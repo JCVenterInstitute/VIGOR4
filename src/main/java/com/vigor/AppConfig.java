@@ -1,0 +1,53 @@
+package com.vigor;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.config.ConfigurationSource;
+import org.apache.logging.log4j.core.config.Configurator;
+import org.jcvi.jillion.core.datastore.DataStoreException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import com.vigor.service.VigorInputValidationService;
+
+//import com.vigor.component.Test;
+
+
+@Configuration
+@ComponentScan("com.vigor")
+public class AppConfig {
+	
+	private static final Logger LOGGER = LogManager.getLogger(AppConfig.class);
+	
+
+	public static void main(String... args) throws IOException, DataStoreException {
+		LOGGER.debug("******** VIGOR4 APPLICATION STARTED ************");
+		
+		/*Test test = new Test();
+		test.test();*/
+			
+		//ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+		VigorInputValidationService validateObj = new VigorInputValidationService();
+		validateObj.processInput(args);
+		//ctx.getBean(VigorInputValidationService.class).processInput(args);
+		//((ConfigurableApplicationContext) ctx).close();
+		LOGGER.debug("******** VIGOR4 APPLICATION STOPED ************");
+	}
+	
+	static {
+		try {
+			ConfigurationSource source = new ConfigurationSource(ClassLoader.getSystemResourceAsStream("log4j2.xml"));
+			Configurator.initialize(null, source);
+		} catch (FileNotFoundException e) {
+			LOGGER.error(e.getMessage(),e);
+		} catch (IOException e) {
+			LOGGER.error(e.getMessage(),e);
+		}
+	}
+
+}
