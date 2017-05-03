@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="349.75" y="925.0">com.vigor.component.GeneModel</node>
+    <node x="524.0" y="290.5">com.vigor.component.GeneStructure</node>
+    <node x="1018.75" y="8.0">com.vigor.component.Exon</node>
+    <node x="25.076923076923094" y="511.0">com.vigor.component.Alignment</node>
+    <node x="517.75" y="923.0">com.vigor.component.Pseudogene</node>
+    <node x="-77.0" y="65.0">com.vigor.component.VirusGenome</node>
+    <node x="490.5" y="13.5">com.vigor.component.Intron</node>
+    <node x="188.0" y="275.5">com.vigor.component.AlignmentEvidence</node>
+    <node x="-82.0" y="233.0">com.vigor.component.HSP</node>
+    <node x="332.75" y="680.0">com.vigor.component.Model</node>
+    <node x="801.0" y="195.0">com.vigor.component.ViralTricks</node>
+    <node x="722.8076923076923" y="523.0">com.vigor.component.ViralProtein</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.vigor.component.Pseudogene" target="com.vigor.component.Model">
+      <point x="0.0" y="-18.5" />
+      <point x="590.75" y="947.0" />
+      <point x="586.75" y="922.0" />
+      <point x="84.0" y="99.5" />
+    </edge>
+    <edge source="com.vigor.component.GeneModel" target="com.vigor.component.Model">
+      <point x="0.0" y="-18.5" />
+      <point x="417.75" y="962.0" />
+      <point x="417.75" y="932.0" />
+      <point x="-84.0" y="99.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="617.0" y="362.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
