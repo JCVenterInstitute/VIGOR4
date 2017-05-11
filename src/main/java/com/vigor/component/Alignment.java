@@ -11,10 +11,12 @@ import lombok.Data;
 @Scope("prototype")
 @Data
 public class Alignment {
-	
+
 	private String alignmentTool_name;
-	private ArrayList<HSP> hsps;
-	private AlignmentEvidence alignmentEvidence;
-		
+	private ArrayList<AlignmentFragment> alignmentFragments;
+	private float alignemntScore;
+	private VirusGenome virusGenome;
+	private ViralProtein viralProtein;
+
 
 }

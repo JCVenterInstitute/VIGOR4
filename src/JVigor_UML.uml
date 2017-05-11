@@ -3,35 +3,37 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="349.75" y="925.0">com.vigor.component.GeneModel</node>
-    <node x="524.0" y="290.5">com.vigor.component.GeneStructure</node>
-    <node x="1018.75" y="8.0">com.vigor.component.Exon</node>
-    <node x="25.076923076923094" y="511.0">com.vigor.component.Alignment</node>
-    <node x="517.75" y="923.0">com.vigor.component.Pseudogene</node>
-    <node x="-77.0" y="65.0">com.vigor.component.VirusGenome</node>
-    <node x="490.5" y="13.5">com.vigor.component.Intron</node>
-    <node x="188.0" y="275.5">com.vigor.component.AlignmentEvidence</node>
-    <node x="-82.0" y="233.0">com.vigor.component.HSP</node>
-    <node x="332.75" y="680.0">com.vigor.component.Model</node>
-    <node x="801.0" y="195.0">com.vigor.component.ViralTricks</node>
-    <node x="722.8076923076923" y="523.0">com.vigor.component.ViralProtein</node>
+    <node x="122.0" y="-14181.0">com.vigor.component.Ribosomal_Slippage</node>
+    <node x="736.0" y="-14177.0">com.vigor.component.StartTranslationException</node>
+    <node x="760.0" y="-14510.0">com.vigor.component.GeneModel</node>
+    <node x="480.0" y="-14569.0">com.vigor.component.GeneStructure</node>
+    <node x="285.0" y="-14017.0">com.vigor.component.Exon</node>
+    <node x="255.0" y="-14360.0">com.vigor.component.Alignment</node>
+    <node x="1060.0" y="-14437.0">com.vigor.component.RNA_Editing</node>
+    <node x="163.0" y="-14598.0">com.vigor.component.Pseudogene</node>
+    <node x="957.0" y="-14161.0">com.vigor.component.GeneAttributes</node>
+    <node x="1073.0" y="-14252.0">com.vigor.component.VirusGenome</node>
+    <node x="1052.0" y="-14544.0">com.vigor.component.Splicing</node>
+    <node x="702.0" y="-14025.0">com.vigor.component.Intron</node>
+    <node x="734.0" y="-14433.0">com.vigor.component.AlignmentFragment</node>
+    <node x="626.0" y="-14096.0">com.vigor.component.StopTranslationException</node>
+    <node x="151.0" y="-14434.0">com.vigor.component.AlignmentEvidence</node>
+    <node x="208.0" y="-14120.0">com.vigor.component.Model</node>
+    <node x="836.0" y="-14599.0">com.vigor.component.StructuralSpecifications</node>
+    <node x="331.0" y="-14560.0">com.vigor.component.ViralProtein</node>
   </nodes>
   <notes />
   <edges>
     <edge source="com.vigor.component.Pseudogene" target="com.vigor.component.Model">
-      <point x="0.0" y="-18.5" />
-      <point x="590.75" y="947.0" />
-      <point x="586.75" y="922.0" />
-      <point x="84.0" y="99.5" />
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
     </edge>
     <edge source="com.vigor.component.GeneModel" target="com.vigor.component.Model">
-      <point x="0.0" y="-18.5" />
-      <point x="417.75" y="962.0" />
-      <point x="417.75" y="932.0" />
-      <point x="-84.0" y="99.5" />
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="617.0" y="362.0" />
+  <settings layout="Hierarchic Group" zoom="1.0" x="731.0" y="-14256.5" />
   <SelectedNodes />
   <Categories>
     <Category>Fields</Category>

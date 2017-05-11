@@ -1,13 +1,19 @@
 package com.vigor.utils;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Pattern;
+
+
+
 
 public class VigorUtils {
 
 	private static String BLAST_CLASSPATH = "vigorResources" + File.separator + "blast" + File.separator;
 	private static String WINDOWS = "windows";
 	private static String LINUX = "linux";
+
 
 	public static boolean isNullOrEmpty(Object value) {
 		if (value != null && !value.toString().trim().equalsIgnoreCase(""))
@@ -60,11 +66,15 @@ public class VigorUtils {
 		return "vigorResources" + File.separator + "data3";
 	}
 
-	public static String getConfigIniPath() {
+	public static String getVigorParametersPath() {
 
 		String vigorIniPath = "vigorResources" + File.separator + "config" + File.separator + "vigor.ini";
 		return vigorIniPath;
 	}
+	public static String getVirusSpecificParametersPath(){
+        String virusParamsPath = "vigorResources" + File.separator + "config" + File.separator + "virusSpecificParams";
+        return virusParamsPath;
+    }
 
 	public static String getBlastFilePath() throws IllegalArgumentException {
 		if (OSValidator.isWindows()) {

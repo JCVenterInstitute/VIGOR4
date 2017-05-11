@@ -1,5 +1,7 @@
 package com.vigor.component;
 
+import org.jcvi.jillion.core.Direction;
+import org.jcvi.jillion.core.Range;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -10,11 +12,10 @@ import lombok.Data;
 @Data
 public class Exon {
 
-	private long begin;
-	private long end;
-	private int strand;
-	private long size;
-	
-	
+	private Range range;
+	private Direction direction;
+	private boolean is_5p_adjusted=false;
+	private boolean is_3p_adjusted=false;
+    private int order;
 	
 }

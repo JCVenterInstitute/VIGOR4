@@ -20,7 +20,7 @@ public class AppTest {
 			
 			Configurations configs = new Configurations();
 			
-			Resource resource = new ClassPathResource(VigorUtils.getConfigIniPath());
+			Resource resource = new ClassPathResource(VigorUtils.getVigorParametersPath ());
 			
 			INIConfiguration iniConfig = configs.ini(resource.getFile());
 			
