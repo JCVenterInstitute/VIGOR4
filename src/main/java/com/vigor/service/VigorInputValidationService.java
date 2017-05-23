@@ -169,17 +169,15 @@ public class VigorInputValidationService {
         Option option17 = Option.builder ( "s" ).hasArg ().desc (
                 "<gene size> minimum size (aa) of product required to report a gene, by default size is ignored" ).build ();
         Option option18 = Option.builder ( "v" ).hasArg ().desc ( "verbose logging (default=terse)" ).build ();
-        Option option19 = Option.builder ( "x" ).hasArg ().desc (
-                "<ref_id,...,ref_id> comma separated list of reference sequence IDs to ignore (useful when debugging a reference database)" ).build ();
         Option option20 = Option.builder ( "h" ).hasArg ().desc ( "For Help" ).build ();
         helperOptions.addOption ( option1 ).addOption ( option2 ).addOption ( option3 ).addOption ( option4 ).addOption ( option5 ).addOption ( option6 ).
                 addOption ( option7 ).addOption ( option8 ).addOption ( option9 ).addOption ( option10 ).addOption ( option11 ).addOption ( option12 )
                      .addOption ( option13 ).addOption ( option14 ).addOption ( option15 ).addOption ( option16 ).addOption ( option17 ).addOption ( option18 ).
-                             addOption ( option19 ).addOption ( option20 );
+                             addOption ( option20 );
         allOptions.addOption ( option1 ).addOption ( option2 ).addOption ( option3 ).addOption ( option4 ).addOption ( option5 ).addOption ( option6 ).
                 addOption ( option7 ).addOption ( option8 ).addOption ( option9 ).addOption ( option10 ).addOption ( option11 ).addOption ( option12 )
                      .addOption ( option13 ).addOption ( option14 ).addOption ( option15 ).addOption ( option16 ).addOption ( option17 ).addOption ( option18 ).
-                             addOption ( option19 ).addOption ( option20 ).addOption ( option2_1 ).addOption ( option9_1 ).addOption ( option13_1 );
+                          addOption ( option20 ).addOption ( option2_1 ).addOption ( option9_1 ).addOption ( option13_1 );
        if(helpOptions) {
            return helperOptions;}
 

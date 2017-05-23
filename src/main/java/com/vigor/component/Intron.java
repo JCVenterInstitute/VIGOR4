@@ -1,5 +1,6 @@
 package com.vigor.component;
 
+import org.jcvi.jillion.core.Range;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -10,8 +11,8 @@ import lombok.Data;
 @Data
 public class Intron {
 
-	private long begin;
-	private long end;
-	private long size;
+	private Range range;
+
+
 	
 }
