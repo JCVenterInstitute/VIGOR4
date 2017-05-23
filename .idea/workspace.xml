@@ -2,115 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab3d517c-ffa4-4273-be63-7f918fb62788" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/cfml.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cglib_cglib_3_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_cli_commons_cli_1_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_configuration2_2_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_3_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_6_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_6_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jillion_jillion_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_4_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_16_14.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/component/RNA_Editing.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/component/Ribosomal_Slippage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/component/Splicing.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/component/StartTranslationException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/component/StopTranslationException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/component/StructuralSpecifications.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/service/AlignmentGenerationService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/cdv_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/chikv_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/cov_alpha_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/cov_beta_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/cov_delta_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/cov_g1a_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/cov_g1b_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/cov_g2a_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/cov_g2cd_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/cov_g3_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/cov_gamma_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/cov_sars_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/cov_unclass_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/filo_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/flua_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/flub_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/fluc_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/fmdv_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/hadva_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/hadvb_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/hadvc_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/hadvd_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/hadve_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/hadvf_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/hadvg_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/hantavirus_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/hhv1_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/hhv2_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/hhv3_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/hhv4_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/hhv5_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/hpiv1_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/hpiv3_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/hrv_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/mmp_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/mpv_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/msl_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/norv1_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/norv2_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/norv_misc_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/norv_murine_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/obunya_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/rabies_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/rbl_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/rsv_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/rtva_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/rtvb_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/rtvc_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/rtvg_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/sapo_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/sendai_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/veev_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/wnvII_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/wnvI_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/wnv_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/yfv_db.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/config/virusSpecificParams/zikv_db.ini" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vigor4.iml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/component/HSP.java" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/component/AlignmentFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/component/ViralTricks.java" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/component/GeneAttributes.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/service/ReferenceProteinGenerationService.java" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/service/ReferenceDBGenerationService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/service/ExonerateService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/service/ModelGenerationService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/service/ViralProteinService.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/test/AppTest.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JVigor_UML.uml" afterPath="$PROJECT_DIR$/src/JVigor_UML.uml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vigor/AppConfig.class" afterPath="$PROJECT_DIR$/target/classes/com/vigor/AppConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vigor/component/Alignment.class" afterPath="$PROJECT_DIR$/target/classes/com/vigor/component/Alignment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vigor/component/AlignmentFragment.class" afterPath="$PROJECT_DIR$/target/classes/com/vigor/component/AlignmentFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vigor/component/Exon.class" afterPath="$PROJECT_DIR$/target/classes/com/vigor/component/Exon.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vigor/component/GeneAttributes.class" afterPath="$PROJECT_DIR$/target/classes/com/vigor/component/GeneAttributes.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vigor/component/GeneStructure.class" afterPath="$PROJECT_DIR$/target/classes/com/vigor/component/GeneStructure.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vigor/component/Model.class" afterPath="$PROJECT_DIR$/target/classes/com/vigor/component/Model.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vigor/component/Ribosomal_Slippage.class" afterPath="$PROJECT_DIR$/target/classes/com/vigor/component/Ribosomal_Slippage.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vigor/component/StructuralSpecifications.class" afterPath="$PROJECT_DIR$/target/classes/com/vigor/component/StructuralSpecifications.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vigor/forms/VigorForm.class" afterPath="$PROJECT_DIR$/target/classes/com/vigor/forms/VigorForm.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vigor/service/AlignmentGenerationService.class" afterPath="$PROJECT_DIR$/target/classes/com/vigor/service/AlignmentGenerationService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vigor/service/VigorInitializationService.class" afterPath="$PROJECT_DIR$/target/classes/com/vigor/service/VigorInitializationService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vigor/service/VigorInputValidationService.class" afterPath="$PROJECT_DIR$/target/classes/com/vigor/service/VigorInputValidationService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vigor/utils/VigorUtils.class" afterPath="$PROJECT_DIR$/target/classes/com/vigor/utils/VigorUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vigor4.iml" afterPath="$PROJECT_DIR$/Vigor4.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/AppConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/AppConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/component/Alignment.java" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/component/Alignment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/component/AlignmentFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/component/AlignmentFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/component/Exon.java" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/component/Exon.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/component/GeneAttributes.java" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/component/GeneAttributes.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/component/GeneStructure.java" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/component/GeneStructure.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/component/Intron.java" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/component/Intron.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/component/Model.java" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/component/Model.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/component/ViralProtein.java" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/component/ViralProtein.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/component/RNA_Editing.java" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/component/RNA_Editing.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/component/Ribosomal_Slippage.java" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/component/Ribosomal_Slippage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/component/StartTranslationException.java" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/component/StartTranslationException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/component/StopTranslationException.java" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/component/StopTranslationException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/component/StructuralSpecifications.java" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/component/StructuralSpecifications.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/component/VirusGenome.java" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/component/VirusGenome.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/forms/VigorForm.java" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/forms/VigorForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/service/AlignmentGenerationService.java" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/service/AlignmentGenerationService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/service/VigorInitializationService.java" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/service/VigorInitializationService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/test/AppTest.java" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/test/AppTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/utils/LoadDefaultParameters.java" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/utils/LoadDefaultParameters.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/service/VigorInputValidationService.java" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/service/VigorInputValidationService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vigor/utils/VigorUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/vigor/utils/VigorUtils.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -173,33 +105,255 @@
       <file leaf-file-name="AlignmentGenerationService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/service/AlignmentGenerationService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1092">
-              <caret line="52" column="30" lean-forward="false" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
+            <state relative-caret-position="168">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6737#6743#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VigorInitializationService.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/service/VigorInitializationService.java">
+      <file leaf-file-name="ModelGenerationService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/service/ModelGenerationService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="43" column="28" lean-forward="false" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
+            <state relative-caret-position="105">
+              <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
               <folding>
-                <marker date="1494531844049" expanded="true" signature="6515:6810" ph="..." />
+                <element signature="e#782#789#0" expanded="true" />
+                <element signature="e#1986#2011#0" expanded="true" />
+                <element signature="e#2577#2596#0" expanded="true" />
+                <element signature="e#4016#4041#0" expanded="true" />
+                <element signature="e#4223#4242#0" expanded="true" />
+                <element signature="e#4942#4948#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReferenceDBGenerationService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/service/ReferenceDBGenerationService.java">
+      <file leaf-file-name="JVigor_UML.uml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/JVigor_UML.uml">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement />
+              <nodes>
+                <node x="638.0" y="27.0">com.vigor.component.Ribosomal_Slippage</node>
+                <node x="1269.4801587301588" y="1201.0">com.vigor.component.GeneModel</node>
+                <node x="0.0" y="54.0">com.vigor.component.StartTranslationException</node>
+                <node x="2301.0" y="27.0">com.vigor.component.Exon</node>
+                <node x="2141.25" y="313.0">com.vigor.component.GeneStructure</node>
+                <node x="916.5833333333334" y="730.0">com.vigor.component.Alignment</node>
+                <node x="1382.0" y="13.5">com.vigor.component.RNA_Editing</node>
+                <node x="1429.4801587301588" y="1201.0">com.vigor.component.Pseudogene</node>
+                <node x="803.9007936507935" y="259.0">com.vigor.component.GeneAttributes</node>
+                <node x="375.0" y="40.5">com.vigor.component.Splicing</node>
+                <node x="445.2301587301588" y="508.0">com.vigor.component.VirusGenome</node>
+                <node x="2112.0" y="67.5">com.vigor.component.Intron</node>
+                <node x="1087.2301587301588" y="508.0">com.vigor.component.AlignmentFragment</node>
+                <node x="833.2301587301588" y="548.5">com.vigor.component.AlignmentEvidence</node>
+                <node x="1737.0" y="54.0">com.vigor.component.StopTranslationException</node>
+                <node x="1279.9801587301588" y="979.0">com.vigor.component.Model</node>
+                <node x="1020.0" y="0.0">com.vigor.component.StructuralSpecifications</node>
+                <node x="1358.2301587301588" y="508.0">com.vigor.component.ViralProtein</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="com.vigor.component.GeneAttributes" target="com.vigor.component.StopTranslationException">
+                  <point x="189.58333333333326" y="-99.5" />
+                  <point x="1220.9841269841268" y="239.0" />
+                  <point x="1914.5" y="239.0" />
+                  <point x="0.0" y="45.5" />
+                </edge>
+                <edge source="com.vigor.component.GeneStructure" target="com.vigor.component.Intron">
+                  <point x="-55.25" y="-45.5" />
+                  <point x="0.0" y="32.0" />
+                </edge>
+                <edge source="com.vigor.component.GeneAttributes" target="com.vigor.component.RNA_Editing">
+                  <point x="113.75" y="-99.5" />
+                  <point x="1145.1507936507935" y="229.0" />
+                  <point x="1549.5" y="229.0" />
+                  <point x="0.0" y="86.0" />
+                </edge>
+                <edge source="com.vigor.component.Alignment" target="com.vigor.component.AlignmentEvidence">
+                  <point x="-46.0" y="-99.5" />
+                  <point x="1054.5833333333335" y="700.0" />
+                  <point x="950.2301587301588" y="700.0" />
+                  <point x="0.0" y="45.5" />
+                </edge>
+                <edge source="com.vigor.component.GeneAttributes" target="com.vigor.component.StructuralSpecifications">
+                  <point x="37.91666666666674" y="-99.5" />
+                  <point x="1069.3174603174602" y="219.0" />
+                  <point x="1191.0" y="219.0" />
+                  <point x="0.0" y="99.5" />
+                </edge>
+                <edge source="com.vigor.component.GeneAttributes" target="com.vigor.component.Splicing">
+                  <point x="-113.75" y="-99.5" />
+                  <point x="917.6507936507935" y="229.0" />
+                  <point x="496.5" y="229.0" />
+                  <point x="0.0" y="59.0" />
+                </edge>
+                <edge source="com.vigor.component.Alignment" target="com.vigor.component.ViralProtein">
+                  <point x="138.0" y="-99.5" />
+                  <point x="1238.5833333333335" y="710.0" />
+                  <point x="1535.2301587301588" y="710.0" />
+                  <point x="0.0" y="86.0" />
+                </edge>
+                <edge source="com.vigor.component.Pseudogene" target="com.vigor.component.Model">
+                  <point x="0.0" y="-18.5" />
+                  <point x="1501.4801587301588" y="1176.0" />
+                  <point x="1490.7301587301588" y="1176.0" />
+                  <point x="70.25" y="86.0" />
+                </edge>
+                <edge source="com.vigor.component.GeneStructure" target="com.vigor.component.Exon">
+                  <point x="55.25" y="-45.5" />
+                  <point x="2307.0" y="239.0" />
+                  <point x="2358.25" y="239.0" />
+                  <point x="-57.25" y="72.5" />
+                </edge>
+                <edge source="com.vigor.component.GeneModel" target="com.vigor.component.Model">
+                  <point x="0.0" y="-18.5" />
+                  <point x="1339.4801587301588" y="1176.0" />
+                  <point x="1350.2301587301588" y="1176.0" />
+                  <point x="-70.25" y="86.0" />
+                </edge>
+                <edge source="com.vigor.component.Model" target="com.vigor.component.Exon">
+                  <point x="70.25" y="-86.0" />
+                  <point x="1490.7301587301588" y="954.0" />
+                  <point x="2472.75" y="954.0" />
+                  <point x="57.25" y="72.5" />
+                </edge>
+                <edge source="com.vigor.component.Alignment" target="com.vigor.component.AlignmentFragment">
+                  <point x="46.0" y="-99.5" />
+                  <point x="1146.5833333333335" y="710.0" />
+                  <point x="1212.7301587301588" y="710.0" />
+                  <point x="0.0" y="86.0" />
+                </edge>
+                <edge source="com.vigor.component.Alignment" target="com.vigor.component.VirusGenome">
+                  <point x="-138.0" y="-99.5" />
+                  <point x="962.5833333333334" y="710.0" />
+                  <point x="629.2301587301588" y="710.0" />
+                  <point x="0.0" y="86.0" />
+                </edge>
+                <edge source="com.vigor.component.GeneAttributes" target="com.vigor.component.Ribosomal_Slippage">
+                  <point x="-37.91666666666674" y="-99.5" />
+                  <point x="993.4841269841268" y="219.0" />
+                  <point x="819.0" y="219.0" />
+                  <point x="0.0" y="72.5" />
+                </edge>
+                <edge source="com.vigor.component.Model" target="com.vigor.component.Alignment">
+                  <point x="-70.25" y="-86.0" />
+                  <point x="1350.2301587301588" y="954.0" />
+                  <point x="1100.5833333333335" y="954.0" />
+                  <point x="0.0" y="99.5" />
+                </edge>
+                <edge source="com.vigor.component.GeneAttributes" target="com.vigor.component.StartTranslationException">
+                  <point x="-189.58333333333326" y="-99.5" />
+                  <point x="841.8174603174602" y="239.0" />
+                  <point x="177.5" y="239.0" />
+                  <point x="0.0" y="45.5" />
+                </edge>
+                <edge source="com.vigor.component.ViralProtein" target="com.vigor.component.GeneStructure">
+                  <point x="88.5" y="-86.0" />
+                  <point x="1623.7301587301588" y="483.0" />
+                  <point x="2251.75" y="483.0" />
+                  <point x="0.0" y="45.5" />
+                </edge>
+                <edge source="com.vigor.component.ViralProtein" target="com.vigor.component.GeneAttributes">
+                  <point x="-88.5" y="-86.0" />
+                  <point x="1446.7301587301588" y="483.0" />
+                  <point x="1031.4007936507935" y="483.0" />
+                  <point x="0.0" y="99.5" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="1.0" x="1060.0" y="137.0" />
+              <SelectedNodes>
+                <node>com.vigor.component.Exon</node>
+              </SelectedNodes>
+              <Categories>
+                <Category>Fields</Category>
+                <Category>Inner Classes</Category>
+              </Categories>
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Model.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/component/Model.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="315">
+              <caret line="25" column="32" lean-forward="false" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViralProteinServiceTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/vigor/service/ViralProteinServiceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Exon.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/component/Exon.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VirusGenome.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/component/VirusGenome.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModelGenerationServiceTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/vigor/service/ModelGenerationServiceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-588">
+              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#599#618#0" expanded="true" />
+                <element signature="e#2480#2505#0" expanded="true" />
+                <element signature="e#2580#2599#0" expanded="true" />
+                <element signature="e#2915#2934#0" expanded="true" />
+                <element signature="e#3196#3215#0" expanded="true" />
+                <element signature="e#3478#3497#0" expanded="true" />
+                <element signature="e#3760#3779#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AlignmentGenerationServiceTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/vigor/service/AlignmentGenerationServiceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppConfigTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/vigor/AppConfigTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="11" column="41" lean-forward="true" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -211,8 +365,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>load</find>
+    </findStrings>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -230,8 +390,36 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/vigor/service/AlignmentGenerationService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vigor/service/VigorInputValidationService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vigor/component/GeneAttributes.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vigor/component/GeneStructure.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vigor/forms/VigorForm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vigor/component/Intron.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vigor/component/AlignmentFragment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vigor/service/ExonerateOutput.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vigor/service/VigorInitializationService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vigor/utils/VigorUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vigor/component/RNA_Editing.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vigor/component/StartTranslationException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vigor/component/StopTranslationException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vigor/component/Alignment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vigor/service/ExonerateService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vigor/component/StructuralSpecifications.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vigor/component/Ribosomal_Slippage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vigor/service/ViralProteinService.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vigor/AppConfig.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/vigor/AppConfigTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/vigor/service/VigorInputValidationServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/vigor/service/VigorInitializationServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/vigor/service/ViralProteinServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/vigor/service/AlignmentGenerationServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vigor/service/ModelGenerationService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vigor/service/AlignmentGenerationService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/vigor/service/ModelGenerationServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vigor/component/Exon.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vigor/component/VirusGenome.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vigor/component/Model.java" />
       </list>
     </option>
   </component>
@@ -248,6 +436,7 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
@@ -273,31 +462,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Vigor4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Vigor4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -321,6 +485,80 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vigor4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VIGOR4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vigor4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VIGOR4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vigor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vigor4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VIGOR4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vigor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -398,6 +636,61 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vigor4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VIGOR4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vigor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="component" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vigor4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vigor4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -420,8 +713,19 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java/com/vigor/service" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.vigor.service" />
+      <recent name="com.vigor" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\git\VIGOR4\src\main\resources\vigorResources\config\virusSpecificParams" />
     </key>
@@ -438,7 +742,65 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Unnamed">
+  <component name="RunManager" selected="JUnit.ModelGenerationServiceTest">
+    <configuration default="false" name="ModelGenerationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.vigor.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Vigor4" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.vigor.service" />
+      <option name="MAIN_CLASS_NAME" value="com.vigor.service.ModelGenerationServiceTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="#PerlConfigurationType" factoryName="Perl" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="alternativeSdkPath" />
+      <option name="compileTimeBreakpointsEnabled" value="false" />
+      <option name="consoleCharset" />
+      <option name="envs">
+        <map />
+      </option>
+      <option name="nonInteractiveModeEnabled" value="false" />
+      <option name="passParentEnvs" value="true" />
+      <option name="perlParameters" value="" />
+      <option name="programParameters" />
+      <option name="scriptPath" />
+      <option name="useAlternativeSdk" value="false" />
+      <option name="workingDirectory" />
+      <option name="SCRIPT_PATH" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="PERL_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENVS">
+        <map />
+      </option>
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="CHARSET" />
+      <option name="USE_ALTERNATIVE_SDK" value="false" />
+      <option name="ALTERNATIVE_SDK_PATH" />
+      <option name="scriptCharset" value="utf8" />
+      <option name="startMode" value="RUN" />
+      <option name="isNonInteractiveModeEnabled" value="false" />
+      <option name="isCompileTimeBreakpointsEnabled" value="false" />
+      <option name="initCode" value="" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -790,6 +1152,13 @@
       </MavenSettings>
       <method />
     </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -833,6 +1202,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -920,11 +1295,17 @@
       </MavenSettings>
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Application.Unnamed" />
       <item index="1" class="java.lang.String" itemvalue="Maven.Unnamed" />
       <item index="2" class="java.lang.String" itemvalue="Maven.test" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ModelGenerationServiceTest" />
     </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ModelGenerationServiceTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -954,12 +1335,48 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1493775788924</updated>
-      <workItem from="1494531753810" duration="818000" />
+      <workItem from="1494531753810" duration="1561000" />
+      <workItem from="1494535001422" duration="92812000" />
+      <workItem from="1495134165471" duration="603000" />
+      <workItem from="1495136806128" duration="602000" />
+      <workItem from="1495163987858" duration="35489000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="ModelGenerationServiceTest - 2017.05.19 at 15h 54m 43s.xml">
+      <configuration name="ModelGenerationServiceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ModelGenerationServiceTest - 2017.05.19 at 15h 58m 15s.xml">
+      <configuration name="ModelGenerationServiceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ModelGenerationServiceTest - 2017.05.19 at 15h 58m 16s.xml">
+      <configuration name="ModelGenerationServiceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ModelGenerationServiceTest - 2017.05.19 at 16h 01m 59s.xml">
+      <configuration name="ModelGenerationServiceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ModelGenerationServiceTest - 2017.05.19 at 16h 09m 47s.xml">
+      <configuration name="ModelGenerationServiceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ModelGenerationServiceTest - 2017.05.19 at 16h 09m 56s.xml">
+      <configuration name="ModelGenerationServiceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ModelGenerationServiceTest - 2017.05.19 at 16h 13m 36s.xml">
+      <configuration name="ModelGenerationServiceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ModelGenerationServiceTest - 2017.05.19 at 17h 05m 47s.xml">
+      <configuration name="ModelGenerationServiceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ModelGenerationServiceTest - 2017.05.19 at 17h 13m 15s.xml">
+      <configuration name="ModelGenerationServiceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ModelGenerationServiceTest - 2017.05.22 at 10h 03m 55s.xml">
+      <configuration name="ModelGenerationServiceTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93411000" />
+    <option name="totallyTimeSpent" value="223660000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -967,43 +1384,83 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.50322235" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.50322235" order="14" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997735" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="simpleUML" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="simpleUML" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272933" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.49677765" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.49785176" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.49785176" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.49785176" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.49785176" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.49785176" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26369494" sideWeight="0.67157584" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.49785176" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.49785176" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25241676" sideWeight="0.67157584" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.50322235" order="14" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997735" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="simpleUML" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272933" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.49677765" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.49785176" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.49785176" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.49785176" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.49785176" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25241676" sideWeight="0.67157584" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -1050,7 +1507,12 @@
     </GetOptions>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="17" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1058,109 +1520,390 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/service/AlignmentGenerationService.java">
+    <entry file="file://$PROJECT_DIR$/Vigor4.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/stream/Collectors.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/HashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="1252" column="0" lean-forward="false" selection-start-line="1252" selection-start-column="0" selection-end-line="1252" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/forms/VigorForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="11" column="48" lean-forward="false" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/blast/BlastVistorImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="30" column="31" lean-forward="true" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6737#6743#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/component/AlignmentEvidence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/component/GeneAttributes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/component/GeneStructure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/component/Intron.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/component/Pseudogene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/component/RNA_Editing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/component/Splicing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/component/StartTranslationException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="17" column="22" lean-forward="false" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/component/StopTranslationException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/utils/LoadDefaultParameters.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="16" column="57" lean-forward="false" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/utils/VigorUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="17" column="55" lean-forward="true" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/component/Alignment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="60" lean-forward="true" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/component/StructuralSpecifications.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/component/Ribosomal_Slippage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="11" column="5" lean-forward="false" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/component/ViralProtein.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/test/AppTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/test/AlignmentGenerationTest/TestViralProteinService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="36" lean-forward="false" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/main.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/AppConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="26" column="18" lean-forward="true" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/vigor/service/VigorInputValidationServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/service/VigorInitializationService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="168">
+          <caret line="32" column="39" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="39" />
           <folding>
-            <marker date="1494531844049" expanded="true" signature="6515:6810" ph="..." />
+            <marker date="1495048612272" expanded="true" signature="7104:7399" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/vigor/service/VigorInitializationServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/service/VigorInputValidationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/service/ViralProteinService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="32" />
+          <folding>
+            <element signature="method#parseDeflineAttributes#0;class#ViralProteinService#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/service/ReferenceDBGenerationService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="126">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/component/Ribosomal_Slippage.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/component/Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="462">
+          <caret line="45" column="33" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="45" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/component/Splicing.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="441">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/component/StructuralSpecifications.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="144">
+          <caret line="240" column="0" lean-forward="false" selection-start-line="240" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
+          <folding>
+            <element signature="e#2137#2138#0" expanded="true" />
+            <element signature="e#2181#2182#0" expanded="true" />
+            <element signature="e#5962#6097#0" expanded="true" />
+            <element signature="e#6096#6097#0" expanded="true" />
+            <element signature="e#6495#6659#0" expanded="true" />
+            <element signature="e#6658#6659#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/component/AlignmentFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jillion/jillion/5.1/jillion-5.1.jar!/org/jcvi/jillion/core/io/IOUtil.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="327" column="0" lean-forward="false" selection-start-line="327" selection-start-column="0" selection-end-line="327" selection-end-column="0" />
+          <folding>
+            <element signature="e#10627#10628#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/jillion/jillion/5.1/jillion-5.1.jar!/org/jcvi/jillion/core/Range.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="165">
+          <caret line="1065" column="0" lean-forward="false" selection-start-line="1065" selection-start-column="0" selection-end-line="1065" selection-end-column="0" />
+          <folding>
+            <element signature="e#37491#37492#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runner/JUnitCore.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="1134">
+          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/utils/LoadDefaultParameters.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="273">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/service/VigorInputValidationService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/service/ExonerateService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="924">
+          <caret line="69" column="9" lean-forward="false" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/component/AlignmentEvidence.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/service/AlignmentGenerationService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="168">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/test/AppTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/service/ModelGenerationService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="105">
+          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+          <folding>
+            <element signature="e#782#789#0" expanded="true" />
+            <element signature="e#1986#2011#0" expanded="true" />
+            <element signature="e#2577#2596#0" expanded="true" />
+            <element signature="e#4016#4041#0" expanded="true" />
+            <element signature="e#4223#4242#0" expanded="true" />
+            <element signature="e#4942#4948#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.classpath">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/vigor/AppConfigTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Vigor4.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="189">
+          <caret line="11" column="41" lean-forward="true" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1170,29 +1913,138 @@
           <ID>JAVA</ID>
           <OriginalElement />
           <nodes>
-            <node x="" y="">com.vigor.component.Exon</node>
-            <node x="" y="">com.vigor.component.VirusGenome</node>
-            <node x="" y="">com.vigor.component.RNA_Editing</node>
-            <node x="" y="">com.vigor.component.Alignment</node>
-            <node x="" y="">com.vigor.component.Intron</node>
-            <node x="" y="">com.vigor.component.Splicing</node>
-            <node x="" y="">com.vigor.component.GeneStructure</node>
-            <node x="" y="">com.vigor.component.AlignmentEvidence</node>
-            <node x="" y="">com.vigor.component.Ribosomal_Slippage</node>
-            <node x="" y="">com.vigor.component.StartTranslationException</node>
-            <node x="" y="">com.vigor.component.ViralProtein</node>
-            <node x="" y="">com.vigor.component.AlignmentFragment</node>
-            <node x="" y="">com.vigor.component.Model</node>
-            <node x="" y="">com.vigor.component.GeneAttributes</node>
-            <node x="" y="">com.vigor.component.StopTranslationException</node>
-            <node x="" y="">com.vigor.component.Pseudogene</node>
-            <node x="" y="">com.vigor.component.GeneModel</node>
-            <node x="" y="">com.vigor.component.StructuralSpecifications</node>
+            <node x="638.0" y="27.0">com.vigor.component.Ribosomal_Slippage</node>
+            <node x="1269.4801587301588" y="1201.0">com.vigor.component.GeneModel</node>
+            <node x="0.0" y="54.0">com.vigor.component.StartTranslationException</node>
+            <node x="2301.0" y="27.0">com.vigor.component.Exon</node>
+            <node x="2141.25" y="313.0">com.vigor.component.GeneStructure</node>
+            <node x="916.5833333333334" y="730.0">com.vigor.component.Alignment</node>
+            <node x="1382.0" y="13.5">com.vigor.component.RNA_Editing</node>
+            <node x="1429.4801587301588" y="1201.0">com.vigor.component.Pseudogene</node>
+            <node x="803.9007936507935" y="259.0">com.vigor.component.GeneAttributes</node>
+            <node x="375.0" y="40.5">com.vigor.component.Splicing</node>
+            <node x="445.2301587301588" y="508.0">com.vigor.component.VirusGenome</node>
+            <node x="2112.0" y="67.5">com.vigor.component.Intron</node>
+            <node x="1087.2301587301588" y="508.0">com.vigor.component.AlignmentFragment</node>
+            <node x="833.2301587301588" y="548.5">com.vigor.component.AlignmentEvidence</node>
+            <node x="1737.0" y="54.0">com.vigor.component.StopTranslationException</node>
+            <node x="1279.9801587301588" y="979.0">com.vigor.component.Model</node>
+            <node x="1020.0" y="0.0">com.vigor.component.StructuralSpecifications</node>
+            <node x="1358.2301587301588" y="508.0">com.vigor.component.ViralProtein</node>
           </nodes>
           <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="731.0" y="-14256.0" />
-          <SelectedNodes />
+          <edges>
+            <edge source="com.vigor.component.GeneAttributes" target="com.vigor.component.StopTranslationException">
+              <point x="189.58333333333326" y="-99.5" />
+              <point x="1220.9841269841268" y="239.0" />
+              <point x="1914.5" y="239.0" />
+              <point x="0.0" y="45.5" />
+            </edge>
+            <edge source="com.vigor.component.GeneStructure" target="com.vigor.component.Intron">
+              <point x="-55.25" y="-45.5" />
+              <point x="0.0" y="32.0" />
+            </edge>
+            <edge source="com.vigor.component.GeneAttributes" target="com.vigor.component.RNA_Editing">
+              <point x="113.75" y="-99.5" />
+              <point x="1145.1507936507935" y="229.0" />
+              <point x="1549.5" y="229.0" />
+              <point x="0.0" y="86.0" />
+            </edge>
+            <edge source="com.vigor.component.Alignment" target="com.vigor.component.AlignmentEvidence">
+              <point x="-46.0" y="-99.5" />
+              <point x="1054.5833333333335" y="700.0" />
+              <point x="950.2301587301588" y="700.0" />
+              <point x="0.0" y="45.5" />
+            </edge>
+            <edge source="com.vigor.component.GeneAttributes" target="com.vigor.component.StructuralSpecifications">
+              <point x="37.91666666666674" y="-99.5" />
+              <point x="1069.3174603174602" y="219.0" />
+              <point x="1191.0" y="219.0" />
+              <point x="0.0" y="99.5" />
+            </edge>
+            <edge source="com.vigor.component.GeneAttributes" target="com.vigor.component.Splicing">
+              <point x="-113.75" y="-99.5" />
+              <point x="917.6507936507935" y="229.0" />
+              <point x="496.5" y="229.0" />
+              <point x="0.0" y="59.0" />
+            </edge>
+            <edge source="com.vigor.component.Alignment" target="com.vigor.component.ViralProtein">
+              <point x="138.0" y="-99.5" />
+              <point x="1238.5833333333335" y="710.0" />
+              <point x="1535.2301587301588" y="710.0" />
+              <point x="0.0" y="86.0" />
+            </edge>
+            <edge source="com.vigor.component.Pseudogene" target="com.vigor.component.Model">
+              <point x="0.0" y="-18.5" />
+              <point x="1501.4801587301588" y="1176.0" />
+              <point x="1490.7301587301588" y="1176.0" />
+              <point x="70.25" y="86.0" />
+            </edge>
+            <edge source="com.vigor.component.GeneStructure" target="com.vigor.component.Exon">
+              <point x="55.25" y="-45.5" />
+              <point x="2307.0" y="239.0" />
+              <point x="2358.25" y="239.0" />
+              <point x="-57.25" y="72.5" />
+            </edge>
+            <edge source="com.vigor.component.GeneModel" target="com.vigor.component.Model">
+              <point x="0.0" y="-18.5" />
+              <point x="1339.4801587301588" y="1176.0" />
+              <point x="1350.2301587301588" y="1176.0" />
+              <point x="-70.25" y="86.0" />
+            </edge>
+            <edge source="com.vigor.component.Model" target="com.vigor.component.Exon">
+              <point x="70.25" y="-86.0" />
+              <point x="1490.7301587301588" y="954.0" />
+              <point x="2472.75" y="954.0" />
+              <point x="57.25" y="72.5" />
+            </edge>
+            <edge source="com.vigor.component.Alignment" target="com.vigor.component.AlignmentFragment">
+              <point x="46.0" y="-99.5" />
+              <point x="1146.5833333333335" y="710.0" />
+              <point x="1212.7301587301588" y="710.0" />
+              <point x="0.0" y="86.0" />
+            </edge>
+            <edge source="com.vigor.component.Alignment" target="com.vigor.component.VirusGenome">
+              <point x="-138.0" y="-99.5" />
+              <point x="962.5833333333334" y="710.0" />
+              <point x="629.2301587301588" y="710.0" />
+              <point x="0.0" y="86.0" />
+            </edge>
+            <edge source="com.vigor.component.GeneAttributes" target="com.vigor.component.Ribosomal_Slippage">
+              <point x="-37.91666666666674" y="-99.5" />
+              <point x="993.4841269841268" y="219.0" />
+              <point x="819.0" y="219.0" />
+              <point x="0.0" y="72.5" />
+            </edge>
+            <edge source="com.vigor.component.Model" target="com.vigor.component.Alignment">
+              <point x="-70.25" y="-86.0" />
+              <point x="1350.2301587301588" y="954.0" />
+              <point x="1100.5833333333335" y="954.0" />
+              <point x="0.0" y="99.5" />
+            </edge>
+            <edge source="com.vigor.component.GeneAttributes" target="com.vigor.component.StartTranslationException">
+              <point x="-189.58333333333326" y="-99.5" />
+              <point x="841.8174603174602" y="239.0" />
+              <point x="177.5" y="239.0" />
+              <point x="0.0" y="45.5" />
+            </edge>
+            <edge source="com.vigor.component.ViralProtein" target="com.vigor.component.GeneStructure">
+              <point x="88.5" y="-86.0" />
+              <point x="1623.7301587301588" y="483.0" />
+              <point x="2251.75" y="483.0" />
+              <point x="0.0" y="45.5" />
+            </edge>
+            <edge source="com.vigor.component.ViralProtein" target="com.vigor.component.GeneAttributes">
+              <point x="-88.5" y="-86.0" />
+              <point x="1446.7301587301588" y="483.0" />
+              <point x="1031.4007936507935" y="483.0" />
+              <point x="0.0" y="99.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="1060.0" y="137.0" />
+          <SelectedNodes>
+            <node>com.vigor.component.Exon</node>
+          </SelectedNodes>
           <Categories>
             <Category>Fields</Category>
             <Category>Inner Classes</Category>
@@ -1202,39 +2054,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/forms/VigorForm.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/component/Exon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/service/ReferenceDBGenerationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="210">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/service/AlignmentGenerationService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/component/VirusGenome.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1092">
-          <caret line="52" column="30" lean-forward="false" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
+        <state relative-caret-position="336">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/component/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="25" column="32" lean-forward="false" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/vigor/service/ViralProteinServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/vigor/service/ModelGenerationServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-588">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6737#6743#0" expanded="true" />
+            <element signature="e#599#618#0" expanded="true" />
+            <element signature="e#2480#2505#0" expanded="true" />
+            <element signature="e#2580#2599#0" expanded="true" />
+            <element signature="e#2915#2934#0" expanded="true" />
+            <element signature="e#3196#3215#0" expanded="true" />
+            <element signature="e#3478#3497#0" expanded="true" />
+            <element signature="e#3760#3779#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vigor/service/VigorInitializationService.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/vigor/service/AlignmentGenerationServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="43" column="28" lean-forward="false" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
-          <folding>
-            <marker date="1494531844049" expanded="true" signature="6515:6810" ph="..." />
-          </folding>
+        <state relative-caret-position="336">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>

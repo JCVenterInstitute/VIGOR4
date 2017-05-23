@@ -1,5 +1,6 @@
 package com.vigor.forms;
 
+import com.vigor.component.AlignmentEvidence;
 import lombok.Data;
 
 import java.util.Map;
@@ -8,5 +9,6 @@ import java.util.Map;
 public class VigorForm {
 
 	private Map<String,String> vigorParametersList;
+	private AlignmentEvidence alignmentEvidence;
 
 }

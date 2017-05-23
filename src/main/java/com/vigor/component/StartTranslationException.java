@@ -15,7 +15,7 @@ import java.util.List;
 @Data
 public class StartTranslationException {
 
-   private boolean isStartTranslationException=false;
+   private boolean hasStartTranslationException=false;
    private List<String> alternateStartCodons;
 
 }

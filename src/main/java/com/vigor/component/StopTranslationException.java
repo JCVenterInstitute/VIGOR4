@@ -15,7 +15,7 @@ import java.util.List;
 @Data
 public class StopTranslationException {
 
-    private boolean isStopTranslationException=false;
+    private boolean hasStopTranslationException=false;
     private String stopCodon_readthru;
 
 }

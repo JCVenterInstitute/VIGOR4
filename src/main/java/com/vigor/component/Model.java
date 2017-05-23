@@ -2,6 +2,8 @@ package com.vigor.component;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 import org.jcvi.jillion.core.Direction;
@@ -16,11 +18,10 @@ import lombok.Data;
 public class Model {
 	
 	//These exons are the Hsps converted to exons
-	private ArrayList<Exon> Exons;
-	private Direction direction;
-	private ViralProtein viralProtein;
+	private List<Exon> Exons;
 	private Alignment alignment;
 	private HashMap<String,Float> scores;
-	private String geneSymbol;	
-	
+	private String geneSymbol;
+	private Map<String,String> status;
+	private Direction direction;
 }

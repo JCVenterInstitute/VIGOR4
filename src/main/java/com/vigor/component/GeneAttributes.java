@@ -11,7 +11,6 @@ import lombok.Data;
 @Data
 public class GeneAttributes {
 
-	private int geneVariation;
 	private Ribosomal_Slippage ribosomal_slippage;
 	private Splicing splicing;
 	private StartTranslationException startTranslationException;

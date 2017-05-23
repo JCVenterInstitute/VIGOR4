@@ -18,7 +18,7 @@ public class AlignmentFragment {
 	private double score;
 	private Direction direction;
 	private Range proteinSeqRange;
-	private Range subSeqRange;
+	private Range nucleotideSeqRange;
     private Frame frame;
 	
 

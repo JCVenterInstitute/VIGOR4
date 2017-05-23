@@ -5,6 +5,8 @@ import java.io.File;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import com.sun.javafx.collections.MappingChange;
@@ -19,7 +21,6 @@ import org.jcvi.jillion.fasta.nt.NucleotideFastaFileDataStoreBuilder;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.vigor.component.AlignmentEvidence;
 import com.vigor.component.VirusGenome;
 import com.vigor.forms.VigorForm;
@@ -67,7 +68,8 @@ public class VigorInitializationService {
             while (i.hasNext ()) {
                 NucleotideFastaRecord record = i.next ();
                 VirusGenome virusGenome = new VirusGenome ( record.getSequence (), record.getComment (), isComplete, isCircular );
-                alignmentGenerationService.GenerateAlignment (virusGenome,alignmentEvidence,form);
+                form.setAlignmentEvidence ( alignmentEvidence );
+                alignmentGenerationService.GenerateAlignment (virusGenome,form);
 
 
             }
@@ -135,14 +137,22 @@ public class VigorInitializationService {
             vigorParameterList.put ( "min_pseudogene_similarity", "0" );
             vigorParameterList.put ( "min_pseudogene_coverage", "0" );
         }
-        if (inputs.hasOption ( 'P' )) {
-            // Implement Parse parameters logic
-        }
+
         if (inputs.hasOption ( 'e' )) {
             vigorParameterList.put ( "candidate_evalue", inputs.getOptionValue ( 'e' ) );
         }
         if (inputs.hasOption ( 'j' )) {
             vigorParameterList.put ( "jcvi_rules", "0" );
+        }
+        if (inputs.hasOption ( 'P' )) {
+           Map<String,String> temp = Pattern.compile ("~~").splitAsStream ( inputs.getOptionValue ( 'P' ).trim () )
+                                            .map( s -> s.split ( "=", 2 ) )
+                                            .collect ( Collectors.toMap ( a -> a[0], a -> a.length > 1 ? a[1] : "" ) );
+            for ( String key : temp.keySet() ) {
+                if(vigorParameterList.containsKey ( key )){
+                    vigorParameterList.put ( key,temp.get ( key ) );
+                }
+            }
         }
         form.setVigorParametersList ( vigorParameterList );
         return form;

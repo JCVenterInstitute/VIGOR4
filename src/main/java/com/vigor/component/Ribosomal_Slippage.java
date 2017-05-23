@@ -12,9 +12,9 @@ import org.springframework.stereotype.Component;
 @Data
 public class Ribosomal_Slippage {
 
-    private boolean is_ribosomal_slippage=false;
+    private boolean has_ribosomal_slippage=false;
     private String slippage_motif;
     private int slippage_offset;
-    private int slippage_frameshift;
+    private int slippage_frameshift=-1;
 
 }

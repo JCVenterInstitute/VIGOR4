@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Data
 public class RNA_Editing {
 
-    private boolean is_RNA_editing=false;
+    private boolean has_RNA_editing=false;
     private int size;
     private String regExp;
     private String replacementString;

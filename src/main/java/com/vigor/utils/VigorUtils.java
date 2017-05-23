@@ -110,5 +110,18 @@ public class VigorUtils {
 			throw new IllegalArgumentException("Your OS is not support!!");
 		}
 	}
+	public static boolean is_Integer(String value){
+		try {
+			int number = Integer.parseInt ( value );
+			return true;
+		}
+		catch(NumberFormatException e)
+		{
+			return false;
+		}
+
+
+	}
+
 
 }
