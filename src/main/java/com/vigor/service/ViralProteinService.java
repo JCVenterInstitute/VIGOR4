@@ -22,17 +22,16 @@ import java.util.stream.Collectors;
 @Service
 public class ViralProteinService {
     private static final Logger LOGGER = LogManager.getLogger ( ViralProteinService.class );
-    private VigorForm form;
+    private AlignmentEvidence alignmentEvidence;
 
     /**
      *
-     * @param form
+     * @param alignment
      * @return viralProtein: For the given protein ID ViralProtein object is generated and all the properties are defined;
      */
-    public  ViralProtein getViralProtein(VigorForm form){
-        this.form=form;
-        ViralProtein viralProtein = new ViralProtein ();
-        setViralProteinAttributes (viralProtein);
+    public  ViralProtein getViralProtein(Alignment alignment){
+        alignmentEvidence=alignment.getAlignmentEvidence ();
+        ViralProtein viralProtein = setViralProteinAttributes (alignment.getViralProtein ());
         return viralProtein;
     }
 
@@ -45,7 +44,7 @@ public class ViralProteinService {
     public ViralProtein setViralProteinAttributes(ViralProtein viralProtein) {
 
         try {
-            AlignmentEvidence alignmentEvidence= form.getAlignmentEvidence ();
+
             GeneAttributes geneAttributes = new GeneAttributes ();
             String defline = viralProtein.getDefline ();
             defline = StringUtils.normalizeSpace ( defline );
@@ -115,9 +114,9 @@ public class ViralProteinService {
 
                 if (attributes.get ( "ribosomal_slippage" ).equalsIgnoreCase ( "Y" )) {
                     ribosomal_slippage.setHas_ribosomal_slippage ( true );
-                    if (attributes.containsKey ( "slippage_fraqmeshift" )) {
-                        if (VigorUtils.is_Integer ( attributes.get ( "slippage_fraqmeshift" ) )) {
-                            int fs = Integer.parseInt ( "slippage_fraqmeshift" );
+                    if (attributes.containsKey ( "slippage_frameshift" )) {
+                        if (VigorUtils.is_Integer ( attributes.get ( "slippage_frameshift" ) )) {
+                            int fs = Integer.parseInt ( attributes.get("slippage_frameshift" ));
                             if (fs >= -3 && fs <= 3)
                                 ribosomal_slippage.setSlippage_frameshift ( fs );
                         }
@@ -318,7 +317,7 @@ public class ViralProteinService {
             if (matcher.find ()) {
                 deflineAttributes.add ( matcher.group ( 0 ) );
             }
-            pattern = Pattern.compile ( "(slippage_fraqmeshift=(-?\\d*))" );
+            pattern = Pattern.compile ( "(slippage_frameshift=(-?\\d*))" );
             matcher = pattern.matcher ( defline );
             if (matcher.find ()) {
                 deflineAttributes.add ( matcher.group ( 0 ) );

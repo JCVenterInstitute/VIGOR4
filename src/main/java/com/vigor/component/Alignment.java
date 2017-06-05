@@ -1,6 +1,6 @@
 package com.vigor.component;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.context.annotation.Scope;
@@ -14,11 +14,12 @@ import lombok.Data;
 public class Alignment {
 
 	private String alignmentTool_name;
-	private ArrayList<AlignmentFragment> alignmentFragments;
-	private Map<String,Float> alignemntScore;
+	private List<AlignmentFragment> alignmentFragments;
+	private Map<String,Float> alignmentScore;
 	private VirusGenome virusGenome;
 	private ViralProtein viralProtein;
 	private AlignmentEvidence alignmentEvidence;
+
 
 
 }

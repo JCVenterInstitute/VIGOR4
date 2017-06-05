@@ -51,7 +51,6 @@ public class Test {
 		System.out.println("The sequence is "+genome1.getSequence());
 		SequenceBuilder sq= genome1.getSequence().toBuilder();
 		
-		
 		//System.out.println();
 		ProteinFastaDataStore datastore1 = new ProteinFastaFileDataStoreBuilder(new File("C:/Users/snettem/Downloads/cdv_db"))
                 .hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)

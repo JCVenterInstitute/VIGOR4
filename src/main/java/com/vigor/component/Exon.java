@@ -15,8 +15,8 @@ public class Exon {
 
 	private Range range;
 	private Frame frame;
+	private AlignmentFragment alignmentFragment;
 	private boolean is_5p_adjusted=false;
 	private boolean is_3p_adjusted=false;
-
 	
 }

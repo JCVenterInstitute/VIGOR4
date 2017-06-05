@@ -1,5 +1,6 @@
 package com.vigor.service;
 
+import com.vigor.component.ViralProtein;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -10,6 +11,9 @@ import static org.junit.Assert.*;
 public class ViralProteinServiceTest {
     @Test
     public void getViralProtein() throws Exception {
+
+
+
     }
 
     @Test
@@ -18,6 +22,11 @@ public class ViralProteinServiceTest {
 
     @Test
     public void determineGeneStructure() throws Exception {
+
+
+
+
+
     }
 
     @Test
