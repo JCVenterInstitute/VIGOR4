@@ -20,8 +20,11 @@ public class Model {
 	//These exons are the Hsps converted to exons
 	private List<Exon> Exons;
 	private Alignment alignment;
-	private HashMap<String,Float> scores;
+	private Map<String,Float> scores;
 	private String geneSymbol;
-	private Map<String,String> status;
+	private List<String> status;
 	private Direction direction;
+
+
+
 }

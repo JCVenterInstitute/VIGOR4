@@ -14,7 +14,7 @@ public class Ribosomal_Slippage {
 
     private boolean has_ribosomal_slippage=false;
     private String slippage_motif;
-    private int slippage_offset;
+    private int slippage_offset=0;
     private int slippage_frameshift=-1;
 
 }

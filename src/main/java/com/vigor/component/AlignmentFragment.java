@@ -20,7 +20,7 @@ public class AlignmentFragment {
 	private Range proteinSeqRange;
 	private Range nucleotideSeqRange;
     private Frame frame;
-	
+	private boolean isSubChain=false;
 
 	
 	

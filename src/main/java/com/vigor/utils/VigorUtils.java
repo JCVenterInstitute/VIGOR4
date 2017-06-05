@@ -1,6 +1,12 @@
 package com.vigor.utils;
 
+import com.vigor.service.ViralProteinService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.core.io.ClassPathResource;
+
 import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -10,6 +16,7 @@ import java.util.regex.Pattern;
 
 public class VigorUtils {
 
+	private static final Logger LOGGER = LogManager.getLogger ( VigorUtils.class );
 	private static String BLAST_CLASSPATH = "vigorResources" + File.separator + "blast" + File.separator;
 	private static String WINDOWS = "windows";
 	private static String LINUX = "linux";
@@ -63,7 +70,16 @@ public class VigorUtils {
 	}
 
 	public static String getVirusDatabasePath() {
-		return "vigorResources" + File.separator + "data3";
+		String filepath="";
+		try {
+			File folder = new ClassPathResource ( "vigorResources/data3" ).getFile ();
+			filepath=folder.getAbsolutePath ();
+
+		}
+		catch(IOException e){
+			LOGGER.error ( e.getMessage (),e );
+		}
+		return filepath;
 	}
 
 	public static String getVigorParametersPath() {
