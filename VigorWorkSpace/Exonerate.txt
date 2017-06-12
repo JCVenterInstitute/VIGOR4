@@ -1,0 +1,572 @@
++-
+Command line: [exonerate --model protein2genome -q /home/snettem/Exonerate_output/flua_db -t /home/snettem/Exonerate_output/sequence.fasta --showcigar true --showquerygff true --showtargetgff true --showsugar true]
+Hostname: [snettemvm-lx]
+
+C4 Alignment:
+------------
+         Query: seg7prot2ADR3_V27A&S31N db="flua_db" gene="M2" intron_size=650-750 product="matrix protein 2" splice_form="e26i690e264" spliced=Y length=97
+        Target: KT388711.1 Influenza A virus (A/goose/Taiwan/TNO20/2015(H5N8)) segment 7 cRNA sequence
+         Model: protein2genome:local
+     Raw score: 458
+   Query range: 0 -> 97
+  Target range: 0 -> 979
+
+   1 : MetSerLeuLeuThrGluValGlu{Th}  >>>> Target Intron 1 >>>>  {r}ProT :  11
+       ||||||||||||||||||||||||{||}            688 bp           {|}||||
+       MetSerLeuLeuThrGluValGlu{Th}++                         ++{r}ProT
+   1 : ATGAGTCTTCTAACCGAGGTCGAA{AC}gt.........................ag{G}CCTA : 719
+
+  12 : hrArgAsnGlyTrpGluCysLysCysSerAspSerSerAspProLeuAlaIleAlaAlaAsnIl :  32
+       |||||!.!! !|||||||||!:!||||||||||||||||||||||||!.!:!!|||||||||||
+       hrArgThrGluTrpGluCysArgCysSerAspSerSerAspProLeuValValAlaAlaAsnIl
+ 720 : CCAGAACCGAATGGGAGTGCAGATGCAGCGATTCAAGTGATCCTCTTGTTGTTGCCGCAAATAT : 782
+
+  33 : eIleGlyIleLeuHisLeuIleLeuTrpIleLeuAspArgLeuPhePheLysCysIleTyrArg :  53
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       eIleGlyIleLeuHisLeuIleLeuTrpIleLeuAspArgLeuPhePheLysCysIleTyrArg
+ 783 : CATTGGGATCCTGCACTTGATATTGTGGATCCTTGATCGTCTTTTCTTCAAATGCATTTATCGT : 845
+
+  54 : ArgLeuLysTyrGlyLeuLysArgGlyProSerThrGluGlyValProGluSerMetArgGluG :  75
+       |||||||||||||||||||||! !||||||||||||||||||||||||||||||||||||||||
+       ArgLeuLysTyrGlyLeuLysIleGlyProSerThrGluGlyValProGluSerMetArgGluG
+ 846 : CGCCTTAAATACGGTTTGAAAATAGGGCCTTCTACGGAAGGGGTACCTGAGTCTATGAGGGAAG : 911
+
+  76 : luTyrArgGlnGluGlnGlnSerAlaValAspValAspAspSerHisPheValAsnIleGluLe :  96
+       |||||||||||||||||||||||||||||||||||||||||.!!||||||||||||||||||||
+       luTyrArgGlnGluGlnGlnSerAlaValAspValAspAspGlyHisPheValAsnIleGluLe
+ 912 : AGTACCGGCAGGAACAGCAGAGTGCTGTGGATGTTGACGATGGTCATTTTGTCAACATAGAATT : 974
+
+  97 : uGlu :  97
+       ||||
+       uGlu
+ 975 : GGAG : 979
+
+sugar: seg7prot2ADR3_V27A&S31N 0 97 . KT388711.1 0 979 + 458
+cigar: seg7prot2ADR3_V27A&S31N 0 97 . KT388711.1 0 979 + 458  M 24 D 690 M 265
+vulgar: seg7prot2ADR3_V27A&S31N 0 97 . KT388711.1 0 979 + 458 M 8 24 S 0 2 5 0 2 I 0 684 3 0 2 S 1 1 M 88 264
+# --- START OF GFF DUMP ---
+#
+#
+##gff-version 2
+##source-version exonerate:protein2genome:local 2.2.0
+##date 2017-05-05
+##type Protein
+#
+#
+# seqname source feature start end score strand frame attributes
+#
+seg7prot2ADR3_V27A&S31N	exonerate:protein2genome:local	similarity	1	97	458	.	.	alignment_id 1 ; Target KT388711.1 ; Align 1 1 8 ; Align 10 716 88
+# --- END OF GFF DUMP ---
+#
+# --- START OF GFF DUMP ---
+#
+#
+##gff-version 2
+##source-version exonerate:protein2genome:local 2.2.0
+##date 2017-05-05
+##type DNA
+#
+#
+# seqname source feature start end score strand frame attributes
+#
+KT388711.1	exonerate:protein2genome:local	gene	1	979	458	+	.	gene_id 1 ; sequence seg7prot2ADR3_V27A&S31N ; gene_orientation +
+KT388711.1	exonerate:protein2genome:local	cds	1	26	.	+	.	
+KT388711.1	exonerate:protein2genome:local	exon	1	26	.	+	.	insertions 0 ; deletions 0
+KT388711.1	exonerate:protein2genome:local	splice5	27	28	.	+	.	intron_id 1 ; splice_site "GT"
+KT388711.1	exonerate:protein2genome:local	intron	27	714	.	+	.	intron_id 1
+KT388711.1	exonerate:protein2genome:local	splice3	713	714	.	+	.	intron_id 0 ; splice_site "AG"
+KT388711.1	exonerate:protein2genome:local	cds	715	979	.	+	.	
+KT388711.1	exonerate:protein2genome:local	exon	715	979	.	+	.	insertions 0 ; deletions 0
+KT388711.1	exonerate:protein2genome:local	similarity	1	979	458	+	.	alignment_id 1 ; Query seg7prot2ADR3_V27A&S31N ; Align 1 1 24 ; Align 716 10 264
+# --- END OF GFF DUMP ---
+#
+
+C4 Alignment:
+------------
+         Query: seg7prot2ADR2_S31N db="flua_db" gene="M2" intron_size=650-750 product="matrix protein 2" splice_form="e26i688e268" spliced=Y length=97
+        Target: KT388711.1 Influenza A virus (A/goose/Taiwan/TNO20/2015(H5N8)) segment 7 cRNA sequence
+         Model: protein2genome:local
+     Raw score: 462
+   Query range: 0 -> 97
+  Target range: 0 -> 979
+
+   1 : MetSerLeuLeuThrGluValGlu{Th}  >>>> Target Intron 1 >>>>  {r}ProT :  11
+       ||||||||||||||||||||||||{||}            688 bp           {|}||||
+       MetSerLeuLeuThrGluValGlu{Th}++                         ++{r}ProT
+   1 : ATGAGTCTTCTAACCGAGGTCGAA{AC}gt.........................ag{G}CCTA : 719
+
+  12 : hrArgAsnGlyTrpGluCysLysCysSerAspSerSerAspProLeuValIleAlaAlaAsnIl :  32
+       |||||!.!! !|||||||||!:!|||||||||||||||||||||||||||:!!|||||||||||
+       hrArgThrGluTrpGluCysArgCysSerAspSerSerAspProLeuValValAlaAlaAsnIl
+ 720 : CCAGAACCGAATGGGAGTGCAGATGCAGCGATTCAAGTGATCCTCTTGTTGTTGCCGCAAATAT : 782
+
+  33 : eIleGlyIleLeuHisLeuIleLeuTrpIleLeuAspArgLeuPhePheLysCysIleTyrArg :  53
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       eIleGlyIleLeuHisLeuIleLeuTrpIleLeuAspArgLeuPhePheLysCysIleTyrArg
+ 783 : CATTGGGATCCTGCACTTGATATTGTGGATCCTTGATCGTCTTTTCTTCAAATGCATTTATCGT : 845
+
+  54 : ArgLeuLysTyrGlyLeuLysArgGlyProSerThrGluGlyValProGluSerMetArgGluG :  75
+       |||||||||||||||||||||! !||||||||||||||||||||||||||||||||||||||||
+       ArgLeuLysTyrGlyLeuLysIleGlyProSerThrGluGlyValProGluSerMetArgGluG
+ 846 : CGCCTTAAATACGGTTTGAAAATAGGGCCTTCTACGGAAGGGGTACCTGAGTCTATGAGGGAAG : 911
+
+  76 : luTyrArgGlnGluGlnGlnSerAlaValAspValAspAspSerHisPheValAsnIleGluLe :  96
+       |||||||||||||||||||||||||||||||||||||||||.!!||||||||||||||||||||
+       luTyrArgGlnGluGlnGlnSerAlaValAspValAspAspGlyHisPheValAsnIleGluLe
+ 912 : AGTACCGGCAGGAACAGCAGAGTGCTGTGGATGTTGACGATGGTCATTTTGTCAACATAGAATT : 974
+
+  97 : uGlu :  97
+       ||||
+       uGlu
+ 975 : GGAG : 979
+
+sugar: seg7prot2ADR2_S31N 0 97 . KT388711.1 0 979 + 462
+cigar: seg7prot2ADR2_S31N 0 97 . KT388711.1 0 979 + 462  M 24 D 690 M 265
+vulgar: seg7prot2ADR2_S31N 0 97 . KT388711.1 0 979 + 462 M 8 24 S 0 2 5 0 2 I 0 684 3 0 2 S 1 1 M 88 264
+# --- START OF GFF DUMP ---
+#
+#
+##gff-version 2
+##source-version exonerate:protein2genome:local 2.2.0
+##date 2017-05-05
+##type Protein
+#
+#
+# seqname source feature start end score strand frame attributes
+#
+seg7prot2ADR2_S31N	exonerate:protein2genome:local	similarity	1	97	462	.	.	alignment_id 1 ; Target KT388711.1 ; Align 1 1 8 ; Align 10 716 88
+# --- END OF GFF DUMP ---
+#
+# --- START OF GFF DUMP ---
+#
+#
+##gff-version 2
+##source-version exonerate:protein2genome:local 2.2.0
+##date 2017-05-05
+##type DNA
+#
+#
+# seqname source feature start end score strand frame attributes
+#
+KT388711.1	exonerate:protein2genome:local	gene	1	979	462	+	.	gene_id 1 ; sequence seg7prot2ADR2_S31N ; gene_orientation +
+KT388711.1	exonerate:protein2genome:local	cds	1	26	.	+	.	
+KT388711.1	exonerate:protein2genome:local	exon	1	26	.	+	.	insertions 0 ; deletions 0
+KT388711.1	exonerate:protein2genome:local	splice5	27	28	.	+	.	intron_id 1 ; splice_site "GT"
+KT388711.1	exonerate:protein2genome:local	intron	27	714	.	+	.	intron_id 1
+KT388711.1	exonerate:protein2genome:local	splice3	713	714	.	+	.	intron_id 0 ; splice_site "AG"
+KT388711.1	exonerate:protein2genome:local	cds	715	979	.	+	.	
+KT388711.1	exonerate:protein2genome:local	exon	715	979	.	+	.	insertions 0 ; deletions 0
+KT388711.1	exonerate:protein2genome:local	similarity	1	979	462	+	.	alignment_id 1 ; Query seg7prot2ADR2_S31N ; Align 1 1 24 ; Align 716 10 264
+# --- END OF GFF DUMP ---
+#
+
+C4 Alignment:
+------------
+         Query: seg7prot2B db="flua_db" gene="M2" intron_size=650-750 product="matrix protein 2" splice_form="e26i682e262" spliced=Y length=96
+        Target: KT388711.1 Influenza A virus (A/goose/Taiwan/TNO20/2015(H5N8)) segment 7 cRNA sequence
+         Model: protein2genome:local
+     Raw score: 452
+   Query range: 0 -> 96
+  Target range: 0 -> 976
+
+   1 : MetSerLeuLeuThrGluValGlu{Th}  >>>> Target Intron 1 >>>>  {r}ProT :  11
+       ||||||||||||||||||||||||{||}            688 bp           {|}||||
+       MetSerLeuLeuThrGluValGlu{Th}++                         ++{r}ProT
+   1 : ATGAGTCTTCTAACCGAGGTCGAA{AC}gt.........................ag{G}CCTA : 719
+
+  12 : hrArgAsnGlyTrpGluCysLysCysSerAspSerSerAspProLeuValIleAlaAlaSerIl :  32
+       |||||!.!! !|||||||||!:!|||||||||||||||||||||||||||:!!||||||!:!||
+       hrArgThrGluTrpGluCysArgCysSerAspSerSerAspProLeuValValAlaAlaAsnIl
+ 720 : CCAGAACCGAATGGGAGTGCAGATGCAGCGATTCAAGTGATCCTCTTGTTGTTGCCGCAAATAT : 782
+
+  33 : eIleGlyIleLeuHisLeuIleLeuTrpIleLeuAspArgLeuPhePheLysCysIleTyrArg :  53
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       eIleGlyIleLeuHisLeuIleLeuTrpIleLeuAspArgLeuPhePheLysCysIleTyrArg
+ 783 : CATTGGGATCCTGCACTTGATATTGTGGATCCTTGATCGTCTTTTCTTCAAATGCATTTATCGT : 845
+
+  54 : ArgLeuLysTyrGlyLeuLysArgGlyProSerThrGluGlyValProGluSerMetArgGluG :  75
+       |||||||||||||||||||||! !||||||||||||||||||||||||||||||||||||||||
+       ArgLeuLysTyrGlyLeuLysIleGlyProSerThrGluGlyValProGluSerMetArgGluG
+ 846 : CGCCTTAAATACGGTTTGAAAATAGGGCCTTCTACGGAAGGGGTACCTGAGTCTATGAGGGAAG : 911
+
+  76 : luTyrArgGlnGluGlnGlnSerAlaValAspValAspAspSerHisPheValAsnIleGluLe :  96
+       |||||||||||||||||||||||||||||||||||||||||.!!||||||||||||||||||||
+       luTyrArgGlnGluGlnGlnSerAlaValAspValAspAspGlyHisPheValAsnIleGluLe
+ 912 : AGTACCGGCAGGAACAGCAGAGTGCTGTGGATGTTGACGATGGTCATTTTGTCAACATAGAATT : 974
+
+  97 : u :  96
+       |
+       u
+ 975 : G : 976
+
+sugar: seg7prot2B 0 96 . KT388711.1 0 976 + 452
+cigar: seg7prot2B 0 96 . KT388711.1 0 976 + 452  M 24 D 690 M 262
+vulgar: seg7prot2B 0 96 . KT388711.1 0 976 + 452 M 8 24 S 0 2 5 0 2 I 0 684 3 0 2 S 1 1 M 87 261
+# --- START OF GFF DUMP ---
+#
+#
+##gff-version 2
+##source-version exonerate:protein2genome:local 2.2.0
+##date 2017-05-05
+##type Protein
+#
+#
+# seqname source feature start end score strand frame attributes
+#
+seg7prot2B	exonerate:protein2genome:local	similarity	1	96	452	.	.	alignment_id 1 ; Target KT388711.1 ; Align 1 1 8 ; Align 10 716 87
+# --- END OF GFF DUMP ---
+#
+# --- START OF GFF DUMP ---
+#
+#
+##gff-version 2
+##source-version exonerate:protein2genome:local 2.2.0
+##date 2017-05-05
+##type DNA
+#
+#
+# seqname source feature start end score strand frame attributes
+#
+KT388711.1	exonerate:protein2genome:local	gene	1	976	452	+	.	gene_id 1 ; sequence seg7prot2B ; gene_orientation +
+KT388711.1	exonerate:protein2genome:local	cds	1	26	.	+	.	
+KT388711.1	exonerate:protein2genome:local	exon	1	26	.	+	.	insertions 0 ; deletions 0
+KT388711.1	exonerate:protein2genome:local	splice5	27	28	.	+	.	intron_id 1 ; splice_site "GT"
+KT388711.1	exonerate:protein2genome:local	intron	27	714	.	+	.	intron_id 1
+KT388711.1	exonerate:protein2genome:local	splice3	713	714	.	+	.	intron_id 0 ; splice_site "AG"
+KT388711.1	exonerate:protein2genome:local	cds	715	976	.	+	.	
+KT388711.1	exonerate:protein2genome:local	exon	715	976	.	+	.	insertions 0 ; deletions 0
+KT388711.1	exonerate:protein2genome:local	similarity	1	976	452	+	.	alignment_id 1 ; Query seg7prot2B ; Align 1 1 24 ; Align 716 10 261
+# --- END OF GFF DUMP ---
+#
+
+C4 Alignment:
+------------
+         Query: seg7prot2ADR1_V27A db="flua_db" gene="M2" intron_size=650-750 product="matrix protein 2" splice_form="e26i686e268" spliced=Y length=97
+        Target: KT388711.1 Influenza A virus (A/goose/Taiwan/TNO20/2015(H5N8)) segment 7 cRNA sequence
+         Model: protein2genome:local
+     Raw score: 453
+   Query range: 0 -> 97
+  Target range: 0 -> 979
+
+   1 : MetSerLeuLeuThrGluValGlu{Th}  >>>> Target Intron 1 >>>>  {r}ProT :  11
+       ||||||||||||||||||||||||{||}            688 bp           {|}||||
+       MetSerLeuLeuThrGluValGlu{Th}++                         ++{r}ProT
+   1 : ATGAGTCTTCTAACCGAGGTCGAA{AC}gt.........................ag{G}CCTA : 719
+
+  12 : hrArgAsnGlyTrpGluCysLysCysSerAspSerSerAspProLeuAlaIleAlaAlaSerIl :  32
+       |||||!.!! !|||||||||!:!||||||||||||||||||||||||!.!:!!||||||!:!||
+       hrArgThrGluTrpGluCysArgCysSerAspSerSerAspProLeuValValAlaAlaAsnIl
+ 720 : CCAGAACCGAATGGGAGTGCAGATGCAGCGATTCAAGTGATCCTCTTGTTGTTGCCGCAAATAT : 782
+
+  33 : eIleGlyIleLeuHisLeuIleLeuTrpIleLeuAspArgLeuPhePheLysCysIleTyrArg :  53
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       eIleGlyIleLeuHisLeuIleLeuTrpIleLeuAspArgLeuPhePheLysCysIleTyrArg
+ 783 : CATTGGGATCCTGCACTTGATATTGTGGATCCTTGATCGTCTTTTCTTCAAATGCATTTATCGT : 845
+
+  54 : ArgLeuLysTyrGlyLeuLysArgGlyProSerThrGluGlyValProGluSerMetArgGluG :  75
+       |||||||||||||||||||||! !||||||||||||||||||||||||||||||||||||||||
+       ArgLeuLysTyrGlyLeuLysIleGlyProSerThrGluGlyValProGluSerMetArgGluG
+ 846 : CGCCTTAAATACGGTTTGAAAATAGGGCCTTCTACGGAAGGGGTACCTGAGTCTATGAGGGAAG : 911
+
+  76 : luTyrArgGlnGluGlnGlnSerAlaValAspValAspAspSerHisPheValAsnIleGluLe :  96
+       |||||||||||||||||||||||||||||||||||||||||.!!||||||||||||||||||||
+       luTyrArgGlnGluGlnGlnSerAlaValAspValAspAspGlyHisPheValAsnIleGluLe
+ 912 : AGTACCGGCAGGAACAGCAGAGTGCTGTGGATGTTGACGATGGTCATTTTGTCAACATAGAATT : 974
+
+  97 : uGlu :  97
+       ||||
+       uGlu
+ 975 : GGAG : 979
+
+sugar: seg7prot2ADR1_V27A 0 97 . KT388711.1 0 979 + 453
+cigar: seg7prot2ADR1_V27A 0 97 . KT388711.1 0 979 + 453  M 24 D 690 M 265
+vulgar: seg7prot2ADR1_V27A 0 97 . KT388711.1 0 979 + 453 M 8 24 S 0 2 5 0 2 I 0 684 3 0 2 S 1 1 M 88 264
+# --- START OF GFF DUMP ---
+#
+#
+##gff-version 2
+##source-version exonerate:protein2genome:local 2.2.0
+##date 2017-05-05
+##type Protein
+#
+#
+# seqname source feature start end score strand frame attributes
+#
+seg7prot2ADR1_V27A	exonerate:protein2genome:local	similarity	1	97	453	.	.	alignment_id 1 ; Target KT388711.1 ; Align 1 1 8 ; Align 10 716 88
+# --- END OF GFF DUMP ---
+#
+# --- START OF GFF DUMP ---
+#
+#
+##gff-version 2
+##source-version exonerate:protein2genome:local 2.2.0
+##date 2017-05-05
+##type DNA
+#
+#
+# seqname source feature start end score strand frame attributes
+#
+KT388711.1	exonerate:protein2genome:local	gene	1	979	453	+	.	gene_id 1 ; sequence seg7prot2ADR1_V27A ; gene_orientation +
+KT388711.1	exonerate:protein2genome:local	cds	1	26	.	+	.	
+KT388711.1	exonerate:protein2genome:local	exon	1	26	.	+	.	insertions 0 ; deletions 0
+KT388711.1	exonerate:protein2genome:local	splice5	27	28	.	+	.	intron_id 1 ; splice_site "GT"
+KT388711.1	exonerate:protein2genome:local	intron	27	714	.	+	.	intron_id 1
+KT388711.1	exonerate:protein2genome:local	splice3	713	714	.	+	.	intron_id 0 ; splice_site "AG"
+KT388711.1	exonerate:protein2genome:local	cds	715	979	.	+	.	
+KT388711.1	exonerate:protein2genome:local	exon	715	979	.	+	.	insertions 0 ; deletions 0
+KT388711.1	exonerate:protein2genome:local	similarity	1	979	453	+	.	alignment_id 1 ; Query seg7prot2ADR1_V27A ; Align 1 1 24 ; Align 716 10 264
+# --- END OF GFF DUMP ---
+#
+
+C4 Alignment:
+------------
+         Query: seg7part2A db="flua_db" gene="M2" product="matrix protein 2" length=88
+        Target: KT388711.1 Influenza A virus (A/goose/Taiwan/TNO20/2015(H5N8)) segment 7 cRNA sequence
+         Model: protein2genome:local
+     Raw score: 434
+   Query range: 0 -> 88
+  Target range: 715 -> 979
+
+   1 : ProThrArgAsnGlyTrpGluCysLysCysSerAspSerSerAspProLeuValIleAlaAlaS :  22
+       |||||||||!.!! !|||||||||!:!|||||||||||||||||||||||||||:!!||||||!
+       ProThrArgThrGluTrpGluCysArgCysSerAspSerSerAspProLeuValValAlaAlaA
+ 716 : CCTACCAGAACCGAATGGGAGTGCAGATGCAGCGATTCAAGTGATCCTCTTGTTGTTGCCGCAA : 779
+
+  23 : erIleIleGlyIleLeuHisLeuIleLeuTrpIleLeuAspArgLeuPhePheLysCysIleTy :  43
+       :!||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       snIleIleGlyIleLeuHisLeuIleLeuTrpIleLeuAspArgLeuPhePheLysCysIleTy
+ 780 : ATATCATTGGGATCCTGCACTTGATATTGTGGATCCTTGATCGTCTTTTCTTCAAATGCATTTA : 842
+
+  44 : rArgArgLeuLysTyrGlyLeuLysArgGlyProSerThrGluGlyValProGluSerMetArg :  64
+       |||||||||||||||||||||||||! !||||||||||||||||||||||||||||||||||||
+       rArgArgLeuLysTyrGlyLeuLysIleGlyProSerThrGluGlyValProGluSerMetArg
+ 843 : TCGTCGCCTTAAATACGGTTTGAAAATAGGGCCTTCTACGGAAGGGGTACCTGAGTCTATGAGG : 905
+
+  65 : GluGluTyrArgGlnGluGlnGlnSerAlaValAspValAspAspSerHisPheValAsnIleG :  86
+       |||||||||||||||||||||||||||||||||||||||||||||.!!||||||||||||||||
+       GluGluTyrArgGlnGluGlnGlnSerAlaValAspValAspAspGlyHisPheValAsnIleG
+ 906 : GAAGAGTACCGGCAGGAACAGCAGAGTGCTGTGGATGTTGACGATGGTCATTTTGTCAACATAG : 971
+
+  87 : luLeuGlu :  88
+       ||||||||
+       luLeuGlu
+ 972 : AATTGGAG : 979
+
+sugar: seg7part2A 0 88 . KT388711.1 715 979 + 434
+cigar: seg7part2A 0 88 . KT388711.1 715 979 + 434  M 264
+vulgar: seg7part2A 0 88 . KT388711.1 715 979 + 434 M 88 264
+# --- START OF GFF DUMP ---
+#
+#
+##gff-version 2
+##source-version exonerate:protein2genome:local 2.2.0
+##date 2017-05-05
+##type Protein
+#
+#
+# seqname source feature start end score strand frame attributes
+#
+seg7part2A	exonerate:protein2genome:local	similarity	1	88	434	.	.	alignment_id 1 ; Target KT388711.1 ; Align 1 716 88
+# --- END OF GFF DUMP ---
+#
+# --- START OF GFF DUMP ---
+#
+#
+##gff-version 2
+##source-version exonerate:protein2genome:local 2.2.0
+##date 2017-05-05
+##type DNA
+#
+#
+# seqname source feature start end score strand frame attributes
+#
+KT388711.1	exonerate:protein2genome:local	gene	716	979	434	+	.	gene_id 1 ; sequence seg7part2A ; gene_orientation .
+KT388711.1	exonerate:protein2genome:local	cds	716	979	.	+	.	
+KT388711.1	exonerate:protein2genome:local	exon	716	979	.	+	.	insertions 0 ; deletions 0
+KT388711.1	exonerate:protein2genome:local	similarity	716	979	434	+	.	alignment_id 1 ; Query seg7part2A ; Align 716 1 264
+# --- END OF GFF DUMP ---
+#
+
+C4 Alignment:
+------------
+         Query: seg7prot1 db="flua_db" gene="M1" product="matrix protein 1" length=252
+        Target: KT388711.1 Influenza A virus (A/goose/Taiwan/TNO20/2015(H5N8)) segment 7 cRNA sequence
+         Model: protein2genome:local
+     Raw score: 1226
+   Query range: 0 -> 252
+  Target range: 0 -> 756
+
+   1 : MetSerLeuLeuThrGluValGluThrTyrValLeuSerIleValProSerGlyProLeuLysA :  22
+       ||||||||||||||||||||||||||||||||||||||||||:!!|||||||||||||||||||
+       MetSerLeuLeuThrGluValGluThrTyrValLeuSerIleIleProSerGlyProLeuLysA
+   1 : ATGAGTCTTCTAACCGAGGTCGAAACGTACGTTCTCTCTATCATCCCGTCAGGCCCCCTCAAAG :  64
+
+  23 : laGluIleAlaGlnArgLeuGluAspValPheAlaGlyLysAsnThrAspLeuGluAlaLeuMe :  43
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       laGluIleAlaGlnArgLeuGluAspValPheAlaGlyLysAsnThrAspLeuGluAlaLeuMe
+  65 : CCGAGATCGCGCAGAGACTTGAAGATGTCTTTGCAGGGAAAAACACCGATCTCGAGGCTCTCAT : 127
+
+  44 : tGluTrpLeuLysThrArgProIleLeuSerProLeuThrLysGlyIleLeuGlyPheValPhe :  64
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       tGluTrpLeuLysThrArgProIleLeuSerProLeuThrLysGlyIleLeuGlyPheValPhe
+ 128 : GGAGTGGCTAAAGACAAGACCAATCCTGTCACCTCTGACTAAAGGGATTTTGGGATTTGTGTTC : 190
+
+  65 : ThrLeuThrValProSerGluArgGlyLeuGlnArgArgArgPheValGlnAsnAlaLeuAsnG :  86
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       ThrLeuThrValProSerGluArgGlyLeuGlnArgArgArgPheValGlnAsnAlaLeuAsnG
+ 191 : ACGCTCACCGTGCCCAGTGAGCGAGGACTGCAGCGTAGACGCTTCGTCCAGAATGCCCTAAATG : 256
+
+  87 : lyAsnGlyAspProAsnAsnMetAspArgAlaValLysLeuTyrArgLysLeuLysArgGluIl : 107
+       ||||||||||||||||||||||||||!:!|||||||||||||||!:!|||||||||||||||||
+       lyAsnGlyAspProAsnAsnMetAspLysAlaValLysLeuTyrLysLysLeuLysArgGluIl
+ 257 : GAAATGGGGATCCAAATAATATGGATAAGGCAGTTAAGCTATATAAGAAGCTGAAAAGAGAGAT : 319
+
+ 108 : eThrPheHisGlyAlaLysGluValAlaLeuSerTyrSerThrGlyAlaLeuAlaSerCysMet : 128
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       eThrPheHisGlyAlaLysGluValAlaLeuSerTyrSerThrGlyAlaLeuAlaSerCysMet
+ 320 : AACATTCCATGGGGCTAAGGAGGTCGCACTTAGCTACTCAACCGGTGCACTTGCCAGCTGCATG : 382
+
+ 129 : GlyLeuIleTyrAsnArgMetGlyThrValThrThrGluValAlaPheGlyLeuValCysAlaT : 150
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       GlyLeuIleTyrAsnArgMetGlyThrValThrThrGluValAlaPheGlyLeuValCysAlaT
+ 383 : GGTCTCATATACAACAGGATGGGAACGGTGACTACAGAAGTGGCTTTTGGCCTAGTGTGTGCCA : 448
+
+ 151 : hrCysGluGlnIleAlaAspSerGlnHisArgSerHisArgGlnMetValThrThrThrAsnPr : 171
+       |||||||||||||||||||||||||||||||||||||||||||||||!.!|||! !||||||||
+       hrCysGluGlnIleAlaAspSerGlnHisArgSerHisArgGlnMetAlaThrIleThrAsnPr
+ 449 : CTTGTGAGCAGATTGCAGATTCACAGCATCGGTCCCACAGACAGATGGCAACCATCACCAACCC : 511
+
+ 172 : oLeuIleArgHisGluAsnArgMetValLeuAlaSerThrThrAlaLysAlaMetGluGlnMet : 192
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       oLeuIleArgHisGluAsnArgMetValLeuAlaSerThrThrAlaLysAlaMetGluGlnMet
+ 512 : ATTAATCAGACATGAGAACAGAATGGTGCTGGCCAGCACTACAGCTAAGGCCATGGAGCAGATG : 574
+
+ 193 : AlaGlySerSerGluGlnAlaAlaGluAlaMetGluValAlaSerGlnAlaArgGlnMetValG : 214
+       |||||||||||||||||||||:!!||||||||||||||||||!:!|||||||||||||||||||
+       AlaGlySerSerGluGlnAlaSerGluAlaMetGluValAlaAsnGlnAlaArgGlnMetValG
+ 575 : GCAGGATCAAGCGAGCAGGCATCAGAAGCCATGGAGGTTGCTAATCAGGCCAGGCAGATGGTAC : 640
+
+ 215 : lnAlaMetArgThrIleGlyThrHisProSerSerSerAlaGlyLeuLysAspAspLeuLeuGl : 235
+       |||||||||||||||||||||||||||||!:!|||||||||||||||!:!|||:!!||||||||
+       lnAlaMetArgThrIleGlyThrHisProAsnSerSerAlaGlyLeuArgAspAsnLeuLeuGl
+ 641 : AGGCAATGAGGACAATTGGGACTCATCCTAATTCTAGTGCTGGTCTGAGAGATAATCTTCTTGA : 703
+
+ 236 : uAsnLeuGlnAlaTyrGlnLysArgMetGlyValGlnMetGlnArgPheLys : 252
+       |||||||||||||||||||!!.||||||||||||||||||||||||||||||
+       uAsnLeuGlnAlaTyrGlnAsnArgMetGlyValGlnMetGlnArgPheLys
+ 704 : AAATTTGCAGGCCTACCAGAACCGAATGGGAGTGCAGATGCAGCGATTCAAG : 756
+
+sugar: seg7prot1 0 252 . KT388711.1 0 756 + 1226
+cigar: seg7prot1 0 252 . KT388711.1 0 756 + 1226  M 756
+vulgar: seg7prot1 0 252 . KT388711.1 0 756 + 1226 M 252 756
+# --- START OF GFF DUMP ---
+#
+#
+##gff-version 2
+##source-version exonerate:protein2genome:local 2.2.0
+##date 2017-05-05
+##type Protein
+#
+#
+# seqname source feature start end score strand frame attributes
+#
+seg7prot1	exonerate:protein2genome:local	similarity	1	252	1226	.	.	alignment_id 1 ; Target KT388711.1 ; Align 1 1 252
+# --- END OF GFF DUMP ---
+#
+# --- START OF GFF DUMP ---
+#
+#
+##gff-version 2
+##source-version exonerate:protein2genome:local 2.2.0
+##date 2017-05-05
+##type DNA
+#
+#
+# seqname source feature start end score strand frame attributes
+#
+KT388711.1	exonerate:protein2genome:local	gene	1	756	1226	+	.	gene_id 1 ; sequence seg7prot1 ; gene_orientation .
+KT388711.1	exonerate:protein2genome:local	cds	1	756	.	+	.	
+KT388711.1	exonerate:protein2genome:local	exon	1	756	.	+	.	insertions 0 ; deletions 0
+KT388711.1	exonerate:protein2genome:local	similarity	1	756	1226	+	.	alignment_id 1 ; Query seg7prot1 ; Align 1 1 756
+# --- END OF GFF DUMP ---
+#
+
+C4 Alignment:
+------------
+         Query: seg7prot2A db="flua_db" gene="M2" intron_size=650-750 product="matrix protein 2" splice_form="e26i688e268" spliced=Y length=97
+        Target: KT388711.1 Influenza A virus (A/goose/Taiwan/TNO20/2015(H5N8)) segment 7 cRNA sequence
+         Model: protein2genome:local
+     Raw score: 457
+   Query range: 0 -> 97
+  Target range: 0 -> 979
+
+   1 : MetSerLeuLeuThrGluValGlu{Th}  >>>> Target Intron 1 >>>>  {r}ProT :  11
+       ||||||||||||||||||||||||{||}            688 bp           {|}||||
+       MetSerLeuLeuThrGluValGlu{Th}++                         ++{r}ProT
+   1 : ATGAGTCTTCTAACCGAGGTCGAA{AC}gt.........................ag{G}CCTA : 719
+
+  12 : hrArgAsnGlyTrpGluCysLysCysSerAspSerSerAspProLeuValIleAlaAlaSerIl :  32
+       |||||!.!! !|||||||||!:!|||||||||||||||||||||||||||:!!||||||!:!||
+       hrArgThrGluTrpGluCysArgCysSerAspSerSerAspProLeuValValAlaAlaAsnIl
+ 720 : CCAGAACCGAATGGGAGTGCAGATGCAGCGATTCAAGTGATCCTCTTGTTGTTGCCGCAAATAT : 782
+
+  33 : eIleGlyIleLeuHisLeuIleLeuTrpIleLeuAspArgLeuPhePheLysCysIleTyrArg :  53
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       eIleGlyIleLeuHisLeuIleLeuTrpIleLeuAspArgLeuPhePheLysCysIleTyrArg
+ 783 : CATTGGGATCCTGCACTTGATATTGTGGATCCTTGATCGTCTTTTCTTCAAATGCATTTATCGT : 845
+
+  54 : ArgLeuLysTyrGlyLeuLysArgGlyProSerThrGluGlyValProGluSerMetArgGluG :  75
+       |||||||||||||||||||||! !||||||||||||||||||||||||||||||||||||||||
+       ArgLeuLysTyrGlyLeuLysIleGlyProSerThrGluGlyValProGluSerMetArgGluG
+ 846 : CGCCTTAAATACGGTTTGAAAATAGGGCCTTCTACGGAAGGGGTACCTGAGTCTATGAGGGAAG : 911
+
+  76 : luTyrArgGlnGluGlnGlnSerAlaValAspValAspAspSerHisPheValAsnIleGluLe :  96
+       |||||||||||||||||||||||||||||||||||||||||.!!||||||||||||||||||||
+       luTyrArgGlnGluGlnGlnSerAlaValAspValAspAspGlyHisPheValAsnIleGluLe
+ 912 : AGTACCGGCAGGAACAGCAGAGTGCTGTGGATGTTGACGATGGTCATTTTGTCAACATAGAATT : 974
+
+  97 : uGlu :  97
+       ||||
+       uGlu
+ 975 : GGAG : 979
+
+sugar: seg7prot2A 0 97 . KT388711.1 0 979 + 457
+cigar: seg7prot2A 0 97 . KT388711.1 0 979 + 457  M 24 D 690 M 265
+vulgar: seg7prot2A 0 97 . KT388711.1 0 979 + 457 M 8 24 S 0 2 5 0 2 I 0 684 3 0 2 S 1 1 M 88 264
+# --- START OF GFF DUMP ---
+#
+#
+##gff-version 2
+##source-version exonerate:protein2genome:local 2.2.0
+##date 2017-05-05
+##type Protein
+#
+#
+# seqname source feature start end score strand frame attributes
+#
+seg7prot2A	exonerate:protein2genome:local	similarity	1	97	457	.	.	alignment_id 1 ; Target KT388711.1 ; Align 1 1 8 ; Align 10 716 88
+# --- END OF GFF DUMP ---
+#
+# --- START OF GFF DUMP ---
+#
+#
+##gff-version 2
+##source-version exonerate:protein2genome:local 2.2.0
+##date 2017-05-05
+##type DNA
+#
+#
+# seqname source feature start end score strand frame attributes
+#
+KT388711.1	exonerate:protein2genome:local	gene	1	979	457	+	.	gene_id 1 ; sequence seg7prot2A ; gene_orientation +
+KT388711.1	exonerate:protein2genome:local	cds	1	26	.	+	.	
+KT388711.1	exonerate:protein2genome:local	exon	1	26	.	+	.	insertions 0 ; deletions 0
+KT388711.1	exonerate:protein2genome:local	splice5	27	28	.	+	.	intron_id 1 ; splice_site "GT"
+KT388711.1	exonerate:protein2genome:local	intron	27	714	.	+	.	intron_id 1
+KT388711.1	exonerate:protein2genome:local	splice3	713	714	.	+	.	intron_id 0 ; splice_site "AG"
+KT388711.1	exonerate:protein2genome:local	cds	715	979	.	+	.	
+KT388711.1	exonerate:protein2genome:local	exon	715	979	.	+	.	insertions 0 ; deletions 0
+KT388711.1	exonerate:protein2genome:local	similarity	1	979	457	+	.	alignment_id 1 ; Query seg7prot2A ; Align 1 1 24 ; Align 716 10 264
+# --- END OF GFF DUMP ---
+#
+-- completed exonerate analysis

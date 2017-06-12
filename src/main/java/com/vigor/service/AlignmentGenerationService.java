@@ -2,6 +2,10 @@ package com.vigor.service;
 
 import com.vigor.component.*;
 import com.vigor.forms.VigorForm;
+import com.vigor.utils.VigorUtils;
+
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,36 +22,24 @@ public class AlignmentGenerationService {
     private static final Logger LOGGER = LogManager.getLogger ( AlignmentGenerationService.class );
 
     @Autowired
-    private ViralProteinService viralProteinService;
+    private ExonerateService exonerateService;
     @Autowired
     private ModelGenerationService modelGenerationService;
-    @Autowired
-    private ExonerateService exonerateService;
 
     public void GenerateAlignment(VirusGenome virusGenome,VigorForm form) {
         String alignmentTool = chooseAlignmentTool ( form.getAlignmentEvidence () );
-        Alignment alignment = new Alignment ();
-        if (alignmentTool.equals ( "jillion" )) {
-            //Query jillion for exonerate output object. Input to Jillion will be VirusGenome, reference Db and candidate evalue;
-           ExonerateService exonerateService = new ExonerateService ();
-           exonerateService.parseExonerateOutput (form);
-
-
+        //create vigor workspace and generate the exonerate output file in that workspace
+        // VigorUtils.getVigorWorkSpace();
+        if (alignmentTool.equals ( "exonerate" )) {
+        List<Alignment> alignments = exonerateService.getAlignment(virusGenome, form.getAlignmentEvidence());
+        modelGenerationService.generateModels(alignments, form);
         }
-       //modelGenerationService.generateModel (alignment,viralProtein);
-
-
-
-
-
-
+        
     }
-
-
 
     public String chooseAlignmentTool(AlignmentEvidence alignmentEvidence) {
 
-        return "jillion";
+        return "exonerate";
     }
 
 
