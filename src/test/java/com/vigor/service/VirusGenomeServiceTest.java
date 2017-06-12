@@ -29,7 +29,7 @@ public class VirusGenomeServiceTest {
 	@Test
 	public void findGapsTest(){
 	
-			System.out.println("Entered test");
+	/*		System.out.println("Entered test");
 			File file = new File("C:"+File.separator+"Users"+File.separator+"snettem"+File.separator+"Desktop"+File.separator+"sequence.fasta");
 		NucleotideFastaDataStore datastore;
 		try {
@@ -49,7 +49,7 @@ public class VirusGenomeServiceTest {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		
 	
 	

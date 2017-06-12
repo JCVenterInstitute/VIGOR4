@@ -1,14 +1,10 @@
 package com.vigor.utils;
 
-import com.sun.javafx.binding.StringFormatter;
-import com.vigor.component.Alignment;
-import com.vigor.component.Exon;
 import com.vigor.component.Model;
-import com.vigor.forms.VigorForm;
-
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import org.jcvi.jillion.core.Range;
 
 /**
  * Created by snettem on 5/24/2017.
@@ -17,16 +13,20 @@ public class FormatVigorOutput {
 
     public static void printModels(List<Model> models){
         System.out.println("********************************************************************************************************************");
-        System.out.println(String.format ( "%-32s%-20s%-20s%-20s", "Gene_Symbol", "Direction", "Status","Range"));
+        System.out.println(String.format ( "%-32s%-20s%-20s%-20s", "Gene_Symbol", "Direction","NTSeqRange","AASeqRange"));
 
         for(Model model : models) {
-
-            String status = model.getStatus ().stream ().collect ( Collectors.joining(System.lineSeparator ()+"%30s"));
-            String ranges = model.getExons ().stream ().map(e->e.getRange ().toString ()).collect ( Collectors.joining(System.lineSeparator ()+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t") );
-            System.out.println(String.format ( "%-32s%-20s%-20s%-20s", model.getGeneSymbol (),model.getDirection (),status,ranges));
-            System.out.println(System.lineSeparator ());
+         
+        System.out.print(String.format("%-32s",model.getGeneSymbol()));
+        System.out.print(String.format("%-20s", model.getDirection()));
+        List<Range> NTranges = model.getExons ().stream ().map(e->e.getRange()).collect(Collectors.toList());
+        List<Range> AAranges = model.getExons().stream().map(e->e.getAlignmentFragment().getProteinSeqRange()).collect(Collectors.toList()) ;
+        for(int i=0;i<NTranges.size();i++){
+        	System.out.print(String.format("%-20s", NTranges.get(i).getBegin()+"-"+NTranges.get(i).getEnd()));
+            System.out.println(String.format("%-20s", AAranges.get(i).getBegin()+"-"+AAranges.get(i).getEnd()));
+            System.out.print(String.format("%-52s",""));
+        }
+         System.out.println("");           
         }
     }
-
-
 }

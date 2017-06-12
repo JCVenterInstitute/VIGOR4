@@ -22,7 +22,7 @@ public class VirusGenome {
 	private String id;
 	private Boolean isComplete = false;
 	private Boolean isCircular = false;
-    private List<Range> gaps;
+    private List<Range> sequenceGaps;
 
 	public VirusGenome(NucleotideSequence sequence, String defline, boolean isComplete, boolean isCircular){
 

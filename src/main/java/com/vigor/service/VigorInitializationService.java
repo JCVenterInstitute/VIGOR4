@@ -39,8 +39,7 @@ public class VigorInitializationService {
     @Autowired
     private AlignmentGenerationService alignmentGenerationService;
 
-    private AlignmentEvidence alignmentEvidence;
-
+   
     /**
      * @param inputs: User provided command line inputs
      *                Retrieve each Genomic sequence from the input file and determine AlignmentEvidence
@@ -68,7 +67,7 @@ public class VigorInitializationService {
             while (i.hasNext ()) {
                 NucleotideFastaRecord record = i.next ();
                 VirusGenome virusGenome = new VirusGenome ( record.getSequence (), record.getComment (), isComplete, isCircular );
-                form.setAlignmentEvidence ( alignmentEvidence );
+                // Call referenceDBGenerationService methods to generate the alignmentEvidence object. 
                 alignmentGenerationService.GenerateAlignment (virusGenome,form);
 
 
@@ -93,7 +92,7 @@ public class VigorInitializationService {
     public VigorForm loadDefaultParameters(CommandLine inputs,VigorForm form) {
 
         Map<String, String> vigorParameterList = LoadDefaultParameters.loadVigorParameters ( VigorUtils.getVigorParametersPath ());
-        alignmentEvidence = new AlignmentEvidence ();
+        AlignmentEvidence alignmentEvidence = new AlignmentEvidence ();
         form = new VigorForm ();
         if (inputs.hasOption ( 'A' ) && !(inputs.hasOption ( 'd' ))) {
 
@@ -155,6 +154,7 @@ public class VigorInitializationService {
             }
         }
         form.setVigorParametersList ( vigorParameterList );
+        form.setAlignmentEvidence(alignmentEvidence);
         return form;
     }
 

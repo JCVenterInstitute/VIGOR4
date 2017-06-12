@@ -55,7 +55,8 @@ public class VigorUtils {
 		if (!theDir.exists()) {
 			try {
 				theDir.mkdir();
-			} catch (SecurityException se) {
+			} catch (SecurityException e) {
+				LOGGER.error(e.getMessage(),e);
 
 			}
 		}

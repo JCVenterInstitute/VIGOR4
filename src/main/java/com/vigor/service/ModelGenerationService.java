@@ -5,6 +5,8 @@ import com.vigor.forms.VigorForm;
 import com.vigor.utils.FormatVigorOutput;
 import com.vigor.utils.VigorUtils;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Direction;
 import org.jcvi.jillion.core.Range;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,22 +21,38 @@ import java.util.stream.Collectors;
 @Service
 public class ModelGenerationService {
 
+	//@Autowired
+	//private GenerateGeneModelService generateGeneModelService;
+	private static final Logger LOGGER = LogManager.getLogger ( ModelGenerationService.class );
+	public void generateModels(List<Alignment> alignments,VigorForm form){
+		
+		List<Model> models = new ArrayList<Model>();
+		List<Model> candidateModels = new ArrayList<Model>();
+		for(int i=0;i<alignments.size();i++){
+			models = alignmentToModels(alignments.get(i),form.getAlignmentTool());
+			candidateModels.addAll(models);
+	    }
+		 if(form.isDebug ()) {
+	            System.out.println ( "Initial List Of Models" );
+	            FormatVigorOutput.printModels ( candidateModels );
+	        }
+	//	generateGeneModelService.generateGeneModel(models, form);
+	}
+	
+	
     /**
      *
      * @param alignment : alignment results in multiple models.
      */
   
-	@Autowired
-	private VirusGenomeService virusGenomeService;
-    public void generateModel(Alignment alignment,VigorForm form){
+     public List<Model> alignmentToModels(Alignment alignment,String alignmentTool){
        Map<Direction, List<AlignmentFragment>> alignmentFragsGroupedList =
                 alignment.getAlignmentFragments ().stream().collect(Collectors.groupingBy( w -> w.getDirection ()));
         Set<Direction> keyset = alignmentFragsGroupedList.keySet ();
         Iterator iter = keyset.iterator ();
         List<Model> models = new ArrayList<Model> (  );
         for(Direction direction : keyset){
-         List<List<AlignmentFragment>> ListOfCompatibleFragsList =  generateCompatibleFragsChains ( alignmentFragsGroupedList.get ( iter.next () ), form );
-         System.out.println("Direction"+direction);
+         List<List<AlignmentFragment>> ListOfCompatibleFragsList =  generateCompatibleFragsChains ( alignmentFragsGroupedList.get ( iter.next () ), alignmentTool );
          Iterator iter1 = ListOfCompatibleFragsList.iterator ();
          while(iter1.hasNext ()){
              List<AlignmentFragment> compatibleFragsList = (List<AlignmentFragment>)iter1.next ();
@@ -49,19 +67,20 @@ public class ModelGenerationService {
              models.add ( model );
          }
          }
-         
-        if(form.isDebug ()) {
-             System.out.println ( "Initial List Of Models" );
-             FormatVigorOutput.printModels ( models );
-         }
-         
-        /*
-         * Split the model at gaps(Ns) in the Input virusGenome sequence
-         */
-        
-        splitModelAtSequencingGaps(models, form,alignment.getVirusGenome());
-         
-        
+   	 
+       
+	
+		 /*
+        * Split the model at gaps(Ns) in the Input virusGenome sequence
+        */
+       		
+	//	List<Model> newModels = splitModelAtSequencingGaps(models, form,alignment.getVirusGenome());
+	/*	if(form.isDebug ()) {
+            System.out.println ( "Models after splitting each Model at sequence gaps" );
+            FormatVigorOutput.printModels ( newModels );
+        }    */
+	             
+        return models;
 
     }
 
@@ -75,18 +94,56 @@ public class ModelGenerationService {
     
     public List<Model> splitModelAtSequencingGaps(List<Model> initModels, VigorForm form,VirusGenome genome){
     	List<Model> newModels = new ArrayList<Model>();
-    	newModels.addAll(initModels);
+    	
+    	//newModels.addAll(initModels);
     	List<Range> sequenceGaps = genome.getSequence().getRangesOfNs();
     	String minGapLenString="";
+    	if(sequenceGaps.size()>0){
     	minGapLenString = form.getVigorParametersList().get("min_gap_length");
     	long minGapLength=20;
     	if(VigorUtils.is_Integer(minGapLenString)){
      		minGapLength = Long.parseLong(minGapLenString);
         }
-    	List<Range> filteredRangesOfNs = new ArrayList<Range>();
+    	List<Range> validSequenceGaps = new ArrayList<Range>();
+    	for(Range gapRange : sequenceGaps){
+    		if(gapRange.getLength()>=minGapLength){
+    			validSequenceGaps.add(gapRange);
+    		}
+    	}
+    	Model newModel;
+    	Model tempModel;
+    	try{
     	for(int i=0;i<initModels.size();i++){
     	Model model = initModels.get(i);
-    	
+    	tempModel=(Model)model.clone();
+    	for(int k=0; k<model.getExons().size();k++){
+    		newModel = new Model();
+    	    newModel = (Model) model.clone();
+         	for(int j=0;j<validSequenceGaps.size();j++){
+    		if(model.getExons().get(k).getRange().endsBefore(sequenceGaps.get(i))){
+    			 
+    			List<Exon> tempExons = new ArrayList<Exon>();
+    			List<Exon> newExons = new ArrayList<Exon>();
+    			for(int x=k;x>=0;x--){
+    			  newExons.add(model.getExons().get(x));
+    			}
+    			for(int x=k+1;x<model.getExons().size();x++){
+    				tempExons.add(model.getExons().get(x));
+    			}
+    			newModel.setExons(newExons);
+    			tempModel.setExons(tempExons);
+    			newModels.add(newModel);
+      		}
+    	}
+    	if(k==model.getExons().size()-1){
+    		newModels.add(tempModel);
+    	}
+    	}
+    	}
+    	}
+    	catch(CloneNotSupportedException e){
+    		LOGGER.error(e.getMessage(),e);
+    	}
     	}
     	
     	return newModels;
@@ -100,7 +157,7 @@ public class ModelGenerationService {
      * @return List<List<AlignmentFragment>>: compatible(check for overlap) list of alignment fragments and their permutations and combinations is grouped
      */
 
-    public List<List<AlignmentFragment>> generateCompatibleFragsChains(List<AlignmentFragment> alignmentFragments,VigorForm form) {
+    public List<List<AlignmentFragment>> generateCompatibleFragsChains(List<AlignmentFragment> alignmentFragments,String alignmentTool) {
         List<List<AlignmentFragment>> ListOfCompatibleFragsList = new ArrayList<List<AlignmentFragment>> ();
         int AAOverlapOffset =10;
         int NTOverlapOffset =30;
@@ -109,7 +166,7 @@ public class ModelGenerationService {
 
 
             if (alignmentFragments.get ( i ).isSubChain ()) {
-                tempFlag = generateSubChains (form.getAlignmentTool ());
+                tempFlag = generateSubChains (alignmentTool);
             }
             if (tempFlag) {
                 long NTStart = alignmentFragments.get ( i ).getNucleotideSeqRange ().getBegin ();
