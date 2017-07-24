@@ -1,8 +1,8 @@
-package com.vigor.service;
+/*package com.vigor.service;
 
-/**
+*//**
  * Created by snettem on 5/25/2017.
- */
+ *//*
 
 
 import org.junit.runner.RunWith;
@@ -16,3 +16,4 @@ import org.junit.runners.Suite;
 })
 public class TestSuit {
 }
+*/

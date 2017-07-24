@@ -1,14 +1,11 @@
 package com.vigor.utils;
 
-import com.vigor.service.ViralProteinService;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.core.io.ClassPathResource;
-
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.regex.Pattern;
 
 
