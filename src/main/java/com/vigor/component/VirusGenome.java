@@ -24,10 +24,11 @@ public class VirusGenome {
 	private Boolean isCircular = false;
     private List<Range> sequenceGaps;
 
-	public VirusGenome(NucleotideSequence sequence, String defline, boolean isComplete, boolean isCircular){
+	public VirusGenome(NucleotideSequence sequence, String defline, String id, boolean isComplete, boolean isCircular){
 
 		this.sequence=sequence;
 		this.defline=defline;
+		this.id=id;
 		this.isComplete=isComplete;
 		this.isCircular=isCircular;
 	}

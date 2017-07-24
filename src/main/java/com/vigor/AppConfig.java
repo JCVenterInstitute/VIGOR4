@@ -29,7 +29,7 @@ public class AppConfig {
 
 	public static void main(String... args) throws IOException, DataStoreException {
 		LOGGER.debug("******** VIGOR4 APPLICATION STARTED ************");
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+		ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
 		ctx.getBean(VigorInputValidationService.class).processInput(args);
 		((AnnotationConfigApplicationContext)ctx).close();
 		LOGGER.debug("******** VIGOR4 APPLICATION STOPPED ************");

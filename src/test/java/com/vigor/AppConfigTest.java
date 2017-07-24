@@ -1,4 +1,4 @@
-package com.vigor;
+/*package com.vigor;
 
 import com.vigor.service.TestSuit;
 import org.junit.Test;
@@ -7,9 +7,9 @@ import static org.junit.Assert.*;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
-/**
+*//**
  * Created by snettem on 5/19/2017.
- */
+ *//*
 public class AppConfigTest {
 
 
@@ -24,3 +24,4 @@ public class AppConfigTest {
     }
 }
 
+*/
