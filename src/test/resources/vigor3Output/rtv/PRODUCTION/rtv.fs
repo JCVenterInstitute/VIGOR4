@@ -1,0 +1,125 @@
+========================================================================================================================
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+10182.1            98.1   99.6   82.6   17.4  0.0   0.0   <1..187          262    317    gi_155970351_NSP2 NSP2 | putative non-structural protein 2,
+                                                          187..789                                         C-terminal
+                    frameshift in genome at or near position 187..187 (+2=>+1)
+
+CLUSTAL 2.1 multiple sequence alignment
+
+
+predicted       -------------------------------------------------------QFRKR
+reference       MAELACFCYPHLENDSYKFIPFNNLAIKCMLTAKVDKKDQDKFYNSIVYGIAPPPQFRKR
+                                                                       *****
+
+predicted       YNTSDNSRGMNYETIMFNKVAILICEALNSIKVTQSEVANVLSRVVSVRHLENLVLRKEN
+reference       YNTSDNSRGMNYETIMFNKVAILICEALNSIKVTQSEVANVLSRVVSVRHLENLVLRKEN
+                ************************************************************
+
+predicted       HQDVLFHSKELLLKSVLIAIGQSKEIETTATAEGGEIVFQNAAFTMWKLTYLDHKLMPIL
+reference       HQDVLFHSKELLLKSVLIAIGQSKEIETTATAEGGEIVFQNAAFTMWKLTYLDHKLMPIL
+                ************************************************************
+
+predicted       DQNFLEYKITLNEDKPISDICIKELVAELRWQYNRFAVITHGKGHYRVVKYSSVANHADR
+reference       DQNFIEYKITLNEDKPISDVYVKEIVAELRWQYNRFAVITHGKGHYRVVKYSSVANHADR
+                ****:**************: :**:***********************************
+
+predicted       VFATYKNNAKSGNTTDFNLLDQRIIWQNWYAFTSSMKQGNTIDVCKKLLFQKMKQEKNPF
+reference       VFATYKNNAKSGNTTDFNLLDQRIIWQNWYAFTSSMKQGNTIDVCKKLLFQKMKQEKNPF
+                ************************************************************
+
+predicted       KGLSTDRKMDEVSHVGI
+reference       KGLSTDRKMDEVSHVGI
+                *****************
+
+>10182.1	1	789
+ACAATTTAGAAAACGTTATAATACTAGTGATAATTCGAGAGGAATGAATTACGAGACAAT
+TATGTTTAATAAGGTGGCTATCTTAATTTGTGAAGCACTTAATTCGATTAAAGTTACACA
+ATCTGAAGTTGCAAATGTTCTTTCAAGAGTAGTTTCCGTTAGACATTTAGAAAATCTAGT
+ATTAAGAAAGAAAATCATCAAGATGTACTTTTTCATTCGAAAGAACTACTCTTAAAATCT
+GTGTTGATAGCTATTGGTCAGTCAAAAGAAATCGAAACTACTGCTACTGCTGAAGGAGGA
+GAAATAGTATTTCAGAATGCAGCTTTTACTATGTGGAAATTGACGTATTTAGATCATAAA
+TTAATGCCTATTTTGGATCAGAATTTCCTTGAATATAAAATTACATTGAATGAAGATAAA
+CCAATTTCAGATATATGCATTAAAGAACTTGTTGCTGAACTAAGATGGCAGTATAACAGA
+TTTGCTGTAATAACACATGGTAAAGGTCATTATAGAGTTGTTAAATATTCATCAGTTGCT
+AACCATGCAGATAGAGTATTTGCTACATATAAGAATAATGCTAAGAGTGGTAATACTACC
+GATTTCAATTTGCTAGACCAAAGAATTATTTGGCAAAATTGGTATGCATTTACATCTTCA
+ATGAAACAAGGTAATACAATTGATGTATGTAAGAAACTACTCTTTCAAAAGATGAAACAA
+GAGAAAAATCCGTTCAAAGGATTGTCAACTGATAGAAAAATGGATGAAGTCTCACATGTT
+GGAATTTAAttcgctttcgattcaagaatgatgatgacgaagcaagaatagaaagcgc
+
+Length = 317
+
+Score =   145 bits (311), Expect(2) = e-176
+Identities = 63/64 (98%), Positives = 64/64 (100%)
+Frame = +2
+
+Query: 2   QFRKRYNTSDNSRGMNYETIMFNKVAILICEALNSIKVTQSEVANVLSRVVSVRHLENLV 181
+           QFRKRYNTSDNSRGMNYETIMFNKVAILICEALNSIKVTQSEVANVLSRVVSVRHLENLV
+Sbjct: 56  QFRKRYNTSDNSRGMNYETIMFNKVAILICEALNSIKVTQSEVANVLSRVVSVRHLENLV 115
+
+Query: 182 LRKK 193
+           LRK+
+Sbjct: 116 LRKE 119
+
+------------------------------------------------------------
+frameshifted from +2 to +1 between 2-420
+     2 CAATTTAGAAAACGTTATAATACTAGTGATAATTCGAGAGGAATGAATTACGAGACAATT 61    
+    62 ATGTTTAATAAGGTGGCTATCTTAATTTGTGAAGCACTTAATTCGATTAAAGTTACACAA 121   
+   122 TCTGAAGTTGCAAATGTTCTTTCAAGAGTAGTTTCCGTTAGACATTTAGAAAATCTAGTA 181   
+   182 TTAAGAAAGAAAATCATCAAGATGTACTTTTTCATTCGAAAGAACTACTCTTAAAATCTG 241   
+   242 TGTTGATAGCTATTGGTCAGTCAAAAGAAATCGAAACTACTGCTACTGCTGAAGGAGGAG 301   
+   302 AAATAGTATTTCAGAATGCAGCTTTTACTATGTGGAAATTGACGTATTTAGATCATAAAT 361   
+   362 TAATGCCTATTTTGGATCAGAATTTCCTTGAATATAAAATTACATTGAATGAAGATAAA  420   
+ frame +2
+     2  q -F--R--K--R--Y--N--T--S--D--N--S--R--G--M--N--Y--E--T--I- 61     |
+    62 -M--F--N--K--V--A--I--L--I--C--E--A--L--N--S--I--K--V--T--Q- 121    |
+   122 -S--E--V--A--N--V--L--S--R--V--V--S--V--R--H--L--E--N--L--V- 181    |
+   182 -L--R--K- k  i  i  k  m  y  f -F- i  r -K- n  y  s  *  n  l  241    |
+   242  c  *  *  l  l  v  s  q -K- k  s  k  l  l  l  l  l  k  e  e  301   
+   302  k  *  y -F- r  m  q  l  l  l  c  g  n  *  r  i  *  i  i  n  361   
+   362  *  c  l  f  w  i  r  i  s  l  n  i -K- l  h  *  m  k  i     420   
+ frame +3
+     2   n  l  e  n  v  i  i -L- v  i -I- r  e  e  *  i  t  r  q  l 61    
+    62   c -L- i -R- w  l -S- *  f  v  k  h  l  i  r -L- k  l  h -N 121   
+   122 - l  k  l  q  m -F- f  q  e  *  f  p -L- d  i  *  k -I- *  y 181   
+   182   *  e  r -K- s  s  r  c -T- f  s  f -E- r  t  t  l  k  i  c 241   
+   242   v  d  s  y  w  s  v -K- r  n  r  n  y  c  y  c  *  r  r  r 301   
+   302   n  s  i  s  e  c  s  f  y  y  v  e  i -D- v  f  r  s  *  i 361   
+   362   n  a  y  f  g  s  e  f  p  *  i  *  n  y  i  e  *  r  *    420   
+ frame +1
+     2    i  * -K- t  l  *  y  *  *  *  f  e  r  n  e  l  r  d  n   61    
+    62 y  v  *  *  g  g  y -L- n  l  *  s  t  *  f  d  *  s  y  t   121   
+   122 i  *  s  c  k  c  s  f  k  s  s  f  r  *  t  f  r  k  s  s   181   
+   182 i  k -K--E--N--H--Q--D--V--L--F--H--S--K--E--L--L--L--K--S-- 241    |
+   242 V--L--I--A--I--G--Q--S--K--E--I--E--T--T--A--T--A--E--G--G-- 301    |
+   302 E--I--V--F--Q--N--A--A--F--T--M--W--K--L--T--Y--L--D--H--K-- 361    |
+   362 L--M--P--I--L--D--Q--N--F- l -E--Y--K--I--T--L--N--E--D--K-  420    |
+
+reference sequence 56-195
+FRKRYNTSDNSRGMNYETIMFNKVAILICEALNSIKVTQSEVANVLSRVVSVRHLENLVL
+RKENHQDVLFHSKELLLKSVLIAIGQSKEIETTATAEGGEIVFQNAAFTMWKLTYLDHKL
+MPILDQNFIEYKITLNEDKP
+------------------------------------------------------------
+
+Score =   477 bits (1036), Expect(2) = e-176
+Identities = 195/202 (96%), Positives = 201/202 (99%)
+Frame = +1
+
+Query: 181 IKKENHQDVLFHSKELLLKSVLIAIGQSKEIETTATAEGGEIVFQNAAFTMWKLTYLDHK 360
+           ++KENHQDVLFHSKELLLKSVLIAIGQSKEIETTATAEGGEIVFQNAAFTMWKLTYLDHK
+Sbjct: 116 LRKENHQDVLFHSKELLLKSVLIAIGQSKEIETTATAEGGEIVFQNAAFTMWKLTYLDHK 175
+
+Query: 361 LMPILDQNFLEYKITLNEDKPISDICIKELVAELRWQYNRFAVITHGKGHYRVVKYSSVA 540
+           LMPILDQNF+EYKITLNEDKPISD+ +KE+VAELRWQYNRFAVITHGKGHYRVVKYSSVA
+Sbjct: 176 LMPILDQNFIEYKITLNEDKPISDVYVKEIVAELRWQYNRFAVITHGKGHYRVVKYSSVA 235
+
+Query: 541 NHADRVFATYKNNAKSGNTTDFNLLDQRIIWQNWYAFTSSMKQGNTIDVCKKLLFQKMKQ 720
+           NHADRVFATYKNNAKSGNTTDFNLLDQRIIWQNWYAFTSSMKQGNTIDVCKKLLFQKMKQ
+Sbjct: 236 NHADRVFATYKNNAKSGNTTDFNLLDQRIIWQNWYAFTSSMKQGNTIDVCKKLLFQKMKQ 295
+
+Query: 721 EKNPFKGLSTDRKMDEVSHVGI 786
+           EKNPFKGLSTDRKMDEVSHVGI
+Sbjct: 296 EKNPFKGLSTDRKMDEVSHVGI 317
+
+

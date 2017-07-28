@@ -1,0 +1,49 @@
+gi|10937870|ref|NC_001796.2|	hpiv3_db	111..1658	NP_067148.1	N	nucleoprotein	OK	
+gi|10937870|ref|NC_001796.2|	hpiv3_db	1784..2903	NP_599250.1	D	D protein	OK	
+gi|10937870|ref|NC_001796.2|	hpiv3_db	1784..3595	NP_067149.1	P	phosphoprotein	OK	
+gi|10937870|ref|NC_001796.2|	hpiv3_db	1794..2393	NP_599251.1	C	C protein	OK	
+gi|10937870|ref|NC_001796.2|	hpiv3_db	3753..4814	NP_067150.1	M	matrix protein	OK	
+gi|10937870|ref|NC_001796.2|	hpiv3_db	5072..6691	tr|O89236|O89236_9PARA	F	fusion glycoprotein F0	OK	
+gi|10937870|ref|NC_001796.2|	hpiv3_db	6806..8530	NP_067152.1	HN	hemagglutinin neuraminidase	OK	
+gi|10937870|ref|NC_001796.2|	hpiv3_db	8646..15347	NP_067153.2	L	RNA-directed RNA polymerase L	OK	
+10937870_part1	hpiv3_db	<1..>910	NP_067148.1	N	putative nucleoprotein, fragment	T5	30
+10937870_part1	hpiv3_db	<1..>910	NP_067148.1	N	putative nucleoprotein, fragment	T3	609
+10937870_part2	hpiv3_db	<1..251	tr|O89236|O89236_9PARA	F	putative fusion glycoprotein F0, C-terminal	T5	1371
+10937870_part2	hpiv3_db	366..>1750	NP_067152.1	HN	putative hemagglutinin neuraminidase, N-terminal	T3	342
+10937870_part2	hpiv3_db	<1784..2090	NP_067152.1	HN	putative hemagglutinin neuraminidase, C-terminal	T5	1419
+10937870_part2	hpiv3_db	<2222..>2310	ABZ85674.1	L	putative RNA-directed RNA polymerase L, fragment	T5	18
+10937870_part2	hpiv3_db	<2222..>2310	ABZ85674.1	L	putative RNA-directed RNA polymerase L, fragment	T3	6597
+10937870_draft	hpiv3_db	10..>840	NP_067148.1	N	putative nucleoprotein, N-terminal	T3	717
+10937870_draft	hpiv3_db	<879..>897	NP_067148.1	N	putative nucleoprotein, fragment	T5	870
+10937870_draft	hpiv3_db	<879..>897	NP_067148.1	N	putative nucleoprotein, fragment	T3	660
+10937870_draft	hpiv3_db	<939..1557	NP_067148.1	N	putative nucleoprotein, C-terminal	T5	930
+10937870_draft	hpiv3_db	1683..>2277	NP_599250.1	D	putative D protein, N-terminal	T3	528
+10937870_draft	hpiv3_db	<2350..2802	NP_599250.1	D	putative D protein, C-terminal	T5	669
+10937870_draft	hpiv3_db	1683..>2277	NP_067149.1	P	putative phosphoprotein, N-terminal	T3	1218
+10937870_draft	hpiv3_db	<2350..3494	NP_067149.1	P	putative phosphoprotein, C-terminal	T5	669
+10937870_draft	hpiv3_db	1693..>2277	NP_599251.1	C	putative C protein, N-terminal	T3	15
+10937870_draft	hpiv3_db	3652..>3957	ABZ85671.1	M	putative matrix protein, N-terminal	T3	756
+10937870_draft	hpiv3_db	<5080..6590	tr|O89236|O89236_9PARA	F	putative fusion glycoprotein F0, C-terminal	T5	111
+10937870_draft	hpiv3_db	6705..8429	NP_067152.1	HN	hemagglutinin neuraminidase	OK	
+10937870_draft	hpiv3_db	8545..>9290	NP_067153.2	L	putative RNA-directed RNA polymerase L, N-terminal	T3	5958
+10937870_draft	hpiv3_db	<9347..>10749	NP_067153.2	L	putative RNA-directed RNA polymerase L, fragment	T5	804
+10937870_draft	hpiv3_db	<9347..>10749	NP_067153.2	L	putative RNA-directed RNA polymerase L, fragment	T3	4497
+10937870_draft	hpiv3_db	<10824..>14883	NP_067153.2	L	putative RNA-directed RNA polymerase L, fragment	T5	2280
+10937870_draft	hpiv3_db	<10824..>14883	NP_067153.2	L	putative RNA-directed RNA polymerase L, fragment	T3	363
+10937870_draft	hpiv3_db	<14950..15246	NP_067153.2	L	putative RNA-directed RNA polymerase L, C-terminal	T5	6405
+gi|312618595|gb|HM583801.1|	hpiv3_db	111..1658	ADR00399.1	N	nucleoprotein	OK	
+gi|312618595|gb|HM583801.1|	hpiv3_db	1784..2903	ADR00402.1	D	D protein	OK	
+gi|312618595|gb|HM583801.1|	hpiv3_db	1784..3592	ADR00400.1	P	phosphoprotein	OK	
+gi|312618595|gb|HM583801.1|	hpiv3_db	1794..2393	ADR00401.1	C	C protein	OK	
+gi|312618595|gb|HM583801.1|	hpiv3_db	3753..4814	ADR00403.1	M	matrix protein	OK	
+gi|312618595|gb|HM583801.1|	hpiv3_db	5072..6691	ADR00404.1	F	fusion glycoprotein F0	OK	
+gi|312618595|gb|HM583801.1|	hpiv3_db	6806..8524	ADR00405.1	HN	hemagglutinin neuraminidase	OK	
+gi|312618595|gb|HM583801.1|	hpiv3_db	8646..15347	ADR00406.1	L	RNA-directed RNA polymerase L	OK	
+gi|163866863|gb|EU326526.1|	hpiv3_db	111..1658	ABY47602.1	N	nucleoprotein	OK	
+gi|163866863|gb|EU326526.1|	hpiv3_db	1784..2903	ADR00402.1	D	D protein	OK	
+gi|163866863|gb|EU326526.1|	hpiv3_db	1784..3595	ABY47603.1	P	phosphoprotein	OK	
+gi|163866863|gb|EU326526.1|	hpiv3_db	1794..2393	ADR00401.1	C	C protein	OK	
+gi|163866863|gb|EU326526.1|	hpiv3_db	3753..4814	tr|A9Z0P4|A9Z0P4_9PARA	M	matrix protein	OK	
+gi|163866863|gb|EU326526.1|	hpiv3_db	5072..6691	ABY47605.1	F	fusion glycoprotein F0	OK	
+gi|163866863|gb|EU326526.1|	hpiv3_db	6806..8524	ABY47606.1	HN	hemagglutinin neuraminidase	OK	
+gi|163866863|gb|EU326526.1|	hpiv3_db	8646..15347	ABY47607.1	L	RNA-directed RNA polymerase L	OK	

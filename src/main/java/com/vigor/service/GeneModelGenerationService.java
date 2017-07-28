@@ -15,16 +15,36 @@ public class GeneModelGenerationService {
 
 	@Autowired
 	private DetermineMissingExonsService determineMissingExons;
+	boolean isDebug = false;
+	
 
 	public void generateGeneModel(List<Model> models, VigorForm form) {
 
-		// Determine missing exons
-	    List<Model> modelsAfterMissingExonsDetermined = new ArrayList<Model>();
-		modelsAfterMissingExonsDetermined = models.stream().map(model -> determineMissingExons.determine(model,form)).collect(Collectors.toList());
+		List<Model> partialGeneModels = new ArrayList<Model>();
+		isDebug = form.isDebug();
+		
+		/*Determine missing exons*/
+		List<Model> modelsAfterMissingExonsDetermined = new ArrayList<Model>();
+		for(Model model : models){
+			Model outputModel = determineMissingExons.determine(model, form);
+			if(outputModel.getStatus().contains("partial genes")){
+				partialGeneModels.add(outputModel);
+			}
+			else{
+				modelsAfterMissingExonsDetermined.add(outputModel);
+			}
+		}
+		if (isDebug) {
+			System.out.println("**********After determining the missing exons************");
+			FormatVigorOutput.printModels2(modelsAfterMissingExonsDetermined);
+		}
+		if (isDebug) {
+			System.out.println("**********Partial Gene Models************");
+			FormatVigorOutput.printModels2(partialGeneModels);
+		}
 
-		// Determine start
 		
-		
+		/*Determine start*/
 		
 		
 		

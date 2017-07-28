@@ -1,0 +1,2811 @@
+>Features 84
+511	1388	gene
+			locus_tag	vigor_E1A
+			gene	E1A
+511	582	CDS
+1183	1284
+			codon_start	1
+			protein_id	84.1
+			locus_tag	vigor_E1A
+			gene	E1A
+			product	E1A 6 kDa protein
+			note	synonym: control protein E1A
+511	997	CDS
+1183	1388
+			codon_start	1
+			protein_id	84.2
+			locus_tag	vigor_E1A
+			gene	E1A
+			product	E1A 25 kDa protein
+			note	synonyms: control protein E1A, E1A 12S protein, E1A 12s 25 kDa protein
+511	1090	CDS
+1183	1388
+			codon_start	1
+			protein_id	84.3
+			locus_tag	vigor_E1A
+			gene	E1A
+			product	E1A 29.1 kDa protein
+			note	synonyms: control protein E1A, E1A 13S protein, E1A 13s 28 kDa protein
+1536	3319	gene
+			locus_tag	vigor_E1B
+			gene	E1B
+1536	2072	CDS
+			codon_start	1
+			protein_id	84.4
+			locus_tag	vigor_E1B
+			gene	E1B
+			product	E1B small T antigen
+			note	synonyms: inhibitor of apoptosis protein, control protein E1B 19K, 19 kDa small T antigen, E1B 21- kDa
+1841	3319	CDS
+			codon_start	1
+			protein_id	84.5
+			locus_tag	vigor_E1B
+			gene	E1B
+			product	E1B large T antigen
+			note	synonyms: inhibitor of nuclear immunity 1, E1B 55- kDa, large T antigen, control protein E1B 55K
+3413	3829	gene
+			locus_tag	vigor_IX
+			gene	IX
+3413	3829	CDS
+			codon_start	1
+			protein_id	84.6
+			locus_tag	vigor_IX
+			gene	IX
+			product	hexon associated protein
+			note	synonyms: hexon-interlacing protein, capsid protein IX
+5505	3881	gene
+			locus_tag	vigor_IVa2
+			gene	IVa2
+5505	5493	CDS
+5214	3881
+			codon_start	1
+			protein_id	84.8
+			locus_tag	vigor_IVa2
+			gene	IVa2
+			product	maturation protein
+			note	synonyms: packaging protein 1, maturation protein IVa2, encapsidation protein IVa2, protein IVa2
+7762	>7959	gene
+			locus_tag	vigor_HYPp4
+7762	>7959	CDS
+			codon_start	1
+			protein_id	84.10
+			locus_tag	vigor_HYPp4
+			product	putative hypothetical protein, N-terminal
+7762	13757	gene
+			locus_tag	vigor_L1
+			gene	L1
+7762	>7959	CDS
+			codon_start	1
+			protein_id	84.11a
+			locus_tag	vigor_L1
+			gene	L1
+			product	putative L1 13.6 kDa protein, N-terminal
+			note	synonyms: i-leader protein, L1 13.6 kDa protein, protein 13.6K; coding region disrupted by sequencing gap
+<9415	9435	CDS
+			codon_start	1
+			protein_id	84.11b
+			locus_tag	vigor_L1
+			gene	L1
+			product	putative L1 13.6 kDa protein, C-terminal
+			note	synonyms: i-leader protein, L1 13.6 kDa protein, protein 13.6K; coding region disrupted by sequencing gap
+<11195	11966	CDS
+			codon_start	2
+			protein_id	84.15
+			locus_tag	vigor_L1
+			gene	L1
+			product	putative L1 52 kDa protein, C-terminal
+			note	synonyms: packaging protein 3, late L1 52 kDa protein, encapsidation protein 52K, 55 kDa L1 protein
+11991	>13260	CDS
+			codon_start	1
+			protein_id	84.16a
+			locus_tag	vigor_L1
+			gene	L1
+			product	putative IIIa capsid protein, N-terminal
+			note	synonyms: capsid vertex protein, capsid protein pIIIa, capsid protein precursor pIIIa, L1 protein pIIIa, protein IIIa; coding region disrupted by sequencing gap
+<13390	13757	CDS
+			codon_start	3
+			protein_id	84.16b
+			locus_tag	vigor_L1
+			gene	L1
+			product	putative IIIa capsid protein, C-terminal
+			note	synonyms: capsid vertex protein, capsid protein pIIIa, capsid protein precursor pIIIa, L1 protein pIIIa, protein IIIa; coding region disrupted by sequencing gap
+13796	4984	gene
+			locus_tag	vigor_E2B
+			gene	E2B
+13796	>13788	CDS
+			codon_start	1
+			protein_id	84.12a
+			locus_tag	vigor_E2B
+			gene	E2B
+			product	putative DNA polymerase, N-terminal
+			note	coding region disrupted by sequencing gap
+<7959	4984	CDS
+			codon_start	1
+			protein_id	84.12b
+			locus_tag	vigor_E2B
+			gene	E2B
+			product	putative DNA polymerase, C-terminal
+			note	coding region disrupted by sequencing gap
+9695	9970	gene
+			locus_tag	vigor_HYPp3
+9695	9970	CDS
+			codon_start	1
+			protein_id	84.13
+			locus_tag	vigor_HYPp3
+			product	hypothetical protein
+13796	>8742	gene
+			locus_tag	vigor_pTP
+			gene	pTP
+13796	>13788	CDS
+			codon_start	1
+			protein_id	84.14a
+			locus_tag	vigor_pTP
+			gene	pTP
+			product	putative DNA terminal protein, N-terminal
+			note	synonyms: terminal protein, DNA terminal protein precursor, E2B pTP; coding region disrupted by sequencing gap
+<9992	>8742	CDS
+			codon_start	2
+			protein_id	84.14b
+			locus_tag	vigor_pTP
+			gene	pTP
+			product	putative DNA terminal protein, fragment
+			note	synonyms: terminal protein, DNA terminal protein precursor, E2B pTP; coding region disrupted by sequencing gap
+13845	15479	gene
+			locus_tag	vigor_L2
+			gene	L2
+13845	15479	CDS
+			codon_start	1
+			protein_id	84.17
+			locus_tag	vigor_L2
+			gene	L2
+			product	penton base
+			note	synonym: L2 protein III
+<15705	19018	gene
+			locus_tag	vigor_L3
+			gene	L3
+<15705	>18266	CDS
+			codon_start	1
+			protein_id	84.18
+			locus_tag	vigor_L3
+			gene	L3
+			product	putative hexon, fragment
+			note	synonyms: hexon protein, L3 protein II (hexon)
+<18562	>18680	CDS
+			codon_start	2
+			protein_id	84.19a
+			locus_tag	vigor_L3
+			gene	L3
+			product	putative protease, fragment
+			note	synonyms: adenain, endoprotease, late L3 23 kDa protein; coding region disrupted by sequencing gap
+<18812	19018	CDS
+			codon_start	1
+			protein_id	84.19b
+			locus_tag	vigor_L3
+			gene	L3
+			product	putative protease, C-terminal
+			note	synonyms: adenain, endoprotease, late L3 23 kDa protein; coding region disrupted by sequencing gap
+20655	19105	gene
+			locus_tag	vigor_E2A
+			gene	E2A
+20655	>20648	CDS
+			codon_start	1
+			protein_id	84.20a
+			locus_tag	vigor_E2A
+			gene	E2A
+			product	putative ssDNA-binding protein, N-terminal
+			note	synonyms: DNA binding protein, single-stranded DNA-binding protein, E2A DNA binding protein DBP; coding region disrupted by sequencing gap
+<20526	19105	CDS
+			codon_start	1
+			protein_id	84.20b
+			locus_tag	vigor_E2A
+			gene	E2A
+			product	putative ssDNA-binding protein, C-terminal
+			note	synonyms: DNA binding protein, single-stranded DNA-binding protein, E2A DNA binding protein DBP; coding region disrupted by sequencing gap
+20686	24488	gene
+			locus_tag	vigor_L4
+			gene	L4
+20686	23160	CDS
+			codon_start	1
+			protein_id	84.21
+			locus_tag	vigor_L4
+			gene	L4
+			product	hexon-assembly protein
+			note	synonyms: shutoff protein, 100 kDa hexon-assembly associated protein, hexon assembly protein 100K, L4 100- kDa protein
+22862	23461	CDS
+			codon_start	1
+			protein_id	84.22
+			locus_tag	vigor_L4
+			gene	L4
+			product	L4 encapsidation protein
+			note	synonyms: packaging protein 2, L4 22 kDa encapsidation protein, encapsidation protein 22K, 22 kDa protein
+22862	23243	CDS
+23380	23735
+			codon_start	1
+			protein_id	84.23
+			locus_tag	vigor_L4
+			gene	L4
+			product	splicing factor
+			note	synonyms: L4 33 kDa protein, protein 33K
+23805	24488	CDS
+			codon_start	1
+			protein_id	84.24
+			locus_tag	vigor_L4
+			gene	L4
+			product	VIII capsid protein
+			note	synonyms: hexon linking protein, capsid protein precursor pVIII, pVIII protein
+24488	28176	gene
+			locus_tag	vigor_E3
+			gene	E3
+24488	24808	CDS
+			codon_start	1
+			protein_id	84.25
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 12.5 kDa immune modulating protein
+			note	synonyms: putative host modulation protein E3, Early E3 12.5 kDa glycoprotein, E3 12.1- kDa
+24762	25202	CDS
+			codon_start	1
+			protein_id	84.26
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 CR1-alpha
+			note	synonyms: CR1-alpha membrane glycoprotein, membrane glycoprotein E3 CR1-alpha, early E3 16 kDa glycoprotein, E3 16- kDa
+25187	25705	CDS
+			codon_start	1
+			protein_id	84.27
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 immune modulating protein
+			note	synonyms: inhibitor of MHC protein, membrane glycoprotein E3 gp19K, early E3 18.5 kDa glycoprotein, E3-19K, E3gp 19 kDa, early E3 19.2 kDa glycoprotein, GP19K, E19
+25735	>25978	CDS
+			codon_start	1
+			protein_id	84.28a
+			locus_tag	vigor_E3
+			gene	E3
+			product	putative E3 CR1-beta, N-terminal
+			note	synonyms: adenovirus death protein, membrane glycoprotein E3 CR1-beta, early E3 20.1 kDa glycoprotein; coding region disrupted by sequencing gap
+<26118	26274	CDS
+			codon_start	2
+			protein_id	84.28b
+			locus_tag	vigor_E3
+			gene	E3
+			product	putative E3 CR1-beta, C-terminal
+			note	synonyms: adenovirus death protein, membrane glycoprotein E3 CR1-beta, early E3 20.1 kDa glycoprotein; coding region disrupted by sequencing gap
+26287	26856	CDS
+			codon_start	1
+			protein_id	84.29
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 CR1-gamma
+			note	synonyms: CR1-gamma, 20.1 kDa protein, E3 20.5- kDa
+26875	27047	misc_feature
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 CR1-delta
+			note	could not find valid start codon; frameshift in genome; synonyms: CR1-delta, Early E3 9.0 kDa glycoprotein
+26970	26970	misc_feature
+			locus_tag	vigor_E3
+			note	approximate location of +1 => +3 frameshift in E3 CR1-delta
+27089	27364	CDS
+			codon_start	1
+			protein_id	84.31
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 RID-alpha
+			note	synonyms: receptor internalization and degradation-alpha protein, membrane protein E3 RID-alpha
+27336	27773	CDS
+			codon_start	1
+			protein_id	84.32
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 RID-beta
+			note	synonyms: receptor internalization and degradation-beta protein, membrane protein E3 RID-beta, 14.9 kDa glycoprotein
+27766	28176	CDS
+			codon_start	1
+			protein_id	84.33
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 control protein 14.7 kDa
+			note	synonyms: putative NFkappaB modulation protein, control protein E3 14.7K, 14 kDa protein, E3 15.3- kDa
+28381	>28226	gene
+			locus_tag	vigor_U
+			gene	U
+28381	>28226	CDS
+			codon_start	1
+			protein_id	84.34
+			locus_tag	vigor_U
+			gene	U
+			product	putative protein U, N-terminal
+			note	exon encoding C terminus unidentified
+28396	31178	gene
+			locus_tag	vigor_L5
+			gene	L5
+28396	29355	CDS
+			codon_start	1
+			protein_id	84.35
+			locus_tag	vigor_L5
+			gene	L5
+			product	fiber
+			note	synonym: pIV
+30669	31178	CDS
+			codon_start	1
+			protein_id	84.38
+			locus_tag	vigor_L5
+			gene	L5
+			product	agnoprotein
+31981	29396	gene
+			locus_tag	vigor_E4
+			gene	E4
+30543	30370	CDS
+29647	29396
+			codon_start	1
+			protein_id	84.36
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf6/7
+			note	synonyms: transactivator of host E2F, control protein E4orf6/7, Orf6/7 protein
+30543	29644	CDS
+			codon_start	1
+			protein_id	84.37
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein 34 kDa
+			note	synonyms: inhibitor of nuclear immunity 2, control protein E4 34K, 33.2 kDa protein, E4 ORF6 34- kDa
+30814	30446	CDS
+			codon_start	1
+			protein_id	84.39
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf4
+			note	synonyms: putative alternative splicing protein, control protein E4orf4, 13.6 kDa protein, E4 ORF4
+31176	30823	CDS
+			codon_start	1
+			protein_id	84.40
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf3
+			note	synonyms: inhibitor of nuclear immunity 3, control protein E4orf3, 11 kDa protein, E4 ORF3
+31562	31173	CDS
+			codon_start	1
+			protein_id	84.41
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf2
+			note	synonyms: putative host modulation protein E4-ORF2, control protein E4orf2, E4 ORF2
+31981	31604	CDS
+			codon_start	1
+			protein_id	84.42
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf1
+			note	synonyms: putative tight junction modulation protein, control protein E4orf1, 13.9 kDa protein, E4 ORF1
+>Features 37
+588	1460	gene
+			locus_tag	vigor_E1A
+			gene	E1A
+588	659	CDS
+1252	1356
+			codon_start	1
+			protein_id	37.1
+			locus_tag	vigor_E1A
+			gene	E1A
+			product	E1A 6 kDa protein
+			note	synonym: control protein E1A
+588	1074	CDS
+1252	1460
+			codon_start	1
+			protein_id	37.2
+			locus_tag	vigor_E1A
+			gene	E1A
+			product	E1A 25 kDa protein
+			note	synonyms: control protein E1A, E1A 12S protein, E1A 12s 25 kDa protein
+588	1167	CDS
+1252	1460
+			codon_start	1
+			protein_id	37.3
+			locus_tag	vigor_E1A
+			gene	E1A
+			product	E1A 29.1 kDa protein
+			note	synonyms: control protein E1A, E1A 13S protein, E1A 13s 28 kDa protein
+1617	3406	gene
+			locus_tag	vigor_E1B
+			gene	E1B
+1617	2159	CDS
+			codon_start	1
+			protein_id	37.4
+			locus_tag	vigor_E1B
+			gene	E1B
+			product	E1B small T antigen
+			note	synonyms: inhibitor of apoptosis protein, control protein E1B 19K, 19 kDa small T antigen, E1B 21- kDa
+1922	3406	CDS
+			codon_start	1
+			protein_id	37.5
+			locus_tag	vigor_E1B
+			gene	E1B
+			product	E1B large T antigen
+			note	synonyms: inhibitor of nuclear immunity 1, E1B 55- kDa, large T antigen, control protein E1B 55K
+3489	3908	gene
+			locus_tag	vigor_IX
+			gene	IX
+3489	3908	CDS
+			codon_start	1
+			protein_id	37.6
+			locus_tag	vigor_IX
+			gene	IX
+			product	hexon associated protein
+			note	synonyms: hexon-interlacing protein, capsid protein IX
+5600	3976	gene
+			locus_tag	vigor_IVa2
+			gene	IVa2
+5600	5588	CDS
+5309	3976
+			codon_start	1
+			protein_id	37.8
+			locus_tag	vigor_IVa2
+			gene	IVa2
+			product	maturation protein
+			note	synonyms: packaging protein 1, maturation protein IVa2, encapsidation protein IVa2, protein IVa2
+7857	13607	gene
+			locus_tag	vigor_L1
+			gene	L1
+7857	8255	CDS
+9505	9525
+			codon_start	1
+			protein_id	37.10
+			locus_tag	vigor_L1
+			gene	L1
+			product	L1 13.6 kDa protein
+			note	synonyms: i-leader protein, L1 13.6 kDa protein, protein 13.6K
+10658	11818	CDS
+			codon_start	1
+			protein_id	37.12
+			locus_tag	vigor_L1
+			gene	L1
+			product	L1 52 kDa protein
+			note	synonyms: packaging protein 3, late L1 52 kDa protein, encapsidation protein 52K, 55 kDa L1 protein
+11844	13607	CDS
+			codon_start	1
+			protein_id	37.13
+			locus_tag	vigor_L1
+			gene	L1
+			product	IIIa capsid protein
+			note	synonyms: capsid vertex protein, capsid protein pIIIa, capsid protein precursor pIIIa, L1 protein pIIIa, protein IIIa
+13640	5079	gene
+			locus_tag	vigor_E2B
+			gene	E2B
+13640	13632	CDS
+8651	5079
+			codon_start	1
+			protein_id	37.14
+			locus_tag	vigor_E2B
+			gene	E2B
+			product	DNA polymerase
+13640	8450	gene
+			locus_tag	vigor_pTP
+			gene	pTP
+13640	13632	CDS
+10411	8450
+			codon_start	1
+			protein_id	37.15
+			locus_tag	vigor_pTP
+			gene	pTP
+			product	DNA terminal protein
+			note	synonyms: terminal protein, DNA terminal protein precursor, E2B pTP
+13688	17301	gene
+			locus_tag	vigor_L2
+			gene	L2
+13688	15361	CDS
+			codon_start	1
+			protein_id	37.16
+			locus_tag	vigor_L2
+			gene	L2
+			product	penton base
+			note	synonym: L2 protein III
+15366	15944	CDS
+			codon_start	1
+			protein_id	37.17
+			locus_tag	vigor_L2
+			gene	L2
+			product	VII core protein
+			note	synonyms: histone-like nucleoprotein, major core protein precursor pVII, core protein precursor pVII, L2 protein pVII, protein VII
+15987	17042	CDS
+			codon_start	1
+			protein_id	37.18
+			locus_tag	vigor_L2
+			gene	L2
+			product	V core protein
+			note	synonyms: core-capsid bridging protein, minor core protein V, core protein V, L2 protein pV, protein V
+17071	17301	CDS
+			codon_start	1
+			protein_id	37.19
+			locus_tag	vigor_L2
+			gene	L2
+			product	X core protein
+			note	synonyms: core protein 10, core protein precursor pX, pX
+17384	21749	gene
+			locus_tag	vigor_L3
+			gene	L3
+17384	18124	CDS
+			codon_start	1
+			protein_id	37.20
+			locus_tag	vigor_L3
+			gene	L3
+			product	VI capsid protein
+			note	synonyms: protease cofactor, capsid protein precursor pVI, L3 protein pVI, protein VI
+18240	21080	CDS
+			codon_start	1
+			protein_id	37.21
+			locus_tag	vigor_L3
+			gene	L3
+			product	hexon
+			note	synonyms: hexon protein, L3 protein II (hexon)
+21120	21749	CDS
+			codon_start	1
+			protein_id	37.22
+			locus_tag	vigor_L3
+			gene	L3
+			product	protease
+			note	synonyms: adenain, endoprotease, late L3 23 kDa protein
+23383	21827	gene
+			locus_tag	vigor_E2A
+			gene	E2A
+23383	21827	CDS
+			codon_start	1
+			protein_id	37.23
+			locus_tag	vigor_E2A
+			gene	E2A
+			product	ssDNA-binding protein
+			note	synonyms: DNA binding protein, single-stranded DNA-binding protein, E2A DNA binding protein DBP
+23414	27166	gene
+			locus_tag	vigor_L4
+			gene	L4
+23414	25852	CDS
+			codon_start	1
+			protein_id	37.24
+			locus_tag	vigor_L4
+			gene	L4
+			product	hexon-assembly protein
+			note	synonyms: shutoff protein, 100 kDa hexon-assembly associated protein, hexon assembly protein 100K, L4 100- kDa protein
+25584	26159	CDS
+			codon_start	1
+			protein_id	37.25
+			locus_tag	vigor_L4
+			gene	L4
+			product	L4 encapsidation protein
+			note	synonyms: packaging protein 2, L4 22 kDa encapsidation protein, encapsidation protein 22K, 22 kDa protein
+25584	25902	CDS
+26072	26433
+			codon_start	1
+			protein_id	37.26
+			locus_tag	vigor_L4
+			gene	L4
+			product	splicing factor
+			note	synonyms: L4 33 kDa protein, protein 33K
+26483	27166	CDS
+			codon_start	1
+			protein_id	37.27
+			locus_tag	vigor_L4
+			gene	L4
+			product	VIII capsid protein
+			note	synonyms: hexon linking protein, capsid protein precursor pVIII, pVIII protein
+27166	30579	gene
+			locus_tag	vigor_E3
+			gene	E3
+27166	27483	CDS
+			codon_start	1
+			protein_id	37.28
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 12.5 kDa immune modulating protein
+			note	synonyms: putative host modulation protein E3, Early E3 12.5 kDa glycoprotein, E3 12.1- kDa
+27437	27832	CDS
+			codon_start	1
+			protein_id	37.29
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 CR1-alpha
+			note	synonyms: CR1-alpha membrane glycoprotein, membrane glycoprotein E3 CR1-alpha, early E3 16 kDa glycoprotein, E3 16- kDa
+27817	28317	CDS
+			codon_start	1
+			protein_id	37.30
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 immune modulating protein
+			note	synonyms: inhibitor of MHC protein, membrane glycoprotein E3 gp19K, early E3 18.5 kDa glycoprotein, E3-19K, E3gp 19 kDa, early E3 19.2 kDa glycoprotein, GP19K, E19
+28337	28882	CDS
+			codon_start	1
+			protein_id	37.31
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 CR1-beta
+			note	synonyms: adenovirus death protein, membrane glycoprotein E3 CR1-beta, early E3 20.1 kDa glycoprotein
+28900	29451	CDS
+			codon_start	1
+			protein_id	37.32
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 CR1-gamma
+			note	synonyms: CR1-gamma, 20.1 kDa protein, E3 20.5- kDa
+29495	29770	CDS
+			codon_start	1
+			protein_id	37.33
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 RID-alpha
+			note	synonyms: receptor internalization and degradation-alpha protein, membrane protein E3 RID-alpha
+29775	30179	CDS
+			codon_start	1
+			protein_id	37.34
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 RID-beta
+			note	synonyms: receptor internalization and degradation-beta protein, membrane protein E3 RID-beta, 14.9 kDa glycoprotein
+30172	30579	CDS
+			codon_start	1
+			protein_id	37.35
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 control protein 14.7 kDa
+			note	synonyms: putative NFkappaB modulation protein, control protein E3 14.7K, 14 kDa protein, E3 15.3- kDa
+30767	>30609	gene
+			locus_tag	vigor_U
+			gene	U
+30767	>30609	CDS
+			codon_start	1
+			protein_id	37.36
+			locus_tag	vigor_U
+			gene	U
+			product	putative protein U, N-terminal
+			note	exon encoding C terminus unidentified
+30782	33577	gene
+			locus_tag	vigor_L5
+			gene	L5
+30782	31759	CDS
+			codon_start	1
+			protein_id	37.37
+			locus_tag	vigor_L5
+			gene	L5
+			product	fiber
+			note	synonym: pIV
+33068	33577	misc_feature
+			locus_tag	vigor_L5
+			gene	L5
+			product	agnoprotein
+			note	CDS interrupted by stop codon
+34383	31795	gene
+			locus_tag	vigor_E4
+			gene	E4
+32942	32769	CDS
+32046	31795
+			codon_start	1
+			protein_id	37.38
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf6/7
+			note	synonyms: transactivator of host E2F, control protein E4orf6/7, Orf6/7 protein
+32942	32043	CDS
+			codon_start	1
+			protein_id	37.39
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein 34 kDa
+			note	synonyms: inhibitor of nuclear immunity 2, control protein E4 34K
+33213	32845	CDS
+			codon_start	1
+			protein_id	37.41
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf4
+			note	synonyms: putative alternative splicing protein, control protein E4orf4, 13.6 kDa protein, E4 ORF4
+33575	33222	CDS
+			codon_start	1
+			protein_id	37.42
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf3
+			note	synonyms: inhibitor of nuclear immunity 3, control protein E4orf3, 11 kDa protein, E4 ORF3
+33961	33572	CDS
+			codon_start	1
+			protein_id	37.43
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf2
+			note	synonyms: putative host modulation protein E4-ORF2, control protein E4orf2, E4 ORF2
+34383	34006	CDS
+			codon_start	1
+			protein_id	37.44
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf1
+			note	synonyms: putative tight junction modulation protein, control protein E4orf1, 13.9 kDa protein, E4 ORF1
+>Features 57
+479	1351	gene
+			locus_tag	vigor_E1A
+			gene	E1A
+479	1046	CDS
+1122	1351
+			codon_start	1
+			protein_id	57.1
+			locus_tag	vigor_E1A
+			gene	E1A
+			product	E1A 29.5 kDa protein
+			note	synonym: control protein E1A
+1488	3211	gene
+			locus_tag	vigor_E1B
+			gene	E1B
+1488	1958	CDS
+			codon_start	1
+			protein_id	57.2
+			locus_tag	vigor_E1B
+			gene	E1B
+			product	E1B small T antigen
+			note	synonym: inhibitor of apoptosis protein
+1793	3211	CDS
+			codon_start	1
+			protein_id	57.3
+			locus_tag	vigor_E1B
+			gene	E1B
+			product	E1B large T antigen
+			note	synonyms: inhibitor of nuclear immunity 1, E1B 55 kDa protein
+3290	3724	gene
+			locus_tag	vigor_IX
+			gene	IX
+3290	3724	CDS
+			codon_start	1
+			protein_id	57.4
+			locus_tag	vigor_IX
+			gene	IX
+			product	hexon associated protein
+			note	synonyms: hexon-interlacing protein, Protein IX
+5384	3757	gene
+			locus_tag	vigor_IVa2
+			gene	IVa2
+5384	5372	CDS
+5093	3757
+			codon_start	1
+			protein_id	57.5
+			locus_tag	vigor_IVa2
+			gene	IVa2
+			product	maturation protein
+			note	synonyms: packaging protein 1, maturation protein IVa2, Protein IVa2
+7644	13171	gene
+			locus_tag	vigor_L1
+			gene	L1
+7644	8054	CDS
+9259	9279
+			codon_start	1
+			protein_id	57.6
+			locus_tag	vigor_L1
+			gene	L1
+			product	L1 13.6 kDa protein
+			note	synonyms: i-leader protein, L1 13.6 kDa protein, protein 13.6K
+10310	11413	CDS
+			codon_start	1
+			protein_id	57.7
+			locus_tag	vigor_L1
+			gene	L1
+			product	L1 52 kDa protein
+			note	synonyms: packaging protein 3, late L1 52 kDa protein, encapsidation protein 52K
+11435	13171	CDS
+			codon_start	1
+			protein_id	57.8
+			locus_tag	vigor_L1
+			gene	L1
+			product	IIIa capsid protein
+			note	synonyms: capsid vertex protein, capsid protein pIIIa, Protein IIIa
+13201	4866	gene
+			locus_tag	vigor_E2B
+			gene	E2B
+13201	13193	CDS
+8411	4866
+			codon_start	1
+			protein_id	57.9
+			locus_tag	vigor_E2B
+			gene	E2B
+			product	DNA polymerase
+13201	8222	gene
+			locus_tag	vigor_pTP
+			gene	pTP
+13201	13193	CDS
+10117	8222
+			codon_start	1
+			protein_id	57.10
+			locus_tag	vigor_pTP
+			gene	pTP
+			product	DNA terminal protein
+			note	synonyms: terminal protein, DNA terminal protein precursor, Bellett protein, pTP protein
+13246	16658	gene
+			locus_tag	vigor_L2
+			gene	L2
+13246	14763	CDS
+			codon_start	1
+			protein_id	57.11
+			locus_tag	vigor_L2
+			gene	L2
+			product	penton base
+			note	synonym: Virion component III
+14777	15340	CDS
+			codon_start	1
+			protein_id	57.12
+			locus_tag	vigor_L2
+			gene	L2
+			product	VII core protein
+			note	synonyms: histone-like nucleoprotein, major core protein precursor pVII, core protein precursor pVII
+15382	16416	CDS
+			codon_start	1
+			protein_id	57.13
+			locus_tag	vigor_L2
+			gene	L2
+			product	V core protein
+			note	synonyms: core-capsid bridging protein, minor core protein V, Protein V, core protein V
+16440	16658	CDS
+			codon_start	1
+			protein_id	57.14
+			locus_tag	vigor_L2
+			gene	L2
+			product	X core protein
+			note	synonyms: core protein 10, core protein precursor pX, 11 kDa core protein, Protein X, pMu, Late L2 mu core protein
+16734	21022	gene
+			locus_tag	vigor_L3
+			gene	L3
+16734	17516	CDS
+			codon_start	1
+			protein_id	57.15
+			locus_tag	vigor_L3
+			gene	L3
+			product	VI capsid protein
+			note	synonyms: protease cofactor, capsid protein precursor pVI, Minor capsid protein 6, Minor capsid protein VI
+17616	20384	CDS
+			codon_start	1
+			protein_id	57.16
+			locus_tag	vigor_L3
+			gene	L3
+			product	hexon
+			note	synonyms: hexon protein, Late protein 2
+20411	21022	CDS
+			codon_start	1
+			protein_id	57.17
+			locus_tag	vigor_L3
+			gene	L3
+			product	protease
+			note	synonyms: adenain, Endoprotease, Late L3 23 kDa protein
+22563	21106	gene
+			locus_tag	vigor_E2A
+			gene	E2A
+22563	21106	CDS
+			codon_start	1
+			protein_id	57.18
+			locus_tag	vigor_E2A
+			gene	E2A
+			product	ssDNA-binding protein
+			note	synonyms: DNA binding protein, Early E2A DNA-binding protein
+22592	26194	gene
+			locus_tag	vigor_L4
+			gene	L4
+22592	24919	CDS
+			codon_start	1
+			protein_id	57.19
+			locus_tag	vigor_L4
+			gene	L4
+			product	hexon-assembly protein
+			note	synonyms: shutoff protein, 100 kDa hexon-assembly associated protein, Late 100 kDa protein
+24657	25187	CDS
+			codon_start	1
+			protein_id	57.20
+			locus_tag	vigor_L4
+			gene	L4
+			product	L4 encapsidation protein
+			note	synonyms: packaging protein 2, L4 22 kDa encapsidation protein, encapsidation protein 22K
+24657	24954	CDS
+25133	25434
+			codon_start	1
+			protein_id	57.21
+			locus_tag	vigor_L4
+			gene	L4
+			product	splicing factor
+			note	synonyms: L4 33 kDa protein, protein 33K
+25493	26194	CDS
+			codon_start	1
+			protein_id	57.22
+			locus_tag	vigor_L4
+			gene	L4
+			product	VIII capsid protein
+			note	synonyms: hexon linking protein, capsid protein precursor pVIII, Hexon-associated protein, Protein VIII
+26194	29021	gene
+			locus_tag	vigor_E3
+			gene	E3
+26194	26511	CDS
+			codon_start	1
+			protein_id	57.23
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 12.5 kDa immune modulating protein
+			note	synonyms: putative host modulation protein E3, Early E3 12.5 kDa glycoprotein, E3 12.1- kDa
+26465	27253	CDS
+			codon_start	1
+			protein_id	57.24
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 CR1-alpha
+			note	synonyms: CR1-alpha membrane glycoprotein, membrane glycoprotein E3 CR1-alpha
+27256	28008	CDS
+			codon_start	1
+			protein_id	57.25
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 CR1-beta
+			note	synonyms: adenovirus death protein, membrane glycoprotein E3 CR1-beta
+28041	28316	CDS
+			codon_start	1
+			protein_id	57.26
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 RID-alpha
+			note	synonyms: receptor internalization and degradation-alpha protein, membrane protein E3 RID-alpha, Early E3B 10.4 kDa protein
+28313	28642	CDS
+			codon_start	1
+			protein_id	57.27
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 RID-beta
+			note	synonyms: receptor internalization and degradation-beta protein, membrane protein E3 RID-beta, Early E3B 12.7 kDa protein
+28635	29021	CDS
+			codon_start	1
+			protein_id	57.28
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 control protein 14.7 kDa
+			note	synonyms: putative NFkappaB modulation protein, control protein E3 14.7K
+29189	>29034	gene
+			locus_tag	vigor_U
+			gene	U
+29189	>29034	CDS
+			codon_start	1
+			protein_id	57.29
+			locus_tag	vigor_U
+			gene	U
+			product	putative protein U, N-terminal
+			note	synonym: U exon protein
+29199	30866	gene
+			locus_tag	vigor_L5
+			gene	L5
+29199	30866	CDS
+			codon_start	1
+			protein_id	57.30
+			locus_tag	vigor_L5
+			gene	L5
+			product	fiber
+			note	synonym: pIV
+33469	30901	gene
+			locus_tag	vigor_E4
+			gene	E4
+32011	31874	CDS
+31122	30901
+			codon_start	1
+			protein_id	57.31
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf6/7
+			note	synonyms: transactivator of host E2F, control protein E4orf6/7
+32011	31142	CDS
+			codon_start	1
+			protein_id	57.32
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein 34 kDa
+			note	synonyms: inhibitor of nuclear immunity 2, control protein E4 34K, Early E4 34 kDa protein
+32306	31944	CDS
+			codon_start	1
+			protein_id	57.33
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf4
+			note	synonyms: putative alternative splicing protein, control protein E4orf4, Probable early E4 13 kDa protein
+32662	32312	CDS
+			codon_start	1
+			protein_id	57.34
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf3
+			note	synonyms: inhibitor of nuclear immunity 3, control protein E4orf3, Probable early E4 11 kDa protein
+33054	32659	CDS
+			codon_start	1
+			protein_id	57.35
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf2
+			note	synonyms: putative host modulation protein E4-ORF2, control protein E4orf2
+33469	33086	CDS
+			codon_start	1
+			protein_id	57.36
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf1
+			note	synonyms: putative tight junction modulation protein, control protein E4orf1
+>Features 47
+560	1545	gene
+			locus_tag	vigor_E1A
+			gene	E1A
+560	637	CDS
+1229	1318
+			codon_start	1
+			protein_id	47.1
+			locus_tag	vigor_E1A
+			gene	E1A
+			product	E1A 6 kDa protein
+560	974	CDS
+1229	1545
+			codon_start	1
+			protein_id	47.2
+			locus_tag	vigor_E1A
+			gene	E1A
+			product	E1A 26 kDa protein
+			note	synonym: control protein E1A 243R
+560	1112	CDS
+1229	1545
+			codon_start	1
+			protein_id	47.3
+			locus_tag	vigor_E1A
+			gene	E1A
+			product	E1A 32 kDa protein
+			note	synonym: control protein E1A
+1714	3506	gene
+			locus_tag	vigor_E1B
+			gene	E1B
+1714	2241	CDS
+			codon_start	1
+			protein_id	47.4
+			locus_tag	vigor_E1B
+			gene	E1B
+			product	E1B small T antigen
+			note	synonyms: inhibitor of apoptosis protein, control protein E1B 19K, E1B protein, small T-antigen, E1B-19K, E1B-175R
+2019	3506	CDS
+			codon_start	1
+			protein_id	47.5
+			locus_tag	vigor_E1B
+			gene	E1B
+			product	E1B large T antigen
+			note	synonyms: inhibitor of nuclear immunity 1, control protein E1B 55K, E1B protein, large T antigen, E1B-55K, E1B-495R
+3603	4025	gene
+			locus_tag	vigor_IX
+			gene	IX
+3603	4025	CDS
+			codon_start	1
+			protein_id	47.6
+			locus_tag	vigor_IX
+			gene	IX
+			product	hexon associated protein
+			note	synonyms: hexon-interlacing protein, capsid protein IX, protein IX, IX
+5677	5330	gene
+			locus_tag	vigor_HYPp1
+5677	5330	CDS
+			codon_start	1
+			protein_id	47.7
+			locus_tag	vigor_HYPp1
+			product	hypothetical protein
+5711	4084	gene
+			locus_tag	vigor_IVa2
+			gene	IVa2
+5711	5699	CDS
+5420	4084
+			codon_start	1
+			protein_id	47.8
+			locus_tag	vigor_IVa2
+			gene	IVa2
+			product	maturation protein
+			note	synonyms: packaging protein 1, maturation protein IVa2, encapsidation protein IVa2, protein IVa2
+6283	6603	gene
+			locus_tag	vigor_HYPp2
+6283	6603	CDS
+			codon_start	1
+			protein_id	47.9
+			locus_tag	vigor_HYPp2
+			product	hypothetical protein
+6783	6445	gene
+			locus_tag	vigor_HYPp3
+6783	6445	CDS
+			codon_start	1
+			protein_id	47.10
+			locus_tag	vigor_HYPp3
+			product	hypothetical protein
+7971	14067	gene
+			locus_tag	vigor_L1
+			gene	L1
+7971	8420	CDS
+			codon_start	1
+			protein_id	47.11
+			locus_tag	vigor_L1
+			gene	L1
+			product	L1 13.6 kDa protein
+			note	synonyms: i-leader protein, L1 13.6 kDa protein, protein 13.6K, probable DNA-binding protein DBP, agnoprotein
+11042	12289	CDS
+			codon_start	1
+			protein_id	47.14
+			locus_tag	vigor_L1
+			gene	L1
+			product	L1 52 kDa protein
+			note	synonyms: packaging protein 3, late L1 52 kDa protein, encapsidation protein 52K
+12310	14067	CDS
+			codon_start	1
+			protein_id	47.16
+			locus_tag	vigor_L1
+			gene	L1
+			product	IIIa capsid protein
+			note	synonyms: capsid vertex protein, capsid protein pIIIa, peripentonal hexon-associated protein, protein IIIa
+9297	9803	gene
+			locus_tag	vigor_HYPp4
+9297	9803	CDS
+			codon_start	1
+			protein_id	47.12
+			locus_tag	vigor_HYPp4
+			product	hypothetical protein
+14112	5190	gene
+			locus_tag	vigor_E2B
+			gene	E2B
+14112	14104	CDS
+8777	5190
+			codon_start	1
+			protein_id	47.17
+			locus_tag	vigor_E2B
+			gene	E2B
+			product	DNA polymerase
+14112	8576	gene
+			locus_tag	vigor_pTP
+			gene	pTP
+14112	14104	CDS
+10582	8576
+			codon_start	1
+			protein_id	47.18
+			locus_tag	vigor_pTP
+			gene	pTP
+			product	DNA terminal protein
+			note	synonyms: terminal protein, DNA terminal protein precursor, terminal protein precursor pTP, Bellett protein, pTP protein
+14149	17913	gene
+			locus_tag	vigor_L2
+			gene	L2
+14149	15864	CDS
+			codon_start	1
+			protein_id	47.19
+			locus_tag	vigor_L2
+			gene	L2
+			product	penton base
+			note	synonym: pIII
+15871	16467	CDS
+			codon_start	1
+			protein_id	47.20
+			locus_tag	vigor_L2
+			gene	L2
+			product	VII core protein
+			note	synonyms: histone-like nucleoprotein, major core protein precursor pVII, core protein precursor pVII, major core protein, protein VII, pVII
+16537	17643	CDS
+			codon_start	1
+			protein_id	47.21
+			locus_tag	vigor_L2
+			gene	L2
+			product	V core protein
+			note	synonyms: core-capsid bridging protein, minor core protein V, core protein V, minor core protein, protein V, pV
+17671	17913	CDS
+			codon_start	1
+			protein_id	47.22
+			locus_tag	vigor_L2
+			gene	L2
+			product	X core protein
+			note	synonyms: core protein 10, core protein precursor pX, mu pX, late L2 mu core protein, 11 kDa core protein, protein X, pX, pMu
+17996	22387	gene
+			locus_tag	vigor_L3
+			gene	L3
+17996	18748	CDS
+			codon_start	1
+			protein_id	47.23
+			locus_tag	vigor_L3
+			gene	L3
+			product	VI capsid protein
+			note	synonyms: protease cofactor, capsid protein precursor pVI, minor capsid protein 6
+18833	21739	CDS
+			codon_start	1
+			protein_id	47.24
+			locus_tag	vigor_L3
+			gene	L3
+			product	hexon
+			note	synonyms: hexon protein, late protein 2
+21773	22387	CDS
+			codon_start	1
+			protein_id	47.25
+			locus_tag	vigor_L3
+			gene	L3
+			product	protease
+			note	synonyms: adenain, endoprotease, late L3 23 kDa protein
+24074	22485	gene
+			locus_tag	vigor_E2A
+			gene	E2A
+24074	22485	CDS
+			codon_start	1
+			protein_id	47.26
+			locus_tag	vigor_E2A
+			gene	E2A
+			product	ssDNA-binding protein
+			note	synonyms: DNA binding protein, single-stranded DNA-binding protein, Early E2A DNA-binding protein
+24103	27893	gene
+			locus_tag	vigor_L4
+			gene	L4
+24103	26520	CDS
+			codon_start	1
+			protein_id	47.27
+			locus_tag	vigor_L4
+			gene	L4
+			product	hexon-assembly protein
+			note	synonyms: shutoff protein, 100 kDa hexon-assembly associated protein, late 100 kDa protein
+26234	26821	CDS
+			codon_start	1
+			protein_id	47.28
+			locus_tag	vigor_L4
+			gene	L4
+			product	L4 encapsidation protein
+			note	synonyms: packaging protein 2, L4 22 kDa encapsidation protein, 22 kDa protein, 22K
+26234	26546	CDS
+26749	27122
+			codon_start	1
+			protein_id	47.29
+			locus_tag	vigor_L4
+			gene	L4
+			product	splicing factor
+			note	synonyms: L4 33 kDa protein, protein 33K, phosphorprotein virion morphogen-associated 33 kDa protein
+27210	27893	CDS
+			codon_start	1
+			protein_id	47.30
+			locus_tag	vigor_L4
+			gene	L4
+			product	VIII capsid protein
+			note	synonyms: hexon linking protein, capsid protein precursor pVIII, protein 33K, phosphorprotein virion morphogen-associated 33 kDa protein
+27894	30825	gene
+			locus_tag	vigor_E3
+			gene	E3
+27894	28217	CDS
+			codon_start	1
+			protein_id	47.31
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 12.5 kDa immune modulating protein
+			note	synonyms: putative host modulation protein E3, Early E3 12.5 kDa glycoprotein
+28625	28810	CDS
+			codon_start	1
+			protein_id	47.32
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 CR1-alpha
+			note	synonyms: CR1-alpha membrane glycoprotein, membrane glycoprotein E3 CR1-alpha, membrane glyco E3 CR1alpha0
+28807	29286	CDS
+			codon_start	1
+			protein_id	47.33
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 immune modulating protein
+			note	synonyms: inhibitor of MHC protein, membrane glycoprotein E3 gp19K, early E3 18.5 kDa glycoprotein
+29463	29768	CDS
+			codon_start	1
+			protein_id	47.34
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 CR1-beta
+			note	synonyms: adenovirus death protein, membrane glycoprotein E3 CR1-beta, early E3A 11.6 kDa glycoprotein
+29776	30051	CDS
+			codon_start	1
+			protein_id	47.35
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 RID-alpha
+			note	synonyms: receptor internalization and degradation-alpha protein, membrane protein E3 RID-alpha, early E3B 10.4 kDa protein
+30054	30446	CDS
+			codon_start	1
+			protein_id	47.36
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 RID-beta
+			note	synonyms: receptor internalization and degradation-beta protein, membrane protein E3 RID-beta
+30439	30825	CDS
+			codon_start	1
+			protein_id	47.37
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 control protein 14.7 kDa
+			note	synonyms: putative NFkappaB modulation protein, control protein E3 14.7K, early E3B 14 kDa protein
+31014	>30850	gene
+			locus_tag	vigor_U
+			gene	U
+31014	>30850	CDS
+			codon_start	1
+			protein_id	47.38
+			locus_tag	vigor_U
+			gene	U
+			product	putative protein U, N-terminal
+			note	synonym: U exon protein
+31025	32773	gene
+			locus_tag	vigor_L5
+			gene	L5
+31025	32773	CDS
+			codon_start	1
+			protein_id	47.39
+			locus_tag	vigor_L5
+			gene	L5
+			product	fiber
+			note	synonym: pIV
+35525	32909	gene
+			locus_tag	vigor_E4
+			gene	E4
+34072	33899	CDS
+33187	32909
+			codon_start	1
+			protein_id	47.40
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf6/7
+			note	synonyms: transactivator of host E2F, control protein E4orf6/7, E4ORF6/7-like protein
+34072	33188	CDS
+			codon_start	1
+			protein_id	47.41
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein 34 kDa
+			note	synonyms: inhibitor of nuclear immunity 2, control protein E4 34K, early E4 34 kDa protein
+34337	33993	CDS
+			codon_start	1
+			protein_id	47.42
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf4
+			note	synonyms: putative alternative splicing protein, control protein E4orf4, probable early E4 13 kDa protein
+34699	34599	CDS
+34077	33993
+			codon_start	1
+			protein_id	47.43
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf3/4
+			note	synonyms: 7.2 kDa protein, E4 orf 3/4
+34699	34349	CDS
+			codon_start	1
+			protein_id	47.44
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf3
+			note	synonyms: inhibitor of nuclear immunity 3, control protein E4orf3, E4 ORF3
+35088	34696	CDS
+			codon_start	1
+			protein_id	47.45
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf2
+			note	gene=
+35525	35139	CDS
+			codon_start	1
+			protein_id	47.46
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf1
+			note	synonyms: putative tight junction modulation protein, control protein E4orf1, isoform early 14 kDa protein-3/early 31 kDa protein
+>Features 64
+538	1394	gene
+			locus_tag	vigor_E1A
+			gene	E1A
+538	901	CDS
+1183	1394
+			codon_start	1
+			protein_id	64.1
+			locus_tag	vigor_E1A
+			gene	E1A
+			product	E1A 21 kDa protein
+			note	synonym: control protein E1A
+538	1087	CDS
+1183	1394
+			codon_start	1
+			protein_id	64.2
+			locus_tag	vigor_E1A
+			gene	E1A
+			product	E1A 28 kDa protein
+			note	synonym: control protein E1A
+1546	3338	gene
+			locus_tag	vigor_E1B
+			gene	E1B
+1546	2094	CDS
+			codon_start	1
+			protein_id	64.3
+			locus_tag	vigor_E1B
+			gene	E1B
+			product	E1B small T antigen
+			note	synonyms: inhibitor of apoptosis protein, control protein E1B 19K, E1B 19k protein
+1851	3338	CDS
+			codon_start	1
+			protein_id	64.4
+			locus_tag	vigor_E1B
+			gene	E1B
+			product	E1B large T antigen
+			note	synonyms: inhibitor of nuclear immunity 1, control protein E1B 55K, E1B 55K protein
+3423	3827	gene
+			locus_tag	vigor_IX
+			gene	IX
+3423	3827	CDS
+			codon_start	1
+			protein_id	64.5
+			locus_tag	vigor_IX
+			gene	IX
+			product	hexon associated protein
+			note	synonyms: hexon-interlacing protein, capsid protein IX, pIX protein
+5495	3871	gene
+			locus_tag	vigor_IVa2
+			gene	IVa2
+5495	5483	CDS
+5204	3871
+			codon_start	1
+			protein_id	64.6
+			locus_tag	vigor_IVa2
+			gene	IVa2
+			product	maturation protein
+			note	synonyms: packaging protein 1, maturation protein IVa2, encapsidation protein IVa2, PIVa2 protein
+5734	5168	gene
+			locus_tag	vigor_HYPp1
+5734	5168	CDS
+			codon_start	1
+			protein_id	64.7
+			locus_tag	vigor_HYPp1
+			product	hypothetical protein
+6118	6387	gene
+			locus_tag	vigor_HYPp2
+6118	6387	CDS
+			codon_start	1
+			protein_id	64.8
+			locus_tag	vigor_HYPp2
+			product	hypothetical protein
+6483	7472	gene
+			locus_tag	vigor_HYPp3
+6483	7472	CDS
+			codon_start	1
+			protein_id	64.9
+			locus_tag	vigor_HYPp3
+			product	hypothetical protein
+7755	8222	gene
+			locus_tag	vigor_HYPp4
+7755	8222	CDS
+			codon_start	1
+			protein_id	64.10
+			locus_tag	vigor_HYPp4
+			product	hypothetical protein
+7755	13445	gene
+			locus_tag	vigor_L1
+			gene	L1
+7755	8135	CDS
+9346	9354
+			codon_start	1
+			protein_id	64.11
+			locus_tag	vigor_L1
+			gene	L1
+			product	L1 13.6 kDa protein
+			note	synonyms: i-leader protein, L1 13.6 kDa protein, protein 13.6K
+10607	11731	CDS
+			codon_start	1
+			protein_id	64.14
+			locus_tag	vigor_L1
+			gene	L1
+			product	L1 52 kDa protein
+			note	synonyms: packaging protein 3, late L1 52 kDa protein, encapsidation protein 52K, L1 52/55k 42.2 kDa protein
+11754	13445	CDS
+			codon_start	1
+			protein_id	64.15
+			locus_tag	vigor_L1
+			gene	L1
+			product	IIIa capsid protein
+			note	synonyms: capsid vertex protein, capsid protein pIIIa, capsid protein precursor pIIIa, L1 pIIIa 62.1 kDa protein
+8532	7999	gene
+			locus_tag	vigor_HYPp5
+8532	7999	CDS
+			codon_start	1
+			protein_id	64.12
+			locus_tag	vigor_HYPp5
+			product	hypothetical protein
+9617	9952	gene
+			locus_tag	vigor_HYPp6
+9617	9952	CDS
+			codon_start	1
+			protein_id	64.13
+			locus_tag	vigor_HYPp6
+			product	hypothetical protein
+13472	4974	gene
+			locus_tag	vigor_E2B
+			gene	E2B
+13472	13464	CDS
+8495	4974
+			codon_start	1
+			protein_id	64.16
+			locus_tag	vigor_E2B
+			gene	E2B
+			product	DNA polymerase
+13472	8294	gene
+			locus_tag	vigor_pTP
+			gene	pTP
+13472	13464	CDS
+10192	8294
+			codon_start	1
+			protein_id	64.17
+			locus_tag	vigor_pTP
+			gene	pTP
+			product	DNA terminal protein
+			note	synonyms: terminal protein, DNA terminal protein precursor, terminal protein precursor pTP, pTP, 71.1 kDa preterminal protein
+13499	16943	gene
+			locus_tag	vigor_L2
+			gene	L2
+13499	15058	CDS
+			codon_start	1
+			protein_id	64.18
+			locus_tag	vigor_L2
+			gene	L2
+			product	penton base
+			note	synonym: pIII
+15062	15652	CDS
+			codon_start	1
+			protein_id	64.19
+			locus_tag	vigor_L2
+			gene	L2
+			product	VII core protein
+			note	synonyms: histone-like nucleoprotein, major core protein precursor pVII, core protein precursor pVII
+15685	16689	CDS
+			codon_start	1
+			protein_id	64.20
+			locus_tag	vigor_L2
+			gene	L2
+			product	V core protein
+			note	synonyms: core-capsid bridging protein, minor core protein V, core protein V
+16719	16943	CDS
+			codon_start	1
+			protein_id	64.21
+			locus_tag	vigor_L2
+			gene	L2
+			product	X core protein
+			note	synonyms: core protein 10, core protein precursor pX, Core protein L2 pX
+16999	21219	gene
+			locus_tag	vigor_L3
+			gene	L3
+16999	17703	CDS
+			codon_start	1
+			protein_id	64.22
+			locus_tag	vigor_L3
+			gene	L3
+			product	VI capsid protein
+			note	synonyms: protease cofactor, capsid protein precursor pVI, L3 pVI protein
+17744	20593	CDS
+			codon_start	1
+			protein_id	64.23
+			locus_tag	vigor_L3
+			gene	L3
+			product	hexon
+			note	synonyms: hexon protein, Late protein 2
+20596	21219	CDS
+			codon_start	1
+			protein_id	64.24
+			locus_tag	vigor_L3
+			gene	L3
+			product	protease
+			note	synonyms: adenain, Endoprotease, Late L3 23 kDa protein
+22746	21274	gene
+			locus_tag	vigor_E2A
+			gene	E2A
+22746	21274	CDS
+			codon_start	1
+			protein_id	64.25
+			locus_tag	vigor_E2A
+			gene	E2A
+			product	ssDNA-binding protein
+			note	synonyms: DNA binding protein, single-stranded DNA-binding protein
+22763	26166	gene
+			locus_tag	vigor_L4
+			gene	L4
+22763	24961	CDS
+			codon_start	1
+			protein_id	64.26
+			locus_tag	vigor_L4
+			gene	L4
+			product	hexon-assembly protein
+			note	synonyms: shutoff protein, 100 kDa hexon-assembly associated protein, L4 100 kDa protein
+24744	25157	CDS
+			codon_start	1
+			protein_id	64.28
+			locus_tag	vigor_L4
+			gene	L4
+			product	L4 encapsidation protein
+			note	synonyms: packaging protein 2, L4 22 kDa encapsidation protein, encapsidation protein 22K
+24744	24984	CDS
+25154	25437
+			codon_start	1
+			protein_id	64.29
+			locus_tag	vigor_L4
+			gene	L4
+			product	splicing factor
+			note	synonym: L4 33 kDa protein
+25483	26166	CDS
+			codon_start	1
+			protein_id	64.30
+			locus_tag	vigor_L4
+			gene	L4
+			product	VIII capsid protein
+			note	synonyms: hexon linking protein, capsid protein precursor pVIII, L4 pVIII protein
+24150	23905	gene
+			locus_tag	vigor_HYPp7
+24150	23905	CDS
+			codon_start	1
+			protein_id	64.27
+			locus_tag	vigor_HYPp7
+			product	hypothetical protein
+26167	30740	gene
+			locus_tag	vigor_E3
+			gene	E3
+26167	26487	CDS
+			codon_start	1
+			protein_id	64.31
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 12.5 kDa immune modulating protein
+			note	synonyms: putative host modulation protein E3, Early E3 12.5 kDa glycoprotein, E3 12.2 kDa protein
+26441	27031	CDS
+			codon_start	1
+			protein_id	64.32
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 CR1-alpha
+			note	synonyms: CR1-alpha membrane glycoprotein, membrane glycoprotein E3 CR1-alpha, E3 12.2 kDa protein
+27028	27498	CDS
+			codon_start	1
+			protein_id	64.33
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 immune modulating protein
+			note	synonyms: inhibitor of MHC protein, membrane glycoprotein E3 gp19K, Early E3 18.5 kDa glycoprotein, E3-19K, E3gp 19 kDa, Early E3 19.2 kDa glycoprotein, GP19K, E19
+27523	28809	CDS
+			codon_start	1
+			protein_id	64.34
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 CR1-beta
+			note	synonyms: adenovirus death protein, membrane glycoprotein E3 CR1-beta, E3 45.8 kDa protein
+28836	29678	CDS
+			codon_start	1
+			protein_id	64.35
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 CR1-gamma
+			note	synonyms: CR1-gamma, E3 orf3 33.1 kDa protein
+29685	29960	CDS
+			codon_start	1
+			protein_id	64.36
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 RID-alpha
+			note	synonyms: receptor internalization and degradation-alpha protein, membrane protein E3 RID-alpha
+29963	30355	CDS
+			codon_start	1
+			protein_id	64.37
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 RID-beta
+			note	synonyms: receptor internalization and degradation-beta protein, membrane protein E3 RID-beta
+30348	30740	CDS
+			codon_start	1
+			protein_id	64.38
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 control protein 14.7 kDa
+			note	synonyms: putative NFkappaB modulation protein, control protein E3 14.7K
+30991	>30845	gene
+			locus_tag	vigor_U
+			gene	U
+30991	>30845	CDS
+			codon_start	1
+			protein_id	64.39
+			locus_tag	vigor_U
+			gene	U
+			product	putative protein U, N-terminal
+			note	exon encoding C terminus unidentified
+31007	32104	gene
+			locus_tag	vigor_L5
+			gene	L5
+31007	32104	CDS
+			codon_start	1
+			protein_id	64.40
+			locus_tag	vigor_L5
+			gene	L5
+			product	fiber
+			note	synonym: pIV
+34712	32138	gene
+			locus_tag	vigor_E4
+			gene	E4
+33091	32636	CDS
+			codon_start	1
+			protein_id	64.41
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 17 kDa protein
+33258	33115	CDS
+32386	32138
+			codon_start	1
+			protein_id	64.42
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf6/7
+			note	synonyms: transactivator of host E2F, control protein E4orf6/7
+33258	32380	CDS
+			codon_start	1
+			protein_id	64.43
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein 34 kDa
+			note	synonyms: inhibitor of nuclear immunity 2, control protein E4 34K, Early E4 34 kDa protein
+33550	33188	CDS
+			codon_start	1
+			protein_id	64.44
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf4
+			note	synonyms: putative alternative splicing protein, control protein E4orf4, E4 orf4 14.2 kDa protein
+33906	33553	CDS
+			codon_start	1
+			protein_id	64.45
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf3
+			note	synonyms: inhibitor of nuclear immunity 3, control protein E4orf3, E4 orf 3 13.6 kDa protein
+34295	33903	CDS
+			codon_start	1
+			protein_id	64.46
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf2
+			note	synonyms: putative host modulation protein E4-ORF2, control protein E4orf2, E4 orf2 14.5 kDa protein
+34712	34336	misc_feature
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf1
+			note	frameshift in genome; synonyms: putative tight junction modulation protein, control protein E4orf1, Early E4 14.0 kDa protein, Probable dUTPase E4 ORF1, ORF1
+34632	34632	misc_feature
+			locus_tag	vigor_E4
+			note	approximate location of -2 => -1 frameshift in E4 control protein orf1
+>Features gi|51527264|ref|NC_003266.2|
+576	1154	gene
+			locus_tag	vigor_HYPp1
+576	1154	CDS
+			codon_start	1
+			protein_id	gi_51527264.1
+			locus_tag	vigor_HYPp1
+			product	hypothetical protein
+576	1441	gene
+			locus_tag	vigor_E1A
+			gene	E1A
+576	647	CDS
+1233	1340
+			codon_start	1
+			protein_id	gi_51527264.2
+			locus_tag	vigor_E1A
+			gene	E1A
+			product	E1A 6.8 kDa protein
+			note	synonym: control protein E1A
+576	1047	CDS
+1233	1441
+			codon_start	1
+			protein_id	gi_51527264.3
+			locus_tag	vigor_E1A
+			gene	E1A
+			product	E1A 24.6 kDa protein
+			note	synonym: control protein E1A
+576	1140	CDS
+1233	1441
+			codon_start	1
+			protein_id	gi_51527264.4
+			locus_tag	vigor_E1A
+			gene	E1A
+			product	E1A 28 kDa protein
+			note	synonym: control protein E1A
+1600	3356	gene
+			locus_tag	vigor_E1B
+			gene	E1B
+1600	2115	CDS
+			codon_start	1
+			protein_id	gi_51527264.5
+			locus_tag	vigor_E1B
+			gene	E1B
+			product	E1B small T antigen
+			note	synonyms: inhibitor of apoptosis protein, control protein E1B 19K, E1B 19 kDa protein, E1B-19K
+1905	3356	CDS
+			codon_start	1
+			protein_id	gi_51527264.8
+			locus_tag	vigor_E1B
+			gene	E1B
+			product	E1B large T antigen
+			note	synonyms: inhibitor of nuclear immunity 1, control protein E1B 55K
+1905	3276	gene
+			locus_tag	vigor_HYPp3
+1905	2122	CDS
+3258	3276
+			codon_start	1
+			protein_id	gi_51527264.6
+			locus_tag	vigor_HYPp3
+			product	hypothetical protein
+1905	3356	gene
+			locus_tag	vigor_HYPp2
+1905	2152	CDS
+3140	3356
+			codon_start	1
+			protein_id	gi_51527264.7
+			locus_tag	vigor_HYPp2
+			product	hypothetical protein
+3441	3869	gene
+			locus_tag	vigor_IX
+			gene	IX
+3441	3869	CDS
+			codon_start	1
+			protein_id	gi_51527264.9
+			locus_tag	vigor_IX
+			gene	IX
+			product	hexon associated protein
+			note	synonyms: hexon-interlacing protein, capsid protein IX, Polypeptide IX , Protein IX
+5105	5674	gene
+			locus_tag	vigor_HYPp4
+5105	5674	CDS
+			codon_start	1
+			protein_id	gi_51527264.10
+			locus_tag	vigor_HYPp4
+			product	hypothetical protein
+5554	3930	gene
+			locus_tag	vigor_IVa2
+			gene	IVa2
+5554	5542	CDS
+5263	3930
+			codon_start	1
+			protein_id	gi_51527264.11
+			locus_tag	vigor_IVa2
+			gene	IVa2
+			product	maturation protein
+			note	synonyms: packaging protein 1, maturation protein IVa2, encapsidation protein Iva2
+6126	6446	gene
+			locus_tag	vigor_HYPp5
+6126	6446	CDS
+			codon_start	1
+			protein_id	gi_51527264.12
+			locus_tag	vigor_HYPp5
+			product	hypothetical protein
+7814	13736	gene
+			locus_tag	vigor_L1
+			gene	L1
+7814	8212	CDS
+9456	9476
+			codon_start	1
+			protein_id	gi_51527264.14
+			locus_tag	vigor_L1
+			gene	L1
+			product	L1 13.6 kDa protein
+			note	synonyms: i-leader protein, L1 13.6 kDa protein, protein 13.6K
+10765	11937	CDS
+			codon_start	1
+			protein_id	gi_51527264.15
+			locus_tag	vigor_L1
+			gene	L1
+			product	L1 52 kDa protein
+			note	synonyms: packaging protein 3, late L1 52 kDa protein, encapsidation protein 52K
+11961	13736	CDS
+			codon_start	1
+			protein_id	gi_51527264.16
+			locus_tag	vigor_L1
+			gene	L1
+			product	IIIa capsid protein
+			note	synonyms: capsid vertex protein, capsid protein pIIIa, Peripentonal hexon-associated protein, L1 protein IIIa
+13773	5033	gene
+			locus_tag	vigor_E2B
+			gene	E2B
+13773	13765	CDS
+8605	5033
+			codon_start	1
+			protein_id	gi_51527264.17
+			locus_tag	vigor_E2B
+			gene	E2B
+			product	DNA polymerase
+13773	8404	gene
+			locus_tag	vigor_pTP
+			gene	pTP
+13773	13765	CDS
+10323	8404
+			codon_start	1
+			protein_id	gi_51527264.18
+			locus_tag	vigor_pTP
+			gene	pTP
+			product	DNA terminal protein
+			note	synonyms: terminal protein, DNA terminal protein precursor, terminal protein precursor pTP
+13815	17336	gene
+			locus_tag	vigor_L2
+			gene	L2
+13815	15422	CDS
+			codon_start	1
+			protein_id	gi_51527264.19
+			locus_tag	vigor_L2
+			gene	L2
+			product	penton base
+			note	synonym: pIII
+15426	16007	CDS
+			codon_start	1
+			protein_id	gi_51527264.20
+			locus_tag	vigor_L2
+			gene	L2
+			product	VII core protein
+			note	synonyms: histone-like nucleoprotein, major core protein precursor pVII, Protein VII, Major core protein
+16055	17080	CDS
+			codon_start	1
+			protein_id	gi_51527264.21
+			locus_tag	vigor_L2
+			gene	L2
+			product	V core protein
+			note	synonyms: core-capsid bridging protein, minor core protein V, L2 minor core protein, Minor core protein
+17103	17336	CDS
+			codon_start	1
+			protein_id	gi_51527264.22
+			locus_tag	vigor_L2
+			gene	L2
+			product	X core protein
+			note	synonyms: core protein 10, core protein precursor pX, Protein X, L2 protein X
+17413	21702	gene
+			locus_tag	vigor_L3
+			gene	L3
+17413	18141	CDS
+			codon_start	1
+			protein_id	gi_51527264.23
+			locus_tag	vigor_L3
+			gene	L3
+			product	VI capsid protein
+			note	synonyms: protease cofactor, capsid protein precursor pVI, Protein VI
+18248	21058	CDS
+			codon_start	1
+			protein_id	gi_51527264.24
+			locus_tag	vigor_L3
+			gene	L3
+			product	hexon
+			note	synonyms: hexon protein, L3 hexon protein, Late protein 2
+21082	21702	CDS
+			codon_start	1
+			protein_id	gi_51527264.25
+			locus_tag	vigor_L3
+			gene	L3
+			product	protease
+			note	synonyms: adenain, Endoprotease, Late L3 23 kDa protein
+23312	21774	gene
+			locus_tag	vigor_E2A
+			gene	E2A
+23312	21774	CDS
+			codon_start	1
+			protein_id	gi_51527264.26
+			locus_tag	vigor_E2A
+			gene	E2A
+			product	ssDNA-binding protein
+			note	synonyms: DNA binding protein, single-stranded DNA-binding protein, Early E2A DNA-binding protein
+23341	27004	gene
+			locus_tag	vigor_L4
+			gene	L4
+23341	25716	CDS
+			codon_start	1
+			protein_id	gi_51527264.27
+			locus_tag	vigor_L4
+			gene	L4
+			product	hexon-assembly protein
+			note	synonyms: shutoff protein, 100 kDa hexon-assembly associated protein, L4 100 kDa protein
+25439	25978	CDS
+			codon_start	1
+			protein_id	gi_51527264.28
+			locus_tag	vigor_L4
+			gene	L4
+			product	L4 encapsidation protein
+			note	synonyms: packaging protein 2, L4 22 kDa encapsidation protein, encapsidation protein 22K
+25439	25760	CDS
+25930	26252
+			codon_start	1
+			protein_id	gi_51527264.29
+			locus_tag	vigor_L4
+			gene	L4
+			product	splicing factor
+			note	synonym: L4 33 kDa protein
+26321	27004	CDS
+			codon_start	1
+			protein_id	gi_51527264.30
+			locus_tag	vigor_L4
+			gene	L4
+			product	VIII capsid protein
+			note	synonyms: hexon linking protein, capsid protein precursor pVIII
+27005	34085	gene
+			locus_tag	vigor_E3
+			gene	E3
+27005	27325	CDS
+			codon_start	1
+			protein_id	gi_51527264.31
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 12.5 kDa immune modulating protein
+			note	synonyms: putative host modulation protein E3, Early E3 12.5 kDa glycoprotein, Early E3 12.1 kDa protein
+27279	27911	CDS
+			codon_start	1
+			protein_id	gi_51527264.32
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 CR1-alpha
+			note	synonyms: CR1-alpha membrane glycoprotein, membrane glycoprotein E3 CR1-alpha, E3 23.3 kDa protein
+27893	28417	CDS
+			codon_start	1
+			protein_id	gi_51527264.33
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 immune modulating protein
+			note	synonyms: inhibitor of MHC protein, membrane glycoprotein E3 gp19K, E3 19 kDa protein
+28449	29111	CDS
+			codon_start	1
+			protein_id	gi_51527264.34
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 CR1-beta
+			note	synonyms: adenovirus death protein, membrane glycoprotein E3 CR1-beta, E3 24.8 kDa protein
+29279	29443	CDS
+			codon_start	1
+			protein_id	gi_51527264.35
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 6.3 kDa protein
+29440	30264	CDS
+			codon_start	1
+			protein_id	gi_51527264.36
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 CR1-delta
+			note	synonyms: CR1-delta, E3 29.7 kDa protein
+30273	30548	CDS
+			codon_start	1
+			protein_id	gi_51527264.37
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 RID-alpha
+			note	synonyms: receptor internalization and degradation-alpha protein, membrane protein E3 RID-alpha, 10.4 kDa protein, E3 10.4 kDa protein
+30554	30994	CDS
+			codon_start	1
+			protein_id	gi_51527264.38
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 RID-beta
+			note	synonyms: receptor internalization and degradation-beta protein, membrane protein E3 RID-beta, E3 14.5 kDa protein
+30987	31388	CDS
+			codon_start	1
+			protein_id	gi_51527264.39
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 control protein 14.7 kDa
+			note	synonyms: putative NFkappaB modulation protein, control protein E3 14.7K, E3 14.7 kDa protein
+33288	34085	CDS
+			codon_start	1
+			protein_id	gi_51527264.43
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 27 kDa protein
+31632	>31483	gene
+			locus_tag	vigor_U
+			gene	U
+31632	>31483	CDS
+			codon_start	1
+			protein_id	gi_51527264.40
+			locus_tag	vigor_U
+			gene	U
+			product	putative protein U, N-terminal
+			note	exon encoding C terminus unidentified
+31649	32926	gene
+			locus_tag	vigor_L5
+			gene	L5
+31649	32926	CDS
+			codon_start	1
+			protein_id	gi_51527264.41
+			locus_tag	vigor_L5
+			gene	L5
+			product	fiber
+			note	synonyms: L5 fiber protein, pIV
+35610	33022	gene
+			locus_tag	vigor_E4
+			gene	E4
+33216	33022	CDS
+			codon_start	1
+			protein_id	gi_51527264.42
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 7.4 kDa protein
+34169	33996	CDS
+33273	33022
+			codon_start	1
+			protein_id	gi_51527264.44
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf6/7
+			note	synonyms: transactivator of host E2F, control protein E4orf6/7, E4 15.9 kDa protein
+34169	33270	CDS
+			codon_start	1
+			protein_id	gi_51527264.45
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein 34 kDa
+			note	synonyms: inhibitor of nuclear immunity 2, control protein E4 34K, 35 kDa E4 protein
+34440	34072	CDS
+			codon_start	1
+			protein_id	gi_51527264.46
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf4
+			note	synonyms: putative alternative splicing protein, control protein E4orf4, E4 14.1 kDa protein
+34802	34449	CDS
+			codon_start	1
+			protein_id	gi_51527264.47
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf3
+			note	synonyms: inhibitor of nuclear immunity 3, control protein E4orf3, E4 13.7 kDa protein
+35188	34799	CDS
+			codon_start	1
+			protein_id	gi_51527264.48
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf2
+			note	synonyms: putative host modulation protein E4-ORF2, control protein E4orf2, E4 14.6 kDa protein
+35610	35236	CDS
+			codon_start	1
+			protein_id	gi_51527264.49
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf1
+			note	synonyms: putative tight junction modulation protein, control protein E4orf1, E4 13.5 kDa protein
+>Features gi|9626553|ref|NC_001454.1|
+486	1311	gene
+			locus_tag	vigor_E1A
+			gene	E1A
+486	1011	CDS
+1088	1311
+			codon_start	1
+			protein_id	gi_9626553.1
+			locus_tag	vigor_E1A
+			gene	E1A
+			product	E1A 27 kDa protein
+			note	synonym: control protein E1A
+1414	3149	gene
+			locus_tag	vigor_E1B
+			gene	E1B
+1414	1917	CDS
+			codon_start	1
+			protein_id	gi_9626553.2
+			locus_tag	vigor_E1B
+			gene	E1B
+			product	E1B small T antigen
+			note	synonyms: inhibitor of apoptosis protein, E1B 19 kDa protein, E1B-19K
+1719	3149	CDS
+			codon_start	1
+			protein_id	gi_9626553.3
+			locus_tag	vigor_E1B
+			gene	E1B
+			product	E1B large T antigen
+			note	synonyms: inhibitor of nuclear immunity 1, E1B 55 kDa protein, E1B-55K
+3217	3615	gene
+			locus_tag	vigor_IX
+			gene	IX
+3217	3615	CDS
+			codon_start	1
+			protein_id	gi_9626553.4
+			locus_tag	vigor_IX
+			gene	IX
+			product	hexon associated protein
+			note	synonyms: hexon-interlacing protein, Protein IX, pIX, capsid protein IX
+5268	3650	gene
+			locus_tag	vigor_IVa2
+			gene	IVa2
+5268	5256	CDS
+4977	3650
+			codon_start	1
+			protein_id	gi_9626553.5
+			locus_tag	vigor_IVa2
+			gene	IVa2
+			product	maturation protein
+			note	synonyms: packaging protein 1, maturation protein IVa2, Protein IVa2, encapsidation protein IVa2
+10254	13150	gene
+			locus_tag	vigor_L1
+			gene	L1
+10254	11396	CDS
+			codon_start	1
+			protein_id	gi_9626553.6
+			locus_tag	vigor_L1
+			gene	L1
+			product	L1 52 kDa protein
+			note	synonyms: packaging protein 3, late L1 52 kDa protein, encapsidation protein 52K
+11420	13150	CDS
+			codon_start	1
+			protein_id	gi_9626553.7
+			locus_tag	vigor_L1
+			gene	L1
+			product	IIIa capsid protein
+			note	synonyms: capsid vertex protein, capsid protein pIIIa, Peripentonal hexon-associated protein, IIIa protein
+13188	4750	gene
+			locus_tag	vigor_E2B
+			gene	E2B
+13188	13180	CDS
+8307	4750
+			codon_start	1
+			protein_id	gi_9626553.8
+			locus_tag	vigor_E2B
+			gene	E2B
+			product	DNA polymerase
+13188	8106	gene
+			locus_tag	vigor_pTP
+			gene	pTP
+13188	13180	CDS
+10037	8106
+			codon_start	1
+			protein_id	gi_9626553.9
+			locus_tag	vigor_pTP
+			gene	pTP
+			product	DNA terminal protein
+			note	synonyms: terminal protein, DNA terminal protein precursor, Bellett protein, pTP protein, terminal protein precursor pTP
+13241	16692	gene
+			locus_tag	vigor_L2
+			gene	L2
+13241	14755	CDS
+			codon_start	1
+			protein_id	gi_9626553.10
+			locus_tag	vigor_L2
+			gene	L2
+			product	penton base
+			note	synonym: pIII
+14757	15314	CDS
+			codon_start	1
+			protein_id	gi_9626553.11
+			locus_tag	vigor_L2
+			gene	L2
+			product	VII core protein
+			note	synonyms: histone-like nucleoprotein, major core protein precursor pVII
+15380	16456	CDS
+			codon_start	1
+			protein_id	gi_9626553.12
+			locus_tag	vigor_L2
+			gene	L2
+			product	V core protein
+			note	synonyms: core-capsid bridging protein, minor core protein V, core protein V, Protein V, pV
+16480	16692	CDS
+			codon_start	1
+			protein_id	gi_9626553.13
+			locus_tag	vigor_L2
+			gene	L2
+			product	X core protein
+			note	synonyms: core protein 10, core protein precursor pX, Protein X, pX, pMu, Late L2 mu core protein
+16745	21043	gene
+			locus_tag	vigor_L3
+			gene	L3
+16745	17548	CDS
+			codon_start	1
+			protein_id	gi_9626553.14
+			locus_tag	vigor_L3
+			gene	L3
+			product	VI capsid protein
+			note	synonyms: protease cofactor, capsid protein precursor pVI, Minor capsid protein VI, Minor capsid protein 6
+17643	20414	CDS
+			codon_start	1
+			protein_id	gi_9626553.15
+			locus_tag	vigor_L3
+			gene	L3
+			product	hexon
+			note	synonyms: hexon protein, Late protein 2
+20426	21043	CDS
+			codon_start	1
+			protein_id	gi_9626553.16
+			locus_tag	vigor_L3
+			gene	L3
+			product	protease
+			note	synonyms: adenain, Endoprotease, Late L3 23 kDa protein
+22521	21100	gene
+			locus_tag	vigor_E2A
+			gene	E2A
+22521	21100	CDS
+			codon_start	1
+			protein_id	gi_9626553.17
+			locus_tag	vigor_E2A
+			gene	E2A
+			product	ssDNA-binding protein
+			note	synonyms: DNA binding protein, Early E2A DNA-binding protein, single-stranded DNA-binding protein
+22545	26117	gene
+			locus_tag	vigor_L4
+			gene	L4
+22545	24857	CDS
+			codon_start	1
+			protein_id	gi_9626553.18
+			locus_tag	vigor_L4
+			gene	L4
+			product	hexon-assembly protein
+			note	synonyms: shutoff protein, 100 kDa hexon-assembly associated protein, Late 100 kDa protein
+24559	25119	CDS
+			codon_start	1
+			protein_id	gi_9626553.19
+			locus_tag	vigor_L4
+			gene	L4
+			product	L4 encapsidation protein
+			note	synonyms: packaging protein 2, L4 22 kDa encapsidation protein, encapsidation protein 22K
+24559	24901	CDS
+25080	25372
+			codon_start	1
+			protein_id	gi_9626553.20
+			locus_tag	vigor_L4
+			gene	L4
+			product	splicing factor
+			note	synonyms: L4 33 kDa protein, protein 33K
+25416	26117	CDS
+			codon_start	1
+			protein_id	gi_9626553.21
+			locus_tag	vigor_L4
+			gene	L4
+			product	VIII capsid protein
+			note	synonyms: hexon linking protein, capsid protein precursor pVIII, Hexon-associated protein, Protein VIII, pVIII
+26233	28560	gene
+			locus_tag	vigor_E3
+			gene	E3
+26233	26754	CDS
+			codon_start	1
+			protein_id	gi_9626553.22
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 CR1-alpha
+			note	synonyms: CR1-alpha membrane glycoprotein, membrane glycoprotein E3 CR1-alpha, E3 19.4 kDa protein, E3 19.4K
+26757	27587	CDS
+			codon_start	1
+			protein_id	gi_9626553.23
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 CR1-beta
+			note	synonyms: adenovirus death protein, membrane glycoprotein E3 CR1-beta, E3 31.6K
+27607	27879	CDS
+			codon_start	1
+			protein_id	gi_9626553.24
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 RID-alpha
+			note	synonyms: receptor internalization and degradation-alpha protein, membrane protein E3 RID-alpha, E3 10.1 kd protein, E3 10.1K
+27876	28199	CDS
+			codon_start	1
+			protein_id	gi_9626553.25
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 RID-beta
+			note	synonyms: receptor internalization and degradation-beta protein, membrane protein E3 RID-beta, E3 12.3 kd protein, E3 14.5K
+28192	28560	CDS
+			codon_start	1
+			protein_id	gi_9626553.26
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 control protein 14.7 kDa
+			note	synonyms: putative NFkappaB modulation protein, control protein E3 14.7K, E3 14.0 kd protein, E3 14.7K
+28743	>28588	gene
+			locus_tag	vigor_U
+			gene	U
+28743	>28588	CDS
+			codon_start	1
+			protein_id	gi_9626553.27
+			locus_tag	vigor_U
+			gene	U
+			product	putative protein U, N-terminal
+			note	exon encoding C terminus unidentified
+28751	29914	gene
+			locus_tag	vigor_L5
+			gene	L5
+28751	29914	CDS
+			codon_start	1
+			protein_id	gi_9626553.28
+			locus_tag	vigor_L5
+			gene	L5
+			product	fiber
+29954	31597	gene
+			locus_tag	vigor_L5A
+			gene	L5A
+29954	31597	CDS
+			codon_start	1
+			protein_id	gi_9626553.29
+			locus_tag	vigor_L5A
+			gene	L5A
+			product	fiber 2
+33779	31636	gene
+			locus_tag	vigor_E4
+			gene	E4
+32745	32599	CDS
+31857	31636
+			codon_start	1
+			protein_id	gi_9626553.30
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf6/7
+			note	synonyms: transactivator of host E2F, control protein E4orf6/7
+32745	31876	CDS
+			codon_start	1
+			protein_id	gi_9626553.31
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein 34 kDa
+			note	synonyms: inhibitor of nuclear immunity 2, control protein E4 34K, Early E4 34 kDa protein
+33037	32672	CDS
+			codon_start	1
+			protein_id	gi_9626553.32
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf4
+			note	synonyms: putative alternative splicing protein, control protein E4orf4
+33390	33040	CDS
+			codon_start	1
+			protein_id	gi_9626553.33
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf3
+			note	synonyms: inhibitor of nuclear immunity 3, control protein E4orf3
+33779	33387	CDS
+			codon_start	1
+			protein_id	gi_9626553.34
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf2
+			note	synonyms: putative host modulation protein E4-ORF2, control protein E4orf2
+>Features gi|61602086|ref|NC_006879.1|
+474	1252	gene
+			locus_tag	vigor_E1A
+			gene	E1A
+474	960	CDS
+1041	1252
+			codon_start	1
+			protein_id	gi_61602086.1
+			locus_tag	vigor_E1A
+			gene	E1A
+			product	E1A
+1365	3088	gene
+			locus_tag	vigor_E1B
+			gene	E1B
+1365	1871	CDS
+			codon_start	1
+			protein_id	gi_61602086.2
+			locus_tag	vigor_E1B
+			gene	E1B
+			product	E1B small T antigen
+			note	synonym: inhibitor of apoptosis protein
+1670	3088	CDS
+			codon_start	1
+			protein_id	gi_61602086.3
+			locus_tag	vigor_E1B
+			gene	E1B
+			product	E1B large T antigen
+			note	synonym: inhibitor of nuclear immunity 1
+3150	3560	gene
+			locus_tag	vigor_IX
+			gene	IX
+3150	3560	CDS
+			codon_start	1
+			protein_id	gi_61602086.4
+			locus_tag	vigor_IX
+			gene	IX
+			product	hexon associated protein
+			note	synonym: hexon-interlacing protein
+5220	3599	gene
+			locus_tag	vigor_IVa2
+			gene	IVa2
+5220	5208	CDS
+4929	3599
+			codon_start	1
+			protein_id	gi_61602086.5
+			locus_tag	vigor_IVa2
+			gene	IVa2
+			product	maturation protein
+			note	synonyms: packaging protein 1, maturation protein IVa2
+10190	13047	gene
+			locus_tag	vigor_L1
+			gene	L1
+10190	11317	CDS
+			codon_start	1
+			protein_id	gi_61602086.6
+			locus_tag	vigor_L1
+			gene	L1
+			product	L1 52 kDa protein
+			note	synonyms: packaging protein 3, late L1 52 kDa protein
+11338	13047	CDS
+			codon_start	1
+			protein_id	gi_61602086.7
+			locus_tag	vigor_L1
+			gene	L1
+			product	IIIa capsid protein
+			note	synonyms: capsid vertex protein, capsid protein pIIIa
+13078	4702	gene
+			locus_tag	vigor_E2B
+			gene	E2B
+13078	13070	CDS
+8247	4702
+			codon_start	1
+			protein_id	gi_61602086.8
+			locus_tag	vigor_E2B
+			gene	E2B
+			product	DNA polymerase
+13078	8046	gene
+			locus_tag	vigor_pTP
+			gene	pTP
+13078	13070	CDS
+9977	8046
+			codon_start	1
+			protein_id	gi_61602086.9
+			locus_tag	vigor_pTP
+			gene	pTP
+			product	DNA terminal protein
+			note	synonyms: terminal protein, DNA terminal protein precursor
+13129	16532	gene
+			locus_tag	vigor_L2
+			gene	L2
+13129	14640	CDS
+			codon_start	1
+			protein_id	gi_61602086.10
+			locus_tag	vigor_L2
+			gene	L2
+			product	penton base
+			note	synonym: pIII protein
+14643	15206	CDS
+			codon_start	1
+			protein_id	gi_61602086.11
+			locus_tag	vigor_L2
+			gene	L2
+			product	VII core protein
+			note	synonyms: histone-like nucleoprotein, major core protein precursor pVII
+15263	16300	CDS
+			codon_start	1
+			protein_id	gi_61602086.12
+			locus_tag	vigor_L2
+			gene	L2
+			product	V core protein
+			note	synonyms: core-capsid bridging protein, minor core protein V
+16320	16532	CDS
+			codon_start	1
+			protein_id	gi_61602086.13
+			locus_tag	vigor_L2
+			gene	L2
+			product	X core protein
+			note	synonyms: core protein 10, core protein precursor pX
+16586	20934	gene
+			locus_tag	vigor_L3
+			gene	L3
+16586	17425	CDS
+			codon_start	1
+			protein_id	gi_61602086.14
+			locus_tag	vigor_L3
+			gene	L3
+			product	VI capsid protein
+			note	synonyms: protease cofactor, capsid protein precursor pVI
+17513	20308	CDS
+			codon_start	1
+			protein_id	gi_61602086.15
+			locus_tag	vigor_L3
+			gene	L3
+			product	hexon
+			note	synonym: hexon protein
+20317	20934	CDS
+			codon_start	1
+			protein_id	gi_61602086.16
+			locus_tag	vigor_L3
+			gene	L3
+			product	protease
+			note	synonym: adenain
+22372	20984	gene
+			locus_tag	vigor_E2A
+			gene	E2A
+22372	20984	CDS
+			codon_start	1
+			protein_id	gi_61602086.17
+			locus_tag	vigor_E2A
+			gene	E2A
+			product	ssDNA-binding protein
+			note	synonyms: DNA binding protein, single-stranded DNA-binding protein, Early E2A DNA-binding protein
+22393	25964	gene
+			locus_tag	vigor_L4
+			gene	L4
+22393	24681	CDS
+			codon_start	1
+			protein_id	gi_61602086.18
+			locus_tag	vigor_L4
+			gene	L4
+			product	hexon-assembly protein
+			note	synonyms: shutoff protein, 100 kDa hexon-assembly associated protein
+24386	24931	CDS
+			codon_start	1
+			protein_id	gi_61602086.19
+			locus_tag	vigor_L4
+			gene	L4
+			product	L4 encapsidation protein
+			note	synonyms: packaging protein 2, L4 22 kDa encapsidation protein
+24386	24725	CDS
+24901	25211
+			codon_start	1
+			protein_id	gi_61602086.20
+			locus_tag	vigor_L4
+			gene	L4
+			product	splicing factor
+			note	synonym: L4 33 kDa protein
+25263	25964	CDS
+			codon_start	1
+			protein_id	gi_61602086.21
+			locus_tag	vigor_L4
+			gene	L4
+			product	VIII capsid protein
+			note	synonyms: hexon linking protein, capsid protein precursor pVIII
+25964	28545	gene
+			locus_tag	vigor_E3
+			gene	E3
+25964	26281	CDS
+			codon_start	1
+			protein_id	gi_61602086.22
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 12.5 kDa immune modulating protein
+			note	synonyms: putative host modulation protein E3, Early E3 12.5 kDa glycoprotein
+26235	26753	CDS
+			codon_start	1
+			protein_id	gi_61602086.23
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 CR1-alpha
+			note	synonyms: CR1-alpha membrane glycoprotein, membrane glycoprotein E3 CR1-alpha
+26756	27565	CDS
+			codon_start	1
+			protein_id	gi_61602086.24
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 CR1-beta
+			note	synonyms: adenovirus death protein, membrane glycoprotein E3 CR1-beta
+27580	27852	CDS
+			codon_start	1
+			protein_id	gi_61602086.25
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 RID-alpha
+			note	synonyms: receptor internalization and degradation-alpha protein, membrane protein E3 RID-alpha
+27849	28184	CDS
+			codon_start	1
+			protein_id	gi_61602086.26
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 RID-beta
+			note	synonyms: receptor internalization and degradation-beta protein, membrane protein E3 RID-beta
+28177	28545	CDS
+			codon_start	1
+			protein_id	gi_61602086.27
+			locus_tag	vigor_E3
+			gene	E3
+			product	E3 control protein 14.7 kDa
+			note	synonyms: putative NFkappaB modulation protein, control protein E3 14.7K
+28720	>28562	gene
+			locus_tag	vigor_U
+			gene	U
+28720	>28562	CDS
+			codon_start	1
+			protein_id	gi_61602086.28
+			locus_tag	vigor_U
+			gene	U
+			product	putative protein U, N-terminal
+			note	exon encoding C terminus unidentified
+28731	29822	gene
+			locus_tag	vigor_L5A
+			gene	L5A
+28731	29822	CDS
+			codon_start	1
+			protein_id	gi_61602086.29
+			locus_tag	vigor_L5A
+			gene	L5A
+			product	fiber 2
+29855	31537	gene
+			locus_tag	vigor_L5
+			gene	L5
+29855	31537	CDS
+			codon_start	1
+			protein_id	gi_61602086.30
+			locus_tag	vigor_L5
+			gene	L5
+			product	fiber
+34095	31564	gene
+			locus_tag	vigor_E4
+			gene	E4
+32654	32517	CDS
+31776	31564
+			codon_start	1
+			protein_id	gi_61602086.31
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf6/7
+			note	synonyms: transactivator of host E2F, control protein E4orf6/7
+32654	31794	CDS
+			codon_start	1
+			protein_id	gi_61602086.32
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein 34 kDa
+			note	synonyms: inhibitor of nuclear immunity 2, control protein E4 34K
+32949	32587	CDS
+			codon_start	1
+			protein_id	gi_61602086.33
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf4
+			note	synonyms: putative alternative splicing protein, control protein E4orf4
+33301	32951	CDS
+			codon_start	1
+			protein_id	gi_61602086.34
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf3
+			note	synonyms: inhibitor of nuclear immunity 3, control protein E4orf3
+33690	33298	CDS
+			codon_start	1
+			protein_id	gi_61602086.35
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf2
+			note	synonyms: putative host modulation protein E4-ORF2, control protein E4orf2
+34095	33715	CDS
+			codon_start	1
+			protein_id	gi_61602086.36
+			locus_tag	vigor_E4
+			gene	E4
+			product	E4 control protein orf1
+			note	synonyms: putative tight junction modulation protein, control protein E4orf1
+>Features gi|1323565|gb|U52535.1|HAU52535
+<85	>2	gene
+			locus_tag	vigor_pTP
+			gene	pTP
+<85	>2	CDS
+			codon_start	1
+			protein_id	gi_1323565.1
+			locus_tag	vigor_pTP
+			gene	pTP
+			product	putative DNA terminal protein, fragment
+			note	synonyms: terminal protein, DNA terminal protein precursor, terminal protein precursor pTP
+>Features gi|11908165|gb|AF065063.3|
+131	>3017	gene
+			locus_tag	vigor_L3
+			gene	L3
+131	2941	CDS
+			codon_start	1
+			protein_id	gi_11908165.1
+			locus_tag	vigor_L3
+			gene	L3
+			product	hexon
+			note	synonyms: hexon protein, L3 hexon protein, Late protein 2
+2964	>3017	CDS
+			codon_start	1
+			protein_id	gi_11908165.2
+			locus_tag	vigor_L3
+			gene	L3
+			product	putative protease, N-terminal
+			note	synonyms: adenain, Endoprotease, Late L3 23 kDa protein
+>Features gi|37702182|gb|AY337247.1|
+1	>1491	gene
+			locus_tag	vigor_L3
+			gene	L3
+1	>1491	CDS
+			codon_start	1
+			protein_id	gi_37702182.1
+			locus_tag	vigor_L3
+			gene	L3
+			product	putative hexon, N-terminal
+			note	synonyms: hexon protein, L3 hexon protein, Late protein 2
+>Features gi|37702166|gb|AY337239.1|
+1	>1491	gene
+			locus_tag	vigor_L3
+			gene	L3
+1	>1491	CDS
+			codon_start	1
+			protein_id	gi_37702166.1
+			locus_tag	vigor_L3
+			gene	L3
+			product	putative hexon, N-terminal
+			note	synonyms: hexon protein, L3 hexon protein, Late protein 2
+>Features gi|182375574|dbj|AB433748.1|
+<1	>1029	gene
+			locus_tag	vigor_L3
+			gene	L3
+<1	>1029	CDS
+			codon_start	1
+			protein_id	gi_182375574.1
+			locus_tag	vigor_L3
+			gene	L3
+			product	putative hexon, fragment
+			note	synonyms: hexon protein, L3 hexon protein, Late protein 2

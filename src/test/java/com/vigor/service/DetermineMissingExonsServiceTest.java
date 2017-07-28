@@ -4,16 +4,16 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
-
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.aa.ProteinSequence;
+import org.jcvi.jillion.core.residue.aa.ProteinSequenceBuilder;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
+import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
 import org.junit.Before;
 import org.junit.Test;
-
 import com.vigor.component.Alignment;
+import com.vigor.component.Exon;
 import com.vigor.component.Model;
 import com.vigor.utils.VigorTestUtils;
 
@@ -23,48 +23,61 @@ public class DetermineMissingExonsServiceTest {
 	private ModelGenerationService modelGenerationService = new ModelGenerationService();
 	private DetermineMissingExonsService determineMissingExonsService = new DetermineMissingExonsService();
 	private ViralProteinService viralProteinService = new ViralProteinService();
-	
+
 	@Before
-	public void getModel(){
-		models = new ArrayList<Model>();
+	public void getModel() {
+	
 		alignments = VigorTestUtils.getAlignments();
-		alignments = alignments.stream()
-				.map(alignment -> viralProteinService.setViralProteinAttributes(alignment))
+		alignments = alignments.stream().map(alignment -> viralProteinService.setViralProteinAttributes(alignment))
 				.collect(Collectors.toList());
-		for(Alignment alignment:alignments){
-		models.addAll(modelGenerationService.alignmentToModels(alignment, "exonerate"));
-		models.stream().forEach(System.out::println);;
-		}
-	}
-	
+		models.addAll(modelGenerationService.alignmentToModels(alignments.get(0), "exonerate"));
 		
+	}
+
 	@Test
-	public void findMissingExonsTest(){
+	public void findMissingExonsTest() {
 		Model model = models.get(0);
 		model.getExons().remove(1);
-		int missingExons = determineMissingExonsService.findMissingExonRanges(model, 65, 50).size();
-		assertEquals(1,missingExons);
-		
+		int missingExons = determineMissingExonsService.findMissingExonRanges(model, "65", "50").size();
+		assertEquals(1, missingExons);
+
 	}
-	
-	@Test 
-	public void performPairWiseAlignment(){
-		Model model = models.get(0);
-		model.getExons().remove(1);
-		Map<Range,Range> missingExons = determineMissingExonsService.findMissingExonRanges(model, 65, 50);
-		NucleotideSequence NTSequence = model.getAlignment().getVirusGenome().getSequence();
-		ProteinSequence AASequence = model.getAlignment().getViralProtein().getSequence();
-		for (Map.Entry<Range, Range> entry : missingExons.entrySet()) {
-			
-			determineMissingExonsService.getPairWiseAlignment(entry.getKey(),entry.getValue(),NTSequence,AASequence);
-			
-			
-			
-			
-		}
-			
-			
-		
+
+	@Test
+	public void performPairWiseAlignment() {
+
+		Range NTRange = Range.of(579, 2199);
+		Range AARange = Range.of(190, 231);
+
+		NucleotideSequence NTSequence = new NucleotideSequenceBuilder(
+				"TGATCCAAAATGGAAGATTTTGTGCGACAATGCTTCAATCCAATGATTGTCGAGCTTGCGGAAAAGGCAATGAAAGAATATGGGGAAGATCCGAAAATCGAAACGAACAAATTTGCCGCAATAT"
+						+ "GCACACACTTAGAGGTCTGTTTCATGTATTCGGATTTCCACTTTATTGATGAACGGGGCGAATCAATAATTGTAGAATCTGGCGATCCAAATGCATTATTGAAACACCGATTTGAGATAATTGAAGGGAGAGACCGAA"
+						+ "CGATGGCCTGGACAGTGGTGAATAGTATCTGCAACACCACAGGAGTCGAGAAACCTAAATTTCTCCCAGATTTGTATGACTACAAAGAGAATCGATTCATTGAAATTGGAGTAACACGGAGGGAAGTTCATATATAC"
+						+ "TATCTAGAAAAGGCCAACAAGATAAAATCAGAGAAGACACACATTCACATATTCTCATTCACTGGAGAGGAAATGGCCACCAAAGCGGACTACACTCTTGACGAAGAGAGTAGGGCAAGAATCAAAACCAGGCTGTTC"
+						+ "ACTATAAGGCAGGAAATGGCCAGTAGGGGTCTATGGGATTCCTTTCGTCAGTCCGAGAGAGGCGAAGAGACAGTTGAAGAAAGATTTGAAATCACAGGAACCATGCGCAGGCTTGCCGACCAAAGTCTCCCACCGAACT"
+						+ "TCTCCAGCCTTGAAAACTTTAGAGCCTATGTGGATGGATTCGAACCGAACGGCTGCATTGAGGGCAAGCTTTCTCAAATGTCAAAAGAAGTGAACGCCCGAATTGAGCCATTTCTGAAGACAACACCACGCCCTCTCA"
+						+ "AACTACCTGACGGGCCTCCCTGCTCTCAACGGTCGAAGTTCCTGCTGATGGATGCCCTTAAATTAAGCATCGAAGACCCGAGTCATGAGGGGGAGGGTATACCGCTATATGATGCAATCAAATGCATGAAGACATTTTT"
+						+ "CGGCTGGAAAGAGCCCAACATTGTAAAACCACATGAAAAGGGCATAAACCCCAATTACCTCCTGGCTTGGAAGCAAGTGCTGGCAGAACTCCAAGATATTGAAAATGAGGAGAAAATCCCAAAAACAAAGAACATGAAGAA"
+						+ "AACGAGCCAGTTGAAGTGGGCACTTGGTGAGAATATGGCACCGGAGAAGGTAGACTTTGAGGATTGCAAGGATGTTAGCGATCTGAGACAGTATGACAGTGATGAACCAGAGTCTAGATCGCTAGCAAGCTGGATCCAGAGT"
+						+ "GAATTCAACAAGGCATGTGAATTGACAGATTCAAGTTGGATTGAGCTTGATGAAATAGGGGAAGACATTGCTCCAATTGAGCACATTGCGAGTATGAGAAGAAACTACTTCACAGCGGAAGTATCCCATTGCAGGGCTACTGAA"
+						+ "TACATAATGAAAGGAGTGTACATAAACACAGCCTTGTTGAATGCATCCTGTGCAGCCATGGATGACTTCCAACTGATTCCAATGATAAGCAAATGCAGGACCAAAGAAGGGAGGCGGAAGACTAATCTGTATGGATTCATTATA"
+						+ "AAAGGAAGATCCCATTTGAGAAATGACACCGATGTAGTAAACTTTGTGAGCATGGAATTCTCTCTTACTGACCCGAGGCTGGAGCCACACAAGTGGGAAAAGTACTGTGTTCTCGAGATAGGAGACATGCTCCTACGGACTGC"
+						+ "AATAGGCCAAGTGTCAAGGCCCATGTTCCTGTATGTGAGAACCAATGGGACTTCCAAGATCAAGATGAAGTGGGGCATGGAAATGAGGCGATGCCTTCTTCAATCCCTTCAACAAATTGAGAGCATGATTGAAGCCGAGTCTTC"
+						+ "TGTCAAAGAGAAGGACATGACCAAAGAATTCTTTGAAAACAAATCAGAAACATGGCCAATTGGAGAGTCACCCAAAGGGGTGGAGGAAGGCTCCATTGGGAAGGTGTGCAGAACCTTACTGGCAAAATCTGTATTCAACAGCCTATA"
+						+ "TGCATCTCCACAACTCGAGGGATTTTCAGCTGAATCAAGAAAGTTGCTTCTCATTGTCCAGGCACTTAGGGACAACCTGGAACCTGGGACCTTCGATCTTGGGGGGCTATATGAAGCAATTGAGGAGTGCCTGATTAATGATCCCTGGG"
+						+ "TTTTGCTTAATGCGTCTTGGTTCAACTCCTTCCTCACACATGCACTGAAATAGTTGTGGCAATGCTACTATTTGCTATCCATACTGTCCAAAA")
+								.build();
+
+		ProteinSequence AASequence = new ProteinSequenceBuilder(
+				"MEDFVRQCFNPMIVELAEKTMKEYGEDLKIETNKFAAICTHLEVCFMYSDFHFINEQGESIIVELGDPNALLKHRFEIIEGRDRTMAWTVVNSICNTTGAEKPKFLPDLYDYKENRFIEIGVTRREVHIYYLEKANKI"
+						+ "KSEKTHIHIFSFTGEEMATKADYTLDEESRARIKTRLFTIRQEMASRGLWDSFVSPREEKRQLKKGLKSQEQCASLPTKVSRRTSPALKILEPM")
+								.build();
+
+		Exon exon = determineMissingExonsService.performJillionPairWiseAlignment(NTRange, AARange, NTSequence,
+				AASequence, "50", "65");
+
+		assertEquals(exon.getAlignmentFragment().getProteinSeqRange(), AARange);
+
 	}
 
 }

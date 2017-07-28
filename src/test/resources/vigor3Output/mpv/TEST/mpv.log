@@ -1,0 +1,671 @@
+2017-07-27 11:06:11
+
+parameters
+	bl2seq_extend_hsp	25
+	bl2seq_extend_span	50
+	candidate_blastopts	-p blastx -M BLOSUM80 -e 1E-5 -g F -v 0 -F \"\" -z 3000000 -b 1000
+	candidate_evalue	
+	candidate_overlap_threshold	0.8
+	candidate_refdb	
+	command_line	/usr/local/devel/VIRIFX/software/VIGOR3/prod3/VIGOR3.pl -D mpv -O /home/snettem/vigor_new/mpv/TEST/mpv -i /usr/local/devel/VIRIFX/software/VIGOR3.r19/regr_testing/mpv.fasta
+	default_gene_optional	0
+	default_gene_required	1
+	default_gene_variation	1
+	frameshift_sensitivity	1
+	gene_variations	
+	jcvi_rules	1
+	mature_pep_mincoverage	50
+	mature_pep_minidentity	25
+	mature_pep_minsimilarity	40
+	mature_pep_refdb	/usr/local/devel/VIRIFX/software/VIGOR3.r19/data3/virus_mp
+	max_intron_size	7000
+	min_candidate_pctsimilarity	60
+	min_candidate_sbjcoverage	33
+	min_exon_size	3
+	min_intron_size	30
+	min_pseudogene_coverage	80
+	min_pseudogene_identity	70
+	min_pseudogene_similarity	80
+	noncanonical_splicing_genes	
+	optional_genes	
+	reference_db	/usr/local/devel/VIRIFX/software/VIGOR3.r19/data3/mpv_db
+	reference_dbsize	124617
+	required_genes	
+	ribosomal_slippage_genes	
+	rna_editing_genes	
+	selectivity	0.985
+	slippage_frameshift	-1
+	slippage_motif	[NT][NT][NT]AAAC
+	slippage_offset	0
+	spliced_genes	
+	splicesite_extend_range	0
+	tile_overlap	1000000
+	tile_size	10000000
+	use_locus_tags	1
+	variation	0.975
+	verbose	0
+	vigorspace	/usr/local/devel/VIRIFX/software/VIGOR3.r19/prod3/vigorscratch/837009.144322113
+
+
+genomic sequence 119, length=13288
+
+    found 1 permutation for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26912.1        394    1-394          1   54-1235        1   3  0  N   100.0  100.0  100.0  0        N | nucleoprotein
+        found 1 gene
+
+    found 1 permutation for gene P
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACJ70104.1        294    1-294          1   1262-2143      1   2  0  N   100.0  100.0  100.0  0        P | phosphoprotein
+        found 1 gene
+
+    found 1 permutation for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26914.1        254    1-254          1   2179-2940      1   1  0  N   99.6   99.6   100.0  0        M | matrix protein
+        found 1 gene
+
+    found 1 permutation for gene F
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACJ53596.1        539    1-539          1   3065-4681      1   2  0  N   100.0  100.0  100.0  0        F | fusion glycoprotein
+        found 1 gene
+
+    found 1 permutation for gene M2-1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26919.1        187    1-187          1   4711-5271      1   1  0  N   100.0  100.0  100.0  1.5-e146 M2-1 | transcription elongation factor M2-1
+        found 1 gene
+
+    found 1 permutation for gene M2-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEA02282.1        71     1-71           1   5222-5434      1   2  0  N   98.5   100.0  100.0  8.7-e051 M2-2 | transcription replication factor M2-2
+        found 1 gene
+
+    found 3 permutations for gene SH
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABU82776.1        179    1-178          1   5462-5995      1   2  0  N   97.1   98.3   99.4   3.5-e137 SH | small hydrophobic protein
+    ACJ70109.1        177    1-176          1   5468-5995      1   2  0  N   98.8   99.4   99.4   6.4-e138 SH | small hydrophobic protein
+    AEK26917.1        177    1-177          1   5468-5998      1   2  0  N   93.7   95.4   100.0  2.0-e129 SH | small hydrophobic protein
+        found 1 gene
+
+    found 1 permutation for gene G
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFI56780.1        238    1-238          1   6212-6925      1   2  0  N   98.3   98.7   100.0  0        G | attachment glycoprotein G
+        found 1 gene
+
+    found 2 permutations for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEA02285.1        2003   1-2003         1   7117-13125     1   1  0  N   99.4   99.7   100.0  0        L | RNA-directed RNA polymerase L
+    ABI35810.1        2005   1-2005         1   7117-13131     1   1  0  N   99.6   99.7   100.0  0        L | RNA-directed RNA polymerase L
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+119                     13288      9            0      12504           4159           99.6             99.8          100.0   mpv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+119.1              100.0  100.0  100.0  0.0   0.0   0.0   54..1238         394    394    AEK26912.1        N | nucleoprotein
+119.2              100.0  100.0  100.0  0.0   0.0   0.0   1262..2146       294    294    ACJ70104.1        P | phosphoprotein
+119.3              99.6   100.0  100.0  0.0   0.0   0.0   2179..2943       254    254    AEK26914.1        M | matrix protein
+119.4              100.0  100.0  100.0  0.0   0.0   0.0   3065..4684       539    539    ACJ53596.1        F | fusion glycoprotein
+119.5              100.0  100.0  100.0  0.0   0.0   0.0   4711..5274       187    187    AEK26919.1        M2-1 | transcription elongation factor M2-1
+119.6              98.6   100.0  100.0  0.0   0.0   0.0   5222..5437       71     71     AEA02282.1        M2-2 | transcription replication factor M2-2
+119.7              98.3   98.9   100.0  0.0   0.0   0.0   5468..6001       177    177    ACJ70109.1        SH | small hydrophobic protein
+119.8              98.3   99.1   100.0  0.0   0.0   0.0   6212..6928       238    238    AFI56780.1        G | attachment glycoprotein G
+119.9              99.6   99.8   100.0  0.0   0.0   0.0   7117..13134      2005   2005   ABI35810.1        L | RNA-directed RNA polymerase L
+
+
+genomic sequence 119_part1, length=1370
+
+    found 1 permutation for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26912.1        394    1-394          1   45-1226        1   3  0  N   100.0  100.0  100.0  0        N | nucleoprotein
+        found 1 gene
+
+    found 1 permutation for gene P
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAN52862.1        294    1-39           1   1253-1369      1   2  0  N   100.0  100.0  13.2   4.3-e024 P | phosphoprotein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+119_part1                1370      2            0       1302            433          100.0            100.0           62.9   mpv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+119_part1.1        100.0  100.0  100.0  0.0   0.0   0.0   45..1229         394    394    AEK26912.1        N | nucleoprotein
+119_part1.2        100.0  100.0  13.3   0.0   0.0   86.7  1253..>1370      39     294    AAN52862.1        P | putative phosphoprotein, N-terminal
+
+
+genomic sequence 119_part2, length=2695
+
+    found 1 permutation for gene M2-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26907.1        71     43-71          1   3-89           1   3  0  N   100.0  100.0  40.8   6.8-e016 M2-2 | transcription replication factor M2-2
+        found 1 gene
+
+    found 3 permutations for gene SH
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABU82776.1        179    1-178          1   117-650        1   3  0  N   97.1   98.3   99.4   7.0-e138 SH | small hydrophobic protein
+    ACJ70109.1        177    1-176          1   123-650        1   3  0  N   98.8   99.4   99.4   1.3-e138 SH | small hydrophobic protein
+    AEK26917.1        177    1-177          1   123-653        1   3  0  N   93.7   95.4   100.0  3.9-e130 SH | small hydrophobic protein
+        found 1 gene
+
+    found 1 permutation for gene G
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFI56780.1        238    1-238          1   867-1580       1   3  0  N   98.3   98.7   100.0  0        G | attachment glycoprotein G
+        found 1 gene
+
+    found 1 permutation for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABI35810.1        2005   1-308          1   1772-2695      1   2  0  N   99.6   99.6   15.3   0        L | RNA-directed RNA polymerase L
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+119_part2                2695      4            0       2267            752           99.5             99.8           30.2   mpv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+119_part2.1        100.0  100.0  40.8   59.2  0.0   0.0   <1..92           29     71     AEK26907.1        M2-2 | putative transcription replication factor
+                                                                                                           M2-2, C-terminal
+119_part2.2        98.3   98.9   100.0  0.0   0.0   0.0   123..656         177    177    ACJ70109.1        SH | small hydrophobic protein
+119_part2.3        98.3   99.1   100.0  0.0   0.0   0.0   867..1583        238    238    AFI56780.1        G | attachment glycoprotein G
+119_part2.4        99.7   99.9   15.4   0.0   0.0   84.6  1772..>2695      308    2005   ABI35810.1        L | putative RNA-directed RNA polymerase L,
+                                                                                                           N-terminal
+
+
+genomic sequence 119_part3, length=442
+
+    found 1 permutation for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABI35810.1        2005   1842-1988      1   2-442          1   2  0  N   100.0  100.0  7.3    1.2-e115 L | RNA-directed RNA polymerase L
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+119_part3                 442      1            0        442            147          100.0            100.0            7.3   mpv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+119_part3.1        100.0  100.0  7.3    91.8  0.0   0.8   <1..>442         147    2005   ABI35810.1        L | putative RNA-directed RNA polymerase L,
+                                                                                                           fragment
+
+
+genomic sequence 106, length=13340
+
+    found 1 permutation for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26890.1        394    1-394          1   31-1212        1   1  0  N   100.0  100.0  100.0  0        N | nucleoprotein
+        found 1 gene
+
+    found 1 permutation for gene P
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26885.1        294    1-294          1   1239-2120      1   3  0  N   100.0  100.0  100.0  0        P | phosphoprotein
+        found 1 gene
+
+    found 2 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACJ70114.1        254    1-253          1   2156-2914      1   2  0  N   99.2   100.0  99.6   0        M | matrix protein
+    AAS22100.1        254    1-254          1   2156-2917      1   2  0  N   100.0  100.0  100.0  0        M | matrix protein
+        found 1 gene
+
+    found 2 permutations for gene F
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACJ53620.1        539    1-538          1   3043-4656      1   1  0  N   99.6   99.6   99.8   0        F | fusion glycoprotein
+    AEZ52366.1        539    1-539          1   3043-4659      1   1  0  N   99.8   99.8   100.0  0        F | fusion glycoprotein
+        found 1 gene
+
+    found 1 permutation for gene M2-1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26887.1        187    1-187          1   4739-5299      1   2  0  N   100.0  100.0  100.0  1.5-e146 M2-1 | transcription elongation factor M2-1
+        found 1 gene
+
+    found 1 permutation for gene M2-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26888.1        71     1-71           1   5250-5462      1   3  0  N   100.0  100.0  100.0  1.6-e051 M2-2 | transcription replication factor M2-2
+        found 1 gene
+
+    found 2 permutations for gene SH
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABU82776.1        179    1-178          1   5490-6019      3   0  1  N   60.8   74.3   98.8   2.6-e070 SH | small hydrophobic protein
+    AEK26892.1        183    1-183          1   5496-6043      2   0  1  N   99.4   100.0  99.4   2.2-e128 SH | small hydrophobic protein
+        found 1 gene
+
+    found 1 permutation for gene G
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFI56734.1        236    1-236          1   6247-6954      1   1  0  N   100.0  100.0  100.0  0        G | attachment glycoprotein G
+        found 1 gene
+
+    found 1 permutation for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26889.1        2005   1-2005         1   7168-13182     1   1  0  N   99.7   99.8   100.0  0        L | RNA-directed RNA polymerase L
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+106                     13340      8            1      11964           3980           99.8             99.9          100.0   mpv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+106.1              100.0  100.0  100.0  0.0   0.0   0.0   31..1215         394    394    AEK26890.1        N | nucleoprotein
+106.2              100.0  100.0  100.0  0.0   0.0   0.0   1239..2123       294    294    AEK26885.1        P | phosphoprotein
+106.3              100.0  100.0  100.0  0.0   0.0   0.0   2156..2920       254    254    AAS22100.1        M | matrix protein
+106.4              99.8   99.8   100.0  0.0   0.0   0.0   3043..4662       539    539    AEZ52366.1        F | fusion glycoprotein
+106.5              100.0  100.0  100.0  0.0   0.0   0.0   4739..5302       187    187    AEK26887.1        M2-1 | transcription elongation factor M2-1
+106.6              100.0  100.0  100.0  0.0   0.0   0.0   5250..5465       71     71     AEK26888.1        M2-2 | transcription replication factor M2-2
+106.7              99.5   100.0  100.0  0.0   0.0   0.0   5496..5552       183    183    AEK26892.1        SH | small hydrophobic protein
+                                                          5552..6046                                       
+                    frameshift in genome at or near position 5552..5552 (+3=>+2)
+106.8              100.0  100.0  100.0  0.0   0.0   0.0   6247..6957       236    236    AFI56734.1        G | attachment glycoprotein G
+106.9              99.7   99.9   100.0  0.0   0.0   0.0   7168..13185      2005   2005   AEK26889.1        L | RNA-directed RNA polymerase L
+
+
+genomic sequence 101, length=13293
+
+    found 1 permutation for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26903.1        394    1-394          1   59-1240        1   2  0  N   100.0  100.0  100.0  0        N | nucleoprotein
+        found 1 gene
+
+    found 1 permutation for gene P
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26904.1        294    1-294          1   1267-2148      1   1  0  N   99.6   99.6   100.0  0        P | phosphoprotein
+        found 1 gene
+
+    found 1 permutation for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26914.1        254    1-254          1   2184-2945      1   3  0  N   99.6   100.0  100.0  0        M | matrix protein
+        found 1 gene
+
+    found 1 permutation for gene F
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26906.1        539    1-539          1   3070-4686      1   1  0  N   99.6   99.8   100.0  0        F | fusion glycoprotein
+        found 1 gene
+
+    found 1 permutation for gene M2-1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26908.1        187    1-187          1   4716-5276      1   3  0  N   100.0  100.0  100.0  3.7-e147 M2-1 | transcription elongation factor M2-1
+        found 1 gene
+
+    found 1 permutation for gene M2-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26907.1        71     1-71           1   5227-5439      1   1  0  N   100.0  100.0  100.0  1.6-e051 M2-2 | transcription replication factor M2-2
+        found 1 gene
+
+    found 1 permutation for gene SH
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26909.1        177    1-177          1   5475-6004      2   0  1  N   99.4   100.0  100.0  7.7-e135 SH | small hydrophobic protein
+        found 1 gene
+
+    found 1 permutation for gene G
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFI56757.1        241    1-241          1   6216-6938      1   3  0  N   99.5   99.5   100.0  0        G | attachment glycoprotein G
+        found 1 gene
+
+    found 1 permutation for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26911.1        2005   1-2005         1   7130-13144     1   2  0  N   99.7   99.7   100.0  0        L | RNA-directed RNA polymerase L
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+101                     13293      8            1      11979           3985           99.7             99.8          100.0   mpv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+101.1              100.0  100.0  100.0  0.0   0.0   0.0   59..1243         394    394    AEK26903.1        N | nucleoprotein
+101.2              99.7   99.9   100.0  0.0   0.0   0.0   1267..2151       294    294    AEK26904.1        P | phosphoprotein
+101.3              99.6   100.0  100.0  0.0   0.0   0.0   2184..2948       254    254    AEK26914.1        M | matrix protein
+101.4              99.6   99.8   100.0  0.0   0.0   0.0   3070..4689       539    539    AEK26906.1        F | fusion glycoprotein
+101.5              100.0  100.0  100.0  0.0   0.0   0.0   4716..5279       187    187    AEK26908.1        M2-1 | transcription elongation factor M2-1
+101.6              100.0  100.0  100.0  0.0   0.0   0.0   5227..5442       71     71     AEK26907.1        M2-2 | transcription replication factor M2-2
+101.7              100.0  100.0  100.0  0.0   0.0   0.0   5475..5534       177    177    AEK26909.1        SH | small hydrophobic protein
+                                                          5534..6007                                       
+                    frameshift in genome at or near position 5534..5534 (+3=>+2)
+101.8              99.6   99.6   100.0  0.0   0.0   0.0   6216..6941       241    241    AFI56757.1        G | attachment glycoprotein G
+101.9              99.7   99.8   100.0  0.0   0.0   0.0   7130..13147      2005   2005   AEK26911.1        L | RNA-directed RNA polymerase L
+
+
+genomic sequence 102, length=13354
+
+    found 1 permutation for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26890.1        394    1-394          1   43-1224        1   1  0  N   100.0  100.0  100.0  0        N | nucleoprotein
+        found 1 gene
+
+    found 1 permutation for gene P
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26885.1        294    1-294          1   1251-2132      1   3  0  N   100.0  100.0  100.0  0        P | phosphoprotein
+        found 1 gene
+
+    found 2 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACJ70114.1        254    1-253          1   2168-2926      1   2  0  N   99.2   100.0  99.6   0        M | matrix protein
+    AAS22100.1        254    1-254          1   2168-2929      1   2  0  N   100.0  100.0  100.0  0        M | matrix protein
+        found 1 gene
+
+    found 2 permutations for gene F
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACJ53620.1        539    1-538          1   3055-4668      1   1  0  N   99.6   99.6   99.8   0        F | fusion glycoprotein
+    AEZ52366.1        539    1-539          1   3055-4671      1   1  0  N   99.8   99.8   100.0  0        F | fusion glycoprotein
+        found 1 gene
+
+    found 1 permutation for gene M2-1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26887.1        187    1-187          1   4751-5311      1   2  0  N   100.0  100.0  100.0  1.5-e146 M2-1 | transcription elongation factor M2-1
+        found 1 gene
+
+    found 1 permutation for gene M2-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26888.1        71     1-71           1   5262-5474      1   3  0  N   100.0  100.0  100.0  1.6-e051 M2-2 | transcription replication factor M2-2
+        found 1 gene
+
+    found 1 permutation for gene SH
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26892.1        183    1-183          1   5508-6057      2   0  1  N   99.4   99.4   100.0  2.1-e138 SH | small hydrophobic protein
+        found 1 gene
+
+    found 1 permutation for gene G
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFI56734.1        236    1-236          1   6261-6968      1   3  0  N   100.0  100.0  100.0  0        G | attachment glycoprotein G
+        found 1 gene
+
+    found 1 permutation for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26889.1        2005   1-2005         1   7182-13196     1   3  0  N   99.7   99.8   100.0  0        L | RNA-directed RNA polymerase L
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+102                     13354      8            1      11964           3980           99.8             99.9          100.0   mpv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+102.1              100.0  100.0  100.0  0.0   0.0   0.0   43..1227         394    394    AEK26890.1        N | nucleoprotein
+102.2              100.0  100.0  100.0  0.0   0.0   0.0   1251..2135       294    294    AEK26885.1        P | phosphoprotein
+102.3              100.0  100.0  100.0  0.0   0.0   0.0   2168..2932       254    254    AAS22100.1        M | matrix protein
+102.4              99.8   99.8   100.0  0.0   0.0   0.0   3055..4674       539    539    AEZ52366.1        F | fusion glycoprotein
+102.5              100.0  100.0  100.0  0.0   0.0   0.0   4751..5314       187    187    AEK26887.1        M2-1 | transcription elongation factor M2-1
+102.6              100.0  100.0  100.0  0.0   0.0   0.0   5262..5477       71     71     AEK26888.1        M2-2 | transcription replication factor M2-2
+102.7              98.9   98.9   100.0  0.0   0.0   0.0   5508..5567       184    183    AEK26892.1        SH | small hydrophobic protein
+                                                          5566..6060                                       
+                    frameshift in genome at or near position 5567..5566 (+3=>+1)
+102.8              100.0  100.0  100.0  0.0   0.0   0.0   6261..6971       236    236    AFI56734.1        G | attachment glycoprotein G
+102.9              99.7   99.9   100.0  0.0   0.0   0.0   7182..13199      2005   2005   AEK26889.1        L | RNA-directed RNA polymerase L
+
+
+genomic sequence 113, length=13379
+
+    found 1 permutation for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26890.1        394    1-394          1   55-1236        1   1  0  N   100.0  100.0  100.0  0        N | nucleoprotein
+        found 1 gene
+
+    found 1 permutation for gene P
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26885.1        294    1-294          1   1263-2144      1   3  0  N   99.3   99.3   100.0  0        P | phosphoprotein
+        found 1 gene
+
+    found 2 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACJ70114.1        254    1-253          1   2180-2938      1   2  0  N   99.2   100.0  99.6   0        M | matrix protein
+    AAS22100.1        254    1-254          1   2180-2941      1   2  0  N   100.0  100.0  100.0  0        M | matrix protein
+        found 1 gene
+
+    found 2 permutations for gene F
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEZ52347.1        539    1-538          1   3067-4680      1   1  0  N   99.2   99.8   99.8   0        F | fusion glycoprotein
+    AEZ52366.1        539    1-539          1   3067-4683      1   1  0  N   100.0  100.0  100.0  0        F | fusion glycoprotein
+        found 1 gene
+
+    found 1 permutation for gene M2-1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26887.1        187    1-187          1   4757-5317      1   2  0  N   100.0  100.0  100.0  1.5-e146 M2-1 | transcription elongation factor M2-1
+        found 1 gene
+
+    found 1 permutation for gene M2-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26888.1        71     1-71           1   5268-5480      1   3  0  N   98.5   98.5   100.0  1.2-e050 M2-2 | transcription replication factor M2-2
+        found 1 gene
+
+    found 1 permutation for gene SH
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAS22104.1        183    1-183          1   5514-6062      1   3  0  N   98.3   99.4   100.0  3.1-e142 SH | small hydrophobic protein
+        found 1 gene
+
+    found 1 permutation for gene G
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABD27838.1        236    1-236          1   6266-6973      1   2  0  N   97.0   97.4   100.0  0        G | attachment glycoprotein G
+        found 1 gene
+
+    found 1 permutation for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26889.1        2005   1-2005         1   7184-13198     1   2  0  N   99.5   99.7   100.0  0        L | RNA-directed RNA polymerase L
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+113                     13379      9            0      12534           4169           99.3             99.7          100.0   mpv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+113.1              100.0  100.0  100.0  0.0   0.0   0.0   55..1239         394    394    AEK26890.1        N | nucleoprotein
+113.2              99.3   99.7   100.0  0.0   0.0   0.0   1263..2147       294    294    AEK26885.1        P | phosphoprotein
+113.3              100.0  100.0  100.0  0.0   0.0   0.0   2180..2944       254    254    AAS22100.1        M | matrix protein
+113.4              100.0  100.0  100.0  0.0   0.0   0.0   3067..4686       539    539    AEZ52366.1        F | fusion glycoprotein
+113.5              100.0  100.0  100.0  0.0   0.0   0.0   4757..5320       187    187    AEK26887.1        M2-1 | transcription elongation factor M2-1
+113.6              98.6   98.6   100.0  0.0   0.0   0.0   5268..5483       71     71     AEK26888.1        M2-2 | transcription replication factor M2-2
+113.7              95.2   96.3   100.0  0.0   0.0   0.0   5514..6083       189    183    AAS22104.1        SH | small hydrophobic protein
+113.8              97.0   98.8   100.0  0.0   0.0   0.0   6266..6976       236    236    ABD27838.1        G | attachment glycoprotein G
+113.9              99.5   99.9   100.0  0.0   0.0   0.0   7184..13201      2005   2005   AEK26889.1        L | RNA-directed RNA polymerase L
+
+
+genomic sequence 112, length=13286
+
+    found 1 permutation for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAS22122.1        394    1-394          1   30-1211        1   3  0  N   100.0  100.0  100.0  0        N | nucleoprotein
+        found 1 gene
+
+    found 1 permutation for gene P
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAS22123.1        294    1-294          1   1238-2119      1   2  0  N   99.6   99.6   100.0  0        P | phosphoprotein
+        found 1 gene
+
+    found 2 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACJ70114.1        254    1-253          1   2155-2913      1   1  0  N   100.0  100.0  99.6   0        M | matrix protein
+    AEK26900.1        254    1-254          1   2155-2916      1   1  0  N   100.0  100.0  100.0  0        M | matrix protein
+        found 1 gene
+
+    found 2 permutations for gene F
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEZ52366.1        539    1-538          1   3042-4655      1   3  0  N   99.2   99.8   99.8   0        F | fusion glycoprotein
+    AEZ52347.1        539    1-539          1   3042-4658      1   3  0  N   100.0  100.0  100.0  0        F | fusion glycoprotein
+        found 1 gene
+
+    found 1 permutation for gene M2-1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACS16065.1        187    1-187          1   4698-5258      1   3  0  N   100.0  100.0  100.0  1.0-e146 M2-1 | transcription elongation factor M2-1
+        found 1 gene
+
+    found 1 permutation for gene M2-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26897.1        71     1-71           1   5209-5421      1   1  0  N   100.0  100.0  100.0  3.1-e051 M2-2 | transcription replication factor M2-2
+        found 1 gene
+
+    found 2 permutations for gene SH
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACS16067.1        185    1-185          1   5449-6003      1   1  0  N   98.9   98.9   100.0  6.4-e145 SH | small hydrophobic protein
+    AEL87265.1        183    1-183          1   5455-6003      1   1  0  N   98.9   98.9   100.0  1.4-e143 SH | small hydrophobic protein
+        found 1 gene
+
+    found 1 permutation for gene G
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT46584.1        217    1-217          1   6207-6857      1   3  0  N   99.0   99.5   100.0  6.7-e169 G | attachment glycoprotein G
+        found 1 gene
+
+    found 1 permutation for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    L_HMPVC           2005   1-2005         1   7108-13122     1   1  0  N   99.4   99.8   100.0  0        L | RNA-directed RNA polymerase L
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+112                     13286      9            0      12465           4146           99.6             99.9          100.0   mpv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+112.1              100.0  100.0  100.0  0.0   0.0   0.0   30..1214         394    394    AAS22122.1        N | nucleoprotein
+112.2              99.7   99.7   100.0  0.0   0.0   0.0   1238..2122       294    294    AAS22123.1        P | phosphoprotein
+112.3              100.0  100.0  100.0  0.0   0.0   0.0   2155..2919       254    254    AEK26900.1        M | matrix protein
+112.4              100.0  100.0  100.0  0.0   0.0   0.0   3042..4661       539    539    AEZ52347.1        F | fusion glycoprotein
+112.5              100.0  100.0  100.0  0.0   0.0   0.0   4698..5261       187    187    ACS16065.1        M2-1 | transcription elongation factor M2-1
+112.6              100.0  100.0  100.0  0.0   0.0   0.0   5209..5424       71     71     AEK26897.1        M2-2 | transcription replication factor M2-2
+112.7              98.9   99.9   100.0  0.0   0.0   0.0   5449..6006       185    185    ACS16067.1        SH | small hydrophobic protein
+112.8              99.1   99.9   100.0  0.0   0.0   0.0   6207..6860       217    217    AAT46584.1        G | attachment glycoprotein G
+112.9              99.4   99.9   100.0  0.0   0.0   0.0   7108..13125      2005   2005   L_HMPVC           L | RNA-directed RNA polymerase L
+
+
+genomic sequence 145, length=13246
+
+    found 1 permutation for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAS22114.1        394    1-394          1   30-1211        1   3  0  N   100.0  100.0  100.0  0        N | nucleoprotein
+        found 1 gene
+
+    found 1 permutation for gene P
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAS92880.1        294    1-294          1   1238-2119      1   2  0  N   100.0  100.0  100.0  0        P | phosphoprotein
+        found 1 gene
+
+    found 1 permutation for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26914.1        254    1-254          1   2155-2916      1   1  0  N   98.8   99.6   100.0  0        M | matrix protein
+        found 1 gene
+
+    found 1 permutation for gene F
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAS22117.1        539    1-539          1   3041-4657      1   2  0  N   100.0  100.0  100.0  0        F | fusion glycoprotein
+        found 1 gene
+
+    found 1 permutation for gene M2-1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26908.1        187    1-187          1   4687-5247      1   1  0  N   100.0  100.0  100.0  3.7-e147 M2-1 | transcription elongation factor M2-1
+        found 1 gene
+
+    found 1 permutation for gene M2-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAS22079.1        71     1-71           1   5198-5410      1   2  0  N   100.0  100.0  100.0  1.6-e051 M2-2 | transcription replication factor M2-2
+        found 1 gene
+
+    found 3 permutations for gene SH
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABK96998.1        179    1-178          1   5440-5973      1   1  0  N   99.4   99.4   99.4   1.1-e138 SH | small hydrophobic protein
+    AAS22120.1        177    1-176          1   5446-5973      1   1  0  N   99.4   99.4   99.4   5.0-e137 SH | small hydrophobic protein
+    AAS22080.1        177    1-177          1   5446-5976      1   1  0  N   99.4   99.4   100.0  6.4-e138 SH | small hydrophobic protein
+        found 1 gene
+
+    found 2 permutations for gene G
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAS22081.1        231    1-231          1   6191-6882      2   0  1  N   92.3   95.1   100.0  4.5-e124 G | attachment glycoprotein G
+    ABD27845.1        242    1-242          1   6191-6916      1   2  0  N   90.9   92.5   100.0  2.4-e176 G | attachment glycoprotein G
+        found 1 gene
+
+    found 2 permutations for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEA02285.1        2003   1-2003         1   7104-13112     1   3  0  N   98.2   99.2   100.0  0        L | RNA-directed RNA polymerase L
+    AEK26911.1        2005   1-2005         1   7104-13118     1   3  0  N   99.2   99.6   100.0  0        L | RNA-directed RNA polymerase L
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+145                     13246      9            0      12516           4163           99.0             99.5          100.0   mpv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+145.1              100.0  100.0  100.0  0.0   0.0   0.0   30..1214         394    394    AAS22114.1        N | nucleoprotein
+145.2              100.0  100.0  100.0  0.0   0.0   0.0   1238..2122       294    294    AAS92880.1        P | phosphoprotein
+145.3              98.8   99.9   100.0  0.0   0.0   0.0   2155..2919       254    254    AEK26914.1        M | matrix protein
+145.4              100.0  100.0  100.0  0.0   0.0   0.0   3041..4660       539    539    AAS22117.1        F | fusion glycoprotein
+145.5              100.0  100.0  100.0  0.0   0.0   0.0   4687..5250       187    187    AEK26908.1        M2-1 | transcription elongation factor M2-1
+145.6              100.0  100.0  100.0  0.0   0.0   0.0   5198..5413       71     71     AAS22079.1        M2-2 | transcription replication factor M2-2
+145.7              99.4   99.4   100.0  0.0   0.0   0.0   5446..5979       177    177    AAS22080.1        SH | small hydrophobic protein
+145.8              90.9   95.0   100.0  0.0   0.0   0.0   6191..6919       242    242    ABD27845.1        G | attachment glycoprotein G
+145.9              99.3   99.7   100.0  0.0   0.0   0.0   7104..13121      2005   2005   AEK26911.1        L | RNA-directed RNA polymerase L
+
+
+genomic sequence 145_DRAFT, length=13064
+
+    found 1 permutation for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAS22114.1        394    12-394         1   2-1150         1   2  0  N   100.0  100.0  97.2   0        N | nucleoprotein
+        found 1 gene
+
+    found 1 permutation for gene P
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAS92880.1        294    1-294          1   1177-2058      1   1  0  N   100.0  100.0  100.0  0        P | phosphoprotein
+        found 1 gene
+
+    found 1 permutation for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26914.1        254    1-254          1   2094-2855      1   3  0  N   98.8   99.6   100.0  0        M | matrix protein
+        found 1 gene
+
+    found 1 permutation for gene F
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAS22117.1        539    1-539          1   2980-4596      2   1  0  N   100.0  100.0  95.9   0        F | fusion glycoprotein
+        found 1 gene
+
+    found 1 permutation for gene M2-1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK26908.1        187    1-187          1   4626-5186      2   3  0  N   100.0  100.0  88.7   2.4-e121 M2-1 | transcription elongation factor M2-1
+        found 1 gene
+
+    found 1 permutation for gene M2-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAS22079.1        71     1-71           1   5137-5349      1   1  0  N   100.0  100.0  100.0  1.5-e051 M2-2 | transcription replication factor M2-2
+        found 1 gene
+
+    found 1 permutation for gene SH
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAS22080.1        177    126-177        1   5763-5918      1   3  0  N   100.0  100.0  29.3   7.8-e038 SH | small hydrophobic protein
+        found 1 gene
+
+    found 2 permutations for gene G
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAS22081.1        231    1-231          1   6133-6824      2   0  1  N   92.3   95.1   100.0  4.5-e124 G | attachment glycoprotein G
+    ABD27845.1        242    1-242          1   6133-6858      1   1  0  N   90.9   92.5   100.0  2.3-e176 G | attachment glycoprotein G
+        found 1 gene
+
+    found 2 permutations for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEA02285.1        2003   1-2003         1   7046-13048     6   2  0  N   97.3   98.4   91.6   0        L | RNA-directed RNA polymerase L
+    AEK26911.1        2005   1-2005         1   7046-13054     6   2  0  N   98.4   98.8   91.6   0        L | RNA-directed RNA polymerase L
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+145_DRAFT               13064     18            0      11476           3807           98.8             99.5           22.3   mpv_db
+gaps: 3157-3220, 4679-4740, 5400-5762, 8103-8336, 9187-9224, 10435-10496, 10556-10616, 10678-10736, 12883-12944
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+145_DRAFT.1        100.0  100.0  97.2   2.8   0.0   0.0   <1..1153         383    394    AAS22114.1        N | putative nucleoprotein, C-terminal
+145_DRAFT.2        100.0  100.0  100.0  0.0   0.0   0.0   1177..2061       294    294    AAS92880.1        P | phosphoprotein
+145_DRAFT.3        98.8   99.9   100.0  0.0   0.0   0.0   2094..2858       254    254    AEK26914.1        M | matrix protein
+145_DRAFT.4a       100.0  100.0  10.9   0.0   0.0   89.1  2980..>3156      59     539    AAS22117.1        F | putative fusion glycoprotein, N-terminal
+145_DRAFT.4b       100.0  100.0  85.0   15.0  0.0   0.0   <3221..4599      458    539    AAS22117.1        F | putative fusion glycoprotein, C-terminal
+145_DRAFT.5a       100.0  100.0  9.1    0.0   0.0   90.9  4626..>4678      17     187    AEK26908.1        M2-1 | putative transcription elongation factor
+                                                                                                           M2-1, N-terminal
+145_DRAFT.5b       100.0  100.0  79.1   20.9  0.0   0.0   <4741..5189      148    187    AEK26908.1        M2-1 | putative transcription elongation factor
+                                                                                                           M2-1, C-terminal
+145_DRAFT.6        100.0  100.0  100.0  0.0   0.0   0.0   5137..5352       71     71     AAS22079.1        M2-2 | transcription replication factor M2-2
+145_DRAFT.7a       100.0  100.0  2.8    0.0   0.0   97.2  5385..>5399      5      177    AAS22080.1        SH | putative small hydrophobic protein,
+                                                                                                           N-terminal
+145_DRAFT.7b       100.0  100.0  29.4   70.6  0.0   0.0   <5763..5921      52     177    AAS22080.1        SH | putative small hydrophobic protein,
+                                                                                                           C-terminal
+145_DRAFT.8        90.9   95.0   100.0  0.0   0.0   0.0   6133..6861       242    242    ABD27845.1        G | attachment glycoprotein G
+145_DRAFT.9a       99.1   99.4   17.6   0.0   0.0   82.4  7046..>8102      352    2005   AEK26911.1        L | putative RNA-directed RNA polymerase L,
+                                                                                                           N-terminal
+145_DRAFT.9b       99.6   100.0  14.1   21.6  0.0   64.3  <8337..>9186     282    2005   AEK26911.1        L | putative RNA-directed RNA polymerase L,
+                                                                                                           fragment
+145_DRAFT.9c       98.8   99.7   20.0   36.4  0.0   43.6  <9225..>10434    402    2005   AEK26911.1        L | putative RNA-directed RNA polymerase L,
+                                                                                                           fragment
+145_DRAFT.9d       100.0  100.0  0.9    57.5  0.0   41.5  <10497..>10555   19     2005   AEK26911.1        L | putative RNA-directed RNA polymerase L,
+                                                                                                           fragment
+145_DRAFT.9e       100.0  100.0  0.9    59.5  0.0   39.6  <10617..>10677   19     2005   AEK26911.1        L | putative RNA-directed RNA polymerase L,
+                                                                                                           fragment
+145_DRAFT.9f       99.4   99.9   35.6   61.5  0.0   2.9   <10737..>12882   714    2005   AEK26911.1        L | putative RNA-directed RNA polymerase L,
+                                                                                                           fragment
+145_DRAFT.9g       94.4   97.2   1.8    98.2  0.0   0.0   <12945..13057    36     2005   AEK26911.1        L | putative RNA-directed RNA polymerase L,
+                                                                                                           C-terminal
+

@@ -1,0 +1,225 @@
+2017-07-27 11:06:48
+
+
+parameters
+	bl2seq_extend_hsp	25
+	bl2seq_extend_span	50
+	candidate_blastopts	-p blastx -M BLOSUM62 -e 1E-5 -F \"\" -z 3000000 -v 0 -b 10
+	candidate_evalue	
+	candidate_overlap_threshold	0.8
+	candidate_refdb	
+	command_line	/usr/local/devel/VIRIFX/software/VIGOR3/prod3/VIGOR3.pl -D hrv -O /home/snettem/vigor_new/hrv/PRODUCTION/hrv -i /usr/local/devel/VIRIFX/software/VIGOR3.r19/regr_testing/hrv.fasta
+	default_gene_optional	0
+	default_gene_required	0
+	default_gene_variation	1
+	frameshift_sensitivity	1
+	gene_variations	
+	jcvi_rules	1
+	mature_pep_mincoverage	50
+	mature_pep_minidentity	25
+	mature_pep_minsimilarity	40
+	mature_pep_refdb	/usr/local/devel/VIRIFX/software/VIGOR3.r19/data3/virus_mp
+	max_intron_size	7000
+	min_candidate_pctsimilarity	60
+	min_candidate_sbjcoverage	33
+	min_exon_size	3
+	min_intron_size	30
+	min_pseudogene_coverage	80
+	min_pseudogene_identity	70
+	min_pseudogene_similarity	80
+	noncanonical_splicing_genes	
+	optional_genes	
+	reference_db	/usr/local/devel/VIRIFX/software/VIGOR3.r19/data3/hrv_db
+	reference_dbsize	630193
+	required_genes	
+	ribosomal_slippage_genes	
+	rna_editing_genes	
+	selectivity	0.985
+	slippage_frameshift	-1
+	slippage_motif	[NT][NT][NT]AAAC
+	slippage_offset	0
+	spliced_genes	
+	splicesite_extend_range	0
+	tile_overlap	1000000
+	tile_size	10000000
+	use_locus_tags	1
+	variation	0.975
+	verbose	0
+	vigorspace	/usr/local/devel/VIRIFX/software/VIGOR3.r19/prod3/vigorscratch/406671.986290352
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|385866885|gb|JQ44     2634      1            0       2634            878          100.0            100.0           39.8   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_385866885.1     100.0  100.0  39.8   0.0   0.0   60.2  1..>2634         878    2206   AFR46521.1        POL | putative genome polyprotein, N-terminal
+gi_385866885.1.1   92.8   99.6   100.0  0.0   0.0   0.0   1..207           69     69     YP_003795175.1    capsid protein VP4
+gi_385866885.1.2   100.0  100.0  100.0  0.0   0.0   0.0   208..1020        271    271    JX262382_mp2      capsid protein VP2
+gi_385866885.1.3   100.0  100.0  100.0  0.0   0.0   0.0   1021..1743       241    241    JX262382_mp3      capsid protein VP3
+gi_385866885.1.4   100.0  100.0  100.0  0.0   0.0   0.0   1744..2631       296    296    JX262382_mp4      capsid protein VP1
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|390409014|gb|JQ31      891      1            0        891            297           99.7            100.0           13.5   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_390409014.1     99.7   100.0  13.5   25.8  0.0   60.7  <1..>891         297    2193   AFN65696.1        POL | putative genome polyprotein, fragment
+gi_390409014.1.1   100.0  100.0  100.0  0.0   0.0   0.0   1..891           297    297    ADG57602.1.4      capsid protein VP1
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|390408962|gb|JQ31      891      1            0        891            297           99.3            100.0           13.5   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_390408962.1     99.3   100.0  13.5   25.8  0.0   60.7  <1..>891         297    2193   BAJ49827.1        POL | putative genome polyprotein, fragment
+gi_390408962.1.1   98.7   100.0  100.0  0.0   0.0   0.0   1..891           297    297    BAJ49829.1.4      capsid protein VP1
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|119952257|ref|NC_     7391      1            0       6501           2166           85.9             96.0          100.0   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_119952257.1     85.9   96.0   100.0  0.0   0.0   0.0   820..7320        2166   2166   AAS86317.1        POL | genome polyprotein
+gi_119952257.1.1   78.3   96.0   100.0  0.0   0.0   0.0   820..1026        69     69     NP_740445.1       capsid protein VP4
+gi_119952257.1.2   74.8   89.7   99.2   0.0   0.0   0.8   1027..1764       246    248    NP_740446.1       capsid protein VP2
+gi_119952257.1.3   64.6   86.9   100.0  0.0   0.0   0.0   1765..2493       243    242    NP_740447.1       capsid protein VP3
+gi_119952257.1.4   65.5   87.4   100.0  0.0   0.0   0.0   2494..3315       274    275    328684986_VP1     capsid protein VP1
+gi_119952257.1.5   73.3   90.5   100.0  0.0   0.0   0.0   3316..3765       150    150    NP_740449.1       protease 2A
+gi_119952257.1.6   68.7   95.2   100.0  0.0   0.0   0.0   3766..4062       99     99     NP_740450.1       protein 2B
+gi_119952257.1.7   78.8   92.7   100.0  0.0   0.0   0.0   4063..5049       329    330    NP_740451.1       protein 2C
+gi_119952257.1.8   66.3   91.6   100.0  0.0   0.0   0.0   5050..5316       89     89     NP_740452.1       protein 3A
+gi_119952257.1.9   95.7   100.0  100.0  0.0   0.0   0.0   5317..5385       23     23     119952256_3B      viral protein genome-linked
+gi_119952257.1.10  68.9   88.8   100.0  0.0   0.0   0.0   5386..5934       183    183    NP_740454.1       protease 3C
+gi_119952257.1.11  82.2   95.5   100.0  0.0   0.0   0.0   5935..7317       461    461    NP_740455.1       RNA-directed RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|119952256|ref|NC_     7390      1            0       6501           2166           85.5             95.7          100.0   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_119952256.1     85.5   95.7   100.0  0.0   0.0   0.0   819..7319        2166   2166   AAS86317.1        POL | genome polyprotein
+gi_119952256.1.1   73.9   92.0   100.0  0.0   0.0   0.0   819..1025        69     69     Y14459_mp11       capsid protein VP4
+gi_119952256.1.2   77.6   90.5   99.2   0.0   0.0   0.8   1026..1763       246    248    NP_740446.1       capsid protein VP2
+gi_119952256.1.3   66.3   88.2   100.0  0.0   0.0   0.0   1764..2492       243    242    NP_740447.1       capsid protein VP3
+gi_119952256.1.4   65.1   88.0   100.0  0.0   0.0   0.0   2493..3314       274    275    328684986_VP1     capsid protein VP1
+gi_119952256.1.5   74.7   91.0   100.0  0.0   0.0   0.0   3315..3764       150    150    NP_740449.1       protease 2A
+gi_119952256.1.6   71.7   92.7   100.0  0.0   0.0   0.0   3765..4061       99     99     NP_740450.1       protein 2B
+gi_119952256.1.7   77.6   92.6   100.0  0.0   0.0   0.0   4062..5048       329    330    NP_740451.1       protein 2C
+gi_119952256.1.8   69.7   92.7   100.0  0.0   0.0   0.0   5049..5315       89     89     NP_740452.1       protein 3A
+gi_119952256.1.9   100.0  100.0  100.0  0.0   0.0   0.0   5316..5384       23     23     119952256_3B      viral protein genome-linked
+gi_119952256.1.10  71.6   89.3   100.0  0.0   0.0   0.0   5385..5933       183    183    NP_740454.1       protease 3C
+gi_119952256.1.11  82.4   95.3   100.0  0.0   0.0   0.0   5934..7316       461    461    NP_740455.1       RNA-directed RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|297660097|gb|HM00     7406      0            1          0              0              -                -              -   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_297660097.1     98.1   99.4   100.0  0.0   0.0   0.0   744..7325        2193   2193   BAJ49827.1        POL | genome polyprotein
+                    stop codon embedded in CDS at 4833..4835
+gi_297660097.1.1   98.6   100.0  100.0  0.0   0.0   0.0   744..950         69     69     JX025559_mp1      capsid protein VP4
+gi_297660097.1.2   99.2   99.9   100.0  0.0   0.0   0.0   951..1712        254    254    JX025559_mp2      capsid protein VP2
+gi_297660097.1.3   99.2   99.5   100.0  0.0   0.0   0.0   1713..2438       242    242    JX025559_mp3      capsid protein VP3
+gi_297660097.1.4   99.0   100.0  100.0  0.0   0.0   0.0   2439..3329       297    297    BAJ49829.1.4      capsid protein VP1
+gi_297660097.1.5   97.3   98.7   100.0  0.0   0.0   0.0   3330..3779       150    150    BAJ49828.1.5      protease 2A
+gi_297660097.1.6   99.0   100.0  100.0  0.0   0.0   0.0   3780..4076       99     99     AEK77619.1.6      protein 2B
+gi_297660097.1.7   93.9   97.4   100.0  0.0   0.0   0.0   4077..5063       329    329    NP_740532.1       protein 2C
+gi_297660097.1.8   97.7   99.7   100.0  0.0   0.0   0.0   5064..5321       86     86     NP_740533.1       protein 3A
+gi_297660097.1.9   100.0  100.0  100.0  0.0   0.0   0.0   5322..5387       22     22     ACY00666.1.9      viral protein genome-linked
+gi_297660097.1.10  96.7   99.7   100.0  0.0   0.0   0.0   5388..5936       183    183    BAJ49826.1.10     protease 3C
+gi_297660097.1.11  98.7   99.7   100.0  0.0   0.0   0.0   5937..7322       462    462    BAJ49826.1.11     RNA-directed RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|221213|dbj|D90457     7461      1            0       6645           2214           96.3             99.2          100.0   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_221213.1        96.3   99.2   100.0  0.0   0.0   0.0   751..7395        2214   2214   AEO78972.1        POL | genome polyprotein
+gi_221213.1.1      97.1   98.6   100.0  0.0   0.0   0.0   751..957         69     69     HQ415759_mp1      capsid protein VP4
+gi_221213.1.2      95.6   99.2   100.0  0.0   0.0   0.0   958..1770        271    271    EF026081_mp2      capsid protein VP2
+gi_221213.1.3      93.8   97.7   100.0  0.0   0.0   0.0   1771..2490       240    240    EF026081_mp3      capsid protein VP3
+gi_221213.1.4      90.5   97.9   100.0  0.0   0.0   0.0   2491..3408       306    306    EF026081_mp4      capsid protein VP1
+gi_221213.1.5      87.9   97.1   100.0  0.0   0.0   0.0   3409..3855       149    149    EF026081_mp5      protease 2A
+gi_221213.1.6      93.8   98.7   100.0  0.0   0.0   0.0   3856..4146       97     97     HQ415759_mp6      protein 2B
+gi_221213.1.7      93.6   99.2   100.0  0.0   0.0   0.0   4147..5133       329    329    HQ415759_mp7      protein 2C
+gi_221213.1.8      83.9   98.3   100.0  0.0   0.0   0.0   5134..5394       87     87     HQ415759_mp8      protein 3A
+gi_221213.1.9      90.9   100.0  100.0  0.0   0.0   0.0   5395..5460       22     22     AF499636_mp9      viral protein genome-linked
+gi_221213.1.10     95.6   99.2   100.0  0.0   0.0   0.0   5461..6009       183    183    POL2LAN_mp10      protease 3C
+gi_221213.1.11     88.1   96.7   100.0  0.0   0.0   0.0   6010..7392       461    461    JX174177_mp11     RNA-directed RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|384366194|ref|NC_     7416      0            1          0              0              -                -              -   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_384366194.1     95.1   99.0   100.0  0.0   0.0   0.0   821..1069        2169   2167   AEB33908.1        POL | genome polyprotein
+                                                          1069..1929                                       
+                                                          1928..3982                                       
+                                                          3981..4322                                       
+                                                          4322..7324                                       
+                    frameshifts in genome at or near positions 1069..1069 (+2=>+1), 1929..1928 (+1=>+2), 3982..3981 (+2=>+3) and 4322..4322 (+3=>+2)
+                    stop codon embedded in CDS at 2801..2803
+gi_384366194.1.1   76.8   95.3   100.0  0.0   0.0   0.0   821..1027        69     69     NP_740445.1       capsid protein VP4
+gi_384366194.1.2   76.4   89.3   99.2   0.0   0.0   0.8   1028..1069       246    248    NP_740446.1       capsid protein VP2
+                                                          1069..1764                                       
+gi_384366194.1.3   64.8   87.1   100.0  0.0   0.0   0.0   1765..1929       244    242    NP_740447.1       capsid protein VP3
+                                                          1928..2494                                       
+gi_384366194.1.4   93.5   98.6   100.0  0.0   0.0   0.0   2495..3319       275    275    328684986_VP1     capsid protein VP1
+gi_384366194.1.5   76.0   90.0   100.0  0.0   0.0   0.0   3320..3769       150    150    NP_740449.1       protease 2A
+gi_384366194.1.6   71.0   94.3   100.0  0.0   0.0   0.0   3770..3982       100    99     NP_740450.1       protein 2B
+                                                          3981..4067                                       
+gi_384366194.1.7   76.7   92.8   100.0  0.0   0.0   0.0   4068..4322       329    330    NP_740451.1       protein 2C
+                                                          4322..5053                                       
+gi_384366194.1.8   67.4   90.4   100.0  0.0   0.0   0.0   5054..5320       89     89     NP_740452.1       protein 3A
+gi_384366194.1.9   100.0  100.0  100.0  0.0   0.0   0.0   5321..5389       23     23     119952256_3B      viral protein genome-linked
+gi_384366194.1.10  71.6   91.1   100.0  0.0   0.0   0.0   5390..5938       183    183    NP_740454.1       protease 3C
+gi_384366194.1.11  84.2   96.0   100.0  0.0   0.0   0.0   5939..7321       461    461    NP_740455.1       RNA-directed RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|299562113|gb|HM05     7405      0            1          0              0              -                -              -   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_299562113.1     98.8   99.8   100.0  0.0   0.0   0.0   743..7324        2193   2193   BAJ49827.1        POL | genome polyprotein
+                    stop codon embedded in CDS at 1187..1189
+gi_299562113.1.1   100.0  100.0  100.0  0.0   0.0   0.0   743..949         69     69     JX025559_mp1      capsid protein VP4
+gi_299562113.1.2   98.8   99.6   100.0  0.0   0.0   0.0   950..1711        254    254    JX025559_mp2      capsid protein VP2
+gi_299562113.1.3   99.2   99.5   100.0  0.0   0.0   0.0   1712..2437       242    242    JX025559_mp3      capsid protein VP3
+gi_299562113.1.4   98.3   100.0  100.0  0.0   0.0   0.0   2438..3328       297    297    BAJ49829.1.4      capsid protein VP1
+gi_299562113.1.5   96.0   98.7   100.0  0.0   0.0   0.0   3329..3778       150    150    BAJ49828.1.5      protease 2A
+gi_299562113.1.6   99.0   100.0  100.0  0.0   0.0   0.0   3779..4075       99     99     AEK77619.1.6      protein 2B
+gi_299562113.1.7   97.6   99.5   100.0  0.0   0.0   0.0   4076..5062       329    329    NP_740532.1       protein 2C
+gi_299562113.1.8   94.2   100.0  100.0  0.0   0.0   0.0   5063..5320       86     86     AFN88507.1.8      protein 3A
+gi_299562113.1.9   100.0  100.0  100.0  0.0   0.0   0.0   5321..5386       22     22     JF913464_mp9      viral protein genome-linked
+gi_299562113.1.10  98.4   100.0  100.0  0.0   0.0   0.0   5387..5935       183    183    BAJ49826.1.10     protease 3C
+gi_299562113.1.11  97.6   100.0  100.0  0.0   0.0   0.0   5936..7321       462    462    NP_740536.1       RNA-directed RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+HM053671_DRAFT           6835      0            1          0              0              -                -              -   hrv_db
+gaps: 343-412, 483-552, 623-692, 5099-5242, 5450-5519, 5590-5729, 5940-6009, 6191-6219, 6251-6275
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+HM053671_DRAFT.1   98.9   99.7   86.0   0.5   7.4   6.2   <693..>6835      2047   2193   BAJ49827.1        POL | putative genome polyprotein, fragment
+                    stop codon embedded in CDS at 1109..1111
+HM053671_DRAFT.1.1 100.0  100.0  85.5   14.5  0.0   0.0   <695..871        59     69     JX025559_mp1      putative capsid protein VP4, C-terminal
+HM053671_DRAFT.1.2 98.8   99.6   100.0  0.0   0.0   0.0   872..1633        254    254    JX025559_mp2      capsid protein VP2
+HM053671_DRAFT.1.3 99.2   99.5   100.0  0.0   0.0   0.0   1634..2359       242    242    JX025559_mp3      capsid protein VP3
+HM053671_DRAFT.1.4 98.3   100.0  100.0  0.0   0.0   0.0   2360..3250       297    297    BAJ49829.1.4      capsid protein VP1
+HM053671_DRAFT.1.5 96.0   98.7   100.0  0.0   0.0   0.0   3251..3700       150    150    BAJ49828.1.5      protease 2A
+HM053671_DRAFT.1.6 99.0   100.0  100.0  0.0   0.0   0.0   3701..3997       99     99     AEK77619.1.6      protein 2B
+HM053671_DRAFT.1.7 97.3   99.2   100.0  0.0   0.0   0.0   3998..4981       328    329    NP_740532.1       protein 2C
+HM053671_DRAFT.1.8 100.0  100.0  45.3   0.0   0.0   54.7  4982..>5098      39     86     NP_740533.1       putative protein 3A, N-terminal
+HM053671_DRAFT.1.9 95.5   95.5   100.0  0.0   0.0   0.0   5240..5305       22     22     JF913464_mp9      viral protein genome-linked
+HM053671_DRAFT.1.1 100.0  100.0  60.7   0.0   39.3  0.0   5306..5854       183    183    BAJ49826.1.10     protease 3C
+HM053671_DRAFT.1.1 98.6   99.3   61.5   0.0   9.3   29.2  5855..>6835      327    462    BAJ49826.1.11     putative RNA-directed RNA polymerase, N-terminal
+

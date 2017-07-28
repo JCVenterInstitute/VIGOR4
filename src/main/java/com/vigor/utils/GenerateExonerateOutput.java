@@ -50,15 +50,15 @@ public class GenerateExonerateOutput {
 
 		try {
 			Runtime.getRuntime().exec(
-					"pscp -pw \"Ilovemyself@3\" -scp C:/git/VIGOR4/VigorWorkSpace/sequence.fasta lserver1:/home/snettem/vigor4_workspace/");
+					"pscp -pw \"Ilovemyself@3\" -scp C:/git/VIGOR4/VigorWorkSpace/sequence_temp.fasta lserver1:/home/snettem/vigor4_workspace/");
 
 			String dbPath = "/home/snettem/vigor4_workspace/data3/" + referenceDB;
 			String host = "lserver1";
 			String user = "snettem";
 			String password = "Ilovemyself@3";
-			String command1 = "chmod 777 /home/snettem/vigor4_workspace/sequence.fasta && exonerate --model protein2genome -q "
+			String command1 = "chmod 777 /home/snettem/vigor4_workspace/sequence_temp.fasta && exonerate --model protein2genome -q "
 					+ dbPath
-					+ " -t /home/snettem/vigor4_workspace/sequence.fasta --showcigar true > /home/snettem/vigor4_workspace/exonerate.txt && chmod 777 /home/snettem/vigor4_workspace/exonerate.txt";
+					+ " -t /home/snettem/vigor4_workspace/sequence_temp.fasta --showcigar true > /home/snettem/vigor4_workspace/exonerate.txt && chmod 777 /home/snettem/vigor4_workspace/exonerate.txt";
 
 			java.util.Properties config = new java.util.Properties();
 			config.put("StrictHostKeyChecking", "no");
@@ -95,15 +95,20 @@ public class GenerateExonerateOutput {
 			}
 			channel.disconnect();
 			session.disconnect();
-			Runtime.getRuntime().exec(
-					"pscp -pw \"Ilovemyself@3\" -scp lserver1:/home/snettem/vigor4_workspace/exonerate.txt C:/git/VIGOR4/VigorWorkSpace/");
+			String fileName = virusGenome.getId().replaceAll("\\|", "");
+					Runtime.getRuntime().exec(
+					"pscp -pw \"Ilovemyself@3\" -scp lserver1:/home/snettem/vigor4_workspace/exonerate.txt C:/git/VIGOR4/src/test/resources/VigorRegressionTestOutput/flu/"+fileName+".txt");
 			
 			System.out.println("DONE");
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 		// *********************************
+		
+		
 		File outputFile = new File(VigorUtils.getVigorWorkSpace() + "/exonerate.txt");
 		return outputFile;
 	}

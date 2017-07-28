@@ -41,14 +41,14 @@ public class ModelGenerationService {
 	 *         models at the sequence gaps
 	 */
 	public List<Model> determineCandidateModels(List<Alignment> alignments, VigorForm form) {
-		System.out.println("Number of alignments are " + alignments.size());
+		//System.out.println("Number of alignments are " + alignments.size());
 		List<Model> initialModels = new ArrayList<Model>();
 		List<Model> candidateModels = new ArrayList<Model>();
 		for (int i = 0; i < alignments.size(); i++) {
 			initialModels.addAll(alignmentToModels(alignments.get(i), alignments.get(i).getAlignmentTool_name()));
 		}
 		if (isDebug) {
-			System.out.println("Initial Models :");
+			System.out.println("************Initial Models*************");
 			FormatVigorOutput.printModels2(initialModels);
 		}
 
@@ -56,7 +56,8 @@ public class ModelGenerationService {
 		List<Range> sequenceGaps = initialModels.get(0).getAlignment().getVirusGenome().getSequenceGaps();
 		List<Range> validSequenceGaps = new ArrayList<Range>();
 		String minGapLenString = "";
-		if (sequenceGaps.size() > 0) {
+		
+		if (sequenceGaps !=null && sequenceGaps.size() > 0) {
 			minGapLenString = form.getVigorParametersList().get("min_gap_length");
 			long minGapLength = 20;
 			if (VigorUtils.is_Integer(minGapLenString)) {
@@ -68,7 +69,6 @@ public class ModelGenerationService {
 					validSequenceGaps.add(gapRange);
 				}
 			}
-			validSequenceGaps.stream().forEach(System.out::println);
 		}
 
 		// split models at sequence gaps
@@ -78,10 +78,8 @@ public class ModelGenerationService {
 		}
 
 		if (isDebug) {
-			System.out.println("After splitting models at the Genome sequence gaps");
+			System.out.println("********After splitting models at the Genome sequence gaps**********");
 			FormatVigorOutput.printModels2(candidateModels);
-			System.out.println("Number of models are " + initialModels.size());
-			System.out.println("Number of candidate models are " + candidateModels.size());
 		}
 
 		return candidateModels;

@@ -1,0 +1,1152 @@
+>Features gi|21218484|ref|NC_003899.1|
+47	7528	gene
+			locus_tag	vigor_NSP
+			gene	NSP
+47	7528	CDS
+			codon_start	1
+			transl_except	(pos:5681..5683,aa:R)
+			protein_id	gi_21218484.1
+			locus_tag	vigor_NSP
+			gene	NSP
+			product	non-structural polyprotein precursor P1234
+7592	11317	gene
+			locus_tag	vigor_SP
+			gene	SP
+7592	11317	CDS
+			codon_start	1
+			protein_id	gi_21218484.2
+			locus_tag	vigor_SP
+			gene	SP
+			product	structural polyprotein
+
+>Features gi_21218484.1
+1	532	mat_peptide
+			product	mRNA-capping enzyme nsp1
+			locus_tag	vigor_NSP
+			gene	NSP
+533	1326	mat_peptide
+			product	protease nsp2
+			locus_tag	vigor_NSP
+			gene	NSP
+1327	1885	mat_peptide
+			product	non-structural protein nsp3
+			locus_tag	vigor_NSP
+			gene	NSP
+1886	2493	mat_peptide
+			product	RNA-directed RNA polymerase nsp4
+			locus_tag	vigor_NSP
+			gene	NSP
+
+>Features gi_21218484.2
+1	260	mat_peptide
+			product	capsid protein
+			locus_tag	vigor_SP
+			gene	SP
+261	323	mat_peptide
+			product	E3 protein
+			locus_tag	vigor_SP
+			gene	SP
+324	743	mat_peptide
+			product	E2 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+744	800	mat_peptide
+			product	6K membrane protein
+			locus_tag	vigor_SP
+			gene	SP
+801	1241	mat_peptide
+			product	E1 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+>Features gi|296124546|gb|HM045808.1|
+60	7484	gene
+			locus_tag	vigor_NSP
+			gene	NSP
+60	7484	CDS
+			codon_start	1
+			transl_except	(pos:5628..5630,aa:R)
+			protein_id	gi_296124546.1
+			locus_tag	vigor_NSP
+			gene	NSP
+			product	non-structural polyprotein precursor P1234
+7550	11296	gene
+			locus_tag	vigor_SP
+			gene	SP
+7550	11296	CDS
+			codon_start	1
+			protein_id	gi_296124546.2
+			locus_tag	vigor_SP
+			gene	SP
+			product	structural polyprotein
+
+>Features gi_296124546.1
+1	535	mat_peptide
+			product	mRNA-capping enzyme nsp1
+			locus_tag	vigor_NSP
+			gene	NSP
+536	1333	mat_peptide
+			product	protease nsp2
+			locus_tag	vigor_NSP
+			gene	NSP
+1334	1863	mat_peptide
+			product	non-structural protein nsp3
+			locus_tag	vigor_NSP
+			gene	NSP
+1864	2474	mat_peptide
+			product	RNA-directed RNA polymerase nsp4
+			locus_tag	vigor_NSP
+			gene	NSP
+
+>Features gi_296124546.2
+1	261	mat_peptide
+			product	capsid protein
+			locus_tag	vigor_SP
+			gene	SP
+262	325	mat_peptide
+			product	E3 protein
+			locus_tag	vigor_SP
+			gene	SP
+326	748	mat_peptide
+			product	E2 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+749	809	mat_peptide
+			product	6K membrane protein
+			locus_tag	vigor_SP
+			gene	SP
+810	1248	mat_peptide
+			product	E1 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+>Features gi|390190586|gb|JQ771793.1|
+16	7572	gene
+			locus_tag	vigor_NSP
+			gene	NSP
+16	7572	CDS
+			codon_start	1
+			transl_except	(pos:5719..5721,aa:R)
+			protein_id	gi_390190586.1
+			locus_tag	vigor_NSP
+			gene	NSP
+			product	non-structural polyprotein precursor P1234
+7618	11355	gene
+			locus_tag	vigor_SP
+			gene	SP
+7618	11355	CDS
+			codon_start	1
+			protein_id	gi_390190586.2
+			locus_tag	vigor_SP
+			gene	SP
+			product	structural polyprotein
+
+>Features gi_390190586.1
+1	540	mat_peptide
+			product	mRNA-capping enzyme nsp1
+			locus_tag	vigor_NSP
+			gene	NSP
+541	1347	mat_peptide
+			product	protease nsp2
+			locus_tag	vigor_NSP
+			gene	NSP
+1348	1908	mat_peptide
+			product	non-structural protein nsp3
+			locus_tag	vigor_NSP
+			gene	NSP
+1909	2518	mat_peptide
+			product	RNA-directed RNA polymerase nsp4
+			locus_tag	vigor_NSP
+			gene	NSP
+
+>Features gi_390190586.2
+1	264	mat_peptide
+			product	capsid protein
+			locus_tag	vigor_SP
+			gene	SP
+265	328	mat_peptide
+			product	E3 protein
+			locus_tag	vigor_SP
+			gene	SP
+329	751	mat_peptide
+			product	E2 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+752	806	mat_peptide
+			product	6K membrane protein
+			locus_tag	vigor_SP
+			gene	SP
+807	1245	mat_peptide
+			product	E1 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+>Features gi|126361457|gb|L37661.3|CKGPOLY
+77	7501	gene
+			locus_tag	vigor_NSP
+			gene	NSP
+77	7501	CDS
+			codon_start	1
+			transl_except	(pos:5645..5647,aa:R)
+			protein_id	gi_126361457.1
+			locus_tag	vigor_NSP
+			gene	NSP
+			product	non-structural polyprotein precursor P1234
+7567	11313	gene
+			locus_tag	vigor_SP
+			gene	SP
+7567	11313	CDS
+			codon_start	1
+			protein_id	gi_126361457.2
+			locus_tag	vigor_SP
+			gene	SP
+			product	structural polyprotein
+
+>Features gi_126361457.1
+1	535	mat_peptide
+			product	mRNA-capping enzyme nsp1
+			locus_tag	vigor_NSP
+			gene	NSP
+536	1333	mat_peptide
+			product	protease nsp2
+			locus_tag	vigor_NSP
+			gene	NSP
+1334	1863	mat_peptide
+			product	non-structural protein nsp3
+			locus_tag	vigor_NSP
+			gene	NSP
+1864	2474	mat_peptide
+			product	RNA-directed RNA polymerase nsp4
+			locus_tag	vigor_NSP
+			gene	NSP
+
+>Features gi_126361457.2
+1	261	mat_peptide
+			product	capsid protein
+			locus_tag	vigor_SP
+			gene	SP
+262	325	mat_peptide
+			product	E3 protein
+			locus_tag	vigor_SP
+			gene	SP
+326	748	mat_peptide
+			product	E2 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+749	809	mat_peptide
+			product	6K membrane protein
+			locus_tag	vigor_SP
+			gene	SP
+810	1248	mat_peptide
+			product	E1 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+>Features gi|4887231|gb|L01442.2|EEVNSPEPA
+45	7526	gene
+			locus_tag	vigor_NSP
+			gene	NSP
+45	7526	CDS
+			codon_start	1
+			transl_except	(pos:5682..5684,aa:R)
+			protein_id	gi_4887231.1
+			locus_tag	vigor_NSP
+			gene	NSP
+			product	non-structural polyprotein precursor P1234
+7562	11329	gene
+			locus_tag	vigor_SP
+			gene	SP
+7562	11329	CDS
+			codon_start	1
+			protein_id	gi_4887231.2
+			locus_tag	vigor_SP
+			gene	SP
+			product	structural polyprotein
+
+>Features gi_4887231.1
+1	535	mat_peptide
+			product	mRNA-capping enzyme nsp1
+			locus_tag	vigor_NSP
+			gene	NSP
+536	1329	mat_peptide
+			product	protease nsp2
+			locus_tag	vigor_NSP
+			gene	NSP
+1330	1886	mat_peptide
+			product	non-structural protein nsp3
+			locus_tag	vigor_NSP
+			gene	NSP
+1887	2493	mat_peptide
+			product	RNA-directed RNA polymerase nsp4
+			locus_tag	vigor_NSP
+			gene	NSP
+
+>Features gi_4887231.2
+1	275	mat_peptide
+			product	capsid protein
+			locus_tag	vigor_SP
+			gene	SP
+276	334	mat_peptide
+			product	E3 protein
+			locus_tag	vigor_SP
+			gene	SP
+335	757	mat_peptide
+			product	E2 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+758	813	mat_peptide
+			product	6K membrane protein
+			locus_tag	vigor_SP
+			gene	SP
+814	1255	mat_peptide
+			product	E1 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+>Features gi|5442464|gb|AF004459.2|
+45	7502	gene
+			locus_tag	vigor_NSP
+			gene	NSP
+45	7502	CDS
+			codon_start	1
+			transl_except	(pos:5658..5660,aa:R)
+			protein_id	gi_5442464.1
+			locus_tag	vigor_NSP
+			gene	NSP
+			product	non-structural polyprotein precursor P1234
+7538	11305	gene
+			locus_tag	vigor_SP
+			gene	SP
+7538	11305	CDS
+			codon_start	1
+			protein_id	gi_5442464.2
+			locus_tag	vigor_SP
+			gene	SP
+			product	structural polyprotein
+
+>Features gi_5442464.1
+1	535	mat_peptide
+			product	mRNA-capping enzyme nsp1
+			locus_tag	vigor_NSP
+			gene	NSP
+536	1329	mat_peptide
+			product	protease nsp2
+			locus_tag	vigor_NSP
+			gene	NSP
+1330	1878	mat_peptide
+			product	non-structural protein nsp3
+			locus_tag	vigor_NSP
+			gene	NSP
+1879	2485	mat_peptide
+			product	RNA-directed RNA polymerase nsp4
+			locus_tag	vigor_NSP
+			gene	NSP
+
+>Features gi_5442464.2
+1	275	mat_peptide
+			product	capsid protein
+			locus_tag	vigor_SP
+			gene	SP
+276	334	mat_peptide
+			product	E3 protein
+			locus_tag	vigor_SP
+			gene	SP
+335	757	mat_peptide
+			product	E2 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+758	813	mat_peptide
+			product	6K membrane protein
+			locus_tag	vigor_SP
+			gene	SP
+814	1255	mat_peptide
+			product	E1 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+>Features gi|262073974|gb|FJ513675.1|
+50	7474	gene
+			locus_tag	vigor_NSP
+			gene	NSP
+50	7474	CDS
+			codon_start	1
+			transl_except	(pos:5618..5620,aa:R)
+			protein_id	gi_262073974.1
+			locus_tag	vigor_NSP
+			gene	NSP
+			product	non-structural polyprotein precursor P1234
+7540	11286	gene
+			locus_tag	vigor_SP
+			gene	SP
+7540	11286	CDS
+			codon_start	1
+			protein_id	gi_262073974.2
+			locus_tag	vigor_SP
+			gene	SP
+			product	structural polyprotein
+
+>Features gi_262073974.1
+1	535	mat_peptide
+			product	mRNA-capping enzyme nsp1
+			locus_tag	vigor_NSP
+			gene	NSP
+536	1333	mat_peptide
+			product	protease nsp2
+			locus_tag	vigor_NSP
+			gene	NSP
+1334	1863	mat_peptide
+			product	non-structural protein nsp3
+			locus_tag	vigor_NSP
+			gene	NSP
+1864	2474	mat_peptide
+			product	RNA-directed RNA polymerase nsp4
+			locus_tag	vigor_NSP
+			gene	NSP
+
+>Features gi_262073974.2
+1	261	mat_peptide
+			product	capsid protein
+			locus_tag	vigor_SP
+			gene	SP
+262	325	mat_peptide
+			product	E3 protein
+			locus_tag	vigor_SP
+			gene	SP
+326	748	mat_peptide
+			product	E2 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+749	809	mat_peptide
+			product	6K membrane protein
+			locus_tag	vigor_SP
+			gene	SP
+810	1248	mat_peptide
+			product	E1 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+>Features gi|124295588|gb|EF027138.1|
+64	7488	gene
+			locus_tag	vigor_NSP
+			gene	NSP
+64	7488	CDS
+			codon_start	1
+			transl_except	(pos:5632..5634,aa:R)
+			protein_id	gi_124295588.1
+			locus_tag	vigor_NSP
+			gene	NSP
+			product	non-structural polyprotein precursor P1234
+7554	11300	gene
+			locus_tag	vigor_SP
+			gene	SP
+7554	11300	CDS
+			codon_start	1
+			protein_id	gi_124295588.2
+			locus_tag	vigor_SP
+			gene	SP
+			product	structural polyprotein
+
+>Features gi_124295588.1
+1	535	mat_peptide
+			product	mRNA-capping enzyme nsp1
+			locus_tag	vigor_NSP
+			gene	NSP
+536	1333	mat_peptide
+			product	protease nsp2
+			locus_tag	vigor_NSP
+			gene	NSP
+1334	1863	mat_peptide
+			product	non-structural protein nsp3
+			locus_tag	vigor_NSP
+			gene	NSP
+1864	2474	mat_peptide
+			product	RNA-directed RNA polymerase nsp4
+			locus_tag	vigor_NSP
+			gene	NSP
+
+>Features gi_124295588.2
+1	261	mat_peptide
+			product	capsid protein
+			locus_tag	vigor_SP
+			gene	SP
+262	325	mat_peptide
+			product	E3 protein
+			locus_tag	vigor_SP
+			gene	SP
+326	748	mat_peptide
+			product	E2 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+749	809	mat_peptide
+			product	6K membrane protein
+			locus_tag	vigor_SP
+			gene	SP
+810	1248	mat_peptide
+			product	E1 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+>Features gi|21218484|ref|NC_003899.1|
+47	7528	gene
+			locus_tag	vigor_NSP
+			gene	NSP
+47	7528	CDS
+			codon_start	1
+			transl_except	(pos:5681..5683,aa:R)
+			protein_id	gi_21218484.1
+			locus_tag	vigor_NSP
+			gene	NSP
+			product	non-structural polyprotein precursor P1234
+7592	11317	gene
+			locus_tag	vigor_SP
+			gene	SP
+7592	11317	CDS
+			codon_start	1
+			protein_id	gi_21218484.2
+			locus_tag	vigor_SP
+			gene	SP
+			product	structural polyprotein
+
+>Features gi_21218484.1
+1	532	mat_peptide
+			product	mRNA-capping enzyme nsp1
+			locus_tag	vigor_NSP
+			gene	NSP
+533	1326	mat_peptide
+			product	protease nsp2
+			locus_tag	vigor_NSP
+			gene	NSP
+1327	1885	mat_peptide
+			product	non-structural protein nsp3
+			locus_tag	vigor_NSP
+			gene	NSP
+1886	2493	mat_peptide
+			product	RNA-directed RNA polymerase nsp4
+			locus_tag	vigor_NSP
+			gene	NSP
+
+>Features gi_21218484.2
+1	260	mat_peptide
+			product	capsid protein
+			locus_tag	vigor_SP
+			gene	SP
+261	323	mat_peptide
+			product	E3 protein
+			locus_tag	vigor_SP
+			gene	SP
+324	743	mat_peptide
+			product	E2 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+744	800	mat_peptide
+			product	6K membrane protein
+			locus_tag	vigor_SP
+			gene	SP
+801	1241	mat_peptide
+			product	E1 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+>Features gi|296124546|gb|HM045808.1|
+60	7484	gene
+			locus_tag	vigor_NSP
+			gene	NSP
+60	7484	CDS
+			codon_start	1
+			transl_except	(pos:5628..5630,aa:R)
+			protein_id	gi_296124546.1
+			locus_tag	vigor_NSP
+			gene	NSP
+			product	non-structural polyprotein precursor P1234
+7550	11296	gene
+			locus_tag	vigor_SP
+			gene	SP
+7550	11296	CDS
+			codon_start	1
+			protein_id	gi_296124546.2
+			locus_tag	vigor_SP
+			gene	SP
+			product	structural polyprotein
+
+>Features gi_296124546.1
+1	535	mat_peptide
+			product	mRNA-capping enzyme nsp1
+			locus_tag	vigor_NSP
+			gene	NSP
+536	1333	mat_peptide
+			product	protease nsp2
+			locus_tag	vigor_NSP
+			gene	NSP
+1334	1863	mat_peptide
+			product	non-structural protein nsp3
+			locus_tag	vigor_NSP
+			gene	NSP
+1864	2474	mat_peptide
+			product	RNA-directed RNA polymerase nsp4
+			locus_tag	vigor_NSP
+			gene	NSP
+
+>Features gi_296124546.2
+1	261	mat_peptide
+			product	capsid protein
+			locus_tag	vigor_SP
+			gene	SP
+262	325	mat_peptide
+			product	E3 protein
+			locus_tag	vigor_SP
+			gene	SP
+326	748	mat_peptide
+			product	E2 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+749	809	mat_peptide
+			product	6K membrane protein
+			locus_tag	vigor_SP
+			gene	SP
+810	1248	mat_peptide
+			product	E1 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+>Features gi|390190586|gb|JQ771793.1|
+16	7572	gene
+			locus_tag	vigor_NSP
+			gene	NSP
+16	7572	CDS
+			codon_start	1
+			transl_except	(pos:5719..5721,aa:R)
+			protein_id	gi_390190586.1
+			locus_tag	vigor_NSP
+			gene	NSP
+			product	non-structural polyprotein precursor P1234
+7618	11355	gene
+			locus_tag	vigor_SP
+			gene	SP
+7618	11355	CDS
+			codon_start	1
+			protein_id	gi_390190586.2
+			locus_tag	vigor_SP
+			gene	SP
+			product	structural polyprotein
+
+>Features gi_390190586.1
+1	540	mat_peptide
+			product	mRNA-capping enzyme nsp1
+			locus_tag	vigor_NSP
+			gene	NSP
+541	1347	mat_peptide
+			product	protease nsp2
+			locus_tag	vigor_NSP
+			gene	NSP
+1348	1908	mat_peptide
+			product	non-structural protein nsp3
+			locus_tag	vigor_NSP
+			gene	NSP
+1909	2518	mat_peptide
+			product	RNA-directed RNA polymerase nsp4
+			locus_tag	vigor_NSP
+			gene	NSP
+
+>Features gi_390190586.2
+1	264	mat_peptide
+			product	capsid protein
+			locus_tag	vigor_SP
+			gene	SP
+265	328	mat_peptide
+			product	E3 protein
+			locus_tag	vigor_SP
+			gene	SP
+329	751	mat_peptide
+			product	E2 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+752	806	mat_peptide
+			product	6K membrane protein
+			locus_tag	vigor_SP
+			gene	SP
+807	1245	mat_peptide
+			product	E1 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+>Features gi|126361457|gb|L37661.3|CKGPOLY
+77	7501	gene
+			locus_tag	vigor_NSP
+			gene	NSP
+77	7501	CDS
+			codon_start	1
+			transl_except	(pos:5645..5647,aa:R)
+			protein_id	gi_126361457.1
+			locus_tag	vigor_NSP
+			gene	NSP
+			product	non-structural polyprotein precursor P1234
+7567	11313	gene
+			locus_tag	vigor_SP
+			gene	SP
+7567	11313	CDS
+			codon_start	1
+			protein_id	gi_126361457.2
+			locus_tag	vigor_SP
+			gene	SP
+			product	structural polyprotein
+
+>Features gi_126361457.1
+1	535	mat_peptide
+			product	mRNA-capping enzyme nsp1
+			locus_tag	vigor_NSP
+			gene	NSP
+536	1333	mat_peptide
+			product	protease nsp2
+			locus_tag	vigor_NSP
+			gene	NSP
+1334	1863	mat_peptide
+			product	non-structural protein nsp3
+			locus_tag	vigor_NSP
+			gene	NSP
+1864	2474	mat_peptide
+			product	RNA-directed RNA polymerase nsp4
+			locus_tag	vigor_NSP
+			gene	NSP
+
+>Features gi_126361457.2
+1	261	mat_peptide
+			product	capsid protein
+			locus_tag	vigor_SP
+			gene	SP
+262	325	mat_peptide
+			product	E3 protein
+			locus_tag	vigor_SP
+			gene	SP
+326	748	mat_peptide
+			product	E2 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+749	809	mat_peptide
+			product	6K membrane protein
+			locus_tag	vigor_SP
+			gene	SP
+810	1248	mat_peptide
+			product	E1 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+>Features gi|4887231|gb|L01442.2|EEVNSPEPA
+45	7526	gene
+			locus_tag	vigor_NSP
+			gene	NSP
+45	7526	CDS
+			codon_start	1
+			transl_except	(pos:5682..5684,aa:R)
+			protein_id	gi_4887231.1
+			locus_tag	vigor_NSP
+			gene	NSP
+			product	non-structural polyprotein precursor P1234
+7562	11329	gene
+			locus_tag	vigor_SP
+			gene	SP
+7562	11329	CDS
+			codon_start	1
+			protein_id	gi_4887231.2
+			locus_tag	vigor_SP
+			gene	SP
+			product	structural polyprotein
+
+>Features gi_4887231.1
+1	535	mat_peptide
+			product	mRNA-capping enzyme nsp1
+			locus_tag	vigor_NSP
+			gene	NSP
+536	1329	mat_peptide
+			product	protease nsp2
+			locus_tag	vigor_NSP
+			gene	NSP
+1330	1886	mat_peptide
+			product	non-structural protein nsp3
+			locus_tag	vigor_NSP
+			gene	NSP
+1887	2493	mat_peptide
+			product	RNA-directed RNA polymerase nsp4
+			locus_tag	vigor_NSP
+			gene	NSP
+
+>Features gi_4887231.2
+1	275	mat_peptide
+			product	capsid protein
+			locus_tag	vigor_SP
+			gene	SP
+276	334	mat_peptide
+			product	E3 protein
+			locus_tag	vigor_SP
+			gene	SP
+335	757	mat_peptide
+			product	E2 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+758	813	mat_peptide
+			product	6K membrane protein
+			locus_tag	vigor_SP
+			gene	SP
+814	1255	mat_peptide
+			product	E1 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+>Features gi|5442464|gb|AF004459.2|
+45	7502	gene
+			locus_tag	vigor_NSP
+			gene	NSP
+45	7502	CDS
+			codon_start	1
+			transl_except	(pos:5658..5660,aa:R)
+			protein_id	gi_5442464.1
+			locus_tag	vigor_NSP
+			gene	NSP
+			product	non-structural polyprotein precursor P1234
+7538	11305	gene
+			locus_tag	vigor_SP
+			gene	SP
+7538	11305	CDS
+			codon_start	1
+			protein_id	gi_5442464.2
+			locus_tag	vigor_SP
+			gene	SP
+			product	structural polyprotein
+
+>Features gi_5442464.1
+1	535	mat_peptide
+			product	mRNA-capping enzyme nsp1
+			locus_tag	vigor_NSP
+			gene	NSP
+536	1329	mat_peptide
+			product	protease nsp2
+			locus_tag	vigor_NSP
+			gene	NSP
+1330	1878	mat_peptide
+			product	non-structural protein nsp3
+			locus_tag	vigor_NSP
+			gene	NSP
+1879	2485	mat_peptide
+			product	RNA-directed RNA polymerase nsp4
+			locus_tag	vigor_NSP
+			gene	NSP
+
+>Features gi_5442464.2
+1	275	mat_peptide
+			product	capsid protein
+			locus_tag	vigor_SP
+			gene	SP
+276	334	mat_peptide
+			product	E3 protein
+			locus_tag	vigor_SP
+			gene	SP
+335	757	mat_peptide
+			product	E2 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+758	813	mat_peptide
+			product	6K membrane protein
+			locus_tag	vigor_SP
+			gene	SP
+814	1255	mat_peptide
+			product	E1 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+>Features gi|262073974|gb|FJ513675.1|
+50	7474	gene
+			locus_tag	vigor_NSP
+			gene	NSP
+50	7474	CDS
+			codon_start	1
+			transl_except	(pos:5618..5620,aa:R)
+			protein_id	gi_262073974.1
+			locus_tag	vigor_NSP
+			gene	NSP
+			product	non-structural polyprotein precursor P1234
+7540	11286	gene
+			locus_tag	vigor_SP
+			gene	SP
+7540	11286	CDS
+			codon_start	1
+			protein_id	gi_262073974.2
+			locus_tag	vigor_SP
+			gene	SP
+			product	structural polyprotein
+
+>Features gi_262073974.1
+1	535	mat_peptide
+			product	mRNA-capping enzyme nsp1
+			locus_tag	vigor_NSP
+			gene	NSP
+536	1333	mat_peptide
+			product	protease nsp2
+			locus_tag	vigor_NSP
+			gene	NSP
+1334	1863	mat_peptide
+			product	non-structural protein nsp3
+			locus_tag	vigor_NSP
+			gene	NSP
+1864	2474	mat_peptide
+			product	RNA-directed RNA polymerase nsp4
+			locus_tag	vigor_NSP
+			gene	NSP
+
+>Features gi_262073974.2
+1	261	mat_peptide
+			product	capsid protein
+			locus_tag	vigor_SP
+			gene	SP
+262	325	mat_peptide
+			product	E3 protein
+			locus_tag	vigor_SP
+			gene	SP
+326	748	mat_peptide
+			product	E2 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+749	809	mat_peptide
+			product	6K membrane protein
+			locus_tag	vigor_SP
+			gene	SP
+810	1248	mat_peptide
+			product	E1 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+>Features gi|149346282|gb|EF631998.1|
+79	7482	gene
+			locus_tag	vigor_NSP
+			gene	NSP
+79	7482	CDS
+			codon_start	1
+			transl_except	(pos:5626..5628,aa:R)
+			protein_id	gi_149346282.1
+			locus_tag	vigor_NSP
+			gene	NSP
+			product	non-structural polyprotein precursor P1234
+7527	11288	gene
+			locus_tag	vigor_SP
+			gene	SP
+7527	11288	CDS
+			codon_start	1
+			protein_id	gi_149346282.2
+			locus_tag	vigor_SP
+			gene	SP
+			product	structural polyprotein
+
+>Features gi_149346282.1
+1	534	mat_peptide
+			product	mRNA-capping enzyme nsp1
+			locus_tag	vigor_NSP
+			gene	NSP
+535	1332	mat_peptide
+			product	protease nsp2
+			locus_tag	vigor_NSP
+			gene	NSP
+1333	1856	mat_peptide
+			product	non-structural protein nsp3
+			locus_tag	vigor_NSP
+			gene	NSP
+1857	2467	mat_peptide
+			product	RNA-directed RNA polymerase nsp4
+			locus_tag	vigor_NSP
+			gene	NSP
+
+>Features gi_149346282.2
+1	268	mat_peptide
+			product	capsid protein
+			locus_tag	vigor_SP
+			gene	SP
+269	332	mat_peptide
+			product	E3 protein
+			locus_tag	vigor_SP
+			gene	SP
+333	754	mat_peptide
+			product	E2 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+755	815	mat_peptide
+			product	6K membrane protein
+			locus_tag	vigor_SP
+			gene	SP
+816	1253	mat_peptide
+			product	E1 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+>Features gi|124295588|gb|EF027138.1|
+64	7488	gene
+			locus_tag	vigor_NSP
+			gene	NSP
+64	7488	CDS
+			codon_start	1
+			transl_except	(pos:5632..5634,aa:R)
+			protein_id	gi_124295588.1
+			locus_tag	vigor_NSP
+			gene	NSP
+			product	non-structural polyprotein precursor P1234
+7554	11300	gene
+			locus_tag	vigor_SP
+			gene	SP
+7554	11300	CDS
+			codon_start	1
+			protein_id	gi_124295588.2
+			locus_tag	vigor_SP
+			gene	SP
+			product	structural polyprotein
+
+>Features gi_124295588.1
+1	535	mat_peptide
+			product	mRNA-capping enzyme nsp1
+			locus_tag	vigor_NSP
+			gene	NSP
+536	1333	mat_peptide
+			product	protease nsp2
+			locus_tag	vigor_NSP
+			gene	NSP
+1334	1863	mat_peptide
+			product	non-structural protein nsp3
+			locus_tag	vigor_NSP
+			gene	NSP
+1864	2474	mat_peptide
+			product	RNA-directed RNA polymerase nsp4
+			locus_tag	vigor_NSP
+			gene	NSP
+
+>Features gi_124295588.2
+1	261	mat_peptide
+			product	capsid protein
+			locus_tag	vigor_SP
+			gene	SP
+262	325	mat_peptide
+			product	E3 protein
+			locus_tag	vigor_SP
+			gene	SP
+326	748	mat_peptide
+			product	E2 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+749	809	mat_peptide
+			product	6K membrane protein
+			locus_tag	vigor_SP
+			gene	SP
+810	1248	mat_peptide
+			product	E1 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
+>Features HM045808_DRAFT
+60	7484	gene
+			locus_tag	vigor_NSP
+			gene	NSP
+60	>593	CDS
+			codon_start	1
+			protein_id	HM045808_DRAFT.1a
+			locus_tag	vigor_NSP
+			gene	NSP
+			product	putative non-structural polyprotein precursor P1234, N-terminal
+			note	coding region disrupted by sequencing gap
+<771	>1400	CDS
+			codon_start	1
+			protein_id	HM045808_DRAFT.1b
+			locus_tag	vigor_NSP
+			gene	NSP
+			product	putative non-structural polyprotein precursor P1234, fragment
+			note	coding region disrupted by sequencing gap
+<1556	>2938	CDS
+			codon_start	2
+			protein_id	HM045808_DRAFT.1c
+			locus_tag	vigor_NSP
+			gene	NSP
+			product	putative non-structural polyprotein precursor P1234, fragment
+			note	coding region disrupted by sequencing gap
+<3012	>4550	CDS
+			codon_start	1
+			protein_id	HM045808_DRAFT.1d
+			locus_tag	vigor_NSP
+			gene	NSP
+			product	putative non-structural polyprotein precursor P1234, fragment
+			note	coding region disrupted by sequencing gap
+<4906	7484	CDS
+			codon_start	3
+			transl_except	(pos:5628..5630,aa:R)
+			protein_id	HM045808_DRAFT.1e
+			locus_tag	vigor_NSP
+			gene	NSP
+			product	putative non-structural polyprotein precursor P1234, C-terminal
+			note	coding region disrupted by sequencing gap
+7550	11296	gene
+			locus_tag	vigor_SP
+			gene	SP
+7550	>8508	CDS
+			codon_start	1
+			protein_id	HM045808_DRAFT.2a
+			locus_tag	vigor_SP
+			gene	SP
+			product	putative structural polyprotein, N-terminal
+			note	coding region disrupted by sequencing gap
+<8700	>9906	CDS
+			codon_start	3
+			protein_id	HM045808_DRAFT.2b
+			locus_tag	vigor_SP
+			gene	SP
+			product	putative structural polyprotein, fragment
+			note	coding region disrupted by sequencing gap
+<9967	11296	CDS
+			codon_start	2
+			protein_id	HM045808_DRAFT.2c
+			locus_tag	vigor_SP
+			gene	SP
+			product	putative structural polyprotein, C-terminal
+			note	coding region disrupted by sequencing gap
+
+>Features HM045808_DRAFT.1a
+1	>178	mat_peptide
+			product	putative mRNA-capping enzyme nsp1, N-terminal
+			locus_tag	vigor_NSP
+			gene	NSP
+
+>Features HM045808_DRAFT.1b
+<1	>210	mat_peptide
+			product	putative mRNA-capping enzyme nsp1, fragment
+			locus_tag	vigor_NSP
+			gene	NSP
+
+>Features HM045808_DRAFT.1c
+<1	36	mat_peptide
+			product	putative mRNA-capping enzyme nsp1, C-terminal
+			locus_tag	vigor_NSP
+			gene	NSP
+37	>460	mat_peptide
+			product	putative protease nsp2, N-terminal
+			locus_tag	vigor_NSP
+			gene	NSP
+
+>Features HM045808_DRAFT.1d
+<1	349	mat_peptide
+			product	putative protease nsp2, C-terminal
+			locus_tag	vigor_NSP
+			gene	NSP
+350	>513	mat_peptide
+			product	putative non-structural protein nsp3, N-terminal
+			locus_tag	vigor_NSP
+			gene	NSP
+
+>Features HM045808_DRAFT.1e
+<1	247	mat_peptide
+			product	putative non-structural protein nsp3, C-terminal
+			locus_tag	vigor_NSP
+			gene	NSP
+248	858	mat_peptide
+			product	RNA-directed RNA polymerase nsp4
+			locus_tag	vigor_NSP
+			gene	NSP
+
+>Features HM045808_DRAFT.2a
+1	261	mat_peptide
+			product	capsid protein
+			locus_tag	vigor_SP
+			gene	SP
+262	>319	mat_peptide
+			product	putative E3 protein, N-terminal
+			locus_tag	vigor_SP
+			gene	SP
+
+>Features HM045808_DRAFT.2b
+<1	364	mat_peptide
+			product	putative E2 envelope glycoprotein, C-terminal
+			locus_tag	vigor_SP
+			gene	SP
+365	>401	mat_peptide
+			product	putative 6K membrane protein, N-terminal
+			locus_tag	vigor_SP
+			gene	SP
+
+>Features HM045808_DRAFT.2c
+4	442	mat_peptide
+			product	E1 envelope glycoprotein
+			locus_tag	vigor_SP
+			gene	SP
