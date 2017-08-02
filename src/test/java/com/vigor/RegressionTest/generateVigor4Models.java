@@ -21,6 +21,7 @@ import com.vigor.forms.VigorForm;
 import com.vigor.service.ExonerateService;
 import com.vigor.service.ModelGenerationService;
 import com.vigor.service.ViralProteinService;
+import com.vigor.utils.FormatVigorOutput;
 import com.vigor.utils.VigorTestUtils;
 
 public class generateVigor4Models {
@@ -62,12 +63,17 @@ public class generateVigor4Models {
 		File outputFile = new File(fileName);
 		AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
 		alignmentEvidence.setReference_db("flua_db");
+		
 		List<Alignment> alignments = exonerateService.parseExonerateOutput(outputFile, alignmentEvidence,virusGenome);
 		alignments = alignments.stream().map(alignment -> viralProteinService.setViralProteinAttributes(alignment))
 				.collect(Collectors.toList());
 		List<Model> candidateModels = modelGenerationService.determineCandidateModels(alignments, new VigorForm());
 		vigor4Models.put(virusGenome.getId(), candidateModels);
+		FormatVigorOutput.printModels(candidateModels);
+		System.out.println("outputFile"+outputFile);
+		System.out.println("actual one in the end:"+virusGenome.getId());
 		System.out.println("counter"+count);
+		count++;
 		      
 	}
 		

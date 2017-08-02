@@ -43,6 +43,7 @@ public class GenerateExonerateOutputTest {
 
 		// connect to lserver1 and run exonerate
 		String fileName="";
+		fileName = virusGenome.getId().replaceAll("\\|", "")+".txt";
 		String refDBFolder = referenceDB.replaceAll("_db", "");
 		try {
 			Runtime.getRuntime().exec(
@@ -54,7 +55,7 @@ public class GenerateExonerateOutputTest {
 			String password = "Ilovemyself@3";
 			String command1 = "chmod 777 /home/snettem/vigor4_workspace/sequence_temp.fasta && exonerate --model protein2genome -q "
 					+ dbPath
-					+ " -t /home/snettem/vigor4_workspace/sequence_temp.fasta --showcigar true > /home/snettem/vigor4_workspace/exonerate.txt && chmod 777 /home/snettem/vigor4_workspace/exonerate.txt";
+					+ " -t /home/snettem/vigor4_workspace/sequence_temp.fasta --showcigar true > /home/snettem/vigor4_workspace/"+fileName +" && chmod 777 /home/snettem/vigor4_workspace/"+fileName;
 
 			java.util.Properties config = new java.util.Properties();
 			config.put("StrictHostKeyChecking", "no");
@@ -88,9 +89,9 @@ public class GenerateExonerateOutputTest {
 			}
 			channel.disconnect();
 			session.disconnect();
-			fileName = virusGenome.getId().replaceAll("\\|", "")+".txt";
+			
 					Runtime.getRuntime().exec(
-					"pscp -pw \"Ilovemyself@3\" -scp lserver1:/home/snettem/vigor4_workspace/exonerate.txt " +workspace+"/"+refDBFolder+"/"+fileName);
+					"pscp -pw \"Ilovemyself@3\" -scp lserver1:/home/snettem/vigor4_workspace/"+fileName+" "+workspace+"/"+refDBFolder+"/"+fileName);
 					
 			System.out.println("DONE");
 			
