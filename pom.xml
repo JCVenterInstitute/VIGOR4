@@ -1,7 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <repositories>
+    <repository>
+      <id>local-maven-repository</id>
+      <url>file://${project.basedir}/local-maven-repository</url>
+    </repository>
+  </repositories>
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.vigor</groupId>
+	<groupId>org.jcvi.vigor</groupId>
 	<artifactId>Vigor4</artifactId>
 	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
@@ -69,9 +75,9 @@
 			<version>2.6.1</version>
 		</dependency>
 		<dependency>
-			<groupId>org.jillion</groupId>
+			<groupId>org.jcvi</groupId>
 			<artifactId>jillion</artifactId>
-			<version>5.3</version>
+			<version>5.3-SNAPSHOT</version>
 		</dependency>
 
 	</dependencies>
