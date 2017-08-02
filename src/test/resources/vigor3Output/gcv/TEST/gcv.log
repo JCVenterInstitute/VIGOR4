@@ -1,0 +1,947 @@
+2017-07-27 11:27:10
+
+parameters
+	bl2seq_extend_hsp	25
+	bl2seq_extend_span	50
+	candidate_blastopts	-p blastx -M BLOSUM45 -e 1E-10 -g F -F "" -b 2000 -v 0
+	candidate_evalue	
+	candidate_overlap_threshold	0.8
+	candidate_refdb	
+	command_line	/usr/local/devel/VIRIFX/software/VIGOR3/prod3/VIGOR3.pl -D gcv -O /home/snettem/vigor_new/gcv/TEST/gcv -i /usr/local/devel/VIRIFX/software/VIGOR3.r19/regr_testing/gcv.fasta
+	default_gene_optional	0
+	default_gene_required	0
+	default_gene_variation	1
+	frameshift_sensitivity	1
+	gene_variations	
+	jcvi_rules	1
+	mature_pep_mincoverage	50
+	mature_pep_minidentity	25
+	mature_pep_minsimilarity	40
+	mature_pep_refdb	/usr/local/devel/VIRIFX/software/VIGOR3.r19/data3/virus_mp
+	max_intron_size	7000
+	min_candidate_pctsimilarity	60
+	min_candidate_sbjcoverage	33
+	min_exon_size	3
+	min_intron_size	30
+	min_pseudogene_coverage	80
+	min_pseudogene_identity	70
+	min_pseudogene_similarity	80
+	noncanonical_splicing_genes	
+	optional_genes	
+	reference_db	/usr/local/devel/VIRIFX/software/VIGOR3.r19/data3/cov_db
+	required_genes	
+	ribosomal_slippage_genes	
+	rna_editing_genes	
+	selectivity	0.985
+	slippage_frameshift	-1
+	slippage_motif	[NT][NT][NT]AAAC
+	slippage_offset	0
+	spliced_genes	
+	splicesite_extend_range	0
+	tile_overlap	1000000
+	tile_size	10000000
+	use_locus_tags	1
+	variation	0.975
+	verbose	0
+	vigorspace	/usr/local/devel/VIRIFX/software/VIGOR3.r19/prod3/vigorscratch/517398.65036598
+
+
+genomic sequence gi|529367566|gb|KF493884.1|, length=202
+  selecting database cov_g2a_db
+
+    found 1 permutation for gene Pp1ab
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_937947.1       7095   4916-4982      1   2-202          1   2  0  N   100.0  100.0  0.9    2.9-e041 Pp1ab | replicase polyprotein 1ab
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|529367566|gb|KF49      202      1            0        201             67          100.0            100.0            0.9   cov_g2a_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_529367566.1     100.0  100.0  0.9    69.3  0.0   29.8  <2..>202         67     7095   NP_937947.1       Pp1ab | putative replicase polyprotein 1ab,
+                                                                                                           fragment
+gi_529367566.1.1   100.0  100.0  7.2    58.8  0.0   33.9  <2..>202         67     928    NC_005147_nsp12   putative nsp12, fragment
+
+
+genomic sequence gi|529367566|gb|KF493884.1|, length=202
+  selecting database cov_g2a_db
+
+    found 1 permutation for gene Pp1ab
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_937947.1       7095   4916-4982      1   2-202          1   2  0  N   100.0  100.0  0.9    2.9-e041 Pp1ab | replicase polyprotein 1ab
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|529367566|gb|KF49      202      1            0        201             67          100.0            100.0            0.9   cov_g2a_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_529367566.1     100.0  100.0  0.9    69.3  0.0   29.8  <2..>202         67     7095   NP_937947.1       Pp1ab | putative replicase polyprotein 1ab,
+                                                                                                           fragment
+gi_529367566.1.1   100.0  100.0  7.2    58.8  0.0   33.9  <2..>202         67     928    NC_005147_nsp12   putative nsp12, fragment
+
+
+genomic sequence gi|564131295|gb|KF668605.1|, length=15344
+  selecting database cov_g3_db
+
+    found 4 permutations for gene Pp1ab
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEB00723.1        6631   3942-6631      1   1-8070         1   1  0  N   98.4   99.1   40.5   0        Pp1ab | polyprotein 1ab
+    AFH35028.1        6629   3941-6629      1   4-8070         1   1  0  N   98.2   98.9   40.5   0        Pp1ab | polyprotein 1ab
+    YP_002308496.1    6286   3605-6278      1   10-8022        1   1  0  N   49.2   64.7   42.5   0        Pp1ab | polyprotein 1ab
+    CAZ86697.1        6631   3945-6631      1   10-8070        1   1  0  N   97.3   98.9   40.5   0        Pp1ab | polyprotein 1ab
+        found 1 gene
+
+    found 2 permutations for gene S
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADA83490.1        1172   1-1172         1   8024-11536     1   2  0  N   68.4   82.2   100.0  0        S | spike glycoprotein
+    AAS00080.1        1169   5-1169         1   8036-11536     1   2  0  N   68.9   81.9   99.6   0        S | spike glycoprotein
+        found 1 gene
+
+    found 1 permutation for gene 3a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEB00707.1        57     1-57           1   11539-11709    1   1  0  N   82.4   92.9   100.0  1.7-e024 3a | 3a protein
+        found 1 gene
+
+    found 1 permutation for gene 3b
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEJ80240.1        62     1-62           1   11712-11897    1   3  0  N   79.0   90.3   100.0  9.1-e029 3b | 3b protein
+        found 1 gene
+
+    found 3 permutations for gene E
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    CAZ86711.1        92     2-91           1   11884-12153    1   1  0  N   90.0   96.6   97.8   2.5-e052 E | envelope protein
+    AEJ80241.1        108    1-98           1   11884-12177    1   1  0  N   92.8   98.9   90.7   1.6-e059 E | envelope protein
+    AEO86771.1        109    1-109          1   11884-12210    1   1  0  N   84.4   91.7   100.0  1.9-e058 E | envelope protein
+        found 1 gene
+
+    found 4 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    CAZ86703.1        226    1-226          1   12182-12859    1   2  0  N   90.2   93.8   100.0  1.2-e138 M | membrane protein
+    ACC94330.1        225    3-225          1   12191-12859    1   2  0  N   91.9   94.1   99.1   5.3-e138 M | membrane protein
+    YP_001941170.1    223    2-223          1   12194-12859    1   2  0  N   91.4   94.5   99.5   1.9-e137 M | membrane protein
+    ADP06463.1        223    4-223          1   12200-12859    1   2  0  N   91.8   95.0   98.6   6.5-e137 M | membrane protein
+        found 1 gene
+
+    found 2 permutations for gene 4b
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADP06500.1        94     1-93           1   12863-13141    1   2  0  N   87.0   91.3   98.9   3.1-e051 4b | 4b protein
+    ADV71817.1        97     1-97           1   12863-13153    1   2  0  N   83.5   90.7   100.0  7.4-e052 4b | 4b protein
+        found 1 gene
+
+    found 2 permutations for gene 4c
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADV71779.1        56     1-48           1   13068-13211    1   3  0  N   68.7   81.2   85.7   2.2-e016 4c | 4c protein
+    ADV71728.1        57     1-55           1   13068-13232    1   3  0  N   50.9   67.2   96.4   8.3-e011 4c | 4c protein
+        found 1 gene
+
+    found 1 permutation for gene 5a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEO86773.1        65     1-65           1   13225-13419    1   1  0  N   95.3   98.4   100.0  2.1-e034 5a | 5a protein
+        found 1 gene
+
+    found 1 permutation for gene 5b
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEO86774.1        82     1-82           1   13419-13664    1   3  0  N   98.7   98.7   100.0  9.8-e051 5b | 5b protein
+        found 1 gene
+
+    found 1 permutation for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEO86775.1        409    1-409          1   13610-14836    1   2  0  N   97.5   98.7   100.0  0        N | nucleocapsid protein
+        found 1 gene
+
+    found 2 permutations for gene 6b
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADV71750.1        74     1-74           1   14848-15066    1   1  0  N   62.1   77.0   100.0  6.2-e023 6b | 6b protein
+    ACB87504.1        73     3-73           1   14857-15066    1   1  0  N   63.3   78.8   97.2   8.2-e023 6b | 6b protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|564131295|gb|KF66    15344     11            1      15126           5031           93.6             97.6           56.0   cov_g3_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_564131295.1     98.5   99.5   40.6   59.4  0.0   0.0   <1..8073         2690   6631   AEB00723.1        Pp1ab | putative polyprotein 1ab, C-terminal
+gi_564131295.1.1   96.0   99.0   98.7   1.3   0.0   0.0   <1..2787         929    941    YP_001941185.1    putative nsp12, C-terminal
+gi_564131295.1.2   98.5   99.9   100.0  0.0   0.0   0.0   2788..4587       600    600    AY646283_nsp13    nsp13
+gi_564131295.1.3   96.9   99.7   100.0  0.0   0.0   0.0   4588..6150       521    521    AY646283_nsp14    nsp14
+gi_564131295.1.4   96.2   99.0   100.0  0.0   0.0   0.0   6151..7164       338    338    AY646283_nsp15    nsp15
+gi_564131295.1.5   94.4   99.7   100.0  0.0   0.0   0.0   7165..8070       302    302    AY646283_nsp16    nsp16
+gi_564131295.2     68.7   88.0   100.0  0.0   0.0   0.0   8024..11539      1171   1169   AAS00080.1        S | spike glycoprotein
+gi_564131295.3     82.5   96.1   100.0  0.0   0.0   0.0   11539..11712     57     57     AEB00707.1        3a | 3a protein
+gi_564131295.4     79.0   91.9   100.0  0.0   0.0   0.0   11712..11900     62     62     AEJ80240.1        3b | 3b protein
+gi_564131295.5     89.2   95.8   94.4   0.0   0.0   5.6   11884..12192     102    108    AEJ80241.1        E | envelope protein
+gi_564131295.6     91.2   96.2   100.0  0.0   0.0   0.0   12182..12862     226    225    ACC94330.1        M | membrane protein
+gi_564131295.7     86.2   92.3   100.0  0.0   0.0   0.0   12863..13147     94     94     ADP06500.1        4b | 4b protein
+gi_564131295.8     61.4   80.7   100.0  0.0   0.0   0.0   13068..13241     57     56     ADV71779.1        4c | 4c protein
+                    stop codon embedded in CDS at 13212..13214
+gi_564131295.9     95.4   99.2   100.0  0.0   0.0   0.0   13225..13422     65     65     AEO86773.1        5a | 5a protein
+gi_564131295.10    98.8   98.8   100.0  0.0   0.0   0.0   13419..13667     82     82     AEO86774.1        5b | 5b protein
+gi_564131295.11    97.6   99.5   100.0  0.0   0.0   0.0   13610..14839     409    409    AEO86775.1        N | nucleocapsid protein
+gi_564131295.12    63.5   86.8   100.0  0.0   0.0   0.0   14848..15069     73     73     ACB87504.1        6b | 6b protein
+
+
+genomic sequence gi|30271926|ref|NC_004718.3|, length=29751
+  selecting database cov_sars_db
+
+    found 1 permutation for gene Pp1a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAC81403.1        4382   1-4382         1   265-13410      1   1  0  N   100.0  100.0  100.0  0        Pp1a | replicase polyprotein 1a
+        found 1 gene
+
+    found 1 permutation for gene Pp1ab
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABI96956.1        7073   1-7073         1   265-21482      2   0  1  N   100.0  100.0  100.0  0        Pp1ab | replicase polyprotein 1ab
+        found 1 gene
+
+    found 1 permutation for gene S
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_828851.1       1255   1-1255         1   21492-25256    1   3  0  N   100.0  100.0  100.0  0        S | spike glycoprotein
+        found 1 gene
+
+    found 1 permutation for gene NS3a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT76149.1        274    1-274          1   25268-26089    1   2  0  N   100.0  100.0  100.0  0        NS3a | non-structural protein 3a
+        found 1 gene
+
+    found 1 permutation for gene NS3b
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_828853.1       154    1-154          1   25689-26150    1   3  0  N   100.0  100.0  100.0  8.0-e095 NS3b | non-structural protein 3b
+        found 1 gene
+
+    found 1 permutation for gene E
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABF65839.1        76     1-76           1   26117-26344    1   2  0  N   100.0  100.0  100.0  6.2-e042 E | envelope small membrane protein
+        found 1 gene
+
+    found 1 permutation for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABI96962.1        221    1-221          1   26398-27060    1   1  0  N   100.0  100.0  100.0  5.7-e144 M | membrane protein
+        found 1 gene
+
+    found 1 permutation for gene NS6
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_828856.1       63     1-63           1   27074-27262    1   2  0  N   100.0  100.0  100.0  1.1-e034 NS6 | non-structural protein 6
+        found 1 gene
+
+    found 1 permutation for gene NS7a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_828857.1       122    1-122          1   27273-27638    1   3  0  N   100.0  100.0  100.0  1.7-e077 NS7a | non-structural protein 7a
+        found 1 gene
+
+    found 1 permutation for gene NS7b
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABF65843.1        44     1-44           1   27638-27769    1   2  0  N   100.0  100.0  100.0  1.9-e022 NS7b | non-structural protein 7b
+        found 1 gene
+
+    found 1 permutation for gene NS8a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_849176.1       39     1-39           1   27779-27895    1   2  0  N   100.0  100.0  100.0  9.6-e021 NS8a | non-structural protein 8a
+        found 1 gene
+
+    found 1 permutation for gene NS8
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABG47066.1        122    1-117          1   27779-28100    2   0  1  N   78.7   87.9   88.5   1.6-e042 NS8 | non-structural protein 8
+        found 1 gene
+
+    found 1 permutation for gene NS8b
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFR58680.1        84     1-84           1   27864-28115    1   3  0  N   100.0  100.0  100.0  5.1-e055 NS8b | non-structural protein 8b
+        found 1 gene
+
+    found 1 permutation for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_828858.1       422    1-422          1   28120-29385    1   1  0  N   100.0  100.0  100.0  0        N | nucleoprotein
+        found 1 gene
+
+    found 1 permutation for gene NS9a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFR58752.1        98     1-98           1   28130-28423    1   2  0  N   100.0  100.0  100.0  4.0-e057 NS9a | non-structural protein 9a
+        found 1 gene
+
+    found 1 permutation for gene NS9b
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFR58753.1        70     1-70           1   28583-28792    1   2  0  N   100.0  100.0  100.0  6.2-e041 NS9b | non-structural protein 9b
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|30271926|ref|NC_0    29751     15            0      43176          14377          100.0            100.0          100.0   cov_sars_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_30271926.1      100.0  100.0  100.0  0.0   0.0   0.0   265..13413       4382   4382   BAC81403.1        Pp1a | replicase polyprotein 1a
+gi_30271926.1.11   100.0  100.0  100.0  0.0   0.0   0.0   13372..13410     13     13     NP_904321.1       nsp11
+gi_30271926.2      100.0  100.0  100.0  0.0   0.0   0.0   265..13398       7073   7073   ABI96956.1        Pp1ab | replicase polyprotein 1ab
+                                                          13398..21485                                     
+gi_30271926.2.1    100.0  100.0  100.0  0.0   0.0   0.0   265..804         180    180    NP_828860.2       nsp1
+gi_30271926.2.2    100.0  100.0  99.8   0.2   0.0   0.0   805..2718        638    639    AAP13566_mp2      nsp2
+gi_30271926.2.3    100.0  100.0  100.0  0.0   0.0   0.0   2719..8484       1922   1922   NP_828862.2       nsp3
+gi_30271926.2.4    100.0  100.0  100.0  0.0   0.0   0.0   8485..9984       500    500    SARS1720.1.4      nsp4
+gi_30271926.2.5    100.0  100.0  100.0  0.0   0.0   0.0   9985..10902      306    306    NP_828863.1       nsp5
+gi_30271926.2.6    100.0  100.0  100.0  0.0   0.0   0.0   10903..11772     290    290    AAP13566_mp5      nsp6
+gi_30271926.2.7    100.0  100.0  100.0  0.0   0.0   0.0   11773..12021     83     83     NP_828865.1       nsp7
+gi_30271926.2.8    100.0  100.0  100.0  0.0   0.0   0.0   12022..12615     198    198    NP_828866.1       nsp8
+gi_30271926.2.9    100.0  100.0  100.0  0.0   0.0   0.0   12616..12954     113    113    NP_828867.1       nsp9
+gi_30271926.2.10   100.0  100.0  100.0  0.0   0.0   0.0   12955..13371     139    139    AAP13566_mp9      nsp10
+gi_30271926.2.11   100.0  100.0  100.0  0.0   0.0   0.0   13372..13398     932    932    NP_828869.1       nsp12
+                                                          13398..16166                                     
+gi_30271926.2.12   100.0  100.0  100.0  0.0   0.0   0.0   16167..17969     601    601    NP_828870.1       nsp13
+gi_30271926.2.13   99.6   99.6   97.2   2.8   0.0   0.0   17970..19550     527    542    ACZ71751_mp3      nsp14
+gi_30271926.2.14   100.0  100.0  100.0  0.0   0.0   0.0   19551..20588     346    346    NP_828872.1       nsp15
+gi_30271926.2.15   100.0  100.0  100.0  0.0   0.0   0.0   20589..21482     298    298    AAP13566_mp14     nsp16
+gi_30271926.3      100.0  100.0  100.0  0.0   0.0   0.0   21492..25259     1255   1255   NP_828851.1       S | spike glycoprotein
+gi_30271926.4      100.0  100.0  100.0  0.0   0.0   0.0   25268..26092     274    274    AAT76149.1        NS3a | non-structural protein 3a
+gi_30271926.5      100.0  100.0  100.0  0.0   0.0   0.0   25689..26153     154    154    NP_828853.1       NS3b | non-structural protein 3b
+gi_30271926.6      100.0  100.0  100.0  0.0   0.0   0.0   26117..26347     76     76     ABF65839.1        E | envelope small membrane protein
+gi_30271926.7      100.0  100.0  100.0  0.0   0.0   0.0   26398..27063     221    221    ABI96962.1        M | membrane protein
+gi_30271926.8      100.0  100.0  100.0  0.0   0.0   0.0   27074..27265     63     63     NP_828856.1       NS6 | non-structural protein 6
+gi_30271926.9      100.0  100.0  100.0  0.0   0.0   0.0   27273..27641     122    122    NP_828857.1       NS7a | non-structural protein 7a
+gi_30271926.10     100.0  100.0  100.0  0.0   0.0   0.0   27638..27772     44     44     ABF65843.1        NS7b | non-structural protein 7b
+gi_30271926.11     100.0  100.0  100.0  0.0   0.0   0.0   27779..27898     39     39     NP_849176.1       NS8a | non-structural protein 8a
+gi_30271926.12     100.0  100.0  100.0  0.0   0.0   0.0   27864..28118     84     84     AFR58680.1        NS8b | non-structural protein 8b
+gi_30271926.13     100.0  100.0  100.0  0.0   0.0   0.0   28120..29388     422    422    NP_828858.1       N | nucleoprotein
+gi_30271926.14     100.0  100.0  100.0  0.0   0.0   0.0   28130..28426     98     98     AFR58752.1        NS9a | non-structural protein 9a
+gi_30271926.15     100.0  100.0  100.0  0.0   0.0   0.0   28583..28795     70     70     AFR58753.1        NS9b | non-structural protein 9b
+
+
+genomic sequence gi|384038902|gb|JN634064.1|, length=28984
+  selecting database cov_g1a_db
+
+    found 2 permutations for gene Pp1a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAY32595.1        3965   1-3965         1   313-12165      1   1  0  N   92.6   96.0   100.0  0        Pp1a | ORF1a polyprotein
+    ACS44216.1        4034   1-4034         1   313-12165      3   0  2  N   93.6   96.9   98.0   0        Pp1a | ORF1a polyprotein
+        found 1 gene
+
+    found 3 permutations for gene Pp1ab
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK25520.1        6692   1-6692         1   313-20165      4   0  3  N   94.2   97.5   98.9   0        Pp1ab | ORF1ab polyprotein
+    YP_004070193.1    6709   1-6709         1   313-20165      4   0  1  N   95.2   97.5   99.1   0        Pp1ab | ORF1ab polyprotein
+    AAY32594.1        6632   1-6632         1   313-20165      2   0  1  N   95.1   97.4   100.0  0        Pp1ab | ORF1ab polyprotein
+        found 1 gene
+
+    found 1 permutation for gene S
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFG19742.1        1454   1-1454         1   20165-24514    1   2  0  N   95.3   97.1   100.0  0        S | spike protein
+        found 1 gene
+
+    found 1 permutation for gene NS3a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADB10850.1        71     1-71           1   24602-24814    1   2  0  N   97.1   97.1   100.0  5.1-e037 NS3a | non-structural protein 3a
+        found 1 gene
+
+    found 1 permutation for gene NS3b
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFG19740.1        71     1-50           1   24762-24911    1   3  0  N   98.0   100.0  70.4   1.1-e025 NS3b | non-structural protein 3b
+        found 1 gene
+
+    found 4 permutations for gene NS3c
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACR10353.1        209    16-209         1   25002-25601    1   3  0  N   82.0   88.0   92.8   5.6-e101 NS3c | non-structural protein 3c
+    AFG19741.1        251    20-247         1   25014-25695    2   0  1  N   95.5   97.7   90.4   6.9-e132 NS3c | non-structural protein 3c
+    AEE69325.1        244    20-237         1   25014-25667    1   3  0  N   95.8   98.1   89.3   8.4-e133 NS3c | non-structural protein 3c
+    AFG19732.1        244    21-237         1   25017-25667    1   3  0  N   94.9   97.6   88.9   3.4-e131 NS3c | non-structural protein 3c
+        found 1 gene
+
+    found 1 permutation for gene E
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFG19731.1        82     14-82          1   25719-25925    1   3  0  N   100.0  100.0  84.1   6.7-e039 E | envelope protein
+        found 1 gene
+
+    found 2 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACS44222.1        261    1-261          1   25939-26726    2   0  1  N   91.6   95.8   100.0  4.7-e134 M | membrane protein
+    YP_004070198.1    262    4-262          1   25945-26726    2   0  1  N   92.3   96.1   98.8   5.1-e136 M | membrane protein
+        found 1 gene
+
+    found 1 permutation for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADL71503.1        377    1-377          1   26742-27869    1   3  0  N   93.6   96.2   100.0  0        N | nucleocapsid protein
+        found 1 gene
+
+    found 1 permutation for gene NS7a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_004070200.1    101    1-101          1   27877-28179    1   1  0  N   97.0   98.0   100.0  6.2-e055 NS7a | non-structural protein 7a
+        found 1 gene
+
+    found 1 permutation for gene NS7b
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADL71505.1        206    1-182          1   28187-28642    1   2  0  N   67.5   72.4   88.3   8.1-e075 NS7b | non-structural protein 7b
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|384038902|gb|JN63    28984      6            5      37719          12567           94.3             98.2          100.0   cov_g1a_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_384038902.1     92.6   97.8   100.0  0.0   0.0   0.0   313..12168       3951   3965   AAY32595.1        Pp1a | ORF1a polyprotein
+gi_384038902.1.11  84.2   98.7   100.0  0.0   0.0   0.0   12109..12165     19     19     sp_Q98VG9_11      nsp11
+gi_384038902.2     95.1   98.5   100.0  0.0   0.0   0.0   313..12138       6618   6632   AAY32594.1        Pp1ab | ORF1ab polyprotein
+                                                          12138..20168                                     
+gi_384038902.2.1   96.4   99.3   100.0  0.0   0.0   0.0   313..642         110    110    sp_Q98VG9_1       nsp1
+gi_384038902.2.2   95.7   99.1   100.0  0.0   0.0   0.0   643..2949        769    769    sp_Q98VG9_2       nsp2
+gi_384038902.2.3   84.2   91.6   100.0  0.0   0.0   0.0   2950..7278       1443   1534   sp_Q98VG9_3       nsp3
+gi_384038902.2.4   93.9   98.8   100.0  0.0   0.0   0.0   7279..8748       490    490    sp_Q98VG9_4       nsp4
+gi_384038902.2.5   98.0   99.6   100.0  0.0   0.0   0.0   8749..9654       302    302    sp_Q98VG9_5       3C-like proteinase nsp5
+gi_384038902.2.6   95.2   98.4   100.0  0.0   0.0   0.0   9655..10536      294    294    sp_Q98VG9_6       nsp6
+gi_384038902.2.7   98.8   99.7   100.0  0.0   0.0   0.0   10537..10785     83     83     sp_Q98VG9_7       nsp7
+gi_384038902.2.8   99.0   100.0  100.0  0.0   0.0   0.0   10786..11370     195    195    sp_Q98VG9_8       nsp8
+gi_384038902.2.9   98.2   99.1   100.0  0.0   0.0   0.0   11371..11703     111    111    sp_Q98VG9_9       nsp9
+gi_384038902.2.10  97.8   99.8   100.0  0.0   0.0   0.0   11704..12108     135    135    gb_ABI14447.1_10  nsp10
+gi_384038902.2.11  97.5   99.4   100.0  0.0   0.0   0.0   12109..12138     929    929    gb_AAY32594.1_12  RNA-directed RNA polymerase nsp12
+                                                          12138..14894                                     
+gi_384038902.2.12  99.7   100.0  100.0  0.0   0.0   0.0   14895..16691     599    599    sp_Q98VG9_13      Helicase nsp13
+gi_384038902.2.13  99.8   100.0  100.0  0.0   0.0   0.0   16692..18248     519    519    sp_Q98VG9_14      Exoribonuclease nsp14
+gi_384038902.2.14  98.2   99.6   100.0  0.0   0.0   0.0   18249..19265     339    339    sp_Q98VG9_15      Uridylate-specific endoribonuclease nsp15
+gi_384038902.2.15  99.3   99.9   100.0  0.0   0.0   0.0   19266..20165     300    300    sp_Q98VG9_16      2'-O-methyl transferase nsp16
+gi_384038902.3     95.4   98.1   100.0  0.0   0.0   0.0   20165..24517     1450   1454   AFG19742.1        S | spike protein
+gi_384038902.4     97.2   98.6   100.0  0.0   0.0   0.0   24602..24817     71     71     ADB10850.1        NS3a | non-structural protein 3a
+gi_384038902.5     68.0   75.0   97.2   0.0   2.8   0.0   24762..24995     77     71     AFG19740.1        NS3b | non-structural protein 3b
+                    stop codons embedded in CDS at 24927..24929 and 24930..24932
+gi_384038902.6     98.1   99.5   86.9   7.8   0.0   5.3   25014..25652     212    244    AEE69325.1        NS3c | non-structural protein 3c
+                    could not find valid start codon
+gi_384038902.7     100.0  100.0  84.1   15.9  0.0   0.0   25719..25928     69     82     AFG19731.1        E | envelope protein
+                    could not find valid start codon
+gi_384038902.8     92.0   96.8   100.0  0.0   0.0   0.0   25939..26565     263    262    YP_004070198.1    M | membrane protein
+                                                          26565..26729                                     
+                    frameshift in genome at or near position 26565..26565 (+1=>+3)
+gi_384038902.9     93.6   97.6   100.0  0.0   0.0   0.0   26742..27872     376    377    ADL71503.1        N | nucleocapsid protein
+gi_384038902.10    97.0   98.0   100.0  0.0   0.0   0.0   27877..28182     101    101    YP_004070200.1    NS7a | non-structural protein 7a
+gi_384038902.11    62.6   71.7   99.5   0.0   0.0   0.5   28187..28690     167    206    ADL71505.1        NS7b | non-structural protein 7b
+                    stop codons embedded in CDS at 28610..28612 and 28658..28660
+
+
+genomic sequence gi|509265008|gb|KC189944.1|, length=27953
+  selecting database cov_g1b_db
+
+    found 1 permutation for gene Pp1a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    402235146_1a      4117   1-4117         1   293-12619      1   2  0  N   97.9   98.6   100.0  0        Pp1a | replicase polyprotein 1a
+        found 1 gene
+
+    found 1 permutation for gene Pp1ab
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    402235146_1ab     6781   1-6781         1   293-20610      2   0  1  N   98.4   99.0   100.0  0        Pp1ab | replicase polyprotein 1ab
+        found 1 gene
+
+    found 1 permutation for gene S
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFQ37598.1        1385   1-1385         1   20610-24755    1   3  0  N   92.4   94.4   100.0  0        S | spike glycoprotein
+        found 1 gene
+
+    found 3 permutations for gene NS3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_001718613.1    222    1-221          1   24758-25374    2   0  1  N   40.1   61.6   97.2   1.9-e035 NS3 | non-structural protein 3
+    ABS89139.1        207    1-207          1   24758-25380    2   0  1  N   85.0   86.4   99.5   3.5-e078 NS3 | non-structural protein 3
+    402235146_4ab     224    1-224          1   24758-25380    2   0  1  N   85.0   87.4   92.4   2.4-e077 NS3 | non-structural protein 3
+        found 1 gene
+
+    found 1 permutation for gene NS4b
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_073553.1       88     1-83           1   25102-25341    1   1  0  N   39.7   62.6   94.3   5.1-e013 NS4b | non-structural protein 4b
+        found 1 gene
+
+    found 1 permutation for gene E
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    402235146_E       76     1-76           1   25364-25591    1   2  0  N   96.0   98.6   100.0  1.9-e043 E | envelope small membrane protein
+        found 1 gene
+
+    found 1 permutation for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    402235146_M       226    1-226          1   25602-26279    1   3  0  N   98.6   99.1   100.0  1.9-e147 M | membrane protein
+        found 1 gene
+
+    found 1 permutation for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFQ37602.1        440    1-440          1   26294-27613    1   2  0  N   97.2   97.7   100.0  0        N | nucleoprotein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|509265008|gb|KC18    27953      6            1      39039          13007           97.6             99.0          100.0   cov_g1b_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_509265008.1     98.0   99.2   100.0  0.0   0.0   0.0   293..12622       4109   4117   402235146_1a      Pp1a | replicase polyprotein 1a
+gi_509265008.1.11  100.0  100.0  100.0  0.0   0.0   0.0   12569..12619     17     17     402235146_11      nsp11
+gi_509265008.2     98.5   99.4   100.0  0.0   0.0   0.0   293..12592       6773   6781   402235146_1ab     Pp1ab | replicase polyprotein 1ab
+                                                          12592..20613                                     
+gi_509265008.2.1   99.1   100.0  100.0  0.0   0.0   0.0   293..622         110    110    402235146_1       nsp1
+gi_509265008.2.2   97.7   99.7   100.0  0.0   0.0   0.0   623..2977        785    785    402235146_2       nsp2
+gi_509265008.2.3   97.1   98.7   100.0  0.0   0.0   0.0   2978..7816       1613   1621   402235146_3       nsp3
+gi_509265008.2.4   98.8   99.3   100.0  0.0   0.0   0.0   7817..9259       481    481    402235146_4       nsp4
+gi_509265008.2.5   97.7   98.5   100.0  0.0   0.0   0.0   9260..10165      302    302    402235146_5       3C-like Proteinase, nsp5
+gi_509265008.2.6   99.3   99.8   100.0  0.0   0.0   0.0   10166..11005     280    280    402235146_6       nsp6
+gi_509265008.2.7   100.0  100.0  100.0  0.0   0.0   0.0   11006..11254     83     83     402235146_7       nsp7
+gi_509265008.2.8   100.0  100.0  100.0  0.0   0.0   0.0   11255..11839     195    195    402235146_8       nsp8
+gi_509265008.2.9   100.0  100.0  100.0  0.0   0.0   0.0   11840..12163     108    108    402235146_9       nsp9
+gi_509265008.2.10  97.8   99.1   100.0  0.0   0.0   0.0   12164..12568     135    135    402235146_10      nsp10
+gi_509265008.2.11  99.1   99.6   100.0  0.0   0.0   0.0   12569..12592     927    927    402235146_12      nsp12
+                                                          12592..15348                                     
+gi_509265008.2.12  99.5   100.0  100.0  0.0   0.0   0.0   15349..17139     597    597    402235146_13      nsp13
+gi_509265008.2.13  99.6   99.8   100.0  0.0   0.0   0.0   17140..18690     517    517    402235146_14      nsp14
+gi_509265008.2.14  98.8   99.6   100.0  0.0   0.0   0.0   18691..19707     339    339    402235146_15      nsp15
+gi_509265008.2.15  99.0   100.0  100.0  0.0   0.0   0.0   19708..20610     301    301    402235146_16      nsp16
+gi_509265008.3     92.5   96.5   100.0  0.0   0.0   0.0   20610..24758     1382   1385   AFQ37598.1        S | spike glycoprotein
+gi_509265008.4     99.5   99.5   100.0  0.0   0.0   0.0   24758..25000     208    207    ABS89139.1        NS3 | non-structural protein 3
+                                                          25000..25383                                     
+                    frameshift in genome at or near position 25000..25000 (+2=>+1)
+gi_509265008.5     96.1   99.7   100.0  0.0   0.0   0.0   25364..25594     76     76     402235146_E       E | envelope small membrane protein
+gi_509265008.6     98.7   99.8   100.0  0.0   0.0   0.0   25602..26282     226    226    402235146_M       M | membrane protein
+gi_509265008.7     97.1   98.5   100.0  0.0   0.0   0.0   26294..27619     441    440    AFQ37602.1        N | nucleoprotein
+
+
+genomic sequence gi|343781332|gb|HM776941.1|, length=28580
+  selecting database cov_g1a_db
+
+    found 1 permutation for gene Pp1a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFG19737.1        4018   1-4018         1   314-12361      4   0  3  N   94.4   96.8   100.0  0        Pp1a | ORF1a polyprotein
+        found 1 gene
+
+    found 2 permutations for gene Pp1ab
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADB28906.1        6683   1-6683         1   314-20361      6   0  4  N   96.0   98.0   100.0  0        Pp1ab | ORF1ab polyprotein
+    AFG19738.1        6685   1-6685         1   314-20361      5   0  4  N   96.1   97.9   100.0  0        Pp1ab | ORF1ab polyprotein
+        found 1 gene
+
+    found 2 permutations for gene S
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFG19726.1        1453   11-1453        1   20381-24700    1   2  0  N   81.4   86.9   99.3   0        S | spike protein
+    ADB28907.1        1457   12-1457        1   20396-24700    1   2  0  N   91.7   95.2   99.2   0        S | spike protein
+        found 1 gene
+
+    found 1 permutation for gene NS3a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_004070195.1    71     1-71           1   24822-25033    2   0  1  N   90.0   90.0   98.5   6.0-e026 NS3a | non-structural protein 3a
+        found 1 gene
+
+    found 1 permutation for gene NS3b
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACS44220.1        71     1-71           1   24981-25130    1   3  0  N   63.3   64.7   100.0  4.6-e016 NS3b | non-structural protein 3b
+        found 1 gene
+
+    found 2 permutations for gene NS3c
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADB28910.1        244    1-243          1   25130-25858    1   2  0  N   95.8   97.9   99.5   3.8-e151 NS3c | non-structural protein 3c
+    AFG19741.1        251    1-251          1   25130-25882    1   2  0  N   94.0   95.6   100.0  5.8-e152 NS3c | non-structural protein 3c
+        found 1 gene
+
+    found 1 permutation for gene E
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFG19743.1        82     1-81           1   25851-26093    1   3  0  N   96.2   97.5   98.7   1.0-e044 E | envelope protein
+        found 1 gene
+
+    found 1 permutation for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEE69327.1        262    1-262          1   26110-26895    1   1  0  N   94.6   98.4   100.0  2.1-e170 M | membrane protein
+        found 1 gene
+
+    found 1 permutation for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFG19745.1        382    1-382          1   26911-28056    1   1  0  N   95.5   98.4   100.0  0        N | nucleocapsid protein
+        found 1 gene
+
+    found 2 permutations for gene NS7a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAQ17226.1        101    1-100          1   28065-28295    1   3  0  N   74.0   76.0   99.0   2.1-e035 NS7a | non-structural protein 7a
+    AFG19746.1        101    1-101          1   28065-28298    1   3  0  N   74.2   76.2   100.0  1.1-e035 NS7a | non-structural protein 7a
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|343781332|gb|HM77    28580      5            5       3159           1048           93.3             96.8          100.0   cov_g1a_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_343781332.1     94.6   98.3   100.0  0.0   0.0   0.0   314..4990        4017   4018   AFG19737.1        Pp1a | ORF1a polyprotein
+                                                          4990..7818                                       
+                                                          7818..11279                                      
+                                                          11279..12364                                     
+                    frameshifts in genome at or near positions 4990..4990 (+2=>+1), 7818..7818 (+1=>+3) and 11279..11279 (+3=>+2)
+gi_343781332.1.1   92.7   98.6   100.0  0.0   0.0   0.0   314..643         110    110    sp_Q98VG9_1       nsp1
+gi_343781332.1.2   79.1   95.0   100.0  0.0   0.0   0.0   644..2950        769    769    sp_Q98VG9_2       nsp2
+gi_343781332.1.3   76.9   90.6   100.0  0.0   0.0   0.0   2951..4990       1509   1534   sp_Q98VG9_3       nsp3
+                                                          4990..7476                                       
+gi_343781332.1.4   87.1   97.0   100.0  0.0   0.0   0.0   7477..7818       490    490    gb_ABI14447.1_4   nsp4
+                                                          7818..8945                                       
+gi_343781332.1.5   93.7   98.8   100.0  0.0   0.0   0.0   8946..9851       302    302    gb_ABI14447.1_5   3C-like proteinase nsp5
+gi_343781332.1.6   76.9   95.7   100.0  0.0   0.0   0.0   9852..10733      294    294    gb_ABI14447.1_6   nsp6
+gi_343781332.1.7   96.4   98.8   100.0  0.0   0.0   0.0   10734..10982     83     83     sp_Q98VG9_7       nsp7
+gi_343781332.1.8   92.3   98.3   100.0  0.0   0.0   0.0   10983..11279     195    195    sp_Q98VG9_8       nsp8
+                                                          11279..11566                                     
+gi_343781332.1.9   91.0   99.5   100.0  0.0   0.0   0.0   11567..11899     111    111    gb_ABI14447.1_9   nsp9
+gi_343781332.1.10  95.6   99.6   100.0  0.0   0.0   0.0   11900..12304     135    135    gb_ABI14447.1_10  nsp10
+gi_343781332.1.11  84.2   93.4   100.0  0.0   0.0   0.0   12305..12361     19     19     sp_Q98VG9_11      nsp11
+gi_343781332.2     96.3   98.9   100.0  0.0   0.0   0.0   314..4990        6684   6685   AFG19738.1        Pp1ab | ORF1ab polyprotein
+                                                          4990..7818                                       
+                                                          7818..11279                                      
+                                                          11279..12334                                     
+                                                          12334..20364                                     
+                    frameshifts in genome at or near positions 4990..4990 (+2=>+1), 7818..7818 (+1=>+3) and 11279..11279 (+3=>+2)
+gi_343781332.2.1   92.7   98.6   100.0  0.0   0.0   0.0   314..643         110    110    sp_Q98VG9_1       nsp1
+gi_343781332.2.2   79.1   95.0   100.0  0.0   0.0   0.0   644..2950        769    769    sp_Q98VG9_2       nsp2
+gi_343781332.2.3   76.9   90.6   100.0  0.0   0.0   0.0   2951..4990       1509   1534   sp_Q98VG9_3       nsp3
+                                                          4990..7476                                       
+gi_343781332.2.4   87.1   97.0   100.0  0.0   0.0   0.0   7477..7818       490    490    gb_ABI14447.1_4   nsp4
+                                                          7818..8945                                       
+gi_343781332.2.5   93.7   98.8   100.0  0.0   0.0   0.0   8946..9851       302    302    gb_ABI14447.1_5   3C-like proteinase nsp5
+gi_343781332.2.6   76.9   95.7   100.0  0.0   0.0   0.0   9852..10733      294    294    gb_ABI14447.1_6   nsp6
+gi_343781332.2.7   96.4   98.8   100.0  0.0   0.0   0.0   10734..10982     83     83     sp_Q98VG9_7       nsp7
+gi_343781332.2.8   92.3   98.3   100.0  0.0   0.0   0.0   10983..11279     195    195    sp_Q98VG9_8       nsp8
+                                                          11279..11566                                     
+gi_343781332.2.9   91.0   99.5   100.0  0.0   0.0   0.0   11567..11899     111    111    gb_ABI14447.1_9   nsp9
+gi_343781332.2.10  95.6   99.6   100.0  0.0   0.0   0.0   11900..12304     135    135    gb_ABI14447.1_10  nsp10
+gi_343781332.2.11  97.5   99.4   100.0  0.0   0.0   0.0   12305..12334     929    929    gb_AAY32594.1_12  RNA-directed RNA polymerase nsp12
+                                                          12334..15090                                     
+gi_343781332.2.12  98.8   99.8   100.0  0.0   0.0   0.0   15091..16887     599    599    sp_Q98VG9_13      Helicase nsp13
+gi_343781332.2.13  99.2   100.0  100.0  0.0   0.0   0.0   16888..18444     519    519    sp_Q98VG9_14      Exoribonuclease nsp14
+gi_343781332.2.14  98.2   99.6   100.0  0.0   0.0   0.0   18445..19461     339    339    sp_Q98VG9_15      Uridylate-specific endoribonuclease nsp15
+gi_343781332.2.15  97.7   99.8   100.0  0.0   0.0   0.0   19462..20361     300    300    sp_Q98VG9_16      2'-O-methyl transferase nsp16
+gi_343781332.3     91.7   97.0   99.2   0.8   0.0   0.0   20396..24703     1435   1457   ADB28907.1        S | spike protein
+                    could not find valid start codon
+gi_343781332.4     90.1   91.5   100.0  0.0   0.0   0.0   24822..24866     71     71     YP_004070195.1    NS3a | non-structural protein 3a
+                                                          24866..25036                                     
+                    frameshift in genome at or near position 24866..24866 (+3=>+2)
+gi_343781332.5     63.4   65.8   100.0  0.0   0.0   0.0   24981..25133     50     71     ACS44220.1        NS3b | non-structural protein 3b
+                    stop codon embedded in CDS at 25026..25028
+gi_343781332.6     95.5   98.8   100.0  0.0   0.0   0.0   25130..25864     244    244    ADB28910.1        NS3c | non-structural protein 3c
+gi_343781332.7     95.1   97.0   100.0  0.0   0.0   0.0   25851..26099     82     82     AFG19743.1        E | envelope protein
+gi_343781332.8     94.7   99.4   100.0  0.0   0.0   0.0   26110..26898     262    262    AEE69327.1        M | membrane protein
+gi_343781332.9     95.5   99.0   100.0  0.0   0.0   0.0   26911..28059     382    382    AFG19745.1        N | nucleocapsid protein
+gi_343781332.10    74.3   77.2   100.0  0.0   0.0   0.0   28065..28301     78     101    AFG19746.1        NS7a | non-structural protein 7a
+
+
+genomic sequence gi|564131295|gb|KF668605.1|, length=16771
+  selecting database cov_g3_db
+
+    found 2 permutations for gene Pp1a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_001876436.1    3964   3450-3963      1   1-1461         1   1  0  N   53.1   68.6   12.9   9.6-e156 Pp1a | polyprotein 1a
+    ADI54954.1        3953   3466-3953      1   1-1464         1   1  0  N   99.3   99.3   12.3   0        Pp1a | polyprotein 1a
+        found 1 gene
+
+    found 2 permutations for gene Pp1ab
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEB00723.1        6631   3466-6631      1   1-9497         2   0  1  N   98.6   99.2   47.7   0        Pp1ab | polyprotein 1ab
+    YP_002308496.1    6286   3175-6278      1   19-9449        2   0  1  N   47.0   63.4   49.3   0        Pp1ab | polyprotein 1ab
+        found 1 gene
+
+    found 2 permutations for gene S
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADA83490.1        1172   1-1172         1   9451-12963     1   1  0  N   68.4   82.2   100.0  0        S | spike glycoprotein
+    AAS00080.1        1169   5-1169         1   9463-12963     1   1  0  N   68.9   81.9   99.6   0        S | spike glycoprotein
+        found 1 gene
+
+    found 1 permutation for gene 3a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEB00707.1        57     1-57           1   12966-13136    1   3  0  N   82.4   92.9   100.0  1.8-e024 3a | 3a protein
+        found 1 gene
+
+    found 1 permutation for gene 3b
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEJ80240.1        62     1-62           1   13139-13324    1   2  0  N   79.0   90.3   100.0  1.0-e030 3b | 3b protein
+        found 1 gene
+
+    found 3 permutations for gene E
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    CAZ86711.1        92     2-91           1   13311-13580    1   3  0  N   90.0   96.6   97.8   2.7-e052 E | envelope protein
+    AEJ80241.1        108    1-98           1   13311-13604    1   3  0  N   92.8   98.9   90.7   1.7-e059 E | envelope protein
+    AEO86771.1        109    1-109          1   13311-13637    1   3  0  N   84.4   91.7   100.0  2.0-e058 E | envelope protein
+        found 1 gene
+
+    found 4 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    CAZ86703.1        226    1-226          1   13609-14286    1   1  0  N   90.2   93.8   100.0  1.3-e138 M | membrane protein
+    ACC94330.1        225    3-225          1   13618-14286    1   1  0  N   91.9   94.1   99.1   5.6-e138 M | membrane protein
+    YP_001941170.1    223    2-223          1   13621-14286    1   1  0  N   91.4   94.5   99.5   2.0-e137 M | membrane protein
+    ADP06463.1        223    4-223          1   13627-14286    1   1  0  N   91.8   95.0   98.6   6.8-e137 M | membrane protein
+        found 1 gene
+
+    found 2 permutations for gene 4b
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADP06500.1        94     1-93           1   14290-14568    1   1  0  N   87.0   91.3   98.9   3.3-e051 4b | 4b protein
+    ADV71817.1        97     1-97           1   14290-14580    1   1  0  N   83.5   90.7   100.0  8.1-e052 4b | 4b protein
+        found 1 gene
+
+    found 2 permutations for gene 4c
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADV71779.1        56     1-48           1   14495-14638    1   2  0  N   68.7   81.2   85.7   2.4-e016 4c | 4c protein
+    ADV71728.1        57     1-55           1   14495-14659    1   2  0  N   50.9   67.2   96.4   9.1-e011 4c | 4c protein
+        found 1 gene
+
+    found 1 permutation for gene 5a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEO86773.1        65     1-65           1   14652-14846    1   3  0  N   95.3   98.4   100.0  2.3-e034 5a | 5a protein
+        found 1 gene
+
+    found 1 permutation for gene 5b
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEO86774.1        82     1-82           1   14846-15091    1   2  0  N   98.7   98.7   100.0  1.1-e050 5b | 5b protein
+        found 1 gene
+
+    found 1 permutation for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEO86775.1        409    1-409          1   15037-16263    1   1  0  N   97.5   98.7   100.0  0        N | nucleocapsid protein
+        found 1 gene
+
+    found 2 permutations for gene 6b
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADV71750.1        74     1-74           1   16275-16493    1   3  0  N   62.1   77.0   100.0  6.8-e023 6b | 6b protein
+    ACB87504.1        73     3-73           1   16284-16493    1   3  0  N   63.3   78.8   97.2   9.0-e023 6b | 6b protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|564131295|gb|KF66    16771     12            1      18021           5995           95.4             98.2           46.3   cov_g3_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_564131295.1     99.4   99.7   12.3   87.7  0.0   0.0   <1..1467         488    3953   ADI54954.1        Pp1a | putative polyprotein 1a, C-terminal
+gi_564131295.1.4   95.7   100.0  100.0  0.0   0.0   0.0   1396..1464       23     23     AY646283_nsp11    nsp11
+gi_564131295.2     98.5   99.5   47.7   52.3  0.0   0.0   <1..1437         3166   6631   AEB00723.1        Pp1ab | putative polyprotein 1ab, C-terminal
+                                                          1437..9500                                       
+gi_564131295.2.1   95.2   98.4   99.5   0.5   0.0   0.0   <1..627          209    210    AY646283_nsp8     putative nsp8, C-terminal
+gi_564131295.2.2   98.2   99.5   100.0  0.0   0.0   0.0   628..960         111    111    AY641576_nsp9     nsp9
+gi_564131295.2.3   96.6   99.3   100.0  0.0   0.0   0.0   961..1395        145    145    AY646283_nsp10    nsp10
+gi_564131295.2.4   95.9   99.0   100.0  0.0   0.0   0.0   1396..1437       940    941    YP_001941185.1    nsp12
+                                                          1437..4214                                       
+gi_564131295.2.5   98.5   99.9   100.0  0.0   0.0   0.0   4215..6014       600    600    AY646283_nsp13    nsp13
+gi_564131295.2.6   96.9   99.7   100.0  0.0   0.0   0.0   6015..7577       521    521    AY646283_nsp14    nsp14
+gi_564131295.2.7   96.2   99.0   100.0  0.0   0.0   0.0   7578..8591       338    338    AY646283_nsp15    nsp15
+gi_564131295.2.8   94.4   99.7   100.0  0.0   0.0   0.0   8592..9497       302    302    AY646283_nsp16    nsp16
+gi_564131295.3     68.7   88.0   100.0  0.0   0.0   0.0   9451..12966      1171   1169   AAS00080.1        S | spike glycoprotein
+gi_564131295.4     82.5   96.1   100.0  0.0   0.0   0.0   12966..13139     57     57     AEB00707.1        3a | 3a protein
+gi_564131295.5     79.0   91.9   100.0  0.0   0.0   0.0   13139..13327     62     62     AEJ80240.1        3b | 3b protein
+gi_564131295.6     89.2   95.8   94.4   0.0   0.0   5.6   13311..13619     102    108    AEJ80241.1        E | envelope protein
+gi_564131295.7     91.2   96.2   100.0  0.0   0.0   0.0   13609..14289     226    225    ACC94330.1        M | membrane protein
+gi_564131295.8     86.2   92.3   100.0  0.0   0.0   0.0   14290..14574     94     94     ADP06500.1        4b | 4b protein
+gi_564131295.9     61.4   80.7   100.0  0.0   0.0   0.0   14495..14668     57     56     ADV71779.1        4c | 4c protein
+                    stop codon embedded in CDS at 14639..14641
+gi_564131295.10    95.4   99.2   100.0  0.0   0.0   0.0   14652..14849     65     65     AEO86773.1        5a | 5a protein
+gi_564131295.11    98.8   98.8   100.0  0.0   0.0   0.0   14846..15094     82     82     AEO86774.1        5b | 5b protein
+gi_564131295.12    97.6   99.5   100.0  0.0   0.0   0.0   15037..16266     409    409    AEO86775.1        N | nucleocapsid protein
+gi_564131295.13    63.5   86.8   100.0  0.0   0.0   0.0   16275..16496     73     73     ACB87504.1        6b | 6b protein
+
+
+genomic sequence testslip1, length=16561
+  selecting database cov_g3_db
+
+    found 2 permutations for gene Pp1a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADI54944.1        3953   3466-3871      1   1-1218         1   1  0  N   99.5   99.5   10.2   0        Pp1a | polyprotein 1a
+    212681378_1a      3605   3175-3550      1   19-1218        1   1  0  N   34.0   56.0   10.4   1.1-e061 Pp1a | polyprotein 1a
+        found 1 gene
+
+    found 4 permutations for gene Pp1ab
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    CAZ86697.1        6631   3466-6631      1   1-9287         2   0  1  N   97.4   98.8   44.5   0        Pp1ab | polyprotein 1ab
+    AFH35028.1        6629   3464-6629      1   1-9287         2   0  1  N   98.4   99.1   44.5   0        Pp1ab | polyprotein 1ab
+    AEB00723.1        6631   3466-6631      1   1-9287         2   0  1  N   98.6   99.2   44.5   0        Pp1ab | polyprotein 1ab
+    YP_002308496.1    6286   3175-6278      1   19-9239        2   0  1  N   47.5   63.9   46.0   0        Pp1ab | polyprotein 1ab
+        found 1 gene
+
+    found 2 permutations for gene S
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADA83490.1        1172   1-1172         1   9241-12753     1   1  0  N   68.4   82.2   100.0  0        S | spike glycoprotein
+    AAS00080.1        1169   5-1169         1   9253-12753     1   1  0  N   68.9   81.9   99.6   0        S | spike glycoprotein
+        found 1 gene
+
+    found 1 permutation for gene 3a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEB00707.1        57     1-57           1   12756-12926    1   3  0  N   82.4   92.9   100.0  1.8-e024 3a | 3a protein
+        found 1 gene
+
+    found 1 permutation for gene 3b
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEJ80240.1        62     1-62           1   12929-13114    1   2  0  N   79.0   90.3   100.0  9.8-e029 3b | 3b protein
+        found 1 gene
+
+    found 3 permutations for gene E
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    CAZ86711.1        92     2-91           1   13101-13370    1   3  0  N   90.0   96.6   97.8   2.7-e052 E | envelope protein
+    AEJ80241.1        108    1-98           1   13101-13394    1   3  0  N   92.8   98.9   90.7   1.7-e059 E | envelope protein
+    AEO86771.1        109    1-109          1   13101-13427    1   3  0  N   84.4   91.7   100.0  2.0-e058 E | envelope protein
+        found 1 gene
+
+    found 4 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    CAZ86703.1        226    1-226          1   13399-14076    1   1  0  N   90.2   93.8   100.0  1.2-e138 M | membrane protein
+    ACC94330.1        225    3-225          1   13408-14076    1   1  0  N   91.9   94.1   99.1   5.6-e138 M | membrane protein
+    YP_001941170.1    223    2-223          1   13411-14076    1   1  0  N   91.4   94.5   99.5   2.0-e137 M | membrane protein
+    ADP06463.1        223    4-223          1   13417-14076    1   1  0  N   91.8   95.0   98.6   6.8-e137 M | membrane protein
+        found 1 gene
+
+    found 2 permutations for gene 4b
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADP06500.1        94     1-93           1   14080-14358    1   1  0  N   87.0   91.3   98.9   3.3-e051 4b | 4b protein
+    ADV71817.1        97     1-97           1   14080-14370    1   1  0  N   83.5   90.7   100.0  8.0-e052 4b | 4b protein
+        found 1 gene
+
+    found 2 permutations for gene 4c
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADV71779.1        56     1-48           1   14285-14428    1   2  0  N   68.7   81.2   85.7   2.4-e016 4c | 4c protein
+    ADV71728.1        57     1-55           1   14285-14449    1   2  0  N   50.9   67.2   96.4   9.0-e011 4c | 4c protein
+        found 1 gene
+
+    found 1 permutation for gene 5a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEO86773.1        65     1-65           1   14442-14636    1   3  0  N   95.3   98.4   100.0  2.3-e034 5a | 5a protein
+        found 1 gene
+
+    found 1 permutation for gene 5b
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEO86774.1        82     1-82           1   14636-14881    1   2  0  N   98.7   98.7   100.0  1.1-e050 5b | 5b protein
+        found 1 gene
+
+    found 1 permutation for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEO86775.1        409    1-409          1   14827-16053    1   1  0  N   97.5   98.7   100.0  0        N | nucleocapsid protein
+        found 1 gene
+
+    found 2 permutations for gene 6b
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADV71750.1        74     1-74           1   16065-16283    1   3  0  N   62.1   77.0   100.0  6.7-e023 6b | 6b protein
+    ACB87504.1        73     3-73           1   16074-16283    1   3  0  N   63.3   78.8   97.2   8.9-e023 6b | 6b protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+testslip1               16561     15            1      17148           5703           97.8             99.2           18.9   cov_g3_db
+gaps: 1219-1408, 1417-1647
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+testslip1.1a       99.5   99.9   10.3   87.7  0.0   2.1   <1..>1218        406    3953   ADI54944.1        Pp1a | putative polyprotein 1a, fragment
+testslip1.1b       100.0  100.0  0.1    1.6   0.0   98.4  <1409..>1416     2      3953   ADI54944.1        Pp1a | putative polyprotein 1a, fragment
+testslip1.2a       99.0   99.7   6.1    52.3  0.0   41.6  <1..>1218        406    6631   AEB00723.1        Pp1ab | putative polyprotein 1ab, fragment
+testslip1.2a.1     95.2   98.4   99.5   0.5   0.0   0.0   <1..627          209    210    AY646283_nsp8     putative nsp8, C-terminal
+testslip1.2a.2     98.2   99.5   100.0  0.0   0.0   0.0   628..960         111    111    AY641576_nsp9     nsp9
+testslip1.2a.3     97.7   98.8   59.3   0.0   0.0   40.7  961..>1218       86     145    AY646283_nsp10    putative nsp10, N-terminal
+testslip1.2b       100.0  100.0  0.0    0.9   0.0   99.0  <1409..>1416     2      6631   AEB00723.1        Pp1ab | putative polyprotein 1ab, fragment
+testslip1.2c       98.5   99.6   38.4   61.6  0.0   0.0   <1648..9290      2546   6631   AEB00723.1        Pp1ab | putative polyprotein 1ab, C-terminal
+testslip1.2c.1     96.9   99.6   83.4   16.6  0.0   0.0   <1650..4004      785    941    YP_001941185.1    putative nsp12, C-terminal
+testslip1.2c.2     98.5   99.9   100.0  0.0   0.0   0.0   4005..5804       600    600    AY646283_nsp13    nsp13
+testslip1.2c.3     96.9   99.7   100.0  0.0   0.0   0.0   5805..7367       521    521    AY646283_nsp14    nsp14
+testslip1.2c.4     96.2   99.0   100.0  0.0   0.0   0.0   7368..8381       338    338    AY646283_nsp15    nsp15
+testslip1.2c.5     94.4   99.7   100.0  0.0   0.0   0.0   8382..9287       302    302    AY646283_nsp16    nsp16
+testslip1.3        68.7   88.0   100.0  0.0   0.0   0.0   9241..12756      1171   1169   AAS00080.1        S | spike glycoprotein
+testslip1.4        82.5   96.1   100.0  0.0   0.0   0.0   12756..12929     57     57     AEB00707.1        3a | 3a protein
+testslip1.5        79.0   91.9   100.0  0.0   0.0   0.0   12929..13117     62     62     AEJ80240.1        3b | 3b protein
+testslip1.6        89.2   95.8   94.4   0.0   0.0   5.6   13101..13409     102    108    AEJ80241.1        E | envelope protein
+testslip1.7        91.2   96.2   100.0  0.0   0.0   0.0   13399..14079     226    225    ACC94330.1        M | membrane protein
+testslip1.8        86.2   92.3   100.0  0.0   0.0   0.0   14080..14364     94     94     ADP06500.1        4b | 4b protein
+testslip1.9        61.4   80.7   100.0  0.0   0.0   0.0   14285..14458     57     56     ADV71779.1        4c | 4c protein
+                    stop codon embedded in CDS at 14429..14431
+testslip1.10       95.4   99.2   100.0  0.0   0.0   0.0   14442..14639     65     65     AEO86773.1        5a | 5a protein
+testslip1.11       98.8   98.8   100.0  0.0   0.0   0.0   14636..14884     82     82     AEO86774.1        5b | 5b protein
+testslip1.12       97.6   99.5   100.0  0.0   0.0   0.0   14827..16056     409    409    AEO86775.1        N | nucleocapsid protein
+testslip1.13       63.5   86.8   100.0  0.0   0.0   0.0   16065..16286     73     73     ACB87504.1        6b | 6b protein
+
+
+genomic sequence gi|597503885|gb|KJ556336.1|, length=29890
+  selecting database cov_g2cd_db
+
+    found 1 permutation for gene Pp1a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AGG22541.1        4391   1-4391         1   65-13237       1   2  0  N   99.8   99.8   100.0  0        Pp1a | polyprotein 1a
+        found 1 gene
+
+    found 2 permutations for gene Pp1ab
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NC_009020_1ab     7182   1-7175         1   65-21289       3   0  2  N   73.6   84.6   99.9   0        Pp1ab | polyprotein 1ab
+    AGH58716.1        7078   1-7078         1   65-21295       4   0  2  N   99.6   99.6   99.9   0        Pp1ab | polyprotein 1ab
+        found 1 gene
+
+    found 1 permutation for gene S
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFS88936.1        1353   1-1353         1   21240-25298    1   3  0  N   99.9   99.9   100.0  0        S | spike glycoprotein
+        found 1 gene
+
+    found 1 permutation for gene NS3a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFY13308.1        103    1-103          1   25316-25624    1   2  0  N   98.0   98.0   100.0  9.1-e062 NS3a | non-structural protein 3a
+        found 1 gene
+
+    found 1 permutation for gene NS3b
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFS88938.1        109    1-109          1   25636-25962    1   1  0  N   100.0  100.0  100.0  1.8-e070 NS3b | non-structural protein 3b
+        found 1 gene
+
+    found 1 permutation for gene NS3c
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AGN70954.1        246    1-246          1   25877-26614    1   2  0  N   99.5   99.5   100.0  2.4-e163 NS3c | non-structural protein 3c
+        found 1 gene
+
+    found 2 permutations for gene NS3d
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFS88940.1        107    1-107          1   26624-26944    1   2  0  N   100.0  100.0  100.0  8.2-e063 NS3d | non-structural protein 3d
+    AGN70955.1        224    1-224          1   26624-27295    1   2  0  N   100.0  100.0  100.0  8.6-e144 NS3d | non-structural protein 3d
+        found 1 gene
+
+    found 1 permutation for gene E
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AGN70934.1        82     1-82           1   27374-27619    1   2  0  N   100.0  100.0  100.0  2.4-e050 E | envelope protein
+        found 1 gene
+
+    found 1 permutation for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AGN72645.1        219    1-219          1   27637-28293    1   1  0  N   99.5   100.0  100.0  4.2-e142 M | membrane glycoprotein
+        found 1 gene
+
+    found 1 permutation for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AGN72646.1        413    1-413          1   28350-29588    1   3  0  N   100.0  100.0  100.0  0        N | nucleocapsid phosphoprotein
+        found 1 gene
+
+    found 1 permutation for gene N2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AGN70981.1        112    1-112          1   28546-28881    1   1  0  N   99.1   99.1   100.0  3.4-e067 N2 | N2 protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|597503885|gb|KJ55    29890     10            1      21786           7252           99.9             99.9          100.0   cov_g2cd_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_597503885.1     99.9   99.9   100.0  0.0   0.0   0.0   65..13240        4391   4391   AGG22541.1        Pp1a | polyprotein 1a
+gi_597503885.1.1   100.0  100.0  100.0  0.0   0.0   0.0   65..643          193    193    gi_511262662_nsp1 nsp1
+gi_597503885.1.2   99.8   99.8   100.0  0.0   0.0   0.0   644..2623        660    660    gi_511261290_nsp2 nsp2
+gi_597503885.1.3   99.6   99.9   100.0  0.0   0.0   0.0   2624..8281       1886   1886   gi_511261314_nsp3 nsp3
+gi_597503885.1.4   99.6   99.9   100.0  0.0   0.0   0.0   8282..9805       508    508    gi_511261278_nsp4 nsp4
+gi_597503885.1.5   100.0  100.0  100.0  0.0   0.0   0.0   9806..10723      306    306    gi_511262662_nsp5 nsp5
+gi_597503885.1.6   100.0  100.0  100.0  0.0   0.0   0.0   10724..11599     292    292    gi_511261314_nsp6 nsp6
+gi_597503885.1.7   100.0  100.0  100.0  0.0   0.0   0.0   11600..11848     83     83     gi_496838675_nsp7 nsp7
+gi_597503885.1.8   100.0  100.0  100.0  0.0   0.0   0.0   11849..12445     199    199    gi_511261314_NSP8 nsp8
+gi_597503885.1.9   100.0  100.0  100.0  0.0   0.0   0.0   12446..12775     110    110    gi_511261278_NSP9 nsp9
+gi_597503885.1.10  100.0  100.0  100.0  0.0   0.0   0.0   12776..13195     140    140    gi_511261302_nsp1 nsp10
+gi_597503885.1.11  100.0  100.0  100.0  0.0   0.0   0.0   13196..13237     14     14     NC_009020_nsp11   nsp11
+gi_597503885.2     99.6   99.9   100.0  0.0   0.0   0.0   65..13219        7078   7078   AGH58716.1        Pp1ab | polyprotein 1ab
+                                                          13219..13485                                     
+                                                          13486..19701                                     
+                                                          19700..21298                                     
+                    frameshifts in genome at or near positions 13219..13219 (+2=>+1), 13485..13486 (+1=>+3) and 19701..19700 (+3=>+2)
+gi_597503885.2.1   100.0  100.0  100.0  0.0   0.0   0.0   65..643          193    193    gi_511262662_nsp1 nsp1
+gi_597503885.2.2   99.8   99.8   100.0  0.0   0.0   0.0   644..2623        660    660    gi_511261290_nsp2 nsp2
+gi_597503885.2.3   99.6   99.9   100.0  0.0   0.0   0.0   2624..8281       1886   1886   gi_511261314_nsp3 nsp3
+gi_597503885.2.4   99.6   99.9   100.0  0.0   0.0   0.0   8282..9805       508    508    gi_511261278_nsp4 nsp4
+gi_597503885.2.5   100.0  100.0  100.0  0.0   0.0   0.0   9806..10723      306    306    gi_511262662_nsp5 nsp5
+gi_597503885.2.6   100.0  100.0  100.0  0.0   0.0   0.0   10724..11599     292    292    gi_511261314_nsp6 nsp6
+gi_597503885.2.7   100.0  100.0  100.0  0.0   0.0   0.0   11600..11848     83     83     gi_496838675_nsp7 nsp7
+gi_597503885.2.8   100.0  100.0  100.0  0.0   0.0   0.0   11849..12445     199    199    gi_511261314_NSP8 nsp8
+gi_597503885.2.9   100.0  100.0  100.0  0.0   0.0   0.0   12446..12775     110    110    gi_511261278_NSP9 nsp9
+gi_597503885.2.10  100.0  100.0  100.0  0.0   0.0   0.0   12776..13195     140    140    gi_511261302_nsp1 nsp10
+gi_597503885.2.11  100.0  100.0  100.0  0.0   0.0   0.0   13196..13219     933    933    gi_511261290_nsp1 nsp12
+                                                          13219..13485                                     
+                                                          13486..15993                                     
+gi_597503885.2.12  100.0  100.0  100.0  0.0   0.0   0.0   15994..17787     598    598    gi_511261278_nsp1 nsp13
+gi_597503885.2.13  100.0  100.0  100.0  0.0   0.0   0.0   17788..19359     524    524    gi_496838675_nsp1 nsp14
+gi_597503885.2.14  100.0  100.0  100.0  0.0   0.0   0.0   19360..19701     343    343    gi_511261314_nsp1 nsp15
+                                                          19700..20386                                     
+gi_597503885.2.15  100.0  100.0  100.0  0.0   0.0   0.0   20387..21295     303    303    gi_511261278_nsp1 nsp16
+gi_597503885.3     99.9   100.0  100.0  0.0   0.0   0.0   21240..25301     1353   1353   AFS88936.1        S | spike glycoprotein
+gi_597503885.4     98.1   99.8   100.0  0.0   0.0   0.0   25316..25627     103    103    AFY13308.1        NS3a | non-structural protein 3a
+gi_597503885.5     100.0  100.0  100.0  0.0   0.0   0.0   25636..25965     109    109    AFS88938.1        NS3b | non-structural protein 3b
+gi_597503885.6     99.6   99.6   100.0  0.0   0.0   0.0   25877..26617     246    246    AGN70954.1        NS3c | non-structural protein 3c
+gi_597503885.7     100.0  100.0  100.0  0.0   0.0   0.0   26624..27298     224    224    AGN70955.1        NS3d | non-structural protein 3d
+gi_597503885.8     100.0  100.0  100.0  0.0   0.0   0.0   27374..27622     82     82     AGN70934.1        E | envelope protein
+gi_597503885.9     99.5   100.0  100.0  0.0   0.0   0.0   27637..28296     219    219    AGN72645.1        M | membrane glycoprotein
+gi_597503885.10    100.0  100.0  100.0  0.0   0.0   0.0   28350..29591     413    413    AGN72646.1        N | nucleocapsid phosphoprotein
+gi_597503885.11    99.1   99.1   100.0  0.0   0.0   0.0   28546..28884     112    112    AGN70981.1        N2 | N2 protein
+

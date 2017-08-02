@@ -1,0 +1,106 @@
+347990599_DRAFT	msl_db	<141..>210	Q77M43.1	NP	putative nucleocapsid protein, fragment	T5	33
+347990599_DRAFT	msl_db	<141..>210	Q77M43.1	NP	putative nucleocapsid protein, fragment	T3	1476
+347990599_DRAFT	msl_db	<281..>350	Q77M43.1	NP	putative nucleocapsid protein, fragment	T5	174
+347990599_DRAFT	msl_db	<281..>350	Q77M43.1	NP	putative nucleocapsid protein, fragment	T3	1335
+347990599_DRAFT	msl_db	<421..>490	Q77M43.1	NP	putative nucleocapsid protein, fragment	T5	315
+347990599_DRAFT	msl_db	<421..>490	Q77M43.1	NP	putative nucleocapsid protein, fragment	T3	1197
+347990599_DRAFT	msl_db	<561..>630	Q77M43.1	NP	putative nucleocapsid protein, fragment	T5	453
+347990599_DRAFT	msl_db	<561..>630	Q77M43.1	NP	putative nucleocapsid protein, fragment	T3	1056
+347990599_DRAFT	msl_db	<700..>839	Q77M43.1	NP	putative nucleocapsid protein, fragment	T5	594
+347990599_DRAFT	msl_db	<700..>839	Q77M43.1	NP	putative nucleocapsid protein, fragment	T3	846
+347990599_DRAFT	msl_db	<980..>1119	Q77M43.1	NP	putative nucleocapsid protein, fragment	T5	873
+347990599_DRAFT	msl_db	<980..>1119	Q77M43.1	NP	putative nucleocapsid protein, fragment	T3	567
+347990599_DRAFT	msl_db	<1260..>1468	Q77M43.1	NP	putative nucleocapsid protein, fragment	T5	1155
+347990599_DRAFT	msl_db	<1260..>1468	Q77M43.1	NP	putative nucleocapsid protein, fragment	T3	216
+347990599_DRAFT	msl_db	1806..>2517	AAF85677.2	V	putative V protein, N-terminal	T3	189
+347990599_DRAFT	msl_db	<2590..2704	AAF85677.2	V	putative V protein, C-terminal	T5	645
+347990599_DRAFT	msl_db	1806..>2517	AEP40463.1	P	putative phosphoprotein, N-terminal	T3	813
+347990599_DRAFT	msl_db	<2590..3329	AEP40463.1	P	putative phosphoprotein, C-terminal	T5	786
+347990599_DRAFT	msl_db	1828..2388	NP_056920.1	C	C protein	OK	
+347990599_DRAFT	msl_db	3437..>4339	NP_056921.1	M	putative membrane protein, N-terminal	T3	105
+347990599_DRAFT	msl_db	5457..7109	NP_056922.1	F	fusion protein	OK	
+347990599_DRAFT	msl_db	7270..>8679	NP_056923.1	H	putative hemagglutinin-neuraminidase, N-terminal	T3	444
+347990599_DRAFT	msl_db	<8737..9123	NP_056923.1	H	putative hemagglutinin-neuraminidase, C-terminal	T5	1467
+347990599_DRAFT	msl_db	9233..>12796	P35975.1	L	putative large protein, N-terminal	T3	2988
+347990599_DRAFT	msl_db	<12839..>12905	P35975.1	L	putative large protein, fragment	T5	3606
+347990599_DRAFT	msl_db	<12839..>12905	P35975.1	L	putative large protein, fragment	T3	2880
+347990599_DRAFT	msl_db	<12950..>13859	P35975.1	L	putative large protein, fragment	T5	3717
+347990599_DRAFT	msl_db	<12950..>13859	P35975.1	L	putative large protein, fragment	T3	1926
+347990599_DRAFT	msl_db	<14000..>15189	P35975.1	L	putative large protein, fragment	T5	4767
+347990599_DRAFT	msl_db	<14000..>15189	P35975.1	L	putative large protein, fragment	T3	597
+347990599_DRAFT	msl_db	<15471..15784	P35975.1	L	putative large protein, C-terminal	T5	6240
+gi|347990599|gb|JN635410.1|	msl_db	108..1685	Q77M43.1	NP	nucleocapsid protein	OK	
+gi|347990599|gb|JN635410.1|	msl_db	1807..2705	AAF85677.2	V	V protein	OK	
+gi|347990599|gb|JN635410.1|	msl_db	1807..3330	AEP40463.1	P	phosphoprotein	OK	
+gi|347990599|gb|JN635410.1|	msl_db	1829..2389	NP_056920.1	C	C protein	OK	
+gi|347990599|gb|JN635410.1|	msl_db	3438..4445	NP_056921.1	M	membrane protein	OK	
+gi|347990599|gb|JN635410.1|	msl_db	5458..7110	NP_056922.1	F	fusion protein	OK	
+gi|347990599|gb|JN635410.1|	msl_db	7271..9124	NP_056923.1	H	hemagglutinin-neuraminidase	OK	
+gi|347990599|gb|JN635410.1|	msl_db	9234..15785	P35975.1	L	large protein	OK	
+gi|347990563|gb|JN635406.1|	msl_db	108..1685	Q77M43.1	NP	nucleocapsid protein	OK	
+gi|347990563|gb|JN635406.1|	msl_db	1807..2705	YP_003873249.1	V	V protein	OK	
+gi|347990563|gb|JN635406.1|	msl_db	1807..3330	NP_056919.1	P	phosphoprotein	OK	
+gi|347990563|gb|JN635406.1|	msl_db	1829..2389	NP_056920.1	C	C protein	OK	
+gi|347990563|gb|JN635406.1|	msl_db	3438..4445	NP_056921.1	M	membrane protein	OK	
+gi|347990563|gb|JN635406.1|	msl_db	5458..7110	NP_056922.1	F	fusion protein	OK	
+gi|347990563|gb|JN635406.1|	msl_db	7271..9124	NP_056923.1	H	hemagglutinin-neuraminidase	OK	
+gi|347990563|gb|JN635406.1|	msl_db	9234..15785	P35975.1	L	large protein	OK	
+gi|347990527|gb|JN635402.1|	msl_db	108..1685	Q77M43.1	NP	nucleocapsid protein	OK	
+gi|347990527|gb|JN635402.1|	msl_db	1807..2705	AAF85677.2	V	V protein	OK	
+gi|347990527|gb|JN635402.1|	msl_db	1807..3330	NP_056919.1	P	phosphoprotein	OK	
+gi|347990527|gb|JN635402.1|	msl_db	1829..2389	NP_056920.1	C	C protein	OK	
+gi|347990527|gb|JN635402.1|	msl_db	3438..4445	NP_056921.1	M	membrane protein	OK	
+gi|347990527|gb|JN635402.1|	msl_db	5464..7116	NP_056922.1	F	fusion protein	OK	
+gi|347990527|gb|JN635402.1|	msl_db	7277..9130	NP_056923.1	H	hemagglutinin-neuraminidase	OK	
+gi|347990527|gb|JN635402.1|	msl_db	9240..15791	P35975.1	L	large protein	OK	
+gi|347990590|gb|JN635409.1|	msl_db	108..1685	Q77M43.1	NP	nucleocapsid protein	OK	
+gi|347990590|gb|JN635409.1|	msl_db	1807..2705	YP_003873249.1	V	V protein	OK	
+gi|347990590|gb|JN635409.1|	msl_db	1807..3330	NP_056919.1	P	phosphoprotein	OK	
+gi|347990590|gb|JN635409.1|	msl_db	1829..2389	NP_056920.1	C	C protein	OK	
+gi|347990590|gb|JN635409.1|	msl_db	3438..4445	NP_056921.1	M	membrane protein	OK	
+gi|347990590|gb|JN635409.1|	msl_db	5458..7110	NP_056922.1	F	fusion protein	OK	
+gi|347990590|gb|JN635409.1|	msl_db	7271..9124	NP_056923.1	H	hemagglutinin-neuraminidase	OK	
+gi|347990590|gb|JN635409.1|	msl_db	9234..15785	P35975.1	L	large protein	OK	
+gi|186660408|gb|EU332916.1|	msl_db	1..1578	Q77M43.1	NP	nucleocapsid protein	OK	
+gi|56266679|gb|AY730614.1|	msl_db	108..1685	Q77M43.1	NP	nucleocapsid protein	OK	
+gi|56266679|gb|AY730614.1|	msl_db	1807..2705	AAF85677.2	V	V protein	OK	
+gi|56266679|gb|AY730614.1|	msl_db	1807..3330	NP_056919.1	P	phosphoprotein	OK	
+gi|56266679|gb|AY730614.1|	msl_db	1829..2389	NP_056920.1	C	C protein	OK	
+gi|56266679|gb|AY730614.1|	msl_db	3438..4445	NP_056921.1	M	membrane protein	OK	
+gi|56266679|gb|AY730614.1|	msl_db	5458..7110	NP_056922.1	F	fusion protein	OK	
+gi|56266679|gb|AY730614.1|	msl_db	7271..9124	NP_056923.1	H	hemagglutinin-neuraminidase	OK	
+gi|56266679|gb|AY730614.1|	msl_db	9234..15785	P35975.1	L	large protein	OK	
+gi|13518006|gb|AF212302.2|	msl_db	113..1711	YP_087120.2	NP	nucleocapsid protein	OK	
+gi|13518006|gb|AF212302.2|	msl_db	5144..6166	BAK40021.1	M	membrane protein	OK	
+gi|13518006|gb|AF212302.2|	msl_db	6654..8294	AFH55532.1	F	fusion protein	OK	
+gi|13518006|gb|AF212302.2|	msl_db	11412..18146	BAK40017.1	L	large protein	OK	
+gi|9181902|gb|AF266290.1|	msl_db	108..1685	Q77M43.1	NP	nucleocapsid protein	OK	
+gi|9181902|gb|AF266290.1|	msl_db	1807..2705	AAF85677.2	V	V protein	OK	
+gi|9181902|gb|AF266290.1|	msl_db	1807..3330	NP_056919.1	P	phosphoprotein	OK	
+gi|9181902|gb|AF266290.1|	msl_db	1829..2389	NP_056920.1	C	C protein	OK	
+gi|9181902|gb|AF266290.1|	msl_db	3438..4445	NP_056921.1	M	membrane protein	OK	
+gi|9181902|gb|AF266290.1|	msl_db	5458..7110	NP_056922.1	F	fusion protein	OK	
+gi|9181902|gb|AF266290.1|	msl_db	7271..9124	NP_056923.1	H	hemagglutinin-neuraminidase	OK	
+gi|9181902|gb|AF266290.1|	msl_db	9234..15785	P35975.1	L	large protein	OK	
+gi|9181873|gb|AF266287.1|	msl_db	108..1685	Q77M43.1	NP	nucleocapsid protein	OK	
+gi|9181873|gb|AF266287.1|	msl_db	1807..2705	AAF85677.2	V	V protein	OK	
+gi|9181873|gb|AF266287.1|	msl_db	1807..3330	NP_056919.1	P	phosphoprotein	OK	
+gi|9181873|gb|AF266287.1|	msl_db	1829..2389	NP_056920.1	C	C protein	OK	
+gi|9181873|gb|AF266287.1|	msl_db	3438..4445	NP_056921.1	M	membrane protein	OK	
+gi|9181873|gb|AF266287.1|	msl_db	5458..7110	NP_056922.1	F	fusion protein	OK	
+gi|9181873|gb|AF266287.1|	msl_db	7271..9124	NP_056923.1	H	hemagglutinin-neuraminidase	OK	
+gi|9181873|gb|AF266287.1|	msl_db	9234..15785	P35975.1	L	large protein	OK	
+gi|186660456|gb|EU332920.1|	msl_db	1..899	AAF85677.2	V	V protein	OK	
+gi|186660456|gb|EU332920.1|	msl_db	1..1524	NP_056919.1	P	phosphoprotein	OK	
+gi|186660456|gb|EU332920.1|	msl_db	23..583	NP_056920.1	C	C protein	OK	
+gi|186660422|gb|EU332923.1|	msl_db	1..899	AEP40448.1	V	V protein	OK	
+gi|186660422|gb|EU332923.1|	msl_db	1..1524	AEP40447.1	P	phosphoprotein	OK	
+gi|186660422|gb|EU332923.1|	msl_db	23..583	NP_056920.1	C	C protein	OK	
+gi|162946431|gb|EU293550.1|	msl_db	108..1685	Q77M43.1	NP	nucleocapsid protein	OK	
+gi|162946431|gb|EU293550.1|	msl_db	1807..2705	YP_003873249.1	V	V protein	OK	
+gi|162946431|gb|EU293550.1|	msl_db	1807..3330	NP_056919.1	P	phosphoprotein	OK	
+gi|162946431|gb|EU293550.1|	msl_db	1829..2389	NP_056920.1	C	C protein	OK	
+gi|162946431|gb|EU293550.1|	msl_db	3438..4445	NP_056921.1	M	membrane protein	OK	
+gi|162946431|gb|EU293550.1|	msl_db	5458..7110	NP_056922.1	F	fusion protein	OK	
+gi|162946431|gb|EU293550.1|	msl_db	7271..9124	NP_056923.1	H	hemagglutinin-neuraminidase	OK	
+gi|162946431|gb|EU293550.1|	msl_db	9234..15785	P35975.1	L	large protein	OK	

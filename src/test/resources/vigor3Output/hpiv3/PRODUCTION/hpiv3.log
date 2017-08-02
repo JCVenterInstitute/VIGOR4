@@ -1,0 +1,346 @@
+2017-07-27 11:33:48
+
+parameters
+	bl2seq_extend_hsp	25
+	bl2seq_extend_span	50
+	candidate_blastopts	-p blastx -M BLOSUM80 -e 1E-5 -g F -v 0 -F \"\" -z 3000000 -b 1000
+	candidate_evalue	
+	candidate_overlap_threshold	0.8
+	candidate_refdb	
+	command_line	/usr/local/devel/VIRIFX/software/VIGOR3/prod3/VIGOR3.pl -D hpiv3 -O /home/snettem/vigor_new/hpiv3/PRODUCTION/hpiv3 -i /usr/local/devel/VIRIFX/software/VIGOR3.r19/regr_testing/hpiv3.fasta
+	default_gene_optional	0
+	default_gene_required	0
+	default_gene_variation	1
+	frameshift_sensitivity	1
+	gene_variations	
+	jcvi_rules	1
+	mature_pep_mincoverage	50
+	mature_pep_minidentity	25
+	mature_pep_minsimilarity	40
+	mature_pep_refdb	/usr/local/devel/VIRIFX/software/VIGOR3.r19/data3/virus_mp
+	max_intron_size	7000
+	min_candidate_pctsimilarity	60
+	min_candidate_sbjcoverage	33
+	min_exon_size	3
+	min_intron_size	30
+	min_pseudogene_coverage	80
+	min_pseudogene_identity	70
+	min_pseudogene_similarity	80
+	noncanonical_splicing_genes	
+	optional_genes	
+	reference_db	/usr/local/devel/VIRIFX/software/VIGOR3.r19/data3/hpiv3_db
+	reference_dbsize	68352
+	required_genes	
+	ribosomal_slippage_genes	
+	rna_editing_genes	
+	selectivity	0.985
+	slippage_frameshift	-1
+	slippage_motif	[NT][NT][NT]AAAC
+	slippage_offset	0
+	spliced_genes	
+	splicesite_extend_range	0
+	tile_overlap	1000000
+	tile_size	10000000
+	use_locus_tags	1
+	variation	0.975
+	verbose	0
+	vigorspace	/usr/local/devel/VIRIFX/software/VIGOR3.r19/prod3/vigorscratch/481712.215886549
+
+
+genomic sequence gi|10937870|ref|NC_001796.2|, length=15462
+
+    found 1 permutation for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_067148.1       515    1-515          1   111-1655       1   3  0  N   100.0  100.0  100.0  0        N | nucleoprotein
+        found 1 gene
+
+    found 1 permutation for gene D
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_599250.1       373    1-373          1   1784-2900      2   0  1  N   99.4   99.7   100.0  0        D | D protein
+        found 1 gene
+
+    found 1 permutation for gene P
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_067149.1       603    1-603          1   1784-3592      1   2  0  N   100.0  100.0  100.0  0        P | phosphoprotein
+        found 1 gene
+
+    found 1 permutation for gene C
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_599251.1       199    1-199          1   1794-2390      1   3  0  N   100.0  100.0  100.0  6.4-e157 C | C protein
+        found 1 gene
+
+    found 1 permutation for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_067150.1       353    1-353          1   3753-4811      1   3  0  N   100.0  100.0  100.0  0        M | matrix protein
+        found 1 gene
+
+    found 1 permutation for gene F
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    tr|O89236|O89236_ 539    1-539          1   5072-6688      1   2  0  N   100.0  100.0  100.0  0        F | fusion glycoprotein F0
+        found 1 gene
+
+    found 1 permutation for gene HN
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_067152.1       574    1-574          1   6806-8527      1   2  0  N   100.0  100.0  100.0  0        HN | hemagglutinin neuraminidase
+        found 1 gene
+
+    found 1 permutation for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_067153.2       2233   1-2233         1   8646-15344     1   3  0  N   100.0  100.0  100.0  0        L | RNA-directed RNA polymerase L
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|10937870|ref|NC_0    15462      8            0      16191           5389          100.0            100.0          100.0   hpiv3_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_10937870.1      100.0  100.0  100.0  0.0   0.0   0.0   111..1658        515    515    NP_067148.1       N | nucleoprotein
+gi_10937870.2      100.0  100.0  100.0  0.0   0.0   0.0   1784..2903       373    373    NP_599250.1       D | D protein
+                    transcription exception 2500..2506:AAAAGGGGG
+gi_10937870.3      100.0  100.0  100.0  0.0   0.0   0.0   1784..3595       603    603    NP_067149.1       P | phosphoprotein
+gi_10937870.4      100.0  100.0  100.0  0.0   0.0   0.0   1794..2393       199    199    NP_599251.1       C | C protein
+gi_10937870.5      100.0  100.0  100.0  0.0   0.0   0.0   3753..4814       353    353    NP_067150.1       M | matrix protein
+gi_10937870.6      100.0  100.0  100.0  0.0   0.0   0.0   5072..6691       539    539    tr|O89236|O89236_ F | fusion glycoprotein F0
+gi_10937870.7      100.0  100.0  100.0  0.0   0.0   0.0   6806..8530       574    574    NP_067152.1       HN | hemagglutinin neuraminidase
+gi_10937870.8      100.0  100.0  100.0  0.0   0.0   0.0   8646..15347      2233   2233   NP_067153.2       L | RNA-directed RNA polymerase L
+
+
+genomic sequence 10937870_part1, length=910
+
+    found 1 permutation for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_067148.1       515    11-313         1   1-909          1   1  0  N   100.0  100.0  58.8   0        N | nucleoprotein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+10937870_part1            910      1            0        909            303          100.0            100.0           58.8   hpiv3_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+10937870_part1.1   100.0  100.0  58.8   1.9   0.0   39.2  <1..>910         303    515    NP_067148.1       N | putative nucleoprotein, fragment
+
+
+genomic sequence 10937870_part2, length=2310
+
+    found 1 permutation for gene F
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    tr|O89236|O89236_ 539    458-539        1   3-248          1   3  0  N   100.0  100.0  15.2   1.3-e059 F | fusion glycoprotein F0
+        found 1 gene
+
+    found 1 permutation for gene HN
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_067152.1       574    1-574          1   366-2087       1   3  0  N   97.9   97.9   100.0  0        HN | hemagglutinin neuraminidase
+        found 1 gene
+
+    found 1 permutation for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABZ85674.1        2233   7-35           1   2224-2310      1   1  0  N   100.0  100.0  1.2    2.1-e016 L | RNA-directed RNA polymerase L
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+10937870_part2           2310      4            0       2032            673          100.0            100.0           17.2   hpiv3_db
+gaps: 1751-1783, 2196-2221
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+10937870_part2.1   100.0  100.0  15.2   84.8  0.0   0.0   <1..251          82     539    tr|O89236|O89236_ F | putative fusion glycoprotein F0, C-terminal
+10937870_part2.2a  100.0  100.0  80.3   0.0   0.0   19.7  366..>1750       461    574    NP_067152.1       HN | putative hemagglutinin neuraminidase,
+                                                                                                           N-terminal
+10937870_part2.2b  100.0  100.0  17.6   82.4  0.0   0.0   <1784..2090      101    574    NP_067152.1       HN | putative hemagglutinin neuraminidase,
+                                                                                                           C-terminal
+10937870_part2.3   100.0  100.0  1.3    0.3   0.0   98.4  <2222..>2310     29     2233   ABZ85674.1        L | putative RNA-directed RNA polymerase L,
+                                                                                                           fragment
+
+
+genomic sequence 10937870_draft, length=15361
+
+    found 1 permutation for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_067148.1       515    1-515          1   10-1554        1   1  0  N   94.3   94.3   100.0  0        N | nucleoprotein
+        found 1 gene
+
+    found 1 permutation for gene D
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_599250.1       373    1-373          1   1683-2799      3   0  1  N   99.4   99.7   93.2   0        D | D protein
+        found 1 gene
+
+    found 1 permutation for gene P
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_067149.1       603    1-603          1   1683-3491      2   3  0  N   100.0  100.0  95.8   0        P | phosphoprotein
+        found 1 gene
+
+    found 1 permutation for gene C
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_599251.1       199    1-195          1   1693-2277      1   1  0  N   100.0  100.0  97.9   1.7-e153 C | C protein
+        found 1 gene
+
+    found 1 permutation for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABZ85671.1        353    1-102          1   3652-3957      1   1  0  N   100.0  100.0  28.8   1.1-e077 M | matrix protein
+        found 1 gene
+
+    found 1 permutation for gene F
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    tr|O89236|O89236_ 539    38-539         1   5082-6587      1   3  0  N   100.0  100.0  93.1   0        F | fusion glycoprotein F0
+        found 1 gene
+
+    found 1 permutation for gene HN
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_067152.1       574    1-574          1   6705-8426      1   3  0  N   100.0  100.0  100.0  0        HN | hemagglutinin neuraminidase
+        found 1 gene
+
+    found 1 permutation for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_067153.2       2233   1-2233         1   8545-15243     4   1  0  N   100.0  100.0  96.9   0        L | RNA-directed RNA polymerase L
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+10937870_draft          15361     15            0      14892           4953          100.0            100.0           35.1   hpiv3_db
+gaps: 841-878, 898-938, 2278-2349, 3960-5079, 9291-9346, 10750-10823, 14884-14949
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+10937870_draft.1a  99.3   99.3   53.8   0.0   0.0   46.2  10..>840         277    515    NP_067148.1       N | putative nucleoprotein, N-terminal
+10937870_draft.1b  100.0  100.0  1.2    56.3  0.0   42.5  <879..>897       6      515    NP_067148.1       N | putative nucleoprotein, fragment
+10937870_draft.1c  100.0  100.0  39.8   60.2  0.0   0.0   <939..1557       205    515    NP_067148.1       N | putative nucleoprotein, C-terminal
+10937870_draft.2a  100.0  100.0  53.1   0.0   0.0   46.9  1683..>2277      198    373    NP_599250.1       D | putative D protein, N-terminal
+10937870_draft.2b  100.0  100.0  40.2   59.8  0.0   0.0   <2350..2802      150    373    NP_599250.1       D | putative D protein, C-terminal
+                    transcription exception 2399..2405:AAAAGGGGG
+10937870_draft.3a  100.0  100.0  32.8   0.0   0.0   67.2  1683..>2277      198    603    NP_067149.1       P | putative phosphoprotein, N-terminal
+10937870_draft.3b  100.0  100.0  63.0   37.0  0.0   0.0   <2350..3494      380    603    NP_067149.1       P | putative phosphoprotein, C-terminal
+10937870_draft.4   100.0  100.0  98.0   0.0   0.0   2.0   1693..>2277      195    199    NP_599251.1       C | putative C protein, N-terminal
+10937870_draft.5   100.0  100.0  28.9   0.0   0.0   71.1  3652..>3957      102    353    ABZ85671.1        M | putative matrix protein, N-terminal
+10937870_draft.6   100.0  100.0  93.1   6.9   0.0   0.0   <5080..6590      502    539    tr|O89236|O89236_ F | putative fusion glycoprotein F0, C-terminal
+10937870_draft.7   100.0  100.0  100.0  0.0   0.0   0.0   6705..8429       574    574    NP_067152.1       HN | hemagglutinin neuraminidase
+10937870_draft.8a  100.0  100.0  11.1   0.0   0.0   88.9  8545..>9290      248    2233   NP_067153.2       L | putative RNA-directed RNA polymerase L,
+                                                                                                           N-terminal
+10937870_draft.8b  100.0  100.0  20.9   12.0  0.0   67.1  <9347..>10749    467    2233   NP_067153.2       L | putative RNA-directed RNA polymerase L,
+                                                                                                           fragment
+10937870_draft.8c  100.0  100.0  60.6   34.0  0.0   5.4   <10824..>14883   1353   2233   NP_067153.2       L | putative RNA-directed RNA polymerase L,
+                                                                                                           fragment
+10937870_draft.8d  100.0  100.0  4.4    95.6  0.0   0.0   <14950..15246    98     2233   NP_067153.2       L | putative RNA-directed RNA polymerase L,
+                                                                                                           C-terminal
+
+
+genomic sequence gi|312618595|gb|HM583801.1|, length=15462
+
+    found 1 permutation for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADR00399.1        515    1-515          1   111-1655       1   3  0  N   100.0  100.0  100.0  0        N | nucleoprotein
+        found 1 gene
+
+    found 1 permutation for gene D
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADR00402.1        373    1-373          1   1784-2900      2   0  1  N   99.4   99.7   100.0  0        D | D protein
+        found 1 gene
+
+    found 1 permutation for gene P
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADR00400.1        602    1-602          1   1784-3589      1   2  0  N   100.0  100.0  100.0  0        P | phosphoprotein
+        found 1 gene
+
+    found 1 permutation for gene C
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADR00401.1        199    1-199          1   1794-2390      1   3  0  N   100.0  100.0  100.0  6.4-e157 C | C protein
+        found 1 gene
+
+    found 1 permutation for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADR00403.1        353    1-353          1   3753-4811      1   3  0  N   100.0  100.0  100.0  0        M | matrix protein
+        found 1 gene
+
+    found 1 permutation for gene F
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADR00404.1        539    1-539          1   5072-6688      1   2  0  N   100.0  100.0  100.0  0        F | fusion glycoprotein F0
+        found 1 gene
+
+    found 1 permutation for gene HN
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADR00405.1        572    1-572          1   6806-8521      1   2  0  N   100.0  100.0  100.0  0        HN | hemagglutinin neuraminidase
+        found 1 gene
+
+    found 1 permutation for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADR00406.1        2233   1-2233         1   8646-15344     1   3  0  N   100.0  100.0  100.0  0        L | RNA-directed RNA polymerase L
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|312618595|gb|HM58    15462      8            0      16182           5386          100.0            100.0          100.0   hpiv3_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_312618595.1     100.0  100.0  100.0  0.0   0.0   0.0   111..1658        515    515    ADR00399.1        N | nucleoprotein
+gi_312618595.2     100.0  100.0  100.0  0.0   0.0   0.0   1784..2903       373    373    ADR00402.1        D | D protein
+                    transcription exception 2500..2506:AAAAGGGGG
+gi_312618595.3     100.0  100.0  100.0  0.0   0.0   0.0   1784..3592       602    602    ADR00400.1        P | phosphoprotein
+gi_312618595.4     100.0  100.0  100.0  0.0   0.0   0.0   1794..2393       199    199    ADR00401.1        C | C protein
+gi_312618595.5     100.0  100.0  100.0  0.0   0.0   0.0   3753..4814       353    353    ADR00403.1        M | matrix protein
+gi_312618595.6     100.0  100.0  100.0  0.0   0.0   0.0   5072..6691       539    539    ADR00404.1        F | fusion glycoprotein F0
+gi_312618595.7     100.0  100.0  100.0  0.0   0.0   0.0   6806..8524       572    572    ADR00405.1        HN | hemagglutinin neuraminidase
+gi_312618595.8     100.0  100.0  100.0  0.0   0.0   0.0   8646..15347      2233   2233   ADR00406.1        L | RNA-directed RNA polymerase L
+
+
+genomic sequence gi|332663|gb|M64469.1|PIF3TNS7, length=333
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|332663|gb|M64469.      333      0            0          0              0              -                -              -   hpiv3_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+
+
+genomic sequence gi|163866863|gb|EU326526.1|, length=15462
+
+    found 1 permutation for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABY47602.1        515    1-515          1   111-1655       1   3  0  N   100.0  100.0  100.0  0        N | nucleoprotein
+        found 1 gene
+
+    found 1 permutation for gene D
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADR00402.1        373    1-373          1   1784-2900      2   0  1  N   91.5   94.4   100.0  0        D | D protein
+        found 1 gene
+
+    found 1 permutation for gene P
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABY47603.1        603    1-603          1   1784-3592      1   2  0  N   100.0  100.0  100.0  0        P | phosphoprotein
+        found 1 gene
+
+    found 1 permutation for gene C
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADR00401.1        199    1-199          1   1794-2390      1   3  0  N   98.4   100.0  100.0  5.5-e155 C | C protein
+        found 1 gene
+
+    found 1 permutation for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    tr|A9Z0P4|A9Z0P4_ 353    1-353          1   3753-4811      1   3  0  N   100.0  100.0  100.0  0        M | matrix protein
+        found 1 gene
+
+    found 1 permutation for gene F
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABY47605.1        539    1-539          1   5072-6688      1   2  0  N   100.0  100.0  100.0  0        F | fusion glycoprotein F0
+        found 1 gene
+
+    found 1 permutation for gene HN
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABY47606.1        572    1-572          1   6806-8521      1   2  0  N   100.0  100.0  100.0  0        HN | hemagglutinin neuraminidase
+        found 1 gene
+
+    found 1 permutation for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABY47607.1        2233   1-2233         1   8646-15344     1   3  0  N   100.0  100.0  100.0  0        L | RNA-directed RNA polymerase L
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|163866863|gb|EU32    15462      8            0      16185           5387           99.4             99.7          100.0   hpiv3_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_163866863.1     100.0  100.0  100.0  0.0   0.0   0.0   111..1658        515    515    ABY47602.1        N | nucleoprotein
+gi_163866863.2     92.0   96.0   100.0  0.0   0.0   0.0   1784..2903       373    373    ADR00402.1        D | D protein
+                    transcription exception 2500..2506:AAAAGGGGG
+gi_163866863.3     100.0  100.0  100.0  0.0   0.0   0.0   1784..3595       603    603    ABY47603.1        P | phosphoprotein
+gi_163866863.4     98.5   99.9   100.0  0.0   0.0   0.0   1794..2393       199    199    ADR00401.1        C | C protein
+gi_163866863.5     100.0  100.0  100.0  0.0   0.0   0.0   3753..4814       353    353    tr|A9Z0P4|A9Z0P4_ M | matrix protein
+gi_163866863.6     100.0  100.0  100.0  0.0   0.0   0.0   5072..6691       539    539    ABY47605.1        F | fusion glycoprotein F0
+gi_163866863.7     100.0  100.0  100.0  0.0   0.0   0.0   6806..8524       572    572    ABY47606.1        HN | hemagglutinin neuraminidase
+gi_163866863.8     100.0  100.0  100.0  0.0   0.0   0.0   8646..15347      2233   2233   ABY47607.1        L | RNA-directed RNA polymerase L
+

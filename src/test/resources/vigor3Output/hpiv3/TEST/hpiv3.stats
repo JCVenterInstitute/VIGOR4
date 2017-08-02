@@ -1,0 +1,8 @@
+Sequence	Length	Genes	Pseudogenes	CDS Bases	Peptide Bases	%Ref Identity	%Ref Similarity	%Ref Coverage	Ref DB
+gi|10937870|ref|NC_001796.2|	15462	8	0	16191	5389	100.0	100.0	100.0	hpiv3_db
+10937870_part1	910	1	0	909	303	100.0	100.0	58.8	hpiv3_db
+10937870_part2	2310	4	0	2032	673	100.0	100.0	17.2	hpiv3_db
+10937870_draft	15361	15	0	14892	4953	100.0	100.0	35.1	hpiv3_db
+gi|312618595|gb|HM583801.1|	15462	8	0	16182	5386	100.0	100.0	100.0	hpiv3_db
+gi|332663|gb|M64469.1|PIF3TNS7	333	0	0	0	0	-	-	-	hpiv3_db
+gi|163866863|gb|EU326526.1|	15462	8	0	16185	5387	99.4	99.7	100.0	hpiv3_db

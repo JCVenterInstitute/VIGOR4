@@ -1,0 +1,70 @@
+77_part1	mmp_db	29..1678	Q77IS8.1	NP	nucleocapsid protein	OK	
+77_part1	mmp_db	1862..>2339	AEY76114.1	I	putative I protein, N-terminal	T3	36
+77_part1	mmp_db	1862..>2339	BAK26765.1	V	putative V protein, N-terminal	T3	198
+77_part1	mmp_db	1862..>2339	NP_054708.1	P	putative phosphoprotein, N-terminal	T3	696
+77_part2	mmp_db	<1..68	CBA10119.1	I	putative I protein, C-terminal	T5	444
+77_part2	mmp_db	<1..231	BAK26765.1	V	putative V protein, C-terminal	T5	444
+77_part2	mmp_db	<1..730	NP_054708.1	P	putative phosphoprotein, C-terminal	T5	444
+77_part2	mmp_db	842..>1621	NP_054710.1	M	putative membrane protein, N-terminal	T3	348
+77_part3	mmp_db	<1..>897	P30929.1	L	putative large protein, fragment	T5	5763
+77_part3	mmp_db	<1..>897	P30929.1	L	putative large protein, fragment	T3	129
+77	mmp_db	109..1758	Q77IS8.1	NP	nucleocapsid protein	OK	
+77	mmp_db	1942..2453	AEY76114.1	I	I protein	OK	
+77	mmp_db	1942..2616	BAK26765.1	V	V protein	OK	
+77	mmp_db	1942..3115	NP_054708.1	P	phosphoprotein	OK	
+77	mmp_db	3227..4354	NP_054710.1	M	membrane protein	OK	
+77	mmp_db	4509..6125	AAT81469.1	F	fusion protein	OK	
+77	mmp_db	6231..6404	P28087.1	SH	small hydrophobic protein	OK	
+77	mmp_db	6577..8325	AAT81471.1	HN	hemagglutinin-neuraminidase	OK	
+77	mmp_db	8401..15186	P30929.1	L	large protein	OK	
+84	mmp_db	62..1711	Q77IS8.1	NP	nucleocapsid protein	OK	
+84	mmp_db	1895..2406	AEY76114.1	I	I protein	OK	
+84	mmp_db	1895..2569	BAK26765.1	V	V protein	OK	
+84	mmp_db	1895..3068	NP_054708.1	P	phosphoprotein	OK	
+84	mmp_db	3180..4307	NP_054710.1	M	membrane protein	OK	
+84	mmp_db	4462..6078	AAT81469.1	F	fusion protein	OK	
+84	mmp_db	6184..6357	P28087.1	SH	small hydrophobic protein	OK	
+84	mmp_db	6530..8278	AAT81471.1	HN	hemagglutinin-neuraminidase	OK	
+84	mmp_db	8354..15139	P30929.1	L	large protein	OK	
+66	mmp_db	86..1735	Q77IS8.1	NP	nucleocapsid protein	OK	
+66	mmp_db	1919..2430	AEY76114.1	I	I protein	OK	
+66	mmp_db	1919..2593	BAK26765.1	V	V protein	OK	
+66	mmp_db	1919..3092	NP_054708.1	P	phosphoprotein	OK	
+66	mmp_db	3204..4331	NP_054710.1	M	membrane protein	OK	
+66	mmp_db	4486..6102	AAT81469.1	F	fusion protein	OK	
+66	mmp_db	6208..6381	AAL68456.1	SH	small hydrophobic protein	OK	
+66	mmp_db	6554..8302	AAT81471.1	HN	hemagglutinin-neuraminidase	OK	
+66	mmp_db	8378..15163	P30929.1	L	large protein	OK	
+gi|32172464|gb|AY309060.1|	mmp_db	146..1795	Q77IS8.1	NP	nucleocapsid protein	OK	
+gi|32172464|gb|AY309060.1|	mmp_db	1979..2472	AEY76114.1	I	I protein	OK	
+gi|32172464|gb|AY309060.1|	mmp_db	1979..2653	BAK26765.1	V	V protein	OK	
+gi|32172464|gb|AY309060.1|	mmp_db	1979..3152	NP_054708.1	P	phosphoprotein	OK	
+gi|32172464|gb|AY309060.1|	mmp_db	3264..4391	NP_054710.1	M	membrane protein	OK	
+gi|32172464|gb|AY309060.1|	mmp_db	4546..6162	AAT81469.1	F	fusion protein	OK	
+gi|32172464|gb|AY309060.1|	mmp_db	6268..6441	P28087.1	SH	small hydrophobic protein	OK	
+gi|32172464|gb|AY309060.1|	mmp_db	6614..8362	AAT81471.1	HN	hemagglutinin-neuraminidase	OK	
+gi|32172464|gb|AY309060.1|	mmp_db	8438..15223	P30929.1	L	large protein	OK	
+32172464_DRAF	mmp_db	104..>207	Q77IS8.1	NP	putative nucleocapsid protein, N-terminal	T3	1548
+32172464_DRAF	mmp_db	<284..>1217	Q77IS8.1	NP	putative nucleocapsid protein, fragment	T5	180
+32172464_DRAF	mmp_db	<284..>1217	Q77IS8.1	NP	putative nucleocapsid protein, fragment	T3	537
+32172464_DRAF	mmp_db	<1644..1753	Q77IS8.1	NP	putative nucleocapsid protein, C-terminal	T5	1542
+32172464_DRAF	mmp_db	1937..2430	AEY76114.1	I	I protein	OK	
+32172464_DRAF	mmp_db	1937..2611	BAK26765.1	V	V protein	OK	
+32172464_DRAF	mmp_db	1937..3110	NP_054708.1	P	phosphoprotein	OK	
+32172464_DRAF	mmp_db	3222..4349	NP_054710.1	M	membrane protein	OK	
+32172464_DRAF	mmp_db	4504..>4648	AAT81469.1	F	putative fusion protein, N-terminal	T3	1473
+32172464_DRAF	mmp_db	<4813..>5232	AAT81469.1	F	putative fusion protein, fragment	T5	309
+32172464_DRAF	mmp_db	<4813..>5232	AAT81469.1	F	putative fusion protein, fragment	T3	888
+32172464_DRAF	mmp_db	<5279..6120	AAT81469.1	F	putative fusion protein, C-terminal	T5	777
+32172464_DRAF	mmp_db	6226..6399	P28087.1	SH	small hydrophobic protein	OK	
+32172464_DRAF	mmp_db	6572..8320	AAT81471.1	HN	hemagglutinin-neuraminidase	OK	
+32172464_DRAF	mmp_db	8396..>8515	P30929.1	L	putative large protein, N-terminal	T3	6666
+32172464_DRAF	mmp_db	<8643..>11513	P30929.1	L	putative large protein, fragment	T5	249
+32172464_DRAF	mmp_db	<8643..>11513	P30929.1	L	putative large protein, fragment	T3	3669
+32172464_DRAF	mmp_db	<11746..>13678	P30929.1	L	putative large protein, fragment	T5	3351
+32172464_DRAF	mmp_db	<11746..>13678	P30929.1	L	putative large protein, fragment	T3	1503
+32172464_DRAF	mmp_db	<13749..>13822	P30929.1	L	putative large protein, fragment	T5	5355
+32172464_DRAF	mmp_db	<13749..>13822	P30929.1	L	putative large protein, fragment	T3	1359
+32172464_DRAF	mmp_db	<14103..>14238	P30929.1	L	putative large protein, fragment	T5	5709
+32172464_DRAF	mmp_db	<14103..>14238	P30929.1	L	putative large protein, fragment	T3	945
+32172464_DRAF	mmp_db	<14309..15181	P30929.1	L	putative large protein, C-terminal	T5	5913

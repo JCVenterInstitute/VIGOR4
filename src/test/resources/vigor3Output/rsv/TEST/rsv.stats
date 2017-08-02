@@ -1,0 +1,9 @@
+Sequence	Length	Genes	Pseudogenes	CDS Bases	Peptide Bases	%Ref Identity	%Ref Similarity	%Ref Coverage	Ref DB
+rsv_part1	1800	3	0	1553	515	100.0	100.0	78.7	rsv_db
+rsv_part2	1464	1	0	1324	440	100.0	100.0	20.3	rsv_db
+RSV_DRAFT	14265	21	0	11488	3810	100.0	100.0	27.3	rsv_db
+149	15193	11	0	13635	4534	100.0	100.0	100.0	rsv_db
+30	15280	11	0	13686	4551	99.7	99.9	100.0	rsv_db
+123	15249	11	0	13686	4551	99.6	99.9	100.0	rsv_db
+154	15194	11	0	13635	4534	99.8	99.9	100.0	rsv_db
+150	15194	11	0	13635	4534	99.7	99.9	100.0	rsv_db

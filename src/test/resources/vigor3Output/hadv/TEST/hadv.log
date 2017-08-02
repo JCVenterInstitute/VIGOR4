@@ -1,0 +1,2359 @@
+2017-07-27 11:56:13
+
+parameters
+	bl2seq_extend_hsp	25
+	bl2seq_extend_span	50
+	candidate_blastopts	-p blastx -M BLOSUM45 -e 1E-10 -g F -F "" -b 2000 -v 0
+	candidate_evalue	
+	candidate_overlap_threshold	0.8
+	candidate_refdb	
+	command_line	/usr/local/devel/VIRIFX/software/VIGOR3/prod3/VIGOR3.pl -D hadv -O /home/snettem/vigor_new/hadv/TEST/hadv -i /usr/local/devel/VIRIFX/software/VIGOR3.r19/regr_testing/hadv.fasta
+	default_gene_optional	0
+	default_gene_required	0
+	default_gene_variation	1
+	frameshift_sensitivity	1
+	gene_variations	
+	jcvi_rules	1
+	mature_pep_mincoverage	50
+	mature_pep_minidentity	25
+	mature_pep_minsimilarity	40
+	mature_pep_refdb	/usr/local/devel/VIRIFX/software/VIGOR3.r19/data3/virus_mp
+	max_intron_size	7000
+	min_candidate_pctsimilarity	60
+	min_candidate_sbjcoverage	33
+	min_exon_size	3
+	min_intron_size	30
+	min_pseudogene_coverage	80
+	min_pseudogene_identity	70
+	min_pseudogene_similarity	80
+	noncanonical_splicing_genes	
+	optional_genes	
+	reference_db	/usr/local/devel/VIRIFX/software/VIGOR3.r19/data3/hadv_db
+	required_genes	
+	ribosomal_slippage_genes	
+	rna_editing_genes	
+	selectivity	0.985
+	slippage_frameshift	-1
+	slippage_motif	[NT][NT][NT]AAAC
+	slippage_offset	0
+	spliced_genes	
+	splicesite_extend_range	0
+	tile_overlap	1000000
+	tile_size	10000000
+	use_locus_tags	1
+	variation	0.975
+	verbose	0
+	vigorspace	/usr/local/devel/VIRIFX/software/VIGOR3.r19/prod3/vigorscratch/583112.691369937
+
+
+genomic sequence 84, length=32339
+  selecting database hadvb_db
+
+    found 1 permutation for gene E1A-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFI24565.1        57     1-57           1   511-1281       2   1  0  N   96.5   96.5   100.0  1.4-e046 E1A-3 | E1A 6 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene E1A-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFI24564.1        230    1-230          1   511-1385       2   0  1  N   97.8   98.6   99.5   0        E1A-2 | E1A 25 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene E1A
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFI24563.1        261    1-261          1   511-1385       2   0  1  N   96.6   97.7   100.0  0        E1A | E1A 29.1 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene E1B
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213766.1    178    1-178          1   1536-2069      1   3  0  N   99.4   100.0  100.0  0        E1B | E1B small T antigen
+        found 1 gene
+
+    found 1 permutation for gene E1B-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000536.1       492    1-492          1   1841-3316      1   2  0  N   99.5   99.7   100.0  0        E1B-2 | E1B large T antigen
+        found 1 gene
+
+    found 1 permutation for gene IX
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000537.1       138    1-138          1   3413-3826      1   2  0  N   100.0  100.0  100.0  9.0-e136 IX | hexon associated protein
+        found 1 gene
+
+    found 1 permutation for gene IVa2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW33155.1        448    1-448          -1  3884-5505      2   0  1  N   99.1   99.7   100.0  0        IVa2 | maturation protein
+        found 1 gene
+
+    found 2 permutations for gene E2B
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000539.1       1193   1-1193         -1  4987-14434     2   0  1  N   98.9   99.6   83.3   0        E2B | DNA polymerase
+    AP_000539.1       1193   1-1193         -1  4987-13796     2   0  1  N   98.9   99.6   83.3   0        E2B | DNA polymerase
+        found 1 gene
+
+    found 1 permutation for gene HYP-1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW33157.1        189    1-189          1   5056-5622      2   1  0  N   97.3   98.9   99.4   0        HYP-1 | hypothetical protein
+        found 1 gene
+
+    found 1 permutation for gene HYP-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW33158.1        173    8-173          -1  6804-7301      2   -1 0  N   95.1   95.7   95.3   1.3-e151 HYP-2 | hypothetical protein
+        found 1 gene
+
+    found 1 permutation for gene HYP-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW33159.1        198    1-66           1   7762-7959      1   1  0  N   98.4   100.0  33.3   2.7-e064 HYP-4 | hypothetical protein
+        found 1 gene
+
+    found 1 permutation for gene L1-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213771.1    139    1-139          1   7762-9432      2   1  0  N   98.6   100.0  51.7   2.7-e064 L1-3 | L1 13.6 kDa protein
+        found 1 gene
+
+    found 2 permutations for gene pTP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213832.1    658    1-532          -1  8741-13796     2   0  1  N   99.0   99.0   63.8   0        pTP | DNA terminal protein
+    AP_000267.1       661    1-535          -1  8741-13796     3   0  1  N   94.3   96.2   63.9   0        pTP | DNA terminal protein
+        found 1 gene
+
+    found 1 permutation for gene HYP-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW33161.1        91     1-91           1   9695-9967      1   2  0  N   94.5   98.9   100.0  4.3-e084 HYP-3 | hypothetical protein
+        found 1 gene
+
+    found 2 permutations for gene L1-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000541.1       389    134-389        1   11196-11963    1   3  0  N   100.0  100.0  65.8   0        L1-2 | L1 52 kDa protein
+    YP_002213772.1    385    130-385        1   11196-11963    1   3  0  N   99.6   99.6   66.4   0        L1-2 | L1 52 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene L1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213773.1    588    1-588          1   11991-13754    2   3  0  N   98.1   98.5   92.5   0        L1 | IIIa capsid protein
+        found 1 gene
+
+    found 1 permutation for gene L2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW33164.1        544    1-544          1   13845-15476    1   3  0  N   99.2   99.6   100.0  0        L2 | penton base
+        found 1 gene
+
+    found 1 permutation for gene L3-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213779.1    942    63-914         1   15705-18266    2   3  0  N   98.7   99.1   90.4   0        L3-2 | hexon
+        found 1 gene
+
+    found 1 permutation for gene L3-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213780.1    209    59-209         1   18563-19015    2   2  0  N   100.0  100.0  51.1   3.1-e108 L3-3 | protease
+        found 1 gene
+
+    found 1 permutation for gene E2A
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW33170.1        517    45-517         -1  19108-20526    1   -3 0  N   99.5   100.0  91.4   0        E2A | ssDNA-binding protein
+        found 1 gene
+
+    found 1 permutation for gene L4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213782.1    826    1-826          1   20686-23157    3   1  0  N   98.5   99.1   99.6   0        L4 | hexon-assembly protein
+        found 1 gene
+
+    found 1 permutation for gene L4-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213784.1    199    1-199          1   22862-23458    1   2  0  N   98.4   99.4   100.0  0        L4-2 | L4 encapsidation protein
+        found 1 gene
+
+    found 2 permutations for gene L4-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW33173.1        245    1-245          1   22862-23732    2   0  1  N   98.3   99.5   99.5   0        L4-3 | splicing factor
+    YP_002213783.1    234    1-234          1   22862-23732    2   0  1  N   97.0   98.7   100.0  0        L4-3 | splicing factor
+        found 1 gene
+
+    found 1 permutation for gene L4-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW33174.1        227    1-227          1   23805-24485    1   3  0  N   100.0  100.0  100.0  0        L4-4 | VIII capsid protein
+        found 1 gene
+
+    found 1 permutation for gene E3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213786.1    106    1-106          1   24488-24805    1   2  0  N   100.0  100.0  100.0  3.8-e112 E3 | E3 12.5 kDa immune modulating protein
+        found 1 gene
+
+    found 1 permutation for gene E3-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW33176.1        146    1-146          1   24762-25199    1   3  0  N   98.6   98.6   100.0  1.2-e149 E3-2 | E3 CR1-alpha
+        found 1 gene
+
+    found 1 permutation for gene E3-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW33177.1        172    1-172          1   25187-25702    1   2  0  N   99.4   100.0  100.0  0        E3-3 | E3 immune modulating protein
+        found 1 gene
+
+    found 1 permutation for gene E3-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213789.1    179    1-179          1   25735-26271    2   1  0  N   97.7   97.7   73.7   7.2-e128 E3-4 | E3 CR1-beta
+        found 1 gene
+
+    found 1 permutation for gene E3-5
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213790.1    189    1-189          1   26287-26853    1   1  0  N   97.8   98.9   100.0  0        E3-5 | E3 CR1-gamma
+        found 1 gene
+
+    found 1 permutation for gene E3-6
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AET87201.1        64     2-64           1   26875-27044    2   0  1  N   96.2   96.2   84.3   3.7-e044 E3-6 | E3 CR1-delta
+        found 1 gene
+
+    found 1 permutation for gene E3-7
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000560.1       91     1-91           1   27089-27361    1   2  0  N   100.0  100.0  100.0  2.4-e096 E3-7 | E3 RID-alpha
+        found 1 gene
+
+    found 2 permutations for gene E3-8
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW33182.1        145    1-145          1   27336-27770    1   3  0  N   97.2   99.3   100.0  1.1-e154 E3-8 | E3 RID-beta
+    AP_000561.1       134    1-134          1   27369-27770    1   3  0  N   98.5   100.0  100.0  4.8-e144 E3-8 | E3 RID-beta
+        found 1 gene
+
+    found 1 permutation for gene E3-9
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW33183.1        136    1-136          1   27766-28173    1   1  0  N   99.2   99.2   100.0  5.2-e143 E3-9 | E3 control protein 14.7 kDa
+        found 1 gene
+
+    found 2 permutations for gene U
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW33184.1        53     1-52           -1  28226-28381    1   -2 0  N   100.0  100.0  98.1   2.4-e052 U | protein U
+    YP_002213834.1    52     1-52           -1  28226-28381    1   -2 0  N   100.0  100.0  100.0  2.6-e051 U | protein U
+        found 1 gene
+
+    found 1 permutation for gene L5
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW33185.1        319    1-319          1   28396-29352    1   1  0  N   96.8   97.8   100.0  0        L5 | fiber
+        found 1 gene
+
+    found 1 permutation for gene E4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213835.1    141    1-141          -1  29399-30543    2   0  1  N   100.0  100.0  100.0  7.0-e144 E4 | E4 control protein orf6/7
+        found 1 gene
+
+    found 1 permutation for gene E4-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW33187.1        299    1-299          -1  29647-30543    1   -3 0  N   99.6   100.0  100.0  0        E4-2 | E4 control protein 34 kDa
+        found 1 gene
+
+    found 1 permutation for gene E4-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213837.1    122    1-122          -1  30449-30814    1   -2 0  N   98.3   99.1   100.0  2.2-e128 E4-3 | E4 control protein orf4
+        found 1 gene
+
+    found 1 permutation for gene L5-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW33189.1        169    1-169          1   30669-31175    1   3  0  N   98.2   98.8   100.0  1.1-e176 L5-2 | agnoprotein
+        found 1 gene
+
+    found 1 permutation for gene E4-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW33190.1        117    1-117          -1  30826-31176    1   -3 0  N   98.2   99.1   100.0  3.2-e123 E4-4 | E4 control protein orf3
+        found 1 gene
+
+    found 1 permutation for gene E4-5
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213839.1    129    1-129          -1  31176-31562    1   -1 0  N   97.6   97.6   100.0  3.7-e130 E4-5 | E4 control protein orf2
+        found 1 gene
+
+    found 1 permutation for gene E4-6
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000570.1       125    1-125          -1  31607-31981    1   -2 0  N   97.6   100.0  100.0  7.2-e130 E4-6 | E4 control protein orf1
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+84                      32339     46            3      31051          10311           98.9             99.6           69.3   hadvb_db
+gaps: 7960-8741, 9993-11194, 13261-13389, 15520-15704, 18268-18561, 18681-18811, 20527-20647, 25979-26117
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+84.1               96.5   98.2   100.0  0.0   0.0   0.0   511..582         57     57     AFI24565.1        E1A-3 | E1A 6 kDa protein
+                                                          1183..1284                                       
+84.2               97.8   98.7   100.0  0.0   0.0   0.0   511..997         230    230    AFI24564.1        E1A-2 | E1A 25 kDa protein
+                                                          1183..1388                                       
+84.3               98.1   98.9   100.0  0.0   0.0   0.0   511..1090        261    261    AFI24563.1        E1A | E1A 29.1 kDa protein
+                                                          1183..1388                                       
+84.4               99.4   100.0  100.0  0.0   0.0   0.0   1536..2072       178    178    YP_002213766.1    E1B | E1B small T antigen
+84.5               99.6   99.8   100.0  0.0   0.0   0.0   1841..3319       492    492    AP_000536.1       E1B-2 | E1B large T antigen
+84.6               100.0  100.0  100.0  0.0   0.0   0.0   3413..3829       138    138    AP_000537.1       IX | hexon associated protein
+84.7               96.8   98.8   100.0  0.0   0.0   0.0   5056..5625       189    189    AAW33157.1        HYP-1 | hypothetical protein
+                    stop codon embedded in CDS at 5110..5112
+84.8               99.1   100.0  100.0  0.0   0.0   0.0   5505..5493       448    448    AAW33155.1        IVa2 | maturation protein
+                                                          5214..3881                                       
+84.9               93.5   94.1   98.3   1.7   0.0   0.0   7313..6801       170    173    AAW33158.1        HYP-2 | hypothetical protein
+                    stop codons embedded in CDS at 7307..7305 and 7163..7161
+84.10              98.5   100.0  33.3   0.0   0.0   66.7  7762..>7959      66     198    AAW33159.1        HYP-4 | putative hypothetical protein, N-terminal
+84.11a             98.5   100.0  47.5   0.0   0.0   52.5  7762..>7959      66     139    YP_002213771.1    L1-3 | putative L1 13.6 kDa protein, N-terminal
+84.11b             100.0  100.0  4.3    95.7  0.0   0.0   <9415..9435      6      139    YP_002213771.1    L1-3 | putative L1 13.6 kDa protein, C-terminal
+84.12a             100.0  100.0  0.3    0.0   0.0   99.7  13796..>13788    3      1193   AP_000539.1       E2B | putative DNA polymerase, N-terminal
+84.12b             99.0   100.0  83.1   16.9  0.0   0.0   <7959..4984      991    1193   AP_000539.1       E2B | putative DNA polymerase, C-terminal
+84.13              94.5   99.7   100.0  0.0   0.0   0.0   9695..9970       91     91     AAW33161.1        HYP-3 | hypothetical protein
+84.14a             100.0  100.0  0.5    0.0   0.0   99.5  13796..>13788    3      658    YP_002213832.1    pTP | putative DNA terminal protein, N-terminal
+84.14b             99.0   99.4   63.2   17.5  0.0   19.3  <9992..>8742     416    658    YP_002213832.1    pTP | putative DNA terminal protein, fragment
+84.15              100.0  100.0  65.8   34.2  0.0   0.0   <11195..11966    256    389    AP_000541.1       L1-2 | putative L1 52 kDa protein, C-terminal
+84.16a             98.1   98.6   71.9   0.0   0.0   28.1  11991..>13260    423    588    YP_002213773.1    L1 | putative IIIa capsid protein, N-terminal
+84.16b             98.3   99.2   20.6   79.4  0.0   0.0   <13390..13757    121    588    YP_002213773.1    L1 | putative IIIa capsid protein, C-terminal
+84.17              99.3   99.6   100.0  0.0   0.0   0.0   13845..15479     544    544    AAW33164.1        L2 | penton base
+84.18              98.6   99.3   90.4   6.6   0.0   3.0   <15705..>18266   854    942    YP_002213779.1    L3-2 | putative hexon, fragment
+84.19a             100.0  100.0  18.7   27.8  0.0   53.6  <18562..>18680   39     209    YP_002213780.1    L3-3 | putative protease, fragment
+84.19b             100.0  100.0  32.5   67.5  0.0   0.0   <18812..19018    68     209    YP_002213780.1    L3-3 | putative protease, C-terminal
+84.20a             100.0  100.0  0.4    0.0   0.0   99.6  20655..>20648    2      517    AAW33170.1        E2A | putative ssDNA-binding protein, N-terminal
+84.20b             99.6   100.0  91.5   8.5   0.0   0.0   <20526..19105    473    517    AAW33170.1        E2A | putative ssDNA-binding protein, C-terminal
+84.21              97.9   98.8   100.0  0.0   0.0   0.0   20686..23160     824    826    YP_002213782.1    L4 | hexon-assembly protein
+84.22              98.5   99.5   100.0  0.0   0.0   0.0   22862..23461     199    199    YP_002213784.1    L4-2 | L4 encapsidation protein
+84.23              98.4   99.9   100.0  0.0   0.0   0.0   22862..23243     245    245    AAW33173.1        L4-3 | splicing factor
+                                                          23380..23735                                     
+84.24              100.0  100.0  100.0  0.0   0.0   0.0   23805..24488     227    227    AAW33174.1        L4-4 | VIII capsid protein
+84.25              100.0  100.0  100.0  0.0   0.0   0.0   24488..24808     106    106    YP_002213786.1    E3 | E3 12.5 kDa immune modulating protein
+84.26              98.6   99.3   100.0  0.0   0.0   0.0   24762..25202     146    146    AAW33176.1        E3-2 | E3 CR1-alpha
+84.27              99.4   100.0  100.0  0.0   0.0   0.0   25187..25705     172    172    AAW33177.1        E3-3 | E3 immune modulating protein
+84.28a             98.8   99.7   45.3   0.0   0.0   54.7  25735..>25978    81     179    YP_002213789.1    E3-4 | putative E3 CR1-beta, N-terminal
+84.28b             96.1   98.0   28.5   71.5  0.0   0.0   <26118..26274    51     179    YP_002213789.1    E3-4 | putative E3 CR1-beta, C-terminal
+84.29              97.9   98.9   100.0  0.0   0.0   0.0   26287..26856     189    189    YP_002213790.1    E3-5 | E3 CR1-gamma
+84.30              84.1   86.9   98.4   1.6   0.0   0.0   26875..26970     57     64     AET87201.1        E3-6 | E3 CR1-delta
+                                                          26970..27047                                     
+                    frameshift in genome at or near position 26970..26970 (+1=>+3)
+                    could not find valid start codon
+84.31              100.0  100.0  100.0  0.0   0.0   0.0   27089..27364     91     91     AP_000560.1       E3-7 | E3 RID-alpha
+84.32              97.2   99.8   100.0  0.0   0.0   0.0   27336..27773     145    145    AAW33182.1        E3-8 | E3 RID-beta
+84.33              99.3   100.0  100.0  0.0   0.0   0.0   27766..28176     136    136    AAW33183.1        E3-9 | E3 control protein 14.7 kDa
+84.34              100.0  100.0  100.0  0.0   0.0   0.0   28381..>28226    52     52     YP_002213834.1    U | putative protein U, N-terminal
+84.35              96.9   98.5   100.0  0.0   0.0   0.0   28396..29355     319    319    AAW33185.1        L5 | fiber
+84.36              100.0  100.0  100.0  0.0   0.0   0.0   30543..30370     141    141    YP_002213835.1    E4 | E4 control protein orf6/7
+                                                          29647..29396                                     
+84.37              99.7   100.0  100.0  0.0   0.0   0.0   30543..29644     299    299    AAW33187.1        E4-2 | E4 control protein 34 kDa
+84.38              98.2   99.9   100.0  0.0   0.0   0.0   30669..31178     169    169    AAW33189.1        L5-2 | agnoprotein
+84.39              98.4   99.2   100.0  0.0   0.0   0.0   30814..30446     122    122    YP_002213837.1    E4-3 | E4 control protein orf4
+84.40              98.3   99.8   100.0  0.0   0.0   0.0   31176..30823     117    117    AAW33190.1        E4-4 | E4 control protein orf3
+84.41              97.7   98.3   100.0  0.0   0.0   0.0   31562..31173     129    129    YP_002213839.1    E4-5 | E4 control protein orf2
+84.42              97.6   100.0  100.0  0.0   0.0   0.0   31981..31604     125    125    AP_000570.1       E4-6 | E4 control protein orf1
+
+
+genomic sequence 37, length=34763
+  selecting database hadvb_db
+
+    found 1 permutation for gene E1A-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACU57002.1        58     1-58           1   588-1353       2   0  1  N   96.8   96.8   100.0  4.1-e053 E1A-3 | E1A 6 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene E1A-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACU57003.1        231    1-231          1   588-1457       2   3  0  N   100.0  100.0  99.5   0        E1A-2 | E1A 25 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene E1A
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACU57004.1        262    1-262          1   588-1457       2   3  0  N   100.0  100.0  99.6   0        E1A | E1A 29.1 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene E1B
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000572.1       180    1-180          1   1617-2156      1   3  0  N   98.3   100.0  100.0  0        E1B | E1B small T antigen
+        found 1 gene
+
+    found 1 permutation for gene E1B-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213800.1    494    1-494          1   1922-3403      1   2  0  N   98.9   99.3   100.0  0        E1B-2 | E1B large T antigen
+        found 1 gene
+
+    found 1 permutation for gene IX
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000574.1       139    1-139          1   3489-3905      1   3  0  N   97.8   98.5   100.0  6.2-e133 IX | hexon associated protein
+        found 1 gene
+
+    found 1 permutation for gene IVa2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213841.1    448    1-448          -1  3979-5600      2   0  1  N   98.4   98.6   100.0  0        IVa2 | maturation protein
+        found 1 gene
+
+    found 1 permutation for gene E2B
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000576.1       1193   1-1193         -1  5082-13640     2   -1 0  N   98.9   99.7   100.0  0        E2B | DNA polymerase
+        found 1 gene
+
+    found 1 permutation for gene HYP-1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW33157.1        189    1-189          1   5151-5717      7   3  0  N   76.2   84.7   93.6   7.4-e090 HYP-1 | hypothetical protein
+        found 1 gene
+
+    found 1 permutation for gene HYP-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW33158.1        173    30-173         -1  6899-7330      4   -2 0  N   75.3   81.8   44.5   1.2-e044 HYP-2 | hypothetical protein
+        found 1 gene
+
+    found 1 permutation for gene L1-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213804.1    139    1-139          1   7857-9522      2   0  1  N   97.8   99.2   100.0  2.7-e135 L1-3 | L1 13.6 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene HYP-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW33159.1        198    1-197          1   7857-8447      3   3  0  N   75.4   87.9   92.4   1.3-e119 HYP-4 | hypothetical protein
+        found 1 gene
+
+    found 1 permutation for gene pTP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000577.1       656    1-656          -1  8453-13640     2   0  1  N   98.9   99.5   100.0  0        pTP | DNA terminal protein
+        found 1 gene
+
+    found 1 permutation for gene HYP-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW33161.1        91     3-91           1   9785-10051     2   2  0  N   72.7   86.3   96.7   1.9-e051 HYP-3 | hypothetical protein
+        found 1 gene
+
+    found 1 permutation for gene L1-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000578.1       388    1-388          1   10658-11815    2   2  0  N   99.7   99.7   100.0  0        L1-2 | L1 52 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene L1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000579.1       587    1-587          1   11844-13604    1   3  0  N   99.4   99.8   100.0  0        L1 | IIIa capsid protein
+        found 1 gene
+
+    found 1 permutation for gene L2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000580.1       561    1-561          1   13688-15358    3   2  0  N   98.9   99.2   100.0  0        L2 | penton base
+        found 1 gene
+
+    found 1 permutation for gene L2-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000581.1       192    1-192          1   15366-15941    1   3  0  N   98.9   100.0  100.0  0        L2-2 | VII core protein
+        found 1 gene
+
+    found 1 permutation for gene L2-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000582.1       351    1-351          1   15987-17039    1   3  0  N   98.5   98.8   100.0  0        L2-3 | V core protein
+        found 1 gene
+
+    found 1 permutation for gene L2-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000583.1       76     1-76           1   17071-17298    1   1  0  N   100.0  100.0  100.0  1.9-e074 L2-4 | X core protein
+        found 1 gene
+
+    found 1 permutation for gene L3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000584.1       246    1-246          1   17384-18121    1   2  0  N   99.1   100.0  100.0  0        L3 | VI capsid protein
+        found 1 gene
+
+    found 1 permutation for gene L3-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213812.1    948    1-948          1   18240-21077    2   3  0  N   98.6   99.0   99.7   0        L3-2 | hexon
+        found 1 gene
+
+    found 1 permutation for gene L3-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000586.1       209    1-209          1   21120-21746    1   3  0  N   100.0  100.0  100.0  0        L3-3 | protease
+        found 1 gene
+
+    found 1 permutation for gene E2A
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213852.1    518    1-518          -1  21830-23383    1   -2 0  N   99.2   99.8   100.0  0        E2A | ssDNA-binding protein
+        found 1 gene
+
+    found 1 permutation for gene L4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213815.1    810    1-810          1   23414-25849    2   2  0  N   98.8   99.6   100.0  0        L4 | hexon-assembly protein
+        found 1 gene
+
+    found 1 permutation for gene L4-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213817.1    191    1-191          1   25584-26156    1   3  0  N   96.8   98.4   100.0  0        L4-2 | L4 encapsidation protein
+        found 1 gene
+
+    found 1 permutation for gene L4-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000589.1       226    1-226          1   25584-26430    2   0  1  N   94.8   96.9   100.0  0        L4-3 | splicing factor
+        found 1 gene
+
+    found 1 permutation for gene L4-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000591.1       227    1-227          1   26483-27163    1   2  0  N   99.1   99.5   100.0  0        L4-4 | VIII capsid protein
+        found 1 gene
+
+    found 1 permutation for gene E3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000592.1       105    1-105          1   27166-27480    1   1  0  N   99.0   99.0   100.0  4.4-e111 E3 | E3 12.5 kDa immune modulating protein
+        found 1 gene
+
+    found 1 permutation for gene E3-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000593.1       131    1-131          1   27437-27829    1   2  0  N   95.4   96.9   100.0  7.8-e130 E3-2 | E3 CR1-alpha
+        found 1 gene
+
+    found 1 permutation for gene E3-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000594.1       166    1-166          1   27817-28314    1   1  0  N   98.1   99.3   100.0  2.9-e178 E3-3 | E3 immune modulating protein
+        found 1 gene
+
+    found 1 permutation for gene E3-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000595.1       181    1-181          1   28337-28879    1   2  0  N   95.0   97.2   100.0  0        E3-4 | E3 CR1-beta
+        found 1 gene
+
+    found 1 permutation for gene E3-5
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000596.1       187    1-187          1   28900-29448    2   1  0  N   95.6   97.2   98.9   0        E3-5 | E3 CR1-gamma
+        found 1 gene
+
+    found 1 permutation for gene E3-7
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000597.1       91     1-91           1   29495-29767    1   2  0  N   98.9   100.0  100.0  7.8-e095 E3-7 | E3 RID-alpha
+        found 1 gene
+
+    found 1 permutation for gene E3-8
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213825.1    134    1-134          1   29775-30176    1   3  0  N   95.5   97.0   100.0  5.0-e140 E3-8 | E3 RID-beta
+        found 1 gene
+
+    found 1 permutation for gene E3-9
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000599.1       135    1-135          1   30172-30576    1   1  0  N   98.5   99.2   100.0  1.2-e141 E3-9 | E3 control protein 14.7 kDa
+        found 1 gene
+
+    found 1 permutation for gene U
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213845.1    53     1-53           -1  30609-30767    1   -1 0  N   100.0  100.0  100.0  2.8-e051 U | protein U
+        found 1 gene
+
+    found 1 permutation for gene L5
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213828.1    325    1-325          1   30782-31756    1   2  0  N   92.3   96.3   100.0  0        L5 | fiber
+        found 1 gene
+
+    found 2 permutations for gene E4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213846.1    141    1-139          -1  31804-32942    2   0  1  N   97.8   99.2   98.5   1.3-e136 E4 | E4 control protein orf6/7
+    AP_000602.1       120    1-120          -1  31861-32942    2   0  1  N   96.6   98.3   100.0  5.1-e114 E4 | E4 control protein orf6/7
+        found 1 gene
+
+    found 1 permutation for gene E4-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002213847.1    299    1-299          -1  32046-32942    1   -1 0  N   97.9   99.3   100.0  0        E4-2 | E4 control protein 34 kDa
+        found 1 gene
+
+    found 1 permutation for gene E4-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000604.1       122    1-122          -1  32848-33213    1   -3 0  N   95.9   96.7   100.0  7.3-e122 E4-3 | E4 control protein orf4
+        found 1 gene
+
+    found 1 permutation for gene L5-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW33189.1        169    1-169          1   33068-33574    2   2  0  N   92.2   94.6   99.4   1.8-e152 L5-2 | agnoprotein
+        found 1 gene
+
+    found 1 permutation for gene E4-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000605.1       117    1-117          -1  33225-33575    1   -1 0  N   97.4   100.0  100.0  9.5-e123 E4-4 | E4 control protein orf3
+        found 1 gene
+
+    found 1 permutation for gene E4-5
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000606.1       129    1-129          -1  33575-33961    1   -2 0  N   95.3   97.6   100.0  7.0-e127 E4-5 | E4 control protein orf2
+        found 1 gene
+
+    found 1 permutation for gene E4-6
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000570.1       125    1-125          -1  34009-34383    1   -3 0  N   96.8   98.4   100.0  2.5-e127 E4-6 | E4 control protein orf1
+        found 1 gene
+
+dropping pseudogene 37.10, fails match requirements: %id 64.6 < 70, %sim 71.5 < 80
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+37.10              64.6   71.5   83.2   16.8  0.0   0.0   7330..6896       144    173    AAW33158.1        HYP-2 | hypothetical protein
+                    stop codons embedded in CDS at 7258..7256, 7120..7118, 7072..7070, 7036..7034 and 7000..6998
+                    could not find valid start codon
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+37                      34763     40            4      35400          11761           98.3             99.5          100.0   hadvb_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+37.1               100.0  100.0  100.0  0.0   0.0   0.0   588..659         58     58     ACU57002.1        E1A-3 | E1A 6 kDa protein
+                                                          1252..1356                                       
+37.2               100.0  100.0  100.0  0.0   0.0   0.0   588..1074        231    231    ACU57003.1        E1A-2 | E1A 25 kDa protein
+                                                          1252..1460                                       
+37.3               100.0  100.0  100.0  0.0   0.0   0.0   588..1167        262    262    ACU57004.1        E1A | E1A 29.1 kDa protein
+                                                          1252..1460                                       
+37.4               98.3   99.9   100.0  0.0   0.0   0.0   1617..2159       180    180    AP_000572.1       E1B | E1B small T antigen
+37.5               99.0   99.8   100.0  0.0   0.0   0.0   1922..3406       494    494    YP_002213800.1    E1B-2 | E1B large T antigen
+37.6               97.8   99.8   100.0  0.0   0.0   0.0   3489..3908       139    139    AP_000574.1       IX | hexon associated protein
+37.7               73.2   90.8   96.8   0.0   0.0   3.2   5151..5702       183    189    AAW33157.1        HYP-1 | hypothetical protein
+                    stop codons embedded in CDS at 5421..5423, 5526..5528 and 5652..5654
+37.8               98.4   99.5   100.0  0.0   0.0   0.0   5600..5588       448    448    YP_002213841.1    IVa2 | maturation protein
+                                                          5309..3976                                       
+37.9               71.7   92.9   100.0  0.0   0.0   0.0   7857..8453       198    198    AAW33159.1        HYP-4 | hypothetical protein
+                    stop codons embedded in CDS at 8265..8267 and 8316..8318
+37.10              97.8   100.0  100.0  0.0   0.0   0.0   7857..8255       139    139    YP_002213804.1    L1-3 | L1 13.6 kDa protein
+                                                          9505..9525                                       
+37.11              71.9   94.7   97.8   2.2   0.0   0.0   9785..10054      89     91     AAW33161.1        HYP-3 | hypothetical protein
+                    could not find valid start codon
+37.12              99.5   99.5   100.0  0.0   0.0   0.0   10658..11818     386    388    AP_000578.1       L1-2 | L1 52 kDa protein
+37.13              99.5   99.8   100.0  0.0   0.0   0.0   11844..13607     587    587    AP_000579.1       L1 | IIIa capsid protein
+37.14              99.0   99.9   100.0  0.0   0.0   0.0   13640..13632     1193   1193   AP_000576.1       E2B | DNA polymerase
+                                                          8651..5079                                       
+37.15              98.9   99.5   100.0  0.0   0.0   0.0   13640..13632     656    656    AP_000577.1       pTP | DNA terminal protein
+                                                          10411..8450                                      
+37.16              98.6   99.1   100.0  0.0   0.0   0.0   13688..15361     557    561    AP_000580.1       L2 | penton base
+37.17              99.0   100.0  100.0  0.0   0.0   0.0   15366..15944     192    192    AP_000581.1       L2-2 | VII core protein
+37.18              98.6   99.7   100.0  0.0   0.0   0.0   15987..17042     351    351    AP_000582.1       L2-3 | V core protein
+37.19              100.0  100.0  100.0  0.0   0.0   0.0   17071..17301     76     76     AP_000583.1       L2-4 | X core protein
+37.20              99.2   100.0  100.0  0.0   0.0   0.0   17384..18124     246    246    AP_000584.1       L3 | VI capsid protein
+37.21              98.4   99.3   100.0  0.0   0.0   0.0   18240..21080     946    948    YP_002213812.1    L3-2 | hexon
+37.22              100.0  100.0  100.0  0.0   0.0   0.0   21120..21749     209    209    AP_000586.1       L3-3 | protease
+37.23              99.2   100.0  100.0  0.0   0.0   0.0   23383..21827     518    518    YP_002213852.1    E2A | ssDNA-binding protein
+37.24              98.6   99.6   100.0  0.0   0.0   0.0   23414..25852     812    810    YP_002213815.1    L4 | hexon-assembly protein
+37.25              96.9   99.1   100.0  0.0   0.0   0.0   25584..26159     191    191    YP_002213817.1    L4-2 | L4 encapsidation protein
+37.26              96.5   98.8   100.0  0.0   0.0   0.0   25584..25902     226    226    AP_000589.1       L4-3 | splicing factor
+                                                          26072..26433                                     
+37.27              99.1   100.0  100.0  0.0   0.0   0.0   26483..27166     227    227    AP_000591.1       L4-4 | VIII capsid protein
+37.28              99.0   100.0  100.0  0.0   0.0   0.0   27166..27483     105    105    AP_000592.1       E3 | E3 12.5 kDa immune modulating protein
+37.29              95.4   97.5   100.0  0.0   0.0   0.0   27437..27832     131    131    AP_000593.1       E3-2 | E3 CR1-alpha
+37.30              98.2   99.8   100.0  0.0   0.0   0.0   27817..28317     166    166    AP_000594.1       E3-3 | E3 immune modulating protein
+37.31              95.0   98.2   100.0  0.0   0.0   0.0   28337..28882     181    181    AP_000595.1       E3-4 | E3 CR1-beta
+37.32              93.6   97.5   100.0  0.0   0.0   0.0   28900..29451     183    187    AP_000596.1       E3-5 | E3 CR1-gamma
+37.33              98.9   100.0  100.0  0.0   0.0   0.0   29495..29770     91     91     AP_000597.1       E3-7 | E3 RID-alpha
+37.34              95.5   99.8   100.0  0.0   0.0   0.0   29775..30179     134    134    YP_002213825.1    E3-8 | E3 RID-beta
+37.35              98.5   99.8   100.0  0.0   0.0   0.0   30172..30579     135    135    AP_000599.1       E3-9 | E3 control protein 14.7 kDa
+37.36              100.0  100.0  100.0  0.0   0.0   0.0   30767..>30609    53     53     YP_002213845.1    U | putative protein U, N-terminal
+37.37              92.3   98.2   100.0  0.0   0.0   0.0   30782..31759     325    325    YP_002213828.1    L5 | fiber
+37.38              97.2   98.6   100.0  0.0   0.0   0.0   32942..32769     141    141    YP_002213846.1    E4 | E4 control protein orf6/7
+                                                          32046..31795                                     
+37.39              98.0   99.3   100.0  0.0   0.0   0.0   32942..32043     299    299    YP_002213847.1    E4-2 | E4 control protein 34 kDa
+37.40              91.7   95.6   100.0  0.0   0.0   0.0   33068..33577     169    169    AAW33189.1        L5-2 | agnoprotein
+                    stop codon embedded in CDS at 33122..33124
+37.41              95.9   99.2   100.0  0.0   0.0   0.0   33213..32845     122    122    AP_000604.1       E4-3 | E4 control protein orf4
+37.42              97.4   100.0  100.0  0.0   0.0   0.0   33575..33222     117    117    AP_000605.1       E4-4 | E4 control protein orf3
+37.43              95.3   99.0   100.0  0.0   0.0   0.0   33961..33572     129    129    AP_000606.1       E4-5 | E4 control protein orf2
+37.44              96.8   99.2   100.0  0.0   0.0   0.0   34383..34006     125    125    AP_000570.1       E4-6 | E4 control protein orf1
+
+
+genomic sequence 57, length=33802
+  selecting database hadva_db
+
+    found 1 permutation for gene E1A
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000107.1       266    1-266          1   479-1348       3   2  0  N   87.3   94.7   99.6   0        E1A | E1A 29.5 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene E1B
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000108.1       163    1-145          1   1488-1922      1   3  0  N   93.1   97.2   88.9   1.0-e145 E1B | E1B small T antigen
+        found 1 gene
+
+    found 1 permutation for gene E1B-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000109.1       482    1-481          1   1793-3208      4   2  0  N   89.3   95.4   95.4   0        E1B-2 | E1B large T antigen
+        found 1 gene
+
+    found 1 permutation for gene IX
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000110.1       144    1-144          1   3290-3721      1   2  0  N   86.1   89.5   100.0  3.8-e117 IX | hexon associated protein
+        found 1 gene
+
+    found 2 permutations for gene IVa2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000111.1       449    1-449          -1  3760-5384      2   0  1  N   91.3   94.9   100.0  0        IVa2 | maturation protein
+    NP_040914.1       452    5-450          -1  3766-5103      1   -2 0  N   91.5   95.1   98.6   0        IVa2 | maturation protein
+        found 1 gene
+
+    found 1 permutation for gene E2B
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000112.1       1189   1-1188         -1  4872-13201     3   0  1  N   88.6   94.7   93.6   0        E2B | DNA polymerase
+        found 1 gene
+
+    found 1 permutation for gene L1-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040916.2       142    1-142          1   7644-9276      3   0  1  N   74.5   90.0   76.0   7.9-e075 L1-3 | L1 13.6 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene pTP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000113.1       641    1-632          -1  8240-13201     4   -1 0  N   88.5   93.3   97.3   0        pTP | DNA terminal protein
+        found 1 gene
+
+    found 1 permutation for gene L1-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000114.1       373    1-373          1   10310-11410    3   2  0  N   94.7   96.4   97.0   0        L1-2 | L1 52 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene L1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000115.1       582    1-576          1   11435-13150    2   2  0  N   94.4   97.5   98.4   0        L1 | IIIa capsid protein
+        found 1 gene
+
+    found 1 permutation for gene L2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000116.1       497    1-497          1   13246-14760    3   1  0  N   95.7   97.7   99.5   0        L2 | penton base
+        found 1 gene
+
+    found 1 permutation for gene L2-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000117.1       188    1-188          1   14777-15337    2   2  0  N   92.8   95.9   100.0  9.3-e101 L2-2 | VII core protein
+        found 1 gene
+
+    found 1 permutation for gene L2-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000118.1       344    1-344          1   15382-16413    4   1  0  N   82.7   92.9   99.1   0        L2-3 | V core protein
+        found 1 gene
+
+    found 1 permutation for gene L2-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000119.1       72     1-71           1   16440-16652    1   3  0  N   92.9   94.3   98.6   6.9-e061 L2-4 | X core protein
+        found 1 gene
+
+    found 1 permutation for gene L3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000120.1       265    1-265          1   16734-17513    2   3  0  N   91.4   96.2   100.0  0        L3 | VI capsid protein
+        found 1 gene
+
+    found 1 permutation for gene L3-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000121.1       919    1-919          1   17616-20381    7   3  0  N   91.4   95.5   97.7   0        L3-2 | hexon
+        found 1 gene
+
+    found 1 permutation for gene L3-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000122.1       206    1-203          1   20411-21019    1   2  0  N   93.5   96.0   98.5   0        L3-3 | protease
+        found 1 gene
+
+    found 1 permutation for gene E2A
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000123.1       484    1-484          -1  21109-22563    2   -2 0  N   89.8   95.3   100.0  0        E2A | ssDNA-binding protein
+        found 1 gene
+
+    found 1 permutation for gene L4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000124.1       780    14-780         1   22619-24916    8   2  0  N   89.1   93.7   96.5   0        L4 | hexon-assembly protein
+        found 1 gene
+
+    found 1 permutation for gene L4-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000126.1       182    1-182          1   24657-25184    4   3  0  N   79.1   89.5   99.4   4.7-e131 L4-2 | L4 encapsidation protein
+        found 1 gene
+
+    found 1 permutation for gene L4-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000125.1       205    1-205          1   24657-25431    5   0  1  N   86.8   95.0   88.7   9.4-e137 L4-3 | splicing factor
+        found 1 gene
+
+    found 1 permutation for gene L4-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000127.1       233    1-233          1   25493-26191    1   2  0  N   90.9   95.7   100.0  0        L4-4 | VIII capsid protein
+        found 1 gene
+
+    found 1 permutation for gene E3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000128.1       105    1-105          1   26194-26508    1   1  0  N   96.1   97.1   100.0  8.2-e107 E3 | E3 12.5 kDa immune modulating protein
+        found 1 gene
+
+    found 1 permutation for gene E3-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000129.1       264    1-264          1   26465-27250    3   2  0  N   80.0   88.2   93.1   0        E3-2 | E3 CR1-alpha
+        found 1 gene
+
+    found 1 permutation for gene E3-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000130.1       268    16-249         1   27295-27990    3   1  0  N   80.5   87.8   86.1   2.2-e178 E3-4 | E3 CR1-beta
+        found 1 gene
+
+    found 1 permutation for gene E3-7
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000131.1       91     1-91           1   28041-28313    1   3  0  N   89.0   95.6   100.0  3.8-e082 E3-7 | E3 RID-alpha
+        found 1 gene
+
+    found 1 permutation for gene E3-8
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000132.1       110    9-110          1   28334-28639    1   2  0  N   81.3   90.1   92.7   1.0-e081 E3-8 | E3 RID-beta
+        found 1 gene
+
+    found 1 permutation for gene E3-9
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000133.1       128    1-128          1   28635-29018    1   3  0  N   88.2   96.0   100.0  4.4-e115 E3-9 | E3 control protein 14.7 kDa
+        found 1 gene
+
+    found 1 permutation for gene U
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_002640222.1    52     1-52           -1  29034-29189    1   -3 0  N   82.6   94.2   100.0  4.3-e041 U | protein U
+        found 1 gene
+
+    found 1 permutation for gene L5
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000135.1       587    1-587          1   29199-30863    4   3  0  N   80.5   91.8   94.5   0        L5 | fiber
+        found 1 gene
+
+    found 1 permutation for gene E4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000136.1       125    1-125          -1  30913-32011    4   0  1  N   86.7   90.2   90.4   1.6-e074 E4 | E4 control protein orf6/7
+        found 1 gene
+
+    found 1 permutation for gene E4-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000137.1       290    1-290          -1  31145-32011    3   -1 0  N   92.0   95.8   99.6   0        E4-2 | E4 control protein 34 kDa
+        found 1 gene
+
+    found 1 permutation for gene E4-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000138.1       120    1-120          -1  31947-32306    1   -3 0  N   82.5   90.8   100.0  5.5-e099 E4-3 | E4 control protein orf4
+        found 1 gene
+
+    found 1 permutation for gene E4-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000139.1       116    1-116          -1  32315-32662    1   -1 0  N   98.2   100.0  100.0  7.1-e122 E4-4 | E4 control protein orf3
+        found 1 gene
+
+    found 1 permutation for gene E4-5
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000140.1       131    1-131          -1  32662-33054    1   -2 0  N   93.8   96.9   100.0  1.5-e129 E4-5 | E4 control protein orf2
+        found 1 gene
+
+    found 1 permutation for gene E4-6
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000141.1       127    1-126          -1  33092-33469    1   -1 0  N   86.5   93.6   99.2   5.9-e107 E4-6 | E4 control protein orf1
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+57                      33802     36            0      33726          11207           87.1             95.5           99.8   hadva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+57.1               87.2   97.4   100.0  0.0   0.0   0.0   479..1046        265    266    AP_000107.1       E1A | E1A 29.5 kDa protein
+                                                          1122..1351                                       
+57.2               85.8   94.1   99.4   0.0   0.0   0.6   1488..1958       156    163    AP_000108.1       E1B | E1B small T antigen
+57.3               86.5   95.0   99.8   0.0   0.0   0.2   1793..3211       472    482    AP_000109.1       E1B-2 | E1B large T antigen
+57.4               86.1   94.8   100.0  0.0   0.0   0.0   3290..3724       144    144    AP_000110.1       IX | hexon associated protein
+57.5               91.5   98.3   100.0  0.0   0.0   0.0   5384..5372       449    449    AP_000111.1       IVa2 | maturation protein
+                                                          5093..3757                                       
+57.6               67.8   92.5   100.0  0.0   0.0   0.0   7644..8054       143    142    NP_040916.2       L1-3 | L1 13.6 kDa protein
+                                                          9259..9279                                       
+57.7               92.0   96.6   100.0  0.0   0.0   0.0   10310..11413     367    373    AP_000114.1       L1-2 | L1 52 kDa protein
+57.8               93.3   97.6   100.0  0.0   0.0   0.0   11435..13171     578    582    AP_000115.1       L1 | IIIa capsid protein
+57.9               86.2   96.3   100.0  0.0   0.0   0.0   13201..13193     1184   1189   AP_000112.1       E2B | DNA polymerase
+                                                          8411..4866                                       
+57.10              87.5   94.2   100.0  0.0   0.0   0.0   13201..13193     634    641    AP_000113.1       pTP | DNA terminal protein
+                                                          10117..8222                                      
+57.11              93.9   97.7   100.0  0.0   0.0   0.0   13246..14763     505    497    AP_000116.1       L2 | penton base
+57.12              93.1   98.5   100.0  0.0   0.0   0.0   14777..15340     187    188    AP_000117.1       L2-2 | VII core protein
+57.13              82.9   95.1   100.0  0.0   0.0   0.0   15382..16416     344    344    AP_000118.1       L2-3 | V core protein
+57.14              91.7   98.3   100.0  0.0   0.0   0.0   16440..16658     72     72     AP_000119.1       L2-4 | X core protein
+57.15              91.3   96.6   100.0  0.0   0.0   0.0   16734..17516     260    265    AP_000120.1       L3 | VI capsid protein
+57.16              89.3   96.2   100.0  0.0   0.0   0.0   17616..20384     922    919    AP_000121.1       L3-2 | hexon
+57.17              93.6   98.6   98.5   0.0   0.0   1.5   20411..21022     203    206    AP_000122.1       L3-3 | protease
+57.18              90.5   98.0   100.0  0.0   0.0   0.0   22563..21106     485    484    AP_000123.1       E2A | ssDNA-binding protein
+57.19              85.9   94.1   99.9   0.1   0.0   0.0   22592..24919     775    780    AP_000124.1       L4 | hexon-assembly protein
+57.20              77.5   92.2   100.0  0.0   0.0   0.0   24657..25187     176    182    AP_000126.1       L4-2 | L4 encapsidation protein
+57.21              82.0   91.6   100.0  0.0   0.0   0.0   24657..24954     199    205    AP_000125.1       L4-3 | splicing factor
+                                                          25133..25434                                     
+57.22              91.0   98.1   100.0  0.0   0.0   0.0   25493..26194     233    233    AP_000127.1       L4-4 | VIII capsid protein
+57.23              96.2   98.8   100.0  0.0   0.0   0.0   26194..26511     105    105    AP_000128.1       E3 | E3 12.5 kDa immune modulating protein
+57.24              76.1   90.9   100.0  0.0   0.0   0.0   26465..27253     262    264    AP_000129.1       E3-2 | E3 CR1-alpha
+57.25              76.1   89.7   94.8   0.0   0.0   5.2   27256..28008     250    268    AP_000130.1       E3-4 | E3 CR1-beta
+57.26              89.0   98.6   100.0  0.0   0.0   0.0   28041..28316     91     91     AP_000131.1       E3-7 | E3 RID-alpha
+57.27              79.1   93.9   100.0  0.0   0.0   0.0   28313..28642     109    110    AP_000132.1       E3-8 | E3 RID-beta
+57.28              88.3   97.3   100.0  0.0   0.0   0.0   28635..29021     128    128    AP_000133.1       E3-9 | E3 control protein 14.7 kDa
+57.29              82.7   96.2   100.0  0.0   0.0   0.0   29189..>29034    52     52     YP_002640222.1    U | putative protein U, N-terminal
+57.30              76.5   90.3   100.0  0.0   0.0   0.0   29199..30866     555    587    AP_000135.1       L5 | fiber
+57.31              77.3   83.0   100.0  0.0   0.0   0.0   32011..31874     119    125    AP_000136.1       E4 | E4 control protein orf6/7
+                                                          31122..30901                                     
+57.32              91.1   96.7   100.0  0.0   0.0   0.0   32011..31142     289    290    AP_000137.1       E4-2 | E4 control protein 34 kDa
+57.33              82.5   94.4   100.0  0.0   0.0   0.0   32306..31944     120    120    AP_000138.1       E4-3 | E4 control protein orf4
+57.34              98.3   100.0  100.0  0.0   0.0   0.0   32662..32312     116    116    AP_000139.1       E4-4 | E4 control protein orf3
+57.35              93.9   98.9   100.0  0.0   0.0   0.0   33054..32659     131    131    AP_000140.1       E4-5 | E4 control protein orf2
+57.36              85.8   97.4   100.0  0.0   0.0   0.0   33469..33086     127    127    AP_000141.1       E4-6 | E4 control protein orf1
+
+
+genomic sequence 47, length=35931
+  selecting database hadvc_db
+
+    found 1 permutation for gene E1A-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88084.1        55     1-55           1   560-1315       2   2  0  N   100.0  100.0  100.0  2.1-e047 E1A-3 | E1A 6 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene E1A-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88086.1        243    1-243          1   560-1542       2   0  1  N   100.0  100.0  100.0  0        E1A-2 | E1A 26 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene E1A
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88085.1        289    1-289          1   560-1542       2   0  1  N   100.0  100.0  100.0  0        E1A | E1A 32 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene E1B
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88087.1        175    1-175          1   1714-2238      1   1  0  N   100.0  100.0  100.0  0        E1B | E1B small T antigen
+        found 1 gene
+
+    found 1 permutation for gene E1B-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88090.1        495    1-495          1   2019-3503      1   3  0  N   100.0  100.0  100.0  0        E1B-2 | E1B large T antigen
+        found 1 gene
+
+    found 1 permutation for gene IX
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88092.1        140    1-140          1   3603-4022      1   3  0  N   100.0  100.0  100.0  6.1-e138 IX | hexon associated protein
+        found 1 gene
+
+    found 1 permutation for gene IVa2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88093.1        449    1-449          -1  4087-5711      2   0  1  N   99.7   99.7   100.0  0        IVa2 | maturation protein
+        found 1 gene
+
+    found 1 permutation for gene E2B
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88094.1        1198   1-1198         -1  5193-14112     2   0  1  N   99.9   99.9   100.0  0        E2B | DNA polymerase
+        found 1 gene
+
+    found 1 permutation for gene HYP-1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW65500.1        115    1-115          -1  5333-5677      1   -3 0  N   98.2   98.2   100.0  6.6-e115 HYP-1 | hypothetical protein
+        found 1 gene
+
+    found 1 permutation for gene HYP-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW65501.1        106    1-106          1   6283-6600      1   1  0  N   99.0   99.0   100.0  1.1-e103 HYP-2 | hypothetical protein
+        found 1 gene
+
+    found 1 permutation for gene HYP-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW65502.1        112    1-112          -1  6448-6783      1   -1 0  N   99.1   99.1   100.0  1.8-e114 HYP-3 | hypothetical protein
+        found 1 gene
+
+    found 1 permutation for gene L1-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88098.1        149    1-149          1   7971-8417      1   3  0  N   100.0  100.0  100.0  7.6-e157 L1-3 | L1 13.6 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene pTP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88100.1        671    1-671          -1  8579-14112     2   0  1  N   100.0  100.0  100.0  0        pTP | DNA terminal protein
+        found 1 gene
+
+    found 1 permutation for gene HYP-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88101.1        168    1-168          1   9297-9800      1   3  0  N   100.0  100.0  100.0  3.0-e169 HYP-4 | hypothetical protein
+        found 1 gene
+
+    found 1 permutation for gene HYP-5
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88102.1        137    1-137          1   10424-10833    3   0  1  N   100.0  100.0  98.5   6.0-e127 HYP-5 | hypothetical protein
+        found 1 gene
+
+    found 1 permutation for gene HYP-6
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW65506.1        121    1-121          -1  10750-11111    2   0  1  N   97.5   97.5   100.0  6.1-e111 HYP-6 | hypothetical protein
+        found 1 gene
+
+    found 1 permutation for gene L1-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88104.1        415    1-415          1   11042-12286    1   2  0  N   99.7   99.7   100.0  0        L1-2 | L1 52 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene L1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW65508.1        585    1-585          1   12310-14064    1   1  0  N   99.6   99.8   100.0  0        L1 | IIIa capsid protein
+        found 1 gene
+
+    found 1 permutation for gene L2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW65509.1        571    1-571          1   14149-15861    2   1  0  N   99.1   99.4   99.6   0        L2 | penton base
+        found 1 gene
+
+    found 1 permutation for gene L2-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW65510.1        198    1-198          1   15871-16464    1   1  0  N   99.4   99.4   100.0  0        L2-2 | VII core protein
+        found 1 gene
+
+    found 2 permutations for gene L2-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88108.1        369    1-369          1   16537-17640    2   1  0  N   99.2   99.4   100.0  0        L2-3 | V core protein
+    AAW65511.1        368    1-368          1   16537-17640    1   1  0  N   99.1   99.4   100.0  0        L2-3 | V core protein
+        found 1 gene
+
+    found 1 permutation for gene L2-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88109.1        80     1-80           1   17671-17910    1   1  0  N   100.0  100.0  100.0  1.3-e079 L2-4 | X core protein
+        found 1 gene
+
+    found 1 permutation for gene L3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW65513.1        250    1-250          1   17996-18745    1   2  0  N   98.8   100.0  100.0  0        L3 | VI capsid protein
+        found 1 gene
+
+    found 1 permutation for gene L3-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADV03661.1        963    1-963          1   18833-21736    6   2  0  N   94.3   96.9   95.4   0        L3-2 | hexon
+        found 1 gene
+
+    found 1 permutation for gene L3-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88112.1        204    1-204          1   21773-22384    1   2  0  N   100.0  100.0  100.0  0        L3-3 | protease
+        found 1 gene
+
+    found 1 permutation for gene E2A
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88113.1        529    1-529          -1  22488-24074    1   -2 0  N   99.6   99.6   100.0  0        E2A | ssDNA-binding protein
+        found 1 gene
+
+    found 1 permutation for gene L4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88114.1        806    1-806          1   24103-26517    2   1  0  N   99.6   99.7   99.8   0        L4 | hexon-assembly protein
+        found 1 gene
+
+    found 1 permutation for gene L4-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88115.1        194    1-194          1   26234-26818    3   2  0  N   97.0   97.5   100.0  0        L4-2 | L4 encapsidation protein
+        found 1 gene
+
+    found 1 permutation for gene L4-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88116.1        227    1-227          1   26234-27119    3   0  1  N   98.2   98.6   98.6   0        L4-3 | splicing factor
+        found 1 gene
+
+    found 1 permutation for gene L4-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88117.1        227    1-227          1   27210-27890    1   3  0  N   100.0  100.0  100.0  0        L4-4 | VIII capsid protein
+        found 1 gene
+
+    found 2 permutations for gene E3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88118.1        78     1-76           1   27894-28121    1   3  0  N   98.6   98.6   97.4   1.3-e075 E3 | E3 12.5 kDa immune modulating protein
+    AAW65521.1        107    1-107          1   27894-28214    1   3  0  N   88.7   92.5   100.0  1.3-e097 E3 | E3 12.5 kDa immune modulating protein
+        found 1 gene
+
+    found 1 permutation for gene E3-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88119.1        61     1-61           1   28625-28807    1   2  0  N   98.3   100.0  100.0  1.3-e057 E3-2 | E3 CR1-alpha
+        found 1 gene
+
+    found 1 permutation for gene E3-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88120.1        159    1-159          1   28807-29283    1   1  0  N   100.0  100.0  100.0  7.4-e175 E3-3 | E3 immune modulating protein
+        found 1 gene
+
+    found 1 permutation for gene E3-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88121.1        101    1-101          1   29463-29765    1   3  0  N   97.0   97.0   100.0  4.0-e104 E3-4 | E3 CR1-beta
+        found 1 gene
+
+    found 1 permutation for gene E3-7
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88122.1        91     1-91           1   29776-30048    1   1  0  N   98.9   100.0  100.0  3.1-e094 E3-7 | E3 RID-alpha
+        found 1 gene
+
+    found 1 permutation for gene E3-8
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88123.1        130    1-130          1   30054-30443    1   3  0  N   96.9   96.9   100.0  2.1-e134 E3-8 | E3 RID-beta
+        found 1 gene
+
+    found 1 permutation for gene E3-9
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88124.1        128    1-128          1   30439-30822    1   1  0  N   100.0  100.0  100.0  1.4-e135 E3-9 | E3 control protein 14.7 kDa
+        found 1 gene
+
+    found 1 permutation for gene U
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88125.1        55     1-55           -1  30850-31014    1   -1 0  N   94.5   98.1   100.0  1.2-e049 U | protein U
+        found 1 gene
+
+    found 2 permutations for gene L5
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88126.1        528    1-528          1   31025-32770    5   2  0  N   74.7   87.6   97.9   0        L5 | fiber
+    AAW65529.1        579    1-579          1   31025-32770    7   2  0  N   72.2   86.2   96.5   0        L5 | fiber
+        found 1 gene
+
+    found 1 permutation for gene E4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88127.1        150    1-150          -1  32912-34072    2   -3 0  N   100.0  100.0  100.0  1.3-e153 E4 | E4 control protein orf6/7
+        found 1 gene
+
+    found 1 permutation for gene E4-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW65531.1        294    1-294          -1  33191-34072    1   -3 0  N   100.0  100.0  100.0  0        E4-2 | E4 control protein 34 kDa
+        found 1 gene
+
+    found 1 permutation for gene E4-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88130.1        114    1-114          -1  33996-34337    1   -2 0  N   100.0  100.0  100.0  2.7-e122 E4-3 | E4 control protein orf4
+        found 1 gene
+
+    found 1 permutation for gene E4-3a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW65533.1        61     1-61           -1  33996-34699    2   0  1  N   98.3   98.3   100.0  7.0-e052 E4-3a | E4 control protein orf3/4
+        found 1 gene
+
+    found 1 permutation for gene E4-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88131.1        116    1-116          -1  34352-34699    1   -3 0  N   100.0  100.0  100.0  5.0-e123 E4-4 | E4 control protein orf3
+        found 1 gene
+
+    found 1 permutation for gene E4-5
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88133.1        130    1-130          -1  34699-35088    1   -1 0  N   100.0  100.0  100.0  4.7-e137 E4-5 | E4 control protein orf2
+        found 1 gene
+
+    found 1 permutation for gene E4-6
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN88138.1        128    1-128          -1  35142-35525    1   -2 0  N   100.0  100.0  100.0  7.1-e136 E4-6 | E4 control protein orf1
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+47                      35931     44            2      37314          12395           97.3             99.0          100.0   hadvc_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+47.1               100.0  100.0  100.0  0.0   0.0   0.0   560..637         55     55     ACN88084.1        E1A-3 | E1A 6 kDa protein
+                                                          1229..1318                                       
+47.2               100.0  100.0  100.0  0.0   0.0   0.0   560..974         243    243    ACN88086.1        E1A-2 | E1A 26 kDa protein
+                                                          1229..1545                                       
+47.3               100.0  100.0  100.0  0.0   0.0   0.0   560..1112        289    289    ACN88085.1        E1A | E1A 32 kDa protein
+                                                          1229..1545                                       
+47.4               100.0  100.0  100.0  0.0   0.0   0.0   1714..2241       175    175    ACN88087.1        E1B | E1B small T antigen
+47.5               100.0  100.0  100.0  0.0   0.0   0.0   2019..3506       495    495    ACN88090.1        E1B-2 | E1B large T antigen
+47.6               100.0  100.0  100.0  0.0   0.0   0.0   3603..4025       140    140    ACN88092.1        IX | hexon associated protein
+47.7               98.3   98.9   100.0  0.0   0.0   0.0   5677..5330       115    115    AAW65500.1        HYP-1 | hypothetical protein
+47.8               99.8   100.0  100.0  0.0   0.0   0.0   5711..5699       449    449    ACN88093.1        IVa2 | maturation protein
+                                                          5420..4084                                       
+47.9               99.1   99.1   100.0  0.0   0.0   0.0   6283..6603       106    106    AAW65501.1        HYP-2 | hypothetical protein
+47.10              99.1   99.8   100.0  0.0   0.0   0.0   6783..6445       112    112    AAW65502.1        HYP-3 | hypothetical protein
+47.11              100.0  100.0  100.0  0.0   0.0   0.0   7971..8420       149    149    ACN88098.1        L1-3 | L1 13.6 kDa protein
+47.12              100.0  100.0  100.0  0.0   0.0   0.0   9297..9803       168    168    ACN88101.1        HYP-4 | hypothetical protein
+47.13              98.5   98.5   100.0  0.0   0.0   0.0   10424..10810     137    137    ACN88102.1        HYP-5 | hypothetical protein
+                                                          10810..10836                                     
+                    frameshift in genome at or near position 10810..10810 (+2=>+1)
+                    stop codon embedded in CDS at 10559..10561
+47.14              99.8   100.0  100.0  0.0   0.0   0.0   11042..12289     415    415    ACN88104.1        L1-2 | L1 52 kDa protein
+47.15              97.5   98.3   100.0  0.0   0.0   0.0   11111..10812     121    121    AAW65506.1        HYP-6 | hypothetical protein
+                                                          10812..10747                                     
+                    frameshift in genome at or near position 10812..10812 (-2=>-1)
+47.16              99.7   100.0  100.0  0.0   0.0   0.0   12310..14067     585    585    AAW65508.1        L1 | IIIa capsid protein
+47.17              99.9   99.9   100.0  0.0   0.0   0.0   14112..14104     1198   1198   ACN88094.1        E2B | DNA polymerase
+                                                          8777..5190                                       
+47.18              100.0  100.0  100.0  0.0   0.0   0.0   14112..14104     671    671    ACN88100.1        pTP | DNA terminal protein
+                                                          10582..8576                                      
+47.19              98.8   99.4   100.0  0.0   0.0   0.0   14149..15864     571    571    AAW65509.1        L2 | penton base
+47.20              99.5   99.5   100.0  0.0   0.0   0.0   15871..16467     198    198    AAW65510.1        L2-2 | VII core protein
+47.21              99.5   99.7   100.0  0.0   0.0   0.0   16537..17643     368    369    ACN88108.1        L2-3 | V core protein
+47.22              100.0  100.0  100.0  0.0   0.0   0.0   17671..17913     80     80     ACN88109.1        L2-4 | X core protein
+47.23              98.8   100.0  100.0  0.0   0.0   0.0   17996..18748     250    250    AAW65513.1        L3 | VI capsid protein
+47.24              90.1   95.6   100.0  0.0   0.0   0.0   18833..21739     968    963    ADV03661.1        L3-2 | hexon
+47.25              100.0  100.0  100.0  0.0   0.0   0.0   21773..22387     204    204    ACN88112.1        L3-3 | protease
+47.26              99.6   99.8   100.0  0.0   0.0   0.0   24074..22485     529    529    ACN88113.1        E2A | ssDNA-binding protein
+47.27              99.5   99.6   100.0  0.0   0.0   0.0   24103..26520     805    806    ACN88114.1        L4 | hexon-assembly protein
+47.28              96.4   97.3   100.0  0.0   0.0   0.0   26234..26821     195    194    ACN88115.1        L4-2 | L4 encapsidation protein
+47.29              97.8   97.8   100.0  0.0   0.0   0.0   26234..26546     228    227    ACN88116.1        L4-3 | splicing factor
+                                                          26749..27122                                     
+47.30              100.0  100.0  100.0  0.0   0.0   0.0   27210..27893     227    227    ACN88117.1        L4-4 | VIII capsid protein
+47.31              88.8   96.7   100.0  0.0   0.0   0.0   27894..28217     107    107    AAW65521.1        E3 | E3 12.5 kDa immune modulating protein
+47.32              98.4   100.0  100.0  0.0   0.0   0.0   28625..28810     61     61     ACN88119.1        E3-2 | E3 CR1-alpha
+47.33              100.0  100.0  100.0  0.0   0.0   0.0   28807..29286     159    159    ACN88120.1        E3-3 | E3 immune modulating protein
+47.34              97.0   98.5   100.0  0.0   0.0   0.0   29463..29768     101    101    ACN88121.1        E3-4 | E3 CR1-beta
+47.35              98.9   100.0  100.0  0.0   0.0   0.0   29776..30051     91     91     ACN88122.1        E3-7 | E3 RID-alpha
+47.36              96.9   97.5   100.0  0.0   0.0   0.0   30054..30446     130    130    ACN88123.1        E3-8 | E3 RID-beta
+47.37              100.0  100.0  100.0  0.0   0.0   0.0   30439..30825     128    128    ACN88124.1        E3-9 | E3 control protein 14.7 kDa
+47.38              94.5   98.2   100.0  0.0   0.0   0.0   31014..>30850    55     55     ACN88125.1        U | putative protein U, N-terminal
+47.39              69.3   92.3   100.0  0.0   0.0   0.0   31025..32773     582    579    AAW65529.1        L5 | fiber
+47.40              100.0  100.0  100.0  0.0   0.0   0.0   34072..33899     150    150    ACN88127.1        E4 | E4 control protein orf6/7
+                                                          33187..32909                                     
+47.41              100.0  100.0  100.0  0.0   0.0   0.0   34072..33188     294    294    AAW65531.1        E4-2 | E4 control protein 34 kDa
+47.42              100.0  100.0  100.0  0.0   0.0   0.0   34337..33993     114    114    ACN88130.1        E4-3 | E4 control protein orf4
+47.43              98.4   98.4   100.0  0.0   0.0   0.0   34699..34599     61     61     AAW65533.1        E4-3a | E4 control protein orf3/4
+                                                          34077..33993                                     
+47.44              100.0  100.0  100.0  0.0   0.0   0.0   34699..34349     116    116    ACN88131.1        E4-4 | E4 control protein orf3
+47.45              100.0  100.0  100.0  0.0   0.0   0.0   35088..34696     130    130    ACN88133.1        E4-5 | E4 control protein orf2
+47.46              100.0  100.0  100.0  0.0   0.0   0.0   35525..35139     128    128    ACN88138.1        E4-6 | E4 control protein orf1
+
+
+genomic sequence 64, length=35151
+  selecting database hadvd_db
+
+    found 1 permutation for gene E1A-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI47086.1        191    1-191          1   538-1391       2   0  1  N   100.0  100.0  100.0  0        E1A-2 | E1A 21 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene E1A
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI47087.1        253    1-253          1   538-1391       2   0  1  N   100.0  100.0  99.6   0        E1A | E1A 28 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene E1B
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI04172.1        182    1-182          1   1546-2091      1   1  0  N   100.0  100.0  100.0  0        E1B | E1B small T antigen
+        found 1 gene
+
+    found 1 permutation for gene E1B-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABN10545.1        495    1-495          1   1851-3335      1   3  0  N   99.7   99.7   100.0  0        E1B-2 | E1B large T antigen
+        found 1 gene
+
+    found 1 permutation for gene IX
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI47076.1        134    1-134          1   3423-3824      1   3  0  N   100.0  100.0  100.0  1.2-e132 IX | hexon associated protein
+        found 1 gene
+
+    found 1 permutation for gene IVa2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI47088.1        448    1-448          -1  3874-5495      2   0  1  N   100.0  100.0  100.0  0        IVa2 | maturation protein
+        found 1 gene
+
+    found 2 permutations for gene E2B
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI04176.3        1165   1-1165         -1  4977-13472     3   -2 0  N   98.6   99.3   100.0  0        E2B | DNA polymerase
+    YP_001974426.1    1176   1-1176         -1  4977-13472     2   -2 0  N   98.8   99.4   100.0  0        E2B | DNA polymerase
+        found 1 gene
+
+    found 1 permutation for gene HYP-1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI47069.1        188    1-188          -1  5171-5734      1   -3 0  N   100.0  100.0  100.0  0        HYP-1 | hypothetical protein
+        found 1 gene
+
+    found 1 permutation for gene HYP-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI47083.1        89     1-89           1   6118-6384      1   1  0  N   100.0  100.0  100.0  1.0-e086 HYP-2 | hypothetical protein
+        found 1 gene
+
+    found 1 permutation for gene HYP-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI47066.1        329    1-329          1   6483-7469      1   3  0  N   100.0  100.0  100.0  0        HYP-3 | hypothetical protein
+        found 1 gene
+
+    found 1 permutation for gene L1-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_001974467.1    129    1-129          1   7755-9351      2   0  1  N   98.4   99.2   100.0  4.3-e129 L1-3 | L1 13.6 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene HYP-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI47073.1        155    1-155          1   7755-8219      1   3  0  N   100.0  100.0  100.0  5.1-e162 HYP-4 | hypothetical protein
+        found 1 gene
+
+    found 1 permutation for gene HYP-5
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI47071.1        177    1-177          -1  8002-8532      1   -1 0  N   100.0  100.0  100.0  0        HYP-5 | hypothetical protein
+        found 1 gene
+
+    found 2 permutations for gene pTP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_001974468.1    635    1-635          -1  8297-13472     2   0  1  N   99.2   99.5   100.0  0        pTP | DNA terminal protein
+    ACI04177.2        624    1-624          -1  8297-13472     3   0  1  N   99.8   100.0  100.0  0        pTP | DNA terminal protein
+        found 1 gene
+
+    found 1 permutation for gene HYP-6
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI47081.1        111    1-111          1   9617-9949      1   2  0  N   100.0  100.0  100.0  3.4-e110 HYP-6 | hypothetical protein
+        found 1 gene
+
+    found 1 permutation for gene L1-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI04178.1        374    1-374          1   10607-11728    1   2  0  N   100.0  100.0  100.0  0        L1-2 | L1 52 kDa protein
+        found 1 gene
+
+    found 3 permutations for gene L1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI04179.1        563    1-563          1   11754-13442    1   3  0  N   100.0  100.0  100.0  0        L1 | IIIa capsid protein
+    AP_000146.1       564    1-564          1   11754-13442    2   3  0  N   99.4   99.6   99.2   0        L1 | IIIa capsid protein
+    ABN10531.1        565    4-565          1   11757-13442    1   3  0  N   99.2   99.4   99.4   0        L1 | IIIa capsid protein
+        found 1 gene
+
+    found 1 permutation for gene L2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI04180.1        519    1-519          1   13499-15055    1   2  0  N   100.0  100.0  100.0  0        L2 | penton base
+        found 1 gene
+
+    found 2 permutations for gene L2-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI04181.1        163    1-163          1   15062-15649    2   2  0  N   100.0  100.0  100.0  1.9-e166 L2-2 | VII core protein
+    ABN10533.1        196    1-196          1   15062-15649    1   2  0  N   98.9   98.9   100.0  0        L2-2 | VII core protein
+        found 1 gene
+
+    found 3 permutations for gene L2-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABN10546.1        332    1-332          1   15685-16686    2   1  0  N   99.0   99.3   100.0  0        L2-3 | V core protein
+    YP_001974451.1    334    1-334          1   15685-16686    1   1  0  N   99.4   99.7   100.0  0        L2-3 | V core protein
+    ACI04182.1        297    1-297          1   15685-16686    3   1  0  N   98.6   99.6   100.0  0        L2-3 | V core protein
+        found 1 gene
+
+    found 1 permutation for gene L2-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000148.1       73     1-73           1   16719-16937    1   3  0  N   100.0  100.0  100.0  2.6-e070 L2-4 | X core protein
+        found 1 gene
+
+    found 1 permutation for gene L3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000149.1       234    1-234          1   16999-17700    1   1  0  N   100.0  100.0  100.0  0        L3 | VI capsid protein
+        found 1 gene
+
+    found 1 permutation for gene L3-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI04185-T5       945    1-945          1   17744-20590    6   2  0  N   95.0   97.3   95.5   0        L3-2 | hexon
+        found 1 gene
+
+    found 2 permutations for gene L3-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI04186.1        207    1-207          1   20596-21216    1   1  0  N   100.0  100.0  100.0  0        L3-3 | protease
+    YP_001974454.1    209    1-207          1   20596-21216    1   1  0  N   100.0  100.0  99.0   0        L3-3 | protease
+        found 1 gene
+
+    found 1 permutation for gene E2A
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI04187.1        490    1-490          -1  21277-22746    1   -1 0  N   99.7   99.7   100.0  0        E2A | ssDNA-binding protein
+        found 1 gene
+
+    found 1 permutation for gene L4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABN10536.1        732    1-732          1   22763-24958    1   2  0  N   100.0  100.0  100.0  0        L4 | hexon-assembly protein
+        found 1 gene
+
+    found 1 permutation for gene HYP-7
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI47084.1        81     1-81           -1  23908-24150    1   -1 0  N   100.0  100.0  100.0  5.5-e082 HYP-7 | hypothetical protein
+        found 1 gene
+
+    found 1 permutation for gene L4-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI04189.1        137    1-137          1   24744-25154    1   3  0  N   100.0  100.0  100.0  2.1-e147 L4-2 | L4 encapsidation protein
+        found 1 gene
+
+    found 1 permutation for gene L4-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_001974455.1    173    1-173          1   24744-25434    3   0  1  N   97.1   98.3   100.0  7.8-e167 L4-3 | splicing factor
+        found 1 gene
+
+    found 1 permutation for gene L4-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI47067.1        227    1-227          1   25483-26163    1   1  0  N   100.0  100.0  100.0  0        L4-4 | VIII capsid protein
+        found 1 gene
+
+    found 1 permutation for gene E3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI47082.1        106    1-106          1   26167-26484    1   1  0  N   100.0  100.0  100.0  1.1-e112 E3 | E3 12.5 kDa immune modulating protein
+        found 1 gene
+
+    found 1 permutation for gene E3-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI47068.1        196    1-196          1   26441-27028    1   2  0  N   99.4   99.4   100.0  0        E3-2 | E3 CR1-alpha
+        found 1 gene
+
+    found 1 permutation for gene E3-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI47072.1        156    1-156          1   27028-27495    1   1  0  N   100.0  100.0  100.0  1.9-e170 E3-3 | E3 immune modulating protein
+        found 1 gene
+
+    found 1 permutation for gene E3-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABN10537.1        428    1-428          1   27523-28806    1   1  0  N   100.0  100.0  100.0  0        E3-4 | E3 CR1-beta
+        found 1 gene
+
+    found 1 permutation for gene E3-5
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABN10543.1        280    1-280          1   28836-29675    1   3  0  N   100.0  100.0  100.0  0        E3-5 | E3 CR1-gamma
+        found 1 gene
+
+    found 1 permutation for gene E3-7
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABN10538.1        91     1-91           1   29685-29957    1   3  0  N   100.0  100.0  100.0  2.4-e097 E3-7 | E3 RID-alpha
+        found 1 gene
+
+    found 1 permutation for gene E3-8
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI47078.1        130    1-130          1   29963-30352    1   2  0  N   100.0  100.0  100.0  1.2-e141 E3-8 | E3 RID-beta
+        found 1 gene
+
+    found 1 permutation for gene E3-9
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000155.1       130    1-130          1   30348-30737    1   3  0  N   100.0  100.0  100.0  1.0-e139 E3-9 | E3 control protein 14.7 kDa
+        found 1 gene
+
+    found 1 permutation for gene U
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABN10549.1        49     1-49           -1  30845-30991    1   -3 0  N   100.0  100.0  100.0  2.0-e047 U | protein U
+        found 1 gene
+
+    found 1 permutation for gene L5
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABN10548.1        365    1-365          1   31007-32101    1   2  0  N   100.0  100.0  100.0  0        L5 | fiber
+        found 1 gene
+
+    found 1 permutation for gene E4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_001974469.1    130    1-130          -1  32141-33258    2   0  1  N   96.9   99.2   100.0  2.3-e127 E4 | E4 control protein orf6/7
+        found 1 gene
+
+    found 1 permutation for gene E4-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABN10544.1        292    1-292          -1  32383-33258    1   -1 0  N   100.0  100.0  100.0  0        E4-2 | E4 control protein 34 kDa
+        found 1 gene
+
+    found 1 permutation for gene E4-2a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI47074.1        151    1-151          -1  32639-33091    1   -3 0  N   100.0  100.0  100.0  8.6-e164 E4-2a | E4 17 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene E4-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACI47079.1        120    1-120          -1  33191-33550    1   -3 0  N   100.0  100.0  100.0  9.5-e132 E4-3 | E4 control protein orf4
+        found 1 gene
+
+    found 1 permutation for gene E4-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_001974472.1    117    1-117          -1  33556-33906    1   -1 0  N   100.0  100.0  100.0  1.3-e127 E4-4 | E4 control protein orf3
+        found 1 gene
+
+    found 1 permutation for gene E4-5
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_001974473.1    130    1-130          -1  33906-34295    1   -2 0  N   100.0  100.0  100.0  1.2-e132 E4-5 | E4 control protein orf2
+        found 1 gene
+
+    found 1 permutation for gene E4-6
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_001974474.1    125    1-125          -1  34339-34712    2   0  1  N   98.4   98.4   100.0  1.2-e124 E4-6 | E4 control protein orf1
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+64                      35151     46            1      38697          12854           99.0             99.6          100.0   hadvd_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+64.1               100.0  100.0  100.0  0.0   0.0   0.0   538..901         191    191    ACI47086.1        E1A-2 | E1A 21 kDa protein
+                                                          1183..1394                                       
+64.2               100.0  100.0  100.0  0.0   0.0   0.0   538..1087        253    253    ACI47087.1        E1A | E1A 28 kDa protein
+                                                          1183..1394                                       
+64.3               100.0  100.0  100.0  0.0   0.0   0.0   1546..2094       182    182    ACI04172.1        E1B | E1B small T antigen
+64.4               99.8   99.8   100.0  0.0   0.0   0.0   1851..3338       495    495    ABN10545.1        E1B-2 | E1B large T antigen
+64.5               100.0  100.0  100.0  0.0   0.0   0.0   3423..3827       134    134    ACI47076.1        IX | hexon associated protein
+64.6               100.0  100.0  100.0  0.0   0.0   0.0   5495..5483       448    448    ACI47088.1        IVa2 | maturation protein
+                                                          5204..3871                                       
+64.7               100.0  100.0  100.0  0.0   0.0   0.0   5734..5168       188    188    ACI47069.1        HYP-1 | hypothetical protein
+64.8               100.0  100.0  100.0  0.0   0.0   0.0   6118..6387       89     89     ACI47083.1        HYP-2 | hypothetical protein
+64.9               100.0  100.0  100.0  0.0   0.0   0.0   6483..7472       329    329    ACI47066.1        HYP-3 | hypothetical protein
+64.10              100.0  100.0  100.0  0.0   0.0   0.0   7755..8222       155    155    ACI47073.1        HYP-4 | hypothetical protein
+64.11              98.4   99.8   100.0  0.0   0.0   0.0   7755..8135       129    129    YP_001974467.1    L1-3 | L1 13.6 kDa protein
+                                                          9346..9354                                       
+64.12              100.0  100.0  100.0  0.0   0.0   0.0   8532..7999       177    177    ACI47071.1        HYP-5 | hypothetical protein
+64.13              100.0  100.0  100.0  0.0   0.0   0.0   9617..9952       111    111    ACI47081.1        HYP-6 | hypothetical protein
+64.14              100.0  100.0  100.0  0.0   0.0   0.0   10607..11731     374    374    ACI04178.1        L1-2 | L1 52 kDa protein
+64.15              100.0  100.0  100.0  0.0   0.0   0.0   11754..13445     563    563    ACI04179.1        L1 | IIIa capsid protein
+64.16              98.9   99.7   100.0  0.0   0.0   0.0   13472..13464     1176   1176   YP_001974426.1    E2B | DNA polymerase
+                                                          8495..4974                                       
+64.17              99.2   100.0  100.0  0.0   0.0   0.0   13472..13464     635    635    YP_001974468.1    pTP | DNA terminal protein
+                                                          10192..8294                                      
+64.18              100.0  100.0  100.0  0.0   0.0   0.0   13499..15058     519    519    ACI04180.1        L2 | penton base
+64.19              99.0   99.9   100.0  0.0   0.0   0.0   15062..15652     196    196    ABN10533.1        L2-2 | VII core protein
+64.20              99.4   99.9   100.0  0.0   0.0   0.0   15685..16689     334    334    YP_001974451.1    L2-3 | V core protein
+64.21              98.6   98.6   100.0  0.0   0.0   0.0   16719..16943     74     73     AP_000148.1       L2-4 | X core protein
+64.22              100.0  100.0  100.0  0.0   0.0   0.0   16999..17703     234    234    AP_000149.1       L3 | VI capsid protein
+64.23              90.2   95.1   100.0  0.0   0.0   0.0   17744..20593     949    945    ACI04185-T5       L3-2 | hexon
+64.24              100.0  100.0  100.0  0.0   0.0   0.0   20596..21219     207    207    ACI04186.1        L3-3 | protease
+64.25              99.8   99.9   100.0  0.0   0.0   0.0   22746..21274     490    490    ACI04187.1        E2A | ssDNA-binding protein
+64.26              100.0  100.0  100.0  0.0   0.0   0.0   22763..24961     732    732    ABN10536.1        L4 | hexon-assembly protein
+64.27              100.0  100.0  100.0  0.0   0.0   0.0   24150..23905     81     81     ACI47084.1        HYP-7 | hypothetical protein
+64.28              100.0  100.0  100.0  0.0   0.0   0.0   24744..25157     137    137    ACI04189.1        L4-2 | L4 encapsidation protein
+64.29              97.1   98.7   100.0  0.0   0.0   0.0   24744..24984     174    173    YP_001974455.1    L4-3 | splicing factor
+                                                          25154..25437                                     
+64.30              100.0  100.0  100.0  0.0   0.0   0.0   25483..26166     227    227    ACI47067.1        L4-4 | VIII capsid protein
+64.31              100.0  100.0  100.0  0.0   0.0   0.0   26167..26487     106    106    ACI47082.1        E3 | E3 12.5 kDa immune modulating protein
+64.32              99.5   99.9   100.0  0.0   0.0   0.0   26441..27031     196    196    ACI47068.1        E3-2 | E3 CR1-alpha
+64.33              100.0  100.0  100.0  0.0   0.0   0.0   27028..27498     156    156    ACI47072.1        E3-3 | E3 immune modulating protein
+64.34              100.0  100.0  100.0  0.0   0.0   0.0   27523..28809     428    428    ABN10537.1        E3-4 | E3 CR1-beta
+64.35              100.0  100.0  100.0  0.0   0.0   0.0   28836..29678     280    280    ABN10543.1        E3-5 | E3 CR1-gamma
+64.36              100.0  100.0  100.0  0.0   0.0   0.0   29685..29960     91     91     ABN10538.1        E3-7 | E3 RID-alpha
+64.37              100.0  100.0  100.0  0.0   0.0   0.0   29963..30355     130    130    ACI47078.1        E3-8 | E3 RID-beta
+64.38              100.0  100.0  100.0  0.0   0.0   0.0   30348..30740     130    130    AP_000155.1       E3-9 | E3 control protein 14.7 kDa
+64.39              100.0  100.0  100.0  0.0   0.0   0.0   30991..>30845    49     49     ABN10549.1        U | putative protein U, N-terminal
+64.40              100.0  100.0  100.0  0.0   0.0   0.0   31007..32104     365    365    ABN10548.1        L5 | fiber
+64.41              100.0  100.0  100.0  0.0   0.0   0.0   33091..32636     151    151    ACI47074.1        E4-2a | E4 17 kDa protein
+64.42              98.5   99.8   100.0  0.0   0.0   0.0   33258..33115     130    130    YP_001974469.1    E4 | E4 control protein orf6/7
+                                                          32386..32138                                     
+64.43              100.0  100.0  100.0  0.0   0.0   0.0   33258..32380     292    292    ABN10544.1        E4-2 | E4 control protein 34 kDa
+64.44              100.0  100.0  100.0  0.0   0.0   0.0   33550..33188     120    120    ACI47079.1        E4-3 | E4 control protein orf4
+64.45              100.0  100.0  100.0  0.0   0.0   0.0   33906..33553     117    117    YP_001974472.1    E4-4 | E4 control protein orf3
+64.46              100.0  100.0  100.0  0.0   0.0   0.0   34295..33903     130    130    YP_001974473.1    E4-5 | E4 control protein orf2
+64.47              98.4   99.8   100.0  0.0   0.0   0.0   34712..34632     125    125    YP_001974474.1    E4-6 | E4 control protein orf1
+                                                          34632..34336                                     
+                    frameshift in genome at or near position 34632..34632 (-2=>-1)
+
+
+genomic sequence gi|51527264|ref|NC_003266.2|, length=35994
+  selecting database hadve_db
+
+    found 2 permutations for gene HYP-1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT97474.1        192    1-192          1   576-1151       1   3  0  N   100.0  100.0  100.0  0        HYP-1 | hypothetical protein
+    ABR27493.1        194    1-194          1   576-1155       2   0  1  N   100.0  100.0  98.9   0        HYP-1 | hypothetical protein
+        found 1 gene
+
+    found 2 permutations for gene E1A-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT97427.1        59     1-59           1   576-1337       2   3  0  N   100.0  100.0  100.0  1.3-e051 E1A-3 | E1A 6.8 kDa protein
+    AAT97475.1        59     1-59           1   576-1337       2   3  0  N   100.0  100.0  100.0  1.3-e051 E1A-3 | E1A 6.8 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene E1A-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT97477.1        226    1-226          1   576-1438       2   0  1  N   100.0  100.0  100.0  0        E1A-2 | E1A 24.6 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene E1A
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068018.1       257    1-257          1   576-1438       2   0  1  N   100.0  100.0  99.6   0        E1A | E1A 28 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene E1B
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068019.1       171    1-171          1   1600-2112      1   1  0  N   100.0  100.0  100.0  0        E1B | E1B small T antigen
+        found 1 gene
+
+    found 1 permutation for gene HYP-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT97480.1        78     1-78           1   1905-3273      2   0  1  N   100.0  100.0  100.0  5.6-e069 HYP-3 | hypothetical protein
+        found 1 gene
+
+    found 1 permutation for gene HYP-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT97482.1        154    1-154          1   1905-3353      2   3  0  N   98.7   100.0  100.0  1.6-e155 HYP-2 | hypothetical protein
+        found 1 gene
+
+    found 1 permutation for gene E1B-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068020.1       483    1-483          1   1905-3353      1   3  0  N   100.0  100.0  100.0  0        E1B-2 | E1B large T antigen
+        found 1 gene
+
+    found 1 permutation for gene IX
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068021.1       142    1-142          1   3441-3866      1   3  0  N   100.0  100.0  100.0  1.9-e140 IX | hexon associated protein
+        found 1 gene
+
+    found 1 permutation for gene IVa2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068022.1       448    1-448          -1  3933-5554      2   0  1  N   100.0  100.0  100.0  0        IVa2 | maturation protein
+        found 1 gene
+
+    found 1 permutation for gene E2B
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068023.1       1193   1-1193         -1  5036-13773     2   0  1  N   100.0  100.0  100.0  0        E2B | DNA polymerase
+        found 1 gene
+
+    found 1 permutation for gene HYP-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT97486.1        189    1-189          1   5105-5671      1   2  0  N   100.0  100.0  100.0  0        HYP-4 | hypothetical protein
+        found 1 gene
+
+    found 1 permutation for gene HYP-5
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABR27497.1        106    1-106          1   6126-6443      1   3  0  N   100.0  100.0  100.0  3.4-e106 HYP-5 | hypothetical protein
+        found 1 gene
+
+    found 2 permutations for gene L1-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    EYP_001974467.1   129    1-129          1   7814-9460      2   2  0  N   94.6   96.1   100.0  1.5-e121 L1-3 | L1 13.6 kDa protein
+    YP_001661328.1    139    1-139          1   7814-9473      2   0  1  N   100.0  100.0  100.0  1.1-e138 L1-3 | L1 13.6 kDa protein
+        found 1 gene
+
+    found 2 permutations for gene pTP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068024.1       642    1-642          -1  8407-13773     2   -1 0  N   100.0  100.0  100.0  0        pTP | DNA terminal protein
+    ABR27500-EXT5     642    1-625          -1  8458-13773     2   -1 0  N   99.3   99.5   97.3   0        pTP | DNA terminal protein
+        found 1 gene
+
+    found 1 permutation for gene HYP-6
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT97489.1        224    1-224          1   7814-9201      2   0  1  N   100.0  100.0  100.0  0        HYP-6 | hypothetical protein
+        found 1 gene
+
+    found 1 permutation for gene L1-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068025.1       390    1-390          1   10765-11934    1   1  0  N   100.0  100.0  100.0  0        L1-2 | L1 52 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene L1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068026.1       591    1-591          1   11961-13733    1   3  0  N   100.0  100.0  100.0  0        L1 | IIIa capsid protein
+        found 1 gene
+
+    found 1 permutation for gene L2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068027.1       535    1-535          1   13815-15419    1   3  0  N   100.0  100.0  100.0  0        L2 | penton base
+        found 1 gene
+
+    found 1 permutation for gene L2-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068028.1       193    1-193          1   15426-16004    1   3  0  N   100.0  100.0  100.0  0        L2-2 | VII core protein
+        found 1 gene
+
+    found 1 permutation for gene L2-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068029.1       341    1-341          1   16055-17077    1   2  0  N   100.0  100.0  100.0  0        L2-3 | V core protein
+        found 1 gene
+
+    found 1 permutation for gene L2-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068030.1       77     1-77           1   17103-17333    1   3  0  N   100.0  100.0  100.0  1.4-e074 L2-4 | X core protein
+        found 1 gene
+
+    found 2 permutations for gene L3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAS16294-T5       242    1-242          1   17413-18138    3   0  2  N   100.0  100.0  99.5   0        L3 | VI capsid protein
+    AAT97497-T5       242    1-242          1   17413-18138    1   1  0  N   100.0  100.0  100.0  0        L3 | VI capsid protein
+        found 1 gene
+
+    found 2 permutations for gene L3-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABR27507.1        932    1-932          1   18248-21055    2   2  0  N   99.8   99.8   100.0  0        L3-2 | hexon
+    YP_068032.1       936    1-936          1   18248-21055    1   2  0  N   100.0  100.0  100.0  0        L3-2 | hexon
+        found 1 gene
+
+    found 1 permutation for gene L3-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068033.1       206    1-206          1   21082-21699    1   1  0  N   100.0  100.0  100.0  0        L3-3 | protease
+        found 1 gene
+
+    found 2 permutations for gene E2A
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAS16280.1        533    1-533          -1  21715-23312    2   0  1  N   99.6   99.6   100.0  0        E2A | ssDNA-binding protein
+    YP_068034.1       512    1-512          -1  21777-23312    1   -2 0  N   100.0  100.0  100.0  0        E2A | ssDNA-binding protein
+        found 1 gene
+
+    found 1 permutation for gene L4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068035.1       789    1-789          1   23341-25713    2   1  0  N   100.0  100.0  100.0  0        L4 | hexon-assembly protein
+        found 1 gene
+
+    found 1 permutation for gene L4-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068037.1       179    1-179          1   25439-25975    1   2  0  N   100.0  100.0  100.0  0        L4-2 | L4 encapsidation protein
+        found 1 gene
+
+    found 2 permutations for gene L4-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT97455.1        213    1-213          1   25439-26249    3   0  1  N   99.0   99.0   100.0  0        L4-3 | splicing factor
+    YP_068036.1       214    1-214          1   25439-26249    2   0  1  N   99.5   99.5   100.0  0        L4-3 | splicing factor
+        found 1 gene
+
+    found 1 permutation for gene L4-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068038.1       227    1-227          1   26321-27001    1   2  0  N   100.0  100.0  100.0  0        L4-4 | VIII capsid protein
+        found 1 gene
+
+    found 1 permutation for gene E3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068039.1       106    1-106          1   27005-27322    1   2  0  N   100.0  100.0  100.0  2.3-e111 E3 | E3 12.5 kDa immune modulating protein
+        found 1 gene
+
+    found 1 permutation for gene E3-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068040.1       210    1-210          1   27279-27908    1   3  0  N   100.0  100.0  100.0  0        E3-2 | E3 CR1-alpha
+        found 1 gene
+
+    found 1 permutation for gene E3-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068041.1       174    1-174          1   27893-28414    1   2  0  N   100.0  100.0  100.0  0        E3-3 | E3 immune modulating protein
+        found 1 gene
+
+    found 2 permutations for gene E3-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABR27516.1        205    1-205          1   28449-29108    2   3  0  N   100.0  100.0  100.0  0        E3-4 | E3 CR1-beta
+    YP_068042.1       220    1-220          1   28449-29108    1   3  0  N   100.0  100.0  100.0  0        E3-4 | E3 CR1-beta
+        found 1 gene
+
+    found 1 permutation for gene E3-5
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAS10451.1        204    106-204        1   29127-29417    3   3  0  N   85.7   91.6   41.1   2.2-e054 E3-5 | E3 CR1-gamma
+        found 1 gene
+
+    found 1 permutation for gene E3-11
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT97509.1        54     1-54           1   29279-29440    1   2  0  N   100.0  100.0  100.0  5.0-e053 E3-11 | E3 6.3 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene E3-6
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068043.1       274    1-274          1   29440-30261    1   1  0  N   100.0  100.0  100.0  0        E3-6 | E3 CR1-delta
+        found 1 gene
+
+    found 1 permutation for gene E3-7
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068044.1       91     1-91           1   30273-30545    1   3  0  N   100.0  100.0  100.0  1.9-e096 E3-7 | E3 RID-alpha
+        found 1 gene
+
+    found 1 permutation for gene E3-8
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068045.1       146    1-146          1   30554-30991    1   2  0  N   100.0  100.0  100.0  2.0-e161 E3-8 | E3 RID-beta
+        found 1 gene
+
+    found 1 permutation for gene E3-9
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068046.1       133    1-133          1   30987-31385    1   3  0  N   100.0  100.0  100.0  9.5-e141 E3-9 | E3 control protein 14.7 kDa
+        found 1 gene
+
+    found 1 permutation for gene U
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000329.1       50     1-50           -1  31483-31632    1   -1 0  N   94.0   96.0   100.0  9.2-e045 U | protein U
+        found 1 gene
+
+    found 1 permutation for gene L5
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068048.1       425    1-425          1   31649-32923    1   2  0  N   100.0  100.0  100.0  0        L5 | fiber
+        found 1 gene
+
+    found 1 permutation for gene E4-7
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT97515.1        64     1-64           -1  33025-33216    1   -1 0  N   100.0  100.0  100.0  3.0-e064 E4-7 | E4 7.4 kDa protein
+        found 1 gene
+
+    found 2 permutations for gene E4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT97516.1        140    1-140          -1  33025-34169    2   0  1  N   100.0  100.0  99.2   2.5-e142 E4 | E4 control protein orf6/7
+    YP_068049.1       141    1-141          -1  33025-34169    2   0  1  N   99.2   100.0  100.0  8.6-e144 E4 | E4 control protein orf6/7
+        found 1 gene
+
+    found 1 permutation for gene E4-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068050.1       299    1-299          -1  33273-34169    1   -2 0  N   100.0  100.0  100.0  0        E4-2 | E4 control protein 34 kDa
+        found 1 gene
+
+    found 1 permutation for gene E3-10
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABR27524.1        265    1-265          1   33288-34082    1   3  0  N   100.0  100.0  100.0  0        E3-10 | E3 27 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene E4-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068051.1       122    1-122          -1  34075-34440    1   -1 0  N   100.0  100.0  100.0  1.7-e128 E4-3 | E4 control protein orf4
+        found 1 gene
+
+    found 1 permutation for gene E4-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068052.1       117    1-117          -1  34452-34802    1   -2 0  N   100.0  100.0  100.0  5.6-e126 E4-4 | E4 control protein orf3
+        found 1 gene
+
+    found 1 permutation for gene E4-5
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068053.1       129    1-129          -1  34802-35188    1   -3 0  N   100.0  100.0  100.0  6.1-e138 E4-5 | E4 control protein orf2
+        found 1 gene
+
+    found 1 permutation for gene E4-6
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068054.1       124    1-124          -1  35239-35610    1   -1 0  N   100.0  100.0  100.0  2.4-e128 E4-6 | E4 control protein orf1
+        found 1 gene
+
+dropping pseudogene gi_51527264.35, fails match requirements: %cov 48.5 < 80
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_51527264.35     77.0   87.5   48.5   51.5  0.0   0.0   29127..29420     97     204    AAS10451.1        E3-5 | E3 CR1-gamma
+                    could not find valid start codon
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|51527264|ref|NC_0    35994     48            1      39312          13057          100.0            100.0          100.0   hadve_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_51527264.1      100.0  100.0  100.0  0.0   0.0   0.0   576..1154        192    192    AAT97474.1        HYP-1 | hypothetical protein
+gi_51527264.2      100.0  100.0  100.0  0.0   0.0   0.0   576..647         59     59     AAT97427.1        E1A-3 | E1A 6.8 kDa protein
+                                                          1233..1340                                       
+gi_51527264.3      100.0  100.0  100.0  0.0   0.0   0.0   576..1047        226    226    AAT97477.1        E1A-2 | E1A 24.6 kDa protein
+                                                          1233..1441                                       
+gi_51527264.4      100.0  100.0  100.0  0.0   0.0   0.0   576..1140        257    257    YP_068018.1       E1A | E1A 28 kDa protein
+                                                          1233..1441                                       
+gi_51527264.5      100.0  100.0  100.0  0.0   0.0   0.0   1600..2115       171    171    YP_068019.1       E1B | E1B small T antigen
+gi_51527264.6      100.0  100.0  100.0  0.0   0.0   0.0   1905..2122       78     78     AAT97480.1        HYP-3 | hypothetical protein
+                                                          3258..3276                                       
+gi_51527264.7      100.0  100.0  100.0  0.0   0.0   0.0   1905..2152       154    154    AAT97482.1        HYP-2 | hypothetical protein
+                                                          3140..3356                                       
+gi_51527264.8      100.0  100.0  100.0  0.0   0.0   0.0   1905..3356       483    483    YP_068020.1       E1B-2 | E1B large T antigen
+gi_51527264.9      100.0  100.0  100.0  0.0   0.0   0.0   3441..3869       142    142    YP_068021.1       IX | hexon associated protein
+gi_51527264.10     100.0  100.0  100.0  0.0   0.0   0.0   5105..5674       189    189    AAT97486.1        HYP-4 | hypothetical protein
+gi_51527264.11     100.0  100.0  100.0  0.0   0.0   0.0   5554..5542       448    448    YP_068022.1       IVa2 | maturation protein
+                                                          5263..3930                                       
+gi_51527264.12     100.0  100.0  100.0  0.0   0.0   0.0   6126..6446       106    106    ABR27497.1        HYP-5 | hypothetical protein
+gi_51527264.13     99.6   99.6   99.6   0.4   0.0   0.0   7814..7815       223    224    AAT97489.1        HYP-6 | hypothetical protein
+                                                          8535..9204                                       
+                    non-canonical splicing for intron at 7816..8534
+                    could not find valid start codon
+gi_51527264.14     100.0  100.0  100.0  0.0   0.0   0.0   7814..8212       139    139    YP_001661328.1    L1-3 | L1 13.6 kDa protein
+                                                          9456..9476                                       
+gi_51527264.15     100.0  100.0  100.0  0.0   0.0   0.0   10765..11937     390    390    YP_068025.1       L1-2 | L1 52 kDa protein
+gi_51527264.16     100.0  100.0  100.0  0.0   0.0   0.0   11961..13736     591    591    YP_068026.1       L1 | IIIa capsid protein
+gi_51527264.17     100.0  100.0  100.0  0.0   0.0   0.0   13773..13765     1193   1193   YP_068023.1       E2B | DNA polymerase
+                                                          8605..5033                                       
+gi_51527264.18     100.0  100.0  100.0  0.0   0.0   0.0   13773..13765     642    642    YP_068024.1       pTP | DNA terminal protein
+                                                          10323..8404                                      
+gi_51527264.19     100.0  100.0  100.0  0.0   0.0   0.0   13815..15422     535    535    YP_068027.1       L2 | penton base
+gi_51527264.20     100.0  100.0  100.0  0.0   0.0   0.0   15426..16007     193    193    YP_068028.1       L2-2 | VII core protein
+gi_51527264.21     100.0  100.0  100.0  0.0   0.0   0.0   16055..17080     341    341    YP_068029.1       L2-3 | V core protein
+gi_51527264.22     100.0  100.0  100.0  0.0   0.0   0.0   17103..17336     77     77     YP_068030.1       L2-4 | X core protein
+gi_51527264.23     100.0  100.0  100.0  0.0   0.0   0.0   17413..18141     242    242    AAT97497-T5       L3 | VI capsid protein
+gi_51527264.24     100.0  100.0  100.0  0.0   0.0   0.0   18248..21058     936    936    YP_068032.1       L3-2 | hexon
+gi_51527264.25     100.0  100.0  100.0  0.0   0.0   0.0   21082..21702     206    206    YP_068033.1       L3-3 | protease
+gi_51527264.26     100.0  100.0  100.0  0.0   0.0   0.0   23312..21774     512    512    YP_068034.1       E2A | ssDNA-binding protein
+gi_51527264.27     99.7   99.7   100.0  0.0   0.0   0.0   23341..25716     791    789    YP_068035.1       L4 | hexon-assembly protein
+gi_51527264.28     100.0  100.0  100.0  0.0   0.0   0.0   25439..25978     179    179    YP_068037.1       L4-2 | L4 encapsidation protein
+gi_51527264.29     100.0  100.0  100.0  0.0   0.0   0.0   25439..25760     214    214    YP_068036.1       L4-3 | splicing factor
+                                                          25930..26252                                     
+gi_51527264.30     100.0  100.0  100.0  0.0   0.0   0.0   26321..27004     227    227    YP_068038.1       L4-4 | VIII capsid protein
+gi_51527264.31     100.0  100.0  100.0  0.0   0.0   0.0   27005..27325     106    106    YP_068039.1       E3 | E3 12.5 kDa immune modulating protein
+gi_51527264.32     100.0  100.0  100.0  0.0   0.0   0.0   27279..27911     210    210    YP_068040.1       E3-2 | E3 CR1-alpha
+gi_51527264.33     100.0  100.0  100.0  0.0   0.0   0.0   27893..28417     174    174    YP_068041.1       E3-3 | E3 immune modulating protein
+gi_51527264.34     100.0  100.0  100.0  0.0   0.0   0.0   28449..29111     220    220    YP_068042.1       E3-4 | E3 CR1-beta
+gi_51527264.35     100.0  100.0  100.0  0.0   0.0   0.0   29279..29443     54     54     AAT97509.1        E3-11 | E3 6.3 kDa protein
+gi_51527264.36     100.0  100.0  100.0  0.0   0.0   0.0   29440..30264     274    274    YP_068043.1       E3-6 | E3 CR1-delta
+gi_51527264.37     100.0  100.0  100.0  0.0   0.0   0.0   30273..30548     91     91     YP_068044.1       E3-7 | E3 RID-alpha
+gi_51527264.38     100.0  100.0  100.0  0.0   0.0   0.0   30554..30994     146    146    YP_068045.1       E3-8 | E3 RID-beta
+gi_51527264.39     100.0  100.0  100.0  0.0   0.0   0.0   30987..31388     133    133    YP_068046.1       E3-9 | E3 control protein 14.7 kDa
+gi_51527264.40     94.0   98.0   100.0  0.0   0.0   0.0   31632..>31483    50     50     AP_000329.1       U | putative protein U, N-terminal
+gi_51527264.41     100.0  100.0  100.0  0.0   0.0   0.0   31649..32926     425    425    YP_068048.1       L5 | fiber
+gi_51527264.42     100.0  100.0  100.0  0.0   0.0   0.0   33216..33022     64     64     AAT97515.1        E4-7 | E4 7.4 kDa protein
+gi_51527264.43     100.0  100.0  100.0  0.0   0.0   0.0   33288..34085     265    265    ABR27524.1        E3-10 | E3 27 kDa protein
+gi_51527264.44     100.0  100.0  100.0  0.0   0.0   0.0   34169..33996     141    141    YP_068049.1       E4 | E4 control protein orf6/7
+                                                          33273..33022                                     
+gi_51527264.45     100.0  100.0  100.0  0.0   0.0   0.0   34169..33270     299    299    YP_068050.1       E4-2 | E4 control protein 34 kDa
+gi_51527264.46     100.0  100.0  100.0  0.0   0.0   0.0   34440..34072     122    122    YP_068051.1       E4-3 | E4 control protein orf4
+gi_51527264.47     100.0  100.0  100.0  0.0   0.0   0.0   34802..34449     117    117    YP_068052.1       E4-4 | E4 control protein orf3
+gi_51527264.48     100.0  100.0  100.0  0.0   0.0   0.0   35188..34799     129    129    YP_068053.1       E4-5 | E4 control protein orf2
+gi_51527264.49     100.0  100.0  100.0  0.0   0.0   0.0   35610..35236     124    124    YP_068054.1       E4-6 | E4 control protein orf1
+
+
+genomic sequence gi|9626553|ref|NC_001454.1|, length=34214
+  selecting database hadvf_db
+
+    found 1 permutation for gene E1A
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040845.1       249    1-249          1   486-1308       2   0  1  N   100.0  100.0  99.5   0        E1A | E1A 27 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene E1B
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040848.1       167    1-167          1   1414-1914      1   1  0  N   100.0  100.0  100.0  2.6-e179 E1B | E1B small T antigen
+        found 1 gene
+
+    found 1 permutation for gene E1B-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040850.1       476    1-476          1   1719-3146      1   3  0  N   100.0  100.0  100.0  0        E1B-2 | E1B large T antigen
+        found 1 gene
+
+    found 1 permutation for gene IX
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040851.1       132    1-132          1   3217-3612      1   1  0  N   100.0  100.0  100.0  5.1-e131 IX | hexon associated protein
+        found 1 gene
+
+    found 1 permutation for gene IVa2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040852.1       446    1-446          -1  3653-5268      2   0  1  N   100.0  100.0  100.0  0        IVa2 | maturation protein
+        found 1 gene
+
+    found 1 permutation for gene E2B
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040853.1       1188   1-1188         -1  4753-13188     2   -3 0  N   100.0  100.0  100.0  0        E2B | DNA polymerase
+        found 1 gene
+
+    found 1 permutation for gene pTP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040854.1       646    1-646          -1  8109-13188     2   0  1  N   100.0  100.0  100.0  0        pTP | DNA terminal protein
+        found 1 gene
+
+    found 1 permutation for gene L1-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040855.1       380    1-380          1   10254-11393    1   3  0  N   100.0  100.0  100.0  0        L1-2 | L1 52 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene L1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040856.1       576    1-576          1   11420-13147    1   2  0  N   100.0  100.0  100.0  0        L1 | IIIa capsid protein
+        found 1 gene
+
+    found 1 permutation for gene L2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040857.1       504    1-504          1   13241-14752    1   2  0  N   100.0  100.0  100.0  0        L2 | penton base
+        found 1 gene
+
+    found 1 permutation for gene L2-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040858.1       185    1-185          1   14757-15311    1   3  0  N   100.0  100.0  100.0  0        L2-2 | VII core protein
+        found 1 gene
+
+    found 1 permutation for gene L2-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040859.1       358    1-358          1   15380-16453    1   2  0  N   100.0  100.0  100.0  0        L2-3 | V core protein
+        found 1 gene
+
+    found 1 permutation for gene L2-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040860.1       70     1-70           1   16480-16689    1   1  0  N   100.0  100.0  100.0  3.4-e066 L2-4 | X core protein
+        found 1 gene
+
+    found 1 permutation for gene L3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040861.1       267    1-267          1   16745-17545    1   2  0  N   100.0  100.0  100.0  0        L3 | VI capsid protein
+        found 1 gene
+
+    found 1 permutation for gene L3-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040862.1       923    1-923          1   17643-20411    1   3  0  N   100.0  100.0  100.0  0        L3-2 | hexon
+        found 1 gene
+
+    found 1 permutation for gene L3-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040863.1       205    1-205          1   20426-21040    1   2  0  N   100.0  100.0  100.0  0        L3-3 | protease
+        found 1 gene
+
+    found 1 permutation for gene E2A
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040864.1       473    1-473          -1  21103-22521    1   -3 0  N   100.0  100.0  100.0  0        E2A | ssDNA-binding protein
+        found 1 gene
+
+    found 1 permutation for gene L4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040865.1       770    1-770          1   22545-24854    1   3  0  N   100.0  100.0  100.0  0        L4 | hexon-assembly protein
+        found 1 gene
+
+    found 1 permutation for gene L4-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040867.1       186    1-186          1   24559-25116    1   1  0  N   100.0  100.0  100.0  0        L4-2 | L4 encapsidation protein
+        found 1 gene
+
+    found 1 permutation for gene L4-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040866.1       211    1-211          1   24559-25369    2   0  1  N   100.0  100.0  100.0  0        L4-3 | splicing factor
+        found 1 gene
+
+    found 1 permutation for gene L4-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040868.1       233    1-233          1   25416-26114    1   3  0  N   100.0  100.0  100.0  0        L4-4 | VIII capsid protein
+        found 1 gene
+
+    found 1 permutation for gene E3-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040869.1       173    1-173          1   26233-26751    1   1  0  N   100.0  100.0  100.0  0        E3-2 | E3 CR1-alpha
+        found 1 gene
+
+    found 1 permutation for gene E3-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040870.1       276    1-276          1   26757-27584    1   3  0  N   100.0  100.0  100.0  0        E3-4 | E3 CR1-beta
+        found 1 gene
+
+    found 1 permutation for gene E3-7
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040871.1       90     1-90           1   27607-27876    1   1  0  N   100.0  100.0  100.0  3.2-e093 E3-7 | E3 RID-alpha
+        found 1 gene
+
+    found 1 permutation for gene E3-8
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040872.1       107    1-107          1   27876-28196    1   3  0  N   100.0  100.0  100.0  4.5-e115 E3-8 | E3 RID-beta
+        found 1 gene
+
+    found 1 permutation for gene E3-9
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040873.1       122    1-122          1   28192-28557    1   1  0  N   100.0  100.0  100.0  2.0-e130 E3-9 | E3 control protein 14.7 kDa
+        found 1 gene
+
+    found 1 permutation for gene U
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040874.2       52     1-52           -1  28588-28743    1   -3 0  N   100.0  100.0  100.0  1.1-e050 U | protein U
+        found 1 gene
+
+    found 1 permutation for gene L5
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040875.1       387    1-387          1   28751-29911    1   2  0  N   100.0  100.0  100.0  0        L5 | fiber
+        found 1 gene
+
+    found 1 permutation for gene L5A
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040876.1       547    1-547          1   29954-31594    1   2  0  N   100.0  100.0  100.0  0        L5A | fiber 2
+        found 1 gene
+
+    found 1 permutation for gene E4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040877.2       122    1-122          -1  31639-32745    2   -3 0  N   100.0  100.0  100.0  4.4-e121 E4 | E4 control protein orf6/7
+        found 1 gene
+
+    found 1 permutation for gene E4-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040878.2       289    1-289          -1  31879-32745    1   -3 0  N   100.0  100.0  100.0  0        E4-2 | E4 control protein 34 kDa
+        found 1 gene
+
+    found 1 permutation for gene E4-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040879.1       121    1-121          -1  32675-33037    1   -2 0  N   100.0  100.0  100.0  1.6-e128 E4-3 | E4 control protein orf4
+        found 1 gene
+
+    found 1 permutation for gene E4-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040880.1       116    1-116          -1  33043-33390    1   -3 0  N   100.0  100.0  100.0  1.2-e123 E4-4 | E4 control protein orf3
+        found 1 gene
+
+    found 1 permutation for gene E4-5
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_040881.1       130    1-130          -1  33390-33779    1   -1 0  N   100.0  100.0  100.0  4.6-e141 E4-5 | E4 control protein orf2
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|9626553|ref|NC_00    34214     34            0      33630          11177          100.0            100.0          100.0   hadvf_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_9626553.1       100.0  100.0  100.0  0.0   0.0   0.0   486..1011        249    249    NP_040845.1       E1A | E1A 27 kDa protein
+                                                          1088..1311                                       
+gi_9626553.2       100.0  100.0  100.0  0.0   0.0   0.0   1414..1917       167    167    NP_040848.1       E1B | E1B small T antigen
+gi_9626553.3       100.0  100.0  100.0  0.0   0.0   0.0   1719..3149       476    476    NP_040850.1       E1B-2 | E1B large T antigen
+gi_9626553.4       100.0  100.0  100.0  0.0   0.0   0.0   3217..3615       132    132    NP_040851.1       IX | hexon associated protein
+gi_9626553.5       100.0  100.0  100.0  0.0   0.0   0.0   5268..5256       446    446    NP_040852.1       IVa2 | maturation protein
+                                                          4977..3650                                       
+gi_9626553.6       100.0  100.0  100.0  0.0   0.0   0.0   10254..11396     380    380    NP_040855.1       L1-2 | L1 52 kDa protein
+gi_9626553.7       100.0  100.0  100.0  0.0   0.0   0.0   11420..13150     576    576    NP_040856.1       L1 | IIIa capsid protein
+gi_9626553.8       100.0  100.0  100.0  0.0   0.0   0.0   13188..13180     1188   1188   NP_040853.1       E2B | DNA polymerase
+                                                          8307..4750                                       
+gi_9626553.9       100.0  100.0  100.0  0.0   0.0   0.0   13188..13180     646    646    NP_040854.1       pTP | DNA terminal protein
+                                                          10037..8106                                      
+gi_9626553.10      100.0  100.0  100.0  0.0   0.0   0.0   13241..14755     504    504    NP_040857.1       L2 | penton base
+gi_9626553.11      100.0  100.0  100.0  0.0   0.0   0.0   14757..15314     185    185    NP_040858.1       L2-2 | VII core protein
+gi_9626553.12      100.0  100.0  100.0  0.0   0.0   0.0   15380..16456     358    358    NP_040859.1       L2-3 | V core protein
+gi_9626553.13      100.0  100.0  100.0  0.0   0.0   0.0   16480..16692     70     70     NP_040860.1       L2-4 | X core protein
+gi_9626553.14      100.0  100.0  100.0  0.0   0.0   0.0   16745..17548     267    267    NP_040861.1       L3 | VI capsid protein
+gi_9626553.15      100.0  100.0  100.0  0.0   0.0   0.0   17643..20414     923    923    NP_040862.1       L3-2 | hexon
+gi_9626553.16      100.0  100.0  100.0  0.0   0.0   0.0   20426..21043     205    205    NP_040863.1       L3-3 | protease
+gi_9626553.17      100.0  100.0  100.0  0.0   0.0   0.0   22521..21100     473    473    NP_040864.1       E2A | ssDNA-binding protein
+gi_9626553.18      100.0  100.0  100.0  0.0   0.0   0.0   22545..24857     770    770    NP_040865.1       L4 | hexon-assembly protein
+gi_9626553.19      100.0  100.0  100.0  0.0   0.0   0.0   24559..25119     186    186    NP_040867.1       L4-2 | L4 encapsidation protein
+gi_9626553.20      100.0  100.0  100.0  0.0   0.0   0.0   24559..24901     211    211    NP_040866.1       L4-3 | splicing factor
+                                                          25080..25372                                     
+gi_9626553.21      100.0  100.0  100.0  0.0   0.0   0.0   25416..26117     233    233    NP_040868.1       L4-4 | VIII capsid protein
+gi_9626553.22      100.0  100.0  100.0  0.0   0.0   0.0   26233..26754     173    173    NP_040869.1       E3-2 | E3 CR1-alpha
+gi_9626553.23      100.0  100.0  100.0  0.0   0.0   0.0   26757..27587     276    276    NP_040870.1       E3-4 | E3 CR1-beta
+gi_9626553.24      100.0  100.0  100.0  0.0   0.0   0.0   27607..27879     90     90     NP_040871.1       E3-7 | E3 RID-alpha
+gi_9626553.25      100.0  100.0  100.0  0.0   0.0   0.0   27876..28199     107    107    NP_040872.1       E3-8 | E3 RID-beta
+gi_9626553.26      100.0  100.0  100.0  0.0   0.0   0.0   28192..28560     122    122    NP_040873.1       E3-9 | E3 control protein 14.7 kDa
+gi_9626553.27      100.0  100.0  100.0  0.0   0.0   0.0   28743..>28588    52     52     NP_040874.2       U | putative protein U, N-terminal
+gi_9626553.28      100.0  100.0  100.0  0.0   0.0   0.0   28751..29914     387    387    NP_040875.1       L5 | fiber
+gi_9626553.29      100.0  100.0  100.0  0.0   0.0   0.0   29954..31597     547    547    NP_040876.1       L5A | fiber 2
+gi_9626553.30      100.0  100.0  100.0  0.0   0.0   0.0   32745..32599     122    122    NP_040877.2       E4 | E4 control protein orf6/7
+                                                          31857..31636                                     
+gi_9626553.31      100.0  100.0  100.0  0.0   0.0   0.0   32745..31876     289    289    NP_040878.2       E4-2 | E4 control protein 34 kDa
+gi_9626553.32      100.0  100.0  100.0  0.0   0.0   0.0   33037..32672     121    121    NP_040879.1       E4-3 | E4 control protein orf4
+gi_9626553.33      100.0  100.0  100.0  0.0   0.0   0.0   33390..33040     116    116    NP_040880.1       E4-4 | E4 control protein orf3
+gi_9626553.34      100.0  100.0  100.0  0.0   0.0   0.0   33779..33387     130    130    NP_040881.1       E4-5 | E4 control protein orf2
+
+
+genomic sequence gi|61602086|ref|NC_006879.1|, length=34450
+  selecting database hadvg_db
+
+    found 1 permutation for gene E1A
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213961.1       232    1-232          1   474-1249       2   0  1  N   100.0  100.0  99.5   0        E1A | E1A
+        found 1 gene
+
+    found 1 permutation for gene E1B
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213962.1       168    1-168          1   1365-1868      1   3  0  N   100.0  100.0  100.0  0        E1B | E1B small T antigen
+        found 1 gene
+
+    found 1 permutation for gene E1B-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213963.1       472    1-472          1   1670-3085      1   2  0  N   100.0  100.0  100.0  0        E1B-2 | E1B large T antigen
+        found 1 gene
+
+    found 1 permutation for gene IX
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213964.1       136    1-136          1   3150-3557      1   3  0  N   100.0  100.0  100.0  8.0-e134 IX | hexon associated protein
+        found 1 gene
+
+    found 1 permutation for gene IVa2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213965.1       447    1-447          -1  3602-5220      2   0  1  N   100.0  100.0  100.0  0        IVa2 | maturation protein
+        found 1 gene
+
+    found 1 permutation for gene E2B
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213966.1       1184   1-1184         -1  4705-13078     2   0  1  N   100.0  100.0  100.0  0        E2B | DNA polymerase
+        found 1 gene
+
+    found 1 permutation for gene pTP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213967.1       646    1-646          -1  8049-13078     2   0  1  N   100.0  100.0  100.0  0        pTP | DNA terminal protein
+        found 1 gene
+
+    found 1 permutation for gene L1-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213968.1       375    1-375          1   10190-11314    1   2  0  N   100.0  100.0  100.0  0        L1-2 | L1 52 kDa protein
+        found 1 gene
+
+    found 1 permutation for gene L1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213969.1       569    1-569          1   11338-13044    1   1  0  N   100.0  100.0  100.0  0        L1 | IIIa capsid protein
+        found 1 gene
+
+    found 1 permutation for gene L2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213970.1       503    1-503          1   13129-14637    1   1  0  N   100.0  100.0  100.0  0        L2 | penton base
+        found 1 gene
+
+    found 1 permutation for gene L2-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213971.1       187    1-187          1   14643-15203    1   3  0  N   100.0  100.0  100.0  0        L2-2 | VII core protein
+        found 1 gene
+
+    found 1 permutation for gene L2-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213972.1       345    1-345          1   15263-16297    1   2  0  N   100.0  100.0  100.0  0        L2-3 | V core protein
+        found 1 gene
+
+    found 1 permutation for gene L2-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213973.1       70     1-70           1   16320-16529    1   3  0  N   100.0  100.0  100.0  1.7-e066 L2-4 | X core protein
+        found 1 gene
+
+    found 1 permutation for gene L3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213974.1       279    1-279          1   16586-17422    1   2  0  N   100.0  100.0  100.0  0        L3 | VI capsid protein
+        found 1 gene
+
+    found 1 permutation for gene L3-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213975.1       931    1-931          1   17513-20305    1   2  0  N   100.0  100.0  100.0  0        L3-2 | hexon
+        found 1 gene
+
+    found 1 permutation for gene L3-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213976.1       205    1-205          1   20317-20931    1   1  0  N   100.0  100.0  100.0  0        L3-3 | protease
+        found 1 gene
+
+    found 1 permutation for gene E2A
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213977.1       462    1-462          -1  20987-22372    1   -1 0  N   100.0  100.0  100.0  0        E2A | ssDNA-binding protein
+        found 1 gene
+
+    found 1 permutation for gene L4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213978.1       762    1-762          1   22393-24678    1   1  0  N   100.0  100.0  100.0  0        L4 | hexon-assembly protein
+        found 1 gene
+
+    found 1 permutation for gene L4-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213980.1       181    1-181          1   24386-24928    1   2  0  N   100.0  100.0  100.0  0        L4-2 | L4 encapsidation protein
+        found 1 gene
+
+    found 1 permutation for gene L4-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213979.1       216    1-216          1   24386-25208    2   0  1  N   98.6   98.6   100.0  0        L4-3 | splicing factor
+        found 1 gene
+
+    found 1 permutation for gene L4-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213981.1       233    1-233          1   25263-25961    1   3  0  N   100.0  100.0  100.0  0        L4-4 | VIII capsid protein
+        found 1 gene
+
+    found 1 permutation for gene E3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213982.1       105    1-105          1   25964-26278    1   2  0  N   100.0  100.0  100.0  6.2-e111 E3 | E3 12.5 kDa immune modulating protein
+        found 1 gene
+
+    found 1 permutation for gene E3-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213983.1       172    1-172          1   26235-26750    1   3  0  N   100.0  100.0  100.0  0        E3-2 | E3 CR1-alpha
+        found 1 gene
+
+    found 1 permutation for gene E3-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213984.1       269    1-269          1   26756-27562    1   2  0  N   100.0  100.0  100.0  0        E3-4 | E3 CR1-beta
+        found 1 gene
+
+    found 1 permutation for gene E3-7
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213985.1       90     1-90           1   27580-27849    1   1  0  N   100.0  100.0  100.0  1.1-e094 E3-7 | E3 RID-alpha
+        found 1 gene
+
+    found 1 permutation for gene E3-8
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213986.1       111    1-111          1   27849-28181    1   3  0  N   100.0  100.0  100.0  4.7-e119 E3-8 | E3 RID-beta
+        found 1 gene
+
+    found 1 permutation for gene E3-9
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213987.1       122    1-122          1   28177-28542    1   1  0  N   100.0  100.0  100.0  8.3-e129 E3-9 | E3 control protein 14.7 kDa
+        found 1 gene
+
+    found 1 permutation for gene U
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABK35057.1        53     1-53           -1  28562-28720    1   -1 0  N   86.7   92.4   100.0  2.2-e041 U | protein U
+        found 1 gene
+
+    found 1 permutation for gene L5A
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213988.1       363    1-363          1   28731-29819    1   3  0  N   100.0  100.0  100.0  0        L5A | fiber 2
+        found 1 gene
+
+    found 1 permutation for gene L5
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213989.1       560    1-560          1   29855-31534    1   2  0  N   100.0  100.0  100.0  0        L5 | fiber
+        found 1 gene
+
+    found 1 permutation for gene E4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213990.1       116    1-116          -1  31567-32654    2   0  1  N   100.0  100.0  100.0  4.0-e117 E4 | E4 control protein orf6/7
+        found 1 gene
+
+    found 1 permutation for gene E4-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213991.1       286    1-286          -1  31797-32654    1   -3 0  N   100.0  100.0  100.0  0        E4-2 | E4 control protein 34 kDa
+        found 1 gene
+
+    found 1 permutation for gene E4-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213992.1       120    1-120          -1  32590-32949    1   -2 0  N   100.0  100.0  100.0  3.6-e131 E4-3 | E4 control protein orf4
+        found 1 gene
+
+    found 1 permutation for gene E4-4
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213993.1       116    1-116          -1  32954-33301    1   -1 0  N   100.0  100.0  100.0  5.8-e125 E4-4 | E4 control protein orf3
+        found 1 gene
+
+    found 1 permutation for gene E4-5
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213994.1       130    1-130          -1  33301-33690    1   -2 0  N   100.0  100.0  100.0  3.0-e138 E4-5 | E4 control protein orf2
+        found 1 gene
+
+    found 1 permutation for gene E4-6
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_213995.1       126    1-126          -1  33718-34095    1   -2 0  N   100.0  100.0  100.0  2.2-e133 E4-6 | E4 control protein orf1
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|61602086|ref|NC_0    34450     36            0      34131          11342           99.9            100.0          100.0   hadvg_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_61602086.1      100.0  100.0  100.0  0.0   0.0   0.0   474..960         232    232    YP_213961.1       E1A | E1A
+                                                          1041..1252                                       
+gi_61602086.2      100.0  100.0  100.0  0.0   0.0   0.0   1365..1871       168    168    YP_213962.1       E1B | E1B small T antigen
+gi_61602086.3      100.0  100.0  100.0  0.0   0.0   0.0   1670..3088       472    472    YP_213963.1       E1B-2 | E1B large T antigen
+gi_61602086.4      100.0  100.0  100.0  0.0   0.0   0.0   3150..3560       136    136    YP_213964.1       IX | hexon associated protein
+gi_61602086.5      100.0  100.0  100.0  0.0   0.0   0.0   5220..5208       447    447    YP_213965.1       IVa2 | maturation protein
+                                                          4929..3599                                       
+gi_61602086.6      100.0  100.0  100.0  0.0   0.0   0.0   10190..11317     375    375    YP_213968.1       L1-2 | L1 52 kDa protein
+gi_61602086.7      100.0  100.0  100.0  0.0   0.0   0.0   11338..13047     569    569    YP_213969.1       L1 | IIIa capsid protein
+gi_61602086.8      100.0  100.0  100.0  0.0   0.0   0.0   13078..13070     1184   1184   YP_213966.1       E2B | DNA polymerase
+                                                          8247..4702                                       
+gi_61602086.9      100.0  100.0  100.0  0.0   0.0   0.0   13078..13070     646    646    YP_213967.1       pTP | DNA terminal protein
+                                                          9977..8046                                       
+gi_61602086.10     100.0  100.0  100.0  0.0   0.0   0.0   13129..14640     503    503    YP_213970.1       L2 | penton base
+gi_61602086.11     100.0  100.0  100.0  0.0   0.0   0.0   14643..15206     187    187    YP_213971.1       L2-2 | VII core protein
+gi_61602086.12     100.0  100.0  100.0  0.0   0.0   0.0   15263..16300     345    345    YP_213972.1       L2-3 | V core protein
+gi_61602086.13     100.0  100.0  100.0  0.0   0.0   0.0   16320..16532     70     70     YP_213973.1       L2-4 | X core protein
+gi_61602086.14     100.0  100.0  100.0  0.0   0.0   0.0   16586..17425     279    279    YP_213974.1       L3 | VI capsid protein
+gi_61602086.15     100.0  100.0  100.0  0.0   0.0   0.0   17513..20308     931    931    YP_213975.1       L3-2 | hexon
+gi_61602086.16     100.0  100.0  100.0  0.0   0.0   0.0   20317..20934     205    205    YP_213976.1       L3-3 | protease
+gi_61602086.17     100.0  100.0  100.0  0.0   0.0   0.0   22372..20984     462    462    YP_213977.1       E2A | ssDNA-binding protein
+gi_61602086.18     100.0  100.0  100.0  0.0   0.0   0.0   22393..24681     762    762    YP_213978.1       L4 | hexon-assembly protein
+gi_61602086.19     100.0  100.0  100.0  0.0   0.0   0.0   24386..24931     181    181    YP_213980.1       L4-2 | L4 encapsidation protein
+gi_61602086.20     100.0  100.0  100.0  0.0   0.0   0.0   24386..24725     216    216    YP_213979.1       L4-3 | splicing factor
+                                                          24901..25211                                     
+gi_61602086.21     100.0  100.0  100.0  0.0   0.0   0.0   25263..25964     233    233    YP_213981.1       L4-4 | VIII capsid protein
+gi_61602086.22     100.0  100.0  100.0  0.0   0.0   0.0   25964..26281     105    105    YP_213982.1       E3 | E3 12.5 kDa immune modulating protein
+gi_61602086.23     100.0  100.0  100.0  0.0   0.0   0.0   26235..26753     172    172    YP_213983.1       E3-2 | E3 CR1-alpha
+gi_61602086.24     100.0  100.0  100.0  0.0   0.0   0.0   26756..27565     269    269    YP_213984.1       E3-4 | E3 CR1-beta
+gi_61602086.25     100.0  100.0  100.0  0.0   0.0   0.0   27580..27852     90     90     YP_213985.1       E3-7 | E3 RID-alpha
+gi_61602086.26     100.0  100.0  100.0  0.0   0.0   0.0   27849..28184     111    111    YP_213986.1       E3-8 | E3 RID-beta
+gi_61602086.27     100.0  100.0  100.0  0.0   0.0   0.0   28177..28545     122    122    YP_213987.1       E3-9 | E3 control protein 14.7 kDa
+gi_61602086.28     86.8   98.1   100.0  0.0   0.0   0.0   28720..>28562    53     53     ABK35057.1        U | putative protein U, N-terminal
+gi_61602086.29     100.0  100.0  100.0  0.0   0.0   0.0   28731..29822     363    363    YP_213988.1       L5A | fiber 2
+gi_61602086.30     100.0  100.0  100.0  0.0   0.0   0.0   29855..31537     560    560    YP_213989.1       L5 | fiber
+gi_61602086.31     100.0  100.0  100.0  0.0   0.0   0.0   32654..32517     116    116    YP_213990.1       E4 | E4 control protein orf6/7
+                                                          31776..31564                                     
+gi_61602086.32     100.0  100.0  100.0  0.0   0.0   0.0   32654..31794     286    286    YP_213991.1       E4-2 | E4 control protein 34 kDa
+gi_61602086.33     100.0  100.0  100.0  0.0   0.0   0.0   32949..32587     120    120    YP_213992.1       E4-3 | E4 control protein orf4
+gi_61602086.34     100.0  100.0  100.0  0.0   0.0   0.0   33301..32951     116    116    YP_213993.1       E4-4 | E4 control protein orf3
+gi_61602086.35     100.0  100.0  100.0  0.0   0.0   0.0   33690..33298     130    130    YP_213994.1       E4-5 | E4 control protein orf2
+gi_61602086.36     100.0  100.0  100.0  0.0   0.0   0.0   34095..33715     126    126    YP_213995.1       E4-6 | E4 control protein orf1
+
+
+genomic sequence gi|1323565|gb|U52535.1|HAU52535, length=548
+  selecting database hadve_db
+
+    found 1 permutation for gene pTP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT97490.1        642    1-31           -1  2-3534         2   -2 0  Y   89.1   91.8   4.8    4.7-e021 pTP | DNA terminal protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|1323565|gb|U52535      548      1            0         84             28           89.3             96.4            4.4   hadve_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_1323565.1       89.3   96.4   4.4    0.5   0.0   95.2  <85..>2          28     642    AAT97490.1        pTP | putative DNA terminal protein, fragment
+
+
+genomic sequence gi|11908165|gb|AF065063.3|, length=3017
+  selecting database hadve_db
+
+    found 2 permutations for gene L3-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_068032.1       936    1-936          1   131-2938       1   2  0  N   99.6   99.7   100.0  0        L3-2 | hexon
+    ABR27507.1        932    1-932          1   131-2938       2   2  0  N   99.5   99.6   100.0  0        L3-2 | hexon
+        found 1 gene
+
+    found 1 permutation for gene L3-3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AP_000314.1       206    6-21           1   2970-3017      1   3  0  N   100.0  100.0  7.7    3.2-e009 L3-3 | protease
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|11908165|gb|AF065     3017      2            0       2865            954           97.2             97.5           83.8   hadve_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_11908165.1      99.7   100.0  100.0  0.0   0.0   0.0   131..2941        936    936    YP_068032.1       L3-2 | hexon
+gi_11908165.2      85.7   85.7   10.2   0.0   0.0   89.8  2964..>3017      18     206    AP_000314.1       L3-3 | putative protease, N-terminal
+
+
+genomic sequence gi|37702182|gb|AY337247.1|, length=1491
+  selecting database hadve_db
+
+    found 2 permutations for gene L3-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW33307.1        934    1-495          1   1-1491         2   1  0  N   99.5   100.0  52.9   0        L3-2 | hexon
+    YP_068032.1       936    1-497          1   1-1491         1   1  0  N   97.7   98.3   53.0   0        L3-2 | hexon
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|37702182|gb|AY337     1491      1            0       1491            497           99.4             99.6           53.0   hadve_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_37702182.1      99.4   99.6   53.0   0.0   0.0   47.0  1..>1491         497    934    AAW33307.1        L3-2 | putative hexon, N-terminal
+
+
+genomic sequence gi|37702166|gb|AY337239.1|, length=1491
+  selecting database hadve_db
+
+    found 2 permutations for gene L3-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABR27507.1        932    1-493          1   1-1491         2   1  0  N   99.5   99.5   52.8   0        L3-2 | hexon
+    YP_068032.1       936    1-497          1   1-1491         1   1  0  N   99.7   99.7   53.0   0        L3-2 | hexon
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|37702166|gb|AY337     1491      1            0       1491            497           99.8             99.9           53.1   hadve_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_37702166.1      99.8   99.9   53.1   0.0   0.0   46.9  1..>1491         497    936    YP_068032.1       L3-2 | putative hexon, N-terminal
+
+
+genomic sequence gi|182375574|dbj|AB433748.1|, length=1029
+  selecting database hadve_db
+
+    found 2 permutations for gene L3-2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAW33307.1        934    118-458        1   1-1029         2   1  0  N   99.7   100.0  36.5   0        L3-2 | hexon
+    YP_068032.1       936    118-460        1   1-1029         1   1  0  N   97.0   97.6   36.6   0        L3-2 | hexon
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|182375574|dbj|AB4     1029      1            0       1029            343           99.4             99.4           36.5   hadve_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_182375574.1     99.4   99.4   36.5   12.5  0.0   51.0  <1..>1029        343    934    AAW33307.1        L3-2 | putative hexon, fragment
+

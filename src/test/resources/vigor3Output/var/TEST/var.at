@@ -1,0 +1,265 @@
+var_part1	hhv3_db	173..562	YP_053044.1	ORF0	membrane protein UL56	OK	
+var_part1	hhv3_db	915..589	NP_040124.1	ORF1	membrane protein V1	OK	
+var_part1	hhv3_db	1185..>1729	NP_040125.2	ORF2	putative myristylated tegument protein CIRC, N-terminal	T3	123
+var_part2	hhv3_db	291..>1	NP_040127.1	ORF4	putative multifunctional expression regulator, N-terminal	T3	1068
+var_part2	hhv3_db	<1284..402	NP_040128.1	ORF5	putative envelope glycoprotein K, C-terminal	T5	141
+var_part3	hhv3_db	818..>2170	NP_040184.1	ORF62	putative transcriptional regulator ICP4, N-terminal	T3	2580
+gi|365753148|gb|JN704708.1|	hhv3_db	173..562	YP_053044.1	ORF0	membrane protein UL56	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	915..589	NP_040124.1	ORF1	membrane protein V1	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	1185..1850	NP_040125.2	ORF2	myristylated tegument protein CIRC	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	2447..1908	NP_040126.1	ORF3	nuclear protein UL55	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	4141..2783	NP_040127.1	ORF4	multifunctional expression regulator	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	5274..4252	NP_040128.1	ORF5	envelope glycoprotein K	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	8577..5326	NP_040129.1	ORF6	helicase-primase primase subunit	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	8607..9386	NP_040130.1	ORF7	tegument protein UL51	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	10642..10905	YP_068406.1	ORF9A	envelope glycoprotein N	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	10667..9477	NP_040131.1	ORF8	deoxyuridine triphosphatase	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	11009..11917	NP_040132.1	ORF9	tegument protein VP22	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	12160..13392	NP_040133.1	ORF10	transactivating tegument protein VP16	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	13590..16046	NP_040134.1	ORF11	tegument protein VP13/14	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	16211..18196	NP_040135.1	ORF12	tegument protein VP11/12	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	18438..19343	NP_040136.1	ORF13	thymidylate synthase	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	21110..19428	NP_040137.1	ORF14	envelope glycoprotein C	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	22475..21255	NP_040138.1	ORF15	envelope protein UL43	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	23791..22565	NP_040139.1	ORF16	DNA polymerase processivity subunit	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	24146..25513	NP_040140.1	ORF17	tegument host shutoff protein	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	26490..25570	NP_040141.1	ORF18	ribonucleotide reductase subunit 2	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	28842..26515	NP_040142.1	ORF19	ribonucleotide reductase subunit 1	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	30472..29021	NP_040143.1	ORF20	capsid triplex subunit 1	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	30756..33872	NP_040144.1	ORF21	tegument protein UL37	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	34080..42344	NP_040145.1	ORF22	large tegument protein	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	43108..42401	NP_040146.1	ORF23	small capsid protein	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	43991..43182	NP_040147.1	ORF24	nuclear egress membrane protein	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	44476..46233	NP_040149.1	ORF26	DNA packaging protein UL32	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	44588..44118	NP_040148.1	ORF25	DNA packaging protein UL33	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	46160..47098	NP_040150.2	ORF27	nuclear egress lamina protein	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	50606..47022	NP_040151.1	ORF28	DNA polymerase catalytic subunit	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	50827..54426	NP_040152.1	ORF29	single-stranded DNA-binding protein	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	54606..56918	NP_040153.1	ORF30	DNA packaging terminase subunit 2	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	56774..59569	NP_040154.2	ORF31	envelope glycoprotein B	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	59721..60152	NP_040155.1	ORF32	protein V32	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	61184..60276	YP_068407.1	ORF33.5	capsid scaffold protein	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	62093..60276	NP_040156.1	ORF33	capsid maturation protease	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	63865..62126	NP_040157.1	ORF34	DNA packaging tegument protein UL25	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	64708..63932	NP_040158.1	ORF35	nuclear protein UL24	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	64762..65787	NP_040159.1	ORF36	thymidine kinase	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	66029..68554	NP_040160.1	ORF37	envelope glycoprotein H	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	70248..68623	NP_040161.1	ORF38	tegument protein UL21	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	70642..71310	NP_040162.2	ORF39	envelope protein UL20	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	71495..75685	NP_040163.1	ORF40	major capsid protein	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	75802..76752	NP_040164.1	ORF41	capsid triplex subunit 2	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	78125..80155	NP_040166.1	ORF43	DNA packaging tegument protein UL17	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	80315..81406	NP_040167.1	ORF44	tegument protein UL16	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	82548..81493,77993..76806	NP_040165.1	ORF42	DNA packaging terminase subunit 1	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	82674..83273	NP_040168.1	ORF46	tegument protein UL14	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	83123..84655	NP_040169.1	ORF47	tegument serine/threonine protein kinase	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	84622..86277	NP_040170.1	ORF48	deoxyribonuclease	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	86181..86426	NP_040171.1	ORF49	myristylated tegument protein	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	87836..90343	NP_040173.1	ORF51	DNA replication origin-binding helicase	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	87837..86530	NP_040172.1	ORF50	envelope glycoprotein M	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	90448..92763	NP_040174.1	ORF52	helicase-primase subunit	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	93805..92810	NP_040175.1	ORF53	tegument protein UL7	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	95939..93630	NP_040176.1	ORF54	capsid portal protein	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	95951..98596	NP_040177.1	ORF55	helicase-primase helicase subunit	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	98667..99257	NP_040178.2	ORF56	nuclear protein UL4	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	99581..99366	NP_040179.1	ORF57	protein V57	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	100227..99562	NP_040180.1	ORF58	nuclear protein UL3	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	101174..100257	NP_040181.1	ORF59	uracil-DNA glycosylase	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	101604..101125	NP_040182.1	ORF60	envelope glycoprotein L	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	104440..103037	NP_040183.1	ORF61	ubiquitin E3 ligase ICP0	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	109087..105155	NP_040184.1	ORF62	transcriptional regulator ICP4	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	110540..111376	NP_040185.1	ORF63	regulatory protein ICP22	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	111524..112066	NP_040186.1	ORF64	virion protein US10	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	112599..112291	NP_040187.1	ORF65	membrane protein US9	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	112996..114177	NP_040188.1	ORF66	serine/threonine protein kinase US3	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	114455..115519	NP_040189.1	ORF67	envelope glycoprotein I	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	115767..117638	NP_040190.1	ORF68	envelope glycoprotein E	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	118291..117749	NP_040186.1	ORF64A	virion protein US10	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	119275..118439	NP_040185.1	ORF63A	regulatory protein ICP22	OK	
+gi|365753148|gb|JN704708.1|	hhv3_db	120728..124660	NP_040184.1	ORF62A	transcriptional regulator ICP4	OK	
+3	hhv3_db	154..543	YP_053044.1	ORF0	membrane protein UL56	OK	
+3	hhv3_db	896..570	NP_040124.1	ORF1	membrane protein V1	OK	
+3	hhv3_db	1166..1831	NP_040125.2	ORF2	myristylated tegument protein CIRC	OK	
+3	hhv3_db	2428..1889	NP_040126.1	ORF3	nuclear protein UL55	OK	
+3	hhv3_db	4122..2764	NP_040127.1	ORF4	multifunctional expression regulator	OK	
+3	hhv3_db	5255..4233	NP_040128.1	ORF5	envelope glycoprotein K	OK	
+3	hhv3_db	8558..5307	NP_040129.1	ORF6	helicase-primase primase subunit	OK	
+3	hhv3_db	8588..9367	NP_040130.1	ORF7	tegument protein UL51	OK	
+3	hhv3_db	10623..10886	YP_068406.1	ORF9A	envelope glycoprotein N	OK	
+3	hhv3_db	10648..9458	NP_040131.1	ORF8	deoxyuridine triphosphatase	OK	
+3	hhv3_db	10990..11898	NP_040132.1	ORF9	tegument protein VP22	OK	
+3	hhv3_db	12141..13373	NP_040133.1	ORF10	transactivating tegument protein VP16	OK	
+3	hhv3_db	13571..16030	NP_040134.1	ORF11	tegument protein VP13/14	OK	
+3	hhv3_db	16195..18180	NP_040135.1	ORF12	tegument protein VP11/12	OK	
+3	hhv3_db	18422..19327	NP_040136.1	ORF13	thymidylate synthase	OK	
+3	hhv3_db	21094..19412	NP_040137.1	ORF14	envelope glycoprotein C	OK	
+3	hhv3_db	22459..21239	NP_040138.1	ORF15	envelope protein UL43	OK	
+3	hhv3_db	23775..22549	NP_040139.1	ORF16	DNA polymerase processivity subunit	OK	
+3	hhv3_db	24130..25497	NP_040140.1	ORF17	tegument host shutoff protein	OK	
+3	hhv3_db	26474..25554	NP_040141.1	ORF18	ribonucleotide reductase subunit 2	OK	
+3	hhv3_db	28826..26499	NP_040142.1	ORF19	ribonucleotide reductase subunit 1	OK	
+3	hhv3_db	30456..29005	NP_040143.1	ORF20	capsid triplex subunit 1	OK	
+3	hhv3_db	30740..33856	NP_040144.1	ORF21	tegument protein UL37	OK	
+3	hhv3_db	34064..42355	NP_040145.1	ORF22	large tegument protein	OK	
+3	hhv3_db	43116..42409	NP_040146.1	ORF23	small capsid protein	OK	
+3	hhv3_db	43999..43190	NP_040147.1	ORF24	nuclear egress membrane protein	OK	
+3	hhv3_db	44484..46241	NP_040149.1	ORF26	DNA packaging protein UL32	OK	
+3	hhv3_db	44596..44126	NP_040148.1	ORF25	DNA packaging protein UL33	OK	
+3	hhv3_db	46168..47106	NP_040150.2	ORF27	nuclear egress lamina protein	OK	
+3	hhv3_db	50614..47030	NP_040151.1	ORF28	DNA polymerase catalytic subunit	OK	
+3	hhv3_db	50835..54449	NP_040152.1	ORF29	single-stranded DNA-binding protein	OK	
+3	hhv3_db	54629..56941	NP_040153.1	ORF30	DNA packaging terminase subunit 2	OK	
+3	hhv3_db	56797..59592	NP_040154.2	ORF31	envelope glycoprotein B	OK	
+3	hhv3_db	59744..60175	NP_040155.1	ORF32	protein V32	OK	
+3	hhv3_db	61204..60296	YP_068407.1	ORF33.5	capsid scaffold protein	OK	
+3	hhv3_db	62113..60296	NP_040156.1	ORF33	capsid maturation protease	OK	
+3	hhv3_db	63885..62146	NP_040157.1	ORF34	DNA packaging tegument protein UL25	OK	
+3	hhv3_db	64728..63952	NP_040158.1	ORF35	nuclear protein UL24	OK	
+3	hhv3_db	64782..65807	NP_040159.1	ORF36	thymidine kinase	OK	
+3	hhv3_db	66049..68574	NP_040160.1	ORF37	envelope glycoprotein H	OK	
+3	hhv3_db	70268..68643	NP_040161.1	ORF38	tegument protein UL21	OK	
+3	hhv3_db	70662..71330	NP_040162.2	ORF39	envelope protein UL20	OK	
+3	hhv3_db	71515..75705	NP_040163.1	ORF40	major capsid protein	OK	
+3	hhv3_db	75822..76772	NP_040164.1	ORF41	capsid triplex subunit 2	OK	
+3	hhv3_db	78145..80175	NP_040166.1	ORF43	DNA packaging tegument protein UL17	OK	
+3	hhv3_db	80335..81426	NP_040167.1	ORF44	tegument protein UL16	OK	
+3	hhv3_db	82568..81513,78013..76826	NP_040165.1	ORF42	DNA packaging terminase subunit 1	OK	
+3	hhv3_db	82694..83293	NP_040168.1	ORF46	tegument protein UL14	OK	
+3	hhv3_db	83143..84675	NP_040169.1	ORF47	tegument serine/threonine protein kinase	OK	
+3	hhv3_db	84642..86297	NP_040170.1	ORF48	deoxyribonuclease	OK	
+3	hhv3_db	86201..86446	NP_040171.1	ORF49	myristylated tegument protein	OK	
+3	hhv3_db	87856..90363	NP_040173.1	ORF51	DNA replication origin-binding helicase	OK	
+3	hhv3_db	87857..86550	NP_040172.1	ORF50	envelope glycoprotein M	OK	
+3	hhv3_db	90468..92783	NP_040174.1	ORF52	helicase-primase subunit	OK	
+3	hhv3_db	93825..92830	NP_040175.1	ORF53	tegument protein UL7	OK	
+3	hhv3_db	95959..93650	NP_040176.1	ORF54	capsid portal protein	OK	
+3	hhv3_db	95971..98616	NP_040177.1	ORF55	helicase-primase helicase subunit	OK	
+3	hhv3_db	98687..99277	NP_040178.2	ORF56	nuclear protein UL4	OK	
+3	hhv3_db	99601..99386	NP_040179.1	ORF57	protein V57	OK	
+3	hhv3_db	100247..99582	NP_040180.1	ORF58	nuclear protein UL3	OK	
+3	hhv3_db	101194..100277	NP_040181.1	ORF59	uracil-DNA glycosylase	OK	
+3	hhv3_db	101624..101145	NP_040182.1	ORF60	envelope glycoprotein L	OK	
+3	hhv3_db	104451..103048	NP_040183.1	ORF61	ubiquitin E3 ligase ICP0	OK	
+3	hhv3_db	109099..105167	NP_040184.1	ORF62	transcriptional regulator ICP4	OK	
+3	hhv3_db	110552..111388	NP_040185.1	ORF63	regulatory protein ICP22	OK	
+3	hhv3_db	111536..112078	NP_040186.1	ORF64	virion protein US10	OK	
+3	hhv3_db	112611..112303	NP_040187.1	ORF65	membrane protein US9	OK	
+3	hhv3_db	113008..114189	NP_040188.1	ORF66	serine/threonine protein kinase US3	OK	
+3	hhv3_db	114467..115531	NP_040189.1	ORF67	envelope glycoprotein I	OK	
+3	hhv3_db	115779..117650	NP_040190.1	ORF68	envelope glycoprotein E	OK	
+3	hhv3_db	118303..117761	NP_040186.1	ORF64A	virion protein US10	OK	
+3	hhv3_db	119287..118451	NP_040185.1	ORF63A	regulatory protein ICP22	OK	
+3	hhv3_db	120738..124694	NP_040184.1	ORF62A	transcriptional regulator ICP4	OK	
+3_DRAFT	hhv3_db	582..>1	NP_040127.1	ORF4	putative multifunctional expression regulator, N-terminal	T3	777
+3_DRAFT	hhv3_db	1715..>1681	NP_040128.1	ORF5	putative envelope glycoprotein K, N-terminal	T3	990
+3_DRAFT	hhv3_db	<1620..>1561	NP_040128.1	ORF5	putative envelope glycoprotein K, fragment	T5	96
+3_DRAFT	hhv3_db	<1620..>1561	NP_040128.1	ORF5	putative envelope glycoprotein K, fragment	T3	870
+3_DRAFT	hhv3_db	<1500..>1441	NP_040128.1	ORF5	putative envelope glycoprotein K, fragment	T5	216
+3_DRAFT	hhv3_db	<1500..>1441	NP_040128.1	ORF5	putative envelope glycoprotein K, fragment	T3	750
+3_DRAFT	hhv3_db	<1380..>1321	NP_040128.1	ORF5	putative envelope glycoprotein K, fragment	T5	336
+3_DRAFT	hhv3_db	<1380..>1321	NP_040128.1	ORF5	putative envelope glycoprotein K, fragment	T3	630
+3_DRAFT	hhv3_db	<1260..693	NP_040128.1	ORF5	putative envelope glycoprotein K, C-terminal	T5	456
+3_DRAFT	hhv3_db	5018..>3781	NP_040129.1	ORF6	putative helicase-primase primase subunit, N-terminal	T3	2016
+3_DRAFT	hhv3_db	<3420..>1921	NP_040129.1	ORF6	putative helicase-primase primase subunit, fragment	T5	1599
+3_DRAFT	hhv3_db	<3420..>1921	NP_040129.1	ORF6	putative helicase-primase primase subunit, fragment	T3	156
+3_DRAFT	hhv3_db	<1860..>1803	NP_040129.1	ORF6	putative helicase-primase primase subunit, fragment	T5	3159
+3_DRAFT	hhv3_db	<1860..>1803	NP_040129.1	ORF6	putative helicase-primase primase subunit, fragment	T3	36
+3_DRAFT	hhv3_db	5048..5827	NP_040130.1	ORF7	tegument protein UL51	OK	
+3_DRAFT	hhv3_db	7083..7346	YP_068406.1	ORF9A	envelope glycoprotein N	OK	
+3_DRAFT	hhv3_db	7108..5918	NP_040131.1	ORF8	deoxyuridine triphosphatase	OK	
+3_DRAFT	hhv3_db	7450..8358	NP_040132.1	ORF9	tegument protein VP22	OK	
+3_DRAFT	hhv3_db	8601..9833	NP_040133.1	ORF10	transactivating tegument protein VP16	OK	
+3_DRAFT	hhv3_db	10031..12490	NP_040134.1	ORF11	tegument protein VP13/14	OK	
+3_DRAFT	hhv3_db	12655..14640	NP_040135.1	ORF12	tegument protein VP11/12	OK	
+3_DRAFT	hhv3_db	14882..15787	NP_040136.1	ORF13	thymidylate synthase	OK	
+3_DRAFT	hhv3_db	17554..15872	NP_040137.1	ORF14	envelope glycoprotein C	OK	
+3_DRAFT	hhv3_db	18919..17699	NP_040138.1	ORF15	envelope protein UL43	OK	
+3_DRAFT	hhv3_db	20235..19009	NP_040139.1	ORF16	DNA polymerase processivity subunit	OK	
+3_DRAFT	hhv3_db	20590..21957	NP_040140.1	ORF17	tegument host shutoff protein	OK	
+3_DRAFT	hhv3_db	22934..22014	NP_040141.1	ORF18	ribonucleotide reductase subunit 2	OK	
+3_DRAFT	hhv3_db	25286..22959	NP_040142.1	ORF19	ribonucleotide reductase subunit 1	OK	
+3_DRAFT	hhv3_db	26916..>26641	NP_040143.1	ORF20	putative capsid triplex subunit 1, N-terminal	T3	1176
+3_DRAFT	hhv3_db	<26580..>26281	NP_040143.1	ORF20	putative capsid triplex subunit 1, fragment	T5	336
+3_DRAFT	hhv3_db	<26580..>26281	NP_040143.1	ORF20	putative capsid triplex subunit 1, fragment	T3	816
+3_DRAFT	hhv3_db	<26220..>25981	NP_040143.1	ORF20	putative capsid triplex subunit 1, fragment	T5	696
+3_DRAFT	hhv3_db	<26220..>25981	NP_040143.1	ORF20	putative capsid triplex subunit 1, fragment	T3	516
+3_DRAFT	hhv3_db	<25920..>25741	NP_040143.1	ORF20	putative capsid triplex subunit 1, fragment	T5	996
+3_DRAFT	hhv3_db	<25920..>25741	NP_040143.1	ORF20	putative capsid triplex subunit 1, fragment	T3	276
+3_DRAFT	hhv3_db	<25680..>25561	NP_040143.1	ORF20	putative capsid triplex subunit 1, fragment	T5	1236
+3_DRAFT	hhv3_db	<25680..>25561	NP_040143.1	ORF20	putative capsid triplex subunit 1, fragment	T3	96
+3_DRAFT	hhv3_db	<25500..25465	NP_040143.1	ORF20	putative capsid triplex subunit 1, C-terminal	T5	1416
+3_DRAFT	hhv3_db	27200..>27660	NP_040144.1	ORF21	putative tegument protein UL37, N-terminal	T3	2658
+3_DRAFT	hhv3_db	<27721..>28440	NP_040144.1	ORF21	putative tegument protein UL37, fragment	T5	522
+3_DRAFT	hhv3_db	<27721..>28440	NP_040144.1	ORF21	putative tegument protein UL37, fragment	T3	1878
+3_DRAFT	hhv3_db	<28501..30316	NP_040144.1	ORF21	putative tegument protein UL37, C-terminal	T5	1302
+3_DRAFT	hhv3_db	30524..>36540	NP_040145.1	ORF22	putative large tegument protein, N-terminal	T3	2277
+3_DRAFT	hhv3_db	<36661..>36780	NP_040145.1	ORF22	putative large tegument protein, fragment	T5	6138
+3_DRAFT	hhv3_db	<36661..>36780	NP_040145.1	ORF22	putative large tegument protein, fragment	T3	2037
+3_DRAFT	hhv3_db	<36901..>37020	NP_040145.1	ORF22	putative large tegument protein, fragment	T5	6378
+3_DRAFT	hhv3_db	<36901..>37020	NP_040145.1	ORF22	putative large tegument protein, fragment	T3	1797
+3_DRAFT	hhv3_db	<37141..>37260	NP_040145.1	ORF22	putative large tegument protein, fragment	T5	6618
+3_DRAFT	hhv3_db	<37141..>37260	NP_040145.1	ORF22	putative large tegument protein, fragment	T3	1557
+3_DRAFT	hhv3_db	<37381..>37440	NP_040145.1	ORF22	putative large tegument protein, fragment	T5	6858
+3_DRAFT	hhv3_db	<37381..>37440	NP_040145.1	ORF22	putative large tegument protein, fragment	T3	1377
+3_DRAFT	hhv3_db	<37561..>37620	NP_040145.1	ORF22	putative large tegument protein, fragment	T5	7038
+3_DRAFT	hhv3_db	<37561..>37620	NP_040145.1	ORF22	putative large tegument protein, fragment	T3	1197
+3_DRAFT	hhv3_db	<37741..38815	NP_040145.1	ORF22	putative large tegument protein, C-terminal	T5	7218
+3_DRAFT	hhv3_db	39576..38869	NP_040146.1	ORF23	small capsid protein	OK	
+3_DRAFT	hhv3_db	40459..39650	NP_040147.1	ORF24	nuclear egress membrane protein	OK	
+3_DRAFT	hhv3_db	40944..42701	NP_040149.1	ORF26	DNA packaging protein UL32	OK	
+3_DRAFT	hhv3_db	41056..40586	NP_040148.1	ORF25	DNA packaging protein UL33	OK	
+3_DRAFT	hhv3_db	42628..>43020	NP_040150.2	ORF27	putative nuclear egress lamina protein, N-terminal	T3	546
+3_DRAFT	hhv3_db	<43081..43566	NP_040150.2	ORF27	putative nuclear egress lamina protein, C-terminal	T5	453
+3_DRAFT	hhv3_db	47074..>46201	NP_040151.1	ORF28	putative DNA polymerase catalytic subunit, N-terminal	T3	2712
+3_DRAFT	hhv3_db	<45600..43490	NP_040151.1	ORF28	putative DNA polymerase catalytic subunit, C-terminal	T5	1476
+3_DRAFT	hhv3_db	47295..50909	NP_040152.1	ORF29	single-stranded DNA-binding protein	OK	
+3_DRAFT	hhv3_db	51089..53401	NP_040153.1	ORF30	DNA packaging terminase subunit 2	OK	
+3_DRAFT	hhv3_db	53257..56052	NP_040154.2	ORF31	envelope glycoprotein B	OK	
+3_DRAFT	hhv3_db	56204..56635	NP_040155.1	ORF32	protein V32	OK	
+3_DRAFT	hhv3_db	57664..56756	YP_068407.1	ORF33.5	capsid scaffold protein	OK	
+3_DRAFT	hhv3_db	58573..56756	NP_040156.1	ORF33	capsid maturation protease	OK	
+3_DRAFT	hhv3_db	60345..58606	NP_040157.1	ORF34	DNA packaging tegument protein UL25	OK	
+3_DRAFT	hhv3_db	61188..60412	NP_040158.1	ORF35	nuclear protein UL24	OK	
+3_DRAFT	hhv3_db	61242..>61979	NP_040159.1	ORF36	putative thymidine kinase, N-terminal	T3	288
+3_DRAFT	hhv3_db	62509..65034	NP_040160.1	ORF37	envelope glycoprotein H	OK	
+3_DRAFT	hhv3_db	66728..65103	NP_040161.1	ORF38	tegument protein UL21	OK	
+3_DRAFT	hhv3_db	67122..67790	NP_040162.2	ORF39	envelope protein UL20	OK	
+3_DRAFT	hhv3_db	67975..72165	NP_040163.1	ORF40	major capsid protein	OK	
+3_DRAFT	hhv3_db	72282..73232	NP_040164.1	ORF41	capsid triplex subunit 2	OK	
+3_DRAFT	hhv3_db	74605..76635	NP_040166.1	ORF43	DNA packaging tegument protein UL17	OK	
+3_DRAFT	hhv3_db	76795..77886	NP_040167.1	ORF44	tegument protein UL16	OK	
+3_DRAFT	hhv3_db	79028..77973,74473..73286	NP_040165.1	ORF42	DNA packaging terminase subunit 1	OK	
+3_DRAFT	hhv3_db	79154..79753	NP_040168.1	ORF46	tegument protein UL14	OK	
+3_DRAFT	hhv3_db	79603..81135	NP_040169.1	ORF47	tegument serine/threonine protein kinase	OK	
+3_DRAFT	hhv3_db	81102..82757	NP_040170.1	ORF48	deoxyribonuclease	OK	
+3_DRAFT	hhv3_db	82661..82906	NP_040171.1	ORF49	myristylated tegument protein	OK	
+3_DRAFT	hhv3_db	84316..86823	NP_040173.1	ORF51	DNA replication origin-binding helicase	OK	
+3_DRAFT	hhv3_db	84317..83010	NP_040172.1	ORF50	envelope glycoprotein M	OK	
+3_DRAFT	hhv3_db	86928..89243	NP_040174.1	ORF52	helicase-primase subunit	OK	
+3_DRAFT	hhv3_db	90285..89290	NP_040175.1	ORF53	tegument protein UL7	OK	
+3_DRAFT	hhv3_db	92419..90110	NP_040176.1	ORF54	capsid portal protein	OK	
+3_DRAFT	hhv3_db	92431..95076	NP_040177.1	ORF55	helicase-primase helicase subunit	OK	
+3_DRAFT	hhv3_db	95147..95737	NP_040178.2	ORF56	nuclear protein UL4	OK	
+3_DRAFT	hhv3_db	96061..95846	NP_040179.1	ORF57	protein V57	OK	
+3_DRAFT	hhv3_db	96707..96042	NP_040180.1	ORF58	nuclear protein UL3	OK	
+3_DRAFT	hhv3_db	97654..96737	NP_040181.1	ORF59	uracil-DNA glycosylase	OK	
+3_DRAFT	hhv3_db	98084..97605	NP_040182.1	ORF60	envelope glycoprotein L	OK	
+3_DRAFT	hhv3_db	100911..99508	NP_040183.1	ORF61	ubiquitin E3 ligase ICP0	OK	
+3_DRAFT	hhv3_db	105559..101627	NP_040184.1	ORF62	transcriptional regulator ICP4	OK	
+3_DRAFT	hhv3_db	107012..107848	NP_040185.1	ORF63	regulatory protein ICP22	OK	
+3_DRAFT	hhv3_db	107996..108538	NP_040186.1	ORF64	virion protein US10	OK	
+3_DRAFT	hhv3_db	109071..108763	NP_040187.1	ORF65	membrane protein US9	OK	
+3_DRAFT	hhv3_db	109468..110649	NP_040188.1	ORF66	serine/threonine protein kinase US3	OK	
+3_DRAFT	hhv3_db	110927..111991	NP_040189.1	ORF67	envelope glycoprotein I	OK	
+3_DRAFT	hhv3_db	112239..114110	NP_040190.1	ORF68	envelope glycoprotein E	OK	
+3_DRAFT	hhv3_db	114763..114221	NP_040186.1	ORF64A	virion protein US10	OK	
+3_DRAFT	hhv3_db	115747..114911	NP_040185.1	ORF63A	regulatory protein ICP22	OK	
+3_DRAFT	hhv3_db	117198..>118260	NP_040184.1	ORF62A	putative transcriptional regulator ICP4, N-terminal	T3	2871
+3_DRAFT	hhv3_db	<118321..>118380	NP_040184.1	ORF62A	putative transcriptional regulator ICP4, fragment	T5	1125
+3_DRAFT	hhv3_db	<118321..>118380	NP_040184.1	ORF62A	putative transcriptional regulator ICP4, fragment	T3	2751
+3_DRAFT	hhv3_db	<118501..>118560	NP_040184.1	ORF62A	putative transcriptional regulator ICP4, fragment	T5	1305
+3_DRAFT	hhv3_db	<118501..>118560	NP_040184.1	ORF62A	putative transcriptional regulator ICP4, fragment	T3	2571
+3_DRAFT	hhv3_db	<118621..>118740	NP_040184.1	ORF62A	putative transcriptional regulator ICP4, fragment	T5	1425
+3_DRAFT	hhv3_db	<118621..>118740	NP_040184.1	ORF62A	putative transcriptional regulator ICP4, fragment	T3	2391
+3_DRAFT	hhv3_db	<118861..>119122	NP_040184.1	ORF62A	putative transcriptional regulator ICP4, fragment	T5	1665
+3_DRAFT	hhv3_db	<118861..>119122	NP_040184.1	ORF62A	putative transcriptional regulator ICP4, fragment	T3	2010

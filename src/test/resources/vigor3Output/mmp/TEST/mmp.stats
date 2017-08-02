@@ -1,0 +1,9 @@
+Sequence	Length	Genes	Pseudogenes	CDS Bases	Peptide Bases	%Ref Identity	%Ref Similarity	%Ref Coverage	Ref DB
+77_part1	2339	4	0	3087	1028	97.3	98.7	77.0	mmp_db
+77_part2	1621	4	0	1815	602	99.4	99.8	51.9	mmp_db
+77_part3	897	1	0	896	298	98.3	99.0	13.2	mmp_db
+77	15316	9	0	15471	5148	98.2	99.4	100.0	mmp_db
+84	15243	9	0	15471	5148	98.0	99.5	100.0	mmp_db
+66	15301	9	0	15471	5148	98.0	99.4	100.0	mmp_db
+gi|32172464|gb|AY309060.1|	15384	9	0	15453	5142	97.7	99.4	99.9	mmp_db
+32172464_DRAF	15342	18	0	13962	4639	97.7	99.3	24.9	mmp_db

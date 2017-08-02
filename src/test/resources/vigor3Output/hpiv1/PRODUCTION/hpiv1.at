@@ -1,0 +1,70 @@
+gi|399605605|gb|JQ902009.1|	hpiv1_db	21..1595	sp_P36354_NCAP_PI1HA	N	nucleoprotein	OK	
+gi|399605605|gb|JQ902009.1|	hpiv1_db	1710..2369	AAA46833.1	C'	C' protein	ES	2151..2153
+gi|399605605|gb|JQ902009.1|	hpiv1_db	1745..>2201	sp_P32532_PHOSP_PI1HE	P	putative phosphoprotein, N-terminal	T3	1251
+gi|399605605|gb|JQ902009.1|	hpiv1_db	<2228..>2895	sp_P32532_PHOSP_PI1HE	P	putative phosphoprotein, fragment	T5	483
+gi|399605605|gb|JQ902009.1|	hpiv1_db	<2228..>2895	sp_P32532_PHOSP_PI1HE	P	putative phosphoprotein, fragment	T3	558
+gi|399605605|gb|JQ902009.1|	hpiv1_db	<2943..3451	sp_P32532_PHOSP_PI1HE	P	putative phosphoprotein, C-terminal	T5	1200
+gi|399605605|gb|JQ902009.1|	hpiv1_db	1755..2369	sp_P32535_C_PI1HE	C	C protein	ES	2151..2153
+gi|399605605|gb|JQ902009.1|	hpiv1_db	1824..2369	AAA46832.1	Y1	Y1 protein	ES	2151..2153
+gi|399605605|gb|JQ902009.1|	hpiv1_db	1842..2369	tr_Q8QT28_9PARA	Y2	putative Y2 protein	ES	2151..2153
+gi|399605605|gb|JQ902009.1|	hpiv1_db	3570..>3576	sp_P36355_MATRX_PI1HA	M	putative matrix protein, N-terminal	T3	1041
+gi|399605605|gb|JQ902009.1|	hpiv1_db	<3642..4616	sp_P36355_MATRX_PI1HA	M	putative matrix protein, C-terminal	T5	72
+gi|399605605|gb|JQ902009.1|	hpiv1_db	4989..>6302	tr_Q77E64_Q77E64_9PARA	F	putative fusion glycoprotein F0, N-terminal	T3	354
+gi|399605605|gb|JQ902009.1|	hpiv1_db	<7413..8531	AAB17182.1	HN	putative hemagglutinin neuraminidase, C-terminal	T5	609
+gi|399605605|gb|JQ902009.1|	hpiv1_db	8673..>15051	NP_604442.1	L	putative RNA-directed RNA polymerase L, N-terminal	T3	294
+gi|399605591|gb|JQ902007.1|	hpiv1_db	21..1595	sp_P36354_NCAP_PI1HA	N	nucleoprotein	OK	
+gi|399605591|gb|JQ902007.1|	hpiv1_db	1710..2369	AAA46833.1	C'	C' protein	OK	
+gi|399605591|gb|JQ902007.1|	hpiv1_db	1745..3451	sp_P32532_PHOSP_PI1HE	P	phosphoprotein	OK	
+gi|399605591|gb|JQ902007.1|	hpiv1_db	1755..2369	sp_P32535_C_PI1HE	C	C protein	OK	
+gi|399605591|gb|JQ902007.1|	hpiv1_db	1824..2369	AAA46832.1	Y1	Y1 protein	OK	
+gi|399605591|gb|JQ902007.1|	hpiv1_db	1842..2369	tr_Q8QT28_9PARA	Y2	putative Y2 protein	OK	
+gi|399605591|gb|JQ902007.1|	hpiv1_db	3570..4616	sp_P36355_MATRX_PI1HA	M	matrix protein	OK	
+gi|399605591|gb|JQ902007.1|	hpiv1_db	4989..6656	tr_Q77E64_Q77E64_9PARA	F	fusion glycoprotein F0	OK	
+gi|399605591|gb|JQ902007.1|	hpiv1_db	6804..8531	AAB17172.1	HN	hemagglutinin neuraminidase	OK	
+gi|399605591|gb|JQ902007.1|	hpiv1_db	8673..15344	NP_604442.1	L	RNA-directed RNA polymerase L	OK	
+gi|399605563|gb|JQ902003.1|	hpiv1_db	21..1595	sp_P36354_NCAP_PI1HA	N	nucleoprotein	OK	
+gi|399605563|gb|JQ902003.1|	hpiv1_db	1710..2369	AAA46833.1	C'	C' protein	OK	
+gi|399605563|gb|JQ902003.1|	hpiv1_db	1745..3451	sp_P32531_PHOSP_PI1HD	P	phosphoprotein	OK	
+gi|399605563|gb|JQ902003.1|	hpiv1_db	1755..2369	sp_P32535_C_PI1HE	C	C protein	OK	
+gi|399605563|gb|JQ902003.1|	hpiv1_db	1824..2369	AAA46832.1	Y1	Y1 protein	OK	
+gi|399605563|gb|JQ902003.1|	hpiv1_db	1842..2369	tr_Q8QT28_9PARA	Y2	putative Y2 protein	OK	
+gi|399605563|gb|JQ902003.1|	hpiv1_db	3570..4616	sp_P36355_MATRX_PI1HA	M	matrix protein	OK	
+gi|399605563|gb|JQ902003.1|	hpiv1_db	4989..6656	tr_Q77E64_Q77E64_9PARA	F	fusion glycoprotein F0	OK	
+gi|399605563|gb|JQ902003.1|	hpiv1_db	6804..8531	AAB17172.1	HN	hemagglutinin neuraminidase	OK	
+gi|399605563|gb|JQ902003.1|	hpiv1_db	8673..15344	NP_604442.1	L	RNA-directed RNA polymerase L	OK	
+gi|399605437|gb|JQ901985.1|	hpiv1_db	94..1668	sp_P36354_NCAP_PI1HA	N	nucleoprotein	OK	
+gi|399605437|gb|JQ901985.1|	hpiv1_db	1783..2442	AAA46833.1	C'	C' protein	OK	
+gi|399605437|gb|JQ901985.1|	hpiv1_db	1818..3524	sp_P32532_PHOSP_PI1HE	P	phosphoprotein	OK	
+gi|399605437|gb|JQ901985.1|	hpiv1_db	1828..2442	sp_P32535_C_PI1HE	C	C protein	OK	
+gi|399605437|gb|JQ901985.1|	hpiv1_db	1897..2442	AAA46832.1	Y1	Y1 protein	OK	
+gi|399605437|gb|JQ901985.1|	hpiv1_db	1915..2442	tr_Q8QT28_9PARA	Y2	putative Y2 protein	OK	
+gi|399605437|gb|JQ901985.1|	hpiv1_db	3643..4689	sp_P36355_MATRX_PI1HA	M	matrix protein	OK	
+gi|399605437|gb|JQ901985.1|	hpiv1_db	5062..6729	tr_Q77E64_Q77E64_9PARA	F	fusion glycoprotein F0	OK	
+gi|399605437|gb|JQ901985.1|	hpiv1_db	6877..8604	AAB17172.1	HN	hemagglutinin neuraminidase	OK	
+gi|399605437|gb|JQ901985.1|	hpiv1_db	8746..15417	NP_604442.1	L	RNA-directed RNA polymerase L	OK	
+gi|399605486|gb|JQ901992.1|	hpiv1_db	92..1666	sp_P36354_NCAP_PI1HA	N	nucleoprotein	OK	
+gi|399605486|gb|JQ901992.1|	hpiv1_db	1781..2440	AAA46833.1	C'	C' protein	OK	
+gi|399605486|gb|JQ901992.1|	hpiv1_db	1816..3522	sp_P32532_PHOSP_PI1HE	P	phosphoprotein	OK	
+gi|399605486|gb|JQ901992.1|	hpiv1_db	1826..2440	sp_P32535_C_PI1HE	C	C protein	OK	
+gi|399605486|gb|JQ901992.1|	hpiv1_db	1895..2440	AAA46832.1	Y1	Y1 protein	OK	
+gi|399605486|gb|JQ901992.1|	hpiv1_db	1913..2440	tr_Q8QT28_9PARA	Y2	putative Y2 protein	OK	
+gi|399605486|gb|JQ901992.1|	hpiv1_db	3641..4687	sp_P36355_MATRX_PI1HA	M	matrix protein	OK	
+gi|399605486|gb|JQ901992.1|	hpiv1_db	5060..6727	tr_Q77E64_Q77E64_9PARA	F	fusion glycoprotein F0	OK	
+gi|399605486|gb|JQ901992.1|	hpiv1_db	6875..8602	AAB17172.1	HN	hemagglutinin neuraminidase	OK	
+gi|399605486|gb|JQ901992.1|	hpiv1_db	8744..15415	NP_604442.1	L	RNA-directed RNA polymerase L	OK	
+399605486_part1	hpiv1_db	92..>1470	sp_P36354_NCAP_PI1HA	N	putative nucleoprotein, N-terminal	T3	198
+399605486_part2	hpiv1_db	<1..196	sp_P36354_NCAP_PI1HA	N	putative nucleoprotein, C-terminal	T5	1380
+399605486_part2	hpiv1_db	311..970	AAA46833.1	C'	C' protein	OK	
+399605486_part2	hpiv1_db	346..>1330	sp_P32532_PHOSP_PI1HE	P	putative phosphoprotein, N-terminal	T3	723
+399605486_part2	hpiv1_db	356..970	sp_P32535_C_PI1HE	C	C protein	OK	
+399605486_part2	hpiv1_db	425..970	AAA46832.1	Y1	Y1 protein	OK	
+399605486_part2	hpiv1_db	443..970	tr_Q8QT28_9PARA	Y2	putative Y2 protein	OK	
+399605486_part3	hpiv1_db	<1..>490	sp_P32531_PHOSP_PI1HD	P	putative phosphoprotein, fragment	T5	987
+399605486_part3	hpiv1_db	<1..>490	sp_P32531_PHOSP_PI1HD	P	putative phosphoprotein, fragment	T3	234
+399605486_part4	hpiv1_db	<1..232	sp_P32531_PHOSP_PI1HD	P	putative phosphoprotein, C-terminal	T5	1476
+399605486_part4	hpiv1_db	351..>1330	NP_604439.1	M	putative matrix protein, N-terminal	T3	69
+399605486_part5	hpiv1_db	<1..67	sp_P36355_MATRX_PI1HA	M	putative matrix protein, C-terminal	T5	981
+399605486_part5	hpiv1_db	440..2107	tr_Q77E64_Q77E64_9PARA	F	fusion glycoprotein F0	OK	
+399605486_part5	hpiv1_db	2255..3982	AAB17172.1	HN	hemagglutinin neuraminidase	OK	
+399605486_part5	hpiv1_db	4124..>10430	NP_604442.1	L	putative RNA-directed RNA polymerase L, N-terminal	T3	366
+399605486_part6	hpiv1_db	<1..365	AAD23456.1	L	putative RNA-directed RNA polymerase L, C-terminal	T5	6309

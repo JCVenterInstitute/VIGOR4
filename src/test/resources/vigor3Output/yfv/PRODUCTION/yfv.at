@@ -1,0 +1,22 @@
+gi|399764453|gb|JX417422.1|	yfv_db	<1..>709	CAX41890	GP1	putative genome polyprotein, fragment	T5	4509
+gi|399764453|gb|JX417422.1|	yfv_db	<1..>709	CAX41890	GP1	putative genome polyprotein, fragment	T3	5088
+JQ928174_DRAFT	yfv_db	66..>3360	CAX41890_GP2	GP2	putative truncated polyprotein, N-terminal	T3	294
+JQ928174_DRAFT	yfv_db	<3520..3521,3521..3652	CAX41890_GP2	GP2	putative truncated polyprotein, C-terminal	T5	3456
+JQ928174_DRAFT	yfv_db	66..>3360	CAX41890	GP1	putative genome polyprotein, N-terminal	T3	7008
+JQ928174_DRAFT	yfv_db	<3520..>3990	CAX41890	GP1	putative genome polyprotein, fragment	T5	3456
+JQ928174_DRAFT	yfv_db	<3520..>3990	CAX41890	GP1	putative genome polyprotein, fragment	T3	6378
+JQ928174_DRAFT	yfv_db	<4160..10367	CAX41890	GP1	putative genome polyprotein, C-terminal	T5	4095
+gi|399764449|gb|JQ928174.1|	yfv_db	66..3521,3521..3652	CAX41890_GP2	GP2	truncated polyprotein	OK	
+gi|399764449|gb|JQ928174.1|	yfv_db	66..10367	CAX41890	GP1	genome polyprotein	OK	
+gi|399764451|gb|JQ928175.1|	yfv_db	79..3534,3534..3665	CAX41890_GP2	GP2	truncated polyprotein	OK	
+gi|399764451|gb|JQ928175.1|	yfv_db	79..10380	CAX41890	GP1	genome polyprotein	OK	
+1	yfv_db	92..10327	CAA27332.1	GP1	genome polyprotein	OK	
+1_DRAFT	yfv_db	<1..>941	CAA27332.1	GP1	putative genome polyprotein, fragment	T5	828
+1_DRAFT	yfv_db	<1..>941	CAA27332.1	GP1	putative genome polyprotein, fragment	T3	8469
+1_DRAFT	yfv_db	<1062..>2303	CAA27332.1	GP1	putative genome polyprotein, fragment	T5	1890
+1_DRAFT	yfv_db	<1062..>2303	CAA27332.1	GP1	putative genome polyprotein, fragment	T3	7107
+1_DRAFT	yfv_db	<2518..>3588	CAA27332.1	GP1	putative genome polyprotein, fragment	T5	3345
+1_DRAFT	yfv_db	<2518..>3588	CAA27332.1	GP1	putative genome polyprotein, fragment	T3	5820
+1_DRAFT	yfv_db	<4004..>8449	CAA27332.1	GP1	putative genome polyprotein, fragment	T5	4833
+1_DRAFT	yfv_db	<4004..>8449	CAA27332.1	GP1	putative genome polyprotein, fragment	T3	960
+1_DRAFT	yfv_db	<8570..9408	CAA27332.1	GP1	putative genome polyprotein, C-terminal	T5	9399
