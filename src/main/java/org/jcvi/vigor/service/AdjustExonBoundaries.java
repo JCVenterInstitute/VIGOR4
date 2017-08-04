@@ -1,7 +1,8 @@
-package com.vigor.service;
+package org.jcvi.vigor.service;
 
-import com.vigor.component.Model;
-import com.vigor.forms.VigorForm;
+import org.jcvi.vigor.service.EvaluateModel;
+import org.jcvi.vigor.component.Model;
+import org.jcvi.vigor.forms.VigorForm;
 
 public class AdjustExonBoundaries implements EvaluateModel {
 
@@ -13,7 +14,6 @@ public class AdjustExonBoundaries implements EvaluateModel {
 	    
 		return model;
 	}
-	
 	
 	
 }

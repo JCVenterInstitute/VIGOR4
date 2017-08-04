@@ -33,7 +33,9 @@ public class VirusGenome {
 		this.isCircular=isCircular;
 	}
 
-
+    public VirusGenome(){
+    	
+    }
 	
 	
 }

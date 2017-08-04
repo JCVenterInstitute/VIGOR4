@@ -19,22 +19,19 @@ import org.jcvi.jillion.core.residue.aa.ProteinSequence;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.springframework.stereotype.Service;
 
-<<<<<<< HEAD:src/main/java/com/vigor/service/DetermineMissingExonsService.java
-import com.vigor.component.AlignmentFragment;
-import com.vigor.component.Exon;
-import com.vigor.component.Model;
-import com.vigor.component.ViralProtein;
-import com.vigor.forms.VigorForm;
-import com.vigor.utils.FormatVigorOutput;
-import com.vigor.utils.VigorUtils;
-=======
-
+import org.jcvi.vigor.component.AlignmentFragment;
+import org.jcvi.vigor.component.Exon;
+import org.jcvi.vigor.component.Model;
+import org.jcvi.vigor.component.ViralProtein;
+import org.jcvi.vigor.forms.VigorForm;
+import org.jcvi.vigor.utils.FormatVigorOutput;
+import org.jcvi.vigor.utils.VigorUtils;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.component.ViralProtein;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.utils.VigorUtils;
->>>>>>> 4aafe0f0632a193b0d31d36b3f8efd0b9439888a:src/main/java/org/jcvi/vigor/service/DetermineMissingExonsService.java
+
 
 @Service
 public class DetermineMissingExonsService implements EvaluateModel {
@@ -161,9 +158,11 @@ public class DetermineMissingExonsService implements EvaluateModel {
 		Range refExonAARange;
 		Range modelExonNTRange;
 		Range modelExonAARange;
+		Range prevRefExonNTRange=Range.of(0,0);
 		long preExonEnd = 0;
 		List<Exon> tempExons = new ArrayList<Exon>();
 		tempExons.addAll(model.getExons());
+		Range prevRefExonAARange=Range.of(0,0);
 		boolean found = false;
 		for (int i = 0; i < referenceExons.size(); i++) {
 			found = false;
@@ -172,7 +171,7 @@ public class DetermineMissingExonsService implements EvaluateModel {
 			refExonAARange = Range.of(0,refExonNTRange.getLength()/3 );
 			}
 			else{
-				refExonAARange = Range.of(referenceExons.get(i-1).getEnd()+1,refExonNTRange.getLength()/3 );
+				refExonAARange = Range.of(prevRefExonAARange.getEnd()+1,prevRefExonAARange.getEnd()+1+refExonNTRange.getLength()/3 );
 			}
 			
 			for (int j = 0; j < exons.size(); j++) {
@@ -196,12 +195,15 @@ public class DetermineMissingExonsService implements EvaluateModel {
 					
 				}
 			   else {
+				   long intronSize = refExonNTRange.getBegin()-prevRefExonNTRange.getEnd()-1;
+				  
 					if (tempExons.size() > 0) {
-						missingExons.put(Range.of(preExonEnd + 1, tempExons.get(0).getRange().getBegin() - 1),
+						
+						missingExons.put(Range.of(preExonEnd + 1+intronSize, tempExons.get(0).getRange().getBegin() - 1),
 								refExonAARange);
 					} else {
 						missingExons.put(
-								Range.of(preExonEnd + 1,
+								Range.of(preExonEnd + 1+intronSize,
 										model.getAlignment().getVirusGenome().getSequence().getLength() - 1),
 								refExonAARange);
 					}
@@ -215,6 +217,8 @@ public class DetermineMissingExonsService implements EvaluateModel {
 					}
 				}
 			}
+			prevRefExonNTRange = refExonNTRange;
+			prevRefExonAARange =refExonAARange;
 		}
 		return missingExons;
 	}

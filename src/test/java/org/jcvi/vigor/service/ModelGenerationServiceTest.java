@@ -1,6 +1,8 @@
 package org.jcvi.vigor.service;
 
 import static org.junit.Assert.assertEquals;
+
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,10 +10,10 @@ import java.util.List;
 import org.jcvi.jillion.core.Range;
 import org.junit.Before;
 import org.junit.Test;
-
 import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.utils.VigorTestUtils;
+import org.jcvi.vigor.utils.VigorUtils;
 
 /**
  * Created by snettem on 5/19/2017.
@@ -22,10 +24,12 @@ public class ModelGenerationServiceTest {
 	private List<Alignment> alignments;
 	private List<Model> models;
 	private ModelGenerationService modelGenerationService = new ModelGenerationService();
+	private static ClassLoader classLoader = VigorTestUtils.class.getClassLoader(); 
+	private static File file = new File(classLoader.getResource("vigorUnitTestInput/sequence.fasta"). getFile());
 
 	@Before
 	public void getModels() throws IOException {
-		alignments = VigorTestUtils.getAlignments();
+		alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(),"flua_db",VigorUtils.getVigorWorkSpace());
 		for(Alignment alignment:alignments){
 		models = modelGenerationService.alignmentToModels(alignment, "exonerate");
 		}
@@ -36,7 +40,7 @@ public class ModelGenerationServiceTest {
 		
 		Alignment alignment = alignments.get(0);
 		List<Model> outputModels = modelGenerationService.alignmentToModels(alignment, "exonerate");
-		assertEquals(2, outputModels.size());
+		assertEquals(1, outputModels.size());
 
 	}
 
