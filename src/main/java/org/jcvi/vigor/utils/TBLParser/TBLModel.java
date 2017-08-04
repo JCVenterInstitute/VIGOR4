@@ -10,7 +10,10 @@ import lombok.Data;
 public class TBLModel {
 	
 	private String virusGenomeID;
-	private List<TBLFragment> TBLFragments;
-	   
+	private List<Exon> exons;
+	private String viralProteinID;
+	private String product;
+	private String note;
+	private String gene;
 
 }

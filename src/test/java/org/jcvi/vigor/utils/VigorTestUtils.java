@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.datastore.DataStoreProviderHint;
@@ -23,17 +24,18 @@ import org.jcvi.vigor.service.ViralProteinService;
 public class VigorTestUtils {
 
 	private static final Logger LOGGER = LogManager.getLogger(VigorTestUtils.class);
-	private static ClassLoader classLoader = VigorTestUtils.class.getClassLoader(); 
-	private static File file = new File(classLoader.getResource("vigorTestInput/sequence.fasta"). getFile());
 	
 	
-	public static List<Alignment> getAlignments() {
-
+	
+	public static List<Alignment> getAlignments(String inputFilePath, String refDB,String workspace) {
+       
 		NucleotideFastaDataStore dataStore;
 		List<Alignment> alignments = new ArrayList<Alignment>();
 		ExonerateService exonerateService = new ExonerateService();
 		ViralProteinService viralProteinService = new ViralProteinService();
+		GenerateExonerateOutput generateExonerateOutput = new GenerateExonerateOutput();
 		try {
+			File file = new File(inputFilePath);
 			dataStore = new NucleotideFastaFileDataStoreBuilder(file)
 					.hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED).build();
 			Stream<NucleotideFastaRecord> records = dataStore.records();
@@ -41,15 +43,25 @@ public class VigorTestUtils {
 			NucleotideFastaRecord record = i.next();
 			VirusGenome virusGenome = new VirusGenome(record.getSequence(), record.getComment(), record.getId(), false,
 					false);
-
+            
 			// create alignment evidence
 			AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
-			alignmentEvidence.setReference_db("flua_db");
-			exonerateService.testing();
-			alignments = exonerateService.getAlignment(virusGenome, alignmentEvidence);
-			alignments = alignments.stream().map(alignment -> viralProteinService.setViralProteinAttributes(alignment))
+			alignmentEvidence.setReference_db(refDB);
+			
+			String fileName = generateExonerateOutput.queryExonerate(
+					virusGenome, refDB, workspace);
+			File outputFile = new File(fileName);
+			
+			alignments = exonerateService
+					.parseExonerateOutput(outputFile,
+							alignmentEvidence, virusGenome);
+			alignments = alignments
+					.stream()
+					.map(alignment -> viralProteinService
+							.setViralProteinAttributes(alignment))
 					.collect(Collectors.toList());
-			System.out.println("Number of alignments are :" + alignments.size());
+						
+			//System.out.println("Number of alignments are :" + alignments.size());
 
 		} catch (Exception e) {
 			LOGGER.error(e.getMessage(), e);
