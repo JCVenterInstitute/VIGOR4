@@ -1,9 +1,10 @@
 package org.jcvi.vigor.component;
 
-import org.springframework.context.annotation.Scope;
+
 import org.springframework.stereotype.Component;
 
 @Component
+@SuppressWarnings("serial")
 public class Pseudogene extends Model{
 
 	

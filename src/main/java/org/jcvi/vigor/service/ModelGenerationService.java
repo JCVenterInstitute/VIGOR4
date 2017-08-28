@@ -51,9 +51,12 @@ public class ModelGenerationService {
 			System.out.println("************Initial Models*************");
 			FormatVigorOutput.printModels2(initialModels);
 		}
-
+        
+		List<Range> sequenceGaps=new ArrayList<Range>();
 		// get sequence gaps
-		List<Range> sequenceGaps = initialModels.get(0).getAlignment().getVirusGenome().getSequenceGaps();
+		if(initialModels.get(0).getAlignment().getVirusGenome().getSequenceGaps() !=null){
+		sequenceGaps = initialModels.get(0).getAlignment().getVirusGenome().getSequenceGaps();
+		}
 		List<Range> validSequenceGaps = new ArrayList<Range>();
 		String minGapLenString = "";
 		
@@ -72,11 +75,29 @@ public class ModelGenerationService {
 		}
 
 		// split models at sequence gaps
-
+        System.out.println("Count of initial models"+ initialModels.size());
 		for (Model model : initialModels) {
-			candidateModels.addAll(splitModelAtSequencingGaps(model, validSequenceGaps));
+			Range diffRange=null;
+			for(int i=0;i<model.getExons().size()-1;i++){
+			 diffRange = Range.of(model.getExons().get(i).getRange().getEnd(), model.getExons().get(i+1).getRange().getBegin());
+			}
+			if(diffRange!=null && diffRange.getLength()>=20){
+			
+			List<Model> newModelsreturned = splitModelAtSequenceGaps(model,validSequenceGaps);
+			//candidateModels.addAll(splitModelAtSequenceGaps(model, validSequenceGaps));
+			if(newModelsreturned.size()>1){
+			System.out.println("Before Splitting");
+			model.getExons().stream().forEach(System.out::println);
+			System.out.println("After splitting at the sequence gaps");
+			newModelsreturned.stream().forEach(System.out::println);
+			}
+			candidateModels.addAll(newModelsreturned);
+			}else
+			{
+				candidateModels.add(model);
+			}
 		}
-
+       System.out.println("Count after splitting"+candidateModels.size());
 		if (isDebug) {
 			System.out.println("********After splitting models at the Genome sequence gaps**********");
 			FormatVigorOutput.printModels2(candidateModels);
@@ -89,9 +110,7 @@ public class ModelGenerationService {
 	 * 
 	 * @param alignment
 	 * @param alignmentTool
-	 * @param form
-	 * @return Models of each alignment.Also models are split at the sequencing
-	 *         gaps
+	 * @return Models of each alignment.
 	 */
 	public List<Model> alignmentToModels(Alignment alignment, String alignmentTool) {
 		Map<Direction, List<AlignmentFragment>> alignmentFragsGroupedList = alignment.getAlignmentFragments().stream()
@@ -99,7 +118,6 @@ public class ModelGenerationService {
 		Set<Direction> keyset = alignmentFragsGroupedList.keySet();
 		Iterator<Direction> iter = keyset.iterator();
 		List<Model> models = new ArrayList<Model>();
-		List<Model> newModels = new ArrayList<Model>();
 		for (Direction direction : keyset) {
 			List<List<AlignmentFragment>> ListOfCompatibleFragsList = generateCompatibleFragsChains(
 					alignmentFragsGroupedList.get(iter.next()), alignmentTool);
@@ -113,7 +131,9 @@ public class ModelGenerationService {
 				model.setGeneSymbol(alignment.getViralProtein().getProteinID());
 				model.setDirection(direction);
 				model = generateScores(model, alignment);
-				model.setStatus(Arrays.asList("Initial Model"));
+				List<String> statusList = new ArrayList<String>();
+				statusList.add("Initial Model");
+				model.setStatus(statusList);
 				models.add(model);
 			}
 
@@ -139,11 +159,11 @@ public class ModelGenerationService {
 	 * @return Models are split at sequence gaps and new list of models are
 	 *         returned
 	 */
-	public List<Model> splitModelAtSequencingGaps(Model initModel, List<Range> validSequenceGaps) {
+	public List<Model> splitModelAtSequenceGaps(Model initModel, List<Range> validSequenceGaps) {
 
 		List<Model> newModels = new ArrayList<Model>();
 		Model model = new Model();
-		model = initModel;
+		model = Model.deepClone(initModel);
 		if (validSequenceGaps.size() > 0) {
 			Exon nextExon;
 			Exon currentExon;
@@ -151,44 +171,53 @@ public class ModelGenerationService {
 			List<Exon> firstGroup = new ArrayList<Exon>();
 			List<Exon> secondGroup = new ArrayList<Exon>();
 			Model firstModel;
-			Model secondModel;
-
-			try {
-				secondModel = new Model();
-				firstModel = new Model();
-				firstModel = (Model) model.clone();
-				secondModel = (Model) model.clone();
-				List<Exon> modelExons = model.getExons();
-				secondGroup.clear();
+			Model secondModel=null;
+				List<Exon> modelExons = new ArrayList<Exon>();
+				modelExons = model.getExons();
 				secondGroup.addAll(modelExons);
-				firstGroup.clear();
-				boolean firstExonExist = true;
+				boolean startExist = true;
+				
 				for (int j = 0; j < modelExons.size(); j++) {
-
-					firstGroup.add(modelExons.get(j));
+										
 					if (j != modelExons.size() - 1) {
+						
+						
 						nextExon = modelExons.get(j + 1);
 						currentExon = modelExons.get(j);
 						diffRange = Range.of(currentExon.getRange().getEnd(), nextExon.getRange().getBegin());
 						if (diffRange.getLength() >= 20) {
+							firstGroup.add(modelExons.get(j));
+							
 							boolean temp = true;
 							for (int k = 0; k < validSequenceGaps.size(); k++) {
 								if (diffRange.intersects(validSequenceGaps.get(k)) && temp) {
+									secondModel = new Model();
+									secondModel = Model.deepClone(model);
+									firstModel = new Model();
+									firstModel = Model.deepClone(model);;
+									if(currentExon.getRange().getEnd()<validSequenceGaps.get(k).getBegin()){
+									currentExon.set_3p_adjusted(true);
+									}
+								    if(nextExon.getRange().getBegin()>validSequenceGaps.get(k).getEnd()){
+								    	nextExon.set_5p_adjusted(true);
+								    }
 									List<Exon> tempFirst = new ArrayList<>();
 									tempFirst.addAll(firstGroup);
 									List<Exon> tempSecond = new ArrayList<>();
 									tempSecond.addAll(secondGroup);
 									firstModel.setExons(tempFirst);
 									firstModel.setPartial3p(true);
-									if (!firstExonExist) {
+									firstModel.getStatus().add("Model splitted at sequence gaps");
+									if (!startExist) {
 										firstModel.setPartial5p(true);
 									}
 									secondGroup.removeAll(tempFirst);
 									tempSecond.removeAll(tempFirst);
 									secondModel.setExons(tempSecond);
 									secondModel.setPartial5p(true);
+									secondModel.getStatus().add("Model splitted at sequence gaps");
 									newModels.add(firstModel);
-									firstExonExist = false;
+									startExist = false;
 									firstGroup.clear();
 									temp = false;
 
@@ -197,16 +226,17 @@ public class ModelGenerationService {
 						}
 					}
 				}
-				if (secondModel.getExons().size() > 0) {
+				if (secondModel !=null && secondModel.getExons().size() > 0) {
 					newModels.add(secondModel);
 				}
+				if(newModels.size()==0){
+					newModels.add(initModel);
+				}
 
-			} catch (CloneNotSupportedException e) {
-				LOGGER.error(e.getMessage(), e);
-			}
-
-			return newModels;
-		} else {
+				return newModels;
+			} 
+			
+		 else {
 			newModels.add(initModel);
 			return newModels;
 		}
@@ -234,27 +264,29 @@ public class ModelGenerationService {
 				tempFlag = generateSubChains(alignmentTool);
 			}
 			if (tempFlag) {
-
 				long NTEnd = alignmentFragments.get(i).getNucleotideSeqRange().getEnd();
 				long AAEnd = alignmentFragments.get(i).getProteinSeqRange().getEnd();
 				List<AlignmentFragment> compatibleFragsList = new ArrayList<AlignmentFragment>();
-				compatibleFragsList.add(alignmentFragments.get(i));
+				compatibleFragsList.add(AlignmentFragment.deepClone(alignmentFragments.get(i)));
 				if (i != alignmentFragments.size() - 1) {
 					for (int j = i + 1; j < alignmentFragments.size(); j++) {
 						long nextNTStart = alignmentFragments.get(j).getNucleotideSeqRange().getBegin();
 						long nextAAStart = alignmentFragments.get(j).getProteinSeqRange().getBegin();
 						if (nextNTStart >= NTEnd - NTOverlapOffset && nextAAStart >= AAEnd - AAOverlapOffset) {
 							alignmentFragments.get(j).setSubChain(true);
-							compatibleFragsList.add(alignmentFragments.get(j));
+							compatibleFragsList.add(AlignmentFragment.deepClone(alignmentFragments.get(j)));
 						}
 					}
 				}
 				ListOfCompatibleFragsList.add(compatibleFragsList);
+			
 				if (compatibleFragsList.size() > 2) {
 					int temp = 1;
 					for (int k = 0; k < compatibleFragsList.size() - 2; k++) {
 						List<AlignmentFragment> subChain = new ArrayList<AlignmentFragment>();
-						subChain.addAll(compatibleFragsList);
+						for(AlignmentFragment alignFrag : compatibleFragsList){
+							subChain.add(AlignmentFragment.deepClone(alignFrag));
+						}
 						for (int j = 1; j <= temp; j++) {
 							subChain.remove(1);
 						}
@@ -262,6 +294,7 @@ public class ModelGenerationService {
 						temp++;
 					}
 				}
+			
 			}
 		}
 		return ListOfCompatibleFragsList;
@@ -298,6 +331,7 @@ public class ModelGenerationService {
 			AlignmentFragment alignmentFragment = (AlignmentFragment) iter.next();
 			exon.setRange(alignmentFragment.getNucleotideSeqRange());
 			exon.setAlignmentFragment(alignmentFragment);
+			exon.setFrame(alignmentFragment.getFrame());
 			exons.add(exon);
 		}
 		return exons;

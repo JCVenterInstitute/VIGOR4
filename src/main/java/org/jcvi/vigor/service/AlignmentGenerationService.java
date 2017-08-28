@@ -2,8 +2,6 @@ package org.jcvi.vigor.service;
 import org.jcvi.vigor.component.*;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.utils.FormatVigorOutput;
-import org.jcvi.vigor.utils.VigorUtils;
-
 import java.util.List;
 import java.util.stream.Collectors;
 import org.apache.logging.log4j.LogManager;
@@ -15,6 +13,7 @@ import org.springframework.stereotype.Service;
 /**
  * Created by snettem on 5/9/2017.
  */
+
 @Service
 public class AlignmentGenerationService {
 
@@ -26,15 +25,14 @@ public class AlignmentGenerationService {
 	private ModelGenerationService modelGenerationService;
 	@Autowired
 	private ViralProteinService viralProteinService;
-	@Autowired
-	private VirusGenomeService virusGenomeService;
+	
 
 	public void GenerateAlignment(VirusGenome virusGenome, VigorForm form) {
 		isDebug = form.isDebug();
 		try {
 			String alignmentTool = chooseAlignmentTool(form.getAlignmentEvidence());
 			String min_gap_length = form.getVigorParametersList().get("min_gap_length");
-			List<Range> sequenceGaps = virusGenomeService.findSequenceGapRanges(min_gap_length,
+			List<Range> sequenceGaps = VirusGenomeService.findSequenceGapRanges(min_gap_length,
 					virusGenome.getSequence());
 			virusGenome.setSequenceGaps(sequenceGaps);
 			if (alignmentTool.equals("exonerate")) {
@@ -45,7 +43,9 @@ public class AlignmentGenerationService {
 				if (isDebug) {
 					System.out.println("*******Initial List of alignments*****");
 					FormatVigorOutput.printAlignments(alignments);
+					
 				}
+							
 				modelGenerationService.generateModels(alignments, form);
 			}
 		} catch (Exception e) {

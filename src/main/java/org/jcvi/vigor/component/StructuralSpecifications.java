@@ -1,10 +1,9 @@
 package org.jcvi.vigor.component;
 
 import lombok.Data;
+
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-
-
 import java.util.List;
 import java.util.Map;
 
@@ -14,6 +13,7 @@ import java.util.Map;
 @Component
 @Scope("prototype")
 @Data
+
 public class StructuralSpecifications {
 
     private List<String> shared_cds;

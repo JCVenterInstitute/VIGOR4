@@ -1,6 +1,7 @@
 package org.jcvi.vigor.component;
 
 import lombok.Data;
+
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import java.util.Map;

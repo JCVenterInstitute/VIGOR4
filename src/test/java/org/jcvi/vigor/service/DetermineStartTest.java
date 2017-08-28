@@ -1,48 +1,69 @@
 package org.jcvi.vigor.service;
+import static org.junit.Assert.assertEquals;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.jcvi.jillion.core.Range;
+import org.jcvi.jillion.core.residue.Frame;
+import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
+import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
+import org.jcvi.jillion.core.residue.nt.Triplet;
 import org.jcvi.vigor.component.Alignment;
+import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
-import org.jcvi.vigor.utils.VigorTestUtils;
-import org.jcvi.vigor.utils.VigorUtils;
+import org.jcvi.vigor.component.VirusGenome;
+
 
 public class DetermineStartTest {
 	
-	private List<Alignment> alignments;
-	private List<Model> models=new ArrayList<Model>();
-	private ModelGenerationService modelGenerationService = new ModelGenerationService();
-	private ViralProteinService viralProteinService = new ViralProteinService();
+	private Model model = new Model();
 	private DetermineStart determineStart = new DetermineStart();
-	private static ClassLoader classLoader = VigorTestUtils.class.getClassLoader(); 
-	private static File file = new File(classLoader.getResource("vigorUnitTestInput/sequence.fasta"). getFile());
+	
 	
 	@Before
 	public void getModel() {
-			alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(),"flua_db",VigorUtils.getVigorWorkSpace());
-			alignments = alignments.stream().map(alignment -> viralProteinService.setViralProteinAttributes(alignment))
-					.collect(Collectors.toList());
-			models.addAll(modelGenerationService.alignmentToModels(alignments.get(0), "exonerate"));
-	}
-	
+	    VirusGenome virusGenome = new VirusGenome();
+		NucleotideSequence seq = new NucleotideSequenceBuilder("CGAAGGCTGGCCGATAGAAAACAGAAACTAAGCCAAGCAAGCAACAAACGAGACATCAGCAGTGATGC"
+				+ "TGATTATGAAAATGATGATGATGCTACAGCGGCTGCAGGGATAGGAGGAATTTAACAGGATAATTGGACA"
+				+ "GTAGAAACCAGATCAAAAGTAAGAAAAACTTAGGGTGAATGGCAATTCACAGATCAGCTCAACCAGACAT"
+				+ "CATCAGCATACACGAAACCAACCTTCACAGTGGATACCTCAGCATCCAAAACTCTCCTTCCCGAATGGAT"
+				+ "CAGGATGCCTTCTTTTTTGAGAGGGATCCTGAGGCCGAAGGAGAGGCACCACGAAAACAAGAATCACTCT"
+				+ "CAGATGTCATCGGACTCCTTGACGTCGTCCTATCCTACAAGCCCACCGAAATTGGAGAAGACAGAAGCTG"
+				+ "GCTCCATAGTATCATCGACAACCCAAAAGAAAACAAGTCATCATGCAAATCTGACGATAACGATAAAGAC"
+				+ "AGAGCAATCTCGACGTCGACCCAAGATCATAGATCAAGTGAGGAGAGTAGAGTCTCTAGGAGAACAGGTG"
+				+ "AGTCAAAAACAGAGACACATGCTAGAATCCTTGATCAACAAGGTGTACACAGGGCCTCTAGGCGAGGAAC"
+				+ "TAGTCCAAACCCTCTACCTGAGAATATGGGCAATGAAAGAAACACCAGAATAGAGGAAGATCCTTCAAAT"
+				+ "GAGAGAAGACATCAGAGATCAGTATCTACGGNNNNNNNNNNNNNNNNNNNNNNNNNNTTTAATAAGAGGG"
+				+ "AAGAAGACCAAGTTGAGGGATTTCCAGAAGAGGTACGAGGAAGTACATCCTTATCTGATGATGGAGAGAG"
+				+ "TAGAACAAATAATAATGGAAGAAGCATGGAAACTAGCAGCACACATAGTACAAGAATAACTGATGTCATT"
+				+ "ACCAACCCAAGTCCAGAGCTTGAAGATGCCGTTCTACAAAGGAATAAAAGACGGCCGACGACCATCAAGC").build();
+		virusGenome.setSequence(seq);
+		List<Exon> exons = new ArrayList<Exon>();
+		Exon exon = new Exon();
+		exon.setRange(Range.of(236,882));
+		exon.setFrame(Frame.ONE);
+		exons.add(exon);
+		model.setExons(exons);
+		Alignment alignment = new Alignment();
+		alignment.setVirusGenome(virusGenome);
+		model.setAlignment(alignment);
+	}	
 		
 	@Test
 	public void findStart() throws CloneNotSupportedException{
-		List<String> startCodons = new ArrayList<String>();
-		startCodons.add("ATG");
-		Model model = models.get(0);
-		determineStart.findStart(startCodons, model, "5");	    
-		
-		
+		List<Triplet> startCodons = new ArrayList<Triplet>();
+	    Triplet triplet4 = Triplet.create('A','T','G');
+	    Triplet triplet1 = Triplet.create('A', 'C', 'G');
+	    Triplet triplet2 = Triplet.create('C', 'C', 'G');
+	    Triplet triplet3 = Triplet.create('G', 'T', 'G');
+	    startCodons.add(triplet1);
+	    startCodons.add(triplet2);
+	    startCodons.add(triplet3);
+	    startCodons.add(triplet4);
+	    List<Model> outputModels = determineStart.findStart(startCodons, model, "50");		
+		assertEquals(1,outputModels.size());
 	}
-	
-	
-	
-	
-
 }

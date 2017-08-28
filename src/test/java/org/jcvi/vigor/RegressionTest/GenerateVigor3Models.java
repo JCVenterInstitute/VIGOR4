@@ -33,6 +33,7 @@ public class GenerateVigor3Models {
 		List<TBLModel> TBLModels = TBLParser.getModels(TBLFilePath, PEPFilePath);
 		System.out.println("Total Number of models are :"+TBLModels.size() );
 		for(TBLModel tblModel : TBLModels){
+			if(!(tblModel.isPseudoGene())){
 			Model model = new Model();
 			List<Model> models = new ArrayList<Model>();
 			Alignment alignment = new Alignment();
@@ -51,7 +52,7 @@ public class GenerateVigor3Models {
 			}
 		    models.add(model);
 		    vigor3Models.put(virusGenomeID, models);
-		    
+			}
 		}
 		System.out.println(vigor3Models.entrySet().size());
 		vigor3Models.entrySet().forEach(entry -> {System.out.println("key:"+ entry.getKey()+"value:"+entry.getValue().size());

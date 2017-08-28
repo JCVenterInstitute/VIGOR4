@@ -2,11 +2,16 @@ package org.jcvi.vigor.utils;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.jcvi.jillion.core.Range;
+import org.jcvi.jillion.core.residue.Frame;
 import org.springframework.core.io.ClassPathResource;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -34,21 +39,21 @@ public class VigorUtils {
 		return "";
 	}
 
-	public static Boolean isDefLine(String value) {
+	/*public static Boolean isDefLine(String value) {
 		if (value != null && !value.toString().trim().equalsIgnoreCase("")) {
 			return Pattern.compile("^>.*").matcher(value.trim()).matches();
 		}
 		return false;
-	}
+	}*/
 
-	public static Boolean isNucleotide(String value) {
+	/*public static Boolean isNucleotide(String value) {
 		if (value != null && !value.toString().trim().equalsIgnoreCase("")) {
 			return Pattern.compile("^[a-zA-Z]*$").matcher(value.trim()).matches();
 		}
 		return false;
 	}
 
-	
+	*/
 	public static String getVigorWorkSpace() {
 		File theDir = new File("VigorWorkSpace");
 		if (!theDir.exists()) {
@@ -128,16 +133,16 @@ public class VigorUtils {
 	}
 	public static boolean is_Integer(String value){
 		try {
-			int number = Integer.parseInt ( value );
+			Integer.parseInt ( value );
 			return true;
 		}
 		catch(NumberFormatException e)
 		{
 			return false;
 		}
-
-
 	}
+	
+
 	
 	
 

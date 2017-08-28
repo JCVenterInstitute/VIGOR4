@@ -5,10 +5,8 @@ import org.jcvi.vigor.component.AlignmentEvidence;
 import org.jcvi.vigor.component.AlignmentFragment;
 import org.jcvi.vigor.component.ViralProtein;
 import org.jcvi.vigor.component.VirusGenome;
-import org.jcvi.vigor.component.AlignmentFragment;
-import org.jcvi.vigor.forms.VigorForm;
+import org.jcvi.vigor.utils.GenerateExonerateOutput;
 import org.jcvi.vigor.utils.VigorUtils;
-
 import lombok.Data;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,22 +18,11 @@ import org.jcvi.jillion.fasta.aa.ProteinFastaFileDataStoreBuilder;
 import org.jcvi.jillion.fasta.aa.ProteinFastaRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.jcraft.jsch.Channel;
-import com.jcraft.jsch.ChannelExec;
-import com.jcraft.jsch.JSch;
-import com.jcraft.jsch.Session;
 
 /**
  * Created by snettem on 5/17/2017.
@@ -52,16 +39,9 @@ public class ExonerateService {
 	
 
 	public List<Alignment> getAlignment(VirusGenome virusGenome, AlignmentEvidence alignmentEvidence) {
-
-		/*File file = queryExonerate(virusGenome, alignmentEvidence.getReference_db());
-		System.out.println("File created in folder");
-		if (file.exists()) {
-			System.out.println("File exists");
-		} else {
-			System.out.println("File does not exist");
-		}*/
-		File outputFile = new File(VigorUtils.getVigorWorkSpace() + "/exonerate.txt");
-		
+       
+		String outputFilePath = GenerateExonerateOutput.queryExonerate(virusGenome,alignmentEvidence.getReference_db(), VigorUtils.getVigorWorkSpace());
+		File outputFile = new File(outputFilePath);
 		List<Alignment> alignments = parseExonerateOutput(outputFile, alignmentEvidence, virusGenome);
 		return alignments;
 	}

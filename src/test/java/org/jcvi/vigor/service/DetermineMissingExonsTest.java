@@ -7,50 +7,47 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.jcvi.jillion.align.AminoAcidSubstitutionMatrix;
+import org.jcvi.jillion.align.BlosumMatrices;
+import org.jcvi.jillion.align.pairwise.PairwiseAlignmentBuilder;
+import org.jcvi.jillion.align.pairwise.ProteinPairwiseSequenceAlignment;
+import org.jcvi.jillion.core.DirectedRange;
+import org.jcvi.jillion.core.Direction;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.aa.ProteinSequence;
 import org.jcvi.jillion.core.residue.aa.ProteinSequenceBuilder;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
-import org.junit.Before;
 import org.junit.Test;
 import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.utils.VigorTestUtils;
 import org.jcvi.vigor.utils.VigorUtils;
-import org.jcvi.vigor.component.Alignment;
-import org.jcvi.vigor.component.Model;
-import org.jcvi.vigor.utils.VigorTestUtils;
 
 
-public class DetermineMissingExonsServiceTest {
+
+public class DetermineMissingExonsTest {
 	private List<Alignment> alignments;
 	private List<Model> models= new ArrayList<Model>();
 	private ModelGenerationService modelGenerationService = new ModelGenerationService();
-	private DetermineMissingExonsService determineMissingExonsService = new DetermineMissingExonsService();
+	private DetermineMissingExons determineMissingExons = new DetermineMissingExons();
 	private ViralProteinService viralProteinService = new ViralProteinService();
-	private static ClassLoader classLoader = VigorTestUtils.class.getClassLoader(); 
-	private static File file = new File(classLoader.getResource("vigorUnitTestInput/sequence.fasta"). getFile());
 	
-	@Before
-	public void getModel() {
 	
+	@Test
+	public void findMissingExonsWithSpliceFormPresent() {
+	    ClassLoader classLoader = VigorTestUtils.class.getClassLoader(); 
+	    File file = new File(classLoader.getResource("vigorUnitTestInput/sequence_flua.fasta"). getFile());
 		alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(),"flua_db",VigorUtils.getVigorWorkSpace());
 		alignments = alignments.stream().map(alignment -> viralProteinService.setViralProteinAttributes(alignment))
 				.collect(Collectors.toList());
 		models.addAll(modelGenerationService.alignmentToModels(alignments.get(0), "exonerate"));
-		
-	}
-
-	@Test
-	public void findMissingExonsTest() {
 		Model model = new Model();
 		model = models.get(0);
 		model.getExons().remove(1);
-		int missingExons = determineMissingExonsService.findMissingExonRanges(model, "65", "50").size();
-		assertEquals(1, missingExons);
-
+		int exons = determineMissingExons.findMissingExonsWithSpliceFormPresent(model).getExons().size();
+		assertEquals(2, exons);
 	}
 
 	@Test
@@ -77,17 +74,48 @@ public class DetermineMissingExonsServiceTest {
 						+ "TGCATCTCCACAACTCGAGGGATTTTCAGCTGAATCAAGAAAGTTGCTTCTCATTGTCCAGGCACTTAGGGACAACCTGGAACCTGGGACCTTCGATCTTGGGGGGCTATATGAAGCAATTGAGGAGTGCCTGATTAATGATCCCTGGG"
 						+ "TTTTGCTTAATGCGTCTTGGTTCAACTCCTTCCTCACACATGCACTGAAATAGTTGTGGCAATGCTACTATTTGCTATCCATACTGTCCAAAA")
 								.build();
-
+		
 		ProteinSequence AASequence = new ProteinSequenceBuilder(
 				"MEDFVRQCFNPMIVELAEKTMKEYGEDLKIETNKFAAICTHLEVCFMYSDFHFINEQGESIIVELGDPNALLKHRFEIIEGRDRTMAWTVVNSICNTTGAEKPKFLPDLYDYKENRFIEIGVTRREVHIYYLEKANKI"
 						+ "KSEKTHIHIFSFTGEEMATKADYTLDEESRARIKTRLFTIRQEMASRGLWDSFVSPREEKRQLKKGLKSQEQCASLPTKVSRRTSPALKILEPM")
 								.build();
 
-		Exon exon = determineMissingExonsService.performJillionPairWiseAlignment(NTRange, AARange, NTSequence,
-				AASequence, "50", "65");
-
+		Exon exon = determineMissingExons.performJillionPairWiseAlignment(NTRange, AARange, NTSequence,
+				AASequence,true,Direction.FORWARD);
 		assertEquals(exon.getAlignmentFragment().getProteinSeqRange(), AARange);
 
 	}
-
+	
+	@Test
+	public void testJillionPairwiseAlignment(){
+		ProteinSequence querySequence = new ProteinSequenceBuilder("MEDFVRQCFNPMIVELAEKTMKEYGEDLKIETNKFAAICTHLEVCFMYSDFHFI").build();
+		ProteinSequence subjectSequence = new ProteinSequenceBuilder("MEDFVRQCFNPMIVELAEKTMKEYGEDLKIETNKFAAICTHLEVCFMYSDFHFINEQGESIIVELGDPNALLKHRFEIIEGRDRTMAWTVVNSICNTTGAEKPKF").build();
+		AminoAcidSubstitutionMatrix blosom50 = BlosumMatrices.blosum50();
+		ProteinPairwiseSequenceAlignment actual = PairwiseAlignmentBuilder
+				.createProtienAlignmentBuilder(querySequence, subjectSequence, blosom50).gapPenalty(-8, -8)
+				.build();
+		DirectedRange expected;
+		expected =DirectedRange.create((Range.of(0,53)),Direction.FORWARD );
+		DirectedRange queryRange = actual.getQueryRange();
+		assertEquals(expected,queryRange);
+	
+	}
+	
+	@Test
+	public void findMissingExonsWithSpliceFormAbsent(){
+		ClassLoader classLoader = VigorTestUtils.class.getClassLoader(); 
+	    File file = new File(classLoader.getResource("vigorUnitTestInput/sequence_veev.fasta"). getFile());
+		alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(),"veev_db",VigorUtils.getVigorWorkSpace());
+	    alignments = alignments.stream().map(alignment -> viralProteinService.setViralProteinAttributes(alignment))
+				.collect(Collectors.toList());
+		models.addAll(modelGenerationService.alignmentToModels(alignments.get(0), "exonerate"));
+		Model model = new Model();
+		model = models.get(0);
+		model.getExons().remove(0);
+	    Model outputModel = determineMissingExons.findMissingExonsWithSpliceFormAbsent(model);
+	    assertEquals(3,outputModel.getExons().size());
+	}
+	
+	
+	
 }
