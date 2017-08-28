@@ -3,7 +3,6 @@ package org.jcvi.vigor.service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,37 +14,47 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
+import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
+import org.jcvi.jillion.core.residue.nt.Triplet;
 import org.springframework.stereotype.Service;
-
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.forms.VigorForm;
-import org.jcvi.vigor.utils.VigorUtils;
+import org.jcvi.vigor.utils.*;
 
 @Service
 public class DetermineStart implements EvaluateModel {
 
-	private static final Logger LOGGER = LogManager.getLogger(DetermineStart.class);
+	private static final Logger LOGGER = LogManager
+			.getLogger(DetermineStart.class);
 
 	@Override
-	public Model determine(Model model, VigorForm form) {
+	public List<Model> determine(Model model, VigorForm form) {
+		List<Model> models = null;
 		try {
-			List<String> startCodons = LoadStartCodons(model.getAlignment().getViralProtein().getGeneAttributes()
-					.getStartTranslationException().getAlternateStartCodons(), form.getVigorParametersList());
-			String startCodonWindowParam = form.getVigorParametersList().get("start_codon_search_window");
-            
-			findStart(startCodons, model, startCodonWindowParam);
+			List<Triplet> startCodons = LoadStartCodons(model.getAlignment()
+					.getViralProtein().getGeneAttributes()
+					.getStartTranslationException().getAlternateStartCodons(),
+					form.getVigorParametersList());
+			String startCodonWindowParam = form.getVigorParametersList().get(
+					"start_codon_search_window");
+			models = findStart(startCodons, model, startCodonWindowParam);
+
+			for (Model mymodel : models) {
+				System.out.println("Finding start for below model");
+				mymodel.getExons().stream().forEach(System.out::println);
+				System.out.println(mymodel.getGeneSymbol() + "    "
+						+ mymodel.getStartCodon());
+			}
 
 		}
-        catch(CloneNotSupportedException e){
-        	LOGGER.error(e.getMessage(), e);
-        }
+
 		catch (Exception e) {
 			LOGGER.error(e.getMessage(), e);
 		}
 
-		return model;
+		return models;
 	}
 
 	/**
@@ -53,77 +62,130 @@ public class DetermineStart implements EvaluateModel {
 	 * @param alternateStartCodons
 	 *            defined in defline of reference protein
 	 * @param vigorParameters
-	 *            : Default star codons defined in vigor.ini file
+	 *            : Default start codons defined in vigor.ini file
 	 * @return List of all the possible start codons
 	 */
-	public List<String> LoadStartCodons(List<String> alternateStartCodons, Map<String, String> vigorParameters) {
+	public List<Triplet> LoadStartCodons(List<String> alternateStartCodons,
+			Map<String, String> vigorParameters) {
 		String startCodonsParam;
-		List<String> startCodons = new ArrayList<String>();
+		List<String> startCodonStrings = new ArrayList<String>();
 		if (vigorParameters.containsKey("StartCodons")) {
 			startCodonsParam = vigorParameters.get("StartCodons");
-			startCodons = Arrays.asList(StringUtils.normalizeSpace(startCodonsParam).split(","));
+			startCodonStrings = Arrays.asList(StringUtils.normalizeSpace(
+					startCodonsParam).split(","));
 		} else {
-			startCodons.add("ATG");
+
+			startCodonStrings.add("ATG");
 		}
-		startCodons.addAll(alternateStartCodons);
+		if (alternateStartCodons != null) {
+			startCodonStrings.addAll(alternateStartCodons);
+		}
+		List<Triplet> startCodons = new ArrayList<Triplet>();
+		for (String startCodonString : startCodonStrings) {
+			if (startCodonString.length() == 3) {
+				Triplet triplet = Triplet.create(startCodonString.charAt(0),
+						startCodonString.charAt(1), startCodonString.charAt(2));
+				startCodons.add(triplet);
+			}
+
+		}
 		return startCodons;
 	}
 
-	public List<Model> findStart(List<String> startCodons, Model model, String startCodonWindowParam) throws CloneNotSupportedException {
-
+	public List<Model> findStart(List<Triplet> startCodons, Model model,
+		String startCodonWindowParam) {
 		List<Model> newModels = new ArrayList<Model>();
-		int windowSize = 5;
-		boolean missingSequence = false;
+		long start;
+		long end;
+		Range startSearchRange;
+		int windowSize = 50;
+		boolean isSequenceMissing = false;
 		if (startCodonWindowParam != null) {
 			if (VigorUtils.is_Integer(startCodonWindowParam)) {
 				windowSize = Integer.parseInt(startCodonWindowParam);
 			}
 		}
 		Exon firstExon = model.getExons().get(0);
-		
-		long start = firstExon.getRange().getBegin() - windowSize;
-		long centroid = firstExon.getRange().getBegin()-start;
+		Frame frame = VigorFunctionalUtils.getFrame(firstExon.getRange());
+		String spliceform = "";
+		if (model.getAlignment().getViralProtein().getGeneAttributes()
+				.getSplicing().getSpliceform() != null) {
+			spliceform = model.getAlignment().getViralProtein()
+					.getGeneAttributes().getSplicing().getSpliceform();
+		}
+		if (spliceform.equals("")) {
+			long expectedStart = firstExon.getRange().getBegin()
+					- ((firstExon.getAlignmentFragment().getProteinSeqRange()
+							.getBegin() - 1) * 3);
+			start = expectedStart - windowSize;
+			end = expectedStart - windowSize;
+		} else {
+			start = firstExon.getRange().getBegin() - windowSize;
+			end = firstExon.getRange().getBegin() + windowSize;
+		}
 		if (start < 0) {
-			missingSequence = true;
+			isSequenceMissing = true;
 			start = 0;
 		}
-
-		long end = firstExon.getRange().getBegin() + windowSize;
-		Range startSearchRange = Range.of(start, end);
-		NucleotideSequence NTSequence = model.getAlignment().getVirusGenome().getSequence().toBuilder(startSearchRange)
-				.build();
-		long difference = 0;
-	
-		Map<Range,Long> rangeScoreMap = new HashMap<Range,Long>(); 
-		for (String codon : startCodons) {
-			Stream<Range> stream = NTSequence.findMatches(codon);
-			List<Range> foundRanges = stream.collect(Collectors.toList());
-			for (Range range : foundRanges) {
-						
-				if (range.getBegin() - centroid < 0) {
-					difference = centroid - range.getBegin();
-					rangeScoreMap.put(range, difference);
-				} else{
-					difference = range.getBegin() - centroid;}
-				  rangeScoreMap.put(range, difference);				
-			}				
-		}		
-		rangeScoreMap.entrySet().stream().sorted(Map.Entry.comparingByValue()).collect(Collectors.toMap(Map.Entry::getKey,Map.Entry::getValue,(e1, e2) -> e2,LinkedHashMap::new));
-		Set<Range> keys = rangeScoreMap.keySet();
-		float score = 10;
-		for(Range range : keys ){
+		startSearchRange = Range.of(start, end);
+		final long tempStart = start;
+		NucleotideSequence NTSequence = model.getAlignment().getVirusGenome()
+				.getSequence().toBuilder(startSearchRange).build();
+		Map<Range, Float> rangeScoreMap = new HashMap<Range, Float>();
+		for (Triplet triplet : startCodons) {
+			Stream<Range> stream = NTSequence.findMatches(triplet.toString());
+			List<Range> rangesInFrame = new ArrayList<Range>();
+			List<Range> foundRanges = stream.map(
+					range -> {
+						range = Range.of(range.getBegin() + tempStart,
+								range.getEnd() + tempStart);
+						return range;
+					}).collect(Collectors.toList());
+			foundRanges.stream().forEach(x -> {
+				if (VigorFunctionalUtils.getFrame(x).compareTo(frame) == 0) {
+					rangesInFrame.add(x);
+				}
+			});
+			rangeScoreMap.putAll(VigorFunctionalUtils.generateScore(firstExon
+					.getRange().getBegin(), rangesInFrame));
+		}
+		rangeScoreMap
+				.entrySet()
+				.stream()
+				.sorted(Map.Entry.comparingByValue())
+				.collect(
+						Collectors.toMap(Map.Entry::getKey,
+								Map.Entry::getValue, (e1, e2) -> e2,
+								LinkedHashMap::new));
+		if (!(rangeScoreMap.isEmpty())) {
+			Set<Range> keys = rangeScoreMap.keySet();
+			for (Range range : keys) {
+				Model newModel = new Model();
+				newModel = Model.deepClone(model);
+				newModel.setStartCodon(range);
+				if (model.getScores() != null) {
+					newModel.getScores().put("startCodonScore",
+							rangeScoreMap.get(range));
+				} else {
+					Map<String, Float> scores = new HashMap<String, Float>();
+					scores.put("startCodonScore", rangeScoreMap.get(range));
+					newModel.setScores(scores);
+				}
+				newModels.add(newModel);
+			}
+		}
+		if (rangeScoreMap.isEmpty() && isSequenceMissing) {
 			Model newModel = new Model();
-			newModel = (Model)model.clone();
-			newModel.setStartCodon(range);
-			Map<String,Float> scores = new HashMap<String,Float>();
-			scores.putAll(newModel.getScores());
-			scores.put("startCodonOccurence", score);
-			newModel.setScores(scores);
+			newModel = Model.deepClone(model);
+			newModel.setPartial5p(true);
+			newModels.add(newModel);
+
+		} else if (rangeScoreMap.isEmpty()) {
+			Model newModel = new Model();
+			newModel = Model.deepClone(model);
 			newModels.add(newModel);
 		}
-			
-		
-		
+
 		return newModels;
 	}
 

@@ -1,6 +1,6 @@
 package org.jcvi.vigor.component;
 
-import com.sun.prism.shader.Solid_TextureFirstPassLCD_AlphaTest_Loader;
+
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -9,7 +9,7 @@ import lombok.Data;
 @Component
 @Scope("prototype")
 @Data
-public class GeneAttributes {
+public class GeneAttributes{
 
 	private Ribosomal_Slippage ribosomal_slippage;
 	private Splicing splicing;

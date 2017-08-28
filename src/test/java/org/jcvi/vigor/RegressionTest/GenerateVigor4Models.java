@@ -70,11 +70,11 @@ public class GenerateVigor4Models {
 							.determineCandidateModels(alignments,
 									new VigorForm());
 					vigor4Models.put(virusGenome.getId(), candidateModels);
-					FormatVigorOutput.printModels(candidateModels);
-					System.out.println("outputFile" + outputFile);
+				//	FormatVigorOutput.printModels(candidateModels);
+					/*System.out.println("outputFile" + outputFile);
 					System.out.println("actual one in the end:"
 							+ virusGenome.getId());
-					System.out.println("counter" + count);
+					System.out.println("counter" + count);*/
 					count++;
 
 				}

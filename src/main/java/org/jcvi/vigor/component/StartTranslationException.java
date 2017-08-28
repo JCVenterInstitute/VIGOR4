@@ -1,9 +1,9 @@
 package org.jcvi.vigor.component;
 
 import lombok.Data;
+
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 
 /**
@@ -13,7 +13,7 @@ import java.util.List;
 @Component
 @Scope("prototype")
 @Data
-public class StartTranslationException {
+public class StartTranslationException{
 
    private boolean hasStartTranslationException=false;
    private List<String> alternateStartCodons;

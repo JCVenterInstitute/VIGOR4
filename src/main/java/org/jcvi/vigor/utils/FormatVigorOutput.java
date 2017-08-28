@@ -12,9 +12,9 @@ import org.jcvi.jillion.core.Range;
  */
 public class FormatVigorOutput {
 
-	public static void printModels(List<Model> models) {
+	public static void printModels(List<Model> models, String message) {
 		System.out.println(
-				"********************************************************************************************************************");
+				"********************************"+message+"**************************************");
 		System.out
 				.println(String.format("%-32s%-20s%-20s%-20s", "Gene_Symbol", "Direction", "NTSeqRange", "AASeqRange"));
 
@@ -53,7 +53,7 @@ public class FormatVigorOutput {
 
 	public static void printAlignments(List<Alignment> alignments) {
 		System.out.println(
-				"********************************************************************************************************************");
+				"*********************************Intial list of Alignments*****************************************************");
 		System.out.println(String.format("%-32s%-20s%-20s%-20s", "Protein_ID","Alignment_Tool" ,"NTSeqRange", "AASeqRange"));
 
 		for (Alignment alignment : alignments) {

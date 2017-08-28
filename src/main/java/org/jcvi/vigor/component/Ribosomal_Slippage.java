@@ -1,6 +1,6 @@
 package org.jcvi.vigor.component;
-
 import lombok.Data;
+
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -10,7 +10,8 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope("prototype")
 @Data
-public class Ribosomal_Slippage {
+
+public class Ribosomal_Slippage  {
 
     private boolean has_ribosomal_slippage=false;
     private String slippage_motif;

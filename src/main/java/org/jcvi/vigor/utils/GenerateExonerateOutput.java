@@ -12,9 +12,9 @@ import org.jcvi.vigor.component.VirusGenome;
 public class GenerateExonerateOutput {
 	
 		
-	public String queryExonerate(VirusGenome virusGenome, String referenceDB,
+	public static String queryExonerate(VirusGenome virusGenome, String referenceDB,
 			String workspace) {
-
+  
 		File file = new File(workspace + File.separator + "sequence_temp.fasta");
 		Path path = Paths.get(file.getAbsolutePath());
 		List<String> sequence = java.util.Arrays.asList(virusGenome

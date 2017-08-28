@@ -1,8 +1,6 @@
 package org.jcvi.vigor.component;
 
 import org.jcvi.jillion.core.Range;
-import org.jcvi.jillion.core.Sequence;
-import org.jcvi.jillion.core.residue.nt.Nucleotide;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -10,6 +8,7 @@ import org.springframework.stereotype.Component;
 import lombok.Data;
 
 import java.util.List;
+
 
 @Component
 @Scope("prototype")
@@ -22,8 +21,8 @@ public class VirusGenome {
 	private String id;
 	private Boolean isComplete = false;
 	private Boolean isCircular = false;
-    private List<Range> sequenceGaps;
-
+	private List<Range> sequenceGaps;
+   
 	public VirusGenome(NucleotideSequence sequence, String defline, String id, boolean isComplete, boolean isCircular){
 
 		this.sequence=sequence;

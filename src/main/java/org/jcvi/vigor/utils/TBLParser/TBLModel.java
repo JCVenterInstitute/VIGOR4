@@ -15,5 +15,6 @@ public class TBLModel {
 	private String product;
 	private String note;
 	private String gene;
+	private boolean isPseudoGene=false;
 
 }

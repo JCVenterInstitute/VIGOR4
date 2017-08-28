@@ -38,6 +38,7 @@ public class TBLFileParser {
 			String virusGenomeID = "";
 			Pattern startPattern = Pattern
 					.compile("(\\s*)?([\\d*]+)([\\s*]+)(>)?([\\d*]+)(\\s*)?(CDS)");
+			Pattern pattern10 = Pattern.compile("(\\s*)?([\\d*]+)([\\s*]+)([\\d*]+)(\\s*)?(misc_feature)");
 			Pattern pattern2 = Pattern
 					.compile("(<)(\\s*)?([\\d*]+)([\\s*]+)(>)([\\d*]+)(\\s*)?(CDS)");
 			Pattern pattern3 = Pattern
@@ -51,11 +52,14 @@ public class TBLFileParser {
 			Pattern pattern8 = Pattern
 					.compile("(\\s*)?([\\d*]+)([\\s*]+)(>)?([\\d*]+)(\\s*)?(gene)");
 			// TBLFragment fragment = new TBLFragment();
+			boolean isPseudoGene=false;
 			for (String s : (Iterable<String>) tblFile::iterator) {
 				if (s.startsWith(">")) {
 					if (model != null && exons != null && exons.size() > 0) {
 						model.setExons(exons);
+						model.setPseudoGene(isPseudoGene);
 						models.add(model);
+						isPseudoGene=false;
 					}
 					model = null;
 					pattern = Pattern.compile("Features[\\s](\\S*)");
@@ -79,6 +83,7 @@ public class TBLFileParser {
 					Matcher matcher7 = pattern7.matcher(s);
 
 					Matcher matcher8 = pattern8.matcher(s);
+					Matcher matcher10 = pattern10.matcher(s);
 
 					Matcher matcher9 = pattern9.matcher(s);
 
@@ -95,7 +100,9 @@ public class TBLFileParser {
 					} else if (matcher8.find()) {
 						if (model != null && exons != null && exons.size() > 0) {
 							model.setExons(exons);
+							model.setPseudoGene(isPseudoGene);
 							models.add(model);
+							isPseudoGene=false;
 						}
 						model = new TBLModel();
 						model.setVirusGenomeID(virusGenomeID);
@@ -107,7 +114,16 @@ public class TBLFileParser {
 								Long.parseLong(matcher.group(5)));
 						exon.setRange(range);
 						exons.add(exon);
-					} else if (matcher2.matches()) {
+					} else if (matcher10.matches()){
+						exon = new Exon();
+						Range range = null;
+						range = Range.of(Long.parseLong(matcher10.group(2)),
+								Long.parseLong(matcher10.group(4)));
+						exon.setRange(range);
+						exons.add(exon);	
+						isPseudoGene = true;
+					}
+					  else if (matcher2.matches()) {
 						exon = new Exon();
 						Range range = null;
 						range = Range.of(Long.parseLong(matcher2.group(3)),
@@ -133,7 +149,9 @@ public class TBLFileParser {
 			}
 			if (model != null && exons != null && exons.size() > 0) {
 				model.setExons(exons);
+				model.setPseudoGene(isPseudoGene);
 				models.add(model);
+				isPseudoGene = false;
 			}
 			tblFile.close();
 		} catch (IOException e) {

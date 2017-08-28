@@ -1,5 +1,5 @@
 package org.jcvi.vigor.component;
-
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
@@ -11,15 +11,14 @@ import lombok.Data;
 @Component
 @Scope("prototype")
 @Data
-public class Alignment {
+@SuppressWarnings("serial")
+public class Alignment implements Serializable {
 
-	private String alignmentTool_name;
+	private transient String alignmentTool_name;
 	private List<AlignmentFragment> alignmentFragments;
 	private Map<String,Float> alignmentScore;
-	private VirusGenome virusGenome;
-	private ViralProtein viralProtein;
-	private AlignmentEvidence alignmentEvidence;
-
-
+	private transient VirusGenome virusGenome;
+	private transient ViralProtein viralProtein;
+	private transient AlignmentEvidence alignmentEvidence;
 
 }

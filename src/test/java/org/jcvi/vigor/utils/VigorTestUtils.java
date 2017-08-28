@@ -9,17 +9,17 @@ import java.util.stream.Stream;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.datastore.DataStoreProviderHint;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaDataStore;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaFileDataStoreBuilder;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaRecord;
 import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.AlignmentEvidence;
-import org.jcvi.vigor.component.AlignmentFragment;
-import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.component.VirusGenome;
 import org.jcvi.vigor.service.ExonerateService;
 import org.jcvi.vigor.service.ViralProteinService;
+import org.jcvi.vigor.service.VirusGenomeService;
 
 public class VigorTestUtils {
 
@@ -33,7 +33,6 @@ public class VigorTestUtils {
 		List<Alignment> alignments = new ArrayList<Alignment>();
 		ExonerateService exonerateService = new ExonerateService();
 		ViralProteinService viralProteinService = new ViralProteinService();
-		GenerateExonerateOutput generateExonerateOutput = new GenerateExonerateOutput();
 		try {
 			File file = new File(inputFilePath);
 			dataStore = new NucleotideFastaFileDataStoreBuilder(file)
@@ -43,12 +42,14 @@ public class VigorTestUtils {
 			NucleotideFastaRecord record = i.next();
 			VirusGenome virusGenome = new VirusGenome(record.getSequence(), record.getComment(), record.getId(), false,
 					false);
-            
+			List<Range> sequenceGaps = VirusGenomeService.findSequenceGapRanges("20",
+					virusGenome.getSequence());
+			virusGenome.setSequenceGaps(sequenceGaps);
 			// create alignment evidence
 			AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
 			alignmentEvidence.setReference_db(refDB);
 			
-			String fileName = generateExonerateOutput.queryExonerate(
+			String fileName = GenerateExonerateOutput.queryExonerate(
 					virusGenome, refDB, workspace);
 			File outputFile = new File(fileName);
 			

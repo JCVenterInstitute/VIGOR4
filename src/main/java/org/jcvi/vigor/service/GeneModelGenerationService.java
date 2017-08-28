@@ -2,56 +2,65 @@ package org.jcvi.vigor.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.utils.FormatVigorOutput;
 
 @Service
 public class GeneModelGenerationService {
-
 	@Autowired
-	private DetermineMissingExonsService determineMissingExons;
-	boolean isDebug = false;
-	
+	private DetermineMissingExons determineMissingExons;
+	@Autowired
+	private DetermineStart determineStart;
+	boolean isDebug = true;
+	List<Model> partialGeneModels = new ArrayList<Model>();
+	List<Model> pseudoGenes = new ArrayList<Model>();
 
 	public void generateGeneModel(List<Model> models, VigorForm form) {
-
-		List<Model> partialGeneModels = new ArrayList<Model>();
+		
+		evaluateGeneFeatures(models,form);
 		isDebug = form.isDebug();
-		
 		/*Determine missing exons*/
-		List<Model> modelsAfterMissingExonsDetermined = new ArrayList<Model>();
-		for(Model model : models){
-			Model outputModel = determineMissingExons.determine(model, form);
-			if(outputModel.getStatus().contains("partial genes")){
-				partialGeneModels.add(outputModel);
-			}
-			else{
-				modelsAfterMissingExonsDetermined.add(outputModel);
-			}
-		}
-		if (isDebug) {
-			System.out.println("**********After determining the missing exons************");
-			FormatVigorOutput.printModels2(modelsAfterMissingExonsDetermined);
-		}
-		if (isDebug) {
-			System.out.println("**********Partial Gene Models************");
-			FormatVigorOutput.printModels2(partialGeneModels);
-		}
-
 		
-		/*Determine start*/
+	}
+	
+	public List<Model> evaluateGeneFeatures(List<Model> models,VigorForm form){
+			
+		List<Model> processedModels = new ArrayList<Model>();
+		List<Model> modelsWithMissingExonsDetermined = new ArrayList<Model>();
+	    List<Model> modelsAfterDeterminingStart = new ArrayList<Model>();
+		
+	    /* Determine Missing Exons */
+		models.stream().forEach(model -> { 
+			modelsWithMissingExonsDetermined.addAll(determineMissingExons.determine(model, form));
+		});			
+		if(isDebug)FormatVigorOutput.printModels(modelsWithMissingExonsDetermined,"After determining missing exons");
+				
+		/* Determine Start */
+		modelsWithMissingExonsDetermined.stream().forEach(x -> { 
+			if(!x.isPartial5p()){
+			List<Model> outputModels = determineStart.determine(x, form);
+			outputModels.stream().forEach(y->{
+				if((y.getStartCodon()==null || y.getStartCodon().isEmpty())&& !(y.isPartial5p())) {
+					pseudoGenes.add(y);
+				}else if (y.getStartCodon().isEmpty() && y.isPartial5p()){
+					partialGeneModels.add(y);
+				}else{
+					modelsAfterDeterminingStart.add(y);
+				}
+				
+			});
+			}});
+		
+		/*AdjustExonBoundaries*/
 		
 		
+	
 		
-		
-		
-
+		return processedModels;
+	}
+	
 	}
 
-}
