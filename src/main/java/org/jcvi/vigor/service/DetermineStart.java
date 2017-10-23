@@ -39,6 +39,7 @@ public class DetermineStart implements EvaluateModel {
 					form.getVigorParametersList());
 			String startCodonWindowParam = form.getVigorParametersList().get(
 					"start_codon_search_window");
+			
 			models = findStart(startCodons, model, startCodonWindowParam);
 
 			for (Model mymodel : models) {
@@ -106,19 +107,19 @@ public class DetermineStart implements EvaluateModel {
 			}
 		}
 		Exon firstExon = model.getExons().get(0);
-		Frame frame = VigorFunctionalUtils.getFrame(firstExon.getRange());
+		Frame frame = VigorFunctionalUtils.getSequenceFrame(firstExon.getRange().getBegin());
 		String spliceform = "";
-		if (model.getAlignment().getViralProtein().getGeneAttributes()
-				.getSplicing().getSpliceform() != null) {
+		String spliceformOfModel = model.getAlignment().getViralProtein().getGeneAttributes().getSplicing().getSpliceform();
+		if (spliceformOfModel!=null) {
 			spliceform = model.getAlignment().getViralProtein()
 					.getGeneAttributes().getSplicing().getSpliceform();
 		}
 		if (spliceform.equals("")) {
 			long expectedStart = firstExon.getRange().getBegin()
 					- ((firstExon.getAlignmentFragment().getProteinSeqRange()
-							.getBegin() - 1) * 3);
+							.getBegin()) * 3);
 			start = expectedStart - windowSize;
-			end = expectedStart - windowSize;
+			end = expectedStart + windowSize;
 		} else {
 			start = firstExon.getRange().getBegin() - windowSize;
 			end = firstExon.getRange().getBegin() + windowSize;
@@ -142,12 +143,13 @@ public class DetermineStart implements EvaluateModel {
 						return range;
 					}).collect(Collectors.toList());
 			foundRanges.stream().forEach(x -> {
-				if (VigorFunctionalUtils.getFrame(x).compareTo(frame) == 0) {
+				if (VigorFunctionalUtils.getSequenceFrame(x.getBegin()).compareTo(frame) == 0) {
 					rangesInFrame.add(x);
 				}
 			});
-			rangeScoreMap.putAll(VigorFunctionalUtils.generateScore(firstExon
-					.getRange().getBegin(), rangesInFrame));
+			for(Range range:rangesInFrame){
+			rangeScoreMap.put(range,VigorFunctionalUtils.generateScore(firstExon.getRange().getBegin(), range.getBegin()));
+			}
 		}
 		rangeScoreMap
 				.entrySet()
@@ -189,4 +191,11 @@ public class DetermineStart implements EvaluateModel {
 		return newModels;
 	}
 
+ 
+
+	
+	
 }
+
+
+

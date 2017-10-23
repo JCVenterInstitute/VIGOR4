@@ -4,77 +4,65 @@ EAVNLIFPESMILQADIANESTPLHTPTLSPIPELEEEDELDLRCYEEGFPPSDSEDERG
 EQTMALISDYACVIVEEQDVIEKSTEPVQGCRNCQYHRDKSGDVNASCALCYMKQTFSFI
 YSPVSEDELSPSEEDHPSPPELSGETPLQVFRPTPVRPSGERRAAVDKIEDLLQDMGGDE
 PLDLSLKRPRN
-
 >ACI47087.1 db="hadvd_db" gene="E1A" intron_size=45-145 length=253 note="synonym: control protein E1A" product="E1A 28 kDa protein" shared_cds="E1A-2,E1A-3" splice_form="e550i95e212" spliced="Y"
 MRHLRLLSSTVPINMAALLLEDYVSTVLEDELHPSPFELGPTLQDLYDLEVDAHDDDPNE
 EAVNLIFPESLILQADIASEAVPTPLHTPTLSPIPELEEEDELDLRCYEEGFPPSDSEDE
 QGEQSMALISEYACVVVEEHFVLDNPEVPGQGCRSCQYHRDKTGDTNASCALCYMKKNFS
 FIYSPVSEDESSPSEENHPCPPELSGETPLQVHKPTPVRPSGERRAAVEKIEDLLHDMGG
 DEPLDLSLKRPRN
-
 >ACI04170.1 db="hadvd_db" gene="E1A" intron_size=44-144 length=253 note="synonym: control protein E1A" product="E1A 28 kDa protein" shared_cds="E1A-2,E1A-3" splice_form="e550i94e212" spliced="Y"
 MRHLRLLSSTVPINMAALLLEDYVSTVLEDELHPSPFELGPTLQDLYDLEVDAHDDDPNE
 EAVNLIFPESLILQANIASEAVPTPLHTPTLSPIPELEEEDELDLRCYEEGFPPSDSEDE
 QGEQSMALISEYACVVVEEHFVLDNPEVPGQGCRSCQYHRDKTGDTNASCALCYMKKNFS
 FIYSPVSEDESSPSEEDHPCPPELSGETPLQVHRPTPVRPSGERRAAVEKIEDLLHDMGG
 DEPLDLSLKRPRN
-
 >YP_003038597.1 db="hadvd_db" gene="E1A" intron_size=45-145 length=253 note="synonym: control protein E1A" product="E1A 28 kDa protein" shared_cds="E1A-2,E1A-3" splice_form="e550i95e212" spliced="Y"
 MRHLHLLSSTVPIDMAALLLEDYVNTILEDELHLSPFELGPTLQDLYDLEVNAQENDPNE
 EAVNLIFPESMILQADIASEAVPTSVYTPTLPPIPKLEEEDKLDLRCYEEGFPPSDSEDE
 RGEQSVAIISDYACVVVENHFVLDNPEVPGQGCKSCQYHREQTGDPNASCALCYMKMSFS
 FIYSPVSEDESSPLEEDHPSPPDLTNDTPLQVRKPTPVRPSGERRAAVYKIEDLLQDVGG
 NEPLNLSLKRPRN
-
 >ACI04171.1 db="hadvd_db" gene="E1A-2" intron_size=230-330 length=191 note="synonym: control protein E1A" product="E1A 21 kDa protein" shared_cds="E1A,E1A-3" splice_form="e364i280e212" spliced="Y"
 MRHLRLLSSTVPINMAALLLEDYVSTVLEDELHPSPFELGPTLQDLYDLEVDAHDDDPNE
 EAVNLIFPESLILQANIASEAVPTPLHTPTLSPIPELEEEDELDLRCYEEGFPPSDSEDE
 QGPVSEDESSPSEEDHPCPPELSGETPLQVHRPTPVRPSGERRAAVEKIEDLLHDMGGDE
 PLDLSLKRPRN
-
 >YP_003038598.1 db="hadvd_db" gene="E1A-2" intron_size=231-331 length=191 note="synonym: control protein E1A" product="E1A 21 kDa protein" shared_cds="E1A,E1A-3" splice_form="e364i281e212" spliced="Y"
 MRHLHLLSSTVPIDMAALLLEDYVNTILEDELHLSPFELGPTLQDLYDLEVNAQENDPNE
 EAVNLIFPESMILQADIASEAVPTSVYTPTLPPIPKLEEEDKLDLRCYEEGFPPSDSEDE
 RGPVSEDESSPLEEDHPSPPDLTNDTPLQVRKPTPVRPSGERRAAVYKIEDLLQDVGGNE
 PLNLSLKRPRN
-
 >ACI47086.1 db="hadvd_db" gene="E1A-2" intron_size=231-331 length=191 note="synonym: control protein E1A" product="E1A 21 kDa protein" shared_cds="E1A,E1A-3" splice_form="e364i281e212" spliced="Y"
 MRHLRLLSSTVPINMAALLLEDYVSTVLEDELHPSPFELGPTLQDLYDLEVDAHDDDPNE
 EAVNLIFPESLILQADIASEAVPTPLHTPTLSPIPELEEEDELDLRCYEEGFPPSDSEDE
 QGPVSEDESSPSEENHPCPPELSGETPLQVHKPTPVRPSGERRAAVEKIEDLLHDMGGDE
 PLDLSLKRPRN
-
->ACI47070.1 db="hadvd_db" gene="E1B" shared_cds="E1B-2" length=182 note="synonyms: inhibitor of apoptosis protein, control protein E1B 19K, E1B 19k protein" product="E1B small T antigen"
+>ACI47070.1 db="hadvd_db" gene="E1B" shared_cds="E1B-2" length=182 note="synonyms: inhibitor of apoptosis protein, control protein E1B 19K, E1B 19k protein" product="E1B small T antigen" splice_form="e546"
 MDVWTILADFSKTRRLVEDSSDGCSGFWRHWFGTPLSRLVYTVKKDYNEEFENLFADCSG
 LLDSLNLGHQSLFQERVLHSLDFSSPGRTTAGVAFVVFLVDKWSQNTQLSRGYILDFAAM
 HLWRAWVRQRGQRILNYWLIQPAAPGLLRLHRQTSMLEEEMRQAMDENPRSGLDPPSEEE
 LN
-
->ACI04172.1 db="hadvd_db" gene="E1B" shared_cds="E1B-2" length=182 note="synonyms: inhibitor of apoptosis protein, control protein E1B 19K, E1B 19k protein" product="E1B small T antigen"
+>ACI04172.1 db="hadvd_db" gene="E1B" shared_cds="E1B-2" length=182 note="synonyms: inhibitor of apoptosis protein, control protein E1B 19K, E1B 19k protein" product="E1B small T antigen" splice_form="e546"
 MDVWTILADFSKTRRLVEDSSDGCSGFWRHWFGTPLSRLVYTVKKDYNEEFENLFADCSG
 LLDSLNLGHQSLFQERVLHSLDFSSPGRTTAGVAFVVFLVDKWSQNTQLSRGYILDFAAM
 HLWRAWVRQRGQRILNYWLIQPAAPGLLRLHRQTSMLEEEMRQAMDENPRSGLDPPSEEE
 LD
-
->YP_001974423.1 db="hadvd_db" gene="E1B" shared_cds="E1B-2" length=182 note="synonyms: inhibitor of apoptosis protein, control protein E1B 19K, E1B 19k protein" product="E1B small T antigen"
+>YP_001974423.1 db="hadvd_db" gene="E1B" shared_cds="E1B-2" length=182 note="synonyms: inhibitor of apoptosis protein, control protein E1B 19K, E1B 19k protein" product="E1B small T antigen" splice_form="e546"
 MDVWTILADFSKTRRLVEDSSDGCSGFWRHWFGTPLSRLVYTVKKDYKEEFENIFADCSG
 LLDSLNLGHQSLFQERVLHSLDFSSPGRTTAGVAFVVFLVDKWSQDTQLSRGYILDFAAM
 HLWRAWIRQRGQRILNYWLLQPAAPGLLRLHRQTSMLEEEMRQAMDENPRSGLDPPSEEE
 LD
-
->AP_000142.1 db="hadvd_db" gene="E1B" shared_cds="E1B-2" length=182 note="synonyms: inhibitor of apoptosis protein, control protein E1B 19K, E1B 19k protein" product="E1B small T antigen"
+>AP_000142.1 db="hadvd_db" gene="E1B" shared_cds="E1B-2" length=182 note="synonyms: inhibitor of apoptosis protein, control protein E1B 19K, E1B 19k protein" product="E1B small T antigen" splice_form="e546"
 MDVWTILADFSKTRRLVEDSSDGCSGFWRHWFGTPLSRLVYTVKKDYNEEFENLFADCSG
 LLDSLNLGHQSLFQERVLHSLDFSSPGRTTAGVAFVVFLVDKWSQNTQLSRGYILDFAAM
 HLWRAWVRQRGQRILNYWLLQPAAPGLLRLHRQTSMLEEEMRQAMDENPRSGLDPPSEEE
 LD
-
->YP_003038599.1 db="hadvd_db" gene="E1B" shared_cds="E1B-2" length=182 note="synonyms: inhibitor of apoptosis protein, control protein E1B 19K, E1B 19k protein" product="E1B small T antigen"
+>YP_003038599.1 db="hadvd_db" gene="E1B" shared_cds="E1B-2" length=182 note="synonyms: inhibitor of apoptosis protein, control protein E1B 19K, E1B 19k protein" product="E1B small T antigen" splice_form="e546"
 MDVWSILGEFNKTRRLVEDSSDGCSGFWRHWFGTPLSRLVYTVKKDYSEEFENLFADCSG
 LLDSLNFGHQSLFQERVLHSLDFSSPGRTTAGVAFVVFLVDKWSQDTQLSRGYILDFAAM
 HLWRAWMRQRGQRILNYWLLQPAASGLLHLHRQTSMLEEEMREAMDENPRSGLDPPSEEE
 LD
-
->YP_001974446.1 db="hadvd_db" gene="E1B-2" shared_cds="E1B" length=495 note="synonyms: inhibitor of nuclear immunity 1, control protein E1B 55K, E1B 55K protein" product="E1B large T antigen"
+>YP_001974446.1 db="hadvd_db" gene="E1B-2" shared_cds="E1B" length=495 note="synonyms: inhibitor of nuclear immunity 1, control protein E1B 55K, E1B 55K protein" product="E1B large T antigen" splice_form="e1485"
 MEPGHPTEQGLHPGLRSHAPVEGLDQAAGTENLELLASTASSSGSSSSTQTNIHVGGRNE
 AGHGREPEERPGPSVGRGAGLNQVSSLYPELSKVLTSMARGVKRERSDGGNTGMMTELTA
 SLMNRKRPERLTWYELQQECRDELGLMQDKYGLEQIKTHWLNPDEDWEEAIKKYAKIALR
@@ -84,8 +72,7 @@ VKQCVFEKCYLGVSTEGNARVRHCSSLETGCFCLVKGTASLKHNMVKGCTDERMYNMLTC
 DSGVCHILKNIHVTSHPRKKWPVFENNLLIKCHMHLGARRGTFQPYQCNFSQTKLLLEND
 AFSRVNLNGIFDMDVSVYKILRYDETKSRVRACECGGRHTRMQPVALDVTEELRPDHLVM
 ACTGTEFSSSGEDTD
-
->ACI04173.1 db="hadvd_db" gene="E1B-2" shared_cds="E1B" length=495 note="synonyms: inhibitor of nuclear immunity 1, control protein E1B 55K, E1B 55K protein" product="E1B large T antigen"
+>ACI04173.1 db="hadvd_db" gene="E1B-2" shared_cds="E1B" length=495 note="synonyms: inhibitor of nuclear immunity 1, control protein E1B 55K, E1B 55K protein" product="E1B large T antigen" splice_form="e1485"
 MEPEHPTEQGLHSGLCSHAPVEGMGEAAGTENLELLAYTASSSGSSSSTQTNIHVGGRNE
 AGHGREPEERPGPSVGRGAGLNQVSSLYPELSKVLTSMARGVKRERSDGGNTGMMTELTA
 SLMNRKRPERITWHELQMECRDELGLMQDKYGLEQIKTHWLNPDEDWEEAIKKYAKIALR
@@ -95,8 +82,7 @@ VKQCVFEKCYLGVSTEGNARVRHCSSLDTGCFCLVKGTASLKHNMVKGCTDERMYNMLTC
 DSGVCHILKNIHVTSHPRKKWPVFENNLLIKCHMHLGARRGTFQPYQCNFSQTKLLLEND
 AFSRVNLNGIFDMDVSVYKILRYDETKSRVRACECGGRHTRMQPVALDVTEELRPDHLVM
 ACTGTEFSSSGEDTD
-
->YP_003038600.1 db="hadvd_db" gene="E1B-2" shared_cds="E1B" length=495 note="synonyms: inhibitor of nuclear immunity 1, control protein E1B 55K, E1B 55K protein" product="E1B large T antigen"
+>YP_003038600.1 db="hadvd_db" gene="E1B-2" shared_cds="E1B" length=495 note="synonyms: inhibitor of nuclear immunity 1, control protein E1B 55K, E1B 55K protein" product="E1B large T antigen" splice_form="e1485"
 MEPGHPTKQGLHSGLCSHAPVEGLDEAAGTENLELLAFTASSVGSSSSTQTNIHVGGRNE
 GGHGREPEERPGPSVGRGAGLNEVSSLYPELSKVLTSMARGVKRERSDGGNTGLMTELTA
 SLMNRKRPERITWHELQQECRDEIGLMQDKYGLEQIKTHWLNPDEDWEEAIKKYAKIALR
@@ -106,8 +92,7 @@ VKQCVFEKCYLGVCTEGNARVRHCSSLETGCFCLVKGTASIKHNVVKGCTDERMYNMLTC
 DSGVCHILKNIHVTSHPRKKWPVFENNLLIKCHMHLGARRGTFQPYQCNFSQTKLLLEND
 AFSRVNLNGIFDMDVSVYKILRYDETKSRVRACECGGRHTRMQPVALDVTEELRPDHLVM
 ACTGTEFSSSGEDTD
-
->ABN10545.1 db="hadvd_db" gene="E1B-2" shared_cds="E1B" length=495 note="synonyms: inhibitor of nuclear immunity 1, control protein E1B 55K, E1B 55K protein" product="E1B large T antigen"
+>ABN10545.1 db="hadvd_db" gene="E1B-2" shared_cds="E1B" length=495 note="synonyms: inhibitor of nuclear immunity 1, control protein E1B 55K, E1B 55K protein" product="E1B large T antigen" splice_form="e1485"
 MEPEHPTEQGLHSGLRSHAPVEGMGEAAGTENLELLAYTASSSGSSSSTQTNIHVGGRNE
 AGHGREPEERPGPSVGRGAELNQVSSLYPELSKVLTSMARGVKRERSDGGNTGMMTELTA
 SLMNRKRPERITWHELQMECRDELGLMQDKYGLEQIKTHWLNPDEDWEEAIKKYAKIALR
@@ -117,8 +102,7 @@ VKQCVFEKCYLGVSTEGNARVRHCSSLDTGCFCLVKGTASLKHNMVKGCTDERMYNMLTC
 DSGVCHILKNIHVTSHPRKKWPVFENNLLIKCHMHLGARRGTFQPYQCNFSQTKLLLEND
 AFSRVNLNGIFDMDVSVYKILRYDETKSRVRACECGGRHTRMQPVALDVTEELRPDHLVM
 ACTGTEFSSSGEDTD
-
->YP_003038614.1 db="hadvd_db" gene="E2A" length=490 note="synonyms: DNA binding protein, single-stranded DNA-binding protein" product="ssDNA-binding protein"
+>YP_003038614.1 db="hadvd_db" gene="E2A" length=490 note="synonyms: DNA binding protein, single-stranded DNA-binding protein" product="ssDNA-binding protein" splice_form="e1470"
 MAGGSQDVRRFMDREATPPRGHGSARYPPEQERSPSPPLPPLPTKRRKYQRVGSGSSEED
 VVPLDSPPKKKQPRKTKHVTKVNPDEEMPQEDAVIVGVGFSQPPVLLKEGKDGKRIVQPA
 TPGILNVCNPLSLPLVSSWEKGMDTMNVLMERYRVDSGLRDAYKLMPEQTEIFQKMCQTW
@@ -128,8 +112,7 @@ AGCGNNQFSGKSCGLFFSEGAKAQQAFKQIMAFIKALYPNMQRGAGMMLMPVHCECNHKP
 HSVPFLGRQLCKMTPFGLSNAEDLDKDQISDKSVLASVKYPSLMVFQCCNPVYRNSRAQS
 TGPNCDFKISAPDMLGALQMSRRMWSETFPEIAVPKLVIPEFKWQPKYQYRNVALPSAAH
 NDERENPFDF
-
->ABN10540.1 db="hadvd_db" gene="E2A" length=490 note="synonyms: DNA binding protein, single-stranded DNA-binding protein" product="ssDNA-binding protein"
+>ABN10540.1 db="hadvd_db" gene="E2A" length=490 note="synonyms: DNA binding protein, single-stranded DNA-binding protein" product="ssDNA-binding protein" splice_form="e1470"
 MAGGSQDVRRFMEREATPPRGHGSARYPPEQERSPSPPPPPLPTKRRKYQRVGSGSSEED
 VVPVDSPPKKKQARKTKHVTKVDPDEEMPQEDAVIVGVGFSQPPVLLKEGKDGKRIVEPA
 TPGVLNVRNPLSLPLVSSWEKGMDTMNVLMERYRVDSGLRDAYKLMPEQTEIFQKMCQTW
@@ -139,8 +122,7 @@ AGCGNNQFSGKSCGLFFSEGAKAQQAFKQIAAFVKALYPNMQRGAGMMLMPVHCECNHKP
 QSVPFLGRQLCKMTPFGLSNAEDLDKDQISDKSVLASVKYPSLMVFQCCNPVYRNSRAQS
 TGPNCDFKISGPDMLGALQMSRRMWSETFPETPVPKLVIPEFKWLSKYQYRNVALPSAAH
 NDERENPFDF
-
->YP_001974427.1 db="hadvd_db" gene="E2A" length=489 note="synonyms: DNA binding protein, single-stranded DNA-binding protein" product="ssDNA-binding protein"
+>YP_001974427.1 db="hadvd_db" gene="E2A" length=489 note="synonyms: DNA binding protein, single-stranded DNA-binding protein" product="ssDNA-binding protein" splice_form="e1467"
 MAGGSQDVRRFMEREATPPRGHGSARYPPEQERSPSPPPPLPTKRRKYQRVGSGSSEEDV
 VPVDSPPKKKQARKTKHVTKVDPDEEMPQEDAVIVGVGFSQPPVLLKEGKDGKRIVEPAT
 PGILNVRNPLSLPLVSSWEKGMDTMNVLMERYRVDSGLRDAYKLMPEQTEIFQKMCQTWM
@@ -150,8 +132,7 @@ GCGNNQFSGKSCGLFFSEGAKAQQAFKQISAFVKALYPNMQRGAGMMLMPVHCECNHKPQ
 SVPFLGRQLCKMTPFGLSNAEDLDKDQISDKSVLASVKYPSLMVFQCCNPVYRNSRAQST
 GPNCDFKISAPDILGALQMSRRMWSETFPETPVPKLVIPEFKWQPKFQYRNVALPSAAHN
 DERENPFDF
-
->ACI04187.1 db="hadvd_db" gene="E2A" length=490 note="synonyms: DNA binding protein, single-stranded DNA-binding protein" product="ssDNA-binding protein"
+>ACI04187.1 db="hadvd_db" gene="E2A" length=490 note="synonyms: DNA binding protein, single-stranded DNA-binding protein" product="ssDNA-binding protein" splice_form="e1470"
 MAGGSQDVRRFMEREATPPRGHGSARYPPEQERSPSPPPPPLPTKRRKYQRVGSGSSEED
 VVPVDSPPKKKQARKTKHVTKVDPDEEMPQEDAVIVGVGFSQPPVLLKEGKDGKRIVEPA
 TPGVLNVRNPLSLPLVSSWEKGMDTMNVLMERYRVDSGLRDAYKLMPEQTEIFQKMCQTW
@@ -161,7 +142,6 @@ AGCGNNQFSGKSCGLFFSEGAKAQQAFKQIAAFVKALYPNMQRGAGMMLMPVHCECNHKP
 QSVPFLGRQLCKMTPFGLSNAEDLDKDQISDKSVLASVKYPSLMVFQCCNPVYRNSRAQS
 TGPNCDFKISGPDMLGALQMSRRMWSETFPETPVPKLVIPEFKWQPKFQYRNVALPSAAH
 NDERENPFDF
-
 >ACI04176.3 db="hadvd_db" gene="E2B" shared_cds="pTP,IVa2,HYP-1,HYP-5" intron_size=4915-5015 length=1165 product="DNA polymerase" splice_form="e9i4965e3489" spliced="Y"
 MALVQSHGASGLHAKAADPGCQPPRRRARQRSQGAAPGPARAPRQRAAAAGSASATPLLK
 AHRGTVVAPRSYGLMQCVDTTTNSPVEIKYHLHLKHALTRLYEVNLRTLPPDLDLRDTMD
@@ -183,7 +163,6 @@ EEDRGTPLQDRPIKSVYGDTDSLFVTERGHRLMETRGKKRIKKNGGKLVFDPEHPELTWL
 VECETVCAHCGADAFAPESVFLAPKLYALQSILCPACGHSSKGKLRAKGHAAEALNYELM
 VNCYLADAQGEDRARFSTSRMSLKRTLASAQPGAHPFTVTETTLTRTLRPWKDMTLAALD
 AHRLVPYSRSRPNPRNEEVCWIEMP
-
 >AP_000143.1 db="hadvd_db" gene="E2B" shared_cds="pTP,IVa2,HYP-1,HYP-5" intron_size=4722-5418 length=1176 product="DNA polymerase" splice_form="e9i4969e3522" spliced="Y"
 MALVQSHGASGLHAEAADPGCQPPRRRARQRSQGATPGPARAPRRRASAAPARGAGTAAA
 AGSASATPLLKAHRGTVVAPRSYGLMQCVDTATNSPVEIKYHLHLKHALTRLYEVNLRTL
@@ -205,7 +184,6 @@ AFVSEWSEFLYEEDRGTPLQDRPIKSVYGDTDSLFVTERGHRLMETRGKKRIKKNGGKLV
 FDPEQPELTWLVECETVCAHCGADAFAPESVFLAPKLYALQSLLCPACGRSSKGKLRAKG
 HAAEALNYELMVNCYLADAQGEDRARFSTSRMSLKRTLASAQPGAHPFTVTETTLTRTLR
 PWKDMTLAALDAHRLVPYSRSRPNPRNEEVCWIEMP
-
 >YP_001974426.1 db="hadvd_db" gene="E2B" shared_cds="pTP,IVa2,HYP-1,HYP-5" intron_size=4722-5418 length=1176 product="DNA polymerase" splice_form="e9i4957e3522" spliced="Y"
 MALVQSHGARGLHAEAADPGCQPPRRRARQRSQGAAPGPARAPRRRASAAPARGARTAAA
 AGSTPATPLLKAHRGTVVAPRSYGLMQCVDTTTNSPVEIKYHLHLKHALTRLYEVNLRTL
@@ -227,83 +205,67 @@ AFVSEWSEFLYEEDRGTPLQDRPIKSVYGDTDSLFVTERGHRLMETRGKKRIKKNGGKLV
 FDPEQPELTWLVECETVCAHCGADAFAPESVFLAPKLYALQSLLCPACGRSSKGKLRAKG
 HAAEALNYELMVNCYLADSQGEDRARFSTSRMSLKRTLASAQPGAHPFTVTETTLTRTLR
 PWKDMTLAALDAHRLVPYSRSRPNPRNEEVCWIEMP
-
->YP_001974432.1 db="hadvd_db" gene="E3" shared_cds="E3-2" length=106 note="synonyms: putative host modulation protein E3, Early E3 12.5 kDa glycoprotein, E3 12.2 kDa protein" product="E3 12.5 kDa immune modulating protein"
+>YP_001974432.1 db="hadvd_db" gene="E3" shared_cds="E3-2" length=106 note="synonyms: putative host modulation protein E3, Early E3 12.5 kDa glycoprotein, E3 12.2 kDa protein" product="E3 12.5 kDa immune modulating protein" splice_form="e318"
 MSHGDSAELARLRHLDHCRRLRCFARESCGLIYFEFPEEHPNGPAHGVRITVEGTTESHL
 VRFFTQQPFLVERDRGATTYTVYCICPTPKLHENFCCTLCGEFNKS
-
->ACI04191.1 db="hadvd_db" gene="E3" shared_cds="E3-2" length=106 note="synonyms: putative host modulation protein E3, Early E3 12.5 kDa glycoprotein, E3 12.2 kDa protein" product="E3 12.5 kDa immune modulating protein"
+>ACI04191.1 db="hadvd_db" gene="E3" shared_cds="E3-2" length=106 note="synonyms: putative host modulation protein E3, Early E3 12.5 kDa glycoprotein, E3 12.2 kDa protein" product="E3 12.5 kDa immune modulating protein" splice_form="e318"
 MSHGDSAELARLRHLDHCRRLRCFARESCGLIYFEFPKEHPNGPAHGVRITVEGTTESHL
 VRFFTQQPFLVERDRGATTYTVYCICPTPKLHENFCCTLCAEFNKS
-
->ACI47082.1 db="hadvd_db" gene="E3" shared_cds="E3-2" length=106 note="synonyms: putative host modulation protein E3, Early E3 12.5 kDa glycoprotein, E3 12.2 kDa protein" product="E3 12.5 kDa immune modulating protein"
+>ACI47082.1 db="hadvd_db" gene="E3" shared_cds="E3-2" length=106 note="synonyms: putative host modulation protein E3, Early E3 12.5 kDa glycoprotein, E3 12.2 kDa protein" product="E3 12.5 kDa immune modulating protein" splice_form="e318"
 MSYGDSAELARLRHLDHCRRLRCFARESYGLIYFELPEEHPNGPAHGVRITVEGTTESHL
 VRFFTQQPFLVERDRGATTYTVYCICPTPKLHENFCCTLCGEFNKS
-
->YP_003038618.1 db="hadvd_db" gene="E3" shared_cds="E3-2" length=106 note="synonyms: putative host modulation protein E3, Early E3 12.5 kDa glycoprotein, E3 12.2 kDa protein" product="E3 12.5 kDa immune modulating protein"
+>YP_003038618.1 db="hadvd_db" gene="E3" shared_cds="E3-2" length=106 note="synonyms: putative host modulation protein E3, Early E3 12.5 kDa glycoprotein, E3 12.2 kDa protein" product="E3 12.5 kDa immune modulating protein" splice_form="e318"
 MSYGDSAELARLRHLDHCRRLRCFARESCGLVYFKLPEEHPNGPAHGVRITVEGTTKSYL
 VRFFTQQPFLVERDRGATTYTVYCICPTPKLHENFCCTLCGEFNKS
-
->AP_000150.1 db="hadvd_db" gene="E3" shared_cds="E3-2" length=106 note="synonyms: putative host modulation protein E3, Early E3 12.5 kDa glycoprotein, E3 12.2 kDa protein" product="E3 12.5 kDa immune modulating protein"
+>AP_000150.1 db="hadvd_db" gene="E3" shared_cds="E3-2" length=106 note="synonyms: putative host modulation protein E3, Early E3 12.5 kDa glycoprotein, E3 12.2 kDa protein" product="E3 12.5 kDa immune modulating protein" splice_form="e318"
 MSYGDSAELARLRHLDHCRRLRCFARESCGLIYFEFPEEHPNGPAHGVRITVEGTTESHL
 VRFFTQQPFLVERDRGGTTYTVYCICPTPKLHENFCCTLCAEFNKS
-
->AP_000151.1 db="hadvd_db" gene="E3-2" length=198 note="synonyms: CR1-alpha membrane glycoprotein, membrane glycoprotein E3 CR1-alpha, E3 12.2 kDa protein" product="E3 CR1-alpha"
+>AP_000151.1 db="hadvd_db" gene="E3-2" length=198 note="synonyms: CR1-alpha membrane glycoprotein, membrane glycoprotein E3 CR1-alpha, E3 12.2 kDa protein" product="E3 CR1-alpha" splice_form="e594"
 MRIFVVLCVLSLIKAKLLQYSGIPCRRTRNKTFNLTNQTEVKFNCRPGDKYILWLFKNTS
 FAVSNACANDGIEIPNNLTSGLTYTTRKTKLVLYNPFVEGTYHCQSGPCFHTFTLVNVTD
 SSTAATETSNLLFDTNTPKTGGELWVPSLTEGGKHIEAVGYLILGVVLGGCIAVLYYLPC
 WIEIKIFICWVRHCWEEP
-
->ACI04192.1 db="hadvd_db" gene="E3-2" length=197 note="synonyms: CR1-alpha membrane glycoprotein, membrane glycoprotein E3 CR1-alpha, E3 12.2 kDa protein" product="E3 CR1-alpha"
+>ACI04192.1 db="hadvd_db" gene="E3-2" length=197 note="synonyms: CR1-alpha membrane glycoprotein, membrane glycoprotein E3 CR1-alpha, E3 12.2 kDa protein" product="E3 CR1-alpha" splice_form="e591"
 MRIFVVLCVLSLIKAKLLQYSGIPCRRTRNEIFNLTNQTEVKLNCRPGGKYILWLFENTS
 FAVSNACANDGIEIPNNLTSGLTYTTRKTKLVLYNPFVEGTYHCQSGPCFHTFTLVNVTD
 SSTAAPETSNLFDTNTPKTGGELWVPSLTEGGKHIEAVGYLILGVVLGGCIAVLYYLPCW
 NEIKIFICWVIHCWEEP
-
->YP_003038619.1 db="hadvd_db" gene="E3-2" length=188 note="synonyms: CR1-alpha membrane glycoprotein, membrane glycoprotein E3 CR1-alpha, E3 12.2 kDa protein" product="E3 CR1-alpha"
+>YP_003038619.1 db="hadvd_db" gene="E3-2" length=188 note="synonyms: CR1-alpha membrane glycoprotein, membrane glycoprotein E3 CR1-alpha, E3 12.2 kDa protein" product="E3 CR1-alpha" splice_form="e564"
 MRIFAVLFVVSLIKAEIRLYSGIQCRHNRTKTINFTTQEQVNFTCKPHKKYLIWFLKNTT
 FAVVNTCDNDGVLLPNNLTSGLAFSVKRAKLILHRPIVEGTYHCQSGPCHHIFHLVNVTS
 SSNSSETNLSSRTNRPQFGGELRLPPCKEGVSPYKVVGYLILGAVLGGCIAVLAQLPCWV
 EINLYLLG
-
->ACI47068.1 db="hadvd_db" gene="E3-2" length=196 note="synonyms: CR1-alpha membrane glycoprotein, membrane glycoprotein E3 CR1-alpha, E3 12.2 kDa protein" product="E3 CR1-alpha"
+>ACI47068.1 db="hadvd_db" gene="E3-2" length=196 note="synonyms: CR1-alpha membrane glycoprotein, membrane glycoprotein E3 CR1-alpha, E3 12.2 kDa protein" product="E3 CR1-alpha" splice_form="e588"
 MRIFVVLFVVSLIKAKLLQYSGPCRHQLNETVYLTNQTEVKLTCRPHKTYIIWFFENTSF
 AVSNTHCNDGVELPNNLSSGLSYNTRRAKLILYNPFVEGTYQCQSGPCFHSFTLVNVTGS
 STAAPETNLPSDTIKPCFGGELRLPPSQEGVSPYEVVGYLILGVVLGGCIAVLAQLPCWV
 EIKIFICWVRHCGEEL
-
->YP_001974458.1 db="hadvd_db" gene="E3-2" length=196 note="synonyms: CR1-alpha membrane glycoprotein, membrane glycoprotein E3 CR1-alpha, E3 12.2 kDa protein" product="E3 CR1-alpha"
+>YP_001974458.1 db="hadvd_db" gene="E3-2" length=196 note="synonyms: CR1-alpha membrane glycoprotein, membrane glycoprotein E3 CR1-alpha, E3 12.2 kDa protein" product="E3 CR1-alpha" splice_form="e588"
 MRIFAVLFVVSLIKAKLLQYSGPCRHQLNETVYLTNQTEVKLTCRPHKTYIIWFFENTSF
 AVSNTHCNDGVELPNNLSSGLSYDTHRAKLVLYNPFVEGTYHCQSGPCFHSFTLVNVTGS
 STAAPEPNLPSDTIKPRFGGELRLPPSEEGVSPYEVVGYLILGVVLGGCIAVLAQLPCWV
 EIKIFICWVRHCGEEL
-
->YP_001974459.1 db="hadvd_db" gene="E3-3" length=157 note="synonyms: inhibitor of MHC protein, membrane glycoprotein E3 gp19K, Early E3 18.5 kDa glycoprotein, E3-19K, E3gp 19 kDa, Early E3 19.2 kDa glycoprotein, GP19K, E19" product="E3 immune modulating protein"
+>YP_001974459.1 db="hadvd_db" gene="E3-3" length=157 note="synonyms: inhibitor of MHC protein, membrane glycoprotein E3 gp19K, Early E3 18.5 kDa glycoprotein, E3-19K, E3gp 19 kDa, Early E3 19.2 kDa glycoprotein, GP19K, E19" product="E3 immune modulating protein" splice_form="e471"
 MKGLLLIILSLVGGVLSCHEQPRCNITTGNERSVICTVVIKCEHECPLNITFKNRTMGNA
 WVGDWEPGDEQNYTVTVHGSDGNHTFGFKFIFEVMCDITLHVARLHGLWPPTKENMVGFS
 LAFVIMACFMSGLLVGALVWFLKRKPRYGNEEKEKLL
-
->ACI04193.1 db="hadvd_db" gene="E3-3" length=157 note="synonyms: inhibitor of MHC protein, membrane glycoprotein E3 gp19K, Early E3 18.5 kDa glycoprotein, E3-19K, E3gp 19 kDa, Early E3 19.2 kDa glycoprotein, GP19K, E19" product="E3 immune modulating protein"
+>ACI04193.1 db="hadvd_db" gene="E3-3" length=157 note="synonyms: inhibitor of MHC protein, membrane glycoprotein E3 gp19K, Early E3 18.5 kDa glycoprotein, E3-19K, E3gp 19 kDa, Early E3 19.2 kDa glycoprotein, GP19K, E19" product="E3 immune modulating protein" splice_form="e471"
 MKGLLLIILFLVGGVLSCHEQPRCNITTGNERSVICTVVIKCEHTCPLNITFKNKTMGNS
 WVGDWEPGDEQNYTVTVHGSDGNHTFGFKFIFEVMCDITLHVARLHGLWPPTKENIVGFS
 LAFVIMACFMSGLLVGALVWFLKRKPRYGNEEKEKLL
-
->ACI47072.1 db="hadvd_db" gene="E3-3" length=156 note="synonyms: inhibitor of MHC protein, membrane glycoprotein E3 gp19K, Early E3 18.5 kDa glycoprotein, E3-19K, E3gp 19 kDa, Early E3 19.2 kDa glycoprotein, GP19K, E19" product="E3 immune modulating protein"
+>ACI47072.1 db="hadvd_db" gene="E3-3" length=156 note="synonyms: inhibitor of MHC protein, membrane glycoprotein E3 gp19K, Early E3 18.5 kDa glycoprotein, E3-19K, E3gp 19 kDa, Early E3 19.2 kDa glycoprotein, GP19K, E19" product="E3 immune modulating protein" splice_form="e468"
 MKGLLLIILSLVGGVLSCHEQPRCNITTGNERNDCSVVIKCEHHCPLNITFKNKTMGNVW
 VGFWQPGDEQNYTVTVHGSNGNHTFGFKFIFEVMCDITLHVARLHGLWPPTKDNMVGFSL
 AFVIMACLMSGLLVGALVWFLKRKPRYGNEEKEKLL
-
->AP_000152.1 db="hadvd_db" gene="E3-3" length=157 note="synonyms: inhibitor of MHC protein, membrane glycoprotein E3 gp19K, Early E3 18.5 kDa glycoprotein, E3-19K, E3gp 19 kDa, Early E3 19.2 kDa glycoprotein, GP19K, E19" product="E3 immune modulating protein"
+>AP_000152.1 db="hadvd_db" gene="E3-3" length=157 note="synonyms: inhibitor of MHC protein, membrane glycoprotein E3 gp19K, Early E3 18.5 kDa glycoprotein, E3-19K, E3gp 19 kDa, Early E3 19.2 kDa glycoprotein, GP19K, E19" product="E3 immune modulating protein" splice_form="e471"
 MKGLLLIILSLVGGVLSCHEQPRCNITTGNERSVICTVVIKCEHTCPLNITFKNRTMGNA
 WVGDWEPGDEQNYTVTVHGSNGNHTFGFKFIFEVMCDITLHVARLHGLWPPTKDNMVGFS
 LAFVIMACAMSGLLVGALVWFLKRKPRYGNEEKEKLL
-
->YP_003038620.1 db="hadvd_db" gene="E3-3" length=157 note="synonyms: inhibitor of MHC protein, membrane glycoprotein E3 gp19K, Early E3 18.5 kDa glycoprotein, E3-19K, E3gp 19 kDa, Early E3 19.2 kDa glycoprotein, GP19K, E19" product="E3 immune modulating protein"
+>YP_003038620.1 db="hadvd_db" gene="E3-3" length=157 note="synonyms: inhibitor of MHC protein, membrane glycoprotein E3 gp19K, Early E3 18.5 kDa glycoprotein, E3-19K, E3gp 19 kDa, Early E3 19.2 kDa glycoprotein, GP19K, E19" product="E3 immune modulating protein" splice_form="e471"
 MKGLLLIILSLVGGVLSCHEQPRCNITTGNERSVICTVVIKCEHQCPLNITFKNRTMGNA
 WVGYWEPGDEQNYTVTVHGSDGNHTFGFKFIFEVMCDITLHVARLHGLWPPTKENMVGFS
 LAFVIMACFMSGLLVGALMWFLKCKPRYGNEQKEKLL
-
->YP_001974460.1 db="hadvd_db" gene="E3-4" length=409 note="synonyms: adenovirus death protein, membrane glycoprotein E3 CR1-beta, E3 45.8 kDa protein" product="E3 CR1-beta"
+>YP_001974460.1 db="hadvd_db" gene="E3-4" length=409 note="synonyms: adenovirus death protein, membrane glycoprotein E3 CR1-beta, E3 45.8 kDa protein" product="E3 CR1-beta" splice_form="e1227"
 MNTLTSVVLLSLLVAFSQAGIINLNVSWGMNLTLVGPSDLPVTWYDGKGMQFCDGNTIKN
 PQIKHSCNQQNLTLLNADKSHERTYLGYRHDSKGKVDYKVTVIPPPPATRKPLSEPHYVT
 VTMGDNITLVGPSDLPVTWYDGEGNKFCDGEKVEHAEFNHTCNIQNLTLLFVNLTHNGAY
@@ -311,8 +273,7 @@ IGYNKDGSDRELYEVSVKTLFQNGAGQSKVEQGNKGKPNTAQSGGKKTKTEHRNQSPKRK
 STNNLQPTQLYVRPFTNVSLTGPPNGKVTWYDGELNDPCEQKYKLRTFCNQQNLTLINVS
 STYDGIYYGTDEKDKANRYRIKVNTTNHKTVKIKPHTREPPAVQEKQFELQDAETDENES
 KIPSATVAIVVGVIAGFVTLIIVFICYICCRKRPRSYNHMVDPLLSFSY
-
->ABN10537.1 db="hadvd_db" gene="E3-4" length=428 note="synonyms: adenovirus death protein, membrane glycoprotein E3 CR1-beta, E3 45.8 kDa protein" product="E3 CR1-beta"
+>ABN10537.1 db="hadvd_db" gene="E3-4" length=428 note="synonyms: adenovirus death protein, membrane glycoprotein E3 CR1-beta, E3 45.8 kDa protein" product="E3 CR1-beta" splice_form="e1284"
 MNTVNRIVLLSLLVAFSQAGFHTINATWWANITLVGPPDTPVTWYDTQGLWFCNGSRVKN
 PQIRHTCNDQNLTLIHVNKTYERTYMGYNRQGTKKEDYKVVVIPPPPATVKPQPEPEYVF
 VYMGENKTLEGPPGTPVTWFNQDGKKFCEGEKVLHPEFNHTCDKQNLILLFVNFTHDGAY
@@ -321,8 +282,7 @@ QTKVNDRRKTAQKRPSKLKPATIEAMLVTVTAGSNLTLVGPKAEGKVTWFDGDLKRPCEP
 NYRLRHECNNQNLTLINVTKDYEGTYYGTNDKDEGKRYRVKVNTTNSQSVKIQPYTRQTT
 PDQEHKFELQFETNGNYDSKIPSTTVAIVVGVIAGFITLIIVFICYICCRKRPRAYNHMV
 DPLLSFSY
-
->AEY79583.1 db="hadvd_db" gene="E3-4" length=417 note="synonyms: adenovirus death protein, membrane glycoprotein E3 CR1-beta, E3 45.8 kDa protein" product="E3 CR1-beta"
+>AEY79583.1 db="hadvd_db" gene="E3-4" length=417 note="synonyms: adenovirus death protein, membrane glycoprotein E3 CR1-beta, E3 45.8 kDa protein" product="E3 CR1-beta" splice_form="e1251"
 MNTLTSVVLLSLLVVNVDSADPILVSVDWGKNLKLEGPKETPVEWWGGKNIQQLCVGNQT
 KHKELRHTCNMQNITLLSVNTSFNGDYFGFKNDNSGMKHYKVTVIPPKPTTRKPLPPPHY
 VNATMGQNLTLVGPANIPVTWLSEFGTLCEGKKILHEELNHTCNEQNLTLLFVNMTHNGP
@@ -330,8 +290,7 @@ YFGFGKDNVDREQYEVSIISLFKVGAGQKKIDKGQRAEEKTKFNSGDLGRKQSRPKKKDI
 VDEVQVKSGNNQTLIGPPGKNVDWIKLSSGNDAVVTLCKGDTWIKHTCNGPNVTLINVTK
 PYEGSYYGSSDDGSSHYKVTVYDLYKSNKSKSKVKPYTTKGTTVNATNANGLKNALQQDG
 ESENDQESKIPSATVAIVVGVIAGFVTLIIVFICYICCRKRPRTYNHMVDPLLSFSY
-
->YP_003038621.1 db="hadvd_db" gene="E3-4" length=396 note="synonyms: adenovirus death protein, membrane glycoprotein E3 CR1-beta, E3 45.8 kDa protein" product="E3 CR1-beta"
+>YP_003038621.1 db="hadvd_db" gene="E3-4" length=396 note="synonyms: adenovirus death protein, membrane glycoprotein E3 CR1-beta, E3 45.8 kDa protein" product="E3 CR1-beta" splice_form="e1188"
 MNTLTSVVLLSLLVAFSEAGIINLNVSWGINLTLVGPLDLPVTWYDGKGMQFCDGNTIKN
 PQIKHSCNQQNLTLLNADKSHERTYLGYRHDSKGKVDYKVTVIPPPSTTRKPLSQPHYVT
 VTMNHNMTLVGPLNLPVTWYDGEGNKLCNGEKVEHAEFNHTCNIQNLTLLFVNLTHNGAY
@@ -339,8 +298,7 @@ IGYNKDGSNRELYEVSVKTLFQNGAKQSKVEQSNIGQGNTAQSAKRKSTNNLQPTQLYVR
 PFTNVSLTGPPNGKVIWYDGELNDPCEQKYKLKTFCNQQNLTLINVTSTYDGIYYGTDEK
 DKANRYRIKVNTTNHKTVKIKPHTKEPPAEQKKQFQLQVAETDQNESKIPSATVAIVVGV
 IAGFVTLIIVFICYICCRKRPRAYNYMVDPLLSFSY
-
->AEV92974.1 db="hadvd_db" gene="E3-4" length=427 note="synonyms: adenovirus death protein, membrane glycoprotein E3 CR1-beta, E3 45.8 kDa protein" product="E3 CR1-beta"
+>AEV92974.1 db="hadvd_db" gene="E3-4" length=427 note="synonyms: adenovirus death protein, membrane glycoprotein E3 CR1-beta, E3 45.8 kDa protein" product="E3 CR1-beta" splice_form="e1281"
 MNTVIRIVLLSLLVAFSQAGFHTINATWWANITLVGPSDTPVTWYDKQGMQFCDGNTVKN
 PQIRHECNEQNLTLIHVNKTHERTYMGYNRQSTHKEDYKVIVIPPPPATVKPQSGPEYVY
 VNMGENKTLVGPPGIPVTWYDGEGNKFCDGKKVEHAEFNHTCDVQNLTLLFINLTHDGAY
@@ -349,8 +307,7 @@ TSQKKANDKQKATHRRPSKLKPHTPEAKLITVSSGSNLTLLGPDGKVTWYDDDLKRPCEP
 GYKLNCKCDNQNLTLINVTKLYEGVYYGTNDGGNGKRYRVKVNTTNSQNVKIQPYTRPTT
 PDQKHRFELQIDYNQDNDKIPSTTVAIVVGVIAGFITLIIVILCYICCRKRPRAYNHMVD
 PLLSFSY
-
->ACI04194.1 db="hadvd_db" gene="E3-4" length=417 note="synonyms: adenovirus death protein, membrane glycoprotein E3 CR1-beta, E3 45.8 kDa protein" product="E3 CR1-beta"
+>ACI04194.1 db="hadvd_db" gene="E3-4" length=417 note="synonyms: adenovirus death protein, membrane glycoprotein E3 CR1-beta, E3 45.8 kDa protein" product="E3 CR1-beta" splice_form="e1251"
 MNTLTGVVLLSLLVAFSQAGFHTINATWWANITLVGPSDTPVTWYDKQGMQFCDGNTVKN
 PQIRHECNEQNLTLIHVNKTHERTYMGYNRQSTHKEDYKVIVIPPPPATVKPQSGPEYVY
 VNMGENKTLVGPPGIPVTWYDGEGNKFCDGEKVEHAEFNHTCDEQNLTLLFINLTHDGAY
@@ -358,254 +315,205 @@ LGYNRQGTKRTWYEVVVTDGFPKSGEMKIEDQSRQNEHKQGGQKQEGQKETSQKKANDKQ
 KATHRRPSKLKPHTPEAKLITVSSGSNLTLLGPDGKVTWYDDDLKRPCEPGYKLGCKCDN
 QNLTLINVTKLYEGVYYGTNDRGNSKRYRVKVNTTNSQSVKIQPYNRSTTPNQKHRFELQ
 IDSNQDNDKIPSTTVAIVVGVIAGFITIIIVILCYICCRKRPRAYNHMVDPLLSFSY
-
->YP_003038622.1 db="hadvd_db" gene="E3-5" length=261 note="synonyms: CR1-gamma, E3 orf3 33.1 kDa protein" product="E3 CR1-gamma"
+>YP_003038622.1 db="hadvd_db" gene="E3-5" length=261 note="synonyms: CR1-gamma, E3 orf3 33.1 kDa protein" product="E3 CR1-gamma" splice_form="e783"
 MKAFTACVLISIVTLSLSQIINVNVTRGGSITLNGTYKNTTWTRYHLDSWKNLCKWNMTA
 YKCYDNGSITITATGKITSGKYKAESYKNEIKKSVFKTNKTTFEDSGNYEHQKITFYQLT
 IIQLPTTKVPTTTASTYTTQLNTTVQNSTVLVRYLLREESTTQQTDATLSAFSSTANLTS
 LAWTNETGVLLMHGQPYSGLHIQITFLVICGIFILVVLLYFVCCKARKKSRRPIYRPVIG
 NPQPFQVEGGLRNLLFSFSVW
-
->ACI04195.1 db="hadvd_db" gene="E3-5" length=276 note="synonyms: CR1-gamma, E3 orf3 33.1 kDa protein" product="E3 CR1-gamma"
+>ACI04195.1 db="hadvd_db" gene="E3-5" length=276 note="synonyms: CR1-gamma, E3 orf3 33.1 kDa protein" product="E3 CR1-gamma" splice_form="e828"
 MKAFTACVLISIVTLVSADYKQVQVSRGGNITLDGPFDNTTWTRYHNDGHKNGWMKICTW
 TGATYKCHNNGSITIFAFNITSGVYKAEGYKKEVRTFSSRNQKHTIEDSGDYEQQKIYLY
 NLTIIEPPTTKAPTIVRTTTRETTHPTTTTHTTHLDTTVQNTTLLIGFLIRGNESTTDQT
 EATSSAFSSTANLTSLASVNETIVPMMYGQPYSGLDIQITFLVVCGIFILVVLLYFVCCK
 AREKSRRPIYRPVIGDPQPLQVEGGLRNLLFSFSVW
-
->YP_001974461.1 db="hadvd_db" gene="E3-5" length=262 note="synonyms: CR1-gamma, E3 orf3 33.1 kDa protein" product="E3 CR1-gamma"
+>YP_001974461.1 db="hadvd_db" gene="E3-5" length=262 note="synonyms: CR1-gamma, E3 orf3 33.1 kDa protein" product="E3 CR1-gamma" splice_form="e786"
 MKAFTACVLISIVTLSSAAMINVNVTRGGKITLNGTYPQTTWTRYHKDGWKNICEWNVTA
 YKCFNNGSITITATANITSGTYKAESYKNEIKKLTYKNNKTTFEDSGNYEHQKLSFYMLT
 IIELPTTKAPTTTSTTIKTTTHTTVQNTTLLIGFLLRENESTTEQTEATSSAFSSTANLT
 SLAWTNETGVSLMHGQPYSGLDIQITFLVVCGIFILVVLLYFVCCKAREKSRRPIYRPVI
 GEPQPLQVDGGLRNLLFSFTVW
-
->ABN10543.1 db="hadvd_db" gene="E3-5" length=280 note="synonyms: CR1-gamma, E3 orf3 33.1 kDa protein" product="E3 CR1-gamma"
+>ABN10543.1 db="hadvd_db" gene="E3-5" length=280 note="synonyms: CR1-gamma, E3 orf3 33.1 kDa protein" product="E3 CR1-gamma" splice_form="e840"
 MKAFTACVLISLVTLSVAIKNQYHVHNVTRDGYITLNVTIDNTTWTRYHLNKWHQICTWS
 DPSYKCHSNGSITIHAFNITSGQYKAESFTNWFRYYGNHKHEIHIFNITVIEHPTTKAPT
 TANTATSIKSTTTQPTTRETTQPTTTVSTTTETTTQTTQLDTTVQNSTVLVRYLLREEST
 TEQTEATSSAFSSTANLTSLAWTNETGVSLMNHQPFSGLDIQITFLVVCGIFILVVLLYF
 VCCKAREKSRRPIYRPVIGEPQPLQVEGGLRNLLFSFSVW
-
->AP_000153.1 db="hadvd_db" gene="E3-5" length=270 note="synonyms: CR1-gamma, E3 orf3 33.1 kDa protein" product="E3 CR1-gamma"
+>AP_000153.1 db="hadvd_db" gene="E3-5" length=270 note="synonyms: CR1-gamma, E3 orf3 33.1 kDa protein" product="E3 CR1-gamma" splice_form="e810"
 MKAFTACVLISIVTLSSAAMINVNVTRGGKITLNGTYPQTTWTRYHKDGWKNICEWNVTA
 YKCFNNGSITITATANITSGTYKAESYKNEIKKLTYKNNKTTFEDSGNYEHQKLSFYMLT
 IIELPTTKAPTTVSTTTQSTVKTTTHTTQLDTTVQNNTVLVRYLLREESTTEQTEATSSA
 FISTANLTSLAWTNETGVSLMHGQPYSGLDIQITFLVVCGIFILVVLLYFVCCKARKKSR
 RPIYRPVIGEPQPLQVDGGLRNLLFSFTVW
-
->ABN10538.1 db="hadvd_db" gene="E3-7" length=91 note="synonyms: receptor internalization and degradation-alpha protein, membrane protein E3 RID-alpha" product="E3 RID-alpha"
+>ABN10538.1 db="hadvd_db" gene="E3-7" length=91 note="synonyms: receptor internalization and degradation-alpha protein, membrane protein E3 RID-alpha" product="E3 RID-alpha" splice_form="e273"
 MIPRFFLFNILFCLFNICAAFAAVSHASPDCLGPFPTYLLFALLTCTCVCSIVCLVITFL
 QLIDWCCARYNYLHHSPEYRDKNVARILRLI
-
->ACJ67784.1 db="hadvd_db" gene="E3-7" length=91 note="synonyms: receptor internalization and degradation-alpha protein, membrane protein E3 RID-alpha" product="E3 RID-alpha"
+>ACJ67784.1 db="hadvd_db" gene="E3-7" length=91 note="synonyms: receptor internalization and degradation-alpha protein, membrane protein E3 RID-alpha" product="E3 RID-alpha" splice_form="e273"
 MIPRFFLFNILFCLFNVCAAFAAVSHASPDCLGPFPTYLLFALLTCTCVCSIVCLVVTFL
 QLIDWCCARYNYLHHSPEYRDENVARILRLI
-
->YP_001974462.1 db="hadvd_db" gene="E3-7" length=91 note="synonyms: receptor internalization and degradation-alpha protein, membrane protein E3 RID-alpha" product="E3 RID-alpha"
+>YP_001974462.1 db="hadvd_db" gene="E3-7" length=91 note="synonyms: receptor internalization and degradation-alpha protein, membrane protein E3 RID-alpha" product="E3 RID-alpha" splice_form="e273"
 MIPRFFLFNILFCLFNICAAFAAVSHASPDCLGPFPTYLLFALLTCTCVCSIVCVVITFL
 QLIDWCCARYNYLHHSPEYRDENVARILRLI
-
->YP_003038623.1 db="hadvd_db" gene="E3-7" length=91 note="synonyms: receptor internalization and degradation-alpha protein, membrane protein E3 RID-alpha" product="E3 RID-alpha"
+>YP_003038623.1 db="hadvd_db" gene="E3-7" length=91 note="synonyms: receptor internalization and degradation-alpha protein, membrane protein E3 RID-alpha" product="E3 RID-alpha" splice_form="e273"
 MIPRFFLFNILFCLFNVCAAFAAVSHTSPDCLGPFPTYLLFALLTCTCVCSIVCLVITFL
 QLIDWCCARYNYLHHSPEYRDKNVAKLLRLI
-
->AP_000154.1 db="hadvd_db" gene="E3-8" length=129 note="synonyms: receptor internalization and degradation-beta protein, membrane protein E3 RID-beta" product="E3 RID-beta"
+>AP_000154.1 db="hadvd_db" gene="E3-8" length=129 note="synonyms: receptor internalization and degradation-beta protein, membrane protein E3 RID-beta" product="E3 RID-beta" splice_form="e387"
 MQTLLILLSLLSHALATADYSKCKLADIWNFLDCYQEKIDMPSYYLVIVGIVMVCSCTFF
 AIMIYPCFDLGWNSVEAFTYTLESSSLASTPPPTPPPRRNQFPMIQYLEEPPPRPPSTVS
 YFHITGGDD
-
->ACI04196.1 db="hadvd_db" gene="E3-8" length=129 note="synonyms: receptor internalization and degradation-beta protein, membrane protein E3 RID-beta" product="E3 RID-beta"
+>ACI04196.1 db="hadvd_db" gene="E3-8" length=129 note="synonyms: receptor internalization and degradation-beta protein, membrane protein E3 RID-beta" product="E3 RID-beta" splice_form="e387"
 MQTLLILLSLLSPALADDDYSKCKFVELWNFLDCYDVKMDMPSYYLVIVGIVMVCSCTFF
 AIMIYPCFNLGWNSVEAFTYTLESSSLASTPPPTPPPRRNQFPMIQYLEEPPPRPPSTVS
 YFHITGGDD
-
->YP_001974463.1 db="hadvd_db" gene="E3-8" length=129 note="synonyms: receptor internalization and degradation-beta protein, membrane protein E3 RID-beta" product="E3 RID-beta"
+>YP_001974463.1 db="hadvd_db" gene="E3-8" length=129 note="synonyms: receptor internalization and degradation-beta protein, membrane protein E3 RID-beta" product="E3 RID-beta" splice_form="e387"
 MQTLLMLLSLLSPALATSADSKCKFAEIWNFLDCYQEKIDMPSYYLVIVGIVMVCSCTFF
 AIMIYPCFDLGWNSVEAFTYTLESSSLASTPPPTPPPRRNQFPLIQYLEEPPPRPPSTVS
 YFHITGGDD
-
->ACI47078.1 db="hadvd_db" gene="E3-8" length=130 note="synonyms: receptor internalization and degradation-beta protein, membrane protein E3 RID-beta" product="E3 RID-beta"
+>ACI47078.1 db="hadvd_db" gene="E3-8" length=130 note="synonyms: receptor internalization and degradation-beta protein, membrane protein E3 RID-beta" product="E3 RID-beta" splice_form="e390"
 MQTLLMLLSLLSPALATYADYSKCKFADIWNFLDCYQEKIDMPSYYLVIVGIVMVCSCTF
 FAIMIYPCFDLGWNSVEAFTYTLESSSLASTPPPTPPPRRNQFPLIQYLEEPPPRPPSTV
 SYFHITGGDD
-
->YP_003038624.1 db="hadvd_db" gene="E3-8" length=125 note="synonyms: receptor internalization and degradation-beta protein, membrane protein E3 RID-beta" product="E3 RID-beta"
+>YP_003038624.1 db="hadvd_db" gene="E3-8" length=125 note="synonyms: receptor internalization and degradation-beta protein, membrane protein E3 RID-beta" product="E3 RID-beta" splice_form="e375"
 MQTLLILLSLLSPALATFDYSKCKFVELWNFLNCYNATMDMPSYYLVIVGIVMVCSCTFF
 AIMIYPCFDLGWNSVGAFTYTLQNSSPAFTPPPRRNQFPLIQYLEEPPPRPPSTVSYFHI
 TAGDD
-
->AP_000155.1 db="hadvd_db" gene="E3-9" length=130 note="synonyms: putative NFkappaB modulation protein, control protein E3 14.7K" product="E3 control protein 14.7 kDa"
+>AP_000155.1 db="hadvd_db" gene="E3-9" length=130 note="synonyms: putative NFkappaB modulation protein, control protein E3 14.7K" product="E3 control protein 14.7 kDa" splice_form="e390"
 MTDHHLDLEMDGQASEQRILQLRVRQQQERAAKELLDAINIHQCKKGIFCLVKQAKITYE
 LVSNGKQHRLTYEMPQQKQKFTCMVGVNPIVITQQSGETNGCIHCSCESPECIYSLLKTL
 CGLRDLLPMN
-
->YP_001974464.1 db="hadvd_db" gene="E3-9" length=130 note="synonyms: putative NFkappaB modulation protein, control protein E3 14.7K" product="E3 control protein 14.7 kDa"
+>YP_001974464.1 db="hadvd_db" gene="E3-9" length=130 note="synonyms: putative NFkappaB modulation protein, control protein E3 14.7K" product="E3 control protein 14.7 kDa" splice_form="e390"
 MTDHHLDLEMDGQASEQRILQLRVRQQQERAAKELLDAINIHQCKKGIFCLVKQAKITYE
 LVSGGKQHRLTYELPQQKQKFTCMVGVNPIVITQQSGETNGCIHCSCESPECIYSLLKTL
 CGLRDLLPMN
-
->YP_003038625.1 db="hadvd_db" gene="E3-9" length=130 note="synonyms: putative NFkappaB modulation protein, control protein E3 14.7K" product="E3 control protein 14.7 kDa"
+>YP_003038625.1 db="hadvd_db" gene="E3-9" length=130 note="synonyms: putative NFkappaB modulation protein, control protein E3 14.7K" product="E3 control protein 14.7 kDa" splice_form="e390"
 MTDNHLDLEMDGQASEQRILQLRVRQQQERTAKELLDAINIHQCKKGIFCLVKQAKITYE
 LMSGGKQHRLAYELPQQKQKFTCMVGVNPIVITQQTGETSGCIHCSCESPECIYSLLKTL
 CGLRDLLPIN
-
->ACI04197.1 db="hadvd_db" gene="E3-9" length=130 note="synonyms: putative NFkappaB modulation protein, control protein E3 14.7K" product="E3 control protein 14.7 kDa"
+>ACI04197.1 db="hadvd_db" gene="E3-9" length=130 note="synonyms: putative NFkappaB modulation protein, control protein E3 14.7K" product="E3 control protein 14.7 kDa" splice_form="e390"
 MTDNHLDLEMDGQASEQRILQLRVRQQQERAAKELLDAINIHQCKKGIFCLVKQAKITYE
 LVSGGKQHRLAYELPQQKQKFTCMVGVNPIVITQQSGETSGCIHCSCESPECIYSLLKTL
 CGLRNLLPTN
-
 >YP_001974469.1 db="hadvd_db" gene="E4" intron_size=678-778 length=130 note="synonyms: transactivator of host E2F, control protein E4orf6/7" product="E4 control protein orf6/7" shared_cds="E4-2,E4-2a,E4-3" splice_form="e144i728e249" spliced="Y"
 MQTEIQSSSLRHHPYRRARLPRSDEETRASLTEQHPLLPDCDHADYHNTVTLDCEARLDD
 FSEDGFISITDPRLARQETVWIIDPKSSSRTNENISLFKATRAERTVYTVKWAGGGRLTT
 RAGVKINKDT
-
->YP_001974470.1 db="hadvd_db" gene="E4-2" length=292 note="synonyms: inhibitor of nuclear immunity 2, control protein E4 34K, Early E4 34 kDa protein" product="E4 control protein 34 kDa" shared_cds="E4,E4-2a,E4-3"
+>YP_001974470.1 db="hadvd_db" gene="E4-2" length=292 note="synonyms: inhibitor of nuclear immunity 2, control protein E4 34K, Early E4 34 kDa protein" product="E4 control protein 34 kDa" shared_cds="E4,E4-2a,E4-3" splice_form="e876"
 MQTEIQSSSLRHHPYRRARLPRSDEETRASLTEQHPLLPDCDHADYHNVSSVRGLPCAAG
 FTLLQEFPVPWDMILTPEEIKILKRCMSVCLCPATLDLVRAQMVSGYERWILHCHCSSPG
 SLQCRAGGTLLAVWFRRVIYGCMFNQRFPWYRQIVNRNMPKEIMYMGSVFMRGRHLIYCR
 IWYDGHVGSIIPNMSFGWSALNYGLLNNMVIMCCTYCENMAEIRMRCCARRTRRLMLKAV
 GIIVRETCDPDPICSSRTEPRRQRLLRALMERHRPILFSEYESVRSSHSTRL
-
->AP_000158.1 db="hadvd_db" gene="E4-2" length=292 note="synonyms: inhibitor of nuclear immunity 2, control protein E4 34K, Early E4 34 kDa protein" product="E4 control protein 34 kDa" shared_cds="E4,E4-2a,E4-3"
+>AP_000158.1 db="hadvd_db" gene="E4-2" length=292 note="synonyms: inhibitor of nuclear immunity 2, control protein E4 34K, Early E4 34 kDa protein" product="E4 control protein 34 kDa" shared_cds="E4,E4-2a,E4-3" splice_form="e876"
 MQTEIQSSSLRHHPYRRARLPRSDDETRASLTDQHPLLPDCDHADYHNVSSVRGLPCAAG
 FTLLQEFPVPWDMILTTEEIKILKRCMSVCLCPATLDLVRAQMVSGYERWILHCHCSSPG
 SLQCRAGGTLLAVWFRRVIYGCMFNQRFPWYRQIVNRNMPKEIMYMGSVFMRGRHLIYCR
 IWYDGHVGSIIPNMSFGWSTLNYGLLNNMVIMCCTYCENMAEIRMRCCARRTRRLMLKAV
 GIIVRETCDPDPICSSRTEPRRQRLLRALMERHRPILFSEYESVRSSRSTRL
-
->ABN10544.1 db="hadvd_db" gene="E4-2" length=292 note="synonyms: inhibitor of nuclear immunity 2, control protein E4 34K, Early E4 34 kDa protein" product="E4 control protein 34 kDa" shared_cds="E4,E4-2a,E4-3"
+>ABN10544.1 db="hadvd_db" gene="E4-2" length=292 note="synonyms: inhibitor of nuclear immunity 2, control protein E4 34K, Early E4 34 kDa protein" product="E4 control protein 34 kDa" shared_cds="E4,E4-2a,E4-3" splice_form="e876"
 MQTEIQSSSLRHHPYRRARLPRSDEETRASLTEQHPLLPDCDHADYHNVSSVRGLPCAAG
 FTLLQEFPVPWDMILTTEEIKILKRCMSVCLCPATLDLVRAQMVSGYERWILHCHCSSPG
 SLQCRAGGTLLAVWFRRVIYGCMFNQRFPWYRQIVNRNMPKEIMYMGSVFMRGRHLIYCR
 IWYDGHVGSIIPNMSFGWSALNYGLLNNMVIMCCTYCENMAEIRMRCCARRTRRLMLKAV
 GIIVRETCDPDPICSSRTEPRRQRLLRALMERHRPILFSEYESVRSSCSTRL
-
->YP_003038627.1 db="hadvd_db" gene="E4-2" length=292 note="synonyms: inhibitor of nuclear immunity 2, control protein E4 34K, Early E4 34 kDa protein" product="E4 control protein 34 kDa" shared_cds="E4,E4-2a,E4-3"
+>YP_003038627.1 db="hadvd_db" gene="E4-2" length=292 note="synonyms: inhibitor of nuclear immunity 2, control protein E4 34K, Early E4 34 kDa protein" product="E4 control protein 34 kDa" shared_cds="E4,E4-2a,E4-3" splice_form="e876"
 MSTEEQSTLLRHHPYRRARLSRYDKETRASLTEQHPLLPDCDHADYHNVSSVRGLPCAAG
 FTLLQEFPVPWDMILTTKEVKILKRCMSVCLCPATLDLVRAQMVSGYERWILHCHCSSPG
 SLQCRAGGTLLAVWFRRVIYGCMFNQRFPWYRQIVNRNMPKEIMYMGSVFIRGRHLIYCR
 IWYDGHVGSIIPNISFGWSTLNYGLLNNIMIMCCTYCENMSEIRMRCCARRTRRLMLRAV
 GIIVKETCDPDPICSSRTEPRRQRLLRALMERHRPILFSEYESVRSSHSTRL
-
->ACI04199.1 db="hadvd_db" gene="E4-2" length=292 note="synonyms: inhibitor of nuclear immunity 2, control protein E4 34K, Early E4 34 kDa protein" product="E4 control protein 34 kDa" shared_cds="E4,E4-2a,E4-3"
+>ACI04199.1 db="hadvd_db" gene="E4-2" length=292 note="synonyms: inhibitor of nuclear immunity 2, control protein E4 34K, Early E4 34 kDa protein" product="E4 control protein 34 kDa" shared_cds="E4,E4-2a,E4-3" splice_form="e876"
 MSTKEQSTLLRHYPYRRARLPRYDKETRASLTEQHPVLPDCDHADYHNVSSVRGLPCAAG
 FTLLQEFPVPWDMILTRKEIKILKRCMSVCLCPATLDLVRAQMVSGYERWILHCHCLSPG
 SLQCRAGGTLLAVWFRRVIYGCMFNQRFPWYRQIVNRNMSKEIMYMGSVFIRGRHLIYCR
 IWYDGHVGSIISNISFGWSTLNYGLLNNMVIMCCTYCENMSEIRMRCCARRTRRLMLKAV
 GIIVRETCDPDPICSSRTEPRRQRLLRALMERHRPILFSEYESVRSSHSTRL
-
->ACI47074.1 db="hadvd_db" gene="E4-2a" length=151 product="E4 17 kDa protein" shared_cds="E4,E4-2,E4-3"
+>ACI47074.1 db="hadvd_db" gene="E4-2a" length=151 product="E4 17 kDa protein" shared_cds="E4,E4-2,E4-3" splice_form="e453"
 MCCWLYPAPRVSSPLGYDPHHRGNKNFKKMYVSVPVPRYPGLGKSSNGERVRALDPALPL
 FIPWLPAVSGGRHPAGRVVQESHLRVHVQPALPLVPPDCKQKHAQRDHVHGQCVHEGQAP
 DILSHLVRWSRGFHHSQHELWLERPELWAAE
-
->YP_003038628.1 db="hadvd_db" gene="E4-2a" length=79 product="E4 8.5 kDa protein" shared_cds="E4,E4-2,E4-3"
+>YP_003038628.1 db="hadvd_db" gene="E4-2a" length=79 product="E4 8.5 kDa protein" shared_cds="E4,E4-2,E4-3" splice_form="e237"
 MCCWFYPAARVSSPLGYDPDHKGSKNFKKMYVSVPVSRYPGSGESPDGKRVRALDPALPL
 FIPGLPAVPGGRHPAGRVV
-
->ACI04201.1 db="hadvd_db" gene="E4-2a" length=79 product="E4 8.5 kDa protein" shared_cds="E4,E4-2,E4-3"
+>ACI04201.1 db="hadvd_db" gene="E4-2a" length=79 product="E4 8.5 kDa protein" shared_cds="E4,E4-2,E4-3" splice_form="e237"
 MCCWFYPAPRVSSPLGYDPDPKGNKNFKKMYVSVPVSRYPGSGKSPDGKRVRALDPALPL
 FIPGLPAVPGGRHPAGRVV
-
->ACI47079.1 db="hadvd_db" gene="E4-3" length=120 note="synonyms: putative alternative splicing protein, control protein E4orf4, E4 orf4 14.2 kDa protein" product="E4 control protein orf4"
+>ACI47079.1 db="hadvd_db" gene="E4-3" length=120 note="synonyms: putative alternative splicing protein, control protein E4orf4, E4 orf4 14.2 kDa protein" product="E4 control protein orf4" splice_form="e360"
 MVLPVLPPPPLNDRQGSINWMGMAYRVLADVMRGISMDGFFILSDAEELLQNLREWMYFS
 WMTERQQRKDGRRRGICCSRAHFCWQKYDKVRKRIHYNANRDSIQLAPPSSISQGPFTTI
-
->AP_000159.1 db="hadvd_db" gene="E4-3" length=120 note="synonyms: putative alternative splicing protein, control protein E4orf4, E4 orf4 14.2 kDa protein" product="E4 control protein orf4"
+>AP_000159.1 db="hadvd_db" gene="E4-3" length=120 note="synonyms: putative alternative splicing protein, control protein E4orf4, E4 orf4 14.2 kDa protein" product="E4 control protein orf4" splice_form="e360"
 MVLPILPPPPLNDRQGSINWMGMAYRVLADVMRGIRMDGFFISSDAEELLQNLREWMYFS
 WMTERQQRKDGRRRGICCSRAHFCWQKYDKVRKRIHYNANRDSIQLAPPSSISQGPFTTI
-
->ACI04200.1 db="hadvd_db" gene="E4-3" length=120 note="synonyms: putative alternative splicing protein, control protein E4orf4, E4 orf4 14.2 kDa protein" product="E4 control protein orf4"
+>ACI04200.1 db="hadvd_db" gene="E4-3" length=120 note="synonyms: putative alternative splicing protein, control protein E4orf4, E4 orf4 14.2 kDa protein" product="E4 control protein orf4" splice_form="e360"
 MVLPILPPPPLNDRQGSINWMGMAYRVLADVMRGIRMDGLFVSLDTKELLHNLWEWMYFS
 WMTERQQRKDGRRRGICCSRATFCWQKYNKVRKRVHYNEHQGTINLAPPLSISQGPFTTI
-
->YP_003038629.1 db="hadvd_db" gene="E4-3" length=120 note="synonyms: putative alternative splicing protein, control protein E4orf4, E4 orf4 14.2 kDa protein" product="E4 control protein orf4"
+>YP_003038629.1 db="hadvd_db" gene="E4-3" length=120 note="synonyms: putative alternative splicing protein, control protein E4orf4, E4 orf4 14.2 kDa protein" product="E4 control protein orf4" splice_form="e360"
 MVLPILPPPPLNDRQGSINWMGMAYRVLADVLRGIRMDGLFVSSDTEELLHNLWEWMYFS
 WMVERQQRKDGRRRGICCSRATFCWQKYNEVRKRVHYNEHRGTIDLAPPSSISQGPFITI
-
->YP_001974472.1 db="hadvd_db" gene="E4-4" length=117 note="synonyms: inhibitor of nuclear immunity 3, control protein E4orf3, E4 orf 3 13.6 kDa protein" product="E4 control protein orf3"
+>YP_001974472.1 db="hadvd_db" gene="E4-4" length=117 note="synonyms: inhibitor of nuclear immunity 3, control protein E4orf3, E4 orf 3 13.6 kDa protein" product="E4 control protein orf3" splice_form="e351"
 MKVCLIMKVEGALWELFHMCGVDLHQQFVEIIQGWKNENYLGMVQECNLMIDEIDGGPAF
 NVILMLDVRVEPLLEATVEHLENRVGFDLAVCFHQHSGGERCHLRDLHFIVLRDRLE
-
->YP_003038630.1 db="hadvd_db" gene="E4-4" length=117 note="synonyms: inhibitor of nuclear immunity 3, control protein E4orf3, E4 orf 3 13.6 kDa protein" product="E4 control protein orf3"
+>YP_003038630.1 db="hadvd_db" gene="E4-4" length=117 note="synonyms: inhibitor of nuclear immunity 3, control protein E4orf3, E4 orf 3 13.6 kDa protein" product="E4 control protein orf3" splice_form="e351"
 MKVCLIMKVEGALWELFHMCGVDLHQQFVEIIQGWKNENYLGMVQECNMMIDEIDGGPAF
 NVILMLDVRVEPLLEATVDHLENRVGFDLAVCFHQHSGGERCHLRDLHFIVLRDRLE
-
->ACI04202.1 db="hadvd_db" gene="E4-4" length=117 note="synonyms: inhibitor of nuclear immunity 3, control protein E4orf3, E4 orf 3 13.6 kDa protein" product="E4 control protein orf3"
+>ACI04202.1 db="hadvd_db" gene="E4-4" length=117 note="synonyms: inhibitor of nuclear immunity 3, control protein E4orf3, E4 orf 3 13.6 kDa protein" product="E4 control protein orf3" splice_form="e351"
 MKVCLIMKVEGALWELFHMCGVDLHQQFVEIIQGWKNENYLGMVQECNMMIDEIDGGPAF
 NVILMLDVRVEPLLEATVEHLENRVGFDLAVCFHQHSGGERCHLRDLHFIVLRDRLE
-
->AP_000160.1 db="hadvd_db" gene="E4-4" length=117 note="synonyms: inhibitor of nuclear immunity 3, control protein E4orf3, E4 orf 3 13.6 kDa protein" product="E4 control protein orf3"
+>AP_000160.1 db="hadvd_db" gene="E4-4" length=117 note="synonyms: inhibitor of nuclear immunity 3, control protein E4orf3, E4 orf 3 13.6 kDa protein" product="E4 control protein orf3" splice_form="e351"
 MKVCLIMKVEGALWELFNMCGVDLHQQFVEIIQGWKNENYLGMVQECNLMIDEIDGGPAF
 NVILMLDVRVEPLLEATVEHLENRVGFDLAVCFHQHSGGERCHLRDLHFIVLRDRLE
-
->YP_003038631.1 db="hadvd_db" gene="E4-5" length=130 note="synonyms: putative host modulation protein E4-ORF2, control protein E4orf2, E4 orf2 14.5 kDa protein" product="E4 control protein orf2"
+>YP_003038631.1 db="hadvd_db" gene="E4-5" length=130 note="synonyms: putative host modulation protein E4-ORF2, control protein E4orf2, E4 orf2 14.5 kDa protein" product="E4 control protein orf2" splice_form="e390"
 MLQRRGVSYHIVVPGVLVTYLQDFSITKMIKEKLPGFITYILEGITGDTKRAYSSMQFLG
 ASFGALKYSLTLASPTLSPGSELSAVVAQDLSDFLQLTLRRQLRAEGRTLLNFVVLNTLQ
 VVEQQDLFLL
-
->ACI04203.1 db="hadvd_db" gene="E4-5" length=130 note="synonyms: putative host modulation protein E4-ORF2, control protein E4orf2, E4 orf2 14.5 kDa protein" product="E4 control protein orf2"
+>ACI04203.1 db="hadvd_db" gene="E4-5" length=130 note="synonyms: putative host modulation protein E4-ORF2, control protein E4orf2, E4 orf2 14.5 kDa protein" product="E4 control protein orf2" splice_form="e390"
 MLQRRGVSYHIVVPGVLVTYLEDFSITNMIKEKLPRFITHILEGITGDTKRAYSSMQFLG
 ASFGALKYSLTLASPTLSPGSELSAVVAQDLSDFLQLTLRRQLRAEGRTLLNVVVLNTLQ
 VVEQQDLFLL
-
->YP_001974473.1 db="hadvd_db" gene="E4-5" length=130 note="synonyms: putative host modulation protein E4-ORF2, control protein E4orf2, E4 orf2 14.5 kDa protein" product="E4 control protein orf2"
+>YP_001974473.1 db="hadvd_db" gene="E4-5" length=130 note="synonyms: putative host modulation protein E4-ORF2, control protein E4orf2, E4 orf2 14.5 kDa protein" product="E4 control protein orf2" splice_form="e390"
 MLQRRGVSYHIVVPGVLVTYLEDFSITQMIKEKLPRFITHILEGITGDTKRAYSSMQFLG
 ASFGALKFSLTLASPTLSPGSELSAVVAQDLSDFLQLTLRRELRAEGRTLLNLVVLNTLQ
 VVEQQDLFLL
-
->ACI04204.1 db="hadvd_db" gene="E4-6" length=125 note="synonyms: putative tight junction modulation protein, control protein E4orf1, Early E4 14.0 kDa protein, Probable dUTPase E4 ORF1, ORF1" product="E4 control protein orf1"
+>ACI04204.1 db="hadvd_db" gene="E4-6" length=125 note="synonyms: putative tight junction modulation protein, control protein E4orf1, Early E4 14.0 kDa protein, Probable dUTPase E4 ORF1, ORF1" product="E4 control protein orf1" splice_form="e375"
 MAECLYAFIDSPGGMAPVQEGASNKYTFFCPESFYIFPHGVVLVYLKVSVLVPTGYQGTF
 MALNDYHARGILTQSDVIFAGRRQELAVLLFNHTDQFLYVRKGHPVGTLLLKKVIFPSVK
 IATLV
-
->YP_001974474.1 db="hadvd_db" gene="E4-6" length=125 note="synonyms: putative tight junction modulation protein, control protein E4orf1, Early E4 14.0 kDa protein, Probable dUTPase E4 ORF1, ORF1" product="E4 control protein orf1"
+>YP_001974474.1 db="hadvd_db" gene="E4-6" length=125 note="synonyms: putative tight junction modulation protein, control protein E4orf1, Early E4 14.0 kDa protein, Probable dUTPase E4 ORF1, ORF1" product="E4 control protein orf1" splice_form="e375"
 MAESLYAFIDSPGGIAPVQEGTSNRYTFFCPESFHIPPHGVVLLHLKVSVLVPTGYQGRF
 MALNDYHARDILTQSDVIFAGRRQELTVLLFNHTDRFLYVRKGHPVGTLLLERVIFPSVK
 IATLV
-
->YP_003038632.1 db="hadvd_db" gene="E4-6" length=125 note="synonyms: putative tight junction modulation protein, control protein E4orf1, Early E4 14.0 kDa protein, Probable dUTPase E4 ORF1, ORF1" product="E4 control protein orf1"
+>YP_003038632.1 db="hadvd_db" gene="E4-6" length=125 note="synonyms: putative tight junction modulation protein, control protein E4orf1, Early E4 14.0 kDa protein, Probable dUTPase E4 ORF1, ORF1" product="E4 control protein orf1" splice_form="e375"
 MAKCLYAFIDSPGGIAPVQEGASNKYTFFCPQSFYIFPHGVVLVYLKVSVLVPTGYQGIF
 MALNDYHATGILTQSDVIFAGRRQELTVLLFNHTDQFLYVRKGHPVGTLLLKRVIFPSVK
 IATLV
-
->ACI47069.1 db="hadvd_db" gene="HYP-1" length=188 product="hypothetical protein"
+>ACI47069.1 db="hadvd_db" gene="HYP-1" length=188 product="hypothetical protein" splice_form="e564"
 MRRRGTCVCTRWKRWTPWWTTTATPRTWPPLSWRGRAPLSQSGPSFSTRRTAGRPCRTGQ
 SSPSTGTQTACLSPNADTDSWRREVRSASKRTGENWFLTPSSPSSPGSSSARPSAPTAER
 TPSLPSPSFSHPSSTPCNPSSVPPAGALPKASSVPRATPPRPLTTSSWSTAISPTRRAKT
 VPVSAPAG
-
->ACI47083.1 db="hadvd_db" gene="HYP-2" length=89 product="hypothetical protein"
+>ACI47083.1 db="hadvd_db" gene="HYP-2" length=89 product="hypothetical protein" splice_form="e267"
 MLSWTYSRATHFHSGKTVVRSSGTILTRQPRLCRVTRSTLVATSPRRGSLVQQRRPPLRE
 QNGGSTSSRCSSGGSASMVKMPGQSSLSK
-
->ACI47066.1 db="hadvd_db" gene="HYP-3" length=329 product="hypothetical protein"
+>ACI47066.1 db="hadvd_db" gene="HYP-3" length=329 product="hypothetical protein" splice_form="e987"
 MREGGGVHAADVVDIDGLREDADVGGITAPPADAGAHIVIQLVRGGQESGAEIGALGLLG
 AEDDLAKDGMRVGGDGGPLEDVKVGVGQADRVADEVRVGVLQLGNELGGDKDVHGAVVQR
 FTDDVITRLFFLLPQRAVEGVLLVILPVLPERESSIVRTVRAQHVEMVHGLVGTAALLHG
 EGVSLSGLAERGVRQGEGIPNHDFQELVLEIRVVAAAVLPELEIGALLREGVRQSESDVI
 EENLACPRHEIAGDAERARNGGSVVDDLGGEDDLVEAVDVVPDDVEFHESRAAFDVRQLF
 EFLVGEVLGALQAVLLERPLLEMWVGLHE
-
->ACI47073.1 db="hadvd_db" gene="HYP-4" length=155 product="hypothetical protein" shared_cds="L1-3"
+>ACI47073.1 db="hadvd_db" gene="HYP-4" length=155 product="hypothetical protein" shared_cds="L1-3" splice_form="e465"
 MRADWEELDFLPPVGRVAVDVMKVEIPPANRALVLMLVKASAVLAALHGLYLIHEIHSAS
 LEEELQEWRPWLVVFMFACVGLTLGLLEDGEADEPAREPGPDLGAAGAESENEGAQLGAV
 HGVAEIQVRGQGSEVDLVEAGEGVLEMQMVLDLHG
-
->ACI47071.1 db="hadvd_db" gene="HYP-5" length=177 product="hypothetical protein"
+>ACI47071.1 db="hadvd_db" gene="HYP-5" length=177 product="hypothetical protein" splice_form="e531"
 MTPRLILLNCLSGSKSRGPWSSRKGGRSRMSTAASSRTPALSGRSTGTCPSATPTCLYRH
 CPRGRNRRCRRERVRDTASKSAPRHGRGPAQLRAHAMRGHDHQLTRGDQVPSASQARPHP
 PLRGQPQNPAPGPGSPRHHGQLPTARPRFRSPPPPRRDLDLAPARARQPLRPRGAPG
-
->ACI47081.1 db="hadvd_db" gene="HYP-6" length=111 product="hypothetical protein"
+>ACI47081.1 db="hadvd_db" gene="HYP-6" length=111 product="hypothetical protein" splice_form="e333"
 MHEPLDVITGGGGVFHAGDPDAPERLHERQVGDDALGEDGLLHAGEGVLEVVHVDEAVVG
 PCVDGVSAVGHKRPVDGLQAGLHDLGVPEPREGARVEDIVVAGAHEVLVSD
-
->ACI47084.1 db="hadvd_db" gene="HYP-7" length=81 product="hypothetical protein"
+>ACI47084.1 db="hadvd_db" gene="HYP-7" length=81 product="hypothetical protein" splice_form="e243"
 MLWLMKSGSPPFSVCLRRSGKTISARSEATVRSSKPVHSFLRFLARSLSSSFRFSSSRHC
 CHTPMAACHVWQRKRKTQSRM
-
 >ACI04175.1 db="hadvd_db" gene="IVa2" shared_cds="pTP,HYP-1" intron_size=228-328 length=448 noncanonical_splicing="GG+CA" note="synonyms: packaging protein 1, maturation protein IVa2, encapsidation protein IVa2, PIVa2 protein" product="maturation protein" splice_form="e12i278e1335" spliced="Y"
 METRGRRPCPFQHQQDESQAHPCKRPARGPPLHRDGDHAHADPETLEGHDVGSAGRPSSR
 ALQSQSSQPPKRGSLLDRDAVEHVTELWDRLELLSQTLAKMPMADGLKPLKNFASLQELL
@@ -615,7 +523,6 @@ PKFIKMSYDDLTQEHNYDVSDPRNVFAKAAAHGPIAIIMDECMENLGGHKGVSKFFHAFP
 SKLHDKFPKCTGYTVLVVLHNMNPRRDLGGNIANLKIQAKLHIISPRMHPSQLNRFANTY
 TKGLPVAISLLLKDIIQHHAQRPCYDWIIYNTTPEHEAMQWCYLHPRDGLMPMYLNIQSH
 LYRVLEKIHRTLNDRERWTRAYRARKNK
-
 >YP_001974425.1 db="hadvd_db" gene="IVa2" shared_cds="pTP,HYP-1" intron_size=228-328 length=448 note="synonyms: packaging protein 1, maturation protein IVa2, encapsidation protein IVa2, PIVa2 protein" product="maturation protein" splice_form="e13i278e1334" spliced="Y"
 METRGRRPCPFQHQQDESQAHPCKRPARGPPLHRDGDHPHSDPETLEGHDAGRAGRPSSR
 ALQSQSSQPPKRGSLLDRDAVEHVTELWDRLELLSQTLAKMPMADGLKPLKNFASLQELL
@@ -625,7 +532,6 @@ PKFIKMSYDDLTQEHNYDVSDPRNVFAKAAAHGPIAIIMDECMENLGGHKGVSKFFHAFP
 SKLHDKFPKCTGYTVLVVLHNMNPRRDLGGNIANLKIQAKLHIISPRMHPSQLNRFANTY
 TKGLPVAISLLLKDIIQHHAQRPCYDWIIYNTTPEHEAMQWCYLHPRDGLMPMYLNIQSH
 LYRVLEKIHRTLNDRERWTRAYRARKNK
-
 >YP_003038602.1 db="hadvd_db" gene="IVa2" shared_cds="pTP,HYP-1" intron_size=228-328 length=448 note="synonyms: packaging protein 1, maturation protein IVa2, encapsidation protein IVa2, PIVa2 protein" product="maturation protein" splice_form="e13i278e1334" spliced="Y"
 METRGRRPCPFQHQQDESEAHTCKRPARGPPIHRNGDHPHADPETLEGHDAGRAGRPSSC
 ALQSQSSQPPKRGSLLDPDAVEHVTELWDRLELLSQTLAKMPMADGLKPLKNFASLQELL
@@ -635,7 +541,6 @@ PKFIKMSYDDLTQEHNYDVSDPRNVFAKAAAHGPIAIIMDECMENLGGHKGVSKFFHAFP
 SKLHDKFPKCTGYIVLVVLHNMNPRRDLGGNIANLKIQAKLHIISPRMHPSQLNRFANTY
 TKGLPVAISLLLKDIIQHHAQRPCYDWIIYNTTPEHEAMQWCYLHPRDGLMPMYLNIQSH
 LYRVLEKIHRTLNDRERWTRAYRARKNK
-
 >ACI47088.1 db="hadvd_db" gene="IVa2" shared_cds="pTP,HYP-1" intron_size=228-328 length=448 note="synonyms: packaging protein 1, maturation protein IVa2, encapsidation protein IVa2, PIVa2 protein" product="maturation protein" splice_form="e13i278e1334" spliced="Y"
 METRGRRPCPFQHQQDESQAHPCKRPARGPPLHRDGDHPHSDPETLEGHDAGRAGRPSSR
 ALQSQSSQPPKRGSLLDRDAVEHVTELWDRLELLSQTLAKMPMADGLKPLKNFASLQELL
@@ -645,28 +550,23 @@ PKFIKMSYDDLTQEHNYDVSDPRNVFAKAAAHGPIAIIMDECMENLGGHKGVSKFFHAFP
 SKLHDKFPKCTGYTVLVVLHNMNPRRDLGGNIANLKIQAKLHIISPRMHPSQLNRFANTY
 TKGLPVAISLLLKDIIQHHAQRPCYDWIIYNTTPEHEAMQWCYLHPRDGLMPMYLNIQSH
 LYRVLEKIHRTLNDRERWTRAYRARKNK
-
->ACI47076.1 db="hadvd_db" gene="IX" length=134 note="synonyms: hexon-interlacing protein, capsid protein IX, pIX protein" product="hexon associated protein"
+>ACI47076.1 db="hadvd_db" gene="IX" length=134 note="synonyms: hexon-interlacing protein, capsid protein IX, pIX protein" product="hexon associated protein" splice_form="e402"
 MNGTGGAFEGGLFSPYLTTRLPGWAGVRQNVMGSTVDGRPVLPANSSTMTYATVGSSSLD
 STAAAAAAAAAMTATRLASSYMPSSGSSPSVPSSIIAEEKLLALLAELEALSRQLAALTQ
 QVSDLREQQQQQNK
-
->YP_003038601.1 db="hadvd_db" gene="IX" length=135 note="synonyms: hexon-interlacing protein, capsid protein IX, pIX protein" product="hexon associated protein"
+>YP_003038601.1 db="hadvd_db" gene="IX" length=135 note="synonyms: hexon-interlacing protein, capsid protein IX, pIX protein" product="hexon associated protein" splice_form="e405"
 MNGTGGAFEGGLFSPYLTTRLPGWAGVRQNVMGSTVDGRPVLPANSSTMTYATVGTSSSL
 DSTAAAAAAAAAMTATRLASSYMPSSGSSPSIPSSIIAEEKLLALLAELEALSRQLTALT
 QEVSELREQQQQQNK
-
->YP_001974424.1 db="hadvd_db" gene="IX" length=134 note="synonyms: hexon-interlacing protein, capsid protein IX, pIX protein" product="hexon associated protein"
+>YP_001974424.1 db="hadvd_db" gene="IX" length=134 note="synonyms: hexon-interlacing protein, capsid protein IX, pIX protein" product="hexon associated protein" splice_form="e402"
 MNGTGGAFEGGLFSPYLTTRLPGWAGVRQNVMGSTVDGRPVLPANSSTMTYATVGSSSLD
 STAAAAAAAAAMTATRLASSYMPSSGSSPSVPSSIIAEEKLLALLAELEALSRQLAALTQ
 QVSELREQQQQQNK
-
->ACI04174.1 db="hadvd_db" gene="IX" length=134 note="synonyms: hexon-interlacing protein, capsid protein IX, pIX protein" product="hexon associated protein"
+>ACI04174.1 db="hadvd_db" gene="IX" length=134 note="synonyms: hexon-interlacing protein, capsid protein IX, pIX protein" product="hexon associated protein" splice_form="e402"
 MNGTGGAFEGGLFSPYLTTRLPGWAGVRQNVMGSTVDGRPVLPANSSTMTYATVGNSSLD
 STAAAAAAAAAMTATRLASSYMPSSSSSPSVPSSIIAEEKLLALLAELEALSRQLAALTQ
 QVSELREQQQQQNK
-
->YP_003038606.1 db="hadvd_db" gene="L1" length=564 note="synonyms: capsid vertex protein, capsid protein pIIIa, capsid protein precursor pIIIa, L1 pIIIa 62.1 kDa protein" product="IIIa capsid protein"
+>YP_003038606.1 db="hadvd_db" gene="L1" length=564 note="synonyms: capsid vertex protein, capsid protein pIIIa, capsid protein precursor pIIIa, L1 pIIIa 62.1 kDa protein" product="IIIa capsid protein" splice_form="e1692"
 MSQQQAPDPAIRAALQSQPSGLASDDWEAAMQRIMALTTRNPESFRQQPQANRLSAILEA
 VVPSRTNPTHEKVLAIVNALAENKAIRPDEAGLVYNALLERVGRYNSTNVQSNLDRLVTD
 VREAVAQRERFKNEGLGSLVALNAFLATQPANVPRGQDDYTNFISALRLMVTEVPQSEVY
@@ -677,8 +577,7 @@ FINKLMDYLHRAASMNSDYFTNAILNPHWLPPPGFYTGEYDMPDPNDGFLWDDVDSAVFL
 PAFQKRQEAMRTPSEGAVGRSPFPSLGSLHSLPNSVNSGRVSRPHLLGEDEYLNDSLLRP
 PRAKNAMANNGIESLVDKLNRWKTYAQDHRDAPAPRRQRHDRQRGLVWDDEDSADDSSVL
 DLGGSGGGANPFAHLQPRLGQRMF
-
->ABN10531.1 db="hadvd_db" gene="L1" length=565 note="synonyms: capsid vertex protein, capsid protein pIIIa, capsid protein precursor pIIIa, L1 pIIIa 62.1 kDa protein" product="IIIa capsid protein"
+>ABN10531.1 db="hadvd_db" gene="L1" length=565 note="synonyms: capsid vertex protein, capsid protein pIIIa, capsid protein precursor pIIIa, L1 pIIIa 62.1 kDa protein" product="IIIa capsid protein" splice_form="e1695"
 MSQQQAPDPAIRAALQSQPSGLASDDWEAAMQRIMALTTRNPESFRQQPQANRLSAILEA
 VVPSRTNPTHEKVLAIVNALAENKAIRPDEAGLVYNALLERVGRYNSTNVQSNLDRLVTD
 VREAVAQRERFKNEGLGSLVALNAFLATQPANVPRGQDDYTNFISALRLMVTEVPQSEVY
@@ -689,8 +588,7 @@ FINKLMDYLHRAASMNSDYFTNAILNPHWLPPPGFYTGEYDMPDPNDGFLWDDVDSAVFS
 PTLQKRQEAVRTPASEGTVGRSPFPSLGSLHSLPGSVNSGRVSRPRLLGEDEYLNDSLLQ
 PPRVKNAMANNGIESLVDKLNRWKTYAQDHREPAPAPRRQRHDRQRGLVWDDEDSADDSS
 VLDLGGSGGVNPFAHLQPKLGRRMF
-
->ACI04179.1 db="hadvd_db" gene="L1" length=563 note="synonyms: capsid vertex protein, capsid protein pIIIa, capsid protein precursor pIIIa, L1 pIIIa 62.1 kDa protein" product="IIIa capsid protein"
+>ACI04179.1 db="hadvd_db" gene="L1" length=563 note="synonyms: capsid vertex protein, capsid protein pIIIa, capsid protein precursor pIIIa, L1 pIIIa 62.1 kDa protein" product="IIIa capsid protein" splice_form="e1689"
 MQQAPDPAIRAALQSQPSGLASDDWEAAMQRIMALTTRNPESFRQQPQANRLSAILEAVV
 PSRTNPTHEKVLAIVNALAENKAIRPDEAGLVYNALLERVGRYNSTNVQSNLDRLVTDVR
 EAVAQRERFKNEGLGSLVALNAFLATQPANVPRGQDDYTNFISALRLMVTEVPQSEVYQS
@@ -701,8 +599,7 @@ NKLMDYLHRAASMNSDYFTNAILNPHWLPPPGFYTGEYDMPDPNDGFLWDDVDSAVFSPT
 LQKRQEAVRTPASEGAVGRSPFPSLGSLHSLPGSVNSGRVSRPRLLGEDEYLNDSLLQPP
 RVKNAMVNNGIESLVDKLNRWKTYAQDHREPAPAPRRQRHDRQRGLVWDDEDSADDSSVL
 DLGGSGGANPFAHLQPRLGRRMF
-
->AP_000146.1 db="hadvd_db" gene="L1" length=564 note="synonyms: capsid vertex protein, capsid protein pIIIa, capsid protein precursor pIIIa, L1 pIIIa 62.1 kDa protein" product="IIIa capsid protein"
+>AP_000146.1 db="hadvd_db" gene="L1" length=564 note="synonyms: capsid vertex protein, capsid protein pIIIa, capsid protein precursor pIIIa, L1 pIIIa 62.1 kDa protein" product="IIIa capsid protein" splice_form="e1692"
 MQQAPDPAIRAALQSQPSGLASDDWEAAMQRIMALTTRNPESFRQQPQANRLSAILEAVV
 PSRTNPTHEKVLAIVNALAENKAIRPDEAGLVYNALLERVGRYNSTNVQSNLDRLVTDVR
 EAVAQRERFKNEGLGSLVALNAFLATQPANVPRGQDDYTNFISALRLMVTEVPQSEVYQS
@@ -713,8 +610,7 @@ NKLMDYLHRAASMNSDYFTNAILNPHWLPPPGFYTGEYDMPDPNDGFLWDDVDSAVFSPT
 LQKRQEAVRTPASEGAVGRSPFPSLGSLHSLPGSVNSGRVSRPRLLGEDEYLNDSLLQPP
 RVKNAMANNGIESLVDKLNRWKTYAQDHREPAPAPRRQRHDRQRGLVWDDEDSADDSSVL
 DLGGSGGVNPISRILQPKLGRRMF
-
->YP_001974449.1 db="hadvd_db" gene="L1" length=559 note="synonyms: capsid vertex protein, capsid protein pIIIa, capsid protein precursor pIIIa, L1 pIIIa 62.1 kDa protein" product="IIIa capsid protein"
+>YP_001974449.1 db="hadvd_db" gene="L1" length=559 note="synonyms: capsid vertex protein, capsid protein pIIIa, capsid protein precursor pIIIa, L1 pIIIa 62.1 kDa protein" product="IIIa capsid protein" splice_form="e1677"
 MQQAPDPAIRAALQSQPSGLASDDWEAAMQRIMALTTRNPESFRQQPQANRLSAILEAVV
 PSRTNPTHEKVLAIVNALAENKAIRPDEAGLVYNALLERVGRYNSTNVQSNLDRLVTDVR
 EAVAQRERFKNEGLGSLVALNAFLATQPANVPRGQDDYTNFISALRLMVTEVPQSEVYQS
@@ -725,8 +621,7 @@ NKLMDYLHRAAVMNTDYFTNAILNPHWLPPPGFYTGEYDMPDPNDGFLWDDVDSVVFSPT
 FQKRQEAPPSEGAVGRSPFPSLGSLHSLPGSVNSGRVSRPRLLGEDEYLNDSLLQPPRAK
 NAMANNGIESLVDKLNRWKTYAQDHRDAPAPRRQRHDRQRGLVWDDEDSADDSSVLDLGG
 SGGVNPFAHLQPKLGRRMF
-
->YP_003038605.1 db="hadvd_db" gene="L1-2" length=372 note="synonyms: packaging protein 3, late L1 52 kDa protein, encapsidation protein 52K, L1 52/55k 42.2 kDa protein" product="L1 52 kDa protein"
+>YP_003038605.1 db="hadvd_db" gene="L1-2" length=372 note="synonyms: packaging protein 3, late L1 52 kDa protein, encapsidation protein 52K, L1 52/55k 42.2 kDa protein" product="L1 52 kDa protein" splice_form="e1116"
 MHPVLRQMRPTPPATTATAAVAGAGAVQQQTEMDLEEGEGLARLGAPSPERHPRVQLQKD
 VRPAYVPAQNLFRDRSGEEPEEMRDCRFRAGRELREGLDRQRVLRDDDFEPNEQTGISPA
 RAHVAAANLVTAYEQTVKQERNFQKSFNNHVRTLIAREEVALGLMHLWDLAEAIVQNPDS
@@ -734,8 +629,7 @@ KPLTAQLFLVVQHSRDNEAFREALLNIAEPEGRWLLELINILQSIVVQERSLSLAEKVAA
 INYSVLSLGKFYARKIYKTPYVPIDKEVKIDSFYMRMALKVLTLSDDLGVYRNDRIHKAV
 STSRRRELSDRELMLSLRRALVGGAASGEESHFDMGADLHWQPSRRALEAAYGPEDLDED
 EEEEEDAPAAGY
-
->YP_001974448.1 db="hadvd_db" gene="L1-2" length=374 note="synonyms: packaging protein 3, late L1 52 kDa protein, encapsidation protein 52K, L1 52/55k 42.2 kDa protein" product="L1 52 kDa protein"
+>YP_001974448.1 db="hadvd_db" gene="L1-2" length=374 note="synonyms: packaging protein 3, late L1 52 kDa protein, encapsidation protein 52K, L1 52/55k 42.2 kDa protein" product="L1 52 kDa protein" splice_form="e1122"
 MHPVLRQMRPTPPATTATAAVAGAGASQPQPQTEMDLEEGEGLARLGAPSPERHPRVQLQ
 KDVRPAYVPAQNLFRDRSGEEPEEMRDCRFRAGRELREGLDRQRVLRDEDFEPNEQTGIS
 PARAHVAAANLVTAYEQTVKQERNFQKSFNNHVRTLIAREEVALGLMHLWDLAEAIVQNP
@@ -743,8 +637,7 @@ DSKPLTAQLFLVVQHSRDNEAFREALLNIAEPEGRWLLELINILQSIVVQERSLSLAEKV
 AAINYSVLSLGKFYARKIYKTPYVPIDKEVKIDSFYMRMALKVLTLSDDLGVYRNDRIHK
 AVSTSRRRELSDRELMLSLRRALVGGAAGGEESYFDMGADLHWQPSRRALEAAYGPEDLD
 EEEEEEEDAPAAGY
-
->AP_000145.1 db="hadvd_db" gene="L1-2" length=374 note="synonyms: packaging protein 3, late L1 52 kDa protein, encapsidation protein 52K, L1 52/55k 42.2 kDa protein" product="L1 52 kDa protein"
+>AP_000145.1 db="hadvd_db" gene="L1-2" length=374 note="synonyms: packaging protein 3, late L1 52 kDa protein, encapsidation protein 52K, L1 52/55k 42.2 kDa protein" product="L1 52 kDa protein" splice_form="e1122"
 MHPVLRQMRPTPPATTATAAVAGAGASQPQPQTEMDLEEGEGLARLGAPSPERHPRVQLQ
 KDVRPAYVPAQNLFRDRSGEEPEEMRDCRFRAGRELREGLDRQRVLRDEDFEPNEQTGIS
 PARAHVAAANLVTAYEQTVKQERNFQKSFNNHVRTLIAREEVALGLMHLWDLAEAIVQNP
@@ -752,8 +645,7 @@ DSKPLTAQLFLVVQHSRDNEAFREALLNIAEPEGRWLLELINILQSIVVQERSLSLAEKV
 AAINYSVLSLGKFYARKIYKTPYVPIDKEVKIDSFYMRMALKVLTLSDDLGVYRNDRIHK
 AVSASRRRELSDRELMLSLRRALVGGAAGGEESYFDMGADLHWQPSRRALEAAYGPEDLD
 EEEEEEEDAPAAGY
-
->ACI04178.1 db="hadvd_db" gene="L1-2" length=374 note="synonyms: packaging protein 3, late L1 52 kDa protein, encapsidation protein 52K, L1 52/55k 42.2 kDa protein" product="L1 52 kDa protein"
+>ACI04178.1 db="hadvd_db" gene="L1-2" length=374 note="synonyms: packaging protein 3, late L1 52 kDa protein, encapsidation protein 52K, L1 52/55k 42.2 kDa protein" product="L1 52 kDa protein" splice_form="e1122"
 MHPVLRQMRPTPPATTATAAVAGAGASQPQPQTEMDLEEGEGLARLGAPSPERHPRVQLQ
 KDVRPAYVPAQNLFRDRSGEEPEEMRDCRFRAGRELREGLDRQRVLRDEDFEPNEQTGIS
 PARAHVAAANLVTAYEQTVKQERNFQKSFNNHVRTLIAREEVALGLMHLWDLAEAIVQNP
@@ -761,8 +653,7 @@ DSKPLTAQLFLVVQHSRDNEAFREALLNIAEPEGRWLLELINILQSIVVQERSLSLAEKV
 AAINYSVLSLGKFYARKIYKTPYVPIDKEVKIDSFYMRMALKVLTLSDDLGVYRNDRIHK
 AVSTSRRRELSDRELMLSLRRALVGGATGGEESYFDMGADLHWQPSRRALEAAYGPEDLD
 EEEEEEEDAPVAGY
-
->ABN10541.1 db="hadvd_db" gene="L1-2" length=374 note="synonyms: packaging protein 3, late L1 52 kDa protein, encapsidation protein 52K, L1 52/55k 42.2 kDa protein" product="L1 52 kDa protein"
+>ABN10541.1 db="hadvd_db" gene="L1-2" length=374 note="synonyms: packaging protein 3, late L1 52 kDa protein, encapsidation protein 52K, L1 52/55k 42.2 kDa protein" product="L1 52 kDa protein" splice_form="e1122"
 MHPVLRQMRPTPPATTATAAVAGAGASQPQPQTEMDLEEGEGLARLGAPSPERHPRVQLQ
 KDVRPAYVPAQNLFRDRSGEEPEEMRDCRFRAGRELREGLDRQRVLRDEDFEPNEQTGIS
 PARAHVAAANLVTAYEQTVKQERNFQKSFNNHVRTLIAREEVALGLMHLWDLAEAIVQNP
@@ -770,13 +661,11 @@ DSKPLTAQLFLVVQHSRDNEAFREALLNIAEPEGRWLLELINILQSIVVQERSLSLAEKV
 AAINYSVLSLGKFYARKIYKTPYVPIDKEVKIDSFYMRMALKVLTLSDDLGVYRNDRIHK
 AVSTSRRRELSDRELMLSLRRALVGGAAGGEESYFDMGADLHWQPSRRALEAAYGPEDLD
 EDEEEEEDAPVAGY
-
 >YP_001974467.1 db="hadvd_db" gene="L1-3" intron_size=1160-1260 length=129 note="synonyms: i-leader protein, L1 13.6 kDa protein, protein 13.6K" product="L1 13.6 kDa protein" splice_form="e381i1210e9" spliced="Y" shared_cds="HYP-4"
 MRADWEELDFLPPVGRVAVDVMKVEIPPANRALVLMLVKASAVLAALHGLYLIHEIHSAS
 LEEELQEWRPWLVAFMFACVGLTLGLLEDGEADEPAREPGPDLGAAGAESEDEGAQLGAV
 HGVAEIQGT
-
->ABN10532.1 db="hadvd_db" gene="L2" length=514 note="synonym: pIII" product="penton base"
+>ABN10532.1 db="hadvd_db" gene="L2" length=514 note="synonym: pIII" product="penton base" splice_form="e1542"
 MRRAVVSSSPPPSYESVMAQATLEVPFVPPRYMAPTEGRNSIRYSELAPLYDTTRVYLVD
 NKSADIASLNYQNDHSNFLTTVVQNNDFTPAEASTQTINFDERSRWGGDLKTILHTNMPN
 VNEYMFTSKFKARVMVARKHPQGVEATDLSKDILEYQWFEFTLPEGNFSETMTIDLMNNA
@@ -786,8 +675,7 @@ GPARGDSSVSREVEKAAEKELVIEPIKQDDSKRSYNLIEGTHDTLYRSWYLSYTYGDPEK
 GVQSWTLLTTPDVTCGAEQVYWSLPDLMQDPVTFRSTQQVSNYPVVGAELMPFRAKSFYN
 DLAVYSQLIRSYTSLTHVFNRFPDNQILCRPPAPTITTVSENVPALTDHGTLPLRSSIRG
 VQRVTVTDARRRTCPYVYKALGIVAPRVLSSRTF
-
->YP_003038607.1 db="hadvd_db" gene="L2" length=516 note="synonym: pIII" product="penton base"
+>YP_003038607.1 db="hadvd_db" gene="L2" length=516 note="synonym: pIII" product="penton base" splice_form="e1548"
 MRRAVVSSPPPSYESVMAQATLEVPFVPPRYMAPTEGRNSIRYSELAPQYDTTRVYLVDN
 KSADIASLNYQNDHSNFLTTVVQNNDFTTAEASTQTINFDERSRWGGDLKTILHTNMPNV
 NEYMFTSKFKARVMVARKHPEGVDNTDLSQDKLEYQWFEFTLPEGNFSETMTIDLMNNAI
@@ -797,8 +685,7 @@ VNAPARGDSSVPRAVEKAAEKELEIVPIEKDDSNRSYNIIPGTTDTLYRSWYLSYTYGDP
 KKGVQSWTLLTTPDVTCGAEQVYWSLPDLMQDPVTFRSTQQVSNYPVVGAELMPFRAKSF
 YNDLAVYSQLIRSYTSLTHVFNRFPDNQILCRPPAPTITTVSENVPALTDHGTLPLRSSI
 RGVQRVTVTDARRRTCPYVYKALGIVAPRVLSSRTF
-
->AP_000147.1 db="hadvd_db" gene="L2" length=517 note="synonym: pIII" product="penton base"
+>AP_000147.1 db="hadvd_db" gene="L2" length=517 note="synonym: pIII" product="penton base" splice_form="e1551"
 MRRAVVSSSPPPSYESVMAQATLEVPFVPPRYMAPTEGRNSIRYSELAPLYDTTRVYLVD
 NKSADIASLNYQNDHSNFLTTVVQNNDFTPAEASTQTINFDERSRWGGDLKTILHTNMPN
 VNEYMFTSKFKARVMVARKHPQGVEATDLSKDILEYEWFEFTLPEGNFSETMTIDLMNNA
@@ -808,8 +695,7 @@ KANGPARGDSSVSREVEKAAEKELVIEPIKQDDTKRSYNLIEGTMDTLYRSWYLSYTYRD
 PENGVQSWTLLTTPDVTCGAEQVYWSLPDLMQDPVTFRSTQQVSNYPVVGAELMPFRAKS
 FYNDLAVYSQLIRSYTSLTHVFNRFPDNQILCRPPAPTITTVSENVPALTDHGTLPLRSS
 IRGVQRVTVTDARRRTCPYVYKALGIVAPRVLSSRTF
-
->ACI04180.1 db="hadvd_db" gene="L2" length=519 note="synonym: pIII" product="penton base"
+>ACI04180.1 db="hadvd_db" gene="L2" length=519 note="synonym: pIII" product="penton base" splice_form="e1557"
 MRRAVVSSSPPPSYESVMAQATLEVPFVPPRYMAPTEGRNSIRYSELAPLYDTTRVYLVD
 NKSADIASLNYQNDHSNFLTTVVQNNDFTPAEASTQTINFDERSRWGGDLKTILHTNMPN
 VNEYMFTSKFKARVMVARKKAEGADANDRSKDILEYQWFEFTLPEGNFSETMTIDLMNNA
@@ -819,8 +705,7 @@ KAQNDAVPRGDNYASAAEAKAAGKEIELKAILKDDSDRSYNVIEGTTDTLYRSWYLSYTY
 GDPEKGVQSWTLLTTPDVTCGAEQVYWSLPDLMQDPVTFRSTQQVSNYPVVGAELMPFRA
 KSFYNDLAVYSQLIRSYTSLTHVFNRFPDNQILCRPPAPTITTVSENVPALTDHGTLPLR
 SSIRGVQRVTVTDARRRTCPYVYKALGIVAPRVLSSRTF
-
->YP_001974428.1 db="hadvd_db" gene="L2" length=519 note="synonym: pIII" product="penton base"
+>YP_001974428.1 db="hadvd_db" gene="L2" length=519 note="synonym: pIII" product="penton base" splice_form="e1557"
 MRRAVVSSSPPPSYESVMAQATLEVPFVPPRYMAPTEGRNSIRYSELAPQYDTTRVYLVD
 NKSADIASLNYQNDHSNFLTTVVQNNDFTPAEASTQTINFDERSRWGGDLKTILHTNMPN
 VNEYMFTSKFKARVMVARKHPEGVVETDLSQDKLEYEWFEFTLPEGNFSETMTIDLMNNA
@@ -830,90 +715,76 @@ AATADTTTRGDTFATPAQETAADKKVEVLPIEKDESGRSYNLIQGTHDTLYRSWYLSYTY
 GDPEKGVQSWTLLTTPDVTCGAEQVYWSLPDLMQDPVTFRSTQQVSNYPVVGAELMPFRA
 KSFYNDLAVYSQLIRSYTSLTHVFNRFPDNQILCRPPAPTITTVSENVPALTDHGTLPLR
 SSIRGVQRVTVTDARRRTCPYVYKALGIVAPRVLSSRTF
-
->ACI04181.1 db="hadvd_db" gene="L2-2" length=163 note="synonyms: histone-like nucleoprotein, major core protein precursor pVII, core protein precursor pVII" product="VII core protein"
+>ACI04181.1 db="hadvd_db" gene="L2-2" length=163 note="synonyms: histone-like nucleoprotein, major core protein precursor pVII, core protein precursor pVII" product="VII core protein" splice_form="e489"
 MSILISPSNNTGWGLTRPSTMYGGAKKRSQQHPVRVRGHFRAPWGAYKRGRTSAPAAVRT
 TVDDVIDSVVADARNYTPAPSTVDAVIDSVVADARDYARRKSRRRRIARRHRSTPAGRTR
 RRAAAAAAAAISSMTRPRRGNVYWVRDSVTGVRVPVRTRPPRP
-
->ABN10533.1 db="hadvd_db" gene="L2-2" length=196 note="synonyms: histone-like nucleoprotein, major core protein precursor pVII, core protein precursor pVII" product="VII core protein"
+>ABN10533.1 db="hadvd_db" gene="L2-2" length=196 note="synonyms: histone-like nucleoprotein, major core protein precursor pVII, core protein precursor pVII" product="VII core protein" splice_form="e588"
 MSILISPSNNTGWGLTRPSTMYGGAKKRSQQHPVRVRGHFRAPWGAYKRGRTSTAAAVRT
 TVDDVIDSVVADARNYTPAPSTVDAVIDSVVADARDYARRKSRRRRIARRHRSTPAMRAA
 RALLRRARRTGRRAMMRAARRAATAPTPAGRTRRRAAAAAAAAISSMTRPRRGNVYWVRD
 SVTGVRVPVRTRPPRP
-
->YP_001974450.1 db="hadvd_db" gene="L2-2" length=194 note="synonyms: histone-like nucleoprotein, major core protein precursor pVII, core protein precursor pVII" product="VII core protein"
+>YP_001974450.1 db="hadvd_db" gene="L2-2" length=194 note="synonyms: histone-like nucleoprotein, major core protein precursor pVII, core protein precursor pVII" product="VII core protein" splice_form="e582"
 MSILISPSNNTGWGLTRPSTMYGGAKKRSQQHPVRVRGHFRAPWGAYKRGRTSTAVRTTV
 DDVIDSVVADARNYTPAPSTVDAVIDSVVADARDYARRKSRRRRIARRHRSTPAMRAARA
 LLRRARRTGRRAMMRAARRAATAPTPAGRTRRRAAAAAAAAISSMTRPRRGNVYWVRDSV
 TGVRVPVRTRPPRP
-
->YP_003038608.1 db="hadvd_db" gene="L2-2" length=196 note="synonyms: histone-like nucleoprotein, major core protein precursor pVII, core protein precursor pVII" product="VII core protein"
+>YP_003038608.1 db="hadvd_db" gene="L2-2" length=196 note="synonyms: histone-like nucleoprotein, major core protein precursor pVII, core protein precursor pVII" product="VII core protein" splice_form="e588"
 MSILISPSNNTGWGLTRPSTMYGGAKKRSQQHPVRVRGHFRAPWGAYKRGRTSAPAAVRT
 TVDDVIDSVVADARNYTPAPSTVDAVIDSVVADARDYARRKSRRRRIARRHRSTPAMRAA
 RALLRRARRTGRRAMMQAARRAAAAPTPTGRTRRRAAVAAAAAISSMTRPRRGNVYWVRD
 SITGVRVPVRTRPPRP
-
->ACI04182.1 db="hadvd_db" gene="L2-3" length=297 note="synonyms: core-capsid bridging protein, minor core protein V, core protein V" product="V core protein"
+>ACI04182.1 db="hadvd_db" gene="L2-3" length=297 note="synonyms: core-capsid bridging protein, minor core protein V, core protein V" product="V core protein" splice_form="e891"
 MSKRKIKEEMLQVVAPEIYGPPQADQKPRKIKRVKKKDEVDEGAVEFVREFAPRRRVNWK
 GRRVQRVLRPGTAVVFTPGERSSVRSKRSYDEVYGDDDILDQAAERAGEFAYGKRSREEE
 LISLPLDESNPTPSLKPVTLQQVLPSRGIKREGENMYPTMQIMVPKRRRVEDVLDTVKMD
 VEPEVKVRPIKQVAPGLGVQTVDIQIPTDMDVDKKPSTSIEVQTDPWLPASTATASTSTA
 ATATEPPRRRRWGPANRLMPNYVLHPSIIPTPGYRGTRYYASRSLVLPTVRYHPSIL
-
->YP_001974451.1 db="hadvd_db" gene="L2-3" length=334 note="synonyms: core-capsid bridging protein, minor core protein V, core protein V" product="V core protein"
+>YP_001974451.1 db="hadvd_db" gene="L2-3" length=334 note="synonyms: core-capsid bridging protein, minor core protein V, core protein V" product="V core protein" splice_form="e1002"
 MSKRKIKEEMLQVVAPEIYGPPQADQKPRKIKRVKKKDEVDEGAVEFVREFAPRRRVNWK
 GRRVQRVLRPGTAVVFTPGERSSVRSKRSYDEVYGDDDILDQAAERAGEFAYGKRSREEE
 LISLPLDESNPTPSLKPVTLQQVLPQAVLLPSRGVKREGESMYPTMQIMVPKRRRVEDVL
 DTVKMDVEPEVKVRPIKQVAPGLGVQTVDIQIPTDMDVDKKPSTSIEVQTDPWLPASTAT
 VSTSTAATATEPPRRRRWGAASRLMPNYVVHPSIIPTPGYRGTRYYASRRRPASKRRRRT
 ATRRRLAPARVRRVTTRRGRSLVLPTVRYHPSIL
-
->ABN10546.1 db="hadvd_db" gene="L2-3" length=332 note="synonyms: core-capsid bridging protein, minor core protein V, core protein V" product="V core protein"
+>ABN10546.1 db="hadvd_db" gene="L2-3" length=332 note="synonyms: core-capsid bridging protein, minor core protein V, core protein V" product="V core protein" splice_form="e996"
 MSKRKIKEEMLQVVAPEIYGPPDQKPRKIKRVKKKDEVDEGAVEFVREFAPRRRVNWKGR
 RVQRVLRPGTAVVFTPGERSSVRSKRSYDEVYGDDDILDQAAERAGEFAYGKRSREEELI
 SLPLDESNPTPSLKPVTLQQVLPQAVLLPSRGVKREGESMYPTMQIMVPKRRRVEDVLDT
 VKMDVEPEVKVRPIKQVAPGLGVQTVDIQIPTDMDVDKKPSTSIEVQTDPWLPASTATVS
 TSTAATATEPPRRRRWGPANRLMPNYVLHPSIIPTPGYRGTRYYASRRRPASKRRRRTAT
 RRRLAPARVRRVTTRRGRSLVLPTVRYHPSIL
-
->YP_003038609.1 db="hadvd_db" gene="L2-3" length=328 note="synonyms: core-capsid bridging protein, minor core protein V, core protein V" product="V core protein"
+>YP_003038609.1 db="hadvd_db" gene="L2-3" length=328 note="synonyms: core-capsid bridging protein, minor core protein V, core protein V" product="V core protein" splice_form="e984"
 MSKRKIKEEMLQVVAPEIYGPPADQKPRKIKRVKKKDEVGEGAVEFVREFAPRRRVNWKG
 RRVQRVLRPGTAVVFTPGERSSVRSKRSYDEVYGDNDILDQAAERAGEFAYGKRSREEEL
 ISLPLDESNPTPSLKPVTLQQVLPQAVLLPSRGVKREGENMYPTMQIMVPKRRRVEDVLD
 TVKMDVEPEVKVRPIKQVAPGLGVQTVDIQIPTDMDVDKKPSTSIEVQTDPWLPASTAFT
 STATEPSRRRRWGPANRLMPNYVLHPSIIPTPGYRGTRYYASRRRPAGKRRRRTTTRRRL
 APARVRRVTTRQGRSFVLPTVRYHPSIL
-
->AP_000148.1 db="hadvd_db" gene="L2-4" length=73 note="synonyms: core protein 10, core protein precursor pX, Core protein L2 pX" product="X core protein"
+>AP_000148.1 db="hadvd_db" gene="L2-4" length=73 note="synonyms: core protein 10, core protein precursor pX, Core protein L2 pX" product="X core protein" splice_form="e219"
 MALTCRLRIPVPNYRGRSRRRRGMAGSGLNRRRRRAMRRRLSGGFLPALIPIIAAAIGTI
 PGIASVALQASQR
-
->YP_001974429.1 db="hadvd_db" gene="L3" length=235 note="synonyms: protease cofactor, capsid protein precursor pVI, L3 pVI protein" product="VI capsid protein"
+>YP_001974429.1 db="hadvd_db" gene="L3" length=235 note="synonyms: protease cofactor, capsid protein precursor pVI, L3 pVI protein" product="VI capsid protein" splice_form="e705"
 MEDINFASLAPRHGTRPFMGTWNEIGTSQLNGGAFNWSSVWSGLKNFGSTLRTYGNKAWN
 SSTGQLLREKLKDQNFQQKVVDGLASGINGVVDIANQAVQREINSRLDPRPPTVVEMEDA
 TLPPPKGEKRPRPDAEETILQVDEPPSYEEAVKAGMPTTRIIAPLATGVMKPATLDLPPP
 PAPAPPKAAPAVVQAPPVATAVRRVPARRQAQNWQSTLHSIVGLGVKSLKRRRCY
-
->ABN10547.1 db="hadvd_db" gene="L3" length=234 note="synonyms: protease cofactor, capsid protein precursor pVI, L3 pVI protein" product="VI capsid protein"
+>ABN10547.1 db="hadvd_db" gene="L3" length=234 note="synonyms: protease cofactor, capsid protein precursor pVI, L3 pVI protein" product="VI capsid protein" splice_form="e702"
 MEDINFASLAPRHGTRPFMGTWNEIGTSQLNGGAFNWSSVWSGLKNFGSTLRTYGNKAWN
 SSTGQLLREKLKDQNFQQKVVDGLASGINGVVDIANQAVQREINSRLDPRPPTVVEMEDA
 TPPPPKGEKRPRPDAEETILQVDEPPSYEEAVKAGMPTTRIIAPLATGVMKPATLDLPPP
 PTPAPPKAAPVVQPPPVATAVRRVPARRQAQNWQSTLHSIVGLGVKSLKRRRCY
-
->YP_003038611.1 db="hadvd_db" gene="L3" length=234 note="synonyms: protease cofactor, capsid protein precursor pVI, L3 pVI protein" product="VI capsid protein"
+>YP_003038611.1 db="hadvd_db" gene="L3" length=234 note="synonyms: protease cofactor, capsid protein precursor pVI, L3 pVI protein" product="VI capsid protein" splice_form="e702"
 MEDINFASLAPRHGTRPFMGTWNEIGTSQLNGGAFNWSSVWSGLKNFGSTLRTYGNKAWN
 SSTGQMLREKLADQNFQQKVVDGLASGINGVVDIANQAVQREINSRLNPRPPTVVEMEDA
 TPPPRGEKRPRPDAEETTLQVDEPPSYEEALKAGMPTTRIIAPMATGVMKPATLDLPSPP
 VPAPPKAAPVVQAPPVATAVRRVPARRQAQNWQSTLHSIVGLGVKSLKGRRRCY
-
->AP_000149.1 db="hadvd_db" gene="L3" length=234 note="synonyms: protease cofactor, capsid protein precursor pVI, L3 pVI protein" product="VI capsid protein"
+>AP_000149.1 db="hadvd_db" gene="L3" length=234 note="synonyms: protease cofactor, capsid protein precursor pVI, L3 pVI protein" product="VI capsid protein" splice_form="e702"
 MEDINFASLAPRHGTRPFMGTWNEIGTSQLNGGAFNWSSVWSGLKNFGSTLRTYGNKAWN
 SSTGQLLREKLKDQNFQQKVVDGLASGINGVVDIANQAVQREINSRLDPRPPTVVEMEDA
 TLPPPKGEKRPRPDAEETILQVDEPPSYEEAVKAGMPTTRIIAPLATGVMKPATLDLPPP
 PTPAPPKAAPVVQPPPVATAVRRVPARRQAQNWQSTLHSIVGLGVKSLKRRRCY
-
->YP_003038612-T5 db="hadvd_db" gene="L3-2" length=953 note="synonyms: hexon protein, Late protein 2" product="hexon"
+>YP_003038612-T5 db="hadvd_db" gene="L3-2" length=953 note="synonyms: hexon protein, Late protein 2" product="hexon" splice_form="e2859"
 mcltarerakMATPSMMPQWAYMHIAGQDASEYLSPGLVQFARATDTYFSLGNKFRNPTV
 APTHDVTTDRSQRLTLRFVPVDREDTTYSYKARFTLAVGDNRVLDMASTYFDIRGVLDRG
 PSFKPYSGTAYNSLAPKGAPNSSQWITKQTNAGNETTKTHTYGVAAMGGADITIKGLQIG
@@ -930,8 +801,7 @@ KVSIMFDSSVSWPGNDRLLTPNEFEIKRSVDGEGYNVAQCNMTKDWFLIQMLSHYNIGYQ
 GFHVPEGYKDRMYSFFRNFQPMSRQVVDEINYKDYKAVALPFQHNNSGFTGYLAPTMRQG
 QPYPANFPYPLIGETAVPSVTQKKFLCDRVMWRIPFSSNFMSMGALTDLGQNMLYANSAH
 ALDMTFEVDPMDEPTLLYLLFEVFDVVRVHQPHRGVIEAVYLRTPFSAGNATT
-
->ABN10535-T5 db="hadvd_db" gene="L3-2" length=961 note="synonyms: hexon protein, Late protein 2" product="hexon"
+>ABN10535-T5 db="hadvd_db" gene="L3-2" length=961 note="synonyms: hexon protein, Late protein 2" product="hexon" splice_form="e2883"
 mcltarerakMATPSMMPQWAYMHIAGQDASEYLSPGLVQFARATDTYFSLGNKFRNPTV
 APTHDVTTDRSQRLTLRFVPVDREDTTYSYKARFTLAVGDNRVLDMASTYFDIRGVLDRG
 PSFKPYSGTAYNSLAPKGAPNSSQWDAQEKNGQGGNDMVTKTHTFGVAAMGGTNITNQGL
@@ -949,8 +819,7 @@ SHYNIGYQGFHVPEGYKDRMYSFFRNFQPMSRQVVDEINYKDYKAVTLPFQHNNSGFTGY
 LAPTMRQGQPYPANFPYPLIGSTAVPSVTQKKFLCDRVMWRIPFSSNFMSMGALTDLGQN
 MLYANSAHALDMTFEVDPMDEPTLLYLLFEVFDVVRVHQPHRGVIEAVYLRTPFSAGNAT
 T
-
->ACI04185-T5 db="hadvd_db" gene="L3-2" length=945 note="synonyms: hexon protein, Late protein 2" product="hexon"
+>ACI04185-T5 db="hadvd_db" gene="L3-2" length=945 note="synonyms: hexon protein, Late protein 2" product="hexon" splice_form="e2835"
 mcltarerakMATPSMMPQWAYMHIAGQDASEYLSPGLVQFARATDTYFSLGNKFRNPTV
 APTHDVTTDRSQRLTLRFVPVDREDTTYSYKARFTLAVGDNRVLDMASTYFDIRGVLDRG
 PSFKPYSGTAYNSLAPKGAPNSSQWAQKKTGEDNQTETRTFGVAAMGGILIDKNGLQIGT
@@ -967,26 +836,22 @@ SVSWPGNDRLLTPNEFEIKRSVDGEGYNVAQCNMTKDWFLVQMLSHYNIGYQGFHVPEGY
 KDRMYSFFRNFQPMSRQVVDEINYKDYKAVTLPFQHNNSGFTGYLAPTMRQGQPYPANFP
 YPLIGSTAVPSVTQKKFLCDRVMWRIPFSSNFMSMGALTDLGQNMLYANSAHALDMTFEV
 DPMDEPTLLYLLFEVFDVVRVHQPHRGVIEAVYLRTPFSAGNATT
-
->YP_003038613.1 db="hadvd_db" gene="L3-3" length=207 note="synonyms: adenain, Endoprotease, Late L3 23 kDa protein" product="protease"
+>YP_003038613.1 db="hadvd_db" gene="L3-3" length=207 note="synonyms: adenain, Endoprotease, Late L3 23 kDa protein" product="protease" splice_form="e621"
 MSGSSEQELAAIVRDLGCGPYFLGTHDKRFPGFLAGNKLACAIVNTAGRETGGVHWLAFG
 WNPRSRTCYMFDPFGFSDRRLKQIYSFEYEAMLRRSALALSPDRCLSLEQSTQTVQGPDS
 AACGLFCCMFLHAFVHWPDRPMDGNPTMNLLTGVPNGMLQSPQVLPTLRRNQEELYRFLA
 HHSPYFRSHRAAIEHATAFDKMKQLRV
-
->YP_001974454.1 db="hadvd_db" gene="L3-3" length=209 note="synonyms: adenain, Endoprotease, Late L3 23 kDa protein" product="protease"
+>YP_001974454.1 db="hadvd_db" gene="L3-3" length=209 note="synonyms: adenain, Endoprotease, Late L3 23 kDa protein" product="protease" splice_form="e627"
 MSGSSERELAAIVRDLGCGPYFLGTHDKRFPGFLAGDKLACAIVNTAGRETGGVHWLAFG
 WNPRSRTCYMFDPFGFSDRRLKQIYSFEYEAMLRRSALASSPDRCLSLEQSTQTVQGPDS
 AACGLFCCMFLHAFVHWPDRPMDGNPTMNLLTGVPNGMLQSPQVLPTLRRNQEELYRFLA
 RHSPYFRSHRAAIEHATAFDKMKQLRVSQ
-
->ACI04186.1 db="hadvd_db" gene="L3-3" length=207 note="synonyms: adenain, Endoprotease, Late L3 23 kDa protein" product="protease"
+>ACI04186.1 db="hadvd_db" gene="L3-3" length=207 note="synonyms: adenain, Endoprotease, Late L3 23 kDa protein" product="protease" splice_form="e621"
 MSGSSERELAAIVRDLGCGPYFLGTHDKRFPGFLAGDKLACAIVNTAGRETGGVHWLAFG
 WNPRSRTCYMFDPFGFSDRRLKQIYSFEYEAMLRRSALASSPDRCLSLEQSTQTVQGPDS
 AACGLFCCMFLHAFVHWPDRPMDGNPTMNLLTGVPNGMLQSPQVLPTLRRNQEELYRFLA
 RHSPYFRSHRAAIEHATAFDKMKQLRV
-
->ACI04188.1 db="hadvd_db" gene="L4" shared_cds="L4-2,L4-3" length=732 note="synonyms: shutoff protein, 100 kDa hexon-assembly associated protein, L4 100 kDa protein" product="hexon-assembly protein"
+>ACI04188.1 db="hadvd_db" gene="L4" shared_cds="L4-2,L4-3" length=732 note="synonyms: shutoff protein, 100 kDa hexon-assembly associated protein, L4 100 kDa protein" product="hexon-assembly protein" splice_form="e2196"
 MEEQPRKQEQEEDLTTHEQPKIEQDLGFEEPARLKPPQDEQEHEQDAGQEETDAGLEHGY
 LGGEEDVLLKHLQRQSLILRDALADRSETPLSVEELCRAYELNLFSPRVPPKRQPNGTCE
 PNPRLNFYPVFAVPEALATYHIFFKNQKIPISCRANRTRANALLALGPGARIPDIASLEE
@@ -1000,8 +865,7 @@ PHRSLVCNPQLLSETQVIGTFELQGPQESTAPLKLTPGLWTSAYLRKFVPEDYYAHEIKF
 FEDQSRPQHADLTACVITQGAILAQLHAIQKSRQEFLLKKGRGVYLDPQTGEVLNPGLPQ
 HAEEEAGAASGGDGRRMGQPGRGGRMGGGDRGGRLGRGGRGAGNRAARRRTIRAGSPSGH
 GYNLRSSGQASS
-
->YP_003038615.1 db="hadvd_db" gene="L4" shared_cds="L4-2,L4-3" length=712 note="synonyms: shutoff protein, 100 kDa hexon-assembly associated protein, L4 100 kDa protein" product="hexon-assembly protein"
+>YP_003038615.1 db="hadvd_db" gene="L4" shared_cds="L4-2,L4-3" length=712 note="synonyms: shutoff protein, 100 kDa hexon-assembly associated protein, L4 100 kDa protein" product="hexon-assembly protein" splice_form="e2136"
 MEEQPRKQEQEEENLTTHEQPKIKQDLGLEEPARLEPPQDEQKETNAGLEHGYLGGQEDV
 LLKHLQRQSFILRDALADRSKTPLSVQELCRAYELNLFSPRVPPKRQPNGTCEPNPRLNF
 YPVFAVPEALATYHIFFKNQKIPVSCRANRTRADALLALGPGARIPDIASLEEVPKIFEG
@@ -1014,8 +878,7 @@ DFVPLSYRECPPPLWSHCYLLQLANYIAYHSDVIEDVSGEGLLECHCRCNLCSPHRSLVC
 NPQLLSETQVIGTFELQGPEKSTAPLKLTPGLWTSAYLRKFVPQDYHAHEIKFFEDQLRP
 QHADLTACVITQGTILAQLHAIQKSRQEFLLKKGKGVYLDPQTGEVLNPGLPQHAKKEAG
 ATSGGDGRRMGQPGRGGRMGGGRIGRGGTGAGNRAARRRTIRAGSPSGQASS
-
->YP_001974431.1 db="hadvd_db" gene="L4" shared_cds="L4-2,L4-3" length=732 note="synonyms: shutoff protein, 100 kDa hexon-assembly associated protein, L4 100 kDa protein" product="hexon-assembly protein"
+>YP_001974431.1 db="hadvd_db" gene="L4" shared_cds="L4-2,L4-3" length=732 note="synonyms: shutoff protein, 100 kDa hexon-assembly associated protein, L4 100 kDa protein" product="hexon-assembly protein" splice_form="e2196"
 MEEQPRKQEQEEDLTTHEQPKIEQDLGFEEPARLEPPQDEQEHEQDAGQEETDAGLEHGY
 LGGEEDVLLKHLQRQSLILRDALADRSETPLSVEELCRAYELNLFSPRVPPKRQPNGTCE
 PNPRLNFYPVFAVPEALATYHIFFKNQKIPVSCRANRTRADALLALGPGARIPDIASLEE
@@ -1029,8 +892,7 @@ PHRSLVCNPQLLSETQVIGTFELQGPQESTAPLKLTPGLWTSAYLRKFVPEDYHAHEIKF
 FEDQSRPQHADLTACVITQGAILAQLHAIQKSRQEFLLKKGRGVYLDPQTGEVLNTGLPQ
 HAEEEAGAASGGDGRRMGQPGRGGRMGGGDRGGRIGRGGRGAGNRAARRRTIRAGSPGGH
 GYNLRSSGQASS
-
->ABN10536.1 db="hadvd_db" gene="L4" shared_cds="L4-2,L4-3" length=732 note="synonyms: shutoff protein, 100 kDa hexon-assembly associated protein, L4 100 kDa protein" product="hexon-assembly protein"
+>ABN10536.1 db="hadvd_db" gene="L4" shared_cds="L4-2,L4-3" length=732 note="synonyms: shutoff protein, 100 kDa hexon-assembly associated protein, L4 100 kDa protein" product="hexon-assembly protein" splice_form="e2196"
 MEEQPRKQEQEEDLTTHEQPKIEQDLGFEEPARLKPPQDEQEHEQDAGQEETDAGLEHGY
 LGGEEDVLLKHLQRQSLILRDALADRSETPLSVEELCRAYELNLFSPRVPPKRQPNGTCE
 PNPRLNFYPVFAVPEALATYHIFFKNQKIPISCRANRTRADALLALGPGARIPDIASLEE
@@ -1044,52 +906,43 @@ PHRSLVCNPQLLSETQVIGTFELQGPQESTAPLKLTPGLWTSAYLRKFVPEDYYAHEIKF
 FEDQSRPQHADLTACVITQGAILAQLHAIQKSRQEFLLKKGRGVYLDPQTGEVLNPGLPQ
 HAEEEAGAASGGDGRRMGQPGRGGRMGGGDRGGRLGRGGRGAGNRAARRRTIRAGSPSGH
 GYNLRSSGQASS
-
->YP_003038616.1 db="hadvd_db" gene="L4-2" length=124 note="synonyms: packaging protein 2, L4 22 kDa encapsidation protein, encapsidation protein 22K" product="L4 encapsidation protein" shared_cds="L4-3"
+>YP_003038616.1 db="hadvd_db" gene="L4-2" length=124 note="synonyms: packaging protein 2, L4 22 kDa encapsidation protein, encapsidation protein 22K" product="L4 encapsidation protein" shared_cds="L4-3" splice_form="e372"
 MPRKKQEPLVEEMEEEWDSQAEEDEWEEEELEEVEQEQATEQPVAAPSAPAAPPVKPPRR
 WDRVKGDGKHQRQGYRSWRAHKAAIIACLQDCGGNIAFARRYLLFHRGVNIPRNVLHYYR
 HLHS
-
->ACI04189.1 db="hadvd_db" gene="L4-2" length=137 note="synonyms: packaging protein 2, L4 22 kDa encapsidation protein, encapsidation protein 22K" product="L4 encapsidation protein" shared_cds="L4-3"
+>ACI04189.1 db="hadvd_db" gene="L4-2" length=137 note="synonyms: packaging protein 2, L4 22 kDa encapsidation protein, encapsidation protein 22K" product="L4 encapsidation protein" shared_cds="L4-3" splice_form="e411"
 MPRKKQEPLVEEMEEEWDSQAEEDEWEEETEEEDLEEVEEEQATEQPVAAPSAPAAPPVT
 DTTSAAPAKPPRRWDRVKGDGKHERQGYRSWRAHKAAIIACLQDCGGNIAFARRYLLFHR
 GVNIPRNVLHYYRHLHS
-
->YP_001974456.1 db="hadvd_db" gene="L4-2" length=137 note="synonyms: packaging protein 2, L4 22 kDa encapsidation protein, encapsidation protein 22K" product="L4 encapsidation protein" shared_cds="L4-3"
+>YP_001974456.1 db="hadvd_db" gene="L4-2" length=137 note="synonyms: packaging protein 2, L4 22 kDa encapsidation protein, encapsidation protein 22K" product="L4 encapsidation protein" shared_cds="L4-3" splice_form="e411"
 MPRKKQEPLVEEMEEEWDSQAEEDEWEEETEEEELEEVEEEQATEQPVAAPSAPAAPAVT
 DTTSAAPAKPPRRWDRVKGDGKHERQGYRSWRAHKAAIIACLQDCGGNIAFARRYLLFHR
 GVNIPRNVLHYYRHLHS
-
 >YP_001974455.1 db="hadvd_db" gene="L4-3" intron_size=119-219 length=173 note="synonym: L4 33 kDa protein" product="splicing factor" shared_cds="L4-2" splice_form="e241i169e281" spliced="Y"
 MPRKKQEPLVEEMEEEWDSQAEEDEWEEETEEEELEEVEEEQATEQPVAAPSAPAAPAVT
 DTTSAAPAKPPRRWDRVKGDAKKKQVREVAGGGLRIAANEPLTTRELRNRIFPTLYAIFQ
 QSRGQQQELKVKNRSLRSLTRSCLYHKNEDQLQRTLEDAEALFHKYCALTLKD
-
->YP_003038617.1 db="hadvd_db" gene="L4-4" length=227 note="synonyms: hexon linking protein, capsid protein precursor pVIII, L4 pVIII protein" product="VIII capsid protein"
+>YP_003038617.1 db="hadvd_db" gene="L4-4" length=227 note="synonyms: hexon linking protein, capsid protein precursor pVIII, L4 pVIII protein" product="VIII capsid protein" splice_form="e681"
 MSKEIPTPYMWSYQPQMGLAAGASQDYSTRMNWLSAGPSMISQVNGIRNHRNQILLEQAA
 VTSTPRAKLNPRNWPSTLVYQKIPGPTTVLLPRDALAEVRMTNSGVQLAGGASRCPPRPD
 LGIKTLLIRGKGIQLNNELVSSSIGLRPDGVFQLAGAGKSSFTPNQAYLTLQSSSSQPRS
 GGIGTLQFVEEFVPSVYFNPFSGSPGLYPDEFIPNFDAVREAVDGYD
-
->YP_001974457.1 db="hadvd_db" gene="L4-4" length=227 note="synonyms: hexon linking protein, capsid protein precursor pVIII, L4 pVIII protein" product="VIII capsid protein"
+>YP_001974457.1 db="hadvd_db" gene="L4-4" length=227 note="synonyms: hexon linking protein, capsid protein precursor pVIII, L4 pVIII protein" product="VIII capsid protein" splice_form="e681"
 MSKEIPTPYMWSYQPQMGLAAGASQDYSTRMNWLSAGPSMISRVNGVRSHRNQILLEQAA
 VTSTPRAKLNPRNWPSTLVYQEIPGPTTVLLPRDALAEVRMTNSGVQLAGGASRCPLRPQ
 SGIKTLVIRGRGTQLNDELVSSSIGLRPDGVFQLAGAGRSSFTPNQAYLTLQSSSSEPRS
 GGIGTLQFVEEFVPSVYFNPFSGSPGLYPDEFIPNFDAVREAVDGYD
-
->ACI04190.1 db="hadvd_db" gene="L4-4" length=227 note="synonyms: hexon linking protein, capsid protein precursor pVIII, L4 pVIII protein" product="VIII capsid protein"
+>ACI04190.1 db="hadvd_db" gene="L4-4" length=227 note="synonyms: hexon linking protein, capsid protein precursor pVIII, L4 pVIII protein" product="VIII capsid protein" splice_form="e681"
 MSKEIPTPYMWSYQPQMGLAAGASQDYSTRMNWLSAGPSMISQVNGVRNHRNQILLEQAA
 VTSTPRAKLNPRNWPSTLVYQEIPGPTTVLLPRDALAEVRMTNSGVQLAGGASRCPLRPQ
 SGIKTLVIRGRGTQLNDELVSSSIGLRPDGVFQLAGAGRSSFTPHQAYLTLQSSSSEPRS
 GGIGTLQFVEEFVPSVYFNPFSGSPGLYPDEFIPNFDAVREAVDGYD
-
->ACI47067.1 db="hadvd_db" gene="L4-4" length=227 note="synonyms: hexon linking protein, capsid protein precursor pVIII, L4 pVIII protein" product="VIII capsid protein"
+>ACI47067.1 db="hadvd_db" gene="L4-4" length=227 note="synonyms: hexon linking protein, capsid protein precursor pVIII, L4 pVIII protein" product="VIII capsid protein" splice_form="e681"
 MSKEIPTPYMWSYQPQMGLAAGASQDYSTRMNWLSAGPSMISRVNGVRNHRNQILLQQAA
 VTSTPRAKLNPRNWPSTLVYQEIPGPTTVLLPRDALAEVRMTNSGVQLAGGASRCPLRPQ
 SGIKTLVIRGRGTQLNDELVSSSIGLRPDGVFQLAGAGRSSFTPNQAYLTLQSSSSEPRS
 GGIGTLQFVEEFVPSVYFNPFSGSPGLYPDEFIPNFDAVREAVDGYD
-
->YP_001974434.1 db="hadvd_db" gene="L5" length=362 note="synonym: pIV" product="fiber"
+>YP_001974434.1 db="hadvd_db" gene="L5" length=362 note="synonym: pIV" product="fiber" splice_form="e1086"
 MSKRLRVEDDFNPVYPYGYARNQNIPFLTPPFVSSDGFQNFPPGVLSLKLADPIAIVNGN
 VSLKVGGGLTLQDGTGKLTVNADPPLQLTNNKLGIALDAPFDVIDNKLTLLAGHGLSIIT
 KETSTLPGLINTLVVLTGKGIGTESTDNGGSVCVRVGEGGGLSFNNDGDLVAFNKKEDKR
@@ -1097,8 +950,7 @@ TLWTTPDTSPNCKIDQDKDSKLTLVLTKCGSQILANVSLIVVAGKYKIINNNTQPALKGF
 TIKLLFDENGVLMESSNLGKSYWNFRNENSIMSTAYEKAIGFMPNLVAYPKPTAGSKKYA
 RDIVYGNIYLGGKPDQPVTIKTTFNQETGCEYSITFDFSWAKTYVNVEFETTSFTFSYIA
 QE
-
->ACI04198.1 db="hadvd_db" gene="L5" length=362 note="synonym: pIV" product="fiber"
+>ACI04198.1 db="hadvd_db" gene="L5" length=362 note="synonym: pIV" product="fiber" splice_form="e1086"
 MTKRLRVEDDFNPVYPYGYARNQNIPFLTPPFVSSNGFQNFPPGVLSLKLADPITINNQN
 VSLKVGGGLTLQEETGKLTVNTEPPLHLTNNKLGIALDAPFDVIDNKLTLLAGHGLSIIT
 KETSTLPGLVNTLVVLTGKGIGTDLSNNGGNICVRVGEGGGLSFNDNGDLVAFNKKEDKR
@@ -1106,8 +958,7 @@ TLWTTPDTSPNCRIDQDKDSKLTLVLTKCGSQILANVSLIVVAGRYKIINNNTNPALKGF
 TIKLLFDKNGVLMESSNLGKSYWNFRNQNSIMSTAYEKAIGFMPNLVAYPKPTTGSKKYA
 RDIVYGNIYLGGKPHQPVTIKTTFNQETGCEYSITFDFSWAKTYVNVEFETTSFTFSYIA
 QE
-
->YP_003038626.1 db="hadvd_db" gene="L5" length=361 note="synonym: pIV" product="fiber"
+>YP_003038626.1 db="hadvd_db" gene="L5" length=361 note="synonym: pIV" product="fiber" splice_form="e1083"
 MSKRLRVEDDFNPVYPYGYARNQNIPFLTPPFVSSNGFQNFPPGVLSLKLANPITITNGN
 VSLKVGGGLTLQEETGKLTVNTEPPLQLTNNKLGIALDAPFDVIDNKLTLLAGHGLSIIT
 KETSTLPGLVNTLVVLTGKGIGTDSHNGGNICVRVAEGGGLSFNDNGDLVAFNKKEDKRT
@@ -1115,8 +966,7 @@ LWTTPDTSPNCRIDQDKDSKLTLVLTKCGSQILANVSLIVVAGRYKIINNNTQPALKGFT
 IKLLFDKNGVLMESSNLSKSYWNFRNENSIMSTAYEKAIGFMPNLVAYPKPTTGSKKYAR
 DIVYGNIYLGGKPHQPATIKTTFNQETGCEYSITFDFSWAKTYVNVEFETTSFTFSYIAQ
 E
-
->AP_000157.1 db="hadvd_db" gene="L5" length=366 note="synonym: pIV" product="fiber"
+>AP_000157.1 db="hadvd_db" gene="L5" length=366 note="synonym: pIV" product="fiber" splice_form="e1098"
 MSKRLRVEDDFNPVYPYGYARNQNIPFLTPPFVSSDGFKNFPPGVLSLKLADPITIANGD
 VSLKVGGGLTLQEGSMTVDPKAPLQLANNKKLELVYVDPFEVSANKLSLKVGHGLKILDD
 KSAGGLKDLIGKLVVLTGKGIGTENLQNTDGSSRGIGISVRAREGLTFDNDGYLVAWNPK
@@ -1124,8 +974,7 @@ YDTRTLWTTPDTSPNCRIDKEKDSKLTLVLTKCGSQILANVSLIVVSGKYQYIDHATNPT
 LKSFKIKLLFDNKGVLLPSSNLDSTYWNFRSDNLTVSEAYKNAVEFMPNLVAYPKPTTGS
 KKYARDIVYGNIYLGGLAYQPVVIKVTFNEEADSAYSITFEFVWNKEYARVEFETTSFTF
 SYIAQQ
-
->ABN10548.1 db="hadvd_db" gene="L5" length=365 note="synonym: pIV" product="fiber"
+>ABN10548.1 db="hadvd_db" gene="L5" length=365 note="synonym: pIV" product="fiber" splice_form="e1095"
 MSKRLRVEDDFNPVYPYGYARNQNIPFLTPPFVSSDGFKNFPPGVLSLKLADPITITNGD
 VSLKVGGGLTLQDGSLTVNPKAPLQVNTDKKLELAYDNPFESSANKLSLKVGHGLKVLDE
 KSAAGLKDLIGKLVVLTGKGIGTENLENTDGSSRGIGINVRAREGLTFDNDGYLVAWNPK
@@ -1133,13 +982,10 @@ YDTRTLWTTPDTSPNCTIAQDKDSKLTLVLTKCGSQILANVSLIVVAGKYHIINNKTNPK
 IKSFTIKLLFNKNGVLLDNSNLGKAYWNFRSGNSNVSTAYEKAIGFMPNLVAYPKPSNSK
 KYARDIVYGTIYLGGKPDQPAVIKTTFNQETGCEYSITFNFSWSKTYENVEFETTSFTFS
 YIAQE
-
 >ABN10549.1 db="hadvd_db" gene="U" intron_size=100000-100000 length=49 note="exon encoding C terminus unidentified" product="protein U" splice_form="e147i100000e3" spliced="Y" tiny_exon3="i100000:XXX"
 MKIVDQEFDIPFKVWRKFAARRGLEYQSWEEGTEVLLSNYTRDILSDFK
-
 >ACL13287.1 db="hadvd_db" gene="U" intron_size=100000-100000 length=49 note="exon encoding C terminus unidentified" product="protein U" splice_form="e147i100000e3" spliced="Y" tiny_exon3="i100000:XXX"
 MKIVDQEFDIPFKVWRKFAARRGLEYQSWEEGTEVLLNNYTKDILSDFK
-
 >ACI04177.2 db="hadvd_db" gene="pTP" shared_cds="E2B,HYP-5" intron_size=2942-3622 length=624 note="synonyms: terminal protein, DNA terminal protein precursor, terminal protein precursor pTP, pTP, 71.1 kDa preterminal protein" product="DNA terminal protein" splice_form="e9i3268e1866" spliced="Y"
 MALSINDCARLTGQTVPTMDYFLPLRNIWNRVREFPRASTTAAGITWMSRYLYGYHRLML
 EDLAPGAPATQRWPLYRQPPPHFLVGYQYLVRTCNDYVFDSRAFSRLRYSEVVQPGLQTV
@@ -1152,7 +998,6 @@ EAMERLEAIGDISEMPLRRWIMYFFVTEHIATTLNYLFQRLRNYAVFARHVELNLAQVVM
 RARDADGDVVYSRVWNESGLGAFSQLMGRISNDLAATVERAGRGDLQEEEIEQFMSEIAY
 QDNSGDVQEILRQAAVNDAEIDSVELSFRFKVTGPVVFTQRRQIQDVNRRVVAHASALRA
 QHRDLPERHANVPLPPGARPRHRF
-
 >YP_003038604.1 db="hadvd_db" gene="pTP" shared_cds="E2B,HYP-5" intron_size=2942-3622 length=634 note="synonyms: terminal protein, DNA terminal protein precursor, terminal protein precursor pTP, pTP, 71.1 kDa preterminal protein" product="DNA terminal protein" splice_form="e9i3206e1896" spliced="Y"
 MALSVNDCARLTGQTVPTMDYFLPLRNIWNRVREFPRASTTAAGITWMSRYLYGYHRLML
 EDLAPGAPATQRWPLYRQPPPHFLVGYQYLVRTCNDYVFDSRAFSRLRYSEVVQPGLQTV
@@ -1165,7 +1010,6 @@ AMERLEAIGDISEMPLRRWIMYFFVTEHIATTLNYLFQRLRNYAVFTRHVELNLAQVVMR
 ARDVDGDVVYSRVWNESGLGAFSQLMGRISNDLAATVERAGRGDLQEEEIEQFMSEIAYQ
 DNSGDVQEILRQAAVNDAEIDSVELSFRFKVTGPVVFTQRRQIQDVNRRVVAHASALRAQ
 HRDLPERHADVPLPPLPTGPEPPLPPGARPRHRF
-
 >AP_000144.1 db="hadvd_db" gene="pTP" shared_cds="E2B,HYP-5" intron_size=2942-3622 length=634 note="synonyms: terminal protein, DNA terminal protein precursor, terminal protein precursor pTP, pTP, 71.1 kDa preterminal protein" product="DNA terminal protein" splice_form="e9i3275e1896" spliced="Y"
 MALSVNDCARLTGQTVPTMDYFLPLRNIWNRVREFPRASTTAAGITWMSRYLYGYHRLML
 EDLAPGAPATQRWPLYRQPPPHFLVGYQYLVRTCNDYVFDSRAFSRLRYSEVVQPGLQTV
@@ -1178,7 +1022,6 @@ AMERLEAIGDISEMPLRRWIMYFFVTEHIATTLNYLFQRLRNYAVFARHVELNLAQVVMR
 ARDADGDVVYSRVWNESGLGAFSQLMGRISNDLAATVERAGRGDLQEEEIEQFMSEIAYQ
 DNSGDVQEILRQPAVNDAEIDSVELSFRFKVTGPVVFTQRRQIQDVNRRVVAHASALRAQ
 HRDLPERHADVPLPPLPAGPEPPLPPGARPRHRF
-
 >YP_001974468.1 db="hadvd_db" gene="pTP" shared_cds="E2B,HYP-5" intron_size=2942-3622 length=635 note="synonyms: terminal protein, DNA terminal protein precursor, terminal protein precursor pTP, pTP, 71.1 kDa preterminal protein" product="DNA terminal protein" splice_form="e9i3260e1899" spliced="Y"
 MALSVNDCARLTGQTVPTMDYFLPLRNIWNRVREFPRASTTAAGITWMSRYLYGYHRLML
 EDLAPGAPATQRWPLYRQPPPHFLVGYQYLVRTCNDYVFDSRAFSRLRYSEVVQPGLQTV
@@ -1191,7 +1034,6 @@ EAMERLEAIGDISEMPLRRWIMYFFVTEHIATTLNYLFQRLRNYAVFTRHVELNLAQVVM
 RARDADGDVVYSRVWNESGLGAFSQLMGRISNDLAATVERAGRGDLQEEEIEQFMTEIAY
 QDNSGDVQEILRQAAVNDAEIDSVELSFRFKVTGPVVFTQRRQIQDVNRRVVAHASALRA
 QHRDLPERHADVPLPPLPAGPEPPLPPGARPRHRF
-
 >ACI47089.1 db="hadvd_db" gene="pTP" shared_cds="E2B,HYP-5" intron_size=2942-3622 length=635 note="synonyms: terminal protein, DNA terminal protein precursor, terminal protein precursor pTP, pTP, 71.1 kDa preterminal protein" product="DNA terminal protein" splice_form="e9i3277e1899" spliced="Y"
 MALSINDCARLTGQTVPTMDYFLPLRNIWNRVREFPRASTTAAGITWMSRYLYGYHRLML
 EDLAPGAPATQRWPLYRQPPPHFLVGYQYLVRTCNDYVFDSRAFSRLRYSEVVQPGLQTV
@@ -1204,4 +1046,3 @@ EAMERLEAIGDISEMPLRRWIMYFFVTEHIATTLNYLFQRLRNYAVFTRHVELNLAQVVM
 RARDADGDVVYSRVWNESGLGAFSQLMGRISNDLAATVERAGRGDLQEEEIEQFMSEIAY
 QDNSGDVQEILRQAAVNDAEIDSVELSFRFKVTGPVVFTQRRQIQDVNRRVVAHASALRA
 QHRDLPERHADVPLPPLPAGPEPPLPPGARPRHRF
-

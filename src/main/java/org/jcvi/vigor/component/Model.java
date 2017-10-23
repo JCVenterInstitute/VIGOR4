@@ -30,6 +30,7 @@ public class Model implements Serializable{
     private boolean partial5p=false;
     private boolean partial3p=false;
     private Range startCodon;
+    private boolean isPseudogene=false;
     
    public static Model deepClone(Model model) {
 	   try {

@@ -1,0 +1,322 @@
+Command line: [exonerate --model protein2genome -q /home/snettem/git/Vigor4/target/classes/vigorResources/data3/flua_db -t /home/snettem/git/Vigor4/VigorWorkSpace/sequence_temp.fasta --showcigar true]
+Hostname: [TrumpLinux-VB]
+
+C4 Alignment:
+------------
+         Query: seg7prot2ADR3_V27A&S31N db="flua_db" gene="M2" intron_size=650-750 product="matrix protein 2" splice_form="e26i690e264" spliced=Y length=97
+        Target: gi|155016325|gb|CY024819.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 7, complete sequence
+         Model: protein2genome:local
+     Raw score: 476
+   Query range: 0 -> 97
+  Target range: 8 -> 987
+
+   1 : MetSerLeuLeuThrGluValGlu{Th}  >>>> Target Intron 1 >>>>  {r}ProT :  11
+       ||||||||||||||||||||||||{||}            688 bp           {|}||||
+       MetSerLeuLeuThrGluValGlu{Th}++                         ++{r}ProT
+   9 : ATGAGTCTTCTAACCGAGGTCGAA{AC}gt.........................ag{G}CCTA : 727
+
+  12 : hrArgAsnGlyTrpGluCysLysCysSerAspSerSerAspProLeuAlaIleAlaAlaAsnIl :  32
+       ||||||||||||||||||||!:!||||||||||||||||||||||||!.!|||||||||!:!||
+       hrArgAsnGlyTrpGluCysArgCysSerAspSerSerAspProLeuValIleAlaAlaSerIl
+ 728 : CCAGAAACGGATGGGAGTGCAGATGCAGCGATTCAAGTGATCCTCTCGTTATTGCCGCAAGTAT : 790
+
+  33 : eIleGlyIleLeuHisLeuIleLeuTrpIleLeuAspArgLeuPhePheLysCysIleTyrArg :  53
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       eIleGlyIleLeuHisLeuIleLeuTrpIleLeuAspArgLeuPhePheLysCysIleTyrArg
+ 791 : CATTGGGATCTTGCACTTGATATTGTGGATTCTTGATCGTCTTTTCTTCAAATGCATTTATCGT : 853
+
+  54 : ArgLeuLysTyrGlyLeuLysArgGlyProSerThrGluGlyValProGluSerMetArgGluG :  75
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       ArgLeuLysTyrGlyLeuLysArgGlyProSerThrGluGlyValProGluSerMetArgGluG
+ 854 : CGCCTTAAATACGGTTTGAAAAGAGGGCCTTCTACGGAAGGAGTGCCTGAGTCTATGAGGGAAG : 919
+
+  76 : luTyrArgGlnGluGlnGlnSerAlaValAspValAspAspSerHisPheValAsnIleGluLe :  96
+       |||||||||||||||||||||||||||||||||||||||||.!!||||||||||||||||||||
+       luTyrArgGlnGluGlnGlnSerAlaValAspValAspAspGlyHisPheValAsnIleGluLe
+ 920 : AATATCGACAGGAACAGCAGAGTGCTGTGGATGTTGACGATGGTCATTTTGTCAACATAGAGCT : 982
+
+  97 : uGlu :  97
+       ||||
+       uGlu
+ 983 : GGAG : 987
+
+cigar: seg7prot2ADR3_V27A&S31N 0 97 . gi|155016325|gb|CY024819.1| 8 987 + 476  M 24 D 690 M 265
+vulgar: seg7prot2ADR3_V27A&S31N 0 97 . gi|155016325|gb|CY024819.1| 8 987 + 476 M 8 24 S 0 2 5 0 2 I 0 684 3 0 2 S 1 1 M 88 264
+
+C4 Alignment:
+------------
+         Query: seg7prot2ADR2_S31N db="flua_db" gene="M2" intron_size=650-750 product="matrix protein 2" splice_form="e26i688e268" spliced=Y length=97
+        Target: gi|155016325|gb|CY024819.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 7, complete sequence
+         Model: protein2genome:local
+     Raw score: 480
+   Query range: 0 -> 97
+  Target range: 8 -> 987
+
+   1 : MetSerLeuLeuThrGluValGlu{Th}  >>>> Target Intron 1 >>>>  {r}ProT :  11
+       ||||||||||||||||||||||||{||}            688 bp           {|}||||
+       MetSerLeuLeuThrGluValGlu{Th}++                         ++{r}ProT
+   9 : ATGAGTCTTCTAACCGAGGTCGAA{AC}gt.........................ag{G}CCTA : 727
+
+  12 : hrArgAsnGlyTrpGluCysLysCysSerAspSerSerAspProLeuValIleAlaAlaAsnIl :  32
+       ||||||||||||||||||||!:!||||||||||||||||||||||||||||||||||||!:!||
+       hrArgAsnGlyTrpGluCysArgCysSerAspSerSerAspProLeuValIleAlaAlaSerIl
+ 728 : CCAGAAACGGATGGGAGTGCAGATGCAGCGATTCAAGTGATCCTCTCGTTATTGCCGCAAGTAT : 790
+
+  33 : eIleGlyIleLeuHisLeuIleLeuTrpIleLeuAspArgLeuPhePheLysCysIleTyrArg :  53
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       eIleGlyIleLeuHisLeuIleLeuTrpIleLeuAspArgLeuPhePheLysCysIleTyrArg
+ 791 : CATTGGGATCTTGCACTTGATATTGTGGATTCTTGATCGTCTTTTCTTCAAATGCATTTATCGT : 853
+
+  54 : ArgLeuLysTyrGlyLeuLysArgGlyProSerThrGluGlyValProGluSerMetArgGluG :  75
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       ArgLeuLysTyrGlyLeuLysArgGlyProSerThrGluGlyValProGluSerMetArgGluG
+ 854 : CGCCTTAAATACGGTTTGAAAAGAGGGCCTTCTACGGAAGGAGTGCCTGAGTCTATGAGGGAAG : 919
+
+  76 : luTyrArgGlnGluGlnGlnSerAlaValAspValAspAspSerHisPheValAsnIleGluLe :  96
+       |||||||||||||||||||||||||||||||||||||||||.!!||||||||||||||||||||
+       luTyrArgGlnGluGlnGlnSerAlaValAspValAspAspGlyHisPheValAsnIleGluLe
+ 920 : AATATCGACAGGAACAGCAGAGTGCTGTGGATGTTGACGATGGTCATTTTGTCAACATAGAGCT : 982
+
+  97 : uGlu :  97
+       ||||
+       uGlu
+ 983 : GGAG : 987
+
+cigar: seg7prot2ADR2_S31N 0 97 . gi|155016325|gb|CY024819.1| 8 987 + 480  M 24 D 690 M 265
+vulgar: seg7prot2ADR2_S31N 0 97 . gi|155016325|gb|CY024819.1| 8 987 + 480 M 8 24 S 0 2 5 0 2 I 0 684 3 0 2 S 1 1 M 88 264
+
+C4 Alignment:
+------------
+         Query: seg7prot2B db="flua_db" gene="M2" intron_size=650-750 product="matrix protein 2" splice_form="e26i682e262" spliced=Y length=96
+        Target: gi|155016325|gb|CY024819.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 7, complete sequence
+         Model: protein2genome:local
+     Raw score: 478
+   Query range: 0 -> 96
+  Target range: 8 -> 984
+
+   1 : MetSerLeuLeuThrGluValGlu{Th}  >>>> Target Intron 1 >>>>  {r}ProT :  11
+       ||||||||||||||||||||||||{||}            688 bp           {|}||||
+       MetSerLeuLeuThrGluValGlu{Th}++                         ++{r}ProT
+   9 : ATGAGTCTTCTAACCGAGGTCGAA{AC}gt.........................ag{G}CCTA : 727
+
+  12 : hrArgAsnGlyTrpGluCysLysCysSerAspSerSerAspProLeuValIleAlaAlaSerIl :  32
+       ||||||||||||||||||||!:!|||||||||||||||||||||||||||||||||||||||||
+       hrArgAsnGlyTrpGluCysArgCysSerAspSerSerAspProLeuValIleAlaAlaSerIl
+ 728 : CCAGAAACGGATGGGAGTGCAGATGCAGCGATTCAAGTGATCCTCTCGTTATTGCCGCAAGTAT : 790
+
+  33 : eIleGlyIleLeuHisLeuIleLeuTrpIleLeuAspArgLeuPhePheLysCysIleTyrArg :  53
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       eIleGlyIleLeuHisLeuIleLeuTrpIleLeuAspArgLeuPhePheLysCysIleTyrArg
+ 791 : CATTGGGATCTTGCACTTGATATTGTGGATTCTTGATCGTCTTTTCTTCAAATGCATTTATCGT : 853
+
+  54 : ArgLeuLysTyrGlyLeuLysArgGlyProSerThrGluGlyValProGluSerMetArgGluG :  75
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       ArgLeuLysTyrGlyLeuLysArgGlyProSerThrGluGlyValProGluSerMetArgGluG
+ 854 : CGCCTTAAATACGGTTTGAAAAGAGGGCCTTCTACGGAAGGAGTGCCTGAGTCTATGAGGGAAG : 919
+
+  76 : luTyrArgGlnGluGlnGlnSerAlaValAspValAspAspSerHisPheValAsnIleGluLe :  96
+       |||||||||||||||||||||||||||||||||||||||||.!!||||||||||||||||||||
+       luTyrArgGlnGluGlnGlnSerAlaValAspValAspAspGlyHisPheValAsnIleGluLe
+ 920 : AATATCGACAGGAACAGCAGAGTGCTGTGGATGTTGACGATGGTCATTTTGTCAACATAGAGCT : 982
+
+  97 : u :  96
+       |
+       u
+ 983 : G : 984
+
+cigar: seg7prot2B 0 96 . gi|155016325|gb|CY024819.1| 8 984 + 478  M 24 D 690 M 262
+vulgar: seg7prot2B 0 96 . gi|155016325|gb|CY024819.1| 8 984 + 478 M 8 24 S 0 2 5 0 2 I 0 684 3 0 2 S 1 1 M 87 261
+
+C4 Alignment:
+------------
+         Query: seg7prot2ADR1_V27A db="flua_db" gene="M2" intron_size=650-750 product="matrix protein 2" splice_form="e26i686e268" spliced=Y length=97
+        Target: gi|155016325|gb|CY024819.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 7, complete sequence
+         Model: protein2genome:local
+     Raw score: 479
+   Query range: 0 -> 97
+  Target range: 8 -> 987
+
+   1 : MetSerLeuLeuThrGluValGlu{Th}  >>>> Target Intron 1 >>>>  {r}ProT :  11
+       ||||||||||||||||||||||||{||}            688 bp           {|}||||
+       MetSerLeuLeuThrGluValGlu{Th}++                         ++{r}ProT
+   9 : ATGAGTCTTCTAACCGAGGTCGAA{AC}gt.........................ag{G}CCTA : 727
+
+  12 : hrArgAsnGlyTrpGluCysLysCysSerAspSerSerAspProLeuAlaIleAlaAlaSerIl :  32
+       ||||||||||||||||||||!:!||||||||||||||||||||||||!.!||||||||||||||
+       hrArgAsnGlyTrpGluCysArgCysSerAspSerSerAspProLeuValIleAlaAlaSerIl
+ 728 : CCAGAAACGGATGGGAGTGCAGATGCAGCGATTCAAGTGATCCTCTCGTTATTGCCGCAAGTAT : 790
+
+  33 : eIleGlyIleLeuHisLeuIleLeuTrpIleLeuAspArgLeuPhePheLysCysIleTyrArg :  53
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       eIleGlyIleLeuHisLeuIleLeuTrpIleLeuAspArgLeuPhePheLysCysIleTyrArg
+ 791 : CATTGGGATCTTGCACTTGATATTGTGGATTCTTGATCGTCTTTTCTTCAAATGCATTTATCGT : 853
+
+  54 : ArgLeuLysTyrGlyLeuLysArgGlyProSerThrGluGlyValProGluSerMetArgGluG :  75
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       ArgLeuLysTyrGlyLeuLysArgGlyProSerThrGluGlyValProGluSerMetArgGluG
+ 854 : CGCCTTAAATACGGTTTGAAAAGAGGGCCTTCTACGGAAGGAGTGCCTGAGTCTATGAGGGAAG : 919
+
+  76 : luTyrArgGlnGluGlnGlnSerAlaValAspValAspAspSerHisPheValAsnIleGluLe :  96
+       |||||||||||||||||||||||||||||||||||||||||.!!||||||||||||||||||||
+       luTyrArgGlnGluGlnGlnSerAlaValAspValAspAspGlyHisPheValAsnIleGluLe
+ 920 : AATATCGACAGGAACAGCAGAGTGCTGTGGATGTTGACGATGGTCATTTTGTCAACATAGAGCT : 982
+
+  97 : uGlu :  97
+       ||||
+       uGlu
+ 983 : GGAG : 987
+
+cigar: seg7prot2ADR1_V27A 0 97 . gi|155016325|gb|CY024819.1| 8 987 + 479  M 24 D 690 M 265
+vulgar: seg7prot2ADR1_V27A 0 97 . gi|155016325|gb|CY024819.1| 8 987 + 479 M 8 24 S 0 2 5 0 2 I 0 684 3 0 2 S 1 1 M 88 264
+
+C4 Alignment:
+------------
+         Query: seg7part2A db="flua_db" gene="M2" product="matrix protein 2" length=88 splice_form="e264"
+        Target: gi|155016325|gb|CY024819.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 7, complete sequence
+         Model: protein2genome:local
+     Raw score: 460
+   Query range: 0 -> 88
+  Target range: 723 -> 987
+
+   1 : ProThrArgAsnGlyTrpGluCysLysCysSerAspSerSerAspProLeuValIleAlaAlaS :  22
+       ||||||||||||||||||||||||!:!|||||||||||||||||||||||||||||||||||||
+       ProThrArgAsnGlyTrpGluCysArgCysSerAspSerSerAspProLeuValIleAlaAlaS
+ 724 : CCTACCAGAAACGGATGGGAGTGCAGATGCAGCGATTCAAGTGATCCTCTCGTTATTGCCGCAA : 787
+
+  23 : erIleIleGlyIleLeuHisLeuIleLeuTrpIleLeuAspArgLeuPhePheLysCysIleTy :  43
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       erIleIleGlyIleLeuHisLeuIleLeuTrpIleLeuAspArgLeuPhePheLysCysIleTy
+ 788 : GTATCATTGGGATCTTGCACTTGATATTGTGGATTCTTGATCGTCTTTTCTTCAAATGCATTTA : 850
+
+  44 : rArgArgLeuLysTyrGlyLeuLysArgGlyProSerThrGluGlyValProGluSerMetArg :  64
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       rArgArgLeuLysTyrGlyLeuLysArgGlyProSerThrGluGlyValProGluSerMetArg
+ 851 : TCGTCGCCTTAAATACGGTTTGAAAAGAGGGCCTTCTACGGAAGGAGTGCCTGAGTCTATGAGG : 913
+
+  65 : GluGluTyrArgGlnGluGlnGlnSerAlaValAspValAspAspSerHisPheValAsnIleG :  86
+       |||||||||||||||||||||||||||||||||||||||||||||.!!||||||||||||||||
+       GluGluTyrArgGlnGluGlnGlnSerAlaValAspValAspAspGlyHisPheValAsnIleG
+ 914 : GAAGAATATCGACAGGAACAGCAGAGTGCTGTGGATGTTGACGATGGTCATTTTGTCAACATAG : 979
+
+  87 : luLeuGlu :  88
+       ||||||||
+       luLeuGlu
+ 980 : AGCTGGAG : 987
+
+cigar: seg7part2A 0 88 . gi|155016325|gb|CY024819.1| 723 987 + 460  M 264
+vulgar: seg7part2A 0 88 . gi|155016325|gb|CY024819.1| 723 987 + 460 M 88 264
+
+C4 Alignment:
+------------
+         Query: seg7prot1 db="flua_db" gene="M1" product="matrix protein 1" length=252 splice_form="e756"
+        Target: gi|155016325|gb|CY024819.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 7, complete sequence
+         Model: protein2genome:local
+     Raw score: 1265
+   Query range: 0 -> 252
+  Target range: 8 -> 764
+
+   1 : MetSerLeuLeuThrGluValGluThrTyrValLeuSerIleValProSerGlyProLeuLysA :  22
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       MetSerLeuLeuThrGluValGluThrTyrValLeuSerIleValProSerGlyProLeuLysA
+   9 : ATGAGTCTTCTAACCGAGGTCGAAACGTACGTTCTCTCTATCGTCCCGTCAGGCCCCCTCAAAG :  72
+
+  23 : laGluIleAlaGlnArgLeuGluAspValPheAlaGlyLysAsnThrAspLeuGluAlaLeuMe :  43
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       laGluIleAlaGlnArgLeuGluAspValPheAlaGlyLysAsnThrAspLeuGluAlaLeuMe
+  73 : CCGAGATCGCGCAGAGACTTGAAGATGTGTTTGCAGGAAAGAACACCGATCTTGAGGCACTCAT : 135
+
+  44 : tGluTrpLeuLysThrArgProIleLeuSerProLeuThrLysGlyIleLeuGlyPheValPhe :  64
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       tGluTrpLeuLysThrArgProIleLeuSerProLeuThrLysGlyIleLeuGlyPheValPhe
+ 136 : GGAATGGCTAAAGACAAGACCAATCCTGTCACCTCTGACTAAGGGGATTTTAGGATTTGTGTTC : 198
+
+  65 : ThrLeuThrValProSerGluArgGlyLeuGlnArgArgArgPheValGlnAsnAlaLeuAsnG :  86
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       ThrLeuThrValProSerGluArgGlyLeuGlnArgArgArgPheValGlnAsnAlaLeuAsnG
+ 199 : ACGCTCACCGTGCCCAGTGAGCGAGGACTGCAGCGTAGACGCTTTGTCCAAAATGCCCTTAATG : 264
+
+  87 : lyAsnGlyAspProAsnAsnMetAspArgAlaValLysLeuTyrArgLysLeuLysArgGluIl : 107
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       lyAsnGlyAspProAsnAsnMetAspArgAlaValLysLeuTyrArgLysLeuLysArgGluIl
+ 265 : GGAATGGGGATCCAAACAACATGGACAGAGCGGTCAAACTGTACAGGAAGCTAAAAAGGGAAAT : 327
+
+ 108 : eThrPheHisGlyAlaLysGluValAlaLeuSerTyrSerThrGlyAlaLeuAlaSerCysMet : 128
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       eThrPheHisGlyAlaLysGluValAlaLeuSerTyrSerThrGlyAlaLeuAlaSerCysMet
+ 328 : AACATTCCATGGGGCAAAAGAAGTGGCACTCAGTTATTCAACTGGTGCACTTGCCAGTTGCATG : 390
+
+ 129 : GlyLeuIleTyrAsnArgMetGlyThrValThrThrGluValAlaPheGlyLeuValCysAlaT : 150
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       GlyLeuIleTyrAsnArgMetGlyThrValThrThrGluValAlaPheGlyLeuValCysAlaT
+ 391 : GGCCTCATATACAACAGGATGGGGACTGTGACCACTGAAGTGGCATTTGGCCTAGTGTGCGCCA : 456
+
+ 151 : hrCysGluGlnIleAlaAspSerGlnHisArgSerHisArgGlnMetValThrThrThrAsnPr : 171
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       hrCysGluGlnIleAlaAspSerGlnHisArgSerHisArgGlnMetValThrThrThrAsnPr
+ 457 : CGTGTGAGCAGATTGCTGATTCCCAGCATCGGTCTCACAGACAAATGGTGACAACAACCAACCC : 519
+
+ 172 : oLeuIleArgHisGluAsnArgMetValLeuAlaSerThrThrAlaLysAlaMetGluGlnMet : 192
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       oLeuIleArgHisGluAsnArgMetValLeuAlaSerThrThrAlaLysAlaMetGluGlnMet
+ 520 : ACTAATCAGGCACGAGAACAGAATGGTACTGGCCAGTACTACGGCTAAGGCCATGGAGCAAATG : 582
+
+ 193 : AlaGlySerSerGluGlnAlaAlaGluAlaMetGluValAlaSerGlnAlaArgGlnMetValG : 214
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       AlaGlySerSerGluGlnAlaAlaGluAlaMetGluValAlaSerGlnAlaArgGlnMetValG
+ 583 : GCAGGGTCAAGTGAGCAGGCAGCAGAGGCTATGGAAGTTGCTAGTCAGGCCAGACAGATGGTGC : 648
+
+ 215 : lnAlaMetArgThrIleGlyThrHisProSerSerSerAlaGlyLeuLysAspAspLeuLeuGl : 235
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       lnAlaMetArgThrIleGlyThrHisProSerSerSerAlaGlyLeuLysAspAspLeuLeuGl
+ 649 : AGGCAATGAGGACCATTGGGACTCATCCTAGCTCCAGTGCTGGTCTAAAGGATGATCTTCTTGA : 711
+
+ 236 : uAsnLeuGlnAlaTyrGlnLysArgMetGlyValGlnMetGlnArgPheLys : 252
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||
+       uAsnLeuGlnAlaTyrGlnLysArgMetGlyValGlnMetGlnArgPheLys
+ 712 : AAATTTGCAGGCCTACCAGAAACGGATGGGAGTGCAGATGCAGCGATTCAAG : 764
+
+cigar: seg7prot1 0 252 . gi|155016325|gb|CY024819.1| 8 764 + 1265  M 756
+vulgar: seg7prot1 0 252 . gi|155016325|gb|CY024819.1| 8 764 + 1265 M 252 756
+
+C4 Alignment:
+------------
+         Query: seg7prot2A db="flua_db" gene="M2" intron_size=650-750 product="matrix protein 2" splice_form="e26i688e268" spliced=Y length=97
+        Target: gi|155016325|gb|CY024819.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 7, complete sequence
+         Model: protein2genome:local
+     Raw score: 483
+   Query range: 0 -> 97
+  Target range: 8 -> 987
+
+   1 : MetSerLeuLeuThrGluValGlu{Th}  >>>> Target Intron 1 >>>>  {r}ProT :  11
+       ||||||||||||||||||||||||{||}            688 bp           {|}||||
+       MetSerLeuLeuThrGluValGlu{Th}++                         ++{r}ProT
+   9 : ATGAGTCTTCTAACCGAGGTCGAA{AC}gt.........................ag{G}CCTA : 727
+
+  12 : hrArgAsnGlyTrpGluCysLysCysSerAspSerSerAspProLeuValIleAlaAlaSerIl :  32
+       ||||||||||||||||||||!:!|||||||||||||||||||||||||||||||||||||||||
+       hrArgAsnGlyTrpGluCysArgCysSerAspSerSerAspProLeuValIleAlaAlaSerIl
+ 728 : CCAGAAACGGATGGGAGTGCAGATGCAGCGATTCAAGTGATCCTCTCGTTATTGCCGCAAGTAT : 790
+
+  33 : eIleGlyIleLeuHisLeuIleLeuTrpIleLeuAspArgLeuPhePheLysCysIleTyrArg :  53
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       eIleGlyIleLeuHisLeuIleLeuTrpIleLeuAspArgLeuPhePheLysCysIleTyrArg
+ 791 : CATTGGGATCTTGCACTTGATATTGTGGATTCTTGATCGTCTTTTCTTCAAATGCATTTATCGT : 853
+
+  54 : ArgLeuLysTyrGlyLeuLysArgGlyProSerThrGluGlyValProGluSerMetArgGluG :  75
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       ArgLeuLysTyrGlyLeuLysArgGlyProSerThrGluGlyValProGluSerMetArgGluG
+ 854 : CGCCTTAAATACGGTTTGAAAAGAGGGCCTTCTACGGAAGGAGTGCCTGAGTCTATGAGGGAAG : 919
+
+  76 : luTyrArgGlnGluGlnGlnSerAlaValAspValAspAspSerHisPheValAsnIleGluLe :  96
+       |||||||||||||||||||||||||||||||||||||||||.!!||||||||||||||||||||
+       luTyrArgGlnGluGlnGlnSerAlaValAspValAspAspGlyHisPheValAsnIleGluLe
+ 920 : AATATCGACAGGAACAGCAGAGTGCTGTGGATGTTGACGATGGTCATTTTGTCAACATAGAGCT : 982
+
+  97 : uGlu :  97
+       ||||
+       uGlu
+ 983 : GGAG : 987
+
+cigar: seg7prot2A 0 97 . gi|155016325|gb|CY024819.1| 8 987 + 483  M 24 D 690 M 265
+vulgar: seg7prot2A 0 97 . gi|155016325|gb|CY024819.1| 8 987 + 483 M 8 24 S 0 2 5 0 2 I 0 684 3 0 2 S 1 1 M 88 264
+-- completed exonerate analysis

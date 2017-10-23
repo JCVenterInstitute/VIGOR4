@@ -3,7 +3,7 @@ Hostname: [TrumpLinux-VB]
 
 C4 Alignment:
 ------------
-         Query: 170293257_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: 170293257_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7299" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 3750
@@ -260,7 +260,7 @@ vulgar: 170293257_NSP 501 1500 . HM045808_DRAFT 1562 4550 + 3750 M 13 39 G 2 0 M
 
 C4 Alignment:
 ------------
-         Query: 170293257_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: 170293257_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7299" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 2603
@@ -432,7 +432,7 @@ vulgar: 170293257_NSP 1782 2432 . HM045808_DRAFT 5480 7490 + 2603 M 23 69 S 0 1 
 
 C4 Alignment:
 ------------
-         Query: 170293257_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: 170293257_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7299" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 953
@@ -499,7 +499,7 @@ vulgar: 170293257_NSP 239 448 . HM045808_DRAFT 773 1400 + 953 M 209 627
 
 C4 Alignment:
 ------------
-         Query: 170293257_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: 170293257_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7299" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 730
@@ -556,7 +556,7 @@ vulgar: 170293257_NSP 3 179 . HM045808_DRAFT 65 593 + 730 M 176 528
 
 C4 Alignment:
 ------------
-         Query: 170293257_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: 170293257_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7299" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 172
@@ -583,7 +583,7 @@ vulgar: 170293257_NSP 1618 1663 . HM045808_DRAFT 4904 5039 + 172 M 45 135
 
 C4 Alignment:
 ------------
-         Query: 379765038_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: 379765038_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7416" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 2224
@@ -750,7 +750,7 @@ vulgar: 379765038_NSP 1851 2472 . HM045808_DRAFT 5618 7484 + 2224 M 99 297 G 0 3
 
 C4 Alignment:
 ------------
-         Query: 379765038_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: 379765038_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7416" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1870
@@ -907,7 +907,7 @@ vulgar: 379765038_NSP 503 1095 . HM045808_DRAFT 1562 3320 + 1870 M 17 51 G 1 0 M
 
 C4 Alignment:
 ------------
-         Query: 379765038_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: 379765038_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7416" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1349
@@ -1029,7 +1029,7 @@ vulgar: 379765038_NSP 5 448 . HM045808_DRAFT 68 1400 + 1349 M 151 453 G 0 3 M 29
 
 C4 Alignment:
 ------------
-         Query: 379765038_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: 379765038_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7416" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 936
@@ -1146,7 +1146,7 @@ vulgar: 379765038_NSP 1097 1509 . HM045808_DRAFT 3305 4544 + 936 M 26 78 G 0 3 M
 
 C4 Alignment:
 ------------
-         Query: 379765038_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: 379765038_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7416" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 120
@@ -1173,7 +1173,7 @@ vulgar: 379765038_NSP 1631 1681 . HM045808_DRAFT 4907 5057 + 120 M 50 150
 
 C4 Alignment:
 ------------
-         Query: 339267591_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: 339267591_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7590" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 2176
@@ -1335,7 +1335,7 @@ vulgar: 339267591_NSP 1912 2528 . HM045808_DRAFT 5618 7469 + 2176 M 98 294 G 0 3
 
 C4 Alignment:
 ------------
-         Query: 339267591_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: 339267591_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7590" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1733
@@ -1492,7 +1492,7 @@ vulgar: 339267591_NSP 503 1086 . HM045808_DRAFT 1556 3296 + 1733 M 333 999 G 3 0
 
 C4 Alignment:
 ------------
-         Query: 339267591_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: 339267591_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7590" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1296
@@ -1614,7 +1614,7 @@ vulgar: 339267591_NSP 6 450 . HM045808_DRAFT 65 1400 + 1296 M 152 456 G 0 3 M 29
 
 C4 Alignment:
 ------------
-         Query: 339267591_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: 339267591_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7590" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 919
@@ -1731,7 +1731,7 @@ vulgar: 339267591_NSP 1096 1508 . HM045808_DRAFT 3305 4544 + 919 M 29 87 G 0 3 M
 
 C4 Alignment:
 ------------
-         Query: 339267591_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: 339267591_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7590" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 135
@@ -1758,7 +1758,7 @@ vulgar: 339267591_NSP 1632 1679 . HM045808_DRAFT 4913 5054 + 135 M 47 141
 
 C4 Alignment:
 ------------
-         Query: 380034914_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: 380034914_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7293" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 2686
@@ -2015,7 +2015,7 @@ vulgar: 380034914_NSP 501 1494 . HM045808_DRAFT 1559 4547 + 2686 M 662 1986 G 0 
 
 C4 Alignment:
 ------------
-         Query: 380034914_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: 380034914_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7293" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 2192
@@ -2192,7 +2192,7 @@ vulgar: 380034914_NSP 1759 2431 . HM045808_DRAFT 5465 7484 + 2192 M 150 450 G 0 
 
 C4 Alignment:
 ------------
-         Query: 380034914_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: 380034914_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7293" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1370
@@ -2314,7 +2314,7 @@ vulgar: 380034914_NSP 4 449 . HM045808_DRAFT 65 1400 + 1370 M 445 1335
 
 C4 Alignment:
 ------------
-         Query: 53854780_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: 53854780_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7485" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 4068
@@ -2691,7 +2691,7 @@ vulgar: 53854780_NSP 0 1489 . HM045808_DRAFT 59 4547 + 4068 M 103 309 G 0 6 M 70
 
 C4 Alignment:
 ------------
-         Query: 53854780_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: 53854780_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7485" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 2286
@@ -2853,7 +2853,7 @@ vulgar: 53854780_NSP 1882 2494 . HM045808_DRAFT 5636 7472 + 2286 M 612 1836
 
 C4 Alignment:
 ------------
-         Query: 53854780_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: 53854780_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7485" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 131
@@ -2875,7 +2875,7 @@ vulgar: 53854780_NSP 1612 1653 . HM045808_DRAFT 4913 5036 + 131 M 41 123
 
 C4 Alignment:
 ------------
-         Query: 399240871_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: 399240871_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7422" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 6087
@@ -3192,7 +3192,7 @@ vulgar: 399240871_NSP 237 1497 . HM045808_DRAFT 770 4550 + 6087 M 1260 3780
 
 C4 Alignment:
 ------------
-         Query: 399240871_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: 399240871_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7422" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 4264
@@ -3414,7 +3414,7 @@ vulgar: 399240871_NSP 1614 2474 . HM045808_DRAFT 4901 7481 + 4264 M 860 2580
 
 C4 Alignment:
 ------------
-         Query: 399240871_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: 399240871_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7422" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 906
@@ -3486,7 +3486,7 @@ vulgar: 399240871_NSP 0 223 . HM045808_DRAFT 59 7716 + 906 M 179 537 5 0 2 I 0 6
 
 C4 Alignment:
 ------------
-         Query: AAD14562.1 gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" length=2506 gene_variation=1 db="veev_db"
+         Query: AAD14562.1 gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" length=2506 gene_variation=1 db="veev_db" splice_form="e7518" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 4170
@@ -3863,7 +3863,7 @@ vulgar: AAD14562.1 0 1492 . HM045808_DRAFT 59 4547 + 4170 M 807 2421 G 0 3 M 227
 
 C4 Alignment:
 ------------
-         Query: AAD14562.1 gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" length=2506 gene_variation=1 db="veev_db"
+         Query: AAD14562.1 gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" length=2506 gene_variation=1 db="veev_db" splice_form="e7518" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 2325
@@ -4025,7 +4025,7 @@ vulgar: AAD14562.1 1896 2506 . HM045808_DRAFT 5639 7472 + 2325 M 94 282 G 0 3 M 
 
 C4 Alignment:
 ------------
-         Query: AAD14562.1 gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" length=2506 gene_variation=1 db="veev_db"
+         Query: AAD14562.1 gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" length=2506 gene_variation=1 db="veev_db" splice_form="e7518" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 130
@@ -4047,7 +4047,7 @@ vulgar: AAD14562.1 1616 1657 . HM045808_DRAFT 4907 5030 + 130 M 41 123
 
 C4 Alignment:
 ------------
-         Query: NP_598184.1 gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: NP_598184.1 gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7779" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1674
@@ -4209,7 +4209,7 @@ vulgar: NP_598184.1 1979 2592 . HM045808_DRAFT 5633 7469 + 1674 M 93 279 G 0 3 M
 
 C4 Alignment:
 ------------
-         Query: NP_598184.1 gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: NP_598184.1 gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7779" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1410
@@ -4376,7 +4376,7 @@ vulgar: NP_598184.1 557 1181 . HM045808_DRAFT 1646 3503 + 1410 M 45 135 G 1 0 M 
 
 C4 Alignment:
 ------------
-         Query: NP_598184.1 gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: NP_598184.1 gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7779" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 523
@@ -4443,7 +4443,7 @@ vulgar: NP_598184.1 253 466 . HM045808_DRAFT 770 1400 + 523 M 65 195 G 2 0 M 104
 
 C4 Alignment:
 ------------
-         Query: NP_598184.1 gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: NP_598184.1 gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7779" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 421
@@ -4500,7 +4500,7 @@ vulgar: NP_598184.1 13 194 . HM045808_DRAFT 65 593 + 421 M 60 180 G 1 0 M 10 30 
 
 C4 Alignment:
 ------------
-         Query: NP_598184.1 gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db"
+         Query: NP_598184.1 gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" gene_variation=1 db="veev_db" splice_form="e7779" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 331
@@ -4557,7 +4557,7 @@ vulgar: NP_598184.1 1415 1583 . HM045808_DRAFT 4043 4547 + 331 M 168 504
 
 C4 Alignment:
 ------------
-         Query: 19073904_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" length=2506 gene_variation=1 db="veev_db"
+         Query: 19073904_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" length=2506 gene_variation=1 db="veev_db" splice_form="e7314" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 3540
@@ -4814,7 +4814,7 @@ vulgar: 19073904_NSP 499 1498 . HM045808_DRAFT 1559 4550 + 3540 M 13 39 G 2 0 M 
 
 C4 Alignment:
 ------------
-         Query: 19073904_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" length=2506 gene_variation=1 db="veev_db"
+         Query: 19073904_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" length=2506 gene_variation=1 db="veev_db" splice_form="e7314" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 2536
@@ -5006,7 +5006,7 @@ vulgar: 19073904_NSP 1717 2438 . HM045808_DRAFT 5237 7484 + 2536 M 79 237 G 1 0 
 
 C4 Alignment:
 ------------
-         Query: 19073904_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" length=2506 gene_variation=1 db="veev_db"
+         Query: 19073904_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" length=2506 gene_variation=1 db="veev_db" splice_form="e7314" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1627
@@ -5128,7 +5128,7 @@ vulgar: 19073904_NSP 0 447 . HM045808_DRAFT 59 1400 + 1627 M 447 1341
 
 C4 Alignment:
 ------------
-         Query: 19073904_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" length=2506 gene_variation=1 db="veev_db"
+         Query: 19073904_NSP gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" length=2506 gene_variation=1 db="veev_db" splice_form="e7314" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 173
@@ -5165,7 +5165,7 @@ vulgar: 19073904_NSP 1617 1710 . HM045808_DRAFT 4907 5189 + 173 M 69 207 G 0 3 M
 
 C4 Alignment:
 ------------
-         Query: AAD14565.1 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1258 gene_variation=1 db="veev_db"
+         Query: AAD14565.1 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1258 gene_variation=1 db="veev_db" splice_form="e3774"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1313
@@ -5287,7 +5287,7 @@ vulgar: AAD14565.1 813 1247 . HM045808_DRAFT 9967 11269 + 1313 M 434 1302
 
 C4 Alignment:
 ------------
-         Query: AAD14565.1 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1258 gene_variation=1 db="veev_db"
+         Query: AAD14565.1 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1258 gene_variation=1 db="veev_db" splice_form="e3774"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 734
@@ -5364,7 +5364,7 @@ vulgar: AAD14565.1 77 331 . HM045808_DRAFT 7732 8503 + 734 M 185 555 G 1 0 M 17 
 
 C4 Alignment:
 ------------
-         Query: AAD14565.1 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1258 gene_variation=1 db="veev_db"
+         Query: AAD14565.1 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1258 gene_variation=1 db="veev_db" splice_form="e3774"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 688
@@ -5471,7 +5471,7 @@ vulgar: AAD14565.1 420 797 . HM045808_DRAFT 8776 9904 + 688 M 33 99 G 0 3 M 78 2
 
 C4 Alignment:
 ------------
-         Query: 379765038_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1254 gene_variation=1 db="veev_db"
+         Query: 379765038_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1254 gene_variation=1 db="veev_db" splice_form="e3738"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1170
@@ -5598,7 +5598,7 @@ vulgar: 379765038_SP 804 1245 . HM045808_DRAFT 9967 11290 + 1170 M 441 1323
 
 C4 Alignment:
 ------------
-         Query: 379765038_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1254 gene_variation=1 db="veev_db"
+         Query: 379765038_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1254 gene_variation=1 db="veev_db" splice_form="e3738"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 694
@@ -5710,7 +5710,7 @@ vulgar: 379765038_SP 386 787 . HM045808_DRAFT 8695 9898 + 694 M 63 189 G 0 3 M 7
 
 C4 Alignment:
 ------------
-         Query: 379765038_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1254 gene_variation=1 db="veev_db"
+         Query: 379765038_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1254 gene_variation=1 db="veev_db" splice_form="e3738"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 676
@@ -5792,7 +5792,7 @@ vulgar: 379765038_SP 40 323 . HM045808_DRAFT 7660 8506 + 676 M 83 249 G 1 0 M 12
 
 C4 Alignment:
 ------------
-         Query: NC_001786_NSP  gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" length=2411 gene_variation=1 db="veev_db"
+         Query: NC_001786_NSP  gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" length=2411 gene_variation=1 db="veev_db" splice_form="e7233" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 3203
@@ -6049,7 +6049,7 @@ vulgar: NC_001786_NSP 500 1495 . HM045808_DRAFT 1562 4550 + 3203 M 18 54 G 0 3 M
 
 C4 Alignment:
 ------------
-         Query: NC_001786_NSP  gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" length=2411 gene_variation=1 db="veev_db"
+         Query: NC_001786_NSP  gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" length=2411 gene_variation=1 db="veev_db" splice_form="e7233" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 2246
@@ -6221,7 +6221,7 @@ vulgar: NC_001786_NSP 1774 2411 . HM045808_DRAFT 5483 7481 + 2246 M 22 66 S 0 1 
 
 C4 Alignment:
 ------------
-         Query: NC_001786_NSP  gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" length=2411 gene_variation=1 db="veev_db"
+         Query: NC_001786_NSP  gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" length=2411 gene_variation=1 db="veev_db" splice_form="e7233" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1374
@@ -6343,7 +6343,7 @@ vulgar: NC_001786_NSP 5 445 . HM045808_DRAFT 68 1400 + 1374 M 103 309 G 0 12 M 3
 
 C4 Alignment:
 ------------
-         Query: NC_001786_NSP  gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" length=2411 gene_variation=1 db="veev_db"
+         Query: NC_001786_NSP  gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" stopcodon_readthru="Y:R" product="non-structural polyprotein precursor P1234" length=2411 gene_variation=1 db="veev_db" splice_form="e7233" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 124
@@ -6375,7 +6375,7 @@ vulgar: NC_001786_NSP 1616 1688 . HM045808_DRAFT 4913 5129 + 124 M 72 216
 
 C4 Alignment:
 ------------
-         Query: 53854780_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1254 gene_variation=1 db="veev_db"
+         Query: 53854780_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1254 gene_variation=1 db="veev_db" splice_form="e3729"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1310
@@ -6497,7 +6497,7 @@ vulgar: 53854780_SP 798 1238 . HM045808_DRAFT 9967 11284 + 1310 M 144 432 G 1 0 
 
 C4 Alignment:
 ------------
-         Query: 53854780_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1254 gene_variation=1 db="veev_db"
+         Query: 53854780_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1254 gene_variation=1 db="veev_db" splice_form="e3729"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 797
@@ -6609,7 +6609,7 @@ vulgar: 53854780_SP 380 781 . HM045808_DRAFT 8698 9904 + 797 M 62 186 G 0 3 M 73
 
 C4 Alignment:
 ------------
-         Query: 53854780_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1254 gene_variation=1 db="veev_db"
+         Query: 53854780_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1254 gene_variation=1 db="veev_db" splice_form="e3729"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 785
@@ -6696,7 +6696,7 @@ vulgar: 53854780_SP 28 318 . HM045808_DRAFT 7633 8506 + 785 M 50 150 G 0 3 M 167
 
 C4 Alignment:
 ------------
-         Query: NP_598185.1  gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db"
+         Query: NP_598185.1  gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db" splice_form="e3966"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 661
@@ -6798,7 +6798,7 @@ vulgar: NP_598185.1 941 1292 . HM045808_DRAFT 10186 11221 + 661 M 44 132 G 2 0 M
 
 C4 Alignment:
 ------------
-         Query: NP_598185.1  gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db"
+         Query: NP_598185.1  gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db" splice_form="e3966"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 313
@@ -6860,7 +6860,7 @@ vulgar: NP_598185.1 66 270 . HM045808_DRAFT 7684 8296 + 313 M 132 396 G 0 3 M 17
 
 C4 Alignment:
 ------------
-         Query: NP_598185.1  gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db"
+         Query: NP_598185.1  gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db" splice_form="e3966"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 105
@@ -6887,7 +6887,7 @@ vulgar: NP_598185.1 441 494 . HM045808_DRAFT 8755 8917 + 105 M 41 123 G 0 3 M 12
 
 C4 Alignment:
 ------------
-         Query: AAD14561.1    gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1253 gene_variation=1 db="veev_db"
+         Query: AAD14561.1    gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1253 gene_variation=1 db="veev_db" splice_form="e3759"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1298
@@ -7014,7 +7014,7 @@ vulgar: AAD14561.1 809 1250 . HM045808_DRAFT 9967 11290 + 1298 M 441 1323
 
 C4 Alignment:
 ------------
-         Query: AAD14561.1    gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1253 gene_variation=1 db="veev_db"
+         Query: AAD14561.1    gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1253 gene_variation=1 db="veev_db" splice_form="e3759"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 700
@@ -7091,7 +7091,7 @@ vulgar: AAD14561.1 67 328 . HM045808_DRAFT 7708 8503 + 700 M 39 117 G 0 3 M 153 
 
 C4 Alignment:
 ------------
-         Query: AAD14561.1    gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1253 gene_variation=1 db="veev_db"
+         Query: AAD14561.1    gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1253 gene_variation=1 db="veev_db" splice_form="e3759"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 684
@@ -7198,7 +7198,7 @@ vulgar: AAD14561.1 417 793 . HM045808_DRAFT 8776 9904 + 684 M 33 99 G 0 3 M 73 2
 
 C4 Alignment:
 ------------
-         Query: ADA84123.1    gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1254 gene_variation=1 db="veev_db"
+         Query: ADA84123.1    gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1254 gene_variation=1 db="veev_db" splice_form="e3762"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1292
@@ -7320,7 +7320,7 @@ vulgar: ADA84123.1 809 1243 . HM045808_DRAFT 9967 11269 + 1292 M 434 1302
 
 C4 Alignment:
 ------------
-         Query: ADA84123.1    gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1254 gene_variation=1 db="veev_db"
+         Query: ADA84123.1    gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1254 gene_variation=1 db="veev_db" splice_form="e3762"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 717
@@ -7402,7 +7402,7 @@ vulgar: ADA84123.1 63 327 . HM045808_DRAFT 7696 8503 + 717 M 42 126 G 0 6 M 153 
 
 C4 Alignment:
 ------------
-         Query: ADA84123.1    gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1254 gene_variation=1 db="veev_db"
+         Query: ADA84123.1    gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1254 gene_variation=1 db="veev_db" splice_form="e3762"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 700
@@ -7509,7 +7509,7 @@ vulgar: ADA84123.1 416 793 . HM045808_DRAFT 8776 9904 + 700 M 33 99 G 0 3 M 77 2
 
 C4 Alignment:
 ------------
-         Query: ADG95902.1    gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1248 gene_variation=1 db="veev_db"
+         Query: ADG95902.1    gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1248 gene_variation=1 db="veev_db" splice_form="e3744"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 4437
@@ -7741,7 +7741,7 @@ vulgar: ADG95902.1 384 1248 . HM045808_DRAFT 8701 11293 + 4437 M 864 2592
 
 C4 Alignment:
 ------------
-         Query: ADG95902.1    gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1248 gene_variation=1 db="veev_db"
+         Query: ADG95902.1    gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1248 gene_variation=1 db="veev_db" splice_form="e3744"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1700
@@ -7833,7 +7833,7 @@ vulgar: ADG95902.1 0 320 . HM045808_DRAFT 7549 8509 + 1700 M 320 960
 
 C4 Alignment:
 ------------
-         Query: AAD14567.1 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1254 gene_variation=1 db="veev_db"
+         Query: AAD14567.1 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1254 gene_variation=1 db="veev_db" splice_form="e3762"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1315
@@ -7955,7 +7955,7 @@ vulgar: AAD14567.1 809 1243 . HM045808_DRAFT 9967 11269 + 1315 M 434 1302
 
 C4 Alignment:
 ------------
-         Query: AAD14567.1 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1254 gene_variation=1 db="veev_db"
+         Query: AAD14567.1 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1254 gene_variation=1 db="veev_db" splice_form="e3762"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 727
@@ -8032,7 +8032,7 @@ vulgar: AAD14567.1 75 328 . HM045808_DRAFT 7729 8503 + 727 M 31 93 G 0 6 M 152 4
 
 C4 Alignment:
 ------------
-         Query: AAD14567.1 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1254 gene_variation=1 db="veev_db"
+         Query: AAD14567.1 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1254 gene_variation=1 db="veev_db" splice_form="e3762"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 703
@@ -8139,7 +8139,7 @@ vulgar: AAD14567.1 417 793 . HM045808_DRAFT 8776 9904 + 703 M 34 102 G 0 3 M 77 
 
 C4 Alignment:
 ------------
-         Query: NP_054024.1  gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1239 gene_variation=1 db="veev_db"
+         Query: NP_054024.1  gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1239 gene_variation=1 db="veev_db" splice_form="e3717"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 2075
@@ -8371,7 +8371,7 @@ vulgar: NP_054024.1 384 1239 . HM045808_DRAFT 8716 11293 + 2075 M 57 171 G 0 6 M
 
 C4 Alignment:
 ------------
-         Query: NP_054024.1  gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1239 gene_variation=1 db="veev_db"
+         Query: NP_054024.1  gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" length=1239 gene_variation=1 db="veev_db" splice_form="e3717"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 999
@@ -8463,7 +8463,7 @@ vulgar: NP_054024.1 0 313 . HM045808_DRAFT 7549 8503 + 999 M 55 165 5 0 2 I 0 29
 
 C4 Alignment:
 ------------
-         Query: 19073904_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db"
+         Query: 19073904_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db" splice_form="e3729"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 2661
@@ -8695,7 +8695,7 @@ vulgar: 19073904_SP 382 1242 . HM045808_DRAFT 8698 11290 + 2661 M 189 567 G 0 3 
 
 C4 Alignment:
 ------------
-         Query: 19073904_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db"
+         Query: 19073904_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db" splice_form="e3729"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1114
@@ -8787,7 +8787,7 @@ vulgar: 19073904_SP 0 316 . HM045808_DRAFT 7549 8503 + 1114 M 17 51 G 0 3 M 73 2
 
 C4 Alignment:
 ------------
-         Query: 339267591_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db"
+         Query: 339267591_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db" splice_form="e3732"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1257
@@ -8914,7 +8914,7 @@ vulgar: 339267591_SP 799 1241 . HM045808_DRAFT 9964 11290 + 1257 M 442 1326
 
 C4 Alignment:
 ------------
-         Query: 339267591_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db"
+         Query: 339267591_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db" splice_form="e3732"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 715
@@ -9021,7 +9021,7 @@ vulgar: 339267591_SP 396 783 . HM045808_DRAFT 8737 9898 + 715 M 50 150 G 0 3 M 6
 
 C4 Alignment:
 ------------
-         Query: 339267591_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db"
+         Query: 339267591_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db" splice_form="e3732"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 692
@@ -9108,7 +9108,7 @@ vulgar: 339267591_SP 22 317 . HM045808_DRAFT 7633 8503 + 692 M 28 84 G 2 0 M 27 
 
 C4 Alignment:
 ------------
-         Query: 379765038_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db"
+         Query: 379765038_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db" splice_form="e3741"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1171
@@ -9235,7 +9235,7 @@ vulgar: 379765038_SP 804 1247 . HM045808_DRAFT 9967 11296 + 1171 M 443 1329
 
 C4 Alignment:
 ------------
-         Query: 379765038_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db"
+         Query: 379765038_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db" splice_form="e3741"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 694
@@ -9347,7 +9347,7 @@ vulgar: 379765038_SP 386 787 . HM045808_DRAFT 8695 9898 + 694 M 63 189 G 0 3 M 7
 
 C4 Alignment:
 ------------
-         Query: 379765038_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db"
+         Query: 379765038_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db" splice_form="e3741"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 676
@@ -9429,7 +9429,7 @@ vulgar: 379765038_SP 40 323 . HM045808_DRAFT 7660 8506 + 676 M 83 249 G 1 0 M 12
 
 C4 Alignment:
 ------------
-         Query: 339267585_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db"
+         Query: 339267585_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db" splice_form="e3723"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 2011
@@ -9636,7 +9636,7 @@ vulgar: 339267585_SP 391 1139 . HM045808_DRAFT 8716 11014 + 2011 M 16 48 G 0 3 M
 
 C4 Alignment:
 ------------
-         Query: 339267585_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db"
+         Query: 339267585_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db" splice_form="e3723"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 907
@@ -9713,7 +9713,7 @@ vulgar: 339267585_SP 60 321 . HM045808_DRAFT 7708 8503 + 907 M 32 96 G 1 0 M 179
 
 C4 Alignment:
 ------------
-         Query: 339267585_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db"
+         Query: 339267585_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db" splice_form="e3723"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 189
@@ -9750,7 +9750,7 @@ vulgar: 339267585_SP 1148 1235 . HM045808_DRAFT 11017 11278 + 189 M 87 261
 
 C4 Alignment:
 ------------
-         Query: 380034914_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db"
+         Query: 380034914_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db" splice_form="e3756"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1964
@@ -9982,7 +9982,7 @@ vulgar: 380034914_SP 391 1249 . HM045808_DRAFT 8707 11290 + 1964 M 56 168 G 0 6 
 
 C4 Alignment:
 ------------
-         Query: 380034914_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db"
+         Query: 380034914_SP gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" gene_variation=1 db="veev_db" splice_form="e3756"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 960
@@ -10074,7 +10074,7 @@ vulgar: 380034914_SP 14 325 . HM045808_DRAFT 7558 8506 + 960 M 21 63 G 0 6 M 67 
 
 C4 Alignment:
 ------------
-         Query: ABB45868.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45868.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein"
+         Query: ABB45868.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45868.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" splice_form="e3726"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1306
@@ -10201,7 +10201,7 @@ vulgar: ABB45868.1 798 1239 . HM045808_DRAFT 9967 11287 + 1306 M 144 432 G 1 0 M
 
 C4 Alignment:
 ------------
-         Query: ABB45868.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45868.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein"
+         Query: ABB45868.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45868.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" splice_form="e3726"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 790
@@ -10288,7 +10288,7 @@ vulgar: ABB45868.1 28 318 . HM045808_DRAFT 7633 8506 + 790 M 50 150 G 0 3 M 167 
 
 C4 Alignment:
 ------------
-         Query: ABB45868.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45868.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein"
+         Query: ABB45868.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45868.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" splice_form="e3726"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 762
@@ -10400,7 +10400,7 @@ vulgar: ABB45868.1 380 781 . HM045808_DRAFT 8698 9904 + 762 M 62 186 G 0 3 M 73 
 
 C4 Alignment:
 ------------
-         Query: AAT96379.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAT96379.1 " length=2494 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: AAT96379.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAT96379.1 " length=2494 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7482" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 4079
@@ -10777,7 +10777,7 @@ vulgar: AAT96379.1 0 1489 . HM045808_DRAFT 59 4547 + 4079 M 103 309 G 0 6 M 702 
 
 C4 Alignment:
 ------------
-         Query: AAT96379.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAT96379.1 " length=2494 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: AAT96379.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAT96379.1 " length=2494 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7482" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 2286
@@ -10939,7 +10939,7 @@ vulgar: AAT96379.1 1882 2494 . HM045808_DRAFT 5636 7472 + 2286 M 612 1836
 
 C4 Alignment:
 ------------
-         Query: AAT96379.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAT96379.1 " length=2494 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: AAT96379.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAT96379.1 " length=2494 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7482" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 131
@@ -10961,7 +10961,7 @@ vulgar: AAT96379.1 1612 1653 . HM045808_DRAFT 4913 5036 + 131 M 41 123
 
 C4 Alignment:
 ------------
-         Query: ABL84686.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABL84686.1 " length=2494 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: ABL84686.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABL84686.1 " length=2494 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7482" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 4084
@@ -11338,7 +11338,7 @@ vulgar: ABL84686.1 0 1489 . HM045808_DRAFT 59 4547 + 4084 M 103 309 G 0 6 M 702 
 
 C4 Alignment:
 ------------
-         Query: ABL84686.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABL84686.1 " length=2494 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: ABL84686.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABL84686.1 " length=2494 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7482" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 2286
@@ -11500,7 +11500,7 @@ vulgar: ABL84686.1 1882 2494 . HM045808_DRAFT 5636 7472 + 2286 M 612 1836
 
 C4 Alignment:
 ------------
-         Query: ABL84686.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABL84686.1 " length=2494 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: ABL84686.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABL84686.1 " length=2494 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7482" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 131
@@ -11522,7 +11522,7 @@ vulgar: ABL84686.1 1612 1653 . HM045808_DRAFT 4913 5036 + 131 M 41 123
 
 C4 Alignment:
 ------------
-         Query: ABB45867.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45867.1 " length=2471 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: ABB45867.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45867.1 " length=2471 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7413" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 3505
@@ -11839,7 +11839,7 @@ vulgar: ABB45867.1 235 1489 . HM045808_DRAFT 770 4547 + 3505 M 570 1710 G 0 3 M 
 
 C4 Alignment:
 ------------
-         Query: ABB45867.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45867.1 " length=2471 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: ABB45867.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45867.1 " length=2471 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7413" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 2286
@@ -12001,7 +12001,7 @@ vulgar: ABB45867.1 1859 2471 . HM045808_DRAFT 5636 7472 + 2286 M 612 1836
 
 C4 Alignment:
 ------------
-         Query: ABB45867.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45867.1 " length=2471 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: ABB45867.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45867.1 " length=2471 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7413" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 603
@@ -12058,7 +12058,7 @@ vulgar: ABB45867.1 0 176 . HM045808_DRAFT 59 593 + 603 M 103 309 G 0 6 M 73 219
 
 C4 Alignment:
 ------------
-         Query: ABB45867.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45867.1 " length=2471 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: ABB45867.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45867.1 " length=2471 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7413" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 128
@@ -12085,7 +12085,7 @@ vulgar: ABB45867.1 1612 1657 . HM045808_DRAFT 4913 5048 + 128 M 45 135
 
 C4 Alignment:
 ------------
-         Query: NP_632021.2 db="veev_db" organism="Eastern equine encephalitis virus" cluster="NP_632021.2 " length=2493 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: NP_632021.2 db="veev_db" organism="Eastern equine encephalitis virus" cluster="NP_632021.2 " length=2493 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7479" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 4022
@@ -12462,7 +12462,7 @@ vulgar: NP_632021.2 0 1488 . HM045808_DRAFT 59 4547 + 4022 M 103 309 G 0 6 M 288
 
 C4 Alignment:
 ------------
-         Query: NP_632021.2 db="veev_db" organism="Eastern equine encephalitis virus" cluster="NP_632021.2 " length=2493 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: NP_632021.2 db="veev_db" organism="Eastern equine encephalitis virus" cluster="NP_632021.2 " length=2493 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7479" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 2281
@@ -12624,7 +12624,7 @@ vulgar: NP_632021.2 1881 2493 . HM045808_DRAFT 5636 7472 + 2281 M 612 1836
 
 C4 Alignment:
 ------------
-         Query: NP_632021.2 db="veev_db" organism="Eastern equine encephalitis virus" cluster="NP_632021.2 " length=2493 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: NP_632021.2 db="veev_db" organism="Eastern equine encephalitis virus" cluster="NP_632021.2 " length=2493 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7479" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 131
@@ -12646,7 +12646,7 @@ vulgar: NP_632021.2 1611 1652 . HM045808_DRAFT 4913 5036 + 131 M 41 123
 
 C4 Alignment:
 ------------
-         Query: ABB45865.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45865.1 " length=2474 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: ABB45865.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45865.1 " length=2474 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7422" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 3514
@@ -12963,7 +12963,7 @@ vulgar: ABB45865.1 235 1489 . HM045808_DRAFT 770 4547 + 3514 M 570 1710 G 0 3 M 
 
 C4 Alignment:
 ------------
-         Query: ABB45865.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45865.1 " length=2474 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: ABB45865.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45865.1 " length=2474 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7422" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 2289
@@ -13125,7 +13125,7 @@ vulgar: ABB45865.1 1862 2474 . HM045808_DRAFT 5636 7472 + 2289 M 612 1836
 
 C4 Alignment:
 ------------
-         Query: ABB45865.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45865.1 " length=2474 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: ABB45865.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45865.1 " length=2474 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7422" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 602
@@ -13182,7 +13182,7 @@ vulgar: ABB45865.1 0 176 . HM045808_DRAFT 59 593 + 602 M 103 309 G 0 6 M 73 219
 
 C4 Alignment:
 ------------
-         Query: ABB45865.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45865.1 " length=2474 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: ABB45865.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45865.1 " length=2474 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7422" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 132
@@ -13209,7 +13209,7 @@ vulgar: ABB45865.1 1612 1658 . HM045808_DRAFT 4913 5051 + 132 M 46 138
 
 C4 Alignment:
 ------------
-         Query: ABQ63085.1 db="veev_db" organism=" stopcodon_readthru="Y:R" equine encephalitis virus" cluster="ABQ63085.1 " length=2494 gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: ABQ63085.1 db="veev_db" organism=" stopcodon_readthru="Y:R" equine encephalitis virus" cluster="ABQ63085.1 " length=2494 gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7482" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 4080
@@ -13586,7 +13586,7 @@ vulgar: ABQ63085.1 0 1489 . HM045808_DRAFT 59 4547 + 4080 M 103 309 G 0 6 M 702 
 
 C4 Alignment:
 ------------
-         Query: ABQ63085.1 db="veev_db" organism=" stopcodon_readthru="Y:R" equine encephalitis virus" cluster="ABQ63085.1 " length=2494 gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: ABQ63085.1 db="veev_db" organism=" stopcodon_readthru="Y:R" equine encephalitis virus" cluster="ABQ63085.1 " length=2494 gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7482" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 2278
@@ -13748,7 +13748,7 @@ vulgar: ABQ63085.1 1882 2494 . HM045808_DRAFT 5636 7472 + 2278 M 612 1836
 
 C4 Alignment:
 ------------
-         Query: ABQ63085.1 db="veev_db" organism=" stopcodon_readthru="Y:R" equine encephalitis virus" cluster="ABQ63085.1 " length=2494 gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: ABQ63085.1 db="veev_db" organism=" stopcodon_readthru="Y:R" equine encephalitis virus" cluster="ABQ63085.1 " length=2494 gene="NSP" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7482" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 131
@@ -13770,7 +13770,7 @@ vulgar: ABQ63085.1 1612 1653 . HM045808_DRAFT 4913 5036 + 131 M 41 123
 
 C4 Alignment:
 ------------
-         Query: AAU95734.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAU95734.1 " length=2494 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: AAU95734.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAU95734.1 " length=2494 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7482" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 4068
@@ -14147,7 +14147,7 @@ vulgar: AAU95734.1 0 1489 . HM045808_DRAFT 59 4547 + 4068 M 103 309 G 0 6 M 702 
 
 C4 Alignment:
 ------------
-         Query: AAU95734.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAU95734.1 " length=2494 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: AAU95734.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAU95734.1 " length=2494 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7482" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 2286
@@ -14309,7 +14309,7 @@ vulgar: AAU95734.1 1882 2494 . HM045808_DRAFT 5636 7472 + 2286 M 612 1836
 
 C4 Alignment:
 ------------
-         Query: AAU95734.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAU95734.1 " length=2494 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: AAU95734.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAU95734.1 " length=2494 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7482" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 131
@@ -14331,7 +14331,7 @@ vulgar: AAU95734.1 1612 1653 . HM045808_DRAFT 4913 5036 + 131 M 41 123
 
 C4 Alignment:
 ------------
-         Query: AAT96377.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAT96377.1 " length=2494 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: AAT96377.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAT96377.1 " length=2494 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7482" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 4079
@@ -14708,7 +14708,7 @@ vulgar: AAT96377.1 0 1489 . HM045808_DRAFT 59 4547 + 4079 M 103 309 G 0 6 M 702 
 
 C4 Alignment:
 ------------
-         Query: AAT96377.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAT96377.1 " length=2494 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: AAT96377.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAT96377.1 " length=2494 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7482" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 2286
@@ -14870,7 +14870,7 @@ vulgar: AAT96377.1 1882 2494 . HM045808_DRAFT 5636 7472 + 2286 M 612 1836
 
 C4 Alignment:
 ------------
-         Query: AAT96377.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAT96377.1 " length=2494 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: AAT96377.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAT96377.1 " length=2494 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7482" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 130
@@ -14892,7 +14892,7 @@ vulgar: AAT96377.1 1612 1653 . HM045808_DRAFT 4913 5036 + 130 M 41 123
 
 C4 Alignment:
 ------------
-         Query: ABL84688.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABL84688.1 " length=2480 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: ABL84688.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABL84688.1 " length=2480 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7440" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 3515
@@ -15209,7 +15209,7 @@ vulgar: ABL84688.1 235 1489 . HM045808_DRAFT 770 4547 + 3515 M 570 1710 G 0 3 M 
 
 C4 Alignment:
 ------------
-         Query: ABL84688.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABL84688.1 " length=2480 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: ABL84688.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABL84688.1 " length=2480 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7440" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 2311
@@ -15371,7 +15371,7 @@ vulgar: ABL84688.1 1868 2480 . HM045808_DRAFT 5636 7472 + 2311 M 612 1836
 
 C4 Alignment:
 ------------
-         Query: ABL84688.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABL84688.1 " length=2480 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: ABL84688.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABL84688.1 " length=2480 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7440" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 591
@@ -15428,7 +15428,7 @@ vulgar: ABL84688.1 0 176 . HM045808_DRAFT 59 593 + 591 M 103 309 G 0 6 M 73 219
 
 C4 Alignment:
 ------------
-         Query: ABL84688.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABL84688.1 " length=2480 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234"
+         Query: ABL84688.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABL84688.1 " length=2480 gene="NSP" stopcodon_readthru="Y:R" matpepdb="<vigordata>/veev_nsp_mp" product="non-structural polyprotein precursor P1234" splice_form="e7440" V4_stop_codon_readthrough="-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG]"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 130
@@ -15455,7 +15455,7 @@ vulgar: ABL84688.1 1612 1661 . HM045808_DRAFT 4913 5060 + 130 M 49 147
 
 C4 Alignment:
 ------------
-         Query: ABL84687.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAT96380.1 ABL84687.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein"
+         Query: ABL84687.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAT96380.1 ABL84687.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" splice_form="e3726"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1319
@@ -15577,7 +15577,7 @@ vulgar: ABL84687.1 798 1238 . HM045808_DRAFT 9967 11284 + 1319 M 144 432 G 1 0 M
 
 C4 Alignment:
 ------------
-         Query: ABL84687.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAT96380.1 ABL84687.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein"
+         Query: ABL84687.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAT96380.1 ABL84687.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" splice_form="e3726"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 801
@@ -15689,7 +15689,7 @@ vulgar: ABL84687.1 380 781 . HM045808_DRAFT 8698 9904 + 801 M 62 186 G 0 3 M 73 
 
 C4 Alignment:
 ------------
-         Query: ABL84687.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAT96380.1 ABL84687.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein"
+         Query: ABL84687.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAT96380.1 ABL84687.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" splice_form="e3726"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 785
@@ -15776,7 +15776,7 @@ vulgar: ABL84687.1 28 318 . HM045808_DRAFT 7633 8506 + 785 M 50 150 G 0 3 M 167 
 
 C4 Alignment:
 ------------
-         Query: ABB45866.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45866.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein"
+         Query: ABB45866.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45866.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" splice_form="e3726"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1319
@@ -15903,7 +15903,7 @@ vulgar: ABB45866.1 798 1239 . HM045808_DRAFT 9967 11287 + 1319 M 144 432 G 1 0 M
 
 C4 Alignment:
 ------------
-         Query: ABB45866.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45866.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein"
+         Query: ABB45866.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45866.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" splice_form="e3726"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 782
@@ -15990,7 +15990,7 @@ vulgar: ABB45866.1 28 318 . HM045808_DRAFT 7633 8506 + 782 M 50 150 G 0 3 M 167 
 
 C4 Alignment:
 ------------
-         Query: ABB45866.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45866.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein"
+         Query: ABB45866.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABB45866.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" splice_form="e3726"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 770
@@ -16102,7 +16102,7 @@ vulgar: ABB45866.1 380 781 . HM045808_DRAFT 8698 9904 + 770 M 60 180 G 0 3 M 75 
 
 C4 Alignment:
 ------------
-         Query: AAU95735.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAU95735.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein"
+         Query: AAU95735.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAU95735.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" splice_form="e3726"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1310
@@ -16224,7 +16224,7 @@ vulgar: AAU95735.1 798 1238 . HM045808_DRAFT 9967 11284 + 1310 M 144 432 G 1 0 M
 
 C4 Alignment:
 ------------
-         Query: AAU95735.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAU95735.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein"
+         Query: AAU95735.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAU95735.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" splice_form="e3726"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 797
@@ -16336,7 +16336,7 @@ vulgar: AAU95735.1 380 781 . HM045808_DRAFT 8698 9904 + 797 M 62 186 G 0 3 M 73 
 
 C4 Alignment:
 ------------
-         Query: AAU95735.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAU95735.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein"
+         Query: AAU95735.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAU95735.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" splice_form="e3726"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 785
@@ -16423,7 +16423,7 @@ vulgar: AAU95735.1 28 318 . HM045808_DRAFT 7633 8506 + 785 M 50 150 G 0 3 M 167 
 
 C4 Alignment:
 ------------
-         Query: ABQ63086.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABQ63086.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein"
+         Query: ABQ63086.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABQ63086.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" splice_form="e3726"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1320
@@ -16545,7 +16545,7 @@ vulgar: ABQ63086.1 798 1238 . HM045808_DRAFT 9967 11284 + 1320 M 144 432 G 1 0 M
 
 C4 Alignment:
 ------------
-         Query: ABQ63086.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABQ63086.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein"
+         Query: ABQ63086.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABQ63086.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" splice_form="e3726"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 801
@@ -16657,7 +16657,7 @@ vulgar: ABQ63086.1 380 781 . HM045808_DRAFT 8698 9904 + 801 M 62 186 G 0 3 M 73 
 
 C4 Alignment:
 ------------
-         Query: ABQ63086.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABQ63086.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein"
+         Query: ABQ63086.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABQ63086.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" splice_form="e3726"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 785
@@ -16744,7 +16744,7 @@ vulgar: ABQ63086.1 28 318 . HM045808_DRAFT 7633 8506 + 785 M 50 150 G 0 3 M 167 
 
 C4 Alignment:
 ------------
-         Query: AAT96378.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAT96378.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein"
+         Query: AAT96378.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAT96378.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" splice_form="e3726"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1320
@@ -16866,7 +16866,7 @@ vulgar: AAT96378.1 798 1238 . HM045808_DRAFT 9967 11284 + 1320 M 144 432 G 1 0 M
 
 C4 Alignment:
 ------------
-         Query: AAT96378.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAT96378.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein"
+         Query: AAT96378.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAT96378.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" splice_form="e3726"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 801
@@ -16978,7 +16978,7 @@ vulgar: AAT96378.1 380 781 . HM045808_DRAFT 8698 9904 + 801 M 62 186 G 0 3 M 73 
 
 C4 Alignment:
 ------------
-         Query: AAT96378.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAT96378.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein"
+         Query: AAT96378.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="AAT96378.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" splice_form="e3726"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 785
@@ -17065,7 +17065,7 @@ vulgar: AAT96378.1 28 318 . HM045808_DRAFT 7633 8506 + 785 M 50 150 G 0 3 M 167 
 
 C4 Alignment:
 ------------
-         Query: NP_632022.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="NP_632022.1 " length=1241 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein"
+         Query: NP_632022.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="NP_632022.1 " length=1241 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" splice_form="e3723"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1314
@@ -17187,7 +17187,7 @@ vulgar: NP_632022.1 797 1237 . HM045808_DRAFT 9967 11284 + 1314 M 144 432 G 1 0 
 
 C4 Alignment:
 ------------
-         Query: NP_632022.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="NP_632022.1 " length=1241 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein"
+         Query: NP_632022.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="NP_632022.1 " length=1241 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" splice_form="e3723"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 802
@@ -17299,7 +17299,7 @@ vulgar: NP_632022.1 379 780 . HM045808_DRAFT 8698 9904 + 802 M 62 186 G 0 3 M 73
 
 C4 Alignment:
 ------------
-         Query: NP_632022.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="NP_632022.1 " length=1241 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein"
+         Query: NP_632022.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="NP_632022.1 " length=1241 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" splice_form="e3723"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 776
@@ -17376,7 +17376,7 @@ vulgar: NP_632022.1 66 317 . HM045808_DRAFT 7753 8506 + 776 M 178 534 G 1 0 M 18
 
 C4 Alignment:
 ------------
-         Query: ABL84689.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABL84689.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein"
+         Query: ABL84689.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABL84689.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" splice_form="e3726"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 1325
@@ -17503,7 +17503,7 @@ vulgar: ABL84689.1 798 1239 . HM045808_DRAFT 9967 11287 + 1325 M 144 432 G 1 0 M
 
 C4 Alignment:
 ------------
-         Query: ABL84689.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABL84689.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein"
+         Query: ABL84689.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABL84689.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" splice_form="e3726"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 789
@@ -17590,7 +17590,7 @@ vulgar: ABL84689.1 28 318 . HM045808_DRAFT 7633 8506 + 789 M 64 192 G 0 3 M 153 
 
 C4 Alignment:
 ------------
-         Query: ABL84689.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABL84689.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein"
+         Query: ABL84689.1 db="veev_db" organism="Eastern equine encephalitis virus" cluster="ABL84689.1 " length=1242 gene="SP" matpepdb="<vigordata>/veev_sp_mp" product="structural polyprotein" splice_form="e3726"
         Target: HM045808_DRAFT Chikungunya virus strain 3412-78, complete genome
          Model: protein2genome:local
      Raw score: 766

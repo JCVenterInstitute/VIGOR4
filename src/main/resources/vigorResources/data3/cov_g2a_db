@@ -1,5 +1,4 @@
-
->ACN89736.1 gene="Pp1a" shared_cds="Pp1ab" product="replicase polyprotein 1a" note="synonym: ORF1a polyprotein" matpepdb="<vigordata>/cov_g2a_mp" organism="Murine coronavirus MHV-1" length=4458 db="cov_g2a_db" cluster="ACN89736.1 "
+>ACN89736.1 gene="Pp1a" shared_cds="Pp1ab" product="replicase polyprotein 1a" note="synonym: ORF1a polyprotein" matpepdb="<vigordata>/cov_g2a_mp" organism="Murine coronavirus MHV-1" length=4458 db="cov_g2a_db" cluster="ACN89736.1 " splice_form="e13374"
 MAKMGKYGLGFKWAPEFPWMLPNASEKLGNPERSEEDGFCPSAAQEPKVKGKTLVNHVRV
 DCSRLPALECCVQSAIIRDIFVDEDPQKVEASTMMALQFGSAVLVKPSKRLSIQAWANLG
 VLPKTAAMGLFKRLCLCNTRECVCDAHVAFQLFTVQPDGVCLGNGRFIGWFVPVTAIPEY
@@ -75,8 +74,7 @@ LELDPPCKFSVQDVKGLKIKYLYFVKGCNTLARGWVVGTLSSTVRLQAGTATEYASNSAI
 LSLCAFSVDPKKTYLDYIHQGGAPVTNCVKMLCDHAGTGMAITIKPEATTNQDSYGGASV
 CIYCRARVEHPDVDGLCKLRGKFVQVPLGIKDPVSYVLTHDVCQVCGFWRDGSCSCVGAG
 SQFQSKDTNFLNGFGVQV
-
->ACN89745.1 gene="Pp1a" shared_cds="Pp1ab" product="replicase polyprotein 1a" note="synonym: ORF1a polyprotein" matpepdb="<vigordata>/cov_g2a_mp" organism="Murine coronavirus MHV-3" length=4459 db="cov_g2a_db" cluster="ACN89745.1 "
+>ACN89745.1 gene="Pp1a" shared_cds="Pp1ab" product="replicase polyprotein 1a" note="synonym: ORF1a polyprotein" matpepdb="<vigordata>/cov_g2a_mp" organism="Murine coronavirus MHV-3" length=4459 db="cov_g2a_db" cluster="ACN89745.1 " splice_form="e13377"
 MAKMGKYGLGFKWAPEFPWMLPNASEKLGNPERSEEDGFCPSAAQEPKAKGTSLANHVRV
 DCSRLPALECCVQSAIIRDIFVDEDPQKVEASTMMALQFGSAVLVKPSKRLSIQAWANLG
 VLPKTPAMGLFKRYCLCNTRECSCDAHVAFQLFMVQPDGVCLGNGRFIGWFVPATAVPEY
@@ -152,8 +150,7 @@ VLELDPPCKFSVQDVKGLKIKYLYFVKGCNTLARGWVVGTLSSTVRLQAGTATEYASNSA
 ILSLCAFSVDPKKTYLDYIQQGGAPVTNCVKMLCDHAGTGMAITIKPEATTNQDSYGGAS
 VCIYCRARVEHPDVDGLCKLRGKFVQVPLGIKDPVSYVLTHDVCQVCGFWRDGSCSCVGA
 GSQFQSKDTNFLNGFGVQV
-
->NP_045298.1 gene="Pp1a" product="replicase polyprotein 1a" note="synonym: ORF1a polyprotein" shared_cds="Pp1ab" matpepdb="<vigordata>/cov_g2a_mp" organism="Murine hepatitis virus strain A59" length=4470 db="cov_g2a_db" cluster="ACN89718.1 ACN89759.1 ACO72881.1 ACO72890.1 NP_045298.1 AAF69341.1 "
+>NP_045298.1 gene="Pp1a" product="replicase polyprotein 1a" note="synonym: ORF1a polyprotein" shared_cds="Pp1ab" matpepdb="<vigordata>/cov_g2a_mp" organism="Murine hepatitis virus strain A59" length=4470 db="cov_g2a_db" cluster="ACN89718.1 ACN89759.1 ACO72881.1 ACO72890.1 NP_045298.1 AAF69341.1 " splice_form="e13410"
 MAKMGKYGLGFKWAPEFPWMLPNASEKLGNPERSEEDGFCPSAAQEPKVKGKTLVNHVRV
 NCSRLPALECCVQSAIIRDIFVDEDPQKVEASTMMALQFGSAVLVKPSKRLSIQAWTNLG
 VLPKTAAMGLFKRVCLCNTRECSCDAHVAFHLFTVQPDGVCLGNGRFIGWFVPVTAIPEY
@@ -229,8 +226,7 @@ TKIVKEDGNCVVLELDPPCKFSVQDVKGLKIKYLYFVKGCNTLARGWVVGTLSSTVRLQA
 GTATEYASNSAILSLCAFSVDPKKTYLDYIKQGGVPVTNCVKMLCDHAGTGMAITIKPEA
 TTNQDSYGGASVCIYCRSRVEHPDVDGLCKLRGKFVQVPLGIKDPVSYVLTHDVCQVCGF
 WRDGSCSCVGTGSQFQSKDTNFLNGFGVQV
-
->AFD97614.1 gene="Pp1a" product="replicase polyprotein 1a" note="synonym: ORF1a polyprotein" shared_cds="Pp1ab" matpepdb="<vigordata>/cov_g2a_mp" organism="Murine hepatitis virus strain S/3239-17" length=4471 db="cov_g2a_db" cluster="ADI59787.1 AFD97614.1 "
+>AFD97614.1 gene="Pp1a" product="replicase polyprotein 1a" note="synonym: ORF1a polyprotein" shared_cds="Pp1ab" matpepdb="<vigordata>/cov_g2a_mp" organism="Murine hepatitis virus strain S/3239-17" length=4471 db="cov_g2a_db" cluster="ADI59787.1 AFD97614.1 " splice_form="e13413"
 MAKMGKYGLGFKWAPEFPWMLPNASEKLGNPERSEEDGFCPSAAQEPKVKGKTLVNHVRV
 DCSRLPALECCVQSAIIRDIFVDEDPQKVEASTMMALQFGSAVLVKPSKRLSIQAWAKLG
 VLPKTAAMGLFKRVCLCNTRECSCDAHVAFQLFTVQPDGVCLGNGRLIGWFVPVTAIPEY
@@ -306,8 +302,7 @@ YTKIVKEDGNCVVLELDPPCKFSVQDVKGLKIKYLYFVKGCNTLARGWVVGTLSSTVRLQ
 AGTATEYASNSAILSLCAFSVDPKKTYLDYIQQGGVPVTNCVKMLCDHAGTGMAITIKPE
 ATTNQDSYGGASVCIYCRSRVEHPDVDGLCKLRGKFVQVPLGIKDPVSYVLTHDVCQVCA
 FWRDGSCSCVGTGSQFQSKDTNFLNGFGVQV
-
->NP_150074.1 gene="Pp1a" product="replicase polyprotein 1a" note="synonym: ORF1a polyprotein" shared_cds="Pp1ab" matpepdb="<vigordata>/cov_g2a_mp" organism="Bovine coronavirus" length=4383 db="cov_g2a_db" cluster="AAL40396.1 AAL57315.1 ABI93997.2 ABP38235.1 ABP38251.1 ABP38256.1 ABP38263.1 ACT10979.1 ACT10991.1 NP_150074.1 ABP38283.1 "
+>NP_150074.1 gene="Pp1a" product="replicase polyprotein 1a" note="synonym: ORF1a polyprotein" shared_cds="Pp1ab" matpepdb="<vigordata>/cov_g2a_mp" organism="Bovine coronavirus" length=4383 db="cov_g2a_db" cluster="AAL40396.1 AAL57315.1 ABI93997.2 ABP38235.1 ABP38251.1 ABP38256.1 ABP38263.1 ACT10979.1 ACT10991.1 NP_150074.1 ABP38283.1 " splice_form="e13149"
 MSKINKYGLELHWAPEFPWMFEDAEEKLDNPSSSEVDIVCSTTAQKLETGGICPENHVMV
 DCRRLLKQECCVQSSLIREIVMNTRPYDLEVLLQDALQSREAVLVTPPLGMSLEACYVRG
 CNPNGWTMGLFRRRSVCNTGRCAVNKHVAYQLYMIDPAGVCFGAGQFVGWVIPLAFMPVQ
@@ -382,8 +377,7 @@ GLKIKYLYFVKGCNTLARGWVVGTISSTVRLQAGTATEYASNSSILSLCAFSVDPKKTYL
 DFIQQGGTPIANCVKMLCDHAGTGMAITVKPDATTNQDSYGGASVCIYCRARVEHPDVDG
 LCKLRGKFVQVPVGIKDPVSYVLTHDVCQVCGFWRDGSCSCVSTDTTVQSKDTNFLNGFG
 VRV
-
->YP_209230.1 gene="Pp1a" product="replicase polyprotein 1a" note="synonym: ORF1a polyprotein" shared_cds="Pp1ab" matpepdb="<vigordata>/cov_g2a_mp" organism="Murine hepatitis virus strain JHM" length=4474 db="cov_g2a_db" cluster="YP_209230.1 ACN89703.1 ACN89769.1 ACN89779.1 AFO11504.1 AFO11513.1 "
+>YP_209230.1 gene="Pp1a" product="replicase polyprotein 1a" note="synonym: ORF1a polyprotein" shared_cds="Pp1ab" matpepdb="<vigordata>/cov_g2a_mp" organism="Murine hepatitis virus strain JHM" length=4474 db="cov_g2a_db" cluster="YP_209230.1 ACN89703.1 ACN89769.1 ACN89779.1 AFO11504.1 AFO11513.1 " splice_form="e13422"
 MAKMGKYGLGFKWAPEFPWMLPNASEKLGNPERSEEDGFCPSAAQEPKVKGKTLVNHVRV
 DCSRLPALECCVQSAIIRDIFVDEDPQKVEASTMMALQFGSAVLVKPSKRLSVQAWAKLG
 VLPKTPAMGLFKRFCLCNTRECVCDAHVAFQLFTVQPDGVCLGNGRFIGWFVPVTAIPEY
@@ -459,8 +453,7 @@ GLKYTKIVKEDGNCVVLELDPPCKFSVQDVKGLKIKYLYFVKGCNTLARGWVVGTLSSTV
 RLQAGTATEYASNSAILSLCAFSVDPKKTYLDYIQQGGVPVTNCVKMLCDHAGTGMAITI
 KPEATTNQDSYGGASVCIYCRSRVEHPDVDGLCKLRGKFVQVPLGIKDPVSYVLTHDVCQ
 VCGFWRDGSCSCVGTGSQFQSKDTNFLNGFGVQV
-
->AAF69331.1 gene="Pp1a" shared_cds="Pp1ab" product="replicase polyprotein 1a" note="synonym: ORF1a polyprotein" matpepdb="<vigordata>/cov_g2a_mp" organism="Murine hepatitis virus" length=4416 db="cov_g2a_db" cluster="AAF19383.1 AAF69331.1 "
+>AAF69331.1 gene="Pp1a" shared_cds="Pp1ab" product="replicase polyprotein 1a" note="synonym: ORF1a polyprotein" matpepdb="<vigordata>/cov_g2a_mp" organism="Murine hepatitis virus" length=4416 db="cov_g2a_db" cluster="AAF19383.1 AAF69331.1 " splice_form="e13248"
 MAKMGKYGLGFKWAPEFPWMLPNASEKLGSPERSEEDGFCPSAAQEPKTKGKTLINHVRV
 DCSRLPALECCVQSAIIRDIFVDEDPLNVEASTMMALQFGSAVLVKPSKRLSIQAWAKLG
 VLPKTPAMGLFKRFCLCNTRECVCDAHVAFQLFTVQPDGVCLGNGRFIGWFVPVTAIPAY
@@ -535,8 +528,7 @@ CDGLKYTKIVKEDGNCVVLELDPPCKFSVQDVKGLKIKYLYFVKGCNTLARGWVVGTLSS
 TVRLQAGTATEYASNSAILSLCAFSVDPKKTYLDYIQQGGAPVTNCVKMLCDHAGTGMAI
 TIKPEATTNQDSYGGASVCIYCRSRVEHPDVDGLCKLRGKFVQVPLGIKDPVSYVLTHDV
 CQVCGFWRDGSCSCVGTGSQFQSKDTNFLNGFGVQV
-
->YP_003029845.1 gene="Pp1a" product="replicase polyprotein 1a" note="synonym: ORF1a polyprotein" shared_cds="Pp1ab" matpepdb="<vigordata>/cov_g2a_mp" organism="Rat coronavirus Parker" length=4464 db="cov_g2a_db" cluster="AFG25759.1 AFG25769.1 YP_003029845.1 "
+>YP_003029845.1 gene="Pp1a" product="replicase polyprotein 1a" note="synonym: ORF1a polyprotein" shared_cds="Pp1ab" matpepdb="<vigordata>/cov_g2a_mp" organism="Rat coronavirus Parker" length=4464 db="cov_g2a_db" cluster="AFG25759.1 AFG25769.1 YP_003029845.1 " splice_form="e13392"
 MAKMGKYGLGFKWAPEFPWMLPNASEKLGNPERSEEDGFCPSAAQEPKVKGRTLVNHVRV
 DCSRLPALECCVQSAIIRDIFVDKDPQKVEASTMMALQFGSAVLIMPSKRLSIQAWANLG
 VLPRTPAMGLFKRVCLCNTRGCSCDVHVAFQLFTVQPDGVCLGNGRFIGWFVPVTAIPEY
@@ -612,8 +604,7 @@ DGNCVVLELDPPCKFSVQDVKGLKIKYLYFVKGCNTLARGWVVGTLSSTVRLQAGTATEY
 ASNSAILSLCAFSVDPKKTYLDYIQQGGVPVTNCVKMLCDHAGTGMAITIKPEATTNQDS
 YGGASVCIYCRSRVEHPDVDGLCKLRGKFVQVPLGIKDPVLYVLTHDVCQVCGFWRDGSC
 SCVGTGSQFQSKDTNFLNGFGVQV
-
->BAJ04693.1 gene="Pp1a" product="replicase polyprotein 1a" note="synonym: ORF1a polyprotein" shared_cds="Pp1ab" matpepdb="<vigordata>/cov_g2a_mp" organism="Murine hepatitis virus" length=4460 db="cov_g2a_db" cluster="BAJ04693.1 "
+>BAJ04693.1 gene="Pp1a" product="replicase polyprotein 1a" note="synonym: ORF1a polyprotein" shared_cds="Pp1ab" matpepdb="<vigordata>/cov_g2a_mp" organism="Murine hepatitis virus" length=4460 db="cov_g2a_db" cluster="BAJ04693.1 " splice_form="e13380"
 MAKMGKYGLGFKWAPEFPWMLPNASEKLGNPERSEEDGFCPSAAQEPKAKGTSLANHVRV
 DCSRLPALECCVQSAIIRDIFVDEDPQKVESSTMMALQFGSAVLVKPSKRLSIQAWANLG
 VLPKTHAMGLFKRYCLCNTRGCSCDAHVAFQLFMVQPDGVCLGNGRFIGWFVPTTAIPEY
@@ -689,7 +680,6 @@ VVLELDPPCKFSVQDVKGLKIKYLYFVKGCNTLARGWVVGTLSSTVRLQAGTATEYASNS
 AILSLCAFSVDPKKTCLDYIQQGGAPVTNCVKMLCDHAGTGMAITIKPEATTNQDSYGGA
 SVCIYCRARVEHPDVDGLCKLRGKFVQVPLGIKDPVSYVLTHDVCQVCGYWRDGSCSCVG
 TGSQFQSKDTNFLNGFGVQV
-
 >YP_003029844.1 gene="Pp1ab" product="replicase polyprotein 1ab" note="synonym: ORF1ab polyprotein" ribosomal_slippage=Y shared_cds="Pp1a" matpepdb="<vigordata>/cov_g2a_mp" organism="Rat coronavirus Parker" length=7172 db="cov_g2a_db" splice_form="e13400i-1e8143" cluster="AFG25758.1 AFG25768.1 YP_003029844.1 "
 MAKMGKYGLGFKWAPEFPWMLPNASEKLGNPERSEEDGFCPSAAQEPKVKGRTLVNHVRV
 DCSRLPALECCVQSAIIRDIFVDKDPQKVEASTMMALQFGSAVLIMPSKRLSIQAWANLG
@@ -811,7 +801,6 @@ WLPAGSILVDNDVNPFVSDSVASYYGNCITLPFDCQWDLIISDMYDPLTKNIGEYNVSKD
 GFFTYLCHLICDKLALGGSVAIKITEFSWNAELYSLMGKFAFWTIFCTNVNASSSEGFLI
 GINWLNRTRTEIDGKTMHANYLFWRNSTMWNGGAYSLFDMSKFPLKAAGTAVVSLKPDQI
 NDLVLSLIEKGRLLVRDTRKEVFVGDSLVNVK
-
 >AFD97615.1 gene="Pp1ab" product="replicase polyprotein 1ab" note="synonym: ORF1ab polyprotein" ribosomal_slippage=Y shared_cds="Pp1a" matpepdb="<vigordata>/cov_g2a_mp" organism="Murine hepatitis virus strain S/3239-17" length=7179 db="cov_g2a_db" splice_form="e13400i-1e8143" cluster="ADI59786.1 AFD97615.1 "
 MAKMGKYGLGFKWAPEFPWMLPNASEKLGNPERSEEDGFCPSAAQEPKVKGKTLVNHVRV
 DCSRLPALECCVQSAIIRDIFVDEDPQKVEASTMMALQFGSAVLVKPSKRLSIQAWAKLG
@@ -933,7 +922,6 @@ GSAVLRQWLPAGSILVDNDMNPFVSDSVASYYGSCITLPFDCQWDLIISDMYDPLTKNIG
 EYNVSKDGFFTYLCHLIRDKLALGGSVAIKITEFSWNAELYSLMGKFAFWTIFCTNVNAS
 SSEGFLIGINWLNKTRTEIDGKTMHANYLFWRNSTMWNGGAYSLFDMTKFPLKAAGTAVV
 SLKPDQINDLVLSLIEKGKLLVRDTRKEVFVGDSLVNVK
-
 >YP_209229.1 gene="Pp1ab" product="replicase polyprotein 1ab" note="synonym: ORF1ab polyprotein" ribosomal_slippage=Y shared_cds="Pp1a" matpepdb="<vigordata>/cov_g2a_mp" organism="Murine hepatitis virus strain JHM" length=7180 db="cov_g2a_db" splice_form="e13400i-1e8143" cluster="AFO11514.1 AFO11505.1 YP_209229.1 "
 MAKMGKYGLGFKWAPEFPWMLPNASEKLGNPERSEEDGFCPSAAQEPKVKGKTLVNHVRV
 DCSRLPALECCVQSAIIRDIFVDEDPQKVEASTMMALQFGSAVLVKPSKRLSVQAWAKLG
@@ -1055,7 +1043,6 @@ PGSAVLRQWLPSGSILVDNDMNPFVSDSVASYYGNCITLPFDCQWDLIISDMYDPLTKNI
 GEYNVSKDGFFTYLCHLIRDKLALGGSVAIKITEFSWNAELYSLMGKFAFWTIFCTNVNA
 SSSEGFLIGINWLNRTRNEIDGKTMHANYLFWRNSTMWNGGAYSLFDMTKFPLKAAGTAV
 VSLKPDQINDLVLSLIEKGKLLVRDTRKEVFVGDSLVNVK
-
 >BAJ04692.1 gene="Pp1ab" product="replicase polyprotein 1ab" note="synonym: ORF1ab polyprotein" ribosomal_slippage=Y shared_cds="Pp1a" matpepdb="<vigordata>/cov_g2a_mp" organism="Murine hepatitis virus" length=7168 db="cov_g2a_db" splice_form="e13400i-1e8143" cluster="BAJ04692.1 "
 MAKMGKYGLGFKWAPEFPWMLPNASEKLGNPERSEEDGFCPSAAQEPKAKGTSLANHVRV
 DCSRLPALECCVQSAIIRDIFVDEDPQKVESSTMMALQFGSAVLVKPSKRLSIQAWANLG
@@ -1177,7 +1164,6 @@ GSILVDNDMNPFVSDSVASYYGNCITLPFDCQWDLIISDMYDPLTKNIGEYNVSKDGFFA
 YLCHLIRDKLALGGSVAIKITEFSWNADLYSLMGKFAFWTIFCTNVNASSSEGFLIGINW
 LNRTRTEIDGKTMHANYLFWRNSTMWNGGAYSLFDMTKFPLKAAGTAVVSLKPDQINDLV
 LSLIEKGKLLVRDTRKEVFVGDSLVNVK
-
 >NP_937947.1 gene="Pp1ab" shared_cds="Pp1a" product="replicase polyprotein 1ab" note="synonym: ORF1ab polyprotein" ribosomal_slippage=Y matpepdb="<vigordata>/cov_g2a_mp" organism="Human coronavirus OC43" length=7095 db="cov_g2a_db" splice_form="e13122i-1e8166" cluster="AAT84359.1 AAX85666.1 AAX85675.1 AEN19363.1 NP_937947.1 AEN19355.1 "
 MSKINKYGLELHWAPEFPWMFEDAEEKLDNPSSSEVDMICSTTAQKLETDGICPENHVMV
 DCRRLLKQECCVQSSLIREIVMNASPYDLEVLLQDALQSREAVLVTTPLGMSLEACYVRG
@@ -1298,7 +1284,6 @@ SDSVATYFGDCITLPFDCQWDLIISDMYDPITKNIGEYNVSKDGFFTYICHMIRDKLALG
 GSVAIKITEFSWNAELYKLMGYFAFWTVFCTNANASSSEGFLIGINYLCKPKVEIDGNVM
 HANYLFWRNSTVWNGGAYSLFDMAKFPLKLAGTAVINLRADQINDMVYSLLEKGKLLIRD
 TNKEVFVGDSLVNVI
-
 >NP_068668.2 gene="Pp1ab" product="replicase polyprotein 1ab" note="synonym: ORF1ab polyprotein" ribosomal_slippage=Y shared_cds="Pp1a" matpepdb="<vigordata>/cov_g2a_mp" organism="Murine hepatitis virus strain A59" length=7178 db="cov_g2a_db" splice_form="e13400i-1e8143" cluster="AAU06353.1 NP_068668.2 "
 MAKMGKYGLGFKWAPEFPWMLPNASEKLGNPERSEEDGFCPSAAQEPKVKGKTLVNHVRV
 NCSRLPALECCVQSAIIRDIFVDEDPQKVEASTMMALQFGSAVLVKPSKRLSIQAWTNLG
@@ -1420,7 +1405,6 @@ SAVLRQWLPAGSILVDNDVNPFVSDSVASYYGNCITLPFDCQWDLIISDMYDPLTKNIGE
 YNVSKDGFFTYLCHLIRDKLALGGSVAIKITEFSWNAELYSLMGKFAFWTIFCTNVNASS
 SEGFLIGINWLNKTRTEIDGKTMHANYLFWRNSTMWNGGAYSLFDMSKFPLKAAGTAVVS
 LKPDQINDLVLSLIEKGKLLVRDTRKEVFVGDSLVNVK
-
 >ABD75543.1 gene="Pp1ab" product="replicase polyprotein 1ab" note="synonym: ORF1ab polyprotein" ribosomal_slippage=Y matpepdb="<vigordata>/cov_g2a_mp" organism="Human coronavirus HKU1" length=7241 db="cov_g2a_db" splice_form="e13395i-1e8154" cluster="ABD75543.1 ABD75599.1 ABD75527.1 ABD75559.1 ADN03337.1 YP_173236.1 ABD75623.1 ABD75591.1 ABD75647.1 ABD75503.1 ABD75511.1 ABD75551.1 ABD75631.1 ABD75575.1 ABD75583.1 AAX76519.1 ABD75519.1 ABD75535.1 ABD75639.1 ABD75615.1 ABC70717.1 ABD75607.1 ABD75567.1 "
 MIKTSKYGLGFKWAPEFRWLLPDAAEELASPMKSDEGGLCPSTGQAMESVGFVYDNHVKI
 DCRCILGQEWHVQSNLIRDIFVHEDLHVVEVLTKTAVKSGTAILIKSPLHSLGGFPKGYV
@@ -1543,7 +1527,6 @@ APGSAVLRQWLPSGSILVDNDLNPFVSDSLVTYFGDCMTLPFDCHWDLIISDMYDPLTKN
 IGDYNVSKDGFFTYICHLIRDKLSLGGSVAIKITEFSWNADLYKLMSCFAFWTVFCTNVN
 ASSSEGFLIGINYLGKSSFEIDGNVMHANYLFWRNSTTWNGGAYSLFDMTKFSLKLAGTA
 VVNLRPDQLNDLVYSLIERGKLLVRDTRKEIFVGDSLVNTC
-
 >NP_150073.2 gene="Pp1ab" product="replicase polyprotein 1ab" note="synonym: ORF1ab polyprotein" ribosomal_slippage=Y shared_cds="Pp1a" matpepdb="<vigordata>/cov_g2a_mp" organism="Bovine coronavirus" length=7094 db="cov_g2a_db" splice_form="e13131i-1e8154" cluster="AAA64744.2 AAK83365.1 AAL57305.1 ACT10980.1 ACT10992.1 BAF75628.1 NP_150073.2 "
 MSKINKYGLELHWAPEFPWMFEDAEEKLDNPSSSEVDIVCSTTAQKLETGGICPENHVMV
 DCRRLLKQECCVQSSLIREIVMNTRPYDLEVLLQDALQSREAVLVTPPLGMSLEACYVRG
@@ -1664,285 +1647,224 @@ DSVATYFGDCITLPFDCQWDLIISDMYDPITKNIGEYNVSKDGFFTYICHMIRDKLALGG
 SVAIKITEFSWNAELYKLMGYFAFWTVFCTNANASSSEGFLIGINYLGKPKVEIDGNVMH
 ANYLFWRNSTVWNGGAYSLFDMAKFPLKLAGTAVINLRADQINDMVYSLLEKGKLLVRDT
 NKEVFVGDSLVNVI
-
->AFD97610.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 30 kDa accessory protein, p30" organism="Murine hepatitis virus strain S/3239-17" length=265 db="cov_g2a_db" cluster="AFD97610.1 "
-MLNKSILVMAARMAFADKPNHFINFPLAQFSGFMDKYLKLQSQLVEMGLDCKLQKAPHVSITLLDISV
-DQYKQVEFAIQEILDDLAAYEGDIVFDNPHMLGRCLVLDVKGFEELHEDIVEILRRRGCI
-ADQSRQWLPHCTVAQFDEEKETKELQFYFKLPFYLKHNNILTDARLELVKIGSSKIDGFY
-CSELSIWCGERLCYKPPTPKFSDIFGYCCIEKIRVDLEIGDLPEDDEEAWAELSYHYQRN
-IYFFRHVHDNSIYFRTVCRMKGCMC
-
->AAF69333.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 30 kDa accessory protein, p30" organism="Murine hepatitis virus" length=265 db="cov_g2a_db" cluster="AAF69333.1 "
-MLNKSILVMAAMQAFADKPNHFINFPLAQFSGVMGKYLKLQSQLVEMGLDCKLQKAPHVSITMLDIRA
-DQYKQVEFAIQEVIDDMAAYEGDIVFDNPHMLGRCLVLDVKGFEELHEDIVEILRKRGCI
-ADQSRQWIPHCTVAQFEEEKEINELQFYYKLPFYLKHNNILTDARLELVKIGSSKTDGFY
-CSELSIWCGERLCYKPPTPKFSDIFGYCCIDKIRVDLEIGDLPEDDEEAWAELSYHYQRN
-TYFFRYVHDNSIYFRTVCRMKGCMC
-
->ACN89750.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 30 kDa accessory protein, p30" organism="Murine coronavirus MHV-3" length=265 db="cov_g2a_db" cluster="ACN89750.1 "
-MLNKSILVMAAKMAFADKPNHFVNFPLAQFSGFMGKYLKLQSQLMEMGLDCKLQKAPHVSITMLDIKA
-EQYKQVEFAIQEILDDLAACEGDIVFDNPHMLGRCLVLDVKGFEELHEDVVEILYRRGCT
-ADQSRQWIPHCTVAQFEEEKETKGLQFYHKLPFYLKHNSLLTDARLELVKIGSSKIDGFY
-CSELSIWCGERLCYKPPTPKFSDIFGFCCIEKIRGDLEIGDLPQDDEEAWAELSYHYQRN
-TYFFRYVHDNSIYFRTVCRMKGCVC
-
->AAL40398.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 32 kDa accessory protein" organism="Bovine coronavirus" length=277 db="cov_g2a_db" cluster="AAL40398.1 "
+>AFD97610.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 30 kDa accessory protein, p30" organism="Murine hepatitis virus strain S/3239-17" length=265 db="cov_g2a_db" cluster="AFD97610.1 " splice_form="e819"
+MLNKSILVMAARMAFADKPNHFINFPLAQFSGFMDKYLKLQSQLVEMGLDCKLQKAPHVS
+ITLLDISVDQYKQVEFAIQEILDDLAAYEGDIVFDNPHMLGRCLVLDVKGFEELHEDIVE
+ILRRRGCIADQSRQWLPHCTVAQFDEEKETKELQFYFKLPFYLKHNNILTDARLELVKIG
+SSKIDGFYCSELSIWCGERLCYKPPTPKFSDIFGYCCIEKIRVDLEIGDLPEDDEEAWAE
+LSYHYQRNIYFFRHVHDNSIYFRTVCRMKGCMC
+>AAF69333.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 30 kDa accessory protein, p30" organism="Murine hepatitis virus" length=265 db="cov_g2a_db" cluster="AAF69333.1 " splice_form="e819"
+MLNKSILVMAAMQAFADKPNHFINFPLAQFSGVMGKYLKLQSQLVEMGLDCKLQKAPHVS
+ITMLDIRADQYKQVEFAIQEVIDDMAAYEGDIVFDNPHMLGRCLVLDVKGFEELHEDIVE
+ILRKRGCIADQSRQWIPHCTVAQFEEEKEINELQFYYKLPFYLKHNNILTDARLELVKIG
+SSKTDGFYCSELSIWCGERLCYKPPTPKFSDIFGYCCIDKIRVDLEIGDLPEDDEEAWAE
+LSYHYQRNTYFFRYVHDNSIYFRTVCRMKGCMC
+>ACN89750.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 30 kDa accessory protein, p30" organism="Murine coronavirus MHV-3" length=265 db="cov_g2a_db" cluster="ACN89750.1 " splice_form="e819"
+MLNKSILVMAAKMAFADKPNHFVNFPLAQFSGFMGKYLKLQSQLMEMGLDCKLQKAPHVS
+ITMLDIKAEQYKQVEFAIQEILDDLAACEGDIVFDNPHMLGRCLVLDVKGFEELHEDVVE
+ILYRRGCTADQSRQWIPHCTVAQFEEEKETKGLQFYHKLPFYLKHNSLLTDARLELVKIG
+SSKIDGFYCSELSIWCGERLCYKPPTPKFSDIFGFCCIEKIRGDLEIGDLPQDDEEAWAE
+LSYHYQRNTYFFRYVHDNSIYFRTVCRMKGCVC
+>AAL40398.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 32 kDa accessory protein" organism="Bovine coronavirus" length=277 db="cov_g2a_db" cluster="AAL40398.1 " splice_form="e831"
 MAVAYADKPNHFINFPLTQFEGFVLNYKGLQFQLLDEGVDCKIQTAPHISLAMLIFSLKT
 IEVLMLLFKKVIDDMHWGEGFQIKFDNPHILGRCIVLDVKGVEELHDDLVNYIRDKGCVA
 DQSRKWIGHCTIAQLTDAALSIKENVDFINSMQFNYKITINPSSPARLEIVKLGAEKKDG
 FYETIVSHWMGSRFEYNPPTDKLAMIMGYCCSEVVRKELEEGDLPENDDDAWFKLSYHYE
 NNSWFFRHVYRKVLISVSLVNLDCNCLGFYESPVEED
-
->AAU06354.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 30 kDa accessory protein, p30" organism="Murine hepatitis virus" length=261 db="cov_g2a_db" cluster="AAU06354.1 "
+>AAU06354.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 30 kDa accessory protein, p30" organism="Murine hepatitis virus" length=261 db="cov_g2a_db" cluster="AAU06354.1 " splice_form="e819"
 MSNKSILVVAVKMAFADKPNHFINFPLAQFSGFMGKYLKLQSQLVEMGLDCKLQKAPHVS
 ITLLDIKADQYKQVEFAIQEIIDDLAAYEGDIVFDNPHMLGRCLVLDVRGFEELHEDIVE
 ILRRRGCTADQSRHWIPHCTVAQFDEERETKGMQFYHKEPFYLKHNNLLTDAGLELVKIG
 SSKIDGFYCSELSVWCGERLCYKPPTPKFSDIFGYCCIDKIRGDLEIGDLPQDDEEAWAE
 LSYHYQRNTYFFRHVHDNSIYFRTVCRMKGCMC
-
->AFG25753.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 30 kDa accessory protein, p30" organism="Rat coronavirus" length=273 db="cov_g2a_db" cluster="AFG25753.1 "
+>AFG25753.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 30 kDa accessory protein, p30" organism="Rat coronavirus" length=273 db="cov_g2a_db" cluster="AFG25753.1 " splice_form="e819"
 MLNKSILVMAAKMAFADKPNHFINFPLAQFSGFMGKYLKLQSQLVEMGLDCKLQKAPHVS
 ITMLDIKADQYTQLEFAIPEILDDLIAYNHTIVFHKPLMLDRCTVLDVKGFEELHVDIVE
 ILRKMGCTADQSREWIPHCTVAQFEEEKEINAMQFYYKLPFYLKHNNILTDSRLELVKIG
 SSKIDGFYCSELSVWCGERLCYKPPTPKFSDIFGYCCIEKIRGDLEIGDLPQDDEEAWAE
 LSYHYQRNTYFFRYVHDNSIYFRIVCRMKGCMC
-
->YP_003029846.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 30 kDa accessory protein, p30" organism="Rat coronavirus Parker" length=265 db="cov_g2a_db" cluster="YP_003029846.1 "
-MLNKSILVMAAKMAFADKPNHFINFPLAQFSGFMGKYLKLQSQLVEMGLDCKLQKAPHVSITMLDIKA
-DQYKQVEFAIQEILDDLAAYEGYIVFDNPHMLGRCLVLDVKGFEELHVDIVEILRKMGCT
-ADQSRVWIPHCTVAQFEEEKEINAMQFYYKLPFYLKHNNILTDSRLELVKIGSSKIDGFY
-CSELSVWCGERLCYKPPTPKFSDIFGYCCIEKIRGDLEIGDLPQDDEEAWAELSYHYQRN
-TYFFRYVHDNSIYFRIVCRMKGCMC
-
->ACN89741.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 30 kDa accessory protein, p30" organism="Murine coronavirus MHV-1" length=265 db="cov_g2a_db" cluster="ACN89741.1 "
-MLNKSILVMAAKMAFADKPNHFINFPLAQFSGFMGKYLKVQSQLVEMGLDCNLQKAPHVSITMLDIKA
-DQYKQVEFAIQELIDDLAAYEGDIVFDNPHMLGRCLVLDVKGFEELHEDIVEILRRRGCT
-ADQSRQWIPHCTVAQFDEEKETKGLQFYHKEPFYLKHNNLLTDARLELVRIGSSKIDGFY
-CSELSVWCGERLCYEPPTPKFSDIFGYCCIDKIRGDLELGDLPPDDEEAWAELSYHYQRN
-TYFFRHVHDNSIYFRTVCRMKGCMC
-
->NP_068669.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 30 kDa accessory protein, p30" organism="Murine hepatitis virus strain A59" length=273 db="cov_g2a_db" cluster="NP_068669.1 "
-MSNKSILVVAVKMAFADKPNHFINFPLAQFSGFMGKYLKLQSQLVEMGLDCKLQKAPHVS
-ITLLDIKADQYKQVEFAIQEIIDDLAAYEGDIVFDNPHMLGRCLVLDVRGFEELHEDIVE
-ILRRRGCTADQSRHWIPHCTVAQFDEERETKGMQFYHKEPFYLKHNNLLTDAGLELVKIG
-SSKIDGFYCSELSVWCGERLCYKPPTPKFSDIFGYCCIDKIRGDLEIGDLPQDDEEAWAE
-LSYHYQRNTYFFRHVHDNSIYFRTVCRMKGCMC
-
->YP_209231.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 30 kDa accessory protein, p30" organism="Murine hepatitis virus strain JHM" length=265 db="cov_g2a_db" cluster="ACN89780.1 YP_209231.1 "
-MLNKSILVMAARMAFADKPNHFINFPLAQFSGFMGKYLKLQSQLVEMGLDCKLQKVPHVSITLLDIKA
-DQYKQVEFAIQEIIDDLAAYEGDIVFDNPHMLGRCLVLDVKGFEELHEDIVEILRRRGCT
-ADQSRQWIPHCTVAQFDEEKEIKEMQFYFKLPFYLKHNNLLTDARLELVKIGSSKVGGFY
-CSELSIWCGERLCYKPPTPKFSDIFGYCCIDKIRGDLEIGDLPPDDEEAWAELSYHYQRN
-TYFFRHVHDNSIYFRTVCRMKGCMC
-
->BAJ04694.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 30 kDa accessory protein, p30"  organism="Murine hepatitis virus" length=261 db="cov_g2a_db" cluster="BAJ04694.1 "
-MLNKSILVMAARMAFADKPNHFINFSLAQFSGFMGKYLKLQSQLVEMGLDCKLQKAPHVSITMLDIKAEQCK
-QVEFAIQEILDDLAAYEGDIVFDNPHMLGRCLVLDVKGFEELHEDVVEILRRRGCTADQS
-RQWIPHCTVAQFEEEKETKGLQFYHKLPFYPKHNNVLTDARLELVKIGSSKIDGFYCSEL
-SIWCGERLCYKPPTTKFSDIFGYCCIEKIRGDLEIGDLPQDDEEAWAELSYHYQRNTYFF
-RYVHDNSIYFRAVCRMKGCVC
-
->NP_150075.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 32 kDa accessory protein" organism="Bovine coronavirus" length=278 db="cov_g2a_db" cluster="AAL57306.1 AAP20417.1 ABP38231.1 ACT10981.1 ACT10993.1 BAF75629.1 NP_150075.1 ABP38277.1 "
-MAVAYADKPNHFINFPLTQFQGFVLNYKGLQFQLLDEGVDCKIQTAPHISLAMLDIQPED
-YRSVDVAIQEVIDDMHWGEGFQIKFENPHILGRCIVLDVKGVEELHDDLVNYIRDKGCVA
-DQSRKWIGHCTIAQLTDAALSIKENVDFINNMQFNYKITINPSSPARLEIVKLGAERKDG
-FYETIASHWMGIRFEYNPPTDKLAMIMGYCCLEVVRKELEEGDLPENDDDAWFKLSYHYE
-NNSWFFRHVYRKSSYFRKSCQNLDCNCLGFYESSVEED
-
->AFG25763.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 30 kDa accessory protein, p30" organism="Rat coronavirus" length=273 db="cov_g2a_db" cluster="AFG25763.1 "
+>YP_003029846.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 30 kDa accessory protein, p30" organism="Rat coronavirus Parker" length=265 db="cov_g2a_db" cluster="YP_003029846.1 " splice_form="e819"
 MLNKSILVMAAKMAFADKPNHFINFPLAQFSGFMGKYLKLQSQLVEMGLDCKLQKAPHVS
 ITMLDIKADQYKQVEFAIQEILDDLAAYEGYIVFDNPHMLGRCLVLDVKGFEELHVDIVE
 ILRKMGCTADQSRVWIPHCTVAQFEEEKEINAMQFYYKLPFYLKHNNILTDSRLELVKIG
 SSKIDGFYCSELSVWCGERLCYKPPTPKFSDIFGYCCIEKIRGDLEIGDLPQDDEEAWAE
 LSYHYQRNTYFFRYVHDNSIYFRIVCRMKGCMC
-
->NP_937948.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 32 kDa accessory protein" organism="Human coronavirus OC43" length=278 db="cov_g2a_db" cluster="NP_937948.1 "
+>ACN89741.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 30 kDa accessory protein, p30" organism="Murine coronavirus MHV-1" length=265 db="cov_g2a_db" cluster="ACN89741.1 " splice_form="e819"
+MLNKSILVMAAKMAFADKPNHFINFPLAQFSGFMGKYLKVQSQLVEMGLDCNLQKAPHVS
+ITMLDIKADQYKQVEFAIQELIDDLAAYEGDIVFDNPHMLGRCLVLDVKGFEELHEDIVE
+ILRRRGCTADQSRQWIPHCTVAQFDEEKETKGLQFYHKEPFYLKHNNLLTDARLELVRIG
+SSKIDGFYCSELSVWCGERLCYEPPTPKFSDIFGYCCIDKIRGDLELGDLPPDDEEAWAE
+LSYHYQRNTYFFRHVHDNSIYFRTVCRMKGCMC
+>NP_068669.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 30 kDa accessory protein, p30" organism="Murine hepatitis virus strain A59" length=273 db="cov_g2a_db" cluster="NP_068669.1 " splice_form="e819"
+MSNKSILVVAVKMAFADKPNHFINFPLAQFSGFMGKYLKLQSQLVEMGLDCKLQKAPHVS
+ITLLDIKADQYKQVEFAIQEIIDDLAAYEGDIVFDNPHMLGRCLVLDVRGFEELHEDIVE
+ILRRRGCTADQSRHWIPHCTVAQFDEERETKGMQFYHKEPFYLKHNNLLTDAGLELVKIG
+SSKIDGFYCSELSVWCGERLCYKPPTPKFSDIFGYCCIDKIRGDLEIGDLPQDDEEAWAE
+LSYHYQRNTYFFRHVHDNSIYFRTVCRMKGCMC
+>YP_209231.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 30 kDa accessory protein, p30" organism="Murine hepatitis virus strain JHM" length=265 db="cov_g2a_db" cluster="ACN89780.1 YP_209231.1 " splice_form="e819"
+MLNKSILVMAARMAFADKPNHFINFPLAQFSGFMGKYLKLQSQLVEMGLDCKLQKVPHVS
+ITLLDIKADQYKQVEFAIQEIIDDLAAYEGDIVFDNPHMLGRCLVLDVKGFEELHEDIVE
+ILRRRGCTADQSRQWIPHCTVAQFDEEKEIKEMQFYFKLPFYLKHNNLLTDARLELVKIG
+SSKVGGFYCSELSIWCGERLCYKPPTPKFSDIFGYCCIDKIRGDLEIGDLPPDDEEAWAE
+LSYHYQRNTYFFRHVHDNSIYFRTVCRMKGCMC
+>BAJ04694.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 30 kDa accessory protein, p30"  organism="Murine hepatitis virus" length=261 db="cov_g2a_db" cluster="BAJ04694.1 " splice_form="e819"
+MLNKSILVMAARMAFADKPNHFINFSLAQFSGFMGKYLKLQSQLVEMGLDCKLQKAPHVS
+ITMLDIKAEQCKQVEFAIQEILDDLAAYEGDIVFDNPHMLGRCLVLDVKGFEELHEDVVE
+ILRRRGCTADQSRQWIPHCTVAQFEEEKETKGLQFYHKLPFYPKHNNVLTDARLELVKIG
+SSKIDGFYCSELSIWCGERLCYKPPTTKFSDIFGYCCIEKIRGDLEIGDLPQDDEEAWAE
+LSYHYQRNTYFFRYVHDNSIYFRAVCRMKGCVC
+>NP_150075.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 32 kDa accessory protein" organism="Bovine coronavirus" length=278 db="cov_g2a_db" cluster="AAL57306.1 AAP20417.1 ABP38231.1 ACT10981.1 ACT10993.1 BAF75629.1 NP_150075.1 ABP38277.1 " splice_form="e834"
+MAVAYADKPNHFINFPLTQFQGFVLNYKGLQFQLLDEGVDCKIQTAPHISLAMLDIQPED
+YRSVDVAIQEVIDDMHWGEGFQIKFENPHILGRCIVLDVKGVEELHDDLVNYIRDKGCVA
+DQSRKWIGHCTIAQLTDAALSIKENVDFINNMQFNYKITINPSSPARLEIVKLGAERKDG
+FYETIASHWMGIRFEYNPPTDKLAMIMGYCCLEVVRKELEEGDLPENDDDAWFKLSYHYE
+NNSWFFRHVYRKSSYFRKSCQNLDCNCLGFYESSVEED
+>AFG25763.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 30 kDa accessory protein, p30" organism="Rat coronavirus" length=273 db="cov_g2a_db" cluster="AFG25763.1 " splice_form="e819"
+MLNKSILVMAAKMAFADKPNHFINFPLAQFSGFMGKYLKLQSQLVEMGLDCKLQKAPHVS
+ITMLDIKADQYKQVEFAIQEILDDLAAYEGYIVFDNPHMLGRCLVLDVKGFEELHVDIVE
+ILRKMGCTADQSRVWIPHCTVAQFEEEKEINAMQFYYKLPFYLKHNNILTDSRLELVKIG
+SSKIDGFYCSELSVWCGERLCYKPPTPKFSDIFGYCCIEKIRGDLEIGDLPQDDEEAWAE
+LSYHYQRNTYFFRYVHDNSIYFRIVCRMKGCMC
+>NP_937948.1 gene="NS2a" product="non-structural protein 2a" note="synonym: 32 kDa accessory protein" organism="Human coronavirus OC43" length=278 db="cov_g2a_db" cluster="NP_937948.1 " splice_form="e834"
 MAVAYADKPNHFINFPLTHFQGFVLNYKGLQFQILDEGVDCKIQTAPHISLTMLDIQPED
 YKSVDVAIQEVIDDMHWGDGFQIKFENPHILGRCIVLDVKGVEELHDDLVNYIRDKGCVA
 DQSRKWIGHCTIAQLTDAALSIKENVDFINSMQFNYKITINPSSPARLEIVKLGAEKKDG
 FYETIVSHWMGIRFEYTSPTDKLAMIMGYCCLDVVRKELEEGDLPENDDDAWFKLSYHYE
 NNSWFFRHVYRKSFHFRKACQNLDCNCLGFYESSVEEY
-
->AFG25752.1 gene="NS4" product="non-structural protein 4" note="synonym: accessory protein 4, orf4" organism="Rat coronavirus" length=133 db="cov_g2a_db" cluster="AFG25752.1 "
+>AFG25752.1 gene="NS4" product="non-structural protein 4" note="synonym: accessory protein 4, orf4" organism="Rat coronavirus" length=133 db="cov_g2a_db" cluster="AFG25752.1 " splice_form="e399"
 MAALGHKAKLAAVFIGPFIVACMLGISLVYLYQLQNQIFHVNNTIRVTGKPAKLYYSLST
 SVTPVATTLDGTTYTLIRPTSSYTRVYLGKTRGFDTSTFGPKVLNYITSSKPHLNSGRPY
 TFRHMPKYMKGLV
-
->YP_003029849.1 gene="NS4" product="non-structural protein 4" note="synonym: accessory protein 4, orf4" organism="Rat coronavirus Parker" length=133 db="cov_g2a_db" cluster="YP_003029849.1 "
+>YP_003029849.1 gene="NS4" product="non-structural protein 4" note="synonym: accessory protein 4, orf4" organism="Rat coronavirus Parker" length=133 db="cov_g2a_db" cluster="YP_003029849.1 " splice_form="e399"
 MAALGHKAKLAAVFIGPFIVACMLGISLVYLYQLQVQIFHVNNTIRVTGKPATVSYTLST
 PVTPVATTLDGTTYTLIRPTSSYTRVYLGKTRGFDTSTFGPKVLNYITSSKPHLNSGRPY
 TFRHMPKYMKGLV
-
->AFG25762.1 gene="NS4" product="non-structural protein 4" note="synonym: accessory protein 4, orf4" organism="Rat coronavirus" length=139 db="cov_g2a_db" cluster="AFG25762.1 "
+>AFG25762.1 gene="NS4" product="non-structural protein 4" note="synonym: accessory protein 4, orf4" organism="Rat coronavirus" length=139 db="cov_g2a_db" cluster="AFG25762.1 " splice_form="e417"
 MAALGHKAKLAAVFIGPFIVACMLGISLVYLYQLQVQIFHVNNTIRVTGKPATVSYTLST
 PVTPVATTLDGTTYTLIRPTSSYTRVYLGKTRGFDTSTFGPKVLNYITSSKPHLNSGRPY
 TFRHMPKYMTPSATWRFGM
-
->YP_209234.1 gene="NS4" product="non-structural protein 4" note="synonym: accessory protein 4, orf4" organism="Murine hepatitis virus strain JHM" length=139 db="cov_g2a_db" cluster="ACN89764.1 YP_209234.1 "
+>YP_209234.1 gene="NS4" product="non-structural protein 4" note="synonym: accessory protein 4, orf4" organism="Murine hepatitis virus strain JHM" length=139 db="cov_g2a_db" cluster="ACN89764.1 YP_209234.1 " splice_form="e417"
 MALIGPKTTIAAVFIGPFLVACMLGIGLVYLLQLQVQIFHVKDTIRVTGKPATVSYTTST
 PVTPVATTLDGTTYTLIRPTSSYTRVYLGSSRGFDTSTFGPKTLDYITSSKPHLNSGRPY
 TLRHLPKYMTPPATWRFGL
-
->BAJ04697.1 gene="NS4" product="non-structural protein 4" note="synonym: accessory protein 4, orf4" organism="Murine hepatitis virus" length=139 db="cov_g2a_db" cluster="BAJ04697.1 "
+>BAJ04697.1 gene="NS4" product="non-structural protein 4" note="synonym: accessory protein 4, orf4" organism="Murine hepatitis virus" length=139 db="cov_g2a_db" cluster="BAJ04697.1 " splice_form="e417"
 MAVLGPKATFAAVFIGPFIVACMLGIGLVYLYQVQVKIFHVDDTLRVTGKPATVSYTTST
 PVTPSATTLDGTTYTLIRPTSSYTRVYLGSPRGFDTSTFGPKTLDYITSSKPHLNSGRPY
 SLKALPRHMRPPATWRYGM
-
->ACN89734.1 gene="NS4" product="non-structural protein 4" note="synonym: accessory protein 4, orf4" organism="Murine coronavirus MHV-1" length=139 db="cov_g2a_db" cluster="ACN89734.1 "
+>ACN89734.1 gene="NS4" product="non-structural protein 4" note="synonym: accessory protein 4, orf4" organism="Murine coronavirus MHV-1" length=139 db="cov_g2a_db" cluster="ACN89734.1 " splice_form="e417"
 MAIIGPKTTIAAVFIGPFIVACMLGIGLVYLLQLQVQIFHVNDTIRVTGKPATVSYTIST
 PVTPSATTLDGTTYTLIRPTSSYTRVHLGSPRGFDTSTFGPKTLDYTTSSKPHLNSGRPY
 TLRHLPKYMTPPAIWRFGM
-
->AFD97609.1 gene="NS4" product="non-structural protein 4" note="synonym: accessory protein 4, orf4" organism="Murine hepatitis virus strain S/3239-17" length=124 db="cov_g2a_db" cluster="AFD97609.1 "
+>AFD97609.1 gene="NS4" product="non-structural protein 4" note="synonym: accessory protein 4, orf4" organism="Murine hepatitis virus strain S/3239-17" length=124 db="cov_g2a_db" cluster="AFD97609.1 " splice_form="e372"
 MAVLGPKATLAAVFIGPFIVACMLGIGLVYLLQLQVQIFHVKDTIRVTGKPATVSYTTST
 PVTPSATTLDGTTYTLIRPTSSYTRVYLGKTRGFDTSTFGPKVLDYITSSKPHLNSGRPY
 SLSC
-
->NP_068671.1 gene="NS4" product="non-structural protein 4" note="synonym: accessory protein 4, orf4" organism="Murine hepatitis virus strain A59" length=161 db="cov_g2a_db" cluster="NP_068671.1 AAU06357.1 "
+>NP_068671.1 gene="NS4" product="non-structural protein 4" note="synonym: accessory protein 4, orf4" organism="Murine hepatitis virus strain A59" length=161 db="cov_g2a_db" cluster="NP_068671.1 AAU06357.1 " splice_form="e483"
 MRIDYHSLSWKDRKSKQFIAFSLLPGPVRGSHSYGRVGPKATLAAVFIGPFIVACMLGIG
 LVYLLQLQVQIFHVKDTIRVTGKPATVSYTTSTPVTPSATTLDGTTYTLIRPTSSYTRVY
 LGTPRGFDYSTFGPKTLDYVTNLNLILILVVHILLRHCPGI
-
->BAJ04698.1 gene="NS5" product="non-structural protein 5" note="synonym: 12.7 kDa accessory protein, orf5a" organism="Murine hepatitis virus" length=108 db="cov_g2a_db" cluster="BAJ04698.1 "
+>BAJ04698.1 gene="NS5" product="non-structural protein 5" note="synonym: 12.7 kDa accessory protein, orf5a" organism="Murine hepatitis virus" length=108 db="cov_g2a_db" cluster="BAJ04698.1 " splice_form="e324"
 MEIWHVSDAWLRNTRDFGVTRLEDFCFQFNYSQPRVGYCRVPLKAWCSNQGKFAAQFTLK
 SKPADKGQEKFITSFTAYGKTVKQAVSKLVEEAVDFIIWRATQLERNV
-
->ACN89739.1 gene="NS5" product="non-structural protein 5" note="synonym: 12.7 kDa accessory protein, orf5a" organism="Murine coronavirus MHV-1" length=107 db="cov_g2a_db" cluster="ACN89739.1 "
+>ACN89739.1 gene="NS5" product="non-structural protein 5" note="synonym: 12.7 kDa accessory protein, orf5a" organism="Murine coronavirus MHV-1" length=107 db="cov_g2a_db" cluster="ACN89739.1 " splice_form="e321"
 MEIWHVSDAWLRRTRDFGVTRLEDFCFQFNYCQPRVGYCRVPLKAWCSNQGKFAAQFTLK
 SCEKSGHQKFITSFTAYGKTVQQAVGKLVEEAVDFILFRALLLERNV
-
->NP_937951.1 gene="NS4" product="non-structural protein 4" note="synonym: accessory protein 4, orf4" organism="Human coronavirus OC43" length=109 db="cov_g2a_db" cluster="AAX85670.1 AEN19367.1 NP_937951.1 "
+>NP_937951.1 gene="NS4" product="non-structural protein 4" note="synonym: accessory protein 4, orf4" organism="Human coronavirus OC43" length=109 db="cov_g2a_db" cluster="AAX85670.1 AEN19367.1 NP_937951.1 " splice_form="e327"
 MDIWRPEKKYLRYINGFNVSELEDACFKFNYQFPKVGYCRVPSHAWCRNQGRFCATFTLY
 GKSKHYDKYFGVINGFTAFANTVEDAVNKLVFLAVDFITWRRQELNVYG
-
->ABD75634.1 gene="NS4" product="non-structural protein 4" note="synonym: accessory protein 4, orf4" organism="Human coronavirus HKU1" length=109 db="cov_g2a_db" cluster="ABD75634.1 "
+>ABD75634.1 gene="NS4" product="non-structural protein 4" note="synonym: accessory protein 4, orf4" organism="Human coronavirus HKU1" length=109 db="cov_g2a_db" cluster="ABD75634.1 " splice_form="e327"
 MEVWRPSYKYSLITREFGVTDLEDLCFKYNYCQPCVGYCIVPLNVWCRKFGKFASYFVLR
 SHDTSHKNNFGVITSFTSYGNTVSEAVSKLVESASDFIAWRAEALNKYG
-
->YP_173239.1 gene="NS4" product="non-structural protein 4" note="synonym: accessory protein 4, orf4" organism="Human coronavirus HKU1" length=109 db="cov_g2a_db" cluster="ADN03340.1 YP_173239.1 "
+>YP_173239.1 gene="NS4" product="non-structural protein 4" note="synonym: accessory protein 4, orf4" organism="Human coronavirus HKU1" length=109 db="cov_g2a_db" cluster="ADN03340.1 YP_173239.1 " splice_form="e327"
 MDVWRPSYTHSLVIREFGVTNLEDLCLKYNYCQPIVGYCIVPLNVWCRKFGKFASHFTLR
 SHDISHSNNFGVVTSFTTYGNTVSEAVSRLVESASEFIVWRAEALNKYG
-
->NP_150080.1 gene="NS5" product="non-structural protein 5" note="synonym: 12.7 kDa accessory protein, orf5a"organism="Bovine coronavirus" length=109 db="cov_g2a_db" cluster="AAL57316.1 ABI94005.1 ABP38237.1 BAF75634.1 NP_150080.1 "
+>NP_150080.1 gene="NS5" product="non-structural protein 5" note="synonym: 12.7 kDa accessory protein, orf5a"organism="Bovine coronavirus" length=109 db="cov_g2a_db" cluster="AAL57316.1 ABI94005.1 ABP38237.1 BAF75634.1 NP_150080.1 " splice_form="e327"
 MDIWKPEIKYLRYTNGFNVSELEDACFKFNYKFPKVGYCRVPSHAWCRNQGSFCATLTLY
 GKSKHYDKYFGVITGFTAFANTVEEAVNKLVFLAVDFITWRRQELNVYG
-
->AAL40403.1 gene="NS5" product="non-structural protein 5" note="synonym: 12.7 kDa accessory protein, orf5a"organism="Bovine coronavirus" length=87 db="cov_g2a_db" cluster="AAL40403.1 "
+>AAL40403.1 gene="NS5" product="non-structural protein 5" note="synonym: 12.7 kDa accessory protein, orf5a"organism="Bovine coronavirus" length=87 db="cov_g2a_db" cluster="AAL40403.1 " splice_form="e261"
 MDIWRPEIKYLRYTNGFNVSELEDACFKFNYKFPKVGYCRVPSHVWCRNQGSFCATLTLY
 GKSKHYDKYFGVITGFTAFANTARGGC
-
->AAF69335.1 gene="NS5" product="non-structural protein 5" note="synonym: 12.7 kDa accessory protein, orf5a" organism="Murine hepatitis virus" length=107 db="cov_g2a_db" cluster="AAF69335.1 "
+>AAF69335.1 gene="NS5" product="non-structural protein 5" note="synonym: 12.7 kDa accessory protein, orf5a" organism="Murine hepatitis virus" length=107 db="cov_g2a_db" cluster="AAF69335.1 " splice_form="e321"
 MDIWHVSDAWLRRTRDFGVTRLEDFCFQFNYCQPRIGYCRVPLKAWCSNQGKFAAQFTLK
 SCEKSGQEIFITSFTAYDKTVKKAVSKLVEEAVDFIIWRATQLERYV
-
->NP_068672.1 gene="NS5" product="non-structural protein 5" note="synonym: 12.7 kDa accessory protein, orf5a" organism="Murine hepatitis virus strain A59" length=112 db="cov_g2a_db" cluster="NP_068672.1 "
+>NP_068672.1 gene="NS5" product="non-structural protein 5" note="synonym: 12.7 kDa accessory protein, orf5a" organism="Murine hepatitis virus strain A59" length=112 db="cov_g2a_db" cluster="NP_068672.1 " splice_form="e336"
 MRPTATWIWHVSDAWLRRTRDFGVIRLEDFCFQFNYSQPRVGYCRVPLKAWCSNQGKFAA
 QFTLKSCEKPGHEKFITSFTAYGRTVQQAVSKLVEEAVDFILFRATQLERNV
-
->ACN89751.1 gene="NS5" product="non-structural protein 5" note="synonym: accessory protein 4, orf4" organism="Murine coronavirus MHV-3" length=107 db="cov_g2a_db" cluster="ACN89751.1 "
+>ACN89751.1 gene="NS5" product="non-structural protein 5" note="synonym: accessory protein 4, orf4" organism="Murine coronavirus MHV-3" length=107 db="cov_g2a_db" cluster="ACN89751.1 " splice_form="e321"
 MEIWHVSDAWLRRTRDFGVTRLEDFCFQFNYTQPRVGYCRVPLKAWCSNQGKFAAQFTLK
 SCEKSGHPKFITSFTAYGKTVQQAVSKLVEEAVDFILFRALLLERNV
-
->YP_209235.1 gene="NS5" product="non-structural protein 5" note="synonym: 12.7 kDa accessory protein, orf5a" organism="Murine hepatitis virus strain JHM" length=107 db="cov_g2a_db" cluster="ACN89767.1 YP_209235.1 "
+>YP_209235.1 gene="NS5" product="non-structural protein 5" note="synonym: 12.7 kDa accessory protein, orf5a" organism="Murine hepatitis virus strain JHM" length=107 db="cov_g2a_db" cluster="ACN89767.1 YP_209235.1 " splice_form="e321"
 MEIWLVSDAWLRRTRDFGVTRLEDFCFQFNYCQPRVGYCRVPLKAWCSNQGKFAAQFTLK
 SCEKSGHQKFITSFTAYGKTVKQAVSKLVEEAADFIIWRATQLERNV
-
->NP_150078.1 gene="NS4a" product="non-structural protein 4a" note="synonym: 4.9 kDa non-structural protein" organism="Bovine coronavirus" length=29 db="cov_g2a_db" cluster="NP_150078.1 "
+>NP_150078.1 gene="NS4a" product="non-structural protein 4a" note="synonym: 4.9 kDa non-structural protein" organism="Bovine coronavirus" length=29 db="cov_g2a_db" cluster="NP_150078.1 " splice_form="e87"
 MKTKFVFDLLTPDDILHPSNHVNLIIRPI
-
->ABP38282.1 gene="NS4a" product="non-structural protein 4a" note="synonym: 4.9 kDa non-structural protein" organism="Bovine coronavirus E-AH187" length=29 db="cov_g2a_db" cluster="ABP38282.1 "
+>ABP38282.1 gene="NS4a" product="non-structural protein 4a" note="synonym: 4.9 kDa non-structural protein" organism="Bovine coronavirus E-AH187" length=29 db="cov_g2a_db" cluster="ABP38282.1 " splice_form="e87"
 MXTKFVFDLLXPDDILHPSNHVNLIIRPI
-
->AAL57309.1 gene="NS4a" product="non-structural protein 4a" note="synonym: 4.9 kDa non-structural protein" organism="Bovine coronavirus" length=29 db="cov_g2a_db" cluster="AAL57309.1 "
+>AAL57309.1 gene="NS4a" product="non-structural protein 4a" note="synonym: 4.9 kDa non-structural protein" organism="Bovine coronavirus" length=29 db="cov_g2a_db" cluster="AAL57309.1 " splice_form="e87"
 MKIKFVFDLLTPDDILHPSNHVNLIIRPI
-
->BAF75632.1 gene="NS4a" product="non-structural protein 4a" note="synonym: 4.9 kDa non-structural protein" organism="Bovine coronavirus" length=43 db="cov_g2a_db" cluster="BAF75632.1 "
+>BAF75632.1 gene="NS4a" product="non-structural protein 4a" note="synonym: 4.9 kDa non-structural protein" organism="Bovine coronavirus" length=43 db="cov_g2a_db" cluster="BAF75632.1 " splice_form="e129"
 MTTKFVFDLLAPDDILHPFNHVKLIIRPIEVEHIIIATTMPAV
-
->ABP38265.1 gene="NS4a" product="non-structural protein 4a" note="synonym: 4.9 kDa non-structural protein" organism="Bovine coronavirus R-AH65-TC" length=29 db="cov_g2a_db" cluster="ABP38265.1 "
+>ABP38265.1 gene="NS4a" product="non-structural protein 4a" note="synonym: 4.9 kDa non-structural protein" organism="Bovine coronavirus R-AH65-TC" length=29 db="cov_g2a_db" cluster="ABP38265.1 " splice_form="e87"
 MKTKFVFDLLAPDDILHPSNHVNLIIRLI
-
->AAL40402.1 gene="NS4b" product="non-structural protein 4b" note="synonym: 4.8 kDa non-structural protein" organism="Bovine coronavirus" length=43 db="cov_g2a_db" cluster="AAL40402.1 "
+>AAL40402.1 gene="NS4b" product="non-structural protein 4b" note="synonym: 4.8 kDa non-structural protein" organism="Bovine coronavirus" length=43 db="cov_g2a_db" cluster="AAL40402.1 " splice_form="e129"
 MATTIDGTDYTNIMPSTVSTRVYLGCSIGIDTSTTGFTCFSWY
-
->BAF75633.1 gene="NS4b" product="non-structural protein 4b" note="synonym: 4.8 kDa non-structural protein" organism="Bovine coronavirus" length=45 db="cov_g2a_db" cluster="BAF75633.1 "
+>BAF75633.1 gene="NS4b" product="non-structural protein 4b" note="synonym: 4.8 kDa non-structural protein" organism="Bovine coronavirus" length=45 db="cov_g2a_db" cluster="BAF75633.1 " splice_form="e135"
 MPMATTIDGTDYTNIMPSTVSTTVYLGCSIGIDTSTTGFTCFSRY
-
->ACT10985.1 gene="NS4b" product="non-structural protein 4b" note="synonym: 4.8 kDa non-structural protein" organism="Bovine coronavirus E-DB2-TC" length=45 db="cov_g2a_db" cluster="ACT10985.1 "
+>ACT10985.1 gene="NS4b" product="non-structural protein 4b" note="synonym: 4.8 kDa non-structural protein" organism="Bovine coronavirus E-DB2-TC" length=45 db="cov_g2a_db" cluster="ACT10985.1 " splice_form="e135"
 MPMATTIDGTDYTNIMPITVSTTVYLGVSIGIDTSTTGFTCFSRY
-
->ABP38275.1 gene="NS4b" product="non-structural protein 4b" note="synonym: 4.8 kDa non-structural protein" organism="Bovine coronavirus E-AH187" length=45 db="cov_g2a_db" cluster="ABP38275.1 "
+>ABP38275.1 gene="NS4b" product="non-structural protein 4b" note="synonym: 4.8 kDa non-structural protein" organism="Bovine coronavirus E-AH187" length=45 db="cov_g2a_db" cluster="ABP38275.1 " splice_form="e135"
 MPMATTIEVADYTNIMPITVLTTVYLGVSIGIDTSTTGFTCFSRY
-
->NP_150079.1 gene="NS4b" product="non-structural protein 4b" note="synonym: 4.8 kDa non-structural protein" organism="Bovine coronavirus" length=45 db="cov_g2a_db" cluster="NP_150079.1 "
+>NP_150079.1 gene="NS4b" product="non-structural protein 4b" note="synonym: 4.8 kDa non-structural protein" organism="Bovine coronavirus" length=45 db="cov_g2a_db" cluster="NP_150079.1 " splice_form="e135"
 MPMATTIEGADYTNIMPITVLTTVYLGVSIGIDTSTTGFTCFSWY
-
->AAL57310.1 gene="NS4b" product="non-structural protein 4b" note="synonym: 4.8 kDa non-structural protein" organism="Bovine coronavirus" length=45 db="cov_g2a_db" cluster="AAL57310.1 "
+>AAL57310.1 gene="NS4b" product="non-structural protein 4b" note="synonym: 4.8 kDa non-structural protein" organism="Bovine coronavirus" length=45 db="cov_g2a_db" cluster="AAL57310.1 " splice_form="e135"
 MPMATTIEGADYTNIMPITVLTTVYLGVSIGIDTSTTGFTCFSRY
-
->ACT10997.1 gene="NS4b" product="non-structural protein 4b" note="synonym: 4.8 kDa non-structural protein" organism="Bovine coronavirus E-AH187-TC" length=45 db="cov_g2a_db" cluster="ACT10997.1 "
+>ACT10997.1 gene="NS4b" product="non-structural protein 4b" note="synonym: 4.8 kDa non-structural protein" organism="Bovine coronavirus E-AH187-TC" length=45 db="cov_g2a_db" cluster="ACT10997.1 " splice_form="e135"
 MPMVTTIEVADYTNIMPITVLITVYLGVSIGIDTSTTGFTCFSRY
-
->ABP38272.1 gene="NS4b" product="non-structural protein 4b" note="synonym: 4.8 kDa non-structural protein" organism="Bovine coronavirus R-AH65-TC" length=45 db="cov_g2a_db" cluster="ABP38272.1 "
+>ABP38272.1 gene="NS4b" product="non-structural protein 4b" note="synonym: 4.8 kDa non-structural protein" organism="Bovine coronavirus R-AH65-TC" length=45 db="cov_g2a_db" cluster="ABP38272.1 " splice_form="e135"
 MPMATTIEVADYTNIMPITVFITVYLGVSIGIDTSTTGFTCFSRY
-
->ABD75611.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Human coronavirus HKU1" length=80 db="cov_g2a_db" cluster="ABD75595.1 ABD75611.1 "
+>ABD75611.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Human coronavirus HKU1" length=80 db="cov_g2a_db" cluster="ABD75595.1 ABD75611.1 " splice_form="e240"
 MVDLFFNDTAWYIGQILVLVLFCLISLIFVVAFLATIKLCMQLCGFCNFFIISPSAYVYK
 RGMQLYKSYSEQVIPPTSDY
-
->NP_150081.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Bovine coronavirus" length=84 db="cov_g2a_db" cluster="AAA42914.1 BAF75635.1 NP_150081.1 "
+>NP_150081.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Bovine coronavirus" length=84 db="cov_g2a_db" cluster="AAA42914.1 BAF75635.1 NP_150081.1 " splice_form="e252"
 MFMADAYFADTVWYVGQIIFIVAICLLVIIVVVAFLATFKLCIQLCGMCNTLVLSPSIYV
 FNRGRQFYEFYNDVKPPVLDVDDV
-
->NP_937952.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Human coronavirus OC43" length=84 db="cov_g2a_db" cluster="AEN19368.1 NP_937952.1 "
+>NP_937952.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Human coronavirus OC43" length=84 db="cov_g2a_db" cluster="AEN19368.1 NP_937952.1 " splice_form="e252"
 MFMADAYLADTVWYVGQIIFIVAICLLVTIVVVAFLATFKLCIQLCGMCNTLVLSPSIYV
 FNRGRQFYEFYNDVKPPVLDVDDV
-
->YP_173240.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Human coronavirus HKU1" length=82 db="cov_g2a_db" cluster="YP_173240.1 "
+>YP_173240.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Human coronavirus HKU1" length=82 db="cov_g2a_db" cluster="YP_173240.1 " splice_form="e246"
 MVDLFFNDTAWYIGQILVLVLFCLISLIFVVAFLATIKLCMQLCGFCNFFIISPSAYVYK
 RGMQLYKSYSEQVIPPTSDYLI
-
->YP_209236.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Murine hepatitis virus strain JHM" length=88 db="cov_g2a_db" cluster="YP_209236.1 "
+>YP_209236.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Murine hepatitis virus strain JHM" length=88 db="cov_g2a_db" cluster="YP_209236.1 " splice_form="e264"
 MFNLFLTDTVWYVGQIIFIVAVCLMVTIIVVAFLASIKRCIQLCGLCNTLLLSPSIYLYN
 RSKQLYKYYNEEVRPPPLEVDDNIIQTL
-
->ACN89766.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Murine coronavirus MHV-JHM.IA" length=88 db="cov_g2a_db" cluster="ACN89766.1 "
+>ACN89766.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Murine coronavirus MHV-JHM.IA" length=88 db="cov_g2a_db" cluster="ACN89766.1 " splice_form="e264"
 MFNLFLTDTVWYVGQIIFIVAVCLMVTIIVVAFLASIKLCIQLCGLCNTLLLSPSIYVYN
 RSKQLYKYYNEEVRPPPLEVDDNIIQTL
-
->ACN89738.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Murine coronavirus MHV-1" length=88 db="cov_g2a_db" cluster="ACN89738.1 "
+>ACN89738.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Murine coronavirus MHV-1" length=88 db="cov_g2a_db" cluster="ACN89738.1 " splice_form="e264"
 MFNLFLTDTVWYVGQIIFIVAVCLMVTIIVVAFLASIKLCIQLCGLCNTLLLSPSIYVYN
 GSKQLYKYYNEEVRPPPLEVDDKIIQTL
-
->ABD75635.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Human coronavirus HKU1" length=82 db="cov_g2a_db" cluster="ABD75635.1 "
+>ABD75635.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Human coronavirus HKU1" length=82 db="cov_g2a_db" cluster="ABD75635.1 " splice_form="e246"
 MVDVFFTDTAWYVGQIFFLVLSCVIFLIFVVALLATIKLCIQICGFCNIFIISPSAYVYN
 RGRQLYKSYSEHVIPSTLDDLI
-
->AFD97613.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Murine hepatitis virus strain S/3239-17" length=88 db="cov_g2a_db" cluster="ADI59791.1 AFD97613.1 "
+>AFD97613.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Murine hepatitis virus strain S/3239-17" length=88 db="cov_g2a_db" cluster="ADI59791.1 AFD97613.1 " splice_form="e264"
 MFNLFLTNTVWYVGQIIFIVAVCLMVTITVVAFLASIKLCIQLCGLCNTLVLSPSIYLYD
 RSKQLYKYYNEEVRPPPLEVDDIIIQTL
-
->YP_003029850.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Rat coronavirus Parker" length=88 db="cov_g2a_db" cluster="AFG25757.1 YP_003029850.1 "
+>YP_003029850.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Rat coronavirus Parker" length=88 db="cov_g2a_db" cluster="AFG25757.1 YP_003029850.1 " splice_form="e264"
 MFNLFLIDTVWYVGQIIFIVAVCLMVTIIVVAFLASIKLCIQLCGLCNTLLLSPSIYVYN
 RSKQLYKYYNEEVRPPPLEVDDIIIQTL
-
->AAX85671.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Human coronavirus OC43" length=88 db="cov_g2a_db" cluster="AAX85671.1 "
+>AAX85671.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Human coronavirus OC43" length=88 db="cov_g2a_db" cluster="AAX85671.1 " splice_form="e264"
 MFMADAYLADTVWYVGQIIFIVAICLLVTIVVVAFLATFKLCIQLCGMCNTLVLSPSIYV
 FNRGRQFYEFYNDIKPPVLDVDDVIQTL
-
->ACN89744.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Murine coronavirus MHV-3" length=88 db="cov_g2a_db" cluster="ACN89744.1 "
+>ACN89744.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Murine coronavirus MHV-3" length=88 db="cov_g2a_db" cluster="ACN89744.1 " splice_form="e264"
 MFNLFLTDTVWYVGQIIFIVAVCLMVTIIVVAFLASIKRCIQLCGLCNTLLLSPSIYVYN
 RSKQLYKYYNEEVRPPPLEVDDIIIQTL
-
->AAF69336.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Murine hepatitis virus" length=88 db="cov_g2a_db" cluster="AAF69336.1 "
+>AAF69336.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Murine hepatitis virus" length=88 db="cov_g2a_db" cluster="AAF69336.1 " splice_form="e264"
 MFNLFLTDTVWYVGQIIFIVAVCLMVTIIVVAFLASIKLCIQLCGLCNTLLLSPSICVYN
 RSKQLYKYYNEEVRPPPLEVDDIIIQTL
-
->BAJ04699.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Murine hepatitis virus" length=88 db="cov_g2a_db" cluster="BAJ04699.1 "
+>BAJ04699.1 gene="E" product="envelope small membrane protein" note="synonym: E protein, envelope protein" organism="Murine hepatitis virus" length=88 db="cov_g2a_db" cluster="BAJ04699.1 " splice_form="e264"
 MFNVLSTDTVWYVGQIIFIVAVCLMVTIVVVAFLASIKLCIQLCGLCNTLLLSPSIYVYN
 RSKQLYKYYNEEVRPPPLEVDDIIIQTL
-
->YP_003029847.1 gene="HE" product="hemagglutinin-esterase" note="synonym: E3 glycoprotein" organism="Rat coronavirus Parker" length=439 db="cov_g2a_db" cluster="YP_003029847.1 AFG25756.1 "
+>YP_003029847.1 gene="HE" product="hemagglutinin-esterase" note="synonym: E3 glycoprotein" organism="Rat coronavirus Parker" length=439 db="cov_g2a_db" cluster="YP_003029847.1 AFG25756.1 " splice_form="e1317"
 MGRMCIAMAPRTLLLLIGCQLVLGFNEPINIVSHLNDDWFLFGDSRSDCTYVENNGHPKL
 DWLDLDPKLCNSGKIAAKSGNSLFRSFHFTDFYNYTGEGDQIIFYEGVNFSPSHGFKCLV
 EGDNKKWMGNKARFYALLYKKMAQYRSLSFVIVPYAYGGNAKPTSICKDKTLTLNNPTFI
@@ -1951,8 +1873,7 @@ VLYGFNSTLDVGNTAQNPGLDLTCMYLVLTPGNYKAVSLEYLLTIPSKAICLRKPKRFMP
 VQVVDSRWNSTRQSDNMTAVACQLPYCFFRNTSADYSGDTHDVHHGDFYFRQLLSGLLYN
 VSCISQQGAFLYNNVSSIWPVYGYGHCPTAANIGYMAPVCLYDPLPVILLGVLLGIAVLI
 IVFLILYFMADSSVRLHEA
-
->BAJ04695.1 gene="HE" product="hemagglutinin-esterase" note="synonym: E3 glycoprotein" organism="Murine hepatitis virus" length=431 db="cov_g2a_db" cluster="BAJ04695.1 "
+>BAJ04695.1 gene="HE" product="hemagglutinin-esterase" note="synonym: E3 glycoprotein" organism="Murine hepatitis virus" length=431 db="cov_g2a_db" cluster="BAJ04695.1 " splice_form="e1293"
 MACTDAMAPRTLLLVLSLGYALGFNEPLNVVSHLNDDWFLFGDSRSDCNHINNLSHQNYN
 YMDLNPELCKSGKISAKAGNSLFKSFHFTDFYNYTGEGSQIIFYEGVNFTPYVGFKCLNN
 GDNSRWMGNKARFYTQLYQKMAHYRSLSIINITYTYNGSAGPVSMCKHTANGATLTLNNP
@@ -1961,8 +1882,7 @@ YGFNSTLNITIGLDLTCIYLLLTPGNYKSISNELLLTMPSKAICLRKAKAFTPVQVVDSR
 WHSNRQSDNMTAIACQLPYCYFRNTTSDYNGVYDSHHGDAGFTSVLAGLMYNVSCIAQQG
 AFVYNNVSSSWPQYPYGHCPTAANIGFIAPVCMYDPLPVILLGVLLGIAVLIIVFLLFYF
 MTDSGVRLHEI
-
->NP_937949.1 gene="HE" product="hemagglutinin-esterase" note="synonym: E3 glycoprotein" organism="Human coronavirus OC43" length=424 db="cov_g2a_db" cluster="NP_937949.1 "
+>NP_937949.1 gene="HE" product="hemagglutinin-esterase" note="synonym: E3 glycoprotein" organism="Human coronavirus OC43" length=424 db="cov_g2a_db" cluster="NP_937949.1 " splice_form="e1272"
 MFLLPRFILVSCIIGSLGFYNPPTNVVSHVNGDWFLFGDSRSDCNHIVNINPHNYSYMDL
 NPVLCDSGKISSKAGNSIFRSFHFTDFYNYTGEGQQIIFYEGVNFTPYHAFKCNRSGSND
 IWMQNKGLFYTQVYKNMAVYRSLTFVNVPYVYNGSAQATALCKSGSLVLNNPAYIAPQAN
@@ -1971,8 +1891,7 @@ ITTGFDLNCYYLVLPSGNYLAISNELLLTVPTKAICLNKRKDFTPVQVVDSRWNNARQSD
 NMTAVACQPPYCYFRNSTTNYVGVYDINHGDAGFTSILSGLLYNSPCFSQQGVFRYDNVS
 SVWPLYPYGRCPTAADINIPDLPICVYDPLPVILLGILLGVAIVIIVVLLLYFMVDNVTR
 LHDA
-
->NP_150076.1 gene="HE" product="hemagglutinin-esterase" note="synonym: E3 glycoprotein" organism="Bovine coronavirus" length=424 db="cov_g2a_db" cluster="AAA66393.1 AAL40399.1 AAL57307.1 ABI94000.1 ABP38240.1 ABP38246.1 ABP38271.1 ABP38274.1 ACT10982.1 ACT10994.1 BAF75630.1 NP_150076.1 "
+>NP_150076.1 gene="HE" product="hemagglutinin-esterase" note="synonym: E3 glycoprotein" organism="Bovine coronavirus" length=424 db="cov_g2a_db" cluster="AAA66393.1 AAL40399.1 AAL57307.1 ABI94000.1 ABP38240.1 ABP38246.1 ABP38271.1 ABP38274.1 ACT10982.1 ACT10994.1 BAF75630.1 NP_150076.1 " splice_form="e1272"
 MFLLPRFVLVSCIIGSLGFDNPPTNVVSHLNGDWFLFGDSRSDCNHVVTTNPRNYSYMDL
 NPALCGSGKISSKAGNSIFRSFHFTDFYNYTGEGQQIIFYEGVNFTPYHAFKCTTSGSND
 IWMQNKGLFYTQVYKNMAVYRSLTFVNVPYVYNGSAQSTALCKSGSLVLNNPAYIAREAN
@@ -1981,16 +1900,14 @@ ITTGFDFNCHYLVLPSGNYLAISNELLLTVPTKAICLNKRKDFTPVQVVDSRWNNARQSD
 NMTAVACQPPYCYFRNSTTNYVGVYDINHGDAGFTSILSGLLYDSPCFSQQGVFRYDNVS
 SVWPLYPYGRCPTAADINTPDVPICVYDPLPIILLGILLGVAVIIIVVLLLYFMVDNGTR
 LHDA
-
->NP_068670.1 gene="HE" product="hemagglutinin-esterase" note="synonym: E3 glycoprotein" organism="Murine hepatitis virus strain A59" length=312 db="cov_g2a_db" cluster="AAU06355.1 NP_068670.1 "
+>NP_068670.1 gene="HE" product="hemagglutinin-esterase" note="synonym: E3 glycoprotein" organism="Murine hepatitis virus strain A59" length=312 db="cov_g2a_db" cluster="AAU06355.1 NP_068670.1 " splice_form="e936"
 MGNKARFYARVYEKMAQYRSLSFVNVSYAYGGNAKPASICKDNTLTLNNPTFISKESNYV
 DYYYESEANFTLEGCDEFIVPLCGFNGHSKGSSSDAANKYYTDSQSYYNMDIGVLYGFNS
 TLDVGNTAKDPGLDLTCRYLALTPGNYKAVSLEYLLSLPSKAICLHKTKRFMPVQVVDSR
 WSSIRQSDNMTAAACQLPYCFFRNTSANYSGGTHDAHHGDFHFRQLLSGLLYNVSCIAQQ
 GAFLYNNVSSSWPAYGYGHCPTAANIGYMAPVCIYDPLPVILLGVLLGIAVLIIVFLMFY
 FMTDSGVRLHEA
-
->YP_173237.1 gene="HE" product="hemagglutinin-esterase" note="synonym: E3 glycoprotein" organism="Human coronavirus HKU1" length=386 db="cov_g2a_db" cluster="ABD75600.1 ABD75640.1 ADN03338.1 YP_173237.1 "
+>YP_173237.1 gene="HE" product="hemagglutinin-esterase" note="synonym: E3 glycoprotein" organism="Human coronavirus HKU1" length=386 db="cov_g2a_db" cluster="ABD75600.1 ABD75640.1 ADN03338.1 YP_173237.1 " splice_form="e1158"
 MLIIFLFFYFCYGFNEPLNVVSHLNHDWFLFGDSRSDCNHINNLKIKNFDYLDIHPSLCN
 NGKISSSAGDSIFKSFHFTRFYNYTGEGDQIIFYEGVNFNPYHRFKCFPNGSNDVWLLNK
 VRFYRALYSNMAFFRYLTFVDIPYNVSLSKFNSCKSDILSLNNPIFINYSKEVYFTLLGC
@@ -1998,8 +1915,7 @@ SLYLVPLCLFKSNFSQYYYNIDTGSVYGFSNVVYPDLDCIYISLKPGSYKVSTTAPFLSL
 PTKALCFDKSKQFVPVQVVDSRWNNERASDISLSVACQLPYCYFRNSSANYVGKYDINHG
 DSGFISILSGLLYNVSCISYYGVFLYDNFTSIWPYYSFGRCPTSSIIKHPICVYDFLPII
 LQGILLCLALLFVVFLLFLLYNDKSH
-
->YP_209232.1 gene="HE" product="hemagglutinin-esterase" note="synonym: E3 glycoprotein" organism="Murine hepatitis virus strain JHM" length=439 db="cov_g2a_db" cluster="ACN89693.1 ACN89762.1 AFO11516.1 YP_209232.1 "
+>YP_209232.1 gene="HE" product="hemagglutinin-esterase" note="synonym: E3 glycoprotein" organism="Murine hepatitis virus strain JHM" length=439 db="cov_g2a_db" cluster="ACN89693.1 ACN89762.1 AFO11516.1 YP_209232.1 " splice_form="e1317"
 MGSTCIAMAPRTLLLLIGCQLVFGFNEPLNIVSHLNDDWFLFGDSRSDCTYVENNGHPKL
 DWLDLDPKLCNSGKISAKSGNSLFRSFHFTDFYNYTGEGDQIVFYEGVNFSPNHGFKCLA
 YGDNKRWMGNKAAFYARVYEKMAQYRSLSFVNVPYAYGGKAKPTSICKHKTLTLNNPTFI
@@ -2008,113 +1924,94 @@ VLYGLNCTLDVGNTAKDPGLDLTCRYLALTPGNYKAVSLEYLLSLPSKAICLRKPKRFMP
 VQVVDSRWNSTRQSDNMTAVACQLPYCFFRNTSADYSGGTHDVHHGDFHFRQLLSGLLLN
 VSCIAQQGAFLYNNVSSSWPAYGYGQCPTAANIGYMAPVCIYDPLPVVLLGVLLGIAVLI
 IVFLILYFMTDSGVRLHEA
-
->YP_003029853.1 gene="I" product="protein I" note="synonym: accessory protein N2, N internal protein" organism="Rat coronavirus Parker" length=207 db="cov_g2a_db" cluster="AFG25755.1 AFG25765.1 YP_003029853.1 "
+>YP_003029853.1 gene="I" product="protein I" note="synonym: accessory protein N2, N internal protein" organism="Rat coronavirus Parker" length=207 db="cov_g2a_db" cluster="AFG25755.1 AFG25765.1 YP_003029853.1 " splice_form="e621"
 MESSRRPLGLTKPSVDKIMAIEAEGISPSRLQLLSPIPGVWFPITLGFRALPNSRREKSS
 SLQVDKECLLPMESHLLSKRDIGIDTTVVLLKHLTGSRSNYSPDGIFTILGRAPMLEPVS
 ETALRESSGLQIVRRIPIPLLTLLKGTQVAMRLFLLGLRPVRYCLRVSMLKAREGLHLLV
 DLVRGHNPVGQIIALEAVPTSASLPLL
-
->AAL40407.1 gene="I" product="protein I" note="synonym: accessory protein N2, N internal protein" organism="Bovine coronavirus" length=207 db="cov_g2a_db" cluster="AAL40407.1 "
+>AAL40407.1 gene="I" product="protein I" note="synonym: accessory protein N2, N internal protein" organism="Bovine coronavirus" length=207 db="cov_g2a_db" cluster="AAL40407.1 " splice_form="e621"
 MASLSGPISPTNLEMFKPGVEELNPSKLLLLSYHQEGMLYPTILGSLELLSFKKERSLNL
 QRDKVCLLHQESQLLKLRGTGTDTTDVLLKQPMATSVNCCHDGIFTILEQDRMPKTSMAP
 ILTESSGSLVTRLMSIPRLTFSIGTQVAMRLFRLGFRLARYSLRVTILKAQEGLLLIPDL
 LHAHPVEPLVQDRVVEPILATEPLPLV
-
->AAX85683.1 gene="I" product="protein I" note="synonym: accessory protein N2, N internal protein" organism="Human coronavirus OC43" length=207 db="cov_g2a_db" cluster="AAX85674.1 AAX85683.1 "
+>AAX85683.1 gene="I" product="protein I" note="synonym: accessory protein N2, N internal protein" organism="Human coronavirus OC43" length=207 db="cov_g2a_db" cluster="AAX85674.1 AAX85683.1 " splice_form="e621"
 MASSSGPISPTSLEMFKPGVEELNPSKLLLLSNHQEGMLYPTILGSLELLSFKRERSLSL
 QKDKVCLLHQESQLLKLRGTGTDTTDVLLKQPMATSVNCCHDGIFTIWEQDRMLKTSTAP
 ILTESTGSLATRLMSIPRLTLSIGTQVAMRLFRLGFRLARYSLRVTILKAQEGLLLIPDL
 LRAHPAEPLVQDRAVEPILAIEPPPLV
-
->YP_209239.1 gene="I" product="protein I" note="synonym: accessory protein N2, N internal protein" organism="Murine hepatitis virus strain JHM" length=136 db="cov_g2a_db" cluster="ACN89731.1 ACN89765.1 YP_209239.1 "
+>YP_209239.1 gene="I" product="protein I" note="synonym: accessory protein N2, N internal protein" organism="Murine hepatitis virus strain JHM" length=136 db="cov_g2a_db" cluster="ACN89731.1 ACN89765.1 YP_209239.1 " splice_form="e408"
 MESQLHSKRDIGTDTTDVPLKHLMASRSSYCPDGIFTILEQGPMLAQSMATISKELSGSQ
 ANRPRLGPLPILLKGTQVAMRLFLLGLRPVRYCLKVFMLKAQEGLHLLVDLVRGHNPVGQ
 IIALEAVPTSASLPLL
-
->BAJ04702.1 gene="I" product="protein I" note="synonym: accessory protein N2, N internal protein" organism="Murine hepatitis virus" length=136 db="cov_g2a_db" cluster="BAJ04702.1 "
+>BAJ04702.1 gene="I" product="protein I" note="synonym: accessory protein N2, N internal protein" organism="Murine hepatitis virus" length=136 db="cov_g2a_db" cluster="BAJ04702.1 " splice_form="e408"
 MESQLLSKRDIGIDTTDVLLKHLMASRSSYCPDGIFTILEQGPMLAQSMATISKELSGSQ
 AIRPTLRPLPILLKGTQVVMRLFLLGLRPVRLFLKASMLKALEGLHLLVDLARGHNPVGQ
 IIALEAVPTSDSLPLL
-
->ABD75638.1 gene="I" product="protein I" note="synonym: accessory protein N2, N internal protein" organism="Human coronavirus HKU1" length=205 db="cov_g2a_db" cluster="ABD75622.1 ABD75638.1 "
+>ABD75638.1 gene="I" product="protein I" note="synonym: accessory protein N2, N internal protein" organism="Human coronavirus HKU1" length=205 db="cov_g2a_db" cluster="ABD75622.1 ABD75638.1 " splice_form="e615"
 MLEVEAPLEIVQESSRKLLGLTNLSEAIKPIIEAENPNQNSLCLLNHKETLSHIIPGSLG
 LPNFKKVETLNFQMVKEYPLLTGYPLLKQKDIGINTTGVLLKQLMVNKSSCYQDGISTIS
 VPVHMPVHPMVMPTKVSSGSLVTKLILLFPPMFRQGILLFKKLSLLGFRLVRFCLKAIML
 KAQEGLLLIAGQVHVLNHVDPIIVH
-
->ACN89746.1 gene="I" product="protein I" note="synonym: accessory protein N2, N internal protein" organism="Murine coronavirus MHV-3" length=136 db="cov_g2a_db" cluster="ACN89746.1 "
+>ACN89746.1 gene="I" product="protein I" note="synonym: accessory protein N2, N internal protein" organism="Murine coronavirus MHV-3" length=136 db="cov_g2a_db" cluster="ACN89746.1 " splice_form="e408"
 MESQLQSKRDIGIDTTDGLLKHLMASRSSYCPDGIFTILEQGPMLAQSMATISTELSGSQ
 ANRPTLRPLPILLKGTQVAMRLFLLGLRPVRYCLKVFMLKAQEGLHLLVDLVRGHNPVGQ
 IIALEAAPTSASLPLL
-
->YP_173243.1 gene="I" product="protein I" note="synonym: accessory protein N2, N internal protein" organism="Human coronavirus HKU1" length=205 db="cov_g2a_db" cluster="ABD75542.1 ABD75582.1 ABD75590.1 ABD75598.1 ABD75646.1 YP_173243.1 "
+>YP_173243.1 gene="I" product="protein I" note="synonym: accessory protein N2, N internal protein" organism="Human coronavirus HKU1" length=205 db="cov_g2a_db" cluster="ABD75542.1 ABD75582.1 ABD75590.1 ABD75598.1 ABD75646.1 YP_173243.1 " splice_form="e615"
 MLEVEAPLEIVQESSRKLLGLTNLSEITKPLIEAEKPNLNSLCLLNHKEILSHIIPGSPG
 SLNFKKVETLNFQMVKEFPLLSEYPLLKQKDIGIDTAGVLLKQLMVNKSSCYRDGISTIS
 VPAHMPMHPMVNPSKGSSGLLITKLTLLLPPMFRQGILLLKKLSLLGFRLVRFCLKAIML
 KAQEGLLLIVDQVHVLNHVDPIIVH
-
->NP_150084.1 gene="I" product="protein I" note="synonym: accessory protein N2, N internal protein" organism="Bovine coronavirus" length=207 db="cov_g2a_db" cluster="AAL57314.1 ABI94004.1 ACT10990.1 ACT11002.1 AED01932.1 NP_150084.1 "
+>NP_150084.1 gene="I" product="protein I" note="synonym: accessory protein N2, N internal protein" organism="Bovine coronavirus" length=207 db="cov_g2a_db" cluster="AAL57314.1 ABI94004.1 ACT10990.1 ACT11002.1 AED01932.1 NP_150084.1 " splice_form="e621"
 MASLSGPISPTNLEMFKPGVEELNPSKLLLLSNHQEGMLYPTILGSLELLSFKRERSLNL
 QRDKVCLLHQESQLLKLRGTGTDTTDVPLKQPMATSVNCYHDGIFTILEQDRMPKTSMAP
 TLTESTGSLVTRLMSIPRLTFSIGTQVAMRLFRLGFRLARYSLRVTILKAQEGLLLIPDL
 LHAHPVEPLVQDRAVEPILAIEPLPLV
-
->NP_068674.1 gene="I" product="protein I" note="synonym: accessory protein N2, N internal protein" organism="Murine hepatitis virus strain A59" length=207 db="cov_g2a_db" cluster="NP_068674.1 "
+>NP_068674.1 gene="I" product="protein I" note="synonym: accessory protein N2, N internal protein" organism="Murine hepatitis virus strain A59" length=207 db="cov_g2a_db" cluster="NP_068674.1 " splice_form="e621"
 MESSRRPLGLTKPSVDQIIKIEAEGISQSRLQLLNPTPGVWFPITPGFLALPSSKRERSF
 SLQKDKECLLPMESPLQSKRDIGIDTTAVLLKHLMGSRSNYCPDGIFTILAQGPMLEPVM
 ETALKVSSGLQTAKRTPIPALILSKGTQAVMRLFLLGLRPARYCLRAFMLKALEGLHLLA
 DLVRGHNPVGQIIALEAVPTSASLPLL
-
->YP_173241.1 gene="M" product="membrane protein" note="synonym: matrix protein, E1 glycoprotein" organism="Human coronavirus HKU1" length=223 db="cov_g2a_db" cluster="ABD75588.1 ABD75596.1 ABD75644.1 ADN03342.1 YP_173241.1 "
+>YP_173241.1 gene="M" product="membrane protein" note="synonym: matrix protein, E1 glycoprotein" organism="Human coronavirus HKU1" length=223 db="cov_g2a_db" cluster="ABD75588.1 ABD75596.1 ABD75644.1 ADN03342.1 YP_173241.1 " splice_form="e669"
 MNKSFLPQFTSDQAVTFLKEWNFSLGVILLFITIILQFGYTSRSMFVYLIKMIILWLMWP
 LTITLTIFNCFYALNNAFLAFSIVFTIISIVIWILYFVNSIRLFIRTGSWWSFNPETNNL
 MCIDMKGKMFVRPVIEDYHTLTATVIRGHLYIQGVKLGTGYTLSDLPVYVTVAKVQVLCT
 YKRAFLDKLDVNSGFAVFVKSKVGNYRLPSSKPSGMDTALLRA
-
->AAF69337.1 gene="M" product="membrane protein" note="synonym: matrix protein, E1 glycoprotein" organism="Murine hepatitis virus" length=228 db="cov_g2a_db" cluster="AAF19388.1 AAF69337.1 "
+>AAF69337.1 gene="M" product="membrane protein" note="synonym: matrix protein, E1 glycoprotein" organism="Murine hepatitis virus" length=228 db="cov_g2a_db" cluster="AAF19388.1 AAF69337.1 " splice_form="e684"
 MNSTTQAPQPVYQWTADEAIRFLKEWNFSLGIILLFVTIILQFGYTSRSMFVYVVKMILL
 WLMWPLTIVLCIFNCVYALNNVYLGFSIVFTIVSIIMWIMYFVNSIRLFIRTGSWWSFNP
 ETNNLMCIDMKGTVYVRPIIEDYHTLTATIIRGHLYMQGVKLGTGFSLSDLPAYVTVAKV
 SHLCTYKRAFLDKVDGVSGFAVYVKSKVGNYRLPSNKPSGMDTALLRI
-
->BAJ04700.1 gene="M" product="membrane protein" note="synonym: matrix protein, E1 glycoprotein" organism="Murine hepatitis virus" length=228 db="cov_g2a_db" cluster="BAJ04700.1 "
+>BAJ04700.1 gene="M" product="membrane protein" note="synonym: matrix protein, E1 glycoprotein" organism="Murine hepatitis virus" length=228 db="cov_g2a_db" cluster="BAJ04700.1 " splice_form="e684"
 MSSTTPAPQPVYQWTADEAVRFLKEWNFSLGIILLFVTIILQFGYTSRSMFIYVVKMILL
 WLMWPLTIVLCIFNCVYALNNVYLGFSIVFTIVSIVMWIMYFVNSIRLFIRTGSWWSFNP
 ETNNLMCIDMKGTVYVRPIIEDYHTLTATIIRGHLYMQGVKLGTGFSLSDLPAYVTVAKV
 SHLCTYKRAFLDKVDGVSGFAIYVKSKVGNYRLPSNKPSGSDTALLRI
-
->ABD75636.1 gene="M" product="membrane protein" note="synonym: matrix protein, E1 glycoprotein" organism="Human coronavirus HKU1" length=223 db="cov_g2a_db" cluster="ABD75620.1 ABD75636.1 "
+>ABD75636.1 gene="M" product="membrane protein" note="synonym: matrix protein, E1 glycoprotein" organism="Human coronavirus HKU1" length=223 db="cov_g2a_db" cluster="ABD75620.1 ABD75636.1 " splice_form="e669"
 MNESIFPHWNSDQAITFLKEWNFSLGVILLLITIILQFGYTSRSMFVYLIKMIILWLMWP
 LTIILTIFNCFYALNNVFLGLSILFTIISIVIWILYFVNSIRLFIRTGSWWSFNPETNNL
 MCIDMKGKMYVRPVIEDYHTLTATVIRGHLYIQGVKLGTGYTLADLPVYVTVAKVQVLCT
 YKRAFLDKLDVNSGFAVFVKSKVGNYRLPSSKSSGMDTALLRA
-
->NP_937953.1 gene="M" product="membrane protein" note="synonym: matrix protein, E1 glycoprotein" organism="Human coronavirus OC43" length=230 db="cov_g2a_db" cluster="AEN19369.1 NP_937953.1 "
+>NP_937953.1 gene="M" product="membrane protein" note="synonym: matrix protein, E1 glycoprotein" organism="Human coronavirus OC43" length=230 db="cov_g2a_db" cluster="AEN19369.1 NP_937953.1 " splice_form="e690"
 MSSKTTPAPVYIWTADEAIKFLKEWNFSLGIILLFITIILQFGYTSRSMFVYVIKMIILW
 LMWPLTIILTIFNCVYALNNVYLGLSIVFTIVAIIMWIVYFVNSIRLFIRTGSFWSFNPE
 TNNLMCIDMKGTMYVRPIIEDYHTLTVTIIRGHLYIQGIKLGTGYSLADLPAYMTVAKVT
 HLCTYKRGFLDRISDTSGFAVYVKSKVGNYRLPSTQKGSGMDTALLRNNI
-
->YP_209237.1 gene="M" product="membrane protein" note="synonym: matrix protein, E1 glycoprotein" organism="Murine hepatitis virus strain JHM" length=228 db="cov_g2a_db" cluster="ACN89740.1 ACN89749.1 ACN89768.1 ACN89781.1 AFD97611.1 AFO11521.1 NP_045301.1 YP_209237.1 "
+>YP_209237.1 gene="M" product="membrane protein" note="synonym: matrix protein, E1 glycoprotein" organism="Murine hepatitis virus strain JHM" length=228 db="cov_g2a_db" cluster="ACN89740.1 ACN89749.1 ACN89768.1 ACN89781.1 AFD97611.1 AFO11521.1 NP_045301.1 YP_209237.1 " splice_form="e684"
 MSSTTQAPGPVYQWTADEAVQFLKEWNFSLGIILLFITIILQFGYTSRSMFIYVVKMIIL
 WLMWPLIIVLCMFNCVYALNNVYLGFSIVFTIVSVVMWIMYFVNSIRLFIRTGSWWSFNP
 ETNNLMCIDMKGTVYVRPIIEDYHTLTATIIRGHFYMQGVKLGTGFSLSDLPAYVTVAKV
 SHLCTYKRAFLDKVDGVSGFAVYVKSKVGNYRLPSNKPSGADTVLLRI
-
->YP_003029851.1 gene="M" product="membrane protein" note="synonym: matrix protein, E1 glycoprotein" organism="Rat coronavirus Parker" length=228 db="cov_g2a_db" cluster="AFG25764.1 AFG25754.1 YP_003029851.1 "
+>YP_003029851.1 gene="M" product="membrane protein" note="synonym: matrix protein, E1 glycoprotein" organism="Rat coronavirus Parker" length=228 db="cov_g2a_db" cluster="AFG25764.1 AFG25754.1 YP_003029851.1 " splice_form="e684"
 MSSTTSAPQTVYQWTADVAVRFLKEWNFLLGIILLFITIILQFGYTSRSMFIYVVKMIIL
 WLMWPLTIVLCIFNCVYALNNVYLGFSIVFTIVSIVMWIMYFVNSIRLFIRTGSWWSFNP
 ETNNLMCIDVKGTVYVRPIIEDYHTLTATNVRGHLYMQGVKLGTGFSLSDLPAYVTVAKV
 SHLCTYKRAFLDKVDGVSGFAVYVKSKVGNYRLPSNKPSGADTALLRI
-
->NP_150082.1 gene="M" product="membrane protein" note="synonym: matrix protein, E1 glycoprotein" organism="Bovine coronavirus" length=230 db="cov_g2a_db" cluster="AAL40405.1 ABP38278.1 ACT10988.1 ACT11000.1 BAF75636.1 NP_150082.1 "
+>NP_150082.1 gene="M" product="membrane protein" note="synonym: matrix protein, E1 glycoprotein" organism="Bovine coronavirus" length=230 db="cov_g2a_db" cluster="AAL40405.1 ABP38278.1 ACT10988.1 ACT11000.1 BAF75636.1 NP_150082.1 " splice_form="e690"
 MSSVTTPAPVYTWTADEAIKFLKEWNFSLGIILLFITVILQFGYTSRSMFVYVIKMVILW
 LMWPLTIILTIFNCVYALNNVYLGFSIVFTIVAIIMWIVYFVNSIRLFIRTGSWWSFNPE
 TNNLMCIDMKGRMYVRPIIEDYHTLTVTIIRGHLYMQGIKLGTGYSLSDLPAYVTVAKVS
 HLLTYKRGFLDKIGDTSGFAVYVKSKVGNYRLPSTQKGSGLDTALLRNNI
-
->ACN89735.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Murine coronavirus MHV-1" length=455 db="cov_g2a_db" cluster="ACN89735.1 "
+>ACN89735.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Murine coronavirus MHV-1" length=455 db="cov_g2a_db" cluster="ACN89735.1 " splice_form="e1365"
 MSFVPGQENAGSRSSSVNRAGNGILKKTTWADQTERGPNNQNRGRRNQPKQTATTQPNSG
 SVVPHYSWFSGITQFQKGKEFQFAQGQGVPIANGIPASEQKGYWYRHNRRSFKTPDGQQK
 QLLPRWYFYYLGTGPHAGAEYGDDIDGVVWVASQQADTKTTADIVERDPSSHEAIPTRFA
@@ -2123,8 +2020,7 @@ VLAKLGKDAGQPKQVTKQSAKEVRQKILNKPRQKRTPNKQCPVQQCFGKRGPNQNFGGSE
 MLKLGTSDPQFPILAELAPTPSAFFFGSKLELVKKNSGGADDPTKDVYELQYSGAIRFDS
 TLPGFETIMKVLNENLDAYQDQAGGADVVSPKPQRKRGTKQKALKGEVDNVSVAKPKSSV
 QRNVSRELTPEDRSLLAQILDDGVVPDGLEDDSNV
-
->ADN03343.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Human coronavirus HKU1" length=441 db="cov_g2a_db" cluster="ADN03343.1 "
+>ADN03343.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Human coronavirus HKU1" length=441 db="cov_g2a_db" cluster="ADN03343.1 " splice_form="e1323"
 MSYTPGHYAGSRSSSGNRSGILKKTSWADQSERNYQTFNRGRKTQPKFTVSTQPQGNTIP
 HYSWFSGITQFQKGRDFKFSDGQGVPIAFGVPPSEAKGYWYRHSRRSFKTADGQQKQLLP
 RWYFYYLGTGPYANASYGQSLEGVFWVANHQADTSTPSDVSSRDPTTQEAIPTRFPPGTI
@@ -2133,8 +2029,7 @@ AKLGKDSKPQQVTKQNAKEIRHKILTKPRQKRTPNKHCNVQQCFGKRGPSQNFGNAEMLK
 LGTNDPQFPILAELAPTPGAFFFGSKLELVKRESEADSPVKDVFELRYSGSIRFDSTLPG
 FETIMKVLKENLDAYVNSNQNTVSGSLSPKPQRKRGVKQSPELLDPLNLSADTQHISNDF
 TPEDHSLLATLDDPYVEDSVA
-
->NP_150083.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Bovine coronavirus" length=448 db="cov_g2a_db" cluster="AAL40406.1 AAL57313.1 ABP38232.1 ABP38247.1 ABP38273.1 ABP38276.1 ACT10989.1 ACT11001.1 BAF75637.1 NP_150083.1 "
+>NP_150083.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Bovine coronavirus" length=448 db="cov_g2a_db" cluster="AAL40406.1 AAL57313.1 ABP38232.1 ABP38247.1 ABP38273.1 ABP38276.1 ACT10989.1 ACT11001.1 BAF75637.1 NP_150083.1 " splice_form="e1344"
 MSFTPGKQSSSRASSGNRSGNGILKWADQSDQSRNVQTRGRRAQPKQTATSQQPSGGNVV
 PYYSWFSGITQFQKGKEFEFAEGQGVPIAPGVPATEAKGYWYRHNRRSFKTADGNQRQLL
 PRWYFYYLGTGPHAKDQYGTDIDGVYWVASNQADVNTPADILDRDPSSDEAIPTRFPPGT
@@ -2143,8 +2038,7 @@ LAKLGKDAAKPQQVTKQTAKEIRQKILNKPRQKRSPNKQCTVQQCFGKRGPNQNFGGGEM
 LKLGTSDPQFPILAELAPTAGAFFFGSRLELAKVQNLSGNLDEPQKDVYELRYNGAIRFD
 STLSGFETIMKVLNENLNAYQQQDGTMNMSPKPQRQRGQKNGQGENDNISVAAPKSRVQQ
 NKIRELTAEDISLLKKMDEPFTEDTSEI
-
->NP_045302.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Murine hepatitis virus strain A59" length=454 db="cov_g2a_db" cluster="AAF69349.1 ACO72897.1 NP_045302.1 "
+>NP_045302.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Murine hepatitis virus strain A59" length=454 db="cov_g2a_db" cluster="AAF69349.1 ACO72897.1 NP_045302.1 " splice_form="e1362"
 MSFVPGQENAGGRSSSVNRAGNGILKKTTWADQTERGPNNQNRGRRNQPKQTATTQPNSG
 SVVPHYSWFSGITQFQKGKEFQFAEGQGVPIANGIPASEQKGYWYRHNRRSFKTPDGQQK
 QLLPRWYFYYLGTGPHAGASYGDSIEGVFWVANSQADTNTRSDIVERDPSSHEAIPTRFA
@@ -2153,8 +2047,7 @@ VLAKLGKDAGQPKQVTKQSAKEVRQKILNKPRQKRTPNKQCPVQQCFGKRGPNQNFGGSE
 MLKLGTSDPQFPILAELAPTVGAFFFGSKLELVKKNSGGADEPTKDVYELQYSGAVRFDS
 TLPGFETIMKVLNENLNAYQKDGGADVVSPKPQRKGRRQAQEKKDEVDNVSVAKPKSSVQ
 RNVSRELTPEDRSLLAQILDDGVVPDGLEDDSNV
-
->NP_937954.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Human coronavirus OC43" length=448 db="cov_g2a_db" cluster="AAT84366.1 AAX85673.1 AAX85682.1 AEN19362.1 AEN19370.1 NP_937954.1 "
+>NP_937954.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Human coronavirus OC43" length=448 db="cov_g2a_db" cluster="AAT84366.1 AAX85673.1 AAX85682.1 AEN19362.1 AEN19370.1 NP_937954.1 " splice_form="e1344"
 MSFTPGKQSSSRASSGNRSGNGILKWADQSDQFRNVQTRGRRAQPKQTATSQQPSGGNVV
 PYYSWFSGITQFQKGKEFEFVEGQGVPIAPGVPATEAKGYWYRHNRRSFKTADGNQRQLL
 PRWYFYYLGTGPHAKDQYGTDIDGVYWVASNQADVNTPADIVDRDPSSDEAIPTRFPPGT
@@ -2163,8 +2056,7 @@ LAKLGKDATKPQQVTKHTAKEVRQKILNKPRQKRSPNKQCTVQQCFGKRGPNQNFGGGEM
 LKLGTSDPQFPILAELAPTAGAFFFGSRLELAKVQNLSGNPDEPQKDVYELRYNGAIRFD
 STLSGFETIMKVLNENLNAYQQQDGMMNMSPKPQRQRGHKNGQGENDNISVAVPKSRVQQ
 NKSRELTAEDISLLKKMDEPYTEDTSEI
-
->BAJ04701.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Murine hepatitis virus" length=455 db="cov_g2a_db" cluster="BAJ04701.1 "
+>BAJ04701.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Murine hepatitis virus" length=455 db="cov_g2a_db" cluster="BAJ04701.1 " splice_form="e1365"
 MSFVPGQENAGSRSSSGNRAGNGILKKTTWADQTERGPNNQNRGRRNQPKQTATTQLNSG
 SVVPHYSWFSGITQFQKGKQFQFAEGQGVPIANGIPATEQKGYWYRHNRRSFKTPDGQQK
 QLLPRWYFYYLGTGPHAGAEYGDNIEGVVWVASHQADTKTSADIVERDPSSHEAIPTRFA
@@ -2173,8 +2065,7 @@ VLAKLGKDAGQPKQVTKQSAKEVRQKILNKPRQKRTPNKQCPVQQCFGKRGPNQNFGGPE
 MLKLGTNDPQFPILAELVPTPGAFFFGSKLELVKKNSGGADEPTKDVYELQYSGAVRFDS
 TLPGFETIMKVLNENLNAYQKESGGVDVVSPKPQRKGRRQAQEKKDEVDNVSVAKPKSSV
 QRNVSRELTPEDRSLLAQILDDGVVPDGLEDDSKV
-
->YP_003029852.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Rat coronavirus Parker" length=454 db="cov_g2a_db" cluster="AFG25751.1 AFG25761.1 YP_003029852.1 "
+>YP_003029852.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Rat coronavirus Parker" length=454 db="cov_g2a_db" cluster="AFG25751.1 AFG25761.1 YP_003029852.1 " splice_form="e1362"
 MSFVPGQENAGSRSSSGNRAGNGILKKTTWADQTERGQNNGNRGRRNQPKQTATTQPNTG
 SVVPHYSWFSGITQFQKGKEFQFAGGQGVPIANGIPSSEQKGYWYRHNRRSFKTPDGQQK
 QLLPRWYFYYLGTGPHAGASFGDSIEGVFWVANSQADTNTSADIVERDPSSHEAIPTRFA
@@ -2183,8 +2074,7 @@ VLAKLGKDAGQPKQVTKQSAKEVRQKILNKPRQKRTPNKQCPVQQCFGKRGPNQNFGGPE
 MLKLGTSDPQFPILAELAPTPGAFFFGSKLELVKKNSGGVDEPTKDVYELHYSGAVRFDS
 TLSGFETIMKVLNENLNAYQNQAGGVDVVSPKPQRKRGTKQTAQKEELDSISVAQPKSAV
 QRNVSRELTPEDRSLLAQILDDGVVPDGLDDSNV
-
->YP_173242.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Human coronavirus HKU1" length=441 db="cov_g2a_db" cluster="ABD75541.1 ABD75581.1 ABD75589.1 ABD75597.1 ABD75613.1 ABD75645.1 YP_173242.1 "
+>YP_173242.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Human coronavirus HKU1" length=441 db="cov_g2a_db" cluster="ABD75541.1 ABD75581.1 ABD75589.1 ABD75597.1 ABD75613.1 ABD75645.1 YP_173242.1 " splice_form="e1323"
 MSYTPGHYAGSRSSSGNRSGILKKTSWADQSERNYQTFNRGRKTQPKFTVSTQPQGNTIP
 HYSWFSGITQFQKGRDFKFSDGQGVPIAFGVPPSEAKGYWYRHSRRSFKTADGQQKQLLP
 RWYFYYLGTGPYANASYGESLEGVFWVANHQADTSTPSDVSSRDPTTQEAIPTRFPPGTI
@@ -2193,8 +2083,7 @@ AKLGKDSKPQQVTKQNAKEIRHKILTKPRQKRTPNKHCNVQQCFGKRGPSQNFGNAEMLK
 LGTNDPQFPILAELAPTPGAFFFGSKLDLVKRDSEADSPVKDVFELHYSGSIRFDSTLPG
 FETIMKVLEENLNAYVNSNQNTDSDSLSSKPQRKRGVKQLPEQFDSLNLSAGTQHISNDF
 TPEDHSLLATLDDPYVEDSVA
-
->ACN89747.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Murine coronavirus MHV-3" length=457 db="cov_g2a_db" cluster="ACN89747.1 "
+>ACN89747.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Murine coronavirus MHV-3" length=457 db="cov_g2a_db" cluster="ACN89747.1 " splice_form="e1371"
 MSFVPGQENAGSRSSFGNRAGNGILKKTTWADQTERGPNNQNRGRRNQPKQTATTQPNSG
 SVVPHYSWFSGITQFQKGKEFKFADGQGVPIANGIPASEQKGYWYRHNRRSFKTPDGQQK
 QLLPRWYFYYLGTGPHAGAEYGDDIDGVVWVASQQADTKTTADIVERDPSSHEAIPTRFA
@@ -2203,8 +2092,7 @@ VLAKLGKDAGQPKQVTKQSAKEVRQKILNKPRQKRTPNKQCPVQQCFGKRGPNQNFGGPE
 MLKLGTSDPQFPILAELAPTPSAFFFGSKLELVKKNSGGADEPTKDVYELQYSGAVRFDS
 TLPGFETIMKVLNENLNAYQDQAGGADVVSPKPQRKRGQRQVAQKKNDEVDNVSVAKPKS
 SVQRNVSRELTPEDRSLLAQILDDGVVPDGLEDDSNV
-
->AFD97608.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Murine hepatitis virus strain S/3239-17" length=454 db="cov_g2a_db" cluster="AFD97608.1 "
+>AFD97608.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Murine hepatitis virus strain S/3239-17" length=454 db="cov_g2a_db" cluster="AFD97608.1 " splice_form="e1362"
 MSFVPGQENAGSRSSSGSRSGNGILKKTTWADQTERAGNNGNRGRRNQPKQTATTQPNSG
 SVVPHYSWFSGITQFQKGKEFQFVQGQGVPIANGIPASEQKGYWYRHNRRSFKTPDGQQK
 QLLPRWYFYYLGTGPHAGAEYGDDIEGVVWVASQQADTKTTADIVERDPSSHEAIPTRFA
@@ -2213,8 +2101,7 @@ VLAKLGKDAGQPKQVTKQSAKEVRQKILNKPRQKRTPNKQCPVQQCFGKRGPNQNFGGSE
 MLKLGTSDPQFPILAELAPTAGAFFFGSKLELVKKNSGGADEPTKDVYELQYSGAVRFDS
 TLPGFETIMKVLNENLNAYQKDGGADVVSPKPQRKGRRQAQEKKDEVDNVSVAKPKSSVQ
 RNVSRELTPEDRSLLAQILDDGVVPDGLEDDSNV
-
->AAF69338.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Murine hepatitis virus" length=451 db="cov_g2a_db" cluster="AAF69338.1 "
+>AAF69338.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Murine hepatitis virus" length=451 db="cov_g2a_db" cluster="AAF69338.1 " splice_form="e1353"
 MSFVPGQENAGSRSSSGNRAGNGILKKTTWADQTERGNRGRRNHPKQTATTQPNAGSVVP
 HYSWFSGITQFQKGKEFQFAQGQGVPIASGIPASEQKGYWYRHNRRSFKTPDGQHKQLLP
 RWYFYYLGTGPHAGAEYGDDIEGVVWVASQQADTKTTADVVERDPSSHEAIPTRFAPGTV
@@ -2223,8 +2110,7 @@ LGKDAGQPKQVTKQSAKEVRQKILTKPRQKRTPNKQCPVQQCFGKRGPNQNFGGSEMLKL
 GTSDPQFPILAELAPTPSAFFFGSKLELVKKNSGGADEPTKDVYELQYSGAIRFDSTLPG
 FETIMKVLTENLNAYQDQAGSVDLVSPKPPRRGRRQAQEKKDEVDNVSVAKPKSLVQRNV
 SRELTPEDRSLLAQILDDGVVPDGLEDDSNV
-
->ABD75637.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Human coronavirus HKU1" length=441 db="cov_g2a_db" cluster="ABD75549.1 ABD75637.1 "
+>ABD75637.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Human coronavirus HKU1" length=441 db="cov_g2a_db" cluster="ABD75549.1 ABD75637.1 " splice_form="e1323"
 MSYTPGHHAGSRSSSGNRSGILKKTSWVDQSERSHQTYNRGRKPQPKFTVSTQPQGNPIP
 HYSWFSGITQFQKGRDFKFPDGQGVPIAYGIPPSEAKGYWYKHNRRSFKTADGQQKQLLP
 RWYFYYLGTGPYASSSYGDAHEGIFWVASHQADTSIPSDVSARDPTIQEAIPTRFSPGTI
@@ -2233,8 +2119,7 @@ AKLGKDSKPQQVTKQNAKEIRHKILMKPRQKRTPNKFCNVQQCFGKRGPLQNFGNSEMLK
 LGTNDPQFPILAELAPTPGAFFFGSKLELFKRDSDADSPSKDTFELRYSGSIRFDSTLPG
 FETIMKVLKENLDAYVNSNQNTVSGSLSPKPQRKRGVKQSPESFDSLNLSADTQHISNDF
 TPEDHSLLATLDDPYVEDSVA
-
->YP_209238.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Murine hepatitis virus strain JHM" length=455 db="cov_g2a_db" cluster="AFO11512.1 AFO11522.1 YP_209238.1 "
+>YP_209238.1 gene="N" product="nucleoprotein" note="synonym: nucleocapsid protein" organism="Murine hepatitis virus strain JHM" length=455 db="cov_g2a_db" cluster="AFO11512.1 AFO11522.1 YP_209238.1 " splice_form="e1365"
 MSFVPGQENAGSRSSSGNRAGNGILKKTTWADQTERGLNNQNRGRKNQPKQTATTQPNSG
 SVVPHYSWFSGITQFQKGKEFQFAQGQGVPIANGIPASQQKGYWYRHNRRSFKTPDGQQK
 QLLPRWYFYYLGTGPYAGAEYGDDIEGVVWVASQQAETRTSADIVERDPSSHEAIPTRFA
@@ -2243,8 +2128,7 @@ VLAKLGKDAGQPKQVTKQSAKEVRQKILNKPRQKRTPNKQCPVQQCFGKRGPNQNFGGPE
 MLKLGTSDPQFPILAELAPTAGAFFFGSKLELVKKNSGGADGPTKDVYELQYSGAVRFDS
 TLPGFETIMKVLNENLNAYQNQDGGADVVSPKPQRKRGTKQKAQKDEVDNVSVAKPKSSV
 QRNVSRELTPEDRSLLAQILDDGVVPDGLEDDSNV
-
->AAF69334.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Murine hepatitis virus" length=1321 db="cov_g2a_db" cluster="AAF69334.1 "
+>AAF69334.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Murine hepatitis virus" length=1321 db="cov_g2a_db" cluster="AAF69334.1 " splice_form="e3963"
 MLFVFILFLPSCLGYIGDFRCIQLVNSNGANVSAPSISTETVEVSQGLGTYYVLDRVYLN
 ATLLLTGYYPVDGSKFRNFALTGTNSVSLSWFQPPYLSQFNDGIFAKVQNLKTSTPSGAT
 AYFPTIVIGSLFGYTSYTVVIEPYNGVIMASVCQYTICQLPYTDCKPNTNGNKLIGFWHT
@@ -2268,8 +2152,7 @@ GYFVQDDGEWKFTGSNYYYPEPITDKNSVVMSSCAANYTKAPEVFLNTSIPNLPDFKEEL
 DKWFKNQTSIAPDLSLDFEKLNVTLLDLTDEMNRIQDAIKKLNESYINLKDVGTYEMYVK
 WPWYVWLLIGLAGVAVCVLLFFICCCTGCGSCCFKKCGNCCDECGGHQDSIVIHNISSHE
 D
-
->AFG25750.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Rat coronavirus" length=1360 db="cov_g2a_db" cluster="AFG25750.1 "
+>AFG25750.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Rat coronavirus" length=1360 db="cov_g2a_db" cluster="AFG25750.1 " splice_form="e4080"
 MLFVFLTLLPSCLGYIGDFRCINRVNTSISNARAPCVSTEVVDVSKGLGTYYVLDRVYLN
 ATLLLTGYYPVDGSMYRNMALMGTNTLSLNWFEPPFLSEFNDGIYAKVKNLKASLPIGSA
 SYFPTIIIGSNFVNTSYTVVLEPYNGIIMASICQYTICQLPHTDCKPNTGGNTLIGFWHT
@@ -2293,8 +2176,7 @@ NAPYGLYFIHFSYVPTSFTTVNVSPGLCISGDRGLAPKAGYFVQDHGEWKFTGSNYYYPE
 SIIDKNSVVMSSCAVNYTKAPEVFLNTSITNLPDFKEELDKWFKNQTSIVPDLSFDIGKL
 NVTFLDLSYEMNRIQDAIKNLNESYINLKEIGTYEMYVKWPWYVWLLIGLAGVAVCVLLF
 FICCCTGCGSCCFKKCGNCCDEYGGRQAGIVIHNISSHED
-
->AEN19366.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Human coronavirus OC43" length=1361 db="cov_g2a_db" cluster="AAX85678.1 AEN19358.1 AEN19366.1 "
+>AEN19366.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Human coronavirus OC43" length=1361 db="cov_g2a_db" cluster="AAX85678.1 AEN19358.1 AEN19366.1 " splice_form="e4083"
 MFLILLISLPTAFAVIGDLNCPLDTRLKGSFNNRDTGPPSISTDTVDVTNGLGTYYVLDR
 VYLNTTLFLNGYYPTSGSTYRNMALKGTDKLSTLWFKPPFLSDFINGIFAKVKNTKVFKD
 GVMYSEFPAITIGSTFVNTSYSVVVQPRTINLTQDGVNKLQGLLEVSVCQYNMCEYPHTI
@@ -2318,8 +2200,7 @@ IISLVQNAPYGLYFIHFNYVPTKYVTAKVSPGLCIAGNRGIAPKSGYFVNVNNTWMYTGS
 GYYYPEPITENNVVVMSTCAVNYTKAPYVMLNTSIPNLPDFKEELDQWFKNQTSVAPDLS
 LDYINVTFLDLQVEMNRLQEAIKVLNHSYINLKDIGTYEYYVKWPWYVWLLICLAGVAML
 VLLFFICCCTGCGTSCFKKCGGCCDDYTGYQELVIKTSHDD
-
->AAX85669.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Human coronavirus OC43" length=1363 db="cov_g2a_db" cluster="AAX85669.1 "
+>AAX85669.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Human coronavirus OC43" length=1363 db="cov_g2a_db" cluster="AAX85669.1 " splice_form="e4089"
 MFLILLISLPTAFAVIGDLKCPLDTSLKGSFNNRDTGSPSISTDTVDVTNGLGTYYVLDR
 VYLNTTLFLNGYYPTSGSTYRNMALKGTDKLSTLWFKPPFLSDFINGIFAKVKNTKVFKD
 GVMYSEFPAITIGSTFVNTSYSVVVQPRTINSTQDGVNKLQGLLEVSVCQYNMCEYPHTI
@@ -2343,8 +2224,7 @@ NHIISLVQNAPYGLYFIHFSYVPTKYVTAKVSPGLCIAGDRGIAPKSGYFVNVNNTWMYT
 GSGYYYPEPITENNVVVMSTCAVNYTKAPYVMLNTSIPNLPDFREELDQWFKNQTSVAPD
 LSLDYINVTFLDLQVEMNRLQEAIKVLNQSYINLKDIGTYEYYVKWPWYVWLLICLAGVA
 MLVLLFFICCCTGCGTSCFKKCGGCCDDYTGYQELVIKTSHDD
-
->YP_173238.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Human coronavirus HKU1" length=1356 db="cov_g2a_db" cluster="ABD75537.1 ABD75553.1 ABD75593.1 ABD75601.1 ABD75609.1 ABD75641.1 ADN03339.1 YP_173238.1 "
+>YP_173238.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Human coronavirus HKU1" length=1356 db="cov_g2a_db" cluster="ABD75537.1 ABD75553.1 ABD75593.1 ABD75601.1 ABD75609.1 ABD75641.1 ADN03339.1 YP_173238.1 " splice_form="e4068"
 MLLIIFILPTTLAVIGDFNCTNFAINDLNTTVPRISEYVVDVSYGLGTYYILDRVYLNTT
 ILFTGYFPKSGANFRDLSLKGTTYLSTLWYQKPFLSDFNNGIFSRVKNTKLYVNKTLYSE
 FSTIVIGSVFINNSYTIVVQPHNGVLEITACQYTMCEYPHTICKSKGSSRNESWHFDKSE
@@ -2368,8 +2248,7 @@ APYGLLFMHFSYKPISFKTVLVSPGLCISGDVGIAPKQGYFIKHNDHWMFTGSSYYYPEP
 ISDKNVVFMNTCSVNFTKAPLVYLNHSVPKLSDFESELSHWFKNQTSIAPNLTLNLHTIN
 ATFLDLYYEMNLIQESIKSLNNSYINLKDIGTYEMYVKWPWYVWLLISFSFIIFLVLLFF
 ICCCTGCGSACFSKCHNCCDEYGGHHDFVIKTSHDD
-
->AFO11517.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Murine coronavirus" length=1235 db="cov_g2a_db" cluster="AFO11507.1 AFO11517.1 "
+>AFO11517.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Murine coronavirus" length=1235 db="cov_g2a_db" cluster="AFO11507.1 AFO11517.1 " splice_form="e3705"
 MLFVFILLLPSCLGYIGDFRCIQTVNYNGNNASAPSISTEAVDVSKGRGTYYVLDRVYLN
 ATLLLTGYYPVDGSNYRNLALTGTNTLSLTWFKPPFLSEFNDGIFAKVQNLKTNTPTGAT
 SYFPTIVIGSLFGNTSYTVVLEPYNNIIMASVCTYTICQLPYTPCKPNTNGNRVIGFWHT
@@ -2391,8 +2270,7 @@ LCFIHFSYVPTSFKTANVSPGLCISGDRGLAPKAGYFVQDNGEWKFTGSNYYYPEPITDK
 NSVVMISCAVNYTKAPEVFLNNSIPNLPDFKEXLDKWFKNQTSXAPDLSLDFEKLNVTFL
 DLTYEMNRIQDAIKKLNESYINLKEVGTYEMYVKWPWYVWLLIGLAGVAVCVLLFFICCC
 TGCGSCCFRKCGSCCDEYGGHQDSIVIHNISAHED
-
->ACN89743.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Murine coronavirus MHV-3" length=1377 db="cov_g2a_db" cluster="ACN89743.1 "
+>ACN89743.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Murine coronavirus MHV-3" length=1377 db="cov_g2a_db" cluster="ACN89743.1 " splice_form="e4131"
 MLFVFLLLLPSCLGYIGDFRCINLVNTDMSNASAPSVSTETVDVSKGLGTYYVLDRVYLN
 ATLLLTGYYPVDGSNYRNLALTGTNTISLTWFKPPFLSEFNDGIFAKVKNLKANTPKGAT
 SYFPTIVIGSLFGHTSYTVVLEPYNNIIMASVCTYTICLLPYTDCKANTNGNRLIGFWHT
@@ -2416,8 +2294,7 @@ MRINFCGSGNHILSLVQNAPYGLYFIHFSYVPTSFTTARVSPGLCIAGDRGLAPKAGYFV
 QDNGEWKFTGSGYYYPEPITDKNSVVMSSCAVNYTKAPEVFLNTSIPNLSDFKEELDKWF
 KNQTSIAPDLSLDFEKLNVTFLDLTDEMNRIQDAIKKLNESYINLKEVGTYEMYVKWPWY
 IWLLIGLAGVAVCVLLFFICCCTGCGLCCFKKCGNCCDEYGGHQDSIVIHNISSHED
-
->AAF19386.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Murine hepatitis virus strain 2" length=1361 db="cov_g2a_db" cluster="AAF19386.1 "
+>AAF19386.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Murine hepatitis virus strain 2" length=1361 db="cov_g2a_db" cluster="AAF19386.1 " splice_form="e4083"
 MLFVFLTLLPSSLGYIGDFRCIQLVNTDTSNASAPSVSTEVVDVSKGIGTYYVLDRVYLN
 ATLLLTGYYPVDGSMYRNMALTGINTISLNWYKPPFLSEFNDGIFAKVKNLKASLPKDSI
 SYFPTIIIGSNFVTTSYTVVLEPYNGIIMASICQYTICQLPYTDCKPNTGGNKLIGFWHT
@@ -2441,8 +2318,7 @@ QNAPYGLYFIHFSYVPTSFTTANVSPGLCISGDRGLAPKAGYFVQDDGEWKFTGSNYYYP
 EPITDKNSVVMSSCAANYTKAPEVFLNTSIPNLPDFKEELDKWFKNQTSIAPDLSLDFEK
 LNVTLLDLTDEMNRIQDAIKKLNESYINLKDVGTYEMYVKWPWYVWLLIGLAGVAVCVLL
 FFICCCTGCGSCCFKKCGNCCDECGGHQDSIVIHNISSHED
-
->NP_150077.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Bovine coronavirus" length=1363 db="cov_g2a_db" cluster="AAA66399.1 AAL40400.1 AAL57308.1 ABG89288.1 ABI93999.2 ABP38236.1 ABP38243.1 ABP38267.1 ABP38279.1 ACT10983.1 ACT10995.1 BAF75631.1 NP_150077.1 "
+>NP_150077.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Bovine coronavirus" length=1363 db="cov_g2a_db" cluster="AAA66399.1 AAL40400.1 AAL57308.1 ABG89288.1 ABI93999.2 ABP38236.1 ABP38243.1 ABP38267.1 ABP38279.1 ACT10983.1 ACT10995.1 BAF75631.1 NP_150077.1 " splice_form="e4089"
 MFLILLISLPTAFAVIGDLKCTTVSINDVDTGVPSISTDTVDVTNGLGTYYVLDRVYLNT
 TLLLNGYYPTSGSTYRNMALKGTLLLSTLWFKPPFLSDFTNGIFAKVKNTKVIKDGVMYS
 EFPAITIGSTFVNTSYSVVVQPHTTILGNKLQGFLEISVCQYTMCEYPNTICNPNLGNQR
@@ -2466,8 +2342,7 @@ NHIISLVQNAPYGLYFIHFSYVPTKYVTAKVSPGLCIAGDRGIAPKSGYFVNVNNTWMFT
 GSGYYYPEPITGNNVVVMSTCAVNYTKAPDVMLNISTPNLPYFKEELDQWFKNQTSVAPD
 LSLDYINVTFLDLQDEMNRLQEAIKVLNQSYINLKDIGTYEYYVKWPWYVWLLIGFAGVA
 MLVLLFFICCCTGCGTSCFKKCGGCCDDYTGHQELVIKTSHED
-
->AFD97607.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Murine hepatitis virus strain S/3239-17" length=1361 db="cov_g2a_db" cluster="ADI59790.1 AFD97607.1 "
+>AFD97607.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Murine hepatitis virus strain S/3239-17" length=1361 db="cov_g2a_db" cluster="ADI59790.1 AFD97607.1 " splice_form="e4083"
 MLSVFILFLPSCLGYIGDFRCINLVNTDTSNASAPSVSTEVVDVSKGIGTYYVLDRVYLN
 ATLLLTGYYPVDGSNYRNLALTGTNTLSLNWYKPPFLSEFNDGIFAKVKNLKASLPKDST
 SYFPTIVIGSNFVTTSYTVVLEPYNGIIMASICQYTICLLPYTDCKPNTGGNKLIGFWHI
@@ -2491,8 +2366,7 @@ QNAPYGLYFLHFSYVPTSFTTANVSPGLCISGDRGLAPKAGYFVQDDGEWKFTGSNYYYP
 EPITDKNSVVMSSCAVNYTKAPEVFLNTSISNLPDFKEELDKWFKNQTSVAPDLSLDFEK
 LNVTFLDLSDEMNRIQEAIKKLNESYINLKEIGTYEMYVKWPWYVWLLIGLAGVAVCVLL
 FFICCCTGCGSCCFKKCGNCCDEYGGHQDSIVIHNISSHED
-
->ACN89742.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Murine coronavirus MHV-1" length=1363 db="cov_g2a_db" cluster="ACN89742.1 "
+>ACN89742.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Murine coronavirus MHV-1" length=1363 db="cov_g2a_db" cluster="ACN89742.1 " splice_form="e4089"
 MLFVVFILLIPSCLGYIGDFRCIQLVNSNGNNASAPSISIETVDVSKGLGTYYVLDRVYL
 NATLLLTGYYPVDGSNYRNLALTGTNTLSLNWYKPPFLSEFNDGIFAKVKNLKASLPAGS
 SAYFPTIIIGSGFGNTAYTIVMEPYNGIIMASICQYTICQLPYTDCKPNTGGNSIIGFWH
@@ -2516,8 +2390,7 @@ LVQSAPYGLYFIHFSYVPTSFTTVNVSPGLCISGDRGLAPKAGYFVQDNGEWKFTGSGYY
 YPEPINDKNSVVMSSCAVNYTKAPEVFLNTSIPNLPDFKEELDKWFKNQTSIAPDLSLDF
 EKLNVTFLDLTDEMNRIQESIKKLNESYINLKEVGTYEMYVKWPWYIWLLIGLAGVAVCV
 LLFFICCCTGCGSCCFKKCGNCCDEYGGHQDSIVIHNISSHED
-
->YP_209233.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Murine hepatitis virus strain JHM" length=1376 db="cov_g2a_db" cluster="ACN89696.1 ACN89705.1 ACN89722.1 ACN89763.1 YP_209233.1 "
+>YP_209233.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Murine hepatitis virus strain JHM" length=1376 db="cov_g2a_db" cluster="ACN89696.1 ACN89705.1 ACN89722.1 ACN89763.1 YP_209233.1 " splice_form="e4128"
 MLFVFILLLPSCLGYIGDFRCIQTVNYNGNNASAPSISTEAVDVSKGLGTYYVLDRVYLN
 ATLLLTGYYPVDGSNYRNLALTGTNTLSLTWFKPPFLSEFNDGIFAKVQNLKTNTPTGAT
 SYFPTIVIGSLFGNTSYTVVLEPYNNIIMASVCTYTICQLPYTPCKPNTNGNRVIGFWHT
@@ -2541,8 +2414,7 @@ RINFCGNGNHILSLVQNAPYGLCFIHFSYVPTSFKTANVSPGLCISGDRGLAPKAGYFVQ
 DNGEWKFTGSNYYYPEPITDKNSVVMISCAVNYTKAPEVFLNNSIPNLPDFKEELDKWFK
 NQTSIAPDLSLDFEKLNVTFLDLTYEMNRIQDAIKKLNESYINLKEVGTYEMYVKWPWYV
 WLLIGLAGVAVCVLLFFICCCTGCGSCCFRKCGSCCDEYGGHQDSIVIHNISAHED
-
->NP_045300.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Murine hepatitis virus strain A59" length=1324 db="cov_g2a_db" cluster="AAF69344.1 ACN89723.1 ACN89777.1 NP_045300.1 "
+>NP_045300.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Murine hepatitis virus strain A59" length=1324 db="cov_g2a_db" cluster="AAF69344.1 ACN89723.1 ACN89777.1 NP_045300.1 " splice_form="e3972"
 MLFVFILFLPSCLGYIGDFRCIQLVNSNGANVSAPSISTETVEVSQGLGTYYVLDRVYLN
 ATLLLTGYYPVDGSKFRNLALTGTNSVSLSWFQPPYLSQFNDGIFAKVQNLKTSTPSGAT
 AYFPTIVIGSLFGYTSYTVVIEPYNGVIMASVCQYTICLLPYTDCKPNTNGNKLIGFWHT
@@ -2566,8 +2438,7 @@ PKAGYFVQDDGEWKFTGSSYYYPEPITDKNSVIMSSCAVNYTKAPEVFLNTSIPNPPDFK
 EELDKWFKNQTSIAPDLSLDFEKLNVTLLDLTYEMNRIQDAIKKLNESYINLKEVGTYEM
 YVKWPWYVWLLIGLAGVAVCVLLFFICCCTGCGSCCFKKCGNCCDEYGGHQDSIVIHNIS
 SHED
-
->ABD75633.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Human coronavirus HKU1" length=1351 db="cov_g2a_db" cluster="AAX76521.1 ABC70719.1 ABD75513.1 ABD75545.1 ABD75617.1 ABD75625.1 ABD75633.1 "
+>ABD75633.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Human coronavirus HKU1" length=1351 db="cov_g2a_db" cluster="AAX76521.1 ABC70719.1 ABD75513.1 ABD75545.1 ABD75617.1 ABD75625.1 ABD75633.1 " splice_form="e4053"
 MFLIIFILPTTLAVIGDFNCTNSFINHYNKTIPRISEDVVDVSLGLGTYYVLNRVYLNTT
 LLFTGYFPKSGANFRDLALKGSIYLSTLWYKPPFLSDFNNGIFSKVKNTKLYVNNTLYSE
 FSTIVIGSVFVNTSYTIVVQPHNGILEITACQYTMCEYPHTVCKSKGSIRNESWHIDSSE
@@ -2591,8 +2462,7 @@ LLFIHFSYKPTSFKTVLVSPGLCLSGDRGIAPKQGYFIKQNDSWMFTGSSYYYPEPISDK
 NVVFMNSCSVNFTKAPFIYLNNSIPNLSDFEAELSLWFKNHTSIAPNLTFNSHINATFLD
 LYYEMNVIQESIKSLNSSFINLKEIGTYEMYVKWPWYIWLLIVILFIIFLMILFFICCCT
 GCGSACFSKCHNCCDEYGGHNDFVIKASHDD
-
->BAJ04696.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Murine hepatitis virus" length=1378 db="cov_g2a_db" cluster="BAJ04696.1 "
+>BAJ04696.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Murine hepatitis virus" length=1378 db="cov_g2a_db" cluster="BAJ04696.1 " splice_form="e4134"
 MLFVVFILLLPSCLGYIGDFRCIQTVNSNGNNASAPSISTEVVDVSKGLGTYYVLDRVYL
 NATLLLTGYYPVDGSSYRNLALTGTNTVSLAWFKPPFLSEFNDGIFAKVKNLKANTPNGA
 ISFFPTIVMGSLFGNTSYTVVLEPYNNIIMASVCMYTICQLPYTDCKSNTNGNKIIGFWH
@@ -2616,8 +2486,7 @@ TMRINFCGSGNHILSLVQNAPYGLYFIHFSYVPTSFTTARVSPGLCIAGDRGLAPKAGYF
 VQDDGEWKFTGSNYYYPEPITDKNSVVMSSCAVNYTKAPEVFLNTSIPNLPDFKEELDKW
 FKNQTSIAPDLSLDFEKLNVTFLDLTDEMNRIQDAINKLNESYINLKEVGTYEMYVKWPW
 YIWLLIGLAGVAVCVLLFFICCCTGCGSCCFKKCGSCCDEYGGHQDSIVIHNISSHEG
-
->NP_937950.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Human coronavirus OC43" length=1361 db="cov_g2a_db" cluster="NP_937950.1 AAT84354.1 AAT84362.1 "
+>NP_937950.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Human coronavirus OC43" length=1361 db="cov_g2a_db" cluster="NP_937950.1 AAT84354.1 AAT84362.1 " splice_form="e4083"
 MFLILLISLPTAFAVIGDLKCTSDTSYINDKDTGPPPISTDTVDVTNGLGTYYVLDRVYL
 NTTLFLNGYYPTSGSTYRNMALKGSVLLSRLWFKPPFLSDFINGIFAKVKNTKVIKDRVM
 YSEFPAITIGSTFVNTSYSVVVQPRTINSTQDGYNKLQGLLEVSVCQYNMCEYPQTICHP
@@ -2641,8 +2510,7 @@ IISLVQNAPYGLYFIHFSYVPTKYVTARVSPGLCIAGDRGIAPKSGYFVNVNNTWMYTGS
 GYYYPEPITENNVVVMSTCAVNYTKAPYVMLNTSIPNLPDFKEELDQWFKNQTSVAPDLS
 LDYINVTFLDLQVEMNRLQEAIKVLNQSYINLKDIGTYEYYVKWPWYVWLLICLAGVAML
 VLLFFICCCTGCGTSCFKKCGGCCDDYTGYQELVIKTSHDD
-
->YP_003029848.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Rat coronavirus Parker" length=1360 db="cov_g2a_db" cluster="AFG25760.1 YP_003029848.1 "
+>YP_003029848.1 gene="S" product="spike glycoprotein" note="synonym: E2, peplomer protein" organism="Rat coronavirus Parker" length=1360 db="cov_g2a_db" cluster="AFG25760.1 YP_003029848.1 " splice_form="e4080"
 MLFVFLTLLPSCLGYIGDFRCINRVNTSISNARAPSVSTEVVDVSKGLGTYYVLDRVYLN
 ATLLLTGYYPVHGSMYRNMALMGTNTLSLNWFEPPFLSEFNDGIYAKVKNLKASLPIGSA
 SYFPTIIIGSNFVNTSYTVVLEPYNGIIMASICQYTICQLPHTYCKPNTGGNTLIGFWHT
@@ -2666,205 +2534,3 @@ NAPYGLYFIHFSYVPTSFTTVNVSPGLCISGDRGLAPKAGYFVQDHGEWKFTGSNYYYPE
 SITDKNSVVMSSCAVNYTKAPEVFLNTSITNLPDFKEELDKWFKNQTSIVPDLSFDIGKL
 NVTFLDLSYEMNRIQDAIKNLNESYINLKEIGTYEMYVKWPWYVWLLIGLAGVAVCVLLF
 FICCCTGCGSCCFKKCGNCCDEYGGRQAGIVIHNISSHED
->AAY68294.1 gene="Pb1ab" product="replicase polyprotein" note="ORF1ab; translated via -1 ribosomal frameshift" ribosomal_slippage=Y shared_cds="Pp1a" matpepdb="<vigordata>/cov_g2a_mp" organism="Porcine hemagglutinating encephalomyelitis virus" length=7095 db="cov_g2a_db" splice_form="e13131i-1e8157" cluster="AAY68294.1 "
-MSKINKYGLELYWAPEFPWMFEDAEEKLDNPSSSEVDIVCSTTA
-QKLETGGICPENHVMVDCRRLLKQECCVQSSLIREIVMNTRPYDLEVLLQDALQSREA
-VLVTPPLGMSLEACYVRGCNPNGWTMGLFRRRSVCNTGRCAVNKHVAYQLYMIDPAGV
-CFGAGQFVGWVIPLAFMPAQSRKFIVPWVMYLRKCGDKGAYNKDHKRGGFEHVYNFKV
-EDAYDQVHDEPKGKFSRKAYALLRGYRGVKPLLYVDQYGCDYTGGLADGLEAYADKTL
-QEMKALFPIWSQELPFDVTVAWHVVRDPRYVMRLQSASTIRSVAYVANPTEDLCDGSV
-VIKEPVHVYADDSIILRQHNLVDIMSCFYMEADAVVNAFYGVDLKDCGFVMQFGYIDC
-EQDLCDFKGWVPGNMIDGFACTTCGHVYETGDLLAQSSGVLPVNPVLHTKSAAGYGGF
-GCKDSFTLYGQTVVYFGGCVYWSPARNIWIPILKSSVKSYDSLVYTGVVGCKAIVKET
-NLICKALYLDYVEHKCGNLHQRELLGVSDVWHKQLLLNRGVYKPLLENIDYFNMRRAK
-FSLETFTVCADGFMPFLLDDLVPRAYYLAVSGHAFCDYADKLCHAVVSKSKDLLDVSL
-DSLGAAIHYLNFKIVDLAQHFSDFGASFVSTIVRYFKTFTTSTALAFAWVLFHVLHGA
-YIVVESDIYFVKNIPRYASAVAQAFRSVAKVVLDSLRVTFIDGLSCFKIGRRRICLSG
-RKIYEVERGLLHSSQLPLDVYDLTMPSQVQKAKQKPIYLKGSGSDFSLADSVVEVVTT
-SLTPCGYSEPPKFADKICIVDNVYMAKAGDKYYPVVVDDHVGLLDQAWRVPCAGKRVT
-FKEQPTVNEIVSMPKTIKVFYELDKDFNTILNTACGVFEVDDTVDMEEFYAVVIDAIE
-EKLSPCKELEGVGAKVSAFLQKLDDNSLFLFDEAGEEVFAPKLYCAFTAPEEDYFLEE
-SDVEEDDVEGEETDLTVTSAGEPCVASKQKESSEILEDTLDDGPCVETSDSQVEEDVE
-MSDFVDLESVIQDYENVCFDFYTTEPEFIKVLDLYVPKATRNNCWLRSVLAVMQKLPC
-QFKDKNLQDLWVLYKQQYSQLFVDTLVNKIPANIVVPQGGYVADFAYWFLTLCDWQCV
-AYWKCIKCDLALKLKGLDAMFFYGDVVSHVCKCGESMVLIDVNVPFTAHFALKDKLFC
-AFITKRSVYKAACVVDVNDSHSMAVVDGKQIDDHRITSITSDKFDFIIGHGMSFSMTT
-FEIAQLYGSCITPNVCFVKGDIIKVSKRVKAEVVVNPANGHMAHGGGVAKAIAVAAGQ
-QFVKETTDMVKSKGVCATGDCYVSTGGKLCKTVLNVVGPDARAQGKQSYALLERVYKH
-LNKYDCVVTTLISAGIFSVPSDVSLTYLLGTATKQVVLVSNNQEDFDLISKCQITAVE
-GTKKLAERLSFNVGRSIVYETDANKLLLSNEVAFVSTFNVLQDVLSLRHDIILEDDAR
-TFVQSNVDIVPEGWRVVNKFDQINGVRTVKYFECPGGIDICSQGKVFGYVQRGVFNKA
-TVAQIKALFVDKVDVLLTVDGVNFTNRFIPVSESFGKILGNVFCDGVNVTKHKCDIKY
-KGKVFFQFDNLSSEELKAVRSSFNFDQKELLAYYNMLVNCNKWQVVVNGKYFTFKQAN
-NNCFVNVSCLMLQSLTLKFKIVQWQEAWLEFRSGRPARFVALVMAKGGFKFGDPADSR
-DFLRVVFSQVDLTGATCDFEIACKCGVKQEQRTGLDAVMHFGTLSREELEVGYTVDCS
-CGKKLIHCVRFDVPFLICSNTPSSVKLPKGVVCANIFIGDKVGHYVHVKCEQAYQLYD
-ASNVKKVADVTGNLSDCLYLKNLKQTFKSVLTTYYLDDVKKIEYNPDLSQYYCDGGKY
-YTQRIIKAQFKTFEKVDGVYTNFKLVGHTICDSLNAKLGFDSSKEFVEYKVTEWPTAT
-GDVVLATDDLYVKRYERGCITFGKPVIWLSHEKASLNSLTYFNRPSLVDDNKFAVLKV
-ADVDSGDDSSESAVKETKKINIVQLNGVKKPFKVEDSVVINDDTSETKYVKSLSIVDV
-YDMWLTGCKYVVKTANALSRAVNVPTIRKYIKFGMTLVSIPIDLLNLRDIKPVVNVVR
-AVRNKVSACFNFIKWLFVLLFGWIKISADNKVIYTTEIASKLTCKLVALAVKNALLTF
-NWSMVARGACIIATIFLLWFNFIYANVIFSDFYLPKIGFLPTFVGKIAQWIKSTFSLV
-TICDFYSVQDVGFKNQYCNGSIACQFCLSGFDMLDNYKAIDVVQYEADRRVVVDYTGV
-LKIVIELIVSYALYTAWFYPLFALISLQILTTWLPELFMLSTLHWSFRLLVSLANMLP
-AHVFMRFYIIIASFIKLFSLFRHVAYGCSKPGCLFCYKRNRSLRVKCSTIVGGMIRYY
-DVMANGGTGFCSKHQWNCIDCDSYKPGNTFITVEAAFDLSRELKRPIQPTDVAYHTVT
-DVKQVGCSMRLFYDRDGQRTYDDVNASLFVDYSNLLHSKVKSVPNMHVVVVENDADKA
-NFLNAAVFYAQSLFRPILMVDKNLITTANTGTSVTETMFDVYVDTFLSMFDVDKKSLN
-ALIVTAHSSIKQGTQIDKVLDTFLSCARKSCSIDSDVGTKCLADSVMSAVSAGLELTD
-ESCNNLVPTYLKGDNIVAADLGVLIQNSAKHVQGNVAKIAGVSCIWSVDAFNQLSSDF
-QHKLKKACCKTGLKLKLTYNKQMANVSVLTTPFSLKGGAVFSYFVYVCFVLSLICFIG
-LWCLMPTYAVYKSDFQLPVYASYKVLDNGVIRDISVEDVCFANKFEQFDQWYESTFGL
-NYYSNNMACPIVVAVIDQDIGSTVFNVPTKVLRYGYHVLHFITHAFSADGVQCYTPHS
-QISYSTFYASGCVLSSACTMFAMADGRPQPYCYTEGLMQNASLYSSLVPHVRYNLANA
-KGFIRFPEVLREGLVRIVRTRSMSYCRVGLCEDADEGVCFNFNGSWVLNNEYYRSLPG
-TFCGRDVFDLIYQLFKGLAQPVDFLALTASSIAGAILAVIVVLVFYYLIKLKRAFGDY
-TSVVFVNVVVWCVNFMMLFVFQVYPTLSCVYAICYFYATLYFPYEISVIMHLQWLVMY
-GTIMPLWFCLLYISVVFSNHALWVFSYCRQLGTSVRSDGTFEEMALTTFMITKDSYCK
-LKNSLSDVAFNRYLSLYNKYRYYSGKMDTAAYREAACSQLAKAMDTFTNNNGSDVLYQ
-PPTASVSTSFLQSGIVKMVNPTSKVEPCIVSVTYGTMTLNGLWLDDKVYCPRHVICSA
-SDMTNPDYTNLLCRVTSSDFTVLFDRLSLTVMSYQMQGCMLVLTVTLQNSRTPKYTFG
-VVKPGETFTVLAAYNGKPQGAFHVTMRSSYTIKGSFLCGSCGSVGYVIMGDCVKFVYM
-HQLELSTGCHTGTDFNGDFYGPYKDAQVVQLPVQDYIQSVNFVAWLYAAILNNCNWFV
-QSDKCSVEDFNVWALSNGFSQFKSDLVIDALASMTGVSLETLLAAIKRLKNGFQGRQI
-MGSCSFEDELTPSDVYQQLAGIKLQSKRTRLFKGIVCWIMASTFLFSCIITAFVKWTM
-FMYVTTNMLSITFCALCVISLAMLLVKHKHLYLTMYIIPVLFTLLYNNYLVVYKHTFR
-GYVYAWLSHFVPSVEYTYTDEVIYGMLLLVGMVFVTLRSINHDLFSFIMFVGRVISVV
-SLWYMGSNIEEEILLMLASLFGTYTWTTALSMAAAKVIAKWVAVNVLYFTDIPQIKIV
-LLCYLFIGYIISCYWGLFSLMNSLFRMPLGVYNYKISVQELRYMNANGLRPPKNSFEA
-LMLNFKLLGIGGVPIIEVSQFQSKLTDVKCANVVLLNCLQHLHVASNSKLWQYCSTLH
-NEILATSDLSVAFEKLAQLLIVLFANPAAVDSKCLTSIEEVCDDYAKDNTVLQALQSE
-FVNMASFVEYEVAKKNLDEARSSGSANQQQLKQLEKACNIAKSAYERDRAVARKLERM
-ADLALTNMYKEARINDKKSKVVSALQTMLFSMVRKLDNQALNSILDNAVKGCVPLNAI
-PSLAANTLTIIVPDKSVYDQVVDNVYVTYAGNVWQVQTIQDSDGTNKQLNEISDDCNW
-PLVIIANRHNEVSATVLQNNELMPAKLKTQVVNSGPDQTCNTPTLCYYNNSNNGKIVY
-AILSDVDGLKYTKILKDDGNFVVLELDPPCKFTVQDVKGLKIKYLYFVKGCNTLARGW
-VVGTISSTVRLQAGTATEYASNSSILSLCAFSVDPKKTYLDFIQQGGTPIVNCVKMLC
-DHAGTGMAITAKPDATTSQDSYGGASVCIYCRARVEHPDVDGLCKLRGRFVQVPVGIK
-DPVSYVLTHDVCQVCGFWRDGSCSCVSTDTTVQSKDTNFLNRVRGTSVDARLVPCASG
-LSTDVQLRAFDICNASVAGIGLHLKVNCCRFQRVDENGDKLDQFFVVKRTDLTIYNRE
-MECYERVKDCKFVAEHDFFTFDVEGSRVPHIVRKDLTKYTMLDLCYALRHFDRNDCML
-LCDILSIYAGCEQSYFTKKDWYDFVENPDIINLYKKLGPILNRALVSATEFADKLVEV
-GLVGVLTLDNQDLNGKWYDFGDYVIAAPGCGVAIADSYYSYMMPMLTMCHALDCELYV
-NNAYRLFDLVQYDFTDYKLELFNKYFKHWSMPYHPNTVDCQDDRCIIHCANFNILFSM
-VLPNTCFGPLVRQIFVDGVPFVVSIGYHYKELGIVMNMDVDTHRYRLSLKDLLLYAAD
-PALHVASASALYDLRTCCFSVAAITSGVKFQTVKPGNFNQDFYDFILSKGMLKEGSSV
-DLKHFFFTQDGNAAITDYNYYKYNLPTMVDIKQLLFVLEVVYKYFEIYDGGCIPASQV
-IVNNYDKSAGYPFNKFGKARLYYEALSFEEQDEIYAYTKRNVLPTLTQMNLKYAISAK
-NRARTVAGVSILSTMTGRMFHQKCLKSIAATRGVPVVIGTTKFYGGWDDMLRRLIKDV
-DNPVLMGWDYPKCDRAMPNILRIVSSLVLARKHEACCSQSDRFYRLANECAQVLSEIV
-MCGGCYYVKPGGTSSGDATTAFANSVFNICQAVSANVCSLMSCNGNKIEDLSIRALQK
-RLYSHVYRSDMVDSTFVTEYYEFLNKHFSMMILSDDGVVCYNSDYASKGYIANISAFQ
-QVLYYQNNVFMSESKCWVENDINKGPHEFCSQHTMLVKMDGDDVYLPYPDPSRILGAG
-CFVDDLLKTDSVLLIERFVSLAIDAYPLVYHENEEYQKVFRVYLEYIKKLYNDLGNQI
-LDSYSVILSTCDGQKFTEESFYKNMYLRSAVMQSVGACVVCSSQTSLRCGSCIRKPLL
-CCKCCYDHVMATDHKYVLSVSPYVCNAPGCDVNDVTRLYLGGMSYYCEDHKPQYSFKL
-VMNGMVFGLYKQSCTGSPYIDDFNRIASCKWTDVDDYILANECTERLKLFAAETQKAT
-EEAFKQSYASATIQEIVSERELILSWEIGKVKPPLNKNYVFTGYHFTKNGKTVLGEYV
-FDKSELTNGVYYRATTTYKLSVGDVFVLTSHSVANLSAPTLVPQENYSSIRFASVYSV
-LETFQNNVVNYQHIGMKRYCTVQGPPGTGKSHLAIGLAVYYCTARVVYTAASHAAVDA
-LCEKAYKFLNINDCTRIVPAKVRVECYDKFKINDTTRKYVFTTINALPEMVTDIVVVD
-EVSMLTNYELSVINARIRAKHYVYIGDPAQLPAPRVLLSKGTLEPKYFNTVTKLMCCL
-GPDIFLGTCYRCPKEIVDTVSALVYENKLKAKNESSSLCFKVYYKGVTTHESSSAVNM
-QQIYLINKFLKANPLWHKAVFISPYNSQNFAAKRVLGLQTQTVDSAQGSEYDYVIYSQ
-TAETAHSVNVNRFNVAITRAKKGILCVMSNMQLFEALQFTTLTLDKVPQAVETKVQCS
-TNLFKDCSKNYSGYHPAYAPSFLAVDDKYKATGDLAVCLGISDSAVTYSRLISLMGFK
-LDVTLDGYCKLFITKEEAVKRVRAWVGFDAEGAHATRDSIGTNFPLQLGFSTGIDFVV
-EATGLFADRDGYSFKKAVAKAPPGEQFKHLIPLMTRGQRWDVVRPRIVQMFADHLIDL
-SDCVVLVTWAANFELTCLRYFVKVGREICCNVCTKRATVYNSRTGYYGCWRHSVTCDY
-LYNPLIVDIQQWGYTGSLSSNHDLYCSIHKGAHVASSDAIMTRCLAVYDCFCNNINWN
-VEYPIISNELSINTSCRVLQRVMLKAAMLCNRYSLCYDIGNPKAIACVKDFDFKFYDA
-QPIVKSVKTLLYSFEAHKDSFKDGLCMFWNCNVDKYPPNAVVCRFDTRVLNNLNLPGC
-NGGSLYVNKHAFHTKPFSRAAFEYLKPMPFFYYSDTPCVYMDGMDAKQVDYVPLKSAT
-CITRCNLGGAVCLKHAEEYREYLESYNTATTAGFTFWVYKTFDFYNLWNTFTKLQSLE
-NVVYNLVKTGHYTEQAGEMPCAIINDKVVAKIDKEDVVIFTNNTTYPTNVAVELFAKR
-SIRHHPELKLFRNLNVDVCWKHVIWDYARESIFCSNTYGVCMYTDLKFIDKLNVLFDG
-RDNGALEAFKRSNNGVYISMTKVKSLSMIKGPPRAELNGVVVDKVGDTDCVFYFAVRK
-EGQDVIFSQFDSLGVSSNQSPQGNLGSNGKPGNVGGNEALATSTIFTQSRVISSFTCR
-TDMEKDFIALDQDVFIQKYGLEDYAFEHIVYGNFNQKIIGGLHLLIGLYRRQQTSYLV
-VQEFVSYDSSIHSYFITDEKSGSSKSVCTVIDILLDDFVALVKSLNLNCVSKVVNVNV
-DFKDFQFMLWCNDEKVMTFYPRLQAASDWKPGYSMPVLYKYLNSPMERVSLWNYGKPV
-TLPTGCMMNVAKYTQLCQYLNTTTLAVPVNMRVLHLGAGSEKGVAPGSAVLRQWLPAG
-TILVDNDLYPFVSDSVATYFGDCITLPFDCQWDLIISDMYDPITKNIGEYNVSKDGFF
-TYICHMIRDKLALGGSVAIKITEFSWNAELYKLMGYFAFWTVFCTNANASSSEGFLIG
-INYLGKSKVDIDGNVMHANYLFWRNSTVWNGGAYSLFDMAKFPLKLAGTAVINLRADQ
-INDMVYSLLEKGKLLIRDTNKEVFVGDSLVNVI
-
->AAY68295.1 gene="NS2" product="non-structural protein" organism="Porcine hemagglutinating encephalomyelitis virus" length=194 db="cov_g2a_db" cluster="AAY68296.1 "
-MAVSYADNPNHFINFPLTQFDGSVLNYKGLQSQLLDEGVDCKIQ
-TAPHISLTMLDIQPEDYISVDVAIQEVIDDMHWGEGFQIKFDNPHILGRCLVLDVKGV
-EELHDDLVNYIRDKGCVADQSRKWIGHCTIAQFTDAALSIKENVDFINSMQFNYKITI
-NPSSPARLEIVKLGAEKKDGFYETVVSHWMGIRH
-
->AAY68296.1 gene="HE" product="hemagglutinin-esterase protein" organism="Porcine hemagglutinating encephalomyelitis virus" db="cov_g2a_db" length=424 cluster="AAY68296.1"
-MFLLPIFFLVCSIIGTFGFENPPTNVVSHFNDDWFLFGDSRSDC
-NHVVNTNPRNYSYMDLNPALCDSGKISSKAGNSIFRSFHFTDFYNYTGEGQQIIFYEG
-VNFTPYHAFKCTSAGNNDIWMQNKGLFYTQVYKKMAVYRSLTLVNVPYVYNGSTQPTA
-FCKSGSLILNNPAYIAREANVGDYYYKSEADFSLSGCDEYIVPLCIFNGKFLSNTKYY
-DDSQYYFNKDTGVIYGLNSTETITTGFDFNCHYLVLPSGNYLAISNELLLTVPTKAIC
-LNKRKAFTPVQVVDSRWNNARQSDNMTAVACQLPYCYFRNSTSNYVGIYDVNHGDAGF
-TSILSGLLYDSPCFSQQGIFRYDNVSTVWPLYPYGNCPTAASIIFFDLPICVYDPLPI
-ILLGILLGVAVIVIGVSLVYFMVDNGTRLHYA
-
->AAY68297.1 gene="S" product="spike glycoprotein" organism="Porcine hemagglutinating encephalomyelitis virus" db="cov_g2a_db" length=1349 cluster="AAY68297.1"
-MFFILLISLPSAFAVLGDLKCNTSSINDVDTGVPSISSEVVDVT
-NGLGTFYVLDRVYLNTTLLLNGYYPISGATFRNMALKGTRLLSTLWFKPPFLSPFNDG
-IFAKVKNSRFFKDGVIYSEFPAITIGSTFVNTSYSIVVEPHTLLINGNLQGLLQISVC
-QYTMCEYPHTICHPNLGNQRIELWHYDTDVVSCLYRRNFTYDVNADYLYFHFYQEGGT
-FYAYFTDTGFVTKFLFKLYLGTVLSHYYVMPLTCDSALSLEYWVTPLTTRQFLLAFDQ
-DGVLYHAVDCASDFMSEIMCKTSSITPPTGVYELNGYTVQPVATVYRRIPDLPNCDIE
-AWLNSKTVSSPLNWERKIFSNCNFNMGRLMSFIQADSFGCNNIDASRLYGMCFGSITI
-DKFAIPNSRKVDLQVGKSGYLQSFNYKIDTAVSSCQLYYSLPAANVSVTHYNPSSWNR
-RYGFNNQSFGSRGLHDAVYSQQCFNTPNTYCPCRTSQCIGGAGTGTCPVGTTVRKCFA
-AVTNATKCTCWCQPDPSTYKGVNAWTCPQSKVSIQPGQHCPGLGLVEDDCSGNPCTCK
-PQAFIGWSSETCLQNGRCNIFANFILNDVNSGTTCSTDLQQGNTNITTDVCVNYDLYG
-ITGQGILIEVNATYYNSWQNLLYDSSGNLYGFRDYLSNRTFLIRSCYSGRVSAVFHAN
-SSEPALMFRNLKCSHVFNNTILRQIQLVNYFDSYLGCVVNAYNNTASAVSTCDLTVGS
-GYCVDYVTALRSRRSFTTGYRFTNFEPFAVNLVNDSIEPVGGLYEIQIPSEFTIGNLE
-EFIQTSSPKVTIDCATFVCGDYAACRQQLAEYGSFCENINAILIEVNELLDTTQLQVA
-NSLMNGVTLSTKIKDGINFNVDDINFSPVLGCLGSECNRASTRSAIEDLLFDKVKLSD
-VGFVQAYNNCTGGAEIRDLICVQSYNGIKVLPPLLSENQISGYTLAATAASLFPPWTA
-AAGVPFYLNVQYRINGLGVTMDVLSQNQKLIASAFNNALDAIQEGFDATNSALVKIQS
-VVNANAEALNNLLQQLSNRFGAISASLQEILSRLDALEAKAQIDRLINGRLTALNAYV
-SQQLSDSTLVKFSAAQAMEKVNECVKSQSSRINFCGNGNHIISLVQNAPYGLYFIHFS
-YVPTKYVTAKVSPGLCIAGDIGISPKSGYFINVNNSWMFTGSGYYYPEPITQNNVVMM
-STCAVNYTKAPDLMLNTSTPNLPDFKEELYQWFKNQSSVAPDLSLDYINVTFLDLQDE
-MNRLQEAIKVLNHSYINLKDIGTYEYYVKWPWYVWLLIGLAGVAMLVLLFFICCCTGC
-GTSCFKKCGGCCDDYTGHQEFVIKTSHDD
-
->AAY68298.1 gene="NS4.9" product="non-structural protein" organism="Porcine hemagglutinating encephalomyelitis virus" length=24 db="cov_g2a_db" cluster="AAY68298.1 "
-MTTKFVFDLLTLDDIVTLSICQSF
-
->AAY68299.1 gene="NS12.7" product="non-structural protein" organism="Porcine hemagglutinating encephalomyelitis virus" length=109 db="cov_g2a_db" cluster="AAY68299.1 "
-MDIWCPEKKYLRYTNGFNVSVLEDVCFKYNYQFPKVGYCRVPNY
-AWCRNQGSFCATFTLYGKSKHYDKYFGIITGFTAFSNSVEEAVNKLVFLAVDFITWRS
-QSLNVYG
-
->AAY68300.1 gene="E" product="envelope protein" note="9.5 kDa protein, small membrane protein" organism="Porcine hemagglutinating encephalomyelitis virus" length=84 db="cov_g2a_db" cluster="AAY68300.1 " 
-MFMADAYFADTVWYVGQIIFIVAICLLVIIVVVAFLATFKLCIQ
-LCGMCNTLVLSPSIYVFNRGRQFYEFYNEVKPPVLDVDDV
-
->AAY68301.1 gene="M" product="membrane protein" organism="Porcine hemagglutinating encephalomyelitis virus" length=230 db="cov_g2a_db" cluster="AAY68301.1 "
-MSSPTTPVPVISWTADEAIKFLKEWNFSLGIIVLFITIILQFGY
-TSRSMFVYVIKMVILWLMWPLTIILTIFNCVYALNNVYLGFSIVFTIVAIIMWVVYFV
-NSIRLFIRTGSWWSFNPETNNLMCIDMKGRMYVRPIIEDYHTLTATIIRGHLYIQGIK
-LGTGYSLSDLPAYVTVAKVTHLCTYKRGFLDRIGDTSGFAVYVKSKVGNYRLPSTHKG
-SGMDTALLRNNI
-
->AAY68302.1 gene="N" product="nucleocapsid protein" organism="Porcine hemagglutinating encephalomyelitis virus" length=449 db="cov_g2a_db" cluster="AAY68302.1 " shared_cds="I"
-MSFTPGKQPSSRASSGNRSGNGILKWADQSDQSRNVQTRGRRVQ
-SKQTATSQQPSGGTVVPYYSWFSGITQFQKGKEFEFAEGQGVPIAPGVPATEAKGYWY
-RHNRRSFKTADGNQRQLLPRWYFYYLGTGPYAKDHYGTDIDGVFWVASNQADVNTPAD
-IVDRDPSSDEAIPTRFPPGTVLPQGYYIEGSGRSVPNSRSTSRASNRAPSSGSRSRAN
-SGNRTSTSGVTPDMADQIASLVLAKLGKDATKPQQVTKQTAKEVRQKILNKPRQKRSP
-NKQCTVQQCFGKRGPNQNFGGGEMLKLGTSDPQFPILAELAPTAGAFFFGSRLELAKV
-QNSSGNLDEPQKDVYELRYNGAIRFDSTLSGFETIMKVLNQNLNAYQHQEDGMINISP
-KPQRQRGQKNGQVENDNVSVAVPKSRVQQNKSRELTAEDISLLKKMDEPYTEDTSEI
-
->AAY68303.1 gene="I" product="N2 protein" note="N gene internal orf" organism="Porcine hemagglutinating encephalomyelitis virus" length=207 db="cov_g2a_db" cluster="AAY68303.1 " shared_cds="N"
-MASLSGPISPTSLEMFKPGVEEFNPSKLLLLSNHQEGLLYPTIL
-GSLELLSFKRERSLNLQRDKVCLLHQESQLLKLRGTGTDTTDVLLKQPMAISVNCCHD
-GTFTTWEQDRMPKTITAPTLTESSGSLVTRLMLIPRLTLSIGIQVAMRLFRLGFRLAR
-YSLKVTILKAQEGLFLIPDLLHAHPIEPLVQDRVVEPILAIEPLPLV
-

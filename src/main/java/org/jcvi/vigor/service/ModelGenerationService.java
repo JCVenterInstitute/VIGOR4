@@ -3,12 +3,13 @@ package org.jcvi.vigor.service;
 import org.jcvi.vigor.component.*;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.utils.FormatVigorOutput;
+import org.jcvi.vigor.utils.VigorFunctionalUtils;
 import org.jcvi.vigor.utils.VigorUtils;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Direction;
 import org.jcvi.jillion.core.Range;
+import org.jcvi.jillion.core.residue.Frame;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -332,6 +333,8 @@ public class ModelGenerationService {
 			exon.setRange(alignmentFragment.getNucleotideSeqRange());
 			exon.setAlignmentFragment(alignmentFragment);
 			exon.setFrame(alignmentFragment.getFrame());
+			Frame sequenceFrame= VigorFunctionalUtils.getSequenceFrame(exon.getRange().getBegin()+exon.getFrame().getFrame()-1);
+			exon.setSequenceFrame(sequenceFrame);
 			exons.add(exon);
 		}
 		return exons;

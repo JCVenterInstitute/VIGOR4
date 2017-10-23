@@ -29,6 +29,8 @@ public class SequenceUtils {
 	}
 	
 	
+	
+	
 	public static Iterator<Nucleotide> handleFrame(NucleotideSequence sequence, Frame frame) {
 	    Iterator<Nucleotide> iter;
 	    if(frame.onReverseStrand()){

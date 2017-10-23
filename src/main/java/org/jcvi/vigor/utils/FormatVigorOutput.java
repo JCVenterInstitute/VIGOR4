@@ -2,10 +2,12 @@ package org.jcvi.vigor.utils;
 
 import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.Model;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.jcvi.jillion.core.Range;
+import org.jcvi.jillion.core.residue.Frame;
 
 /**
  * Created by snettem on 5/24/2017.
@@ -54,19 +56,21 @@ public class FormatVigorOutput {
 	public static void printAlignments(List<Alignment> alignments) {
 		System.out.println(
 				"*********************************Intial list of Alignments*****************************************************");
-		System.out.println(String.format("%-32s%-20s%-20s%-20s", "Protein_ID","Alignment_Tool" ,"NTSeqRange", "AASeqRange"));
+		System.out.println(String.format("%-32s%-20s%-20s%-20s%-20s", "Protein_ID","Alignment_Tool" ,"NTSeqRange", "AASeqRange","Frame"));
 
 		for (Alignment alignment : alignments) {
 			System.out.print(String.format("%-32s", alignment.getViralProtein().getProteinID()));
 			System.out.print(String.format("%-20s", alignment.getAlignmentTool_name()));
 			List<Range> NTranges = alignment.getAlignmentFragments().stream().map(e -> e.getNucleotideSeqRange())
 					.collect(Collectors.toList());
+			List<Frame> frames = alignment.getAlignmentFragments().stream().map(e->e.getFrame()).collect(Collectors.toList());
 			List<Range> AAranges = alignment.getAlignmentFragments().stream().map(e -> e.getProteinSeqRange())
 					.collect(Collectors.toList());
 			for (int i = 0; i < NTranges.size(); i++) {
 				System.out.print(String.format("%-20s", NTranges.get(i).getBegin() + "-" + NTranges.get(i).getEnd()));
 				System.out.println(String.format("%-20s", AAranges.get(i).getBegin() + "-" + AAranges.get(i).getEnd()));
-				System.out.print(String.format("%-52s", ""));
+				System.out.println(String.format("%-20s", frames.get(i)));
+			    System.out.print(String.format("%-52s", ""));
 			}
 			System.out.println("");
 		}

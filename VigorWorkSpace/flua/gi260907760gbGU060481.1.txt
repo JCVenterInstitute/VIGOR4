@@ -214,7 +214,7 @@ vulgar: seg3prot2A 0 252 . gi|260907760|gb|GU060481.1| 9 766 + 1205 M 190 570 F 
 
 C4 Alignment:
 ------------
-         Query: seg3prot db="flua_db" gene="PA" product="polymerase PA" shared_cds="PA-X" length=716
+         Query: seg3prot db="flua_db" gene="PA" product="polymerase PA" shared_cds="PA-X" length=716 splice_form="e2148"
         Target: gi|260907760|gb|GU060481.1| Influenza A Virus (A/goose/Czech Republic/1848-K9/2009(H7N9)) segment 3 polymerase PA (PA) gene, complete cds
          Model: protein2genome:local
      Raw score: 3658

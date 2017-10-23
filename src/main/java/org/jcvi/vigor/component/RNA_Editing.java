@@ -3,6 +3,7 @@ package org.jcvi.vigor.component;
 
 import lombok.Data;
 
+import org.jcvi.jillion.core.residue.aa.AminoAcid;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -18,7 +19,7 @@ public class RNA_Editing {
     private boolean has_RNA_editing=false;
     private int size;
     private String regExp;
-    private String replacementString;
+    private String insertionString;
     private String note;
 
 }

@@ -4,7 +4,8 @@ import lombok.Data;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import java.util.Map;
+import java.util.List;
+
 
 
 /**
@@ -16,8 +17,22 @@ import java.util.Map;
 public class Splicing {
 
     private boolean isSpliced=false;
-    private Map<String,String> nonCanonical_spliceSites; //Donor+Acceptor
+    private List<SpliceSite> nonCanonical_spliceSites; 
     private String spliceform;
 
+    public class SpliceSite{
+    	public String donor;
+    	public String acceptor;
+    	public SpliceSite(String donor,String acceptor){
+    		this.donor=donor;
+    		this.acceptor=acceptor;
+    	}
+    	public SpliceSite(){
+    		
+    	}
+    	    	
+    	
+    }
 
 }
+

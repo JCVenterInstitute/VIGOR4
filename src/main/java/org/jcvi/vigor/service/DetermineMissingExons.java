@@ -65,7 +65,7 @@ public class DetermineMissingExons implements EvaluateModel {
 	public Exon performJillionPairWiseAlignment(Range NTRange, Range AARange,
 			NucleotideSequence NTSequence, ProteinSequence AASequence,boolean spliceFormExists,Direction modelDirection) {
 		Exon exon = null;
-		Frame frame = VigorFunctionalUtils.getFrame(NTRange);
+		
 		NucleotideSequence NTSubSequence = NTSequence.toBuilder(NTRange)
 				.build();
 		ProteinPairwiseSequenceAlignment actual = null;
@@ -73,19 +73,14 @@ public class DetermineMissingExons implements EvaluateModel {
 				.build();
 		Map<Frame, ProteinPairwiseSequenceAlignment> alignments = new HashMap<Frame, ProteinPairwiseSequenceAlignment>();
 		ProteinPairwiseSequenceAlignment bestAlignment = null;
-		for (int i = 0; i < 3; i++) {
-			ProteinSequence queryAASequence = IupacTranslationTables.STANDARD
-					.translate(NTSubSequence, frame);
-			AminoAcidSubstitutionMatrix blosom50 = BlosumMatrices.blosum50();
-			actual = PairwiseAlignmentBuilder
-					.createProtienAlignmentBuilder(queryAASequence,
-							subjectAASequence, blosom50).gapPenalty(-8, -8)
-					.build();
-			alignments.put(frame, actual);
-			if (i != 2) {
-				frame = frame.shift(1);
-
-			}
+		for(Frame frame: Frame.forwardFrames()){
+		ProteinSequence queryAASequence = IupacTranslationTables.STANDARD.translate(NTSubSequence,frame);
+		AminoAcidSubstitutionMatrix blosom50 = BlosumMatrices.blosum50();
+		actual = PairwiseAlignmentBuilder
+				.createProtienAlignmentBuilder(queryAASequence,
+						subjectAASequence, blosom50).gapPenalty(-8, -8)
+				.build();
+		alignments.put(frame, actual);
 		}
 		
 		if(alignments!=null && alignments.size()>0){
@@ -96,19 +91,21 @@ public class DetermineMissingExons implements EvaluateModel {
 			}
 			if (bestAlignment.getScore() < alignments.get(myFrame).getScore()) {
 				bestAlignment = alignments.get(myFrame);
-				frame = myFrame;
-			}
+				if(myFrame==Frame.TWO){
+					NTRange = Range.of(NTRange.getBegin()+1,NTRange.getEnd());
+				}else if (myFrame == Frame.THREE){
+					NTRange = Range.of(NTRange.getBegin()+2,NTRange.getEnd());
+				}
+			   }
+			
 		}
 		
 		if(bestAlignment.getQueryRange().getDirection().equals(modelDirection)){
-   		boolean found = false;
-		Range modelExonAARange = Range.of(bestAlignment.getSubjectRange()
+   		Range modelExonAARange = Range.of(bestAlignment.getSubjectRange()
 				.getRange().getBegin()
 				+ AARange.getBegin(), bestAlignment.getSubjectRange()
 				.getRange().getEnd()
 				+ AARange.getBegin());
-				
-		if (found) {
 			exon = new Exon();
 			Range range = bestAlignment.getQueryRange().getRange();
 			Range modelExonNTRange = Range.of(
@@ -122,9 +119,9 @@ public class DetermineMissingExons implements EvaluateModel {
 			alignmentFragment.setProteinSeqRange(modelExonAARange);
 			alignmentFragment.setScore(bestAlignment.getScore());
 			exon.setAlignmentFragment(alignmentFragment);
-			exon.setFrame(frame);
+			exon.setFrame(Frame.ONE);
 		}
-		}
+		
 		}
 		return exon;
 	}

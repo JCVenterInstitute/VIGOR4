@@ -1,19 +1,21 @@
 package org.jcvi.vigor.utils;
-
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
+import org.jcvi.vigor.component.Exon;
+
+
 
 public class VigorFunctionalUtils {
 	
-	public static Frame getFrame(Range inputRange){
-		Range range = Range.of(inputRange.getBegin(),inputRange.getEnd());
+	public static Frame getSequenceFrame(long coordinate){
 		Frame frame=Frame.ONE;
-		if(range.getBegin()>2){
-		long remin = range.getBegin()%3;
+		if(coordinate>2){
+		long remin = coordinate%3;
 		if(remin==0){
 			frame=Frame.ONE;
 		}
@@ -23,32 +25,86 @@ public class VigorFunctionalUtils {
 		{
 			frame = Frame.THREE;
 		}
-		}else if(range.getBegin()==0)frame=Frame.ONE;
-		else if (range.getBegin()==1)frame=Frame.TWO;
+		}else if(coordinate==0)frame=Frame.ONE;
+		else if (coordinate==1)frame=Frame.TWO;
 		else frame=Frame.THREE;
 		return frame;
 	}
-	public static Map<Range,Float> generateScore(long centroid,List<Range> ranges){
-		Map<Range,Float> rangeScoreMap = new HashMap<Range,Float>();
-		float difference = 0;
+	public static float generateScore(long referenceCoordinate,long pointOfOccurance){
+		long distance = 0;
 		float score =0;
-		for (Range range : ranges) {
 			
-			if (range.getBegin() - centroid < 0) {
-				difference = centroid - range.getBegin();
+			if (pointOfOccurance - referenceCoordinate < 0) {
+				distance = referenceCoordinate - pointOfOccurance;
 				
-			} else if(range.getBegin() -centroid ==0){
-			    difference = 0.1f;
+			} else {
+				distance = pointOfOccurance - referenceCoordinate;
 			}
-			else{
-				difference = range.getBegin() - centroid;
-				}
+			
 			  
-			  score = 100/difference;
-			  rangeScoreMap.put(Range.of(range.getBegin(),range.getEnd()), score);				
-		}		
-		return rangeScoreMap;
+			  score = 100f/(1f+distance);
+			 				
+		return score;
 	}
+		 
+	public static Map<Frame,List<Long>> frameToSequenceFrame(Map<Frame,List<Long>> rangeFrameMaP){
+		Map<Frame,List<Long>> outRangeFrameMap = new HashMap<Frame,List<Long>>();
+		for(Frame frame : rangeFrameMaP.keySet()){
+			if(rangeFrameMaP.get(frame).size()>0){
+			List<Long> ranges = rangeFrameMaP.get(frame);
+			Long coordinate = ranges.get(0);
+			Frame seqFrame = getSequenceFrame(coordinate);
+			outRangeFrameMap.put(seqFrame, ranges);	
+			}
+		}
+		return outRangeFrameMap;
+	}
+	public static List<Range> rangesMatchingSequenceFrame(List<Range> ranges, Frame frame){
+		List<Range> outRanges = new ArrayList<Range>();
+		for(Range range: ranges){
+			Frame outFrame = getSequenceFrame(range.getBegin());
+			if(outFrame.equals(frame)){
+				outRanges.add(range);
+			}
+		}
+		return outRanges;
+	}
+		
+	public static Range getNTRange(List<Exon> exons,Range CDSNTRange){
+		exons.sort(Exon.Comparators.Ascending);
+		long outputStart=0;
+		long outputEnd=0;
+		long refCurLength=0;
+		long refPreLength=0;
+		long difference=0;
+		long CDSNtStart=CDSNTRange.getBegin();
+		for(int i=0;i<exons.size();i++){
+		   refCurLength=exons.get(i).getRange().getLength()+refCurLength;
+		   if(refPreLength==0){
+			   refPreLength=refCurLength;
+		   }
+		   if(refCurLength>=CDSNtStart){
+			    difference = CDSNtStart-refPreLength;
+			    outputStart=exons.get(i).getRange().getBegin()+difference;
+			    long leftOver = exons.get(i).getRange().getLength()-difference;
+			    if(leftOver==1){
+			    	outputEnd = exons.get(i+1).getRange().getBegin()+2;
+			    }else if(leftOver==2){
+			    	outputEnd = exons.get(i+1).getRange().getBegin()+1;
+			    }else{
+			    	outputEnd = outputStart+2;
+			    }
+			    break;
+		   }
+		
+		  refPreLength=refCurLength;
+		}
+		return Range.of(outputStart,outputEnd);
+        }
 	
-	
+	public static Long getNTCoordinate(List<Exon> exons, Long coordinate){
+		Range outputRange = getNTRange(exons,Range.of(coordinate));
+		return outputRange.getBegin();
+	}
+			
 }

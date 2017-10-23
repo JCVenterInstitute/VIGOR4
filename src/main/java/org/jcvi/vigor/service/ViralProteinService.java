@@ -1,11 +1,12 @@
 package org.jcvi.vigor.service;
-
 import org.jcvi.vigor.component.*;
 import org.jcvi.vigor.utils.VigorUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.jcvi.vigor.component.Splicing.SpliceSite;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
+import org.jcvi.jillion.core.residue.aa.AminoAcid;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -65,14 +66,29 @@ public class ViralProteinService {
 				if (!(attributes.get("splice_form").equals(""))) {
 					splicing.setSpliced(true);
 					splicing.setSpliceform((attributes.get("splice_form")).replaceAll("^\"|\"$", ""));
+					List<SpliceSite> splicePairs = new ArrayList<SpliceSite>();
 					if (attributes.containsKey("noncanonical_splicing")) {
 						if (!(attributes.get("noncanonical_splicing").equalsIgnoreCase("N"))) {
-							splicing.setNonCanonical_spliceSites(
-									Pattern.compile(",").splitAsStream(attributes.get("noncanonical_splicing").trim())
-											.map(s -> s.split("\\+", 2))
-											.collect(Collectors.toMap((a -> a[0]), a -> a.length > 1 ? a[1] : "")));
+							
+								List<String> spliceSites = Pattern.compile(";").splitAsStream(attributes.get("noncanonical_splicing").trim()).collect(Collectors.toList());
+
+								for(String spliceSite : spliceSites){
+									String[] temp = spliceSite.split("+");
+									SpliceSite spliceSiteObj = splicing.new SpliceSite();
+									spliceSiteObj.donor=temp[0];
+									spliceSiteObj.acceptor=temp[1];
+									splicePairs.add(spliceSiteObj);
+									
+								}
 						}
 					}
+					    SpliceSite defaultSpliceSite = splicing.new SpliceSite();
+					    defaultSpliceSite.donor="GT";
+					    defaultSpliceSite.acceptor="AG";
+					    splicePairs.add(defaultSpliceSite);
+						splicing.setNonCanonical_spliceSites(splicePairs);			
+						
+					
 					if (attributes.containsKey("tiny_exon3")) {
 						String attribute = attributes.get("tiny_exon3").replaceAll("^\"|\"$", "");
 						String regex = null;
@@ -136,7 +152,8 @@ public class ViralProteinService {
 				String attribute = attributes.get("stop_codon_readthru").replaceAll("^\"|\"$", "");
 				stopTranslationException.setHasStopTranslationException(true);
 				String[] temp = attribute.split(":");
-				stopTranslationException.setStopCodon_readthru(temp[1]);
+				AminoAcid replacementAA = AminoAcid.valueOf(temp[1]);
+				stopTranslationException.setReplacementAA(replacementAA);
 			}
 
 			/* Set StartTranslationException attributes */
@@ -156,7 +173,7 @@ public class ViralProteinService {
 				}
 				rna_editing.setRegExp(temp[1]);
 				rna_editing.setHas_RNA_editing(true);
-				rna_editing.setReplacementString(temp[2]);
+				rna_editing.setInsertionString(temp[2]);
 				rna_editing.setNote(temp[3]);
 			}
 

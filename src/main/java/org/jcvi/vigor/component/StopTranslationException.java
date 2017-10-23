@@ -2,6 +2,7 @@ package org.jcvi.vigor.component;
 
 import lombok.Data;
 
+import org.jcvi.jillion.core.residue.aa.AminoAcid;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -17,6 +18,6 @@ import org.springframework.stereotype.Component;
 public class StopTranslationException{
 
     private boolean hasStopTranslationException=false;
-    private String stopCodon_readthru;
+    private AminoAcid replacementAA;
 
 }

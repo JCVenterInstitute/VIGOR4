@@ -26,7 +26,6 @@ import org.jcvi.vigor.utils.VigorTestUtils;
 import org.jcvi.vigor.utils.VigorUtils;
 
 
-
 public class DetermineMissingExonsTest {
 	private List<Alignment> alignments;
 	private List<Model> models= new ArrayList<Model>();

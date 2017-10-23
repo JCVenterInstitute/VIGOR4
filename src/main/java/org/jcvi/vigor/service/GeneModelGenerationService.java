@@ -1,12 +1,22 @@
 package org.jcvi.vigor.service;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.jcvi.jillion.core.Range;
+import org.jcvi.jillion.core.residue.Frame;
+import org.jcvi.jillion.core.residue.aa.IupacTranslationTables;
+import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
+import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
+import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.utils.FormatVigorOutput;
+import org.jcvi.vigor.utils.VigorFunctionalUtils;
 
 @Service
 public class GeneModelGenerationService {
@@ -61,6 +71,45 @@ public class GeneModelGenerationService {
 		
 		return processedModels;
 	}
+	
+	public NucleotideSequence determineCDS(Model model){
+		
+		model.getExons().sort(Exon.Comparators.Ascending);
+		List<Exon> exons = model.getExons();
+		Exon replaceExon = exons.stream().filter(thisExon-> thisExon.getReplacementString()!="").findAny().map(thisExon -> thisExon).orElse(null);
+		NucleotideSequence virusGenomeSeq = new NucleotideSequenceBuilder(model.getAlignment().getVirusGenome().getSequence()).replace(replaceExon.getRange(), replaceExon.getReplacementString()).build();
+		NucleotideSequenceBuilder CDSBuilder = new NucleotideSequenceBuilder("");
+		for(Exon exon : exons){
+			if(exon.getInsertionString()!=""){
+			CDSBuilder.append(exon.getInsertionString());
+			}else if(exon.getReplacementString().equals("") || exon.getReplacementString()==null) {
+			CDSBuilder.append(virusGenomeSeq.toBuilder(exon.getRange()));
+			}
+			
+		}
+		NucleotideSequence cds = CDSBuilder.build();
+		return cds;		
+				
+	}
+	
+	public List<Range> getInternalStops(Model model, NucleotideSequence cds){
+		//dont have to translate, just find stops by calling a function
+		List<Range> internalStops = new ArrayList<Range>();
+		Map<Frame,List<Long>> stops = IupacTranslationTables.STANDARD.findStops(cds);
+		for(Map.Entry<Frame,List<Long>> pair :stops.entrySet()){
+			if(pair.getKey().equals(Frame.ONE)){
+			List<Long> cdsStops = (List<Long>)pair.getValue();
+			for(Long stop : cdsStops){
+				Range NTStopRange = VigorFunctionalUtils.getNTRange(model.getExons(), Range.of(stop));
+				internalStops.add(NTStopRange);			
+			}
+		}
+		}
+		return internalStops;
+	}
+	
+	
+	
 	
 	}
 

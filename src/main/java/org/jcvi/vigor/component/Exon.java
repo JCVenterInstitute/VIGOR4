@@ -9,6 +9,8 @@ import java.util.Comparator;
 
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
+import org.jcvi.jillion.core.residue.aa.AminoAcid;
+import org.jcvi.jillion.core.residue.nt.Triplet;
 import org.jcvi.jillion.internal.core.util.JillionUtil;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -26,6 +28,9 @@ public class Exon implements Serializable {
 	private AlignmentFragment alignmentFragment;
 	private boolean is_5p_adjusted=false;
 	private boolean is_3p_adjusted=false;
+	private String insertionString;
+	private String replacementString;
+	private Frame sequenceFrame;
 	
 	public Exon(){
 		
