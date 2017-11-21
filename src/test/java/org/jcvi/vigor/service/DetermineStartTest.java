@@ -1,27 +1,32 @@
-package org.jcvi.vigor.service;
-import static org.junit.Assert.assertEquals;
+/*package org.jcvi.vigor.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
-import org.jcvi.jillion.core.residue.nt.Triplet;
+import org.jcvi.vigor.AppConfig;
 import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.component.ViralProtein;
 import org.jcvi.vigor.component.VirusGenome;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringRunner;
 
 
+@RunWith(SpringRunner.class)
+@ContextConfiguration(classes = AppConfig.class)
 public class DetermineStartTest {
 	
 	private Model model = new Model();
-	private DetermineStart determineStart = new DetermineStart();
+	@Autowired
+	private DetermineStart determineStart ;
 	
 	
 	@Before
@@ -54,7 +59,7 @@ public class DetermineStartTest {
 		alignment.setViralProtein(viralProtein);
 		model.setAlignment(alignment);
 	}	
-	/*	
+		
 	@Test
 	public void findStart() throws CloneNotSupportedException{
 		List<Triplet> startCodons = new ArrayList<Triplet>();
@@ -68,5 +73,6 @@ public class DetermineStartTest {
 	    startCodons.add(triplet4);
 	    List<Model> outputModels = determineStart.findStart(startCodons, model, "50");		
 		assertEquals(1,outputModels.size());
-	}*/
+	}
 }
+*/

@@ -3,14 +3,30 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
+import org.jcvi.jillion.core.residue.aa.IupacTranslationTables;
+import org.jcvi.vigor.component.AlignmentFragment;
 import org.jcvi.vigor.component.Exon;
+import org.jcvi.vigor.component.VirusGenome;
 
 
 
 public class VigorFunctionalUtils {
+	
+	public static AlignmentFragment mergeTwoFragments(AlignmentFragment frag1 , AlignmentFragment frag2){
+		Range prevExonNTRange = frag1.getNucleotideSeqRange();
+		Range nextExonNTRange = frag2.getNucleotideSeqRange();
+		Range prevExonAARange = frag1.getProteinSeqRange();
+		Range nextExonAARange = frag2.getProteinSeqRange();
+		Range mergedExonNTRange = Range.of(prevExonNTRange.getBegin(),nextExonNTRange.getEnd());
+		Range mergedExonAARange = Range.of(prevExonAARange.getBegin(),nextExonAARange.getEnd());
+		frag1.setProteinSeqRange(mergedExonAARange);
+		frag1.setNucleotideSeqRange(mergedExonNTRange);
+		return frag1;
+	}
 	
 	public static Frame getSequenceFrame(long coordinate){
 		Frame frame=Frame.ONE;
@@ -106,5 +122,19 @@ public class VigorFunctionalUtils {
 		Range outputRange = getNTRange(exons,Range.of(coordinate));
 		return outputRange.getBegin();
 	}
+	public static Map<Frame,List<Long>> findStopsInSequenceFrame(VirusGenome virusGenome,Range searchRange){
+		Map<Frame,List<Long>> stops = IupacTranslationTables.STANDARD.findStops(virusGenome.getSequence().toBuilder(searchRange).build());
+		Map<Frame,List<Long>> stopsTemp = new HashMap<Frame,List<Long>>();
+		final long startCoordinate = searchRange.getBegin();
+		for(Frame frame : stops.keySet()){
+			List<Long> temp = stops.get(frame).stream().map(x->x+startCoordinate).collect(Collectors.toList());
+			stopsTemp.put(frame, temp);
+		}
+		Map<Frame,List<Long>> outStopsMap = VigorFunctionalUtils.frameToSequenceFrame(stopsTemp);
+		return outStopsMap;
+		
+	}
+	
+	
 			
 }

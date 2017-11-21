@@ -10,6 +10,7 @@ import org.jcvi.jillion.core.Range;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 /**
  * Created by snettem on 5/9/2017.
  */
@@ -27,7 +28,7 @@ public class AlignmentGenerationService {
 	private ViralProteinService viralProteinService;
 	
 
-	public void GenerateAlignment(VirusGenome virusGenome, VigorForm form) {
+	public void GenerateAlignment(VirusGenome virusGenome,VigorForm form){
 		isDebug = form.isDebug();
 		try {
 			String alignmentTool = chooseAlignmentTool(form.getAlignmentEvidence());
@@ -36,22 +37,23 @@ public class AlignmentGenerationService {
 					virusGenome.getSequence());
 			virusGenome.setSequenceGaps(sequenceGaps);
 			if (alignmentTool.equals("exonerate")) {
-				List<Alignment> alignments = exonerateService.getAlignment(virusGenome, form.getAlignmentEvidence());
+			    List<Alignment> alignments = generateExonerateAlignment(virusGenome,form.getAlignmentEvidence());
 				alignments = alignments.stream()
-						.map(alignment -> viralProteinService.setViralProteinAttributes(alignment))
+						.map(alignment -> viralProteinService.setViralProteinAttributes(alignment,form))
 						.collect(Collectors.toList());
 				if (isDebug) {
 					System.out.println("*******Initial List of alignments*****");
-					FormatVigorOutput.printAlignments(alignments);
-					
-				}
-							
+					FormatVigorOutput.printAlignments(alignments);					
+				}							
 				modelGenerationService.generateModels(alignments, form);
 			}
 		} catch (Exception e) {
 			LOGGER.error(e.getMessage(), e);
-		}
-
+		}				
+	}
+	
+	public List<Alignment> generateExonerateAlignment(VirusGenome virusGenome, AlignmentEvidence alignmentEvidence) {
+	             return exonerateService.getAlignment(virusGenome, alignmentEvidence);
 	}
 
 	public String chooseAlignmentTool(AlignmentEvidence alignmentEvidence) {

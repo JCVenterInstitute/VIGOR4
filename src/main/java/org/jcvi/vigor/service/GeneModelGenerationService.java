@@ -1,10 +1,8 @@
 package org.jcvi.vigor.service;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.jcvi.jillion.core.Range;
@@ -24,6 +22,8 @@ public class GeneModelGenerationService {
 	private DetermineMissingExons determineMissingExons;
 	@Autowired
 	private DetermineStart determineStart;
+	@Autowired
+	private AdjustExonBoundaries adjustExonBounds;
 	boolean isDebug = true;
 	List<Model> partialGeneModels = new ArrayList<Model>();
 	List<Model> pseudoGenes = new ArrayList<Model>();
@@ -41,7 +41,8 @@ public class GeneModelGenerationService {
 		List<Model> processedModels = new ArrayList<Model>();
 		List<Model> modelsWithMissingExonsDetermined = new ArrayList<Model>();
 	    List<Model> modelsAfterDeterminingStart = new ArrayList<Model>();
-		
+	 	    
+	     
 	    /* Determine Missing Exons */
 		models.stream().forEach(model -> { 
 			modelsWithMissingExonsDetermined.addAll(determineMissingExons.determine(model, form));
@@ -62,12 +63,16 @@ public class GeneModelGenerationService {
 				}
 				
 			});
-			}});
+			}else{
+				partialGeneModels.add(x);
+			}
+				});
+			
 		
 		/*AdjustExonBoundaries*/
-		
-		
-	
+		modelsAfterDeterminingStart.stream().forEach(x->{
+			List<Model> outputModels = adjustExonBounds.determine(x, form);
+		});	
 		
 		return processedModels;
 	}
@@ -107,8 +112,7 @@ public class GeneModelGenerationService {
 		}
 		return internalStops;
 	}
-	
-	
+		
 	
 	
 	}

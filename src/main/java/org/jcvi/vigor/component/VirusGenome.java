@@ -35,6 +35,6 @@ public class VirusGenome {
     public VirusGenome(){
     	
     }
-	
+   
 	
 }

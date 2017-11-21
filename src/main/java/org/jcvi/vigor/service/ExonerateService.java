@@ -7,7 +7,6 @@ import org.jcvi.vigor.component.ViralProtein;
 import org.jcvi.vigor.component.VirusGenome;
 import org.jcvi.vigor.utils.GenerateExonerateOutput;
 import org.jcvi.vigor.utils.VigorUtils;
-import lombok.Data;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.align.exonerate.Exonerate2;
@@ -16,7 +15,6 @@ import org.jcvi.jillion.core.datastore.DataStoreProviderHint;
 import org.jcvi.jillion.fasta.aa.ProteinFastaDataStore;
 import org.jcvi.jillion.fasta.aa.ProteinFastaFileDataStoreBuilder;
 import org.jcvi.jillion.fasta.aa.ProteinFastaRecord;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.io.File;
 import java.util.ArrayList;
@@ -27,20 +25,17 @@ import java.util.Map;
 /**
  * Created by snettem on 5/17/2017.
  */
-@Data
+
 @Service
 public class ExonerateService {
 
 	private static final Logger LOGGER = LogManager.getLogger(ExonerateService.class);
 
-	@Autowired
-	private ViralProteinService viralProteinService;
-	
 	
 
 	public List<Alignment> getAlignment(VirusGenome virusGenome, AlignmentEvidence alignmentEvidence) {
        
-		String outputFilePath = GenerateExonerateOutput.queryExonerate(virusGenome,alignmentEvidence.getReference_db(), VigorUtils.getVigorWorkSpace());
+		String outputFilePath = GenerateExonerateOutput.queryExonerate(virusGenome,alignmentEvidence.getReference_db(), VigorUtils.getVigorWorkSpace(),null);
 		File outputFile = new File(outputFilePath);
 		List<Alignment> alignments = parseExonerateOutput(outputFile, alignmentEvidence, virusGenome);
 		return alignments;

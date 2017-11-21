@@ -2,8 +2,6 @@ package org.jcvi.vigor.component;
 
 
 import lombok.Data;
-
-import org.jcvi.jillion.core.residue.aa.AminoAcid;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope("prototype")
 @Data
-public class RNA_Editing {
+public class RNA_Editing  {
 
     private boolean has_RNA_editing=false;
     private int size;

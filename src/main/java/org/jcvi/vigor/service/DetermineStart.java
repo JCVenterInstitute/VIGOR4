@@ -50,6 +50,9 @@ public class DetermineStart implements EvaluateModel {
 			}
 
 		}
+		catch(CloneNotSupportedException e){
+			LOGGER.error(e.getMessage(),e);
+		}
 
 		catch (Exception e) {
 			LOGGER.error(e.getMessage(), e);
@@ -94,7 +97,7 @@ public class DetermineStart implements EvaluateModel {
 	}
 
 	public List<Model> findStart(List<Triplet> startCodons, Model model,
-		String startCodonWindowParam) {
+		String startCodonWindowParam) throws CloneNotSupportedException {
 		List<Model> newModels = new ArrayList<Model>();
 		long start;
 		long end;
@@ -108,22 +111,22 @@ public class DetermineStart implements EvaluateModel {
 		}
 		Exon firstExon = model.getExons().get(0);
 		Frame frame = VigorFunctionalUtils.getSequenceFrame(firstExon.getRange().getBegin());
-		String spliceform = "";
+		/*String spliceform = "";
 		String spliceformOfModel = model.getAlignment().getViralProtein().getGeneAttributes().getSplicing().getSpliceform();
 		if (spliceformOfModel!=null) {
 			spliceform = model.getAlignment().getViralProtein()
 					.getGeneAttributes().getSplicing().getSpliceform();
 		}
-		if (spliceform.equals("")) {
-			long expectedStart = firstExon.getRange().getBegin()
+		if (spliceform.equals("")) {*/
+		long expectedStart = firstExon.getRange().getBegin()
 					- ((firstExon.getAlignmentFragment().getProteinSeqRange()
 							.getBegin()) * 3);
 			start = expectedStart - windowSize;
 			end = expectedStart + windowSize;
-		} else {
+		/*} else {
 			start = firstExon.getRange().getBegin() - windowSize;
 			end = firstExon.getRange().getBegin() + windowSize;
-		}
+		}*/
 		if (start < 0) {
 			isSequenceMissing = true;
 			start = 0;
@@ -163,29 +166,34 @@ public class DetermineStart implements EvaluateModel {
 			Set<Range> keys = rangeScoreMap.keySet();
 			for (Range range : keys) {
 				Model newModel = new Model();
-				newModel = Model.deepClone(model);
+				newModel = model.clone();
 				newModel.setStartCodon(range);
 				if (model.getScores() != null) {
 					newModel.getScores().put("startCodonScore",
 							rangeScoreMap.get(range));
+					System.out.println(newModel.getAlignment().getViralProtein().getProteinID()+" Startcodon range "+ newModel.getStartCodon());
 				} else {
 					Map<String, Float> scores = new HashMap<String, Float>();
 					scores.put("startCodonScore", rangeScoreMap.get(range));
 					newModel.setScores(scores);
+					System.out.println(newModel.getAlignment().getViralProtein().getProteinID()+" Startcodon range "+ newModel.getStartCodon());
 				}
+				
 				newModels.add(newModel);
 			}
 		}
 		if (rangeScoreMap.isEmpty() && isSequenceMissing) {
 			Model newModel = new Model();
-			newModel = Model.deepClone(model);
+			newModel = model.clone();
 			newModel.setPartial5p(true);
 			newModels.add(newModel);
+			System.out.println("Sequence is missin. No Start found. Partial gene "+newModel.getAlignment().getViralProtein().getProteinID());
 
 		} else if (rangeScoreMap.isEmpty()) {
 			Model newModel = new Model();
-			newModel = Model.deepClone(model);
+			newModel = model.clone();
 			newModels.add(newModel);
+			System.out.println("Pseudogene. No Start found. "+newModel.getAlignment().getViralProtein().getProteinID());
 		}
 
 		return newModels;

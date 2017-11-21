@@ -1,13 +1,9 @@
 package org.jcvi.vigor.component;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+
 import java.util.List;
 import java.util.Map;
-
+import java.util.stream.Collectors;
 import org.jcvi.jillion.core.Direction;
 import org.jcvi.jillion.core.Range;
 import org.springframework.context.annotation.Scope;
@@ -18,8 +14,7 @@ import lombok.Data;
 @Component
 @Scope("prototype")
 @Data
-@SuppressWarnings("serial")
-public class Model implements Serializable{
+public class Model implements Cloneable{
 	
 	private List<Exon> exons;
 	private Alignment alignment;
@@ -32,7 +27,14 @@ public class Model implements Serializable{
     private Range startCodon;
     private boolean isPseudogene=false;
     
-   public static Model deepClone(Model model) {
+   public Model clone() throws CloneNotSupportedException {
+	   Model model = (Model) super.clone();
+	   model.exons = exons.stream().map(x->x.clone()).collect(Collectors.toList());
+	
+		
+	/*
+	   
+	   
 	   try {
 	     ByteArrayOutputStream baos = new ByteArrayOutputStream();
 	     ObjectOutputStream oos = new ObjectOutputStream(baos);
@@ -45,7 +47,8 @@ public class Model implements Serializable{
 	     e.printStackTrace();
 	     return null;
 	   }
-	 }
+	 }*/
+return model;
 
-
+}
 }

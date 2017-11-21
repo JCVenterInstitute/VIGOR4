@@ -1,16 +1,9 @@
 package org.jcvi.vigor.component;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
-import java.util.Comparator;
 
+import java.util.Comparator;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
-import org.jcvi.jillion.core.residue.aa.AminoAcid;
-import org.jcvi.jillion.core.residue.nt.Triplet;
 import org.jcvi.jillion.internal.core.util.JillionUtil;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -20,8 +13,8 @@ import lombok.Data;
 @Component
 @Scope("prototype")
 @Data
-@SuppressWarnings("serial")
-public class Exon implements Serializable {
+
+public class Exon implements Cloneable {
 
 	private Range range;
 	private Frame frame;
@@ -39,7 +32,18 @@ public class Exon implements Serializable {
 		this.range = range;
 		this.frame = frame;
 	}
-	
+	public Exon clone(){
+		
+		Exon exon=null;
+		try {
+			exon = (Exon)(super.clone());
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return exon;
+	}
+	/*
 	 public static Exon deepClone(Exon exon) {
 		   try {
 		     ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -53,7 +57,7 @@ public class Exon implements Serializable {
 		     e.printStackTrace();
 		     return null;
 		   }
-	 }
+	 }*/
 	 
 	public enum Comparators implements Comparator<Exon>{
 		Descending{

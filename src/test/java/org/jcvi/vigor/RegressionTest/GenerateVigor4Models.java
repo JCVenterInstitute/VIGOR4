@@ -36,11 +36,9 @@ public class GenerateVigor4Models {
 		if (file.exists()) {
 			File inputFile = new File(inputFilePath);
 			if (inputFile.exists()) {
-				int count = 0;
 				ExonerateService exonerateService = new ExonerateService();
 				ViralProteinService viralProteinService = new ViralProteinService();
 				ModelGenerationService modelGenerationService = new ModelGenerationService();
-				GenerateExonerateOutput generateExonerateOutput = new GenerateExonerateOutput();
 				NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(
 						inputFile).hint(
 						DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)
@@ -53,8 +51,8 @@ public class GenerateVigor4Models {
 							record.getSequence(), record.getComment(),
 							record.getId(), false, false);
 
-					String fileName = generateExonerateOutput.queryExonerate(
-							virusGenome, refDB, file.getAbsolutePath());
+					String fileName = GenerateExonerateOutput.queryExonerate(
+							virusGenome, refDB, file.getAbsolutePath(),null);
 					File outputFile = new File(fileName);
 					AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
 					alignmentEvidence.setReference_db(refDB);
@@ -64,7 +62,7 @@ public class GenerateVigor4Models {
 					alignments = alignments
 							.stream()
 							.map(alignment -> viralProteinService
-									.setViralProteinAttributes(alignment))
+									.setViralProteinAttributes(alignment, new VigorForm()))
 							.collect(Collectors.toList());
 					List<Model> candidateModels = modelGenerationService
 							.determineCandidateModels(alignments,
@@ -75,8 +73,7 @@ public class GenerateVigor4Models {
 					System.out.println("actual one in the end:"
 							+ virusGenome.getId());
 					System.out.println("counter" + count);*/
-					count++;
-
+				
 				}
 
 				/*

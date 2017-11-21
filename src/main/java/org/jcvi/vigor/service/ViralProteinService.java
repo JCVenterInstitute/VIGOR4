@@ -1,8 +1,10 @@
 package org.jcvi.vigor.service;
 import org.jcvi.vigor.component.*;
+import org.jcvi.vigor.utils.VigorFunctionalUtils;
 import org.jcvi.vigor.utils.VigorUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.jcvi.vigor.component.Splicing.SpliceSite;
+import org.jcvi.vigor.forms.VigorForm;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
@@ -21,6 +23,7 @@ import java.util.stream.Collectors;
 public class ViralProteinService {
 	private static final Logger LOGGER = LogManager.getLogger(ViralProteinService.class);
 	private String matPepDB = "";
+	private int min_intron_length;
 
 	/**
 	 *
@@ -28,7 +31,11 @@ public class ViralProteinService {
 	 * @return viralProtein: For the given protein ID ViralProtein object is
 	 *         generated and all the properties are defined;
 	 */
-	public Alignment setViralProteinAttributes(Alignment alignment) {
+	public Alignment setViralProteinAttributes(Alignment alignment,VigorForm form) {
+		String min_intronSize_param = form.getVigorParametersList().get("min_intron_size");
+		if(VigorUtils.is_Integer(min_intronSize_param)){
+			min_intron_length=Integer.parseInt(min_intronSize_param);
+		}		
 		ViralProtein viralProtein = setGeneAttributes(alignment.getViralProtein());
 		AlignmentEvidence alignmentEvidence = alignment.getAlignmentEvidence();
 		alignmentEvidence.setMatpep_db(matPepDB);
@@ -173,7 +180,8 @@ public class ViralProteinService {
 				}
 				rna_editing.setRegExp(temp[1]);
 				rna_editing.setHas_RNA_editing(true);
-				rna_editing.setInsertionString(temp[2]);
+				String insertionString = temp[2].substring(2);
+				rna_editing.setInsertionString(insertionString);
 				rna_editing.setNote(temp[3]);
 			}
 
@@ -233,11 +241,12 @@ public class ViralProteinService {
 	 *         These are determined from spliceform annotated in the defline
 	 */
 	public ViralProtein DetermineGeneStructure(ViralProtein viralProtein) {
-
+        
 		boolean is_ribosomal_slippage = viralProtein.getGeneAttributes().getRibosomal_slippage()
 				.isHas_ribosomal_slippage();
 		boolean is_spliced = viralProtein.getGeneAttributes().getSplicing().isSpliced();
 		List<Range> NTFragments = new ArrayList<Range>();
+		List<Range> introns = new ArrayList<Range>();
 		if (!(is_ribosomal_slippage) && !(is_spliced)) {
 			Range range = Range.of(0, 3 * (viralProtein.getSequence().getLength()-1));
 			NTFragments.add(range);
@@ -260,12 +269,19 @@ public class ViralProteinService {
 					Long dnaOffset = 0l;
 					for (int i = 0; i < splices.size(); i++) {
 						long nucleotides = Long.parseLong(splices.get(i).substring(1));
+						if(nucleotides>0){
 						Range range = Range.of(dnaOffset, (dnaOffset + nucleotides) - 1);
 						if (splices.get(i).matches("e-?[0-9]*")) {
 							dnaOffset = range.getEnd() + 1;
 							NTFragments.add(range);
 						} else {
+							if(nucleotides>=min_intron_length){
+								introns.add(range);
+							}
 							dnaOffset = range.getEnd() + 1;
+						}}
+						else{
+							dnaOffset=dnaOffset-nucleotides;
 						}
 					}
 				}
@@ -278,6 +294,7 @@ public class ViralProteinService {
 			}
 		}
         viralProtein.setNTfragments(NTFragments);
+        viralProtein.setIntrons(introns);
 		return viralProtein;
 	}
 

@@ -18,9 +18,5 @@ public class GeneAttributes{
 	private RNA_Editing rna_editing;
 	private StructuralSpecifications structuralSpecifications;
 	
-	
-	
-	
-	
-	
+		
 }

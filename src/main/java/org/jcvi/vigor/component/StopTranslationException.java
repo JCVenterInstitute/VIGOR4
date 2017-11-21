@@ -19,5 +19,6 @@ public class StopTranslationException{
 
     private boolean hasStopTranslationException=false;
     private AminoAcid replacementAA;
+    
 
 }

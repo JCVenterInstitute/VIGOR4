@@ -7,13 +7,22 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.stream.Stream;
+
+import org.jcvi.jillion.core.datastore.DataStoreProviderHint;
+import org.jcvi.jillion.fasta.aa.ProteinFastaDataStore;
+import org.jcvi.jillion.fasta.aa.ProteinFastaFileDataStoreBuilder;
+import org.jcvi.jillion.fasta.aa.ProteinFastaRecord;
+import org.jcvi.jillion.fasta.nt.NucleotideFastaDataStore;
+import org.jcvi.jillion.fasta.nt.NucleotideFastaFileDataStoreBuilder;
+import org.jcvi.jillion.fasta.nt.NucleotideFastaRecord;
 import org.jcvi.vigor.component.VirusGenome;
 
 public class GenerateExonerateOutput {
 	
 		
 	public static String queryExonerate(VirusGenome virusGenome, String referenceDB,
-			String workspace) {
+			String workspace,String proteinID) {
   
 		File file = new File(workspace + File.separator + "sequence_temp.fasta");
 		Path path = Paths.get(file.getAbsolutePath());
@@ -30,19 +39,48 @@ public class GenerateExonerateOutput {
 					System.out.println(e.getMessage());
 				}
 			});
+			writer.close();
 
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
-
 		String fileName = "";
 		fileName = virusGenome.getId().replaceAll("\\|", "") + ".txt";
 		String refDBFolder = referenceDB.replaceAll("_db", "");
+		
 		try {
 			String dbPath = VigorUtils.getVirusDatabasePath() + File.separator
 					+ referenceDB;
-			String command2 = workspace + File.separator + refDBFolder;
+		  	if(proteinID!=null){
+		  	  File dbFileTemp = new File(workspace+File.separator+"db_temp.fasta");
+				ProteinFastaDataStore dataStore = new ProteinFastaFileDataStoreBuilder(
+						new File(dbPath)).hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)
+								.build();
+				Stream<ProteinFastaRecord> records = dataStore.records();
+				ProteinFastaRecord record = records.filter(r->r.getId().equals(proteinID)).findFirst().get();
+				Path dbpath = Paths.get(dbFileTemp.getAbsolutePath());
+				List<String> Psequence = java.util.Arrays.asList(record
+						.getSequence().toString().split("(?<=\\G.{70})"));
+				try (BufferedWriter writer = Files.newBufferedWriter(dbpath)) {
+					writer.write(">" + record.getId() + " "
+							+ record.getComment());
+					Psequence.stream().forEach(line -> {
+						try {
+							writer.write("\n");
+							writer.write(line);
+						} catch (IOException e) {
+							System.out.println(e.getMessage());
+						}
+					});
+					writer.close();
 
+				} catch (IOException e) {
+					System.out.println(e.getMessage());
+				}
+				dbPath = dbFileTemp.getAbsolutePath();				
+			}
+			String command2 = workspace + File.separator + refDBFolder;
+      
 			Process p1 = new ProcessBuilder("mkdir", command2).start();
 			p1.waitFor();
 			p1.destroy();
