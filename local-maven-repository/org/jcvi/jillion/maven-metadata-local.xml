@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.jcvi</groupId>
+  <artifactId>jillion</artifactId>
+  <versioning>
+    <versions>
+      <version>5.3-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20171006153127</lastUpdated>
+  </versioning>
+</metadata>
