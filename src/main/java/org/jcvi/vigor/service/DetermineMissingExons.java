@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -28,35 +29,34 @@ import org.jcvi.vigor.utils.*;
 import org.jcvi.jillion.core.Direction;
 
 @Service
-public class DetermineMissingExons implements EvaluateModel {
+public class DetermineMissingExons implements DetermineGeneFeatures {
 	private static final Logger LOGGER = LogManager
 			.getLogger(DetermineMissingExons.class);
-	private int minMissingAAalign=6;
-	private int exonPercentCoverage = 65;
+	private int minExonSize=30;
+	//private int exonPercentCoverage = 65;
 	private int maxIntronSize=2500;
+	private int min_missing_AA_size=10;
 
 	@Override
 	public List<Model> determine(Model model, VigorForm form) {
-		String exonPercentCoverageParam = form.getVigorParametersList().get(
-				"exon_percentage_coverage");
+		String minExonSizeParam = form.getVigorParametersList().get(
+				"min_exon_size");
 		String maxIntronSizeparam = form.getVigorParametersList().get("max_intron_size");
-		if (VigorUtils.is_Integer(exonPercentCoverageParam)) {
-			exonPercentCoverage = Integer.parseInt(exonPercentCoverageParam);
+		String minMissingAASizeParam = form.getVigorParametersList().get("min_missing_AA_size");
+		if (VigorUtils.is_Integer(minExonSizeParam)) {
+			minExonSize = Integer.parseInt(minExonSizeParam);
 		}
 		if (VigorUtils.is_Integer(maxIntronSizeparam)) {
-			maxIntronSize = Integer.parseInt(exonPercentCoverageParam);
+			maxIntronSize = Integer.parseInt(maxIntronSizeparam);
 		}
-		String spliceform="";
-		if(model.getAlignment().getViralProtein().getGeneAttributes().getSplicing().getSpliceform()!=null){
-		spliceform = model.getAlignment().getViralProtein()
-				.getGeneAttributes().getSplicing().getSpliceform();
+		if (VigorUtils.is_Integer(minMissingAASizeParam)) {
+			min_missing_AA_size = Integer.parseInt(minMissingAASizeParam);
 		}
-		model.getExons().sort(Exon.Comparators.Ascending);
-		if (spliceform.equals("")) {
-			model = findMissingExonsWithSpliceFormAbsent(model);
-		} else {
-			model = findMissingExonsWithSpliceFormPresent(model);
-		}
+		model.getExons().sort(Exon.Comparators.Ascending);	
+		System.out.println("Model "+ model.getGeneSymbol());
+		System.out.println("Before"+model.getExons().size());
+		model = findMissingExons(model);	
+		System.out.println("After"+model.getExons().size());
 		model.getExons().sort(Exon.Comparators.Ascending);
 		List<Model> models = new ArrayList<Model>();
 		models.add(model);
@@ -64,7 +64,7 @@ public class DetermineMissingExons implements EvaluateModel {
 	}
 
 	public Exon performJillionPairWiseAlignment(Range NTRange, Range AARange,
-			NucleotideSequence NTSequence, ProteinSequence AASequence,boolean spliceFormExists,Direction modelDirection) {
+			NucleotideSequence NTSequence, ProteinSequence AASequence,Direction modelDirection) {
 		Exon exon = null;			
 		NucleotideSequence NTSubSequence = NTSequence.toBuilder(NTRange)
 				.build();
@@ -88,7 +88,7 @@ public class DetermineMissingExons implements EvaluateModel {
 		for (Frame myFrame : frameSet) {
 			if (bestAlignment == null) {
 				bestAlignment = alignments.get(myFrame);
-			}
+		}
 			if (bestAlignment.getScore() < alignments.get(myFrame).getScore()) {
 				bestAlignment = alignments.get(myFrame);
 				if(myFrame==Frame.TWO){
@@ -96,8 +96,7 @@ public class DetermineMissingExons implements EvaluateModel {
 				}else if (myFrame == Frame.THREE){
 					NTRange = Range.of(NTRange.getBegin()+2,NTRange.getEnd());
 				}
-			   }
-			
+			   }			
 		}
 		
 		if(bestAlignment.getQueryRange().getDirection().equals(modelDirection)){
@@ -110,7 +109,7 @@ public class DetermineMissingExons implements EvaluateModel {
 			Range range = bestAlignment.getQueryRange().getRange();
 			Range modelExonNTRange = Range.of(
 					(range.getBegin() * 3) + NTRange.getBegin(),
-					((range.getEnd() * 3)+(range.getBegin()*3)-1) + NTRange.getBegin());
+					(((range.getEnd()+1) * 3 )-1)+ NTRange.getBegin());
 			exon.setRange(modelExonNTRange);
 			AlignmentFragment alignmentFragment = new AlignmentFragment();
 			alignmentFragment.setDirection(bestAlignment.getQueryRange()
@@ -125,7 +124,7 @@ public class DetermineMissingExons implements EvaluateModel {
 		}
 		return exon;
 	}
-
+/*
 	public Model findMissingExonsWithSpliceFormAbsent(Model model) {
 		List<Exon> exons = model.getExons();
 		List<Exon> newExons = new ArrayList<Exon>();
@@ -234,12 +233,101 @@ public class DetermineMissingExons implements EvaluateModel {
 		model.setExons(newExons);
 		return model;
 	}
-
-	public Model findMissingExonsWithSpliceFormPresent(Model model) {
-		if(model.getAlignment().getViralProtein().getProteinID().equals("gi|392990023|ref|YP_006491251.1|")){
-			System.out.println("I will break");
+*/
+	
+	public Model findMissingExons(Model model) {
+		if(model.getGeneSymbol().equals("Model gi|392976861|ref|YP_006491245.1|")){
+			System.out.println("found");
 		}
-		ViralProtein viralProtein = model.getAlignment().getViralProtein();
+		//List<Model> models = new ArrayList<Model>();
+		List<Exon> exons = model.getExons();
+		List<Exon> missingExons = new ArrayList<Exon>();
+		long proteinLength = model.getAlignment().getViralProtein().getSequence().getLength();
+		NucleotideSequence NTSeq = model.getAlignment().getVirusGenome().getSequence();
+		ProteinSequence AASeq = model.getAlignment().getViralProtein().getSequence();
+		List<Range> sequenceGaps = model.getAlignment().getVirusGenome().getSequenceGaps();
+		long NTSeqLength = NTSeq.getLength();
+		Range preAARange = null;
+		Range preNTRange = null;
+		Exon prevExon=null;
+		boolean afterLastExon=false;
+		for(int i=0;i<=exons.size();i++){
+			int j=0;
+			if(i==exons.size()){
+			   j=exons.size()-1;
+			   preAARange=null;
+			   preNTRange=null;
+			   afterLastExon = true;
+			}else{
+				j=i;
+			}
+			Exon exon = exons.get(j);
+			Range AARange = exon.getAlignmentFragment().getProteinSeqRange();
+			Range NTRange = exon.getRange();
+			Range missingAARange=null;
+			Range missingNTRange = null;
+			if(preAARange!=null){
+				missingAARange = Range.of(preAARange.getEnd()+1,AARange.getBegin()-1);
+				missingNTRange = Range.of(preNTRange.getEnd()+1,NTRange.getBegin()-1);
+			}else{
+				if(i!=exons.size()){
+				missingAARange = Range.of(0,AARange.getBegin());
+				missingNTRange = Range.of(0,NTRange.getBegin());	
+				
+				}else{
+				missingAARange = Range.of(AARange.getEnd()+1,proteinLength-1);
+				missingNTRange = Range.of(NTRange.getEnd()+1,NTSeqLength-1);
+				}
+			}
+			long temp = maxIntronSize+(missingAARange.getLength()*3);
+			if(missingNTRange.getLength()>temp){
+				missingNTRange = Range.of(missingNTRange.getBegin(),missingNTRange.getBegin()+temp);
+			}
+			boolean sequenceGap=false;
+			if(sequenceGaps!=null){
+				for(Range range:sequenceGaps){
+					if(range.intersects(missingNTRange)){
+						Range intersection = range.intersection(missingNTRange);
+						Range leftOver=null;
+						if(i==0){
+						leftOver = Range.of(intersection.getEnd()+1,missingNTRange.getEnd());
+						}else{
+						leftOver = Range.of(missingNTRange.getBegin(),intersection.getBegin()-1);
+						}
+						if(leftOver!=null && leftOver.getLength()>=20){
+							missingNTRange=leftOver;
+						}else{
+						sequenceGap=true;
+						}
+						break;
+					}
+				}
+				
+			}	
+			if(!sequenceGap){
+			if(missingAARange.getLength()>=min_missing_AA_size){
+			Exon determinedExon = performJillionPairWiseAlignment(missingNTRange,
+						missingAARange, NTSeq,AASeq,model.getDirection());
+			if(determinedExon.getRange().getLength()>=minExonSize){
+			    missingExons.add(determinedExon);
+			    if(prevExon!=null){
+			    prevExon.set_3p_adjusted(false);
+			    }
+			    if(afterLastExon){
+			    exon.set_3p_adjusted(false);
+			    }else
+			    {
+			    exon.set_5p_adjusted(false);
+			    }
+			}
+			}
+			}
+			
+		preNTRange=NTRange;
+		preAARange=AARange;
+		prevExon = exon;
+		}
+		/*ViralProtein viralProtein = model.getAlignment().getViralProtein();
 		List<Range> referenceExons = viralProtein.getNTfragments();
 		List<Range> sequenceGaps = model.getAlignment().getVirusGenome().getSequenceGaps();
 		NucleotideSequence NTSequence = model.getAlignment().getVirusGenome()
@@ -290,7 +378,7 @@ public class DetermineMissingExons implements EvaluateModel {
 				}				
 			}
 
-/*			if (!found) {
+			if (!found) {
 				Range missingNTRange = null;
 				Range missingAARange = null;
 				if (i == 0) {
@@ -386,12 +474,14 @@ public class DetermineMissingExons implements EvaluateModel {
 			prevRefExonAARange = refExonAARange;
 		}
 		foundMissingExons.addAll(exons);
-		model.setExons(foundMissingExons);*/
-		}
+		model.setExons(foundMissingExons);
+		}*/
+		missingExons.addAll(model.getExons());
+		model.setExons(missingExons);
 		return model;
 	}
 
-	public boolean isExon(Range modelExonAARange, Range refExonAARange) {
+	/*public boolean isExon(Range modelExonAARange, Range refExonAARange) {
 		boolean found = false;
 		long intersectionLength = modelExonAARange.intersection(refExonAARange)
 				.getLength();
@@ -401,7 +491,7 @@ public class DetermineMissingExons implements EvaluateModel {
 			found = true;
 		}		
 		return found;
-	}
+	}*/
 		
 
 }

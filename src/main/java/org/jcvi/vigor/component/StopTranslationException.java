@@ -19,6 +19,8 @@ public class StopTranslationException{
 
     private boolean hasStopTranslationException=false;
     private AminoAcid replacementAA;
+    private String motif;
+    private int offset;
     
 
 }

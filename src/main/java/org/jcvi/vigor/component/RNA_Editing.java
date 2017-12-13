@@ -19,5 +19,6 @@ public class RNA_Editing  {
     private String regExp;
     private String insertionString;
     private String note;
+    
 
 }

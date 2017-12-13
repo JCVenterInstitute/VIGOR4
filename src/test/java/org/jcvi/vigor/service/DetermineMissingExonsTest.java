@@ -56,7 +56,7 @@ public class DetermineMissingExonsTest {
 		Model model = new Model();
 		model = models.get(0);
 		model.getExons().remove(1);
-		int exons = determineMissingExons.findMissingExonsWithSpliceFormPresent(model).getExons().size();
+		int exons = determineMissingExons.findMissingExons(model).getExons().size();
 		assertEquals(2, exons);
 	}
 
@@ -91,7 +91,7 @@ public class DetermineMissingExonsTest {
 								.build();
 
 		Exon exon = determineMissingExons.performJillionPairWiseAlignment(NTRange, AARange, NTSequence,
-				AASequence,true,Direction.FORWARD);
+				AASequence,Direction.FORWARD);
 		assertEquals(exon.getAlignmentFragment().getProteinSeqRange(), AARange);
 
 	}

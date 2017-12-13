@@ -21,9 +21,7 @@ public class Exon implements Cloneable {
 	private AlignmentFragment alignmentFragment;
 	private boolean is_5p_adjusted=false;
 	private boolean is_3p_adjusted=false;
-	private String insertionString;
-	private String replacementString;
-	private Frame sequenceFrame;
+    private Frame sequenceFrame;
 	
 	public Exon(){
 		

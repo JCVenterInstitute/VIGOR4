@@ -4,7 +4,6 @@ package org.jcvi.vigor.forms;
 import org.jcvi.vigor.component.AlignmentEvidence;
 import org.jcvi.vigor.utils.LoadDefaultParameters;
 import org.jcvi.vigor.utils.VigorUtils;
-import org.jcvi.vigor.component.AlignmentEvidence;
 import lombok.Data;
 import java.util.Map;
 

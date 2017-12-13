@@ -1,6 +1,7 @@
 package org.jcvi.vigor.utils;
 
 import org.jcvi.vigor.component.Alignment;
+import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
 
 import java.util.List;
@@ -21,11 +22,12 @@ public class FormatVigorOutput {
 				.println(String.format("%-32s%-20s%-20s%-20s%-20s", "Gene_Symbol", "Direction","spliceform", "NTSeqRange", "AASeqRange"));
 
 		for (Model model : models) {
-			System.out.print(String.format("%-32s", model.getGeneSymbol()));
+			List<Exon> exons = model.getExons();
+		    System.out.print(String.format("%-32s", model.getGeneSymbol()));
 			System.out.print(String.format("%-20s", model.getDirection()));
 			System.out.print(String.format("%-20s",model.getAlignment().getViralProtein().getGeneAttributes().getSplicing().getSpliceform()));
-			List<Range> NTranges = model.getExons().stream().map(e -> e.getRange()).collect(Collectors.toList());
-			List<Range> AAranges = model.getExons().stream().map(e -> e.getAlignmentFragment().getProteinSeqRange())
+			List<Range> NTranges =exons.stream().map(e -> e.getRange()).collect(Collectors.toList());
+			List<Range> AAranges = exons.stream().map(e -> e.getAlignmentFragment().getProteinSeqRange())
 					.collect(Collectors.toList());
 			for (int i = 0; i < NTranges.size(); i++) {
 				System.out.print(String.format("%-20s", NTranges.get(i).getBegin() + "-" + NTranges.get(i).getEnd()));
@@ -72,6 +74,28 @@ public class FormatVigorOutput {
 				System.out.print(String.format("%-20s", AAranges.get(i).getBegin() + "-" + AAranges.get(i).getEnd()));
 				System.out.println(String.format("%-20s", frames.get(i).getFrame()));
 				System.out.print(String.format("%-72s", ""));
+			}
+			System.out.println("");
+		}
+	 }
+	
+	public static void printModelsWithStart(List<Model> models, String message) {
+		System.out.println(
+				"********************************"+message+"**************************************");
+		System.out
+				.println(String.format("%-32s%-20s%-20s%-20s%-20s", "Gene_Symbol", "Direction","spliceform","NTSeqRange", "AASeqRange"));
+
+		for (Model model : models) {
+			System.out.print(String.format("%-32s", model.getGeneSymbol()));
+			System.out.print(String.format("%-20s", model.getDirection()));
+			System.out.print(String.format("%-20s",model.getAlignment().getViralProtein().getGeneAttributes().getSplicing().getSpliceform()));
+			List<Range> NTranges = model.getExons().stream().map(e -> e.getRange()).collect(Collectors.toList());
+			List<Range> AAranges = model.getExons().stream().map(e -> e.getAlignmentFragment().getProteinSeqRange())
+					.collect(Collectors.toList());
+			for (int i = 0; i < NTranges.size(); i++) {
+				System.out.print(String.format("%-20s", NTranges.get(i).getBegin() + "-" + NTranges.get(i).getEnd()));
+				System.out.println(String.format("%-20s", AAranges.get(i).getBegin() + "-" + AAranges.get(i).getEnd()));
+				System.out.print(String.format("%-92s", ""));
 			}
 			System.out.println("");
 		}

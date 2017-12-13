@@ -1,8 +1,8 @@
-/*package org.jcvi.vigor.service;
+package org.jcvi.vigor.service;
 
-*//**
+/**
  * Created by snettem on 5/25/2017.
- *//*
+ */
 
 
 import org.junit.runner.RunWith;
@@ -12,8 +12,12 @@ import org.junit.runners.Suite;
 
 @Suite.SuiteClasses({
         AlignmentGenerationServiceTest.class,
-        ModelGenerationServiceTest.class
+        ModelGenerationServiceTest.class,
+        DetermineMissingExonsTest.class,
+        DetermineStartAndStopTest.class,
+        AdjustViralTricksTest.class,
+        AdjustUneditedExonBoundariesTest.class        
 })
 public class TestSuit {
 }
-*/
+

@@ -18,22 +18,23 @@ public class Model implements Cloneable{
 	
 	private List<Exon> exons;
 	private Alignment alignment;
-	private Map<String,Float> scores;
+	private Map<String,Double> scores;
 	private String geneSymbol;
 	private List<String> status;
 	private Direction direction;
     private boolean partial5p=false;
     private boolean partial3p=false;
-    private Range startCodon;
     private boolean isPseudogene=false;
+    private Range replaceStopCodonRange;
+    private Range insertRNAEditingRange;
+   
     
    public Model clone() throws CloneNotSupportedException {
 	   Model model = (Model) super.clone();
 	   model.exons = exons.stream().map(x->x.clone()).collect(Collectors.toList());
-	
-		
-	/*
 	   
+		
+	/*  
 	   
 	   try {
 	     ByteArrayOutputStream baos = new ByteArrayOutputStream();

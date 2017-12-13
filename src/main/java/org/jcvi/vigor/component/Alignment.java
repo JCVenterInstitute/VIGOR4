@@ -16,7 +16,7 @@ public class Alignment implements Serializable {
 
 	private transient String alignmentTool_name;
 	private List<AlignmentFragment> alignmentFragments;
-	private Map<String,Float> alignmentScore;
+	private Map<String,Double> alignmentScore;
 	private transient VirusGenome virusGenome;
 	private transient ViralProtein viralProtein;
 	private transient AlignmentEvidence alignmentEvidence;

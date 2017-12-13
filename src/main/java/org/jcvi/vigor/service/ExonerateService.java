@@ -52,8 +52,8 @@ public class ExonerateService {
 			for (int i = 0; i < Jalignments.size(); i++) {
 				VulgarProtein2Genome2 Jalignment = Jalignments.get(i);
 				Alignment alignment = new Alignment();
-				Map<String, Float> alignmentScores = new HashMap<String, Float>();
-				alignmentScores.put("ExonerateScore", Jalignment.getScore());
+				Map<String, Double> alignmentScores = new HashMap<String, Double>();
+				alignmentScores.put("ExonerateScore",(double)Jalignment.getScore());
 				alignment.setAlignmentScore(alignmentScores);
 				alignment.setAlignmentTool_name("exonerate");
 				alignment.setAlignmentEvidence(alignmentEvidence);

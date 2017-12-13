@@ -46,9 +46,9 @@ public class VigorFunctionalUtils {
 		else frame=Frame.THREE;
 		return frame;
 	}
-	public static float generateScore(long referenceCoordinate,long pointOfOccurance){
+	public static double generateScore(long referenceCoordinate,long pointOfOccurance){
 		long distance = 0;
-		float score =0;
+		double score =0;
 			
 			if (pointOfOccurance - referenceCoordinate < 0) {
 				distance = referenceCoordinate - pointOfOccurance;

@@ -15,6 +15,7 @@ import org.junit.runner.RunWith;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.vigor.AppConfig;
 import org.jcvi.vigor.component.Alignment;
+import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.utils.VigorTestUtils;
@@ -26,7 +27,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = AppConfig.class)
-public class AdjustExonBoundariesTest {
+public class AdjustViralTricksTest {
 
 	private List<Alignment> alignments;
 	private List<Model> models=new ArrayList<Model>();
@@ -35,7 +36,7 @@ public class AdjustExonBoundariesTest {
 	@Autowired
 	private ViralProteinService viralProteinService;
 	@Autowired
-	private AdjustExonBoundaries adjustExonBoundaries;
+	private AdjustViralTricks adjustViralTricks;
 	private ClassLoader classLoader = VigorTestUtils.class.getClassLoader(); 
 	private File file = new File(classLoader.getResource("vigorUnitTestInput/chikv.ungapped.fasta.JF274082.1.ref.fasta"). getFile());
 	
@@ -44,32 +45,31 @@ public class AdjustExonBoundariesTest {
 			alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(),"chikv_db",VigorUtils.getVigorWorkSpace(),"gi|392976865|ref|YP_006491243.1|");
 			alignments = alignments.stream().map(alignment -> viralProteinService.setViralProteinAttributes(alignment,new VigorForm()))
 					.collect(Collectors.toList());
-			alignments.stream().forEach(x -> {
+			alignments = modelGenerationService.mergeIdenticalProteinAlignments(alignments);
+		    alignments.stream().forEach(x -> {
 				if(x.getViralProtein().getProteinID().equals("gi|392976865|ref|YP_006491243.1|")){
 					models.addAll(modelGenerationService.alignmentToModels(x, "exonerate"));
 				}
 			});
-		
 	}
 	
     @Test
     public void adjustRibosomalSlippageTest() throws CloneNotSupportedException{
-    	Optional<Model> testModel = models.stream().filter(x->x.getAlignment().getViralProtein().getProteinID().equals("gi|392976865|ref|YP_006491243.1|")).findFirst();
-    	List<Model> models=null;
-    	if(testModel.isPresent()){
-    	models = adjustExonBoundaries.adjustRibosomalSlippage(testModel.get());
-    	}
-    	Range actual = models.get(0).getExons().get(0).getRange();    
+    	Model testModel = models.get(0);
+    	List<Exon> exons = testModel.getExons();
+       	List<Model> models=null;
+       	models = adjustViralTricks.adjustRibosomalSlippage(testModel);
+       	Range actual = models.get(0).getExons().get(0).getRange();    
     	assertEquals(Range.of(7553,9943),actual);
     }
     
-    @Test
+   /* @Test
     public void adjustSpliceSitesTest() throws CloneNotSupportedException{
     	
-    	adjustExonBoundaries.adjustSpliceSites(models.get(0));
+    	adjustViralTricks.adjustSpliceSites(models.get(0));
     	
     	
-    }
+    }*/
 	
 	/*
 	@Test

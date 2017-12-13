@@ -22,11 +22,11 @@ import java.util.stream.Collectors;
 @Service
 public class ModelGenerationService {
 	
-	private long minCondensation;
-	private long minIntronLength;
+	private long minCondensation=10;
+	private long minIntronLength=30;
 	private static boolean isDebug = false;
-	private int AAOverlapOffset;
-	private int NTOverlapOffset;
+	private int AAOverlapOffset=10;
+	private int NTOverlapOffset=30;
 
 	@Autowired
 	private GeneModelGenerationService geneModelGenerationService;
@@ -77,8 +77,8 @@ public class ModelGenerationService {
 	        alignmentsTemp.remove(mergedAlignment);
 	    	for(Alignment alignment : alignmentsTemp){
 	    		mergedAlignment.getAlignmentFragments().addAll(alignment.getAlignmentFragments());
-	    		Map<String,Float> scores = mergedAlignment.getAlignmentScore();
-	    		Float score = scores.get("ExonerateScore");
+	    		Map<String,Double> scores = mergedAlignment.getAlignmentScore();
+	    		double score = scores.get("ExonerateScore");
 	    		score = score+alignment.getAlignmentScore().get("ExonerateScore");
 	    		scores.put("ExonerateScore", score);
 	    		mergedAlignment.setAlignmentScore(scores);
@@ -197,13 +197,6 @@ public class ModelGenerationService {
 			
 			List<Model> newModelsreturned = splitModelAtSequenceGaps(model,validSequenceGaps);
 			
-			//candidateModels.addAll(splitModelAtSequenceGaps(model, validSequenceGaps));
-			if(newModelsreturned.size()>1){
-			System.out.println("Before Splitting");
-			model.getExons().stream().forEach(System.out::println);
-			System.out.println("After splitting at the sequence gaps");
-			newModelsreturned.stream().forEach(System.out::println);
-			}
 			candidateModels.addAll(newModelsreturned);
 			}else
 			{
@@ -231,17 +224,13 @@ public class ModelGenerationService {
 	 * @return Models of each alignment.
 	 */
 	public List<Model> alignmentToModels(Alignment alignment, String alignmentTool) {
-		if(alignment.getViralProtein().getProteinID().equals("P21277.1")){
-			System.out.println("I will break");
-		}
-		
+				
 		Map<Direction, List<AlignmentFragment>> alignmentFragsGroupedList = alignment.getAlignmentFragments().stream()
 				.collect(Collectors.groupingBy(w -> w.getDirection()));
 		Set<Direction> keyset = alignmentFragsGroupedList.keySet();
 		Iterator<Direction> iter = keyset.iterator();
 		List<Model> models = new ArrayList<Model>();
 		for (Direction direction : keyset) {
-			System.out.println("for protein " +alignment.getViralProtein().getProteinID());
 			List<List<AlignmentFragment>> ListOfCompatibleFragsList = generateCompatibleFragsChains(
 					alignmentFragsGroupedList.get(iter.next()), alignmentTool);
 			Iterator<List<AlignmentFragment>> iter1 = ListOfCompatibleFragsList.iterator();
@@ -255,7 +244,8 @@ public class ModelGenerationService {
 				model.setAlignment(alignment);
 				model.setGeneSymbol(alignment.getViralProtein().getProteinID());
 				model.setDirection(direction);
-				model = generateScores(model, alignment);
+				Map<String, Double> alignmentScores = alignment.getAlignmentScore();
+				model.setScores(alignmentScores);
 				List<String> statusList = new ArrayList<String>();
 				statusList.add("Initial Model");
 				model.setStatus(statusList);
@@ -289,7 +279,7 @@ public class ModelGenerationService {
         intronRange = Range.of(currentFragment.getEnd()+1,nextFragment.getBegin()-1);
         }
         catch(Exception e){
-        	System.out.println("Exception " +e.getMessage());
+        	LOGGER.error(e.getMessage(),e);
         }  Range missingAAalignRange=Range.of(0,0);
         try{
         if(intronRange.getEnd()-intronRange.getBegin()==-1){
@@ -306,7 +296,7 @@ public class ModelGenerationService {
 		}	
         }
         catch(Exception e){
-        	System.out.println();
+        	LOGGER.error(e.getMessage(),e);
         }
 		if((intronRange.getLength()<=minIntronLength && missingAAalignRange.getLength()<=minCondensation)){
 		Map<Frame,List<Long>> intronStops = VigorFunctionalUtils.findStopsInSequenceFrame(virusGenome, intronRange);
@@ -363,13 +353,6 @@ public class ModelGenerationService {
 		return outFragments;
 	}
 
-	public Model generateScores(Model model, Alignment alignment) {
-
-		Map<String, Float> alignmentScores = alignment.getAlignmentScore();
-		model.setScores(alignmentScores);
-
-		return model;
-	}
 
 	/**
 	 * 

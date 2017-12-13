@@ -24,7 +24,7 @@ import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.utils.*;
 
 @Service
-public class DetermineStart implements EvaluateModel {
+public class DetermineStart implements DetermineGeneFeatures {
 
 	private static final Logger LOGGER = LogManager
 			.getLogger(DetermineStart.class);
@@ -41,13 +41,6 @@ public class DetermineStart implements EvaluateModel {
 					"start_codon_search_window");
 			
 			models = findStart(startCodons, model, startCodonWindowParam);
-
-			for (Model mymodel : models) {
-				System.out.println("Finding start for below model");
-				mymodel.getExons().stream().forEach(System.out::println);
-				System.out.println(mymodel.getGeneSymbol() + "    "
-						+ mymodel.getStartCodon());
-			}
 
 		}
 		catch(CloneNotSupportedException e){
@@ -135,7 +128,7 @@ public class DetermineStart implements EvaluateModel {
 		final long tempStart = start;
 		NucleotideSequence NTSequence = model.getAlignment().getVirusGenome()
 				.getSequence().toBuilder(startSearchRange).build();
-		Map<Range, Float> rangeScoreMap = new HashMap<Range, Float>();
+		Map<Range, Double> rangeScoreMap = new HashMap<Range, Double>();
 		for (Triplet triplet : startCodons) {
 			Stream<Range> stream = NTSequence.findMatches(triplet.toString());
 			List<Range> rangesInFrame = new ArrayList<Range>();
@@ -167,20 +160,20 @@ public class DetermineStart implements EvaluateModel {
 			for (Range range : keys) {
 				Model newModel = new Model();
 				newModel = model.clone();
-				newModel.setStartCodon(range);
+				Exon fExon = newModel.getExons().get(0);
+				fExon.setRange(Range.of(range.getBegin(),fExon.getRange().getEnd()));
 				if (model.getScores() != null) {
 					newModel.getScores().put("startCodonScore",
 							rangeScoreMap.get(range));
-					System.out.println(newModel.getAlignment().getViralProtein().getProteinID()+" Startcodon range "+ newModel.getStartCodon());
 				} else {
-					Map<String, Float> scores = new HashMap<String, Float>();
+					Map<String, Double> scores = new HashMap<String, Double>();
 					scores.put("startCodonScore", rangeScoreMap.get(range));
 					newModel.setScores(scores);
-					System.out.println(newModel.getAlignment().getViralProtein().getProteinID()+" Startcodon range "+ newModel.getStartCodon());
 				}
-				
 				newModels.add(newModel);
 			}
+		}else{
+			System.out.println("Sorry i did not have start");
 		}
 		if (rangeScoreMap.isEmpty() && isSequenceMissing) {
 			Model newModel = new Model();
@@ -192,7 +185,8 @@ public class DetermineStart implements EvaluateModel {
 		} else if (rangeScoreMap.isEmpty()) {
 			Model newModel = new Model();
 			newModel = model.clone();
-			newModels.add(newModel);
+			newModel.setPseudogene(true);
+			newModels.add(newModel);	
 			System.out.println("Pseudogene. No Start found. "+newModel.getAlignment().getViralProtein().getProteinID());
 		}
 

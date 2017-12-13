@@ -7,175 +7,41 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
-import org.jcvi.vigor.service.EvaluateModel;
-import org.jcvi.vigor.utils.VigorFunctionalUtils;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
-import org.jcvi.vigor.component.RNA_Editing;
-import org.jcvi.vigor.component.Ribosomal_Slippage;
-import org.jcvi.vigor.component.Splicing.SpliceSite;
 import org.jcvi.vigor.component.VirusGenome;
+import org.jcvi.vigor.component.Splicing.SpliceSite;
 import org.jcvi.vigor.forms.VigorForm;
+import org.jcvi.vigor.utils.VigorFunctionalUtils;
+import org.jcvi.vigor.utils.VigorUtils;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AdjustExonBoundaries implements EvaluateModel {
-
-	private static final Logger LOGGER = LogManager.getLogger(ModelGenerationService.class);
+public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
 	private long defaultSearchWindow =50;
 	private long minIntronLength = 20;
-	
-	public List<Model> determine(Model model,VigorForm form){
+	@Override
+	public List<Model> determine(Model model, VigorForm form) {
+		Map<String,String> params  = form.getVigorParametersList();
+		if(VigorUtils.is_Integer(params.get("stop_codon_search_window"))){
+			defaultSearchWindow=Integer.parseInt(params.get("stop_codon_search_window"));
+		}
+		if(VigorUtils.is_Integer(params.get("min_intron_size"))){
+			minIntronLength=Integer.parseInt(params.get("min_intron_size"));
+		}
 		List<Model> models=null;
-		
 		try{
-		models = adjustRibosomalSlippage(model);
-		for(Model riboAdjustedModel : models){
-		models = adjustSpliceSites(riboAdjustedModel);
+		models = adjustSpliceSites(model);
 		}
-		for(Model spliceAdjustedModel : models){
-			models = adjustRNAEditing(spliceAdjustedModel);
-		}
+		catch(CloneNotSupportedException e){
 			
-		}catch(CloneNotSupportedException e){
-			LOGGER.error(e.getMessage(),e);
-		}catch(Exception e){
-			LOGGER.error(e.getMessage(),e);
 		}
 		return models;
 	}
-	
-	//change findMatches method.While extending the exon boundaries, check that there should not be any internal stops.
-	public List<Model> adjustRibosomalSlippage(Model model) throws CloneNotSupportedException{
-	   Ribosomal_Slippage riboSlippage= model.getAlignment().getViralProtein().getGeneAttributes().getRibosomal_slippage();
-	   List<Model> models = new ArrayList<Model>();
-	   if(riboSlippage.isHas_ribosomal_slippage()){
-	   long CDSStart =model.getExons().get(0).getRange().getBegin();
-	   long CDSEnd = model.getExons().get(model.getExons().size()-1).getRange().getEnd();
-	   NucleotideSequence cds = model.getAlignment().getVirusGenome().getSequence().toBuilder(Range.of(CDSStart,CDSEnd))
-				.build();
-	   List<Range> matches = new ArrayList<Range>();
 
-	   matches = cds.findMatches(riboSlippage.getSlippage_motif()).collect(Collectors.toList());
-	   
-	   matches=matches.stream().map(x->x=Range.of(x.getBegin()+CDSStart,x.getEnd()+CDSStart)).sequential().collect(Collectors.toList());
-	   for(Range match:matches){
-		  Model newModel = new Model();
-		  newModel = model.clone();
-		 // Range slippagePoint = Range.of(match.getEnd()+riboSlippage.getSlippage_offset(),match.getEnd()+riboSlippage.getSlippage_offset());
-		 //test logic(vigor3 annotation)
-		  Range slippagePoint = Range.of(match.getBegin()+riboSlippage.getSlippage_offset()-1);
-		 for(int i=0;i<newModel.getExons().size();i++){
-			 Range exonRange = newModel.getExons().get(i).getRange();
-			 if(exonRange.intersects(slippagePoint)){
-				String pointOfOccurance = determineLocation(exonRange,slippagePoint,3);
-				 if(pointOfOccurance.equals("middle")){
-					 Exon exon = new Exon();
-					 exon = newModel.getExons().get(i).clone();
-					 exon.set_5p_adjusted(true);
-					 exon.setRange(Range.of(slippagePoint.getBegin()+1+riboSlippage.getSlippage_frameshift(),exonRange.getEnd()));
-					 exon.setFrame(newModel.getExons().get(i).getFrame().shift(Math.abs(riboSlippage.getSlippage_frameshift())));
-					 newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(),slippagePoint.getBegin()));
-					 newModel.getExons().get(i).set_3p_adjusted(true);
-					 newModel.getExons().add(exon);
-										 
-				 } else if(pointOfOccurance.equals("start")){
-					 newModel.getExons().get(i).setRange(Range.of(slippagePoint.getBegin()+1+riboSlippage.getSlippage_frameshift(),exonRange.getEnd()));
-					 newModel.getExons().get(i).set_5p_adjusted(true);
-					 if(i!=0){
-					 Range prevExonRange = newModel.getExons().get(i-1).getRange();
-					 newModel.getExons().get(i-1).setRange(Range.of(prevExonRange.getBegin(),slippagePoint.getBegin()));
-					 newModel.getExons().get(i-1).set_3p_adjusted(true);
-					 }
-				 }else{
-					 newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(),slippagePoint.getBegin()));
-					 newModel.getExons().get(i).set_3p_adjusted(true);
-					 if(i!=newModel.getExons().size()-1){
-					 Range nextExonRange = newModel.getExons().get(i+1).getRange();
-					 newModel.getExons().get(i+1).setRange(Range.of(slippagePoint.getBegin()+1+riboSlippage.getSlippage_frameshift(),nextExonRange.getEnd()));
-					 newModel.getExons().get(i+1).set_5p_adjusted(true);
-					 }
-				 }
-			 }else if(i!=newModel.getExons().size()-1){
-				 Range nextExonRange = newModel.getExons().get(i+1).getRange();
-				 if(slippagePoint.intersects(Range.of(exonRange.getEnd()+1,nextExonRange.getBegin()-1))){
-					 newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(),slippagePoint.getBegin()));
-					 newModel.getExons().get(i).set_3p_adjusted(true);
-                     newModel.getExons().get(i+1).setRange(Range.of(slippagePoint.getBegin()+1+riboSlippage.getSlippage_frameshift(),nextExonRange.getEnd()));
-                     newModel.getExons().get(i+1).set_5p_adjusted(true);
-				 }
-			 }
-		 }
-		
-		 models.add(newModel);
-		 
-	   }
-	   }
-	  if(models.size()==0){
-		  models.add(model);
-	  }
-		return models;
-		
-	}
-	
-	public List<Model> adjustRNAEditing(Model model) throws CloneNotSupportedException{
-		List<Model> models = new ArrayList<Model>();
-		if(model.getAlignment().getViralProtein().getGeneAttributes().getRna_editing().isHas_RNA_editing()){
-		RNA_Editing rna_editing = model.getAlignment().getViralProtein().getGeneAttributes().getRna_editing();
-		long CDSStart =model.getExons().get(0).getRange().getBegin();
-		long CDSEnd = model.getExons().get(model.getExons().size()-1).getRange().getEnd();
-		NucleotideSequence cds = model.getAlignment().getVirusGenome().getSequence().toBuilder(Range.of(CDSStart,CDSEnd))
-					.build();
-		List<Range> matches = cds.findMatches(rna_editing.getRegExp(),true).distinct().collect(Collectors.toList());
-		//offset must be used to determine pointOfInsertion
-		matches=matches.stream().map(x->x=Range.of(x.getBegin()+CDSStart,x.getEnd()+CDSStart)).sequential().collect(Collectors.toList());
-		for(Range match:matches){
-			  Model newModel = new Model();
-			  newModel = model.clone();
-			  Range pointOfInsertion=Range.of(match.getEnd(),match.getEnd()+rna_editing.getInsertionString().length()-1);
-			  Exon newExon = new Exon();
-			  newExon.setInsertionString(rna_editing.getInsertionString());
-			  newExon.setRange(pointOfInsertion);
-			  for(int i=0;i<newModel.getExons().size();i++){
-					 Range exonRange = newModel.getExons().get(i).getRange();
-					 if(exonRange.intersects(pointOfInsertion)){
-						String pointOfOccurance = determineLocation(exonRange,pointOfInsertion,2);
-						 if(pointOfOccurance.equals("start")){
-							 newModel.getExons().get(i).setRange(Range.of(pointOfInsertion.getBegin()+1,exonRange.getEnd()));
-							 if(i!=0){
-							 Range prevExonRange = newModel.getExons().get(i-1).getRange();
-							 newModel.getExons().get(i-1).setRange(Range.of(prevExonRange.getBegin(),pointOfInsertion.getBegin()));
-							 }
-						 }else{
-							 newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(),pointOfInsertion.getBegin()));
-							 if(i!=newModel.getExons().size()-1){
-							 Range nextExonRange = newModel.getExons().get(i+1).getRange();
-							 newModel.getExons().get(i+1).setRange(Range.of(pointOfInsertion.getBegin()+1,nextExonRange.getEnd()));
-							 }
-						 }
-					 }else if(i!=newModel.getExons().size()-1){
-						 Range nextExonRange = newModel.getExons().get(i+1).getRange();
-						 if(pointOfInsertion.intersects(Range.of(exonRange.getEnd()+1,nextExonRange.getBegin()-1))){
-							 newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(),pointOfInsertion.getBegin()));
-		                     newModel.getExons().get(i+1).setRange(Range.of(pointOfInsertion.getBegin()+1,nextExonRange.getEnd()));
-						 }
-					 }
-				 }
-			  newModel.getExons().add(newExon);
-			  models.add(newModel);
-		}
-		if(models.size()==0){
-			  models.add(model);
-		  }
-		}
-			return models;
-	}
-	
 	/**
 	 * 
 	 * @param model
@@ -217,8 +83,8 @@ public class AdjustExonBoundaries implements EvaluateModel {
     		    }
     			boolean isBoundaryAdjusted=false;
     			boolean isPesudogene=false;
-    			/*//*******************
-    			if(!foundSplicePair){
+    			//*******************
+    			/*if(!foundSplicePair){
     				Range intronRange = Range.of(currentExon.getEnd()+1,nextExon.getBegin()-1);
     			    if(intronRange.getLength()<=minIntronLength){
     				Map<Frame,List<Long>> intronStops = VigorFunctionalUtils.findStopsInSequenceFrame(virusGenome, intronRange);
@@ -333,20 +199,20 @@ public class AdjustExonBoundaries implements EvaluateModel {
     	        			Model newModel = newModelprev.clone();
     	        			newModel.getExons().get(i).setRange(foundUpExonRange);
     	        			newModel.getExons().get(i+1).setRange(foundDownExonRange);
-    	        			float donorScore = VigorFunctionalUtils.generateScore(currentExon.getEnd(), donorRange.getBegin());
-    	        			float acceptorScore = VigorFunctionalUtils.generateScore(nextExon.getBegin(), acceptorRange.getBegin());
-    	        			float spliceScore = donorScore + acceptorScore;
-    	        			Map<String,Float> scores=null;
+    	        			double donorScore = VigorFunctionalUtils.generateScore(currentExon.getEnd(), donorRange.getBegin());
+    	        			double acceptorScore = VigorFunctionalUtils.generateScore(nextExon.getBegin(), acceptorRange.getBegin());
+    	        			double spliceScore = donorScore + acceptorScore;
+    	        			Map<String,Double> scores=null;
     	        			if(newModel.getScores()!=null){
     	        			 scores = newModel.getScores();
     	        			 if(scores.containsKey("spliceScore")){
-    	        				float existingScore = scores.get("spliceScore");
-    	        				float spliceScoreSum = existingScore+spliceScore;
+    	        				double existingScore = scores.get("spliceScore");
+    	        				double spliceScoreSum = existingScore+spliceScore;
     	        				scores.replace("spliceScore", spliceScoreSum);
     	        				newModel.setScores(scores);
     	        			 
     	        			}else{
-    	        				scores = new HashMap<String,Float>();
+    	        				scores = new HashMap<String,Double>();
     	        				scores.put("spliceScore", spliceScore);
     	        				newModel.setScores(scores);
     	        			}   } 	        		   	        		  	        		    
@@ -384,26 +250,6 @@ public class AdjustExonBoundaries implements EvaluateModel {
 			return false;
 		}
 	}
-	
-	public String determineLocation(Range searchRange,Range inputRange, int noOfLocations){
-		long length = searchRange.getLength();
-		if(noOfLocations==3){
-        Range start = Range.of(searchRange.getBegin(),searchRange.getBegin()+length/4);
-        Range middle = Range.of(start.getEnd()+1,start.getEnd()+1+length/2);
-        if(inputRange.isSubRangeOf(start))
-        	return "start";
-        else if(inputRange.isSubRangeOf(middle))
-        	return "middle";
-        else return "end";
-		}
-		else{
-			Range start = Range.of(searchRange.getBegin(),searchRange.getBegin()+length/2);
-			if(inputRange.isSubRangeOf(start)) return "start";
-			else return "end";
-		}
-	}
-	
-    
 	
 	
 }
