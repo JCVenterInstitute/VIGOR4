@@ -41,22 +41,7 @@ public class Exon implements Cloneable {
 		}
 		return exon;
 	}
-	/*
-	 public static Exon deepClone(Exon exon) {
-		   try {
-		     ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		     ObjectOutputStream oos = new ObjectOutputStream(baos);
-		     oos.writeObject(exon);
-		     ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
-		     ObjectInputStream ois = new ObjectInputStream(bais);
-		     return (Exon)(ois.readObject());
-		   }
-		   catch (Exception e) {
-		     e.printStackTrace();
-		     return null;
-		   }
-	 }*/
-	 
+		 
 	public enum Comparators implements Comparator<Exon>{
 		Descending{
 			@Override

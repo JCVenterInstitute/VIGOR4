@@ -8,14 +8,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Stream;
-
 import org.jcvi.jillion.core.datastore.DataStoreProviderHint;
 import org.jcvi.jillion.fasta.aa.ProteinFastaDataStore;
 import org.jcvi.jillion.fasta.aa.ProteinFastaFileDataStoreBuilder;
 import org.jcvi.jillion.fasta.aa.ProteinFastaRecord;
-import org.jcvi.jillion.fasta.nt.NucleotideFastaDataStore;
-import org.jcvi.jillion.fasta.nt.NucleotideFastaFileDataStoreBuilder;
-import org.jcvi.jillion.fasta.nt.NucleotideFastaRecord;
 import org.jcvi.vigor.component.VirusGenome;
 
 public class GenerateExonerateOutput {

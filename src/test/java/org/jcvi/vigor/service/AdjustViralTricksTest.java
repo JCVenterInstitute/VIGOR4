@@ -6,16 +6,13 @@ import static org.junit.Assert.*;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.vigor.AppConfig;
 import org.jcvi.vigor.component.Alignment;
-import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.utils.VigorTestUtils;
@@ -56,8 +53,7 @@ public class AdjustViralTricksTest {
     @Test
     public void adjustRibosomalSlippageTest() throws CloneNotSupportedException{
     	Model testModel = models.get(0);
-    	List<Exon> exons = testModel.getExons();
-       	List<Model> models=null;
+    	List<Model> models=null;
        	models = adjustViralTricks.adjustRibosomalSlippage(testModel);
        	Range actual = models.get(0).getExons().get(0).getRange();    
     	assertEquals(Range.of(7553,9943),actual);

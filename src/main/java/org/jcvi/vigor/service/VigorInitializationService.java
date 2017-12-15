@@ -7,8 +7,6 @@ import java.util.Iterator;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.utils.VigorUtils;
 import org.apache.commons.cli.CommandLine;
 import org.apache.logging.log4j.LogManager;

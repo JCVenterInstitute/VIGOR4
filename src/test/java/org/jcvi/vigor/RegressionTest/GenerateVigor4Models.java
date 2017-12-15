@@ -21,7 +21,6 @@ import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.service.ExonerateService;
 import org.jcvi.vigor.service.ModelGenerationService;
 import org.jcvi.vigor.service.ViralProteinService;
-import org.jcvi.vigor.utils.FormatVigorOutput;
 
 public class GenerateVigor4Models {
 
@@ -68,19 +67,9 @@ public class GenerateVigor4Models {
 							.determineCandidateModels(alignments,
 									new VigorForm());
 					vigor4Models.put(virusGenome.getId(), candidateModels);
-				//	FormatVigorOutput.printModels(candidateModels);
-					/*System.out.println("outputFile" + outputFile);
-					System.out.println("actual one in the end:"
-							+ virusGenome.getId());
-					System.out.println("counter" + count);*/
-				
+							
 				}
 
-				/*
-				 * Set<String> keys = vigor4Models.keySet(); for(String key :
-				 * keys ){ System.out.println("Reference ID" + key
-				 * +" "+vigor4Models.get(key).size()); }
-				 */
 			} else {
 				System.out.println("InputFile does not exist");
 			}

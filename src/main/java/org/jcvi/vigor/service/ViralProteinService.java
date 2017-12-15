@@ -1,6 +1,5 @@
 package org.jcvi.vigor.service;
 import org.jcvi.vigor.component.*;
-import org.jcvi.vigor.utils.VigorFunctionalUtils;
 import org.jcvi.vigor.utils.VigorUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.jcvi.vigor.component.Splicing.SpliceSite;

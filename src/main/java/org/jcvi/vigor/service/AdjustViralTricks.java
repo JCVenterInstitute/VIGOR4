@@ -11,6 +11,7 @@ import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.vigor.service.DetermineGeneFeatures;
+import org.jcvi.vigor.utils.VigorUtils;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.component.RNA_Editing;
@@ -23,12 +24,16 @@ import org.springframework.stereotype.Service;
 public class AdjustViralTricks implements DetermineGeneFeatures {
 
 	private static final Logger LOGGER = LogManager.getLogger(ModelGenerationService.class);
-
+    private int leakyStopNotFoundScore=80;
 	
 	@Override
 	public List<Model> determine(Model model,VigorForm form){
 		List<Model> riboAdjustedmodels=null;
 		List<Model> outputModels = new ArrayList<Model>();
+		String leakyStopScoreParam = form.getVigorParametersList().get("LeakyStop_notFound_score");
+		if (VigorUtils.is_Integer(leakyStopScoreParam)) {
+			leakyStopNotFoundScore = Integer.parseInt(leakyStopScoreParam);
+		}
 		try{
 		riboAdjustedmodels = adjustRibosomalSlippage(model);
 		List<Model> rnaEditedModels= new ArrayList<Model>();
@@ -182,7 +187,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 			   scores.put("leakyStopScore",100.00);
 			   model.setReplaceStopCodonRange(range);			 			   
 			 }else{
-			   scores.put("leakyStopScore", 80.00);				
+			   scores.put("leakyStopScore", (double)leakyStopNotFoundScore);				
 			}
 			model.setScores(scores);
 		}		

@@ -1,15 +1,13 @@
 package org.jcvi.vigor.service;
 
 import org.jcvi.vigor.forms.VigorForm;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 
 @Service
 public class ReferenceDBGenerationService {
 
-	private static final Logger LOGGER = LogManager.getLogger(ReferenceDBGenerationService.class);
+	//private static final Logger LOGGER = LogManager.getLogger(ReferenceDBGenerationService.class);
 
 /*	public void blastVirusGenome(VirusGenome virusGenome, VigorForm form) {
 		String vigorspace = VigorUtils.getVigorWorkSpace();

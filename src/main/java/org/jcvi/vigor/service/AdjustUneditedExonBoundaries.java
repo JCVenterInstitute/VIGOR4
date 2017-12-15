@@ -66,7 +66,6 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
     				upExon.set_3p_adjusted(true);
     				downExon.set_5p_adjusted(true);
     			}
-    			//discuss with paolo and check about this condition
     			if(upExon.is_3p_adjusted()!=true && downExon.is_5p_adjusted()!=true)   {			
     			//Check if donor and acceptor are found at start and end of intron respectively
     			boolean foundSplicePair = false;
@@ -83,41 +82,7 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
     		    }
     			boolean isBoundaryAdjusted=false;
     			boolean isPesudogene=false;
-    			//*******************
-    			/*if(!foundSplicePair){
-    				Range intronRange = Range.of(currentExon.getEnd()+1,nextExon.getBegin()-1);
-    			    if(intronRange.getLength()<=minIntronLength){
-    				Map<Frame,List<Long>> intronStops = VigorFunctionalUtils.findStopsInSequenceFrame(virusGenome, intronRange);
-    				List<Long> upStops=new ArrayList<Long>();
-    				List<Long> downStops=new ArrayList<Long>();
-    				if(intronStops.get(upExon.getSequenceFrame())!=null){
-    					upStops = intronStops.get(upExon.getSequenceFrame());
-    				}
-    				if(intronStops.get(downExon.getSequenceFrame())!=null){
-    					downStops = intronStops.get(downExon.getSequenceFrame());
-    				}
-    			    if(upStops.size()==0 && downStops.size()==0 && intronRange.getLength()%3==0 ){
-    			    	Range adjustedrange = Range.of(currentExon.getBegin(),nextExon.getBegin()-1);
-    			    	model.getExons().get(i).setRange(adjustedrange);
-    			    	model.getExons().get(i).set_3p_adjusted(true);
-    			    	model.getExons().get(i+1).set_5p_adjusted(true);
-    			    	isBoundaryAdjusted=true;
-    			    	final int exonIndex=i;
-    			    	if(models.size()>0){
-    			    		models.stream().forEach(x->x.getExons().get(exonIndex).setRange(adjustedrange));
-    			    	}if(tempModels.size()>0){
-    			    		tempModels.stream().forEach(x->x.getExons().get(exonIndex).setRange(adjustedrange));
-    			    	}
-    			    	    					
-    			    } else{
-    			    	isPesudogene=true;
-    			    	model.setPseudogene(true);
-    					return Arrays.asList(model);
-    			    }
-    				}
-    			}    		
-    			*/
-    			//**********************
+    			
     			
     			if(!foundSplicePair&&!isBoundaryAdjusted&&!isPesudogene){
     			//determine Donor search window
