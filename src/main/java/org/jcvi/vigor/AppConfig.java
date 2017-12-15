@@ -1,24 +1,19 @@
 package org.jcvi.vigor;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.config.ConfigurationSource;
 import org.apache.logging.log4j.core.config.Configurator;
 import org.jcvi.jillion.core.datastore.DataStoreException;
-import org.jcvi.jillion.core.datastore.DataStoreProviderHint;
-import org.jcvi.jillion.core.io.IOUtil;
-import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
-import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
-import org.jcvi.jillion.core.util.iter.StreamingIterator;
-import org.jcvi.jillion.fasta.nt.*;
+import org.jcvi.vigor.service.VigorInputValidationService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.jcvi.vigor.service.VigorInputValidationService;
+
 
 
 

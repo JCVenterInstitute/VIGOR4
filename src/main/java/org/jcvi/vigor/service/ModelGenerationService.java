@@ -85,59 +85,7 @@ public class ModelGenerationService {
 	    	}
 	    	allOutAlignments.add(mergedAlignment);
 	    }
-	       
-	  /*
-	    boolean preMerge=false;
-	   for(String proteinID : protein2AlignmentsMap.keySet()){
-		   	List<Alignment> alignmentsTemp = protein2AlignmentsMap.get(proteinID);
-	    	List<Alignment> outAlignments = new ArrayList<Alignment>();
-	    	boolean isLastAdded=false;
-	    	if(alignmentsTemp.size()>1){
-	    		for(int i=0;i<alignmentsTemp.size()-1;i++){	    		    
-	    			List<AlignmentFragment> fragments = alignmentsTemp.get(i).getAlignmentFragments();
-	    			List<AlignmentFragment> nextFragments = alignmentsTemp.get(i+1).getAlignmentFragments();
-	    			Range intersection = fragments.get(fragments.size()-1).getNucleotideSeqRange().intersection(nextFragments.get(0).getNucleotideSeqRange());
-	    			boolean isMergeAllowed=true;
-	    			if(intersection.getLength()==0){
-	    				long end = fragments.get(fragments.size()-1).getNucleotideSeqRange().getEnd();
-	    				long start = nextFragments.get(0).getNucleotideSeqRange().getBegin();
-	    				if(start<end){
-	    					isMergeAllowed=false;
-	    				}
-	    			}
-	    			if(intersection.getLength()%3==0 && isMergeAllowed){
-	    				if(preMerge&&outAlignments.size()>0){
-	    					fragments.clear();
-		    				fragments.addAll(outAlignments.get(outAlignments.size()-1).getAlignmentFragments());
-		    				outAlignments.remove(outAlignments.get(outAlignments.size()-1));
-		    			}
-	    				if(intersection.getLength()>0){	    					
-	    					AlignmentFragment mergedFragment = VigorFunctionalUtils.mergeTwoFragments(fragments.get(fragments.size()-1), nextFragments.get(0));
-	    					nextFragments.remove(0);
-	    					fragments.remove(fragments.size()-1);
-	    					fragments.add(mergedFragment);	    										
-	    				}
-	    		    	
-	    		    	fragments.addAll(nextFragments);
-	    		    	alignmentsTemp.get(i).setAlignmentFragments(fragments);
-	    		    	outAlignments.add(alignmentsTemp.get(i));
-	    		    	preMerge=true;
-	    		    }else {preMerge=false;	
-	    		    if(i+1==alignmentsTemp.size()-1){
-	    		    	isLastAdded=true;
-	    		    }
-	    		    outAlignments.add(alignmentsTemp.get(i));
-	    		    } 		    	    
-	    		}
-	    		if(!preMerge&&isLastAdded){
-	    			outAlignments.add(alignmentsTemp.get(alignmentsTemp.size()-1));
-	    		}
-	    		allOutAlignments.addAll(outAlignments);	    	
-	    	}else{
-	    		allOutAlignments.addAll(alignmentsTemp);
-	    	}
-	    }	    	*/	
-		return allOutAlignments;
+	 	return allOutAlignments;
 	}
 	
 	
@@ -150,7 +98,6 @@ public class ModelGenerationService {
 	 *         models at the sequence gaps
 	 */
 	public List<Model> determineCandidateModels(List<Alignment> alignments, VigorForm form) {
-		//System.out.println("Number of alignments are " + alignments.size());
 		List<Model> initialModels = new ArrayList<Model>();
 		List<Model> candidateModels = new ArrayList<Model>();
 		try{

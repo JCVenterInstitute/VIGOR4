@@ -4,10 +4,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.jcvi.vigor.RegressionTest.*;
 import org.jcvi.vigor.component.Model;
-import org.junit.Before;
-import org.junit.Test;
+
 
 public class ValidateVigor4Models {
 	
@@ -22,12 +20,9 @@ public class ValidateVigor4Models {
 		GenerateVigor4Models generateVigor4Models = new GenerateVigor4Models();
 		allVigor4Models = generateVigor4Models.generateModels("/home/snettem/workspace/vigor4RegressionOutput",
 					"/home/snettem/git/Vigor4/src/test/resources/VigorRegressionTestInput/veev.fasta",
-					"veev_db");
+					"veev_db");		
 		
-		
-	}
-	
-	
+	}	
 	
 	public void validate(){
 	  allVigor4Models.entrySet().forEach(entry -> { if(allVigor3Models.containsKey(entry.getKey())){

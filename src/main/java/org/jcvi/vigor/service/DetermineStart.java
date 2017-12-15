@@ -104,22 +104,11 @@ public class DetermineStart implements DetermineGeneFeatures {
 		}
 		Exon firstExon = model.getExons().get(0);
 		Frame frame = VigorFunctionalUtils.getSequenceFrame(firstExon.getRange().getBegin());
-		/*String spliceform = "";
-		String spliceformOfModel = model.getAlignment().getViralProtein().getGeneAttributes().getSplicing().getSpliceform();
-		if (spliceformOfModel!=null) {
-			spliceform = model.getAlignment().getViralProtein()
-					.getGeneAttributes().getSplicing().getSpliceform();
-		}
-		if (spliceform.equals("")) {*/
 		long expectedStart = firstExon.getRange().getBegin()
 					- ((firstExon.getAlignmentFragment().getProteinSeqRange()
 							.getBegin()) * 3);
 			start = expectedStart - windowSize;
 			end = expectedStart + windowSize;
-		/*} else {
-			start = firstExon.getRange().getBegin() - windowSize;
-			end = firstExon.getRange().getBegin() + windowSize;
-		}*/
 		if (start < 0) {
 			isSequenceMissing = true;
 			start = 0;
