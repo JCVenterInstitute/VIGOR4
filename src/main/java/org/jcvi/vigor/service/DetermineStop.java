@@ -112,7 +112,7 @@ public class DetermineStop implements DetermineGeneFeatures {
 				List<Exon> newExons = newModel.getExons();
 				Exon lExon = newExons.get(newExons.size()-1);
 				lExon.setRange(Range.of(lExon.getRange().getBegin(),range.getBegin()-1));
-				if (model.getScores() != null) {
+				if (newModel.getScores() != null) {
 					newModel.getScores().put("stopCodonScore",
 							rangeScoreMap.get(range));
 				} else {

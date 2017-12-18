@@ -153,8 +153,13 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
 			Range missingAARange=null;
 			Range missingNTRange = null;
 			if(preAARange!=null){
-				missingAARange = Range.of(preAARange.getEnd()+1,AARange.getBegin()-1);
-				missingNTRange = Range.of(preNTRange.getEnd()+1,NTRange.getBegin()-1);
+			    if(preAARange.getEnd()-AARange.getBegin()>min_missing_AA_size && preNTRange.getEnd()-NTRange.getBegin()>min_missing_AA_size*3) {
+                    missingAARange = Range.of(preAARange.getEnd() + 1, AARange.getBegin() - 1);
+                    missingNTRange = Range.of(preNTRange.getEnd() + 1, NTRange.getBegin() - 1);
+                }else{
+			        missingAARange = Range.ofLength(0);
+			        missingNTRange = Range.ofLength(0);
+                }
 			}else{
 				if(i!=exons.size()){
 				missingAARange = Range.of(0,AARange.getBegin());

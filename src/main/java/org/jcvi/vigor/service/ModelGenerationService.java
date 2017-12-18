@@ -103,6 +103,9 @@ public class ModelGenerationService {
 		try{
 		for (int i = 0; i < alignments.size(); i++) {
 			Alignment alignment = alignments.get(i);
+			if(alignment.getViralProtein().getProteinID().equals("379765038_SP")){
+			    System.out.println("Break");
+            }
 			alignment.getAlignmentFragments().sort(AlignmentFragment.Comparators.Ascending);
 			initialModels.addAll(alignmentToModels(alignment, alignment.getAlignmentTool_name()));
 		}
@@ -206,7 +209,7 @@ public class ModelGenerationService {
 	}
 	/**
 	 * 
-	 * @param alignment
+	 * @param:alignment
 	 * @return merge two fragments if the intron length is <minIntronLength and if there are no stops in between and if intron length is divisible by 3. Also merge fragments if the missing protein alignment length between two
 	 * fragments is less than the minimum_condensation;
 	 */
@@ -223,24 +226,34 @@ public class ModelGenerationService {
     			Range nextFragment = downFragment.getNucleotideSeqRange();
     			Range intronRange=null;
         try{
-        intronRange = Range.of(currentFragment.getEnd()+1,nextFragment.getBegin()-1);
+        	if(currentFragment.getEnd()-nextFragment.getBegin()==0){
+        		intronRange = Range.ofLength(0);
+			}else {
+        		if(currentFragment.getEnd()>nextFragment.getBegin()){
+                    intronRange = currentFragment.intersection(nextFragment);
+				}else {
+					intronRange = Range.of(currentFragment.getEnd() + 1, nextFragment.getBegin() - 1);
+				}
+			}
         }
         catch(Exception e){
         	LOGGER.error(e.getMessage(),e);
         }  Range missingAAalignRange=Range.of(0,0);
         try{
-        if(intronRange.getEnd()-intronRange.getBegin()==-1){
+       /* if(intronRange.getEnd()-intronRange.getBegin()==-1){
 			intronRange=Range.ofLength(0);
 		}
-      
-       
-        if(upFragment.getProteinSeqRange().getEnd()+1<=downFragment.getProteinSeqRange().getBegin()-1)  {	
+      */
+        if(upFragment.getProteinSeqRange().getEnd()-downFragment.getProteinSeqRange().getBegin()==0){
+       	missingAAalignRange = Range.ofLength(0);
+	    }
+        else {
 		missingAAalignRange = Range.of(upFragment.getProteinSeqRange().getEnd()+1,downFragment.getProteinSeqRange().getBegin()-1);
         }
        
-		if(missingAAalignRange.getBegin()-intronRange.getEnd()==-1 || missingAAalignRange==null){
+		/*if(missingAAalignRange.getBegin()-missingAAalignRange.getEnd()==0 || missingAAalignRange==null){
 			missingAAalignRange = Range.ofLength(0);
-		}	
+		}*/
         }
         catch(Exception e){
         	LOGGER.error(e.getMessage(),e);
@@ -303,9 +316,9 @@ public class ModelGenerationService {
 
 	/**
 	 * 
-	 * @param initModels
-	 * @param form
-	 * @param genome
+	 * @param:initModels
+	 * @param:form
+	 * @param:genome
 	 * @return Models are split at sequence gaps and new list of models are
 	 *         returned
 	 */

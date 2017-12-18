@@ -40,6 +40,7 @@ public class GeneModelGenerationService {
 				return Double.compare(m1.getScores().get("totalScore"), m2.getScores().get("totalScore"));
 		}
 		});
+		processedModels.forEach(System.out::println);
 	
 	}
 	
