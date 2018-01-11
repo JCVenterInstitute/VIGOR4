@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.jcvi.vigor.component.Model;
+import org.junit.Test;
 
 
 public class ValidateVigor4Models {
@@ -12,18 +13,19 @@ public class ValidateVigor4Models {
 	private Map<String,List<Model>> allVigor4Models = new HashMap<String,List<Model>>();
 	private Map<String,List<Model>> allVigor3Models = new HashMap<String,List<Model>>();
 	
-	
+	@Test
 	public void getModels() throws IOException, InterruptedException{
-		GenerateVigor3Models generateVigor3Models = new GenerateVigor3Models();
-		allVigor3Models = generateVigor3Models.generateModels("/home/snettem/git/Vigor4/src/test/resources/vigor3Output","veev");
-				
-		GenerateVigor4Models generateVigor4Models = new GenerateVigor4Models();
-		allVigor4Models = generateVigor4Models.generateModels("/home/snettem/workspace/vigor4RegressionOutput",
-					"/home/snettem/git/Vigor4/src/test/resources/VigorRegressionTestInput/veev.fasta",
+	/*	GenerateVigor3Models generateVigor3Models = new GenerateVigor3Models();
+		allVigor3Models = generateVigor3Models.generateModels("/Users/snettem/git/Vigor4/src/test/resources/vigor3Output","veev");
+				*/
+		GenerateVigor4GeneModels generateVigor4GeneModels = new GenerateVigor4GeneModels();
+		allVigor4Models = generateVigor4GeneModels.generateModels("/Users/snettem/workspace/vigor4_regression",
+					"/Users/snettem/git/Vigor4/src/test/resources/VigorRegressionTestInput/veev.fasta",
 					"veev_db");		
 		
 	}	
-	
+
+	@Test
 	public void validate(){
 	  allVigor4Models.entrySet().forEach(entry -> { if(allVigor3Models.containsKey(entry.getKey())){
 			  List<Model> vigor4Models = entry.getValue();
