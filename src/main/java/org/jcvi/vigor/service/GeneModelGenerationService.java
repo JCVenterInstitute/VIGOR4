@@ -1,4 +1,5 @@
 package org.jcvi.vigor.service;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -32,7 +33,7 @@ public class GeneModelGenerationService {
 		isDebug = form.isDebug();
 		List<Model> processedModels = determineGeneFeatures(models,form);
 		processedModels.stream().forEach(model-> checkCoverage.evaluate(model,form));
-		processedModels.stream().forEach(model->evaluateScores.evaluate(model, form));
+		processedModels.stream().forEach(model-> evaluateScores.evaluate(model, form));
 		
 		processedModels.sort(new Comparator<Model>(){
 			@Override
@@ -41,9 +42,14 @@ public class GeneModelGenerationService {
 		}
 		});
 		processedModels.forEach(System.out::println);
-	
+
 	}
-	
+
+	public void generateOutputFiles(List<Model> models){
+
+	    models.forEach(System.out::println);
+    }
+
 	public List<Model> determineGeneFeatures(List<Model> models,VigorForm form){
 			
 	    List<Model> modelsWithMissingExonsDetermined=new ArrayList<Model>();

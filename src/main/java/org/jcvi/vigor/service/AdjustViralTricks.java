@@ -131,7 +131,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 		long CDSEnd = model.getExons().get(model.getExons().size()-1).getRange().getEnd();
 		NucleotideSequence cds = model.getAlignment().getVirusGenome().getSequence().toBuilder(Range.of(CDSStart,CDSEnd))
 					.build();
-		List<Range> matches = cds.findMatches(rna_editing.getRegExp(),true).distinct().collect(Collectors.toList());
+		List<Range> matches = cds.findMatches(rna_editing.getRegExp()).distinct().collect(Collectors.toList());
 		//offset must be used to determine pointOfInsertion
 		matches=matches.stream().map(x->x=Range.of(x.getBegin()+CDSStart,x.getEnd()+CDSStart)).sequential().collect(Collectors.toList());
 		for(Range match:matches){
