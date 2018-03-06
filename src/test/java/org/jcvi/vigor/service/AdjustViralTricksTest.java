@@ -52,10 +52,12 @@ public class AdjustViralTricksTest {
 	
     @Test
     public void adjustRibosomalSlippageTest() throws CloneNotSupportedException{
+		assertTrue(String.format("No models created for file %s and chikv_db", file), models.size() > 0);
     	Model testModel = models.get(0);
-    	List<Model> models=null;
-       	models = adjustViralTricks.adjustRibosomalSlippage(testModel);
-       	Range actual = models.get(0).getExons().get(0).getRange();    
+    	List<Model> adjustedModels= adjustViralTricks.adjustRibosomalSlippage(testModel);
+    	assertTrue(String.format("No adjusted models returned for test model %s", testModel), adjustedModels.size() > 0);
+		assertTrue(String.format("No exons for adjusted model %s", adjustedModels.get(0)), adjustedModels.get(0).getExons().size() > 0);
+       	Range actual = adjustedModels.get(0).getExons().get(0).getRange();
     	assertEquals(Range.of(7553,9943),actual);
     }
     

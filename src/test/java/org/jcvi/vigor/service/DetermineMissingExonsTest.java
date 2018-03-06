@@ -52,9 +52,13 @@ public class DetermineMissingExonsTest {
 		alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(),"flua_db",VigorUtils.getVigorWorkSpace(),null);
 		alignments = alignments.stream().map(alignment -> viralProteinService.setViralProteinAttributes(alignment,new VigorForm()))
 				.collect(Collectors.toList());
+		assertTrue(String.format("No alignments found using file %s and database flua_db", file.getName()), alignments.size() > 0);
+
 		models.addAll(modelGenerationService.alignmentToModels(alignments.get(0), "exonerate"));
-		Model model = new Model();
-		model = models.get(0);
+		assertTrue(String.format("No models were generated using alignment %s",alignments.get(0)), models.size() > 0);
+
+		Model model = models.get(0);
+		// TODO why remove the second one?
 		model.getExons().remove(1);
 		int exons = determineMissingExons.findMissingExons(model).getExons().size();
 		assertEquals(2, exons);
