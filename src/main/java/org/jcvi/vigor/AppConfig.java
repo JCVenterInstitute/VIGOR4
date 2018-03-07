@@ -9,7 +9,6 @@ import org.apache.logging.log4j.core.config.ConfigurationSource;
 import org.apache.logging.log4j.core.config.Configurator;
 import org.jcvi.jillion.core.datastore.DataStoreException;
 import org.jcvi.vigor.service.VigorInputValidationService;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -24,9 +23,9 @@ public class AppConfig {
 
 	public static void main(String... args) throws IOException, DataStoreException {
 		LOGGER.debug("******** VIGOR4 APPLICATION STARTED ************");
-		ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
-		ctx.getBean(VigorInputValidationService.class).processInput(args);
-		((AnnotationConfigApplicationContext)ctx).close();
+		try (AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class); ) {
+			ctx.getBean(VigorInputValidationService.class).processInput(args);
+		}
 		LOGGER.debug("******** VIGOR4 APPLICATION STOPPED ************");
 	}
 	
