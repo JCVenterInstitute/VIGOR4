@@ -56,8 +56,8 @@ public class VigorInitializationService {
 				isComplete = true;
 				isCircular = true;
 			}
-			VigorForm form = new VigorForm();
-			form = loadParameters(inputs, form);
+			VigorForm form = loadParameters(inputs);
+
 			NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(
 					new File(inputs.getString("input_fasta"))).hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)
 							.build();
@@ -90,12 +90,12 @@ public class VigorInitializationService {
 	 *         by the default parameters of vigor.ini file and saved to
 	 *         VigorParametersList attribute of the form.
 	 */
-	public VigorForm loadParameters(Namespace inputs, VigorForm form) {
+	public VigorForm loadParameters(Namespace inputs) {
 
 		Map<String, String> vigorParameterList = LoadDefaultParameters
 				.loadVigorParameters(VigorUtils.getVigorParametersPath());
 		AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
-		form = new VigorForm();
+		VigorForm form = new VigorForm();
 		String reference_db = inputs.getString("reference_database");
 		if ("any".equals(reference_db)) {
 
