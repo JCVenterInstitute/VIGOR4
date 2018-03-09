@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import net.sourceforge.argparse4j.inf.Namespace;
+import org.jcvi.vigor.utils.VigorLogging;
 import org.jcvi.vigor.utils.VigorUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -57,9 +58,10 @@ public class VigorInitializationService {
 				isCircular = true;
 			}
 			VigorForm form = loadParameters(inputs);
-
+			String inputFileName = inputs.getString("input_fasta");
+			// TODO check
 			NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(
-					new File(inputs.getString("input_fasta"))).hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)
+					new File(inputFileName)).hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)
 							.build();
 			Stream<NucleotideFastaRecord> records = dataStore.records();
 			Iterator<NucleotideFastaRecord> i = records.iterator();
@@ -98,16 +100,14 @@ public class VigorInitializationService {
 		VigorForm form = new VigorForm();
 		String reference_db = inputs.getString("reference_database");
 		if ("any".equals(reference_db)) {
-
-			alignmentEvidence.setReference_db(vigorParameterList.get("reference_db"));
-			// here call the method from ReferenceDBGenerationService which
-			// determines the reference_db
-			// and set the alignment evidence
-
-		} else {
-			System.out.println("Reference_db is " + reference_db);
-			alignmentEvidence.setReference_db(reference_db);
+			reference_db = vigorParameterList.get("reference_db");
+			LOGGER.debug("autoselecting reference database; setting value to {}", reference_db);
 		}
+
+		LOGGER.debug("Reference_db is " + reference_db);
+		// TODO check if reference db is a path, if so use that, else construct path using database path
+		alignmentEvidence.setReference_db(reference_db);
+
 
 		vigorParameterList = loadVirusSpecificParameters(vigorParameterList, alignmentEvidence.getReference_db());
 
@@ -162,6 +162,8 @@ public class VigorInitializationService {
 			for (String key : temp.keySet()) {
 				if (vigorParameterList.containsKey(key)) {
 					vigorParameterList.put(key, temp.get(key));
+				} else {
+					LOGGER.warn(VigorLogging.VIGOR4_USER_MESSAGE, "skipping unknown parameter \"{}\" with value \"{}\"", key, temp.get(key));
 				}
 			}
 		}
