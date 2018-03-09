@@ -7,7 +7,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.config.ConfigurationSource;
 import org.apache.logging.log4j.core.config.Configurator;
-import org.jcvi.jillion.core.datastore.DataStoreException;
 import org.jcvi.vigor.service.VigorInputValidationService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
@@ -21,7 +20,7 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
 	private static final Logger LOGGER = LogManager.getLogger(AppConfig.class);
 
-	public static void main(String... args) throws IOException, DataStoreException {
+	public static void main(String... args) throws Exception {
 		LOGGER.debug("******** VIGOR4 APPLICATION STARTED ************");
 		try (AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class); ) {
 			ctx.getBean(VigorInputValidationService.class).processInput(args);
