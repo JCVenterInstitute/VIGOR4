@@ -79,7 +79,7 @@ public class ViralProteinService {
 								List<String> spliceSites = Pattern.compile(";").splitAsStream(attributes.get("noncanonical_splicing").trim()).collect(Collectors.toList());
 
 								for(String spliceSite : spliceSites){
-									String[] temp = spliceSite.split("+");
+									String[] temp = spliceSite.split("\\+");
 									SpliceSite spliceSiteObj = splicing.new SpliceSite();
 									spliceSiteObj.donor=temp[0];
 									spliceSiteObj.acceptor=temp[1];
