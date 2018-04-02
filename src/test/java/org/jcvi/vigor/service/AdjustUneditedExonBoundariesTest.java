@@ -2,6 +2,7 @@ package org.jcvi.vigor.service;
 
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -52,12 +53,23 @@ public class AdjustUneditedExonBoundariesTest {
 	
 	@Test
 	public void adjustSpliceSitesTest() throws CloneNotSupportedException{
+<<<<<<< HEAD
 		   Model testModel = models.get(0);
 		   testModel.getExons().get(0).setRange(Range.of(11,30));
 		   List<Model> outModels = adjustUneditedExonBoundaries.adjustSpliceSites(testModel);
 	       Comparator<Model> bySpliceScore = (Model m1,Model m2)->m1.getScores().get("spliceScore").compareTo(m2.getScores().get("spliceScore"));
 	       Optional<Model> outModel = outModels.stream().sorted(bySpliceScore.reversed()).findFirst();
 	       assertEquals(Range.of(11,40),outModel.get().getExons().get(0).getRange());
+=======
+		assertTrue(String.format("No models generated using file %s and flua_db", file), models.size() > 0);
+		Model testModel = models.get(0);
+		assertTrue(String.format("No exons for test model %s", testModel), testModel.getExons().size() > 0);
+		testModel.getExons().get(0).setRange(Range.of(8,31));
+		List<Model> outModels = adjustUneditedExonBoundaries.adjustSpliceSites(testModel);
+		Comparator<Model> bySpliceScore = (Model m1,Model m2)->m1.getScores().get("spliceScore").compareTo(m2.getScores().get("spliceScore"));
+		Optional<Model> outModel = outModels.stream().sorted(bySpliceScore.reversed()).findFirst();
+		assertEquals(Range.of(8,33),outModel.get().getExons().get(0).getRange());
+>>>>>>> 66dc8b68e7543c0bd7eca9a56916a7ad74428382
 	}
 	
 	

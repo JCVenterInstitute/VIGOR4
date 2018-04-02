@@ -37,6 +37,7 @@ public class AdjustViralTricksTest {
 
     @Test
     public void adjustRibosomalSlippageTest() throws CloneNotSupportedException{
+<<<<<<< HEAD
 	    List<Alignment> alignments;
 	    List<Model> models=new ArrayList<Model>();
         File file = new File(classLoader.getResource("vigorUnitTestInput/Flua_RiboSlippage_Test.fasta"). getFile());
@@ -69,6 +70,15 @@ public class AdjustViralTricksTest {
         Model outputModel = adjustViralTricks.checkForLeakyStop(testModel);
         Range actual = outputModel.getExons().get(0).getRange();
         assertEquals(Range.of(9,581),actual);
+=======
+		assertTrue(String.format("No models created for file %s and chikv_db", file), models.size() > 0);
+    	Model testModel = models.get(0);
+    	List<Model> adjustedModels= adjustViralTricks.adjustRibosomalSlippage(testModel);
+    	assertTrue(String.format("No adjusted models returned for test model %s", testModel), adjustedModels.size() > 0);
+		assertTrue(String.format("No exons for adjusted model %s", adjustedModels.get(0)), adjustedModels.get(0).getExons().size() > 0);
+       	Range actual = adjustedModels.get(0).getExons().get(0).getRange();
+    	assertEquals(Range.of(7553,9943),actual);
+>>>>>>> 66dc8b68e7543c0bd7eca9a56916a7ad74428382
     }
 
 
