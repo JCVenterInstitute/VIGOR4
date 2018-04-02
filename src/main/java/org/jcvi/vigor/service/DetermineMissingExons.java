@@ -51,6 +51,7 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
 		try{
 		model.getExons().sort(Exon.Comparators.Ascending);	
 		System.out.println("Model "+ model.getGeneSymbol());
+
 		System.out.println("Before"+model.getExons().size());
 		model = findMissingExons(model);	
 		System.out.println("After"+model.getExons().size());

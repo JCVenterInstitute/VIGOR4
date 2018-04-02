@@ -2,363 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab3d517c-ffa4-4273-be63-7f918fb62788" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/utils/GenerateVigorOutput.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/component/MaturePeptide.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/VigorWorkSpace/chikv/JF274082.1.txt" afterPath="$PROJECT_DIR$/VigorWorkSpace/chikv/JF274082.1.txt" />
-      <change beforePath="$PROJECT_DIR$/VigorWorkSpace/db_temp.fasta" afterPath="$PROJECT_DIR$/VigorWorkSpace/db_temp.fasta" />
-      <change beforePath="$PROJECT_DIR$/VigorWorkSpace/flua/gi155016323gbCY024818.1.txt" afterPath="$PROJECT_DIR$/VigorWorkSpace/flua/gi155016323gbCY024818.1.txt" />
-      <change beforePath="$PROJECT_DIR$/VigorWorkSpace/flua/gi155016325gbCY024819.1.txt" afterPath="$PROJECT_DIR$/VigorWorkSpace/flua/gi155016325gbCY024819.1.txt" />
-      <change beforePath="$PROJECT_DIR$/VigorWorkSpace/flua/gi260907760gbGU060481.1.txt" afterPath="$PROJECT_DIR$/VigorWorkSpace/flua/gi260907760gbGU060481.1.txt" />
-      <change beforePath="$PROJECT_DIR$/VigorWorkSpace/flua/gi525338705gbCY147019.1.txt" afterPath="$PROJECT_DIR$/VigorWorkSpace/flua/gi525338705gbCY147019.1.txt" />
-      <change beforePath="$PROJECT_DIR$/VigorWorkSpace/mmp/77_part1.txt" afterPath="$PROJECT_DIR$/VigorWorkSpace/mmp/77_part1.txt" />
-      <change beforePath="$PROJECT_DIR$/VigorWorkSpace/sequence_temp.fasta" afterPath="$PROJECT_DIR$/VigorWorkSpace/sequence_temp.fasta" />
-      <change beforePath="$PROJECT_DIR$/VigorWorkSpace/veev/HM045808_DRAFT.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/VigorWorkSpace/veev/gi21218484refNC_003899.1.txt" afterPath="$PROJECT_DIR$/VigorWorkSpace/veev/gi21218484refNC_003899.1.txt" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/component/Model.java" afterPath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/component/Model.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/component/RNA_Editing.java" afterPath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/component/RNA_Editing.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/component/ViralProtein.java" afterPath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/component/ViralProtein.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/component/VirusGenome.java" afterPath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/component/VirusGenome.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/AdjustUneditedExonBoundaries.java" afterPath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/AdjustUneditedExonBoundaries.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/AdjustViralTricks.java" afterPath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/AdjustViralTricks.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/AlignmentGenerationService.java" afterPath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/AlignmentGenerationService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/CheckCoverage.java" afterPath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/CheckCoverage.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/DetermineMissingExons.java" afterPath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/DetermineMissingExons.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/DetermineStart.java" afterPath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/DetermineStart.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/DetermineStop.java" afterPath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/DetermineStop.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/EvaluateScores.java" afterPath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/EvaluateScores.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/ExonerateService.java" afterPath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/ExonerateService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/GeneModelGenerationService.java" afterPath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/GeneModelGenerationService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/ModelGenerationService.java" afterPath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/ModelGenerationService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/VigorInitializationService.java" afterPath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/VigorInitializationService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/VigorInputValidationService.java" afterPath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/VigorInputValidationService.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/ViralProteinService.java" afterPath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/ViralProteinService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/VirusGenomeService.java" afterPath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/VirusGenomeService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/utils/FormatVigorOutput.java" afterPath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/utils/FormatVigorOutput.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/utils/VigorFunctionalUtils.java" afterPath="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/utils/VigorFunctionalUtils.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/bunya_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/bunya_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/bunya_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cdv_db" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cdv_db" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cdv_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cdv_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cdv_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/chikv_db" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/chikv_db" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/chikv_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/chikv_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/chikv_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/chikv_nsp_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/chikv_nsp_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/chikv_nsp_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/chikv_sp_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/chikv_sp_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/chikv_sp_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/chikv_utr_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/chikv_utr_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/chikv_utr_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_alpha_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_alpha_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_alpha_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_alpha_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_alpha_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_alpha_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_beta_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_beta_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_beta_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_beta_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_beta_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_beta_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_delta_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_delta_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_delta_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g1a_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g1a_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g1a_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g1a_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g1a_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g1a_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g1b_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g1b_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g1b_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g1b_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g1b_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g1b_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g2a_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g2a_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g2a_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g2a_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g2a_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g2a_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g2cd_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g2cd_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g2cd_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g2cd_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g2cd_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g2cd_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g3_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g3_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g3_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g3_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g3_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_g3_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_gamma_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_gamma_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_gamma_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_gamma_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_gamma_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_gamma_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_sars_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_sars_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_sars_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_sars_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_sars_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_sars_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_unclass_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_unclass_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/cov_unclass_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/eeev_utr_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/eeev_utr_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/eeev_utr_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/filo_db" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/filo_db" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/filo_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/filo_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/filo_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/flua_db" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/flua_db" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/flua_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/flua_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/flua_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/flua_ha_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/flua_ha_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/flua_ha_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/flub_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/flub_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/flub_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/fluc_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/fluc_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/fluc_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/flux_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/flux_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/flux_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/fmdv_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/fmdv_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/fmdv_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/formatdb.log" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/formatdb.log" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hadv_rna_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hadv_rna_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hadv_rna_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hadva_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hadva_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hadva_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hadvb_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hadvb_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hadvb_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hadvc_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hadvc_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hadvc_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hadvd_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hadvd_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hadvd_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hadve_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hadve_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hadve_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hadvf_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hadvf_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hadvf_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hadvg_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hadvg_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hadvg_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hantavirus_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hantavirus_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hantavirus_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hhv1_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hhv1_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hhv1_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hhv2_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hhv2_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hhv2_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hhv3_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hhv3_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hhv3_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hhv4_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hhv4_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hhv4_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hhv5_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hhv5_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hhv5_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hpiv1_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hpiv1_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hpiv1_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hpiv1_utr_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hpiv1_utr_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hpiv1_utr_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hpiv3_db" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hpiv3_db" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hpiv3_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hpiv3_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hpiv3_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hpiv3_utr_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hpiv3_utr_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hpiv3_utr_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hrv_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hrv_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hrv_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hrv_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hrv_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/hrv_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/misc_bunya_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/misc_bunya_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/misc_bunya_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/mmp_db" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/mmp_db" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/mmp_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/mmp_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/mmp_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/mpv_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/mpv_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/mpv_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/mpv_utr_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/mpv_utr_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/mpv_utr_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/msl_db" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/msl_db" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/msl_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/msl_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/msl_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/mumps_db" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/mumps_db" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/mumps_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/mumps_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/mumps_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/norv1_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/norv1_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/norv1_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/norv1_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/norv1_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/norv1_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/norv2_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/norv2_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/norv2_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/norv2_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/norv2_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/norv2_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/norv_misc_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/norv_misc_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/norv_misc_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/norv_misc_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/norv_misc_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/norv_misc_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/norv_murine_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/norv_murine_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/norv_murine_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/norv_murine_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/norv_murine_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/norv_murine_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/obunya_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/obunya_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/obunya_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/obunya_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/obunya_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/obunya_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rabies_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rabies_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rabies_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rbl_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rbl_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rbl_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rbl_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rbl_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rbl_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rhino_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rhino_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rhino_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rhino_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rhino_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rhino_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rsv_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rsv_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rsv_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rsv_utr_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rsv_utr_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rsv_utr_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rtva_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rtva_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rtva_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rtvb_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rtvb_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rtvb_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rtvc_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rtvc_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rtvc_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rtvf_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rtvf_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rtvf_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rtvg_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rtvg_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/rtvg_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/sapo_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/sapo_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/sapo_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/sapo_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/sapo_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/sapo_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/sendai_db" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/sendai_db" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/sendai_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/sendai_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/sendai_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/var_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/var_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/var_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/veevX_db" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/veevX_db" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/veevX_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/veevX_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/veevX_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/veev_db" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/veev_db" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/veev_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/veev_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/veev_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/veev_nsp_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/veev_nsp_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/veev_nsp_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/veev_sp2_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/veev_sp2_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/veev_sp2_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/veev_sp_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/veev_sp_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/veev_sp_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/wnvII_db" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/wnvII_db" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/wnvII_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/wnvII_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/wnvII_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/wnvI_db" afterPath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/wnvI_db" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/wnvI_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/wnvI_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/wnvI_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/wnv_GP1_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/wnv_GP1_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/wnv_GP1_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/wnv_GP2_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/wnv_GP2_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/wnv_GP2_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/wnv_GP3_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/wnv_GP3_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/wnv_GP3_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/yfv_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/yfv_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/yfv_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/yfv_gp2_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/yfv_gp2_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/yfv_gp2_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/yfv_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/yfv_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/yfv_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/zikv_db.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/zikv_db.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/zikv_db.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/zikv_mp.phr" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/zikv_mp.pin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vigorResources/data3/zikv_mp.psq" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/jcvi/vigor/RegressionTest/GenerateVigor4GeneModels.java" afterPath="$PROJECT_DIR$/src/test/java/org/jcvi/vigor/RegressionTest/GenerateVigor4GeneModels.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/jcvi/vigor/RegressionTest/ValidateVigor4Models.java" afterPath="$PROJECT_DIR$/src/test/java/org/jcvi/vigor/RegressionTest/ValidateVigor4Models.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/jcvi/vigor/service/AdjustUneditedExonBoundariesTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/jcvi/vigor/service/AdjustUneditedExonBoundariesTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/jcvi/vigor/service/AdjustViralTricksTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/jcvi/vigor/service/AdjustViralTricksTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/jcvi/vigor/service/CheckCoverageTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/jcvi/vigor/service/CheckCoverageTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/jcvi/vigor/service/DetermineStartAndStopTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/jcvi/vigor/service/DetermineStartAndStopTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/VigorRegressionTestInput/flua.fasta" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -421,36 +70,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="GeneModelGenerationService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/GeneModelGenerationService.java">
+      <file leaf-file-name="GenerateVigorOutput.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/utils/GenerateVigorOutput.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="58" column="52" lean-forward="false" selection-start-line="58" selection-start-column="52" selection-end-line="58" selection-end-column="52" />
-              <folding>
-                <element signature="e#2499#2506#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VirusGenomeService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/VirusGenomeService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="49" column="9" lean-forward="true" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
+            <state relative-caret-position="240">
+              <caret line="47" column="40" lean-forward="true" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VigorInputValidationService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/VigorInputValidationService.java">
+      <file leaf-file-name="ViralProteinService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/ViralProteinService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="930">
-              <caret line="62" column="57" lean-forward="true" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="57" />
+            <state relative-caret-position="178">
+              <caret line="227" column="66" lean-forward="true" selection-start-line="227" selection-start-column="66" selection-end-line="227" selection-end-column="66" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <marker date="1522698607250" expanded="false" signature="9598:9605" ph="&lt;~&gt;" />
+                <marker date="1522698607250" expanded="false" signature="9646:9653" ph="&lt;~&gt;" />
+                <marker date="1522698607250" expanded="false" signature="10260:10268" ph="&lt;~&gt;" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViralProtein.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/component/ViralProtein.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Model.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/component/Model.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -458,18 +117,43 @@
       <file leaf-file-name="Alignment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/component/Alignment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="14" column="48" lean-forward="true" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
+            <state relative-caret-position="45">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="13" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExonerateService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/ExonerateService.java">
+      <file leaf-file-name="MaturePeptide.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/component/MaturePeptide.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-165">
-              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+            <state relative-caret-position="225">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#195#222#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VigorInputValidationService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/VigorInputValidationService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DetermineMissingExons.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/DetermineMissingExons.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1725">
+              <caret line="30" column="31" lean-forward="true" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -478,22 +162,9 @@
       <file leaf-file-name="GenerateExonerateOutput.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/utils/GenerateExonerateOutput.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
+            <state relative-caret-position="795">
               <caret line="86" column="24" lean-forward="true" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="24" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GenerateVigor4GeneModels.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/org/jcvi/vigor/RegressionTest/GenerateVigor4GeneModels.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
-              <folding>
-                <element signature="e#1558#1579#0" expanded="true" />
-                <element signature="e#6187#6202#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -501,28 +172,8 @@
       <file leaf-file-name="VigorInitializationService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/VigorInitializationService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ModelGenerationService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/ModelGenerationService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="37" column="38" lean-forward="false" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="570">
+              <caret line="70" column="20" lean-forward="false" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -587,7 +238,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/vigor/component/VirusGenome.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vigor/component/AlignmentFragment.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vigor/component/Alignment.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vigor/forms/VigorForm.java" />
@@ -613,19 +263,15 @@
         <option value="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/forms/VigorForm.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/jcvi/vigor/service/CheckCoverageTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/utils/VigorFunctionalUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/component/ViralProtein.java" />
         <option value="$PROJECT_DIR$/src/main/resources/vigorResources/data3/flua_db" />
         <option value="$PROJECT_DIR$/src/main/resources/vigorResources/data3/veev_db" />
         <option value="$PROJECT_DIR$/src/test/java/org/jcvi/vigor/service/AdjustUneditedExonBoundariesTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/component/Model.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/jcvi/vigor/service/DetermineStartAndStopTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/component/RNA_Editing.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/jcvi/vigor/service/AdjustViralTricksTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/jcvi/vigor/RegressionTest/ValidateVigor4Models.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/ModelGenerationService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/ViralProteinService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/VigorInputValidationService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/DetermineMissingExons.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/AdjustViralTricks.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/AdjustUneditedExonBoundaries.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/CheckCoverage.java" />
@@ -638,6 +284,11 @@
         <option value="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/utils/GenerateVigorOutput.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/VigorInitializationService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/GeneModelGenerationService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/DetermineMissingExons.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/ViralProteinService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/component/ViralProtein.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/component/MaturePeptide.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jcvi/vigor/component/Model.java" />
       </list>
     </option>
   </component>
@@ -1606,7 +1257,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="627234000" />
+    <option name="totallyTimeSpent" value="634009000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1682" height="1023" extended-state="6" />
@@ -1628,12 +1279,12 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23095238" sideWeight="0.67157584" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09756097" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42407808" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24946466" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.015184382" sideWeight="0.49321267" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.015184382" sideWeight="0.49321267" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1839,27 +1490,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="174" column="0" lean-forward="false" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/4.3.9.RELEASE/spring-test-4.3.9.RELEASE.jar!/org/springframework/test/context/junit4/statements/RunAfterTestMethodCallbacks.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/statements/RunBefores.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1875,7 +1509,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
           <caret line="97" column="60" lean-forward="true" selection-start-line="97" selection-start-column="60" selection-end-line="97" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1891,7 +1524,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="33" column="33" lean-forward="false" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1907,17 +1539,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
           <caret line="580" column="0" lean-forward="false" selection-start-line="580" selection-start-column="0" selection-end-line="580" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/component/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="37" column="65" lean-forward="false" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="65" />
-          <folding>
-            <element signature="e#1509#1517#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1925,7 +1546,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
           <caret line="149" column="60" lean-forward="true" selection-start-line="149" selection-start-column="60" selection-end-line="149" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1933,7 +1553,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
           <caret line="21" column="245" lean-forward="false" selection-start-line="21" selection-start-column="231" selection-end-line="21" selection-end-column="245" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1941,7 +1560,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1949,7 +1567,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
           <caret line="345" column="1" lean-forward="true" selection-start-line="345" selection-start-column="1" selection-end-line="345" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2020,22 +1637,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/ViralProteinService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="443" column="27" lean-forward="false" selection-start-line="443" selection-start-column="27" selection-end-line="443" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/ReferenceDBGenerationService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-135">
@@ -2048,14 +1649,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-361">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/DetermineMissingExons.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="61" column="27" lean-forward="false" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -2139,22 +1732,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/AlignmentGenerationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="51" column="61" lean-forward="false" selection-start-line="51" selection-start-column="61" selection-end-line="51" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/utils/FormatVigorOutput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="58" column="130" lean-forward="false" selection-start-line="58" selection-start-column="130" selection-end-line="58" selection-end-column="130" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/org/jcvi/vigor/RegressionTest/ValidateVigor4Models.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -2163,19 +1740,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/utils/GenerateVigorOutput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="33" column="71" lean-forward="true" selection-start-line="33" selection-start-column="71" selection-end-line="33" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/vigorResources/data3/flua_db">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
           <caret line="394" column="106" lean-forward="true" selection-start-line="394" selection-start-column="106" selection-end-line="394" selection-end-column="106" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2184,42 +1752,8 @@
         <state relative-caret-position="269">
           <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
           <folding>
-            <element signature="e#1558#1579#0" expanded="true" />
-            <element signature="e#6187#6202#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/component/Alignment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="14" column="48" lean-forward="true" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/ExonerateService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-165">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/utils/GenerateExonerateOutput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="86" column="24" lean-forward="true" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/GeneModelGenerationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="58" column="52" lean-forward="false" selection-start-line="58" selection-start-column="52" selection-end-line="58" selection-end-column="52" />
-          <folding>
-            <element signature="e#2499#2506#0" expanded="true" />
+            <element signature="e#1558#1579#0" expanded="false" />
+            <element signature="e#6187#6202#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2232,10 +1766,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/utils/FormatVigorOutput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="49" column="25" lean-forward="true" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/AlignmentGenerationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="55" column="53" lean-forward="false" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/ModelGenerationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="49" column="34" lean-forward="false" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/GeneModelGenerationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="64" column="12" lean-forward="false" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/ExonerateService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="86" column="10" lean-forward="true" selection-start-line="86" selection-start-column="10" selection-end-line="86" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/VigorInputValidationService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="62" column="57" lean-forward="true" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="57" />
+        <state relative-caret-position="330">
+          <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -2244,25 +1833,80 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/VigorInitializationService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state relative-caret-position="570">
+          <caret line="70" column="20" lean-forward="false" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/ModelGenerationService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/utils/GenerateExonerateOutput.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="37" column="38" lean-forward="false" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
+        <state relative-caret-position="795">
+          <caret line="86" column="24" lean-forward="true" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/utils/GenerateVigorOutput.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="47" column="40" lean-forward="true" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="40" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/component/ViralProtein.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/ViralProteinService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="227" column="66" lean-forward="true" selection-start-line="227" selection-start-column="66" selection-end-line="227" selection-end-column="66" />
+          <folding>
+            <marker date="1522698607250" expanded="false" signature="9598:9605" ph="&lt;~&gt;" />
+            <marker date="1522698607250" expanded="false" signature="9646:9653" ph="&lt;~&gt;" />
+            <marker date="1522698607250" expanded="false" signature="10260:10268" ph="&lt;~&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/service/DetermineMissingExons.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1725">
+          <caret line="30" column="31" lean-forward="true" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/component/Alignment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="13" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/component/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jcvi/vigor/component/MaturePeptide.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#195#222#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

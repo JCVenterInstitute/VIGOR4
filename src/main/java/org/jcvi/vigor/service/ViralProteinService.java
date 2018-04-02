@@ -225,7 +225,7 @@ public class ViralProteinService {
 			viralProtein.setGeneAttributes(geneAttributes);
 
 			/* set geneStructure property of viralProtein */
-			viralProtein = DetermineGeneStructure(viralProtein);
+			//viralProtein = DetermineGeneStructure(viralProtein);
 
 		} catch (Exception e) {
 			LOGGER.error(e.getMessage(), e);
@@ -240,7 +240,7 @@ public class ViralProteinService {
 	 * @param viralProtein
 	 * @return GeneStructure: has list of exons and introns of the viralProtein.
 	 *         These are determined from spliceform annotated in the defline
-	 */
+	 *//*
 	public ViralProtein DetermineGeneStructure(ViralProtein viralProtein) {
         
 		boolean is_ribosomal_slippage = viralProtein.getGeneAttributes().getRibosomal_slippage()
@@ -298,7 +298,7 @@ public class ViralProteinService {
         viralProtein.setIntrons(introns);
 		return viralProtein;
 	}
-
+*/
 	/**
 	 * @param defline
 	 *            of the protein
