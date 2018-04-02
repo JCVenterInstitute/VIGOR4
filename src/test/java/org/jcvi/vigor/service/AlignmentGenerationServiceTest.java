@@ -28,32 +28,32 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = AppConfig.class)
 public class AlignmentGenerationServiceTest {
-	
+
 	@Autowired
 	private AlignmentGenerationService alignmentGenerationService;
 	private VirusGenome virusGenome = new VirusGenome();
-	private ClassLoader classLoader = VigorTestUtils.class.getClassLoader(); 
+	private ClassLoader classLoader = VigorTestUtils.class.getClassLoader();
 	private File file = new File(classLoader.getResource("vigorUnitTestInput/sequence_flua.fasta"). getFile());
-	
+
 	@Before
 	public void getVirusGenome() throws IOException{
-			
+
 		NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(
 				file).hint(
 				DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)
 				.build();
 		Optional<NucleotideFastaRecord> record = dataStore.records().findFirst();
-	    NucleotideFastaRecord seqRecord = record.get();
-	   	virusGenome.setDefline(seqRecord.getComment());
+		NucleotideFastaRecord seqRecord = record.get();
+		virusGenome.setDefline(seqRecord.getComment());
 		virusGenome.setId(seqRecord.getId());
 		virusGenome.setSequence(seqRecord.getSequence());
-			
+
 	}
-			
+
 	@Test
 	public void generateAlignmentsTest() {
 		List<Alignment> alignments = alignmentGenerationService.generateExonerateAlignment(virusGenome,new AlignmentEvidence("flua_db"));
-	    assertEquals(4,alignments.size());
+		assertEquals(4,alignments.size());
 	}
-	
+
 }

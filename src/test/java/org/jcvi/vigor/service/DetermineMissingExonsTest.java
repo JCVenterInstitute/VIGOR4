@@ -43,22 +43,18 @@ public class DetermineMissingExonsTest {
 	private DetermineMissingExons determineMissingExons ;
 	@Autowired
 	private ViralProteinService viralProteinService ;
-	
-	
+
+
 	@Test
 	public void findMissingExonsWithSpliceFormPresent() {
-	    ClassLoader classLoader = VigorTestUtils.class.getClassLoader(); 
-	    File file = new File(classLoader.getResource("vigorUnitTestInput/sequence_flua.fasta"). getFile());
+		ClassLoader classLoader = VigorTestUtils.class.getClassLoader();
+		File file = new File(classLoader.getResource("vigorUnitTestInput/sequence_flua.fasta"). getFile());
 		alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(),"flua_db",VigorUtils.getVigorWorkSpace(),null);
 		alignments = alignments.stream().map(alignment -> viralProteinService.setViralProteinAttributes(alignment,new VigorForm()))
 				.collect(Collectors.toList());
-		assertTrue(String.format("No alignments found using file %s and database flua_db", file.getName()), alignments.size() > 0);
-
 		models.addAll(modelGenerationService.alignmentToModels(alignments.get(0), "exonerate"));
-		assertTrue(String.format("No models were generated using alignment %s",alignments.get(0)), models.size() > 0);
-
-		Model model = models.get(0);
-		// TODO why remove the second one?
+		Model model = new Model();
+		model = models.get(0);
 		model.getExons().remove(1);
 		int exons = determineMissingExons.findMissingExons(model).getExons().size();
 		assertEquals(2, exons);
@@ -87,19 +83,19 @@ public class DetermineMissingExonsTest {
 						+ "TGTCAAAGAGAAGGACATGACCAAAGAATTCTTTGAAAACAAATCAGAAACATGGCCAATTGGAGAGTCACCCAAAGGGGTGGAGGAAGGCTCCATTGGGAAGGTGTGCAGAACCTTACTGGCAAAATCTGTATTCAACAGCCTATA"
 						+ "TGCATCTCCACAACTCGAGGGATTTTCAGCTGAATCAAGAAAGTTGCTTCTCATTGTCCAGGCACTTAGGGACAACCTGGAACCTGGGACCTTCGATCTTGGGGGGCTATATGAAGCAATTGAGGAGTGCCTGATTAATGATCCCTGGG"
 						+ "TTTTGCTTAATGCGTCTTGGTTCAACTCCTTCCTCACACATGCACTGAAATAGTTGTGGCAATGCTACTATTTGCTATCCATACTGTCCAAAA")
-								.build();
-		
+				.build();
+
 		ProteinSequence AASequence = new ProteinSequenceBuilder(
 				"MEDFVRQCFNPMIVELAEKTMKEYGEDLKIETNKFAAICTHLEVCFMYSDFHFINEQGESIIVELGDPNALLKHRFEIIEGRDRTMAWTVVNSICNTTGAEKPKFLPDLYDYKENRFIEIGVTRREVHIYYLEKANKI"
 						+ "KSEKTHIHIFSFTGEEMATKADYTLDEESRARIKTRLFTIRQEMASRGLWDSFVSPREEKRQLKKGLKSQEQCASLPTKVSRRTSPALKILEPM")
-								.build();
+				.build();
 
 		Exon exon = determineMissingExons.performJillionPairWiseAlignment(NTRange, AARange, NTSequence,
 				AASequence,Direction.FORWARD);
 		assertEquals(exon.getAlignmentFragment().getProteinSeqRange(), AARange);
 
 	}
-	
+
 	@Test
 	public void testJillionPairwiseAlignment(){
 		ProteinSequence querySequence = new ProteinSequenceBuilder("MEDFVRQCFNPMIVELAEKTMKEYGEDLKIETNKFAAICTHLEVCFMYSDFHFI").build();
@@ -112,7 +108,7 @@ public class DetermineMissingExonsTest {
 		expected =DirectedRange.create((Range.of(0,53)),Direction.FORWARD );
 		DirectedRange queryRange = actual.getQueryRange();
 		assertEquals(expected,queryRange);
-	
+
 	}
 	
 	/*@Test
@@ -130,6 +126,6 @@ public class DetermineMissingExonsTest {
 	    assertEquals(12,outputModel.getExons().size());
 	}
 	*/
-	
-	
+
+
 }

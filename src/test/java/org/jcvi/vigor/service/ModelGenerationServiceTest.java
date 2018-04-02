@@ -37,12 +37,12 @@ public class ModelGenerationServiceTest {
 	@Autowired
 	private ModelGenerationService modelGenerationService;
 	@Autowired
-    private ExonerateService exonerateService;
-	private ClassLoader classLoader = VigorTestUtils.class.getClassLoader(); 
+	private ExonerateService exonerateService;
+	private ClassLoader classLoader = VigorTestUtils.class.getClassLoader();
 	private File file = new File(classLoader.getResource("vigorUnitTestInput/exonerate_flua.txt"). getFile());
 	@Test
 	public void alignmentToModelsTest() throws IOException {
-		
+
 		alignments = exonerateService.parseExonerateOutput(file, new AlignmentEvidence("flua_db"), new VirusGenome());
 		Alignment alignment = alignments.get(0);
 		List<Model> outputModels = modelGenerationService.alignmentToModels(alignment, "exonerate");
@@ -53,25 +53,25 @@ public class ModelGenerationServiceTest {
 	@Test
 	public void splitModelAtSequenceGapsTest() throws CloneNotSupportedException {
 		Model model = new Model();
-        List<Exon> exons = new ArrayList<Exon>();
-        exons.add(new Exon(Range.of(20, 500),Frame.ONE));
-        exons.add(new Exon(Range.of(600,1300),Frame.TWO));
-        exons.add(new Exon(Range.of(1600,2800),Frame.ONE));
-        exons.add(new Exon(Range.of(3011,4500),Frame.ONE));
-        model.setExons(exons);
-        model.setStatus(new ArrayList<String>());
-        List<Range> sequenceGaps = new ArrayList<Range>();
-        sequenceGaps.add(Range.of(1400,1554));
-        sequenceGaps.add(Range.of(2938,3010));
-        sequenceGaps.add(Range.of(4550,4904));
-        sequenceGaps.add(Range.of(8508,8698));
-        sequenceGaps.add(Range.of(9906,9965));
-        sequenceGaps.add(Range.of(11619,11759));
-        List<Model> models = modelGenerationService.splitModelAtSequenceGaps(model, sequenceGaps);
-        assertEquals(3,models.size());
-        	
+		List<Exon> exons = new ArrayList<Exon>();
+		exons.add(new Exon(Range.of(20, 500),Frame.ONE));
+		exons.add(new Exon(Range.of(600,1300),Frame.TWO));
+		exons.add(new Exon(Range.of(1600,2800),Frame.ONE));
+		exons.add(new Exon(Range.of(3011,4500),Frame.ONE));
+		model.setExons(exons);
+		model.setStatus(new ArrayList<String>());
+		List<Range> sequenceGaps = new ArrayList<Range>();
+		sequenceGaps.add(Range.of(1400,1554));
+		sequenceGaps.add(Range.of(2938,3010));
+		sequenceGaps.add(Range.of(4550,4904));
+		sequenceGaps.add(Range.of(8508,8698));
+		sequenceGaps.add(Range.of(9906,9965));
+		sequenceGaps.add(Range.of(11619,11759));
+		List<Model> models = modelGenerationService.splitModelAtSequenceGaps(model, sequenceGaps);
+		assertEquals(3,models.size());
+
 	}
-	
+
 	@Test
 	public void generateCompatibleFragsChainsTest(){
 		List<AlignmentFragment> alignmentFrags = new ArrayList<AlignmentFragment>();
@@ -82,6 +82,6 @@ public class ModelGenerationServiceTest {
 		alignmentFrags.add(new AlignmentFragment(Range.of(130,170),Range.of(330,500),1000,Direction.FORWARD,Frame.ONE));
 		alignmentFrags.add(new AlignmentFragment(Range.of(171,180),Range.of(650,670),1000,Direction.FORWARD,Frame.ONE));
 		List<List<AlignmentFragment>> outList = modelGenerationService.generateCompatibleFragsChains(alignmentFrags, "exonerate");
-		assertEquals(outList.size(),6);		
+		assertEquals(outList.size(),6);
 	}
 }
