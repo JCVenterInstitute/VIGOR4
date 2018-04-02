@@ -1,112 +1,234 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <repositories>
     <repository>
       <id>local-maven-repository</id>
       <url>file://${project.basedir}/local-maven-repository</url>
     </repository>
   </repositories>
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.jcvi.vigor</groupId>
-	<artifactId>Vigor4</artifactId>
-	<packaging>jar</packaging>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>Vigor4</name>
-	<url>http://maven.apache.org</url>
-	<properties>
-		<spring.version>4.3.7.RELEASE</spring.version>
-		<java-version>1.8</java-version>
-	</properties>
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
-			<scope>test</scope>
-		</dependency>
-        <dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-core</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>cglib</groupId>
-			<artifactId>cglib</artifactId>
-			<version>3.0</version>
-		</dependency>
-		<dependency>
-	       <groupId>org.projectlombok</groupId>
-	       <artifactId>lombok</artifactId>
-	       <version>1.16.14</version>
-	       <scope>provided</scope>
-        </dependency>
-        <dependency>
-           	<groupId>com.jcraft</groupId>
-	        <artifactId>jsch</artifactId>
-	        <version>0.1.53</version>
-	    </dependency>
-	    <dependency>
-			<groupId>commons-cli</groupId>
-			<artifactId>commons-cli</artifactId>
-			<version>1.3.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-configuration2</artifactId>
-			<version>2.1.1</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-beanutils</groupId>
-			<artifactId>commons-beanutils</artifactId>
-			<version>1.9.3</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-api</artifactId>
-			<version>2.6.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-			<version>2.6.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jcvi</groupId>
-			<artifactId>jillion</artifactId>
-			<version>5.3.20180213</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
-        <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-test</artifactId>
-        <version>4.3.9.RELEASE</version>
-        <scope>test</scope>
-        </dependency>
 
-	</dependencies>
-	<build>
-		<finalName>Vigor4</finalName>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.6.1</version>
-					<configuration>
-						<source>${java-version}</source>
-						<target>${java-version}</target>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-		
-		 		
-		
-	</build>
+  <properties>
+    <spring.version>5.0.4.RELEASE</spring.version>
+    <java-version>1.8</java-version>
+    <argparse4j-version>0.8.1</argparse4j-version>
+    <junit-version>4.12</junit-version>
+    <lombok-version>1.16.20</lombok-version>
+    <commons-configuration-version>2.2</commons-configuration-version>
+    <commons-beanutils-version>1.9.3</commons-beanutils-version>
+    <log4j-version>2.10.0</log4j-version>
+    <jillion-version>5.3.20180213</jillion-version>
+    <argparse4j-version>0.8.1</argparse4j-version>
+    <jacoco-version>0.8.0</jacoco-version>
+  </properties>
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.jcvi.vigor</groupId>
+  <artifactId>Vigor4</artifactId>
+  <packaging>jar</packaging> 
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Vigor4</name>
+  <url>http://maven.apache.org</url>
+
+
+  <dependencies>
+
+    <dependency>
+      <groupId>net.sourceforge.argparse4j</groupId>
+      <artifactId>argparse4j</artifactId>
+      <version>${argparse4j-version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit-version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
+    <dependency>
+      <groupId>org.jacoco</groupId>
+      <artifactId>jacoco-maven-plugin</artifactId>
+      <version>${jacoco-version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+<!--    <dependency>
+      <groupId>cglib</groupId>
+      <artifactId>cglib</artifactId>
+      <version>3.0</version>
+    </dependency> -->
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok-version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-configuration2</artifactId>
+      <version>${commons-configuration-version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-beanutils</groupId>
+      <artifactId>commons-beanutils</artifactId>
+      <version>${commons-beanutils-version}</version>
+    </dependency> 
+
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>${log4j-version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>${log4j-version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jcvi</groupId>
+      <artifactId>jillion</artifactId>
+      <version>${jillion-version}</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>${spring.version}</version>
+      <scope>test</scope> 
+    </dependency>
+
+  </dependencies>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+        <!--              <version>2.21.0</version> -->
+      </plugin>
+    </plugins>
+  </reporting>
+
+  <build>
+    <finalName>Vigor4</finalName>
+
+    
+    <pluginManagement>
+      <plugins>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.6.1</version>
+          <configuration>
+            <source>${java-version}</source>
+            <target>${java-version}</target>
+          </configuration>
+        </plugin>
+
+	<plugin>
+	  <groupId>org.apache.maven.plugins</groupId>
+	  <artifactId>maven-assembly-plugin</artifactId>
+	  <version>3.1.0</version> 
+	  <configuration>
+	    <finalName>vigor-${project.version}</finalName>
+	    <!-- get all project dependencies -->
+	    <descriptorRefs>
+	      <descriptorRef>jar-with-dependencies</descriptorRef>
+	    </descriptorRefs>
+	    <!-- MainClass in mainfest make a executable jar -->
+	    <archive>
+	      <manifest>
+		<mainClass>org.jcvi.vigor.AppConfig</mainClass>
+	      </manifest>
+	    </archive>
+	    <appendAssemblyId>false</appendAssemblyId>
+	  </configuration>
+	  <executions>
+	    <execution>
+	      <id>make-assembly</id>
+              <!-- bind to the packaging phase -->
+	      <phase>package</phase>
+	      <goals>
+		<goal>single</goal>
+	      </goals>
+	    </execution>
+	  </executions>
+	</plugin>
+	
+      </plugins>
+    </pluginManagement>
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>${jacoco-version}</version>
+        <executions>
+          <execution>
+            <id>default-prepare-agent</id>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>default-report</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>report</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>default-check</id>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <!-- implementation is needed only for Maven 2 -->
+                <rule implementation="org.jacoco.maven.RuleConfiguration">
+                  <element>BUNDLE</element>
+                  <limits>
+                    <!-- implementation is needed only for Maven 2 -->
+                    <limit implementation="org.jacoco.report.check.Limit">
+                      <counter>COMPLEXITY</counter>
+                      <value>COVEREDRATIO</value>
+                      <minimum>0.50</minimum>
+                    </limit>
+                  </limits>
+                </rule>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      
+    </plugins>
+
+  </build>
 
 </project>

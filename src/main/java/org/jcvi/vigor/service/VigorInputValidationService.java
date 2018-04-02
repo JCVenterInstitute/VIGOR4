@@ -1,11 +1,15 @@
 package org.jcvi.vigor.service;
 
-import org.apache.commons.cli.*;
+import net.sourceforge.argparse4j.ArgumentParsers;
+import net.sourceforge.argparse4j.impl.Arguments;
+import net.sourceforge.argparse4j.inf.ArgumentGroup;
+import net.sourceforge.argparse4j.inf.ArgumentParser;
+import net.sourceforge.argparse4j.inf.ArgumentParserException;
+import net.sourceforge.argparse4j.inf.MutuallyExclusiveGroup;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.jcvi.vigor.exception.VigorException;
 
 @Service
 public class VigorInputValidationService {
@@ -15,192 +19,161 @@ public class VigorInputValidationService {
 	@Autowired
 	private VigorInitializationService vigorInitializationServiceObj;
 
-	public void processInput(String... inputParams) {
-		CommandLine inputs = null;
-		if (inputParams.length >= 1) {
-			inputs = validateInput(inputParams);
-		} else {
-			System.out.println("Missing input parameters");
-			printHelp();
-		}
-		try {
-			if (!(inputs == null)) {
-				vigorInitializationServiceObj.initializeVigor(inputs);
-			}
-		} catch (Exception e) {
-			LOGGER.error(e.getMessage(), e);
-			System.exit(0);
-		}
-
+	public void processInput(String... inputParams) throws ArgumentParserException {
+		ArgumentParser parser = getArgumentParser();
+		vigorInitializationServiceObj.initializeVigor(parser.parseArgsOrFail(inputParams));
 	}
 
-	// Retrieve all the input parameters and validate
-	public CommandLine validateInput(String[] inputParams) {
-		CommandLineParser parser = new DefaultParser();
-		CommandLine inputs = null;
+	private ArgumentParser getArgumentParser() {
 
-		try {
-			Options options = createOptions(false);
+		ArgumentParser parser = ArgumentParsers.newFor("vigor4")
+											   .build()
+											   .usage("${prog} -i inputfasta -o outputprefix [ -d refdb ]")
+				.epilog(String.join("\n","Outputs:",
+						"  outputprefix.rpt   - summary of program results",
+						"  outputprefix.stats - run statistics (per genome sequence) in tab-delimited format",
+						"  outputprefix.cds   - fasta file of predicted CDSs",
+						"  outputprefix.pep   - fasta file of predicted proteins",
+						"  outputprefix.tbl   - predicted features in GenBank tbl format",
+						"  outputprefix.aln   - alignment of predicted protein to reference, and reference protein to genome",
+						"  outputprefix.fs    - subset of aln report for those genes with potential sequencing issues",
+						"  outputprefix.at    - potential sequencing issues in tab-delimited format"));
 
-			OptionGroup synonymOptionGroup1 = new OptionGroup();
-			synonymOptionGroup1.setRequired(true);
-			synonymOptionGroup1.addOption(options.getOption("I"));
-			synonymOptionGroup1.addOption(options.getOption("i"));
-			OptionGroup synonymOptionGroup2 = new OptionGroup();
-			synonymOptionGroup2.setRequired(true);
-			synonymOptionGroup2.addOption(options.getOption("o"));
-			synonymOptionGroup2.addOption(options.getOption("O"));
-			OptionGroup synonymOptionGroup3 = new OptionGroup();
-			synonymOptionGroup3.setRequired(false);
-			synonymOptionGroup3.addOption(options.getOption("d"));
-			synonymOptionGroup3.addOption(options.getOption("D"));
-			options.addOptionGroup(synonymOptionGroup1);
-			options.addOptionGroup(synonymOptionGroup2);
-			options.addOptionGroup(synonymOptionGroup3);
-			OptionGroup conflictOptionGroup1 = new OptionGroup();
-			conflictOptionGroup1.addOption(options.getOption("l"));
-			conflictOptionGroup1.addOption(options.getOption("L"));
-			options.addOptionGroup(conflictOptionGroup1);
+		MutuallyExclusiveGroup inputGroup = parser.addMutuallyExclusiveGroup().required(true);
+		inputGroup.addArgument("-i","--input-fasta")
+				  .action(Arguments.store())
+				  .dest("input_fasta")
+				  .metavar("<input fasta>")
+				  .help("path to fasta file of genomic sequences to be annotated, (-I is a synonym for this option)");
 
-			inputs = parser.parse(options, inputParams);
+		inputGroup.addArgument("-I")
+				  .action(Arguments.store())
+				  .dest("input_fasta")
+				  .metavar("<input fasta>")
+				  .help("synonym for -i/--input-fasta)");
 
-			if (inputs.hasOption('F')) {
-				int f = Integer.parseInt(inputs.getOptionValue('F'));
-				if (!(f >= 0 && f < 3)) {
-					VigorException.printExceptionMessage("Invalid value for Frameshift Sensitivity");
-					System.exit(0);
-				}
-			}
-			if (inputs.hasOption('K')) {
-				int k = Integer.parseInt(inputs.getOptionValue('K'));
-				if (!(k >= 0 && k <= 1)) {
-					VigorException.printExceptionMessage("Invalid value for Candidate Selection");
-					System.exit(0);
-				}
-			}
+		MutuallyExclusiveGroup outputGroup = parser.addMutuallyExclusiveGroup().required(true);
+		outputGroup.addArgument("-o","--output-prefix")
+				   .action(Arguments.store())
+				   .dest("output_prefix")
+				   .metavar("<output prefix>")
+				   .help("prefix for outputfile files, e.g. if the ouput prefix is /mydir/anno VIGOR will create output files /mydir/anno.tbl, /mydir/anno.stats, etc., (-O is a synonym for this option)");
 
-			if (inputs.hasOption('e')) {
-				int e = Integer.parseInt(inputs.getOptionValue('e'));
-				if (!(e > 0)) {
-					VigorException.printExceptionMessage("E-value must be > 0 (-e " + e + ")");
-					System.exit(0);
-				}
-			}
-
-		} catch (AlreadySelectedException e) {
-			LOGGER.error(e.getMessage(), e);
-			VigorException.printExceptionMessage(e.getMessage() + ". Please select either of the two options");
-
-		} catch (MissingOptionException e) {
-			LOGGER.error(e.getMessage(), e);
-			VigorException.printExceptionMessage(e.getMessage());
-
-		}
-
-		catch (UnrecognizedOptionException e) {
-			LOGGER.error(e.getMessage(), e);
-			VigorException.printExceptionMessage(e.getMessage());
+		outputGroup.addArgument("-O")
+				   .action(Arguments.store())
+				   .dest("output_prefix")
+				   .metavar("<output prefix>")
+				   .help("synonym for -o/--output-prefix");
 
 
-		} catch (MissingArgumentException e) {
-			LOGGER.error(e.getMessage(), e);
-			VigorException.printExceptionMessage(e.getMessage());
+		MutuallyExclusiveGroup referenceGroup = parser.addMutuallyExclusiveGroup("reference database");
 
-		} catch (ParseException e) {
-			LOGGER.error(e.getMessage(), e);
-			VigorException.printExceptionMessage(e.getMessage());
-		}
 
-		return inputs;
+		referenceGroup.addArgument("-a", "--autoselect-reference")
+					  .dest("reference_database")
+					  .action(Arguments.storeConst())
+					  .setConst("any")
+					  .help("auto-select the reference database, equivalent to '-d any ', default behavior unless overridden by -d or -G, (-A is a synonym for this option)");
+		referenceGroup.addArgument("-A")
+					  .dest("reference_database")
+					  .action(Arguments.storeConst())
+					  .setConst("any")
+					  .help("synonym for -a/--autoselect-reference");
 
-	}
+		referenceGroup.addArgument("-d", "--reference-database")
+					  .dest("reference_database")
+					  .action(Arguments.store())
+					  .metavar("<ref db>")
+					  .help("specify the reference database to be used, (-D is a synonym for this option)");
+		referenceGroup.addArgument("-D")
+					  .dest("reference_database")
+					  .action(Arguments.store())
+					  .metavar("<ref db>")
+					  .help("synonym for -d/--reference-database");
+		referenceGroup.addArgument("-G", "--genbank-reference")
+					  .metavar("<genback file>")
+					  .dest("genback_reference")
+					  .action(Arguments.store())
+					  .help("use a genbank file as the reference database, caution: VIGOR genbank parsing is fairly rudimentary and many genbank files are unparseable.  Partial genes will be ignored. Note: genbank files do not record enough information to handle RNA editing");
 
-	// CommandLine options and database related information to display to the
-	// user
-	public void printHelp() {
-		Options options = createOptions(true);
+		// TODO what are acceptable values for this
+		parser.addArgument("-e", "--evalue")
+			  .action(Arguments.store())
+			  .type(Integer.class)
+			  .dest("evalue")
+			  .help("<evalue>, override the default evalue used to identify potential genes, the default is usually 1E-5, but varies by reference database");
 
-		HelpFormatter formatter = new HelpFormatter();
-		formatter.printHelp("CommandLineOptions", options);
+		// TODO add validation
+		parser.addArgument("-c", "--min-coverage")
+			  .action(Arguments.store())
+			  .help("minimum coverage of reference product (0-100) required to report a gene, by default coverage is ignored");
 
-	}
+		parser.addArgument("-C", "--complete")
+				   .help("complete (linear) genome (do not treat edges as gaps)")
+				   .dest("complete_gene")
+				   .action(Arguments.storeTrue());
+		parser.addArgument("-0", "--circular")
+				   .dest("circular_gene")
+				   .help("complete circular genome (allows gene to span origin)")
+				   .action(Arguments.storeTrue());
+		parser.addArgument("-f", "--frameshift-sensitivity")
+			  .action(Arguments.store())
+			  .dest("frameshift_sensitivity")
+			  .choices("0","1","2")
+			  .setDefault("1")
+			  .help("frameshift sensitivity, 0=ignore frameshifts, 1=normal (default), 2=sensitive");
 
-	// Set the command line parameters into Options object
-	public Options createOptions(boolean helpOptions) {
-		Options helperOptions = new Options();
-		Options allOptions = new Options();
-		// Option h ;
-		Option option1 = Option.builder("a").hasArg()
-				.desc("auto-select the reference database, equivalent to '-d any ', default behavior unless overridden by -d or -G, (-A is a synonym for this option)")
-				.build();
-		Option option2 = Option.builder("d").hasArg()
-				.desc("<ref db>, specify the reference database to be used, (-D is a synonym for this option)").build();
-		Option option2_1 = Option.builder("D").hasArg()
-				.desc("<ref db>, specify the reference database to be used, (-d is a synonym for this option)").build();
-		Option option3 = Option.builder("e").hasArg()
-				.desc("<evalue>, override the default evalue used to identify potential genes, the default is usually 1E-5, but varies by reference database")
-				.build();
-		Option option4 = Option.builder("c").hasArg()
-				.desc("minimum coverage of reference product (0-100) required to report a gene, by default coverage is ignored")
-				.build();
-		Option option5 = Option.builder("C").hasArg().desc("complete (linear) genome (do not treat edges as gaps)")
-				.build();
-		Option option6 = Option.builder("0").hasArg().desc("complete circular genome (allows gene to span origin)")
-				.build();
-		Option option7 = Option.builder("f").hasArg()
-				.desc("<0, 1, or 2>, frameshift sensitivity, 0=ignore frameshifts, 1=normal (default), 2=sensitive")
-				.build();
-		Option option8 = Option.builder("G").hasArg()
-				.desc("<genbank file>, use a genbank file as the reference database, caution: VIGOR genbank parsing is fairly rudimentary and many genbank files are unparseable.  Partial genes will be ignored. Note: genbank files do not record enough information to handle RNA editing")
-				.build();
-		Option option9 = Option.builder("i").hasArg()
-				.desc("<input fasta>, path to fasta file of genomic sequences to be annotated, (-I is a synonym for this option)")
-				.build();
-		Option option9_1 = Option.builder("I").hasArg()
-				.desc("<input fasta>, path to fasta file of genomic sequences to be annotated, (-i is a synonym for this option)")
-				.build();
-		Option option10 = Option.builder("K").hasArg().desc("<value>, value=0 skip candidate selection (default=1)")
-				.build();
-		Option option11 = Option.builder("l").hasArg()
-				.desc("do NOT use locus_tags in TBL file output (incompatible with -L)").build();
-		Option option12 = Option.builder("L").hasArg().desc("USE locus_tags in TBL file output (incompatible with -l)")
-				.build();
-		Option option13 = Option.builder("o").hasArg()
-				.desc("<output prefix>, prefix for outputfile files, e.g. if the ouput prefix is /mydir/anno VIGOR will create output files /mydir/anno.tbl, /mydir/anno.stats, etc., (-O is a synonym for this option)")
-				.build();
-		Option option13_1 = Option.builder("O").hasArg()
-				.desc("<output prefix>, prefix for outputfile files, e.g. if the ouput prefix is /mydir/anno VIGOR will create output files /mydir/anno.tbl, /mydir/anno.stats, etc., (-o is a synonym for this option)")
-				.build();
-		Option option14 = Option.builder("P").hasArg()
-				.desc("<parameter=value~~...~~paramaeter=value>, override default values of VIGOR parameters").build();
-		Option option15 = Option.builder("j").hasArg()
-				.desc("turn off JCVI rules, JCVI rules treat gaps and ambiguity codes conservatively, use this option to relax these constraints and produce a more speculative annotation")
-				.build();
-		Option option16 = Option.builder("m").hasArg()
-				.desc("ignore reference match requirements (coverage/identity/similarity), sometimes useful when running VIGOR to evaluate raw contigs and rough draft sequences")
-				.build();
-		Option option17 = Option.builder("s").hasArg()
-				.desc("<gene size> minimum size (aa) of product required to report a gene, by default size is ignored")
-				.build();
-		Option option18 = Option.builder("v").hasArg().desc("verbose logging (default=terse)").build();
-		Option option20 = Option.builder("h").hasArg().desc("For Help").build();
-		helperOptions.addOption(option1).addOption(option2).addOption(option3).addOption(option4).addOption(option5)
-				.addOption(option6).addOption(option7).addOption(option8).addOption(option9).addOption(option10)
-				.addOption(option11).addOption(option12).addOption(option13).addOption(option14).addOption(option15)
-				.addOption(option16).addOption(option17).addOption(option18).addOption(option20);
-		allOptions.addOption(option1).addOption(option2).addOption(option3).addOption(option4).addOption(option5)
-				.addOption(option6).addOption(option7).addOption(option8).addOption(option9).addOption(option10)
-				.addOption(option11).addOption(option12).addOption(option13).addOption(option14).addOption(option15)
-				.addOption(option16).addOption(option17).addOption(option18).addOption(option20).addOption(option2_1)
-				.addOption(option9_1).addOption(option13_1);
-		if (helpOptions) {
-			return helperOptions;
-		}
+		parser.addArgument("-K", "--skip-candidate-selection")
+			  .choices("0", "1")
+			  .setDefault("1")
+			  .dest("skip_selection")
+			  .metavar("<value>")
+			  .help("value=0 skip candidate selection (default=1)");
 
-		else {
-			return allOptions;
-		}
+		MutuallyExclusiveGroup locusGroup = parser.addMutuallyExclusiveGroup("locus tag usage");
+		// use storeConst rather than storeTrue to avoid automatically setting a default value
+		locusGroup.addArgument("-l", "--no-locus-tags")
+				  .dest("use_locus_tags")
+				  .action(Arguments.storeConst())
+				  .setConst(true)
+				  .help("do NOT use locus_tags in TBL file output (incompatible with -L)");
+		locusGroup.addArgument("-L", "--locus-tags")
+				  .dest("use_locus_tags")
+				  .action(Arguments.storeConst())
+				  .setConst(false)
+				  .help("USE locus_tags in TBL file output (incompatible with -l)");
 
+		parser.addArgument("-P","--parameter")
+			  .action(Arguments.append())
+			  .dest("parameters")
+			  .metavar("<parameter=value~~...~~parameter=value>")
+			  .help("~~ separated list of VIGOR parameters to override default values");
+		parser.addArgument("-j", "--jcvi-rules-off")
+			  .action(Arguments.storeFalse())
+			  .dest("jcvi_rules")
+			  .setDefault(true)
+			  .help("turn off JCVI rules, JCVI rules treat gaps and ambiguity codes conservatively, use this option to relax these constraints and produce a more speculative annotation");
+		parser.addArgument("-m","--ignore-reference-requirements")
+			  .action(Arguments.storeTrue())
+			  .dest("ignore_reference_requirements")
+			  .help("ignore reference match requirements (coverage/identity/similarity), sometimes useful when running VIGOR to evaluate raw contigs and rough draft sequences");
+		parser.addArgument("-s","--min-gene-size")
+			  .action(Arguments.store())
+			  .dest("min-gene-size")
+			  .type(Integer.class)
+			  .metavar("<gene size>")
+			  .help("minimum size (aa) of product required to report a gene, by default size is ignored");
+		parser.addArgument("-v","--verbose")
+			  .action(Arguments.storeTrue())
+			  .dest("verbose")
+			  .help("verbose logging (default=terse)");
+
+		parser.addArgument("-x", "--ignore-refID")
+			  .action(Arguments.append())
+			  .dest("ignore_refID")
+			  .metavar("<ref_id,...,ref_id>")
+			  .help("comma separated list of reference sequence IDs to ignore (useful when debugging a reference database)");
+		return parser;
 	}
 
 }
