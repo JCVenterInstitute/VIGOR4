@@ -15,6 +15,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
+import org.jcvi.jillion.core.residue.aa.IupacTranslationTables;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.jillion.core.residue.nt.Triplet;
 import org.springframework.stereotype.Service;
@@ -45,12 +46,15 @@ public class DetermineStart implements DetermineGeneFeatures {
 		}
 		catch(CloneNotSupportedException e){
 			LOGGER.error(e.getMessage(),e);
+			System.exit(0);
 		}
 
 		catch (Exception e) {
 			LOGGER.error(e.getMessage(), e);
+			System.exit(0);
 		}
-
+        System.out.println("Models after determining start");
+		models.forEach(System.out::println);
 		return models;
 	}
 
@@ -103,17 +107,39 @@ public class DetermineStart implements DetermineGeneFeatures {
 			}
 		}
 		Exon firstExon = model.getExons().get(0);
-		Frame frame = VigorFunctionalUtils.getSequenceFrame(firstExon.getRange().getBegin());
+		Frame firstExonFrame = VigorFunctionalUtils.getSequenceFrame(firstExon.getRange().getBegin());
 		long expectedStart = firstExon.getRange().getBegin()
 					- ((firstExon.getAlignmentFragment().getProteinSeqRange()
 							.getBegin()) * 3);
 			start = expectedStart - windowSize;
-			end = expectedStart + windowSize;
 		if (start < 0) {
 			isSequenceMissing = true;
 			start = 0;
 		}
+		end = start+windowSize;
+		if(end>firstExon.getRange().getEnd()){
+		    end = firstExon.getRange().getEnd();
+        }
 		startSearchRange = Range.of(start, end);
+		//find any internal stops
+        Map<Frame,List<Long>> internalStops = model.getAlignment().getVirusGenome().getInternalStops();
+        List<Long> stopsInFrame=new ArrayList<Long>();
+
+        if(internalStops!=null) {
+            for (Frame frame : internalStops.keySet()) {
+                if (frame.equals(firstExonFrame)) {
+                    List<Long> tempList = internalStops.get(firstExonFrame);
+                    for(Long stop : tempList){
+                        Range tempRange = Range.of(stop);
+                        if(tempRange.isSubRangeOf(startSearchRange)){
+                            stopsInFrame.add(stop);
+                        }
+                    }
+                }
+            }
+        }
+
+
 		final long tempStart = start;
 		NucleotideSequence NTSequence = model.getAlignment().getVirusGenome()
 				.getSequence().toBuilder(startSearchRange).build();
@@ -127,13 +153,23 @@ public class DetermineStart implements DetermineGeneFeatures {
 								range.getEnd() + tempStart);
 						return range;
 					}).collect(Collectors.toList());
+
+
 			foundRanges.stream().forEach(x -> {
-				if (VigorFunctionalUtils.getSequenceFrame(x.getBegin()).compareTo(frame) == 0) {
+				if (VigorFunctionalUtils.getSequenceFrame(x.getBegin()).compareTo(firstExonFrame) == 0) {
 					rangesInFrame.add(x);
 				}
 			});
 			for(Range range:rangesInFrame){
-			rangeScoreMap.put(range,VigorFunctionalUtils.generateScore(firstExon.getRange().getBegin(), range.getBegin()));
+			    boolean isValid = true;
+			    for(Long stop: stopsInFrame){
+			        if(range.endsBefore(Range.of(stop,stop+2))){
+			            isValid=false;
+                    }
+                }
+                if(isValid) {
+                    rangeScoreMap.put(range, VigorFunctionalUtils.generateScore(firstExon.getRange().getBegin(), range.getBegin()));
+                }
 			}
 		}
 		rangeScoreMap
@@ -147,14 +183,15 @@ public class DetermineStart implements DetermineGeneFeatures {
 		if (!(rangeScoreMap.isEmpty())) {
 			Set<Range> keys = rangeScoreMap.keySet();
 			for (Range range : keys) {
+
 				Model newModel = new Model();
 				newModel = model.clone();
 				Exon fExon = newModel.getExons().get(0);
 				fExon.setRange(Range.of(range.getBegin(),fExon.getRange().getEnd()));
 				if (model.getScores() != null) {
-					newModel.getScores().put("startCodonScore",
-							rangeScoreMap.get(range));
-				} else {
+				   newModel.getScores().put("startCodonScore",
+                           rangeScoreMap.get(range));
+				   } else {
 					Map<String, Double> scores = new HashMap<String, Double>();
 					scores.put("startCodonScore", rangeScoreMap.get(range));
 					newModel.setScores(scores);
@@ -162,7 +199,7 @@ public class DetermineStart implements DetermineGeneFeatures {
 				newModels.add(newModel);
 			}
 		}else{
-			System.out.println("Sorry i did not have start");
+			System.out.println("Start not found");
 		}
 		if (rangeScoreMap.isEmpty() && isSequenceMissing) {
 			Model newModel = new Model();

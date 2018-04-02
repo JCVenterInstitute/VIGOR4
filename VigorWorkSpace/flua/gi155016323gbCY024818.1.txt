@@ -1,9 +1,9 @@
-Command line: [exonerate --model protein2genome -q /home/snettem/git/Vigor4/target/classes/vigorResources/data3/flua_db -t /home/snettem/git/Vigor4/VigorWorkSpace/sequence_temp.fasta --showcigar true]
-Hostname: [TrumpLinux-VB]
+Command line: [exonerate --model protein2genome -q /home/snettem/git/VIGOR4/target/classes/vigorResources/data3/flua_db -t /home/snettem/git/VIGOR4/VigorWorkSpace/sequence_temp.fasta --showcigar true]
+Hostname: [snettem-VirtualBox]
 
 C4 Alignment:
 ------------
-         Query: seg4protN db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=561
+         Query: seg4protN db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=561 splice_form="e1683"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 1899
@@ -155,7 +155,7 @@ vulgar: seg4protN 2 561 . gi|155016323|gb|CY024818.1| 16 1687 + 1899 M 132 396 G
 
 C4 Alignment:
 ------------
-         Query: seg4prot7D db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=564
+         Query: seg4prot7D db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=564 splice_form="e1692"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 2566
@@ -307,7 +307,7 @@ vulgar: seg4prot7D 0 564 . gi|155016323|gb|CY024818.1| 7 1687 + 2566 M 337 1011 
 
 C4 Alignment:
 ------------
-         Query: seg4protP db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=568
+         Query: seg4protP db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=568 splice_form="e1704"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 1114
@@ -459,7 +459,7 @@ vulgar: seg4protP 3 568 . gi|155016323|gb|CY024818.1| 22 1687 + 1114 M 55 165 G 
 
 C4 Alignment:
 ------------
-         Query: seg4protC gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin"   db="flua_db" length=565
+         Query: seg4protC gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin"   db="flua_db" length=565 splice_form="e1695"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 1398
@@ -606,7 +606,7 @@ vulgar: seg4protC 27 565 . gi|155016323|gb|CY024818.1| 67 1687 + 1398 M 129 387 
 
 C4 Alignment:
 ------------
-         Query: seg4prot7E gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" db="flua_db" length=563
+         Query: seg4prot7E gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" db="flua_db" length=563 splice_form="e1689"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 2554
@@ -758,7 +758,7 @@ vulgar: seg4prot7E 0 563 . gi|155016323|gb|CY024818.1| 7 1687 + 2554 M 337 1011 
 
 C4 Alignment:
 ------------
-         Query: seg4prot3A db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=566
+         Query: seg4prot3A db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=566 splice_form="e1698"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 1408
@@ -905,7 +905,7 @@ vulgar: seg4prot3A 28 566 . gi|155016323|gb|CY024818.1| 67 1687 + 1408 M 130 390
 
 C4 Alignment:
 ------------
-         Query: seg4protG db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=564
+         Query: seg4protG db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=564 splice_form="e1692"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 1398
@@ -1052,7 +1052,7 @@ vulgar: seg4protG 24 564 . gi|155016323|gb|CY024818.1| 67 1687 + 1398 M 265 795 
 
 C4 Alignment:
 ------------
-         Query: seg4protI gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin"   db="flua_db" length=565
+         Query: seg4protI gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin"   db="flua_db" length=565 splice_form="e1695"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 979
@@ -1199,7 +1199,7 @@ vulgar: seg4protI 16 565 . gi|155016323|gb|CY024818.1| 61 1687 + 979 M 42 126 G 
 
 C4 Alignment:
 ------------
-         Query: seg4protL gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin"   db="flua_db" length=564
+         Query: seg4protL gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin"   db="flua_db" length=564 splice_form="e1692"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 1052
@@ -1346,7 +1346,7 @@ vulgar: seg4protL 17 564 . gi|155016323|gb|CY024818.1| 61 1687 + 1052 M 42 126 G
 
 C4 Alignment:
 ------------
-         Query: seg4prot5A db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=567
+         Query: seg4prot5A db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=567 splice_form="e1701"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 1124
@@ -1498,7 +1498,7 @@ vulgar: seg4prot5A 3 567 . gi|155016323|gb|CY024818.1| 22 1687 + 1124 M 55 165 G
 
 C4 Alignment:
 ------------
-         Query: seg4protE gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin"   db="flua_db" length=568
+         Query: seg4protE gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin"   db="flua_db" length=568 splice_form="e1704"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 1399
@@ -1645,7 +1645,7 @@ vulgar: seg4protE 28 568 . gi|155016323|gb|CY024818.1| 67 1687 + 1399 M 131 393 
 
 C4 Alignment:
 ------------
-         Query: seg4prot5Ab db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=566
+         Query: seg4prot5Ab db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=566 splice_form="e1698"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 1129
@@ -1797,7 +1797,7 @@ vulgar: seg4prot5Ab 3 566 . gi|155016323|gb|CY024818.1| 22 1687 + 1129 M 55 165 
 
 C4 Alignment:
 ------------
-         Query: seg4prot7A gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin"   db="flua_db" length=552
+         Query: seg4prot7A gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin"   db="flua_db" length=552 splice_form="e1656"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 1654
@@ -1889,7 +1889,7 @@ vulgar: seg4prot7A 229 552 . gi|155016323|gb|CY024818.1| 718 1687 + 1654 M 323 9
 
 C4 Alignment:
 ------------
-         Query: seg4prot7A gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin"   db="flua_db" length=552
+         Query: seg4prot7A gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin"   db="flua_db" length=552 splice_form="e1656"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 1127
@@ -1956,7 +1956,7 @@ vulgar: seg4prot7A 0 229 . gi|155016323|gb|CY024818.1| 7 694 + 1127 M 229 687
 
 C4 Alignment:
 ------------
-         Query: seg4prot7F db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=562
+         Query: seg4prot7F db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=562 splice_form="e1686"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 2613
@@ -2108,7 +2108,7 @@ vulgar: seg4prot7F 0 562 . gi|155016323|gb|CY024818.1| 7 1687 + 2613 M 337 1011 
 
 C4 Alignment:
 ------------
-         Query: seg4protF gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin"   db="flua_db" length=566
+         Query: seg4protF gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin"   db="flua_db" length=566 splice_form="e1698"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 1098
@@ -2260,7 +2260,7 @@ vulgar: seg4protF 3 566 . gi|155016323|gb|CY024818.1| 22 1687 + 1098 M 55 165 G 
 
 C4 Alignment:
 ------------
-         Query: seg4protD gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin"   db="flua_db" length=562
+         Query: seg4protD gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin"   db="flua_db" length=562 splice_form="e1686"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 1079
@@ -2412,7 +2412,7 @@ vulgar: seg4protD 2 562 . gi|155016323|gb|CY024818.1| 22 1687 + 1079 M 55 165 G 
 
 C4 Alignment:
 ------------
-         Query: seg4protH gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" db="flua_db" length=566
+         Query: seg4protH gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" db="flua_db" length=566 splice_form="e1698"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 964
@@ -2564,7 +2564,7 @@ vulgar: seg4protH 0 566 . gi|155016323|gb|CY024818.1| 7 1687 + 964 M 61 183 G 1 
 
 C4 Alignment:
 ------------
-         Query: seg4protK db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=565
+         Query: seg4protK db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=565 splice_form="e1695"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 1071
@@ -2716,7 +2716,7 @@ vulgar: seg4protK 5 565 . gi|155016323|gb|CY024818.1| 28 1687 + 1071 M 54 162 G 
 
 C4 Alignment:
 ------------
-         Query: seg4protA gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" db="flua_db" length=566
+         Query: seg4protA gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" db="flua_db" length=566 splice_form="e1698"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 995
@@ -2833,7 +2833,7 @@ vulgar: seg4protA 146 566 . gi|155016323|gb|CY024818.1| 427 1687 + 995 M 11 33 G
 
 C4 Alignment:
 ------------
-         Query: seg4prot7C db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=570
+         Query: seg4prot7C db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=570 splice_form="e1710"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 1568
@@ -2930,7 +2930,7 @@ vulgar: seg4prot7C 0 338 . gi|155016323|gb|CY024818.1| 7 1021 + 1568 M 338 1014
 
 C4 Alignment:
 ------------
-         Query: seg4prot7C db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=570
+         Query: seg4prot7C db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=570 splice_form="e1710"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 1168
@@ -2997,7 +2997,7 @@ vulgar: seg4prot7C 346 570 . gi|155016323|gb|CY024818.1| 1015 1687 + 1168 M 224 
 
 C4 Alignment:
 ------------
-         Query: seg4protB db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=566
+         Query: seg4protB db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=566 splice_form="e1698"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 1358
@@ -3144,7 +3144,7 @@ vulgar: seg4protB 28 566 . gi|155016323|gb|CY024818.1| 67 1687 + 1358 M 129 387 
 
 C4 Alignment:
 ------------
-         Query: seg4protO db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=560
+         Query: seg4protO db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=560 splice_form="e1680"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 2621
@@ -3296,7 +3296,7 @@ vulgar: seg4protO 0 560 . gi|155016323|gb|CY024818.1| 7 1687 + 2621 M 560 1680
 
 C4 Alignment:
 ------------
-         Query: seg4protM gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" db="flua_db" length=566
+         Query: seg4protM gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" db="flua_db" length=566 splice_form="e1698"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 904
@@ -3448,7 +3448,7 @@ vulgar: seg4protM 8 566 . gi|155016323|gb|CY024818.1| 28 1687 + 904 M 54 162 G 1
 
 C4 Alignment:
 ------------
-         Query: seg4protJ db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=560
+         Query: seg4protJ db="flua_db" gene="HA" matpepdb="<vigordata>/flua_ha_mp" product="hemagglutinin" length=560 splice_form="e1680"
         Target: gi|155016323|gb|CY024818.1| Influenza A virus (A/blue-winged teal/Ohio/566/2006(H7N9)) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 1014

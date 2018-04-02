@@ -29,6 +29,7 @@ public class VigorInputValidationService {
 			}
 		} catch (Exception e) {
 			LOGGER.error(e.getMessage(), e);
+			System.exit(0);
 		}
 
 	}
@@ -99,6 +100,7 @@ public class VigorInputValidationService {
 		catch (UnrecognizedOptionException e) {
 			LOGGER.error(e.getMessage(), e);
 			VigorException.printExceptionMessage(e.getMessage());
+
 
 		} catch (MissingArgumentException e) {
 			LOGGER.error(e.getMessage(), e);

@@ -37,7 +37,10 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
 		models = adjustSpliceSites(model);
 		}
 		catch(CloneNotSupportedException e){
-			
+			System.exit(0);
+		}
+		catch(Exception e){
+			System.exit(0);
 		}
 		return models;
 	}

@@ -20,8 +20,9 @@ public class ViralProtein {
 	private ProteinSequence sequence;
     private GeneAttributes geneAttributes;
     private String proteinID;
+    private String geneSymbol;
     private String defline;
-
+    private String product;
 
 
     

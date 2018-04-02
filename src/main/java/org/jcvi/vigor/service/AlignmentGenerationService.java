@@ -1,8 +1,10 @@
 package org.jcvi.vigor.service;
+import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.vigor.component.*;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.utils.FormatVigorOutput;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -32,9 +34,11 @@ public class AlignmentGenerationService {
 		isDebug = form.isDebug();
 		try {
 			String alignmentTool = chooseAlignmentTool(form.getAlignmentEvidence());
-			String min_gap_length = form.getVigorParametersList().get("min_gap_length");
+			String min_gap_length = form.getVigorParametersList().get("min_seq_gap_length");
 			List<Range> sequenceGaps = VirusGenomeService.findSequenceGapRanges(min_gap_length,
 					virusGenome.getSequence());
+			Map<Frame,List<Long>> internalStops =VirusGenomeService.findInternalStops(virusGenome.getSequence());
+			virusGenome.setInternalStops(internalStops);
 			virusGenome.setSequenceGaps(sequenceGaps);
 			if (alignmentTool.equals("exonerate")) {
 			    List<Alignment> alignments = generateExonerateAlignment(virusGenome,form.getAlignmentEvidence());
@@ -44,11 +48,16 @@ public class AlignmentGenerationService {
 				if (isDebug) {
 					System.out.println("*******Initial List of alignments*****");
 					FormatVigorOutput.printAlignments(alignments);					
-				}							
+				}
+				if(alignments!=null && alignments.size()<=0){
+				    System.out.println("No alignments found");
+				    System.exit(1);
+                }
 				modelGenerationService.generateModels(alignments, form);
 			}
 		} catch (Exception e) {
 			LOGGER.error(e.getMessage(), e);
+			System.exit(0);
 		}				
 	}
 	

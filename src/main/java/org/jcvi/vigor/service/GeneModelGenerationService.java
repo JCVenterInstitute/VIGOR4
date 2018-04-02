@@ -3,11 +3,15 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.jcvi.vigor.utils.GenerateVigorOutput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.utils.FormatVigorOutput;
+
 
 @Service
 public class GeneModelGenerationService {
@@ -25,24 +29,51 @@ public class GeneModelGenerationService {
 	private CheckCoverage checkCoverage;
 	@Autowired
 	private EvaluateScores evaluateScores;
+	@Autowired
+    private GenerateVigorOutput generateVigorOutput;
 	boolean isDebug = true;
-	List<Model> partialGeneModels = new ArrayList<Model>();
-	List<Model> pseudoGenes = new ArrayList<Model>();
-
+	List<Model> partialGeneModels;
+	List<Model> pseudoGenes;
+    private static final Logger LOGGER = LogManager.getLogger(GeneModelGenerationService.class);
 	public void generateGeneModel(List<Model> models, VigorForm form) {		
-		isDebug = form.isDebug();
-		List<Model> processedModels = determineGeneFeatures(models,form);
-		processedModels.stream().forEach(model-> checkCoverage.evaluate(model,form));
-		processedModels.stream().forEach(model-> evaluateScores.evaluate(model, form));
-		
-		processedModels.sort(new Comparator<Model>(){
-			@Override
-			public int compare(Model m1, Model m2){
-				return Double.compare(m1.getScores().get("totalScore"), m2.getScores().get("totalScore"));
-		}
-		});
-		processedModels.forEach(System.out::println);
+		try {
+		    partialGeneModels = new ArrayList<Model>();
+		    pseudoGenes = new ArrayList<Model>();
+            isDebug = form.isDebug();
+            List<Model> processedModels = determineGeneFeatures(models, form);
+            // Process partial gene models and pseudogenes
+            if(processedModels.size()<=0){
+                processedModels.addAll(partialGeneModels);
+            }
+            processedModels.stream().forEach(model -> checkCoverage.evaluate(model, form));
+            processedModels.stream().forEach(model -> {
+                if (model.isPseudogene()) {
+                    pseudoGenes.add(model);
+                }
+            });
+            processedModels.removeAll(pseudoGenes);
+            processedModels.stream().forEach(model -> evaluateScores.evaluate(model, form));
+            processedModels.sort(new Comparator<Model>() {
+                @Override
+                public int compare(Model m1, Model m2) {
+                    return Double.compare(m1.getScores().get("totalScore"), m2.getScores().get("totalScore"));
+                }
+            });
+            String outputFile = form.getVigorParametersList().get("output");
 
+
+            List<Model> geneModels = new ArrayList<Model>();
+            geneModels.add(processedModels.get(processedModels.size()-1));
+
+            //System.out.println("Genomic Sequence: "+models.get(0).getAlignment().getVirusGenome().getId()+"  Genomic Sequence Length: "+ models.get(0).getAlignment().getVirusGenome().getSequence().getLength());
+          //  FormatVigorOutput.printModelsWithAllFeatures(processedModels);
+            generateVigorOutput.generateOutputFiles(outputFile,geneModels);
+            System.out.println("processed one genome");
+        }
+        catch(Exception e){
+            LOGGER.error(e.getMessage(),e);
+			System.exit(0);
+        }
 	}
 
 	public void generateOutputFiles(List<Model> models){
@@ -60,7 +91,7 @@ public class GeneModelGenerationService {
 	     
 	  				
 		/* Determine Start */
-		models.stream().forEach(model -> { 
+		models.stream().forEach(model -> {
 			if(!model.isPartial5p()){
 			List<Model> outputModels = determineStart.determine(model, form);
 			outputModels.stream().forEach(model1->{
@@ -103,7 +134,9 @@ public class GeneModelGenerationService {
 			
 		});
 		
-		if(isDebug)FormatVigorOutput.printModels(modelsWithMissingExonsDetermined,"After determining missing exons");
+		if(isDebug){
+		    FormatVigorOutput.printModels(modelsWithMissingExonsDetermined,"After determining missing exons");
+        }
 		
 		
 		/* Determine Stop */
@@ -124,7 +157,6 @@ public class GeneModelGenerationService {
 			}
 				});
 		if(isDebug)FormatVigorOutput.printModels(modelsAfterDeterminingStop,"Models after determining stop");
-		
 		return modelsAfterDeterminingStop;
 	}
 	

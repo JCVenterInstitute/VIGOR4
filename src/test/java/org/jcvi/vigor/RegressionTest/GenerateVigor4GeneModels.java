@@ -12,6 +12,12 @@ import org.jcvi.vigor.component.VirusGenome;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.service.*;
 import org.jcvi.vigor.utils.GenerateExonerateOutput;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringRunner;
+
 import java.util.Comparator;
 import java.io.File;
 import java.io.IOException;
@@ -22,8 +28,13 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+@Service
+@RunWith(SpringRunner.class)
+@ContextConfiguration(classes = AppConfig.class)
 public class GenerateVigor4GeneModels {
 
+    @Autowired
+    AlignmentGenerationService alignmentGenerationService;
     public Map<String, List<Model>> generateModels(String workspace,
                                                    String inputFilePath, String refDB)
     {
@@ -35,7 +46,6 @@ public class GenerateVigor4GeneModels {
             if (file.exists()) {
                 File inputFile = new File(inputFilePath);
                 if (inputFile.exists()) {
-                    AlignmentGenerationService alignmentGenerationService = new AlignmentGenerationService();
                     ExonerateService exonerateService = new ExonerateService();
                     ViralProteinService viralProteinService = new ViralProteinService();
                     ModelGenerationService modelGenerationService = new ModelGenerationService();
@@ -49,13 +59,19 @@ public class GenerateVigor4GeneModels {
                     Stream<NucleotideFastaRecord> records = dataStore.records();
                     Iterator<NucleotideFastaRecord> i = records.iterator();
                     while (i.hasNext()) {
+
                         NucleotideFastaRecord record = i.next();
+                        System.out.println("next one is "+record.getComment());
                         VigorForm form = new VigorForm();
+                        form = setVigorParameters(form,workspace);
+                        AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
+                        alignmentEvidence.setReference_db(refDB);
+                        form.setAlignmentEvidence(alignmentEvidence);
                         VirusGenome virusGenome = new VirusGenome(
                                 record.getSequence(), record.getComment(),
                                 record.getId(), false, false);
-                        alignmentGenerationService.GenerateAlignment(virusGenome,new VigorForm());
-                        String fileName = GenerateExonerateOutput.queryExonerate(
+                        alignmentGenerationService.GenerateAlignment(virusGenome,form);
+                   /*     String fileName = GenerateExonerateOutput.queryExonerate(
                                 virusGenome, refDB, file.getAbsolutePath(),null);
                         File outputFile = new File(fileName);
                         AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
@@ -81,7 +97,7 @@ public class GenerateVigor4GeneModels {
                             }
                         });
                         processedModels.forEach(System.out::println);
-                        vigor4Models.put(virusGenome.getId(), candidateModels);
+                        vigor4Models.put(virusGenome.getId(), candidateModels);*/
                     }
 
                 } else {
@@ -101,5 +117,13 @@ public class GenerateVigor4GeneModels {
 
         return vigor4Models;
 
+    }
+
+
+    public VigorForm setVigorParameters(VigorForm form,String workspace){
+        Map<String,String>  vigorParameters = new HashMap<String,String>();
+        vigorParameters.put("output",workspace+"/TEST");
+        form.setVigorParametersList(vigorParameters);
+        return form;
     }
 }

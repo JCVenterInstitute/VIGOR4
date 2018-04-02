@@ -1,8 +1,10 @@
 package org.jcvi.vigor.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.jcvi.jillion.align.AminoAcidSubstitutionMatrix;
 import org.jcvi.jillion.align.BlosumMatrices;
@@ -14,6 +16,7 @@ import org.jcvi.jillion.core.residue.aa.AminoAcid;
 import org.jcvi.jillion.core.residue.aa.IupacTranslationTables;
 import org.jcvi.jillion.core.residue.aa.ProteinSequence;
 import org.jcvi.jillion.core.residue.aa.ProteinSequenceBuilder;
+import org.jcvi.jillion.core.residue.nt.Nucleotide;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
 import org.jcvi.vigor.component.Exon;
@@ -28,90 +31,169 @@ public class CheckCoverage implements EvaluateModel {
 	
 	@Override
 	public Model evaluate(Model model,VigorForm form) {
-		//getInternalStops(model, cds);
-	    determineHomology(model);
-		
-		
-		return null;
+	    try{
+		NucleotideSequence cds = determineCDS(model);
+		List<Range> internalStops = getInternalStops(model);
+		if(internalStops.size()>0){
+		    model.setPseudogene(true);
+        }
+	    model = determineHomology(model,cds);
+	    model =	addWeightageToScores(model,form);}
+	    catch(Exception e){
+	        System.exit(1);
+        }
+		return model;
 	}
-    public void determineHomology(Model model){
-    	
-    	ProteinSequence querySeq = determineCDS(model);
+	public Model addWeightageToScores(Model model,VigorForm form) {
+        Map<String, Double> scores = model.getScores();
+        Map<String, String> vigorParameters = form.getVigorParametersList();
+        //retrieve the parameters and multiply to the scores. define the parameters in the .ini files.
+        return model;
+    }
+    public Model determineHomology(Model model, NucleotideSequence cds){
+        long replacementOffset=0;
+        if(model.getReplaceStopCodonRange()!=null){
+            replacementOffset = model.getReplaceStopCodonRange().getBegin();
+        }
+        if(replacementOffset != 0){
+            replacementOffset = getTranslatedProteinCooridnate(model.getExons(),replacementOffset,model.getInsertRNAEditingRange());
+        }
+        AminoAcid replacementAA = model.getAlignment().getViralProtein().getGeneAttributes().getStopTranslationException().getReplacementAA();
+        ProteinSequence translatedSeq = IupacTranslationTables.STANDARD.translate(cds);
+        ProteinSequenceBuilder proteinSeqBuilder = new ProteinSequenceBuilder(translatedSeq);
+        if(replacementOffset !=0 && replacementAA !=null){
+            proteinSeqBuilder.replace((int)replacementOffset,replacementAA);
+        }
+        ProteinSequence querySeq = proteinSeqBuilder.build();
+        model.setTanslatedSeq(querySeq);
        	ProteinSequence subSeq = model.getAlignment().getViralProtein().getSequence();
     	AminoAcidSubstitutionMatrix blosom50 = BlosumMatrices.blosum50();
     	ProteinPairwiseSequenceAlignment actual = PairwiseAlignmentBuilder
 				.createProtienAlignmentBuilder(querySeq,
 						subSeq, blosom50).gapPenalty(-8, -8)
 				.build();
-    	double identity = actual.getPercentIdentity();
-   	    Map<String,Double> scores = model.getScores();
-   	    scores.put("percentIdentity",identity);
-   	    model.setScores(scores);
-   	    
+   	    Map<String,Double> scores = new HashMap<String,Double>();
+   	    if(model.getScores()!=null) {
+            scores.putAll(model.getScores());
+        }
+        double percentIdentity = actual.getPercentIdentity()*100;
+        int mismatches = actual.getNumberOfMismatches()+actual.getNumberOfGapOpenings();
+        int matches = actual.getAlignmentLength()-mismatches;
+        long maxSeqLength = Long.max(querySeq.getLength(),subSeq.getLength());
+        double percentSimilarity = ((double)matches/maxSeqLength)*100;
+        long coverage = Long.max(actual.getQueryRange().getLength(),actual.getSubjectRange().getLength());
+        double percentCoverage = ((double)coverage/querySeq.getLength())*100;
+        scores.put("%identity",percentIdentity);
+        scores.put("%similarity",percentSimilarity);
+        scores.put("%coverage",percentCoverage);
+        model.setScores(scores);
+   	    return model;
     }
-	public ProteinSequence determineCDS(Model model){
-		model.getExons().sort(Exon.Comparators.Ascending);
-		String insertionString = model.getAlignment().getViralProtein().getGeneAttributes().getRna_editing().getInsertionString();
-		NucleotideSequenceBuilder virusGenomeSeqBuilder = new NucleotideSequenceBuilder(model.getAlignment().getVirusGenome().getSequence());
-		if(model.getInsertRNAEditingRange()!=null && insertionString !=null){
-		virusGenomeSeqBuilder.insert((int)model.getInsertRNAEditingRange().getBegin(), insertionString);
-		}
-		NucleotideSequence virusGenomeSeq = virusGenomeSeqBuilder.build();
-		AminoAcid replacementAA = model.getAlignment().getViralProtein().getGeneAttributes().getStopTranslationException().getReplacementAA();
-		List<Exon> exons = model.getExons();
-		long replacementOffset=0;
-		if(model.getReplaceStopCodonRange()!=null){
-		replacementOffset = model.getReplaceStopCodonRange().getBegin();
-		}
-		if(replacementOffset != 0){
-		replacementOffset = getTranslatedProteinCooridnate(model.getExons(),replacementOffset);
-		}
-		NucleotideSequenceBuilder NTSeqBuilder=new NucleotideSequenceBuilder("");
-		NucleotideSequence NTSeq=null;				
-		for(Exon exon : exons){
-			NTSeqBuilder.append(virusGenomeSeq.toBuilder(exon.getRange()));
-		}
-		NTSeq = NTSeqBuilder.build();
-		ProteinSequence translatedSeq = IupacTranslationTables.STANDARD.translate(NTSeq);
-		ProteinSequenceBuilder proteinSeqBuilder = new ProteinSequenceBuilder(translatedSeq);
-		if(replacementOffset !=0 && replacementAA !=null){
-		proteinSeqBuilder.replace((int)replacementOffset,replacementAA);
-		}
-		return translatedSeq;		
-	}
-	
-	public long getTranslatedProteinCooridnate(List<Exon> exons,long NTOffset){
+
+    public NucleotideSequence determineCDS(Model model){
+        model.getExons().sort(Exon.Comparators.Ascending);
+        List<Exon> exons = model.getExons();
+        NucleotideSequence virusGenomeSeq = model.getAlignment().getVirusGenome().getSequence();
+        boolean inserted=false;
+        NucleotideSequenceBuilder NTSeqBuilder=new NucleotideSequenceBuilder("");
+        NucleotideSequence NTSeq=null;
+        for(Exon exon : exons){
+            if(!inserted && model.getInsertRNAEditingRange()!=null && model.getInsertRNAEditingRange().getBegin()==(exon.getRange().getEnd()+1)){
+                NTSeqBuilder.append(virusGenomeSeq.toBuilder(exon.getRange()));
+                String insertionString = model.getAlignment().getViralProtein().getGeneAttributes().getRna_editing().getInsertionString();
+                    NTSeqBuilder.append(insertionString);
+                    inserted=true;
+            }else {
+                NTSeqBuilder.append(virusGenomeSeq.toBuilder(exon.getRange()));
+            }
+        }
+        NTSeq = NTSeqBuilder.build();
+        model.setCds(NTSeq);
+        return NTSeq;
+    }
+
+	public long getTranslatedProteinCooridnate(List<Exon> exons,long NTOffset,Range insertionRange){
 		long translatedProteinLength=0;
+		long proteinCoordinate=0;
+		Frame adjustedFrame=null;
 		for(Exon exon:exons){
-		    Range exonRange = exon.getRange();
-		    long length = exonRange.getLength();
+            long insertionLength=0;
+            Range exonRange = exon.getRange();
+            long length = exonRange.getLength();
+		    if(insertionRange!=null ){
+		        if(insertionRange.getBegin()==exon.getRange().getEnd()+1){
+		            insertionLength=insertionRange.getLength();
+                   long  tempLength = length-exon.getFrame().getFrame()+1+insertionLength;
+                    long leftOvers = tempLength % 3;
+                    if(leftOvers==1){
+                        adjustedFrame=Frame.THREE;
+                    }else if(leftOvers==2){
+                        adjustedFrame=Frame.TWO;
+                    }else if(leftOvers==0){
+                        adjustedFrame=Frame.ONE;
+                    }
+
+                }
+            }
 		    if(exonRange.intersects(Range.of(NTOffset))){
-		        long startCoordinate = exonRange.getBegin()+exon.getFrame().getFrame()-1;
+		        Frame exonFrame = exon.getFrame();
+		        if(adjustedFrame!=null){
+		            exonFrame=adjustedFrame;
+		            adjustedFrame=null;
+                }
+		        long startCoordinate = exonRange.getBegin()+exonFrame.getFrame()-1;
 		        long difference = NTOffset-startCoordinate;
-		        long proteinCoordinate = difference/3;
-		        proteinCoordinate = proteinCoordinate+length;		        
+		        if(difference<0){
+		            proteinCoordinate=proteinCoordinate+translatedProteinLength;
+		            break;
+                }else {
+		            float temp = ((float)difference)/3;
+                    proteinCoordinate = (long)Math.ceil(temp);
+                    proteinCoordinate = proteinCoordinate + translatedProteinLength;
+                    break;
+                }
 		    }
-		    translatedProteinLength = (long)(translatedProteinLength+Math.ceil(length/3));
-		}	
-		return translatedProteinLength;		
+
+		    length = length-exon.getFrame().getFrame()+1+insertionLength;
+		    float temp = ((float)length)/3;
+		    translatedProteinLength = (long)(translatedProteinLength+Math.ceil(temp));
+		}
+
+		return proteinCoordinate;
 	}
 	
-	//find internal stops(remove range from the list of stop codon has to be ignored
-	public List<Range> getInternalStops(Model model, NucleotideSequence cds){
-		//dont have to translate, just find stops by calling a function
-		List<Range> internalStops = new ArrayList<Range>();
+
+	public List<Range> getInternalStops(Model model){
+	    List<Range> internalStops = new ArrayList<Range>();
+        NucleotideSequence virusGenomeSeq = model.getAlignment().getVirusGenome().getSequence();
+        NucleotideSequenceBuilder NTSeqBuilder=new NucleotideSequenceBuilder("");
+        NucleotideSequence NTSeq=null;
+        for(Exon exon : model.getExons()){
+            NTSeqBuilder.append(virusGenomeSeq.toBuilder(exon.getRange()));
+        }
+		NucleotideSequence cds = NTSeqBuilder.build();
+        long length = cds.getLength();
+        long start = model.getExons().get(0).getRange().getBegin();
+        System.out.println(cds);
 		Map<Frame,List<Long>> stops = IupacTranslationTables.STANDARD.findStops(cds);
 		for(Map.Entry<Frame,List<Long>> pair :stops.entrySet()){
 			if(pair.getKey().equals(Frame.ONE)){
 			List<Long> cdsStops = (List<Long>)pair.getValue();
 			for(Long stop : cdsStops){
-				Range NTStopRange = VigorFunctionalUtils.getNTRange(model.getExons(), Range.of(stop));
-				internalStops.add(NTStopRange);			
+				long NTStop = VigorFunctionalUtils.getNTRange(model.getExons(), stop);
+				Range NTStopRange= Range.of(NTStop,NTStop+2);
+				if(model.getReplaceStopCodonRange()!=null){
+				    if(!NTStopRange.equals(model.getReplaceStopCodonRange())){
+				        internalStops.add(NTStopRange);
+                    }
+                }else if(!Range.of(stop).equals(Range.of(cds.getLength()-3))){
+				    Range temp = Range.of(cds.getLength()-3,cds.getLength()-1);
+                    internalStops.add(NTStopRange);
+                }
 			}
 		}
 		}
 		return internalStops;
 	}
-		
 
 }

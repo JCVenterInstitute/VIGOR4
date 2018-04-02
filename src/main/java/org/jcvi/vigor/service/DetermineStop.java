@@ -39,6 +39,7 @@ public class DetermineStop implements DetermineGeneFeatures {
 		}
 		catch(Exception e){
 			LOGGER.error(e.getMessage(),e);
+			System.exit(0);
 		}
 		return models;
 	}
@@ -71,25 +72,24 @@ public class DetermineStop implements DetermineGeneFeatures {
 			end = seq.getLength()-1;
 			start=end-stopCodonWindow;
 		}	
-		
-		stopSearchRange = Range.of(start, end);	
-		NucleotideSequence NTSequence = model.getAlignment().getVirusGenome()
-				.getSequence().toBuilder(stopSearchRange).build();
+		if(start<lastExon.getRange().getBegin()){
+			start = lastExon.getRange().getBegin();
+		}stopSearchRange = Range.of(start, end);
+
 		Map<Range, Double> rangeScoreMap = new HashMap<Range, Double>();
-		Map<Frame,List<Long>> stops = IupacTranslationTables.STANDARD.findStops(NTSequence);
-		for(Frame frame : stops.keySet()){
-			List<Long> temp = new ArrayList<Long>();
-			for(Long x : stops.get(frame)){
-				x=x+start;
-				temp.add(x);
-			}
-		stops.put(frame, temp);
-		}
-		stops = VigorFunctionalUtils.frameToSequenceFrame(stops);
-		List<Long> stopsInFrame=null;
-		for(Frame frame: stops.keySet()){
-			if(frame.equals(lastExonFrame)){
-				stopsInFrame = stops.get(frame);
+		Map<Frame,List<Long>> stops = model.getAlignment().getVirusGenome().getInternalStops();
+		List<Long> stopsInFrame=new ArrayList<Long>();
+		if(stops!=null) {
+			for (Frame frame : stops.keySet()) {
+				if (frame.equals(lastExonFrame)) {
+					List<Long> tempList = stops.get(lastExonFrame);
+					for(Long stop : tempList){
+					    Range tempRange = Range.of(stop);
+					    if(tempRange.isSubRangeOf(stopSearchRange)){
+					        stopsInFrame.add(stop);
+                        }
+                    }
+				}
 			}
 		}
 		if(stopsInFrame!=null && stopsInFrame.size()>0){
@@ -111,7 +111,7 @@ public class DetermineStop implements DetermineGeneFeatures {
 				newModel = model.clone();
 				List<Exon> newExons = newModel.getExons();
 				Exon lExon = newExons.get(newExons.size()-1);
-				lExon.setRange(Range.of(lExon.getRange().getBegin(),range.getBegin()-1));
+				lExon.setRange(Range.of(lExon.getRange().getBegin(),range.getBegin()+2));
 				if (newModel.getScores() != null) {
 					newModel.getScores().put("stopCodonScore",
 							rangeScoreMap.get(range));

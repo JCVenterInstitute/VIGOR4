@@ -59,6 +59,7 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
 		}
 		catch(Exception e){
 		  LOGGER.error(e.getMessage(),e);
+			System.exit(0);
 		}
 		return outModels;
 	}

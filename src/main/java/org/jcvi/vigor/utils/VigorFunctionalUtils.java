@@ -86,42 +86,31 @@ public class VigorFunctionalUtils {
 		return outRanges;
 	}
 		
-	public static Range getNTRange(List<Exon> exons,Range CDSNTRange){
+	public static long getNTRange(List<Exon> exons,long CDSNTCoordinate){
 		exons.sort(Exon.Comparators.Ascending);
 		long outputStart=0;
 		long outputEnd=0;
 		long refCurLength=0;
 		long refPreLength=0;
 		long difference=0;
-		long CDSNtStart=CDSNTRange.getBegin();
+		long refBases=0;
 		for(int i=0;i<exons.size();i++){
-		   refCurLength=exons.get(i).getRange().getLength()+refCurLength;
-		   if(refPreLength==0){
-			   refPreLength=refCurLength;
-		   }
-		   if(refCurLength>=CDSNtStart){
-			    difference = CDSNtStart-refPreLength;
-			    outputStart=exons.get(i).getRange().getBegin()+difference;
-			    long leftOver = exons.get(i).getRange().getLength()-difference;
-			    if(leftOver==1){
-			    	outputEnd = exons.get(i+1).getRange().getBegin()+2;
-			    }else if(leftOver==2){
-			    	outputEnd = exons.get(i+1).getRange().getBegin()+1;
-			    }else{
-			    	outputEnd = outputStart+2;
-			    }
+			long bases=0;
+			if(i==0) {
+				bases = exons.get(i).getRange().getBegin();
+			}else{
+				bases = exons.get(i).getRange().getBegin()-exons.get(i-1).getRange().getEnd()-1;
+			}
+		   refCurLength=exons.get(i).getRange().getLength()-bases+refCurLength;
+		   if(refCurLength>=CDSNTCoordinate){
+			    outputStart=CDSNTCoordinate+refBases;
 			    break;
 		   }
-		
-		  refPreLength=refCurLength;
+		   refBases = refBases+bases;
 		}
-		return Range.of(outputStart,outputEnd);
-        }
-	
-	public static Long getNTCoordinate(List<Exon> exons, Long coordinate){
-		Range outputRange = getNTRange(exons,Range.of(coordinate));
-		return outputRange.getBegin();
+		return outputStart;
 	}
+
 	public static Map<Frame,List<Long>> findStopsInSequenceFrame(VirusGenome virusGenome,Range searchRange){
 		Map<Frame,List<Long>> stops = IupacTranslationTables.STANDARD.findStops(virusGenome.getSequence().toBuilder(searchRange).build());
 		Map<Frame,List<Long>> stopsTemp = new HashMap<Frame,List<Long>>();
@@ -134,6 +123,10 @@ public class VigorFunctionalUtils {
 		return outStopsMap;
 		
 	}
+
+	/*public Range getGenomeSequenceCoordinates(List<Exon> exons, Range insertRNAEditingRange,Range proteinRange){
+
+    }*/
 	
 	
 			

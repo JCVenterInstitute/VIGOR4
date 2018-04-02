@@ -2,9 +2,13 @@ package org.jcvi.vigor.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.jcvi.jillion.core.Range;
+import org.jcvi.jillion.core.residue.Frame;
+import org.jcvi.jillion.core.residue.aa.IupacTranslationTables;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
+import org.jcvi.vigor.utils.VigorFunctionalUtils;
 import org.springframework.stereotype.Service;
 import org.jcvi.vigor.utils.VigorUtils;
 
@@ -43,6 +47,12 @@ import org.jcvi.vigor.utils.VigorUtils;
 			}
 		  return rangesOfNs;
 
+		}
+
+		public static Map<Frame,List<Long>> findInternalStops(NucleotideSequence NTSequence){
+			Map<Frame,List<Long>> stops = IupacTranslationTables.STANDARD.findStops(NTSequence);
+			stops = VigorFunctionalUtils.frameToSequenceFrame(stops);
+			return stops;
 		}
 
 	}

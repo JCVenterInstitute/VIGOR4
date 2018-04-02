@@ -33,7 +33,7 @@ MLKTIKSWILGKRNQEINQLISPRPSTSLNSYSAPTPKKTYRKTTQSTQEPSNSAPPSVN
 QKSNQQKQVKKLVDQLTKIDSLGHHTNVQQKQNIEILIRKLYREDLGEEAAQIVELRLWS
 LEESLEASQILKMEPKTRRILISMKLERWIRTLLRGKCDNLQMFQARYQEVMSYLQQNKV
 ETVIMEEAWNLSVHLIQDQ
->NP_599250.1 gene="D" product="D protein" shared_cds="P,C,V" excludes_gene="C',Y1,Y2" organism="Human parainfluenza virus 3" length=373 rna_editing=2/([NA][NA][NA][NA]GGG)/$1GG/two non-templated Gs inserted during transcription due to RNA editing/ db="hpiv3_db" splice_form="e1119"
+>NP_599250.1 gene="D" product="D protein" shared_cds="P,C,V" excludes_gene="C',Y1,Y2" organism="Human parainfluenza virus 3" length=373 rna_editing=2/([NA][NA][NA][NA]GGG)/$1GG/two non-templated Gs inserted during transcription due to RNA editing/ db="hpiv3_db" splice_form="e1119" V4_rna_editing="0/GG/[ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/two non-templated Gs inserted during transcription due to RNA editing"
 MESDAKNYQIMDSWEEESRDKSTNISSALNIIEFILSTDPQEDLSENDTINTRTQQLSAT
 IYQPKIKPTETSEKDSGSTDKNRQSGSSHECTTEAKDRTIDQETVQRGPGRRSSSDSRAE
 TVVSGGISRSITNSKNGTQNTEDIDLNEIRKMDKDSIEGKVRQSADVPSEISGSDVIFTT
@@ -41,7 +41,7 @@ EQSRNSDHGRSLESISTPDTRSISVVTAATPDDEEEILMKNSRTKKSSSIHQEDDKRIKK
 GGEKGKTGLRNQKILTTRYQHQTTDPHQKGRRKSQKQQPSTPTQRGKQKYRQNHQEHNPH
 HGISPLITTQIEPNRQTQLPQQQPPDQLIQKNQSEQTLDPNPRHKRQMERKGRIQKRAID
 LQRGQLLYCRILV
->ADR00402.1  gene="D" product="D protein" shared_cds="P,C,V" excludes_gene="C',Y1,Y2" organism="Human parainfluenza virus 3" length=373 rna_editing=2/([NA][NA][NA][NA]GGG)/$1GG/two non-templated Gs inserted during transcription due to RNA editing/ db="hpiv3_db" splice_form="e1119"
+>ADR00402.1  gene="D" product="D protein" shared_cds="P,C,V" excludes_gene="C',Y1,Y2" organism="Human parainfluenza virus 3" length=373 rna_editing=2/([NA][NA][NA][NA]GGG)/$1GG/two non-templated Gs inserted during transcription due to RNA editing/ db="hpiv3_db" splice_form="e1119" V4_rna_editing="0/GG/[ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/two non-templated Gs inserted during transcription due to RNA editing"
 MESDAKNYQIMDSWEEESRDKSTNISSALNIIEFILSTDPQEDLSENDTINTRTQQLSAT
 ICQPEIKPTETSEKDSGSTDKNRQSGSSYECTTEAKDRNIDQETVQRGPGRRSSSDSRAE
 AVVSGGISRSITDSKNGTQNTEDIDLNEIRKMDKDSIEGKMRQPANVPSEISGSDVIFTT

@@ -78,18 +78,16 @@ public class ModelGenerationService {
 	    	for(Alignment alignment : alignmentsTemp){
 	    		mergedAlignment.getAlignmentFragments().addAll(alignment.getAlignmentFragments());
 	    		Map<String,Double> scores = mergedAlignment.getAlignmentScore();
-	    		double score = scores.get("ExonerateScore");
-	    		score = score+alignment.getAlignmentScore().get("ExonerateScore");
-	    		scores.put("ExonerateScore", score);
+	    		double score = scores.get("exonerateScore");
+	    		score = score+alignment.getAlignmentScore().get("exonerateScore");
+	    		scores.put("exonerateScore", score);
 	    		mergedAlignment.setAlignmentScore(scores);
 	    	}
 	    	allOutAlignments.add(mergedAlignment);
 	    }
 	 	return allOutAlignments;
 	}
-	
-	
-	
+
 	/**
 	 * 
 	 * @param alignments
@@ -103,7 +101,7 @@ public class ModelGenerationService {
 		try{
 		for (int i = 0; i < alignments.size(); i++) {
 			Alignment alignment = alignments.get(i);
-			if(alignment.getViralProtein().getProteinID().equals("379765038_SP")){
+			if(alignment.getViralProtein().getProteinID().equals("339267591_SP")){
 			    System.out.println("Break");
             }
 			alignment.getAlignmentFragments().sort(AlignmentFragment.Comparators.Ascending);
@@ -141,7 +139,10 @@ public class ModelGenerationService {
 		for (Model model : initialModels) {
 			Range diffRange=null;
 			for(int i=0;i<model.getExons().size()-1;i++){
-			 diffRange = Range.of(model.getExons().get(i).getRange().getEnd(), model.getExons().get(i+1).getRange().getBegin());
+                if (model.getExons().get(i).getRange().getEnd()<model.getExons().get(i+1).getRange().getBegin()) {
+
+                    diffRange = Range.of(model.getExons().get(i).getRange().getEnd(), model.getExons().get(i + 1).getRange().getBegin());
+                }
 			}
 			if(diffRange!=null && diffRange.getLength()>=20){
 			
@@ -160,8 +161,10 @@ public class ModelGenerationService {
 		}}
 		catch(CloneNotSupportedException e){
 			LOGGER.error(e.getMessage(),e);
+            System.exit(0);
 		}catch(Exception e){
 			LOGGER.error(e.getMessage(),e);
+			System.exit(0);
 		}
 
 		return candidateModels;
@@ -238,6 +241,7 @@ public class ModelGenerationService {
         }
         catch(Exception e){
         	LOGGER.error(e.getMessage(),e);
+            System.exit(0);
         }  Range missingAAalignRange=Range.of(0,0);
         try{
        /* if(intronRange.getEnd()-intronRange.getBegin()==-1){
@@ -248,7 +252,11 @@ public class ModelGenerationService {
        	missingAAalignRange = Range.ofLength(0);
 	    }
         else {
-		missingAAalignRange = Range.of(upFragment.getProteinSeqRange().getEnd()+1,downFragment.getProteinSeqRange().getBegin()-1);
+        if(downFragment.getProteinSeqRange().getBegin()-1>upFragment.getProteinSeqRange().getEnd()+1) {
+            missingAAalignRange = Range.of(upFragment.getProteinSeqRange().getEnd() + 1, downFragment.getProteinSeqRange().getBegin() - 1);
+        }else{
+            missingAAalignRange = Range.of(downFragment.getProteinSeqRange().getBegin() - 1, upFragment.getProteinSeqRange().getEnd() + 1);
+        }
         }
        
 		/*if(missingAAalignRange.getBegin()-missingAAalignRange.getEnd()==0 || missingAAalignRange==null){
@@ -257,6 +265,7 @@ public class ModelGenerationService {
         }
         catch(Exception e){
         	LOGGER.error(e.getMessage(),e);
+            System.exit(0);
         }
 		if((intronRange.getLength()<=minIntronLength && missingAAalignRange.getLength()<=minCondensation)){
 		Map<Frame,List<Long>> intronStops = VigorFunctionalUtils.findStopsInSequenceFrame(virusGenome, intronRange);

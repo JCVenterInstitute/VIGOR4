@@ -1528,134 +1528,134 @@ EEGGEYYDDELFSDVQDIKTALAKIHEDNQKIISKLESLLLLKGEVESIKKQINKQNISI
 STLEGHLSSIMIAIPGFGKDPNDPTADVEINPDLKPIISRDSGRALAEVLKKPVASRQLQ
 GMTNGRTSSRGQLLKEFQLKPIGKKMSSAVGFVPDTGPASRSVIRSIIKSSRLEEDRKRY
 LMTLLDDIKGANDLAKFHQMLMKIIMK
->AFH55521.1 organism="Feline morbillivirus" cluster="AFH55521.1 " length=276 product="protein V" gene="V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e828"
+>AFH55521.1 organism="Feline morbillivirus" cluster="AFH55521.1 " length=276 product="protein V" gene="V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e828" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MSSHQIQQVKHGLESLQEIKSNPPPSQDVNLAREIYESIRQTGTSSVQGGAIAGNNITSG
 GNNDSMYSQGPSPPISSINKNIEGPTGFDHSGLWDPEGNLCMLFESDDDENHYSEINGRS
 STIEGLDEQDNENSIIKQPGNQCTEGVSKTDSSPSSQETTLSVGGSDIPGTGISTCASLD
 ITVNELEDATVRNSNNMKGNWPIPKLLVKPPPRVKSSVDHSNPLKGGHRREISLTWDGDY
 IIREEWCNPICTPIYSTCKRLQCRCKQCPSTCPKCE
->AEP40448.1 organism="Measles virus strain MVi/New Jersey.USA/45.05" cluster="AEP40448.1 " length=299 gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e897"
+>AEP40448.1 organism="Measles virus strain MVi/New Jersey.USA/45.05" cluster="AEP40448.1 " length=299 gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e897" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MAEEQARHVKNGLECIRALKAEPIGPLAIEEAMAAWSEISDNPGQERATCKKEKAGSSGL
 SKPCLSAIGSTEGGAPRIRGQGPGESDDDAETLGAPSGNLQASSAGLQRYYVYDHSGEAI
 KGIQDADSIMVQSGLEGDSTLSGGDNESENSDVDIGEPDTEGYAITDRGSAPISMGFRAS
 DVETAEGGEIHELLRLQSRGNNFLKPGKTLNVPPPPDPGRANTSETPIKKGHRREISLIW
 NGDRVFIDRWCNPMCSKVALGTIRARCTCGECPRVCEQCRTDTGVDTRIWYHNLPEIPE
->AEP40472.1 organism="Measles virus strain MVi/Pennsylvania.USA/20.09" cluster="AEP40472.1 " length=299 gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e897"
+>AEP40472.1 organism="Measles virus strain MVi/Pennsylvania.USA/20.09" cluster="AEP40472.1 " length=299 gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e897" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MAEEQARHVKNGLECIRALKAEPISSLAIGEAMAAWSEISDNPGQERATCKEEEAGSSGL
 SKPCFTAIGSAEGGAPRIRGQGSGESDDNTEVLGIPSRNPQASSTGLQRYHVYDHSGEAV
 EGIQDADSIMVRSGLDDDSAFSGGDNESENSNVDIGEPDTEGYAITDRGSAPISMGFRAS
 DVETAEGGEIHELLKLQSRGNNLSKLGKTLNVPPPPDPSRASTSGTPIKKGHRREVSLIW
 NGDRVFIDRWCNPMCSKVTLGTIRARCTCGECPRVCEQCRTDTGVDTRIWYHSLPEIPE
->YP_003873249.1 organism="Measles virus" cluster="YP_003873249.1 " length=299 gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e897"
+>YP_003873249.1 organism="Measles virus" cluster="YP_003873249.1 " length=299 gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e897" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MAEEQARHVKNGLECIRALKAEPIGSLAVEEAMAAWSEISDNPGQDRATCKEEEAGSSGL
 SKPCLSAIGSTEGGAPRIRGQGSGESDDDAETLGIPSRNLQASSTGLQCYHVYDHSGEAV
 KGIQDADSIMVQSGLDGDSTLSGGDDESENSDVDIGEPDTEGYAITDRGSAPISMGFRAS
 DVETAEGGEIHELLKLQSRGNNFPKLGKTLNVPPPPNPSRASTSETPIKKGTDAKIGLIW
 NGDRVFIDRWCNPMCSKVTLGTIRARCTCGECPRVCEQCRTDTGVDTRIWYHNLPEIPE
->NC_006296_V organism="Rinderpest virus (strain Kabete O)" cluster="NC_006296_V " length=301 gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e903"
+>NC_006296_V organism="Rinderpest virus (strain Kabete O)" cluster="NC_006296_V " length=301 gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e903" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MAEEQAYHVNKGLECIKALRARPLDPLVVEEALAAWVETSEGQTLDRMSSDEAEADHQDI
 SKPCFPAAGPGKSSMSRCHDQGLGGSNSCDEELGAFIGDSSMHSTEVQHYHVYDHSGEKV
 EGVEDADSILVQSGADDGVEVWGGDEESENSDVDSGEPDPEGSAPADWGSSPISPATRAS
 DVETVEGDEIQKLLEDQSRIRKMTKAGKTLVVPPIPSQERPTASEKPIKKGTDREIDLIW
 NDGRVFIDRWCNPTCSKVTVGTVRAKCICGECPRVCEQCITDSGIENRIWYHNLAGGYPR
 V
->ABX75306.1 organism="Peste-des-petits-ruminants virus" cluster="ABX75306.1 " length=298 gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e894"
+>ABX75306.1 organism="Peste-des-petits-ruminants virus" cluster="ABX75306.1 " length=298 gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e894" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MAEEQAYHVNKGLECIKSLKTSPPDLSIIRDTLESWREGLGPSDCATPSPGASEGVHQDI
 NQSCSSAVGSGKIDVSPEGNLGFREITYDDSEAGPRGIQDKGSDSQIQRYHVYSHGGKEI
 EGLEDADSLVVQADPPVANTFSGGEDGSDDSDVDSGPDDPSRDPLYDWGSVTGHDVARST
 DVEKLEGDDIQAVLNSQKNKGGRFQGGKTLRVPEIPDVKHFGPSAQSIKKGTDGNSVSSG
 TATECLCDKWCNPSCARVKMGVVRAKCICGECPQICEECKDDPGVDTRIWYHSITDSA
->AFH55529.1 organism="Feline morbillivirus" cluster="AFH55529.1 " length=276 product="protein V" gene="V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e828"
+>AFH55529.1 organism="Feline morbillivirus" cluster="AFH55529.1 " length=276 product="protein V" gene="V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e828" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MSSHQIQQVKHGLESLQEIKNNPPSSKDVDLAREIYESIRQTGTSSVQGGAIAGDNITSG
 GNNHSMHSQGPSSPISSVNKNIEGSTGFDHSGLWDSEGNLCMLFESDDDENHYSEINGRS
 PAIEGLDEQDTENSIIKQPGNQCTEGVSKTNSPSSPQETTLSVGGSNIPGTGISTCASLD
 ITVNELEDATIRNSDNMKGNWPIPKLLVKPPPRARSSIDHSNPLKGGHRREISLTWDGDY
 IIREEWCNPICTPIYSTCKRLQCKCKQCPSTCPKCE
->BAM15597.1 organism="Canine distemper virus" cluster="BAM15597.1 " length=300 gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e900"
+>BAM15597.1 organism="Canine distemper virus" cluster="BAM15597.1 " length=300 gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e900" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MAEEQAYHVNKGLECLKALRENPPDIEEIQEVSSIRDQTRNPGQENGTASMQEEEVSQDL
 DESHEPTKGSNYLGHVLQNNPGCGESNTALVEAEQPAKDDIQPGPGIRCYHVYDHSGEEV
 KGIEDADSLVVPAGAVSNRGFERGEGSPDDSTEDSGEDYSEGNASSNWGYSFGLKPDRAA
 DVSMLMEEELSALLKTSRNVGIKKRDGKTLQFPHNPEGKTEDPECGSIKKGHRREVSLTW
 NGDSCWIDKWCNPICTQVNWGIIRAKCVCGECPPTCNECKDDPEMQTRVWYATPSQDIKZ
->ABX75314.1 organism="Peste-des-petits-ruminants virus" cluster="ABX75314.1 " length=298 gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e894"
+>ABX75314.1 organism="Peste-des-petits-ruminants virus" cluster="ABX75314.1 " length=298 gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e894" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MAEEQAYHVNKGLECIKSLKASPPDLSTIKDALESWREGPSPPGRATPNPDTPEGDHQNI
 NQSCSPAIGSDKVDMSPEDNLGFREITCTDSEAGLGGVQDKRSDSQVQRYYVYSHGGEEI
 EGLEDADSLVVQANPPVANTFNGGEDGSDNSDVDSGPDDPGRDPLYDRGPAAGNDVSRST
 DVEKLEGDDIQEVLNSQKSKGGRFQGGKILRVPEIPDVKNSRPSAQSIKKGTDGSSALSG
 TVTECSCDKWCNPSCARVQMGVIRAKCVCGECPQICEECKDDPGVNTRIWYHSITDSA
->AAQ96310.1 organism="Canine distemper virus" cluster="AAQ96310.1 " length=299  gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e897"
+>AAQ96310.1 organism="Canine distemper virus" cluster="AAQ96310.1 " length=299  gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e897" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MAEEQAYHVSKGLECLKALRENPPDLEEIQEVSSIRDQTRNPGQENGTASMQEEEVSQDL
 DESHEPAKGSNYVGHVLQNNPGSGKGNTALVEAEQPAKDVIQPGPGIRCYHVYDHSGEEV
 KGTEDADSLVVPAGAVSNRGFERGEGSLDDSTEDSGEDYSEGNASSNWGYSFGLKPDRAA
 DVSMLMEEELSALLKTSRNVGIQKRDGKTLQFPHNPEGKTGDPECGSIKKGHRREVSLTW
 NGDSCWIDKWCNPICTQVNWGIIRAKCVCGECPPTCSECKDDPEMQTRVWYATPSQDLK
->ACD92993.1 organism="Canine distemper virus" cluster="ACD92993.1 " length=299 gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e897"
+>ACD92993.1 organism="Canine distemper virus" cluster="ACD92993.1 " length=299 gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e897" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MAEEQAYHVSKGLECLKALRENPPDIEEIQEVSSIRDQTRNPSQANGTASMQEEEVSQDL
 DESHEPAKGSNYVGHVLQNNPGCGESNTALVEAEQPAKDDIQPGPGIRCYHVYDHSGEEV
 KGIKDAGSLVVPAGAVSNREFERGEGSLDDSTEDSGEDYSEGNASSNWGYSFGLKPDRAA
 DVSMLMEEELSALLKTSRTVGIQKRDGKTLQFPHNPEGKTGDPGCGSIKKGHRREVSLTW
 NGDSCWIDKWCNPICTQVNWGIIRAKCVCGECPPTCNECKDDPEMQTRVWYATPSQDLK
->AAT94549.1 organism="Canine distemper virus" cluster="AAT94549.1 " length=299 gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e897"
+>AAT94549.1 organism="Canine distemper virus" cluster="AAT94549.1 " length=299 gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e897" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MAEEQAYHVSKGLECLKALRENPPDIEEIQEVSSIRDQTRNPSQANGTASMQEEEVSQDL
 DESHEPAKGSNYVGHVLQNNPGSGESNTALVEAEQPAKDDIQPGPGIRCYHVYDHSGEEV
 KGIEDADSLVVPAGAVSNRGFERGEGSLDDSTEDSGEDYSEGNASSNWGYSFGLKPDRAA
 DVSMLMEEELSALLRTSRNVGTQKRDGKTLQFPHNSESKTGDPECGSIKKGHRREVSLTW
 NGDSCWIDKWCNPICTQVNWGIIRAKCVCGECPPTCNECKDDPEMQTRVWYATPSQDLK
->BAM15589.1 organism="Canine distemper virus" cluster="BAM15589.1 " length=299 gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e897"
+>BAM15589.1 organism="Canine distemper virus" cluster="BAM15589.1 " length=299 gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e897" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MAEEQAYHVNKGLECLKALRENPPDIEEIQEVSSIRDQTRNPGQENGTASMQEEEVSQDL
 DESHEPAKGSNYLGHVLQNNPGCGESNTALVEAEQPAKDDIQPGPGIRCYHVYDHSGEEV
 KGIEDADSLVVPAGAVSNRGFERGEGSPDDSTEDSGEDYSEGNASSNWGYSFGLKPDRAA
 DVSMLMEEELSALLKTSRNVGIKKRDGKTLQFPHNPEGKTEDPECGSIKKGHRREVSLTW
 NGDSCWIDKWCNPICTQVNWGIIRAKCVCGECPPTCNECKDDPEMQTRVWYATPSQDIK
->AAQ96302.1 organism="Canine distemper virus" cluster="AAQ96302.1 " length=299  gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e897"
+>AAQ96302.1 organism="Canine distemper virus" cluster="AAQ96302.1 " length=299  gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e897" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MAEEQAYHVSKGLECLKALRENPPDLEEIQEVSSIRDQTRNPGQENGTASMQEEEVSQDL
 DESHEPAKGSNYVGHVLQNNPGSGKGNTALVEAEQPAKDVIQPGPGIRCYHVYDHSGEEV
 KGIEDADSLVVPAGAVSNRGFERGEGSLDDSTEDSGEDYSEGNASSNWGYSFGLKPDRAA
 DVSMLMEEELSALLKTSRNVGIQKRDGKTLQFPHNPEGKTGDPECGSIKKGHRREVSLTW
 NGDSCWIDKWCNPICTQVNWGIIRAKCVCGECPPTCSECKDDPEMQTRVWYATPSQDLK
->ACC86102T     gene="V"  product="protein V"   organism="Measles virus"  rna_editing=4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/  gene_variation=1 note="truncated V protein" shared_cds="C,P" cluster="ACC86102T " length=275  db="msl_db" splice_form="e825"
+>ACC86102T     gene="V"  product="protein V"   organism="Measles virus"  rna_editing=4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/  gene_variation=1 note="truncated V protein" shared_cds="C,P" cluster="ACC86102T " length=275  db="msl_db" splice_form="e825" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MAEEQARHVKNGLECIRALKAEPIGSLAIEEAMAAWSEISDNPGQERATCREEKAGSSGL
 SKPCLSAIGSTEGGAPRIRGQGPGESDDDAETLGIPPRNLQASSTGLQCYYVYDHSGEAV
 KGIQDADSIMVQSGLDGDSTLSGGDNESENSDVDIGEPDTEGYAITDRGSAPISMGFRAS
 DVETAEGGEIHELLRLQSRGNNFPKLGKTLNVPPPPDPGRASTSGTPIKKGHRREISLIW
 NGDRVFIDRWCNPMCSKVTLGTIRARCTCGECPRV
->ACQ44673.1 organism="Peste-des-petits-ruminants virus" cluster="ACQ44673.1 " length=298 gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e894"
+>ACQ44673.1 organism="Peste-des-petits-ruminants virus" cluster="ACQ44673.1 " length=298 gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e894" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MAEEQAYHVNKGLECIKSLKASPPDLSTIRDTIESWREGLSPSGRATPNPDMSEGDHQNI
 NQPCSPAIGPNKVYLSPEDNLGFREITSNDYEAELGGVQGKGSNSQVQRYYVYSHGGEEI
 EGLEDADSLVVQADPPVANIFNGGEDGSDDSDVDSGPDDPGRDTLYDRGSVASNDVARST
 DVEKLEGADIQEVLNSQKGRGGRFQGGKTLRVPEIPDVKHSRPSAQSIKKGHRRELSLIW
 NGDRVFIDKWCNPSCARVKMGVIRAKCVCGECPQVCGECKDDPGVDTRIWYHSITDSA
->AFH55513.1 organism="Feline morbillivirus" cluster="AFH55513.1 " length=276 product="protein V" gene="V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e828"
+>AFH55513.1 organism="Feline morbillivirus" cluster="AFH55513.1 " length=276 product="protein V" gene="V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e828" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MSSHQIQQVKHGLESLQEIKNNPPSSQDVNLAREIYESIRQTGTSSVQGGAIAGDNITSG
 GNNDSMYSQGPSPPISSVNKNIEGPTGFDHSGLWDPEGNLCMLFESDDDENHYSEINGRS
 SAIEGLDEQDNENSIIKQPGNQCTEGVSKTDSSLSSQETTLSVGGSDIPGAGISTCASLD
 ITVNELEDATVRNSNNMKGNWPIPKLLVKPPPRVKTSVDHSNPLKGGHRREISLTWDGDY
 IIREEWCNPICTPIYSTCKRLQCRCKQCPSTCPKCE
->AAR32269.1 splice_form="e691i-1e209" intron_size=40-49 noncanonical_splicing="GA+AG" organism="Canine distemper virus" cluster="AAR32269.1 " length=299  gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db"
+>AAR32269.1 splice_form="e691i-1e209" intron_size=40-49 noncanonical_splicing="GA+AG" organism="Canine distemper virus" cluster="AAR32269.1 " length=299  gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MAEEQAYHVSKGLECLKALRENPPDIEEIQEVSSIRDQTRNPSQANGTASMQEEEVSQDL
 DESHEPAKGSNYVGHVLQNNPGSGESNTALVEAEQPAKDDIQPGPGIRCYHVYDHSGEEV
 KGIEDADSLVVPAGAVSNRGFEGGEGSLDDSTEDSGEDYSEGNASSNWGYSFGLKPDRAA
 DVSMLMEEELSALLRTSRNVGIQKRDGKTLQFPHNPEGKTRVPECGSIKKGNRREVSLTW
 NGDSCWIDKWCNPICTQVNWGIIRAKCVCGECPPTCNECKDDPEMQTRVWYATPSQDLK
->AAF85677.2 organism="Measles virus strain Edmonston" length=299 gene="V" product="protein V" note="truncated V protein" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e897"
+>AAF85677.2 organism="Measles virus strain Edmonston" length=299 gene="V" product="protein V" note="truncated V protein" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e897" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MAEEQARHVKNGLECIRALKAEPIGSLAIEEAMAAWSEISDNPGQERATCREEKAGSSGL
 SKPCLSAIGSTEGGAPRIRGQGPGESDDDAETLGIPPRNLQASSTGLQCYYVYDHSGEAV
 KGIQDADSIMVQSGLDGDSTLSGGDNESENSDVDIGEPDTEGYAITDRGSAPISMGFRAS
 DVETAEGGEIHELLRLQSRGNNFPKLGKTLNVPPPPDPGRASTSETPIKKGHRREISLIW
 NGDRVFIDRWCNPMCSKVTLGTIRARCTCGECPRVCEQCRTDTGVDTRIWYHNLPEIPE
->AFC40220.1 organism="Canine distemper virus" cluster="ACZ56429.1 AFC40220.1 " length=299  gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e897"
+>AFC40220.1 organism="Canine distemper virus" cluster="ACZ56429.1 AFC40220.1 " length=299  gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e897" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MAEEQAYHVSKGLECLKALRENPPDIEEIQEVSSIRDQTCNPGQENGTTGMQEEEDSQNL
 DESHEPTKGSNYVGHVLQNNPGCGESNSAFVEAEQPPKEDIQPGPGIRCYHVYDHSGEEV
 KGIEDADSLVVPAGTVGNRGFESGEGSPDDSTEDSGEDYSEGNASSNWGYSFGLKPDRAA
 DVSMLMEEELSALLKTSRNVGIQKRDGKTLQFPHNPEGKTRVPECGSIKKGHRREVSLTW
 NGDSCWIDKWCNPICTQVNWGIIRAKCVCGECPPTCNECKDDPEMQTRVWYATPSQDLK
->AAS48408.1 organism="Canine distemper virus" cluster="AAR16535.1 AAR30099.1 AAS48408.1 " length=299  gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e897"
+>AAS48408.1 organism="Canine distemper virus" cluster="AAR16535.1 AAR30099.1 AAS48408.1 " length=299  gene="V" product="protein V" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e897" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MAEEQAYHVSKGLECLKALRENPPDIEEIQEVSSIRDQTRNPSQANGTASMQEEEVSQDL
 DESHEPAKGSNYVGHVLQNNPGCGESNTALVEAEQPARDDIQPGPGIRCYHVYDHSGEEV
 KGIEDADSLVVPAGTVGNRGFESGEGSPDDSTEDSGEDYSEGNASSNWGYSFGLKPDRAA
 DVSMLMEEELSALLKTSRNVGIQKRDGKTLQFPHNPEGKTRVPECGSIKKGHRREVSLTR
 NGDSCWIDKWCNPICTQVNWGIIRAKCVCGECPPTCNECKDDPEMQTRVWYATPSQDLK
->NC_005283_V organism="Dolphin morbillivirus" cluster="NC_005283_V " length=304 gene="V" product="protein V" note="truncated V protein" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e912"
+>NC_005283_V organism="Dolphin morbillivirus" cluster="NC_005283_V " length=304 gene="V" product="protein V" note="truncated V protein" rna_editing="4/([NA][NA][NA][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/" shared_cds="C,P" db="msl_db" splice_form="e912" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MAEEQAYHVNKGLECLKSLRENPPDAVEIKEAQIIRSKAACEESSESHHQDNSEKDTLDF
 DESCSSAIRPETYRMLLGDDTGFRAPGYIPNEGEPEPGDIGKEEPAVRCYHVYDHGGQAV
 EGVKDADLLVVPTGSDDDAEFRDGDESSLESDGESGTVDTRGNSSSNRGSAPRIKVERSS

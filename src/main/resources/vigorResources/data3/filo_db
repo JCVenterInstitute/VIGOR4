@@ -1,4 +1,4 @@
->ACI28632.1 gene="GP" product="envelope glycoprotein" note="synonym: preGP" rna_editing="1/(TAAAAAAA)/$1A/non-templated A inserted during transcription due to RNA editing/" splice_form="e2030" shared_cds="SsGP,sGP" organism="Tai Forest ebolavirus" db="filo_db" length=676
+>ACI28632.1 gene="GP" product="envelope glycoprotein" note="synonym: preGP" rna_editing="1/(TAAAAAAA)/$1A/non-templated A inserted during transcription due to RNA editing/" splice_form="e2030" shared_cds="SsGP,sGP" organism="Tai Forest ebolavirus" db="filo_db" length=676 V4_rna_editing="0/A/[TYWKBDHN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN]/non-templated A inserted during transcription due to RNA editing"
 MGASGILQLPRERFRKTSFFVWVIILFHKVFSIPLGVVHNNTLQVSDIDKFVCRDKLSST
 SQLKSVGLNLEGNGVATDVPTATKRWGFRAGVPPKVVNCEAGEWAENCYNLAIKKVDGSE
 CLPEAPEGVRDFPRCRYVHKVSGTGPCPGGLAFHKEGAFFLYDRLASTIIYRGTTFAEGV
@@ -11,7 +11,7 @@ FLTNTIRGVTNLLTGSRRKRRDVTPNTQPKCNPNLHYWTALDEGAAIGLAWIPYFGPAAE
 GIYTEGIMENQNGLICGLRQLANETTQALQLFLRATTELRTFSILNRKAIDFLLQRWGGT
 CHILGPDCCIEPQDWTKNITDKIDQIIHDFVDNNLPNQNDGSNWWTGWKQWVPAGIGITG
 VIIAIIALLCICKFML
->NP_066246.1 organism="Ebola virus - Mayinga, Zaire, 1976"   db="filo_db" gene="GP" product="envelope glycoprotein" note="synonym: preGP" rna_editing="1/(TAAAAAAA)/$1A/non-templated A inserted during transcription due to RNA editing/" shared_cds="SsGP,sGP" length=676 splice_form="e2028"
+>NP_066246.1 organism="Ebola virus - Mayinga, Zaire, 1976"   db="filo_db" gene="GP" product="envelope glycoprotein" note="synonym: preGP" rna_editing="1/(TAAAAAAA)/$1A/non-templated A inserted during transcription due to RNA editing/" shared_cds="SsGP,sGP" length=676 splice_form="e2028" V4_rna_editing="0/A/[TYWKBDHN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN]/non-templated A inserted during transcription due to RNA editing"
 MGVTGILQLPRDRFKRTSFFLWVIILFQRTFSIPLGVIHNSTLQVSDVDKLVCRDKLSST
 NQLRSVGLNLEGNGVATDVPSATKRWGFRSGVPPKVVNYEAGEWAENCYNLEIKKPDGSE
 CLPAAPDGIRGFPRCRYVHKVSGTGPCAGDFAFHKEGAFFLYDRLASTVIYRGTTFAEGV
@@ -24,7 +24,7 @@ LITNTIAGVAGLITGGRRTRREAIVNAQPKCNPNLHYWTTQDEGAAIGLAWIPYFGPAAE
 GIYIEGLMHNQDGLICGLRQLANETTQALQLFLRATTELRTFSILNRKAIDFLLQRWGGT
 CHILGPDCCIEPHDWTKNITDKIDQIIHDFVDKTLPDQGDNDNWWTGWRQWIPAGIGVTG
 VIIAVIALFCICKFVF
->YP_003815435.1 gene="GP" product="envelope glycoprotein" note="synonym: preGP" rna_editing="1/(TAAAAAAA)/$1A/non-templated A inserted during transcription due to RNA editing/" splice_form="e2030" shared_cds="SsGP,sGP" organism="Bundibugyo ebolavirus" db="filo_db" length=676
+>YP_003815435.1 gene="GP" product="envelope glycoprotein" note="synonym: preGP" rna_editing="1/(TAAAAAAA)/$1A/non-templated A inserted during transcription due to RNA editing/" splice_form="e2030" shared_cds="SsGP,sGP" organism="Bundibugyo ebolavirus" db="filo_db" length=676 V4_rna_editing="0/A/[TYWKBDHN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN]/non-templated A inserted during transcription due to RNA editing"
 MVTSGILQLPRERFRKTSFFVWVIILFHKVFPIPLGVVHNNTLQVSDIDKLVCRDKLSST
 SQLKSVGLNLEGNGVATDVPTATKRWGFRAGVPPKVVNYEAGEWAENCYNLDIKKADGSE
 CLPEAPEGVRGFPRCRYVHKVSGTGPCPEGYAFHKEGAFFLYDRLASTIIYRSTTFSEGV
@@ -37,7 +37,7 @@ PLTNTTRGAANLLTGSRRTRREITLRTQAKCNPNLHYWTTQDEGAAIGLAWIPYFGPAAE
 GIYTEGIMHNQNGLICGLRQLANETTQALQLFLRATTELRTFSILNRKAIDFLLQRWGGT
 CHILGPDCCIEPHDWTKNITDKIDQIIHDFIDKPLPDQTDNDNWWTGWRQWVPAGIGITG
 VIIAVIALLCICKFLL
->YP_138523.1 gene="GP" product="envelope glycoprotein" note="synonym: preGP" rna_editing="1/(TAAAAAAA)/$1A/non-templated A inserted during transcription due to RNA editing/" splice_form="e2030" shared_cds="sGP,SsGP" organism="Sudan ebolavirus" db="filo_db" length=676
+>YP_138523.1 gene="GP" product="envelope glycoprotein" note="synonym: preGP" rna_editing="1/(TAAAAAAA)/$1A/non-templated A inserted during transcription due to RNA editing/" splice_form="e2030" shared_cds="sGP,SsGP" organism="Sudan ebolavirus" db="filo_db" length=676 V4_rna_editing="0/A/[TYWKBDHN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN]/non-templated A inserted during transcription due to RNA editing"
 MGGLSLLQLPRDKFRKSSFFVWVIILFQKAFSMPLGVVTNSTLEVTEIDQLVCKDHLAST
 DQLKSVGLNLEGSGVSTDIPSATKRWGFRSGVPPKVVSYEAGEWAENCYNLEIKKPDGSE
 CLPPPPDGVRGFPRCRYVHKAQGTGPCPGDYAFHKDGAFFLYDRLASTVIYRGVNFAEGV
@@ -50,7 +50,7 @@ LITSTVTGILGSLGLRKRSRRQTNTKATGKCNPNLHYWTAQEQHNAAGIAWIPYFGPGAE
 GIYTEGLMHNQNALVCGLRQLANETTQALQLFLRATTELRTYTILNRKAIDFLLRRWGGT
 CRILGPDCCIEPHDWTKNITDKINQIIHDFIDNPLPNQDNDDNWWTGWRQWIPAGIGITG
 IIIAIIALLCVCKLLC
->ACT22794.1 gene="GP" product="envelope glycoprotein" note="synonym: preGP" shared_cds="sGP,SsGP"  organism="Reston ebolavirus - Reston" rna_editing="1/(TAAAAAAA)/$1A/non-templated A inserted during transcription due to RNA editing/" splice_form="e2033" db="filo_db" length=677
+>ACT22794.1 gene="GP" product="envelope glycoprotein" note="synonym: preGP" shared_cds="sGP,SsGP"  organism="Reston ebolavirus - Reston" rna_editing="1/(TAAAAAAA)/$1A/non-templated A inserted during transcription due to RNA editing/" splice_form="e2033" db="filo_db" length=677 V4_rna_editing="0/A/[TYWKBDHN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN]/non-templated A inserted during transcription due to RNA editing"
 MGSGYQLLQLPQGCFRKTSFFVWVIILFQRAISMPLGIVTNSTLRATEIDQLVCRDKLSS
 TSQLKSVGLNLEGNGIATDVLSATKRWGFRSGVPPKVVSYEAGEWAENCYNLEIKKLDGS
 ECLPLPPDGVRGFPRCRYVHKVQGTGPCPGDLAFHKNGAFFLYDRLASTVIYRGTTFAEG
@@ -63,7 +63,7 @@ GLIINTVSEVAGSLSPTRKQKQSARQNTANKCNPDLHYWTAVDEGAAVGLAWIPYFGPAA
 EGIYIEGVMHNQNGLICGLRQLANETTQALQLFLRATTELRTYSLLNRKAIDFLLQRWGG
 TCRILGPSCCIEPHDWTKNITDEINQIRHDFIDNPLPNHGDDLILWTGWRQWIPAGIGII
 GVIIAIIALLCICKILC
->NP_690583.1 gene="GP" product="envelope glycoprotein" note="synonym: preGP" rna_editing="1/(TAAAAAAA)/$1A/non-templated A inserted during transcription due to RNA editing/" splice_form="e2033" shared_cds="SsGP,sGP" organism="Tai Forest ebolavirus" db="filo_db" length=677
+>NP_690583.1 gene="GP" product="envelope glycoprotein" note="synonym: preGP" rna_editing="1/(TAAAAAAA)/$1A/non-templated A inserted during transcription due to RNA editing/" splice_form="e2033" shared_cds="SsGP,sGP" organism="Tai Forest ebolavirus" db="filo_db" length=677 V4_rna_editing="0/A/[TYWKBDHN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN]/non-templated A inserted during transcription due to RNA editing"
 MGSGYQLLQLPRERFRKTSFLVWVIILFQRAISMPLGIVTNSTLKATEIDQLVCRDKLSS
 TSQLKSVGLNLEGNGIATDVPSATKRWGFRSGVPPKVVSYEAGEWAENCYNLEIKKSDGS
 ECLPLPPDGVRGFPRCRYVHKVQGTGPCPGDLAFHKNGAFFLYDRLASTVIYRGTTFAEG
@@ -141,7 +141,7 @@ DQHASPNISLTLSYFPNINENTAYSGENENDCDAELRIWSVQEDDLAAGLSWIPFFGPGI
 EGLYTAVLIKNQNNLVCRLRRLANQTAKSLELLLRVTTEERTFSLINRHAIDFLLTRWGG
 TCKVLGPDCCIGIEDLSKNISEQIDQIKKDEQKEGTGWGLGGKWWTSDWGVLTNLGILLL
 LSIAVLIALSCICRIFTKYIG
->355469071_GP gene="GP" product="envelope glycoprotein" note="synonym: preGP" rna_editing="1/(TAAAAAAA)/$1A/non-templated A inserted during transcription due to RNA editing/" splice_form="e2154" shared_cds="SsGP,sGP" organism="Lloviu virus" db="filo_db" length=717
+>355469071_GP gene="GP" product="envelope glycoprotein" note="synonym: preGP" rna_editing="1/(TAAAAAAA)/$1A/non-templated A inserted during transcription due to RNA editing/" splice_form="e2154" shared_cds="SsGP,sGP" organism="Lloviu virus" db="filo_db" length=717 V4_rna_editing="0/A/[TYWKBDHN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN]/non-templated A inserted during transcription due to RNA editing"
 MVPTYPYSSLLDWRPPPNTLPWILNLVVFYTIAWLPGGVSGIPLGLLGNNSITQTVVDNV
 VCKEHLATTDQLQAIGLGLEGLGEHADLPTATKRWGFRSDVIPKIVGYTAGEWVENCYNL
 EITKKDGHPCLPSPPTGLLGYPRCRYVHRAKGAGPCPGGNAFHKHGSFFLYHGMASTVIY
@@ -611,41 +611,41 @@ ATDEHTDLLNKDHRRNQVKPGRRGNDPRTLPLISFDDNEGEILDDKSDLPAPDTHSDPDT
 EESEEEHPDEELLPPAPKYNTKTSEQEPGDWKQPTSPLSTIPEEEGGHEANNDNSESDLI
 DQMYQHIFETEGAYAAINYYYKTTGRPVTFTSNNNHDYTFPQDIEGLFPPWEGKENQKVA
 EILTNSLHETGQEWADMSAKERYLFLINN
->NP_066248.1 organism="Ebola virus - Mayinga, Zaire, 1976"   db="filo_db" gene="SsGP" product="super small secreted glycoprotein SsGP" rna_editing="2/(TAAAAAAA)/$1AA/two non-templated A's inserted during transcription due to RNA editing/" shared_cds="sGP,GP" length=297 splice_form="e891"
+>NP_066248.1 organism="Ebola virus - Mayinga, Zaire, 1976"   db="filo_db" gene="SsGP" product="super small secreted glycoprotein SsGP" rna_editing="2/(TAAAAAAA)/$1AA/two non-templated A's inserted during transcription due to RNA editing/" shared_cds="sGP,GP" length=297 splice_form="e891" V4_rna_editing="0/AA/[TYWKBDHN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN]/two non-templated A's inserted during transcription due to RNA editing"
 MGVTGILQLPRDRFKRTSFFLWVIILFQRTFSIPLGVIHNSTLQVSDVDKLVCRDKLSST
 NQLRSVGLNLEGNGVATDVPSATKRWGFRSGVPPKVVNYEAGEWAENCYNLEIKKPDGSE
 CLPAAPDGIRGFPRCRYVHKVSGTGPCAGDFAFHKEGAFFLYDRLASTVIYRGTTFAEGV
 VAFLILPQAKKDFFSSHPLREPVNATEDPSSGYYSTTIRYQATGFGTNETEYLFEVDNLT
 YVQLESRFTPQFLLQLNETIYTSGKRSNTTGKLIWKVNPEIDTTIGEWAFWETKKPH
->YP_003815437.1 gene="SsGP" product="super small secreted glycoprotein SsGP" rna_editing="2/(TAAAAAAA)/$1AA/two non-templated A's inserted during transcription due to RNA editing/" shared_cds="sGP,GP" organism="Bundibugyo ebolavirus" db="filo_db" length=302 splice_form="e906"
+>YP_003815437.1 gene="SsGP" product="super small secreted glycoprotein SsGP" rna_editing="2/(TAAAAAAA)/$1AA/two non-templated A's inserted during transcription due to RNA editing/" shared_cds="sGP,GP" organism="Bundibugyo ebolavirus" db="filo_db" length=302 splice_form="e906" V4_rna_editing="0/AA/[TYWKBDHN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN]/two non-templated A's inserted during transcription due to RNA editing"
 MVTSGILQLPRERFRKTSFFVWVIILFHKVFPIPLGVVHNNTLQVSDIDKLVCRDKLSST
 SQLKSVGLNLEGNGVATDVPTATKRWGFRAGVPPKVVNYEAGEWAENCYNLDIKKADGSE
 CLPEAPEGVRGFPRCRYVHKVSGTGPCPEGYAFHKEGAFFLYDRLASTIIYRSTTFSEGV
 VAFLILPETKKDFFQSPPLHEPANMTTDPSSYYHTVTLNYVADNFGTNMTNFLFQVDHLT
 YVQLEPRFTPQFLVQLNETIYTNGRRSNTTGTLIWKVNPTVDTGVGEWAFWENKKLHKNP
 FK
->208436395_SsGP gene="SsGP" product="super small secreted glycoprotein SsGP" rna_editing="2/(TAAAAAAA)/$1AA/two non-templated A's inserted during transcription due to RNA editing/" shared_cds="sGP,GP" organism="Tai Forest ebolavirus " db="filo_db" length=303 splice_form="e909"
+>208436395_SsGP gene="SsGP" product="super small secreted glycoprotein SsGP" rna_editing="2/(TAAAAAAA)/$1AA/two non-templated A's inserted during transcription due to RNA editing/" shared_cds="sGP,GP" organism="Tai Forest ebolavirus " db="filo_db" length=303 splice_form="e909" V4_rna_editing="0/AA/[TYWKBDHN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN]/two non-templated A's inserted during transcription due to RNA editing"
 MGASGILQLPRERFRKTSFFVWVIILFHKVFSIPLGVVHNNTLQVSDIDKFVCRDKLSST
 SQLKSVGLNLEGNGVATDVPTATKRWGFRAGVPPKVVNCEAGEWAENCYNLAIKKVDGSE
 CLPEAPEGVRDFPRCRYVHKVSGTGPCPGGLAFHKEGAFFLYDRLASTIIYRGTTFAEGV
 IAFLILPKARKDFFQSPPLHEPANMTTDPSSYYHTTTINYVVDNFGTNTTEFLFQVDHLT
 YVQLEARFTPQFLVLLNETIYSDNRRSNTTGKLIWKINPTVDTSMGEWAFWENKKKLHKN
 PFK
->355469071_SsGP gene="SsGP" product="super small secreted glycoprotein SsGP" rna_editing="2/(TAAAAAAA)/$1AA/two non-templated A's inserted during transcription due to RNA editing/" shared_cds="sGP,GP" organism="Lloviu virus" db="filo_db" length=313 splice_form="e939"
+>355469071_SsGP gene="SsGP" product="super small secreted glycoprotein SsGP" rna_editing="2/(TAAAAAAA)/$1AA/two non-templated A's inserted during transcription due to RNA editing/" shared_cds="sGP,GP" organism="Lloviu virus" db="filo_db" length=313 splice_form="e939" V4_rna_editing="0/AA/[TYWKBDHN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN]/two non-templated A's inserted during transcription due to RNA editing"
 MVPTYPYSSLLDWRPPPNTLPWILNLVVFYTIAWLPGGVSGIPLGLLGNNSITQTVVDNV
 VCKEHLATTDQLQAIGLGLEGLGEHADLPTATKRWGFRSDVIPKIVGYTAGEWVENCYNL
 EITKKDGHPCLPSPPTGLLGYPRCRYVHRAKGAGPCPGGNAFHKHGSFFLYHGMASTVIY
 HGVTFTEGTIAFLIVPKDAPRLKAGLGTGFSHQAENQNPNNQFRTTTLDYDVMSPWMDNA
 TFFFRAREDTSMLIQTRYPPANLELVQERLANLTGDQADPSKMEEIVAEVLTLELGDWSG
 WTTKKKPQYKPYG
->55770807_SsGP gene="SsGP" product="super small secreted glycoprotein SsGP" rna_editing="2/(TAAAAAAA)/$1AA/two non-templated A's inserted during transcription due to RNA editing/" shared_cds="sGP,GP" organism="Sudan ebolavirus" db="filo_db" length=319 splice_form="e957"
+>55770807_SsGP gene="SsGP" product="super small secreted glycoprotein SsGP" rna_editing="2/(TAAAAAAA)/$1AA/two non-templated A's inserted during transcription due to RNA editing/" shared_cds="sGP,GP" organism="Sudan ebolavirus" db="filo_db" length=319 splice_form="e957" V4_rna_editing="0/AA/[TYWKBDHN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN]/two non-templated A's inserted during transcription due to RNA editing"
 MGGLSLLQLPRDKFRKSSFFVWVIILFQKAFSMPLGVVTNSTLEVTEIDQLVCKDHLAST
 DQLKSVGLNLEGSGVSTDIPSATKRWGFRSGVPPKVVSYEAGEWAENCYNLEIKKPDGSE
 CLPPPPDGVRGFPRCRYVHKAQGTGPCPGDYAFHKDGAFFLYDRLASTVIYRGVNFAEGV
 IAFLILAKPKETFLQSPPIREAVNYTENTSSYYATSYLEYEIENFGAQHSTTLFKIDNNT
 FVRLDRPHTPQFLFQLNDTIHLHQQLSNTTGRLIWTLDANINADIGEWAFWENKKKSLRT
 TTWRRAVFRSFIAQRDRRR
->FJ621585_SsGP gene="SsGP" product="super small secreted glycoprotein SsGP" rna_editing="2/(TAAAAAAA)/$1AA/two non-templated A's inserted during transcription due to RNA editing/" shared_cds="sGP,GP" organism="Reston ebolavirus - Reston strain Reston08-E" db="filo_db" length=332 splice_form="e996"
+>FJ621585_SsGP gene="SsGP" product="super small secreted glycoprotein SsGP" rna_editing="2/(TAAAAAAA)/$1AA/two non-templated A's inserted during transcription due to RNA editing/" shared_cds="sGP,GP" organism="Reston ebolavirus - Reston strain Reston08-E" db="filo_db" length=332 splice_form="e996" V4_rna_editing="0/AA/[TYWKBDHN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN]/two non-templated A's inserted during transcription due to RNA editing"
 MGSGYQLLQLPRERFRKTSFLVWAIILFQRAISMPLGIVTNSTLKATEIDQLVCRDKLSS
 TSQLKSVGLNLEGNGIATDVPSATKRWGFRSGVPPKVVSYEAGEWAENCYNLEIKKSDGS
 ECLPPPPDGVRGFPRCRYVHKVQGTGPCPGDLAFHKNGAFFLYDRLASTVIYRGTTFAEG

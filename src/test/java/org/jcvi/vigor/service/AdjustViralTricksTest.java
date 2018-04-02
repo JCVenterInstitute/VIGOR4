@@ -26,55 +26,69 @@ import org.springframework.test.context.junit4.SpringRunner;
 @ContextConfiguration(classes = AppConfig.class)
 public class AdjustViralTricksTest {
 
-	private List<Alignment> alignments;
-	private List<Model> models=new ArrayList<Model>();
+
 	@Autowired
 	private ModelGenerationService modelGenerationService;
 	@Autowired
 	private ViralProteinService viralProteinService;
 	@Autowired
 	private AdjustViralTricks adjustViralTricks;
-	private ClassLoader classLoader = VigorTestUtils.class.getClassLoader(); 
-	private File file = new File(classLoader.getResource("vigorUnitTestInput/chikv.ungapped.fasta.JF274082.1.ref.fasta"). getFile());
-	
-	@Before
-	public void getModel() {
-			alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(),"chikv_db",VigorUtils.getVigorWorkSpace(),"gi|392976865|ref|YP_006491243.1|");
-			alignments = alignments.stream().map(alignment -> viralProteinService.setViralProteinAttributes(alignment,new VigorForm()))
-					.collect(Collectors.toList());
-			alignments = modelGenerationService.mergeIdenticalProteinAlignments(alignments);
-		    alignments.stream().forEach(x -> {
-				if(x.getViralProtein().getProteinID().equals("gi|392976865|ref|YP_006491243.1|")){
-					models.addAll(modelGenerationService.alignmentToModels(x, "exonerate"));
-				}
-			});
-	}
-	
+	private ClassLoader classLoader = VigorTestUtils.class.getClassLoader();
+
     @Test
     public void adjustRibosomalSlippageTest() throws CloneNotSupportedException{
+	    List<Alignment> alignments;
+	    List<Model> models=new ArrayList<Model>();
+        File file = new File(classLoader.getResource("vigorUnitTestInput/Flua_RiboSlippage_Test.fasta"). getFile());
+        alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(),"flua_db",VigorUtils.getVigorWorkSpace(),"seg3prot2A");
+        alignments = alignments.stream().map(alignment -> viralProteinService.setViralProteinAttributes(alignment,new VigorForm()))
+                .collect(Collectors.toList());
+        alignments = modelGenerationService.mergeIdenticalProteinAlignments(alignments);
+        alignments.stream().forEach(x -> {
+            models.addAll(modelGenerationService.alignmentToModels(x, "exonerate"));
+        });
     	Model testModel = models.get(0);
-    	List<Model> models=null;
-       	models = adjustViralTricks.adjustRibosomalSlippage(testModel);
-       	Range actual = models.get(0).getExons().get(0).getRange();    
-    	assertEquals(Range.of(7553,9943),actual);
+       	List<Model> outputModels = adjustViralTricks.adjustRibosomalSlippage(testModel);
+       	Range actual = outputModels.get(0).getExons().get(0).getRange();
+    	assertEquals(Range.of(9,581),actual);
     }
-    
-   /* @Test
-    public void adjustSpliceSitesTest() throws CloneNotSupportedException{
-    	
-    	adjustViralTricks.adjustSpliceSites(models.get(0));
-    	
-    	
-    }*/
-	
-	/*
+
+    @Test
+    public void checkForLeakyStopTest(){
+        List<Alignment> alignments;
+        List<Model> models=new ArrayList<Model>();
+        File file = new File(classLoader.getResource("vigorUnitTestInput/Veev_StopTranslationEx_Test.fasta"). getFile());
+        alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(),"veev_db",VigorUtils.getVigorWorkSpace(),"399240871_NSP");
+        alignments = alignments.stream().map(alignment -> viralProteinService.setViralProteinAttributes(alignment,new VigorForm()))
+                .collect(Collectors.toList());
+        alignments = modelGenerationService.mergeIdenticalProteinAlignments(alignments);
+        alignments.stream().forEach(x -> {
+            models.addAll(modelGenerationService.alignmentToModels(x, "exonerate"));
+        });
+        Model testModel = models.get(0);
+        Model outputModel = adjustViralTricks.checkForLeakyStop(testModel);
+        Range actual = outputModel.getExons().get(0).getRange();
+        assertEquals(Range.of(9,581),actual);
+    }
+
+
+
 	@Test
-    public void SpliceSitesTest() throws CloneNotSupportedException{
-    	List<Model> outModels = adjustExonBoundaries.adjustSpliceSites(models.get(0));
-    	Comparator<Model> bySpliceScore = (Model m1,Model m2)->m1.getScores().get("spliceScore").compareTo(m2.getScores().get("spliceScore"));
-    	Optional<Model> outModel = outModels.stream().sorted(bySpliceScore.reversed()).findFirst();
-    	assertEquals(13,outModels.size());
-    	 	
+    public void adjustRNAEditingTest() throws CloneNotSupportedException{
+        List<Alignment> alignments;
+        List<Model> models=new ArrayList<Model>();
+        File file = new File(classLoader.getResource("vigorUnitTestInput/mmp_rna_editing_Test.fasta"). getFile());
+        alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(),"mmp_db",VigorUtils.getVigorWorkSpace(),"AEY76114.1");
+        alignments = alignments.stream().map(alignment -> viralProteinService.setViralProteinAttributes(alignment,new VigorForm()))
+                .collect(Collectors.toList());
+        alignments = modelGenerationService.mergeIdenticalProteinAlignments(alignments);
+        alignments.stream().forEach(x -> {
+            models.addAll(modelGenerationService.alignmentToModels(x, "exonerate"));
+        });
+        Model testModel = models.get(0);
+        List<Model> outputModels = adjustViralTricks.adjustRNAEditing(testModel);
+        Range actual = outputModels.get(0).getExons().get(0).getRange();
+        assertEquals(Range.of(1861,2322),actual);
+
     }
-	*/
 }

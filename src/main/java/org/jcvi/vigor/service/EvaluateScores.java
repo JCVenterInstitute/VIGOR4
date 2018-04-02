@@ -60,14 +60,10 @@ public class EvaluateScores implements EvaluateModel {
 		scores.put("startCodonScore",startCodonScore);
 		scores.put("leakyStopScore",leakyStopScore);
 		scores.put("spliceScore",splicingScore);
-		scores.put("stopCodonScore",stopScore);		
-		scores.put("totalScore", totalScore);
+		scores.put("stopCodonScore",stopScore);
 		totalScore = exonerateScore + startCodonScore + leakyStopScore + splicingScore + stopScore;
+		scores.put("totalScore", totalScore);
 		return model;
 	}
-	
-	
-
-	
 	
 }

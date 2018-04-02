@@ -67,6 +67,19 @@ public class ViralProteinService {
 			StartTranslationException startTranslationException = new StartTranslationException();
 			RNA_Editing rna_editing = new RNA_Editing();
 
+			/* Set product attribute */
+            if (attributes.containsKey("product")) {
+                String product = attributes.get("product");
+                viralProtein.setProduct(product);
+            }
+
+
+            /* Set gene symbol */
+            if(attributes.containsKey("gene")){
+                String geneSymbol = attributes.get("gene");
+                viralProtein.setGeneSymbol(geneSymbol);
+            }
+
 			/* Set Splicing attributes */
 			if (attributes.containsKey("splice_form")) {
 				if (!(attributes.get("splice_form").equals(""))) {
@@ -79,7 +92,7 @@ public class ViralProteinService {
 								List<String> spliceSites = Pattern.compile(";").splitAsStream(attributes.get("noncanonical_splicing").trim()).collect(Collectors.toList());
 
 								for(String spliceSite : spliceSites){
-									String[] temp = spliceSite.split("+");
+									String[] temp = spliceSite.split(Pattern.quote("+"));
 									SpliceSite spliceSiteObj = splicing.new SpliceSite();
 									spliceSiteObj.donor=temp[0];
 									spliceSiteObj.acceptor=temp[1];
@@ -131,34 +144,23 @@ public class ViralProteinService {
 			}
 
 			/* Set RibosomalSlippage attributes */
-			if (attributes.containsKey("ribosomal_slippage")) {
-
-				if (attributes.get("ribosomal_slippage").equalsIgnoreCase("Y")) {
-					ribosomal_slippage.setHas_ribosomal_slippage(true);
-					if (attributes.containsKey("slippage_frameshift")) {
-						if (VigorUtils.is_Integer(attributes.get("slippage_frameshift"))) {
-							int fs = Integer.parseInt(attributes.get("slippage_frameshift"));
-							if (fs >= -3 && fs <= 3)
-								ribosomal_slippage.setSlippage_frameshift(fs);
-						}
-					}
-					if (attributes.containsKey("slippage_offset")) {
-						if (VigorUtils.is_Integer(attributes.get("slippage_offset")))
-							ribosomal_slippage.setSlippage_offset(
-									Integer.parseInt(attributes.get("slippage_offset").replaceAll("^\"|\"$", "")));
-					}
-					if (attributes.containsKey("slippage_motif"))
-						ribosomal_slippage
-								.setSlippage_motif(attributes.get("slippage_motif").replaceAll("^\"|\"$", ""));
-				}
+			if (attributes.containsKey("V4_Ribosomal_Slippage")) {
+				ribosomal_slippage.setHas_ribosomal_slippage(true);
+				String attribute = attributes.get("V4_Ribosomal_Slippage").replaceAll("^\"|\"$", "");
+				String[] temp = attribute.split("/");
+				ribosomal_slippage.setSlippage_offset(Integer.parseInt(temp[0]));
+				ribosomal_slippage.setSlippage_frameshift(Integer.parseInt(temp[1]));
+				ribosomal_slippage.setSlippage_motif(temp[2]);
 			}
 
 			/* Set StopTranslationException attributes */
-			if (attributes.containsKey("stop_codon_readthru")) {
-				String attribute = attributes.get("stop_codon_readthru").replaceAll("^\"|\"$", "");
+			if (attributes.containsKey(" V4_stop_codon_readthrough")) {
+				String attribute = attributes.get(" V4_stop_codon_readthrough").replaceAll("^\"|\"$", "");
 				stopTranslationException.setHasStopTranslationException(true);
-				String[] temp = attribute.split(":");
-				AminoAcid replacementAA = AminoAcid.valueOf(temp[1]);
+				String[] temp = attribute.split("/");
+				stopTranslationException.setMotif(temp[2]);
+				stopTranslationException.setOffset(Integer.parseInt(temp[0]));
+				AminoAcid replacementAA = AminoAcid.parse(temp[1]);
 				stopTranslationException.setReplacementAA(replacementAA);
 			}
 
@@ -171,16 +173,15 @@ public class ViralProteinService {
 			}
 
 			/* Set RNA_Editing attributes */
-			if (attributes.containsKey("rna_editing")) {
-				String attribute = attributes.get("rna_editing").replaceAll("^\"|\"$", "");
+			if (attributes.containsKey("V4_rna_editing")) {
+				String attribute = attributes.get("V4_rna_editing").replaceAll("^\"|\"$", "");
 				String[] temp = attribute.split("/");
 				if (VigorUtils.is_Integer(temp[0])) {
-					rna_editing.setSize(Integer.parseInt(temp[0]));
+					rna_editing.setOffset(Integer.parseInt(temp[0]));
 				}
-				rna_editing.setRegExp(temp[1]);
+				rna_editing.setRegExp(temp[2]);
 				rna_editing.setHas_RNA_editing(true);
-				String insertionString = temp[2].substring(2);
-				rna_editing.setInsertionString(insertionString);
+				rna_editing.setInsertionString(temp[1]);
 				rna_editing.setNote(temp[3]);
 			}
 
@@ -228,6 +229,7 @@ public class ViralProteinService {
 
 		} catch (Exception e) {
 			LOGGER.error(e.getMessage(), e);
+            System.exit(0);
 		}
 		return viralProtein;
 
@@ -325,7 +327,26 @@ public class ViralProteinService {
 				deflineAttributes.add(matcher.group(0));
 			}
 
-			/* parsing ribosomal slippage attributes */
+			pattern = Pattern.compile("product=(\\\"[a-zA-Z0-9 ]+\\\")");
+			matcher = pattern.matcher(defline);
+			if(matcher.find()){
+			    deflineAttributes.add(matcher.group(0));
+            }
+
+            pattern = Pattern.compile("gene=(\\\"[a-zA-Z0-9 ]+\\\")");
+            matcher = pattern.matcher(defline);
+            if(matcher.find()){
+                deflineAttributes.add(matcher.group(0));
+            }
+
+            /* parsing ribosomal slippage attributes */
+            pattern = Pattern.compile("V4_Ribosomal_Slippage=\\\"(-?\\+?\\d*)/(-?\\+?\\d*)/(\\S*)\\\"");
+            matcher = pattern.matcher(defline);
+            if (matcher.find()) {
+                deflineAttributes.add(matcher.group(0));
+            }
+
+/*
 			pattern = Pattern.compile("(ribosomal_slippage=[Yy])");
 			matcher = pattern.matcher(defline);
 			if (matcher.find()) {
@@ -346,13 +367,20 @@ public class ViralProteinService {
 			if (matcher.find()) {
 				deflineAttributes.add(matcher.group(0));
 			}
+*/
 
 			/* Parsing Translation exception attributes */
-			pattern = Pattern.compile("(stop_codon_readthru=[Yy](:[a-zA-Z])?)");
+			/*pattern = Pattern.compile("(stop_codon_readthru=[Yy](:[a-zA-Z])?)");
 			matcher = pattern.matcher(defline);
 			if (matcher.find()) {
 				deflineAttributes.add(matcher.group(0));
-			}
+			}*/
+            pattern = Pattern.compile("V4_stop_codon_readthrough=\\\"(-?\\+?\\d*)/[A-Z]/(\\S*)\\\"");
+            matcher = pattern.matcher(defline);
+            if (matcher.find()) {
+                deflineAttributes.add(matcher.group(0));
+            }
+
 			pattern = Pattern.compile("alternate_startcodon=\"[a-zA-Z,]*\"");
 			matcher = pattern.matcher(defline);
 			if (matcher.find()) {
@@ -360,7 +388,7 @@ public class ViralProteinService {
 			}
 
 			/* parsing rna_editing attribute */
-			pattern = Pattern.compile("rna_editing=\\d*/\\(.*\\)/\\$1[a-zA-Z]*/.*?/");
+			pattern = Pattern.compile("V4_rna_editing=\\\"(-?\\+?\\d*)/([A-Z]*)/(\\S*)/(.*?)\\\"");
 			matcher = pattern.matcher(defline);
 			if (matcher.find()) {
 				deflineAttributes.add(matcher.group(0));
@@ -413,6 +441,7 @@ public class ViralProteinService {
 
 		} catch (Exception e) {
 			LOGGER.error(e.getMessage(), e);
+            System.exit(0);
 		}
 		return deflineAttributes;
 	}

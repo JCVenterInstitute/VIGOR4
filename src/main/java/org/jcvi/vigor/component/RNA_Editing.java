@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 public class RNA_Editing  {
 
     private boolean has_RNA_editing=false;
-    private int size;
+    private int offset;
     private String regExp;
     private String insertionString;
     private String note;

@@ -1,3 +1,4 @@
->seg7prot2ADR2_S31N db="flua_db" gene="M2" intron_size=650-750 product="matrix protein 2" splice_form="e26i688e268" spliced=Y length=97
-MSLLTEVETPTRNGWECKCSDSSDPLVIAANIIGILHLILWILDRLFFKCIYRRLKYGLKRGPSTEGVPE
-SMREEYRQEQQSAVDVDDSHFVNIELE
+>AEY76114.1 gene="I"  product="I protein"  organism="Mumps virus" rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ db="mmp_db" gene_variation=1 shared_cds="V,P" length=171 splice_form="e513" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
+MDQFIKQDETGDLIETGMNVANHFLSAPIQGTNLLSKATIIPGVAPVLIGNPEQKNIQYPTASHQGSKSK
+GRSSGAKPIIVSSSEVGTGGTQIPEPLFAQTGQGGTVTTVYQDPTIQPTGSYRSVELAKIGKERMINRFV
+EKPRTSTPVTEFKRGGGRERLLKARQSKRRA

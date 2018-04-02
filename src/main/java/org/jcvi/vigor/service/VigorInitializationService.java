@@ -71,6 +71,7 @@ public class VigorInitializationService {
 		} catch (Exception e) {
 			e.printStackTrace();
 			LOGGER.error(e.getMessage(), e);
+			System.exit(0);
 
 		}
 
@@ -97,7 +98,7 @@ public class VigorInitializationService {
 			alignmentEvidence.setReference_db(vigorParameterList.get("reference_db"));
 			// here call the method from ReferenceDBGenerationService which
 			// determines the reference_db
-			// and set the alignment evidence
+			// and set it to the alignment evidence object
 
 		} else if (inputs.hasOption('d')) {
 			System.out.println("Reference_db is " + inputs.getOptionValue("d"));
@@ -109,6 +110,9 @@ public class VigorInitializationService {
 
 		if (inputs.hasOption('s')) {
 			vigorParameterList.put("min_gene_size", inputs.getOptionValue('s'));
+		}
+		if(inputs.hasOption('o')){
+			vigorParameterList.put("output",inputs.getOptionValue("o"));
 		}
 		if (inputs.hasOption('c')) {
 			vigorParameterList.put("min_gene_coverage", inputs.getOptionValue('c'));

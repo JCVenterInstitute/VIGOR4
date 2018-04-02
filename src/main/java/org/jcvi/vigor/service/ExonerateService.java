@@ -37,8 +37,8 @@ public class ExonerateService {
        
 		String outputFilePath = GenerateExonerateOutput.queryExonerate(virusGenome,alignmentEvidence.getReference_db(), VigorUtils.getVigorWorkSpace(),null);
 		File outputFile = new File(outputFilePath);
-		List<Alignment> alignments = parseExonerateOutput(outputFile, alignmentEvidence, virusGenome);
-		return alignments;
+		return parseExonerateOutput(outputFile, alignmentEvidence, virusGenome);
+
 	}
 
 	
@@ -53,7 +53,7 @@ public class ExonerateService {
 				VulgarProtein2Genome2 Jalignment = Jalignments.get(i);
 				Alignment alignment = new Alignment();
 				Map<String, Double> alignmentScores = new HashMap<String, Double>();
-				alignmentScores.put("ExonerateScore",(double)Jalignment.getScore());
+				alignmentScores.put("exonerateScore",(double)Jalignment.getScore());
 				alignment.setAlignmentScore(alignmentScores);
 				alignment.setAlignmentTool_name("exonerate");
 				alignment.setAlignmentEvidence(alignmentEvidence);

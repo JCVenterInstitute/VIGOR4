@@ -4,12 +4,21 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.jcvi.vigor.AppConfig;
 import org.jcvi.vigor.component.Model;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringRunner;
 
-
+@RunWith(SpringRunner.class)
+@ContextConfiguration(classes = AppConfig.class)
 public class ValidateVigor4Models {
-	
+
+	@Autowired
+	GenerateVigor4GeneModels generateVigor4GeneModels;
 	private Map<String,List<Model>> allVigor4Models = new HashMap<String,List<Model>>();
 	private Map<String,List<Model>> allVigor3Models = new HashMap<String,List<Model>>();
 	
@@ -18,10 +27,9 @@ public class ValidateVigor4Models {
 	/*	GenerateVigor3Models generateVigor3Models = new GenerateVigor3Models();
 		allVigor3Models = generateVigor3Models.generateModels("/Users/snettem/git/Vigor4/src/test/resources/vigor3Output","veev");
 				*/
-		GenerateVigor4GeneModels generateVigor4GeneModels = new GenerateVigor4GeneModels();
-		allVigor4Models = generateVigor4GeneModels.generateModels("/Users/snettem/workspace/vigor4_regression",
-					"/Users/snettem/git/Vigor4/src/test/resources/VigorRegressionTestInput/veev.fasta",
-					"veev_db");		
+		allVigor4Models = generateVigor4GeneModels.generateModels("/home/snettem/workspace/vigor4_regression",
+					"/home/snettem/git/VIGOR4/src/test/resources/VigorRegressionTestInput/flu.fasta",
+					"flua_db");
 		
 	}	
 

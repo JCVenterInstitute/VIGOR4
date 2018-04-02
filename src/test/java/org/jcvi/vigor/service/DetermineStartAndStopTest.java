@@ -55,6 +55,7 @@ public class DetermineStartAndStopTest {
 				+ "TAGAACAAATAATAATGGAAGAAGCATGGAAACTAGCAGCACACATAGTACAAGAATAACTGATGTCATT"
 				+ "ACCAACCCAAGTCCAGAGCTTGAAGATGCCGTTCTACAAAGGAATAAAAGACGGCCGACGACCATCAAGC").build();
 		virusGenome.setSequence(seq);
+		System.out.println(seq.getLength());
 	    ViralProtein viralProtein = new ViralProtein();
 	    //Dummy protein sequence
 	    ProteinSequence proteinSeq = new ProteinSequenceBuilder("MNRPFFQNFGRRPFPAPSIAWRPRRRRSAAPAFQAPRFGLANQIQQLTSAVSALVIGQSA"

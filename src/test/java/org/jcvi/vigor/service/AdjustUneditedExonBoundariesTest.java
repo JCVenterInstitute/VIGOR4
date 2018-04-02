@@ -37,11 +37,11 @@ public class AdjustUneditedExonBoundariesTest {
 	@Autowired
 	private AdjustUneditedExonBoundaries adjustUneditedExonBoundaries;
 	private ClassLoader classLoader = VigorTestUtils.class.getClassLoader(); 
-	private File file = new File(classLoader.getResource("vigorUnitTestInput/sequence_flua_1.fasta"). getFile());
+	private File file = new File(classLoader.getResource("vigorUnitTestInput/Flua_SpliceSites_Test.fasta"). getFile());
 
 	@Before
 	public void getModel() {
-			alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(),"flua_db",VigorUtils.getVigorWorkSpace(),"seg7prot2ADR2_S31N");
+			alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(),"flua_db",VigorUtils.getVigorWorkSpace(),"seg8prot2A");
 			alignments = alignments.stream().map(alignment -> viralProteinService.setViralProteinAttributes(alignment,new VigorForm()))
 					.collect(Collectors.toList());
 			alignments.stream().forEach(x -> {
@@ -53,11 +53,11 @@ public class AdjustUneditedExonBoundariesTest {
 	@Test
 	public void adjustSpliceSitesTest() throws CloneNotSupportedException{
 		   Model testModel = models.get(0);
-		   testModel.getExons().get(0).setRange(Range.of(8,31));
+		   testModel.getExons().get(0).setRange(Range.of(11,30));
 		   List<Model> outModels = adjustUneditedExonBoundaries.adjustSpliceSites(testModel);
 	       Comparator<Model> bySpliceScore = (Model m1,Model m2)->m1.getScores().get("spliceScore").compareTo(m2.getScores().get("spliceScore"));
 	       Optional<Model> outModel = outModels.stream().sorted(bySpliceScore.reversed()).findFirst();
-	       assertEquals(Range.of(8,33),outModel.get().getExons().get(0).getRange());
+	       assertEquals(Range.of(11,40),outModel.get().getExons().get(0).getRange());
 	}
 	
 	

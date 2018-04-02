@@ -343,51 +343,51 @@ QEVANMLTSPYYGEVLVLNFLYVCSLLDNIPGDCSVQLIPPDNMTLGAESRLYVLNGSLI
 MYKRGSSWWPYTELYQINYRVNNRAFRVRESVRINTTSTSRPGVQGCNLEKVCPKVCVSG
 IYQSPGIISAPVNPTRQEEGLLYFLVWTSSMSSRTGPLSSLCDHSTCRITYPIGDDTIFI
 GYTDSSCFMSSIKEGIYCIAFLELDNQPYSMMAIRSLSYIIN
->CBA10119.1 gene="I"  product="I protein"  organism="Mumps virus"  rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ db="mmp_db" gene_variation=1 shared_cds="V,P" length=171 splice_form="e513"
+>CBA10119.1 gene="I"  product="I protein"  organism="Mumps virus"  rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ db="mmp_db" gene_variation=1 shared_cds="V,P" length=171 splice_form="e513" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MDQFIKQDETGDLIETGMNVANHFLSAPIQGTNSLSKASIIPGVAPVLIGNPEQKNIQHP
 TASHQGSKSKGRGSGVRSIIVPPSEAGNGGTQIPEPLFAQTGQGGIVTTVYQDPTIQPTG
 SYRSVELAKIGKERMINRFVEKPRTSTPVTEFKRGGGRERLLKARQSKRRA
->AEY76114.1 gene="I"  product="I protein"  organism="Mumps virus" rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ db="mmp_db" gene_variation=1 shared_cds="V,P" length=171 splice_form="e513"
+>AEY76114.1 gene="I"  product="I protein"  organism="Mumps virus" rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ db="mmp_db" gene_variation=1 shared_cds="V,P" length=171 splice_form="e513" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MDQFIKQDETGDLIETGMNVANHFLSAPIQGTNLLSKATIIPGVAPVLIGNPEQKNIQYP
 TASHQGSKSKGRSSGAKPIIVSSSEVGTGGTQIPEPLFAQTGQGGTVTTVYQDPTIQPTG
 SYRSVELAKIGKERMINRFVEKPRTSTPVTEFKRGGGRERLLKARQSKRRA
->YP_001331030.1 organism="Porcine rubulavirus" length=174 gene="I" product="I protein" rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ shared_cds="P,V" db="mmp_db" splice_form="e522"
+>YP_001331030.1 organism="Porcine rubulavirus" length=174 gene="I" product="I protein" rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ shared_cds="P,V" db="mmp_db" splice_form="e522" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MASSSLSFSDGEITELLETGLGTIESIERMVAAKGGPDGGIDPESQPGQRGLPTPTPRTT
 STPTAAGSASATLELSPEGGAIKKAPRAHPTLPNPLGQEERPGNPLSTFTPVRGSSSTHD
 PLPGSRPGSEVYEGDLMARARSELVTRWSDEEGDPVPTRVLQSTFKRGGRPERS
->ABL84844.1 organism="Mapuera virus" length=201 gene="I" product="I protein" rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ shared_cds="P,V" db="mmp_db" splice_form="e603"
+>ABL84844.1 organism="Mapuera virus" length=201 gene="I" product="I protein" rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ shared_cds="P,V" db="mmp_db" splice_form="e603" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MDLTFSPSEIDDLFGTGLDTIQFITDQKSKQNDAHGSAKDSPPQTQNGPDSGPSDPTQVQ
 GAKPKSHGIYPPIPTAPPVPTARHPGSRVDDPVLYDYPRRGKVTTHEPKESSQADGYEYD
 SYLAQNAKTNILKRWTDVSGDVEPIPMNPEVFKRGGRPHQAHKSQSRSSPRMEHWVGWVN
 SQGLGVVQPHLLSNYSNIPIL
->19525721-I gene="I" product="I protein" db="mmp_db" rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ shared_cds="P,V" splice_form="e498"
+>19525721-I gene="I" product="I protein" db="mmp_db" rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ shared_cds="P,V" splice_form="e498" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MAEEPTYTTEQVDELIHAGLGTVDFFLSRPIDAQSSLGKGSIPPGVTAVLTSAAETKSKP
 VAAGPVKPRRKKVISNTTPYTIADNIPPEKLPINTPIPNPLLPLARPHGKMTDIDIVTGN
 ITEGSYKGVELAKLGKQTLLTRFTSNEPVSSAGSAQDPNFKRGGGS
->55775697-I gene="I" product="I protein" db="mmp_db" rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ shared_cds="P,V" splice_form="e516"
+>55775697-I gene="I" product="I protein" db="mmp_db" rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ shared_cds="P,V" splice_form="e516" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MDPTDLSFSPDEINKLIETGLNTVEYFTSQQVTGTSSLGKNTIPPGVTGLLTNAAEAKIQ
 ESTNHQKGSVGGGAKPKKPRPKIAIVPADDKTVPGKPIPNPLLGLDSTPSTQTVLDLSGK
 TLPSGSYKGVKLAKFGKENLMTRFIEEPRENPIATSSPIDFKRGGQGYRRVP
->YP_001249273.1 organism="Mapuera virus" length=201 gene="I" product="I protein" rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ shared_cds="P,V" db="mmp_db" splice_form="e603"
+>YP_001249273.1 organism="Mapuera virus" length=201 gene="I" product="I protein" rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ shared_cds="P,V" db="mmp_db" splice_form="e603" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MDLTFSPSEIDDLFGTGLDTIQFITDQKSKQNDAHGSAKDSPPQTQNGPDSGPSDPTQVQ
 GAKPKSHGIYPPIPTAPPVPTARHPGSRVDDPVLYDYPRRGKVTTHEPKESSQADGYEYD
 SYLAQNAKTNILKRWTDVSGDVEPIPMNPEVFKRGGRPHQAHKSQSRSSPRMEHWVGWVN
 SQGLGVVQPHLLSNYSNIPIL
->378406359-I gene="I" product="I protein" db="mmp_db" rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ shared_cds="P,V" splice_form="e468"
+>378406359-I gene="I" product="I protein" db="mmp_db" rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ shared_cds="P,V" splice_form="e468" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MSFEISVEEIDELIETGNLNIDYALKELGATNQLPPNKPPSQISKTEENNDETRISKNSA
 SAEAPAHASSPLRSHNEESELGKQSSDGFSMISNRPQTGMLLMGSDTQSPSPSKTYQGLI
 LDAKKRALNEPRRNQKTTNEHGNTNDTWIFKRGGGI
->298388487-I gene="I" product="I protein" db="mmp_db" rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ shared_cds="P,V" splice_form="e543"
+>298388487-I gene="I" product="I protein" db="mmp_db" rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ shared_cds="P,V" splice_form="e543" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MDPSPSDEEISAWIDKGMDTVQHFISQPVNPQSSLGKNTIKSGNTKILIKSAEKKSKATK
 DNVTQESAPTPPPRDYQSEKKEVVRPKIRKTQGERPRPLPPIPQQEESIYEEVSREVVEE
 DQPLLQQQQAHVLKGKQKILSTSPVNQEPDLPTGPGGQGFKRGGVSVSYLNNRTRPLTTK
 A
->298388479-I gene="I" product="I protein" db="mmp_db" rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ shared_cds="P,V" splice_form="e546"
+>298388479-I gene="I" product="I protein" db="mmp_db" rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ shared_cds="P,V" splice_form="e546" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MEISPSDEEINIWMDKALDTVDHFTSIPVNPQSSLGKNTIKAGNTKSIIKSAERKARAVP
 DHANAAPNATVEPATDRPYQTVQPVTKPKQPRKARALPCPSSAPPVPPRVSEPQEEPYEE
 LGAPAQEDTPLLKQAVPQSPSSGKLKSSQLPPLDNSNDSSNPSLSDQNIFKRGGHIQECR
 TE
->298388495-I gene="I" product="I protein" db="mmp_db" rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ shared_cds="P,V" splice_form="e555"
+>298388495-I gene="I" product="I protein" db="mmp_db" rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ shared_cds="P,V" splice_form="e555" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MEPTPSDAEISAWIEKGLATAKHFAPNPVSSQSSLGKSTIKKGNTKVLVSSAEQIASSQP
 AASHTVKVQAQVHPQQPTASQPCTGARPKTKRTATPAPTPSVQQAVKIEPVYEDIVSNPT
 HQAENAPLIATQSSAKQSLLCTEPLPSQPSSATRCGEQSFKRGGAIFFLFHREEIQQSPR
@@ -1325,7 +1325,7 @@ YFQYGVETAMKHQGTVDPKLALELGITDEDRVDIMQSVEKHISGKAGDDISQPAGAFAMS
 LNRSAFINNNTSQDFSGARLSNYEQGWSGTNQDETRDAYPESTMHRLPNIESTDSDHNEL
 LMPELESDSNPFNRPRFTVRAPLIPEISHQNPNTRMSRNINTRDNTRTDHQDTNEDRGSN
 IPDDILGDLDN
->BAJ11749.1 organism="Human parainfluenza virus 4b" length=399 gene="P" product="phosphoprotein" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" db="mmp_db" splice_form="e1197"
+>BAJ11749.1 organism="Human parainfluenza virus 4b" length=399 gene="P" product="phosphoprotein" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" db="mmp_db" splice_form="e1197" V4_rna_editing="0/GG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/two non-templated G's inserted during transcription"
 MSFEISVEEIDELIETGNLNIDYALKELGATSQPPPNRPLSQISKTEENNDETRTSKNSA
 SAEAPAHASSPLRSHNEESEPGKQSSDGFSMISNRPQTGMLLMGSDTQSPSPSKTYQGLI
 LDAKKRALNEPRRNQKTTNEHGNTNDTWIFKRGGNIATKKEAWVTQNQRSKIQSSFQDIE
@@ -1333,7 +1333,7 @@ ESTRFHGSMEEPQYQSGAIHVAHQSNQLPPSKNVHVEDVPKFANYALEILDAIKALEVRL
 DRIEGKVDKIMLTQNTIQQTKNDTQQIKGSLATIEGLITTMKIMDPGVPSKVSLRSLNKG
 PEQVPIIVTGTGDVSKFVDQDNTITLDPLARPILSGTKQITDERRAGVRIDALKITVSEM
 IRDLFGDCDKSRKLLESINMATTEQDINSIKTNALRSIT
->NP_054708.1      gene="P"  product="phosphoprotein"  organism="Mumps virus"  rna_editing=2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/ db="mmp_db" length=391 gene_variation=1 shared_cds="V,I" splice_form="e1173"
+>NP_054708.1      gene="P"  product="phosphoprotein"  organism="Mumps virus"  rna_editing=2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/ db="mmp_db" length=391 gene_variation=1 shared_cds="V,I" splice_form="e1173" V4_rna_editing="0/GG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/two non-templated G's inserted during transcription"
 MDQFIKQDETGDLIETGMNVANHFLSAPIQGTNSLSKATIIPGVAPVLIGNPEQKNIQYP
 TTSHQGSKSKGRGSGARPIIVSSSEGGTGGTQVPEPLFAQTGQGGIVTTVYQDPTIQPTG
 SYRSVELAKIGKERMINRFVEKPRTSTPVTEFKRGGPGAAAQGQTIQEEGIDGNGASAGS
@@ -1341,7 +1341,7 @@ KERSGSLSGATPYAHLSLPQQDSTPANVGIAPQSAISANEIMDLLRGMDARLQHLEQKVD
 KVLAQGSMVTQIKNELSTVKTTLATIEGMMATVKIMDPGNPTGVPVDELRRSFSDHVTIV
 SGPGDVSFSSGEEPTLYLDELARPVPKPRPAKQPKPQPVKDLAGRKVMITKMITDCVANP
 QMKQVFEQRLAKASTEDALNDIKRDIIRSAI
->YP_138512.1 organism="Parainfluenza virus 5" length=392  gene="P" product="phosphoprotein" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" db="mmp_db" splice_form="e1176"
+>YP_138512.1 organism="Parainfluenza virus 5" length=392  gene="P" product="phosphoprotein" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" db="mmp_db" splice_form="e1176" V4_rna_editing="0/GG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/two non-templated G's inserted during transcription"
 MDPTDLSFSPDEINKLIETGLNTVEYFTSQQVTGTSSLGKNTIPPGVTGLLTNAAEAKIQ
 ESTNHQKGSVGGGAKPKKPRPKIAIVPADDKTVPGKPIPNPLLGLDSTPSTQTVLDLSGK
 TLPSGSYKGVKLAKFGKENLMTRFIEEPRENPIATSSPIDFKRGAGIPAGSIEGSTQSDG
@@ -1349,7 +1349,7 @@ WEMKSRSLSGAIHPVLQSPLQQGDLNALVTSVQSLALNVNEILNTVRNLDSRMNQLETKV
 DRILSSQSLIQTIKNDIVGLKAGMATLEGMITTVKIMDPGVPSNVTVEDVRKTLSNHAVV
 VPESFNDSFLTQSEDVISLDELARPTATSVKKIVRKVPPQKDLTGLKITLEQLAKDCISK
 PKMREEYLLKINQASSEAQLIDLKKAIIRSAI
->ACF59813.1 organism="Human parainfluenza virus 4b" length=399 gene="P" product="phosphoprotein" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" db="mmp_db" splice_form="e1197"
+>ACF59813.1 organism="Human parainfluenza virus 4b" length=399 gene="P" product="phosphoprotein" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" db="mmp_db" splice_form="e1197" V4_rna_editing="0/GG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/two non-templated G's inserted during transcription"
 MSFEISVEEIDDLIETGNLNIDYALKELGATNQLPPNKPPSQISKTEENNNETRISKNSA
 SGEAPAHTPSPLRSHNEENELGKQSSDGFSMISNRPQTGTLLMGSDTQSPSPSKTYQGLI
 LDAKKRALNEPRRNQKTTNEHGNTNDTRIFKRGGNIATKKEAWVTQDQRSKIQSSFQDIE
@@ -1357,7 +1357,7 @@ GSTRFHGSTEELQYQSGAIHVAHQSNQLPLSKNVHVEDVPKFANCALEILDAIKALEVRL
 DRIEGKVDKIMLTQNTVQQTKNDTQQIKGSLATIEGLITTMKIMDPGVPSKVSLRSLNKG
 PEQAPVIVTGTGDVSKFVDQDNTITLDPLARPILSGTKQITDERRAGVRIDALKITVSEM
 IRDLFGDCDKSRKLLESINMATTEQEINLIKTNALRSIT
->ADI80724.1 organism="Tuhoko virus 3" length=401 gene="P" product="phosphoprotein" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" db="mmp_db" splice_form="e1203"
+>ADI80724.1 organism="Tuhoko virus 3" length=401 gene="P" product="phosphoprotein" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" db="mmp_db" splice_form="e1203" V4_rna_editing="0/GG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/two non-templated G's inserted during transcription"
 MEPTPSDAEISAWIEKGLATAKHFAPNPVSSQSSLGKSTIKKGNTKVLVSSAEQIASSQP
 AASHTVKVQAQVHPQQPTASQPCTGARPKTKRTATPAPTPSVQQAVKIEPVYEDIVSNPT
 HQAENAPLIATQSSAKQSLLCTEPLPSQPSSATRCGEQSFKRGGDFLPVPPGRDPTVTQD
@@ -1365,7 +1365,7 @@ TDENLILFGAQENLRSENGATQPAPQSLQSPEDISAVVGNALESANSVREIIRYLKVMEA
 KMTQIEWKVDKVLAQNSLIQQVRNEQLVLKASMATIEGLMTTIKIMDPGVGPGATAAQAK
 RLFKEAPVVVSGPIVGDNDLIFEDKIEISSLGKPQKVAPQPKKRLVTSEADIAGYKLTLT
 KLLKECIPNANQHKKFEDLIASVKNESDFKAAKREIVRAAI
->BAJ11742.1 organism="Human parainfluenza virus 4a" length=399 gene="P" product="phosphoprotein" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" db="mmp_db" splice_form="e1197"
+>BAJ11742.1 organism="Human parainfluenza virus 4a" length=399 gene="P" product="phosphoprotein" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" db="mmp_db" splice_form="e1197" V4_rna_editing="0/GG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/two non-templated G's inserted during transcription"
 MSFEISVEEIEELIETGNLNIDHALKELGATSQSSLNKPPSQSSRTEGNDGGTKISRNPA
 PVEAPAHTSTAQRSHNEENESGRQNLDSLSMISNKPQTGTLLMGSDTQLPSPSKTYQGLI
 LDAKKRALNEPRRDQKITNEHGSMNDTRIFKRGGNIDTRKEAWVTQNQRSRTQPPLQDIE
@@ -1373,7 +1373,7 @@ ESTRFHGLTEEPQYPSGAIHAAHQSNQLPLSKNAHVEDVPKFANYASEILDAIKALEVRL
 DRIEGKVDKIMLTQNTIQQTKNDTQQIKGSLATIEGLITTMKIMDPGVPSKVSLRSLNKE
 SEQVPIIVTGNGDVSKFVDQDNTITLDSLARPILSGTKQKTDERRAGVRIDALKITVSEM
 IRDLFGDCDKSKKLLESINMATTEQDINLIKTNALRSIT
->AFB82773.1 organism="Human parainfluenza virus 4b" length=399  gene="P" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" product="phosphoprotein" db="mmp_db" splice_form="e1197"
+>AFB82773.1 organism="Human parainfluenza virus 4b" length=399  gene="P" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" product="phosphoprotein" db="mmp_db" splice_form="e1197" V4_rna_editing="0/GG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/two non-templated G's inserted during transcription"
 MSFEISVEEIDELIETGNLNIDYALKELGATNQLPPNKPPSQISKTEENNDETRISKNSA
 SAEAPAHASSPLRSHNEESELGKQSSDGFSMISNRPQTGMLLMGSDTQSPSPSKTYQGLI
 LDAKKRALNEPRRNQKTTNEHGNTNDTWIFKRGGNIATKKEAWVTQNQRSKIQSSFQDIE
@@ -1381,7 +1381,7 @@ ESTRFHGSMEEPQYQSGAIHVAHQSNQLPPSKNVHVEDVPKFANYALEILDAIKALEVRL
 DRIEGKVDKIMLTQNTIQQTKNDTQQIKGSLATIEGLITTMKIMDPGVPSKVSLRSLNKG
 PEQAPIIVTGTGDVSKFVDQDNTITLDPLARPILSGTKQITDERRAGVRIDALKITVSEM
 IRDLFGDCDKSRKLLESINMATTEQDINSIKTNALRSIT
->DAA06045.1 organism="Porcine rubulavirus" length=404 gene="P" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" product="phosphoprotein" db="mmp_db" splice_form="e1212"
+>DAA06045.1 organism="Porcine rubulavirus" length=404 gene="P" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" product="phosphoprotein" db="mmp_db" splice_form="e1212" V4_rna_editing="0/GG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/two non-templated G's inserted during transcription"
 MASSSLSFSDGEITELLETGLGTIESIERMVAAKGGPDGGIDPESQPGQRGLPTPTPRTT
 STPTAAGSASATLELSPEGGAIKKAPRAHPTLPNPLGQEERPGNPLSTFTPVRGSSSTHD
 PLPGSRPGSEVYEGDLMARARSELVTRWSDEEGDPVPTRVLQSTFKRGGPTGKELIPANQ
@@ -1389,7 +1389,7 @@ ATVENIASGGSVGPSGSSNGATQHVPQYPWNQDTTNAPVAPAPQSALNVPEIMELLKAIE
 GRMMALEMKVDRVLAQGSVLTQIKNEVTTLKATTATIEGLITTVRIMDPGVPSNMTAQIA
 RNQIAEVPLIVTGPGPVPQYKRDTDLIVLDELARPSIAPLPAAQTQKPAPAKQATDGARL
 MVSRMISSCVTNDSARKRFEARLGSCTTMDQIQALKNDVIRYAS
->YP_001249271.1 organism="Mapuera virus" length=391 gene="P" product="phosphoprotein" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" db="mmp_db" splice_form="e1173"
+>YP_001249271.1 organism="Mapuera virus" length=391 gene="P" product="phosphoprotein" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" db="mmp_db" splice_form="e1173" V4_rna_editing="0/GG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/two non-templated G's inserted during transcription"
 MDLTFSPSEIDDLFGTGLDTIQFITDQKSKQNDAHGSAKDSPPQTQNGPDSGPSDPTQVQ
 GAKPKSHGIYPPIPTAPPVPTARHPGSRVDDPVLYDYPRRGKVTTHEPKESSQADGYEYD
 SYLAQNAKTNILKRWTDVSGDVEPIPMNPEVFKRGGQTSPSPQIPIQVIAENGALGGLGQ
@@ -1397,7 +1397,7 @@ QSRSWSGATPPALQLQQHPDTMNVSVESALRSAPDVSEIMDMLRRLDARIGSVEAKMDRI
 LAVGATVNQIKNEVSSLKSITATIEGMITTVRIMDPGTPSHMSATEVRRQLSDVPLVISG
 PGPVPQLDPRRDLIALDELARPKVVQSPPVASPAPSMASQLSDGTRIMILQMIKECVSDP
 LEQSRFETKLSSCTTEDQGKAIKMEILRRAT
->ADI80710.1 organism="Tuhoko virus 1" length=409 gene="P" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" product="phosphoprotein" db="mmp_db" splice_form="e1227"
+>ADI80710.1 organism="Tuhoko virus 1" length=409 gene="P" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" product="phosphoprotein" db="mmp_db" splice_form="e1227" V4_rna_editing="0/GG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/two non-templated G's inserted during transcription"
 MEISPSDEEINIWMDKALDTVDHFTSIPVNPQSSLGKNTIKAGNTKSIIKSAERKARAVP
 DHANAAPNATVEPATDRPYQTVQPVTKPKQPRKARALPCPSSAPPVPPRVSEPQEEPYEE
 LGAPAQEDTPLLKQAVPQSPSSGKLKSSQLPPLDNSNDSSNPSLSDQNIFKRGAYPRVPD
@@ -1405,7 +1405,7 @@ GMNKKLHVTGESSTLSGVGAVQSSLSGATQSAPPSLPIQDDNPVGAGDAQVFANSVKEIT
 TILQGMEARMSQIEWKVDKLLAQQSTITQIRNEQVALKAQMATIEGLLATVKIMDPGAVS
 STTANQAKKYFTESCVVVSGPPTGDLELTKAKELFIGDLGTPTPNPPPQPQPAQSDSREL
 AGYKMTLNMLAKDCIPNSQQRQPFLKKIETIKSEQDFKKLKREIIRAAV
->YP_001331028.1 organism="Porcine rubulavirus" length=404 gene="P" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" product="phosphoprotein"  db="mmp_db" splice_form="e1212"
+>YP_001331028.1 organism="Porcine rubulavirus" length=404 gene="P" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" product="phosphoprotein"  db="mmp_db" splice_form="e1212" V4_rna_editing="0/GG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/two non-templated G's inserted during transcription"
 MASSSLSFSDGEITELLETGLGTIESIERMVAAKGGPDGGIDPESQPGQRGLPTPTPRTT
 STPTAAGSASATLELSPEGGAIKKAPRAHPTLPNPLGQEERPGNPLSTFTPVRGSSSTHD
 PLPGSRPGSEVYEGDLMARARSELVTRWSDEEGDPVPTRVLQSTFKRGGPTGKELIPANQ
@@ -1413,7 +1413,7 @@ ATVENIASGGSVGPSGSSNGATQHVPQYPWNQDTTNAPVAPAPQSALNVPEIMELLKAIE
 GRMMALEMKVDRVLAQGSVLTQIKNEVTTLKATTATIEGLITTVRIMDPGVPSNMTAQIA
 RNQIAEVPLIVTGPGPVPQYKRDTDLIVLDELARPSIAPLPAAQTQKPAPAKQATDGARL
 MVSRMISSCVTNDSARKRFEARLGSCTTMDQIQALKNDVIRYAS
->ADI80717.1 organism="Tuhoko virus 2" length=401 gene="P" product="phosphoprotein" gene="P" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" db="mmp_db" splice_form="e1203"
+>ADI80717.1 organism="Tuhoko virus 2" length=401 gene="P" product="phosphoprotein" gene="P" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" db="mmp_db" splice_form="e1203" V4_rna_editing="0/GG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/two non-templated G's inserted during transcription"
 MDPSPSDEEISAWIDKGMDTVQHFISQPVNPQSSLGKNTIKSGNTKILIKSAEKKSKATK
 DNVTQESAPTPPPRDYQSEKKEVVRPKIRKTQGERPRPLPPIPQQEESIYEEVSREVVEE
 DQPLLQQQQAHVLKGKQKILSTSPVNQEPDLPTGPGGQGFKRGGLGLISQQQDSSTYDQG
@@ -1421,7 +1421,7 @@ IDESLTSDGMATNLVLESGATLAVPLSDQLQCDIPALVENALQSAPCVKEILRYLRVLEN
 RFNQMESKIDKIISHQNILTQIRNEQLGLKASMAMLEGMITSIKIMDPGVGPGATAAQAK
 KLFKEVPVVISGNSVGATELTEAAELEIQDLGRPVIPQQTPKKRAVVGDSDLASYKLTLK
 NLAKDCIPNAHIQAEFDKKISSIRSENDFKKIKREILRAAT
->ABL84843.1 organism="Mapuera virus" length=391 gene="P" product="phosphoprotein" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" db="mmp_db" splice_form="e1173"
+>ABL84843.1 organism="Mapuera virus" length=391 gene="P" product="phosphoprotein" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" db="mmp_db" splice_form="e1173" V4_rna_editing="0/GG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/two non-templated G's inserted during transcription"
 MDLTFSPSEIDDLFGTGLDTIQFITDQKSKQNDAHGSAKDSPPQTQNGPDSGPSDPTQVQ
 GAKPKSHGIYPPIPTAPPVPTARHPGSRVDDPVLYDYPRRGKVTTHEPKESSQADGYEYD
 SYLAQNAKTNILKRWTDVSGDVEPIPMNPEVFKRGGQTSPSPQIPIQVIAENGALGGLGQ
@@ -1429,7 +1429,7 @@ QSRSWSGATPPALQLQQHPDTMNVSVESALRSAPDVSEIMDMLRRLDARIGSVEAKMDRI
 LAVGATVNQIKNEVSSLKSITATIEGMITTVRIMDPGTPSHMSATEVRRQLSDVPLVISG
 PGPVPQLDPRRDLIALDELARPKVVQSPPVASPAPSMASQLSDGTRIMILQMIKECVSDP
 LEQSRFETKLSSCTTEDQGKAIKMEILRRAT
->YP_138505.1 organism="Simian virus 41" length=395 gene="P" product="phosphoprotein" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" db="mmp_db" splice_form="e1185"
+>YP_138505.1 organism="Simian virus 41" length=395 gene="P" product="phosphoprotein" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" db="mmp_db" splice_form="e1185" V4_rna_editing="0/GG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/two non-templated G's inserted during transcription"
 MAEEPTYTAEQVNDVVHAGLGTVDFFLSRPVDGQSSLGKGSVPPGITAVLTNAAELKAKT
 AAAAPVKPKRKKIQHMTPAYTIADNGDPNRLPANTPIANPLIPIERPPGRMTDLDLATGT
 VTQGTYKGVELAKAGKNALLTRFSSGPSLTDQASSKDPNFKRGGEKLTDATKADIGGSGA
@@ -1437,7 +1437,7 @@ SPGSETKLRFMSGAIQHVPQLLPLTASSPVLVEPAPIGAENVKEIIEILRGLDLRMQSLE
 GKVDKILATSATITALKNEVTSLKANVATVEGMMTTMKIMDPSTPTNVPVEKIRKNLKDT
 PVIISGPLSESHITEGSDMIVLDELARPSLSSTKKIVRRPEPKKDLTGMKLMLIQLANDC
 MGKPDQKAEIVAKIHAATREAQLLDIKRSIIKSAI
->NP_599019.1 organism="Human parainfluenza virus 2" length=395  gene="P" product="phosphoprotein" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" db="mmp_db" splice_form="e1185"
+>NP_599019.1 organism="Human parainfluenza virus 2" length=395  gene="P" product="phosphoprotein" rna_editing="2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/" shared_cds="V,I" db="mmp_db" splice_form="e1185" V4_rna_editing="0/GG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/two non-templated G's inserted during transcription"
 MAEEPTYTTEQVDELIHAGLGTVDFFLSRPIDAQSSLGKGSIPPGVTAVLTSAAETKSKP
 VAAGPVKPRRKKVISNTTPYTIADNIPPEKLPINTPIPNPLLPLARPHGKMTDIDIVTGN
 ITEGSYKGVELAKLGKQTLLTRFTSNEPVSSAGSAQDPNFKRGGELIEKEQEATIGENGV

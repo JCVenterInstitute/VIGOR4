@@ -19,11 +19,11 @@ ALRSYFPSYFSNRRVQSVFLVCAWNQILVTNCELVVPSNNQTLMGAEGRVLLINNRLFYY
 QRSTSWWPYELLYEISFTFTNSGLSSVNMSWIPIYSFTRPGSGNCSGENVCPTACVSGVY
 LDPWPLTPYSHQSGINRNFYFTGALLNSSTTRVNPTLYVSALNNLKVLAPYGTQGLFASY
 TTTTCFQDTGDANVYCVYIMELASNIVGEFQILPVLTRLTIT
->AEY76114.1 gene="I"  product="I protein"  organism="Mumps virus"  rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ db="mumps_db" gene_variation=1 shared_cds="V,P" splice_form="e513"
+>AEY76114.1 gene="I"  product="I protein"  organism="Mumps virus"  rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ db="mumps_db" gene_variation=1 shared_cds="V,P" splice_form="e513" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MDQFIKQDETGDLIETGMNVANHFLSAPIQGTNLLSKATIIPGVAPVLIGNPEQKNIQYP
 TASHQGSKSKGRSSGAKPIIVSSSEVGTGGTQIPEPLFAQTGQGGTVTTVYQDPTIQPTG
 SYRSVELAKIGKERMINRFVEKPRTSTPVTEFKRGGGRERLLKARQSKRRA
->CBA10119.1 gene="I"  product="I protein"  organism="Mumps virus"  rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ db="mumps_db" gene_variation=1 shared_cds="V,P" splice_form="e513"
+>CBA10119.1 gene="I"  product="I protein"  organism="Mumps virus"  rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ db="mumps_db" gene_variation=1 shared_cds="V,P" splice_form="e513" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
 MDQFIKQDETGDLIETGMNVANHFLSAPIQGTNSLSKASIIPGVAPVLIGNPEQKNIQHP
 TASHQGSKSKGRGSGVRSIIVPPSEAGNGGTQIPEPLFAQTGQGGIVTTVYQDPTIQPTG
 SYRSVELAKIGKERMINRFVEKPRTSTPVTEFKRGGGRERLLKARQSKRRA
@@ -96,7 +96,7 @@ YFQIGVETARRQQGTVDNRVADDLGLTPEQRNEVTQLVDRLARGRGAGIPGGPVNPFVPP
 VQQQQPAAVYADIPALEESDDDGDEDGGAGFQNGVQVPAVRQGGQTDFRAQPLQDPIQAQ
 LFMPLYPQVSNIPNNRIIRSIASGGWKTKIYYDTTRMVILNKMQGANTETLSQTIPIKTH
 SCKWATGMSKSLT
->NP_054708.1      gene="P"  product="phosphoprotein"  organism="Mumps virus"  rna_editing=2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/ db="mumps_db" length=391 gene_variation=1 shared_cds="V,I" splice_form="e1173"
+>NP_054708.1      gene="P"  product="phosphoprotein"  organism="Mumps virus"  rna_editing=2/([NA][NA][NG][NA]GGG)/$1GG/two non-templated G's inserted during transcription/ db="mumps_db" length=391 gene_variation=1 shared_cds="V,I" splice_form="e1173" V4_rna_editing="0/GG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/two non-templated G's inserted during transcription"
 MDQFIKQDETGDLIETGMNVANHFLSAPIQGTNSLSKATIIPGVAPVLIGNPEQKNIQYP
 TTSHQGSKSKGRGSGARPIIVSSSEGGTGGTQVPEPLFAQTGQGGIVTTVYQDPTIQPTG
 SYRSVELAKIGKERMINRFVEKPRTSTPVTEFKRGGPGAAAQGQTIQEEGIDGNGASAGS

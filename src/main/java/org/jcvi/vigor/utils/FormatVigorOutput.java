@@ -4,7 +4,12 @@ import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.jcvi.jillion.core.Range;
@@ -38,13 +43,51 @@ public class FormatVigorOutput {
 		}
 	}
 
+	public static void printModelsWithAllFeatures(List<Model> models) throws FileNotFoundException{
+	    String genomeID = models.get(0).getAlignment().getVirusGenome().getId();
+	    PrintStream o = new PrintStream(new File(VigorUtils.getVigorWorkSpace()+"/Unit_Test_Output/"+File.separator+genomeID));
+	    PrintStream console = System.out;
+	    System.setOut(o);
+        System.out.println("Genomic Sequence: "+genomeID+"  Genomic Sequence Length: "+ models.get(0).getAlignment().getVirusGenome().getSequence().getLength());
+	    System.out
+				.println(String.format("%-32s%-20s%-20s%-20s%-20s%-20s%-32s%-20s%-20s%-20s", "Gene_Symbol","ProteinLength", "Direction","spliceform", "NTSeqRange", "AASeqRange", "Scores","partial5'","partial3'","isPseudogene"));
+		for (Model model : models) {
+			List<Exon> exons = model.getExons();
+			System.out.print(String.format("%-32s", model.getGeneSymbol()));
+			System.out.print(String.format("%-20s",model.getAlignment().getViralProtein().getSequence().getLength()));
+			System.out.print(String.format("%-20s", model.getDirection()));
+			System.out.print(String.format("%-20s",model.getAlignment().getViralProtein().getGeneAttributes().getSplicing().getSpliceform()));
+			List<Range> NTranges =exons.stream().map(e -> e.getRange()).collect(Collectors.toList());
+			List<Range> AAranges = exons.stream().map(e -> e.getAlignmentFragment().getProteinSeqRange())
+					.collect(Collectors.toList());
+			for (int i = 0; i < NTranges.size(); i++) {
+				System.out.print(String.format("%-20s", NTranges.get(i).getBegin() + "-" + NTranges.get(i).getEnd()));
+				System.out.println(String.format("%-20s", AAranges.get(i).getBegin() + "-" + AAranges.get(i).getEnd()));
+				System.out.print(String.format("%-92s", ""));
+			}
+			Map<String,Double> scores = model.getScores();
+			Set<String> keys = scores.keySet();
+            System.out.print(String.format("%-40s",""));
+			for(String key : keys){
+			     System.out.println(String.format("%-32s",key+":"+scores.get(key)));
+			     System.out.print(String.format("%-132s",""));
+			}
+			System.out.print(String.format("%-32s",""));
+            System.out.print(String.format("%-20s",model.isPartial5p()));
+            System.out.print(String.format("%-20s",model.isPartial3p()));
+            System.out.print(String.format("%-20s",model.isPseudogene()));
+			System.out.println("");
+
+		}
+	}
+
 	public static void printModels2(List<Model> models) {
 		for (Model model : models) {
 
 			System.out.print(String.format("%-32s", model.getGeneSymbol()));
 			System.out.print(String.format("%-20s", model.getDirection()));
 			List<Range> NTranges = model.getExons().stream().map(e -> e.getRange()).collect(Collectors.toList());
-			List<Range> AAranges = model.getExons().stream().map(e -> e.getAlignmentFragment().getProteinSeqRange())
+						List<Range> AAranges = model.getExons().stream().map(e -> e.getAlignmentFragment().getProteinSeqRange())
 					.collect(Collectors.toList());
 			for (int i = 0; i < NTranges.size(); i++) {
 				System.out.print(String.format("%-20s", NTranges.get(i).getBegin() + "-" + NTranges.get(i).getEnd()));
