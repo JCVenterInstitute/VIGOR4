@@ -12,6 +12,8 @@ import org.jcvi.jillion.core.residue.aa.ProteinSequence;
 import org.jcvi.jillion.fasta.aa.ProteinFastaFileDataStore;
 ;
 import org.jcvi.jillion.fasta.aa.ProteinFastaRecord;
+import org.jcvi.vigor.component.Alignment;
+import org.jcvi.vigor.component.MaturePeptide;
 import org.jcvi.vigor.component.ViralProtein;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -99,19 +101,16 @@ public class PeptideService implements PeptideMatchingService {
         }
     }
 
-    static final Comparator<PeptideMatch> byQueryAlignment = new Comparator<PeptideMatch>() {
-        @Override
-        public int compare(PeptideMatch a, PeptideMatch b) {
-            DirectedRange aDirectedRange = a.alignment.getSubjectRange();
-            DirectedRange bDirectedRange = b.alignment.getSubjectRange();
+    static final Comparator<PeptideMatch> byQueryAlignment = (a,b) -> {
+        DirectedRange aDirectedRange = a.alignment.getSubjectRange();
+        DirectedRange bDirectedRange = b.alignment.getSubjectRange();
 
-            int result = aDirectedRange.getDirection().compareTo(bDirectedRange.getDirection());
-            if (result == 0) {
-                result = Range.Comparators.ARRIVAL.compare(aDirectedRange.getRange(),
-                        bDirectedRange.getRange());
-            }
-            return result;
+        int result = aDirectedRange.getDirection().compareTo(bDirectedRange.getDirection());
+        if (result == 0) {
+            result = Range.Comparators.ARRIVAL.compare(aDirectedRange.getRange(),
+                    bDirectedRange.getRange());
         }
+        return result;
     };
 
     @Autowired
@@ -119,11 +118,11 @@ public class PeptideService implements PeptideMatchingService {
 
     }
 
-    public List<ProteinSequence> findPeptides(ViralProtein protein, File peptideDatabase) throws ServiceException {
+    public List<MaturePeptide> findPeptides(ViralProtein protein, File peptideDatabase) throws ServiceException {
         return findPeptides(protein, peptideDatabase, Scores.of(0.25d, .40d, .50d));
     }
 
-    public List<ProteinSequence> findPeptides(ViralProtein protein, File peptideDatabase, Scores minscores) throws ServiceException {
+    public List<MaturePeptide> findPeptides(ViralProtein protein, File peptideDatabase, Scores minscores) throws ServiceException {
         // outline from VIGOR3. Leading - means not implementing in Vigor4
         // - 1) fill in gaps and truncations from referenceSequence (
         // 2) find alignments (blast or jillion)
@@ -192,7 +191,7 @@ public class PeptideService implements PeptideMatchingService {
             ));
 
 
-            List<ProteinSequence> peptides = new ArrayList<>(alignmentsByRange.size());
+            List<MaturePeptide> peptides = new ArrayList<>(alignmentsByRange.size());
             // TODO don't just use score.
             PeptideMatch match;
             for (
@@ -208,12 +207,23 @@ public class PeptideService implements PeptideMatchingService {
                         match.alignment.getGappedSubjectAlignment(),
                         match.alignment.getGappedQueryAlignment(),
                         match.peptide.getSequence());
-                peptides.add(match.alignment.getGappedSubjectAlignment());
+                peptides.add(peptideFromMatch(match));
             }
             return peptides;
         } catch (IOException e) {
             throw new ServiceException(String.format("Problem finding peptide matches for sequence %s in database %s", protein, peptideDatabase), e);
         }
+    }
+
+    private MaturePeptide peptideFromMatch(PeptideMatch match) {
+        MaturePeptide peptide = new MaturePeptide();
+        Alignment alignment = new Alignment();
+        alignment.setAlignmentTool_name("Jillion");
+        alignment.setViralProtein(match.protein);
+        // what
+        alignment.setVirusGenome(null);
+        peptide.setAlignment(alignment);
+        return peptide;
     }
 
     private static String getRangeString(PeptideMatch match) {

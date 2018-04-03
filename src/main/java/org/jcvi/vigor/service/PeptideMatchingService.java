@@ -1,6 +1,7 @@
 package org.jcvi.vigor.service;
 
 import org.jcvi.jillion.core.residue.aa.ProteinSequence;
+import org.jcvi.vigor.component.MaturePeptide;
 import org.jcvi.vigor.component.ViralProtein;
 import org.jcvi.vigor.service.exception.ServiceException;
 
@@ -12,5 +13,5 @@ import java.util.List;
  * TODO add filter argument
  */
 public interface PeptideMatchingService {
-    List<ProteinSequence> findPeptides(ViralProtein protein, File peptideDatabase) throws ServiceException;
+    List<MaturePeptide> findPeptides(ViralProtein protein, File peptideDatabase) throws ServiceException;
 }
