@@ -79,9 +79,18 @@ public class PeptideService implements PeptideMatchingService {
         public static PeptideProfile profileFromSequence(ProteinSequence sequence) {
             return new PeptideProfile(getKmerProfile(sequence), sequence.getLength());
         }
-        //TODO using KMers for this is overkill but convenient
+        // Return histogram of Kmers of length 1,2 and 3 to occurrences in the sequence.
         private static Map<String,Long> getKmerProfile(ProteinSequence sequence){
-            return Stream.of(1,2,3).flatMap(i -> sequence.kmers(i)).collect(Collectors.groupingBy(String::valueOf, Collectors.counting()));
+            String sequenceAsString = sequence.toString();
+            int sequenceLength = sequenceAsString.length();
+
+            // If the sequence is not evenly partitionable, we can ignore the extra at the end of the sequence,
+            // because it would have already been counted by a smaller kmer.
+            return Stream.of(1,2,3)
+                  .flatMap(x->Stream.iterate(0, y -> y+x)
+                                    .limit(sequenceLength/x )
+                                    .map(i->sequenceAsString.substring(i,i+x)))
+                  .collect(Collectors.groupingBy(String::valueOf, Collectors.counting()));
         }
 
         public Long get(String kmer) {
@@ -123,38 +132,25 @@ public class PeptideService implements PeptideMatchingService {
     }
 
     public List<MaturePeptide> findPeptides(ViralProtein protein, File peptideDatabase, Scores minscores) throws ServiceException {
-        // outline from VIGOR3. Leading - means not implementing in Vigor4
-        // - 1) fill in gaps and truncations from referenceSequence (
-        // 2) find alignments (blast or jillion)
-        // 3) filter hits based on
-        //     a) overlap
-        //     b) coverage
-        //     c) similarity
-        //     d) identity
-        //     e) other?
-        // 4) weight scores based on edge adjustments made
-        // 5) remove redundant peptides
-        // 6) create tree where nodes are connected if end and start are within a epsilon gap
-        // 7) find best path for each start
-        // 8) remove redundant paths
-        // 9) adjust peptide edges
-        //
 
         // filter
         Predicate<PeptideMatch> filterByScore = match -> {
             ProteinPairwiseSequenceAlignment alignment = match.alignment;
-            LOGGER.debug("alignment for subject {} to query {} %identity {} min %identity {} %similarity {} min %similarity {}",
+            double coverage = computeCoverage(match);
+            double similiarity = computeSimilarity(match);
+            LOGGER.debug("alignment for subject {} to query {} %identity {} min %identity {} %similarity {} min %similarity {} %coverage {}  min %coverage {}",
                     alignment.getGappedSubjectAlignment(),
                     alignment.getGappedQueryAlignment(),
                     alignment.getPercentIdentity(), minscores.minidentity,
-                    computeSimilarity(match), minscores.minsimilarity);
+                    similiarity, minscores.minsimilarity,
+                    coverage, minscores.mincoverage);
 
             return alignment.getPercentIdentity() >= minscores.minidentity &&
-                    computeSimilarity(match) >= minscores.minsimilarity;
+                    similiarity >= minscores.minsimilarity &&
+                    coverage >= minscores.mincoverage;
         };
 
         try (Stream<PeptideMatch> alignments = getAlignments(protein, peptideDatabase);) {
-
 
             List<Range> ranges = new ArrayList<>();
 
@@ -241,12 +237,12 @@ public class PeptideService implements PeptideMatchingService {
 
     private double computeCoverage(PeptideMatch match) {
         return Math.max(
-                match.alignment.getQueryRange().getLength()/match.protein.getSequence().getLength(),
-                match.alignment.getSubjectRange().getLength() / match.peptide.getSequence().getLength()
+                (double) match.alignment.getQueryRange().getLength()/ (double) match.protein.getSequence().getLength(),
+                (double) match.alignment.getSubjectRange().getLength() / (double) match.peptide.getSequence().getLength()
         );
     }
 
-
+    // TODO this will be for scoring proteins when adjusting edges
     private double scorePeptideByProfile(ProteinSequence peptide, PeptideProfile referenceProfile) {
         return scoreProfile(PeptideProfile.profileFromSequence(peptide), referenceProfile);
     }
@@ -279,7 +275,7 @@ public class PeptideService implements PeptideMatchingService {
     Stream<PeptideMatch> getAlignments(ViralProtein protein, File peptideDatabase) throws IOException {
 
         ProteinFastaFileDataStore peptideDataStore = ProteinFastaFileDataStore.fromFile(peptideDatabase);
-
+        // TODO configurable gap penalties and blosum matrix
         return peptideDataStore.records()
                                .map(record -> PeptideMatch.of(record,
                                        protein,
