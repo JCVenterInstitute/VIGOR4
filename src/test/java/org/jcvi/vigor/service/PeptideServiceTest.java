@@ -4,7 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.residue.aa.ProteinSequence;
 import org.jcvi.vigor.AppConfig;
-import org.jcvi.vigor.component.MaturePeptide;
+import org.jcvi.vigor.component.MaturePeptideMatch;
 import org.jcvi.vigor.component.ViralProtein;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.VigorUtils;
@@ -140,15 +140,19 @@ public class PeptideServiceTest {
             protein.setSequence(ProteinSequence.of(testData[1]));
             File peptideDB = Paths.get(VigorUtils.getVirusDatabasePath(), testData[2]).toFile();
 
-            List<MaturePeptide> matches = peptideService.findPeptides(protein, peptideDB);
+            List<MaturePeptideMatch> matches = peptideService.findPeptides(protein, peptideDB);
             LOGGER.debug(() -> String.format("peptides:%s", matches.stream().map(String::valueOf).collect(Collectors.joining("\n> ", "\n> ", ""))));
 
             String[] expected = Arrays.copyOfRange(testData, 3, testData.length);
 
             assertThat(String.format("peptide mismatches for %s", protein.getDefline()), matches.size(), equalTo(expected.length));
-            /**for (String expectedPeptide : expected) {
-                assertThat(matches, hasItem(ProteinSequence.of(expectedPeptide)));
-            }**/
+            List<ProteinSequence> subjectMatches = matches.stream()
+                                                          .map(m -> m.getProtein().getSequence().toBuilder().trim(m.getProteinRange()).build())
+                                                          .collect(Collectors.toList());
+
+            for (String expectedPeptide : expected) {
+                assertThat(subjectMatches, hasItem(ProteinSequence.of(expectedPeptide)));
+            }
         }
     }
 

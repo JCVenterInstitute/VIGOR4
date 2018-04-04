@@ -13,7 +13,7 @@ import org.jcvi.jillion.fasta.aa.ProteinFastaFileDataStore;
 ;
 import org.jcvi.jillion.fasta.aa.ProteinFastaRecord;
 import org.jcvi.vigor.component.Alignment;
-import org.jcvi.vigor.component.MaturePeptide;
+import org.jcvi.vigor.component.MaturePeptideMatch;
 import org.jcvi.vigor.component.ViralProtein;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +30,14 @@ import java.util.stream.Stream;
 @Service
 public class PeptideService implements PeptideMatchingService {
 
-    private static final long PROXIMITY_MIN = 30L;
+    /**
+     * Maximum difference in amino acids length at beginning or end
+     * for a peptide to be considered situated in the same spot on
+     * the protein
+     */
+    private static final long PROXIMITY_MAX = 30L;
+    private static final long MAX_GAP = 15L;
+
     private static Logger LOGGER = LogManager.getLogger(PeptideService.class);
 
     private static class Scores {
@@ -127,11 +134,12 @@ public class PeptideService implements PeptideMatchingService {
 
     }
 
-    public List<MaturePeptide> findPeptides(ViralProtein protein, File peptideDatabase) throws ServiceException {
+    @Override
+    public List<MaturePeptideMatch> findPeptides(ViralProtein protein, File peptideDatabase) throws ServiceException {
         return findPeptides(protein, peptideDatabase, Scores.of(0.25d, .40d, .50d));
     }
 
-    public List<MaturePeptide> findPeptides(ViralProtein protein, File peptideDatabase, Scores minscores) throws ServiceException {
+    public List<MaturePeptideMatch> findPeptides(ViralProtein protein, File peptideDatabase, Scores minscores) throws ServiceException {
 
         // filter
         Predicate<PeptideMatch> filterByScore = match -> {
@@ -161,8 +169,8 @@ public class PeptideService implements PeptideMatchingService {
                 if (ranges.size() != 0) {
                     Range rangeKey = ranges.get(ranges.size() - 1);
 
-                    if (Math.abs(rangeKey.getBegin() - subjectRange.getBegin()) < PROXIMITY_MIN &&
-                            Math.abs(rangeKey.getEnd() - subjectRange.getEnd()) < PROXIMITY_MIN) {
+                    if (Math.abs(rangeKey.getBegin() - subjectRange.getBegin()) < PROXIMITY_MAX &&
+                            Math.abs(rangeKey.getEnd() - subjectRange.getEnd()) < PROXIMITY_MAX) {
                         return rangeKey;
                     }
                 }
@@ -187,23 +195,60 @@ public class PeptideService implements PeptideMatchingService {
             ));
 
 
-            List<MaturePeptide> peptides = new ArrayList<>(alignmentsByRange.size());
-            // TODO don't just use score.
-            PeptideMatch match;
-            for (
-                    List<PeptideMatch> matches : alignmentsByRange.values())
+            // TODO don't just use score, but also %identity %similarity %coverage as well as edges
+            List<PeptideMatch> bestMatches = alignmentsByRange.keySet().stream()
+                                           .sorted(Range.Comparators.ARRIVAL)
+                                           .map((x) -> {
+                                               PeptideMatch match = alignmentsByRange.get(x).stream()
+                                                                                     .max(Comparator.comparing(p -> p.alignment.getScore()))
+                                                                                     .get();
+                                               LOGGER.debug("With score {} %identity {} returning range {}\nS>{}\nQ>{}\nP>{}",
+                                                       match.alignment.getScore(),
+                                                       match.alignment.getPercentIdentity(),
+                                                       getRangeString(match),
+                                                       match.alignment.getGappedSubjectAlignment(),
+                                                       match.alignment.getGappedQueryAlignment(),
+                                                       match.peptide.getSequence());
+                                               return match;
+                                           }).collect(Collectors.toList());
 
-            {
-                match = matches.stream().max(Comparator.comparing(p -> p.alignment.getScore())).get();
+            List<MaturePeptideMatch> peptides = new ArrayList<>(alignmentsByRange.size());
+            MaturePeptideMatch prev = null;
+            MaturePeptideMatch current = null;
+            Range currentRange;
+            Range previousRange = null;
+            for (PeptideMatch currentMatch: bestMatches) {
+                // handle first one
+                if (previousRange == null) {
+                    previousRange = Range.of(Range.CoordinateSystem.RESIDUE_BASED, 0,0);
+                }
 
-                LOGGER.debug("With score {} %identity {} returning range {}\nS>{}\nQ>{}\nP>{}",
-                        match.alignment.getScore(),
-                        match.alignment.getPercentIdentity(),
-                        getRangeString(match),
-                        match.alignment.getGappedSubjectAlignment(),
-                        match.alignment.getGappedQueryAlignment(),
-                        match.peptide.getSequence());
-                peptides.add(peptideFromMatch(match));
+                currentRange = currentMatch.alignment.getSubjectRange().getRange();
+                current = peptideFromMatch(currentMatch);
+
+                if (currentRange.getBegin() - previousRange.getEnd() > MAX_GAP) {
+                    LOGGER.debug("difference between range [{}:{}] and [{}:{}] > max gap {}. Setting fuzzy edges",
+                            previousRange.getBegin(), previousRange.getEnd(),
+                            currentRange.getBegin(), currentRange.getEnd(),
+                            MAX_GAP);
+                    if (prev != null) {
+                        prev.setFuzzyEnd(true);
+                    }
+                    current.setFuzzyBegin(true);
+                } else if (currentRange.getBegin() != previousRange.getEnd() + 1) {
+                    LOGGER.debug("Range [{}:{}] doesn't align to following range [{}:{}]. Adjusting edges",
+                            previousRange.getBegin(), previousRange.getEnd(),
+                            currentRange.getBegin(), currentRange.getEnd());
+                    // the first one we just set to the beginning
+                    if (prev == null) {
+                        current.setProteinRange(currentRange.toBuilder().setBegin(0).build());
+                    } else {
+                        adjustPeptideEdges(prev, current);
+                    }
+                }
+                peptides.add(current);
+                prev = current;
+                previousRange = currentRange;
             }
             return peptides;
         } catch (IOException e) {
@@ -211,15 +256,23 @@ public class PeptideService implements PeptideMatchingService {
         }
     }
 
-    private MaturePeptide peptideFromMatch(PeptideMatch match) {
-        MaturePeptide peptide = new MaturePeptide();
-        Alignment alignment = new Alignment();
-        alignment.setAlignmentTool_name("Jillion");
-        alignment.setViralProtein(match.protein);
-        // what
-        alignment.setVirusGenome(null);
-        peptide.setAlignment(alignment);
-        return peptide;
+    private void adjustPeptideEdges(MaturePeptideMatch prev, MaturePeptideMatch current) {
+        // TODO implement
+        Range previousRange = prev.getProteinRange();
+        Range currentRange = current.getProteinRange();
+        LOGGER.debug("adjusting edges for\n{} [{}-{}]\n{} [{}-{}]",
+                prev.getProtein().getSequence().toBuilder().trim(previousRange),
+                previousRange.getBegin(), previousRange.getEnd(),
+                current.getProtein().getSequence().toBuilder().trim(currentRange),
+                currentRange.getBegin(), currentRange.getEnd()
+                );
+    }
+
+    private MaturePeptideMatch peptideFromMatch (PeptideMatch match) {
+
+        ViralProtein referenceProtein = new ViralProtein();
+        referenceProtein.setSequence(match.peptide.getSequence());
+        return MaturePeptideMatch.of(match.protein, referenceProtein, match.alignment.getSubjectRange().asRange(), match.alignment.getQueryRange().asRange());
     }
 
     private static String getRangeString(PeptideMatch match) {
