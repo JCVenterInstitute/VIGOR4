@@ -28,7 +28,7 @@ public class Model implements Cloneable{
     private NucleotideSequence cds;
     private ProteinSequence tanslatedSeq;
     private String proteinID;
-    private List<MaturePeptide> maturePeptides;
+    private List<MaturePeptideMatch> maturePeptides;
    public Model clone() throws CloneNotSupportedException {
 	   Model model = (Model) super.clone();
 	   model.exons = exons.stream().map(x->x.clone()).collect(Collectors.toList());
