@@ -21,12 +21,12 @@ public class MaturePeptideMatch {
     private ViralProtein reference;
 
     /**
-     * position of alignment of reference to protein starting from beginning of protein (1 based coordinates).
+     * position of alignment of reference to protein starting from beginning of protein.
      */
     private Range proteinRange;
 
     /**
-     * position of alignment of reference to protein starting from beginning of reference (1 based coordinates).
+     * position of alignment of reference to protein starting from beginning of reference.
      */
     private Range referenceRange;
 

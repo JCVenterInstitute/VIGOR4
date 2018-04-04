@@ -218,9 +218,9 @@ public class PeptideService implements PeptideMatchingService {
             Range currentRange;
             Range previousRange = null;
             for (PeptideMatch currentMatch: bestMatches) {
-                // handle first one
+                // handle first one with a previous range before the start
                 if (previousRange == null) {
-                    previousRange = Range.of(Range.CoordinateSystem.RESIDUE_BASED, 0,0);
+                    previousRange = Range.of(Range.CoordinateSystem.RESIDUE_BASED, 0);
                 }
 
                 currentRange = currentMatch.alignment.getSubjectRange().getRange();
@@ -260,19 +260,25 @@ public class PeptideService implements PeptideMatchingService {
         // TODO implement
         Range previousRange = prev.getProteinRange();
         Range currentRange = current.getProteinRange();
-        LOGGER.debug("adjusting edges for\n{} [{}-{}]\n{} [{}-{}]",
-                prev.getProtein().getSequence().toBuilder().trim(previousRange),
+        LOGGER.debug("adjusting edges for\n[{}-{}] {}\n[{}-{}] {}",
                 previousRange.getBegin(), previousRange.getEnd(),
-                current.getProtein().getSequence().toBuilder().trim(currentRange),
-                currentRange.getBegin(), currentRange.getEnd()
+                prev.getProtein().getSequence().toBuilder().trim(previousRange),
+                currentRange.getBegin(), currentRange.getEnd(),
+                current.getProtein().getSequence().toBuilder().trim(currentRange)
                 );
+        LOGGER.warn("adjustment not implemented!");
     }
 
     private MaturePeptideMatch peptideFromMatch (PeptideMatch match) {
 
         ViralProtein referenceProtein = new ViralProtein();
         referenceProtein.setSequence(match.peptide.getSequence());
-        return MaturePeptideMatch.of(match.protein, referenceProtein, match.alignment.getSubjectRange().asRange(), match.alignment.getQueryRange().asRange());
+        referenceProtein.setDefline(match.peptide.getId());
+
+        return MaturePeptideMatch.of(match.protein,
+                referenceProtein,
+                match.alignment.getSubjectRange().asRange(),
+                match.alignment.getQueryRange().asRange());
     }
 
     private static String getRangeString(PeptideMatch match) {
@@ -316,7 +322,6 @@ public class PeptideService implements PeptideMatchingService {
         }
 
         //TODO account for gaps
-
         for (String key: Sets.symmetricDifference(peptideKeys, profileKeys)) {
             mismatches += subjectProfile.getOrDefault(key, referenceProfile.get(key));
         }
