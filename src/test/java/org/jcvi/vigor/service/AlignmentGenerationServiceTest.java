@@ -11,7 +11,7 @@ import org.jcvi.jillion.core.datastore.DataStoreProviderHint;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaDataStore;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaFileDataStoreBuilder;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaRecord;
-import org.jcvi.vigor.AppConfig;
+import org.jcvi.vigor.Application;
 import org.jcvi.vigor.service.AlignmentGenerationService;
 import org.jcvi.vigor.utils.VigorTestUtils;
 import org.jcvi.vigor.component.Alignment;
@@ -26,7 +26,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = AppConfig.class)
+@ContextConfiguration(classes = Application.class)
 public class AlignmentGenerationServiceTest {
 
 	@Autowired

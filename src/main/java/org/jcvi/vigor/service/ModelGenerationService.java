@@ -10,7 +10,6 @@ import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Direction;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -28,11 +27,9 @@ public class ModelGenerationService {
 	private int AAOverlapOffset=10;
 	private int NTOverlapOffset=30;
 
-	@Autowired
-	private GeneModelGenerationService geneModelGenerationService;
 	private static final Logger LOGGER = LogManager.getLogger(ModelGenerationService.class);
 
-	public void generateModels(List<Alignment> alignments, VigorForm form) {
+	public List<Model> generateModels(List<Alignment> alignments, VigorForm form) {
 		isDebug = form.isDebug();
 		Map<String,String> params  = form.getVigorParametersList();
 		if(VigorUtils.is_Integer(params.get("AAOverlap_offset"))){
@@ -46,8 +43,7 @@ public class ModelGenerationService {
 		}
 		minIntronLength=minCondensation*3;
 		alignments =  mergeIdenticalProteinAlignments(alignments);
-		List<Model> candidateModels = determineCandidateModels(alignments, form);
-		geneModelGenerationService.generateGeneModel(candidateModels, form);
+		return determineCandidateModels(alignments, form);
 	}
 
 	public List<Alignment> mergeIdenticalProteinAlignments(List<Alignment> alignments){

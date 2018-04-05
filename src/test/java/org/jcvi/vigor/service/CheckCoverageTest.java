@@ -13,7 +13,7 @@ import org.jcvi.jillion.core.residue.aa.ProteinSequenceBuilder;
 import org.jcvi.jillion.core.residue.nt.Nucleotide;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
-import org.jcvi.vigor.AppConfig;
+import org.jcvi.vigor.Application;
 import org.jcvi.vigor.component.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,7 +27,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = AppConfig.class)
+@ContextConfiguration(classes = Application.class)
 public class CheckCoverageTest {
 
     @Autowired

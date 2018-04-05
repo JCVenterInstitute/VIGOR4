@@ -1,11 +1,9 @@
 package org.jcvi.vigor.service;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.jcvi.vigor.utils.GenerateVigorOutput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.jcvi.vigor.component.Model;
@@ -29,14 +27,11 @@ public class GeneModelGenerationService {
 	private CheckCoverage checkCoverage;
 	@Autowired
 	private EvaluateScores evaluateScores;
-	@Autowired
-    private GenerateVigorOutput generateVigorOutput;
 	boolean isDebug = true;
 	List<Model> partialGeneModels;
 	List<Model> pseudoGenes;
     private static final Logger LOGGER = LogManager.getLogger(GeneModelGenerationService.class);
-	public void generateGeneModel(List<Model> models, VigorForm form) {		
-		try {
+	public List<Model> generateGeneModel(List<Model> models, VigorForm form) {
 		    partialGeneModels = new ArrayList<Model>();
 		    pseudoGenes = new ArrayList<Model>();
             isDebug = form.isDebug();
@@ -59,27 +54,11 @@ public class GeneModelGenerationService {
                     return Double.compare(m1.getScores().get("totalScore"), m2.getScores().get("totalScore"));
                 }
             });
-            String outputFile = form.getVigorParametersList().get("output");
-
 
             List<Model> geneModels = new ArrayList<Model>();
             geneModels.add(processedModels.get(processedModels.size()-1));
-
-            //System.out.println("Genomic Sequence: "+models.get(0).getAlignment().getVirusGenome().getId()+"  Genomic Sequence Length: "+ models.get(0).getAlignment().getVirusGenome().getSequence().getLength());
-          //  FormatVigorOutput.printModelsWithAllFeatures(processedModels);
-            generateVigorOutput.generateOutputFiles(outputFile,geneModels);
-            System.out.println("processed one genome");
-        }
-        catch(Exception e){
-            LOGGER.error(e.getMessage(),e);
-			System.exit(0);
-        }
+			return geneModels;
 	}
-
-	public void generateOutputFiles(List<Model> models){
-
-	    models.forEach(System.out::println);
-    }
 
 	public List<Model> determineGeneFeatures(List<Model> models,VigorForm form){
 			

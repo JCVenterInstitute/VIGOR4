@@ -11,7 +11,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.jcvi.jillion.core.Range;
-import org.jcvi.vigor.AppConfig;
+import org.jcvi.vigor.Application;
 import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.forms.VigorForm;
@@ -23,7 +23,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = AppConfig.class)
+@ContextConfiguration(classes = Application.class)
 public class AdjustViralTricksTest {
 
 

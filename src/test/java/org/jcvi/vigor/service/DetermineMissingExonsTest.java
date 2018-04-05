@@ -20,7 +20,7 @@ import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.jcvi.vigor.AppConfig;
+import org.jcvi.vigor.Application;
 import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
@@ -33,7 +33,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = AppConfig.class)
+@ContextConfiguration(classes = Application.class)
 public class DetermineMissingExonsTest {
 	private List<Alignment> alignments;
 	private List<Model> models= new ArrayList<Model>();

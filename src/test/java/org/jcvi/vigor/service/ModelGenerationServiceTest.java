@@ -12,7 +12,7 @@ import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.jcvi.vigor.AppConfig;
+import org.jcvi.vigor.Application;
 import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.AlignmentEvidence;
 import org.jcvi.vigor.component.AlignmentFragment;
@@ -30,7 +30,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = AppConfig.class)
+@ContextConfiguration(classes = Application.class)
 public class ModelGenerationServiceTest {
 
 	private List<Alignment> alignments;
