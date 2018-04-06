@@ -16,6 +16,7 @@ import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.forms.VigorForm;
+import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.VigorFunctionalUtils;
 import org.jcvi.vigor.utils.VigorUtils;
 import org.springframework.stereotype.Service;
@@ -28,20 +29,17 @@ public class DetermineStop implements DetermineGeneFeatures {
 	long stopCodonWindow = 50;
 
 	@Override
-	public List<Model> determine(Model model, VigorForm form) {
+	public List<Model> determine(Model model, VigorForm form) throws ServiceException {
 		List<Model> models = null;
 		String stopCodonWindowParam = form.getVigorParametersList().get("stop_codon_search_window");
 		if (VigorUtils.is_Integer(stopCodonWindowParam)) {
 			stopCodonWindow = Integer.parseInt(stopCodonWindowParam);
 		}
-		try{
-		models = findStop(model);
+		try {
+			return findStop(model);
+		} catch (CloneNotSupportedException e) {
+			throw new ServiceException(String.format("Problem determine start for model %s", model), e);
 		}
-		catch(Exception e){
-			LOGGER.error(e.getMessage(),e);
-			System.exit(0);
-		}
-		return models;
 	}
 	
 	public List<Model> findStop(Model model)

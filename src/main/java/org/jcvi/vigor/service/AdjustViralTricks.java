@@ -1,5 +1,6 @@
 package org.jcvi.vigor.service;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -12,6 +13,7 @@ import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.vigor.service.DetermineGeneFeatures;
+import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.VigorFunctionalUtils;
 import org.jcvi.vigor.utils.VigorUtils;
 import org.jcvi.vigor.component.Exon;
@@ -29,30 +31,26 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
     private int leakyStopNotFoundScore=80;
 	
 	@Override
-	public List<Model> determine(Model model,VigorForm form){
-		List<Model> riboAdjustedmodels=null;
-		List<Model> outputModels = new ArrayList<Model>();
+	public List<Model> determine(Model model,VigorForm form) throws ServiceException {
+		List<Model> outputModels = new ArrayList<>();
+		List<Model> rnaEditedModels= new ArrayList<>();
+
 		String leakyStopScoreParam = form.getVigorParametersList().get("LeakyStop_notFound_score");
 		if (VigorUtils.is_Integer(leakyStopScoreParam)) {
 			leakyStopNotFoundScore = Integer.parseInt(leakyStopScoreParam);
 		}
-		try{
-		riboAdjustedmodels = adjustRibosomalSlippage(model);
-		List<Model> rnaEditedModels= new ArrayList<Model>();
-		for(Model riboAdjustedModel : riboAdjustedmodels){
-			rnaEditedModels.addAll(adjustRNAEditing(riboAdjustedModel));
-		}			
+		try {
+			List<Model> riboAdjustedmodels = adjustRibosomalSlippage(model);
+			for (Model riboAdjustedModel : riboAdjustedmodels) {
+				rnaEditedModels.addAll(adjustRNAEditing(riboAdjustedModel));
+			}
+		} catch (CloneNotSupportedException e) {
+			throw new ServiceException(String.format("Problem adjusting model %s for viral tricks", model),e);
+		}
 		for(Model rnaEditeddModel : rnaEditedModels){
 			outputModels.add(checkForLeakyStop(rnaEditeddModel));
 		}
-		}catch(CloneNotSupportedException e){
-			LOGGER.error(e.getMessage(),e);
-            System.exit(0);
-		}catch(Exception e){
-			LOGGER.error(e.getMessage(),e);
-            System.exit(0);
-		}
-		
+
 		return outputModels;
 	}
 	

@@ -15,9 +15,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
-import org.jcvi.jillion.core.residue.aa.IupacTranslationTables;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.jillion.core.residue.nt.Triplet;
+import org.jcvi.vigor.service.exception.ServiceException;
 import org.springframework.stereotype.Service;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
@@ -31,31 +31,26 @@ public class DetermineStart implements DetermineGeneFeatures {
 			.getLogger(DetermineStart.class);
 
 	@Override
-	public List<Model> determine(Model model, VigorForm form) {
-		List<Model> models = null;
+	public List<Model> determine(Model model, VigorForm form) throws ServiceException {
+		List<Triplet> startCodons = LoadStartCodons(model.getAlignment()
+														 .getViralProtein().getGeneAttributes()
+														 .getStartTranslationException().getAlternateStartCodons(),
+				form.getVigorParametersList());
+		String startCodonWindowParam = form.getVigorParametersList().get(
+				"start_codon_search_window");
 		try {
-			List<Triplet> startCodons = LoadStartCodons(model.getAlignment()
-					.getViralProtein().getGeneAttributes()
-					.getStartTranslationException().getAlternateStartCodons(),
-					form.getVigorParametersList());
-			String startCodonWindowParam = form.getVigorParametersList().get(
-					"start_codon_search_window");
-			
-			models = findStart(startCodons, model, startCodonWindowParam);
-
-		}
-		catch(CloneNotSupportedException e){
-			LOGGER.error(e.getMessage(),e);
-			System.exit(0);
+			List<Model> models = findStart(startCodons, model, startCodonWindowParam);
+			LOGGER.info("Models after determining start: {}", () ->
+				models.stream().map(String::valueOf).collect(Collectors.joining("\n")));
+			return models;
+		} catch (CloneNotSupportedException e) {
+			LOGGER.error("for model {} problem finding start using codons {} and search window {}",
+					model,
+					startCodons.stream().map(String::valueOf).collect(Collectors.joining(",")),
+					startCodonWindowParam);
+			throw new ServiceException(e);
 		}
 
-		catch (Exception e) {
-			LOGGER.error(e.getMessage(), e);
-			System.exit(0);
-		}
-        System.out.println("Models after determining start");
-		models.forEach(System.out::println);
-		return models;
 	}
 
 	/**

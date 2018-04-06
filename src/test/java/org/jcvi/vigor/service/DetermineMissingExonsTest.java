@@ -18,6 +18,7 @@ import org.jcvi.jillion.core.residue.aa.ProteinSequence;
 import org.jcvi.jillion.core.residue.aa.ProteinSequenceBuilder;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
+import org.jcvi.vigor.service.exception.ServiceException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.jcvi.vigor.Application;
@@ -35,8 +36,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = Application.class)
 public class DetermineMissingExonsTest {
-	private List<Alignment> alignments;
-	private List<Model> models= new ArrayList<Model>();
 	@Autowired
 	private ModelGenerationService modelGenerationService;
 	@Autowired
@@ -46,15 +45,20 @@ public class DetermineMissingExonsTest {
 
 
 	@Test
-	public void findMissingExonsWithSpliceFormPresent() {
+	public void findMissingExonsWithSpliceFormPresent() throws ServiceException {
 		ClassLoader classLoader = VigorTestUtils.class.getClassLoader();
 		File file = new File(classLoader.getResource("vigorUnitTestInput/sequence_flua.fasta"). getFile());
-		alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(),"flua_db",VigorUtils.getVigorWorkSpace(),null);
-		alignments = alignments.stream().map(alignment -> viralProteinService.setViralProteinAttributes(alignment,new VigorForm()))
-				.collect(Collectors.toList());
+		List<Alignment> alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(),"flua_db",
+				VigorUtils.getVigorWorkSpace(),null);
+		List<Model> models = new ArrayList<>();
+		for (int i=0;i<alignments.size();i++) {
+			alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm()));
+		}
 		models.addAll(modelGenerationService.alignmentToModels(alignments.get(0), "exonerate"));
-		Model model = new Model();
-		model = models.get(0);
+		assertTrue(String.format("Expected at least 1 model, got %s", models.size()), 1 >= models.size());
+		Model model = models.get(0);
+		assertTrue(String.format("Expected models %s to have at least 2 exons, got %s", model, model.getExons().size()),
+				2 >= model.getExons().size());
 		model.getExons().remove(1);
 		int exons = determineMissingExons.findMissingExons(model).getExons().size();
 		assertEquals(2, exons);
@@ -111,21 +115,5 @@ public class DetermineMissingExonsTest {
 
 	}
 	
-	/*@Test
-	public void findMissingExonsWithSpliceFormAbsent(){
-		ClassLoader classLoader = VigorTestUtils.class.getClassLoader(); 
-	    File file = new File(classLoader.getResource("vigorUnitTestInput/sequence_veev.fasta"). getFile());
-		alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(),"veev_db",VigorUtils.getVigorWorkSpace());
-	    alignments = alignments.stream().map(alignment -> viralProteinService.setViralProteinAttributes(alignment))
-				.collect(Collectors.toList());
-		models.addAll(modelGenerationService.alignmentToModels(alignments.get(0), "exonerate"));
-		Model model = new Model();
-		model = models.get(0);
-		model.getExons().remove(0);
-	    Model outputModel = determineMissingExons.findMissingExonsWithSpliceFormAbsent(model);
-	    assertEquals(12,outputModel.getExons().size());
-	}
-	*/
-
 
 }

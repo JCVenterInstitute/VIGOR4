@@ -1,7 +1,9 @@
 package org.jcvi.vigor.service;
 
 import org.jcvi.vigor.component.*;
+import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.forms.VigorForm;
+import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.FormatVigorOutput;
 import org.jcvi.vigor.utils.VigorFunctionalUtils;
 import org.jcvi.vigor.utils.VigorUtils;
@@ -29,7 +31,7 @@ public class ModelGenerationService {
 
 	private static final Logger LOGGER = LogManager.getLogger(ModelGenerationService.class);
 
-	public List<Model> generateModels(List<Alignment> alignments, VigorForm form) {
+	public List<Model> generateModels(List<Alignment> alignments, VigorForm form) throws ServiceException {
 		isDebug = form.isDebug();
 		Map<String,String> params  = form.getVigorParametersList();
 		if(VigorUtils.is_Integer(params.get("AAOverlap_offset"))){
@@ -91,15 +93,15 @@ public class ModelGenerationService {
 	 * @return all the possible models of each alignment and after splitting
 	 *         models at the sequence gaps
 	 */
-	public List<Model> determineCandidateModels(List<Alignment> alignments, VigorForm form) {
+	public List<Model> determineCandidateModels(List<Alignment> alignments, VigorForm form) throws ServiceException {
 		List<Model> initialModels = new ArrayList<Model>();
 		List<Model> candidateModels = new ArrayList<Model>();
-		try{
+
 		for (int i = 0; i < alignments.size(); i++) {
 			Alignment alignment = alignments.get(i);
-			if(alignment.getViralProtein().getProteinID().equals("339267591_SP")){
-			    System.out.println("Break");
-            }
+			if (alignment.getViralProtein().getProteinID().equals("339267591_SP")) {
+				System.out.println("Break");
+			}
 			alignment.getAlignmentFragments().sort(AlignmentFragment.Comparators.Ascending);
 			initialModels.addAll(alignmentToModels(alignment, alignment.getAlignmentTool_name()));
 		}
@@ -107,18 +109,18 @@ public class ModelGenerationService {
 			System.out.println("************Initial Models*************");
 			FormatVigorOutput.printModels2(initialModels);
 		}
-        
-		List<Range> sequenceGaps=new ArrayList<Range>();
+
+		List<Range> sequenceGaps = new ArrayList<Range>();
 		// get sequence gaps
-		if(initialModels.get(0).getAlignment().getVirusGenome().getSequenceGaps() !=null){
-		sequenceGaps = initialModels.get(0).getAlignment().getVirusGenome().getSequenceGaps();
+		if (initialModels.get(0).getAlignment().getVirusGenome().getSequenceGaps() != null) {
+			sequenceGaps = initialModels.get(0).getAlignment().getVirusGenome().getSequenceGaps();
 		}
 		List<Range> validSequenceGaps = new ArrayList<Range>();
 		String minGapLenString = "";
-		
-		if (sequenceGaps !=null && sequenceGaps.size() > 0) {
+
+		if (sequenceGaps != null && sequenceGaps.size() > 0) {
 			minGapLenString = form.getVigorParametersList().get("min_seq_gap_length");
-			long minGapLength=0;
+			long minGapLength = 0;
 			if (VigorUtils.is_Integer(minGapLenString)) {
 				minGapLength = Long.parseLong(minGapLenString);
 			}
@@ -131,36 +133,30 @@ public class ModelGenerationService {
 		}
 
 		// split models at sequence gaps
-        System.out.println("Count of initial models"+ initialModels.size());
+		System.out.println("Count of initial models" + initialModels.size());
 		for (Model model : initialModels) {
-			Range diffRange=null;
-			for(int i=0;i<model.getExons().size()-1;i++){
-                if (model.getExons().get(i).getRange().getEnd()<model.getExons().get(i+1).getRange().getBegin()) {
+			Range diffRange = null;
+			for (int i = 0; i < model.getExons().size() - 1; i++) {
+				if (model.getExons().get(i).getRange().getEnd() < model.getExons().get(i + 1).getRange().getBegin()) {
 
-                    diffRange = Range.of(model.getExons().get(i).getRange().getEnd(), model.getExons().get(i + 1).getRange().getBegin());
-                }
+					diffRange = Range.of(model.getExons().get(i).getRange().getEnd(), model.getExons().get(i + 1).getRange().getBegin());
+				}
 			}
-			if(diffRange!=null && diffRange.getLength()>=20){
-			
-			List<Model> newModelsreturned = splitModelAtSequenceGaps(model,validSequenceGaps);
-			
-			candidateModels.addAll(newModelsreturned);
-			}else
-			{
+			if (diffRange != null && diffRange.getLength() >= 20) {
+				try {
+					candidateModels.addAll(splitModelAtSequenceGaps(model, validSequenceGaps));
+				} catch (CloneNotSupportedException e) {
+					LOGGER.error("problem splitting model {}", model);
+					throw new ServiceException(String.format("problem splitting model %s", model),e);
+				}
+			} else {
 				candidateModels.add(model);
 			}
 		}
-       System.out.println("Count after splitting"+candidateModels.size());
+		System.out.println("Count after splitting" + candidateModels.size());
 		if (isDebug) {
 			System.out.println("********After splitting models at the Genome sequence gaps**********");
 			FormatVigorOutput.printModels2(candidateModels);
-		}}
-		catch(CloneNotSupportedException e){
-			LOGGER.error(e.getMessage(),e);
-            System.exit(0);
-		}catch(Exception e){
-			LOGGER.error(e.getMessage(),e);
-			System.exit(0);
 		}
 
 		return candidateModels;
@@ -215,106 +211,89 @@ public class ModelGenerationService {
 	public List<AlignmentFragment> mergeAlignmentFragments(List<AlignmentFragment> fragments,VirusGenome virusGenome){
 		fragments.sort(AlignmentFragment.Comparators.Ascending);
 		List<AlignmentFragment> outFragments = new ArrayList<AlignmentFragment>();
-		boolean isPreMerge=false;
-		if(fragments.size()>1){
-    		for(int i=0;i<fragments.size();i++){    			
-    			if(i!=fragments.size()-1){
-    				AlignmentFragment upFragment = fragments.get(i);
-	        		AlignmentFragment  downFragment = fragments.get(i+1);
-    			Range currentFragment = upFragment.getNucleotideSeqRange();
-    			Range nextFragment = downFragment.getNucleotideSeqRange();
-    			Range intronRange=null;
-        try{
-        	if(currentFragment.getEnd()-nextFragment.getBegin()==0){
-        		intronRange = Range.ofLength(0);
-			}else {
-        		if(currentFragment.getEnd()>nextFragment.getBegin()){
-                    intronRange = currentFragment.intersection(nextFragment);
-				}else {
-					intronRange = Range.of(currentFragment.getEnd() + 1, nextFragment.getBegin() - 1);
+		boolean isPreMerge = false;
+		if (fragments.size() == 1) {
+			outFragments.add(fragments.get(0));
+		}
+		else if (fragments.size() > 1){
+			for (int i = 0; i < fragments.size(); i++) {
+				if (i != fragments.size() - 1) {
+					AlignmentFragment upFragment = fragments.get(i);
+					AlignmentFragment downFragment = fragments.get(i + 1);
+					Range currentFragment = upFragment.getNucleotideSeqRange();
+					Range nextFragment = downFragment.getNucleotideSeqRange();
+					Range intronRange = null;
+					if (currentFragment.getEnd() - nextFragment.getBegin() == 0) {
+						intronRange = Range.ofLength(0);
+					} else {
+						if (currentFragment.getEnd() > nextFragment.getBegin()) {
+							intronRange = currentFragment.intersection(nextFragment);
+						} else {
+							intronRange = Range.of(currentFragment.getEnd() + 1, nextFragment.getBegin() - 1);
+						}
+					}
+					Range missingAAalignRange = Range.of(0, 0);
+					if (upFragment.getProteinSeqRange().getEnd() - downFragment.getProteinSeqRange().getBegin() == 0) {
+						missingAAalignRange = Range.ofLength(0);
+					} else {
+						if (downFragment.getProteinSeqRange().getBegin() - 1 > upFragment.getProteinSeqRange().getEnd() + 1) {
+							missingAAalignRange = Range.of(upFragment.getProteinSeqRange().getEnd() + 1, downFragment.getProteinSeqRange().getBegin() - 1);
+						} else {
+							missingAAalignRange = Range.of(downFragment.getProteinSeqRange().getBegin() - 1, upFragment.getProteinSeqRange().getEnd() + 1);
+						}
+					}
+
+					if ((intronRange.getLength() <= minIntronLength && missingAAalignRange.getLength() <= minCondensation)) {
+						Map<Frame, List<Long>> intronStops = VigorFunctionalUtils.findStopsInSequenceFrame(virusGenome, intronRange);
+						List<Long> upStops = new ArrayList<Long>();
+						List<Long> downStops = new ArrayList<Long>();
+						Frame upSeqFrame = VigorFunctionalUtils.getSequenceFrame(upFragment.getNucleotideSeqRange().getBegin() + upFragment.getFrame().getFrame() - 1);
+						if (intronStops.get(upSeqFrame) != null) {
+							upStops = intronStops.get(upSeqFrame);
+						}
+						Frame downSeqFrame = VigorFunctionalUtils.getSequenceFrame(upFragment.getNucleotideSeqRange().getBegin() + upFragment.getFrame().getFrame() - 1);
+						if (intronStops.get(downSeqFrame) != null) {
+							downStops = intronStops.get(downSeqFrame);
+						}
+						if (upStops.size() == 0 && downStops.size() == 0 && (intronRange.getLength() % 3 == 0)) {
+
+							if (isPreMerge) {
+								upFragment = outFragments.get(outFragments.size() - 1);
+								outFragments.remove(upFragment);
+								currentFragment = upFragment.getNucleotideSeqRange();
+							}
+							Range adjustedNTrange = Range.of(currentFragment.getBegin(), nextFragment.getEnd());
+							Range adjustedAArange = Range.of(upFragment.getProteinSeqRange().getBegin(), downFragment.getProteinSeqRange().getEnd());
+							upFragment.setNucleotideSeqRange(adjustedNTrange);
+							upFragment.setProteinSeqRange(adjustedAArange);
+							outFragments.add(upFragment);
+							isPreMerge = true;
+
+						} else {
+							if (!isPreMerge) {
+								outFragments.add(fragments.get(i));
+							}
+							isPreMerge = false;
+						}
+					} else {
+						if (!isPreMerge) {
+							outFragments.add(fragments.get(i));
+						}
+						isPreMerge = false;
+					}
+
+				} else {
+					if (!isPreMerge) {
+						outFragments.add(fragments.get(i));
+					}
 				}
 			}
-        }
-        catch(Exception e){
-        	LOGGER.error(e.getMessage(),e);
-            System.exit(0);
-        }  Range missingAAalignRange=Range.of(0,0);
-        try{
-       /* if(intronRange.getEnd()-intronRange.getBegin()==-1){
-			intronRange=Range.ofLength(0);
 		}
-      */
-        if(upFragment.getProteinSeqRange().getEnd()-downFragment.getProteinSeqRange().getBegin()==0){
-       	missingAAalignRange = Range.ofLength(0);
-	    }
-        else {
-        if(downFragment.getProteinSeqRange().getBegin()-1>upFragment.getProteinSeqRange().getEnd()+1) {
-            missingAAalignRange = Range.of(upFragment.getProteinSeqRange().getEnd() + 1, downFragment.getProteinSeqRange().getBegin() - 1);
-        }else{
-            missingAAalignRange = Range.of(downFragment.getProteinSeqRange().getBegin() - 1, upFragment.getProteinSeqRange().getEnd() + 1);
-        }
-        }
-       
-		/*if(missingAAalignRange.getBegin()-missingAAalignRange.getEnd()==0 || missingAAalignRange==null){
-			missingAAalignRange = Range.ofLength(0);
-		}*/
-        }
-        catch(Exception e){
-        	LOGGER.error(e.getMessage(),e);
-            System.exit(0);
-        }
-		if((intronRange.getLength()<=minIntronLength && missingAAalignRange.getLength()<=minCondensation)){
-		Map<Frame,List<Long>> intronStops = VigorFunctionalUtils.findStopsInSequenceFrame(virusGenome, intronRange);
-		List<Long> upStops=new ArrayList<Long>();
-		List<Long> downStops=new ArrayList<Long>();
-		Frame upSeqFrame= VigorFunctionalUtils.getSequenceFrame(upFragment.getNucleotideSeqRange().getBegin()+upFragment.getFrame().getFrame()-1);
-		if(intronStops.get(upSeqFrame)!=null){
-			upStops = intronStops.get(upSeqFrame);
-		}
-		Frame downSeqFrame= VigorFunctionalUtils.getSequenceFrame(upFragment.getNucleotideSeqRange().getBegin()+upFragment.getFrame().getFrame()-1);
-		if(intronStops.get(downSeqFrame)!=null){
-			downStops = intronStops.get(downSeqFrame);
-		}
-	    if(upStops.size()==0 && downStops.size()==0 && (intronRange.getLength()%3==0)){
-	    	
-	    	if(isPreMerge){
-	    		upFragment = outFragments.get(outFragments.size()-1);
-	    		outFragments.remove(upFragment);
-	    		currentFragment = upFragment.getNucleotideSeqRange();
-	    	}
-	    	Range adjustedNTrange = Range.of(currentFragment.getBegin(),nextFragment.getEnd());
-	    	Range adjustedAArange = Range.of(upFragment.getProteinSeqRange().getBegin(),downFragment.getProteinSeqRange().getEnd());
-	    	upFragment.setNucleotideSeqRange(adjustedNTrange);
-	    	upFragment.setProteinSeqRange(adjustedAArange);
-	    	outFragments.add(upFragment);
-	    	isPreMerge=true;
-	    		    	    					
-	    } else{
-	    	if(!isPreMerge){
-	    	outFragments.add(fragments.get(i));
-	    	}
-	    	isPreMerge=false;
-	    }
-		}else{
-			if(!isPreMerge){
-				outFragments.add(fragments.get(i));
-			}
-			isPreMerge=false;
-		}
-				
-   }else{
-	   if(!isPreMerge){
-		   outFragments.add(fragments.get(i));
-	   }
-	   }
-   }
-    }else{
-    		 outFragments.addAll(fragments);
-    		}
-		if(outFragments.size()==0){
+
+		if (outFragments.size() == 0) {
 			outFragments.addAll(fragments);
 		}
-	
+
 		return outFragments;
 	}
 
@@ -330,8 +309,7 @@ public class ModelGenerationService {
 	public List<Model> splitModelAtSequenceGaps(Model initModel, List<Range> validSequenceGaps) throws CloneNotSupportedException {
 
 		List<Model> newModels = new ArrayList<Model>();
-		Model model = new Model();
-		model = initModel.clone();
+		Model model = initModel.clone();
 		if (validSequenceGaps.size() > 0) {
 			Exon nextExon;
 			Exon currentExon;
@@ -340,8 +318,7 @@ public class ModelGenerationService {
 			List<Exon> secondGroup = new ArrayList<Exon>();
 			Model firstModel;
 			Model secondModel=null;
-				List<Exon> modelExons = new ArrayList<Exon>();
-				modelExons = model.getExons();
+				List<Exon> modelExons = model.getExons();
 				secondGroup.addAll(modelExons);
 				boolean startExist = true;
 				
@@ -359,9 +336,7 @@ public class ModelGenerationService {
 							boolean temp = true;
 							for (int k = 0; k < validSequenceGaps.size(); k++) {
 								if (diffRange.intersects(validSequenceGaps.get(k)) && temp) {
-									secondModel = new Model();
-									secondModel =model.clone();
-									firstModel = new Model();
+									secondModel= model.clone();
 									firstModel = model.clone();
 									if(currentExon.getRange().getEnd()<validSequenceGaps.get(k).getBegin()){
 									currentExon.set_3p_adjusted(true);
@@ -375,7 +350,7 @@ public class ModelGenerationService {
 									tempSecond.addAll(secondGroup);
 									firstModel.setExons(tempFirst);
 									firstModel.setPartial3p(true);
-									firstModel.getStatus().add("Model splitted at sequence gaps");
+									firstModel.getStatus().add("Model split at sequence gaps");
 									if (!startExist) {
 										firstModel.setPartial5p(true);
 									}
@@ -383,7 +358,7 @@ public class ModelGenerationService {
 									tempSecond.removeAll(tempFirst);
 									secondModel.setExons(tempSecond);
 									secondModel.setPartial5p(true);
-									secondModel.getStatus().add("Model splitted at sequence gaps");
+									secondModel.getStatus().add("Model split at sequence gaps");
 									newModels.add(firstModel);
 									startExist = false;
 									firstGroup.clear();

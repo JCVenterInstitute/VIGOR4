@@ -13,6 +13,7 @@ import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.component.VirusGenome;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.service.*;
+import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.GenerateVigorOutput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -89,6 +90,9 @@ public class Vigor {
         } catch (IOException e) {
             LOGGER.error("file problem", e);
             System.exit(1);
+        } catch (ServiceException e) {
+            LOGGER.error(e);
+            System.exit(1);
         }
 
 
@@ -102,19 +106,19 @@ public class Vigor {
         return initializationService.initializeVigor(args);
     }
 
-    public List<Alignment> generateAlignments(VirusGenome genome, VigorForm form) {
+    public List<Alignment> generateAlignments(VirusGenome genome, VigorForm form) throws ServiceException{
         return alignmentGenerationService.GenerateAlignment(genome, form);
     }
 
-    public List<Model> generateModels(List<Alignment> alignments, VigorForm form) {
+    public List<Model> generateModels(List<Alignment> alignments, VigorForm form) throws ServiceException {
         return modelGenerationService.generateModels(alignments, form);
     }
 
-    public List<Model> generateGeneModels(List<Model> models, VigorForm form) {
+    public List<Model> generateGeneModels(List<Model> models, VigorForm form) throws ServiceException {
         return geneModelGenerationService.generateGeneModel(models, form);
     }
 
-    public void generateOutput(List<Model> models, String outputDirectory) {
+    public void generateOutput(List<Model> models, String outputDirectory) throws ServiceException{
         generateVigorOutput.generateOutputFiles(outputDirectory, models);
     }
 
