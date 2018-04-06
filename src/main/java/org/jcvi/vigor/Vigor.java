@@ -54,14 +54,21 @@ public class Vigor {
 
         Namespace parsedArgs = parseArgs(args);
         VigorForm vigorForm = getVigorForm(parsedArgs);
+        String inputFileName = parsedArgs.getString("input_fasta");
+        File inputFile = new File(inputFileName);
+        if (! inputFile.exists()) {
+            LOGGER.error("input file {} doesn't exists.", inputFileName);
+            System.exit(1);
+        } else if (! inputFile.canRead()) {
+            LOGGER.error("input file {} isn't readable.", inputFileName);
+            System.exit(1);
+        }
         Map<String,String> vigorParameters = vigorForm.getVigorParametersList();
-        LOGGER.debug( () ->  vigorParameters.entrySet()
+        LOGGER.info( () ->  vigorParameters.entrySet()
                                             .stream()
                                             .sorted(Map.Entry.comparingByKey())
                                             .map( e -> String.format("%s:%s", e.getKey(), e.getValue()))
                                             .collect(Collectors.joining("\n")) );
-        String inputFileName = parsedArgs.getString("input_fasta");
-        File inputFile = new File(inputFileName);
         // TODO check file exists and is readable
         // TODO check output directory and permissions
         try (NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(inputFile)
