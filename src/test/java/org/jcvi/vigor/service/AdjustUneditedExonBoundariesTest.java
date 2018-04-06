@@ -57,7 +57,7 @@ public class AdjustUneditedExonBoundariesTest {
         Model testModel = models.get(0);
         testModel.getExons().get(0).setRange(Range.of(11,30));
         List<Model> outModels = adjustUneditedExonBoundaries.adjustSpliceSites(testModel);
-        Comparator<Model> bySpliceScore = (Model m1,Model m2)->m1.getScores().get("spliceScore").compareTo(m2.getScores().get("spliceScore"));
+        Comparator<Model> bySpliceScore = Comparator.comparing( (m)->m.getScores().get("spliceScore"));
         Optional<Model> outModel = outModels.stream().sorted(bySpliceScore.reversed()).findFirst();
         assertEquals(Range.of(11,40),outModel.get().getExons().get(0).getRange());
     }
