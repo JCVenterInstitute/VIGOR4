@@ -87,7 +87,7 @@ public class Vigor {
                 List<Model> candidateModels = generateModels(alignments, vigorForm);
                 List<Model> geneModels = generateGeneModels(candidateModels, vigorForm);
                 // TODO checkout output earlier.
-                generateOutput(candidateModels, vigorForm.getVigorParametersList().get("output"));
+                generateOutput(geneModels, vigorForm.getVigorParametersList().get("output"));
             }
 
         } catch (DataStoreException e) {
