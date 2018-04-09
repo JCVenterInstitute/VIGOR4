@@ -1,5 +1,6 @@
 package org.jcvi.vigor.service;
 import org.jcvi.vigor.component.*;
+import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.VigorUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.jcvi.vigor.component.Splicing.SpliceSite;
@@ -30,7 +31,7 @@ public class ViralProteinService {
      * @return viralProtein: For the given protein ID ViralProtein object is
      *         generated and all the properties are defined;
      */
-    public Alignment setViralProteinAttributes(Alignment alignment,VigorForm form) {
+    public Alignment setViralProteinAttributes(Alignment alignment,VigorForm form) throws ServiceException {
         String min_intronSize_param = form.getVigorParametersList().get("min_intron_size");
         if(VigorUtils.is_Integer(min_intronSize_param)){
             min_intron_length=Integer.parseInt(min_intronSize_param);
@@ -49,9 +50,7 @@ public class ViralProteinService {
      * @return viralProtein object which has all the gene attributes set.
      */
 
-    public ViralProtein setGeneAttributes(ViralProtein viralProtein) {
-
-        try {
+    public ViralProtein setGeneAttributes(ViralProtein viralProtein) throws ServiceException {
 
             GeneAttributes geneAttributes = new GeneAttributes();
             String defline = viralProtein.getDefline();
@@ -227,10 +226,7 @@ public class ViralProteinService {
             /* set geneStructure property of viralProtein */
             viralProtein = DetermineGeneStructure(viralProtein);
 
-        } catch (Exception e) {
-            LOGGER.error(e.getMessage(), e);
-            System.exit(0);
-        }
+
         return viralProtein;
 
     }
@@ -241,7 +237,7 @@ public class ViralProteinService {
      * @return GeneStructure: has list of exons and introns of the viralProtein.
      *         These are determined from spliceform annotated in the defline*/
 
-    public ViralProtein DetermineGeneStructure(ViralProtein viralProtein) {
+    public ViralProtein DetermineGeneStructure(ViralProtein viralProtein) throws ServiceException {
 
         boolean is_ribosomal_slippage = viralProtein.getGeneAttributes().getRibosomal_slippage()
                 .isHas_ribosomal_slippage();
@@ -256,10 +252,10 @@ public class ViralProteinService {
             String spliceform = viralProtein.getGeneAttributes().getSplicing().getSpliceform();
             if (spliceform != null) {
                 if (spliceform.equals("") || !(spliceform.matches("([i,e]-?[0-9]*)+"))) {
-                    String exception = "Spliced reference missing/malformed splice_form tag:"
-                            + viralProtein.getProteinID();
-                    System.out.println(exception);
-                    LOGGER.debug(exception);
+                    String exception = String.format("For protein %s spliced reference missing/malformed splice_form tag: %s",
+                            viralProtein.getProteinID(), spliceform);
+                    LOGGER.warn(exception);
+                    throw new ServiceException(exception);
                 } else {
 
                     List<String> splices = new ArrayList<String>();

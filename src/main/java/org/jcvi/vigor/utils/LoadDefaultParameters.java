@@ -23,10 +23,6 @@ public class LoadDefaultParameters {
 			iniConfig.getSections().stream().forEach(i -> iniConfig.getSection(i).getKeys()
 					.forEachRemaining(n -> vigorParametersList.put(n, iniConfig.getSection(i).getString(n))));
 
-			for (String key : vigorParametersList.keySet()) {
-				System.out.println(key + " : " + vigorParametersList.get(key));
-			}
-
 		} catch (ConfigurationException e) {
 			VigorException.printExceptionMessage(e.getMessage());
 			LOGGER.error(e.getMessage(),e);

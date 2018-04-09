@@ -10,9 +10,10 @@ import java.util.List;
 import org.jcvi.jillion.core.Direction;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
+import org.jcvi.vigor.service.exception.ServiceException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.jcvi.vigor.AppConfig;
+import org.jcvi.vigor.Application;
 import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.AlignmentEvidence;
 import org.jcvi.vigor.component.AlignmentFragment;
@@ -30,7 +31,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = AppConfig.class)
+@ContextConfiguration(classes = Application.class)
 public class ModelGenerationServiceTest {
 
 	private List<Alignment> alignments;
@@ -41,7 +42,7 @@ public class ModelGenerationServiceTest {
 	private ClassLoader classLoader = VigorTestUtils.class.getClassLoader();
 	private File file = new File(classLoader.getResource("vigorUnitTestInput/exonerate_flua.txt"). getFile());
 	@Test
-	public void alignmentToModelsTest() throws IOException {
+	public void alignmentToModelsTest() throws ServiceException {
 
 		alignments = exonerateService.parseExonerateOutput(file, new AlignmentEvidence("flua_db"), new VirusGenome());
 		Alignment alignment = alignments.get(0);

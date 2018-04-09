@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.jcvi.jillion.core.datastore.DataStoreProviderHint;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaDataStore;
@@ -43,9 +42,9 @@ public class GenerateVigor4Models {
 						DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)
 						.build();
 				Stream<NucleotideFastaRecord> records = dataStore.records();
-				Iterator<NucleotideFastaRecord> i = records.iterator();
-				while (i.hasNext()) {
-					NucleotideFastaRecord record = i.next();
+				Iterator<NucleotideFastaRecord> iter = records.iterator();
+				while (iter.hasNext()) {
+					NucleotideFastaRecord record = iter.next();
 					VirusGenome virusGenome = new VirusGenome(
 							record.getSequence(), record.getComment(),
 							record.getId(), false, false);
@@ -58,11 +57,10 @@ public class GenerateVigor4Models {
 					List<Alignment> alignments = exonerateService
 							.parseExonerateOutput(outputFile,
 									alignmentEvidence, virusGenome);
-					alignments = alignments
-							.stream()
-							.map(alignment -> viralProteinService
-									.setViralProteinAttributes(alignment, new VigorForm()))
-							.collect(Collectors.toList());
+					for (int i=0; i<alignments.size(); i++) {
+						alignments.set(i, viralProteinService
+								.setViralProteinAttributes(alignments.get(i), new VigorForm()));
+					}
 					List<Model> candidateModels = modelGenerationService
 							.determineCandidateModels(alignments,
 									new VigorForm());

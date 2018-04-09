@@ -158,7 +158,7 @@
 	    <!-- MainClass in mainfest make a executable jar -->
 	    <archive>
 	      <manifest>
-		<mainClass>org.jcvi.vigor.AppConfig</mainClass>
+		<mainClass>org.jcvi.vigor.Application </mainClass>
 	      </manifest>
 	    </archive>
 	    <appendAssemblyId>false</appendAssemblyId>

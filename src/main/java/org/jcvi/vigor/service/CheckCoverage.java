@@ -31,17 +31,13 @@ public class CheckCoverage implements EvaluateModel {
 	
 	@Override
 	public Model evaluate(Model model,VigorForm form) {
-	    try{
 		NucleotideSequence cds = determineCDS(model);
 		List<Range> internalStops = getInternalStops(model);
 		if(internalStops.size()>0){
 		    model.setPseudogene(true);
         }
 	    model = determineHomology(model,cds);
-	    model =	addWeightageToScores(model,form);}
-	    catch(Exception e){
-	        System.exit(1);
-        }
+        model = addWeightageToScores(model,form);
 		return model;
 	}
 	public Model addWeightageToScores(Model model,VigorForm form) {

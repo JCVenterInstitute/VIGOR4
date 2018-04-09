@@ -48,8 +48,7 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
 		if (VigorUtils.is_Integer(minMissingAASizeParam)) {
 			min_missing_AA_size = Integer.parseInt(minMissingAASizeParam);
 		}
-		try{
-		model.getExons().sort(Exon.Comparators.Ascending);	
+		model.getExons().sort(Exon.Comparators.Ascending);
 		System.out.println("Model "+ model.getGeneSymbol());
 
 		System.out.println("Before"+model.getExons().size());
@@ -57,11 +56,6 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
 		System.out.println("After"+model.getExons().size());
 		model.getExons().sort(Exon.Comparators.Ascending);
 		outModels.add(model);	
-		}
-		catch(Exception e){
-		  LOGGER.error(e.getMessage(),e);
-			System.exit(0);
-		}
 		return outModels;
 	}
 

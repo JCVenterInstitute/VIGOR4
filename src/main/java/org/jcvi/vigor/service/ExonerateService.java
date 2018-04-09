@@ -1,10 +1,12 @@
 package org.jcvi.vigor.service;
 
+import org.jcvi.jillion.core.datastore.DataStoreException;
 import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.AlignmentEvidence;
 import org.jcvi.vigor.component.AlignmentFragment;
 import org.jcvi.vigor.component.ViralProtein;
 import org.jcvi.vigor.component.VirusGenome;
+import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.GenerateExonerateOutput;
 import org.jcvi.vigor.utils.VigorUtils;
 import org.apache.logging.log4j.LogManager;
@@ -17,6 +19,7 @@ import org.jcvi.jillion.fasta.aa.ProteinFastaFileDataStoreBuilder;
 import org.jcvi.jillion.fasta.aa.ProteinFastaRecord;
 import org.springframework.stereotype.Service;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -31,47 +34,44 @@ public class ExonerateService {
 
 	private static final Logger LOGGER = LogManager.getLogger(ExonerateService.class);
 
-	
+	public List<Alignment> getAlignment(VirusGenome virusGenome, AlignmentEvidence alignmentEvidence, String referenceDbDir) throws ServiceException {
 
-	public List<Alignment> getAlignment(VirusGenome virusGenome, AlignmentEvidence alignmentEvidence,String referenceDbDir) {
-       
 		String outputFilePath = GenerateExonerateOutput.queryExonerate(virusGenome,alignmentEvidence.getReference_db(), VigorUtils.getVigorWorkSpace(),null);
 		File outputFile = new File(outputFilePath);
 		return parseExonerateOutput(outputFile, alignmentEvidence, virusGenome);
 
 	}
 
-	
-
 	public List<Alignment> parseExonerateOutput(File file, AlignmentEvidence alignmentEvidence,
-			VirusGenome virusGenome) {
+			VirusGenome virusGenome) throws ServiceException{
 		List<Alignment> alignments = new ArrayList<Alignment>();
+		List<VulgarProtein2Genome2> Jalignments;
 		try {
-
-			List<VulgarProtein2Genome2> Jalignments = Exonerate2.parseVulgarOutput(file);
-			for (int i = 0; i < Jalignments.size(); i++) {
-				VulgarProtein2Genome2 Jalignment = Jalignments.get(i);
+			Jalignments = Exonerate2.parseVulgarOutput(file);
+		} catch (IOException e) {
+			throw new ServiceException(String.format("Error parsing exonerate output %s", file.getName()));
+		}
+		String dbFilePath = VigorUtils.getVirusDatabasePath() + File.separator + alignmentEvidence.getReference_db();
+		try (ProteinFastaDataStore datastore = new ProteinFastaFileDataStoreBuilder(new File(dbFilePath))
+				.hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED).build();
+		) {
+			for (VulgarProtein2Genome2 Jalignment: Jalignments) {
 				Alignment alignment = new Alignment();
 				Map<String, Double> alignmentScores = new HashMap<String, Double>();
-				alignmentScores.put("exonerateScore",(double)Jalignment.getScore());
+				alignmentScores.put("exonerateScore", (double) Jalignment.getScore());
 				alignment.setAlignmentScore(alignmentScores);
 				alignment.setAlignmentTool_name("exonerate");
 				alignment.setAlignmentEvidence(alignmentEvidence);
 				List<AlignmentFragment> alignmentFragments = new ArrayList<AlignmentFragment>();
-				
-				for (int j = 0; j < Jalignment.getAlignmentFragments().size(); j++) {
+
+				for (VulgarProtein2Genome2.AlignmentFragment fragment: Jalignment.getAlignmentFragments()) {
 					AlignmentFragment alignmentFragment = new AlignmentFragment();
-					alignmentFragment.setDirection(Jalignment.getAlignmentFragments().get(j).getDirection());
-					alignmentFragment.setFrame(Jalignment.getAlignmentFragments().get(j).getFrame());
-					alignmentFragment
-							.setNucleotideSeqRange(Jalignment.getAlignmentFragments().get(j).getNucleotideSeqRange());
-					alignmentFragment
-							.setProteinSeqRange(Jalignment.getAlignmentFragments().get(j).getProteinSeqRange());
+					alignmentFragment.setDirection(fragment.getDirection());
+					alignmentFragment.setFrame(fragment.getFrame());
+					alignmentFragment.setNucleotideSeqRange(fragment.getNucleotideSeqRange());
+					alignmentFragment.setProteinSeqRange(fragment.getProteinSeqRange());
 					alignmentFragments.add(alignmentFragment);
 				}
-				ProteinFastaDataStore datastore = new ProteinFastaFileDataStoreBuilder(new File(
-						VigorUtils.getVirusDatabasePath() + File.separator + alignmentEvidence.getReference_db()))
-								.hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED).build();
 				ProteinFastaRecord fasta = datastore.get(Jalignment.getQueryId());
 				ViralProtein viralProtein = new ViralProtein();
 				viralProtein.setProteinID(fasta.getId());
@@ -83,18 +83,10 @@ public class ExonerateService {
 				alignment.setAlignmentEvidence(alignmentEvidence);
 				alignments.add(alignment);
 			}
-
-		} catch (Exception e) {
-			LOGGER.debug(e.getMessage(), e);
+		} catch (IOException e) {
+			LOGGER.error(String.format("Problem reading virus database file %s", dbFilePath), e);
+			throw new ServiceException(e);
 		}
 		return alignments;
-
 	}
-	
-	
-	public void testing()
-	{
-		
-	}
-
 }

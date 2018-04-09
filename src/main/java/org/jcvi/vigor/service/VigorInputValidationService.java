@@ -2,10 +2,7 @@ package org.jcvi.vigor.service;
 
 import net.sourceforge.argparse4j.ArgumentParsers;
 import net.sourceforge.argparse4j.impl.Arguments;
-import net.sourceforge.argparse4j.inf.ArgumentGroup;
-import net.sourceforge.argparse4j.inf.ArgumentParser;
-import net.sourceforge.argparse4j.inf.ArgumentParserException;
-import net.sourceforge.argparse4j.inf.MutuallyExclusiveGroup;
+import net.sourceforge.argparse4j.inf.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +16,9 @@ public class VigorInputValidationService {
 	@Autowired
 	private VigorInitializationService vigorInitializationServiceObj;
 
-	public void processInput(String... inputParams) throws ArgumentParserException {
+	public Namespace processInput(String... inputParams)  {
 		ArgumentParser parser = getArgumentParser();
-		vigorInitializationServiceObj.initializeVigor(parser.parseArgsOrFail(inputParams));
+		return parser.parseArgsOrFail(inputParams);
 	}
 
 	private ArgumentParser getArgumentParser() {

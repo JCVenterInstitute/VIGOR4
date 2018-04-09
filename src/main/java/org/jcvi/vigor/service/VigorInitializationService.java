@@ -1,30 +1,20 @@
 package org.jcvi.vigor.service;
 
-import java.io.File;
-
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Iterator;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 import net.sourceforge.argparse4j.inf.Namespace;
-import org.jcvi.vigor.utils.VigorLogging;
-import org.jcvi.vigor.utils.VigorUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.jcvi.jillion.core.datastore.DataStoreProviderHint;
-import org.jcvi.jillion.fasta.nt.NucleotideFastaDataStore;
-import org.jcvi.jillion.fasta.nt.NucleotideFastaFileDataStoreBuilder;
-import org.jcvi.jillion.fasta.nt.NucleotideFastaRecord;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.jcvi.vigor.component.AlignmentEvidence;
-import org.jcvi.vigor.component.VirusGenome;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.utils.LoadDefaultParameters;
+import org.jcvi.vigor.utils.VigorLogging;
+import org.jcvi.vigor.utils.VigorUtils;
+import org.springframework.stereotype.Service;
+
+import java.io.File;
+import java.util.List;
+import java.util.Map;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 /**
  * This class is under service layer. The methods in this class has
@@ -35,8 +25,6 @@ public class VigorInitializationService {
 
 	private static final Logger LOGGER = LogManager.getLogger(VigorInitializationService.class);
 
-	@Autowired
-	private AlignmentGenerationService alignmentGenerationService;
 
 	/**
 	 * @param inputs:
@@ -44,8 +32,7 @@ public class VigorInitializationService {
 	 *            sequence from the input file and determine AlignmentEvidence
 	 */
 
-	public void initializeVigor(Namespace inputs) {
-		try {
+	public VigorForm initializeVigor(Namespace inputs) {
 			boolean isComplete = false;
 			boolean isCircular = false;
 			Boolean complete_gene = inputs.getBoolean("complete_gene");
@@ -57,28 +44,10 @@ public class VigorInitializationService {
 				isComplete = true;
 				isCircular = true;
 			}
-			VigorForm form = loadParameters(inputs);
-			String inputFileName = inputs.getString("input_fasta");
-			// TODO check
-			NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(
-					new File(inputFileName)).hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)
-							.build();
-			Stream<NucleotideFastaRecord> records = dataStore.records();
-			Iterator<NucleotideFastaRecord> i = records.iterator();
-			while (i.hasNext()) {
-				NucleotideFastaRecord record = i.next();
-				VirusGenome virusGenome = new VirusGenome(record.getSequence(), record.getComment(), record.getId(),
-						isComplete, isCircular);
-				// Call referenceDBGenerationService methods to generate alignmentEvidence.
-				alignmentGenerationService.GenerateAlignment(virusGenome, form);
-                
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			LOGGER.error(e.getMessage(), e);
-
-		}
+		VigorForm form = loadParameters(inputs);
+		form.getVigorParametersList().put("circular_gene", isCircular ? "1": "0");
+		form.getVigorParametersList().put("complete_gene", isComplete ? "1": "0");
+		return form;
 
 	}
 
@@ -188,6 +157,5 @@ public class VigorInitializationService {
 		vigorParametersList.putAll(virusSpecificParameters);
 		return vigorParametersList;
 	}
-
 
 }
