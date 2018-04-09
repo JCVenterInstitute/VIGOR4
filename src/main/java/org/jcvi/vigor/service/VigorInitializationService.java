@@ -188,4 +188,6 @@ public class VigorInitializationService {
 		vigorParametersList.putAll(virusSpecificParameters);
 		return vigorParametersList;
 	}
+
+
 }

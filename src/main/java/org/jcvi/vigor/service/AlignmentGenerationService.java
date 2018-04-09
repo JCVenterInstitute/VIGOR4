@@ -35,13 +35,14 @@ public class AlignmentGenerationService {
 		try {
 			String alignmentTool = chooseAlignmentTool(form.getAlignmentEvidence());
 			String min_gap_length = form.getVigorParametersList().get("min_seq_gap_length");
+			String referenceDbDir = form.getVigorParametersList().get("reference_db_path");
 			List<Range> sequenceGaps = VirusGenomeService.findSequenceGapRanges(min_gap_length,
 					virusGenome.getSequence());
 			Map<Frame,List<Long>> internalStops =VirusGenomeService.findInternalStops(virusGenome.getSequence());
 			virusGenome.setInternalStops(internalStops);
 			virusGenome.setSequenceGaps(sequenceGaps);
 			if (alignmentTool.equals("exonerate")) {
-			    List<Alignment> alignments = generateExonerateAlignment(virusGenome,form.getAlignmentEvidence());
+			    List<Alignment> alignments = generateExonerateAlignment(virusGenome,form.getAlignmentEvidence(),referenceDbDir);
 				alignments = alignments.stream()
 						.map(alignment -> viralProteinService.setViralProteinAttributes(alignment,form))
 						.collect(Collectors.toList());
@@ -61,8 +62,8 @@ public class AlignmentGenerationService {
 		}				
 	}
 	
-	public List<Alignment> generateExonerateAlignment(VirusGenome virusGenome, AlignmentEvidence alignmentEvidence) {
-	             return exonerateService.getAlignment(virusGenome, alignmentEvidence);
+	public List<Alignment> generateExonerateAlignment(VirusGenome virusGenome, AlignmentEvidence alignmentEvidence,String referenceDbDir) {
+	             return exonerateService.getAlignment(virusGenome, alignmentEvidence,referenceDbDir);
 	}
 
 	public String chooseAlignmentTool(AlignmentEvidence alignmentEvidence) {

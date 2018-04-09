@@ -33,7 +33,7 @@ public class ExonerateService {
 
 	
 
-	public List<Alignment> getAlignment(VirusGenome virusGenome, AlignmentEvidence alignmentEvidence) {
+	public List<Alignment> getAlignment(VirusGenome virusGenome, AlignmentEvidence alignmentEvidence,String referenceDbDir) {
        
 		String outputFilePath = GenerateExonerateOutput.queryExonerate(virusGenome,alignmentEvidence.getReference_db(), VigorUtils.getVigorWorkSpace(),null);
 		File outputFile = new File(outputFilePath);

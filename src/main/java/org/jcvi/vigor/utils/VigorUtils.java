@@ -2,6 +2,14 @@ package org.jcvi.vigor.utils;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.Appender;
+import org.apache.logging.log4j.core.Layout;
+import org.apache.logging.log4j.core.LoggerContext;
+import org.apache.logging.log4j.core.appender.FileAppender;
+import org.apache.logging.log4j.core.config.AppenderRef;
+import org.apache.logging.log4j.core.config.Configuration;
+import org.apache.logging.log4j.core.config.LoggerConfig;
+import org.apache.logging.log4j.core.layout.PatternLayout;
 import org.springframework.core.io.ClassPathResource;
 import java.io.File;
 import java.io.IOException;
@@ -133,7 +141,15 @@ public class VigorUtils {
 			return false;
 		}
 	}
-	
+	public void initializeUserReportAppender(File outputDirectory,String fileName){
+		LoggerContext lc = (LoggerContext) LogManager.getContext(false);
+		FileAppender fa = FileAppender.newBuilder().withName("userReport").withAppend(false).withFileName(new File(outputDirectory, fileName).toString())
+				.setConfiguration(lc.getConfiguration()).build();
+		fa.start();
+		lc.getConfiguration().addAppender(fa);
+		lc.getRootLogger().addAppender(lc.getConfiguration().getAppender(fa.getName()));
+		lc.updateLoggers();
+	}
 
 	
 	
