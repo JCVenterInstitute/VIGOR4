@@ -35,11 +35,11 @@ public class VigorInitializationService {
 	public VigorForm initializeVigor(Namespace inputs) {
 			boolean isComplete = false;
 			boolean isCircular = false;
-			Boolean complete_gene = inputs.getBoolean("complete_gene");
+			Boolean complete_gene = inputs.getBoolean(CommandLineParameters.completeGene);
 			if (complete_gene != null && complete_gene) {
 				isComplete = true;
 			}
-			Boolean circular_gene = inputs.getBoolean("circular_gene");
+			Boolean circular_gene = inputs.getBoolean(CommandLineParameters.circularGene);
 			if (circular_gene != null && circular_gene) {
 				isComplete = true;
 				isCircular = true;
@@ -67,7 +67,7 @@ public class VigorInitializationService {
 				.loadVigorParameters(VigorUtils.getVigorParametersPath());
 		AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
 		VigorForm form = new VigorForm();
-		String reference_db = inputs.getString("reference_database");
+		String reference_db = inputs.getString(CommandLineParameters.referenceDB);
 		if ("any".equals(reference_db)) {
 			reference_db = vigorParameterList.get("reference_db");
 			LOGGER.debug("autoselecting reference database; setting value to {}", reference_db);
@@ -80,28 +80,28 @@ public class VigorInitializationService {
 
 		vigorParameterList = loadVirusSpecificParameters(vigorParameterList, alignmentEvidence.getReference_db());
 
-		Integer min_gene_size = inputs.getInt("min_gene_size");
+		Integer min_gene_size = inputs.getInt(CommandLineParameters.minGeneSize);
 		if (min_gene_size != null) {
 			vigorParameterList.put("min_gene_size", min_gene_size.toString());
 		}
 
-		String min_gene_coverage = inputs.getString("min_gene_coverage");
+		String min_gene_coverage = inputs.getString(CommandLineParameters.minCoverage);
 		if (min_gene_coverage != null ) {
 			vigorParameterList.put("min_gene_coverage", min_gene_coverage);
 		}
-		String frameshift_sensitivity = inputs.getString("frameshift_sensitity");
+		String frameshift_sensitivity = inputs.getString(CommandLineParameters.frameshiftSensitivity);
 		if (frameshift_sensitivity != null ) {
 			vigorParameterList.put("frameshift_sensitivity", frameshift_sensitivity);
 		}
-		String candidate_selection = inputs.getString("skip_selection");
+		String candidate_selection = inputs.getString(CommandLineParameters.skipSelection);
 		if (candidate_selection != null ) {
 			vigorParameterList.put("candidate_selection", candidate_selection);
 		}
-		Boolean use_locus_tags = inputs.getBoolean("use_locus_tags");
+		Boolean use_locus_tags = inputs.getBoolean(CommandLineParameters.useLocusTags);
 		if (use_locus_tags != null) {
 			vigorParameterList.put("use_locus_tags", use_locus_tags ? "1": "0");
 		}
-		Boolean ignore_reference_requirements = inputs.getBoolean("ignore_reference_requirements");
+		Boolean ignore_reference_requirements = inputs.getBoolean(CommandLineParameters.ignoreReferenceRequirements);
 		if (ignore_reference_requirements != null && ignore_reference_requirements) {
 			vigorParameterList.put("min_candidate_pctsimilarity", "0");
 			vigorParameterList.put("min_candidate_sbjcoverage", "0");
@@ -113,15 +113,15 @@ public class VigorInitializationService {
 			vigorParameterList.put("min_pseudogene_coverage", "0");
 		}
 
-		String evalue = inputs.getString("evalue");
+		String evalue = inputs.getString(CommandLineParameters.eValue);
 		if (evalue != null) {
 			vigorParameterList.put("candidate_evalue", evalue);
 		}
-		Boolean jcvi_rules = inputs.getBoolean("jcvi_rules");
+		Boolean jcvi_rules = inputs.getBoolean(CommandLineParameters.jcviRules);
 		if (jcvi_rules != null) {
 			vigorParameterList.put("jcvi_rules", jcvi_rules ? "1": "0");
 		}
-		List<String> parameters = inputs.getList("parameters");
+		List<String> parameters = inputs.getList(CommandLineParameters.parameters);
 		if (parameters != null) {
 			final Pattern splitter = Pattern.compile("~~");
 			Map<String, String> temp = parameters.stream()

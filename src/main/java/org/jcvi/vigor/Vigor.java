@@ -54,13 +54,27 @@ public class Vigor {
 
         Namespace parsedArgs = parseArgs(args);
         VigorForm vigorForm = getVigorForm(parsedArgs);
-        String inputFileName = parsedArgs.getString("input_fasta");
+        String inputFileName = parsedArgs.getString(CommandLineParameters.inputFile);
         File inputFile = new File(inputFileName);
+        boolean argsOK = true;
         if (! inputFile.exists()) {
             LOGGER.error("input file {} doesn't exists.", inputFileName);
-            System.exit(1);
+            argsOK = false;
         } else if (! inputFile.canRead()) {
             LOGGER.error("input file {} isn't readable.", inputFileName);
+            argsOK = false;
+        }
+        File outputDirectory = new File(parsedArgs.getString(CommandLineParameters.outputPrefix)).getAbsoluteFile();
+        if ( outputDirectory.exists()) {
+            if (!outputDirectory.isDirectory()) {
+                LOGGER.error("{} exists but is not a directory", outputDirectory.getPath());
+                argsOK = false;
+            }
+        } else if (! outputDirectory.mkdirs()) {
+            LOGGER.error("Unable to create directory path {}", outputDirectory.getPath());
+        }
+
+        if (! argsOK) {
             System.exit(1);
         }
         Map<String,String> vigorParameters = vigorForm.getVigorParametersList();
@@ -86,8 +100,7 @@ public class Vigor {
                 List<Alignment> alignments = generateAlignments(virusGenome, vigorForm);
                 List<Model> candidateModels = generateModels(alignments, vigorForm);
                 List<Model> geneModels = generateGeneModels(candidateModels, vigorForm);
-                // TODO checkout output earlier.
-                generateOutput(geneModels, vigorForm.getVigorParametersList().get("output"));
+                generateOutput(geneModels, outputDirectory.toString());
             }
 
         } catch (DataStoreException e) {
