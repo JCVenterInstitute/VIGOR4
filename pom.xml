@@ -8,6 +8,11 @@
   </repositories>
 
   <properties>
+
+    <!-- platform -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    
+    <!-- library versions -->
     <spring.version>5.0.4.RELEASE</spring.version>
     <java-version>1.8</java-version>
     <argparse4j-version>0.8.1</argparse4j-version>
