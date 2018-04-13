@@ -37,7 +37,7 @@ public class GeneModelGenerationService {
 		List<Model> pseudoGenes = new ArrayList<Model>();
 		isDebug = form.isDebug();
 		List<Model> processedModels = determineGeneFeatures(models, partialGeneModels, pseudoGenes, form);
-		// Process partial gene models and pseudogenes
+		// TODO process pseudogenes, Not included in initial release
 		if(processedModels.size()<=0){
 			processedModels.addAll(partialGeneModels);
 		}

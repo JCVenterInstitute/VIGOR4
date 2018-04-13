@@ -40,8 +40,8 @@ public class DetermineStart implements DetermineGeneFeatures {
 				"start_codon_search_window");
 		try {
 			List<Model> models = findStart(startCodons, model, startCodonWindowParam);
-			LOGGER.info("Models after determining start: {}", () ->
-				models.stream().map(String::valueOf).collect(Collectors.joining("\n")));
+			/*LOGGER.debug("Models after determining start: {}", () ->
+				models.stream().map(String::valueOf).collect(Collectors.joining("\n")));*/
 			return models;
 		} catch (CloneNotSupportedException e) {
 			LOGGER.error("for model {} problem finding start using codons {} and search window {}",
@@ -193,22 +193,20 @@ public class DetermineStart implements DetermineGeneFeatures {
 				}
 				newModels.add(newModel);
 			}
-		}else{
-			System.out.println("Start not found");
 		}
 		if (rangeScoreMap.isEmpty() && isSequenceMissing) {
 			Model newModel = new Model();
 			newModel = model.clone();
 			newModel.setPartial5p(true);
 			newModels.add(newModel);
-			System.out.println("Sequence is missin. No Start found. Partial gene "+newModel.getAlignment().getViralProtein().getProteinID());
+			//System.out.println("Sequence is missin. No Start found. Partial gene "+newModel.getAlignment().getViralProtein().getProteinID());
 
 		} else if (rangeScoreMap.isEmpty()) {
 			Model newModel = new Model();
 			newModel = model.clone();
 			newModel.setPseudogene(true);
 			newModels.add(newModel);	
-			System.out.println("Pseudogene. No Start found. "+newModel.getAlignment().getViralProtein().getProteinID());
+			//System.out.println("Pseudogene. No Start found. "+newModel.getAlignment().getViralProtein().getProteinID());
 		}
 
 		return newModels;

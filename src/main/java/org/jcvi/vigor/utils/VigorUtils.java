@@ -2,6 +2,14 @@ package org.jcvi.vigor.utils;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.Appender;
+import org.apache.logging.log4j.core.Layout;
+import org.apache.logging.log4j.core.LoggerContext;
+import org.apache.logging.log4j.core.appender.FileAppender;
+import org.apache.logging.log4j.core.config.AppenderRef;
+import org.apache.logging.log4j.core.config.Configuration;
+import org.apache.logging.log4j.core.config.LoggerConfig;
+import org.apache.logging.log4j.core.layout.PatternLayout;
 import org.springframework.core.io.ClassPathResource;
 import java.io.File;
 import java.io.IOException;
@@ -16,6 +24,7 @@ public class VigorUtils {
 	private static String BLAST_CLASSPATH = "vigorResources" + File.separator + "blast" + File.separator;
 	private static String WINDOWS = "windows";
 	private static String LINUX = "linux";
+
 
 
 	public static boolean isNullOrEmpty(Object value) {
@@ -66,7 +75,7 @@ public class VigorUtils {
 				+ " -e 1e-5 -M BLOSUM45 -g F -F \"\" -z 3000000 -v 0 -b 100 -m 7";
 	}
 
-	public static String getVirusDatabasePath() {
+	/*public static String getVirusDatabasePath() {
 		String filepath="";
 		try {
 			File folder = new ClassPathResource ( "vigorResources/data3" ).getFile ();
@@ -77,17 +86,17 @@ public class VigorUtils {
 			LOGGER.error ( e.getMessage (),e );
 		}
 		return filepath;
-	}
+	}*/
 
 	public static String getVigorParametersPath() {
 
 		String vigorIniPath = "vigorResources" + File.separator + "config" + File.separator + "vigor.ini";
 		return vigorIniPath;
 	}
-	public static String getVirusSpecificParametersPath(){
+	/*public static String getVirusSpecificParametersPath(){
         String virusParamsPath = "vigorResources" + File.separator + "config" + File.separator + "virusSpecificParams";
         return virusParamsPath;
-    }
+    }*/
 
 	public static String getBlastFilePath() throws IllegalArgumentException {
 		if (OSValidator.isWindows()) {
@@ -133,7 +142,7 @@ public class VigorUtils {
 			return false;
 		}
 	}
-	
+
 
 	
 	

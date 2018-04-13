@@ -49,11 +49,7 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
 			min_missing_AA_size = Integer.parseInt(minMissingAASizeParam);
 		}
 		model.getExons().sort(Exon.Comparators.Ascending);
-		System.out.println("Model "+ model.getGeneSymbol());
-
-		System.out.println("Before"+model.getExons().size());
-		model = findMissingExons(model);	
-		System.out.println("After"+model.getExons().size());
+		model = findMissingExons(model);
 		model.getExons().sort(Exon.Comparators.Ascending);
 		outModels.add(model);	
 		return outModels;

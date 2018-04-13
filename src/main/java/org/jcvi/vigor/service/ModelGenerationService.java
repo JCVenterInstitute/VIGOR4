@@ -99,15 +99,11 @@ public class ModelGenerationService {
 
 		for (int i = 0; i < alignments.size(); i++) {
 			Alignment alignment = alignments.get(i);
-			if (alignment.getViralProtein().getProteinID().equals("339267591_SP")) {
-				System.out.println("Break");
-			}
 			alignment.getAlignmentFragments().sort(AlignmentFragment.Comparators.Ascending);
 			initialModels.addAll(alignmentToModels(alignment, alignment.getAlignmentTool_name()));
 		}
 		if (isDebug) {
-			System.out.println("************Initial Models*************");
-			FormatVigorOutput.printModels2(initialModels);
+			FormatVigorOutput.printModels2(initialModels,"Initial Models");
 		}
 
 		List<Range> sequenceGaps = new ArrayList<Range>();
@@ -133,7 +129,7 @@ public class ModelGenerationService {
 		}
 
 		// split models at sequence gaps
-		System.out.println("Count of initial models" + initialModels.size());
+
 		for (Model model : initialModels) {
 			Range diffRange = null;
 			for (int i = 0; i < model.getExons().size() - 1; i++) {
@@ -152,11 +148,6 @@ public class ModelGenerationService {
 			} else {
 				candidateModels.add(model);
 			}
-		}
-		System.out.println("Count after splitting" + candidateModels.size());
-		if (isDebug) {
-			System.out.println("********After splitting models at the Genome sequence gaps**********");
-			FormatVigorOutput.printModels2(candidateModels);
 		}
 
 		return candidateModels;
