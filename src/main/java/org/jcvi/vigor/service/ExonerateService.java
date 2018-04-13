@@ -8,7 +8,6 @@ import org.jcvi.vigor.component.ViralProtein;
 import org.jcvi.vigor.component.VirusGenome;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.GenerateExonerateOutput;
-import org.jcvi.vigor.utils.VigorUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.align.exonerate.Exonerate2;
@@ -34,9 +33,10 @@ public class ExonerateService {
 
 	private static final Logger LOGGER = LogManager.getLogger(ExonerateService.class);
 
-	public List<Alignment> getAlignment(VirusGenome virusGenome, AlignmentEvidence alignmentEvidence, String referenceDbDir) throws ServiceException {
+	public List<Alignment> getAlignment(VirusGenome virusGenome, AlignmentEvidence alignmentEvidence, String workspace,String exoneratePath) throws ServiceException {
 
-		String outputFilePath = GenerateExonerateOutput.queryExonerate(virusGenome,alignmentEvidence.getReference_db(), VigorUtils.getVigorWorkSpace(),null);
+		String referenceDB= getClass().getClassLoader().getResource(alignmentEvidence.getReference_db()).getPath();
+		String outputFilePath = GenerateExonerateOutput.queryExonerate(virusGenome,referenceDB,workspace,null,exoneratePath);
 		File outputFile = new File(outputFilePath);
 		return parseExonerateOutput(outputFile, alignmentEvidence, virusGenome);
 
@@ -51,7 +51,7 @@ public class ExonerateService {
 		} catch (IOException e) {
 			throw new ServiceException(String.format("Error parsing exonerate output %s", file.getName()));
 		}
-		String dbFilePath = VigorUtils.getVirusDatabasePath() + File.separator + alignmentEvidence.getReference_db();
+		String dbFilePath = this.getClass().getClassLoader().getResource(alignmentEvidence.getReference_db()).getPath();
 		try (ProteinFastaDataStore datastore = new ProteinFastaFileDataStoreBuilder(new File(dbFilePath))
 				.hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED).build();
 		) {

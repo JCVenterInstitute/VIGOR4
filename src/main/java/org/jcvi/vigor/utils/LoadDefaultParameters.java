@@ -21,7 +21,7 @@ public class LoadDefaultParameters {
 			INIConfiguration iniConfig = configs.ini(Thread.currentThread().getContextClassLoader().getResource(path));
 
 			iniConfig.getSections().stream().forEach(i -> iniConfig.getSection(i).getKeys()
-					.forEachRemaining(n -> vigorParametersList.put(n, iniConfig.getSection(i).getString(n))));
+					.forEachRemaining(n -> vigorParametersList.put(n, iniConfig.getSection(i).getString(n).replaceAll("\\s+",""))));
 
 		} catch (ConfigurationException e) {
 			VigorException.printExceptionMessage(e.getMessage());

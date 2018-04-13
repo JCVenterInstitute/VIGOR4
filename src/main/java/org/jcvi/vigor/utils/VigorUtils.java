@@ -26,6 +26,7 @@ public class VigorUtils {
 	private static String LINUX = "linux";
 
 
+
 	public static boolean isNullOrEmpty(Object value) {
 		if (value != null && !value.toString().trim().equalsIgnoreCase(""))
 			return false;
@@ -74,7 +75,7 @@ public class VigorUtils {
 				+ " -e 1e-5 -M BLOSUM45 -g F -F \"\" -z 3000000 -v 0 -b 100 -m 7";
 	}
 
-	public static String getVirusDatabasePath() {
+	/*public static String getVirusDatabasePath() {
 		String filepath="";
 		try {
 			File folder = new ClassPathResource ( "vigorResources/data3" ).getFile ();
@@ -85,17 +86,17 @@ public class VigorUtils {
 			LOGGER.error ( e.getMessage (),e );
 		}
 		return filepath;
-	}
+	}*/
 
 	public static String getVigorParametersPath() {
 
 		String vigorIniPath = "vigorResources" + File.separator + "config" + File.separator + "vigor.ini";
 		return vigorIniPath;
 	}
-	public static String getVirusSpecificParametersPath(){
+	/*public static String getVirusSpecificParametersPath(){
         String virusParamsPath = "vigorResources" + File.separator + "config" + File.separator + "virusSpecificParams";
         return virusParamsPath;
-    }
+    }*/
 
 	public static String getBlastFilePath() throws IllegalArgumentException {
 		if (OSValidator.isWindows()) {
@@ -141,15 +142,7 @@ public class VigorUtils {
 			return false;
 		}
 	}
-	public void initializeUserReportAppender(File outputDirectory,String fileName){
-		LoggerContext lc = (LoggerContext) LogManager.getContext(false);
-		FileAppender fa = FileAppender.newBuilder().withName("userReport").withAppend(false).withFileName(new File(outputDirectory, fileName).toString())
-				.setConfiguration(lc.getConfiguration()).build();
-		fa.start();
-		lc.getConfiguration().addAppender(fa);
-		lc.getRootLogger().addAppender(lc.getConfiguration().getAppender(fa.getName()));
-		lc.updateLoggers();
-	}
+
 
 	
 	

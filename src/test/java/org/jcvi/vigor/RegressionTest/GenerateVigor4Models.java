@@ -50,7 +50,7 @@ public class GenerateVigor4Models {
 							record.getId(), false, false);
 
 					String fileName = GenerateExonerateOutput.queryExonerate(
-							virusGenome, refDB, file.getAbsolutePath(),null);
+							virusGenome, refDB, file.getAbsolutePath(),null,"/usr/bin/exonerate");
 					File outputFile = new File(fileName);
 					AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
 					alignmentEvidence.setReference_db(refDB);

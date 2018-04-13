@@ -11,6 +11,7 @@ import org.jcvi.jillion.fasta.nt.NucleotideFastaRecord;
 import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.component.VirusGenome;
+import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.service.*;
 import org.jcvi.vigor.service.exception.ServiceException;
@@ -53,7 +54,6 @@ public class Vigor {
 	public void run(String ... args) {
 
         Namespace parsedArgs = parseArgs(args);
-        VigorForm vigorForm = getVigorForm(parsedArgs);
         String inputFileName = parsedArgs.getString("input_fasta");
         File inputFile = new File(inputFileName);
         if (! inputFile.exists()) {
@@ -63,6 +63,8 @@ public class Vigor {
             LOGGER.error("input file {} isn't readable.", inputFileName);
             System.exit(1);
         }
+        try{
+        VigorForm vigorForm = getVigorForm(parsedArgs);
         Map<String,String> vigorParameters = vigorForm.getVigorParametersList();
         LOGGER.info( () ->  vigorParameters.entrySet()
                                             .stream()
@@ -71,9 +73,9 @@ public class Vigor {
                                             .collect(Collectors.joining("\n")) );
         // TODO check file exists and is readable
         // TODO check output directory and permissions
-        try (NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(inputFile)
+        NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(inputFile)
                 .hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)
-                .build();) {
+                .build();
             Stream<NucleotideFastaRecord> records = dataStore.records();
             Iterator<NucleotideFastaRecord> i = records.iterator();
             while (i.hasNext()) {
@@ -87,7 +89,8 @@ public class Vigor {
                 List<Model> candidateModels = generateModels(alignments, vigorForm);
                 List<Model> geneModels = generateGeneModels(candidateModels, vigorForm);
                 // TODO checkout output earlier.
-                generateOutput(geneModels, vigorForm.getVigorParametersList().get("output"));
+                generateOutput(geneModels, vigorForm.getVigorParametersList().get("output_directory")
+                        +File.separator+vigorForm.getVigorParametersList().get("output_prefix"));
             }
 
         } catch (DataStoreException e) {
@@ -101,6 +104,10 @@ public class Vigor {
             LOGGER.error(e);
             System.exit(1);
         }
+        catch(VigorException e){
+            LOGGER.error(e);
+            System.exit(1);
+        }
 
 
     }
@@ -109,7 +116,7 @@ public class Vigor {
         return inputValidationService.processInput(args);
     }
 
-    public VigorForm getVigorForm(Namespace args) {
+    public VigorForm getVigorForm(Namespace args) throws VigorException {
         return initializationService.initializeVigor(args);
     }
 

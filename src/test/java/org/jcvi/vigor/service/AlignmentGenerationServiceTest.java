@@ -52,7 +52,7 @@ public class AlignmentGenerationServiceTest {
 
 	@Test
 	public void generateAlignmentsTest() throws ServiceException {
-		List<Alignment> alignments = alignmentGenerationService.generateExonerateAlignment(virusGenome,new AlignmentEvidence("flua_db"));
+		List<Alignment> alignments = alignmentGenerationService.generateExonerateAlignment(virusGenome,new AlignmentEvidence("flua_db"),"data3");
 		assertEquals(4,alignments.size());
 	}
 

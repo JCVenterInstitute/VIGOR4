@@ -128,14 +128,14 @@ public class DetermineStop implements DetermineGeneFeatures {
 			newModel = model.clone();
 			newModel.setPartial3p(true);
 			newModels.add(newModel);
-			System.out.println("Sequence is missin. No stop found. Partial gene "+newModel.getAlignment().getViralProtein().getProteinID());
+			//System.out.println("Sequence is missin. No stop found. Partial gene "+newModel.getAlignment().getViralProtein().getProteinID());
 
 		} else if (rangeScoreMap.isEmpty()) {
 			Model newModel = new Model();
 			newModel = model.clone();
 			newModel.setPseudogene(true);
 			newModels.add(newModel);
-			System.out.println("Pseudogene. No stop found. "+newModel.getAlignment().getViralProtein().getProteinID());
+			//System.out.println("Pseudogene. No stop found. "+newModel.getAlignment().getViralProtein().getProteinID());
 		}
 
 		return newModels;

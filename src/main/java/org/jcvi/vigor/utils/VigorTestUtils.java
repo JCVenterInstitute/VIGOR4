@@ -49,7 +49,7 @@ public class VigorTestUtils {
 			alignmentEvidence.setReference_db(refDB);
 
 			String fileName = GenerateExonerateOutput.queryExonerate(
-					virusGenome, refDB, workspace, proteinID);
+					virusGenome, refDB, workspace, proteinID,"/usr/bin/exonerate");
 			File outputFile = new File(fileName);
 			List<Alignment> alignments = exonerateService.parseExonerateOutput(outputFile,
 							alignmentEvidence, virusGenome);

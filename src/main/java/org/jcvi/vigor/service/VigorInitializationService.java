@@ -3,7 +3,11 @@ package org.jcvi.vigor.service;
 import net.sourceforge.argparse4j.inf.Namespace;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.LoggerContext;
+import org.apache.logging.log4j.core.appender.FileAppender;
+import org.apache.logging.log4j.core.layout.PatternLayout;
 import org.jcvi.vigor.component.AlignmentEvidence;
+import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.utils.LoadDefaultParameters;
 import org.jcvi.vigor.utils.VigorLogging;
@@ -32,22 +36,26 @@ public class VigorInitializationService {
 	 *            sequence from the input file and determine AlignmentEvidence
 	 */
 
-	public VigorForm initializeVigor(Namespace inputs) {
-			boolean isComplete = false;
-			boolean isCircular = false;
-			Boolean complete_gene = inputs.getBoolean("complete_gene");
-			if (complete_gene != null && complete_gene) {
-				isComplete = true;
-			}
-			Boolean circular_gene = inputs.getBoolean("circular_gene");
-			if (circular_gene != null && circular_gene) {
-				isComplete = true;
-				isCircular = true;
-			}
-		VigorForm form = loadParameters(inputs);
-		form.getVigorParametersList().put("circular_gene", isCircular ? "1": "0");
-		form.getVigorParametersList().put("complete_gene", isComplete ? "1": "0");
-		return form;
+	public VigorForm initializeVigor(Namespace inputs) throws VigorException {
+
+            boolean isComplete = false;
+            boolean isCircular = false;
+            Boolean complete_gene = inputs.getBoolean("complete_gene");
+            if (complete_gene != null && complete_gene) {
+                isComplete = true;
+            }
+            Boolean circular_gene = inputs.getBoolean("circular_gene");
+            if (circular_gene != null && circular_gene) {
+                isComplete = true;
+                isCircular = true;
+            }
+            VigorForm form = loadParameters(inputs);
+            String outputDir = form.getVigorParametersList().get("output_directory");
+            String outputPrefix = form.getVigorParametersList().get("output_prefix");
+            initiateReportFile(outputDir,outputPrefix);
+            form.getVigorParametersList().put("circular_gene", isCircular ? "1" : "0");
+            form.getVigorParametersList().put("complete_gene", isComplete ? "1" : "0");
+            return form;
 
 	}
 
@@ -61,24 +69,41 @@ public class VigorInitializationService {
 	 *         by the default parameters of vigor.ini file and saved to
 	 *         VigorParametersList attribute of the form.
 	 */
-	public VigorForm loadParameters(Namespace inputs) {
+	public VigorForm loadParameters(Namespace inputs) throws VigorException{
 
 		Map<String, String> vigorParameterList = LoadDefaultParameters
 				.loadVigorParameters(VigorUtils.getVigorParametersPath());
 		AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
 		VigorForm form = new VigorForm();
-		String reference_db = inputs.getString("reference_database");
+		String reference_db_dir=vigorParameterList.get("reference_db_path");
+		String reference_db= inputs.getString("reference_database");
 		if ("any".equals(reference_db)) {
-			reference_db = vigorParameterList.get("reference_db");
-			LOGGER.debug("autoselecting reference database; setting value to {}", reference_db);
-		}
+			//TODO initiate referenceDB generation service
+			LOGGER.debug("autoselecting reference database from"+reference_db_dir+"; setting value to {}");
+		}else{
+		    File file = new File(reference_db);
+		    if(file.exists() && file.isFile()){
+		        reference_db=file.getAbsolutePath();
+            }else{
+                reference_db=reference_db_dir+File.separator+reference_db;
+            }
+        }
+
 
 		LOGGER.debug("Reference_db is " + reference_db);
-		// TODO check if reference db is a path, if so use that, else construct path using database path
 		alignmentEvidence.setReference_db(reference_db);
 
-
 		vigorParameterList = loadVirusSpecificParameters(vigorParameterList, alignmentEvidence.getReference_db());
+
+		String outputPath = inputs.getString("output_prefix");
+		File outputFile= new File(outputPath);
+		if(outputFile.getParentFile().exists()&&outputFile.getParentFile().isDirectory()){
+
+        }else{
+		    throw new VigorException("Invalid -o parameter.Please provide valid output directory followed by prefix");
+        }
+		vigorParameterList.put("output_prefix",outputFile.getName());
+        vigorParameterList.put("output_directory",outputFile.getParentFile().getAbsolutePath());
 
 		Integer min_gene_size = inputs.getInt("min_gene_size");
 		if (min_gene_size != null) {
@@ -152,10 +177,21 @@ public class VigorInitializationService {
 	 */
 	public Map<String, String> loadVirusSpecificParameters(Map<String, String> vigorParametersList,
 			String reference_db) {
+	    String virusSpecificParametersPath = vigorParametersList.get("virusSpecific_parameters");
 		Map<String, String> virusSpecificParameters = LoadDefaultParameters.loadVigorParameters(
-				VigorUtils.getVirusSpecificParametersPath() + File.separator + reference_db + ".ini");
+				virusSpecificParametersPath + File.separator + reference_db + ".ini");
 		vigorParametersList.putAll(virusSpecificParameters);
 		return vigorParametersList;
 	}
 
+	public void initiateReportFile(String outputDir, String outputPrefix ){
+        LoggerContext lc = (LoggerContext) LogManager.getContext(false);
+        FileAppender fa = FileAppender.newBuilder().withName("mylogger").withAppend(false).withFileName(new File(outputDir, outputPrefix+".rpt").toString())
+                .withLayout(PatternLayout.newBuilder().withPattern("%-5p %d  [%t] %C{2} (%F:%L) - %m%n").build())
+                .setConfiguration(lc.getConfiguration()).build();
+        fa.start();
+        lc.getConfiguration().addAppender(fa);
+        lc.getRootLogger().addAppender(lc.getConfiguration().getAppender(fa.getName()));
+        lc.updateLoggers();
+    }
 }

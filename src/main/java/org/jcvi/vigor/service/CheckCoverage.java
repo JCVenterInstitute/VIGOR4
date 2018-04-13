@@ -16,7 +16,6 @@ import org.jcvi.jillion.core.residue.aa.AminoAcid;
 import org.jcvi.jillion.core.residue.aa.IupacTranslationTables;
 import org.jcvi.jillion.core.residue.aa.ProteinSequence;
 import org.jcvi.jillion.core.residue.aa.ProteinSequenceBuilder;
-import org.jcvi.jillion.core.residue.nt.Nucleotide;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
 import org.jcvi.vigor.component.Exon;
@@ -28,7 +27,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class CheckCoverage implements EvaluateModel {
 
-	
 	@Override
 	public Model evaluate(Model model,VigorForm form) {
 		NucleotideSequence cds = determineCDS(model);
@@ -170,8 +168,7 @@ public class CheckCoverage implements EvaluateModel {
 		NucleotideSequence cds = NTSeqBuilder.build();
         long length = cds.getLength();
         long start = model.getExons().get(0).getRange().getBegin();
-        System.out.println(cds);
-		Map<Frame,List<Long>> stops = IupacTranslationTables.STANDARD.findStops(cds);
+        Map<Frame,List<Long>> stops = IupacTranslationTables.STANDARD.findStops(cds);
 		for(Map.Entry<Frame,List<Long>> pair :stops.entrySet()){
 			if(pair.getKey().equals(Frame.ONE)){
 			List<Long> cdsStops = (List<Long>)pair.getValue();

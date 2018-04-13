@@ -14,13 +14,14 @@ import org.jcvi.jillion.fasta.aa.ProteinFastaFileDataStoreBuilder;
 import org.jcvi.jillion.fasta.aa.ProteinFastaRecord;
 import org.jcvi.vigor.component.VirusGenome;
 
+
 public class GenerateExonerateOutput {
 	
 		
 	public static String queryExonerate(VirusGenome virusGenome, String referenceDB,
-			String workspace,String proteinID) {
-  
-		File file = new File(workspace + File.separator + "sequence_temp.fasta");
+			String workspace,String proteinID,String exoneratePath) {
+
+        File file = new File(workspace + File.separator + "sequence_temp.fasta");
 		Path path = Paths.get(file.getAbsolutePath());
 		List<String> sequence = java.util.Arrays.asList(virusGenome
 				.getSequence().toString().split("(?<=\\G.{70})"));
@@ -42,15 +43,15 @@ public class GenerateExonerateOutput {
 		}
 		String fileName = "";
 		fileName = virusGenome.getId().replaceAll("\\|", "") + ".txt";
-		String refDBFolder = referenceDB.replaceAll("_db", "");
-		
+		File dbFile = new File(referenceDB);
+		String refDBFolder = dbFile.getName().replaceAll("_db", "");
+		String dbPath=referenceDB;
 		try {
-			String dbPath = VigorUtils.getVirusDatabasePath() + File.separator
-					+ referenceDB;
+
 		  	if(proteinID!=null){
 		  	  File dbFileTemp = new File(workspace+File.separator+"db_temp.fasta");
-				ProteinFastaDataStore dataStore = new ProteinFastaFileDataStoreBuilder(
-						new File(dbPath)).hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)
+		  	  ProteinFastaDataStore dataStore = new ProteinFastaFileDataStoreBuilder(
+						dbFile).hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)
 								.build();
 				Stream<ProteinFastaRecord> records = dataStore.records();
 				ProteinFastaRecord record = records.filter(r->r.getId().equals(proteinID)).findFirst().get();
@@ -73,14 +74,14 @@ public class GenerateExonerateOutput {
 				} catch (IOException e) {
 					System.out.println(e.getMessage());
 				}
-				dbPath = dbFileTemp.getAbsolutePath();				
+				dbPath = dbFileTemp.getAbsolutePath();
 			}
 			String command2 = workspace + File.separator + refDBFolder;
       
 			Process p1 = new ProcessBuilder("mkdir", command2).start();
 			p1.waitFor();
 			p1.destroy();
-			Process p2 = new ProcessBuilder("exonerate", "--model",
+			Process p2 = new ProcessBuilder(exoneratePath, "--model",
 					"protein2genome", "-q", dbPath, "-t",
 					file.getAbsolutePath(), "--showcigar", "true")
 					.redirectOutput(
