@@ -69,7 +69,7 @@ public class PeptideServiceTest {
         protein.setDefline(id);
         protein.setProteinID("");
         protein.setSequence(ProteinSequence.of(sequence));
-        File peptideDB = Paths.get(VigorUtils.getVirusDatabasePath(), mp_ref_db).toFile();
+        File peptideDB = new File(mp_ref_db);
 
         List<MaturePeptideMatch> matches = peptideService.findPeptides(protein, peptideDB);
         LOGGER.debug(() -> String.format("peptides:%s", matches.stream().map(String::valueOf).collect(Collectors.joining("\n> ", "\n> ", ""))));
