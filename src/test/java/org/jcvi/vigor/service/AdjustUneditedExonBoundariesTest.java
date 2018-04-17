@@ -1,24 +1,25 @@
 package org.jcvi.vigor.service;
 
 
+import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.vigor.Application;
 import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.Model;
+import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.forms.VigorForm;
-import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.VigorTestUtils;
 import org.jcvi.vigor.utils.VigorUtils;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,36 +30,44 @@ import org.springframework.test.context.junit4.SpringRunner;
 @ContextConfiguration(classes = Application.class)
 public class AdjustUneditedExonBoundariesTest {
 
-    private List<Alignment> alignments;
-    private List<Model> models=new ArrayList<Model>();
+    final static Logger logger = LogManager.getLogger(AdjustUneditedExonBoundariesTest.class);
+
     @Autowired
     private ModelGenerationService modelGenerationService;
     @Autowired
     private ViralProteinService viralProteinService;
     @Autowired
     private AdjustUneditedExonBoundaries adjustUneditedExonBoundaries;
-    private ClassLoader classLoader = VigorTestUtils.class.getClassLoader();
-    private File file = new File(classLoader.getResource("vigorUnitTestInput/Flua_SpliceSites_Test.fasta"). getFile());
 
-    @Before
-    public void getModel() throws ServiceException {
-        alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(),"flua_db",VigorUtils.getVigorWorkSpace(),"seg8prot2A");
+    @Test
+    public void adjustSpliceSitesTest() throws CloneNotSupportedException, VigorException {
+        ClassLoader classLoader = VigorTestUtils.class.getClassLoader();
+        File file = new File(classLoader.getResource("vigorUnitTestInput/Flua_SpliceSites_Test.fasta"). getFile());
+        String referenceDB = classLoader.getResource("vigorResources/data3/flua_db").getFile().toString();
+        assertTrue("couldn't find reference DB", referenceDB != null);
+        String proteinID = "seg8prot2A";
+
+        logger.info("using fasta file {} and reference database {}", file, referenceDB);
+        List<Alignment> alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(),
+                referenceDB ,
+                VigorUtils.getVigorWorkSpace(),
+                proteinID);
         for (int i=0; i<alignments.size(); i++) {
             alignments.set(i,viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm()));
         }
-        alignments.stream().forEach(x -> {
-            models.addAll(modelGenerationService.alignmentToModels(x, "exonerate"));
-        });
-
-    }
-
-    @Test
-    public void adjustSpliceSitesTest() throws CloneNotSupportedException{
+        logger.info("found {} alignments for protein {}", alignments.size(), proteinID);
+        List<Model> models = alignments.stream()
+                                       .flatMap(x -> modelGenerationService.alignmentToModels(x, "exonerate").stream())
+                                       .collect(Collectors.toList());
+        logger.info("{} models for {} alignments", models.size(), alignments.size());
+        assertTrue("no models found for alignments", models.size() > 0);
         Model testModel = models.get(0);
+        assertTrue(String.format("no exons found for test model %s", testModel) , testModel.getExons().size() > 0);
         testModel.getExons().get(0).setRange(Range.of(11,30));
         List<Model> outModels = adjustUneditedExonBoundaries.adjustSpliceSites(testModel);
         Comparator<Model> bySpliceScore = Comparator.comparing( (m)->m.getScores().get("spliceScore"));
         Optional<Model> outModel = outModels.stream().sorted(bySpliceScore.reversed()).findFirst();
+        assertTrue("No adjusted model found", outModel.isPresent());
         assertEquals(Range.of(11,40),outModel.get().getExons().get(0).getRange());
     }
 

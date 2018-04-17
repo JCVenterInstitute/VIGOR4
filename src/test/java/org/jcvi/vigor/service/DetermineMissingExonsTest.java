@@ -18,6 +18,7 @@ import org.jcvi.jillion.core.residue.aa.ProteinSequence;
 import org.jcvi.jillion.core.residue.aa.ProteinSequenceBuilder;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
+import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -45,7 +46,7 @@ public class DetermineMissingExonsTest {
 
 
 	@Test
-	public void findMissingExonsWithSpliceFormPresent() throws ServiceException {
+	public void findMissingExonsWithSpliceFormPresent() throws VigorException {
 		ClassLoader classLoader = VigorTestUtils.class.getClassLoader();
 		File file = new File(classLoader.getResource("vigorUnitTestInput/sequence_flua.fasta"). getFile());
 		List<Alignment> alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(),"flua_db",

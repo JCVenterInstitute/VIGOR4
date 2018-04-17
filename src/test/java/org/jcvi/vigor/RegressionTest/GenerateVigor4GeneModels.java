@@ -5,7 +5,6 @@ import org.jcvi.jillion.fasta.nt.NucleotideFastaDataStore;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaFileDataStoreBuilder;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaRecord;
 import org.jcvi.vigor.Application;
-import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.AlignmentEvidence;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.component.VirusGenome;
@@ -18,14 +17,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.Comparator;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Service
@@ -70,7 +67,7 @@ public class GenerateVigor4GeneModels {
                         VirusGenome virusGenome = new VirusGenome(
                                 record.getSequence(), record.getComment(),
                                 record.getId(), false, false);
-                        alignmentGenerationService.GenerateAlignment(virusGenome,form);
+                        alignmentGenerationService.generateAlignment(virusGenome,form);
                    /*     String fileName = GenerateExonerateOutput.queryExonerate(
                                 virusGenome, refDB, file.getAbsolutePath(),null);
                         File outputFile = new File(fileName);

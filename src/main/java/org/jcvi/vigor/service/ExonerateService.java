@@ -6,6 +6,7 @@ import org.jcvi.vigor.component.AlignmentEvidence;
 import org.jcvi.vigor.component.AlignmentFragment;
 import org.jcvi.vigor.component.ViralProtein;
 import org.jcvi.vigor.component.VirusGenome;
+import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.GenerateExonerateOutput;
 import org.apache.logging.log4j.LogManager;
@@ -19,6 +20,7 @@ import org.jcvi.jillion.fasta.aa.ProteinFastaRecord;
 import org.springframework.stereotype.Service;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -29,30 +31,39 @@ import java.util.Map;
  */
 
 @Service
-public class ExonerateService {
+public class ExonerateService implements AlignmentService{
 
 	private static final Logger LOGGER = LogManager.getLogger(ExonerateService.class);
 
-	public List<Alignment> getAlignment(VirusGenome virusGenome, AlignmentEvidence alignmentEvidence, String workspace,String exoneratePath) throws ServiceException {
+	private Path exoneratePath;
 
-		String referenceDB= getClass().getClassLoader().getResource(alignmentEvidence.getReference_db()).getPath();
-		String outputFilePath = GenerateExonerateOutput.queryExonerate(virusGenome,referenceDB,workspace,null,exoneratePath);
+	public void setExoneratePath(Path exoneratePath) throws VigorException {
+		if (! (exoneratePath.toFile().exists() && exoneratePath.toFile().canExecute()) ) {
+			LOGGER.warn("exonerate path {} does not exist or is not executable", exoneratePath);
+			throw new VigorException(String.format("exonerate path %s does not exist or is not executable", exoneratePath));
+		}
+		this.exoneratePath = exoneratePath;
+	}
+
+	@Override
+	public List<Alignment> getAlignment(AlignmentEvidence alignmentEvidence, VirusGenome virusGenome, String referenceDB, String workspace) throws ServiceException {
+
+		String outputFilePath = GenerateExonerateOutput.queryExonerate(virusGenome,referenceDB,workspace,null, exoneratePath.toString());
 		File outputFile = new File(outputFilePath);
-		return parseExonerateOutput(outputFile, alignmentEvidence, virusGenome);
+		return parseExonerateOutput(outputFile, alignmentEvidence, virusGenome, referenceDB);
 
 	}
 
-	public List<Alignment> parseExonerateOutput(File file, AlignmentEvidence alignmentEvidence,
-			VirusGenome virusGenome) throws ServiceException{
+	public List<Alignment> parseExonerateOutput(File exonerateOutput, AlignmentEvidence alignmentEvidence,
+			VirusGenome virusGenome, String referenceDB) throws ServiceException{
 		List<Alignment> alignments = new ArrayList<Alignment>();
 		List<VulgarProtein2Genome2> Jalignments;
 		try {
-			Jalignments = Exonerate2.parseVulgarOutput(file);
+			Jalignments = Exonerate2.parseVulgarOutput(exonerateOutput);
 		} catch (IOException e) {
-			throw new ServiceException(String.format("Error parsing exonerate output %s", file.getName()));
+			throw new ServiceException(String.format("Error parsing exonerate output %s", exonerateOutput.getName()));
 		}
-		String dbFilePath = this.getClass().getClassLoader().getResource(alignmentEvidence.getReference_db()).getPath();
-		try (ProteinFastaDataStore datastore = new ProteinFastaFileDataStoreBuilder(new File(dbFilePath))
+		try (ProteinFastaDataStore datastore = new ProteinFastaFileDataStoreBuilder(new File(referenceDB))
 				.hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED).build();
 		) {
 			for (VulgarProtein2Genome2 Jalignment: Jalignments) {
@@ -62,7 +73,7 @@ public class ExonerateService {
 				alignment.setAlignmentScore(alignmentScores);
 				alignment.setAlignmentTool_name("exonerate");
 				alignment.setAlignmentEvidence(alignmentEvidence);
-				List<AlignmentFragment> alignmentFragments = new ArrayList<AlignmentFragment>();
+				List<AlignmentFragment> alignmentFragments = new ArrayList<>();
 
 				for (VulgarProtein2Genome2.AlignmentFragment fragment: Jalignment.getAlignmentFragments()) {
 					AlignmentFragment alignmentFragment = new AlignmentFragment();
@@ -84,7 +95,7 @@ public class ExonerateService {
 				alignments.add(alignment);
 			}
 		} catch (IOException e) {
-			LOGGER.error(String.format("Problem reading virus database file %s", dbFilePath), e);
+			LOGGER.error(String.format("Problem reading virus database file %s", referenceDB), e);
 			throw new ServiceException(e);
 		}
 		return alignments;

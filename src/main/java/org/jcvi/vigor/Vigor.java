@@ -21,7 +21,6 @@ import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -121,7 +120,7 @@ public class Vigor {
     }
 
     public List<Alignment> generateAlignments(VirusGenome genome, VigorForm form) throws ServiceException{
-        return alignmentGenerationService.GenerateAlignment(genome, form);
+        return alignmentGenerationService.generateAlignment(genome, form);
     }
 
     public List<Model> generateModels(List<Alignment> alignments, VigorForm form) throws ServiceException {
