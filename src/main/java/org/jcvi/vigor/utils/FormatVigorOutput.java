@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
+import org.jcvi.vigor.exception.VigorException;
 
 /**
  * Created by snettem on 5/24/2017.
@@ -47,7 +48,7 @@ public class FormatVigorOutput {
 		}
 	}
 
-	public static void printModelsWithAllFeatures(List<Model> models) throws FileNotFoundException{
+	public static void printModelsWithAllFeatures(List<Model> models) throws FileNotFoundException, VigorException {
 	    String genomeID = models.get(0).getAlignment().getVirusGenome().getId();
 	    PrintStream o = new PrintStream(new File(VigorUtils.getVigorWorkSpace()+"/Unit_Test_Output/"+File.separator+genomeID));
 	    PrintStream console = System.out;

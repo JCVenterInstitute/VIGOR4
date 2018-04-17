@@ -1,6 +1,7 @@
 package org.jcvi.vigor.service;
 import org.jcvi.vigor.component.*;
 import org.jcvi.vigor.service.exception.ServiceException;
+import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.VigorUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.jcvi.vigor.component.Splicing.SpliceSite;
@@ -32,7 +33,7 @@ public class ViralProteinService {
      *         generated and all the properties are defined;
      */
     public Alignment setViralProteinAttributes(Alignment alignment,VigorForm form) throws ServiceException {
-        String min_intronSize_param = form.getVigorParametersList().get("min_intron_size");
+        String min_intronSize_param = form.getConfiguration().get(ConfigurationParameters.IntronMinimumSize);
         if(VigorUtils.is_Integer(min_intronSize_param)){
             min_intron_length=Integer.parseInt(min_intronSize_param);
         }

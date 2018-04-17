@@ -10,7 +10,8 @@ import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.component.VirusGenome;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.service.*;
-import org.jcvi.vigor.utils.GenerateExonerateOutput;
+import org.jcvi.vigor.utils.ConfigurationParameters;
+import org.jcvi.vigor.utils.VigorConfiguration;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -117,10 +118,10 @@ public class GenerateVigor4GeneModels {
     }
 
 
-    public VigorForm setVigorParameters(VigorForm form,String workspace){
-        Map<String,String>  vigorParameters = new HashMap<String,String>();
-        vigorParameters.put("output",workspace+"/TEST");
-        form.setVigorParametersList(vigorParameters);
+    public VigorForm setVigorParameters(VigorForm form, String workspace){
+        VigorConfiguration configuration = new VigorConfiguration("test");
+        configuration.put(ConfigurationParameters.OutputDirectory,workspace+"/TEST");
+        form.setConfiguration(configuration);
         return form;
     }
 }

@@ -35,10 +35,10 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
 	@Override
 	public List<Model> determine(Model model, VigorForm form) {
 		List<Model> outModels=new ArrayList<Model>();
-		String minExonSizeParam = form.getVigorParametersList().get(
-				"min_exon_size");
-		String maxIntronSizeparam = form.getVigorParametersList().get("max_intron_size");
-		String minMissingAASizeParam = form.getVigorParametersList().get("min_missing_AA_size");
+		String minExonSizeParam = form.getConfiguration().get(
+				ConfigurationParameters.ExonMinimumSize);
+		String maxIntronSizeparam = form.getConfiguration().get(ConfigurationParameters.IntronMinimumSize);
+		String minMissingAASizeParam = form.getConfiguration().get(ConfigurationParameters.MinimumMissingAASize);
 		if (VigorUtils.is_Integer(minExonSizeParam)) {
 			minExonSize = Integer.parseInt(minExonSizeParam);
 		}

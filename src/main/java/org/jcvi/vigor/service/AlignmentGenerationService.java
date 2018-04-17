@@ -4,6 +4,7 @@ import org.jcvi.vigor.component.*;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.service.exception.ServiceException;
+import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.FormatVigorOutput;
 
 import java.nio.file.Paths;
@@ -13,6 +14,7 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
+import org.jcvi.vigor.utils.VigorConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,10 +38,12 @@ public class AlignmentGenerationService {
 		isDebug = form.isDebug();
 		AlignmentEvidence alignmentEvidence = form.getAlignmentEvidence();
 		String alignmentTool = chooseAlignmentTool(alignmentEvidence);
-		String min_gap_length = form.getVigorParametersList().get("min_seq_gap_length");
-		String exoneratePath = form.getVigorParametersList().get("exonerate_path");
-		String workspace = form.getVigorParametersList().get("output_directory");
-		String referenceDB = Paths.get(form.getVigorParametersList().get("reference_database_path"), alignmentEvidence.getReference_db()).toString();
+		VigorConfiguration vigorConfig = form.getConfiguration();
+
+		String min_gap_length = vigorConfig.get(ConfigurationParameters.SequenceGapMinimumLength);
+		String exoneratePath = vigorConfig.get(ConfigurationParameters.ExoneratePath);
+		String workspace = vigorConfig.get(ConfigurationParameters.OutputDirectory);
+		String referenceDB = Paths.get(vigorConfig.get(ConfigurationParameters.ReferenceDatabasePath), alignmentEvidence.getReference_db()).toString();
 
 		List<Range> sequenceGaps = VirusGenomeService.findSequenceGapRanges(min_gap_length,
 				virusGenome.getSequence());
@@ -67,7 +71,7 @@ public class AlignmentGenerationService {
 	private AlignmentService getAlignmentService(String alignmentTool, VigorForm form) throws ServiceException {
 		if ("exonerate".equals(alignmentTool)) {
 			try {
-				exonerateService.setExoneratePath(Paths.get(form.getVigorParametersList().get("exonerate_path")));
+				exonerateService.setExoneratePath(Paths.get(form.getConfiguration().get(ConfigurationParameters.ExoneratePath)));
 				return exonerateService;
 			} catch (VigorException e) {
 				throw new ServiceException(e);

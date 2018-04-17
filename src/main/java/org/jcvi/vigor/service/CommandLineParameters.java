@@ -19,7 +19,7 @@ public final class CommandLineParameters {
 	public final static String minGeneSize = "mine-gene-size";
 	public final static String verbose = "verbose";
 	public final static String ignoreRefID = "ignore_refID";
-
+	public final static String listConfigParameters = "list_config_parameters";
     /**
      * Not to be instantiated
      */

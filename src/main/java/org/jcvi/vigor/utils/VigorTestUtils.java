@@ -19,6 +19,7 @@ import org.jcvi.jillion.fasta.nt.NucleotideFastaRecord;
 import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.AlignmentEvidence;
 import org.jcvi.vigor.component.VirusGenome;
+import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.service.ExonerateService;
 import org.jcvi.vigor.service.ViralProteinService;
@@ -31,7 +32,7 @@ public class VigorTestUtils {
 	
 	
 	
-	public static List<Alignment> getAlignments(String inputFilePath, String refDB,String workspace,String proteinID) throws ServiceException {
+	public static List<Alignment> getAlignments(String inputFilePath, String refDB,String workspace,String proteinID) throws VigorException {
        
 		ExonerateService exonerateService = new ExonerateService();
 		ViralProteinService viralProteinService = new ViralProteinService();
@@ -52,7 +53,7 @@ public class VigorTestUtils {
 					virusGenome, refDB, workspace, proteinID,"/usr/bin/exonerate");
 			File outputFile = new File(fileName);
 			List<Alignment> alignments = exonerateService.parseExonerateOutput(outputFile,
-							alignmentEvidence, virusGenome);
+							alignmentEvidence, virusGenome, refDB);
 			for (int i = 0; i < alignments.size(); i++) {
 				alignments.set(i, viralProteinService
 						.setViralProteinAttributes(alignments.get(i), new VigorForm()));

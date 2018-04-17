@@ -4,6 +4,8 @@ import java.util.Map;
 
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.forms.VigorForm;
+import org.jcvi.vigor.utils.ConfigurationParameters;
+import org.jcvi.vigor.utils.VigorConfiguration;
 import org.jcvi.vigor.utils.VigorUtils;
 import org.springframework.stereotype.Service;
 
@@ -19,21 +21,21 @@ public class EvaluateScores implements EvaluateModel {
 	public Model evaluate(Model model,VigorForm form) {
 		
 		Map<String,Double> scores = model.getScores();
-		Map<String,String> params = form.getVigorParametersList();
-		if (VigorUtils.is_Integer(params.get("exonerate_score_factor"))) {
-			exonerateScoreFactor = Integer.parseInt(params.get("exonerate_score_factor"));
+		VigorConfiguration configuration = form.getConfiguration();
+		if (VigorUtils.is_Integer(configuration.get(ConfigurationParameters.ScoreFactorExonerate))) {
+			exonerateScoreFactor = Integer.parseInt(configuration.get(ConfigurationParameters.ScoreFactorExonerate));
 		}
-		if (VigorUtils.is_Integer(params.get("start_score_factor"))) {
-			startScoreFactor = Integer.parseInt(params.get("start_score_factor"));
+		if (VigorUtils.is_Integer(configuration.get(ConfigurationParameters.ScoreFactorStart))) {
+			startScoreFactor = Integer.parseInt(configuration.get(ConfigurationParameters.ScoreFactorStart));
 		}
-		if (VigorUtils.is_Integer(params.get("splicing_score_factor"))) {
-			splicingScoreFactor = Integer.parseInt(params.get("splicing_score_factor"));
+		if (VigorUtils.is_Integer(configuration.get(ConfigurationParameters.ScoreFactorSplicing))) {
+			splicingScoreFactor = Integer.parseInt(configuration.get(ConfigurationParameters.ScoreFactorSplicing));
 		}
-		if (VigorUtils.is_Integer(params.get("stop_score_factor"))) {
-			stopScoreFactor = Integer.parseInt(params.get("stop_score_factor"));
+		if (VigorUtils.is_Integer(configuration.get(ConfigurationParameters.ScoreFactorStop))) {
+			stopScoreFactor = Integer.parseInt(configuration.get(ConfigurationParameters.ScoreFactorStop));
 		}
-		if (VigorUtils.is_Integer(params.get("leakystop_score_factor"))) {
-			leakyStopScoreFactor = Integer.parseInt(params.get("leakystop_score_factor"));
+		if (VigorUtils.is_Integer(configuration.get(ConfigurationParameters.ScoreFactorLeakyStop))) {
+			leakyStopScoreFactor = Integer.parseInt(configuration.get(ConfigurationParameters.ScoreFactorLeakyStop));
 		}
 		double exonerateScore=0;
 		double startCodonScore=0;

@@ -3,7 +3,6 @@ package org.jcvi.vigor.service;
 import static org.junit.Assert.assertEquals;
 
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +12,6 @@ import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.forms.VigorForm;
-import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -49,7 +47,7 @@ public class ModelGenerationServiceTest {
 	public void alignmentToModelsTest() throws VigorException {
 
 		VigorForm form = new VigorForm();
-		String referenceDB = Paths.get(form.getVigorParametersList().get(ConfigurationParameters.ReferenceDatabasePath), "flua_db").toString();
+		String referenceDB = Paths.get(form.getConfiguration().get(ConfigurationParameters.ReferenceDatabasePath), "flua_db").toString();
 		alignments = exonerateService.parseExonerateOutput(file, new AlignmentEvidence("flua_db"), new VirusGenome(), referenceDB);
 		Alignment alignment = alignments.get(0);
 		List<Model> outputModels = modelGenerationService.alignmentToModels(alignment, "exonerate");

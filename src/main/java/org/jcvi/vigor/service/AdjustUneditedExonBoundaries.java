@@ -16,6 +16,8 @@ import org.jcvi.vigor.component.VirusGenome;
 import org.jcvi.vigor.component.Splicing.SpliceSite;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.service.exception.ServiceException;
+import org.jcvi.vigor.utils.ConfigurationParameters;
+import org.jcvi.vigor.utils.VigorConfiguration;
 import org.jcvi.vigor.utils.VigorFunctionalUtils;
 import org.jcvi.vigor.utils.VigorUtils;
 import org.springframework.stereotype.Service;
@@ -26,12 +28,12 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
 	private long minIntronLength = 20;
 	@Override
 	public List<Model> determine(Model model, VigorForm form) throws ServiceException {
-		Map<String,String> params  = form.getVigorParametersList();
-		if(VigorUtils.is_Integer(params.get("stop_codon_search_window"))){
-			defaultSearchWindow=Integer.parseInt(params.get("stop_codon_search_window"));
+		VigorConfiguration configuration  = form.getConfiguration();
+		if(VigorUtils.is_Integer(configuration.get(ConfigurationParameters.StopCodonSearchWindow))){
+			defaultSearchWindow=Integer.parseInt(configuration.get(ConfigurationParameters.StopCodonSearchWindow));
 		}
-		if(VigorUtils.is_Integer(params.get("min_intron_size"))){
-			minIntronLength=Integer.parseInt(params.get("min_intron_size"));
+		if(VigorUtils.is_Integer(configuration.get(ConfigurationParameters.IntronMinimumSize))){
+			minIntronLength=Integer.parseInt(configuration.get(ConfigurationParameters.IntronMinimumSize));
 		}
 		List<Model> models=null;
 		try{

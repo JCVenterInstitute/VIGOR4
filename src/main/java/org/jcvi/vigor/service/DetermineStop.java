@@ -11,12 +11,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
-import org.jcvi.jillion.core.residue.aa.IupacTranslationTables;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.service.exception.ServiceException;
+import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.VigorFunctionalUtils;
 import org.jcvi.vigor.utils.VigorUtils;
 import org.springframework.stereotype.Service;
@@ -31,7 +31,7 @@ public class DetermineStop implements DetermineGeneFeatures {
 	@Override
 	public List<Model> determine(Model model, VigorForm form) throws ServiceException {
 		List<Model> models = null;
-		String stopCodonWindowParam = form.getVigorParametersList().get("stop_codon_search_window");
+		String stopCodonWindowParam = form.getConfiguration().get(ConfigurationParameters.StopCodonSearchWindow);
 		if (VigorUtils.is_Integer(stopCodonWindowParam)) {
 			stopCodonWindow = Integer.parseInt(stopCodonWindowParam);
 		}

@@ -32,12 +32,12 @@ public class DetermineStart implements DetermineGeneFeatures {
 
 	@Override
 	public List<Model> determine(Model model, VigorForm form) throws ServiceException {
-		List<Triplet> startCodons = LoadStartCodons(model.getAlignment()
+		List<Triplet> startCodons = loadStartCodons(model.getAlignment()
 														 .getViralProtein().getGeneAttributes()
 														 .getStartTranslationException().getAlternateStartCodons(),
-				form.getVigorParametersList());
-		String startCodonWindowParam = form.getVigorParametersList().get(
-				"start_codon_search_window");
+				form.getConfiguration());
+		String startCodonWindowParam = form.getConfiguration().get(
+				ConfigurationParameters.StartCodonSearchWindow);
 		try {
 			List<Model> models = findStart(startCodons, model, startCodonWindowParam);
 			/*LOGGER.debug("Models after determining start: {}", () ->
@@ -61,16 +61,15 @@ public class DetermineStart implements DetermineGeneFeatures {
 	 *            : Default start codons defined in vigor.ini file
 	 * @return List of all the possible start codons
 	 */
-	public List<Triplet> LoadStartCodons(List<String> alternateStartCodons,
-			Map<String, String> vigorParameters) {
+	public List<Triplet> loadStartCodons(List<String> alternateStartCodons,
+			VigorConfiguration vigorParameters) {
 		String startCodonsParam;
 		List<String> startCodonStrings = new ArrayList<String>();
-		if (vigorParameters.containsKey("StartCodons")) {
-			startCodonsParam = vigorParameters.get("StartCodons");
+		if (vigorParameters.containsKey(ConfigurationParameters.StartCodons)) {
+			startCodonsParam = vigorParameters.get(ConfigurationParameters.StartCodons);
 			startCodonStrings = Arrays.asList(StringUtils.normalizeSpace(
 					startCodonsParam).split(","));
 		} else {
-
 			startCodonStrings.add("ATG");
 		}
 		if (alternateStartCodons != null) {

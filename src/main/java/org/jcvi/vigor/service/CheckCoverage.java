@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import org.jcvi.jillion.align.AminoAcidSubstitutionMatrix;
 import org.jcvi.jillion.align.BlosumMatrices;
@@ -21,6 +20,8 @@ import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.forms.VigorForm;
+import org.jcvi.vigor.utils.ConfigurationParameters;
+import org.jcvi.vigor.utils.VigorConfiguration;
 import org.jcvi.vigor.utils.VigorFunctionalUtils;
 import org.springframework.stereotype.Service;
 
@@ -40,7 +41,7 @@ public class CheckCoverage implements EvaluateModel {
 	}
 	public Model addWeightageToScores(Model model,VigorForm form) {
         Map<String, Double> scores = model.getScores();
-        Map<String, String> vigorParameters = form.getVigorParametersList();
+        VigorConfiguration vigorConfiguration = form.getConfiguration();
         //retrieve the parameters and multiply to the scores. define the parameters in the .ini files.
         return model;
     }
