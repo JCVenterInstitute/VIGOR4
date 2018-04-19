@@ -41,9 +41,8 @@ public class AlignmentGenerationService {
 		VigorConfiguration vigorConfig = form.getConfiguration();
 
 		String min_gap_length = vigorConfig.get(ConfigurationParameters.SequenceGapMinimumLength);
-		String exoneratePath = vigorConfig.get(ConfigurationParameters.ExoneratePath);
 		String workspace = vigorConfig.get(ConfigurationParameters.OutputDirectory);
-		String referenceDB = Paths.get(vigorConfig.get(ConfigurationParameters.ReferenceDatabasePath), alignmentEvidence.getReference_db()).toString();
+		String referenceDB = alignmentEvidence.getReference_db();
 
 		List<Range> sequenceGaps = VirusGenomeService.findSequenceGapRanges(min_gap_length,
 				virusGenome.getSequence());
