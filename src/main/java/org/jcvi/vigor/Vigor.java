@@ -23,6 +23,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -75,7 +76,7 @@ public class Vigor {
             VigorConfiguration.ValueWithSource unset = VigorConfiguration.ValueWithSource.of("NOTSET", "unknown");
             LOGGER.info( () ->  vigorParameters.entrySet()
                                                .stream()
-                                               .sorted(Map.Entry.comparingByKey())
+                                               .sorted(Comparator.comparing(es -> es.getKey().configKey, String.CASE_INSENSITIVE_ORDER))
                                                .map( e -> String.format("%-50s%s (%s)",
                                                        e.getKey().configKey,
                                                        e.getValue(),
