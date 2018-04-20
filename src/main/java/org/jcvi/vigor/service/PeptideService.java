@@ -59,16 +59,16 @@ public class PeptideService implements PeptideMatchingService {
 
     private static class PeptideMatch {
         public final ProteinFastaRecord peptide;
-        public final ViralProtein protein;
+        public final ProteinSequence protein;
         public final ProteinPairwiseSequenceAlignment alignment;
 
-        public PeptideMatch(ProteinFastaRecord peptide, ViralProtein protein, ProteinPairwiseSequenceAlignment alignment) {
+        public PeptideMatch(ProteinFastaRecord peptide, ProteinSequence protein, ProteinPairwiseSequenceAlignment alignment) {
             this.peptide = peptide;
             this.protein = protein;
             this.alignment = alignment;
         }
 
-        public static PeptideMatch of(ProteinFastaRecord peptide, ViralProtein protein, ProteinPairwiseSequenceAlignment alignment) {
+        public static PeptideMatch of(ProteinFastaRecord peptide, ProteinSequence protein, ProteinPairwiseSequenceAlignment alignment) {
             return new PeptideMatch(peptide, protein, alignment);
         }
 
@@ -135,11 +135,11 @@ public class PeptideService implements PeptideMatchingService {
     }
 
     @Override
-    public List<MaturePeptideMatch> findPeptides(ViralProtein protein, File peptideDatabase) throws ServiceException {
+    public List<MaturePeptideMatch> findPeptides(ProteinSequence protein, File peptideDatabase) throws ServiceException {
         return findPeptides(protein, peptideDatabase, Scores.of(0.25d, .40d, .50d));
     }
 
-    public List<MaturePeptideMatch> findPeptides(ViralProtein protein, File peptideDatabase, Scores minscores) throws ServiceException {
+    public List<MaturePeptideMatch> findPeptides(ProteinSequence protein, File peptideDatabase, Scores minscores) throws ServiceException {
 
         // filter
         Predicate<PeptideMatch> filterByScore = match -> {
@@ -243,7 +243,7 @@ public class PeptideService implements PeptideMatchingService {
                     if (prev == null) {
                         current.setProteinRange(currentRange.toBuilder().setBegin(0).build());
                     } else {
-                        adjustPeptideEdges(protein.getSequence(), prev, current);
+                        adjustPeptideEdges(protein, prev, current);
                     }
                 }
                 peptides.add(current);
@@ -263,9 +263,9 @@ public class PeptideService implements PeptideMatchingService {
         Range currentRange = current.getProteinRange();
         LOGGER.debug("adjusting edges for\n[{}-{}] {}\n[{}-{}] {}",
                 previousRange.getBegin(), previousRange.getEnd(),
-                prev.getProtein().getSequence().toBuilder().trim(previousRange),
+                prev.getProtein().toBuilder().trim(previousRange),
                 currentRange.getBegin(), currentRange.getEnd(),
-                current.getProtein().getSequence().toBuilder().trim(currentRange)
+                current.getProtein().toBuilder().trim(currentRange)
                 );
 
         PeptideProfile previousReferenceProfile = PeptideProfile.profileFromSequence(prev.getReference().getSequence());
@@ -350,7 +350,7 @@ public class PeptideService implements PeptideMatchingService {
 
     private double computeCoverage(PeptideMatch match) {
         return Math.max(
-                (double) match.alignment.getQueryRange().getLength()/ (double) match.protein.getSequence().getLength(),
+                (double) match.alignment.getQueryRange().getLength()/ (double) match.protein.getLength(),
                 (double) match.alignment.getSubjectRange().getLength() / (double) match.peptide.getSequence().getLength()
         );
     }
@@ -384,7 +384,7 @@ public class PeptideService implements PeptideMatchingService {
         return score;
     }
 
-    Stream<PeptideMatch> getAlignments(ViralProtein protein, File peptideDatabase) throws IOException {
+    Stream<PeptideMatch> getAlignments(ProteinSequence protein, File peptideDatabase) throws IOException {
 
         ProteinFastaFileDataStore peptideDataStore = ProteinFastaFileDataStore.fromFile(peptideDatabase);
         // TODO configurable gap penalties and blosum matrix
@@ -393,7 +393,7 @@ public class PeptideService implements PeptideMatchingService {
                                        protein,
                                        PairwiseAlignmentBuilder.createProtienAlignmentBuilder(
                                                record.getSequence(),
-                                               protein.getSequence(),
+                                               protein,
                                                BlosumMatrices.blosum40())
                                                                .useLocalAlignment(true)
                                                                .gapPenalty(-16F,-8F)

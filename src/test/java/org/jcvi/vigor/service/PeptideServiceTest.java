@@ -65,18 +65,15 @@ public class PeptideServiceTest {
     public void testPeptides() throws ServiceException {
 
         // must have atleast id, polyprotein, peptide db
-        ViralProtein protein = new ViralProtein();
-        protein.setDefline(id);
-        protein.setProteinID("");
-        protein.setSequence(ProteinSequence.of(sequence));
+        ProteinSequence protein = ProteinSequence.of(sequence);
         File peptideDB = new File(mp_ref_db);
 
         List<MaturePeptideMatch> matches = peptideService.findPeptides(protein, peptideDB);
         LOGGER.debug(() -> String.format("peptides:%s", matches.stream().map(String::valueOf).collect(Collectors.joining("\n> ", "\n> ", ""))));
 
-        assertThat(String.format("peptide mismatches for %s", protein.getDefline()), matches.size(), equalTo(expected.size()));
+        assertThat(String.format("peptide mismatches for %s", id), matches.size(), equalTo(expected.size()));
         List<ProteinSequence> subjectMatches = matches.stream()
-                                                      .map(m -> m.getProtein().getSequence().toBuilder().trim(m.getProteinRange()).build())
+                                                      .map(m -> m.getProtein().toBuilder().trim(m.getProteinRange()).build())
                                                       .collect(Collectors.toList());
 
         for (String expectedPeptide : expected) {
