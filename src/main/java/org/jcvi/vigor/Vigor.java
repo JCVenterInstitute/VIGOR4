@@ -53,6 +53,9 @@ public class Vigor {
 	@Autowired
     private GenerateVigorOutput generateVigorOutput;
 
+	@Autowired
+    private PeptideMatchingService peptideMatchingService;
+
 	public void run(String ... args) {
 
         Namespace parsedArgs = parseArgs(args);
@@ -99,6 +102,7 @@ public class Vigor {
                 List<Alignment> alignments = generateAlignments(virusGenome, vigorForm);
                 List<Model> candidateModels = generateModels(alignments, vigorForm);
                 List<Model> geneModels = generateGeneModels(candidateModels, vigorForm);
+                geneModels = findPeptides(geneModels, vigorForm);
                 // TODO checkout output earlier.
                 generateOutput(geneModels, vigorForm.getConfiguration().get(ConfigurationParameters.OutputDirectory)
                         +File.separator+vigorForm.getConfiguration().get(ConfigurationParameters.OutputPrefix));
@@ -121,6 +125,19 @@ public class Vigor {
         }
 
 
+    }
+
+    private List<Model> findPeptides(List<Model> geneModels, VigorForm vigorForm) throws VigorException {
+
+        for (Model model: geneModels) {
+            String maturePeptideDB = model.getAlignment().getAlignmentEvidence().getMatpep_db();
+            // TODO check peptides for psuedogenes?
+            if (! (maturePeptideDB == null || maturePeptideDB.isEmpty()) ) {
+                model.setMaturePeptides(peptideMatchingService.findPeptides(model.getTanslatedSeq(),
+                        new File(maturePeptideDB)));
+            }
+        }
+        return geneModels;
     }
 
     private void printConfigParameters() {
