@@ -70,7 +70,9 @@ public class AlignmentGenerationService {
 	private AlignmentService getAlignmentService(String alignmentTool, VigorForm form) throws ServiceException {
 		if ("exonerate".equals(alignmentTool)) {
 			try {
-				exonerateService.setExoneratePath(Paths.get(form.getConfiguration().get(ConfigurationParameters.ExoneratePath)));
+				String exoneratePath = form.getConfiguration().get(ConfigurationParameters.ExoneratePath);
+				LOGGER.debug("Using exonerate path {}", exoneratePath);
+				exonerateService.setExoneratePath(Paths.get(exoneratePath));
 				return exonerateService;
 			} catch (VigorException e) {
 				throw new ServiceException(e);
