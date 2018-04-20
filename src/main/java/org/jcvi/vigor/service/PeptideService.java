@@ -243,7 +243,7 @@ public class PeptideService implements PeptideMatchingService {
                     if (prev == null) {
                         current.setProteinRange(currentRange.toBuilder().setBegin(0).build());
                     } else {
-                        adjustPeptideEdges(prev, current);
+                        adjustPeptideEdges(protein.getSequence(), prev, current);
                     }
                 }
                 peptides.add(current);
@@ -256,8 +256,9 @@ public class PeptideService implements PeptideMatchingService {
         }
     }
 
-    private void adjustPeptideEdges(MaturePeptideMatch prev, MaturePeptideMatch current) {
-        // TODO implement
+    // TODO return new MaturePeptideMatch objects rather than altering the existing ones.
+    private void adjustPeptideEdges(ProteinSequence subjectSequence, MaturePeptideMatch prev, MaturePeptideMatch current) {
+
         Range previousRange = prev.getProteinRange();
         Range currentRange = current.getProteinRange();
         LOGGER.debug("adjusting edges for\n[{}-{}] {}\n[{}-{}] {}",
@@ -266,7 +267,60 @@ public class PeptideService implements PeptideMatchingService {
                 currentRange.getBegin(), currentRange.getEnd(),
                 current.getProtein().getSequence().toBuilder().trim(currentRange)
                 );
-        LOGGER.warn("adjustment not implemented!");
+
+        PeptideProfile previousReferenceProfile = PeptideProfile.profileFromSequence(prev.getReference().getSequence());
+        PeptideProfile currentReferenceProfile = PeptideProfile.profileFromSequence(current.getReference().getSequence());
+
+        long previousEnd = previousRange.getEnd();
+        long currentBegin = currentRange.getBegin();
+
+        long start, end;
+        if (previousEnd >= currentBegin) {
+            // Overlap
+            start = currentBegin - 1;
+            end = previousEnd;
+        } else {
+            // Gap
+            start = previousEnd;
+            end = currentBegin - 1;
+        }
+        Range testPreviousRange;
+        Range testCurrentRange;
+        ProteinSequence testPrevious;
+        ProteinSequence testCurrent;
+        Range[] bestRange = {previousRange, currentRange};
+        double bestScore = 0;
+        double testScore = 0;
+        for (; start <= end; start++) {
+            // profile and score new sequences
+            testPreviousRange = previousRange.toBuilder().setEnd(start).build();
+            testCurrentRange = currentRange.toBuilder().setBegin(start+1).build();
+            // now we need the sequence for the new test ranges
+            testPrevious = subjectSequence.toBuilder().trim(testPreviousRange).build();
+            testCurrent = subjectSequence.toBuilder().trim(testCurrentRange).build();
+
+            testScore = scorePeptideByProfile(testPrevious, previousReferenceProfile) + scorePeptideByProfile(testCurrent, currentReferenceProfile);
+            if (testScore > bestScore) {
+                bestRange[0] = testPreviousRange;
+                bestRange[1] = testCurrentRange;
+                bestScore = testScore;
+            }
+        }
+
+        Range bestPreviousRange = bestRange[0];
+        Range bestCurrentRange = bestRange[1];
+        // adjust previous and current
+        prev.setProteinRange(bestPreviousRange);
+        Range referenceRange = prev.getReferenceRange();
+        prev.setReferenceRange(referenceRange.toBuilder().setEnd(referenceRange.getEnd() + (bestPreviousRange.getEnd() - previousEnd)).build());
+        // TODO is this correct?
+        prev.setFuzzyEnd(false);
+
+        current.setProteinRange(bestCurrentRange);
+        referenceRange = current.getReferenceRange();
+        current.setReferenceRange(referenceRange.toBuilder().setBegin(referenceRange.getBegin() + (bestCurrentRange.getBegin() - currentBegin)).build());
+        // TODO
+        current.setFuzzyBegin(false);
     }
 
     private MaturePeptideMatch peptideFromMatch (PeptideMatch match) {
@@ -326,7 +380,7 @@ public class PeptideService implements PeptideMatchingService {
             mismatches += subjectProfile.getOrDefault(key, referenceProfile.get(key));
         }
 
-        double score = (referenceProfile.getPeptideLength() * (2 * matches)) / Math.abs(subjectProfile.getPeptideLength() - referenceProfile.getPeptideLength()) + ((2 * matches) + mismatches);
+        double score = (referenceProfile.getPeptideLength() * (2 * matches)) / ((Math.abs(subjectProfile.getPeptideLength() - referenceProfile.getPeptideLength())) + ((2 * matches) + mismatches));
         return score;
     }
 

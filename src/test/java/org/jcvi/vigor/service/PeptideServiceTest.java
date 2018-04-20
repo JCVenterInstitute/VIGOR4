@@ -236,7 +236,7 @@ public class PeptideServiceTest {
                                 "RPQVNGQSGRIDFHWLLLDPNDTVTFTFNG",
                                 "AFIAPDRASFFRGESLGVQSDVPLDSGCEG",
                                 "DCFHSGGTIVSSLPFQNINPRTVGKCPRYV",
-                                "KQTSLLLATGMRNVPENPKT"),
+                                "KQTSLLLATGMRNVPENPKTR"),
                         String.join("",
                                 "GLFGAIAGFIENGWEGLIDGWYGFRHQNAQ",
                                 "GEGTAADYKSTQSAIDQITGKLNRLIDKTN",
