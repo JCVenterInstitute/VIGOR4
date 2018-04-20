@@ -57,7 +57,7 @@ public class GeneModelGenerationService {
 		});
 
 		List<Model> geneModels = new ArrayList<Model>();
-		if (processedModels.size() > 0) {
+		if (! processedModels.isEmpty() ) {
 			geneModels.add(processedModels.get(processedModels.size() - 1));
 		}
 		return geneModels;

@@ -105,7 +105,7 @@ public class ModelGenerationService {
 
 		List<Range> sequenceGaps = new ArrayList<Range>();
 		// get sequence gaps
-		if (initialModels.get(0).getAlignment().getVirusGenome().getSequenceGaps() != null) {
+		if ( (! initialModels.isEmpty() ) && initialModels.get(0).getAlignment().getVirusGenome().getSequenceGaps() != null) {
 			sequenceGaps = initialModels.get(0).getAlignment().getVirusGenome().getSequenceGaps();
 		}
 		List<Range> validSequenceGaps = new ArrayList<Range>();
