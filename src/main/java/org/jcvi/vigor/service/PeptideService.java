@@ -12,7 +12,6 @@ import org.jcvi.jillion.core.residue.aa.ProteinSequence;
 import org.jcvi.jillion.fasta.aa.ProteinFastaFileDataStore;
 ;
 import org.jcvi.jillion.fasta.aa.ProteinFastaRecord;
-import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.MaturePeptideMatch;
 import org.jcvi.vigor.component.ViralProtein;
 import org.jcvi.vigor.service.exception.ServiceException;
@@ -24,6 +23,8 @@ import java.io.IOException;
 import java.util.*;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -37,7 +38,7 @@ public class PeptideService implements PeptideMatchingService {
      */
     private static final long PROXIMITY_MAX = 30L;
     private static final long MAX_GAP = 15L;
-
+    private static Pattern productPattern = Pattern.compile("product\\s*=\\s*\"?(?<product>.*)\"?\\b");
     private static Logger LOGGER = LogManager.getLogger(PeptideService.class);
 
     private static class Scores {
@@ -327,7 +328,13 @@ public class PeptideService implements PeptideMatchingService {
 
         ViralProtein referenceProtein = new ViralProtein();
         referenceProtein.setSequence(match.peptide.getSequence());
-        referenceProtein.setDefline(match.peptide.getId());
+        referenceProtein.setDefline(String.join(" ", ">" + match.peptide.getId(), match.peptide.getComment()));
+        Matcher m = productPattern.matcher(referenceProtein.getDefline());
+        if (m.find()) {
+            referenceProtein.setProduct(m.group("product"));
+        }
+        referenceProtein.setProteinID(match.peptide.getId());
+
 
         return MaturePeptideMatch.of(match.protein,
                 referenceProtein,

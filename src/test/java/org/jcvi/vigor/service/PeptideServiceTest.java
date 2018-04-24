@@ -7,6 +7,7 @@ import org.jcvi.jillion.core.residue.aa.ProteinSequence;
 import org.jcvi.vigor.Application;
 import org.jcvi.vigor.component.MaturePeptideMatch;
 import org.jcvi.vigor.component.ViralProtein;
+import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.VigorUtils;
 import org.junit.ClassRule;
@@ -20,11 +21,9 @@ import org.springframework.test.context.junit4.rules.SpringClassRule;
 import org.springframework.test.context.junit4.rules.SpringMethodRule;
 
 import java.io.File;
+import java.net.URL;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -48,13 +47,13 @@ public class PeptideServiceTest {
     @Autowired
     private PeptideService peptideService;
 
-    private Collection<String> expected;
+    private List<String[]> expected;
 
     private String id;
     private String sequence;
     private String mp_ref_db;
 
-    public PeptideServiceTest(String id, String sequence, String mp_ref_db, Collection<String> expected) {
+    public PeptideServiceTest(String id, String sequence, String mp_ref_db, List<String[]> expected) {
         this.id = id;
         this.sequence = sequence;
         this.mp_ref_db = mp_ref_db;
@@ -62,27 +61,39 @@ public class PeptideServiceTest {
     }
 
     @Test
-    public void testPeptides() throws ServiceException {
+    public void testPeptides() throws VigorException {
 
         // must have atleast id, polyprotein, peptide db
         ProteinSequence protein = ProteinSequence.of(sequence);
-        File peptideDB = new File(mp_ref_db);
+        // TODO fix reference
+        File peptideDB = getPeptideDB(mp_ref_db);
 
         List<MaturePeptideMatch> matches = peptideService.findPeptides(protein, peptideDB);
         LOGGER.debug(() -> String.format("peptides:%s", matches.stream().map(String::valueOf).collect(Collectors.joining("\n> ", "\n> ", ""))));
 
         assertThat(String.format("peptide mismatches for %s", id), matches.size(), equalTo(expected.size()));
-        List<ProteinSequence> subjectMatches = matches.stream()
-                                                      .map(m -> m.getProtein().toBuilder().trim(m.getProteinRange()).build())
-                                                      .collect(Collectors.toList());
 
-        for (String expectedPeptide : expected) {
-            assertThat(subjectMatches, hasItem(ProteinSequence.of(expectedPeptide)));
-        }
+        assertThat("matches count should be that same as expected count",matches.size(), equalTo(expected.size()));
+
+        String expectedProduct;
+        String expectedID;
+        ProteinSequence expectedSequence;
+        MaturePeptideMatch match;
+        ProteinSequence matchedSequence;
         Range prev = null;
         Range current;
         MaturePeptideMatch prevMatch = null;
-        for (MaturePeptideMatch match: matches) {
+
+        for (int i = 0; i < expected.size(); i++) {
+            match = matches.get(i);
+            expectedID = expected.get(i)[0];
+            expectedProduct = expected.get(i)[1];
+            expectedSequence = ProteinSequence.of(expected.get(i)[2]);
+            matchedSequence =  match.getProtein().toBuilder().trim(match.getProteinRange()).build();
+            assertThat(matchedSequence, equalTo(expectedSequence));
+            assertThat(match.getReference().getProduct(), equalTo(expectedProduct));
+            assertThat(match.getReference().getProteinID(), equalTo(expectedID));
+
             current = match.getProteinRange();
             if (prev == null) {
                 assertTrue(current.getBegin() == 0 || match.isFuzzyBegin());
@@ -94,9 +105,17 @@ public class PeptideServiceTest {
             }
             prev = current;
             prevMatch = match;
-        }
-        // TODO test produced names and products
 
+        }
+
+    }
+
+    private File getPeptideDB(String mp_ref_db) throws VigorException {
+        URL resource = peptideService.getClass().getClassLoader().getResource(Paths.get("vigorResources","data3",mp_ref_db).toString());
+        if (resource == null) {
+            throw new VigorException(String.format("unable to find peptide DB for %s", mp_ref_db));
+        }
+        return new File(resource.getFile());
     }
 
 
@@ -117,14 +136,15 @@ public class PeptideServiceTest {
                                 "SYINDKGKEVLVLWGIHH"),
                         "flua_ha_mp",
                         Arrays.asList(
-                        "MKAILVVLLYTFATANA",
+                                new String[] {"seg4matureA1","signal peptide", "MKAILVVLLYTFATANA" },
+                                new String[] { "seg4matureA2","HA1",
                         String.join("",
                                 "DTLCIGYHANNSTDTVDTVLEKNVTVTHSV",
                                 "NLLEDKHNGKLCKLRGVAPLHLGKCNIAGW",
                                 "ILGNPECESLSTASSWSYIVETSSSDNGTC",
                                 "YPGDFINYEELREQLSSVSSFERFEIFPKT",
                                 "SSWPNHDSNKGVTAACPQAGAKSFYKNLIW",
-                                "LVKKGNSYPKLSKSYINDKGKEVLVLWGIHH"))
+                                "LVKKGNSYPKLSKSYINDKGKEVLVLWGIHH") })
                 });
         testData.add(
                 new Object[]{
@@ -138,7 +158,7 @@ public class PeptideServiceTest {
                                 "KLESTRIYQILAIYSTVASSLVLIVSLGAI",
                                 "SFWMCSNGSLQCRICI*"),
                         "flua_ha_mp",
-                        Arrays.asList(
+                        Arrays.<String[]>asList( new String[] {"seg4matureA3","HA2",
                         String.join("",
                                 "QNAQGSGYAADLKSTQNAIDKITNKVNSVI",
                                 "EKMNTQFTAVGKEFNHLEKRIENLNKKVDD",
@@ -146,7 +166,7 @@ public class PeptideServiceTest {
                                 "NLYEKVRSQLKNNAKEIGNGCFEFYHKCDN",
                                 "TCMESVKNGTYDYPRYSEEAKLNREEIDGV",
                                 "KLESTRIYQILAIYSTVASSLVLIVSLGAI",
-                                "SFWMCSNGSLQCRICI"))
+                                "SFWMCSNGSLQCRICI") })
                 });
         testData.add(
                 new Object[]{
@@ -172,8 +192,9 @@ public class PeptideServiceTest {
                                 "QINPVKLSSGYKDVILWFSFGASCFILLAI",
                                 "AMGLVFICVKNGNMRCTICI*"),
                         "flua_ha_mp",
-                        Arrays.asList(
-                        "MNIQILVFALVAIIPTNA",
+                        Arrays.asList( new String[] { "seg4matureO1","signal peptide",
+                        "MNIQILVFALVAIIPTNA" },
+                                new String[] { "seg4mature7F2", "HA1",
                         String.join("",
                                 "DKICLGHHAVSNGTKVNTLTERGVEVVNAT",
                                 "ETVERTNVPRICSKGKRTVDLGQCGLLGTI",
@@ -185,7 +206,8 @@ public class PeptideServiceTest {
                                 "RPQVNGQSGRIDFHWLMLNPNDTVTFSFNG",
                                 "AFIAPDRASFLKGKSMGIQSGVQVDANCEG",
                                 "DCYHSGGTIISNLPFQNINSRAVGKCPRYV",
-                                "KQESLMLATGMKNVPELPKGR"),
+                                "KQESLMLATGMKNVPELPKGR") },
+                                new String[] { "seg4matureO3","HA2",
                         String.join("",
                                 "GLFGAIAGFIENGWEGLIDGWYGFRHQNAQ",
                                 "GEGTAADYKSTQSAIDQITGKLNRLIEKTN",
@@ -194,11 +216,11 @@ public class PeptideServiceTest {
                                 "RVKRQLRENAEEDGTGCFEIFHKCDDDCMA",
                                 "SIRNNTYDHSKYREEAMQNRIQINPVKLSS",
                                 "GYKDVILWFSFGASCFILLAIAMGLVFICV",
-                                "KNGNMRCTICI"))
+                                "KNGNMRCTICI") })
                 });
         testData.add(
                 new Object[]{
-                        "gi|260907760|gb|GU060481.1|",
+                        "gi_155016323.1",
                         String.join("",
                                 "MNTQILALIACMLIGAKGDKICLGHHAVAN",
                                 "GTKVNTLTERGIEVVNATETVETANIKKIC",
@@ -220,8 +242,9 @@ public class PeptideServiceTest {
                                 "QIDPVRLSSGYKDIILWFSFGASCFLLLAI",
                                 "AMGLVFICIKNGNMRCTICI*"),
                         "flua_ha_mp",
-                        Arrays.asList(
-                        "MNTQILALIACMLIGAKG",
+                        Arrays.asList( new String[] { "seg4mature7A1","signal peptide",
+                        "MNTQILALIACMLIGAKG" },
+                                new String[] { "seg4mature7C2","HA1",
                         String.join("",
                                 "DKICLGHHAVANGTKVNTLTERGIEVVNAT",
                                 "ETVETANIKKICTQGKRPTDLGQCGLLGTL",
@@ -233,7 +256,8 @@ public class PeptideServiceTest {
                                 "RPQVNGQSGRIDFHWLLLDPNDTVTFTFNG",
                                 "AFIAPDRASFFRGESLGVQSDVPLDSGCEG",
                                 "DCFHSGGTIVSSLPFQNINPRTVGKCPRYV",
-                                "KQTSLLLATGMRNVPENPKTR"),
+                                "KQTSLLLATGMRNVPENPKTR") },
+                                new String[] { "seg4mature7A3", "HA2",
                         String.join("",
                                 "GLFGAIAGFIENGWEGLIDGWYGFRHQNAQ",
                                 "GEGTAADYKSTQSAIDQITGKLNRLIDKTN",
@@ -242,8 +266,8 @@ public class PeptideServiceTest {
                                 "RVRKQLRENAEEDGTGCFEIFHKCDDQCME",
                                 "SIRNNTYDHTQYRTESLQNRIQIDPVRLSS",
                                 "GYKDIILWFSFGASCFLLLAIAMGLVFICI",
-                                "KNGNMRCTICI"
-                        ))
+                                "KNGNMRCTICI") }
+                        )
                 });
         return testData;
     }
