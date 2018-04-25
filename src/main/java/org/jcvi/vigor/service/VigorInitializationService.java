@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -70,47 +71,45 @@ public class VigorInitializationService {
 	 */
 	public VigorForm loadParameters(Namespace inputs) throws VigorException{
 
+		List<VigorConfiguration> configurations = new ArrayList<>();
+		VigorConfiguration defaultConfiguration = LoadDefaultParameters
+				.loadVigorConfiguration("defaults",Thread.currentThread().getContextClassLoader().getResource(VigorUtils.getVigorParametersPath()));
+
+		configurations.add(defaultConfiguration);
+
 		VigorConfiguration propConfiguration = new VigorConfiguration("system-properties");
 		String val;
+		String key;
 		for (ConfigurationParameters param: ConfigurationParameters.values()) {
-			val = System.getProperty("vigor."+ param.configKey);
+			key = "vigor."+ param.configKey;
+			val = System.getProperty(key);
 			if (val != null) {
-				propConfiguration.put(param, val);
+				if (param.hasFlag(ConfigurationParameters.Flags.VERSION_4)) {
+					propConfiguration.put(param, val);
+				} else {
+					LOGGER.debug("Ignoring VIGOR3 parameter {}={} set via system properties", param.configKey, val, key);
+				}
 			}
 		}
+		configurations.add(propConfiguration);
+
 
 		VigorConfiguration envConfiguration = new VigorConfiguration("environment");
 		for (ConfigurationParameters param: ConfigurationParameters.values()) {
-			val = System.getenv("VIGOR_" + param.configKey.toUpperCase());
+			key = "VIGOR_" + param.configKey.toUpperCase();
+			val = System.getenv(key);
 			if (val != null) {
-				envConfiguration.put(param, val);
+				if (param.hasFlag(ConfigurationParameters.Flags.VERSION_4)) {
+					envConfiguration.put(param, val);
+				} else {
+					LOGGER.debug("ignoring VIGOR3 parameter {}={} set via environment variable {}", param.configKey, val, key);
+				}
 			}
 		}
+		configurations.add(envConfiguration);
 
-		VigorConfiguration defaultConfiguration = LoadDefaultParameters
-				.loadVigorConfiguration("defaults",Thread.currentThread().getContextClassLoader().getResource(VigorUtils.getVigorParametersPath()));
+
 		VigorConfiguration commandLineConfig = new VigorConfiguration("commandline");
-
-		AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
-		VigorForm form = new VigorForm(defaultConfiguration);
-		String reference_db_dir= defaultConfiguration.get(ConfigurationParameters.ReferenceDatabasePath);
-		String reference_db= inputs.getString(CommandLineParameters.referenceDB);
-		if ("any".equals(reference_db)) {
-			//TODO initiate referenceDB generation service
-			LOGGER.debug("autoselecting reference database from {}. setting value to {}", reference_db_dir, "TODO");
-		}else{
-		    File file = new File(reference_db);
-		    if(file.exists() && file.isFile() ){
-		        reference_db=file.getAbsolutePath();
-            }else{
-                reference_db=Paths.get(reference_db_dir,reference_db).toString();
-            }
-        }
-
-		LOGGER.debug("Reference_db is {}", reference_db);
-		alignmentEvidence.setReference_db(reference_db);
-
-		defaultConfiguration = loadVirusSpecificParameters(defaultConfiguration, reference_db);
 
 		String outputPath = inputs.getString(CommandLineParameters.outputPrefix);
 		File outputFile= new File(outputPath);
@@ -163,6 +162,8 @@ public class VigorInitializationService {
 		if (jcvi_rules != null) {
 			commandLineConfig.put(ConfigurationParameters.JCVIRules, jcvi_rules ? "1": "0");
 		}
+		configurations.add(commandLineConfig);
+
 		List<String> parameters = inputs.getList(CommandLineParameters.parameters);
 		if (parameters != null) {
 			final Pattern splitter = Pattern.compile("~~");
@@ -170,15 +171,60 @@ public class VigorInitializationService {
 												 .flatMap(p -> splitter.splitAsStream(p.trim()))
 												 .map(s -> s.split("=", 2))
 												 .collect(Collectors.toMap(a -> a[0], a -> a.length > 1 ? a[1] : ""));
-			VigorConfiguration commandLineParametersConfig = LoadDefaultParameters.configurationFromMap("commandline-parameters",temp);
-
-			// command line config overrides loaded configuration
-			envConfiguration.setDefaults(defaultConfiguration);
-			propConfiguration.setDefaults(envConfiguration);
-			commandLineParametersConfig.setDefaults(propConfiguration);
-			commandLineConfig.setDefaults(commandLineParametersConfig);
-			defaultConfiguration = commandLineConfig;
+			VigorConfiguration commandLineParametersConfig = LoadDefaultParameters.configurationFromMap("commandline-parameters", temp);
+			configurations.add(commandLineParametersConfig);
 		}
+
+		if (inputs.get("config_file") != null) {
+			VigorConfiguration configFileConfiguration = LoadDefaultParameters.loadVigorConfiguration("config-file",
+					new File(inputs.getString("config_file")));
+			configFileConfiguration.setDefaults(defaultConfiguration);
+			defaultConfiguration = configFileConfiguration;
+			configurations.set(0, defaultConfiguration);
+		}
+
+		String reference_db_dir = null;
+		for (int i = configurations.size() - 1; i >= 0; i--) {
+			reference_db_dir= configurations.get(i).get(ConfigurationParameters.ReferenceDatabasePath);
+			if (reference_db_dir != null) {
+				break;
+			}
+		}
+
+		AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
+		VigorForm form = new VigorForm(defaultConfiguration);
+		// TODO still would be nice to be able to set this via the command line.
+		if (reference_db_dir == null) {
+			throw new VigorException("Reference database path is required");
+		}
+
+		String reference_db= inputs.getString(CommandLineParameters.referenceDB);
+		if ("any".equals(reference_db)) {
+			throw new VigorException("Autoselecting reference database is not implemented");
+		}else{
+			File file = new File(reference_db);
+			if(file.exists() && file.isFile() ){
+				reference_db=file.getAbsolutePath();
+			}else{
+				reference_db=Paths.get(reference_db_dir,reference_db).toString();
+			}
+		}
+
+		LOGGER.debug("Reference_db is {}", reference_db);
+		alignmentEvidence.setReference_db(reference_db);
+
+		defaultConfiguration = loadVirusSpecificParameters(defaultConfiguration, reference_db);
+		configurations.set(0, defaultConfiguration);
+
+		// now setup all the defaults
+		VigorConfiguration previousConfig = defaultConfiguration;
+
+		for (int i = 1; i < configurations.size(); i++) {
+			defaultConfiguration = configurations.get(i);
+			defaultConfiguration.setDefaults(previousConfig);
+			previousConfig = defaultConfiguration;
+		}
+
 		form.setConfiguration(defaultConfiguration);
 		form.setAlignmentEvidence(alignmentEvidence);
 		return form;

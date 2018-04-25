@@ -178,6 +178,11 @@ public class VigorInputValidationService {
 			  .dest(CommandLineParameters.listConfigParameters)
 			  .help("list available configuration parameters and exit");
 
+		parser.addArgument("--config-file")
+			  .action(Arguments.store())
+			  .dest(CommandLineParameters.configFile)
+			  .help("config file to use");
+
 		return parser;
 	}
 
