@@ -1,10 +1,14 @@
 package org.jcvi.vigor.utils;
+import org.jcvi.jillion.core.Sequence;
 import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.jillion.core.residue.nt.Nucleotide;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.jillion.core.residue.nt.Triplet;
 
 import java.util.Iterator;
+import java.util.regex.Pattern;
+import java.util.stream.Stream;
+
 public class SequenceUtils {
 
 
@@ -68,5 +72,8 @@ public class SequenceUtils {
 	    return iter;
 	}
 
-	
+	public static <T> Stream<String> steamOf(Sequence<T> sequence, int lineLength) {
+		Pattern splitPattern = Pattern.compile(String.format("(?<=\\G.{%s})", lineLength));
+		return splitPattern.splitAsStream(sequence.toString());
+	}
 }
