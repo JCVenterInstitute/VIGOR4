@@ -60,10 +60,6 @@ public class Vigor {
 
         Namespace parsedArgs = parseArgs(args);
 
-        if (parsedArgs.getBoolean(CommandLineParameters.listConfigParameters)) {
-            printConfigParameters();
-            System.exit(1);
-        }
         String inputFileName = parsedArgs.getString("input_fasta");
         File inputFile = new File(inputFileName);
         if (! inputFile.exists()) {
@@ -140,19 +136,7 @@ public class Vigor {
         return geneModels;
     }
 
-    private void printConfigParameters() {
-	    System.out.println("Configuration Parameters\n");
-	    for (ConfigurationParameters param: ConfigurationParameters.values()) {
-	        System.out.println(param.configKey);
-	        System.out.println();
-	        System.out.println(String.format("\t%-30s VIGOR_%s","Environment variable:",param.configKey.toUpperCase()));
-            System.out.println(String.format("\t%-30s vigor.%s","System.property:", param.configKey));
-            if (! (param.description == null || param.description.isEmpty()) ) {
-                System.out.println(String.format("\t%-30s %s", "Description:", param.description));
-            }
-            System.out.println();
-        }
-    }
+
 
     public Namespace parseArgs(String[] args) {
         return inputValidationService.processInput(args);

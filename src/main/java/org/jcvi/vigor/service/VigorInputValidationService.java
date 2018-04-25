@@ -6,8 +6,11 @@ import net.sourceforge.argparse4j.inf.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.tools.picocli.CommandLine;
+import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Map;
 
 @Service
 public class VigorInputValidationService {
@@ -174,7 +177,7 @@ public class VigorInputValidationService {
 			  .help("comma separated list of reference sequence IDs to ignore (useful when debugging a reference database)");
 
 		parser.addArgument("--list-config-parameters")
-			  .action(Arguments.storeTrue())
+			  .action(new ListConfigurations())
 			  .dest(CommandLineParameters.listConfigParameters)
 			  .help("list available configuration parameters and exit");
 
@@ -186,4 +189,35 @@ public class VigorInputValidationService {
 		return parser;
 	}
 
+	private static class ListConfigurations implements ArgumentAction {
+
+		@Override
+		public void run(ArgumentParser argumentParser, Argument argument, Map<String, Object> map, String s, Object o) throws ArgumentParserException {
+			System.out.println("Configuration Parameters\n");
+			for (ConfigurationParameters param: ConfigurationParameters.values()) {
+				if (! param.hasFlag(ConfigurationParameters.Flags.VERSION_4)) {
+					continue;
+				}
+				System.out.println(param.configKey);
+				System.out.println();
+				System.out.println(String.format("\t%-30s VIGOR_%s","Environment variable:",param.configKey.toUpperCase()));
+				System.out.println(String.format("\t%-30s vigor.%s","System.property:", param.configKey));
+				if (! (param.description == null || param.description.isEmpty()) ) {
+					System.out.println(String.format("\t%-30s %s", "Description:", param.description));
+				}
+				System.out.println();
+			}
+			System.exit(0);
+		}
+
+		@Override
+		public void onAttach(Argument argument) {
+
+		}
+
+		@Override
+		public boolean consumeArgument() {
+			return false;
+		}
+	}
 }
