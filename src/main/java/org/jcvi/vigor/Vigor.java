@@ -96,9 +96,16 @@ public class Vigor {
 
                 // Call referenceDBGenerationService methods to generate alignmentEvidence.
                 List<Alignment> alignments = generateAlignments(virusGenome, vigorForm);
+                LOGGER.info("{} alignment(s) found for sequence {}", alignments.size(), record.getId());
                 List<Model> candidateModels = generateModels(alignments, vigorForm);
+                LOGGER.info("{} candidate model(s) found for sequence {}", candidateModels.size(), record.getId());
                 List<Model> geneModels = generateGeneModels(candidateModels, vigorForm);
+                LOGGER.info("{} gene model(s) found for sequence {}", geneModels.size(), record.getId());
                 geneModels = findPeptides(geneModels, vigorForm);
+                if (geneModels.isEmpty()) {
+                    LOGGER.warn("No gene models generated for sequence {}", record.getId());
+                    continue;
+                }
                 // TODO checkout output earlier.
                 generateOutput(geneModels, vigorForm.getConfiguration().get(ConfigurationParameters.OutputDirectory)
                         +File.separator+vigorForm.getConfiguration().get(ConfigurationParameters.OutputPrefix));
