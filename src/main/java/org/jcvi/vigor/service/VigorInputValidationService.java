@@ -10,7 +10,10 @@ import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 public class VigorInputValidationService {
@@ -194,7 +197,9 @@ public class VigorInputValidationService {
 		@Override
 		public void run(ArgumentParser argumentParser, Argument argument, Map<String, Object> map, String s, Object o) throws ArgumentParserException {
 			System.out.println("Configuration Parameters\n");
-			for (ConfigurationParameters param: ConfigurationParameters.values()) {
+			for (ConfigurationParameters param: Arrays.stream(ConfigurationParameters.values())
+													  .sorted(Comparator.comparing(p-> p.configKey, String.CASE_INSENSITIVE_ORDER))
+													  .collect(Collectors.toList())) {
 				if (! param.hasFlag(ConfigurationParameters.Flags.VERSION_4)) {
 					continue;
 				}
