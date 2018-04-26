@@ -163,9 +163,8 @@ public class VigorUtils {
 		}
 	}
 
-
-	
-	
-
+	public static String removeQuotes(String in) {
+		return in.replaceAll("^\"|\"$","");
+	}
 
 }

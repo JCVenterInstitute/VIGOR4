@@ -37,7 +37,7 @@ public class ViralProteinService {
         if(VigorUtils.is_Integer(min_intronSize_param)){
             min_intron_length=Integer.parseInt(min_intronSize_param);
         }
-        ViralProtein viralProtein = setGeneAttributes(alignment.getViralProtein());
+        ViralProtein viralProtein = setGeneAttributes(alignment.getViralProtein(), form);
         AlignmentEvidence alignmentEvidence = alignment.getAlignmentEvidence();
         alignmentEvidence.setMatpep_db(matPepDB);
         alignment.setAlignmentEvidence(alignmentEvidence);
@@ -51,7 +51,7 @@ public class ViralProteinService {
      * @return viralProtein object which has all the gene attributes set.
      */
 
-    public ViralProtein setGeneAttributes(ViralProtein viralProtein) throws ServiceException {
+    public ViralProtein setGeneAttributes(ViralProtein viralProtein, VigorForm form) throws ServiceException {
 
             GeneAttributes geneAttributes = new GeneAttributes();
             String defline = viralProtein.getDefline();
@@ -84,7 +84,7 @@ public class ViralProteinService {
             if (attributes.containsKey("splice_form")) {
                 if (!(attributes.get("splice_form").equals(""))) {
                     splicing.setSpliced(true);
-                    splicing.setSpliceform((attributes.get("splice_form")).replaceAll("^\"|\"$", ""));
+                    splicing.setSpliceform(VigorUtils.removeQuotes(attributes.get("splice_form")));
                     List<SpliceSite> splicePairs = new ArrayList<SpliceSite>();
                     if (attributes.containsKey("noncanonical_splicing")) {
                         if (!(attributes.get("noncanonical_splicing").equalsIgnoreCase("N"))) {
@@ -109,7 +109,7 @@ public class ViralProteinService {
 
 
                     if (attributes.containsKey("tiny_exon3")) {
-                        String attribute = attributes.get("tiny_exon3").replaceAll("^\"|\"$", "");
+                        String attribute = VigorUtils.removeQuotes(attributes.get("tiny_exon3"));
                         String regex = null;
                         int offset = 0;
                         String[] temp = attribute.split(":");
@@ -123,7 +123,7 @@ public class ViralProteinService {
                         structuralSpecifications.setTiny_exon3(temp1);
                     }
                     if (attributes.containsKey("tiny_exon5")) {
-                        String attribute = attributes.get("tiny_exon5").replaceAll("^\"|\"$", "");
+                        String attribute = VigorUtils.removeQuotes(attributes.get("tiny_exon5"));
                         String regex = null;
                         int offset = 0;
                         if (attribute.matches(".*?:.*")) {
@@ -146,7 +146,7 @@ public class ViralProteinService {
             /* Set RibosomalSlippage attributes */
             if (attributes.containsKey("V4_Ribosomal_Slippage")) {
                 ribosomal_slippage.setHas_ribosomal_slippage(true);
-                String attribute = attributes.get("V4_Ribosomal_Slippage").replaceAll("^\"|\"$", "");
+                String attribute = VigorUtils.removeQuotes(attributes.get("V4_Ribosomal_Slippage"));
                 String[] temp = attribute.split("/");
                 ribosomal_slippage.setSlippage_offset(Integer.parseInt(temp[0]));
                 ribosomal_slippage.setSlippage_frameshift(Integer.parseInt(temp[1]));
@@ -155,7 +155,7 @@ public class ViralProteinService {
 
             /* Set StopTranslationException attributes */
             if (attributes.containsKey(" V4_stop_codon_readthrough")) {
-                String attribute = attributes.get(" V4_stop_codon_readthrough").replaceAll("^\"|\"$", "");
+                String attribute = VigorUtils.removeQuotes(attributes.get(" V4_stop_codon_readthrough"));
                 stopTranslationException.setHasStopTranslationException(true);
                 String[] temp = attribute.split("/");
                 stopTranslationException.setMotif(temp[2]);
@@ -166,7 +166,7 @@ public class ViralProteinService {
 
             /* Set StartTranslationException attributes */
             if (attributes.containsKey("alternate_startcodon")) {
-                String attribute = attributes.get("alternate_startcodon").replaceAll("^\"|\"$", "");
+                String attribute = VigorUtils.removeQuotes(attributes.get("alternate_startcodon"));
                 startTranslationException.setAlternateStartCodons(Arrays.asList(attribute.split(",")));
                 startTranslationException.setHasStartTranslationException(true);
 
@@ -174,7 +174,7 @@ public class ViralProteinService {
 
             /* Set RNA_Editing attributes */
             if (attributes.containsKey("V4_rna_editing")) {
-                String attribute = attributes.get("V4_rna_editing").replaceAll("^\"|\"$", "");
+                String attribute = VigorUtils.removeQuotes(attributes.get("V4_rna_editing"));
                 String[] temp = attribute.split("/");
                 if (VigorUtils.is_Integer(temp[0])) {
                     rna_editing.setOffset(Integer.parseInt(temp[0]));
@@ -187,7 +187,7 @@ public class ViralProteinService {
 
             /* Set StructuralSpecifications */
             if (attributes.containsKey("shared_cds")) {
-                String attribute = attributes.get("shared_cds").replaceAll("^\"|\"$", "");
+                String attribute = VigorUtils.removeQuotes(attributes.get("shared_cds"));
                 structuralSpecifications.setShared_cds(Arrays.asList(attribute.split(",")));
 
             }
@@ -198,7 +198,7 @@ public class ViralProteinService {
                 structuralSpecifications.set_required(false);
             }
             if (attributes.containsKey("excludes_gene")) {
-                String attribute = attributes.get("excludes_gene").replaceAll("^\"|\"$", "");
+                String attribute = VigorUtils.removeQuotes(attributes.get("excludes_gene"));
                 structuralSpecifications.setExcludes_gene(Arrays.asList(attribute.split(",")));
             }
             if (attributes.containsKey("min_functional_len")) {
@@ -210,7 +210,10 @@ public class ViralProteinService {
 
             /* Set maturepeptide DB attribute */
             if (attributes.containsKey("matpepdb")) {
-                matPepDB = attributes.get("matpepdb");
+                matPepDB = VigorUtils.removeQuotes(attributes.get("matpepdb"));
+                if (matPepDB.contains("<vigordata>")) {
+                    matPepDB = matPepDB.replace("<vigordata>", form.getConfiguration().get(ConfigurationParameters.ReferenceDatabasePath));
+                }
             }
 
             /* Move all the different attribute objects to geneAttributes */
