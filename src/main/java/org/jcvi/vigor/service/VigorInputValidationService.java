@@ -194,6 +194,11 @@ public class VigorInputValidationService {
 			  .dest(CommandLineParameters.referenceDB_Path)
 			  .help("reference database path");
 
+        parser.addArgument("--overwrite-output")
+              .action(Arguments.storeTrue())
+              .dest(CommandLineParameters.overwriteOutputFiles)
+              .help("overwrite existing output files if they exist");
+
 		return parser;
 	}
 

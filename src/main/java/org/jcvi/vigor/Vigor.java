@@ -92,8 +92,12 @@ public class Vigor {
             String outputPrefix = vigorForm.getConfiguration().get(ConfigurationParameters.OutputPrefix);
             GenerateVigorOutput.Outfiles outfiles = new GenerateVigorOutput.Outfiles();
             List<OpenOption> openOptionsList = new ArrayList<>();
-            // TODO add overwriting option
-            openOptionsList.add(StandardOpenOption.CREATE_NEW);
+            if (vigorForm.getConfiguration().get(ConfigurationParameters.OverwriteOutputFiles) == "true") {
+                openOptionsList.add(StandardOpenOption.CREATE);
+                openOptionsList.add(StandardOpenOption.TRUNCATE_EXISTING);
+            } else {
+                openOptionsList.add(StandardOpenOption.CREATE_NEW);
+            }
 
             OpenOption[] openOptions =  openOptionsList.toArray(new OpenOption[] {});
             for (GenerateVigorOutput.Outfile outfile: GenerateVigorOutput.Outfile.values()) {
