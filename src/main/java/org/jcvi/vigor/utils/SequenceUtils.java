@@ -76,4 +76,14 @@ public class SequenceUtils {
 		Pattern splitPattern = Pattern.compile(String.format("(?<=\\G.{%s})", lineLength));
 		return splitPattern.splitAsStream(sequence.toString());
 	}
+
+	public static <T> String elipsedSequenceString(Sequence<T> sequence, int leading, int trailing) {
+		String sequenceString = sequence.toString();
+		if (leading + trailing >= sequence.getLength()) {
+			return sequenceString;
+		}
+		return String.join("...",
+				sequenceString.substring(0,leading),
+				sequenceString.substring(sequenceString.length() -1 - trailing, sequenceString.length() - 1));
+	}
 }
