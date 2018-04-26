@@ -118,12 +118,30 @@ public class GenerateVigorOutput {
             if (! model.getMaturePeptides().isEmpty()) {
                 bw.write(">Features " + idGenerator.next());
                 bw.newLine();
+                String product;
+                boolean isSignalPeptide;
                 for (MaturePeptideMatch match: model.getMaturePeptides()) {
 
                     bw.write(String.format("%s\t%s\t", formatMaturePeptideRange(match)));
-                    bw.write(match.getReference().getProduct());
+                    product = match.getReference().getProduct();
+                    isSignalPeptide = product.contains("signal");
+                    if (isSignalPeptide) {
+                        // TODO pre-classify type
+                        bw.write("sig_peptide");
+                    } else {
+                        bw.write("mat_peptide");
+                        bw.newLine();
+                        bw.write("\t\t\tproduct\t");
+                        bw.write(product);
+                    }
                     bw.newLine();
-                    bw.write("\t\t\t");
+                    String geneSymbol = model.getGeneSymbol();
+                    if (! (geneSymbol == null || geneSymbol.isEmpty())) {
+                        bw.write("\t\t\tgene\t");
+                        bw.write(geneSymbol);
+                        bw.newLine();
+                    }
+                    // TODO other attributes (locus_tag, note)
                 }
             }
         }
