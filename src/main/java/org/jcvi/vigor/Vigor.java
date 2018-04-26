@@ -23,10 +23,9 @@ import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.nio.charset.Charset;
+import java.nio.file.*;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -86,8 +85,23 @@ public class Vigor {
         NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(inputFile)
                 .hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)
                 .build();
-            Stream<NucleotideFastaRecord> records = dataStore.records();
-            Iterator<NucleotideFastaRecord> i = records.iterator();
+
+            // TODO move all this file handling to method
+            // TODO checkout output earlier.
+            String outputDir = vigorForm.getConfiguration().get(ConfigurationParameters.OutputDirectory);
+            String outputPrefix = vigorForm.getConfiguration().get(ConfigurationParameters.OutputPrefix);
+            GenerateVigorOutput.Outfiles outfiles = new GenerateVigorOutput.Outfiles();
+            List<OpenOption> openOptionsList = new ArrayList<>();
+            // TODO add overwriting option
+            openOptionsList.add(StandardOpenOption.CREATE_NEW);
+
+            OpenOption[] openOptions =  openOptionsList.toArray(new OpenOption[] {});
+            for (GenerateVigorOutput.Outfile outfile: GenerateVigorOutput.Outfile.values()) {
+                outfiles.put(outfile, Files.newBufferedWriter(Paths.get(outputDir, outputPrefix + "." + outfile.extension),
+                        Charset.forName("UTF-8"), openOptions));
+            }
+
+            Iterator<NucleotideFastaRecord> i = dataStore.records().iterator();
             while (i.hasNext()) {
                 NucleotideFastaRecord record = i.next();
                 VirusGenome virusGenome = new VirusGenome(record.getSequence(), record.getComment(), record.getId(),
@@ -106,9 +120,7 @@ public class Vigor {
                     LOGGER.warn("No gene models generated for sequence {}", record.getId());
                     continue;
                 }
-                // TODO checkout output earlier.
-                generateOutput(geneModels, vigorForm.getConfiguration().get(ConfigurationParameters.OutputDirectory)
-                        +File.separator+vigorForm.getConfiguration().get(ConfigurationParameters.OutputPrefix));
+                generateOutput(geneModels, outfiles);
             }
 
         } catch (DataStoreException e) {
@@ -165,8 +177,8 @@ public class Vigor {
         return geneModelGenerationService.generateGeneModel(models, form);
     }
 
-    public void generateOutput(List<Model> models, String outputDirectory) throws ServiceException{
-        generateVigorOutput.generateOutputFiles(outputDirectory, models);
+    public void generateOutput(List<Model> models, GenerateVigorOutput.Outfiles outfiles) throws ServiceException, IOException{
+        generateVigorOutput.generateOutputFiles(outfiles, models);
     }
 
 
