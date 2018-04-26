@@ -33,7 +33,11 @@ public class GenerateVigorOutput {
         generatePEPReport(PEPFile,geneModels);
     }
 
-    public void generateTBLReport(File TBLFile,List<Model> geneModels){
+    public void generateTBLReport(File TBLFile, List<Model> geneModels){
+        if (geneModels.isEmpty()) {
+            LOGGER.warn("no gene models to write to file");
+            return;
+        }
         String genomeID = geneModels.get(0).getAlignment().getVirusGenome().getId();
         String[] genomeIDParts = genomeID.split(Pattern.quote("|"));
         String proteinIDOfGenome;
@@ -100,7 +104,7 @@ public class GenerateVigorOutput {
                     bw.write(">Features " + idGenerator.next());
                     bw.newLine();
                     for (MaturePeptideMatch match: model.getMaturePeptides()) {
-                        bw.write(String.format("%s\t%s\t%s", formatMaturelPeptideRange(match)));
+                        bw.write(String.format("%s\t%s\t%s", formatMaturePeptideRange(match)));
                         bw.newLine();
                         bw.write("\t\t\t");
                     }
