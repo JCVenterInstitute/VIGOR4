@@ -189,6 +189,11 @@ public class VigorInputValidationService {
 			  .dest(CommandLineParameters.configFile)
 			  .help("config file to use");
 
+		parser.addArgument("--reference-database-path")
+			  .action(Arguments.store())
+			  .dest(CommandLineParameters.referenceDB_Path)
+			  .help("reference database path");
+
 		return parser;
 	}
 

@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.LoggerContext;
 import org.apache.logging.log4j.core.appender.FileAppender;
 import org.apache.logging.log4j.core.layout.PatternLayout;
+import org.apache.logging.log4j.core.tools.picocli.CommandLine;
 import org.jcvi.vigor.component.AlignmentEvidence;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.forms.VigorForm;
@@ -87,7 +88,7 @@ public class VigorInitializationService {
 				if (param.hasFlag(ConfigurationParameters.Flags.VERSION_4)) {
 					propConfiguration.put(param, val);
 				} else {
-					LOGGER.debug("Ignoring VIGOR3 parameter {}={} set via system properties", param.configKey, val, key);
+					LOGGER.debug("Ignoring non VIGOR4 parameter {}={} set via system properties", param.configKey, val, key);
 				}
 			}
 		}
@@ -102,7 +103,7 @@ public class VigorInitializationService {
 				if (param.hasFlag(ConfigurationParameters.Flags.VERSION_4)) {
 					envConfiguration.put(param, val);
 				} else {
-					LOGGER.debug("ignoring VIGOR3 parameter {}={} set via environment variable {}", param.configKey, val, key);
+					LOGGER.debug("ignoring non-VIGOR4 parameter {}={} set via environment variable {}", param.configKey, val, key);
 				}
 			}
 		}
@@ -113,10 +114,8 @@ public class VigorInitializationService {
 
 		String outputPath = inputs.getString(CommandLineParameters.outputPrefix);
 		File outputFile= new File(outputPath);
-		if(outputFile.getParentFile().exists() &&outputFile.getParentFile().isDirectory()){
-
-        }else{
-		    throw new VigorException("Invalid -o parameter.Please provide valid output directory followed by prefix");
+		if( ! (outputFile.getParentFile().exists() &&outputFile.getParentFile().isDirectory()) ){
+		    throw new VigorException(String.format("Invalid output prefix %s. Please provide an existing output directory followed by a file prefix", outputPath));
         }
 		commandLineConfig.put(ConfigurationParameters.OutputPrefix,outputFile.getName());
         commandLineConfig.put(ConfigurationParameters.OutputDirectory,outputFile.getParentFile().getAbsolutePath());
@@ -162,6 +161,11 @@ public class VigorInitializationService {
 		if (jcvi_rules != null) {
 			commandLineConfig.put(ConfigurationParameters.JCVIRules, jcvi_rules ? "1": "0");
 		}
+
+		String reference_database_path = inputs.getString(CommandLineParameters.referenceDB_Path);
+		if (reference_database_path != null) {
+			commandLineConfig.put(ConfigurationParameters.ReferenceDatabasePath, reference_database_path);
+		}
 		configurations.add(commandLineConfig);
 
 		List<String> parameters = inputs.getList(CommandLineParameters.parameters);
@@ -193,10 +197,7 @@ public class VigorInitializationService {
 
 		AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
 		VigorForm form = new VigorForm(defaultConfiguration);
-		// TODO still would be nice to be able to set this via the command line.
-		if (reference_db_dir == null) {
-			throw new VigorException("Reference database path is required");
-		}
+
 
 		String reference_db= inputs.getString(CommandLineParameters.referenceDB);
 		if ("any".equals(reference_db)) {
@@ -205,12 +206,24 @@ public class VigorInitializationService {
 			File file = new File(reference_db);
 			if(file.exists() && file.isFile() ){
 				reference_db=file.getAbsolutePath();
-			}else{
+				if (reference_db_dir == null || reference_db_dir.isEmpty()) {
+					reference_db_dir = file.getParent();
+				}
+			}else if ( ! (reference_db_dir == null || reference_db_dir.isEmpty())){
 				reference_db=Paths.get(reference_db_dir,reference_db).toString();
 			}
 		}
 
+		// TODO still would be nice to be able to set this via the command line.
+		if (reference_db_dir == null) {
+			throw new VigorException("Reference database path is required");
+		}
+
 		LOGGER.debug("Reference_db is {}", reference_db);
+		if ( reference_db == null || reference_db.isEmpty()) {
+			throw new VigorException("reference database is required");
+		}
+
 		alignmentEvidence.setReference_db(reference_db);
 
 		defaultConfiguration = loadVirusSpecificParameters(defaultConfiguration, reference_db);

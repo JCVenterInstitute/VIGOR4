@@ -21,6 +21,8 @@ public final class CommandLineParameters {
 	public final static String ignoreRefID = "ignore_refID";
 	public final static String listConfigParameters = "list_config_parameters";
 	public final static String configFile = "config_file";
+	public final static String referenceDB_Path = "reference_database_path";
+
     /**
      * Not to be instantiated
      */
