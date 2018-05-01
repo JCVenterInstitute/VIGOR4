@@ -10,12 +10,11 @@ import org.apache.logging.log4j.core.config.AppenderRef;
 import org.apache.logging.log4j.core.config.Configuration;
 import org.apache.logging.log4j.core.config.LoggerConfig;
 import org.apache.logging.log4j.core.layout.PatternLayout;
+import org.jcvi.vigor.exception.VigorException;
 import org.springframework.core.io.ClassPathResource;
 import java.io.File;
 import java.io.IOException;
-
-
-
+import java.nio.file.Paths;
 
 
 public class VigorUtils {
@@ -55,18 +54,41 @@ public class VigorUtils {
 	}
 
 	*/
-	public static String getVigorWorkSpace() {
-		File theDir = new File("VigorWorkSpace");
-		if (!theDir.exists()) {
+	public static String getVigorWorkSpace() throws VigorException {
+		String workingDirectory = null;
+		for (String dirName: new String[] {
+				System.getenv("VIGOR_TEMPDIR"),
+				System.getProperty("vigor.tempdir"),
+				"VigorWorkSpace"}) {
+
+			if (dirName == null) {
+				continue;
+			}
+			File theDir = new File(dirName);
 			try {
-				theDir.mkdir();
+				if (theDir.exists()) {
+					if ( theDir.isDirectory() && theDir.canWrite() && theDir.canRead()) {
+						workingDirectory = theDir.getPath();
+					} else {
+						LOGGER.error("{} is not a directory or is not readable and writable", theDir);
+					}
+				} else {
+					if (theDir.mkdirs() ) {
+						workingDirectory = theDir.getPath();
+					} else {
+						LOGGER.error("unable to create directory {}", theDir);
+					}
+				}
 			} catch (SecurityException e) {
 				LOGGER.error(e.getMessage(),e);
-
+				throw new VigorException(String.format("unable to create working directory %s", theDir),e);
 			}
+			break;
 		}
-
-		return theDir.getPath();
+		if (workingDirectory == null) {
+			throw new VigorException("unable to determine/create working directory");
+		}
+		return workingDirectory;
 	}
 
 	public static String getBlastCommand(String blastFilePath, String inputFilePath, String reference_db,
@@ -89,9 +111,7 @@ public class VigorUtils {
 	}*/
 
 	public static String getVigorParametersPath() {
-
-		String vigorIniPath = "vigorResources" + File.separator + "config" + File.separator + "vigor.ini";
-		return vigorIniPath;
+		return Paths.get("vigorResources", "config", "vigor.ini").toString();
 	}
 	/*public static String getVirusSpecificParametersPath(){
         String virusParamsPath = "vigorResources" + File.separator + "config" + File.separator + "virusSpecificParams";

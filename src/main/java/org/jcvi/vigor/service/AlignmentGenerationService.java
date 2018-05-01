@@ -1,20 +1,22 @@
 package org.jcvi.vigor.service;
 import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.vigor.component.*;
+import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.service.exception.ServiceException;
+import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.FormatVigorOutput;
 
+import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
+import org.jcvi.vigor.utils.VigorConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 
 /**
  * Created by snettem on 5/9/2017.
@@ -25,44 +27,58 @@ public class AlignmentGenerationService {
 
 	private static final Logger LOGGER = LogManager.getLogger(AlignmentGenerationService.class);
 	private boolean isDebug = false;
-	@Autowired
-	private ExonerateService exonerateService;
 
 	@Autowired
 	private ViralProteinService viralProteinService;
 	
+	@Autowired
+	private ExonerateService exonerateService;
 
-	public List<Alignment> GenerateAlignment(VirusGenome virusGenome,VigorForm form) throws ServiceException {
+	public List<Alignment> generateAlignment(VirusGenome virusGenome, VigorForm form) throws ServiceException {
 		isDebug = form.isDebug();
-		String alignmentTool = chooseAlignmentTool(form.getAlignmentEvidence());
-		String min_gap_length = form.getVigorParametersList().get("min_seq_gap_length");
-		String exoneratePath = form.getVigorParametersList().get("exonerate_path");
-		String workspace = form.getVigorParametersList().get("output_directory");
+		AlignmentEvidence alignmentEvidence = form.getAlignmentEvidence();
+		String alignmentTool = chooseAlignmentTool(alignmentEvidence);
+		VigorConfiguration vigorConfig = form.getConfiguration();
+
+		String min_gap_length = vigorConfig.get(ConfigurationParameters.SequenceGapMinimumLength);
+		String workspace = vigorConfig.get(ConfigurationParameters.OutputDirectory);
+		String referenceDB = alignmentEvidence.getReference_db();
+
 		List<Range> sequenceGaps = VirusGenomeService.findSequenceGapRanges(min_gap_length,
 				virusGenome.getSequence());
 		Map<Frame,List<Long>> internalStops =VirusGenomeService.findInternalStops(virusGenome.getSequence());
 		virusGenome.setInternalStops(internalStops);
 		virusGenome.setSequenceGaps(sequenceGaps);
 		List<Alignment> alignments = Collections.EMPTY_LIST;
-		if (alignmentTool.equals("exonerate")) {
-			alignments = generateExonerateAlignment(virusGenome, form.getAlignmentEvidence(),workspace,exoneratePath);
-			for (int i=0; i < alignments.size(); i++ ) {
-				alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), form));
-			}
-			if (isDebug) {
-				FormatVigorOutput.printAlignments(alignments);
-			}
+		AlignmentService alignmentService = getAlignmentService(alignmentTool, form);
+		alignments = alignmentService.getAlignment(form.getAlignmentEvidence(), virusGenome, referenceDB, workspace);
+		for (int i=0; i < alignments.size(); i++ ) {
+			alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), form));
 		}
-		// TODO if alignment service isn't available
+		if (isDebug) {
+			FormatVigorOutput.printAlignments(alignments);
+		}
+
 		return alignments;
 	}
 	
-	public List<Alignment> generateExonerateAlignment(VirusGenome virusGenome, AlignmentEvidence alignmentEvidence,String workspace,String exoneratePath) throws ServiceException {
-	             return exonerateService.getAlignment(virusGenome, alignmentEvidence,workspace,exoneratePath);
-	}
-
+	// TODO why does this take alignmentEvidence rather than the configuration?
 	public String chooseAlignmentTool(AlignmentEvidence alignmentEvidence) {
 		return "exonerate";
+	}
+
+	private AlignmentService getAlignmentService(String alignmentTool, VigorForm form) throws ServiceException {
+		if ("exonerate".equals(alignmentTool)) {
+			try {
+				String exoneratePath = form.getConfiguration().get(ConfigurationParameters.ExoneratePath);
+				LOGGER.debug("Using exonerate path {}", exoneratePath);
+				exonerateService.setExoneratePath(Paths.get(exoneratePath));
+				return exonerateService;
+			} catch (VigorException e) {
+				throw new ServiceException(e);
+			}
+		}
+		throw new ServiceException(String.format("Unsupported alignment tool %s", alignmentTool));
 	}
 
 }

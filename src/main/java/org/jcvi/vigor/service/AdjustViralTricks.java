@@ -1,6 +1,5 @@
 package org.jcvi.vigor.service;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -12,8 +11,8 @@ import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
-import org.jcvi.vigor.service.DetermineGeneFeatures;
 import org.jcvi.vigor.service.exception.ServiceException;
+import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.VigorFunctionalUtils;
 import org.jcvi.vigor.utils.VigorUtils;
 import org.jcvi.vigor.component.Exon;
@@ -35,7 +34,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 		List<Model> outputModels = new ArrayList<>();
 		List<Model> rnaEditedModels= new ArrayList<>();
 
-		String leakyStopScoreParam = form.getVigorParametersList().get("LeakyStop_notFound_score");
+		String leakyStopScoreParam = form.getConfiguration().get(ConfigurationParameters.ScoreFactorLeakyStopNotFound);
 		if (VigorUtils.is_Integer(leakyStopScoreParam)) {
 			leakyStopNotFoundScore = Integer.parseInt(leakyStopScoreParam);
 		}

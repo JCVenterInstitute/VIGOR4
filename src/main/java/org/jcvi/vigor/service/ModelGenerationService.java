@@ -1,12 +1,9 @@
 package org.jcvi.vigor.service;
 
 import org.jcvi.vigor.component.*;
-import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.service.exception.ServiceException;
-import org.jcvi.vigor.utils.FormatVigorOutput;
-import org.jcvi.vigor.utils.VigorFunctionalUtils;
-import org.jcvi.vigor.utils.VigorUtils;
+import org.jcvi.vigor.utils.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Direction;
@@ -33,15 +30,15 @@ public class ModelGenerationService {
 
 	public List<Model> generateModels(List<Alignment> alignments, VigorForm form) throws ServiceException {
 		isDebug = form.isDebug();
-		Map<String,String> params  = form.getVigorParametersList();
-		if(VigorUtils.is_Integer(params.get("AAOverlap_offset"))){
-			AAOverlapOffset=Integer.parseInt(params.get("AAOverlap_offset"));
+		VigorConfiguration configuration  = form.getConfiguration();
+		if(VigorUtils.is_Integer(configuration.get(ConfigurationParameters.AAOverlap_offset))){
+			AAOverlapOffset=Integer.parseInt(configuration.get(ConfigurationParameters.AAOverlap_offset));
 		}
-		if(VigorUtils.is_Integer(params.get("NTOverlap_offset"))){
-			NTOverlapOffset=Integer.parseInt(params.get("NTOverlap_offset"));
+		if(VigorUtils.is_Integer(configuration.get(ConfigurationParameters.NTOverlap_offset))){
+			NTOverlapOffset=Integer.parseInt(configuration.get(ConfigurationParameters.NTOverlap_offset));
 		}
-		if(VigorUtils.is_Integer(params.get("min_condensation"))){
-			minCondensation= Integer.parseInt(params.get("min_condensation"));
+		if(VigorUtils.is_Integer(configuration.get(ConfigurationParameters.CondensationMinimum))){
+			minCondensation= Integer.parseInt(configuration.get(ConfigurationParameters.CondensationMinimum));
 		}
 		minIntronLength=minCondensation*3;
 		alignments =  mergeIdenticalProteinAlignments(alignments);
@@ -108,14 +105,14 @@ public class ModelGenerationService {
 
 		List<Range> sequenceGaps = new ArrayList<Range>();
 		// get sequence gaps
-		if (initialModels.get(0).getAlignment().getVirusGenome().getSequenceGaps() != null) {
+		if ( (! initialModels.isEmpty() ) && initialModels.get(0).getAlignment().getVirusGenome().getSequenceGaps() != null) {
 			sequenceGaps = initialModels.get(0).getAlignment().getVirusGenome().getSequenceGaps();
 		}
 		List<Range> validSequenceGaps = new ArrayList<Range>();
 		String minGapLenString = "";
 
 		if (sequenceGaps != null && sequenceGaps.size() > 0) {
-			minGapLenString = form.getVigorParametersList().get("min_seq_gap_length");
+			minGapLenString = form.getConfiguration().get(ConfigurationParameters.SequenceGapMinimumLength);
 			long minGapLength = 0;
 			if (VigorUtils.is_Integer(minGapLenString)) {
 				minGapLength = Long.parseLong(minGapLenString);

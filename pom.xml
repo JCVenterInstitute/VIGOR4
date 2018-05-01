@@ -24,6 +24,7 @@
     <jillion-version>5.3.20180213</jillion-version>
     <argparse4j-version>0.8.1</argparse4j-version>
     <jacoco-version>0.8.0</jacoco-version>
+    <guava-version>24.1-jre</guava-version>
   </properties>
 
   <modelVersion>4.0.0</modelVersion>
@@ -121,6 +122,12 @@
       <scope>test</scope> 
     </dependency>
 
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>${guava-version}</version>
+    </dependency>
+    
   </dependencies>
 
   <reporting>

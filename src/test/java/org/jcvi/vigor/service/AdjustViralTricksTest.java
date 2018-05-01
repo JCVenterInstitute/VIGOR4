@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.junit.Before;
 import org.junit.Test;
@@ -38,7 +39,7 @@ public class AdjustViralTricksTest {
     private ClassLoader classLoader = VigorTestUtils.class.getClassLoader();
 
     @Test
-    public void adjustRibosomalSlippageTest() throws ServiceException, CloneNotSupportedException {
+    public void adjustRibosomalSlippageTest() throws VigorException, CloneNotSupportedException {
         List<Alignment> alignments;
         List<Model> models=new ArrayList<Model>();
         File file = new File(classLoader.getResource("vigorUnitTestInput/Flua_RiboSlippage_Test.fasta"). getFile());
@@ -57,7 +58,7 @@ public class AdjustViralTricksTest {
     }
 
     @Test
-    public void checkForLeakyStopTest() throws ServiceException{
+    public void checkForLeakyStopTest() throws VigorException {
         List<Alignment> alignments;
         List<Model> models=new ArrayList<Model>();
         File file = new File(classLoader.getResource("vigorUnitTestInput/Veev_StopTranslationEx_Test.fasta"). getFile());
@@ -78,7 +79,7 @@ public class AdjustViralTricksTest {
 
 
     @Test
-    public void adjustRNAEditingTest() throws ServiceException, CloneNotSupportedException{
+    public void adjustRNAEditingTest() throws VigorException, CloneNotSupportedException{
         List<Alignment> alignments;
         List<Model> models=new ArrayList<Model>();
         File file = new File(classLoader.getResource("vigorUnitTestInput/mmp_rna_editing_Test.fasta"). getFile());

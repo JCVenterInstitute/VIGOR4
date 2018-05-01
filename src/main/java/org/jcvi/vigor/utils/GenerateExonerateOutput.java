@@ -36,7 +36,6 @@ public class GenerateExonerateOutput {
 					System.out.println(e.getMessage());
 				}
 			});
-			writer.close();
 
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
@@ -69,8 +68,6 @@ public class GenerateExonerateOutput {
 							System.out.println(e.getMessage());
 						}
 					});
-					writer.close();
-
 				} catch (IOException e) {
 					System.out.println(e.getMessage());
 				}

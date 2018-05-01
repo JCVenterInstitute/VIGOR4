@@ -1,6 +1,7 @@
 package org.jcvi.vigor.service;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import java.io.File;
 import java.io.IOException;
@@ -52,8 +53,11 @@ public class AlignmentGenerationServiceTest {
 
 	@Test
 	public void generateAlignmentsTest() throws ServiceException {
-		List<Alignment> alignments = alignmentGenerationService.generateExonerateAlignment(virusGenome,new AlignmentEvidence("flua_db"),"data3","/usr/bin/exonerate");
-		assertEquals(4,alignments.size());
+
+		fail("TODO setup vigor form for alignment properties");
+		//List<Alignment> alignments = alignmentGenerationService.generateAlignment(virusGenome,new AlignmentEvidence("flua_db"),"data3", "flua_db");
+		//assertEquals(4,alignments.size());
+
 	}
 
 }

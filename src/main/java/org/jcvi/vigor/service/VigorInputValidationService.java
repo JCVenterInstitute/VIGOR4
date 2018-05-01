@@ -172,6 +172,12 @@ public class VigorInputValidationService {
 			  .dest(CommandLineParameters.ignoreRefID)
 			  .metavar("<ref_id,...,ref_id>")
 			  .help("comma separated list of reference sequence IDs to ignore (useful when debugging a reference database)");
+
+		parser.addArgument("--list-config-parameters")
+			  .action(Arguments.storeTrue())
+			  .dest(CommandLineParameters.listConfigParameters)
+			  .help("list available configuration parameters and exit");
+
 		return parser;
 	}
 

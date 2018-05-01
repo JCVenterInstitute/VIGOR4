@@ -56,7 +56,7 @@ public class GenerateVigor4Models {
 					alignmentEvidence.setReference_db(refDB);
 					List<Alignment> alignments = exonerateService
 							.parseExonerateOutput(outputFile,
-									alignmentEvidence, virusGenome);
+									alignmentEvidence, virusGenome, alignmentEvidence.getReference_db());
 					for (int i=0; i<alignments.size(); i++) {
 						alignments.set(i, viralProteinService
 								.setViralProteinAttributes(alignments.get(i), new VigorForm()));

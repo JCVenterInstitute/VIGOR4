@@ -58,6 +58,7 @@ public class GeneModelGenerationService {
         List<Model> geneModels = filterGeneModels(processedModels);
         FormatVigorOutput.printSequenceFeatures(geneModels);
      	return geneModels;
+
 	}
 	public List<Model> filterGeneModels(List<Model> models){
        Map<String,List<Model>> groupedModels = models.stream().collect(groupingBy(model -> model.getAlignment().getViralProtein().getProteinID()));
