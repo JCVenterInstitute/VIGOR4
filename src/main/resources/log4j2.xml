@@ -17,7 +17,7 @@
             <DefaultRolloverStrategy max="4"/>
         </RollingFile>
         <Console name="Console">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+            <PatternLayout pattern="%msg%n" />
         </Console>
     </Appenders>
 

@@ -16,7 +16,7 @@ public final class CommandLineParameters {
 	public final static String jcviRules = "jcvi_rules";
 	public final static String ignoreReferenceRequirements = "ignore_reference_requirements";
 	public final static String parameters = "parameters";
-	public final static String minGeneSize = "mine-gene-size";
+	public final static String minGeneSize = "mine_gene_size";
 	public final static String verbose = "verbose";
 	public final static String ignoreRefID = "ignore_refID";
 

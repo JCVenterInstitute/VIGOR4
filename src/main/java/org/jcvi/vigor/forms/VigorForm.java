@@ -13,7 +13,7 @@ public class VigorForm {
 	private Map<String,String> vigorParametersList;
 	private AlignmentEvidence alignmentEvidence;
 	private String alignmentTool;
-	private boolean debug=true;
+	private boolean debug;
 
 public VigorForm()
 {

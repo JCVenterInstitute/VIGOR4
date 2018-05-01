@@ -88,10 +88,13 @@ public class VigorInitializationService {
                 reference_db=reference_db_dir+File.separator+reference_db;
             }
         }
-
-
 		LOGGER.debug("Reference_db is " + reference_db);
 		alignmentEvidence.setReference_db(reference_db);
+
+		Boolean verbose = inputs.getBoolean("verbose");
+		if(verbose!=null && verbose){
+			form.setDebug(true);
+		}else form.setDebug(false);
 
 		vigorParameterList = loadVirusSpecificParameters(vigorParameterList, alignmentEvidence.getReference_db());
 
@@ -187,11 +190,10 @@ public class VigorInitializationService {
 	public void initiateReportFile(String outputDir, String outputPrefix ){
         LoggerContext lc = (LoggerContext) LogManager.getContext(false);
         FileAppender fa = FileAppender.newBuilder().withName("mylogger").withAppend(false).withFileName(new File(outputDir, outputPrefix+".rpt").toString())
-                .withLayout(PatternLayout.newBuilder().withPattern("%-5p %d  [%t] %C{2} (%F:%L) - %m%n").build())
-                .setConfiguration(lc.getConfiguration()).build();
+                .build();
         fa.start();
         lc.getConfiguration().addAppender(fa);
-        lc.getRootLogger().addAppender(lc.getConfiguration().getAppender(fa.getName()));
+        lc.getLogger("org.jcvi.vigor").addAppender(lc.getConfiguration().getAppender(fa.getName()));
         lc.updateLoggers();
     }
 }

@@ -80,6 +80,8 @@ public class CheckCoverage implements EvaluateModel {
         scores.put("%identity",percentIdentity);
         scores.put("%similarity",percentSimilarity);
         scores.put("%coverage",percentCoverage);
+        double modelScore = percentIdentity+percentSimilarity+percentCoverage;
+        scores.put("modelScore",modelScore);
         model.setScores(scores);
    	    return model;
     }

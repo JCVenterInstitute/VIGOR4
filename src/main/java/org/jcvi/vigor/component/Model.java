@@ -27,7 +27,7 @@ public class Model implements Cloneable{
     private Range insertRNAEditingRange;
     private NucleotideSequence cds;
     private ProteinSequence tanslatedSeq;
-    private String proteinID;
+    private String geneID;
     private List<MaturePeptide> maturePeptides;
    public Model clone() throws CloneNotSupportedException {
 	   Model model = (Model) super.clone();

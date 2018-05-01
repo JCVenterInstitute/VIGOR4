@@ -68,14 +68,14 @@ public class ViralProteinService {
 
             /* Set product attribute */
             if (attributes.containsKey("product")) {
-                String product = attributes.get("product");
+                String product = attributes.get("product").replaceAll("\"","");
                 viralProtein.setProduct(product);
             }
 
 
             /* Set gene symbol */
             if(attributes.containsKey("gene")){
-                String geneSymbol = attributes.get("gene");
+                String geneSymbol = attributes.get("gene").replaceAll("^\"|\"$", "");
                 viralProtein.setGeneSymbol(geneSymbol);
             }
 
@@ -190,10 +190,10 @@ public class ViralProteinService {
                 structuralSpecifications.setShared_cds(Arrays.asList(attribute.split(",")));
 
             }
-            if (attributes.containsKey("is_optional ")) {
+            if (attributes.containsKey("is_optional")) {
                 structuralSpecifications.set_required(true);
             }
-            if (attributes.containsKey("is_required ")) {
+            if (attributes.containsKey("is_required")) {
                 structuralSpecifications.set_required(false);
             }
             if (attributes.containsKey("excludes_gene")) {
@@ -209,7 +209,8 @@ public class ViralProteinService {
 
             /* Set maturepeptide DB attribute */
             if (attributes.containsKey("matpepdb")) {
-                matPepDB = attributes.get("matpepdb");
+                String attribute = attributes.get("matpepdb").replaceAll("^\"|\"$", "");
+                matPepDB=attribute;
             }
 
             /* Move all the different attribute objects to geneAttributes */
@@ -323,13 +324,13 @@ public class ViralProteinService {
                 deflineAttributes.add(matcher.group(0));
             }
 
-            pattern = Pattern.compile("product=(\\\"[a-zA-Z0-9 ]+\\\")");
+            pattern = Pattern.compile("product=\"([^\"]*\")");
             matcher = pattern.matcher(defline);
             if(matcher.find()){
                 deflineAttributes.add(matcher.group(0));
             }
 
-            pattern = Pattern.compile("gene=(\\\"[a-zA-Z0-9 ]+\\\")");
+            pattern = Pattern.compile("gene=\"\\S*\"");
             matcher = pattern.matcher(defline);
             if(matcher.find()){
                 deflineAttributes.add(matcher.group(0));
@@ -398,7 +399,7 @@ public class ViralProteinService {
             }
 
             /* Parsing other structural tags */
-            pattern = Pattern.compile("shared_cds=\"[a-zA-Z,]*\"");
+            pattern = Pattern.compile("shared_cds=\"\\S*\"");
             matcher = pattern.matcher(defline);
             if (matcher.find()) {
                 deflineAttributes.add(matcher.group(0));

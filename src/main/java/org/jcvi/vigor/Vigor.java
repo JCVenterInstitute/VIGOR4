@@ -15,6 +15,7 @@ import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.service.*;
 import org.jcvi.vigor.service.exception.ServiceException;
+import org.jcvi.vigor.utils.GenerateGFF3Output;
 import org.jcvi.vigor.utils.GenerateVigorOutput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -50,6 +51,9 @@ public class Vigor {
 
 	@Autowired
     private GenerateVigorOutput generateVigorOutput;
+
+	@Autowired
+    private GenerateGFF3Output generateGFF3Output;
 
 	public void run(String ... args) {
 
@@ -88,9 +92,12 @@ public class Vigor {
                 List<Alignment> alignments = generateAlignments(virusGenome, vigorForm);
                 List<Model> candidateModels = generateModels(alignments, vigorForm);
                 List<Model> geneModels = generateGeneModels(candidateModels, vigorForm);
-                // TODO checkout output earlier.
+                // TODO checkout output earlier
                 generateOutput(geneModels, vigorForm.getVigorParametersList().get("output_directory")
                         +File.separator+vigorForm.getVigorParametersList().get("output_prefix"));
+                generateGFF3Output(geneModels,vigorForm.getVigorParametersList().get("output_directory")
+                        +File.separator+vigorForm.getVigorParametersList().get("output_prefix"));
+
             }
 
         } catch (DataStoreException e) {
@@ -135,6 +142,10 @@ public class Vigor {
     public void generateOutput(List<Model> models, String outputDirectory) throws ServiceException{
         generateVigorOutput.generateOutputFiles(outputDirectory, models);
     }
+    public void generateGFF3Output(List<Model> models, String outputDirectory) throws ServiceException{
+        generateGFF3Output.generateOutputFile(outputDirectory, models);
+    }
+
 
 
 }

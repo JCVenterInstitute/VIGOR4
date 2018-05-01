@@ -1,7 +1,9 @@
 package org.jcvi.vigor.service;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.text.Normalizer;
+import java.util.*;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.vigor.service.exception.ServiceException;
@@ -10,6 +12,8 @@ import org.springframework.stereotype.Service;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.utils.FormatVigorOutput;
+
+import static java.util.stream.Collectors.groupingBy;
 
 
 @Service
@@ -29,7 +33,7 @@ public class GeneModelGenerationService {
 	@Autowired
 	private EvaluateScores evaluateScores;
 
-	boolean isDebug = true;
+	boolean isDebug = false;
     private static final Logger LOGGER = LogManager.getLogger(GeneModelGenerationService.class);
 
     public List<Model> generateGeneModel(List<Model> models, VigorForm form) throws ServiceException {
@@ -37,10 +41,8 @@ public class GeneModelGenerationService {
 		List<Model> pseudoGenes = new ArrayList<Model>();
 		isDebug = form.isDebug();
 		List<Model> processedModels = determineGeneFeatures(models, partialGeneModels, pseudoGenes, form);
-		// TODO process pseudogenes, Not included in initial release
-		if(processedModels.size()<=0){
-			processedModels.addAll(partialGeneModels);
-		}
+		// TODO process pseudogenes/partial genes, Not included in initial release
+
 		processedModels.stream().forEach(model -> checkCoverage.evaluate(model, form));
 		processedModels.stream().forEach(model -> {
 			if (model.isPseudogene()) {
@@ -49,17 +51,70 @@ public class GeneModelGenerationService {
 		});
 		processedModels.removeAll(pseudoGenes);
 		processedModels.stream().forEach(model -> evaluateScores.evaluate(model, form));
-		processedModels.sort(new Comparator<Model>() {
-			@Override
-			public int compare(Model m1, Model m2) {
-				return Double.compare(m1.getScores().get("totalScore"), m2.getScores().get("totalScore"));
-			}
-		});
-
-		List<Model> geneModels = new ArrayList<Model>();
-		geneModels.add(processedModels.get(processedModels.size()-1));
-		return geneModels;
+		if(processedModels.size()<=0){
+            LOGGER.error("No gene models found. Currently Vigor4 does not support annotating Partial or Pseudogenes ");
+            System.exit(0);
+        }
+        List<Model> geneModels = filterGeneModels(processedModels);
+        FormatVigorOutput.printSequenceFeatures(geneModels);
+     	return geneModels;
 	}
+	public List<Model> filterGeneModels(List<Model> models){
+       Map<String,List<Model>> groupedModels = models.stream().collect(groupingBy(model -> model.getAlignment().getViralProtein().getProteinID()));
+       List<Model> filteredModels = new ArrayList<Model>();
+       List<Model> geneModels = new ArrayList<Model>();
+       Set<String> proteinIDs = groupedModels.keySet();
+       for(String proteinID : proteinIDs){
+           List<Model> similarModels = groupedModels.get(proteinID);
+           similarModels.sort(new Comparator<Model>() {
+               @Override
+               public int compare(Model m1, Model m2) {
+                   return Double.compare(m1.getScores().get("totalScore"), m2.getScores().get("totalScore"));
+               }
+           });
+           filteredModels.add(similarModels.get(similarModels.size()-1));
+       }
+        filteredModels.sort(new Comparator<Model>() {
+            @Override
+            public int compare(Model m1, Model m2) {
+                return Double.compare(m1.getScores().get("modelScore"), m2.getScores().get("modelScore"));
+            }
+        });
+       if(isDebug) {
+           FormatVigorOutput.printModels(filteredModels, "Candidate Models");
+       }
+       Model geneModel = filteredModels.get(filteredModels.size()-1);
+       int x=1;
+       String genomeID = geneModel.getAlignment().getVirusGenome().getId();
+        String regex = Pattern.quote("|");
+        String[] genomeIDParts = genomeID.split(regex);
+        String geneID="";
+        if(genomeIDParts.length>=2) {
+            geneID = genomeIDParts[0] + "_" + genomeIDParts[1];
+        }else{
+            geneID=genomeIDParts[0];
+        }
+       geneModel.setGeneID(geneID+"."+x);
+       geneModels.add(geneModel);
+       filteredModels.remove(geneModel);
+       if(geneModel.getAlignment().getViralProtein().getGeneAttributes().getStructuralSpecifications().getShared_cds()!=null){
+           List<String> sharedCDSList = geneModel.getAlignment().getViralProtein().getGeneAttributes().getStructuralSpecifications().getShared_cds();
+           for(String sharedCDS : sharedCDSList){
+               double totalScore=0;
+               for(int j=filteredModels.size()-1;j<filteredModels.size();j--){
+                 Model model = filteredModels.get(j);
+                   if(model.getGeneSymbol().equals(sharedCDS)){
+                       x++;
+                       model.setGeneID(geneID+"."+x);
+                       geneModels.add(model);
+                       break;
+                   }
+               }
+           }
+       }
+
+       return geneModels;
+    }
 
 	public List<Model> determineGeneFeatures(List<Model> models, List<Model> partialGeneModels, List<Model> pseudoGenes, VigorForm form) throws ServiceException {
 

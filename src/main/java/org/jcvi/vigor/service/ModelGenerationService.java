@@ -178,7 +178,7 @@ public class ModelGenerationService {
 				Model model = new Model();
 				model.setExons(exons);
 				model.setAlignment(alignment);
-				model.setGeneSymbol(alignment.getViralProtein().getProteinID());
+				model.setGeneSymbol(alignment.getViralProtein().getGeneSymbol());
 				model.setDirection(direction);
 				Map<String, Double> alignmentScores = alignment.getAlignmentScore();
 				model.setScores(alignmentScores);
