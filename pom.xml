@@ -161,7 +161,15 @@
 	  <groupId>org.apache.maven.plugins</groupId>
 	  <artifactId>maven-assembly-plugin</artifactId>
 	  <version>3.1.0</version> 
-	  <configuration>
+	  <executions>
+	    <execution>
+	      <id>make-assembly</id>
+              <!-- bind to the packaging phase -->
+	      <phase>package</phase>
+	      <goals>
+		<goal>single</goal>
+	      </goals>
+              	  <configuration>
 	    <finalName>vigor-${project.version}</finalName>
 	    <!-- get all project dependencies -->
 	    <descriptorRefs>
@@ -173,19 +181,30 @@
 		<mainClass>org.jcvi.vigor.Application </mainClass>
 	      </manifest>
 	    </archive>
-	    <appendAssemblyId>false</appendAssemblyId>
+	    <appendAssemblyId>true</appendAssemblyId>
 	  </configuration>
-	  <executions>
+
+	    </execution>
 	    <execution>
-	      <id>make-assembly</id>
+	      <id>make-zip</id>
               <!-- bind to the packaging phase -->
 	      <phase>package</phase>
 	      <goals>
 		<goal>single</goal>
 	      </goals>
+	      <configuration>
+	        <finalName>vigor-${project.version}</finalName>
+	        <!-- MainClass in mainfest make a executable jar -->
+	        <appendAssemblyId>false</appendAssemblyId>
+                <descriptors>
+                  <descriptor>src/assembly/bin.xml</descriptor>
+                </descriptors>
+	      </configuration>
 	    </execution>
+            
 	  </executions>
 	</plugin>
+
 	
       </plugins>
     </pluginManagement>

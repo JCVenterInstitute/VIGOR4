@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<assembly>
+  <id>distribution</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  <fileSets>
+    <!-- script -->
+    <fileSet>
+      <directory>src/bin</directory>
+      <outputDirectory>bin</outputDirectory>
+      <lineEnding>unix</lineEnding>
+      <fileMode>0755</fileMode>
+    </fileSet>
+    <!-- default config -->
+    <fileSet>
+      <directory>src/config</directory>
+      <includes>
+        <include>vigor.ini</include>
+      </includes>
+      <outputDirectory>config</outputDirectory>
+    </fileSet>
+
+    <!-- jar -->
+    <fileSet>
+      <directory>target</directory>
+      <outputDirectory>lib</outputDirectory>
+      <includes>
+        <include>vigor-*.jar</include>
+      </includes>
+    </fileSet>
+
+    <!-- virus specific configurations -->
+    <fileSet>
+      <directory>src/main/resources/vigorResources/config/virusSpecificParams/</directory>
+      <outputDirectory>config/virus-specific</outputDirectory>
+      <includes>
+        <include>*.ini</include>
+      </includes>
+    </fileSet>
+    
+  </fileSets>
+</assembly>
