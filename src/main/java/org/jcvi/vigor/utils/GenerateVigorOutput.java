@@ -6,19 +6,13 @@ import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.aa.ProteinSequence;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.vigor.component.*;
-import org.jcvi.vigor.service.PeptideMatchingService;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.StandardOpenOption;
 import java.util.EnumMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 import java.util.regex.Pattern;
 
 @Service
@@ -27,6 +21,7 @@ public class GenerateVigorOutput {
     public enum Outfile {
         TBL("tbl"),
         CDS("cds"),
+        GFF3("gff3"),
         PEP("pep");
 
         final public String extension;

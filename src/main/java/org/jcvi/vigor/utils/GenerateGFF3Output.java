@@ -3,16 +3,12 @@ package org.jcvi.vigor.utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Direction;
-import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.vigor.component.*;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
-import java.util.regex.Pattern;
 
 @Service
 public class GenerateGFF3Output {
@@ -21,21 +17,15 @@ public class GenerateGFF3Output {
             .getLogger(GenerateGFF3Output.class);
 
 
-    public void generateOutputFile(String outputFile,List<Model> models){
-        File gff3File = new File(outputFile+".gff3");
-        printGFF3Features(gff3File,models);
+    public void generateOutputFile(GenerateVigorOutput.Outfiles outfiles, List<Model> models) throws IOException {
+        printGFF3Features(outfiles.get(GenerateVigorOutput.Outfile.GFF3), models);
     }
 
-    public void printGFF3Features(File gff, List<Model> geneModels){
+    public void printGFF3Features(BufferedWriter bw, List<Model> geneModels) throws IOException{
 
-        BufferedWriter bw = null;
-        FileWriter fw = null;
 
-        try{
-            fw = new FileWriter(gff,true);
-            bw = new BufferedWriter(fw);
-            bw.write("##gff-version 3");
-            for(Model geneModel : geneModels){
+        bw.write("##gff-version 3");
+        for(Model geneModel : geneModels){
             int i=1;
             String geneomeSeqID = geneModel.getAlignment().getVirusGenome().getId();
             List<Exon> exons = geneModel.getExons();
@@ -155,63 +145,46 @@ public class GenerateGFF3Output {
                 bw.write("." + "\t");
                 bw.write("ID=" + mRnaID + "." + k + "," + "Parent=" + mRnaID + ",Note=");
             }
-                //minus_1_translationally_frameshifted
-                if(geneModel.getAlignment().getViralProtein().getGeneAttributes().getRibosomal_slippage().isHas_ribosomal_slippage()) {
-                    int frameshift = geneModel.getAlignment().getViralProtein().getGeneAttributes().getRibosomal_slippage().getSlippage_frameshift();
-                    if (frameshift == -1) {
-                        k++;
-                        bw.write(geneomeSeqID + "\t" + "vigor" + "\t");
-                        bw.write("minus_1_translationally_frameshifted" + "\t");
-                        if (geneModel.getInsertRNAEditingRange() != null) {
-                            bw.write(".\t.\t");
-                        } else {
-                            bw.write(".\t.\t");
-                        }
-                        bw.write("." + "\t");
-                        if (geneModel.getDirection().equals(Direction.FORWARD)) {
-                            bw.write("+" + "\t");
-                        } else bw.write("-" + "\t");
-                        bw.write("." + "\t");
-                        bw.write("ID=" + mRnaID + "." + k + "," + "Parent=" + mRnaID + ",Note=");
-
+            //minus_1_translationally_frameshifted
+            if(geneModel.getAlignment().getViralProtein().getGeneAttributes().getRibosomal_slippage().isHas_ribosomal_slippage()) {
+                int frameshift = geneModel.getAlignment().getViralProtein().getGeneAttributes().getRibosomal_slippage().getSlippage_frameshift();
+                if (frameshift == -1) {
+                    k++;
+                    bw.write(geneomeSeqID + "\t" + "vigor" + "\t");
+                    bw.write("minus_1_translationally_frameshifted" + "\t");
+                    if (geneModel.getInsertRNAEditingRange() != null) {
+                        bw.write(".\t.\t");
+                    } else {
+                        bw.write(".\t.\t");
                     }
-                    //plus_1_translationally_frameshifted
-                    if (frameshift == 1) {
-                        k++;
-                        bw.write(geneomeSeqID + "\t" + "vigor" + "\t");
-                        bw.write("plus_1_translationally_frameshifted" + "\t");
-                        if (geneModel.getInsertRNAEditingRange() != null) {
-                            bw.write(".\t.\t");
-                        } else {
-                            bw.write(".\t.\t");
-                        }
-                        bw.write("." + "\t");
-                        if (geneModel.getDirection().equals(Direction.FORWARD)) {
-                            bw.write("+" + "\t");
-                        } else bw.write("-" + "\t");
-                        bw.write("." + "\t");
-                        bw.write("ID=" + mRnaID + "." + k + "," + "Parent=" + mRnaID + ",Note=");
+                    bw.write("." + "\t");
+                    if (geneModel.getDirection().equals(Direction.FORWARD)) {
+                        bw.write("+" + "\t");
+                    } else bw.write("-" + "\t");
+                    bw.write("." + "\t");
+                    bw.write("ID=" + mRnaID + "." + k + "," + "Parent=" + mRnaID + ",Note=");
 
+                }
+                //plus_1_translationally_frameshifted
+                if (frameshift == 1) {
+                    k++;
+                    bw.write(geneomeSeqID + "\t" + "vigor" + "\t");
+                    bw.write("plus_1_translationally_frameshifted" + "\t");
+                    if (geneModel.getInsertRNAEditingRange() != null) {
+                        bw.write(".\t.\t");
+                    } else {
+                        bw.write(".\t.\t");
                     }
-                }
+                    bw.write("." + "\t");
+                    if (geneModel.getDirection().equals(Direction.FORWARD)) {
+                        bw.write("+" + "\t");
+                    } else bw.write("-" + "\t");
+                    bw.write("." + "\t");
+                    bw.write("ID=" + mRnaID + "." + k + "," + "Parent=" + mRnaID + ",Note=");
 
                 }
-
-        }catch(IOException e ){
-            LOGGER.error(e.getMessage(),e);
-        }
-        finally{
-            try{
-                if(bw!=null){
-                    bw.close();
-                }
-                if(fw!=null){
-                    fw.close();
-                }
-            }catch(IOException e )
-            {
-                LOGGER.error(e.getMessage(),e);
             }
+
         }
 
     }

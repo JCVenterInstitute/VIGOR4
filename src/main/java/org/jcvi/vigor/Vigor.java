@@ -123,17 +123,6 @@ public class Vigor {
                 List<Model> candidateModels = generateModels(alignments, vigorForm);
                 LOGGER.info("{} candidate model(s) found for sequence {}", candidateModels.size(), record.getId());
                 List<Model> geneModels = generateGeneModels(candidateModels, vigorForm);
-<<<<<<< HEAD
-                // TODO checkout output earlier
-
-                geneModels = findPeptides(geneModels, vigorForm);
-                // TODO checkout output earlier.
-                generateOutput(geneModels, vigorForm.getConfiguration().get(ConfigurationParameters.OutputDirectory)
-                        +File.separator+vigorForm.getConfiguration().get(ConfigurationParameters.OutputPrefix));
-                generateGFF3Output(geneModels,vigorForm.getConfiguration().get(ConfigurationParameters.OutputDirectory)
-                        +File.separator+vigorForm.getConfiguration().get(ConfigurationParameters.OutputPrefix));
-
-=======
                 LOGGER.info("{} gene model(s) found for sequence {}", geneModels.size(), record.getId());
                 geneModels = findPeptides(geneModels, vigorForm);
                 if (geneModels.isEmpty()) {
@@ -141,7 +130,7 @@ public class Vigor {
                     continue;
                 }
                 generateOutput(geneModels, outfiles);
->>>>>>> 5e9e7450cb9fb2797a85b7891a44e279d392db05
+                generateGFF3Output(geneModels, outfiles);
             }
 
         } catch (DataStoreException e) {
@@ -201,8 +190,8 @@ public class Vigor {
     public void generateOutput(List<Model> models, GenerateVigorOutput.Outfiles outfiles) throws ServiceException, IOException{
         generateVigorOutput.generateOutputFiles(outfiles, models);
     }
-    public void generateGFF3Output(List<Model> models, String outputDirectory) throws ServiceException{
-        generateGFF3Output.generateOutputFile(outputDirectory, models);
+    public void generateGFF3Output(List<Model> models, GenerateVigorOutput.Outfiles outfiles) throws IOException {
+        generateGFF3Output.generateOutputFile(outfiles, models);
     }
 
 
