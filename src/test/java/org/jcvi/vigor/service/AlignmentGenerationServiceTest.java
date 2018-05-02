@@ -55,8 +55,8 @@ public class AlignmentGenerationServiceTest {
 	public void generateAlignmentsTest() throws ServiceException {
 
 		fail("TODO setup vigor form for alignment properties");
-		//List<Alignment> alignments = alignmentGenerationService.generateAlignment(virusGenome,new AlignmentEvidence("flua_db"),"data3", "flua_db");
-		//assertEquals(4,alignments.size());
+		/*List<Alignment> alignments = alignmentGenerationService.generateAlignment(virusGenome,new AlignmentEvidence("flua_db"),"data3", "flua_db");
+		assertEquals(4,alignments.size());*/
 
 	}
 

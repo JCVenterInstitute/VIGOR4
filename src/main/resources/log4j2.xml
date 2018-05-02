@@ -5,28 +5,19 @@
         <Property name="log-path">logs/</Property>
     </Properties>
 
-    <Appenders>
-        <RollingFile name="RollingFile" fileName="${log-path}/vigor.log"
-                     filePattern="${log-path}/vigor-%d{yyyy-MM-dd}-%i.log" >
-            <PatternLayout>
-                <pattern>%d{dd/MMM/yyyy HH:mm:ss,SSS}- %c{1}: %m%n</pattern>
-            </PatternLayout>
-            <Policies>
-                <SizeBasedTriggeringPolicy size="1 KB" />
-            </Policies>
-            <DefaultRolloverStrategy max="4"/>
-        </RollingFile>
-        <Console name="Console">
-            <PatternLayout pattern="%msg%n" />
-        </Console>
-    </Appenders>
-
-    <Loggers>
-        <Logger name="org.jcvi.vigor" level="TRACE"/>
-        <Root level="ERROR" additivity="false">
-            <AppenderRef ref="RollingFile"/>
+  <Appenders>
+    <Console name="Console">
+      <PatternLayout pattern="%msg\n" />
+    </Console>
+  </Appenders>
+  
+  <Loggers>
+    <Logger name="org.jcvi.vigor" level="info" additivity="false">
+      <AppenderRef ref="Console"/>
+    </Logger>
+    <Root level="ERROR">
             <AppenderRef ref="Console"/>
-        </Root>
+    </Root>
     </Loggers>
 
 </Configuration>

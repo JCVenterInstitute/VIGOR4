@@ -6,7 +6,7 @@ public final class CommandLineParameters {
 	public final static String referenceDB = "reference_database";
 	public final static String genbankDB = "genbank_reference";
 	public final static String eValue = "evalue";
-	public final static String minCoverage = "min-converage";
+	public final static String minCoverage = "min-coverage";
 
 	public final static String circularGene = "circular_gene";
 	public final static String completeGene = "completeGene";
@@ -20,6 +20,9 @@ public final class CommandLineParameters {
 	public final static String verbose = "verbose";
 	public final static String ignoreRefID = "ignore_refID";
 	public final static String listConfigParameters = "list_config_parameters";
+	public final static String configFile = "config_file";
+	public final static String referenceDB_Path = "reference_database_path";
+    public final static String overwriteOutputFiles = "overwrite_output_files";
     /**
      * Not to be instantiated
      */

@@ -253,7 +253,8 @@ public class PeptideService implements PeptideMatchingService {
             }
             return peptides;
         } catch (IOException e) {
-            throw new ServiceException(String.format("Problem finding peptide matches for sequence %s in database %s", protein, peptideDatabase), e);
+            throw new ServiceException(String.format("Problem finding peptide matches for sequence %s in database %s. got %s: %s",
+                    protein, peptideDatabase, e.getClass().getSimpleName(), e.getMessage()), e);
         }
     }
 
@@ -392,6 +393,8 @@ public class PeptideService implements PeptideMatchingService {
     }
 
     Stream<PeptideMatch> getAlignments(ProteinSequence protein, File peptideDatabase) throws IOException {
+
+        LOGGER.info("finding alignments in {} for seq {}", peptideDatabase, protein);
 
         ProteinFastaFileDataStore peptideDataStore = ProteinFastaFileDataStore.fromFile(peptideDatabase);
         // TODO configurable gap penalties and blosum matrix

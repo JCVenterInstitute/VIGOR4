@@ -57,7 +57,7 @@ public class LoadDefaultParameters {
 			}
 		}
 		if (! configEntries.isEmpty()) {
-			LOGGER.warn("In config {} unrecognized configuration entries:\n{}",
+			LOGGER.warn("In config {} unrecognized configuration entries:\n{}\n",
 					sourceName,
 					configEntries.entrySet().stream()
 								 .sorted(Comparator.comparing(es -> es.getKey()))
