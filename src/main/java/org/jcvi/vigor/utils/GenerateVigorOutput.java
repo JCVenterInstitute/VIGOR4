@@ -102,42 +102,42 @@ public class GenerateVigorOutput {
             if (model.getInsertRNAEditingRange() != null) {
                 bw.write("\t\t\t\t\t" + String.format("%-13s", "note") + "\t" + notes + "\n");
                 bw.write(String.format("%-13s", model.getInsertRNAEditingRange().getBegin()) + "\t" + model.getInsertRNAEditingRange().getEnd() + "\t" + "misc_feature\n");
+            }
 
+            if (model.getInsertRNAEditingRange() != null) {
+                NucleotideSequence subSeq = model.getAlignment().getVirusGenome().getSequence().toBuilder(model.getInsertRNAEditingRange()).build();
+                bw.write("\t\t\t\t\t" + String.format("%-13s", "note") + "\tlocation of RNA editing (" + subSeq + "," + rna_editing.getInsertionString() + ") in " + model.getAlignment().getViralProtein().getProduct() + "\n");
+            }
 
-                if (model.getInsertRNAEditingRange() != null) {
-                    NucleotideSequence subSeq = model.getAlignment().getVirusGenome().getSequence().toBuilder(model.getInsertRNAEditingRange()).build();
-                    bw.write("\t\t\t\t\t" + String.format("%-13s", "note") + "\tlocation of RNA editing (" + subSeq + "," + rna_editing.getInsertionString() + ") in " + model.getAlignment().getViralProtein().getProduct() + "\n");
-                }
+            if (!model.getMaturePeptides().isEmpty()) {
+                bw.write(">Features " + idGenerator.next());
+                bw.newLine();
+                String product;
+                boolean isSignalPeptide;
+                for (MaturePeptideMatch match : model.getMaturePeptides()) {
 
-                if (!model.getMaturePeptides().isEmpty()) {
-                    bw.write(">Features " + idGenerator.next());
-                    bw.newLine();
-                    String product;
-                    boolean isSignalPeptide;
-                    for (MaturePeptideMatch match : model.getMaturePeptides()) {
-
-                        bw.write(String.format("%s\t%s\t", formatMaturePeptideRange(match)));
-                        product = match.getReference().getProduct();
-                        isSignalPeptide = product.contains("signal");
-                        if (isSignalPeptide) {
-                            // TODO pre-classify type
-                            bw.write("sig_peptide");
-                        } else {
-                            bw.write("mat_peptide");
-                            bw.newLine();
-                            bw.write("\t\t\tproduct\t");
-                            bw.write(product);
-                        }
+                    bw.write(String.format("%s\t%s\t", formatMaturePeptideRange(match)));
+                    product = match.getReference().getProduct();
+                    isSignalPeptide = product.contains("signal");
+                    if (isSignalPeptide) {
+                        // TODO pre-classify type
+                        bw.write("sig_peptide");
+                    } else {
+                        bw.write("mat_peptide");
                         bw.newLine();
-                        String geneSymbol = model.getGeneSymbol();
-                        if (!(geneSymbol == null || geneSymbol.isEmpty())) {
-                            bw.write("\t\t\tgene\t");
-                            bw.write(geneSymbol);
-                            bw.newLine();
-                        }
-                        // TODO other attributes (locus_tag, note)
+                        bw.write("\t\t\tproduct\t");
+                        bw.write(product);
                     }
+                    bw.newLine();
+                    String geneSymbol = model.getGeneSymbol();
+                    if (!(geneSymbol == null || geneSymbol.isEmpty())) {
+                        bw.write("\t\t\tgene\t");
+                        bw.write(geneSymbol);
+                        bw.newLine();
+                    }
+                    // TODO other attributes (locus_tag, note)
                 }
+
             }
 
         }
