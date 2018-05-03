@@ -153,7 +153,7 @@ public class VigorInputValidationService {
 			  .action(Arguments.append())
 			  .dest(CommandLineParameters.parameters)
 			  .metavar("<parameter=value~~...~~parameter=value>")
-			  .help("~~ separated list of VIGOR parameters to override default values");
+			  .help("~~ separated list of VIGOR parameters to override default values. Use --list-config-parameters to see settable parameters.");
 		parser.addArgument("-j", "--jcvi-rules-off")
 			  .action(Arguments.storeFalse())
 			  .dest(CommandLineParameters.jcviRules)
