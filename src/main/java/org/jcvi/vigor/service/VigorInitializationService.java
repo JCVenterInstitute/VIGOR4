@@ -310,7 +310,7 @@ public class VigorInitializationService {
     private String getConfigValue(ConfigurationParameters param, List<VigorConfiguration> configurations) {
 		String value = null;
 		for (int i = configurations.size() - 1; i >= 0; i--) {
-			value = configurations.get(i).get(ConfigurationParameters.ReferenceDatabasePath);
+			value = configurations.get(i).get(param);
 			if (value != null) {
 				break;
 			}
