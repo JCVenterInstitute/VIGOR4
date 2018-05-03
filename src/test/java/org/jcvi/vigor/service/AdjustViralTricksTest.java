@@ -16,6 +16,7 @@ import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.VigorConfiguration;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.jcvi.jillion.core.Range;
@@ -96,8 +97,10 @@ public class AdjustViralTricksTest {
 
 
 
+    @Ignore("mmp database not yet validated for vigor 4")
     @Test
     public void adjustRNAEditingTest() throws VigorException, CloneNotSupportedException{
+
         VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
         String referenceDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
         assertThat("reference database path must be set", referenceDBPath, is(notNullValue()));
