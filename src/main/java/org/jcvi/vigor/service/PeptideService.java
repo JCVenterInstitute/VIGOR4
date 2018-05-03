@@ -15,6 +15,7 @@ import org.jcvi.jillion.fasta.aa.ProteinFastaRecord;
 import org.jcvi.vigor.component.MaturePeptideMatch;
 import org.jcvi.vigor.component.ViralProtein;
 import org.jcvi.vigor.service.exception.ServiceException;
+import org.jcvi.vigor.utils.SequenceUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -265,9 +266,9 @@ public class PeptideService implements PeptideMatchingService {
         Range currentRange = current.getProteinRange();
         LOGGER.debug("adjusting edges for\n[{}-{}] {}\n[{}-{}] {}",
                 previousRange.getBegin(), previousRange.getEnd(),
-                prev.getProtein().toBuilder().trim(previousRange),
+                SequenceUtils.elipsedSequenceString(prev.getProtein().toBuilder().trim(previousRange).build(),30,30),
                 currentRange.getBegin(), currentRange.getEnd(),
-                current.getProtein().toBuilder().trim(currentRange)
+                SequenceUtils.elipsedSequenceString(current.getProtein().toBuilder().trim(currentRange).build(), 30, 30)
                 );
 
         PeptideProfile previousReferenceProfile = PeptideProfile.profileFromSequence(prev.getReference().getSequence());
@@ -363,7 +364,6 @@ public class PeptideService implements PeptideMatchingService {
         );
     }
 
-    // TODO this will be for scoring proteins when adjusting edges
     private double scorePeptideByProfile(ProteinSequence peptide, PeptideProfile referenceProfile) {
         return scoreProfile(PeptideProfile.profileFromSequence(peptide), referenceProfile);
     }
@@ -394,7 +394,7 @@ public class PeptideService implements PeptideMatchingService {
 
     Stream<PeptideMatch> getAlignments(ProteinSequence protein, File peptideDatabase) throws IOException {
 
-        LOGGER.info("finding alignments in {} for seq {}", peptideDatabase, protein);
+        LOGGER.info("finding alignments in {} for seq {}", peptideDatabase, SequenceUtils.elipsedSequenceString(protein, 40,20));
 
         ProteinFastaFileDataStore peptideDataStore = ProteinFastaFileDataStore.fromFile(peptideDatabase);
         // TODO configurable gap penalties and blosum matrix
