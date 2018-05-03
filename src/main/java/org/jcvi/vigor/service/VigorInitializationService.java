@@ -113,12 +113,16 @@ public class VigorInitializationService {
 
 	public VigorForm loadParameters(Namespace inputs) throws VigorException{
 
-		List<VigorConfiguration> configurations = getDefaultConfigurations();
+		List<VigorConfiguration> configurations = new ArrayList<>();
+		configurations.addAll(getDefaultConfigurations());
 		configurations.addAll(getCommandLineConfiguration(inputs));
 
 		String reference_db_dir = getConfigValue(ConfigurationParameters.ReferenceDatabasePath, configurations);
+		LOGGER.debug("Reference database path is {}", reference_db_dir);
 
 		String reference_db= inputs.getString(CommandLineParameters.referenceDB);
+		LOGGER.debug("reference database is {}", reference_db);
+
 		if ("any".equals(reference_db)) {
 			throw new VigorException("Auto-selecting reference database is not implemented");
 		}else{
@@ -141,11 +145,24 @@ public class VigorInitializationService {
 		if ( reference_db == null || reference_db.isEmpty()) {
 			throw new VigorException("reference database is required");
 		}
+		File referenceDBFile = new File(reference_db);
+		if (! referenceDBFile.exists() ) {
+			throw new VigorException(String.format("Reference database file \"%s\" does not exist", reference_db));
+		}
+
+		if (! referenceDBFile.isFile()) {
+			throw new VigorException(String.format("Reference database \"%s\" is not a file", reference_db));
+		}
+
+		if (! referenceDBFile.canRead()) {
+			throw new VigorException(String.format("Reference database \"%s\" is not readable", reference_db));
+		}
 
 		String virusSpecificConfig = getConfigValue(ConfigurationParameters.VirusSpecificConfiguration, configurations);
 		String virusSpecificConfigPath = getConfigValue(ConfigurationParameters.VirusSpecificConfigurationPath, configurations);
 		VigorConfiguration defaultConfiguration = configurations.get(0);
-		defaultConfiguration = loadVirusSpecificParameters(defaultConfiguration, reference_db, virusSpecificConfigPath, virusSpecificConfig);
+		String referenceDBName = Paths.get(reference_db).getFileName().toString();
+		defaultConfiguration = loadVirusSpecificParameters(defaultConfiguration, referenceDBName, virusSpecificConfigPath, virusSpecificConfig);
 		configurations.set(0, defaultConfiguration);
 
 		defaultConfiguration = mergeConfigurations(configurations);
@@ -279,18 +296,21 @@ public class VigorInitializationService {
 	 *         by virus specific parameters
 	 */
 	public VigorConfiguration loadVirusSpecificParameters(VigorConfiguration vigorConfiguration, String reference_db, String virusSpecificConfigPath, String virusSpecificConfig) throws VigorException {
+		LOGGER.debug("checking virus specific config for reference db {}, virus specific config {}, virus specific config path {}", reference_db, virusSpecificConfig, virusSpecificConfigPath);
 		String configPath = virusSpecificConfig;
 		if (configPath == null) {
+			LOGGER.debug("using default virus specific config path {}", virusSpecificConfigPath);
 			configPath = Paths.get(virusSpecificConfigPath, reference_db + ".ini").toString();
 		}
 		File configFile = new File(configPath);
+		LOGGER.debug("virus specific config file for reference_db {} is {}", reference_db, configPath);
 		// config file was specified, but doesn't exist
-		if (! configFile.exists()  && virusSpecificConfig != null) {
+		if ( (! configFile.exists())  && virusSpecificConfig != null) {
 			throw new VigorException("Virus specific config file {} doesn't exist or is not readable");
 		}
 		// virus specific configuration files may not exist
 		if (configFile.exists()) {
-			VigorConfiguration virusSpecificParameters = LoadDefaultParameters.loadVigorConfiguration(configPath, new File(configPath));
+			VigorConfiguration virusSpecificParameters = LoadDefaultParameters.loadVigorConfiguration(configPath, configFile);
 			virusSpecificParameters.setDefaults(vigorConfiguration);
 			return virusSpecificParameters;
 		}
