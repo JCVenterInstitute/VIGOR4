@@ -13,7 +13,10 @@ import org.jcvi.jillion.fasta.nt.NucleotideFastaDataStore;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaFileDataStoreBuilder;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaRecord;
 import org.jcvi.vigor.Application;
+import org.jcvi.vigor.exception.VigorException;
+import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.service.exception.ServiceException;
+import org.jcvi.vigor.utils.VigorConfiguration;
 import org.jcvi.vigor.utils.VigorTestUtils;
 import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.AlignmentEvidence;
@@ -32,6 +35,9 @@ public class AlignmentGenerationServiceTest {
 
 	@Autowired
 	private AlignmentGenerationService alignmentGenerationService;
+	@Autowired
+	private VigorInitializationService initializationService;
+
 	private VirusGenome virusGenome = new VirusGenome();
 	private ClassLoader classLoader = VigorTestUtils.class.getClassLoader();
 	private File file = new File(classLoader.getResource("vigorUnitTestInput/sequence_flua.fasta"). getFile());
@@ -52,7 +58,10 @@ public class AlignmentGenerationServiceTest {
 	}
 
 	@Test
-	public void generateAlignmentsTest() throws ServiceException {
+	public void generateAlignmentsTest() throws VigorException {
+
+		VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
+		VigorForm form = new VigorForm(config);
 
 		fail("TODO setup vigor form for alignment properties");
 		/*List<Alignment> alignments = alignmentGenerationService.generateAlignment(virusGenome,new AlignmentEvidence("flua_db"),"data3", "flua_db");

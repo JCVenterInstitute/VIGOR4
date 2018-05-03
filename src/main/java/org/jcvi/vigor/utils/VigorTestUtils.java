@@ -2,16 +2,13 @@ package org.jcvi.vigor.utils;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
-import org.jcvi.jillion.core.datastore.DataStoreException;
 import org.jcvi.jillion.core.datastore.DataStoreProviderHint;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaDataStore;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaFileDataStoreBuilder;
@@ -32,8 +29,13 @@ public class VigorTestUtils {
 	
 	
 	
-	public static List<Alignment> getAlignments(String inputFilePath, String refDB,String workspace,String proteinID) throws VigorException {
-       
+	public static List<Alignment> getAlignments(String inputFilePath, String refDB, String workspace, String proteinID, VigorConfiguration config) throws VigorException {
+
+		String exoneratePath = config.get(ConfigurationParameters.ExoneratePath);
+		if (exoneratePath == null || exoneratePath.isEmpty()) {
+			throw new VigorException("Exonerate path not set");
+		}
+
 		ExonerateService exonerateService = new ExonerateService();
 		ViralProteinService viralProteinService = new ViralProteinService();
 		File file = new File(inputFilePath);
@@ -50,13 +52,13 @@ public class VigorTestUtils {
 			alignmentEvidence.setReference_db(refDB);
 
 			String fileName = GenerateExonerateOutput.queryExonerate(
-					virusGenome, refDB, workspace, proteinID,"/usr/bin/exonerate");
+					virusGenome, refDB, workspace, proteinID, exoneratePath);
 			File outputFile = new File(fileName);
 			List<Alignment> alignments = exonerateService.parseExonerateOutput(outputFile,
 							alignmentEvidence, virusGenome, refDB);
 			for (int i = 0; i < alignments.size(); i++) {
 				alignments.set(i, viralProteinService
-						.setViralProteinAttributes(alignments.get(i), new VigorForm()));
+						.setViralProteinAttributes(alignments.get(i), new VigorForm(config)));
 			}
 			return alignments;
 		} catch (IOException e) {

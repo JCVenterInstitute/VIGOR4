@@ -1,8 +1,11 @@
 package org.jcvi.vigor.service;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.*;
 
 import java.io.File;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -20,6 +23,8 @@ import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.service.exception.ServiceException;
+import org.jcvi.vigor.utils.ConfigurationParameters;
+import org.jcvi.vigor.utils.VigorConfiguration;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.jcvi.vigor.Application;
@@ -43,17 +48,24 @@ public class DetermineMissingExonsTest {
 	private DetermineMissingExons determineMissingExons ;
 	@Autowired
 	private ViralProteinService viralProteinService ;
-
+	@Autowired
+	private VigorInitializationService initializationService;
 
 	@Test
 	public void findMissingExonsWithSpliceFormPresent() throws VigorException {
 		ClassLoader classLoader = VigorTestUtils.class.getClassLoader();
 		File file = new File(classLoader.getResource("vigorUnitTestInput/sequence_flua.fasta"). getFile());
-		List<Alignment> alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(),"flua_db",
-				VigorUtils.getVigorWorkSpace(),null);
+		VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
+		VigorForm form = new VigorForm(config);
+
+		String refDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
+		assertThat("Reference database path must be set", refDBPath, is(notNullValue()));
+		String referenceDB = Paths.get(refDBPath, "flua_db").toString();
+		List<Alignment> alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(), referenceDB ,
+				VigorUtils.getVigorWorkSpace(),null, config);
 		List<Model> models = new ArrayList<>();
 		for (int i=0;i<alignments.size();i++) {
-			alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm()));
+			alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), form));
 		}
 		models.addAll(modelGenerationService.alignmentToModels(alignments.get(0), "exonerate"));
 		assertTrue(String.format("Expected at least 1 model, got %s", models.size()), 1 >= models.size());

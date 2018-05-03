@@ -13,6 +13,7 @@ import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.utils.ConfigurationParameters;
+import org.jcvi.vigor.utils.VigorConfiguration;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.jcvi.vigor.Application;
@@ -41,12 +42,18 @@ public class ModelGenerationServiceTest {
 	private ModelGenerationService modelGenerationService;
 	@Autowired
 	private ExonerateService exonerateService;
+	@Autowired
+	private VigorInitializationService initializationService;
+
 	private ClassLoader classLoader = VigorTestUtils.class.getClassLoader();
 	private File file = new File(classLoader.getResource("vigorUnitTestInput/exonerate_flua.txt"). getFile());
+
 	@Test
 	public void alignmentToModelsTest() throws VigorException {
 
-		VigorForm form = new VigorForm();
+		VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
+		VigorForm form = new VigorForm(config);
+
 		String referenceDB = Paths.get(form.getConfiguration().get(ConfigurationParameters.ReferenceDatabasePath), "flua_db").toString();
 		alignments = exonerateService.parseExonerateOutput(file, new AlignmentEvidence("flua_db"), new VirusGenome(), referenceDB);
 		Alignment alignment = alignments.get(0);
