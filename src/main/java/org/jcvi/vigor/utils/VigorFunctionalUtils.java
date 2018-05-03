@@ -27,25 +27,12 @@ public class VigorFunctionalUtils {
 		frag1.setNucleotideSeqRange(mergedExonNTRange);
 		return frag1;
 	}
-	
+
+	private static Frame[] FRAMES = { Frame.ONE, Frame.TWO, Frame.THREE};
 	public static Frame getSequenceFrame(long coordinate){
-		Frame frame=Frame.ONE;
-		if(coordinate>2){
-		long remin = coordinate%3;
-		if(remin==0){
-			frame=Frame.ONE;
-		}
-		else if(remin==1){
-			frame=Frame.TWO;
-		}else
-		{
-			frame = Frame.THREE;
-		}
-		}else if(coordinate==0)frame=Frame.ONE;
-		else if (coordinate==1)frame=Frame.TWO;
-		else frame=Frame.THREE;
-		return frame;
+		return FRAMES[(int) coordinate % 3];
 	}
+
 	public static double generateScore(long referenceCoordinate,long pointOfOccurance){
 		long distance = 0;
 		double score =0;
