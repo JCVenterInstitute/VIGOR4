@@ -238,11 +238,11 @@ public class GenerateVigorOutput {
     }
 
     private static Object[] formatMaturePeptideRange(MaturePeptideMatch match) {
-        String start = String.valueOf(match.getProteinRange().getBegin());
+        String start = String.valueOf(match.getProteinRange().getBegin(Range.CoordinateSystem.RESIDUE_BASED));
         if (match.isFuzzyBegin()) {
             start = "<" + start;
         }
-        String end = String.valueOf(match.getProteinRange().getEnd());
+        String end = String.valueOf(match.getProteinRange().getEnd(Range.CoordinateSystem.RESIDUE_BASED));
         if (match.isFuzzyEnd()) {
             end = ">" + end;
         }
