@@ -70,8 +70,8 @@ public class VigorInitializationService {
 	 *         by the default parameters of vigor.ini file and saved to
 	 *         VigorParametersList attribute of the form.
 	 */
-	public VigorForm loadParameters(Namespace inputs) throws VigorException{
 
+	public List<VigorConfiguration> getDefaultConfigurations() throws VigorException {
 		List<VigorConfiguration> configurations = new ArrayList<>();
 		VigorConfiguration defaultConfiguration = LoadDefaultParameters
 				.loadVigorConfiguration("defaults",Thread.currentThread().getContextClassLoader().getResource(VigorUtils.getVigorParametersPath()));
@@ -108,19 +108,96 @@ public class VigorInitializationService {
 			}
 		}
 		configurations.add(envConfiguration);
+		return configurations;
+	}
 
+	public VigorForm loadParameters(Namespace inputs) throws VigorException{
+
+		List<VigorConfiguration> configurations = getDefaultConfigurations();
+		configurations.addAll(getCommandLineConfiguration(inputs));
+
+		String reference_db_dir = getConfigValue(ConfigurationParameters.ReferenceDatabasePath, configurations);
+
+		String reference_db= inputs.getString(CommandLineParameters.referenceDB);
+		if ("any".equals(reference_db)) {
+			throw new VigorException("Auto-selecting reference database is not implemented");
+		}else{
+			File file = new File(reference_db);
+			if(file.exists() && file.isFile() ){
+				reference_db=file.getAbsolutePath();
+				if (reference_db_dir == null || reference_db_dir.isEmpty()) {
+					reference_db_dir = file.getParent();
+				}
+			}else if ( ! (reference_db_dir == null || reference_db_dir.isEmpty())){
+				reference_db=Paths.get(reference_db_dir,reference_db).toString();
+			}
+		}
+
+		if (reference_db_dir == null) {
+			throw new VigorException("Reference database path is required");
+		}
+
+		LOGGER.debug("Reference_db is {}", reference_db);
+		if ( reference_db == null || reference_db.isEmpty()) {
+			throw new VigorException("reference database is required");
+		}
+
+		String virusSpecificConfig = getConfigValue(ConfigurationParameters.VirusSpecificConfiguration, configurations);
+		String virusSpecificConfigPath = getConfigValue(ConfigurationParameters.VirusSpecificConfigurationPath, configurations);
+		VigorConfiguration defaultConfiguration = configurations.get(0);
+		defaultConfiguration = loadVirusSpecificParameters(defaultConfiguration, reference_db, virusSpecificConfigPath, virusSpecificConfig);
+		configurations.set(0, defaultConfiguration);
+
+		defaultConfiguration = mergeConfigurations(configurations);
+
+		AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
+		VigorForm form = new VigorForm(defaultConfiguration);
+
+		form.setConfiguration(defaultConfiguration);
+		form.setAlignmentEvidence(alignmentEvidence);
+		alignmentEvidence.setReference_db(reference_db);
+
+		return form;
+	}
+
+
+	public VigorConfiguration mergeConfigurations(List<VigorConfiguration> configurations) {
+		// now setup all the defaults
+
+		VigorConfiguration previousConfig = null;
+
+		for (VigorConfiguration config: configurations) {
+			if (previousConfig == null) {
+				previousConfig = config;
+				continue;
+			}
+			config.setDefaults(previousConfig);
+			previousConfig = config;
+		}
+		return previousConfig;
+	}
+
+	public List<VigorConfiguration> getCommandLineConfiguration(Namespace inputs) throws VigorException {
+
+		List<VigorConfiguration> configurations = new ArrayList<>();
+
+		if (inputs.get("config_file") != null) {
+			VigorConfiguration configFileConfiguration = LoadDefaultParameters.loadVigorConfiguration("config-file",
+					new File(inputs.getString("config_file")));
+			configurations.add(configFileConfiguration);
+		}
 
 		VigorConfiguration commandLineConfig = new VigorConfiguration("commandline");
 
 		String outputPath = inputs.getString(CommandLineParameters.outputPrefix);
 		File outputFile= new File(outputPath);
 		if( ! (outputFile.getParentFile().exists() &&outputFile.getParentFile().isDirectory()) ){
-		    throw new VigorException(String.format("Invalid output prefix %s. Please provide an existing output directory followed by a file prefix", outputPath));
-        }
+			throw new VigorException(String.format("Invalid output prefix %s. Please provide an existing output directory followed by a file prefix", outputPath));
+		}
 		commandLineConfig.put(ConfigurationParameters.OutputPrefix,outputFile.getName());
-        commandLineConfig.put(ConfigurationParameters.OutputDirectory,outputFile.getParentFile().getAbsolutePath());
+		commandLineConfig.put(ConfigurationParameters.OutputDirectory,outputFile.getParentFile().getAbsolutePath());
 
-        commandLineConfig.put(ConfigurationParameters.OverwriteOutputFiles,
+		commandLineConfig.put(ConfigurationParameters.OverwriteOutputFiles,
 				inputs.getBoolean(CommandLineParameters.overwriteOutputFiles) ? "true": "false");
 
 		Integer min_gene_size = inputs.getInt(CommandLineParameters.minGeneSize);
@@ -153,12 +230,12 @@ public class VigorInitializationService {
 
 		String evalue = inputs.getString(CommandLineParameters.eValue);
 		if (evalue != null) {
-		    LOGGER.debug("Ignoring legacy parameter evalue");
+			LOGGER.debug("Ignoring legacy parameter evalue");
 		}
 
 		Boolean jcvi_rules = inputs.getBoolean(CommandLineParameters.jcviRules);
 		if (jcvi_rules != null) {
-            LOGGER.debug("Ignoring legacy parameter evalue");
+			LOGGER.debug("Ignoring legacy parameter evalue");
 		}
 
 		String reference_database_path = inputs.getString(CommandLineParameters.referenceDB_Path);
@@ -168,15 +245,16 @@ public class VigorInitializationService {
 
 		String virus_specific_path = inputs.getString(CommandLineParameters.virusSpecificConfigPath);
 		if (virus_specific_path != null) {
-		    commandLineConfig.put(ConfigurationParameters.VirusSpecificConfigurationPath, virus_specific_path);
-        }
+			commandLineConfig.put(ConfigurationParameters.VirusSpecificConfigurationPath, virus_specific_path);
+		}
 
-        virus_specific_path = inputs.getString(CommandLineParameters.virusSpecificConfig);
-        if (virus_specific_path != null) {
-            commandLineConfig.put(ConfigurationParameters.VirusSpecificConfiguration, virus_specific_path);
-        }
+		virus_specific_path = inputs.getString(CommandLineParameters.virusSpecificConfig);
+		if (virus_specific_path != null) {
+			commandLineConfig.put(ConfigurationParameters.VirusSpecificConfiguration, virus_specific_path);
+		}
 
-        configurations.add(commandLineConfig);
+		configurations.add(commandLineConfig);
+
 
 		List<String> parameters = inputs.getList(CommandLineParameters.parameters);
 		if (parameters != null) {
@@ -189,66 +267,8 @@ public class VigorInitializationService {
 			configurations.add(commandLineParametersConfig);
 		}
 
-		if (inputs.get("config_file") != null) {
-			VigorConfiguration configFileConfiguration = LoadDefaultParameters.loadVigorConfiguration("config-file",
-					new File(inputs.getString("config_file")));
-			configFileConfiguration.setDefaults(defaultConfiguration);
-			defaultConfiguration = configFileConfiguration;
-			configurations.set(0, defaultConfiguration);
-		}
-
-		String reference_db_dir = getConfigValue(ConfigurationParameters.ReferenceDatabasePath, configurations);
-
-		AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
-		VigorForm form = new VigorForm(defaultConfiguration);
-
-
-		String reference_db= inputs.getString(CommandLineParameters.referenceDB);
-		if ("any".equals(reference_db)) {
-			throw new VigorException("Auto-selecting reference database is not implemented");
-		}else{
-			File file = new File(reference_db);
-			if(file.exists() && file.isFile() ){
-				reference_db=file.getAbsolutePath();
-				if (reference_db_dir == null || reference_db_dir.isEmpty()) {
-					reference_db_dir = file.getParent();
-				}
-			}else if ( ! (reference_db_dir == null || reference_db_dir.isEmpty())){
-				reference_db=Paths.get(reference_db_dir,reference_db).toString();
-			}
-		}
-
-		if (reference_db_dir == null) {
-			throw new VigorException("Reference database path is required");
-		}
-
-		LOGGER.debug("Reference_db is {}", reference_db);
-		if ( reference_db == null || reference_db.isEmpty()) {
-			throw new VigorException("reference database is required");
-		}
-
-		alignmentEvidence.setReference_db(reference_db);
-
-		String virusSpecificConfig = getConfigValue(ConfigurationParameters.VirusSpecificConfiguration, configurations);
-		String virusSpecificConfigPath = getConfigValue(ConfigurationParameters.VirusSpecificConfigurationPath, configurations);
-		defaultConfiguration = loadVirusSpecificParameters(defaultConfiguration, reference_db, virusSpecificConfigPath, virusSpecificConfig);
-
-		configurations.set(0, defaultConfiguration);
-
-		// now setup all the defaults
-		VigorConfiguration previousConfig = defaultConfiguration;
-
-		for (int i = 1; i < configurations.size(); i++) {
-			defaultConfiguration = configurations.get(i);
-			defaultConfiguration.setDefaults(previousConfig);
-			previousConfig = defaultConfiguration;
-		}
-
-		form.setConfiguration(defaultConfiguration);
-		form.setAlignmentEvidence(alignmentEvidence);
-		return form;
+		return configurations;
 	}
-
 	/**
 	 *
 	 * @param vigorConfiguration:
