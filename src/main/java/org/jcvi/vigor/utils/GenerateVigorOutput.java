@@ -73,8 +73,8 @@ public class GenerateVigorOutput {
             Splicing splicing = model.getAlignment().getViralProtein().getGeneAttributes().getSplicing();
             StringBuilder notes = new StringBuilder("");
             List<Exon> exons = model.getExons();
-            long start = exons.get(0).getRange().getBegin() + 1;
-            long end = exons.get(exons.size() - 1).getRange().getEnd() + 1;
+            long start = exons.get(0).getRange().getBegin(Range.CoordinateSystem.RESIDUE_BASED);
+            long end = exons.get(exons.size() - 1).getRange().getEnd(Range.CoordinateSystem.RESIDUE_BASED);
             bw.write(Long.toString(start));
             bw.write("\t");
             bw.write(Long.toString(end));
@@ -87,11 +87,11 @@ public class GenerateVigorOutput {
                 Exon exon = exons.get(j);
                 if (j == 0) {
                     bw.write(String.join("\t",
-                            Long.toString(exon.getRange().getBegin() + 1),
-                            Long.toString(exon.getRange().getEnd() + 1),"CDS"));
+                            Long.toString(exon.getRange().getBegin(Range.CoordinateSystem.RESIDUE_BASED)),
+                            Long.toString(exon.getRange().getEnd(Range.CoordinateSystem.RESIDUE_BASED)),"CDS"));
                     bw.newLine();
                 } else {
-                    bw.write(Long.toString(exon.getRange().getBegin() + 1) + "\t" + Long.toString(exon.getRange().getEnd() + 1) + "\n");
+                    bw.write(Long.toString(exon.getRange().getBegin(Range.CoordinateSystem.RESIDUE_BASED)) + "\t" + Long.toString(exon.getRange().getEnd(Range.CoordinateSystem.RESIDUE_BASED)) + "\n");
                 }
             }
             bw.write("\t\t\tcodon_start\t" + start + "\n");
@@ -114,6 +114,7 @@ public class GenerateVigorOutput {
 
             if (model.getInsertRNAEditingRange() != null) {
                 bw.write("\t\t\tnote\t" + notes + "\n");
+                // TODO coordinate system?
                 bw.write(model.getInsertRNAEditingRange().getBegin() + "\t" + model.getInsertRNAEditingRange().getEnd() + "\t" + "misc_feature\n");
                 NucleotideSequence subSeq = model.getAlignment().getVirusGenome().getSequence().toBuilder(model.getInsertRNAEditingRange()).build();
                 bw.write("\t\t\tnote\tlocation of RNA editing (" + subSeq + "," + rna_editing.getInsertionString() + ") in " + model.getAlignment().getViralProtein().getProduct() + "\n");
@@ -157,7 +158,8 @@ public class GenerateVigorOutput {
         String reference_db = model.getAlignment().getAlignmentEvidence().getReference_db();
         ViralProtein refProtein = model.getAlignment().getViralProtein();
         List<Exon> exons = model.getExons();
-        Range cdsRange = Range.of(exons.get(0).getRange().getBegin()+1, exons.get(exons.size() - 1).getRange().getEnd()+1);
+        Range cdsRange = Range.of(exons.get(0).getRange().getBegin(Range.CoordinateSystem.RESIDUE_BASED),
+                exons.get(exons.size() - 1).getRange().getEnd(Range.CoordinateSystem.RESIDUE_BASED));
         StringBuilder defline = new StringBuilder();
         defline.append(">" + model.getGeneID());
 
