@@ -182,4 +182,20 @@ public class VigorUtils {
 		return prefix + symbol;
 	}
 
+	public static String putativeName(String name, boolean truncated3p, boolean truncated5p) {
+		String putativeName = name;
+		if (! name.contains("putative")) {
+			putativeName = "putative " + name;
+		}
+		if (truncated3p && truncated5p) {
+			return putativeName + ", fragment";
+		} else if (truncated3p) {
+			return putativeName + ", N-terminal";
+		} else if (truncated5p) {
+			return putativeName + ", C-terminal";
+		} else {
+			return name;
+		}
+	}
+
 }

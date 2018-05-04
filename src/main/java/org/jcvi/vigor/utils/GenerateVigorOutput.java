@@ -100,7 +100,7 @@ public class GenerateVigorOutput {
                 bw.write("\t\t\tlocus_tag\t" +  VigorUtils.nameToLocus(model.getGeneSymbol(), locusPrefix, model.isPseudogene()) + "\n");
             }
             bw.write("\t\t\tgene\t" + model.getAlignment().getViralProtein().getGeneSymbol() + "\n");
-            bw.write("\t\t\tproduct\t" + model.getAlignment().getViralProtein().getProduct() + "\n");
+            bw.write("\t\t\tproduct\t" + VigorUtils.putativeName(model.getAlignment().getViralProtein().getProduct(), model.isPartial3p(), model.isPartial5p()) + "\n");
             if (riboSlippage.isHas_ribosomal_slippage()) {
                 bw.write("\t\t\tribosomal_slippage\n");
             }
@@ -135,7 +135,8 @@ public class GenerateVigorOutput {
                         bw.write("mat_peptide");
                         bw.newLine();
                         bw.write("\t\t\tproduct\t");
-                        bw.write(product);
+                        // TODO check that there aren't other factors here.
+                        bw.write(VigorUtils.putativeName(product, model.isPartial3p(), model.isPartial5p()));
                     }
                     bw.newLine();
                     String geneSymbol = model.getGeneSymbol();
