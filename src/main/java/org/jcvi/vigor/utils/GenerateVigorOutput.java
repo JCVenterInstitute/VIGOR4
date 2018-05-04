@@ -3,7 +3,7 @@ package org.jcvi.vigor.utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
-import org.jcvi.jillion.core.residue.aa.ProteinSequence;
+import org.jcvi.jillion.core.Sequence;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.vigor.component.*;
 import org.springframework.stereotype.Service;
@@ -37,8 +37,7 @@ public class GenerateVigorOutput {
         }
     }
 
-    private static final Logger LOGGER = LogManager
-            .getLogger(GenerateVigorOutput.class);
+    private static final Logger LOGGER = LogManager.getLogger(GenerateVigorOutput.class);
 
     public void generateOutputFiles(VigorConfiguration config, Outfiles outfiles ,List<Model> geneModels) throws IOException {
         generateTBLReport(config, outfiles.get(Outfile.TBL),geneModels);
@@ -154,33 +153,42 @@ public class GenerateVigorOutput {
         }
     }
 
+    private void writeDefline(BufferedWriter bw, Model model) throws IOException {
+        String reference_db = model.getAlignment().getAlignmentEvidence().getReference_db();
+        ViralProtein refProtein = model.getAlignment().getViralProtein();
+        List<Exon> exons = model.getExons();
+        Range cdsRange = Range.of(exons.get(0).getRange().getBegin()+1, exons.get(exons.size() - 1).getRange().getEnd()+1);
+        StringBuilder defline = new StringBuilder();
+        defline.append(">" + model.getGeneID());
+
+        if (model.isPseudogene()) {
+            defline.append(" pseudogene");
+        }
+        defline.append(" location=" + cdsRange);
+        defline.append(" codon_start=" + cdsRange.getBegin());
+        defline.append(" gene=" + refProtein.getGeneSymbol());
+        defline.append(" product=" + refProtein.getProduct());
+        defline.append(" ref_db=\"" + reference_db+"\"");
+        defline.append(" ref_id=\"" + refProtein.getProteinID()+"\"");
+        bw.write(defline.toString());
+        bw.newLine();
+
+    }
+
+    private void writeSequence(BufferedWriter bw, Sequence seq) throws IOException {
+        Iterator<String> sequenceLineIter = SequenceUtils.steamOf(seq, 70).iterator();
+        while(sequenceLineIter.hasNext()) {
+            bw.write(sequenceLineIter.next());
+            bw.newLine();
+        }
+        bw.newLine();
+
+    }
+
     public void generateCDSReport(VigorConfiguration config, BufferedWriter bw ,List<Model> geneModels) throws IOException {
         for (Model model: geneModels) {
-            String reference_db = model.getAlignment().getAlignmentEvidence().getReference_db();
-            ViralProtein refProtein = model.getAlignment().getViralProtein();
-            List<Exon> exons = model.getExons();
-            Range cdsRange = Range.of(exons.get(0).getRange().getBegin()+1, exons.get(exons.size() - 1).getRange().getEnd()+1);
-            StringBuilder defline = new StringBuilder("");
-            defline.append(">" + model.getGeneID());
-            if (model.isPseudogene()) {
-                defline.append(" pseudogene");
-            }
-            defline.append(" location=" + cdsRange);
-            defline.append(" codon_start=" + cdsRange.getBegin());
-            defline.append(" gene=" + refProtein.getGeneSymbol());
-            defline.append(" product=" + refProtein.getProduct());
-            defline.append(" ref_db=\"" + reference_db+"\"");
-            defline.append(" ref_id=\"" + refProtein.getProteinID()+"\"");
-            //  bw.newLine();
-            bw.write(defline.toString());
-            bw.newLine();
-
-            Iterator<String> sequenceIter = SequenceUtils.steamOf(model.getCds(),70).iterator();
-            while(sequenceIter.hasNext() ){
-                bw.write(sequenceIter.next());
-                bw.newLine();
-            }
-            bw.newLine();
+            writeDefline(bw, model);
+            writeSequence(bw, model.getTanslatedSeq());
         }
     }
 
@@ -188,34 +196,11 @@ public class GenerateVigorOutput {
 
     public void generatePEPReport(VigorConfiguration config, BufferedWriter bw, List<Model> geneModels) throws IOException {
 
+        StringBuilder defline;
         for (Model model: geneModels) {
-            String reference_db = model.getAlignment().getAlignmentEvidence().getReference_db();
-            ViralProtein refProtein = model.getAlignment().getViralProtein();
-            List<Exon> exons = model.getExons();
-            Range cdsRange = Range.of(exons.get(0).getRange().getBegin()+1, exons.get(exons.size() - 1).getRange().getEnd()+1);
-            StringBuilder defline = new StringBuilder();
-            defline.append(">" + model.getGeneID());
-
-            if (model.isPseudogene()) {
-                defline.append(" pseudogene");
-            }
-            defline.append(" location=" + cdsRange);
-            defline.append(" codon_start=" + cdsRange.getBegin());
-            defline.append(" gene=" + refProtein.getGeneSymbol());
-            defline.append(" product=" + refProtein.getProduct());
-            defline.append(" ref_db=\"" + reference_db+"\"");
-            defline.append(" ref_id=\"" + refProtein.getProteinID()+"\"");
-            bw.write(defline.toString());
-            bw.newLine();
-            Iterator<String> sequenceLineIter = SequenceUtils.steamOf(model.getTanslatedSeq(), 70).iterator();
-            while(sequenceLineIter.hasNext()) {
-                bw.write(sequenceLineIter.next());
-                bw.newLine();
-            }
-            bw.newLine();
-
+            writeDefline(bw, model);
+            writeSequence(bw, model.getTanslatedSeq());
             IDGenerator idGenerator = IDGenerator.of(model.getGeneID());
-            ProteinSequence matchSequence;
 
             for (MaturePeptideMatch match: model.getMaturePeptides()) {
                 defline = new StringBuilder();
@@ -235,17 +220,9 @@ public class GenerateVigorOutput {
                 bw.newLine();
 
 
-                matchSequence = match.getProtein().toBuilder().trim(match.getProteinRange()).build();
-                Iterator<String> lineIter = SequenceUtils.steamOf(matchSequence, 70).iterator();
-                while(lineIter.hasNext())  {
-                    bw.write(lineIter.next());
-                    bw.newLine();
-                }
+                writeSequence(bw, match.getProtein().toBuilder().trim(match.getProteinRange()).build());
             }
         }
-
-
-
     }
 
     private static Object[] formatMaturePeptideRange(MaturePeptideMatch match) {
