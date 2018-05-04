@@ -125,6 +125,10 @@ public class VigorInitializationService {
 
 		if ("any".equals(reference_db)) {
 			throw new VigorException("Auto-selecting reference database is not implemented");
+		} else if (inputs.get(CommandLineParameters.genbankDB) != null) {
+			throw new VigorException("Using genbank files as the reference database is not implemented");
+		} else if (reference_db == null || reference_db.isEmpty()) {
+			throw new VigorException("no reference database provided");
 		}else{
 			File file = new File(reference_db);
 			if(file.exists() && file.isFile() ){
