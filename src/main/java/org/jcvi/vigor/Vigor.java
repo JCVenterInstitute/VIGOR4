@@ -129,8 +129,8 @@ public class Vigor {
                     LOGGER.warn("No gene models generated for sequence {}", record.getId());
                     continue;
                 }
-                generateOutput(geneModels, outfiles);
-                generateGFF3Output(geneModels, outfiles);
+                generateOutput(vigorParameters, geneModels, outfiles);
+                generateGFF3Output(vigorParameters, geneModels, outfiles);
             }
 
         } catch (DataStoreException e) {
@@ -187,11 +187,11 @@ public class Vigor {
         return geneModelGenerationService.generateGeneModel(models, form);
     }
 
-    public void generateOutput(List<Model> models, GenerateVigorOutput.Outfiles outfiles) throws ServiceException, IOException{
-        generateVigorOutput.generateOutputFiles(outfiles, models);
+    public void generateOutput(VigorConfiguration config, List<Model> models, GenerateVigorOutput.Outfiles outfiles) throws ServiceException, IOException{
+        generateVigorOutput.generateOutputFiles(config, outfiles, models);
     }
-    public void generateGFF3Output(List<Model> models, GenerateVigorOutput.Outfiles outfiles) throws IOException {
-        generateGFF3Output.generateOutputFile(outfiles, models);
+    public void generateGFF3Output(VigorConfiguration config, List<Model> models, GenerateVigorOutput.Outfiles outfiles) throws IOException {
+        generateGFF3Output.generateOutputFile(config, outfiles, models);
     }
 
 

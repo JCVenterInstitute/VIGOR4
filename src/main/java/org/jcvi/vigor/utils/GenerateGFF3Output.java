@@ -17,11 +17,11 @@ public class GenerateGFF3Output {
             .getLogger(GenerateGFF3Output.class);
 
 
-    public void generateOutputFile(GenerateVigorOutput.Outfiles outfiles, List<Model> models) throws IOException {
-        printGFF3Features(outfiles.get(GenerateVigorOutput.Outfile.GFF3), models);
+    public void generateOutputFile(VigorConfiguration config, GenerateVigorOutput.Outfiles outfiles, List<Model> models) throws IOException {
+        printGFF3Features(config, outfiles.get(GenerateVigorOutput.Outfile.GFF3), models);
     }
 
-    public void printGFF3Features(BufferedWriter bw, List<Model> geneModels) throws IOException{
+    public void printGFF3Features(VigorConfiguration config, BufferedWriter bw, List<Model> geneModels) throws IOException{
 
 
         bw.write("##gff-version 3");

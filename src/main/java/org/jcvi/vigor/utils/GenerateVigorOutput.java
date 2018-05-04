@@ -40,18 +40,22 @@ public class GenerateVigorOutput {
     private static final Logger LOGGER = LogManager
             .getLogger(GenerateVigorOutput.class);
 
-    public void generateOutputFiles(Outfiles outfiles ,List<Model> geneModels) throws IOException {
-        generateTBLReport(outfiles.get(Outfile.TBL),geneModels);
-        generateCDSReport(outfiles.get(Outfile.CDS),geneModels);
-        generatePEPReport(outfiles.get(Outfile.PEP),geneModels);
+    public void generateOutputFiles(VigorConfiguration config, Outfiles outfiles ,List<Model> geneModels) throws IOException {
+        generateTBLReport(config, outfiles.get(Outfile.TBL),geneModels);
+        generateCDSReport(config, outfiles.get(Outfile.CDS),geneModels);
+        generatePEPReport(config, outfiles.get(Outfile.PEP),geneModels);
     }
 
 
-    public void generateTBLReport(BufferedWriter bw, List<Model> geneModels) throws IOException {
+    public void generateTBLReport(VigorConfiguration config, BufferedWriter bw, List<Model> geneModels) throws IOException {
         if (geneModels.isEmpty()) {
             LOGGER.warn("no gene models to write to file");
             return;
         }
+
+        String locusPrefix = config.get(ConfigurationParameters.Locustag);
+        boolean writeLocus = !(locusPrefix == null || locusPrefix.isEmpty());
+
         String genomeID = geneModels.get(0).getAlignment().getVirusGenome().getId();
         String[] genomeIDParts = genomeID.split(Pattern.quote("|"));
         String proteinIDOfGenome;
@@ -76,7 +80,9 @@ public class GenerateVigorOutput {
             bw.write("\t");
             bw.write(Long.toString(end));
             bw.write("\tgene\n");
-            bw.write("\t\t\tlocus_tag\tvigor_" + model.getGeneSymbol() + "\n");
+            if (writeLocus) {
+                bw.write("\t\t\tlocus_tag\t" + VigorUtils.nameToLocus(model.getGeneSymbol(), locusPrefix, model.isPseudogene()) + "\n");
+            }
             bw.write("\t\t\tgene\t" + model.getAlignment().getViralProtein().getGeneSymbol() + "\n");
             for (int j = 0; j < exons.size(); j++) {
                 Exon exon = exons.get(j);
@@ -91,7 +97,9 @@ public class GenerateVigorOutput {
             }
             bw.write("\t\t\tcodon_start\t" + start + "\n");
             bw.write("\t\t\tprotein_id\t" + model.getGeneID() + "\n");
-            bw.write("\t\t\tlocus_tag\tvigor_" + model.getGeneSymbol() + "\n");
+            if (writeLocus) {
+                bw.write("\t\t\tlocus_tag\t" +  VigorUtils.nameToLocus(model.getGeneSymbol(), locusPrefix, model.isPseudogene()) + "\n");
+            }
             bw.write("\t\t\tgene\t" + model.getAlignment().getViralProtein().getGeneSymbol() + "\n");
             bw.write("\t\t\tproduct\t" + model.getAlignment().getViralProtein().getProduct() + "\n");
             if (riboSlippage.isHas_ribosomal_slippage()) {
@@ -116,13 +124,11 @@ public class GenerateVigorOutput {
                 bw.write(">Features " + idGenerator.next());
                 bw.newLine();
                 String product;
-                boolean isSignalPeptide;
                 for (MaturePeptideMatch match : model.getMaturePeptides()) {
 
                     bw.write(String.format("%s\t%s\t", formatMaturePeptideRange(match)));
                     product = match.getReference().getProduct();
-                    isSignalPeptide = product.contains("signal");
-                    if (isSignalPeptide) {
+                    if (product.contains("signal")) {
                         // TODO pre-classify type
                         bw.write("sig_peptide");
                     } else {
@@ -134,18 +140,21 @@ public class GenerateVigorOutput {
                     bw.newLine();
                     String geneSymbol = model.getGeneSymbol();
                     if (!(geneSymbol == null || geneSymbol.isEmpty())) {
+                        if (writeLocus) {
+                            bw.write("\t\t\tlocus_tag\t");
+                            bw.write(VigorUtils.nameToLocus(geneSymbol, locusPrefix, model.isPseudogene()));
+                            bw.newLine();
+                        }
                         bw.write("\t\t\tgene\t");
                         bw.write(geneSymbol);
                         bw.newLine();
                     }
-                    // TODO other attributes (locus_tag, note)
                 }
-
             }
         }
     }
 
-    public void generateCDSReport(BufferedWriter bw ,List<Model> geneModels) throws IOException {
+    public void generateCDSReport(VigorConfiguration config, BufferedWriter bw ,List<Model> geneModels) throws IOException {
         for (Model model: geneModels) {
             String reference_db = model.getAlignment().getAlignmentEvidence().getReference_db();
             ViralProtein refProtein = model.getAlignment().getViralProtein();
@@ -177,7 +186,7 @@ public class GenerateVigorOutput {
 
 
 
-    public void generatePEPReport(BufferedWriter bw, List<Model> geneModels) throws IOException {
+    public void generatePEPReport(VigorConfiguration config, BufferedWriter bw, List<Model> geneModels) throws IOException {
 
         for (Model model: geneModels) {
             String reference_db = model.getAlignment().getAlignmentEvidence().getReference_db();
