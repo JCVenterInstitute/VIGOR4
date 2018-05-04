@@ -270,7 +270,7 @@ public class PeptideService implements PeptideMatchingService {
         if (previousEnd >= currentBegin) {
             // Overlap
             start = currentBegin - 1;
-            end = previousEnd;
+            end = Math.min(currentRange.getEnd(), previousEnd);
         } else {
             // Gap
             start = previousEnd;
@@ -285,6 +285,7 @@ public class PeptideService implements PeptideMatchingService {
         double testScore = 0;
         for (; start <= end; start++) {
             // profile and score new sequences
+            LOGGER.debug("checking {}-{} and {}-{}", previousRange.getBegin(),start, start+1, currentRange.getEnd());
             testPreviousRange = previousRange.toBuilder().setEnd(start).build();
             testCurrentRange = currentRange.toBuilder().setBegin(start+1).build();
             // now we need the sequence for the new test ranges
