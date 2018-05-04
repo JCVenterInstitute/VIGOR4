@@ -60,17 +60,6 @@ public class VigorInitializationService {
 
 	}
 
-	/**
-	 * load all the vigor parameters from Vigor.ini file
-	 *
-	 * @param inputs:
-	 *            Input parameters and values provided by user
-	 * @return form : output form object has the AlignmentEvidence object and
-	 *         the VigorParametersList. Few vigor parameters will be overridden
-	 *         by the default parameters of vigor.ini file and saved to
-	 *         VigorParametersList attribute of the form.
-	 */
-
 	public List<VigorConfiguration> getDefaultConfigurations() throws VigorException {
 		List<VigorConfiguration> configurations = new ArrayList<>();
 		VigorConfiguration defaultConfiguration = LoadDefaultParameters
@@ -110,6 +99,17 @@ public class VigorInitializationService {
 		configurations.add(envConfiguration);
 		return configurations;
 	}
+
+	/**
+	 * load all the vigor parameters from Vigor.ini file
+	 *
+	 * @param inputs:
+	 *            Input parameters and values provided by user
+	 * @return form : output form object has the AlignmentEvidence object and
+	 *         the VigorParametersList. Few vigor parameters will be overridden
+	 *         by the default parameters of vigor.ini file and saved to
+	 *         VigorParametersList attribute of the form.
+	 */
 
 	public VigorForm loadParameters(Namespace inputs) throws VigorException{
 
@@ -202,9 +202,16 @@ public class VigorInitializationService {
 
 		List<VigorConfiguration> configurations = new ArrayList<>();
 
-		if (inputs.get("config_file") != null) {
-			VigorConfiguration configFileConfiguration = LoadDefaultParameters.loadVigorConfiguration("config-file",
-					new File(inputs.getString("config_file")));
+		String config_file = inputs.get(CommandLineParameters.configFile);
+		if (config_file == null || config_file.isEmpty()) {
+		    LOGGER.debug("checking environment variable VIGOR_CONFIG_FILE for config file");
+		    config_file = System.getenv("VIGOR_CONFIG_FILE");
+        }
+		if (! (config_file == null || config_file.isEmpty()) ) {
+		    LOGGER.debug("loading config file {}", config_file);
+		    // use the file as configuration name so it's unambigious
+			VigorConfiguration configFileConfiguration = LoadDefaultParameters.loadVigorConfiguration(config_file,
+					new File(config_file));
 			configurations.add(configFileConfiguration);
 		}
 
