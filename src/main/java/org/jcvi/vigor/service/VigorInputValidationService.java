@@ -144,9 +144,12 @@ public class VigorInputValidationService {
 		locusGroup.addArgument("-L", "--locus-tags")
 				  .dest(CommandLineParameters.locusTag)
 				  .action(Arguments.store())
-                  .nargs("?")
-                  .setDefault("vigor_")
-                  .metavar("<locus_tag_prefix>")
+				  .nargs("?")
+				  // default is used when the option is not present
+				  .setDefault("vigor_")
+				  // const is used when the option is present, but no argument is passed
+				  .setConst("vigor_")
+				  .metavar("<locus_tag_prefix>")
 				  .help("USE locus_tags in TBL file output (incompatible with -l). If no prefix is provided, the prefix \"vigor_\" will be used.");
 
 		parser.addArgument("-P","--parameter")
