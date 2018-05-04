@@ -110,6 +110,7 @@ public class Vigor {
                         Charset.forName("UTF-8"), openOptions));
             }
 
+            PeptideMatchingService.Scores peptideScores = getPeptideScores(vigorParameters);
             Iterator<NucleotideFastaRecord> i = dataStore.records().iterator();
             while (i.hasNext()) {
                 NucleotideFastaRecord record = i.next();
@@ -124,7 +125,7 @@ public class Vigor {
                 LOGGER.info("{} candidate model(s) found for sequence {}", candidateModels.size(), record.getId());
                 List<Model> geneModels = generateGeneModels(candidateModels, vigorForm);
                 LOGGER.info("{} gene model(s) found for sequence {}", geneModels.size(), record.getId());
-                geneModels = findPeptides(geneModels, vigorForm);
+                geneModels = findPeptides(vigorParameters, geneModels, vigorForm);
                 if (geneModels.isEmpty()) {
                     LOGGER.warn("No gene models generated for sequence {}", record.getId());
                     continue;
@@ -152,14 +153,29 @@ public class Vigor {
 
     }
 
-    private List<Model> findPeptides(List<Model> geneModels, VigorForm vigorForm) throws VigorException {
+    private PeptideMatchingService.Scores getPeptideScores(VigorConfiguration config) {
+	    String minIdentityString = config.get(ConfigurationParameters.MaturePeptideMinimumIdentity);
+	    double minIdentity = Double.parseDouble(minIdentityString)/ 100.0d;
 
-        for (Model model: geneModels) {
+        String minCoverageString = config.get(ConfigurationParameters.MaturePeptideMinimumCoverage);
+        double minCoverage = Double.parseDouble(minCoverageString)/ 100.0d;
+
+        String minSimilarityString = config.get(ConfigurationParameters.MaturePeptideMinimumSimilarity);
+        double minSimilarity = Double.parseDouble(minSimilarityString) /100.0d;
+
+        return PeptideMatchingService.Scores.of(minIdentity, minCoverage, minSimilarity);
+    }
+
+    private List<Model> findPeptides(VigorConfiguration config, List<Model> geneModels, VigorForm vigorForm) throws VigorException {
+
+	    PeptideMatchingService.Scores scores = getPeptideScores(vigorForm.getConfiguration());
+
+	    for (Model model: geneModels) {
             String maturePeptideDB = model.getAlignment().getAlignmentEvidence().getMatpep_db();
             // TODO check peptides for psuedogenes?
             if (! (maturePeptideDB == null || maturePeptideDB.isEmpty()) ) {
                 model.setMaturePeptides(peptideMatchingService.findPeptides(model.getTanslatedSeq(),
-                        new File(maturePeptideDB)));
+                        new File(maturePeptideDB), scores));
             }
         }
         return geneModels;

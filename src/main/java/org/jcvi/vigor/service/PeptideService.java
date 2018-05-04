@@ -41,22 +41,9 @@ public class PeptideService implements PeptideMatchingService {
     private static final long MAX_GAP = 15L;
     private static Pattern productPattern = Pattern.compile("product\\s*=\\s*\"?(?<product>.*)\"?\\b");
     private static Logger LOGGER = LogManager.getLogger(PeptideService.class);
-
-    private static class Scores {
-        final double minidentity;
-        final double mincoverage;
-        final double minsimilarity;
-
-        public Scores(double minidentity, double mincoverage, double minsimilarity) {
-            this.minidentity = minidentity;
-            this.mincoverage = mincoverage;
-            this.minsimilarity = minsimilarity;
-        }
-
-        public static Scores of(double identity, double coverage, double similarity) {
-            return new Scores(identity, coverage, similarity);
-        }
-    }
+    private static double DEFAULT_MIN_IDENTITY = 0.25d;
+    private static double DEFAULT_MIN_COVERAGE = 0.50d;
+    private static double DEFAULT_MIN_SIMILARITY = 0.40d;
 
 
     private static class PeptideMatch {
@@ -138,9 +125,11 @@ public class PeptideService implements PeptideMatchingService {
 
     @Override
     public List<MaturePeptideMatch> findPeptides(ProteinSequence protein, File peptideDatabase) throws ServiceException {
-        return findPeptides(protein, peptideDatabase, Scores.of(0.25d, .40d, .50d));
+        return findPeptides(protein, peptideDatabase,
+                Scores.of(DEFAULT_MIN_IDENTITY, DEFAULT_MIN_COVERAGE, DEFAULT_MIN_SIMILARITY));
     }
 
+    @Override
     public List<MaturePeptideMatch> findPeptides(ProteinSequence protein, File peptideDatabase, Scores minscores) throws ServiceException {
 
         // filter

@@ -198,4 +198,10 @@ public class VigorUtils {
 		}
 	}
 
+	public static double configValueToPercent(String configValue) {
+		double val = Double.parseDouble(configValue);
+		// TODO limits?
+		return val/100.0d;
+	}
+
 }
