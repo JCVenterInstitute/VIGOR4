@@ -42,8 +42,10 @@ public class AdjustViralTricksTest {
     public void adjustRibosomalSlippageTest() throws VigorException, CloneNotSupportedException {
         List<Alignment> alignments;
         List<Model> models=new ArrayList<Model>();
-        File file = new File(classLoader.getResource("vigorUnitTestInput/Flua_RiboSlippage_Test.fasta"). getFile());
-        alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(),"flua_db",VigorUtils.getVigorWorkSpace(),"seg3prot2A");
+        File virusGenomeSeqFile = new File(classLoader.getResource("vigorUnitTestInput/Flua_RiboSlippage_Test.fasta"). getFile());
+        File alignmentOutput = new File(classLoader.getResource("vigorUnitTestInput/Flua_RiboSlippage_Test.txt"). getFile());
+        String referenceDB = classLoader.getResource("vigorResources/data3/flua_db").getFile().toString();
+        alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile,referenceDB,alignmentOutput);
         for (int i=0; i< alignments.size(); i++) {
             alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm()));
         }
@@ -61,8 +63,10 @@ public class AdjustViralTricksTest {
     public void checkForLeakyStopTest() throws VigorException {
         List<Alignment> alignments;
         List<Model> models=new ArrayList<Model>();
-        File file = new File(classLoader.getResource("vigorUnitTestInput/Veev_StopTranslationEx_Test.fasta"). getFile());
-        alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(),"veev_db",VigorUtils.getVigorWorkSpace(),"399240871_NSP");
+        File virusGenomeSeqFile = new File(classLoader.getResource("vigorUnitTestInput/Veev_StopTranslationEx_Test.fasta"). getFile());
+        File alignmentOutout = new File(classLoader.getResource("vigorUnitTestInput/Veev_StopTranslationEx_Test.txt"). getFile());
+        String referenceDB = classLoader.getResource("vigorResources/data3/veev_db").getFile().toString();
+        alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile,referenceDB,alignmentOutout);
         for (int i=0; i<alignments.size(); i++) {
             alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm()));
         }
@@ -72,18 +76,19 @@ public class AdjustViralTricksTest {
         });
         Model testModel = models.get(0);
         Model outputModel = adjustViralTricks.checkForLeakyStop(testModel);
-        Range actual = outputModel.getExons().get(0).getRange();
-        assertEquals(Range.of(9,581),actual);
+       Range actual = outputModel.getReplaceStopCodonRange();
+        assertEquals(Range.of(5226,5228),actual);
     }
-
 
 
     @Test
     public void adjustRNAEditingTest() throws VigorException, CloneNotSupportedException{
         List<Alignment> alignments;
         List<Model> models=new ArrayList<Model>();
-        File file = new File(classLoader.getResource("vigorUnitTestInput/mmp_rna_editing_Test.fasta"). getFile());
-        alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(),"mmp_db",VigorUtils.getVigorWorkSpace(),"AEY76114.1");
+        File virusGenomeSeqFile = new File(classLoader.getResource("vigorUnitTestInput/mmp_rna_editing_Test.fasta"). getFile());
+        File alignmentOutput = new File(classLoader.getResource("vigorUnitTestInput/mmp_rna_editing_Test.txt"). getFile());
+        String referenceDB = classLoader.getResource("vigorResources/data3/mmp_db").getFile().toString();
+        alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile,referenceDB,alignmentOutput);
         for (int i=0; i<alignments.size(); i++) {
             alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm()));
         }

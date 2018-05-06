@@ -55,7 +55,6 @@ public class DetermineStartAndStopTest {
 				+ "TAGAACAAATAATAATGGAAGAAGCATGGAAACTAGCAGCACACATAGTACAAGAATAACTGATGTCATT"
 				+ "ACCAACCCAAGTCCAGAGCTTGAAGATGCCGTTCTACAAAGGAATAAAAGACGGCCGACGACCATCAAGC").build();
 		virusGenome.setSequence(seq);
-		System.out.println(seq.getLength());
 		ViralProtein viralProtein = new ViralProtein();
 		//Dummy protein sequence
 		ProteinSequence proteinSeq = new ProteinSequenceBuilder("MNRPFFQNFGRRPFPAPSIAWRPRRRRSAAPAFQAPRFGLANQIQQLTSAVSALVIGQSA"
@@ -83,6 +82,7 @@ public class DetermineStartAndStopTest {
 		exons.add(exon1);
 		model.setExons(exons);
 		Alignment alignment = new Alignment();
+		virusGenome.setInternalStops(VirusGenomeService.findInternalStops(seq));
 		alignment.setVirusGenome(virusGenome);
 		alignment.setViralProtein(viralProtein);
 		model.setAlignment(alignment);
@@ -107,9 +107,9 @@ public class DetermineStartAndStopTest {
 	public void findStop() throws CloneNotSupportedException{
 		List<Model> models = determineStop.findStop(model);
 		assertEquals(2,models.size());
-		//stop codons in frame with the last exon are at 927,951;
-		assertEquals(951,models.get(0).getExons().get(model.getExons().size()-1).getRange().getEnd());
-		assertEquals(927,models.get(1).getExons().get(model.getExons().size()-1).getRange().getEnd());
+		//stop codons in frame with the last exon are at 928,952;
+		assertEquals(954,models.get(0).getExons().get(model.getExons().size()-1).getRange().getEnd());
+		assertEquals(930,models.get(1).getExons().get(model.getExons().size()-1).getRange().getEnd());
 	}
 
 }

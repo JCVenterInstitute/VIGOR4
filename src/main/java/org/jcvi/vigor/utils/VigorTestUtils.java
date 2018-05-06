@@ -32,12 +32,11 @@ public class VigorTestUtils {
 	
 	
 	
-	public static List<Alignment> getAlignments(String inputFilePath, String refDB,String workspace,String proteinID) throws VigorException {
+	public static List<Alignment> getAlignments(File inputSeqFile, String refDB,File alignmentOutput) throws VigorException {
        
 		ExonerateService exonerateService = new ExonerateService();
 		ViralProteinService viralProteinService = new ViralProteinService();
-		File file = new File(inputFilePath);
-		try (NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(file).hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED).build();) {
+		try (NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(inputSeqFile).hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED).build();) {
 			Stream<NucleotideFastaRecord> records = dataStore.records();
 			Iterator<NucleotideFastaRecord> iter = records.iterator();
 			NucleotideFastaRecord record = iter.next();
@@ -48,11 +47,7 @@ public class VigorTestUtils {
 			// create alignment evidence
 			AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
 			alignmentEvidence.setReference_db(refDB);
-
-			String fileName = GenerateExonerateOutput.queryExonerate(
-					virusGenome, refDB, workspace, proteinID,"/usr/bin/exonerate");
-			File outputFile = new File(fileName);
-			List<Alignment> alignments = exonerateService.parseExonerateOutput(outputFile,
+			List<Alignment> alignments = exonerateService.parseExonerateOutput(alignmentOutput,
 							alignmentEvidence, virusGenome, refDB);
 			for (int i = 0; i < alignments.size(); i++) {
 				alignments.set(i, viralProteinService
@@ -60,7 +55,7 @@ public class VigorTestUtils {
 			}
 			return alignments;
 		} catch (IOException e) {
-			throw new ServiceException(String.format("Problem reading fasta file %s", inputFilePath), e);
+			throw new ServiceException(String.format("Problem reading fasta file %s", inputSeqFile), e);
 		}
 	}
 	

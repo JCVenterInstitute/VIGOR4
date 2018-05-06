@@ -1,0 +1,54 @@
+Command line: [exonerate --model protein2genome -q /home/snettem/flua_sam_db -t /home/snettem/git/VIGOR4/src/test/resources/vigorUnitTestInput/mmp_rna_editing_Test.fasta]
+Hostname: [snettem-VirtualBox]
+
+C4 Alignment:
+------------
+         Query: AEY76114.1 gene="I"  product="I protein"  organism="Mumps virus" rna_editing=4/([NA][NA][NG][NA]GGG)/$1GGGG/four non-templated G's inserted during transcription/ db="mmp_db" gene_variation=1 shared_cds="V,P" length=171 splice_form="e513" V4_rna_editing="0/GGGG/[ARWMDHVN][ARWMDHVN][GRSKBDVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription"
+        Target: 77_part1
+         Model: protein2genome:local
+     Raw score: 798
+   Query range: 0 -> 157
+  Target range: 1861 -> 2332
+
+    1 : MetAspGlnPheIleLysGlnAspGluThrGlyAspLeuIleGluThrGlyMetAsnValAl :   21
+        ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        MetAspGlnPheIleLysGlnAspGluThrGlyAspLeuIleGluThrGlyMetAsnValAl
+ 1862 : ATGGATCAATTTATAAAACAAGATGAAACTGGTGATTTAATTGAGACAGGAATGAATGTTGC : 1922
+
+   22 : aAsnHisPheLeuSerAlaProIleGlnGlyThrAsnLeuLeuSerLysAlaThrIleIleP :   42
+        ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        aAsnHisPheLeuSerAlaProIleGlnGlyThrAsnLeuLeuSerLysAlaThrIleIleP
+ 1923 : AAATCACTTCCTATCTGCCCCCATTCAGGGAACCAACTTGTTGAGCAAGGCCACAATCATCC : 1985
+
+   43 : roGlyValAlaProValLeuIleGlyAsnProGluGlnLysAsnIleGlnTyrProThrAla :   62
+        ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        roGlyValAlaProValLeuIleGlyAsnProGluGlnLysAsnIleGlnTyrProThrAla
+ 1986 : CCGGCGTTGCACCAGTACTCATTGGCAATCCAGAGCAAAAGAACATTCAGTACCCCACTGCA : 2045
+
+   63 : SerHisGlnGlySerLysSerLysGlyArgSerSerGlyAlaLysProIleIleValSerSe :   83
+        ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        SerHisGlnGlySerLysSerLysGlyArgSerSerGlyAlaLysProIleIleValSerSe
+ 2046 : TCACATCAGGGATCCAAGTCAAAGGGAAGAAGCTCAGGGGCCAAGCCCATCATAGTCTCATC : 2108
+
+   84 : rSerGluValGlyThrGlyGlyThrGlnIleProGluProLeuPheAlaGlnThrGlyGlnG :  104
+        ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        rSerGluValGlyThrGlyGlyThrGlnIleProGluProLeuPheAlaGlnThrGlyGlnG
+ 2109 : TTCCGAAGTAGGCACTGGAGGGACTCAGATTCCTGAGCCCCTTTTCGCACAAACCGGACAAG : 2171
+
+  105 : lyGlyThrValThrThrValTyrGlnAspProThrIleGlnProThrGlySerTyrArgSer :  124
+        ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        lyGlyThrValThrThrValTyrGlnAspProThrIleGlnProThrGlySerTyrArgSer
+ 2172 : GTGGCACTGTCACCACCGTTTATCAAGATCCAACTATCCAACCAACAGGTTCATACCGAAGT : 2231
+
+  125 : ValGluLeuAlaLysIleGlyLysGluArgMetIleAsnArgPheValGluLysProArgTh :  145
+        ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        ValGluLeuAlaLysIleGlyLysGluArgMetIleAsnArgPheValGluLysProArgTh
+ 2232 : GTGGAATTGGCTAAGATAGGAAAAGAGAGAATGATTAATCGATTTGTTGAAAAACCCAGGAC : 2294
+
+  146 : rSerThrProValThrGluPheLysArgGlyGlyGly :  157
+        |||||||||||||||||||||||||||||||!.!|||
+        rSerThrProValThrGluPheLysArgGlyAlaGly
+ 2295 : CTCAACGCCGGTAACAGAATTTAAGAGGGGGGCCGGG : 2332
+
+vulgar: AEY76114.1 0 157 . 77_part1 1861 2332 + 798 M 157 471
+-- completed exonerate analysis

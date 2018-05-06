@@ -30,19 +30,20 @@ public class VigorFunctionalUtils {
 	
 	public static Frame getSequenceFrame(long coordinate){
 		Frame frame=Frame.ONE;
+		coordinate=coordinate+1;
 		if(coordinate>2){
 		long remin = coordinate%3;
 		if(remin==0){
-			frame=Frame.ONE;
+			frame=Frame.THREE;
 		}
 		else if(remin==1){
-			frame=Frame.TWO;
+			frame=Frame.ONE;
 		}else
 		{
-			frame = Frame.THREE;
+			frame = Frame.TWO;
 		}
-		}else if(coordinate==0)frame=Frame.ONE;
-		else if (coordinate==1)frame=Frame.TWO;
+		}else if(coordinate==1)frame=Frame.ONE;
+		else if (coordinate==2)frame=Frame.TWO;
 		else frame=Frame.THREE;
 		return frame;
 	}

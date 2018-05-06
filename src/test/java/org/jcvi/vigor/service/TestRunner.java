@@ -10,6 +10,7 @@ public class TestRunner {
 		Result result = JUnitCore.runClasses(TestSuit.class);
 		for(Failure failure : result.getFailures()){
 			System.out.println(failure.toString());
+			System.exit(0);
 		}
 		if(result.wasSuccessful()){
 		System.out.println("All tests were successful");

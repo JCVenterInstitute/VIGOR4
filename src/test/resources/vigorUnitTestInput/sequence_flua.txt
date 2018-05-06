@@ -1,0 +1,884 @@
+Command line: [exonerate --model protein2genome -q /home/snettem/flua_db -t /home/snettem/git/VIGOR4/src/test/resources/vigorUnitTestInput/sequence_flua.fasta]
+Hostname: [snettem-VirtualBox]
+
+C4 Alignment:
+------------
+         Query: seg3prot db="flua_db" gene="PA" shared_cds="PA-X" product="polymerase PA" shared_cds="PA-X" length=716 splice_form="e2148"
+        Target: gi|260907760|gb|GU060481.1| Influenza A Virus (A/goose/Czech Republic/1848-K9/2009(H7N9)) segment 3 polymerase PA (PA) gene, complete cds
+         Model: protein2genome:local
+     Raw score: 3658
+   Query range: 0 -> 715
+  Target range: 9 -> 2154
+
+    1 : MetGluAspPheValArgGlnCysPheAsnProMetIleValGluLeuAlaGluLysThrMe :   21
+        |||||||||||||||||||||||||||||||||||||||||||||||||||||||||.!!||
+        MetGluAspPheValArgGlnCysPheAsnProMetIleValGluLeuAlaGluLysAlaMe
+   10 : ATGGAAGATTTTGTGCGACAATGCTTCAATCCAATGATTGTCGAGCTTGCGGAAAAGGCAAT :   70
+
+   22 : tLysGluTyrGlyGluAspLeuLysIleGluThrAsnLysPheAlaAlaIleCysThrHisL :   42
+        |||||||||||||||||||! !||||||||||||||||||||||||||||||||||||||||
+        tLysGluTyrGlyGluAspProLysIleGluThrAsnLysPheAlaAlaIleCysThrHisL
+   71 : GAAAGAATATGGGGAAGATCCGAAAATCGAAACGAACAAATTTGCCGCAATATGCACACACT :  133
+
+   43 : euGluValCysPheMetTyrSerAspPheHisPheIleAsnGluGlnGlyGluSerIleIle :   62
+        ||||||||||||||||||||||||||||||||||||||:!!|||!:!|||||||||||||||
+        euGluValCysPheMetTyrSerAspPheHisPheIleAspGluArgGlyGluSerIleIle
+  134 : TAGAGGTCTGTTTCATGTATTCGGATTTCCACTTTATTGATGAACGGGGCGAATCAATAATT :  193
+
+   63 : ValGluLeuGlyAspProSerAlaLeuLeuLysHisArgPheGluIleIleGluGlyArgAs :   83
+        ||||||! !|||||||||!:!|||||||||||||||||||||||||||||||||||||||||
+        ValGluSerGlyAspProAsnAlaLeuLeuLysHisArgPheGluIleIleGluGlyArgAs
+  194 : GTAGAATCTGGCGATCCAAATGCATTATTGAAACACCGATTTGAGATAATTGAAGGGAGAGA :  256
+
+   84 : pArgThrMetAlaTrpThrValValAsnSerIleCysAsnThrThrGlyAlaGluLysProL :  104
+        |||||||||||||||||||||||||||||||||||||||||||||||||!.!||||||||||
+        pArgThrMetAlaTrpThrValValAsnSerIleCysAsnThrThrGlyValGluLysProL
+  257 : CCGAACGATGGCCTGGACAGTGGTGAATAGTATCTGCAACACCACAGGAGTCGAGAAACCTA :  319
+
+  105 : ysPheLeuProAspLeuTyrAspTyrLysGluAsnArgPheIleGluIleGlyValThrArg :  124
+        ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        ysPheLeuProAspLeuTyrAspTyrLysGluAsnArgPheIleGluIleGlyValThrArg
+  320 : AATTTCTCCCAGATTTGTATGACTACAAAGAGAATCGATTCATTGAAATTGGAGTAACACGG :  379
+
+  125 : ArgGluValHisIleTyrTyrLeuGluLysAlaAsnLysIleLysSerGluLysThrHisIl :  145
+        ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        ArgGluValHisIleTyrTyrLeuGluLysAlaAsnLysIleLysSerGluLysThrHisIl
+  380 : AGGGAAGTTCATATATACTATCTAGAAAAGGCCAACAAGATAAAATCAGAGAAGACACACAT :  442
+
+  146 : eHisIlePheSerPheThrGlyGluGluMetAlaThrLysAlaAspTyrThrLeuAspGluG :  166
+        ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        eHisIlePheSerPheThrGlyGluGluMetAlaThrLysAlaAspTyrThrLeuAspGluG
+  443 : TCACATATTCTCATTCACTGGAGAGGAAATGGCCACCAAAGCGGACTACACTCTTGACGAAG :  505
+
+  167 : luSerArgAlaArgIleLysThrArgLeuPheThrIleArgGlnGluMetAlaSerArgGly :  186
+        ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        luSerArgAlaArgIleLysThrArgLeuPheThrIleArgGlnGluMetAlaSerArgGly
+  506 : AGAGTAGGGCAAGAATCAAAACCAGGCTGTTCACTATAAGGCAGGAAATGGCCAGTAGGGGT :  565
+
+  187 : LeuTrpAspSerPheArgGlnSerGluArgGlyGluGluThrIleGluGluArgPheGluIl :  207
+        ||||||||||||||||||||||||||||||||||||||||||:!!|||||||||||||||||
+        LeuTrpAspSerPheArgGlnSerGluArgGlyGluGluThrValGluGluArgPheGluIl
+  566 : CTATGGGATTCCTTTCGTCAGTCCGAGAGAGGCGAAGAGACAGTTGAAGAAAGATTTGAAAT :  628
+
+  208 : eThrGlyThrMetArgLysLeuAlaAspGlnSerLeuProProAsnPheSerSerLeuGluA :  228
+        ||||||||||||||||!:!|||||||||||||||||||||||||||||||||||||||||||
+        eThrGlyThrMetArgArgLeuAlaAspGlnSerLeuProProAsnPheSerSerLeuGluA
+  629 : CACAGGAACCATGCGCAGGCTTGCCGACCAAAGTCTCCCACCGAACTTCTCCAGCCTTGAAA :  691
+
+  229 : snPheArgAlaTyrValAspGlyPheGluProAsnGlyTyrIleGluGlyLysLeuSerGln :  248
+        ||||||||||||||||||||||||||||||||||||||! !|||||||||||||||||||||
+        snPheArgAlaTyrValAspGlyPheGluProAsnGlyCysIleGluGlyLysLeuSerGln
+  692 : ACTTTAGAGCCTATGTGGATGGATTCGAACCGAACGGCTGCATTGAGGGCAAGCTTTCTCAA :  751
+
+  249 : MetSerLysGluValAsnAlaArgIleGluProPheLeuLysThrThrProArgProLeuAr :  269
+        ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||!:
+        MetSerLysGluValAsnAlaArgIleGluProPheLeuLysThrThrProArgProLeuLy
+  752 : ATGTCAAAAGAAGTGAACGCCCGAATTGAGCCATTTCTGAAGACAACACCACGCCCTCTCAA :  814
+
+  270 : gLeuProAsnGlyProProCysSerGlnArgSerLysPheLeuLeuMetAspAlaLeuLysL :  290
+        !||||||:!!||||||||||||||||||||||||||||||||||||||||||||||||||||
+        sLeuProAspGlyProProCysSerGlnArgSerLysPheLeuLeuMetAspAlaLeuLysL
+  815 : ACTACCTGACGGGCCTCCCTGCTCTCAACGGTCGAAGTTCCTGCTGATGGATGCCCTTAAAT :  877
+
+  291 : euSerIleGluAspProSerHisGluGlyGluGlyIleProLeuTyrAspAlaIleLysCys :  310
+        ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        euSerIleGluAspProSerHisGluGlyGluGlyIleProLeuTyrAspAlaIleLysCys
+  878 : TAAGCATCGAAGACCCGAGTCATGAGGGGGAGGGTATACCGCTATATGATGCAATCAAATGC :  937
+
+  311 : MetArgThrPhePheGlyTrpLysGluProAsnValValLysProHisGluLysGlyIleAs :  331
+        |||!:!|||||||||||||||||||||||||||:!!||||||||||||||||||||||||||
+        MetLysThrPhePheGlyTrpLysGluProAsnIleValLysProHisGluLysGlyIleAs
+  938 : ATGAAGACATTTTTCGGCTGGAAAGAGCCCAACATTGTAAAACCACATGAAAAGGGCATAAA : 1000
+
+  332 : nProAsnTyrLeuLeuSerTrpLysGlnValLeuAlaGluLeuGlnAspIleGluAsnGluG :  352
+        ||||||||||||||||:!!|||||||||||||||||||||||||||||||||||||||||||
+        nProAsnTyrLeuLeuAlaTrpLysGlnValLeuAlaGluLeuGlnAspIleGluAsnGluG
+ 1001 : CCCCAATTACCTCCTGGCTTGGAAGCAAGTGCTGGCAGAACTCCAAGATATTGAAAATGAGG : 1063
+
+  353 : luLysIleProLysThrLysAsnMetLysLysThrSerGlnLeuLysTrpAlaLeuGlyGlu :  372
+        ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        luLysIleProLysThrLysAsnMetLysLysThrSerGlnLeuLysTrpAlaLeuGlyGlu
+ 1064 : AGAAAATCCCAAAAACAAAGAACATGAAGAAAACGAGCCAGTTGAAGTGGGCACTTGGTGAG : 1123
+
+  373 : AsnMetAlaProGluLysValAspPheAspAspCysLysAspValGlyAspLeuLysGlnTy :  393
+        |||||||||||||||||||||||||||!!:|||||||||||||||.!!||||||!:!|||||
+        AsnMetAlaProGluLysValAspPheGluAspCysLysAspValSerAspLeuArgGlnTy
+ 1124 : AATATGGCACCGGAGAAGGTAGACTTTGAGGATTGCAAGGATGTTAGCGATCTGAGACAGTA : 1186
+
+  394 : rAspSerAspGluProGluLeuArgSerLeuAlaSerTrpIleGlnAsnGluPheAsnLysA :  414
+        |||||||||||||||||||! !||||||||||||||||||||||||!:!|||||||||||||
+        rAspSerAspGluProGluSerArgSerLeuAlaSerTrpIleGlnSerGluPheAsnLysA
+ 1187 : TGACAGTGATGAACCAGAGTCTAGATCGCTAGCAAGCTGGATCCAGAGTGAATTCAACAAGG : 1249
+
+  415 : laCysGluLeuThrAspSerSerTrpIleGluLeuAspGluIleGlyGluAspValAlaPro :  434
+        |||||||||||||||||||||||||||||||||||||||||||||||||||||:!!||||||
+        laCysGluLeuThrAspSerSerTrpIleGluLeuAspGluIleGlyGluAspIleAlaPro
+ 1250 : CATGTGAATTGACAGATTCAAGTTGGATTGAGCTTGATGAAATAGGGGAAGACATTGCTCCA : 1309
+
+  435 : IleGluHisIleAlaSerMetArgArgAsnTyrPheThrSerGluValSerHisCysArgAl :  455
+        |||||||||||||||||||||||||||||||||||||||:!!||||||||||||||||||||
+        IleGluHisIleAlaSerMetArgArgAsnTyrPheThrAlaGluValSerHisCysArgAl
+ 1310 : ATTGAGCACATTGCGAGTATGAGAAGAAACTACTTCACAGCGGAAGTATCCCATTGCAGGGC : 1372
+
+  456 : aThrGluTyrIleMetLysGlyValTyrIleAsnThrAlaLeuLeuAsnAlaSerCysAlaA :  476
+        ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        aThrGluTyrIleMetLysGlyValTyrIleAsnThrAlaLeuLeuAsnAlaSerCysAlaA
+ 1373 : TACTGAATACATAATGAAAGGAGTGTACATAAACACAGCCTTGTTGAATGCATCCTGTGCAG : 1435
+
+  477 : laMetAspAspPheGlnLeuIleProMetIleSerLysCysArgThrLysGluGlyArgArg :  496
+        ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        laMetAspAspPheGlnLeuIleProMetIleSerLysCysArgThrLysGluGlyArgArg
+ 1436 : CCATGGATGACTTCCAACTGATTCCAATGATAAGCAAATGCAGGACCAAAGAAGGGAGGCGG : 1495
+
+  497 : LysThrAsnLeuTyrGlyPheIleIleLysGlyArgSerHisLeuArgAsnAspThrAspVa :  517
+        ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        LysThrAsnLeuTyrGlyPheIleIleLysGlyArgSerHisLeuArgAsnAspThrAspVa
+ 1496 : AAGACTAATCTGTATGGATTCATTATAAAAGGAAGATCCCATTTGAGAAATGACACCGATGT : 1558
+
+  518 : lValAsnPheValSerMetGluPheSerLeuThrAspProArgLeuGluProHisLysTrpG :  538
+        ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        lValAsnPheValSerMetGluPheSerLeuThrAspProArgLeuGluProHisLysTrpG
+ 1559 : AGTAAACTTTGTGAGCATGGAATTCTCTCTTACTGACCCGAGGCTGGAGCCACACAAGTGGG : 1621
+
+  539 : luLysTyrCysValLeuGluIleGlyAspMetLeuIleArgSerAlaIleGlyGlnValSer :  558
+        |||||||||||||||||||||||||||||||||||:!!|||!!!||||||||||||||||||
+        luLysTyrCysValLeuGluIleGlyAspMetLeuLeuArgThrAlaIleGlyGlnValSer
+ 1622 : AAAAGTACTGTGTTCTCGAGATAGGAGACATGCTCCTACGGACTGCAATAGGCCAAGTGTCA : 1681
+
+  559 : ArgProMetPheLeuTyrValArgThrAsnGlyThrSerLysIleLysMetLysTrpGlyMe :  579
+        ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        ArgProMetPheLeuTyrValArgThrAsnGlyThrSerLysIleLysMetLysTrpGlyMe
+ 1682 : AGGCCCATGTTCCTGTATGTGAGAACCAATGGGACTTCCAAGATCAAGATGAAGTGGGGCAT : 1744
+
+  580 : tGluMetArgArgCysLeuLeuGlnSerLeuGlnGlnIleGluSerMetIleGluAlaGluS :  600
+        ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        tGluMetArgArgCysLeuLeuGlnSerLeuGlnGlnIleGluSerMetIleGluAlaGluS
+ 1745 : GGAAATGAGGCGATGCCTTCTTCAATCCCTTCAACAAATTGAGAGCATGATTGAAGCCGAGT : 1807
+
+  601 : erSerValLysGluLysAspMetThrLysGluPhePheGluAsnLysSerGluThrTrpPro :  620
+        ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        erSerValLysGluLysAspMetThrLysGluPhePheGluAsnLysSerGluThrTrpPro
+ 1808 : CTTCTGTCAAAGAGAAGGACATGACCAAAGAATTCTTTGAAAACAAATCAGAAACATGGCCA : 1867
+
+  621 : IleGlyGluSerProLysGlyValGluGluSerSerIleGlyLysValCysArgThrLeuLe :  641
+        ||||||||||||||||||||||||||||||.!!|||||||||||||||||||||||||||||
+        IleGlyGluSerProLysGlyValGluGluGlySerIleGlyLysValCysArgThrLeuLe
+ 1868 : ATTGGAGAGTCACCCAAAGGGGTGGAGGAAGGCTCCATTGGGAAGGTGTGCAGAACCTTACT : 1930
+
+  642 : uAlaLysSerValPheAsnSerLeuTyrAlaSerProGlnLeuGluGlyPheSerAlaGluS :  662
+        ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        uAlaLysSerValPheAsnSerLeuTyrAlaSerProGlnLeuGluGlyPheSerAlaGluS
+ 1931 : GGCAAAATCTGTATTCAACAGCCTATATGCATCTCCACAACTCGAGGGATTTTCAGCTGAAT : 1993
+
+  663 : erArgLysLeuLeuLeuIleValGlnAlaLeuArgAspAsnLeuGluProGlyThrPheAsp :  682
+        ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        erArgLysLeuLeuLeuIleValGlnAlaLeuArgAspAsnLeuGluProGlyThrPheAsp
+ 1994 : CAAGAAAGTTGCTTCTCATTGTCCAGGCACTTAGGGACAACCTGGAACCTGGGACCTTCGAT : 2053
+
+  683 : LeuGlyGlyLeuTyrGluAlaIleGluGluCysLeuIleAsnAspProTrpValLeuLeuAs :  703
+        ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        LeuGlyGlyLeuTyrGluAlaIleGluGluCysLeuIleAsnAspProTrpValLeuLeuAs
+ 2054 : CTTGGGGGGCTATATGAAGCAATTGAGGAGTGCCTGATTAATGATCCCTGGGTTTTGCTTAA : 2116
+
+  704 : nAlaSerTrpPheAsnSerPheLeuThrHisAlaLeu :  715
+        |||||||||||||||||||||||||||||||||||||
+        nAlaSerTrpPheAsnSerPheLeuThrHisAlaLeu
+ 2117 : TGCGTCTTGGTTCAACTCCTTCCTCACACATGCACTG : 2154
+
+vulgar: seg3prot 0 715 . gi|260907760|gb|GU060481.1| 9 2154 + 3658 M 715 2145
+
+C4 Alignment:
+------------
+         Query: APG39504.1 db="flua_db" gene="PA-X" shared_cds="PA" product="PA-X protein" splice_form="e573i1e183" ribosomal_slippage=Y slippage_motif="[NC]{2}[NT]{3}[NCT]" slippage_offset=1 slippage_frameshift=1 shared_cds="PA" V4_Ribosomal_Slippage="-10/+1/[BCDHKMNSTVWY][BDGKNRSV][BCDGHKMNRSTVWY][ABCDGHKMNRSVWY][ABCDGHKMNRSTVWY][ABCDGHKMNRSTVWY][ABCDGHKMNRSTVWY][ABCDHKMNRSTVWY][ABCDGHKMNRSTVWY][BCDGHKMNRSTVWY][BDHKNTWY][BCDHKMNSTVWY][ABCDHKMNRSTVWY][ABCDGHKMNRSTVWY][BCDGHKMNRSTVWY][ABCDHKMNRSTVWY][ABDGHKMNRSTVWY][ABDGHKMNRSTVWY][BCDGHKMNRSTVWY][BCDHKMNSTVWY][ABCDHKMNRSTVWY][BDGKNRSV]" length=252
+        Target: gi|260907760|gb|GU060481.1| Influenza A Virus (A/goose/Czech Republic/1848-K9/2009(H7N9)) segment 3 polymerase PA (PA) gene, complete cds
+         Model: protein2genome:local
+     Raw score: 1187
+   Query range: 0 -> 252
+  Target range: 9 -> 766
+
+   1 : MetGluAspPheValArgGlnCysPheAsnProMetThrValGluLeuAlaGluLysThrMetL :  22
+       ||||||||||||||||||||||||||||||||||||! !||||||||||||||||||.!!||||
+       MetGluAspPheValArgGlnCysPheAsnProMetIleValGluLeuAlaGluLysAlaMetL
+  10 : ATGGAAGATTTTGTGCGACAATGCTTCAATCCAATGATTGTCGAGCTTGCGGAAAAGGCAATGA :  73
+
+  23 : ysGluTyrGlyGluAspProLysIleGluThrAsnLysLeuAlaAlaIleCysThrHisLeuGl :  43
+       ||||||||||||||||||||||||||||||||||||||!!!|||||||||||||||||||||||
+       ysGluTyrGlyGluAspProLysIleGluThrAsnLysPheAlaAlaIleCysThrHisLeuGl
+  74 : AAGAATATGGGGAAGATCCGAAAATCGAAACGAACAAATTTGCCGCAATATGCACACACTTAGA : 136
+
+  44 : uValCysPheMetTyrSerAspPheHisPheIleAspGluArgGlyGluSerMetIleValGlu :  64
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||!!:|||||||||
+       uValCysPheMetTyrSerAspPheHisPheIleAspGluArgGlyGluSerIleIleValGlu
+ 137 : GGTCTGTTTCATGTATTCGGATTTCCACTTTATTGATGAACGGGGCGAATCAATAATTGTAGAA : 199
+
+  65 : TyrGlyAspProAsnAlaLeuLeuLysHisArgPheGluIleIleGluGlyArgAspArgThrM :  86
+       ! !|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       SerGlyAspProAsnAlaLeuLeuLysHisArgPheGluIleIleGluGlyArgAspArgThrM
+ 200 : TCTGGCGATCCAAATGCATTATTGAAACACCGATTTGAGATAATTGAAGGGAGAGACCGAACGA : 265
+
+  87 : etAlaTrpThrValIleAsnSerIleCysAsnThrThrGlyValAspLysProLysPheLeuPr : 107
+       ||||||||||||||:!:|||||||||||||||||||||||||||!!:|||||||||||||||||
+       etAlaTrpThrValValAsnSerIleCysAsnThrThrGlyValGluLysProLysPheLeuPr
+ 266 : TGGCCTGGACAGTGGTGAATAGTATCTGCAACACCACAGGAGTCGAGAAACCTAAATTTCTCCC : 328
+
+ 108 : oAspLeuTyrAspTyrLysGluAsnArgPheIleGluIleGlyValThrArgArgGluValHis : 128
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       oAspLeuTyrAspTyrLysGluAsnArgPheIleGluIleGlyValThrArgArgGluValHis
+ 329 : AGATTTGTATGACTACAAAGAGAATCGATTCATTGAAATTGGAGTAACACGGAGGGAAGTTCAT : 391
+
+ 129 : ThrTyrTyrLeuGluLysAlaAsnLysIleLysSerGluLysThrHisIleHisIlePheSerP : 150
+       ! !|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       IleTyrTyrLeuGluLysAlaAsnLysIleLysSerGluLysThrHisIleHisIlePheSerP
+ 392 : ATATACTATCTAGAAAAGGCCAACAAGATAAAATCAGAGAAGACACACATTCACATATTCTCAT : 457
+
+ 151 : heThrGlyGluGluMetAlaThrArgAlaAspTyrThrLeuAspGluGluSerArgAlaArgIl : 171
+       |||||||||||||||||||||||!:!||||||||||||||||||||||||||||||||||||||
+       heThrGlyGluGluMetAlaThrLysAlaAspTyrThrLeuAspGluGluSerArgAlaArgIl
+ 458 : TCACTGGAGAGGAAATGGCCACCAAAGCGGACTACACTCTTGACGAAGAGAGTAGGGCAAGAAT : 520
+
+ 172 : eLysThrArgLeuPheThrIleArgGlnGluMetAlaSerArgGlyLeuTrpAspSer-PheVa : 192
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||#|||||
+       eLysThrArgLeuPheThrIleArgGlnGluMetAlaSerArgGlyLeuTrpAspSer#PheVa
+ 521 : CAAAACCAGGCTGTTCACTATAAGGCAGGAAATGGCCAGTAGGGGTCTATGGGATTCCTTTCGT : 584
+
+ 193 : lSerLeuArgGluAlaLysLysGlnLeuLysArgGlyLeuLysLeuGlnGluProCysAlaGly : 213
+       ||||! !||||||||||||!:!|||||||||!:!! !||||||! !||||||||||||||||||
+       lSerProArgGluAlaLysArgGlnLeuLysLysAspLeuLysSerGlnGluProCysAlaGly
+ 585 : CAGTCCGAGAGAGGCGAAGAGACAGTTGAAGAAAGATTTGAAATCACAGGAACCATGCGCAGGC : 647
+
+ 214 : LeuLeuThrLysAlaSerProArgThrSerProAlaLeuLysIleSerGluSerMetTrpMetA : 235
+       |||! !||||||!.!|||! !|||||||||||||||||||||! !! !||| !!||||||||||
+       LeuProThrLysValSerHisArgThrSerProAlaLeuLysThrLeuGluProMetTrpMetA
+ 648 : TTGCCGACCAAAGTCTCCCACCGAACTTCTCCAGCCTTGAAAACTTTAGAGCCTATGTGGATGG : 713
+
+ 236 : spSerAsnArgThrAlaAlaLeuArgAlaSerPheLeuLysCysGlnLysLys : 252
+       |||||||||||||||||||||||||||||||||||||||||||||||||||||
+       spSerAsnArgThrAlaAlaLeuArgAlaSerPheLeuLysCysGlnLysLys
+ 714 : ATTCGAACCGAACGGCTGCATTGAGGGCAAGCTTTCTCAAATGTCAAAAGAAG : 766
+
+vulgar: APG39504.1 0 252 . gi|260907760|gb|GU060481.1| 9 766 + 1187 M 190 570 F 0 1 M 62 186
+
+C4 Alignment:
+------------
+         Query: AGN69266.1 db="flua_db" gene="PA-X" shared_cds="PA" product="PA-X protein" splice_form="e573i1e123" ribosomal_slippage=Y slippage_motif="[NC]{2}[NT]{3}[NCT]" slippage_offset=1 slippage_frameshift=1 shared_cds="PA" V4_Ribosomal_Slippage="-10/+1/[BCDHKMNSTVWY][BDGKNRSV][BCDGHKMNRSTVWY][ABCDGHKMNRSVWY][ABCDGHKMNRSTVWY][ABCDGHKMNRSTVWY][ABCDGHKMNRSTVWY][ABCDHKMNRSTVWY][ABCDGHKMNRSTVWY][BCDGHKMNRSTVWY][BDHKNTWY][BCDHKMNSTVWY][ABCDHKMNRSTVWY][ABCDGHKMNRSTVWY][BCDGHKMNRSTVWY][ABCDHKMNRSTVWY][ABDGHKMNRSTVWY][ABDGHKMNRSTVWY][BCDGHKMNRSTVWY][BCDHKMNSTVWY][ABCDHKMNRSTVWY][BDGKNRSV]" length=232
+        Target: gi|260907760|gb|GU060481.1| Influenza A Virus (A/goose/Czech Republic/1848-K9/2009(H7N9)) segment 3 polymerase PA (PA) gene, complete cds
+         Model: protein2genome:local
+     Raw score: 1056
+   Query range: 0 -> 232
+  Target range: 9 -> 706
+
+   1 : MetGluAspPheValArgGlnCysPheAsnProMetIleValGluLeuAlaGluLysThrMetL :  22
+       |||||||||||||||||||||||||||||||||||||||||||||||||||||||||.!!||||
+       MetGluAspPheValArgGlnCysPheAsnProMetIleValGluLeuAlaGluLysAlaMetL
+  10 : ATGGAAGATTTTGTGCGACAATGCTTCAATCCAATGATTGTCGAGCTTGCGGAAAAGGCAATGA :  73
+
+  23 : ysGluTyrGlyGluAsnProLysIleGluIleAsnLysPheAlaAlaIleCysThrHisMetGl :  43
+       ||||||||||||||:!!||||||||||||!  |||||||||||||||||||||||||||:!:||
+       ysGluTyrGlyGluAspProLysIleGluThrAsnLysPheAlaAlaIleCysThrHisLeuGl
+  74 : AAGAATATGGGGAAGATCCGAAAATCGAAACGAACAAATTTGCCGCAATATGCACACACTTAGA : 136
+
+  44 : uValCysPheMetTyrSerAspPheHisPheIleAsnGluArgGlyGluSerIleIleIleGlu :  64
+       ||||||||||||||||||||||||||||||||||:!!|||||||||||||||||||||:!!|||
+       uValCysPheMetTyrSerAspPheHisPheIleAspGluArgGlyGluSerIleIleValGlu
+ 137 : GGTCTGTTTCATGTATTCGGATTTCCACTTTATTGATGAACGGGGCGAATCAATAATTGTAGAA : 199
+
+  65 : ProGlyAspSerAsnAlaLeuLeuLysHisArgPheGluIleIleGluGlyArgAspArgAsnM :  86
+        !!|||||| !!||||||||||||||||||||||||||||||||||||||||||||||||!..|
+       SerGlyAspProAsnAlaLeuLeuLysHisArgPheGluIleIleGluGlyArgAspArgThrM
+ 200 : TCTGGCGATCCAAATGCATTATTGAAACACCGATTTGAGATAATTGAAGGGAGAGACCGAACGA : 265
+
+  87 : etAlaTrpThrValValAsnSerIleCysAsnThrThrGlyValGlyLysProArgTyrLeuPr : 107
+       ||||||||||||||||||||||||||||||||||||||||||||! !||||||!:!!:!|||||
+       etAlaTrpThrValValAsnSerIleCysAsnThrThrGlyValGluLysProLysPheLeuPr
+ 266 : TGGCCTGGACAGTGGTGAATAGTATCTGCAACACCACAGGAGTCGAGAAACCTAAATTTCTCCC : 328
+
+ 108 : oAspLeuTyrAspTyrLysGluAspArgPheIleGluIleGlyValThrArgArgGluValHis : 128
+       ||||||||||||||||||||||:!!|||||||||||||||||||||||||||||||||||||||
+       oAspLeuTyrAspTyrLysGluAsnArgPheIleGluIleGlyValThrArgArgGluValHis
+ 329 : AGATTTGTATGACTACAAAGAGAATCGATTCATTGAAATTGGAGTAACACGGAGGGAAGTTCAT : 391
+
+ 129 : IleTyrTyrLeuGluLysAlaAsnLysIleLysSerGluAspThrHisIleHisIlePheSerP : 150
+       ||||||||||||||||||||||||||||||||||||||| ! ||||||||||||||||||||||
+       IleTyrTyrLeuGluLysAlaAsnLysIleLysSerGluLysThrHisIleHisIlePheSerP
+ 392 : ATATACTATCTAGAAAAGGCCAACAAGATAAAATCAGAGAAGACACACATTCACATATTCTCAT : 457
+
+ 151 : heThrGlyGluGluMetAlaThrLysAlaAspTyrThrLeuAspGluGluSerArgAlaArgIl : 171
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       heThrGlyGluGluMetAlaThrLysAlaAspTyrThrLeuAspGluGluSerArgAlaArgIl
+ 458 : TCACTGGAGAGGAAATGGCCACCAAAGCGGACTACACTCTTGACGAAGAGAGTAGGGCAAGAAT : 520
+
+ 172 : eLysThrArgLeuPheThrIleArgGlnGluMetAlaSerArgGlyLeuTrpAspSer-PheVa : 192
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||#|||||
+       eLysThrArgLeuPheThrIleArgGlnGluMetAlaSerArgGlyLeuTrpAspSer#PheVa
+ 521 : CAAAACCAGGCTGTTCACTATAAGGCAGGAAATGGCCAGTAGGGGTCTATGGGATTCCTTTCGT : 584
+
+ 193 : lSerProArgGluAlaLysArgGlnLeuLysLysAspLeuLysSerLysGlyArgCysGluSer : 213
+       ||||||||||||||||||||||||||||||||||||||||||||||:!!! !! !|||! !.!!
+       lSerProArgGluAlaLysArgGlnLeuLysLysAspLeuLysSerGlnGluProCysAlaGly
+ 585 : CAGTCCGAGAGAGGCGAAGAGACAGTTGAAGAAAGATTTGAAATCACAGGAACCATGCGCAGGC : 647
+
+ 214 : LeuLeuThrLysValSerHisGlnThrSerGlnValSerThrThrLeuGluProMet : 232
+       |||! !|||||||||||||||!:!||||||! !!.!! !! !|||||||||||||||
+       LeuProThrLysValSerHisArgThrSerProAlaLeuLysThrLeuGluProMet
+ 648 : TTGCCGACCAAAGTCTCCCACCGAACTTCTCCAGCCTTGAAAACTTTAGAGCCTATG : 706
+
+vulgar: AGN69266.1 0 232 . gi|260907760|gb|GU060481.1| 9 706 + 1056 M 190 570 F 0 1 M 42 126
+
+C4 Alignment:
+------------
+         Query: ALX30368.1 db="flua_db" gene="PA-X" shared_cds="PA" product="PA-X protein" splice_form="e573i1e183" ribosomal_slippage=Y slippage_motif="[NC]{2}[NT]{3}[NCT]" slippage_offset=1 slippage_frameshift=1 shared_cds="PA"V4_Ribosomal_Slippage="-10/+1/[BCDHKMNSTVWY][BDGKNRSV][BCDGHKMNRSTVWY][ABCDGHKMNRSVWY][ABCDGHKMNRSTVWY][ABCDGHKMNRSTVWY][ABCDGHKMNRSTVWY][ABCDHKMNRSTVWY][ABCDGHKMNRSTVWY][BCDGHKMNRSTVWY][BDHKNTWY][BCDHKMNSTVWY][ABCDHKMNRSTVWY][ABCDGHKMNRSTVWY][BCDGHKMNRSTVWY][ABCDHKMNRSTVWY][ABDGHKMNRSTVWY][ABDGHKMNRSTVWY][BCDGHKMNRSTVWY][BCDHKMNSTVWY][ABCDHKMNRSTVWY][BDGKNRSV]" length=252 
+        Target: gi|260907760|gb|GU060481.1| Influenza A Virus (A/goose/Czech Republic/1848-K9/2009(H7N9)) segment 3 polymerase PA (PA) gene, complete cds
+         Model: protein2genome:local
+     Raw score: 1185
+   Query range: 0 -> 249
+  Target range: 9 -> 757
+
+   1 : MetGluAspPheValArgGlnCysPheAsnProMetIleValGluLeuAlaGluLysAlaMetL :  22
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       MetGluAspPheValArgGlnCysPheAsnProMetIleValGluLeuAlaGluLysAlaMetL
+  10 : ATGGAAGATTTTGTGCGACAATGCTTCAATCCAATGATTGTCGAGCTTGCGGAAAAGGCAATGA :  73
+
+  23 : ysGluHisGlyGluAspProLysIleGluThrAsnLysPheAlaAlaIleCysThrHisLeuGl :  43
+       |||||:!!||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       ysGluTyrGlyGluAspProLysIleGluThrAsnLysPheAlaAlaIleCysThrHisLeuGl
+  74 : AAGAATATGGGGAAGATCCGAAAATCGAAACGAACAAATTTGCCGCAATATGCACACACTTAGA : 136
+
+  44 : uValCysPheMetTyrSerAspPheHisPheIleAspGluArgGlyGluSerValValValGlu :  64
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||:!!:!!||||||
+       uValCysPheMetTyrSerAspPheHisPheIleAspGluArgGlyGluSerIleIleValGlu
+ 137 : GGTCTGTTTCATGTATTCGGATTTCCACTTTATTGATGAACGGGGCGAATCAATAATTGTAGAA : 199
+
+  65 : SerGlyAspProAsnAlaLeuLeuLysHisArgPheGluIleIleGluGlyArgAspArgAlaM :  86
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||.!!|
+       SerGlyAspProAsnAlaLeuLeuLysHisArgPheGluIleIleGluGlyArgAspArgThrM
+ 200 : TCTGGCGATCCAAATGCATTATTGAAACACCGATTTGAGATAATTGAAGGGAGAGACCGAACGA : 265
+
+  87 : etAlaTrpThrValValAsnSerIleCysAsnThrThrGluValGluLysProLysPheLeuPr : 107
+       ||||||||||||||||||||||||||||||||||||||! !|||||||||||||||||||||||
+       etAlaTrpThrValValAsnSerIleCysAsnThrThrGlyValGluLysProLysPheLeuPr
+ 266 : TGGCCTGGACAGTGGTGAATAGTATCTGCAACACCACAGGAGTCGAGAAACCTAAATTTCTCCC : 328
+
+ 108 : oAspLeuTyrAspTyrLysGluAsnArgPheIleGluIleGlyValThrArgArgGluValHis : 128
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       oAspLeuTyrAspTyrLysGluAsnArgPheIleGluIleGlyValThrArgArgGluValHis
+ 329 : AGATTTGTATGACTACAAAGAGAATCGATTCATTGAAATTGGAGTAACACGGAGGGAAGTTCAT : 391
+
+ 129 : IleTyrTyrLeuGluLysAlaAsnLysIleLysSerGluLysThrHisIleHisIlePheSerP : 150
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       IleTyrTyrLeuGluLysAlaAsnLysIleLysSerGluLysThrHisIleHisIlePheSerP
+ 392 : ATATACTATCTAGAAAAGGCCAACAAGATAAAATCAGAGAAGACACACATTCACATATTCTCAT : 457
+
+ 151 : heThrGlyGluGluMetAlaThrArgAlaAspTyrThrLeuAspGluGluSerArgAlaArgIl : 171
+       |||||||||||||||||||||||!:!||||||||||||||||||||||||||||||||||||||
+       heThrGlyGluGluMetAlaThrLysAlaAspTyrThrLeuAspGluGluSerArgAlaArgIl
+ 458 : TCACTGGAGAGGAAATGGCCACCAAAGCGGACTACACTCTTGACGAAGAGAGTAGGGCAAGAAT : 520
+
+ 172 : eLysThrArgLeuPheThrIleArgGlnGluMetAlaIleArgGlyLeuTrpAspSer-PheVa : 192
+       |||||||||||||||||||||||||||||||||||||! !||||||||||||||||||#|||||
+       eLysThrArgLeuPheThrIleArgGlnGluMetAlaSerArgGlyLeuTrpAspSer#PheVa
+ 521 : CAAAACCAGGCTGTTCACTATAAGGCAGGAAATGGCCAGTAGGGGTCTATGGGATTCCTTTCGT : 584
+
+ 193 : lAsnProLysGluAlaLysArgGlnLeuLysLysSerLeuLysSerArgGluProCysIleGly : 213
+       |!:!|||!:!||||||||||||||||||||||||..!|||||||||!:!|||||||||  !|||
+       lSerProArgGluAlaLysArgGlnLeuLysLysAspLeuLysSerGlnGluProCysAlaGly
+ 585 : CAGTCCGAGAGAGGCGAAGAGACAGTTGAAGAAAGATTTGAAATCACAGGAACCATGCGCAGGC : 647
+
+ 214 : LeuProIleArgValTyrArgGlnThrSerProValLeuLysThrSerGluHisMetTrpMetA : 235
+       ||||||! !!:!|||! !!.!!:!|||||||||!.!|||||||||! !|||! !||||||||||
+       LeuProThrLysValSerHisArgThrSerProAlaLeuLysThrLeuGluProMetTrpMetA
+ 648 : TTGCCGACCAAAGTCTCCCACCGAACTTCTCCAGCCTTGAAAACTTTAGAGCCTATGTGGATGG : 713
+
+ 236 : spSerAsnArgThrAlaAlaLeuArgAlaSerPheLeuLysCys : 249
+       ||||||||||||||||||||||||||||||||||||||||||||
+       spSerAsnArgThrAlaAlaLeuArgAlaSerPheLeuLysCys
+ 714 : ATTCGAACCGAACGGCTGCATTGAGGGCAAGCTTTCTCAAATGT : 757
+
+vulgar: ALX30368.1 0 249 . gi|260907760|gb|GU060481.1| 9 757 + 1185 M 190 570 F 0 1 M 59 177
+
+C4 Alignment:
+------------
+         Query: AJM70481.1 db="flua_db" gene="PA-X" shared_cds="PA" product="PA-X protein" splice_form="e573i1e183" ribosomal_slippage=Y slippage_motif="[NC]{2}[NT]{3}[NCT]" slippage_offset=1 slippage_frameshift=1 shared_cds="PA" V4_Ribosomal_Slippage="-10/+1/[BCDHKMNSTVWY][BDGKNRSV][BCDGHKMNRSTVWY][ABCDGHKMNRSVWY][ABCDGHKMNRSTVWY][ABCDGHKMNRSTVWY][ABCDGHKMNRSTVWY][ABCDHKMNRSTVWY][ABCDGHKMNRSTVWY][BCDGHKMNRSTVWY][BDHKNTWY][BCDHKMNSTVWY][ABCDHKMNRSTVWY][ABCDGHKMNRSTVWY][BCDGHKMNRSTVWY][ABCDHKMNRSTVWY][ABDGHKMNRSTVWY][ABDGHKMNRSTVWY][BCDGHKMNRSTVWY][BCDHKMNSTVWY][ABCDHKMNRSTVWY][BDGKNRSV]" length=252
+        Target: gi|260907760|gb|GU060481.1| Influenza A Virus (A/goose/Czech Republic/1848-K9/2009(H7N9)) segment 3 polymerase PA (PA) gene, complete cds
+         Model: protein2genome:local
+     Raw score: 1177
+   Query range: 0 -> 252
+  Target range: 9 -> 766
+
+   1 : MetGluAspPheValArgGlnCysPheAsnProMetIleValGluLeuAlaGluLysAlaMetL :  22
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       MetGluAspPheValArgGlnCysPheAsnProMetIleValGluLeuAlaGluLysAlaMetL
+  10 : ATGGAAGATTTTGTGCGACAATGCTTCAATCCAATGATTGTCGAGCTTGCGGAAAAGGCAATGA :  73
+
+  23 : ysGluTyrGlyGluAspProLysIleGluThrAsnLysPheAlaAlaIleCysThrHisSerGl :  43
+       |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||! !||
+       ysGluTyrGlyGluAspProLysIleGluThrAsnLysPheAlaAlaIleCysThrHisLeuGl
+  74 : AAGAATATGGGGAAGATCCGAAAATCGAAACGAACAAATTTGCCGCAATATGCACACACTTAGA : 136
+
+  44 : uValCysPheMetTyrSerAspPheHisPheIleAsnGluLeuGlyGluSerValValIleAsp :  64
+       ||||||||||||||||||||||||||||||||||:!!|||! !|||||||||:!!:!!:!!!!:
+       uValCysPheMetTyrSerAspPheHisPheIleAspGluArgGlyGluSerIleIleValGlu
+ 137 : GGTCTGTTTCATGTATTCGGATTTCCACTTTATTGATGAACGGGGCGAATCAATAATTGTAGAA : 199
+
+  65 : SerAspAspProAsnAlaLeuLeuLysHisArgPheGluIleIleGluGlySerAspArgThrI :  86
+       |||! !|||||||||||||||||||||||||||||||||||||||||||||!!!|||||||||!
+       SerGlyAspProAsnAlaLeuLeuLysHisArgPheGluIleIleGluGlyArgAspArgThrM
+ 200 : TCTGGCGATCCAAATGCATTATTGAAACACCGATTTGAGATAATTGAAGGGAGAGACCGAACGA : 265
+
+  87 : leAlaTrpThrValValAsnSerIleCysAsnThrThrArgAlaGluLysProLysPheLeuPr : 107
+       !:|||||||||||||||||||||||||||||||||||| !!!.!||||||||||||||||||||
+       etAlaTrpThrValValAsnSerIleCysAsnThrThrGlyValGluLysProLysPheLeuPr
+ 266 : TGGCCTGGACAGTGGTGAATAGTATCTGCAACACCACAGGAGTCGAGAAACCTAAATTTCTCCC : 328
+
+ 108 : oAspLeuTyrAspTyrLysLysAsnArgPheValGluIleGlyValThrArgArgGluValHis : 128
+       |||||||||||||||||||:!!|||||||||:!!||||||||||||||||||||||||||||||
+       oAspLeuTyrAspTyrLysGluAsnArgPheIleGluIleGlyValThrArgArgGluValHis
+ 329 : AGATTTGTATGACTACAAAGAGAATCGATTCATTGAAATTGGAGTAACACGGAGGGAAGTTCAT : 391
+
+ 129 : IleTyrTyrLeuGluLysAlaAsnLysIleLysSerGluLysThrHisIleHisIlePheSerP : 150
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       IleTyrTyrLeuGluLysAlaAsnLysIleLysSerGluLysThrHisIleHisIlePheSerP
+ 392 : ATATACTATCTAGAAAAGGCCAACAAGATAAAATCAGAGAAGACACACATTCACATATTCTCAT : 457
+
+ 151 : heThrGlyGluGluMetAlaThrArgAlaAspTyrThrLeuAspGluGluSerArgAlaArgIl : 171
+       |||||||||||||||||||||||!:!||||||||||||||||||||||||||||||||||||||
+       heThrGlyGluGluMetAlaThrLysAlaAspTyrThrLeuAspGluGluSerArgAlaArgIl
+ 458 : TCACTGGAGAGGAAATGGCCACCAAAGCGGACTACACTCTTGACGAAGAGAGTAGGGCAAGAAT : 520
+
+ 172 : eLysThrArgLeuPheThrIleArgGlnGluMetAlaSerArgGlyLeuTrpAspSer-PheVa : 192
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||#|||||
+       eLysThrArgLeuPheThrIleArgGlnGluMetAlaSerArgGlyLeuTrpAspSer#PheVa
+ 521 : CAAAACCAGGCTGTTCACTATAAGGCAGGAAATGGCCAGTAGGGGTCTATGGGATTCCTTTCGT : 584
+
+ 193 : lSerProArgGluAlaLysArgGlnLeuLysLysAspLeuLysSerGlnGlyArgCysAlaSer : 213
+       |||||||||||||||||||||||||||||||||||||||||||||||||! !! !||||||.!!
+       lSerProArgGluAlaLysArgGlnLeuLysLysAspLeuLysSerGlnGluProCysAlaGly
+ 585 : CAGTCCGAGAGAGGCGAAGAGACAGTTGAAGAAAGATTTGAAATCACAGGAACCATGCGCAGGC : 647
+
+ 214 : LeuProIleThrValSerHisArgThrSerProAlaLeuLysIleLeuGluSerMetTrpMetA : 235
+       ||||||! !! !||||||||||||||||||||||||||||||! !|||||| !!||||||||||
+       LeuProThrLysValSerHisArgThrSerProAlaLeuLysThrLeuGluProMetTrpMetA
+ 648 : TTGCCGACCAAAGTCTCCCACCGAACTTCTCCAGCCTTGAAAACTTTAGAGCCTATGTGGATGG : 713
+
+ 236 : spSerAsnArgThrAlaAlaLeuArgValSerPheLeuLysCysProLysLys : 252
+       ||||||||||||||||||||||||||!.!|||||||||||||||! !||||||
+       spSerAsnArgThrAlaAlaLeuArgAlaSerPheLeuLysCysGlnLysLys
+ 714 : ATTCGAACCGAACGGCTGCATTGAGGGCAAGCTTTCTCAAATGTCAAAAGAAG : 766
+
+vulgar: AJM70481.1 0 252 . gi|260907760|gb|GU060481.1| 9 766 + 1177 M 190 570 F 0 1 M 62 186
+
+C4 Alignment:
+------------
+         Query: AHB59328.1 db="flua_db" gene="PA-X" shared_cds="PA" product="PA-X protein" splice_form="e573i1e183" ribosomal_slippage=Y slippage_motif="[NC]{2}[NT]{3}[NCT]" slippage_offset=1 slippage_frameshift=1 shared_cds="PA" V4_Ribosomal_Slippage="-10/+1/[BCDHKMNSTVWY][BDGKNRSV][BCDGHKMNRSTVWY][ABCDGHKMNRSVWY][ABCDGHKMNRSTVWY][ABCDGHKMNRSTVWY][ABCDGHKMNRSTVWY][ABCDHKMNRSTVWY][ABCDGHKMNRSTVWY][BCDGHKMNRSTVWY][BDHKNTWY][BCDHKMNSTVWY][ABCDHKMNRSTVWY][ABCDGHKMNRSTVWY][BCDGHKMNRSTVWY][ABCDHKMNRSTVWY][ABDGHKMNRSTVWY][ABDGHKMNRSTVWY][BCDGHKMNRSTVWY][BCDHKMNSTVWY][ABCDHKMNRSTVWY][BDGKNRSV]" length=252
+        Target: gi|260907760|gb|GU060481.1| Influenza A Virus (A/goose/Czech Republic/1848-K9/2009(H7N9)) segment 3 polymerase PA (PA) gene, complete cds
+         Model: protein2genome:local
+     Raw score: 1114
+   Query range: 0 -> 252
+  Target range: 9 -> 766
+
+   1 : MetGluAspPheValArgGlnCysPheAsnProMetIleValGluLeuAlaGluLysThrMetL :  22
+       |||||||||||||||||||||||||||||||||||||||||||||||||||||||||.!!||||
+       MetGluAspPheValArgGlnCysPheAsnProMetIleValGluLeuAlaGluLysAlaMetL
+  10 : ATGGAAGATTTTGTGCGACAATGCTTCAATCCAATGATTGTCGAGCTTGCGGAAAAGGCAATGA :  73
+
+  23 : ysGluTyrGlyGluAsnProLysIleGluThrAsnLysPheAlaAlaIleCysThrHisMetGl :  43
+       ||||||||||||||:!!||||||||||||||||||||||||||||||||||||||||||:!:||
+       ysGluTyrGlyGluAspProLysIleGluThrAsnLysPheAlaAlaIleCysThrHisLeuGl
+  74 : AAGAATATGGGGAAGATCCGAAAATCGAAACGAACAAATTTGCCGCAATATGCACACACTTAGA : 136
+
+  44 : uValCysPheMetTyrSerAspPheHisPheIleAsnGluGlnGlyGluSerIleIleMetGlu :  64
+       ||||||||||||||||||||||||||||||||||:!!|||!:!|||||||||||||||:!:|||
+       uValCysPheMetTyrSerAspPheHisPheIleAspGluArgGlyGluSerIleIleValGlu
+ 137 : GGTCTGTTTCATGTATTCGGATTTCCACTTTATTGATGAACGGGGCGAATCAATAATTGTAGAA : 199
+
+  65 : ProGlyAspSerAsnAlaLeuLeuLysHisArgPheGluIleIleGluGlyArgAspArgAsnM :  86
+        !!|||||| !!||||||||||||||||||||||||||||||||||||||||||||||||!..|
+       SerGlyAspProAsnAlaLeuLeuLysHisArgPheGluIleIleGluGlyArgAspArgThrM
+ 200 : TCTGGCGATCCAAATGCATTATTGAAACACCGATTTGAGATAATTGAAGGGAGAGACCGAACGA : 265
+
+  87 : etAlaTrpThrValValAsnSerIleCysAsnThrThrGlyValGlyLysProArgPheLeuPr : 107
+       ||||||||||||||||||||||||||||||||||||||||||||! !||||||!:!||||||||
+       etAlaTrpThrValValAsnSerIleCysAsnThrThrGlyValGluLysProLysPheLeuPr
+ 266 : TGGCCTGGACAGTGGTGAATAGTATCTGCAACACCACAGGAGTCGAGAAACCTAAATTTCTCCC : 328
+
+ 108 : oAspLeuTyrAspTyrLysGluAspArgPheIleGluIleGlyValThrArgArgGluValHis : 128
+       ||||||||||||||||||||||:!!|||||||||||||||||||||||||||||||||||||||
+       oAspLeuTyrAspTyrLysGluAsnArgPheIleGluIleGlyValThrArgArgGluValHis
+ 329 : AGATTTGTATGACTACAAAGAGAATCGATTCATTGAAATTGGAGTAACACGGAGGGAAGTTCAT : 391
+
+ 129 : IleTyrTyrLeuGluLysAlaAsnLysIleLysSerGluGluThrHisIleHisIlePheSerP : 150
+       |||||||||||||||||||||||||||||||||||||||:!!||||||||||||||||||||||
+       IleTyrTyrLeuGluLysAlaAsnLysIleLysSerGluLysThrHisIleHisIlePheSerP
+ 392 : ATATACTATCTAGAAAAGGCCAACAAGATAAAATCAGAGAAGACACACATTCACATATTCTCAT : 457
+
+ 151 : heThrGlyGluGluMetAlaThrLysAlaAspTyrThrLeuAspGluGluSerArgAlaArgIl : 171
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       heThrGlyGluGluMetAlaThrLysAlaAspTyrThrLeuAspGluGluSerArgAlaArgIl
+ 458 : TCACTGGAGAGGAAATGGCCACCAAAGCGGACTACACTCTTGACGAAGAGAGTAGGGCAAGAAT : 520
+
+ 172 : eLysThrArgLeuPheThrIleArgGlnGluMetAlaSerArgGlyLeuTrpAspSer-PheVa : 192
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||#|||||
+       eLysThrArgLeuPheThrIleArgGlnGluMetAlaSerArgGlyLeuTrpAspSer#PheVa
+ 521 : CAAAACCAGGCTGTTCACTATAAGGCAGGAAATGGCCAGTAGGGGTCTATGGGATTCCTTTCGT : 584
+
+ 193 : lAsnProArgLysAlaLysArgGlnLeuLysLysAsnLeuLysSerLysGlyGlnCysGluAsp : 213
+       |!:!||||||:!!|||||||||||||||||||||:!!|||||||||:!!! !! !|||! !! !
+       lSerProArgGluAlaLysArgGlnLeuLysLysAspLeuLysSerGlnGluProCysAlaGly
+ 585 : CAGTCCGAGAGAGGCGAAGAGACAGTTGAAGAAAGATTTGAAATCACAGGAACCATGCGCAGGC : 647
+
+ 214 : LeuLeuThrLysValSerHisGlnThrPheGlnValSerIleThrLeuGluProMetTrpMetA : 235
+       |||! !|||||||||||||||!:!|||! !! !!.!! !! !||||||||||||||||||||||
+       LeuProThrLysValSerHisArgThrSerProAlaLeuLysThrLeuGluProMetTrpMetA
+ 648 : TTGCCGACCAAAGTCTCCCACCGAACTTCTCCAGCCTTGAAAACTTTAGAGCCTATGTGGATGG : 713
+
+ 236 : spSerSerArgMetAlaThrLeuArgAlaSerPheProLysCysLeuGluLys : 252
+       |||||!:!|||! !|||.!!|||||||||||||||! !||||||! !:!!|||
+       spSerAsnArgThrAlaAlaLeuArgAlaSerPheLeuLysCysGlnLysLys
+ 714 : ATTCGAACCGAACGGCTGCATTGAGGGCAAGCTTTCTCAAATGTCAAAAGAAG : 766
+
+vulgar: AHB59328.1 0 252 . gi|260907760|gb|GU060481.1| 9 766 + 1114 M 190 570 F 0 1 M 62 186
+
+C4 Alignment:
+------------
+         Query: AQW44185.1 db="flua_db" gene="PA-X" shared_cds="PA" product="PA-X protein" splice_form="e573i1e183" ribosomal_slippage=Y slippage_motif="[NC]{2}[NT]{3}[NCT]" slippage_offset=1 slippage_frameshift=1 shared_cds="PA" V4_Ribosomal_Slippage="-10/+1/[BCDHKMNSTVWY][BDGKNRSV][BCDGHKMNRSTVWY][ABCDGHKMNRSVWY][ABCDGHKMNRSTVWY][ABCDGHKMNRSTVWY][ABCDGHKMNRSTVWY][ABCDHKMNRSTVWY][ABCDGHKMNRSTVWY][BCDGHKMNRSTVWY][BDHKNTWY][BCDHKMNSTVWY][ABCDHKMNRSTVWY][ABCDGHKMNRSTVWY][BCDGHKMNRSTVWY][ABCDHKMNRSTVWY][ABDGHKMNRSTVWY][ABDGHKMNRSTVWY][BCDGHKMNRSTVWY][BCDHKMNSTVWY][ABCDHKMNRSTVWY][BDGKNRSV]" length=252
+        Target: gi|260907760|gb|GU060481.1| Influenza A Virus (A/goose/Czech Republic/1848-K9/2009(H7N9)) segment 3 polymerase PA (PA) gene, complete cds
+         Model: protein2genome:local
+     Raw score: 1202
+   Query range: 0 -> 252
+  Target range: 9 -> 766
+
+   1 : MetGluAspPheValArgGlnCysPheAsnProMetIleValGluLeuAlaGluLysAlaMetL :  22
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       MetGluAspPheValArgGlnCysPheAsnProMetIleValGluLeuAlaGluLysAlaMetL
+  10 : ATGGAAGATTTTGTGCGACAATGCTTCAATCCAATGATTGTCGAGCTTGCGGAAAAGGCAATGA :  73
+
+  23 : ysGluTyrGlyGluAspProLysIleGluThrAsnLysPheAlaSerIleCysThrHisLeuGl :  43
+       ||||||||||||||||||||||||||||||||||||||||||||:!!|||||||||||||||||
+       ysGluTyrGlyGluAspProLysIleGluThrAsnLysPheAlaAlaIleCysThrHisLeuGl
+  74 : AAGAATATGGGGAAGATCCGAAAATCGAAACGAACAAATTTGCCGCAATATGCACACACTTAGA : 136
+
+  44 : uValCysPheMetTyrSerAspPheHisPheIleAspGluArgGlyGluSerThrIleIleGlu :  64
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||! !|||:!!|||
+       uValCysPheMetTyrSerAspPheHisPheIleAspGluArgGlyGluSerIleIleValGlu
+ 137 : GGTCTGTTTCATGTATTCGGATTTCCACTTTATTGATGAACGGGGCGAATCAATAATTGTAGAA : 199
+
+  65 : SerGlyAspProAsnAlaLeuLeuLysHisArgPheGluIleIleGluGlyArgAspArgThrM :  86
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       SerGlyAspProAsnAlaLeuLeuLysHisArgPheGluIleIleGluGlyArgAspArgThrM
+ 200 : TCTGGCGATCCAAATGCATTATTGAAACACCGATTTGAGATAATTGAAGGGAGAGACCGAACGA : 265
+
+  87 : etAlaTrpThrValValAsnSerIleCysAsnThrThrGlyValGluLysProLysPheLeuPr : 107
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       etAlaTrpThrValValAsnSerIleCysAsnThrThrGlyValGluLysProLysPheLeuPr
+ 266 : TGGCCTGGACAGTGGTGAATAGTATCTGCAACACCACAGGAGTCGAGAAACCTAAATTTCTCCC : 328
+
+ 108 : oAspLeuTyrAspTyrLysGluAsnArgPheIleGluIleGlyValThrArgArgGluValHis : 128
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       oAspLeuTyrAspTyrLysGluAsnArgPheIleGluIleGlyValThrArgArgGluValHis
+ 329 : AGATTTGTATGACTACAAAGAGAATCGATTCATTGAAATTGGAGTAACACGGAGGGAAGTTCAT : 391
+
+ 129 : IleTyrTyrLeuGluLysAlaAsnLysIleLysSerGluLysThrHisIleHisIleLeuSerP : 150
+       |||||||||||||||||||||||||||||||||||||||||||||||||||||||||!!!||||
+       IleTyrTyrLeuGluLysAlaAsnLysIleLysSerGluLysThrHisIleHisIlePheSerP
+ 392 : ATATACTATCTAGAAAAGGCCAACAAGATAAAATCAGAGAAGACACACATTCACATATTCTCAT : 457
+
+ 151 : heArgGluLysSerTrpProThrLysAlaGlyTyrThrLeuGluGluGluSerArgAlaArgIl : 171
+       ||! !! !:!!..!  ! !!|||||||||! !|||||||||!!:||||||||||||||||||||
+       heThrGlyGluGluMetAlaThrLysAlaAspTyrThrLeuAspGluGluSerArgAlaArgIl
+ 458 : TCACTGGAGAGGAAATGGCCACCAAAGCGGACTACACTCTTGACGAAGAGAGTAGGGCAAGAAT : 520
+
+ 172 : eLysIleLeuLeuPheThrIleArgGlnGluMetAlaSerArgGlyIleCysAspSer-PheVa : 192
+       ||||! !  !||||||||||||||||||||||||||||||||||||:!!!! ||||||#|||||
+       eLysThrArgLeuPheThrIleArgGlnGluMetAlaSerArgGlyLeuTrpAspSer#PheVa
+ 521 : CAAAACCAGGCTGTTCACTATAAGGCAGGAAATGGCCAGTAGGGGTCTATGGGATTCCTTTCGT : 584
+
+ 193 : lSerProLysGluAlaLysLysGlnLeuLysLysAspLeuLysSerGlnGluProCysAlaGly : 213
+       |||||||!:!|||||||||!:!||||||||||||||||||||||||||||||||||||||||||
+       lSerProArgGluAlaLysArgGlnLeuLysLysAspLeuLysSerGlnGluProCysAlaGly
+ 585 : CAGTCCGAGAGAGGCGAAGAGACAGTTGAAGAAAGATTTGAAATCACAGGAACCATGCGCAGGC : 647
+
+ 214 : LeuProThrLysValSerHisArgThrSerProAlaLeuLysThrLeuGluProMetTrpMetA : 235
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       LeuProThrLysValSerHisArgThrSerProAlaLeuLysThrLeuGluProMetTrpMetA
+ 648 : TTGCCGACCAAAGTCTCCCACCGAACTTCTCCAGCCTTGAAAACTTTAGAGCCTATGTGGATGG : 713
+
+ 236 : spSerAsnArgThrAlaAlaLeuArgAlaSerPheLeuLysCysGlnLysLys : 252
+       |||||||||||||||||||||||||||||||||||||||||||||||||||||
+       spSerAsnArgThrAlaAlaLeuArgAlaSerPheLeuLysCysGlnLysLys
+ 714 : ATTCGAACCGAACGGCTGCATTGAGGGCAAGCTTTCTCAAATGTCAAAAGAAG : 766
+
+vulgar: AQW44185.1 0 252 . gi|260907760|gb|GU060481.1| 9 766 + 1202 M 190 570 F 0 1 M 62 186
+
+C4 Alignment:
+------------
+         Query: AHM24288.1 db="flua_db" gene="PA-X" shared_cds="PA" product="PA-X protein" splice_form="e573i1e123" ribosomal_slippage=Y slippage_motif="[NC]{2}[NT]{3}[NCT]" slippage_offset=1 slippage_frameshift=1 shared_cds="PA" V4_Ribosomal_Slippage="-10/+1/[BCDHKMNSTVWY][BDGKNRSV][BCDGHKMNRSTVWY][ABCDGHKMNRSVWY][ABCDGHKMNRSTVWY][ABCDGHKMNRSTVWY][ABCDGHKMNRSTVWY][ABCDHKMNRSTVWY][ABCDGHKMNRSTVWY][BCDGHKMNRSTVWY][BDHKNTWY][BCDHKMNSTVWY][ABCDHKMNRSTVWY][ABCDGHKMNRSTVWY][BCDGHKMNRSTVWY][ABCDHKMNRSTVWY][ABDGHKMNRSTVWY][ABDGHKMNRSTVWY][BCDGHKMNRSTVWY][BCDHKMNSTVWY][ABCDHKMNRSTVWY][BDGKNRSV]" length=232
+        Target: gi|260907760|gb|GU060481.1| Influenza A Virus (A/goose/Czech Republic/1848-K9/2009(H7N9)) segment 3 polymerase PA (PA) gene, complete cds
+         Model: protein2genome:local
+     Raw score: 1010
+   Query range: 0 -> 232
+  Target range: 9 -> 706
+
+   1 : MetGluAspPheValArgGlnCysPheAsnProMetIleValGluLeuAlaGluLysAlaMetL :  22
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       MetGluAspPheValArgGlnCysPheAsnProMetIleValGluLeuAlaGluLysAlaMetL
+  10 : ATGGAAGATTTTGTGCGACAATGCTTCAATCCAATGATTGTCGAGCTTGCGGAAAAGGCAATGA :  73
+
+  23 : ysGluTyrGlyGluAspProLysIleGluThrAsnLysPheAlaAlaIleCysThrHisLeuGl :  43
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       ysGluTyrGlyGluAspProLysIleGluThrAsnLysPheAlaAlaIleCysThrHisLeuGl
+  74 : AAGAATATGGGGAAGATCCGAAAATCGAAACGAACAAATTTGCCGCAATATGCACACACTTAGA : 136
+
+  44 : uValCysPheMetTyrSerAspPheHisPheIleAspGluArgGlyGluSerIleIleValGlu :  64
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       uValCysPheMetTyrSerAspPheHisPheIleAspGluArgGlyGluSerIleIleValGlu
+ 137 : GGTCTGTTTCATGTATTCGGATTTCCACTTTATTGATGAACGGGGCGAATCAATAATTGTAGAA : 199
+
+  65 : SerGlyAspProAsnAlaLeuLeuLysHisArgPheGluIleIleGluGlyArgAspArgIleM :  86
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||!  |
+       SerGlyAspProAsnAlaLeuLeuLysHisArgPheGluIleIleGluGlyArgAspArgThrM
+ 200 : TCTGGCGATCCAAATGCATTATTGAAACACCGATTTGAGATAATTGAAGGGAGAGACCGAACGA : 265
+
+  87 : etAlaTrpThrValValAsnSerIleCysAsnThrThrGlyValGluLysProLysPheLeuPr : 107
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       etAlaTrpThrValValAsnSerIleCysAsnThrThrGlyValGluLysProLysPheLeuPr
+ 266 : TGGCCTGGACAGTGGTGAATAGTATCTGCAACACCACAGGAGTCGAGAAACCTAAATTTCTCCC : 328
+
+ 108 : oAspLeuTyrAspTyrLysGluAsnArgPheIleGluIleGlyValThrArgArgGluValHis : 128
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       oAspLeuTyrAspTyrLysGluAsnArgPheIleGluIleGlyValThrArgArgGluValHis
+ 329 : AGATTTGTATGACTACAAAGAGAATCGATTCATTGAAATTGGAGTAACACGGAGGGAAGTTCAT : 391
+
+ 129 : IleTyrTyrLeuGluLysAlaAsnLysIleLysSerGluLysThrCysIleHisIleLeuSerS : 150
+       |||||||||||||||||||||||||||||||||||||||||||||  !|||||||||!!!|||!
+       IleTyrTyrLeuGluLysAlaAsnLysIleLysSerGluLysThrHisIleHisIlePheSerP
+ 392 : ATATACTATCTAGAAAAGGCCAACAAGATAAAATCAGAGAAGACACACATTCACATATTCTCAT : 457
+
+ 151 : erThrGlyGluGluMetAlaThrLysAlaGluLeuThrLeuAspAlaGluSerArgTyrArgPh : 171
+        !|||||||||||||||||||||||||||!!:! !|||||||||! !|||||||||   |||.!
+       heThrGlyGluGluMetAlaThrLysAlaAspTyrThrLeuAspGluGluSerArgAlaArgIl
+ 458 : TCACTGGAGAGGAAATGGCCACCAAAGCGGACTACACTCTTGACGAAGAGAGTAGGGCAAGAAT : 520
+
+ 172 : eLysMetArgLeuCysThrIleMetHisGlnMetAlaSerMetSerArgTrpAsnSer-PheVa : 192
+       !|||!  ||||||! !||||||! !!!.:!!|||||||||! !.!!! !|||:!!|||#|||||
+       eLysThrArgLeuPheThrIleArgGlnGluMetAlaSerArgGlyLeuTrpAspSer#PheVa
+ 521 : CAAAACCAGGCTGTTCACTATAAGGCAGGAAATGGCCAGTAGGGGTCTATGGGATTCCTTTCGT : 584
+
+ 193 : lSerProLysGluAlaMetLysGlnLeuGluGluAsnSerArgIleGlnGluLeuSerAlaSer : 213
+       |||||||!:!||||||! !!:!||||||:!!:!!:!!! !!:!  !||||||! !!!!|||.!!
+       lSerProArgGluAlaLysArgGlnLeuLysLysAspLeuLysSerGlnGluProCysAlaGly
+ 585 : CAGTCCGAGAGAGGCGAAGAGACAGTTGAAGAAAGATTTGAAATCACAGGAACCATGCGCAGGC : 647
+
+ 214 : LeuProThrLysValSerHisArgThrSerProThrLeuLysThrLeuGluProMet : 232
+       |||||||||||||||||||||||||||||||||.!!|||||||||||||||||||||
+       LeuProThrLysValSerHisArgThrSerProAlaLeuLysThrLeuGluProMet
+ 648 : TTGCCGACCAAAGTCTCCCACCGAACTTCTCCAGCCTTGAAAACTTTAGAGCCTATG : 706
+
+vulgar: AHM24288.1 0 232 . gi|260907760|gb|GU060481.1| 9 706 + 1010 M 190 570 F 0 1 M 42 126
+
+C4 Alignment:
+------------
+         Query: seg3prot2C db="flua_db" gene="PA-X" shared_cds="PA" product="PA-X protein" ribosomal_slippage=Y slippage_motif="[NC]{2}[NT]{3}[NCT]" slippage_offset=1 slippage_frameshift=1 shared_cds="PA" splice_form="e573i1e183" V4_Ribosomal_Slippage="-10/+1/[BCDHKMNSTVWY][BDGKNRSV][BCDGHKMNRSTVWY][ABCDGHKMNRSVWY][ABCDGHKMNRSTVWY][ABCDGHKMNRSTVWY][ABCDGHKMNRSTVWY][ABCDHKMNRSTVWY][ABCDGHKMNRSTVWY][BCDGHKMNRSTVWY][BDHKNTWY][BCDHKMNSTVWY][ABCDHKMNRSTVWY][ABCDGHKMNRSTVWY][BCDGHKMNRSTVWY][ABCDHKMNRSTVWY][ABDGHKMNRSTVWY][ABDGHKMNRSTVWY][BCDGHKMNRSTVWY][BCDHKMNSTVWY][ABCDHKMNRSTVWY][BDGKNRSV]" length=252
+        Target: gi|260907760|gb|GU060481.1| Influenza A Virus (A/goose/Czech Republic/1848-K9/2009(H7N9)) segment 3 polymerase PA (PA) gene, complete cds
+         Model: protein2genome:local
+     Raw score: 1208
+   Query range: 0 -> 252
+  Target range: 9 -> 766
+
+   1 : MetGluAspPheValArgGlnCysPheAsnProMetIleValGluLeuAlaGluLysThrMetL :  22
+       |||||||||||||||||||||||||||||||||||||||||||||||||||||||||.!!||||
+       MetGluAspPheValArgGlnCysPheAsnProMetIleValGluLeuAlaGluLysAlaMetL
+  10 : ATGGAAGATTTTGTGCGACAATGCTTCAATCCAATGATTGTCGAGCTTGCGGAAAAGGCAATGA :  73
+
+  23 : ysGluTyrGlyGluAspLeuLysIleGluThrAsnLysPheAlaAlaIleCysThrHisLeuGl :  43
+       |||||||||||||||||! !||||||||||||||||||||||||||||||||||||||||||||
+       ysGluTyrGlyGluAspProLysIleGluThrAsnLysPheAlaAlaIleCysThrHisLeuGl
+  74 : AAGAATATGGGGAAGATCCGAAAATCGAAACGAACAAATTTGCCGCAATATGCACACACTTAGA : 136
+
+  44 : uValCysPheMetTyrSerAspPheHisPheIleAsnGluGlnGlyGluSerIleIleValGlu :  64
+       ||||||||||||||||||||||||||||||||||:!!|||!:!|||||||||||||||||||||
+       uValCysPheMetTyrSerAspPheHisPheIleAspGluArgGlyGluSerIleIleValGlu
+ 137 : GGTCTGTTTCATGTATTCGGATTTCCACTTTATTGATGAACGGGGCGAATCAATAATTGTAGAA : 199
+
+  65 : LeuGlyAspProAsnAlaLeuLeuLysHisArgPheGluIleIleGluGlyArgAspArgThrM :  86
+       ! !|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       SerGlyAspProAsnAlaLeuLeuLysHisArgPheGluIleIleGluGlyArgAspArgThrM
+ 200 : TCTGGCGATCCAAATGCATTATTGAAACACCGATTTGAGATAATTGAAGGGAGAGACCGAACGA : 265
+
+  87 : etAlaTrpThrValValAsnSerIleCysAsnThrThrGlyAlaGluLysProLysPheLeuPr : 107
+       |||||||||||||||||||||||||||||||||||||||||!.!||||||||||||||||||||
+       etAlaTrpThrValValAsnSerIleCysAsnThrThrGlyValGluLysProLysPheLeuPr
+ 266 : TGGCCTGGACAGTGGTGAATAGTATCTGCAACACCACAGGAGTCGAGAAACCTAAATTTCTCCC : 328
+
+ 108 : oAspLeuTyrAspTyrLysGluAsnArgPheIleGluIleGlyValThrArgArgGluValHis : 128
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       oAspLeuTyrAspTyrLysGluAsnArgPheIleGluIleGlyValThrArgArgGluValHis
+ 329 : AGATTTGTATGACTACAAAGAGAATCGATTCATTGAAATTGGAGTAACACGGAGGGAAGTTCAT : 391
+
+ 129 : IleTyrTyrLeuGluLysAlaAsnLysIleLysSerGluLysThrHisIleHisIlePheSerP : 150
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       IleTyrTyrLeuGluLysAlaAsnLysIleLysSerGluLysThrHisIleHisIlePheSerP
+ 392 : ATATACTATCTAGAAAAGGCCAACAAGATAAAATCAGAGAAGACACACATTCACATATTCTCAT : 457
+
+ 151 : heThrGlyGluGluMetAlaThrLysAlaAspTyrThrLeuAspGluGluSerArgAlaArgIl : 171
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       heThrGlyGluGluMetAlaThrLysAlaAspTyrThrLeuAspGluGluSerArgAlaArgIl
+ 458 : TCACTGGAGAGGAAATGGCCACCAAAGCGGACTACACTCTTGACGAAGAGAGTAGGGCAAGAAT : 520
+
+ 172 : eLysThrArgLeuPheThrIleArgGlnGluMetAlaSerArgGlyLeuTrpAsp-ProPheVa : 192
+       |||||||||||||||||||||||||||||||||||||||||||||||||||||||#||||||||
+       eLysThrArgLeuPheThrIleArgGlnGluMetAlaSerArgGlyLeuTrpAsp#ProPheVa
+ 521 : CAAAACCAGGCTGTTCACTATAAGGCAGGAAATGGCCAGTAGGGGTCTATGGGATTCCTTTCGT : 584
+
+ 193 : lSerProArgGluGluLysArgGlnLeuLysLysGlyLeuLysSerGlnGluGlnCysAlaSer : 213
+       |||||||||||||! !||||||||||||||||||! !|||||||||||||||! !||||||.!!
+       lSerProArgGluAlaLysArgGlnLeuLysLysAspLeuLysSerGlnGluProCysAlaGly
+ 585 : CAGTCCGAGAGAGGCGAAGAGACAGTTGAAGAAAGATTTGAAATCACAGGAACCATGCGCAGGC : 647
+
+ 214 : LeuProThrLysValSerArgArgThrSerProAlaLeuLysIleLeuGluProMetTrpMetA : 235
+       ||||||||||||||||||!.!|||||||||||||||||||||! !|||||||||||||||||||
+       LeuProThrLysValSerHisArgThrSerProAlaLeuLysThrLeuGluProMetTrpMetA
+ 648 : TTGCCGACCAAAGTCTCCCACCGAACTTCTCCAGCCTTGAAAACTTTAGAGCCTATGTGGATGG : 713
+
+ 236 : spSerAsnArgThrAlaThrLeuArgAlaSerCysLeuLysCysProLysLys : 252
+       |||||||||||||||||.!!||||||||||||! !|||||||||! !||||||
+       spSerAsnArgThrAlaAlaLeuArgAlaSerPheLeuLysCysGlnLysLys
+ 714 : ATTCGAACCGAACGGCTGCATTGAGGGCAAGCTTTCTCAAATGTCAAAAGAAG : 766
+
+vulgar: seg3prot2C 0 252 . gi|260907760|gb|GU060481.1| 9 766 + 1208 M 189 567 F 0 1 M 63 189
+
+C4 Alignment:
+------------
+         Query: seg3prot2A gene="PA-X" shared_cds="PA" product="PA-X protein" splice_form="e573i1e183" ribosomal_slippage=Y slippage_motif="[NC]{2}[NT]{3}[NCT]" slippage_offset=1 slippage_frameshift=1 db="flua_db" V4_Ribosomal_Slippage="-10/+1/[BCDHKMNSTVWY][BDGKNRSV][BCDGHKMNRSTVWY][ABCDGHKMNRSVWY][ABCDGHKMNRSTVWY][ABCDGHKMNRSTVWY][ABCDGHKMNRSTVWY][ABCDHKMNRSTVWY][ABCDGHKMNRSTVWY][BCDGHKMNRSTVWY][BDHKNTWY][BCDHKMNSTVWY][ABCDHKMNRSTVWY][ABCDGHKMNRSTVWY][BCDGHKMNRSTVWY][ABCDHKMNRSTVWY][ABDGHKMNRSTVWY][ABDGHKMNRSTVWY][BCDGHKMNRSTVWY][BCDHKMNSTVWY][ABCDHKMNRSTVWY][BDGKNRSV]" length=252
+        Target: gi|260907760|gb|GU060481.1| Influenza A Virus (A/goose/Czech Republic/1848-K9/2009(H7N9)) segment 3 polymerase PA (PA) gene, complete cds
+         Model: protein2genome:local
+     Raw score: 1205
+   Query range: 0 -> 252
+  Target range: 9 -> 766
+
+   1 : MetGluAspPheValArgGlnCysPheAsnProMetIleValGluLeuAlaGluLysThrMetL :  22
+       |||||||||||||||||||||||||||||||||||||||||||||||||||||||||.!!||||
+       MetGluAspPheValArgGlnCysPheAsnProMetIleValGluLeuAlaGluLysAlaMetL
+  10 : ATGGAAGATTTTGTGCGACAATGCTTCAATCCAATGATTGTCGAGCTTGCGGAAAAGGCAATGA :  73
+
+  23 : ysGluTyrGlyGluAspLeuLysIleGluThrAsnLysPheAlaAlaIleCysThrHisLeuGl :  43
+       |||||||||||||||||! !||||||||||||||||||||||||||||||||||||||||||||
+       ysGluTyrGlyGluAspProLysIleGluThrAsnLysPheAlaAlaIleCysThrHisLeuGl
+  74 : AAGAATATGGGGAAGATCCGAAAATCGAAACGAACAAATTTGCCGCAATATGCACACACTTAGA : 136
+
+  44 : uValCysPheMetTyrSerAspPheHisPheIleAsnGluGlnGlyGluSerIleIleValGlu :  64
+       ||||||||||||||||||||||||||||||||||:!!|||!:!|||||||||||||||||||||
+       uValCysPheMetTyrSerAspPheHisPheIleAspGluArgGlyGluSerIleIleValGlu
+ 137 : GGTCTGTTTCATGTATTCGGATTTCCACTTTATTGATGAACGGGGCGAATCAATAATTGTAGAA : 199
+
+  65 : LeuGlyAspProAsnAlaLeuLeuLysHisArgPheGluIleIleGluGlyArgAspArgThrM :  86
+       ! !|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       SerGlyAspProAsnAlaLeuLeuLysHisArgPheGluIleIleGluGlyArgAspArgThrM
+ 200 : TCTGGCGATCCAAATGCATTATTGAAACACCGATTTGAGATAATTGAAGGGAGAGACCGAACGA : 265
+
+  87 : etAlaTrpThrValValAsnSerIleCysAsnThrThrGlyAlaGluLysProLysPheLeuPr : 107
+       |||||||||||||||||||||||||||||||||||||||||!.!||||||||||||||||||||
+       etAlaTrpThrValValAsnSerIleCysAsnThrThrGlyValGluLysProLysPheLeuPr
+ 266 : TGGCCTGGACAGTGGTGAATAGTATCTGCAACACCACAGGAGTCGAGAAACCTAAATTTCTCCC : 328
+
+ 108 : oAspLeuTyrAspTyrLysGluAsnArgPheIleGluIleGlyValThrArgArgGluValHis : 128
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       oAspLeuTyrAspTyrLysGluAsnArgPheIleGluIleGlyValThrArgArgGluValHis
+ 329 : AGATTTGTATGACTACAAAGAGAATCGATTCATTGAAATTGGAGTAACACGGAGGGAAGTTCAT : 391
+
+ 129 : IleTyrTyrLeuGluLysAlaAsnLysIleLysSerGluLysThrHisIleHisIlePheSerP : 150
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       IleTyrTyrLeuGluLysAlaAsnLysIleLysSerGluLysThrHisIleHisIlePheSerP
+ 392 : ATATACTATCTAGAAAAGGCCAACAAGATAAAATCAGAGAAGACACACATTCACATATTCTCAT : 457
+
+ 151 : heThrGlyGluGluMetAlaThrLysAlaAspTyrThrLeuAspGluGluSerArgAlaArgIl : 171
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       heThrGlyGluGluMetAlaThrLysAlaAspTyrThrLeuAspGluGluSerArgAlaArgIl
+ 458 : TCACTGGAGAGGAAATGGCCACCAAAGCGGACTACACTCTTGACGAAGAGAGTAGGGCAAGAAT : 520
+
+ 172 : eLysThrArgLeuPheThrIleArgGlnGluMetAlaSerArgGlyLeuTrpAspSer-PheVa : 192
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||#|||||
+       eLysThrArgLeuPheThrIleArgGlnGluMetAlaSerArgGlyLeuTrpAspSer#PheVa
+ 521 : CAAAACCAGGCTGTTCACTATAAGGCAGGAAATGGCCAGTAGGGGTCTATGGGATTCCTTTCGT : 584
+
+ 193 : lSerProArgGluGluLysArgGlnLeuLysLysGlyLeuLysSerGlnGluGlnCysAlaSer : 213
+       |||||||||||||! !||||||||||||||||||! !|||||||||||||||! !||||||.!!
+       lSerProArgGluAlaLysArgGlnLeuLysLysAspLeuLysSerGlnGluProCysAlaGly
+ 585 : CAGTCCGAGAGAGGCGAAGAGACAGTTGAAGAAAGATTTGAAATCACAGGAACCATGCGCAGGC : 647
+
+ 214 : LeuProThrLysValSerArgArgThrSerProAlaLeuLysIleLeuGluProMetTrpMetA : 235
+       ||||||||||||||||||!.!|||||||||||||||||||||! !|||||||||||||||||||
+       LeuProThrLysValSerHisArgThrSerProAlaLeuLysThrLeuGluProMetTrpMetA
+ 648 : TTGCCGACCAAAGTCTCCCACCGAACTTCTCCAGCCTTGAAAACTTTAGAGCCTATGTGGATGG : 713
+
+ 236 : spSerAsnArgThrAlaThrLeuArgAlaSerCysLeuLysCysProLysLys : 252
+       |||||||||||||||||.!!||||||||||||! !|||||||||! !||||||
+       spSerAsnArgThrAlaAlaLeuArgAlaSerPheLeuLysCysGlnLysLys
+ 714 : ATTCGAACCGAACGGCTGCATTGAGGGCAAGCTTTCTCAAATGTCAAAAGAAG : 766
+
+vulgar: seg3prot2A 0 252 . gi|260907760|gb|GU060481.1| 9 766 + 1205 M 190 570 F 0 1 M 62 186
+
+C4 Alignment:
+------------
+         Query: seg3prot2B gene="PA-X" shared_cds="PA" product="PA-X protein" splice_form="e573i1e123" ribosomal_slippage=Y slippage_motif="[NC]{2}[NT]{3}[NCT]" slippage_offset=1 slippage_frameshift=1 db="flua_db" V4_Ribosomal_Slippage="-10/+1/[BCDHKMNSTVWY][BDGKNRSV][BCDGHKMNRSTVWY][ABCDGHKMNRSVWY][ABCDGHKMNRSTVWY][ABCDGHKMNRSTVWY][ABCDGHKMNRSTVWY][ABCDHKMNRSTVWY][ABCDGHKMNRSTVWY][BCDGHKMNRSTVWY][BDHKNTWY][BCDHKMNSTVWY][ABCDHKMNRSTVWY][ABCDGHKMNRSTVWY][BCDGHKMNRSTVWY][ABCDHKMNRSTVWY][ABDGHKMNRSTVWY][ABDGHKMNRSTVWY][BCDGHKMNRSTVWY][BCDHKMNSTVWY][ABCDHKMNRSTVWY][BDGKNRSV]" length=232
+        Target: gi|260907760|gb|GU060481.1| Influenza A Virus (A/goose/Czech Republic/1848-K9/2009(H7N9)) segment 3 polymerase PA (PA) gene, complete cds
+         Model: protein2genome:local
+     Raw score: 1117
+   Query range: 0 -> 232
+  Target range: 9 -> 706
+
+   1 : MetGluAspPheValArgGlnCysPheAsnProMetIleValGluLeuAlaGluLysThrMetL :  22
+       |||||||||||||||||||||||||||||||||||||||||||||||||||||||||.!!||||
+       MetGluAspPheValArgGlnCysPheAsnProMetIleValGluLeuAlaGluLysAlaMetL
+  10 : ATGGAAGATTTTGTGCGACAATGCTTCAATCCAATGATTGTCGAGCTTGCGGAAAAGGCAATGA :  73
+
+  23 : ysGluTyrGlyGluAspLeuLysIleGluThrAsnLysPheAlaAlaIleCysThrHisLeuGl :  43
+       |||||||||||||||||! !||||||||||||||||||||||||||||||||||||||||||||
+       ysGluTyrGlyGluAspProLysIleGluThrAsnLysPheAlaAlaIleCysThrHisLeuGl
+  74 : AAGAATATGGGGAAGATCCGAAAATCGAAACGAACAAATTTGCCGCAATATGCACACACTTAGA : 136
+
+  44 : uValCysPheMetTyrSerAspPheHisPheIleAsnGluGlnGlyGluSerIleIleValGlu :  64
+       ||||||||||||||||||||||||||||||||||:!!|||!:!|||||||||||||||||||||
+       uValCysPheMetTyrSerAspPheHisPheIleAspGluArgGlyGluSerIleIleValGlu
+ 137 : GGTCTGTTTCATGTATTCGGATTTCCACTTTATTGATGAACGGGGCGAATCAATAATTGTAGAA : 199
+
+  65 : LeuGlyAspProAsnAlaLeuLeuLysHisArgPheGluIleIleGluGlyArgAspArgThrM :  86
+       ! !|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       SerGlyAspProAsnAlaLeuLeuLysHisArgPheGluIleIleGluGlyArgAspArgThrM
+ 200 : TCTGGCGATCCAAATGCATTATTGAAACACCGATTTGAGATAATTGAAGGGAGAGACCGAACGA : 265
+
+  87 : etAlaTrpThrValValAsnSerIleCysAsnThrThrGlyAlaGluLysProLysPheLeuPr : 107
+       |||||||||||||||||||||||||||||||||||||||||!.!||||||||||||||||||||
+       etAlaTrpThrValValAsnSerIleCysAsnThrThrGlyValGluLysProLysPheLeuPr
+ 266 : TGGCCTGGACAGTGGTGAATAGTATCTGCAACACCACAGGAGTCGAGAAACCTAAATTTCTCCC : 328
+
+ 108 : oAspLeuTyrAspTyrLysGluAsnArgPheIleGluIleGlyValThrArgArgGluValHis : 128
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       oAspLeuTyrAspTyrLysGluAsnArgPheIleGluIleGlyValThrArgArgGluValHis
+ 329 : AGATTTGTATGACTACAAAGAGAATCGATTCATTGAAATTGGAGTAACACGGAGGGAAGTTCAT : 391
+
+ 129 : IleTyrTyrLeuGluLysAlaAsnLysIleLysSerGluLysThrHisIleHisIlePheSerP : 150
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       IleTyrTyrLeuGluLysAlaAsnLysIleLysSerGluLysThrHisIleHisIlePheSerP
+ 392 : ATATACTATCTAGAAAAGGCCAACAAGATAAAATCAGAGAAGACACACATTCACATATTCTCAT : 457
+
+ 151 : heThrGlyGluGluMetAlaThrLysAlaAspTyrThrLeuAspGluGluSerArgAlaArgIl : 171
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       heThrGlyGluGluMetAlaThrLysAlaAspTyrThrLeuAspGluGluSerArgAlaArgIl
+ 458 : TCACTGGAGAGGAAATGGCCACCAAAGCGGACTACACTCTTGACGAAGAGAGTAGGGCAAGAAT : 520
+
+ 172 : eLysThrArgLeuPheThrIleArgGlnGluMetAlaSerArgGlyLeuTrpAspSer-PheVa : 192
+       ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||#|||||
+       eLysThrArgLeuPheThrIleArgGlnGluMetAlaSerArgGlyLeuTrpAspSer#PheVa
+ 521 : CAAAACCAGGCTGTTCACTATAAGGCAGGAAATGGCCAGTAGGGGTCTATGGGATTCCTTTCGT : 584
+
+ 193 : lSerProArgGluGluLysArgGlnLeuLysLysGlyLeuLysSerGlnGluGlnCysAlaSer : 213
+       |||||||||||||! !||||||||||||||||||! !|||||||||||||||! !||||||.!!
+       lSerProArgGluAlaLysArgGlnLeuLysLysAspLeuLysSerGlnGluProCysAlaGly
+ 585 : CAGTCCGAGAGAGGCGAAGAGACAGTTGAAGAAAGATTTGAAATCACAGGAACCATGCGCAGGC : 647
+
+ 214 : LeuProThrLysValSerArgArgThrSerProAlaLeuLysIleLeuGluProMet : 232
+       ||||||||||||||||||!.!|||||||||||||||||||||! !||||||||||||
+       LeuProThrLysValSerHisArgThrSerProAlaLeuLysThrLeuGluProMet
+ 648 : TTGCCGACCAAAGTCTCCCACCGAACTTCTCCAGCCTTGAAAACTTTAGAGCCTATG : 706
+
+vulgar: seg3prot2B 0 232 . gi|260907760|gb|GU060481.1| 9 706 + 1117 M 190 570 F 0 1 M 42 126
+-- completed exonerate analysis

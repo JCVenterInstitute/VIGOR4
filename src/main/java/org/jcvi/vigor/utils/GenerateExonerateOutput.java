@@ -16,7 +16,6 @@ import org.jcvi.vigor.component.VirusGenome;
 
 
 public class GenerateExonerateOutput {
-	
 		
 	public static String queryExonerate(VirusGenome virusGenome, String referenceDB,
 			String workspace,String proteinID,String exoneratePath) {

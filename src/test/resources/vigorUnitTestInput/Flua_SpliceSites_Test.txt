@@ -1,0 +1,50 @@
+Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR4/VigorWorkSpace/db_temp.fasta -t /home/snettem/git/VIGOR4/VigorWorkSpace/sequence_temp.fasta --showcigar true]
+Hostname: [snettem-VirtualBox]
+
+C4 Alignment:
+------------
+         Query: seg8prot2A db="flua_db" gene="NEP" shared_cds="NS1" intron_size=450-550 product="nuclear export protein" gene_synonym="NS2" splice_form="e30i471e333" spliced=Y length=121
+        Target: gi|307141877|gb|HQ244419.1| Influenza A Virus (A/goose/Czech Republic/1848-T14/2009(H7N9)) segment 8 nuclear export protein (NEP) and nonstructural protein 1 (NS1) genes, complete cds
+         Model: protein2genome:local
+     Raw score: 558
+   Query range: 0 -> 121
+  Target range: 11 -> 846
+
+   1 : MetAspSerAsnThrValSerSerPheGln  >>>> Target Intron 1 >>>>  AspIl :  12
+       ||||||||||||||||||||||||||||||            472 bp           |||||
+       MetAspSerAsnThrValSerSerPheGln++                         ++AspIl
+  12 : ATGGATTCCAACACTGTGTCAAGCTTTCAGgt.........................agGACAT : 517
+
+  13 : eLeuLeuArgMetSerLysMetGlnLeuGlySerSerSerGluGlyLeuAsnGlyMetIleThr :  33
+       ||||:!!||||||||||||||||||||||||||||||||||||! !||||||||||||||||||
+       eLeuMetArgMetSerLysMetGlnLeuGlySerSerSerGluAspLeuAsnGlyMetIleThr
+ 518 : ACTGATGAGGATGTCAAAAATGCAATTGGGGTCCTCATCGGAGGACTTGAATGGAATGATAACA : 580
+
+  34 : GlnPheGluSerLeuLysIleTyrArgAspSerLeuGlyGluAlaValMetArgMetGlyAspL :  55
+       ||||||||||||||||||:!!|||||||||||||||||||||||||||||||||||||||||||
+       GlnPheGluSerLeuLysLeuTyrArgAspSerLeuGlyGluAlaValMetArgMetGlyAspL
+ 581 : CAGTTCGAGTCTCTGAAACTCTACAGAGATTCGCTTGGAGAAGCAGTAATGAGGATGGGAGACC : 646
+
+  56 : euHisLeuLeuGlnAsnArgAsnGlyLysTrpArgGluGlnLeuGlyGlnLysPheGluGluIl :  76
+       |||||! !||||||!:!|||||||||||||||||||||||||||.!!|||||||||||||||||
+       euHisSerLeuGlnSerArgAsnGlyLysTrpArgGluGlnLeuSerGlnLysPheGluGluIl
+ 647 : TCCACTCCCTCCAAAGCAGAAACGGAAAATGGCGAGAACAATTGAGTCAGAAGTTTGAAGAGAT : 709
+
+  77 : eArgTrpLeuIleGluGluValArgHisArgLeuArgThrThrGluAsnSerPheGluGlnIle :  97
+       ||||||||||||||||||||||||||||||||||!:!! !||||||||||||||||||||||||
+       eArgTrpLeuIleGluGluValArgHisArgLeuLysIleThrGluAsnSerPheGluGlnIle
+ 710 : AAGATGGCTGATTGAAGAAGTGCGACATCGATTGAAAATTACAGAGAACAGCTTCGAACAGATT : 772
+
+  98 : ThrPheMetGlnAlaLeuGlnLeuLeuPheGluValGluGlnGluIleArgThrPheSerPheG : 119
+       |||||||||||||||||||||||||||.!!||||||||||||||||||||||||||||||||||
+       ThrPheMetGlnAlaLeuGlnLeuLeuLeuGluValGluGlnGluIleArgThrPheSerPheG
+ 773 : ACGTTTATGCAAGCCTTACAACTATTGCTTGAAGTAGAGCAAGAGATAAGAACTTTCTCGTTTC : 838
+
+ 120 : lnLeuIle : 121
+       ||||||||
+       lnLeuIle
+ 839 : AGCTTATT : 846
+
+cigar: seg8prot2A 0 121 . gi|307141877|gb|HQ244419.1| 11 846 + 558  M 30 D 472 M 333
+vulgar: seg8prot2A 0 121 . gi|307141877|gb|HQ244419.1| 11 846 + 558 M 10 30 5 0 2 I 0 468 3 0 2 M 111 333
+-- completed exonerate analysis

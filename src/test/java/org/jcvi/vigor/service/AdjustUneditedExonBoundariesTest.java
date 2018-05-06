@@ -20,6 +20,7 @@ import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.utils.VigorTestUtils;
 import org.jcvi.vigor.utils.VigorUtils;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,23 +40,23 @@ public class AdjustUneditedExonBoundariesTest {
     @Autowired
     private AdjustUneditedExonBoundaries adjustUneditedExonBoundaries;
 
+
+
+
     @Test
     public void adjustSpliceSitesTest() throws CloneNotSupportedException, VigorException {
         ClassLoader classLoader = VigorTestUtils.class.getClassLoader();
-        File file = new File(classLoader.getResource("vigorUnitTestInput/Flua_SpliceSites_Test.fasta"). getFile());
+        File virusGenomeSeqFile = new File(classLoader.getResource("vigorUnitTestInput/Flua_SpliceSites_Test.fasta"). getFile());
+        File alignmentOutput = new File(classLoader.getResource("vigorUnitTestInput/Flua_SpliceSites_Test.txt"). getFile());
         String referenceDB = classLoader.getResource("vigorResources/data3/flua_db").getFile().toString();
         assertTrue("couldn't find reference DB", referenceDB != null);
-        String proteinID = "seg8prot2A";
-
-        logger.info("using fasta file {} and reference database {}", file, referenceDB);
-        List<Alignment> alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(),
-                referenceDB ,
-                VigorUtils.getVigorWorkSpace(),
-                proteinID);
+        logger.info("using alignmentOutput file {} and reference database {}", alignmentOutput, referenceDB);
+        List<Alignment> alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile,
+                referenceDB,alignmentOutput);
         for (int i=0; i<alignments.size(); i++) {
             alignments.set(i,viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm()));
         }
-        logger.info("found {} alignments for protein {}", alignments.size(), proteinID);
+        logger.info("found {} alignments for protein {}", alignments.size());
         List<Model> models = alignments.stream()
                                        .flatMap(x -> modelGenerationService.alignmentToModels(x, "exonerate").stream())
                                        .collect(Collectors.toList());

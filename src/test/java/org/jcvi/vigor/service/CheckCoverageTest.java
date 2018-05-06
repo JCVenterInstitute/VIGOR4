@@ -34,7 +34,7 @@ public class CheckCoverageTest {
     private CheckCoverage checkCoverage;
 
 
-    @Test
+    /*@Test
     public void test(){
         ProteinSequence querySeq = new ProteinSequenceBuilder("MSLLTEVETYTLSIIPSGPLKAEIARRRRRQRLEDVFAGKNADLEALMEWIKTRPILSPLTKGILGFVFTLTVPSERGLQRRRFVQNALNGNGDPNNMDKAVKLYKKLKREMTFHGAKEVALSYSTGALASCMGLIYNRMGTVTAEGALGLVCATCEQIADAQHRSHRQMATTTNPLIRHENRMVLASTTAKAMEQMAGSSEQAAEAMEVASQAR").build();
         System.out.println("Length of the string is "+querySeq.getLength());
@@ -61,7 +61,7 @@ public class CheckCoverageTest {
         double percentCoverage = (coverage/querySeq.getLength())*100;
         System.out.println("%coverage "+percentCoverage);
         // coverage : max of sub , query alignment length;
-    }
+    }*/
 
     @Test
     public void determineHomologyTest(){

@@ -110,7 +110,7 @@ public class DetermineStart implements DetermineGeneFeatures {
 			isSequenceMissing = true;
 			start = 0;
 		}
-		end = start+windowSize;
+		end = expectedStart+windowSize;
 		if(end>firstExon.getRange().getEnd()){
 		    end = firstExon.getRange().getEnd();
         }

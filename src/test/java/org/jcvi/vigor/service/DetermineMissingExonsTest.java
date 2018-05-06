@@ -48,14 +48,18 @@ public class DetermineMissingExonsTest {
 	@Test
 	public void findMissingExonsWithSpliceFormPresent() throws VigorException {
 		ClassLoader classLoader = VigorTestUtils.class.getClassLoader();
-		File file = new File(classLoader.getResource("vigorUnitTestInput/sequence_flua.fasta"). getFile());
-		List<Alignment> alignments = VigorTestUtils.getAlignments(file.getAbsolutePath(),"flua_db",
-				VigorUtils.getVigorWorkSpace(),null);
+		File virusGenomeSeqFile = new File(classLoader.getResource("vigorUnitTestInput/sequence_flua.fasta"). getFile());
+        File alignmentOutput = new File(classLoader.getResource("vigorUnitTestInput/sequence_flua_alignmentTest.txt"). getFile());
+        String referenceDB = classLoader.getResource("vigorResources/data3/flua_db").getFile().toString();
+		List<Alignment> alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile,referenceDB,
+                alignmentOutput);
 		List<Model> models = new ArrayList<>();
-		for (int i=0;i<alignments.size();i++) {
-			alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm()));
-		}
-		models.addAll(modelGenerationService.alignmentToModels(alignments.get(0), "exonerate"));
+        for (int i=0; i<alignments.size(); i++) {
+            alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm()));
+        }
+        alignments.stream().forEach(x -> {
+            models.addAll(modelGenerationService.alignmentToModels(x, "exonerate"));
+        });
 		assertTrue(String.format("Expected at least 1 model, got %s", models.size()), 1 >= models.size());
 		Model model = models.get(0);
 		assertTrue(String.format("Expected models %s to have at least 2 exons, got %s", model, model.getExons().size()),

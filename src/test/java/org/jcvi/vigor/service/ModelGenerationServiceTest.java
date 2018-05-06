@@ -36,24 +36,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 @ContextConfiguration(classes = Application.class)
 public class ModelGenerationServiceTest {
 
-	private List<Alignment> alignments;
 	@Autowired
 	private ModelGenerationService modelGenerationService;
-	@Autowired
-	private ExonerateService exonerateService;
-	private ClassLoader classLoader = VigorTestUtils.class.getClassLoader();
-	private File file = new File(classLoader.getResource("vigorUnitTestInput/exonerate_flua.txt"). getFile());
-	@Test
-	public void alignmentToModelsTest() throws VigorException {
-
-		VigorForm form = new VigorForm();
-		String referenceDB = Paths.get(form.getConfiguration().get(ConfigurationParameters.ReferenceDatabasePath), "flua_db").toString();
-		alignments = exonerateService.parseExonerateOutput(file, new AlignmentEvidence("flua_db"), new VirusGenome(), referenceDB);
-		Alignment alignment = alignments.get(0);
-		List<Model> outputModels = modelGenerationService.alignmentToModels(alignment, "exonerate");
-		assertEquals(1, outputModels.size());
-
-	}
 
 	@Test
 	public void splitModelAtSequenceGapsTest() throws CloneNotSupportedException {
