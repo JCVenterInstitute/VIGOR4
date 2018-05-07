@@ -53,7 +53,7 @@ public class GeneModelGenerationService {
 		processedModels.stream().forEach(model -> evaluateScores.evaluate(model, form));
 		if(processedModels.size()<=0){
             LOGGER.error("No gene models found. Currently Vigor4 does not support annotating Partial or Pseudogenes ");
-            System.exit(0);
+			return Collections.EMPTY_LIST;
         }
         List<Model> geneModels = filterGeneModels(processedModels);
         FormatVigorOutput.printSequenceFeatures(geneModels);
@@ -98,11 +98,10 @@ public class GeneModelGenerationService {
        geneModel.setGeneID(geneID+"."+x);
        geneModels.add(geneModel);
        filteredModels.remove(geneModel);
-       if(geneModel.getAlignment().getViralProtein().getGeneAttributes().getStructuralSpecifications().getShared_cds()!=null){
-           List<String> sharedCDSList = geneModel.getAlignment().getViralProtein().getGeneAttributes().getStructuralSpecifications().getShared_cds();
+       List<String> sharedCDSList = geneModel.getAlignment().getViralProtein().getGeneAttributes().getStructuralSpecifications().getShared_cds();
+       if(! (sharedCDSList ==null || filteredModels.isEmpty()) ){
            for(String sharedCDS : sharedCDSList){
-               double totalScore=0;
-               for(int j=filteredModels.size()-1;j<filteredModels.size();j--){
+               for(int j=filteredModels.size()-1;j >= 0; j--){
                  Model model = filteredModels.get(j);
                    if(model.getGeneSymbol().equals(sharedCDS)){
                        x++;

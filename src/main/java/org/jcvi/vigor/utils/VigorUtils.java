@@ -15,6 +15,7 @@ import org.springframework.core.io.ClassPathResource;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.regex.Pattern;
 
 
 public class VigorUtils {
@@ -24,7 +25,7 @@ public class VigorUtils {
 	private static String WINDOWS = "windows";
 	private static String LINUX = "linux";
 
-
+	private static Pattern hypPattern = Pattern.compile("^HYP\\b");
 
 	public static boolean isNullOrEmpty(Object value) {
 		if (value != null && !value.toString().trim().equalsIgnoreCase(""))
@@ -165,6 +166,42 @@ public class VigorUtils {
 
 	public static String removeQuotes(String in) {
 		return in.replaceAll("^\"|\"$","");
+	}
+
+	public static String nameToLocus(String name, String prefix, boolean isPseudoGene) {
+		if (prefix == null || prefix.isEmpty()) {
+			return null;
+		}
+		String symbol = name;
+		if (isPseudoGene || hypPattern.matcher(symbol).find()) {
+			symbol = symbol.replace("-","p");
+		} else {
+			symbol = symbol.replace("-[0-9].*$","");
+		}
+		symbol = symbol.replace("[^a-zA-Z0-9-]","");
+		return prefix + symbol;
+	}
+
+	public static String putativeName(String name, boolean truncated3p, boolean truncated5p) {
+		String putativeName = name;
+		if (! name.contains("putative")) {
+			putativeName = "putative " + name;
+		}
+		if (truncated3p && truncated5p) {
+			return putativeName + ", fragment";
+		} else if (truncated3p) {
+			return putativeName + ", N-terminal";
+		} else if (truncated5p) {
+			return putativeName + ", C-terminal";
+		} else {
+			return name;
+		}
+	}
+
+	public static double configValueToPercent(String configValue) {
+		double val = Double.parseDouble(configValue);
+		// TODO limits?
+		return val/100.0d;
 	}
 
 }

@@ -1,16 +1,21 @@
 package org.jcvi.vigor.service;
 
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.*;
 
 import java.io.File;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.service.exception.ServiceException;
+import org.jcvi.vigor.utils.ConfigurationParameters;
+import org.jcvi.vigor.utils.VigorConfiguration;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.jcvi.jillion.core.Range;
@@ -36,18 +41,25 @@ public class AdjustViralTricksTest {
     private ViralProteinService viralProteinService;
     @Autowired
     private AdjustViralTricks adjustViralTricks;
+    @Autowired
+    private VigorInitializationService initializationService;
+
     private ClassLoader classLoader = VigorTestUtils.class.getClassLoader();
 
     @Test
     public void adjustRibosomalSlippageTest() throws VigorException, CloneNotSupportedException {
+        VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
+        String referenceDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
+        assertThat("reference database path must be set", referenceDBPath, is(notNullValue()));
+        String referenceDB = Paths.get(referenceDBPath, "flua_db").toString();
+
         List<Alignment> alignments;
         List<Model> models=new ArrayList<Model>();
         File virusGenomeSeqFile = new File(classLoader.getResource("vigorUnitTestInput/Flua_RiboSlippage_Test.fasta"). getFile());
         File alignmentOutput = new File(classLoader.getResource("vigorUnitTestInput/Flua_RiboSlippage_Test.txt"). getFile());
-        String referenceDB = classLoader.getResource("vigorResources/data3/flua_db").getFile().toString();
-        alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile,referenceDB,alignmentOutput);
+        alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile,referenceDB,alignmentOutput, config);
         for (int i=0; i< alignments.size(); i++) {
-            alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm()));
+            alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm(config)));
         }
         alignments = modelGenerationService.mergeIdenticalProteinAlignments(alignments);
         alignments.stream().forEach(x -> {
@@ -61,14 +73,18 @@ public class AdjustViralTricksTest {
 
     @Test
     public void checkForLeakyStopTest() throws VigorException {
+        VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
+        String referenceDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
+        assertThat("reference database path must be set", referenceDBPath, is(notNullValue()));
+        String referenceDB = Paths.get(referenceDBPath, "veev_db").toString();
+
         List<Alignment> alignments;
         List<Model> models=new ArrayList<Model>();
         File virusGenomeSeqFile = new File(classLoader.getResource("vigorUnitTestInput/Veev_StopTranslationEx_Test.fasta"). getFile());
         File alignmentOutout = new File(classLoader.getResource("vigorUnitTestInput/Veev_StopTranslationEx_Test.txt"). getFile());
-        String referenceDB = classLoader.getResource("vigorResources/data3/veev_db").getFile().toString();
-        alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile,referenceDB,alignmentOutout);
+        alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile,referenceDB,alignmentOutout,config);
         for (int i=0; i<alignments.size(); i++) {
-            alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm()));
+            alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm(config)));
         }
         alignments = modelGenerationService.mergeIdenticalProteinAlignments(alignments);
         alignments.stream().forEach(x -> {
@@ -76,21 +92,26 @@ public class AdjustViralTricksTest {
         });
         Model testModel = models.get(0);
         Model outputModel = adjustViralTricks.checkForLeakyStop(testModel);
-       Range actual = outputModel.getReplaceStopCodonRange();
+        Range actual = outputModel.getReplaceStopCodonRange();
         assertEquals(Range.of(5226,5228),actual);
     }
 
 
+    @Ignore("mmp database not yet validated for vigor 4")
     @Test
     public void adjustRNAEditingTest() throws VigorException, CloneNotSupportedException{
+
+        VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
+        String referenceDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
+        assertThat("reference database path must be set", referenceDBPath, is(notNullValue()));
+        String referenceDB = Paths.get(referenceDBPath, "mmp_db").toString();
         List<Alignment> alignments;
         List<Model> models=new ArrayList<Model>();
         File virusGenomeSeqFile = new File(classLoader.getResource("vigorUnitTestInput/mmp_rna_editing_Test.fasta"). getFile());
         File alignmentOutput = new File(classLoader.getResource("vigorUnitTestInput/mmp_rna_editing_Test.txt"). getFile());
-        String referenceDB = classLoader.getResource("vigorResources/data3/mmp_db").getFile().toString();
-        alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile,referenceDB,alignmentOutput);
+        alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile,referenceDB,alignmentOutput,config);
         for (int i=0; i<alignments.size(); i++) {
-            alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm()));
+            alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm(config)));
         }
         alignments = modelGenerationService.mergeIdenticalProteinAlignments(alignments);
         alignments.stream().forEach(x -> {

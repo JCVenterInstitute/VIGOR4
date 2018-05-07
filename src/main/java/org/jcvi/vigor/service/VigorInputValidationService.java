@@ -5,7 +5,6 @@ import net.sourceforge.argparse4j.impl.Arguments;
 import net.sourceforge.argparse4j.inf.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.core.tools.picocli.CommandLine;
 import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -77,7 +76,7 @@ public class VigorInputValidationService {
 					  .dest(CommandLineParameters.referenceDB)
 					  .action(Arguments.storeConst())
 					  .setConst("any")
-					  .help("auto-select the reference database, equivalent to '-d any ', default behavior unless overridden by -d or -G, (-A is a synonym for this option)");
+					  .help("auto-select the reference database, equivalent to '-d any ', default behavior unless overridden by -d or -G, (-A is a synonym for this option). This feature is not yet implemented");
 		referenceGroup.addArgument("-A")
 					  .dest(CommandLineParameters.referenceDB)
 					  .action(Arguments.storeConst())
@@ -98,14 +97,14 @@ public class VigorInputValidationService {
 					  .metavar("<genback file>")
 					  .dest(CommandLineParameters.genbankDB)
 					  .action(Arguments.store())
-					  .help("use a genbank file as the reference database, caution: VIGOR genbank parsing is fairly rudimentary and many genbank files are unparseable.  Partial genes will be ignored. Note: genbank files do not record enough information to handle RNA editing");
+					  .help("use a genbank file as the reference database, caution: VIGOR genbank parsing is fairly rudimentary and many genbank files are unparseable.  Partial genes will be ignored. Note: genbank files do not record enough information to handle RNA editing. This feature is not yet implemented.");
 
 		// TODO what are acceptable values for this
 		parser.addArgument("-e", "--evalue")
 			  .action(Arguments.store())
 			  .type(Integer.class)
 			  .dest(CommandLineParameters.eValue)
-			  .help("<evalue>, override the default evalue used to identify potential genes, the default is usually 1E-5, but varies by reference database");
+			  .help("override the default evalue used to identify potential genes, the default is usually 1E-5, but varies by reference database");
 
 		// TODO add validation
 		parser.addArgument("-c", "--min-coverage")
@@ -114,19 +113,19 @@ public class VigorInputValidationService {
 			  .help("minimum coverage of reference product (0-100) required to report a gene, by default coverage is ignored");
 
 		parser.addArgument("-C", "--complete")
-				   .help("complete (linear) genome (do not treat edges as gaps)")
+				   .help("complete (linear) genome (do not treat edges as gaps). This feature is currently unimplemented")
 				   .dest(CommandLineParameters.completeGene)
 				   .action(Arguments.storeTrue());
 		parser.addArgument("-0", "--circular")
 				   .dest(CommandLineParameters.circularGene)
-				   .help("complete circular genome (allows gene to span origin)")
+				   .help("complete circular genome (allows gene to span origin). This feature is currently unimplemented")
 				   .action(Arguments.storeTrue());
 		parser.addArgument("-f", "--frameshift-sensitivity")
 			  .action(Arguments.store())
 			  .dest(CommandLineParameters.frameshiftSensitivity)
 			  .choices("0","1","2")
 			  .setDefault("1")
-			  .help("frameshift sensitivity, 0=ignore frameshifts, 1=normal (default), 2=sensitive");
+			  .help("frameshift sensitivity, 0=ignore frameshifts, 1=normal (default), 2=sensitive. ");
 
 		parser.addArgument("-K", "--skip-candidate-selection")
 			  .choices("0", "1")
@@ -138,21 +137,26 @@ public class VigorInputValidationService {
 		MutuallyExclusiveGroup locusGroup = parser.addMutuallyExclusiveGroup("locus tag usage");
 		// use storeConst rather than storeTrue to avoid automatically setting a default value
 		locusGroup.addArgument("-l", "--no-locus-tags")
-				  .dest(CommandLineParameters.useLocusTags)
+				  .dest(CommandLineParameters.locusTag)
 				  .action(Arguments.storeConst())
-				  .setConst(true)
+				  .setConst("")
 				  .help("do NOT use locus_tags in TBL file output (incompatible with -L)");
 		locusGroup.addArgument("-L", "--locus-tags")
-				  .dest(CommandLineParameters.useLocusTags)
-				  .action(Arguments.storeConst())
-				  .setConst(false)
-				  .help("USE locus_tags in TBL file output (incompatible with -l)");
+				  .dest(CommandLineParameters.locusTag)
+				  .action(Arguments.store())
+				  .nargs("?")
+				  // default is used when the option is not present
+				  .setDefault("vigor_")
+				  // const is used when the option is present, but no argument is passed
+				  .setConst("vigor_")
+				  .metavar("<locus_tag_prefix>")
+				  .help("USE locus_tags in TBL file output (incompatible with -l). If no prefix is provided, the prefix \"vigor_\" will be used.");
 
 		parser.addArgument("-P","--parameter")
 			  .action(Arguments.append())
 			  .dest(CommandLineParameters.parameters)
 			  .metavar("<parameter=value~~...~~parameter=value>")
-			  .help("~~ separated list of VIGOR parameters to override default values");
+			  .help("~~ separated list of VIGOR parameters to override default values. Use --list-config-parameters to see settable parameters.");
 		parser.addArgument("-j", "--jcvi-rules-off")
 			  .action(Arguments.storeFalse())
 			  .dest(CommandLineParameters.jcviRules)
@@ -177,7 +181,7 @@ public class VigorInputValidationService {
 			  .action(Arguments.append())
 			  .dest(CommandLineParameters.ignoreRefID)
 			  .metavar("<ref_id,...,ref_id>")
-			  .help("comma separated list of reference sequence IDs to ignore (useful when debugging a reference database)");
+			  .help("comma separated list of reference sequence IDs to ignore (useful when debugging a reference database). Not currently implemented");
 
 		parser.addArgument("--list-config-parameters")
 			  .action(new ListConfigurations())
@@ -193,6 +197,16 @@ public class VigorInputValidationService {
 			  .action(Arguments.store())
 			  .dest(CommandLineParameters.referenceDB_Path)
 			  .help("reference database path");
+
+		parser.addArgument("--virus-config")
+			  .action(Arguments.store())
+			  .dest(CommandLineParameters.virusSpecificConfig)
+			  .help("Path to virus specific configuration");
+
+		parser.addArgument("--virus-config-path")
+			  .action(Arguments.store())
+			  .dest(CommandLineParameters.virusSpecificConfigPath)
+			  .help("Path to directory containing virus specific config files.");
 
         parser.addArgument("--overwrite-output")
               .action(Arguments.storeTrue())

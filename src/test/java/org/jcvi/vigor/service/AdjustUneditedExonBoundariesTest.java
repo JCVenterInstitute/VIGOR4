@@ -2,9 +2,13 @@ package org.jcvi.vigor.service;
 
 
 import static junit.framework.TestCase.assertTrue;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
 
 import java.io.File;
+import java.nio.file.Paths;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -18,6 +22,8 @@ import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.forms.VigorForm;
+import org.jcvi.vigor.utils.ConfigurationParameters;
+import org.jcvi.vigor.utils.VigorConfiguration;
 import org.jcvi.vigor.utils.VigorTestUtils;
 import org.jcvi.vigor.utils.VigorUtils;
 import org.junit.Before;
@@ -39,24 +45,30 @@ public class AdjustUneditedExonBoundariesTest {
     private ViralProteinService viralProteinService;
     @Autowired
     private AdjustUneditedExonBoundaries adjustUneditedExonBoundaries;
+    @Autowired
+    private VigorInitializationService initializationService;
 
 
 
 
     @Test
     public void adjustSpliceSitesTest() throws CloneNotSupportedException, VigorException {
+        VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
+
         ClassLoader classLoader = VigorTestUtils.class.getClassLoader();
         File virusGenomeSeqFile = new File(classLoader.getResource("vigorUnitTestInput/Flua_SpliceSites_Test.fasta"). getFile());
         File alignmentOutput = new File(classLoader.getResource("vigorUnitTestInput/Flua_SpliceSites_Test.txt"). getFile());
-        String referenceDB = classLoader.getResource("vigorResources/data3/flua_db").getFile().toString();
+        String referenceDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
+        assertThat("reference database path must be set", referenceDBPath, is(notNullValue()));
+        String referenceDB = Paths.get(referenceDBPath, "flua_db").toString();
         assertTrue("couldn't find reference DB", referenceDB != null);
         logger.info("using alignmentOutput file {} and reference database {}", alignmentOutput, referenceDB);
         List<Alignment> alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile,
-                referenceDB,alignmentOutput);
+                referenceDB,alignmentOutput, config);
         for (int i=0; i<alignments.size(); i++) {
-            alignments.set(i,viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm()));
+            alignments.set(i,viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm(config)));
         }
-        logger.info("found {} alignments for protein {}", alignments.size());
+        logger.info("found {} alignments", alignments.size());
         List<Model> models = alignments.stream()
                                        .flatMap(x -> modelGenerationService.alignmentToModels(x, "exonerate").stream())
                                        .collect(Collectors.toList());

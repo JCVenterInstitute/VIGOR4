@@ -100,12 +100,13 @@ public class DetermineStartAndStopTest {
 		startCodons.add(triplet3);
 		startCodons.add(triplet4);
 		List<Model> outputModels = determineStart.findStart(startCodons, model, "50");
-		assertEquals(2,outputModels.size());
+		assertEquals("Expected 2 models, but got " + outputModels.size(), 2,outputModels.size());
 	}
 
 	@Test
 	public void findStop() throws CloneNotSupportedException{
 		List<Model> models = determineStop.findStop(model);
+		assertEquals("Expected 2 models, but got " +models.size(), 2, models.size());
 		assertEquals(2,models.size());
 		//stop codons in frame with the last exon are at 928,952;
 		assertEquals(954,models.get(0).getExons().get(model.getExons().size()-1).getRange().getEnd());

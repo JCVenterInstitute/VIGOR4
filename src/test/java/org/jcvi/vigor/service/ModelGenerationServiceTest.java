@@ -2,27 +2,18 @@ package org.jcvi.vigor.service;
 
 import static org.junit.Assert.assertEquals;
 
-import java.io.File;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.jcvi.jillion.core.Direction;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
-import org.jcvi.vigor.exception.VigorException;
-import org.jcvi.vigor.forms.VigorForm;
-import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.jcvi.vigor.Application;
-import org.jcvi.vigor.component.Alignment;
-import org.jcvi.vigor.component.AlignmentEvidence;
 import org.jcvi.vigor.component.AlignmentFragment;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
-import org.jcvi.vigor.component.VirusGenome;
-import org.jcvi.vigor.utils.VigorTestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;

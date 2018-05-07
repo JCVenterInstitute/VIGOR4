@@ -9,6 +9,8 @@ import org.jcvi.vigor.component.MaturePeptideMatch;
 import org.jcvi.vigor.component.ViralProtein;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.service.exception.ServiceException;
+import org.jcvi.vigor.utils.ConfigurationParameters;
+import org.jcvi.vigor.utils.VigorConfiguration;
 import org.jcvi.vigor.utils.VigorUtils;
 import org.junit.ClassRule;
 import org.junit.Rule;
@@ -28,6 +30,7 @@ import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.hasItem;
+import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
@@ -46,6 +49,8 @@ public class PeptideServiceTest {
 
     @Autowired
     private PeptideService peptideService;
+    @Autowired
+    private VigorInitializationService initializationService;
 
     private List<String[]> expected;
 
@@ -65,7 +70,10 @@ public class PeptideServiceTest {
 
         // must have atleast id, polyprotein, peptide db
         ProteinSequence protein = ProteinSequence.of(sequence);
-        // TODO fix reference
+        VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
+        String refDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
+        assertThat("Reference database path must be set", refDBPath, notNullValue());
+        String refDB = Paths.get(refDBPath, mp_ref_db).toString();
         File peptideDB = getPeptideDB(mp_ref_db);
 
         List<MaturePeptideMatch> matches = peptideService.findPeptides(protein, peptideDB);

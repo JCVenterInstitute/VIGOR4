@@ -15,6 +15,7 @@ import org.jcvi.jillion.fasta.aa.ProteinFastaRecord;
 import org.jcvi.vigor.component.MaturePeptideMatch;
 import org.jcvi.vigor.component.ViralProtein;
 import org.jcvi.vigor.service.exception.ServiceException;
+import org.jcvi.vigor.utils.SequenceUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,22 +41,9 @@ public class PeptideService implements PeptideMatchingService {
     private static final long MAX_GAP = 15L;
     private static Pattern productPattern = Pattern.compile("product\\s*=\\s*\"?(?<product>.*)\"?\\b");
     private static Logger LOGGER = LogManager.getLogger(PeptideService.class);
-
-    private static class Scores {
-        final double minidentity;
-        final double mincoverage;
-        final double minsimilarity;
-
-        public Scores(double minidentity, double mincoverage, double minsimilarity) {
-            this.minidentity = minidentity;
-            this.mincoverage = mincoverage;
-            this.minsimilarity = minsimilarity;
-        }
-
-        public static Scores of(double identity, double coverage, double similarity) {
-            return new Scores(identity, coverage, similarity);
-        }
-    }
+    private static double DEFAULT_MIN_IDENTITY = 0.25d;
+    private static double DEFAULT_MIN_COVERAGE = 0.50d;
+    private static double DEFAULT_MIN_SIMILARITY = 0.40d;
 
 
     private static class PeptideMatch {
@@ -137,9 +125,11 @@ public class PeptideService implements PeptideMatchingService {
 
     @Override
     public List<MaturePeptideMatch> findPeptides(ProteinSequence protein, File peptideDatabase) throws ServiceException {
-        return findPeptides(protein, peptideDatabase, Scores.of(0.25d, .40d, .50d));
+        return findPeptides(protein, peptideDatabase,
+                Scores.of(DEFAULT_MIN_IDENTITY, DEFAULT_MIN_COVERAGE, DEFAULT_MIN_SIMILARITY));
     }
 
+    @Override
     public List<MaturePeptideMatch> findPeptides(ProteinSequence protein, File peptideDatabase, Scores minscores) throws ServiceException {
 
         // filter
@@ -265,9 +255,9 @@ public class PeptideService implements PeptideMatchingService {
         Range currentRange = current.getProteinRange();
         LOGGER.debug("adjusting edges for\n[{}-{}] {}\n[{}-{}] {}",
                 previousRange.getBegin(), previousRange.getEnd(),
-                prev.getProtein().toBuilder().trim(previousRange),
+                SequenceUtils.elipsedSequenceString(prev.getProtein().toBuilder().trim(previousRange).build(),30,30),
                 currentRange.getBegin(), currentRange.getEnd(),
-                current.getProtein().toBuilder().trim(currentRange)
+                SequenceUtils.elipsedSequenceString(current.getProtein().toBuilder().trim(currentRange).build(), 30, 30)
                 );
 
         PeptideProfile previousReferenceProfile = PeptideProfile.profileFromSequence(prev.getReference().getSequence());
@@ -280,7 +270,7 @@ public class PeptideService implements PeptideMatchingService {
         if (previousEnd >= currentBegin) {
             // Overlap
             start = currentBegin - 1;
-            end = previousEnd;
+            end = Math.min(currentRange.getEnd(), previousEnd);
         } else {
             // Gap
             start = previousEnd;
@@ -295,6 +285,7 @@ public class PeptideService implements PeptideMatchingService {
         double testScore = 0;
         for (; start <= end; start++) {
             // profile and score new sequences
+            LOGGER.debug("checking {}-{} and {}-{}", previousRange.getBegin(),start, start+1, currentRange.getEnd());
             testPreviousRange = previousRange.toBuilder().setEnd(start).build();
             testCurrentRange = currentRange.toBuilder().setBegin(start+1).build();
             // now we need the sequence for the new test ranges
@@ -363,7 +354,6 @@ public class PeptideService implements PeptideMatchingService {
         );
     }
 
-    // TODO this will be for scoring proteins when adjusting edges
     private double scorePeptideByProfile(ProteinSequence peptide, PeptideProfile referenceProfile) {
         return scoreProfile(PeptideProfile.profileFromSequence(peptide), referenceProfile);
     }
@@ -394,7 +384,7 @@ public class PeptideService implements PeptideMatchingService {
 
     Stream<PeptideMatch> getAlignments(ProteinSequence protein, File peptideDatabase) throws IOException {
 
-        LOGGER.info("finding alignments in {} for seq {}", peptideDatabase, protein);
+        LOGGER.info("finding alignments in {} for seq {}", peptideDatabase, SequenceUtils.elipsedSequenceString(protein, 40,20));
 
         ProteinFastaFileDataStore peptideDataStore = ProteinFastaFileDataStore.fromFile(peptideDatabase);
         // TODO configurable gap penalties and blosum matrix

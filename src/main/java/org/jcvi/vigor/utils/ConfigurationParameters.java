@@ -58,12 +58,13 @@ public enum ConfigurationParameters {
     StartCodonSearchWindow("start_codon_search_window", "Number of nucleotides before and after a candidate site to check for a start codon"),
     StopCodonSearchWindow("stop_codon_search_window", "Number of nucleotides before and after a candidate site to check for a stop codon"),
 
-    UseLocustags("use_locus_tags", "Include locus tags in output", Flags.VERSION_3, Flags.VERSION_4),
+    Locustag("locus_tag", "Include locus tags in output", Flags.VERSION_3, Flags.VERSION_4),
 
     AAOverlap_offset("AAOverlap_offset", ""),
     NTOverlap_offset("NTOverlap_offset", ""),
 
-    VirusSpecificConfigurationPath("virusSpecific_parameters","Directory containing virus specific configurations. TODO change configuration to path",Flags.VERSION_4);
+    VirusSpecificConfiguration("virusSpecific_config", "Path to virus specific configuration file.", Flags.VERSION_4),
+    VirusSpecificConfigurationPath("virusSpecific_config_path","Directory containing virus specific configurations.",Flags.VERSION_4);
 
     static final Map<String, ConfigurationParameters> byConfigKey;
     static {

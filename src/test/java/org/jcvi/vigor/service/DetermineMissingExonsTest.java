@@ -1,11 +1,13 @@
 package org.jcvi.vigor.service;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.*;
 
 import java.io.File;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.jcvi.jillion.align.AminoAcidSubstitutionMatrix;
 import org.jcvi.jillion.align.BlosumMatrices;
@@ -19,7 +21,8 @@ import org.jcvi.jillion.core.residue.aa.ProteinSequenceBuilder;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
 import org.jcvi.vigor.exception.VigorException;
-import org.jcvi.vigor.service.exception.ServiceException;
+import org.jcvi.vigor.utils.ConfigurationParameters;
+import org.jcvi.vigor.utils.VigorConfiguration;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.jcvi.vigor.Application;
@@ -43,27 +46,33 @@ public class DetermineMissingExonsTest {
 	private DetermineMissingExons determineMissingExons ;
 	@Autowired
 	private ViralProteinService viralProteinService ;
-
+	@Autowired
+	private VigorInitializationService initializationService;
 
 	@Test
 	public void findMissingExonsWithSpliceFormPresent() throws VigorException {
+		VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
+
 		ClassLoader classLoader = VigorTestUtils.class.getClassLoader();
+
 		File virusGenomeSeqFile = new File(classLoader.getResource("vigorUnitTestInput/sequence_flua.fasta"). getFile());
         File alignmentOutput = new File(classLoader.getResource("vigorUnitTestInput/sequence_flua_alignmentTest.txt"). getFile());
-        String referenceDB = classLoader.getResource("vigorResources/data3/flua_db").getFile().toString();
+		String refDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
+		assertThat("Reference database path must be set", refDBPath, is(notNullValue()));
+		String referenceDB = Paths.get(refDBPath, "flua_db").toString();
+
 		List<Alignment> alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile,referenceDB,
-                alignmentOutput);
+                alignmentOutput, config);
+
 		List<Model> models = new ArrayList<>();
         for (int i=0; i<alignments.size(); i++) {
-            alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm()));
+            alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm(config)));
         }
-        alignments.stream().forEach(x -> {
-            models.addAll(modelGenerationService.alignmentToModels(x, "exonerate"));
-        });
+		models.addAll(modelGenerationService.alignmentToModels(alignments.get(0), "exonerate"));
 		assertTrue(String.format("Expected at least 1 model, got %s", models.size()), 1 >= models.size());
 		Model model = models.get(0);
 		assertTrue(String.format("Expected models %s to have at least 2 exons, got %s", model, model.getExons().size()),
-				2 >= model.getExons().size());
+				2 <=model.getExons().size());
 		model.getExons().remove(1);
 		int exons = determineMissingExons.findMissingExons(model).getExons().size();
 		assertEquals(2, exons);
