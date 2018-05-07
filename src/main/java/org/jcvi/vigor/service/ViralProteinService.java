@@ -348,36 +348,6 @@ public class ViralProteinService {
             if (matcher.find()) {
                 deflineAttributes.add(matcher.group(0));
             }
-
-/*
-			pattern = Pattern.compile("(ribosomal_slippage=[Yy])");
-			matcher = pattern.matcher(defline);
-			if (matcher.find()) {
-				deflineAttributes.add(matcher.group(0));
-			}
-			pattern = Pattern.compile("(slippage_motif=\"\\S*\")");
-			matcher = pattern.matcher(defline);
-			if (matcher.find()) {
-				deflineAttributes.add(matcher.group(0));
-			}
-			pattern = Pattern.compile("(slippage_offset=(-?\\d*))");
-			matcher = pattern.matcher(defline);
-			if (matcher.find()) {
-				deflineAttributes.add(matcher.group(0));
-			}
-			pattern = Pattern.compile("(slippage_frameshift=(-?\\d*))");
-			matcher = pattern.matcher(defline);
-			if (matcher.find()) {
-				deflineAttributes.add(matcher.group(0));
-			}
-*/
-
-            /* Parsing Translation exception attributes */
-			/*pattern = Pattern.compile("(stop_codon_readthru=[Yy](:[a-zA-Z])?)");
-			matcher = pattern.matcher(defline);
-			if (matcher.find()) {
-				deflineAttributes.add(matcher.group(0));
-			}*/
             pattern = Pattern.compile("V4_stop_codon_readthrough=\\\"(-?\\+?\\d*)/[A-Z]/(\\S*)\\\"");
             matcher = pattern.matcher(defline);
             if (matcher.find()) {
