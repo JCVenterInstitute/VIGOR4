@@ -141,15 +141,10 @@ public class Vigor {
         } catch (IOException e) {
             LOGGER.error("file problem", e);
             System.exit(1);
-        } catch (ServiceException e) {
+        } catch (VigorException e) {
             LOGGER.error(e);
             System.exit(1);
         }
-        catch(VigorException e){
-            LOGGER.error(e);
-            System.exit(1);
-        }
-
 
     }
 
