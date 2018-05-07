@@ -16,11 +16,4 @@ public class VigorException extends Exception {
 		super(message, nestedException);
 	}
 	
-	public static void printExceptionMessage(String msgName){
-		System.out.println("*******************************");
-		System.out.println("*                             *");
-		System.out.println("*       "+msgName+"           *");
-		System.out.println("*                             *");
-		System.out.println("*******************************");
-	}
 }
