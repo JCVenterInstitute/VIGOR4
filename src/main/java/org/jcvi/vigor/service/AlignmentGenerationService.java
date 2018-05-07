@@ -34,7 +34,7 @@ public class AlignmentGenerationService {
 	@Autowired
 	private ExonerateService exonerateService;
 
-	public List<Alignment> generateAlignment(VirusGenome virusGenome, VigorForm form) throws ServiceException {
+	public List<Alignment> generateAlignment(VirusGenome virusGenome, VigorForm form) throws VigorException {
 		isDebug = form.isDebug();
 		AlignmentEvidence alignmentEvidence = form.getAlignmentEvidence();
 		String alignmentTool = chooseAlignmentTool(alignmentEvidence);

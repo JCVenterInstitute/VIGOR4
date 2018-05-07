@@ -1,5 +1,6 @@
 package org.jcvi.vigor.service;
 import org.jcvi.vigor.component.*;
+import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.VigorUtils;
@@ -32,7 +33,7 @@ public class ViralProteinService {
      * @return viralProtein: For the given protein ID ViralProtein object is
      *         generated and all the properties are defined;
      */
-    public Alignment setViralProteinAttributes(Alignment alignment,VigorForm form) throws ServiceException {
+    public Alignment setViralProteinAttributes(Alignment alignment,VigorForm form) throws VigorException {
         String min_intronSize_param = form.getConfiguration().get(ConfigurationParameters.IntronMinimumSize);
         if(VigorUtils.is_Integer(min_intronSize_param)){
             min_intron_length=Integer.parseInt(min_intronSize_param);
@@ -51,7 +52,7 @@ public class ViralProteinService {
      * @return viralProtein object which has all the gene attributes set.
      */
 
-    public ViralProtein setGeneAttributes(ViralProtein viralProtein, VigorForm form) throws ServiceException {
+    public ViralProtein setGeneAttributes(ViralProtein viralProtein, VigorForm form) throws VigorException {
 
             GeneAttributes geneAttributes = new GeneAttributes();
             String defline = viralProtein.getDefline();
@@ -293,7 +294,6 @@ public class ViralProteinService {
             } else {
 
                 String exception = "Spliced reference missing for " + viralProtein.getProteinID();
-                System.out.println(exception);
                 LOGGER.debug(exception);
             }
         }
@@ -308,7 +308,7 @@ public class ViralProteinService {
      * @return List of attributes in the defline
      */
 
-    public List<String> parseDeflineAttributes(String defline) {
+    public List<String> parseDeflineAttributes(String defline) throws VigorException {
         Pattern pattern;
         Matcher matcher;
         List<String> deflineAttributes = new ArrayList<String>();
@@ -443,8 +443,9 @@ public class ViralProteinService {
             }
 
         } catch (Exception e) {
-            LOGGER.error(e.getMessage(), e);
-            System.exit(0);
+            String message = String.format("Problem parsing defline %s", defline);
+            LOGGER.error(message,e);
+            throw new VigorException(message);
         }
         return deflineAttributes;
     }

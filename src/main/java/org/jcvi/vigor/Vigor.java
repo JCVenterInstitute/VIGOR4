@@ -186,7 +186,7 @@ public class Vigor {
         return initializationService.initializeVigor(args);
     }
 
-    public List<Alignment> generateAlignments(VirusGenome genome, VigorForm form) throws ServiceException{
+    public List<Alignment> generateAlignments(VirusGenome genome, VigorForm form) throws VigorException{
         return alignmentGenerationService.generateAlignment(genome, form);
     }
 
