@@ -1,6 +1,5 @@
 package org.jcvi.vigor.service;
 
-import org.jcvi.jillion.core.datastore.DataStoreException;
 import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.AlignmentEvidence;
 import org.jcvi.vigor.component.AlignmentFragment;
@@ -31,7 +30,7 @@ import java.util.Map;
  */
 
 @Service
-public class ExonerateService implements AlignmentService{
+public class ExonerateService implements AlignmentService {
 
 	private static final Logger LOGGER = LogManager.getLogger(ExonerateService.class);
 
@@ -48,9 +47,13 @@ public class ExonerateService implements AlignmentService{
 	@Override
 	public List<Alignment> getAlignment(AlignmentEvidence alignmentEvidence, VirusGenome virusGenome, String referenceDB, String workspace) throws ServiceException {
 
-		String outputFilePath = GenerateExonerateOutput.queryExonerate(virusGenome,referenceDB,workspace,null, exoneratePath.toString());
-		File outputFile = new File(outputFilePath);
-		return parseExonerateOutput(outputFile, alignmentEvidence, virusGenome, referenceDB);
+		try {
+			String outputFilePath = GenerateExonerateOutput.queryExonerate(virusGenome, referenceDB, workspace, null, exoneratePath.toString());
+			File outputFile = new File(outputFilePath);
+			return parseExonerateOutput(outputFile, alignmentEvidence, virusGenome, referenceDB);
+		} catch (VigorException e ) {
+			throw new ServiceException(String.format("error getting alignment got %s: %s", e.getClass().getSimpleName(), e.getMessage()), e);
+		}
 
 	}
 
