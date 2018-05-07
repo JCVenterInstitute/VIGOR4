@@ -74,7 +74,7 @@ public class PeptideServiceTest {
         String refDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
         assertThat("Reference database path must be set", refDBPath, notNullValue());
         String refDB = Paths.get(refDBPath, mp_ref_db).toString();
-        File peptideDB = getPeptideDB(mp_ref_db);
+        File peptideDB = getPeptideDB(refDBPath, mp_ref_db);
 
         List<MaturePeptideMatch> matches = peptideService.findPeptides(protein, peptideDB);
         LOGGER.debug(() -> String.format("peptides:%s", matches.stream().map(String::valueOf).collect(Collectors.joining("\n> ", "\n> ", ""))));
@@ -118,12 +118,12 @@ public class PeptideServiceTest {
 
     }
 
-    private File getPeptideDB(String mp_ref_db) throws VigorException {
-        URL resource = peptideService.getClass().getClassLoader().getResource(Paths.get("vigorResources","data3",mp_ref_db).toString());
-        if (resource == null) {
+    private File getPeptideDB(String referenceDBPath, String mp_ref_db) throws VigorException {
+        File peptideDB = Paths.get(referenceDBPath,mp_ref_db).toFile();
+        if (! peptideDB.exists()) {
             throw new VigorException(String.format("unable to find peptide DB for %s", mp_ref_db));
         }
-        return new File(resource.getFile());
+        return peptideDB;
     }
 
 
