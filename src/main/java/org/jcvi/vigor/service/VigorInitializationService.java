@@ -12,6 +12,7 @@ import org.jcvi.vigor.utils.*;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -217,8 +218,11 @@ public class VigorInitializationService {
 
 		String outputPath = inputs.getString(CommandLineParameters.outputPrefix);
 		File outputFile= new File(outputPath);
-		if( ! (outputFile.getParentFile().exists() &&outputFile.getParentFile().isDirectory()) ){
-			throw new VigorException(String.format("Invalid output prefix %s. Please provide an existing output directory followed by a file prefix", outputPath));
+		if (! (outputFile.getParentFile().exists() || outputFile.getParentFile().mkdirs()) ) {
+			throw new VigorException(String.format("unable to create directory %s", outputFile.getParent()));
+		}
+		if( ! (outputFile.getParentFile().exists() && outputFile.getParentFile().isDirectory()) ){
+			throw new VigorException(String.format("Invalid output prefix %s. Please provide a directory followed by a file prefix", outputPath));
 		}
 		commandLineConfig.put(ConfigurationParameters.OutputPrefix,outputFile.getName());
 		commandLineConfig.put(ConfigurationParameters.OutputDirectory,outputFile.getParentFile().getAbsolutePath());
@@ -264,8 +268,22 @@ public class VigorInitializationService {
 			LOGGER.debug("Ignoring legacy parameter evalue");
 		}
 
+		String reference_database = inputs.getString(CommandLineParameters.referenceDB);
+		if (reference_database != null) {
+			Path referenceDBPath = Paths.get(reference_database);
+			if (referenceDBPath.isAbsolute()) {
+				commandLineConfig.put(ConfigurationParameters.ReferenceDatabasePath, referenceDBPath.getParent().toString());
+			}
+		}
+
 		String reference_database_path = inputs.getString(CommandLineParameters.referenceDB_Path);
 		if (reference_database_path != null) {
+			if (! (commandLineConfig.get(ConfigurationParameters.ReferenceDatabasePath) == null ||
+					commandLineConfig.get(ConfigurationParameters.ReferenceDatabasePath) == reference_database_path)) {
+				throw new VigorException(String.format("conflicting reference database paths db path %s reference db file %s",
+						reference_database_path,
+						reference_database));
+			}
 			commandLineConfig.put(ConfigurationParameters.ReferenceDatabasePath, reference_database_path);
 		}
 
