@@ -50,23 +50,15 @@ public class Model implements Cloneable{
 	   }
 	   model.setStatus(statusCopy);
 	   model.setScores(scoresCopy);
+	   return model;
+   }
 
-	/*  
-	   
-	   try {
-	     ByteArrayOutputStream baos = new ByteArrayOutputStream();
-	     ObjectOutputStream oos = new ObjectOutputStream(baos);
-	     oos.writeObject(model);
-	     ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
-	     ObjectInputStream ois = new ObjectInputStream(bais);
-	     return (Model)(ois.readObject());
+   public Range getRange() {
+	   List<Exon> exons = getExons();
+	   if (! exons.isEmpty()) {
+		   return Range.of(exons.get(0).getRange().getBegin(),
+				   exons.get(exons.size() - 1).getRange().getEnd());
 	   }
-	   catch (Exception e) {
-	     e.printStackTrace();
-	     return null;
-	   }
-	 }*/
-return model;
-
-}
+	   return Range.ofLength(0);
+   }
 }
