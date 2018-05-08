@@ -105,7 +105,9 @@ public class DetermineStart implements DetermineGeneFeatures {
 		long expectedStart = firstExon.getRange().getBegin()
 					- ((firstExon.getAlignmentFragment().getProteinSeqRange()
 							.getBegin()) * 3);
-			start = expectedStart - windowSize;
+		expectedStart = expectedStart >= 0 ? expectedStart : 0;
+
+		start = expectedStart - windowSize;
 		if (start < 0) {
 			isSequenceMissing = true;
 			start = 0;
