@@ -163,6 +163,9 @@ public class VigorInitializationService {
 
 		String virusSpecificConfig = getConfigValue(ConfigurationParameters.VirusSpecificConfiguration, configurations);
 		String virusSpecificConfigPath = getConfigValue(ConfigurationParameters.VirusSpecificConfigurationPath, configurations);
+		if (virusSpecificConfigPath == null || virusSpecificConfigPath.isEmpty()) {
+			virusSpecificConfigPath = reference_db_dir;
+		}
 		VigorConfiguration defaultConfiguration = configurations.get(0);
 		String referenceDBName = Paths.get(reference_db).getFileName().toString();
 		defaultConfiguration = loadVirusSpecificParameters(defaultConfiguration, referenceDBName, virusSpecificConfigPath, virusSpecificConfig);
@@ -322,13 +325,22 @@ public class VigorInitializationService {
 	 * @return configuration : Default vigor Parameters will be overridden
 	 *         by virus specific parameters
 	 */
-	public VigorConfiguration loadVirusSpecificParameters(VigorConfiguration vigorConfiguration, String reference_db, String virusSpecificConfigPath, String virusSpecificConfig) throws VigorException {
+	public VigorConfiguration loadVirusSpecificParameters(VigorConfiguration vigorConfiguration,
+														  String reference_db,
+														  String virusSpecificConfigPath,
+														  String virusSpecificConfig) throws VigorException {
 		LOGGER.debug("checking virus specific config for reference db {}, virus specific config {}, virus specific config path {}", reference_db, virusSpecificConfig, virusSpecificConfigPath);
 		String configPath = virusSpecificConfig;
-		if (configPath == null) {
+		if (configPath == null && virusSpecificConfigPath != null) {
 			LOGGER.debug("using default virus specific config path {}", virusSpecificConfigPath);
+
 			configPath = Paths.get(virusSpecificConfigPath, reference_db + ".ini").toString();
 		}
+		if (configPath == null || configPath.isEmpty()) {
+			LOGGER.warn("virus specific config path not specified");
+			return vigorConfiguration;
+		}
+
 		File configFile = new File(configPath);
 		LOGGER.debug("virus specific config file for reference_db {} is {}", reference_db, configPath);
 		// config file was specified, but doesn't exist

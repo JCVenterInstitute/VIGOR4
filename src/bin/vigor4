@@ -11,9 +11,6 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 ROOTDIR=$(dirname "${DIR}")
 LIBDIR="${ROOTDIR}/lib"
-if [ -z ${VIGOR_VIRUSSPECIFIC_CONFIG_PATH} ]; then
-    export VIGOR_VIRUSSPECIFIC_CONFIG_PATH="${ROOTDIR}/config/virus-specific/"
-fi
 if [ -z ${VIGOR_CONFIG_FILE} ]; then
     export VIGOR_CONFIG_FILE="${ROOTDIR}/config/vigor.ini"
 fi

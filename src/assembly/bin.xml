@@ -30,14 +30,5 @@
       </includes>
     </fileSet>
 
-    <!-- virus specific configurations -->
-    <fileSet>
-      <directory>src/main/resources/vigorResources/config/virusSpecificParams/</directory>
-      <outputDirectory>config/virus-specific</outputDirectory>
-      <includes>
-        <include>*.ini</include>
-      </includes>
-    </fileSet>
-    
   </fileSets>
 </assembly>
