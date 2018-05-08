@@ -3,6 +3,7 @@ package org.jcvi.vigor;
 import net.sourceforge.argparse4j.inf.Namespace;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.datastore.DataStoreException;
 import org.jcvi.jillion.core.datastore.DataStoreProviderHint;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaDataStore;
@@ -119,6 +120,10 @@ public class Vigor {
                         LOGGER.warn("No gene models generated for sequence {}", record.getId());
                         continue;
                     }
+                    // sort by begin,end
+                    geneModels = geneModels.stream()
+                                           .sorted(Comparator.comparing(g -> g.getRange(), Range.Comparators.ARRIVAL))
+                                           .collect(Collectors.toList());
                     generateOutput(vigorParameters, geneModels, outfiles);
                     generateGFF3Output(vigorParameters, geneModels, outfiles);
                     outfiles.flush();
