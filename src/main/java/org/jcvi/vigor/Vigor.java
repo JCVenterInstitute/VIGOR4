@@ -131,7 +131,9 @@ public class Vigor {
                 }
                 generateOutput(geneModels, outfiles);
                 generateGFF3Output(geneModels, outfiles);
+
             }
+
 
         } catch (DataStoreException e) {
             LOGGER.error(String.format("problem reading input file %s", inputFileName)

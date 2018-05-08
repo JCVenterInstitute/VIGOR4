@@ -181,7 +181,7 @@ public class GenerateVigorOutput {
             String reference_db = model.getAlignment().getAlignmentEvidence().getReference_db();
             ViralProtein refProtein = model.getAlignment().getViralProtein();
             List<Exon> exons = model.getExons();
-            Range cdsRange = Range.of(exons.get(0).getRange().getBegin()+1, exons.get(exons.size() - 1).getRange().getEnd()+1);
+            Range cdsRange = Range.of(exons.get(0).getRange().getBegin() + 1, exons.get(exons.size() - 1).getRange().getEnd() + 1);
             StringBuilder defline = new StringBuilder();
             defline.append(">" + model.getGeneID());
 
@@ -192,12 +192,12 @@ public class GenerateVigorOutput {
             defline.append(" codon_start=" + cdsRange.getBegin());
             defline.append(" gene=" + refProtein.getGeneSymbol());
             defline.append(" product=" + refProtein.getProduct());
-            defline.append(" ref_db=\"" + reference_db+"\"");
-            defline.append(" ref_id=\"" + refProtein.getProteinID()+"\"");
+            defline.append(" ref_db=\"" + reference_db + "\"");
+            defline.append(" ref_id=\"" + refProtein.getProteinID() + "\"");
             bw.write(defline.toString());
             bw.newLine();
             Iterator<String> sequenceLineIter = SequenceUtils.steamOf(model.getTanslatedSeq(), 70).iterator();
-            while(sequenceLineIter.hasNext()) {
+            while (sequenceLineIter.hasNext()) {
                 bw.write(sequenceLineIter.next());
                 bw.newLine();
             }
@@ -206,31 +206,33 @@ public class GenerateVigorOutput {
             IDGenerator idGenerator = IDGenerator.of(model.getGeneID());
             ProteinSequence matchSequence;
 
-            for (MaturePeptideMatch match: model.getMaturePeptides()) {
-                defline = new StringBuilder();
-                defline.append(">" + idGenerator.next());
-                if (model.isPseudogene()) {
-                    defline.append(" pseudogene");
-                }
-                defline.append(" mat_peptide");
-                defline.append(String.format(" location=%s..%s", formatMaturePeptideRange(match)));
-                // TODO make sure this is correct
-                defline.append(String.format(" gene=\"%s\"", model.getGeneSymbol()));
-                // TODO this needs some formatting
-                defline.append(String.format(" product=\"%s\"", match.getReference().getProduct()));
-                defline.append(String.format(" ref_db=\"%s\"", model.getAlignment().getAlignmentEvidence().getMatpep_db()));
-                defline.append(String.format(" ref_id=\"%s\"", match.getReference().getProteinID()));
-                bw.write(defline.toString());
-                bw.newLine();
-
-
-                matchSequence = match.getProtein().toBuilder().trim(match.getProteinRange()).build();
-                Iterator<String> lineIter = SequenceUtils.steamOf(matchSequence, 70).iterator();
-                while(lineIter.hasNext())  {
-                    bw.write(lineIter.next());
+            if (model.getMaturePeptides()!=null && !model.getMaturePeptides().isEmpty()){
+                for (MaturePeptideMatch match : model.getMaturePeptides()) {
+                    defline = new StringBuilder();
+                    defline.append(">" + idGenerator.next());
+                    if (model.isPseudogene()) {
+                        defline.append(" pseudogene");
+                    }
+                    defline.append(" mat_peptide");
+                    defline.append(String.format(" location=%s..%s", formatMaturePeptideRange(match)));
+                    // TODO make sure this is correct
+                    defline.append(String.format(" gene=\"%s\"", model.getGeneSymbol()));
+                    // TODO this needs some formatting
+                    defline.append(String.format(" product=\"%s\"", match.getReference().getProduct()));
+                    defline.append(String.format(" ref_db=\"%s\"", model.getAlignment().getAlignmentEvidence().getMatpep_db()));
+                    defline.append(String.format(" ref_id=\"%s\"", match.getReference().getProteinID()));
+                    bw.write(defline.toString());
                     bw.newLine();
+
+
+                    matchSequence = match.getProtein().toBuilder().trim(match.getProteinRange()).build();
+                    Iterator<String> lineIter = SequenceUtils.steamOf(matchSequence, 70).iterator();
+                    while (lineIter.hasNext()) {
+                        bw.write(lineIter.next());
+                        bw.newLine();
+                    }
                 }
-            }
+        }
         }
 
 
