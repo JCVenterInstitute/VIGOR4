@@ -72,6 +72,9 @@ public class AlignmentGenerationService {
 			try {
 				String exoneratePath = form.getConfiguration().get(ConfigurationParameters.ExoneratePath);
 				LOGGER.debug("Using exonerate path {}", exoneratePath);
+				if (exoneratePath == null || exoneratePath.isEmpty()) {
+					throw new VigorException("Exonerate path is not set");
+				}
 				exonerateService.setExoneratePath(Paths.get(exoneratePath));
 				return exonerateService;
 			} catch (VigorException e) {
