@@ -165,7 +165,11 @@ public class PeptideService implements PeptideMatchingService {
                     if (Math.abs(rangeKey.getBegin() - subjectRange.getBegin()) < PROXIMITY_MAX &&
                             Math.abs(rangeKey.getEnd() - subjectRange.getEnd()) < PROXIMITY_MAX) {
                         return rangeKey;
+                        // fully contained in the range
+                    } else if (subjectRange.getBegin() >= rangeKey.getBegin() && subjectRange.getEnd() <= rangeKey.getEnd()) {
+                        return rangeKey;
                     }
+
                 }
                 ranges.add(subjectRange);
                 return subjectRange;
