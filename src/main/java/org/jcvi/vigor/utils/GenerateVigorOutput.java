@@ -200,30 +200,33 @@ public class GenerateVigorOutput {
     public void generatePEPReport(VigorConfiguration config, BufferedWriter bw, List<Model> geneModels) throws IOException {
 
         StringBuilder defline;
-        for (Model model: geneModels) {
+        for (Model model : geneModels) {
+
             writeDefline(bw, model);
             writeSequence(bw, model.getTanslatedSeq());
+
             IDGenerator idGenerator = IDGenerator.of(model.getGeneID());
 
-            for (MaturePeptideMatch match: model.getMaturePeptides()) {
-                defline = new StringBuilder();
-                defline.append(">" + idGenerator.next());
-                if (model.isPseudogene()) {
-                    defline.append(" pseudogene");
+            if (model.getMaturePeptides() != null && !model.getMaturePeptides().isEmpty()) {
+                for (MaturePeptideMatch match : model.getMaturePeptides()) {
+                    defline = new StringBuilder();
+                    defline.append(">" + idGenerator.next());
+                    if (model.isPseudogene()) {
+                        defline.append(" pseudogene");
+                    }
+                    defline.append(" mat_peptide");
+                    defline.append(String.format(" location=%s..%s", formatMaturePeptideRange(match)));
+                    // TODO make sure this is correct
+                    defline.append(String.format(" gene=\"%s\"", model.getGeneSymbol()));
+                    // TODO this needs some formatting
+                    defline.append(String.format(" product=\"%s\"", match.getReference().getProduct()));
+                    defline.append(String.format(" ref_db=\"%s\"", model.getAlignment().getAlignmentEvidence().getMatpep_db()));
+                    defline.append(String.format(" ref_id=\"%s\"", match.getReference().getProteinID()));
+                    bw.write(defline.toString());
+                    bw.newLine();
+                    writeSequence(bw, match.getProtein().toBuilder().trim(match.getProteinRange()).build());
                 }
-                defline.append(" mat_peptide");
-                defline.append(String.format(" location=%s..%s", formatMaturePeptideRange(match)));
-                // TODO make sure this is correct
-                defline.append(String.format(" gene=\"%s\"", model.getGeneSymbol()));
-                // TODO this needs some formatting
-                defline.append(String.format(" product=\"%s\"", match.getReference().getProduct()));
-                defline.append(String.format(" ref_db=\"%s\"", model.getAlignment().getAlignmentEvidence().getMatpep_db()));
-                defline.append(String.format(" ref_id=\"%s\"", match.getReference().getProteinID()));
-                bw.write(defline.toString());
-                bw.newLine();
 
-
-                writeSequence(bw, match.getProtein().toBuilder().trim(match.getProteinRange()).build());
             }
         }
     }

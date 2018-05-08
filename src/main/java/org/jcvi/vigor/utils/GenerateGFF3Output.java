@@ -25,6 +25,7 @@ public class GenerateGFF3Output {
 
 
         bw.write("##gff-version 3");
+        bw.newLine();
         for(Model geneModel : geneModels){
             int i=1;
             String geneomeSeqID = geneModel.getAlignment().getVirusGenome().getId();

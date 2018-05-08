@@ -37,10 +37,9 @@ public class GeneModelGenerationService {
     private static final Logger LOGGER = LogManager.getLogger(GeneModelGenerationService.class);
 
     public List<Model> generateGeneModel(List<Model> models, VigorForm form) throws ServiceException {
-		List<Model> partialGeneModels = new ArrayList<Model>();
 		List<Model> pseudoGenes = new ArrayList<Model>();
 		isDebug = form.isDebug();
-		List<Model> processedModels = determineGeneFeatures(models, partialGeneModels, pseudoGenes, form);
+		List<Model> processedModels = determineGeneFeatures(models, pseudoGenes, form);
 		// TODO process pseudogenes/partial genes, Not included in initial release
 
 		processedModels.stream().forEach(model -> checkCoverage.evaluate(model, form));
@@ -102,7 +101,7 @@ public class GeneModelGenerationService {
        if(! (sharedCDSList ==null || filteredModels.isEmpty()) ){
            for(String sharedCDS : sharedCDSList){
                for(int j=filteredModels.size()-1;j >= 0; j--){
-                 Model model = filteredModels.get(j);
+               	Model model = filteredModels.get(j);
                    if(model.getGeneSymbol().equals(sharedCDS)){
                        x++;
                        model.setGeneID(geneID+"."+x);
@@ -116,7 +115,7 @@ public class GeneModelGenerationService {
        return geneModels;
     }
 
-	public List<Model> determineGeneFeatures(List<Model> models, List<Model> partialGeneModels, List<Model> pseudoGenes, VigorForm form) throws ServiceException {
+	public List<Model> determineGeneFeatures(List<Model> models, List<Model> pseudoGenes, VigorForm form) throws ServiceException {
 
 		List<Model> modelsWithMissingExonsDetermined=new ArrayList<Model>();
 		List<Model> modelsAfterDeterminingStart =new ArrayList<Model>();
@@ -127,21 +126,15 @@ public class GeneModelGenerationService {
 	  				
 		/* Determine Start */
 		for (Model model: models) {
-			if (!model.isPartial5p()) {
 				List<Model> outputModels = determineStart.determine(model, form);
 				outputModels.stream().forEach(model1 -> {
-					if ((model.isPartial5p())) {
-						partialGeneModels.add(model);
-					} else if (model.isPseudogene()) {
+					 if (model.isPseudogene()) {
 						pseudoGenes.add(model1);
 					} else {
 						modelsAfterDeterminingStart.add(model1);
 					}
 
 				});
-			} else {
-				partialGeneModels.add(model);
-			}
 		};
 
 		if (isDebug) {
@@ -178,20 +171,15 @@ public class GeneModelGenerationService {
 		
 		/* Determine Stop */
 		for (Model model: modelsWithMissingExonsDetermined) {
-			if(!model.isPartial3p()){
 				List<Model> outputModels = determineStop.determine(model, form);
 				outputModels.stream().forEach(m->{
 					if(m.isPseudogene()) {
 						pseudoGenes.add(m);
-					}else if(m.isPartial3p()){
-						partialGeneModels.add(m);
 					}else{
 						modelsAfterDeterminingStop.add(m);
 					}
 				});
-			}else{
-				partialGeneModels.add(model);
-			}
+
 		}
 		if(isDebug) {
 			FormatVigorOutput.printModels(modelsAfterDeterminingStop,"Models after determining stop");
