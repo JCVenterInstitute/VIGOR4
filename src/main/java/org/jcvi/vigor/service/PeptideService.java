@@ -132,21 +132,23 @@ public class PeptideService implements PeptideMatchingService {
     @Override
     public List<MaturePeptideMatch> findPeptides(ProteinSequence protein, File peptideDatabase, Scores minscores) throws ServiceException {
 
+
         // filter
         Predicate<PeptideMatch> filterByScore = match -> {
             ProteinPairwiseSequenceAlignment alignment = match.alignment;
-            double coverage = computeCoverage(match);
-            double similiarity = computeSimilarity(match);
-            LOGGER.debug("alignment for subject {} to query {} %identity {} min %identity {} %similarity {} min %similarity {} %coverage {}  min %coverage {}",
+            Scores matchScores = getMatchScores(match);
+
+            LOGGER.debug("alignment for subject {} to query {} ({}) %ident {} min %ident {} %sim {} min %sim {} %cov {}  min %cov {}",
                     alignment.getGappedSubjectAlignment(),
                     alignment.getGappedQueryAlignment(),
-                    alignment.getPercentIdentity(), minscores.minidentity,
-                    similiarity, minscores.minsimilarity,
-                    coverage, minscores.mincoverage);
+                    match.peptide.getSequence(),
+                    alignment.getPercentIdentity(), minscores.identity,
+                    matchScores.similarity, minscores.similarity,
+                    matchScores.coverage, minscores.coverage);
 
-            return alignment.getPercentIdentity() >= minscores.minidentity &&
-                    similiarity >= minscores.minsimilarity &&
-                    coverage >= minscores.mincoverage;
+            return matchScores.identity >= minscores.identity &&
+                    matchScores.similarity >= minscores.similarity &&
+                    matchScores.coverage >= minscores.coverage;
         };
 
         try (Stream<PeptideMatch> alignments = getAlignments(protein, peptideDatabase);) {
@@ -191,7 +193,7 @@ public class PeptideService implements PeptideMatchingService {
                                            .sorted(Range.Comparators.ARRIVAL)
                                            .map((x) -> {
                                                PeptideMatch match = alignmentsByRange.get(x).stream()
-                                                                                     .max(Comparator.comparing(p -> p.alignment.getScore()))
+                                                                                     .max(Comparator.comparing(p -> {Scores s = PeptideService.getMatchScores(p); return s.coverage + s.identity + s.similarity + p.alignment.getScore();}))
                                                                                      .get();
                                                LOGGER.debug("With score {} %identity {} returning range {}\nS>{}\nQ>{}\nP>{}",
                                                        match.alignment.getScore(),
@@ -285,7 +287,6 @@ public class PeptideService implements PeptideMatchingService {
         double testScore = 0;
         for (; start <= end; start++) {
             // profile and score new sequences
-            LOGGER.debug("checking {}-{} and {}-{}", previousRange.getBegin(),start, start+1, currentRange.getEnd());
             testPreviousRange = previousRange.toBuilder().setEnd(start).build();
             testCurrentRange = currentRange.toBuilder().setBegin(start+1).build();
             // now we need the sequence for the new test ranges
@@ -293,6 +294,10 @@ public class PeptideService implements PeptideMatchingService {
             testCurrent = subjectSequence.toBuilder().trim(testCurrentRange).build();
 
             testScore = scorePeptideByProfile(testPrevious, previousReferenceProfile) + scorePeptideByProfile(testCurrent, currentReferenceProfile);
+            LOGGER.debug("checking {}-{} and {}-{} got score {}",
+                    previousRange.getBegin(),start,
+                    start+1, currentRange.getEnd(),
+                    testScore);
             if (testScore > bestScore) {
                 bestRange[0] = testPreviousRange;
                 bestRange[1] = testCurrentRange;
@@ -302,6 +307,10 @@ public class PeptideService implements PeptideMatchingService {
 
         Range bestPreviousRange = bestRange[0];
         Range bestCurrentRange = bestRange[1];
+        LOGGER.debug("best ranges after adjustment {}-{} and {}-{}",
+                bestPreviousRange.getBegin(),bestPreviousRange.getEnd(),
+                bestCurrentRange.getBegin(), bestCurrentRange.getEnd());
+
         // adjust previous and current
         prev.setProteinRange(bestPreviousRange);
         Range referenceRange = prev.getReferenceRange();
@@ -342,15 +351,14 @@ public class PeptideService implements PeptideMatchingService {
                 queryRange.getEnd() < match.peptide.getLength() - 1 ? ">" : "", subjectRange.getEnd(Range.CoordinateSystem.RESIDUE_BASED));
     }
 
-    private double computeSimilarity(PeptideMatch match) {
-        ProteinSequence querySequence = match.alignment.getGappedQueryAlignment();
-        return   ((double)(match.alignment.getAlignmentLength() - querySequence.getNumberOfGaps() - match.alignment.getNumberOfMismatches()) / (double) match.peptide.getSequence().getLength());
+    private static double computeSimilarity(ProteinSequence protein, ProteinSequence peptide, double alignmentLength, double mismatchCount) {
+        return   ((alignmentLength - protein.getNumberOfGaps() - mismatchCount) / (double) peptide.getLength());
     }
 
-    private double computeCoverage(PeptideMatch match) {
+    private static double computeCoverage(ProteinSequence protein, Range proteinRange, ProteinSequence peptide, Range peptideRange) {
         return Math.max(
-                (double) match.alignment.getQueryRange().getLength()/ (double) match.protein.getLength(),
-                (double) match.alignment.getSubjectRange().getLength() / (double) match.peptide.getSequence().getLength()
+                (double) proteinRange.getLength()/ (double) protein.getLength(),
+                (double) peptideRange.getLength() / (double) peptide.getLength()
         );
     }
 
@@ -401,5 +409,18 @@ public class PeptideService implements PeptideMatchingService {
                                );
     }
 
+    private static Scores getMatchScores(PeptideMatch match) {
+        return Scores.of(match.alignment.getPercentIdentity(),
+                computeCoverage(match.protein,
+                        match.alignment.getQueryRange().asRange(),
+                        match.peptide.getSequence(),
+                        match.alignment.getSubjectRange().asRange()),
+                computeSimilarity(match.alignment.getGappedQueryAlignment(),
+                        match.peptide.getSequence(),
+                        match.alignment.getAlignmentLength(),
+                        match.alignment.getNumberOfMismatches())
+        );
+
+    }
 
 }
