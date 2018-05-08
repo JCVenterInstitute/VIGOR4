@@ -100,7 +100,6 @@ public class PeptideServiceTest {
             matchedSequence =  match.getProtein().toBuilder().trim(match.getProteinRange()).build();
             assertThat(matchedSequence, equalTo(expectedSequence));
             assertThat(match.getReference().getProduct(), equalTo(expectedProduct));
-            assertThat(match.getReference().getProteinID(), equalTo(expectedID));
 
             current = match.getProteinRange();
             if (prev == null) {
