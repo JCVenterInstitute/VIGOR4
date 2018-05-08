@@ -85,60 +85,49 @@ public class Vigor {
                                                        e.getValue(),
                                                        vigorParameters.getWithSource(e.getKey()).orElse(unset).source))
                                                .collect(Collectors.joining("\n")) );
-        // TODO check file exists and is readable
-        // TODO check output directory and permissions
-        NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(inputFile)
-                .hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)
-                .build();
+            // TODO check file exists and is readable
+            // TODO check output directory and permissions
+            NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(inputFile)
+                    .hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)
+                    .build();
 
             // TODO move all this file handling to method
             // TODO checkout output earlier.
             String outputDir = vigorForm.getConfiguration().get(ConfigurationParameters.OutputDirectory);
             String outputPrefix = vigorForm.getConfiguration().get(ConfigurationParameters.OutputPrefix);
-            GenerateVigorOutput.Outfiles outfiles = new GenerateVigorOutput.Outfiles();
-            List<OpenOption> openOptionsList = new ArrayList<>();
-            if (vigorForm.getConfiguration().get(ConfigurationParameters.OverwriteOutputFiles) == "true") {
-                openOptionsList.add(StandardOpenOption.CREATE);
-                openOptionsList.add(StandardOpenOption.TRUNCATE_EXISTING);
-            } else {
-                openOptionsList.add(StandardOpenOption.CREATE_NEW);
-            }
+            try (GenerateVigorOutput.Outfiles outfiles = getOutfiles(outputDir,
+                    outputPrefix,
+                    vigorForm.getConfiguration().get(ConfigurationParameters.OverwriteOutputFiles) == "true")) {
 
-            OpenOption[] openOptions =  openOptionsList.toArray(new OpenOption[] {});
-            for (GenerateVigorOutput.Outfile outfile: GenerateVigorOutput.Outfile.values()) {
-                outfiles.put(outfile, Files.newBufferedWriter(Paths.get(outputDir, outputPrefix + "." + outfile.extension),
-                        Charset.forName("UTF-8"), openOptions));
-            }
+                PeptideMatchingService.Scores peptideScores = getPeptideScores(vigorParameters);
+                Iterator<NucleotideFastaRecord> i = dataStore.records().iterator();
+                while (i.hasNext()) {
+                    NucleotideFastaRecord record = i.next();
+                    VirusGenome virusGenome = new VirusGenome(record.getSequence(), record.getComment(), record.getId(),
+                            "1".equals(vigorParameters.get(ConfigurationParameters.CompleteGene)),
+                            "1".equals(vigorParameters.get(ConfigurationParameters.CircularGene)));
 
-            PeptideMatchingService.Scores peptideScores = getPeptideScores(vigorParameters);
-            Iterator<NucleotideFastaRecord> i = dataStore.records().iterator();
-            while (i.hasNext()) {
-                NucleotideFastaRecord record = i.next();
-                VirusGenome virusGenome = new VirusGenome(record.getSequence(), record.getComment(), record.getId(),
-                        "1".equals(vigorParameters.get(ConfigurationParameters.CompleteGene)),
-                        "1".equals(vigorParameters.get(ConfigurationParameters.CircularGene)));
-
-                // Call referenceDBGenerationService methods to generate alignmentEvidence.
-                List<Alignment> alignments = generateAlignments(virusGenome, vigorForm);
-                LOGGER.info("{} alignment(s) found for sequence {}", alignments.size(), record.getId());
-                List<Model> candidateModels = generateModels(alignments, vigorForm);
-                LOGGER.info("{} candidate model(s) found for sequence {}", candidateModels.size(), record.getId());
-                List<Model> geneModels = generateGeneModels(candidateModels, vigorForm);
-                LOGGER.info("{} gene model(s) found for sequence {}", geneModels.size(), record.getId());
-                geneModels = findPeptides(vigorParameters, geneModels, vigorForm);
-                if (geneModels.isEmpty()) {
-                    LOGGER.warn("No gene models generated for sequence {}", record.getId());
-                    continue;
+                    // Call referenceDBGenerationService methods to generate alignmentEvidence.
+                    List<Alignment> alignments = generateAlignments(virusGenome, vigorForm);
+                    LOGGER.info("{} alignment(s) found for sequence {}", alignments.size(), record.getId());
+                    List<Model> candidateModels = generateModels(alignments, vigorForm);
+                    LOGGER.info("{} candidate model(s) found for sequence {}", candidateModels.size(), record.getId());
+                    List<Model> geneModels = generateGeneModels(candidateModels, vigorForm);
+                    LOGGER.info("{} gene model(s) found for sequence {}", geneModels.size(), record.getId());
+                    geneModels = findPeptides(vigorParameters, geneModels, vigorForm);
+                    if (geneModels.isEmpty()) {
+                        LOGGER.warn("No gene models generated for sequence {}", record.getId());
+                        continue;
+                    }
+                    generateOutput(vigorParameters, geneModels, outfiles);
+                    generateGFF3Output(vigorParameters, geneModels, outfiles);
+                    outfiles.flush();
                 }
-                generateOutput(vigorParameters, geneModels, outfiles);
-                generateGFF3Output(vigorParameters, geneModels, outfiles);
-
             }
 
 
         } catch (DataStoreException e) {
-            LOGGER.error(String.format("problem reading input file %s", inputFileName)
-                    , e);
+            LOGGER.error(String.format("problem reading input file %s", inputFileName), e);
             System.exit(1);
         } catch (IOException e) {
             LOGGER.error("file problem", e);
@@ -208,6 +197,24 @@ public class Vigor {
     }
 
 
+    private GenerateVigorOutput.Outfiles getOutfiles(String outputDir, String outputPrefix, boolean overwrite) throws IOException {
+
+        GenerateVigorOutput.Outfiles outfiles = new GenerateVigorOutput.Outfiles();
+        List<OpenOption> openOptionsList = new ArrayList<>();
+        if (overwrite) {
+            openOptionsList.add(StandardOpenOption.CREATE);
+            openOptionsList.add(StandardOpenOption.TRUNCATE_EXISTING);
+        } else {
+            openOptionsList.add(StandardOpenOption.CREATE_NEW);
+        }
+
+        OpenOption[] openOptions = openOptionsList.toArray(new OpenOption[]{});
+            for (GenerateVigorOutput.Outfile outfile : GenerateVigorOutput.Outfile.values()) {
+                outfiles.put(outfile, Files.newBufferedWriter(Paths.get(outputDir, outputPrefix + "." + outfile.extension),
+                        Charset.forName("UTF-8"), openOptions));
+            }
+        return outfiles;
+    }
 
 }
 

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.Iterator;
 import java.util.List;
@@ -30,10 +31,32 @@ public class GenerateVigorOutput {
         }
     }
 
-    public static class Outfiles extends EnumMap<Outfile, BufferedWriter> {
+    public static class Outfiles extends EnumMap<Outfile, BufferedWriter> implements AutoCloseable {
 
         public Outfiles() {
             super(Outfile.class);
+        }
+
+        public void close() throws IOException {
+            List<IOException> exceptions = new ArrayList<>();
+            for (BufferedWriter writer: values()) {
+                try {
+                    writer.close();
+                } catch (IOException e) {
+                    exceptions.add(e);
+                }
+
+            }
+            if (! exceptions.isEmpty()) {
+                // TODO join all exceptions somehow meaningfully
+                throw exceptions.get(0);
+            }
+        }
+
+        public void flush() throws IOException{
+            for (BufferedWriter writer: values()) {
+                writer.flush();
+            }
         }
     }
 
