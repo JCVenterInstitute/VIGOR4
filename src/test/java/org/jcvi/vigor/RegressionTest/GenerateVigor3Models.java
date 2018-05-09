@@ -22,7 +22,7 @@ import org.jcvi.vigor.utils.TBLParser.TBLModel;
 public class GenerateVigor3Models {
 	private final static Logger LOGGER = LogManager.getLogger(GenerateVigor3Models.class);
 
-	public Map<String,List<Model>> generateModels(String TBLFilePath,String PEPFilePath,String fastaFilePath) throws VigorException,IOException{
+	public Map<String,List<Model>> generateModels(String TBLFilePath,String PEPFilePath,String fastaFilePath) throws IOException{
 		Map<String, List<Model>> vigor3Models = new HashMap<String, List<Model>>();
 		NucleotideFastaDataStore datastore = new NucleotideFastaFileDataStoreBuilder(new File(fastaFilePath)).build();
 		LOGGER.debug("Number of records in the fasta file are : "+ datastore.getNumberOfRecords());
@@ -54,7 +54,7 @@ public class GenerateVigor3Models {
 		LOGGER.debug(vigor3Models.entrySet().size());
 		vigor3Models.entrySet().forEach(entry -> {System.out.println("key:"+ entry.getKey()+"value:"+entry.getValue().size());
 		});
-		return vigor3Models;
+        return vigor3Models;
 	}
 
 }

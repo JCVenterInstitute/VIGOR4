@@ -53,7 +53,7 @@ public class DetermineMissingExonsTest {
 	public void findMissingExonsWithSpliceFormPresent() throws VigorException {
 		VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
 
-		ClassLoader classLoader = VigorTestUtils.class.getClassLoader();
+		ClassLoader classLoader = DetermineMissingExonsTest.class.getClassLoader();
 
 		File virusGenomeSeqFile = new File(classLoader.getResource("vigorUnitTestInput/sequence_flua.fasta"). getFile());
         File alignmentOutput = new File(classLoader.getResource("vigorUnitTestInput/sequence_flua_alignmentTest.txt"). getFile());

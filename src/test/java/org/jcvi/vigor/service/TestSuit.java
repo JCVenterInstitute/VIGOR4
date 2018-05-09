@@ -11,8 +11,7 @@ import org.junit.runners.Suite;
         DetermineMissingExonsTest.class,
         DetermineStartAndStopTest.class,
         AdjustViralTricksTest.class,
-        AdjustUneditedExonBoundariesTest.class,
-        PeptideServiceTest.class
+        AdjustUneditedExonBoundariesTest.class
 })
 public class TestSuit {
 }
