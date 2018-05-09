@@ -143,7 +143,7 @@ public class GenerateVigorOutput {
                 bw.write("\t\t\tnote\tlocation of RNA editing (" + subSeq + "," + rna_editing.getInsertionString() + ") in " + model.getAlignment().getViralProtein().getProduct() + "\n");
             }
 
-            if (!model.getMaturePeptides().isEmpty()) {
+            if (model.getMaturePeptides()!=null && !model.getMaturePeptides().isEmpty()) {
                 bw.write(">Features " + idGenerator.next());
                 bw.newLine();
                 String product;

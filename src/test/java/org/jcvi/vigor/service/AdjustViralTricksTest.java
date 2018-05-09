@@ -42,7 +42,7 @@ public class AdjustViralTricksTest {
     @Autowired
     private VigorInitializationService initializationService;
 
-    private ClassLoader classLoader = VigorTestUtils.class.getClassLoader();
+    private ClassLoader classLoader = AdjustViralTricksTest.class.getClassLoader();
 
     @Test
     public void adjustRibosomalSlippageTest() throws VigorException, CloneNotSupportedException {

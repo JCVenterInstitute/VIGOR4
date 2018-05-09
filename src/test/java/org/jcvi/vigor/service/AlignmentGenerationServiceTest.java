@@ -29,7 +29,7 @@ public class AlignmentGenerationServiceTest {
 	@Autowired
 	private VigorInitializationService initializationService;
 
-	private ClassLoader classLoader = VigorTestUtils.class.getClassLoader();
+	private ClassLoader classLoader = AlignmentGenerationServiceTest.class.getClassLoader();
 
 
 
