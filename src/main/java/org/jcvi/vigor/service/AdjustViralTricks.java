@@ -71,6 +71,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 		 // Range slippagePoint = Range.of(match.getEnd()+riboSlippage.getSlippage_offset(),match.getEnd()+riboSlippage.getSlippage_offset());
 		 //test logic(vigor3 annotation)
 		 Range slippagePoint = Range.of(match.getEnd()+riboSlippage.getSlippage_offset());
+		 newModel.setRibosomalSlippageRange(slippagePoint);
 		 for(int i=0;i<newModel.getExons().size();i++){
 			 Range exonRange = newModel.getExons().get(i).getRange();
 			 if(exonRange.intersects(slippagePoint)){
@@ -112,9 +113,9 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 				 }
 			 }
 		 }
-		
+
 		 models.add(newModel);
-		 
+
 	   }
 	   }
 	  if(models.size()==0){
@@ -202,9 +203,6 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 			 }else{
 			   scores.put("leakyStopScore", (double)leakyStopNotFoundScore);				
 			}
-			if(model.getScores()!=null){
-			    scores.putAll(model.getScores());
-            }
 			model.setScores(scores);
 		}		
 		return model;	

@@ -29,8 +29,8 @@ public class ModelGenerationService {
 	private static final Logger LOGGER = LogManager.getLogger(ModelGenerationService.class);
 
 	public List<Model> generateModels(List<Alignment> alignments, VigorForm form) throws ServiceException {
-		isDebug = form.isDebug();
 		VigorConfiguration configuration  = form.getConfiguration();
+		isDebug = configuration.get(ConfigurationParameters.Verbose).equals("true") ? true : false;
 		if(VigorUtils.is_Integer(configuration.get(ConfigurationParameters.AAOverlap_offset))){
 			AAOverlapOffset=Integer.parseInt(configuration.get(ConfigurationParameters.AAOverlap_offset));
 		}
@@ -173,6 +173,10 @@ public class ModelGenerationService {
 			    alignment.setAlignmentFragments(compatibleFragsList);
 				List<Exon> exons = determineVirusGenomeExons(compatibleFragsList);
 				Model model = new Model();
+				EnumMap<NoteType,String> notes = new EnumMap<NoteType,String>(NoteType.class);
+				model.setNotes(notes);
+				Map<String,Double> scores = new HashMap<String,Double>();
+                model.setScores(scores);
 				model.setExons(exons);
 				model.setAlignment(alignment);
 				model.setGeneSymbol(alignment.getViralProtein().getGeneSymbol());

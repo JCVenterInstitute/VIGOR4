@@ -16,10 +16,7 @@ import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.service.*;
 import org.jcvi.vigor.service.exception.ServiceException;
-import org.jcvi.vigor.utils.GenerateGFF3Output;
-import org.jcvi.vigor.utils.ConfigurationParameters;
-import org.jcvi.vigor.utils.GenerateVigorOutput;
-import org.jcvi.vigor.utils.VigorConfiguration;
+import org.jcvi.vigor.utils.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -99,7 +96,7 @@ public class Vigor {
             try (GenerateVigorOutput.Outfiles outfiles = getOutfiles(outputDir,
                     outputPrefix,
                     vigorForm.getConfiguration().get(ConfigurationParameters.OverwriteOutputFiles) == "true")) {
-
+                outfiles.get(GenerateVigorOutput.Outfile.GFF3).write("##gff-version 3");
                 PeptideMatchingService.Scores peptideScores = getPeptideScores(vigorParameters);
                 Iterator<NucleotideFastaRecord> i = dataStore.records().iterator();
                 while (i.hasNext()) {
@@ -126,6 +123,7 @@ public class Vigor {
                                            .collect(Collectors.toList());
                     generateOutput(vigorParameters, geneModels, outfiles);
                     generateGFF3Output(vigorParameters, geneModels, outfiles);
+                    FormatVigorOutput.printSequenceFeatures(geneModels,"GeneModels");
                     outfiles.flush();
                 }
             }

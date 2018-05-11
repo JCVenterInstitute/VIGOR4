@@ -2,6 +2,7 @@ package org.jcvi.vigor.RegressionTest;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.datastore.DataStoreException;
 import org.jcvi.jillion.core.datastore.DataStoreProviderHint;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaDataStore;
@@ -26,7 +27,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
-
+import java.util.stream.Collectors;
 
 
 @Service
@@ -66,6 +67,9 @@ public class GenerateVigor4GeneModels {
                    LOGGER.warn("No gene models generated for sequence {}", record.getId());
                    continue;
                }
+               geneModels = geneModels.stream()
+                       .sorted(Comparator.comparing(g -> g.getRange(), Range.Comparators.ARRIVAL))
+                       .collect(Collectors.toList());
                vigor4Models.put(virusGenome.getId(), geneModels);
 
            }

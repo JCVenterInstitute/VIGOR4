@@ -105,6 +105,7 @@ public class ValidateVigor4Models {
         isAppPackagedCorrectly(workspace);
         setAbsolutePathOfTestResource();
         config.put(ConfigurationParameters.OutputDirectory,workspace);
+        config.put(ConfigurationParameters.Verbose,"false");
         vigor4Models = generateVigor4GeneModels.generateModels(inputFasta,refDB,config);
         return vigor4Models;
     }
@@ -132,6 +133,9 @@ public class ValidateVigor4Models {
 				  List<Exon> vigor4Exons = vigor4Model.getExons();
 				  if(vigor3ProteinID.equals(vigor4ProteinID)){
 					  flag= true;
+					  if(vigor4Exons.size()!=vigor3Exons.size()){
+					      System.out.println("Break");
+                      }
 					  collector.checkThat(String.format("Exon count differs for Vigor3 & Vigor4 model with gene ID %s of VirusGenome Sequence %s",vigor3ProteinID,vigor3GenomeID),vigor4Exons.size(),equalTo(vigor3Exons.size()));
 					  for(int i=0;i<vigor3Exons.size();i++){
 					      Range temp = vigor4Exons.get(i).getRange();

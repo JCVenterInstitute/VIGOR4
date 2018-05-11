@@ -50,7 +50,6 @@ public class AdjustViralTricksTest {
         String referenceDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
         assertThat("reference database path must be set", referenceDBPath, is(notNullValue()));
         String referenceDB = Paths.get(referenceDBPath, "flua_db").toString();
-
         List<Alignment> alignments;
         List<Model> models=new ArrayList<Model>();
         File virusGenomeSeqFile = new File(classLoader.getResource("vigorUnitTestInput/Flua_RiboSlippage_Test.fasta"). getFile());
@@ -66,7 +65,8 @@ public class AdjustViralTricksTest {
         Model testModel = models.get(0);
         List<Model> outputModels = adjustViralTricks.adjustRibosomalSlippage(testModel);
         Range actual = outputModels.get(0).getExons().get(0).getRange();
-        assertEquals(Range.of(9,581),actual);
+        //581 was earlier value
+        assertEquals(Range.of(9,579),actual);
     }
 
     @Test

@@ -1,12 +1,12 @@
 package org.jcvi.vigor.service;
-import java.text.Normalizer;
 import java.util.*;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.vigor.service.exception.ServiceException;
+import org.jcvi.vigor.utils.ConfigurationParameters;
+import org.jcvi.vigor.utils.NoteType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.jcvi.vigor.component.Model;
@@ -38,7 +38,7 @@ public class GeneModelGenerationService {
 
     public List<Model> generateGeneModel(List<Model> models, VigorForm form) throws ServiceException {
 		List<Model> pseudoGenes = new ArrayList<Model>();
-		isDebug = form.isDebug();
+		isDebug = form.getConfiguration().get(ConfigurationParameters.Verbose).equals("true") ? true : false;
 		List<Model> processedModels = determineGeneFeatures(models, pseudoGenes, form);
 		// TODO process pseudogenes/partial genes, Not included in initial release
 
@@ -55,8 +55,7 @@ public class GeneModelGenerationService {
 			return Collections.EMPTY_LIST;
         }
         List<Model> geneModels = filterGeneModels(processedModels);
-        FormatVigorOutput.printSequenceFeatures(geneModels);
-     	return geneModels;
+		return geneModels;
 
 	}
 	public List<Model> filterGeneModels(List<Model> models){
@@ -81,8 +80,9 @@ public class GeneModelGenerationService {
             }
         });
        if(isDebug) {
-           FormatVigorOutput.printModels(filteredModels, "Candidate Models");
+           FormatVigorOutput.printAllGeneModelsWithScores(filteredModels,"Candidate Gene Models");
        }
+
        Model geneModel = filteredModels.get(filteredModels.size()-1);
        int x=1;
        String genomeID = geneModel.getAlignment().getVirusGenome().getId();

@@ -29,6 +29,7 @@ public enum ConfigurationParameters {
     IntronMinimumSize("min_intron_size", "Minimum sequence length of an intron", Flags.VERSION_3, Flags.VERSION_4),
 
     JCVIRules("jcvi_rules", ""),
+    Verbose("verbose","",Flags.VERSION_3,Flags.VERSION_4),
 
     MaturePeptideMinimumCoverage("mature_pep_mincoverage", "",  Flags.VERSION_3, Flags.VERSION_4),
     MaturePeptideMinimumSimilarity("mature_pep_minsimilarity", "",  Flags.VERSION_3, Flags.VERSION_4),

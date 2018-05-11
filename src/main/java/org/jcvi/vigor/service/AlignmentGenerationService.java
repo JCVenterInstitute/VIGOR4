@@ -35,7 +35,7 @@ public class AlignmentGenerationService {
 	private ExonerateService exonerateService;
 
 	public List<Alignment> generateAlignment(VirusGenome virusGenome, VigorForm form) throws VigorException {
-		isDebug = form.isDebug();
+		isDebug = form.getConfiguration().get(ConfigurationParameters.Verbose).equals("true") ? true : false;
 		AlignmentEvidence alignmentEvidence = form.getAlignmentEvidence();
 		String alignmentTool = chooseAlignmentTool(alignmentEvidence);
 		VigorConfiguration vigorConfig = form.getConfiguration();

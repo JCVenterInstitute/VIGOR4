@@ -47,6 +47,7 @@ public class GenerateVigorOutput {
                 }
 
             }
+
             if (! exceptions.isEmpty()) {
                 // TODO join all exceptions somehow meaningfully
                 throw exceptions.get(0);

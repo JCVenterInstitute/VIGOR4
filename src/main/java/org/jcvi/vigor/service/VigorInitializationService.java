@@ -5,6 +5,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.LoggerContext;
 import org.apache.logging.log4j.core.appender.FileAppender;
+import org.apache.logging.log4j.core.tools.picocli.CommandLine;
 import org.jcvi.vigor.component.AlignmentEvidence;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.forms.VigorForm;
@@ -299,6 +300,8 @@ public class VigorInitializationService {
 		if (virus_specific_path != null) {
 			commandLineConfig.put(ConfigurationParameters.VirusSpecificConfiguration, virus_specific_path);
 		}
+        commandLineConfig.put(ConfigurationParameters.Verbose,
+                inputs.getBoolean(CommandLineParameters.verbose) ? "true": "false");
 
 		configurations.add(commandLineConfig);
 

@@ -87,6 +87,43 @@ public class FormatVigorOutput {
 
 		}
 	}
+    public static void printAllGeneModelsWithScores(List<Model> geneModels,String msg){
+
+        StringBuffer content = new StringBuffer("");
+        content.append(System.lineSeparator());
+        content.append(
+                ""+msg);
+        content.append(System.lineSeparator());
+        content.append(String.format("%-32s%-10s%-10s%-10s%-10s%-10s%-10s%-30s%-10s%-10s%-20s", "Reference_ID", "%id","%sim","%cov", "%t5","%gap","%t3","start..stop","pep_sz","ref_sz","definition"));
+        content.append(System.lineSeparator());
+        for(Model model : geneModels){
+            ViralProtein viralProtein = model.getAlignment().getViralProtein();
+            Map<String,Double> scores  =  model.getScores();
+            long cdsBases =0;
+            content.append(String.format("%-32s", viralProtein.getProteinID()));
+            content.append(String.format("%-10s",String.format("%.02f",scores.get("%identity"))));
+            content.append(String.format("%-10s",String.format("%.02f",scores.get("%similarity"))));
+            content.append(String.format("%-10s",String.format("%.02f",scores.get("%coverage"))));
+            content.append(String.format("%-10s","0.0"));
+            content.append(String.format("%-10s","0.0"));
+            content.append(String.format("%-10s","0.0"));
+            for (int i=0;i<model.getExons().size();i++) {
+                Exon exon = model.getExons().get(i);
+                if(i!=0){
+                    content.append(System.lineSeparator());
+                    content.append(String.format("%-92s", ""));
+                }
+                content.append(String.format("%-30s",exon.getRange().getBegin()+".."+exon.getRange().getEnd()));
+                cdsBases=cdsBases+exon.getRange().getLength();
+            }
+            content.append(String.format("%-10s",cdsBases/3));
+            content.append(String.format("%-10s",viralProtein.getSequence().getLength()));
+            content.append(String.format("%-20s",model.getGeneSymbol() +" | " +viralProtein.getProduct()));
+            content.append(System.lineSeparator());
+        }
+        LOGGER.info(content);
+
+    }
 
 	public static void printModels2(List<Model> models,String message) {
         StringBuffer content = new StringBuffer("");
@@ -196,7 +233,7 @@ public class FormatVigorOutput {
         LOGGER.debug(content);
 	}
 
-	public static void printSequenceFeatures(List<Model> geneModels){
+	public static void printSequenceFeatures(List<Model> geneModels,String msg){
         double identityAvg=0;
         double similarityAvg=0;
         double coverageAvg=0;
@@ -206,6 +243,9 @@ public class FormatVigorOutput {
         String refDb = geneModels.get(0).getAlignment().getAlignmentEvidence().getReference_db();
         StringBuffer content = new StringBuffer("");
         content.append(System.lineSeparator());
+        content.append(
+                ""+msg);
+        content.append(System.lineSeparator());
         content.append(String.format("%-32s%-10s%-10s%-10s%-10s%-10s%-10s%-30s%-10s%-10s%-20s%-20s", "gene_id", "%id","%sim","%cov", "%t5","%gap","%t3","start..stop","pep_sz","ref_sz","ref_id","definition"));
         content.append(System.lineSeparator());
         for(Model model : geneModels){
@@ -213,23 +253,23 @@ public class FormatVigorOutput {
            Map<String,Double> scores  =  model.getScores();
            long cdsBases =0;
             content.append(String.format("%-32s", model.getGeneID()));
-            content.append(String.format("%-20s",String.format("%.02f",scores.get("%identity"))));
-            content.append(String.format("%-20s",String.format("%.02f",scores.get("%similarity"))));
-            content.append(String.format("%-20s",String.format("%.02f",scores.get("%coverage"))));
-            content.append(String.format("%-20s","0.0"));
-            content.append(String.format("%-20s","0.0"));
-            content.append(String.format("%-20s","0.0"));
+            content.append(String.format("%-10s",String.format("%.02f",scores.get("%identity"))));
+            content.append(String.format("%-10s",String.format("%.02f",scores.get("%similarity"))));
+            content.append(String.format("%-10s",String.format("%.02f",scores.get("%coverage"))));
+            content.append(String.format("%-10s","0.0"));
+            content.append(String.format("%-10s","0.0"));
+            content.append(String.format("%-10s","0.0"));
             for (int i=0;i<model.getExons().size();i++) {
                 Exon exon = model.getExons().get(i);
                 if(i!=0){
                     content.append(System.lineSeparator());
-                    content.append(String.format("%-152s", ""));
+                    content.append(String.format("%-92s", ""));
                 }
                 content.append(String.format("%-30s",exon.getRange().getBegin()+".."+exon.getRange().getEnd()));
                 cdsBases=cdsBases+exon.getRange().getLength();
             }
-            content.append(String.format("%-20s",cdsBases/3));
-            content.append(String.format("%-20s",viralProtein.getSequence().getLength()));
+            content.append(String.format("%-10s",cdsBases/3));
+            content.append(String.format("%-10s",viralProtein.getSequence().getLength()));
             content.append(String.format("%-20s",viralProtein.getProteinID()));
             content.append(String.format("%-20s",model.getGeneSymbol() +" | " +viralProtein.getProduct()));
             content.append(System.lineSeparator());
@@ -244,21 +284,21 @@ public class FormatVigorOutput {
         coverageAvg = coverageAvg/geneModels.size();
         StringBuffer contentSummary = new StringBuffer("");
         contentSummary.append(System.lineSeparator());
-        contentSummary.append(String.format("%-32s%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-20s", "Sequence", "Length","Genes","Pseudogenes", "CDS_Bases","Peptide_Bases","%Ref_Identity","%Ref_Similarity","%Ref_Coverage","Ref_DB"));
+        contentSummary.append(String.format("%-32s%-10s%-15s%-15s%-15s%-15s%-15s%-15s%-15s%-20s", "Sequence", "Length","Genes","Pseudogenes", "CDS_Bases","Peptide_Bases","%Ref_Identity","%Ref_Similarity","%Ref_Coverage","Ref_DB"));
         contentSummary.append(System.lineSeparator());
         contentSummary.append(String.format("%-32s", virusGenome.getId()));
-        contentSummary.append(String.format("%-20s", virusGenome.getSequence().getLength()));
-        contentSummary.append(String.format("%-20s",geneModels.size()));
-        contentSummary.append(String.format("%-20s","0"));
-        contentSummary.append(String.format("%-20s",totalCDSBases));
-        contentSummary.append(String.format("%-20s",totalPepBases));
-        contentSummary.append(String.format("%-20s",String.format("%.02f",identityAvg)));
-        contentSummary.append(String.format("%-20s",String.format("%.02f",similarityAvg)));
-        contentSummary.append(String.format("%-20s",String.format("%.02f",coverageAvg)));
+        contentSummary.append(String.format("%-10s", virusGenome.getSequence().getLength()));
+        contentSummary.append(String.format("%-15s",geneModels.size()));
+        contentSummary.append(String.format("%-15s","0"));
+        contentSummary.append(String.format("%-15s",totalCDSBases));
+        contentSummary.append(String.format("%-15s",totalPepBases));
+        contentSummary.append(String.format("%-15s",String.format("%.02f",identityAvg)));
+        contentSummary.append(String.format("%-15s",String.format("%.02f",similarityAvg)));
+        contentSummary.append(String.format("%-15s",String.format("%.02f",coverageAvg)));
         contentSummary.append(String.format("%-20s",refDb));
         contentSummary.append(System.lineSeparator());
-        LOGGER.debug(contentSummary);
-        LOGGER.debug(content);
+        LOGGER.info(contentSummary);
+        LOGGER.info(content);
 
     }
 

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.util.EnumMap;
 import java.util.List;
 
 @Service
@@ -24,9 +25,9 @@ public class GenerateGFF3Output {
     public void printGFF3Features(VigorConfiguration config, BufferedWriter bw, List<Model> geneModels) throws IOException{
 
 
-        bw.write("##gff-version 3");
         bw.newLine();
         for(Model geneModel : geneModels){
+            EnumMap<NoteType,String> notes = geneModel.getNotes();
             int i=1;
             String geneomeSeqID = geneModel.getAlignment().getVirusGenome().getId();
             List<Exon> exons = geneModel.getExons();
@@ -47,11 +48,11 @@ public class GenerateGFF3Output {
                 bw.write("+"+"\t");
             }else bw.write("-"+"\t");
             bw.write(exons.get(0).getFrame().getFrame()-1+"\t");
-            bw.write("ID="+geneModel.getGeneID()+","+"Name="+geneName+",");
+            bw.write("ID="+geneModel.getGeneID()+";"+"Name="+geneName+";");
             if(geneModel.isPartial3p()||geneModel.isPartial5p()){
                 bw.write("Partial"+",");
             }
-            bw.write("Note=");
+            if(notes.containsKey(NoteType.Gene)) bw.write(String.format("Note=%s;",notes.get(NoteType.Gene)));
             bw.write("\n");
             //mRNA
             bw.write(geneomeSeqID+"\t"+"vigor"+"\t");
@@ -62,17 +63,18 @@ public class GenerateGFF3Output {
                 bw.write("+"+"\t");
             }else bw.write("-"+"\t");
             bw.write(exons.get(0).getFrame().getFrame()-1+"\t");
-            bw.write("ID="+mRnaID+","+"Parent="+geneModel.getGeneID());
+            bw.write("ID="+mRnaID+";"+"Parent="+geneModel.getGeneID()+";");
             if(geneModel.isPartial3p()||geneModel.isPartial5p()){
-                bw.write(",Partial");
+                bw.write("Partial;");
             }
             bw.write("\n");
             //remark
-            bw.write(geneomeSeqID+"\t"+"vigor"+"\t");
+            /*bw.write(geneomeSeqID+"\t"+"vigor"+"\t");
             bw.write("remark"+"\t");
             bw.write(".\t.\t.\t.\t.\t");
-            bw.write("Parent="+mRnaID+",Note=");
-            bw.write("\n");
+            bw.write("Parent="+mRnaID+";");
+            bw.write("Note={};");
+            bw.write("\n");*/
 
             //exon
             IDGenerator idGenerator = new IDGenerator(mRnaID);
@@ -87,9 +89,9 @@ public class GenerateGFF3Output {
                     bw.write("+"+"\t");
                 }else bw.write("-"+"\t");
                 bw.write(exon.getFrame().getFrame()-1+"\t");
-                bw.write(String.format("ID=%s,Parent=%s",idGenerator.next(),mRnaID));
+                bw.write(String.format("ID=%s;Parent=%s;",idGenerator.next(),mRnaID));
                 if( (j==0 && geneModel.isPartial5p()) || (j==exons.size()-1 && geneModel.isPartial3p())) {
-                    bw.write(",Partial"+",");
+                    bw.write("Partial"+";");
                 }
                 bw.write("\n");
             }
@@ -102,79 +104,69 @@ public class GenerateGFF3Output {
                 bw.write("+"+"\t");
             }else bw.write("-"+"\t");
             bw.write(exons.get(0).getFrame().getFrame()-1+"\t");
-            bw.write(String.format("ID=%s,Parent=%s",idGenerator.next(), mRnaID));
+            bw.write(String.format("ID=%s;Parent=%s;",idGenerator.next(), mRnaID));
             if(geneModel.isPartial3p()||geneModel.isPartial5p()){
-                bw.write(",Partial"+",");
+                bw.write("Partial"+";");
             }
             bw.write("\n");
             //insertion
             if(geneModel.getInsertRNAEditingRange()!=null) {
                 bw.write(geneomeSeqID + "\t" + "vigor" + "\t");
                 bw.write("insertion" + "\t");
-                if (geneModel.getInsertRNAEditingRange() != null) {
-                    bw.write(Long.toString(geneModel.getInsertRNAEditingRange().getBegin()) + "\t" + Long.toString(geneModel.getInsertRNAEditingRange().getEnd()) + "\t");
-
-                } else {
-                    bw.write(".\t.\t");
-                }
+                bw.write(Long.toString(geneModel.getInsertRNAEditingRange().getBegin()) + "\t" + Long.toString(geneModel.getInsertRNAEditingRange().getEnd()) + "\t");
                 bw.write("." + "\t");
                 if (geneModel.getDirection().equals(Direction.FORWARD)) {
                     bw.write("+" + "\t");
                 } else bw.write("-" + "\t");
                 bw.write("." + "\t");
-                bw.write(String.format("ID=%s,Parent=%s,Note=%s",idGenerator.next(),mRnaID,""));
+                bw.write(String.format("ID=%s;Parent=%s;",idGenerator.next(),mRnaID));
+                if(notes.containsKey(NoteType.RNA_Editing)) bw.write(String.format("Note=%s;",notes.get(NoteType.RNA_Editing)));
+                bw.write("\n");
             }
             //Stop_codon_read_through
             if(geneModel.getReplaceStopCodonRange()!=null) {
                 bw.write(geneomeSeqID + "\t" + "vigor" + "\t");
                 bw.write("stop_codon_read_through" + "\t");
-                if (geneModel.getInsertRNAEditingRange() != null) {
-                    bw.write(Long.toString(geneModel.getReplaceStopCodonRange().getBegin()) + "\t" + Long.toString(geneModel.getReplaceStopCodonRange().getEnd()) + "\t");
-
-                } else {
-                    bw.write(".\t.\t");
-                }
+                bw.write(Long.toString(geneModel.getReplaceStopCodonRange().getBegin()) + "\t" + Long.toString(geneModel.getReplaceStopCodonRange().getEnd()) + "\t");
                 bw.write("." + "\t");
                 if (geneModel.getDirection().equals(Direction.FORWARD)) {
                     bw.write("+" + "\t");
                 } else bw.write("-" + "\t");
                 bw.write("." + "\t");
-                bw.write(String.format("ID=%s,Parent=%s,Note=%s",idGenerator.next(), mRnaID,""));
+                bw.write(String.format("ID=%s;Parent=%s;",idGenerator.next(), mRnaID));
+                if(notes.containsKey(NoteType.StopCodonReadThrough)) bw.write(String.format("Note=%s;",notes.get(NoteType.StopCodonReadThrough)));
+                bw.write("\n");
             }
             //minus_1_translationally_frameshifted
-            if(geneModel.getAlignment().getViralProtein().getGeneAttributes().getRibosomal_slippage().isHas_ribosomal_slippage()) {
+            if(geneModel.getAlignment().getViralProtein().getGeneAttributes().getRibosomal_slippage().isHas_ribosomal_slippage() && geneModel.getRibosomalSlippageRange()!=null) {
                 int frameshift = geneModel.getAlignment().getViralProtein().getGeneAttributes().getRibosomal_slippage().getSlippage_frameshift();
                 if (frameshift == -1) {
                     bw.write(geneomeSeqID + "\t" + "vigor" + "\t");
-                    bw.write("minus_1_translationally_frameshifted" + "\t");
-                    if (geneModel.getInsertRNAEditingRange() != null) {
-                        bw.write(".\t.\t");
-                    } else {
-                        bw.write(".\t.\t");
-                    }
+                    bw.write("mRNA_with_minus_1_frameshift" + "\t");
+                    bw.write(geneModel.getRibosomalSlippageRange().getBegin()+"\t"+geneModel.getRibosomalSlippageRange().getEnd()+"\t");
                     bw.write("." + "\t");
                     if (geneModel.getDirection().equals(Direction.FORWARD)) {
                         bw.write("+" + "\t");
                     } else bw.write("-" + "\t");
                     bw.write("." + "\t");
-                    bw.write(String.format("ID=%s,Parent=%s,Note=%s",idGenerator.next(), mRnaID,""));
+                    bw.write(String.format("ID=%s;Parent=%s;",idGenerator.next(), mRnaID));
+                    //bw.write("Note={};");
+                    bw.write("\n");
 
                 }
                 //plus_1_translationally_frameshifted
                 if (frameshift == 1) {
                     bw.write(geneomeSeqID + "\t" + "vigor" + "\t");
-                    bw.write("plus_1_translationally_frameshifted" + "\t");
-                    if (geneModel.getInsertRNAEditingRange() != null) {
-                        bw.write(".\t.\t");
-                    } else {
-                        bw.write(".\t.\t");
-                    }
+                    bw.write("mRNA_with_plus_1_frameshift" + "\t");
+                    bw.write(geneModel.getRibosomalSlippageRange().getBegin()+"\t"+geneModel.getRibosomalSlippageRange().getEnd()+"\t");
                     bw.write("." + "\t");
                     if (geneModel.getDirection().equals(Direction.FORWARD)) {
                         bw.write("+" + "\t");
                     } else bw.write("-" + "\t");
                     bw.write("." + "\t");
-                    bw.write(String.format("ID=%s,Parent=%s,Note=%s",idGenerator.next(), mRnaID,""));
+                    bw.write(String.format("ID=%s;Parent=%s;",idGenerator.next(), mRnaID));
+                   // bw.write("Note={};");
+                    bw.write("\n");
                 }
             }
 

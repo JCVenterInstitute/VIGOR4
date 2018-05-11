@@ -184,15 +184,9 @@ public class DetermineStart implements DetermineGeneFeatures {
 				newModel = model.clone();
 				Exon fExon = newModel.getExons().get(0);
 				fExon.setRange(Range.of(range.getBegin(),fExon.getRange().getEnd()));
-				if (model.getScores() != null) {
-				   newModel.getScores().put("startCodonScore",
+				newModel.getScores().put("startCodonScore",
                            rangeScoreMap.get(range));
-				   } else {
-					Map<String, Double> scores = new HashMap<String, Double>();
-					scores.put("startCodonScore", rangeScoreMap.get(range));
-					newModel.setScores(scores);
-				}
-				newModels.add(newModel);
+				   newModels.add(newModel);
 			}
 		}
 		if (rangeScoreMap.isEmpty() && isSequenceMissing) {

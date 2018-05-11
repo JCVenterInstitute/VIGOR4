@@ -48,7 +48,7 @@ public class TBLFileParser {
 			Pattern pattern6 = Pattern.compile("(note)([\\s*]+)(.*)");
 			Pattern pattern7 = Pattern.compile("^(\\s*)?(gene)(\\s*)(.*)$");
 			Pattern pattern9 = Pattern
-					.compile("(\\s*)?([\\d*]+)([\\s*]+)([\\d*]+)(\\s*)?$");
+					.compile("(\\s*)?([\\d*]+)([\\s*]+)(>)?([\\d*]+)(\\s*)?$");
 			Pattern pattern8 = Pattern
 					.compile("(\\s*)?([\\d*]+)([\\s*]+)(>)?([\\d*]+)(\\s*)?(gene)");
 			// TBLFragment fragment = new TBLFragment();
@@ -141,7 +141,7 @@ public class TBLFileParser {
 						exon = new Exon();
 						Range range = null;
 						range = Range.of(Long.parseLong(matcher9.group(2)),
-								Long.parseLong(matcher9.group(4)));
+								Long.parseLong(matcher9.group(5)));
 						exon.setRange(range);
 						exons.add(exon);
 					}

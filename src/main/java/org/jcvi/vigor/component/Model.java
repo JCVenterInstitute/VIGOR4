@@ -5,6 +5,7 @@ import org.jcvi.jillion.core.Direction;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.aa.ProteinSequence;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
+import org.jcvi.vigor.utils.NoteType;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import lombok.Data;
@@ -24,11 +25,13 @@ public class Model implements Cloneable{
     private boolean partial3p=false;
     private boolean isPseudogene=false;
     private Range replaceStopCodonRange;
+    private Range ribosomalSlippageRange;
     private Range insertRNAEditingRange;
     private NucleotideSequence cds;
     private ProteinSequence tanslatedSeq;
     private String geneID;
     private List<MaturePeptideMatch> maturePeptides;
+    private EnumMap<NoteType,String> notes;
 
    public Model clone() throws CloneNotSupportedException {
 	   Model model = (Model) super.clone();
@@ -48,6 +51,7 @@ public class Model implements Cloneable{
 		   statusCopy.addAll(this.status);
 
 	   }
+
 	   model.setStatus(statusCopy);
 	   model.setScores(scoresCopy);
 	   return model;
