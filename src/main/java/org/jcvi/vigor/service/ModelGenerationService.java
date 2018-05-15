@@ -100,7 +100,7 @@ public class ModelGenerationService {
 			initialModels.addAll(alignmentToModels(alignment, alignment.getAlignmentTool_name()));
 		}
 		if (isDebug) {
-			FormatVigorOutput.printModels2(initialModels,"Initial Models");
+			FormatVigorOutput.printModels(initialModels,"Initial Models");
 		}
 
 		List<Range> sequenceGaps = new ArrayList<Range>();

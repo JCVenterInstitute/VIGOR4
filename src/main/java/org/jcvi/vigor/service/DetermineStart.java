@@ -180,8 +180,8 @@ public class DetermineStart implements DetermineGeneFeatures {
 			Set<Range> keys = rangeScoreMap.keySet();
 			for (Range range : keys) {
 
-				Model newModel = new Model();
-				newModel = model.clone();
+				//Model newModel = new Model();
+				Model newModel = model.clone();
 				Exon fExon = newModel.getExons().get(0);
 				fExon.setRange(Range.of(range.getBegin(),fExon.getRange().getEnd()));
 				newModel.getScores().put("startCodonScore",
@@ -189,16 +189,23 @@ public class DetermineStart implements DetermineGeneFeatures {
 				   newModels.add(newModel);
 			}
 		}
+		//set 5' partial and extend start of the first exon to the beginning of the sequence
 		if (rangeScoreMap.isEmpty() && isSequenceMissing) {
-			Model newModel = new Model();
-			newModel = model.clone();
+			//Model newModel = new Model();
+			Model newModel = model.clone();
 			newModel.setPartial5p(true);
+			Exon fExon = newModel.getExons().get(0);
+			Range fExonRange = fExon.getRange();
+			long bases = fExonRange.getBegin()-0;
+			int frameshift = (int)bases % 3;
+			fExon.setFrame(fExon.getFrame().shift(frameshift));
+			fExon.setRange(Range.of(0,fExonRange.getEnd()));
 			newModels.add(newModel);
 			//System.out.println("Sequence is missin. No Start found. Partial gene "+newModel.getAlignment().getViralProtein().getProteinID());
 
 		} else if (rangeScoreMap.isEmpty()) {
-			Model newModel = new Model();
-			newModel = model.clone();
+			//Model newModel = new Model();
+			Model newModel = model.clone();
 			newModel.setPseudogene(true);
 			newModels.add(newModel);	
 			//System.out.println("Pseudogene. No Start found. "+newModel.getAlignment().getViralProtein().getProteinID());

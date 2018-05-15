@@ -27,11 +27,12 @@ public class DetermineStop implements DetermineGeneFeatures {
 	private static final Logger LOGGER = LogManager
 			.getLogger(DetermineStop.class);
 	long stopCodonWindow = 50;
+	boolean isDebug = false;
 
 	@Override
 	public List<Model> determine(Model model, VigorForm form) throws ServiceException {
-		List<Model> models = null;
 		String stopCodonWindowParam = form.getConfiguration().get(ConfigurationParameters.StopCodonSearchWindow);
+		isDebug = form.getConfiguration().get(ConfigurationParameters.Verbose).equals("true") ? true : false;
 		if (VigorUtils.is_Integer(stopCodonWindowParam)) {
 			stopCodonWindow = Integer.parseInt(stopCodonWindowParam);
 		}
@@ -105,8 +106,8 @@ public class DetermineStop implements DetermineGeneFeatures {
 		if (!(rangeScoreMap.isEmpty() && rangeScoreMap.size()>0)) {
 			Set<Range> keys = rangeScoreMap.keySet();
 			for (Range range : keys) {
-				Model newModel = new Model();
-				newModel = model.clone();
+				//Model newModel = new Model();
+				Model newModel = model.clone();
 				List<Exon> newExons = newModel.getExons();
 				Exon lExon = newExons.get(newExons.size()-1);
 				lExon.setRange(Range.of(lExon.getRange().getBegin(),range.getBegin()+2));
@@ -117,15 +118,20 @@ public class DetermineStop implements DetermineGeneFeatures {
 		}
 		}
 		if (rangeScoreMap.isEmpty() && isSequenceMissing) {
-			Model newModel = new Model();
-			newModel = model.clone();
+			//Model newModel = new Model();
+			Model newModel = model.clone();
 			newModel.setPartial3p(true);
+            Exon lExon = newModel.getExons().get(newModel.getExons().size()-1);
+            Range lExonRange = lExon.getRange();
+            lExon.setRange(Range.of(lExonRange.getBegin(),(seq.getLength()-1)));
 			newModels.add(newModel);
-			//System.out.println("Sequence is missin. No stop found. Partial gene "+newModel.getAlignment().getViralProtein().getProteinID());
+			/*if(isDebug) {
+                System.out.println("Sequence is missin. No stop found. Partial gene "+newModel.getAlignment().getViralProtein().getProteinID());
+            }*/
 
 		} else if (rangeScoreMap.isEmpty()) {
-			Model newModel = new Model();
-			newModel = model.clone();
+			//Model newModel = new Model();
+			Model newModel = model.clone();
 			newModel.setPseudogene(true);
 			newModels.add(newModel);
 			//System.out.println("Pseudogene. No stop found. "+newModel.getAlignment().getViralProtein().getProteinID());

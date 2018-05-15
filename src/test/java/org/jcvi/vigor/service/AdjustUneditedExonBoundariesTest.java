@@ -48,14 +48,12 @@ public class AdjustUneditedExonBoundariesTest {
     @Autowired
     private VigorInitializationService initializationService;
 
-
-
-
     @Test
     public void adjustSpliceSitesTest() throws CloneNotSupportedException, VigorException {
         VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
-        File virusGenomeSeqFile = new File(AdjustUneditedExonBoundariesTest.class.getClassLoader().getResource("vigorUnitTestInput/Flua_SpliceSites_Test.fasta"). getFile());
-        File alignmentOutput = new File(AdjustUneditedExonBoundariesTest.class.getClassLoader().getResource("vigorUnitTestInput/Flua_SpliceSites_Test.txt"). getFile());
+        File resources = new File("src/test/resources");
+        File virusGenomeSeqFile = new File(resources.getAbsolutePath()+File.separator+"vigorUnitTestInput/Flua_SpliceSites_Test.fasta");
+         File alignmentOutput = new File(resources.getAbsolutePath()+File.separator+"vigorUnitTestInput/Flua_SpliceSites_Test.txt");
         String referenceDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
         assertThat("reference database path must be set", referenceDBPath, is(notNullValue()));
         String referenceDB = Paths.get(referenceDBPath, "flua_db").toString();

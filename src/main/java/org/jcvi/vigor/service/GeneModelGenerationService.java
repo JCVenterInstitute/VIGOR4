@@ -138,7 +138,7 @@ public class GeneModelGenerationService {
 		};
 
 		if (isDebug) {
-			FormatVigorOutput.printModelsWithStart(modelsAfterDeterminingStart, "After Determining Start");
+			FormatVigorOutput.printModels(modelsAfterDeterminingStart, "After Determining Start");
 		}
 		
 		/*Adjust RNAEditing, Ribosomal Slippage and find StopCodonReadThrough*/

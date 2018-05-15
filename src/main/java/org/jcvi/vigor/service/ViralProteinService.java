@@ -83,6 +83,11 @@ public class ViralProteinService {
                 String geneSymbol = attributes.get("gene");
                 viralProtein.setGeneSymbol(geneSymbol);
             }
+        /* Set gene symbol */
+        if(attributes.containsKey("gene_synonym")){
+            String geneSynonym = attributes.get("gene_synonym");
+            viralProtein.setGeneSynonym(geneSynonym);
+        }
 
             /* Set Splicing attributes */
             if (attributes.containsKey("splice_form")) {
@@ -337,6 +342,12 @@ public class ViralProteinService {
             }
 
             pattern = Pattern.compile("gene=\"\\S*\"");
+            matcher = pattern.matcher(defline);
+            if(matcher.find()){
+                deflineAttributes.add(matcher.group(0));
+            }
+
+            pattern = Pattern.compile("gene_synonym=\"\\S*\"");
             matcher = pattern.matcher(defline);
             if(matcher.find()){
                 deflineAttributes.add(matcher.group(0));

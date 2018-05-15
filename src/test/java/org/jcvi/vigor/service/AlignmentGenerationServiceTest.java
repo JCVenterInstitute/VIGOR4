@@ -29,14 +29,12 @@ public class AlignmentGenerationServiceTest {
 	@Autowired
 	private VigorInitializationService initializationService;
 
-	private ClassLoader classLoader = AlignmentGenerationServiceTest.class.getClassLoader();
-
-
 
 	@Test
 	public void generateAlignmentsTest() throws VigorException {
-		File virusGenomeSeqFile = new File(classLoader.getResource("vigorUnitTestInput/sequence_flua.fasta"). getFile());
-		File alignmentOutput = new File(classLoader.getResource("vigorUnitTestInput/sequence_flua.txt"). getFile());
+		File resources = new File("src/test/resources");
+		File virusGenomeSeqFile = new File(resources.getAbsolutePath()+File.separator+"vigorUnitTestInput/sequence_flua.fasta");
+		File alignmentOutput = new File(resources.getAbsolutePath()+File.separator+"vigorUnitTestInput/sequence_flua.txt");
         VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
         String refereceDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
         assertThat("reference database path is required", refereceDBPath, is(notNullValue()));

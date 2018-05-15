@@ -70,7 +70,7 @@ public class ValidateVigor4Models {
         }
     }
 
-    @Parameterized.Parameters(name="PeptideServiceTest[#{index} {0}]")
+    @Parameterized.Parameters(name="ValidateVigor4Models[#{index} {0}]")
     public static Collection<Object[]> getTestData() {
         List<Object[]> testData = new ArrayList<>();
         testData.add(
@@ -78,18 +78,18 @@ public class ValidateVigor4Models {
                         "vigor3Output/flu/PRODUCTION/flu.tbl",
                         "vigor3Output/flu/PRODUCTION/flu.pep",
                         "vigorRegressionTestInput/flu.fasta",
-                        "vigor4RegressionTestOutput","flua_db"
+                        "vigor4Output","flua_db"
                 });
 
      return testData;
 
     }
     private void setAbsolutePathOfTestResource() throws VigorException{
-        ClassLoader classLoader = ValidateVigor4Models.class.getClassLoader();
-        this.vigor3OutputTBL = classLoader.getResource(vigor3OutputTBL).getPath();
-        this.vigor3OutputPep = classLoader.getResource(vigor3OutputPep).getPath();
-        this.inputFasta = classLoader.getResource(inputFasta).getPath();
-        this.workspace = classLoader.getResource(workspace).getPath();
+        File resources = new File("src/test/resources");
+        this.vigor3OutputTBL = resources.getAbsolutePath()+File.separator+vigor3OutputTBL;
+        this.vigor3OutputPep = resources.getAbsolutePath()+File.separator+vigor3OutputPep;
+        this.inputFasta = resources.getAbsolutePath()+File.separator+inputFasta;
+        this.workspace = resources.getAbsolutePath()+File.separator+workspace;
     }
 
     public Map<String,List<Model>> getVigor4Models() throws VigorException{

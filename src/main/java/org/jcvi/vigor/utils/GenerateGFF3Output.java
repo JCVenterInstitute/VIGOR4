@@ -3,6 +3,7 @@ package org.jcvi.vigor.utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Direction;
+import org.jcvi.jillion.core.Range;
 import org.jcvi.vigor.component.*;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +18,7 @@ public class GenerateGFF3Output {
     private static final Logger LOGGER = LogManager
             .getLogger(GenerateGFF3Output.class);
 
-
+    private static Range.CoordinateSystem oneBased = Range.CoordinateSystem.RESIDUE_BASED;
     public void generateOutputFile(VigorConfiguration config, GenerateVigorOutput.Outfiles outfiles, List<Model> models) throws IOException {
         printGFF3Features(config, outfiles.get(GenerateVigorOutput.Outfile.GFF3), models);
     }
@@ -32,8 +33,8 @@ public class GenerateGFF3Output {
             String geneomeSeqID = geneModel.getAlignment().getVirusGenome().getId();
             List<Exon> exons = geneModel.getExons();
             String geneName = geneModel.getAlignment().getViralProtein().getGeneSymbol();
-            String CDSStart = Long.toString(exons.get(0).getRange().getBegin());
-            String CDSEnd = Long.toString(exons.get(exons.size()-1).getRange().getEnd());
+            String CDSStart = Long.toString(exons.get(0).getRange().getBegin(oneBased));
+            String CDSEnd = Long.toString(exons.get(exons.size()-1).getRange().getEnd(oneBased));
             String mRnaID = geneModel.getGeneID()+"."+i;
             bw.write(geneomeSeqID+"\t"+"vigor"+"\t");
             //gene
@@ -83,7 +84,7 @@ public class GenerateGFF3Output {
                 Exon exon = exons.get(j);
                 bw.write(geneomeSeqID+"\t"+"vigor"+"\t");
                 bw.write("exon"+"\t");
-                bw.write(Long.toString(exon.getRange().getBegin())+"\t"+Long.toString(exon.getRange().getEnd())+"\t");
+                bw.write(Long.toString(exon.getRange().getBegin(oneBased))+"\t"+Long.toString(exon.getRange().getEnd(oneBased))+"\t");
                 bw.write("."+"\t");
                 if(geneModel.getDirection().equals(Direction.FORWARD)){
                     bw.write("+"+"\t");
@@ -113,7 +114,7 @@ public class GenerateGFF3Output {
             if(geneModel.getInsertRNAEditingRange()!=null) {
                 bw.write(geneomeSeqID + "\t" + "vigor" + "\t");
                 bw.write("insertion" + "\t");
-                bw.write(Long.toString(geneModel.getInsertRNAEditingRange().getBegin()) + "\t" + Long.toString(geneModel.getInsertRNAEditingRange().getEnd()) + "\t");
+                bw.write(Long.toString(geneModel.getInsertRNAEditingRange().getBegin(oneBased)) + "\t" + Long.toString(geneModel.getInsertRNAEditingRange().getEnd(oneBased)) + "\t");
                 bw.write("." + "\t");
                 if (geneModel.getDirection().equals(Direction.FORWARD)) {
                     bw.write("+" + "\t");
@@ -127,7 +128,7 @@ public class GenerateGFF3Output {
             if(geneModel.getReplaceStopCodonRange()!=null) {
                 bw.write(geneomeSeqID + "\t" + "vigor" + "\t");
                 bw.write("stop_codon_read_through" + "\t");
-                bw.write(Long.toString(geneModel.getReplaceStopCodonRange().getBegin()) + "\t" + Long.toString(geneModel.getReplaceStopCodonRange().getEnd()) + "\t");
+                bw.write(Long.toString(geneModel.getReplaceStopCodonRange().getBegin(oneBased)) + "\t" + Long.toString(geneModel.getReplaceStopCodonRange().getEnd(oneBased)) + "\t");
                 bw.write("." + "\t");
                 if (geneModel.getDirection().equals(Direction.FORWARD)) {
                     bw.write("+" + "\t");
@@ -143,7 +144,7 @@ public class GenerateGFF3Output {
                 if (frameshift == -1) {
                     bw.write(geneomeSeqID + "\t" + "vigor" + "\t");
                     bw.write("mRNA_with_minus_1_frameshift" + "\t");
-                    bw.write(geneModel.getRibosomalSlippageRange().getBegin()+"\t"+geneModel.getRibosomalSlippageRange().getEnd()+"\t");
+                    bw.write(geneModel.getRibosomalSlippageRange().getBegin(oneBased)+"\t"+geneModel.getRibosomalSlippageRange().getEnd(oneBased)+"\t");
                     bw.write("." + "\t");
                     if (geneModel.getDirection().equals(Direction.FORWARD)) {
                         bw.write("+" + "\t");
@@ -158,7 +159,7 @@ public class GenerateGFF3Output {
                 if (frameshift == 1) {
                     bw.write(geneomeSeqID + "\t" + "vigor" + "\t");
                     bw.write("mRNA_with_plus_1_frameshift" + "\t");
-                    bw.write(geneModel.getRibosomalSlippageRange().getBegin()+"\t"+geneModel.getRibosomalSlippageRange().getEnd()+"\t");
+                    bw.write(geneModel.getRibosomalSlippageRange().getBegin(oneBased)+"\t"+geneModel.getRibosomalSlippageRange().getEnd(oneBased)+"\t");
                     bw.write("." + "\t");
                     if (geneModel.getDirection().equals(Direction.FORWARD)) {
                         bw.write("+" + "\t");
