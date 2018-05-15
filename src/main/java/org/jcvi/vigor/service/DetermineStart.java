@@ -198,7 +198,7 @@ public class DetermineStart implements DetermineGeneFeatures {
 			Range fExonRange = fExon.getRange();
 			long bases = fExonRange.getBegin()-0;
 			int frameshift = (int)bases % 3;
-			fExon.setFrame(fExon.getFrame().shift(frameshift));
+			if(frameshift>0) fExon.setFrame(fExon.getFrame().shift(frameshift));
 			fExon.setRange(Range.of(0,fExonRange.getEnd()));
 			newModels.add(newModel);
 			//System.out.println("Sequence is missin. No Start found. Partial gene "+newModel.getAlignment().getViralProtein().getProteinID());
