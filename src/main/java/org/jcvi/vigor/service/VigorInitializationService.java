@@ -1,11 +1,11 @@
 package org.jcvi.vigor.service;
 
 import net.sourceforge.argparse4j.inf.Namespace;
+import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.LoggerContext;
 import org.apache.logging.log4j.core.appender.FileAppender;
-import org.apache.logging.log4j.core.tools.picocli.CommandLine;
 import org.jcvi.vigor.component.AlignmentEvidence;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.forms.VigorForm;
@@ -51,9 +51,10 @@ public class VigorInitializationService {
                 isCircular = true;
             }
             VigorForm form = loadParameters(inputs);
-            String outputDir = form.getConfiguration().get(ConfigurationParameters.OutputDirectory);
-            String outputPrefix = form.getConfiguration().get(ConfigurationParameters.OutputPrefix);
-            initiateReportFile(outputDir,outputPrefix);
+            VigorConfiguration configuration =  form.getConfiguration();
+            String outputDir = configuration.get(ConfigurationParameters.OutputDirectory);
+            String outputPrefix = configuration.get(ConfigurationParameters.OutputPrefix);
+            initiateReportFile(outputDir,outputPrefix, "true".equals(configuration.get(ConfigurationParameters.Verbose)) );
             form.getConfiguration().put(ConfigurationParameters.CircularGene, isCircular ? "1" : "0");
             form.getConfiguration().put(ConfigurationParameters.CompleteGene, isComplete ? "1" : "0");
             return form;
@@ -359,13 +360,17 @@ public class VigorInitializationService {
 		return vigorConfiguration;
 	}
 
-	public void initiateReportFile(String outputDir, String outputPrefix ){
+	public void initiateReportFile(String outputDir, String outputPrefix, boolean verbose){
         LoggerContext lc = (LoggerContext) LogManager.getContext(false);
         FileAppender fa = FileAppender.newBuilder().withName("mylogger").withAppend(false).withFileName(new File(outputDir, outputPrefix+".rpt").toString())
                 .build();
         fa.start();
         lc.getConfiguration().addAppender(fa);
-        lc.getLogger("org.jcvi.vigor").addAppender(lc.getConfiguration().getAppender(fa.getName()));
+
+		lc.getLogger("org.jcvi.vigor").addAppender(lc.getConfiguration().getAppender(fa.getName()));
+		if (verbose) {
+			lc.getConfiguration().getLoggerConfig("org.jcvi.vigor").setLevel(Level.DEBUG);
+		}
         lc.updateLoggers();
     }
 
