@@ -355,8 +355,8 @@ public class PeptideService implements PeptideMatchingService {
                 queryRange.getEnd() < match.peptide.getLength() - 1 ? ">" : "", subjectRange.getEnd(Range.CoordinateSystem.RESIDUE_BASED));
     }
 
-    private static double computeSimilarity(ProteinSequence protein, ProteinSequence peptide, double alignmentLength, double mismatchCount) {
-        return   ((alignmentLength - protein.getNumberOfGaps() - mismatchCount) / (double) peptide.getLength());
+    private static double computeSimilarity(double numberOfGaps, double peptideLength, double alignmentLength, double mismatchCount) {
+        return   ((alignmentLength - numberOfGaps - mismatchCount) /  peptideLength);
     }
 
     private static double computeCoverage(ProteinSequence protein, Range proteinRange, ProteinSequence peptide, Range peptideRange) {
@@ -419,8 +419,8 @@ public class PeptideService implements PeptideMatchingService {
                         match.alignment.getQueryRange().asRange(),
                         match.peptide.getSequence(),
                         match.alignment.getSubjectRange().asRange()),
-                computeSimilarity(match.alignment.getGappedQueryAlignment(),
-                        match.peptide.getSequence(),
+                computeSimilarity(match.alignment.getNumberOfGapOpenings(),
+                        match.peptide.getSequence().getLength(),
                         match.alignment.getAlignmentLength(),
                         match.alignment.getNumberOfMismatches())
         );
