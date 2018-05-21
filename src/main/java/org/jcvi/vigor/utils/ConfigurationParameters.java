@@ -59,6 +59,7 @@ public enum ConfigurationParameters {
     StartCodonSearchWindow("start_codon_search_window", "Number of nucleotides before and after a candidate site to check for a start codon"),
     StopCodonSearchWindow("stop_codon_search_window", "Number of nucleotides before and after a candidate site to check for a stop codon"),
 
+    TemporaryDirectory("temporary_directory", "Directory under which Vigor creates temporary files and directories", Flags.VERSION_4), 
     Locustag("locus_tag", "Include locus tags in output", Flags.VERSION_3, Flags.VERSION_4),
 
     AAOverlap_offset("AAOverlap_offset", ""),

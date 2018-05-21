@@ -1,6 +1,7 @@
 package org.jcvi.vigor.service;
 
 public final class CommandLineParameters {
+
 	public final static String outputPrefix = "output_prefix";
 	public final static String inputFile = "input_fasta";
 	public final static String referenceDB = "reference_database";
@@ -25,6 +26,7 @@ public final class CommandLineParameters {
     public final static String overwriteOutputFiles = "overwrite_output_files";
     public final static String virusSpecificConfig = "virusSpecificConfig";
     public final static String virusSpecificConfigPath = "virusSpecificConfigPath";
+    public final static String temporaryDirectory = "temporaryDirectory";
 
     /**
      * Not to be instantiated

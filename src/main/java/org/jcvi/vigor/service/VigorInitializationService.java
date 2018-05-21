@@ -175,6 +175,24 @@ public class VigorInitializationService {
 
 		defaultConfiguration = mergeConfigurations(configurations);
 
+		String temporaryDirectory = defaultConfiguration.get(ConfigurationParameters.TemporaryDirectory);
+		if ( temporaryDirectory == null || temporaryDirectory.isEmpty()) {
+			throw new VigorException("temporary directory not set");
+		}
+
+		File tempDir = Paths.get(temporaryDirectory).toFile();
+		if (tempDir.exists()) {
+			if (! tempDir.isDirectory()) {
+				throw new VigorException(String.format("temporary directory %s exists but is not a directory", temporaryDirectory));
+			}
+			if (! (tempDir.canRead() && tempDir.canWrite())) {
+				throw new VigorException(String.format("temporary directory %s is not readable or not writable", temporaryDirectory));
+			}
+		} else {
+			if (! tempDir.mkdirs()) {
+				throw new VigorException(String.format("unable to create temporary directory %s", tempDir));
+			}
+		}
 		AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
 		VigorForm form = new VigorForm(defaultConfiguration);
 
