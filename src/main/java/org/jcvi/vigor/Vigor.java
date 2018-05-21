@@ -157,7 +157,7 @@ public class Vigor {
 
     private List<Model> findPeptides(VigorConfiguration config, List<Model> geneModels, VigorForm vigorForm) throws VigorException {
 
-	    PeptideMatchingService.Scores scores = getPeptideScores(vigorForm.getConfiguration());
+	    PeptideMatchingService.Scores scores = getPeptideScores(config);
 
 	    for (Model model: geneModels) {
             String maturePeptideDB = model.getAlignment().getAlignmentEvidence().getMatpep_db();
