@@ -93,7 +93,7 @@ public class CheckCoverage implements EvaluateModel {
         NucleotideSequence virusGenomeSeq = model.getAlignment().getVirusGenome().getSequence();
         boolean inserted=false;
         NucleotideSequenceBuilder NTSeqBuilder=new NucleotideSequenceBuilder("");
-        NucleotideSequence NTSeq=null;
+        NucleotideSequence NTSeq;
         for(Exon exon : exons){
             if(!inserted && model.getInsertRNAEditingRange()!=null && model.getInsertRNAEditingRange().getBegin()==(exon.getRange().getEnd()+1)){
                 NTSeqBuilder.append(virusGenomeSeq.toBuilder(exon.getRange()));
@@ -136,7 +136,6 @@ public class CheckCoverage implements EvaluateModel {
 		        Frame exonFrame = exon.getFrame();
 		        if(adjustedFrame!=null){
 		            exonFrame=adjustedFrame;
-		            adjustedFrame=null;
                 }
 		        long startCoordinate = exonRange.getBegin()+exonFrame.getFrame()-1;
 		        long difference = NTOffset-startCoordinate;
@@ -164,17 +163,15 @@ public class CheckCoverage implements EvaluateModel {
 	    List<Range> internalStops = new ArrayList<Range>();
         NucleotideSequence virusGenomeSeq = model.getAlignment().getVirusGenome().getSequence();
         NucleotideSequenceBuilder NTSeqBuilder=new NucleotideSequenceBuilder("");
-        NucleotideSequence NTSeq=null;
         for(Exon exon : model.getExons()){
             NTSeqBuilder.append(virusGenomeSeq.toBuilder(exon.getRange()));
         }
 		NucleotideSequence cds = NTSeqBuilder.build();
-        long length = cds.getLength();
-        long start = model.getExons().get(0).getRange().getBegin();
         Map<Frame,List<Long>> stops = IupacTranslationTables.STANDARD.findStops(cds);
+        Frame fFrame = model.getExons().get(0).getFrame();
 		for(Map.Entry<Frame,List<Long>> pair :stops.entrySet()){
-			if(pair.getKey().equals(Frame.ONE)){
-			List<Long> cdsStops = (List<Long>)pair.getValue();
+			if(pair.getKey().equals(fFrame)){
+			List<Long> cdsStops = pair.getValue();
 			for(Long stop : cdsStops){
 				long NTStop = VigorFunctionalUtils.getNTRange(model.getExons(), stop);
 				Range NTStopRange= Range.of(NTStop,NTStop+2);
@@ -183,7 +180,7 @@ public class CheckCoverage implements EvaluateModel {
 				        internalStops.add(NTStopRange);
                     }
                 }else if(!Range.of(stop).equals(Range.of(cds.getLength()-3))){
-				    Range temp = Range.of(cds.getLength()-3,cds.getLength()-1);
+				  //  Range temp = Range.of(cds.getLength()-3,cds.getLength()-1);
                     internalStops.add(NTStopRange);
                 }
 			}

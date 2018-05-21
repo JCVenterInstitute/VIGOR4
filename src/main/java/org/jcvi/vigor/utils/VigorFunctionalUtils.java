@@ -76,15 +76,13 @@ public class VigorFunctionalUtils {
 	public static long getNTRange(List<Exon> exons,long CDSNTCoordinate){
 		exons.sort(Exon.Comparators.Ascending);
 		long outputStart=0;
-		long outputEnd=0;
 		long refCurLength=0;
-		long refPreLength=0;
-		long difference=0;
 		long refBases=0;
 		for(int i=0;i<exons.size();i++){
-			long bases=0;
+			long bases;
 			if(i==0) {
 				bases = exons.get(i).getRange().getBegin();
+				refBases=bases;
 			}else{
 				bases = exons.get(i).getRange().getBegin()-exons.get(i-1).getRange().getEnd()-1;
 			}
@@ -93,7 +91,7 @@ public class VigorFunctionalUtils {
 			    outputStart=CDSNTCoordinate+refBases;
 			    break;
 		   }
-		   refBases = refBases+bases;
+		   if(i!=0) refBases = refBases+bases;
 		}
 		return outputStart;
 	}

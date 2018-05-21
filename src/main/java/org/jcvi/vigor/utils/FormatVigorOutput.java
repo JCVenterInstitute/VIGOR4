@@ -174,11 +174,11 @@ public class FormatVigorOutput {
             content.append(String.format("%-20s",model.getGeneSymbol() +" | " +viralProtein.getProduct()));
             content.append(System.lineSeparator());
             totalCDSBases = totalCDSBases+cdsBases;
-            totalPepBases = totalPepBases + cdsBases/3;
             identityAvg = identityAvg+scores.get("%identity");
             similarityAvg = similarityAvg +scores.get("%similarity");
             coverageAvg = coverageAvg+scores.get("%coverage");
         }
+        totalPepBases = totalCDSBases/3;
         identityAvg = identityAvg/geneModels.size();
         similarityAvg = similarityAvg/geneModels.size();
         coverageAvg = coverageAvg/geneModels.size();

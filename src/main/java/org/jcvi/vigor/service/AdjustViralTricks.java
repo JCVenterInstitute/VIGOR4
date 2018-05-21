@@ -136,10 +136,14 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 		List<Range> matches = cds.findMatches(rna_editing.getRegExp()).distinct().collect(Collectors.toList());
 		//offset must be used to determine pointOfInsertion
 		matches=matches.stream().map(x->x=Range.of(x.getBegin()+CDSStart,x.getEnd()+CDSStart)).sequential().collect(Collectors.toList());
+		int offset = rna_editing.getOffset();
+		if(rna_editing.getOffset()<0){
+		    offset=offset-1;
+        }
 		for(Range match:matches){
-			  Model newModel = new Model();
+			  Model newModel;
 			  newModel = model.clone();
-			  Range pointOfInsertion=Range.of(match.getEnd()+rna_editing.getOffset(),match.getEnd()+rna_editing.getInsertionString().length()-1);
+			  Range pointOfInsertion=Range.of(match.getEnd()+offset,match.getEnd()+rna_editing.getInsertionString().length()-1);
 			  newModel.setInsertRNAEditingRange(pointOfInsertion);
 			  for(int i=0;i<newModel.getExons().size();i++){
 					 Range exonRange = newModel.getExons().get(i).getRange();
@@ -185,7 +189,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 	}
 
 	public Model checkForLeakyStop(Model model){
-		Range range=null;
+		Range range;
 		StopTranslationException stopTransExce = model.getAlignment().getViralProtein().getGeneAttributes().getStopTranslationException();
 		Map<String,Double> scores = model.getScores();
 		if(stopTransExce.isHasStopTranslationException()){
@@ -194,9 +198,13 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
             NucleotideSequence cds = model.getAlignment().getVirusGenome().getSequence().toBuilder(Range.of(CDSStart,CDSEnd))
                     .build();
 			Optional<Range> match = cds.findMatches(stopTransExce.getMotif()).distinct().findFirst();
+			int offset = stopTransExce.getOffset();
+			if(offset<0){
+			    offset=offset-1;
+            }
 			if(match.isPresent()){
 			   Range leakyStopRange =  Range.of(match.get().getBegin()+CDSStart,match.get().getEnd()+CDSStart);
-			   long start = leakyStopRange.getEnd()+stopTransExce.getOffset();
+			   long start = leakyStopRange.getEnd()+offset;
 			   range = Range.of(start,start+2);
 			   scores.put("leakyStopScore",100.00);
 			   model.setReplaceStopCodonRange(range);			 			   
