@@ -218,11 +218,9 @@ public class ViralProteinService {
             }
 
             /* Set maturepeptide DB attribute */
-            if (attributes.containsKey("matpepdb")) {
-                matPepDB = attributes.get("matpepdb");
-                if (matPepDB.contains("<vigordata>")) {
+            matPepDB = attributes.getOrDefault("matpepdb","");
+            if (matPepDB != null && matPepDB.contains("<vigordata>")) {
                     matPepDB = matPepDB.replace("<vigordata>", form.getConfiguration().get(ConfigurationParameters.ReferenceDatabasePath));
-                }
             }
 
             /* Move all the different attribute objects to geneAttributes */
