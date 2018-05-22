@@ -74,7 +74,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 		  newModel = model.clone();
 		 // Range slippagePoint = Range.of(match.getEnd()+riboSlippage.getSlippage_offset(),match.getEnd()+riboSlippage.getSlippage_offset());
 		 //test logic(vigor3 annotation)
-		 Range slippagePoint = Range.of(match.getEnd()+riboSlippage.getSlippage_offset());
+		 Range slippagePoint = Range.of(match.getEnd()+offset);
 		 newModel.setRibosomalSlippageRange(slippagePoint);
 		 for(int i=0;i<newModel.getExons().size();i++){
 			 Range exonRange = newModel.getExons().get(i).getRange();
@@ -86,7 +86,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 					 exon.set_5p_adjusted(true);
 					 exon.setRange(Range.of(slippagePoint.getBegin()+riboSlippage.getSlippage_frameshift(),exonRange.getEnd()));
 					 exon.setFrame(Frame.ONE);
-					 newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(),slippagePoint.getBegin()));
+					 newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(),slippagePoint.getBegin()-1));
 					 newModel.getExons().get(i).set_3p_adjusted(true);
 					 newModel.getExons().add(exon);
 										 
@@ -95,11 +95,11 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 					 newModel.getExons().get(i).set_5p_adjusted(true);
 					 if(i!=0){
 					 Range prevExonRange = newModel.getExons().get(i-1).getRange();
-					 newModel.getExons().get(i-1).setRange(Range.of(prevExonRange.getBegin(),slippagePoint.getBegin()));
+					 newModel.getExons().get(i-1).setRange(Range.of(prevExonRange.getBegin(),slippagePoint.getBegin()-1));
 					 newModel.getExons().get(i-1).set_3p_adjusted(true);
 					 }
 				 }else{
-					 newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(),slippagePoint.getBegin()));
+					 newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(),slippagePoint.getBegin()-1));
 					 newModel.getExons().get(i).set_3p_adjusted(true);
 					 if(i!=newModel.getExons().size()-1){
 					 Range nextExonRange = newModel.getExons().get(i+1).getRange();
@@ -110,7 +110,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 			 }else if(i!=newModel.getExons().size()-1){
 				 Range nextExonRange = newModel.getExons().get(i+1).getRange();
 				 if(slippagePoint.intersects(Range.of(exonRange.getEnd()+1,nextExonRange.getBegin()-1))){
-					 newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(),slippagePoint.getBegin()));
+					 newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(),slippagePoint.getBegin()-1));
 					 newModel.getExons().get(i).set_3p_adjusted(true);
                      newModel.getExons().get(i+1).setRange(Range.of(slippagePoint.getBegin()+riboSlippage.getSlippage_frameshift(),nextExonRange.getEnd()));
                      newModel.getExons().get(i+1).set_5p_adjusted(true);

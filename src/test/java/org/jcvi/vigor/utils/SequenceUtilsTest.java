@@ -19,17 +19,16 @@ public class SequenceUtilsTest {
         ProteinSequence first = new ProteinSequenceBuilder("MSLLTEVETYTLSIIPSGPL").build();
 
         ProteinSequence second = first.toBuilder().build();
-        double similarity = SequenceUtils.computeSimilarity(first, second, blosum62);
-        assertThat("identical sequences should be 100% similary", similarity, equalTo(1d));
+        double similarity = SequenceUtils.computePercentSimilarity(first, second,20, blosum62);
+        assertThat("identical sequences should be 100% similary", similarity, equalTo(100d));
 
         second = second.toBuilder().replace(0,AminoAcid.Arginine).build();
-        similarity = SequenceUtils.computeSimilarity(first, second, blosum62);
-        assertThat("replacing one amino acid with an unrelated amino acid should be 95% similary", similarity, equalTo(.95d));
+        similarity = SequenceUtils.computePercentSimilarity(first, second,20, blosum62);
+        assertThat("replacing one amino acid with an unrelated amino acid should be 95% similary", similarity, equalTo(95d));
 
         second = first.toBuilder().replace(0, AminoAcid.Isoleucine).build();
-        similarity = SequenceUtils.computeSimilarity(first, second, blosum62);
-        assertThat("replacing one amino acid with an related amino acid should be 100% similary", similarity, equalTo(1d));
-
+        similarity = SequenceUtils.computePercentSimilarity(first, second,20, blosum62);
+        assertThat("replacing one amino acid with an related amino acid should be 100% similary", similarity, equalTo(100d));
 
     }
 }

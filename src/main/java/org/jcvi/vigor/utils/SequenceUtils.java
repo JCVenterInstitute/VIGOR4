@@ -15,7 +15,6 @@ import java.util.stream.Stream;
 public class SequenceUtils {
 
 
-	
 	public static Triplet getNextTriplet(Iterator<Nucleotide> iter){
 		
 		Nucleotide first= getNextNucleotide(iter);
@@ -34,8 +33,7 @@ public class SequenceUtils {
 		Nucleotide n = iter.next();
 		return n;
 	}
-	
-	
+
 	
 	
 	public static Iterator<Nucleotide> handleFrame(NucleotideSequence sequence, Frame frame) {
@@ -90,20 +88,22 @@ public class SequenceUtils {
 				sequenceString.substring(sequenceString.length() -1 - trailing, sequenceString.length() - 1));
 	}
 
-	public static double computeSimilarity(ProteinSequence first, ProteinSequence second, AminoAcidSubstitutionMatrix matrix) {
+	public static double computePercentSimilarity(ProteinSequence first, ProteinSequence second, int alignmentLength, AminoAcidSubstitutionMatrix matrix) {
 		double similarity = 0;
 		double maxLength = Math.max(first.getLength(), second.getLength());
 		double minLength = Math.min(first.getLength(), second.getLength());
 		// TODO gaps in the same place?
 		double numberOfGaps = first.getNumberOfGaps() + second.getNumberOfGaps();
-		double misMatches = 0;
-		for (int i = 0; i <= minLength; i++) {
+		double matches = 0;
+		for (int i = 0; i < minLength; i++) {
 			if (first.isGap(i) || second.isGap(i)) {
 				continue;
 			}
-			misMatches += matrix.getValue(first.get(i), second.get(i)) <= 0? 1: 0;
+			matches += matrix.getValue(first.get(i), second.get(i)) > 0? 1: 0;
 		}
-		similarity = (maxLength - numberOfGaps - misMatches) / maxLength;
-		return similarity;
+		//similarity = (((int)(1000*(maxLength - numberOfGaps - misMatches))) / alignmentLength)/10;
+        similarity = ((int)(1000*matches/ alignmentLength))/10;
+		if(similarity>100) similarity=100;
+        return similarity;
 	}
 }

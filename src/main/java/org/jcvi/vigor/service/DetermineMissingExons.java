@@ -67,11 +67,11 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
 		ProteinPairwiseSequenceAlignment bestAlignment = null;		
 		for(Frame frame: Frame.forwardFrames()){
 		ProteinSequence queryAASequence = IupacTranslationTables.STANDARD.translate(NTSubSequence,frame);
-		AminoAcidSubstitutionMatrix blosom50 = BlosumMatrices.blosum50();
+		AminoAcidSubstitutionMatrix blosom62 = BlosumMatrices.blosum62();
 
 		actual = PairwiseAlignmentBuilder
 				.createProtienAlignmentBuilder(queryAASequence,
-						subjectAASequence, blosom50).gapPenalty(-8, -8)
+						subjectAASequence, blosom62).gapPenalty(-8, -8)
 				.build();
 		alignments.put(frame, actual);
 		}		

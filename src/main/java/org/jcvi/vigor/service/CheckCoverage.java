@@ -22,6 +22,7 @@ import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.utils.ConfigurationParameters;
+import org.jcvi.vigor.utils.SequenceUtils;
 import org.jcvi.vigor.utils.VigorConfiguration;
 import org.jcvi.vigor.utils.VigorFunctionalUtils;
 import org.springframework.stereotype.Service;
@@ -31,7 +32,7 @@ public class CheckCoverage implements EvaluateModel {
 
 	@Override
 	public Model evaluate(Model model,VigorForm form) {
-		NucleotideSequence cds = determineCDS(model);
+	    NucleotideSequence cds = determineCDS(model);
 		List<Range> internalStops = getInternalStops(model);
 		if(internalStops.size()>0){
 		    model.setPseudogene(true);
@@ -47,6 +48,7 @@ public class CheckCoverage implements EvaluateModel {
         return model;
     }
     public Model determineHomology(Model model, NucleotideSequence cds){
+
         long replacementOffset=0;
         if(model.getReplaceStopCodonRange()!=null){
             replacementOffset = model.getReplaceStopCodonRange().getBegin();
@@ -54,8 +56,9 @@ public class CheckCoverage implements EvaluateModel {
         if(replacementOffset != 0){
             replacementOffset = getTranslatedProteinCooridnate(model.getExons(),replacementOffset,model.getInsertRNAEditingRange());
         }
+        Frame fFrame = model.getExons().get(0).getFrame();
         AminoAcid replacementAA = model.getAlignment().getViralProtein().getGeneAttributes().getStopTranslationException().getReplacementAA();
-        ProteinSequence translatedSeq = IupacTranslationTables.STANDARD.translate(cds);
+        ProteinSequence translatedSeq = IupacTranslationTables.STANDARD.translate(cds,fFrame);
         ProteinSequenceBuilder proteinSeqBuilder = new ProteinSequenceBuilder(translatedSeq);
         if(replacementOffset !=0 && replacementAA !=null){
             proteinSeqBuilder.replace((int)replacementOffset,replacementAA);
@@ -63,22 +66,33 @@ public class CheckCoverage implements EvaluateModel {
         ProteinSequence querySeq = proteinSeqBuilder.build();
         model.setTanslatedSeq(querySeq);
        	ProteinSequence subSeq = model.getAlignment().getViralProtein().getSequence();
-    	AminoAcidSubstitutionMatrix blosom50 = BlosumMatrices.blosum50();
+    	AminoAcidSubstitutionMatrix blosom62 = BlosumMatrices.blosum62();
     	ProteinPairwiseSequenceAlignment actual = PairwiseAlignmentBuilder
 				.createProtienAlignmentBuilder(querySeq,
-						subSeq, blosom50).gapPenalty(-8, -8)
+						subSeq, blosom62).gapPenalty(-8, -8)
 				.build();
-   	    Map<String,Double> scores = new HashMap<String,Double>();
+    	Map<String,Double> scores = new HashMap<String,Double>();
    	    if(model.getScores()!=null) {
             scores.putAll(model.getScores());
         }
         double percentIdentity = actual.getPercentIdentity()*100;
-        int mismatches = actual.getNumberOfMismatches()+actual.getNumberOfGapOpenings();
+        /*int mismatches = actual.getNumberOfMismatches()+actual.getNumberOfGapOpenings();
         int matches = actual.getAlignmentLength()-mismatches;
-        long maxSeqLength = Long.max(querySeq.getLength(),subSeq.getLength());
-        double percentSimilarity = ((double)matches/maxSeqLength)*100;
-        long coverage = Long.max(actual.getQueryRange().getLength(),actual.getSubjectRange().getLength());
-        double percentCoverage = ((double)coverage/querySeq.getLength())*100;
+        long maxSeqLength = Long.max(querySeq.getLength(),subSeq.getLength());*/
+        double percentSimilarity = SequenceUtils.computePercentSimilarity(actual.getGappedQueryAlignment(),actual.getGappedSubjectAlignment(),actual.getAlignmentLength(),blosom62);
+       // double percentSimilarity = ((double)matches/maxSeqLength)*100;
+        //long coverage = Long.max(actual.getQueryRange().getLength(),actual.getSubjectRange().getLength());
+      //  double percentCoverage = ((double)actual.getAlignmentLength()/subSeq.getLength())*100;
+        double partialGeneCoverage = ((int)(1000*actual.getQueryRange().getLength()/subSeq.getLength()))/10;
+        if(partialGeneCoverage>100) partialGeneCoverage=100;
+        double queryCoverage = ((int)(1000*actual.getQueryRange().getLength()/querySeq.getLength()))/10;
+        if(queryCoverage>100) queryCoverage=100;
+        double  subjectCoverage = ((int)(1000*actual.getSubjectRange().getLength()/subSeq.getLength()))/10;
+        if(subjectCoverage>100) subjectCoverage=100;
+        double percentCoverage;
+        if(model.isPartial5p()||model.isPartial3p()){
+            percentCoverage=partialGeneCoverage;
+        }else percentCoverage = Math.max(queryCoverage,subjectCoverage);
         scores.put("%identity",percentIdentity);
         scores.put("%similarity",percentSimilarity);
         scores.put("%coverage",percentCoverage);
@@ -178,7 +192,8 @@ public class CheckCoverage implements EvaluateModel {
 				boolean internalStop=true;
 				if(model.getReplaceStopCodonRange()!=null&& NTStopRange.equals(model.getReplaceStopCodonRange())){
 				        internalStop=false;
-                }else if(Range.of(stop).equals(Range.of(cds.getLength()-3))){
+                }
+                if(Range.of(stop).equals(Range.of(cds.getLength()-3))){
                     internalStop=false;
                 }
                 if(internalStop) internalStops.add(NTStopRange);

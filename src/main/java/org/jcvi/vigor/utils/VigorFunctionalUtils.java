@@ -133,7 +133,10 @@ public class VigorFunctionalUtils {
 		return outStopsMap;
 		
 	}
+   /* public static long get5partialStart(){
+	    long start=0;
 
+    }*/
 	/*public Range getGenomeSequenceCoordinates(List<Exon> exons, Range insertRNAEditingRange,Range proteinRange){
 
     }*/
