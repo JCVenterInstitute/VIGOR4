@@ -81,19 +81,19 @@ public class GeneModelGenerationService {
            filteredModels.add(similarModels.get(similarModels.size()-1));
        }
 
-
        List<Model> candidateGenes = new ArrayList<Model>();
+        if(isDebug) {
+            FormatVigorOutput.printAllGeneModelsWithScores(filteredModels,"All Gene Models");
+        }
        Map<String,List<Model>> genewiseModels = filteredModels.stream().collect(Collectors.groupingBy(x -> x.getGeneSymbol()));
        for(Map.Entry<String,List<Model>> entry : genewiseModels.entrySet()){
            List<Model> tempModels = entry.getValue();
            tempModels=sortModels(tempModels);
            candidateGenes.add(tempModels.get(tempModels.size()-1));
        }
-
         if(isDebug) {
             FormatVigorOutput.printAllGeneModelsWithScores(candidateGenes,"Candidate Gene Models");
         }
-
         candidateGenes=sortModels(candidateGenes);
         Model geneModel = candidateGenes.get(candidateGenes.size()-1);
         candidateGenes.remove(geneModel);

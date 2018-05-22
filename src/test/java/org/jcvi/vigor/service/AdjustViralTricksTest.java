@@ -66,7 +66,7 @@ public class AdjustViralTricksTest {
         List<Model> outputModels = adjustViralTricks.adjustRibosomalSlippage(testModel);
         Range actual = outputModels.get(0).getExons().get(0).getRange();
         //581 was earlier value
-        assertEquals(Range.of(9,579),actual);
+        assertEquals(Range.of(9,581),actual);
     }
 
     @Test
@@ -75,7 +75,6 @@ public class AdjustViralTricksTest {
         String referenceDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
         assertThat("reference database path must be set", referenceDBPath, is(notNullValue()));
         String referenceDB = Paths.get(referenceDBPath, "veev_db").toString();
-
         List<Alignment> alignments;
         List<Model> models=new ArrayList<Model>();
         File resources = new File("src/test/resources");
@@ -92,7 +91,8 @@ public class AdjustViralTricksTest {
         Model testModel = models.get(0);
         Model outputModel = adjustViralTricks.checkForLeakyStop(testModel);
         Range actual = outputModel.getReplaceStopCodonRange();
-        assertEquals(Range.of(5226,5228),actual);
+        assertEquals("TGA",outputModel.getAlignment().getVirusGenome().getSequence().toBuilder().trim(Range.of(5227,5229)).build().toString());
+        assertEquals(Range.of(5227,5229),actual);
     }
 
 

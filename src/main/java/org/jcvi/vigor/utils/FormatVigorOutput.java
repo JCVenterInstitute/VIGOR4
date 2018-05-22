@@ -173,6 +173,7 @@ public class FormatVigorOutput {
             content.append(String.format("%-20s",viralProtein.getProteinID()));
             content.append(String.format("%-20s",model.getGeneSymbol() +" | " +viralProtein.getProduct()));
             content.append(System.lineSeparator());
+            cdsBases=cdsBases-3; // excluding stop codon
             totalCDSBases = totalCDSBases+cdsBases;
             identityAvg = identityAvg+scores.get("%identity");
             similarityAvg = similarityAvg +scores.get("%similarity");

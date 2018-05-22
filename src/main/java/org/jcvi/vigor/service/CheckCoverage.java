@@ -175,12 +175,13 @@ public class CheckCoverage implements EvaluateModel {
 			for(Long stop : cdsStops){
 				long NTStop = VigorFunctionalUtils.getNTRange(model.getExons(), stop);
 				Range NTStopRange= Range.of(NTStop,NTStop+2);
-				if(model.getReplaceStopCodonRange()!=null){
-				    if(!NTStopRange.equals(model.getReplaceStopCodonRange())){
+				//if(model.getAlignment().getViralProtein().getProteinID().equals("399240871_NSP")){
+				/*System.out.println(virusGenomeSeq.toBuilder().trim(NTStopRange).build());
+				System.out.println(NTStopRange);
+				System.out.println(model.getReplaceStopCodonRange());//}*/
+				if(model.getReplaceStopCodonRange()!=null&&!NTStopRange.equals(model.getReplaceStopCodonRange()) && !Range.of(stop).equals(Range.of(cds.getLength()-3))){
 				        internalStops.add(NTStopRange);
-                    }
                 }else if(!Range.of(stop).equals(Range.of(cds.getLength()-3))){
-				  //  Range temp = Range.of(cds.getLength()-3,cds.getLength()-1);
                     internalStops.add(NTStopRange);
                 }
 			}
@@ -188,5 +189,4 @@ public class CheckCoverage implements EvaluateModel {
 		}
 		return internalStops;
 	}
-
 }

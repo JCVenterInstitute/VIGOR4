@@ -3,7 +3,7 @@ Hostname: [snettem-VirtualBox]
 
 C4 Alignment:
 ------------
-         Query: seg3prot2A gene="PA-X" shared_cds="PA" product="PA-X protein" splice_form="e573i1e183" ribosomal_slippage=Y slippage_motif="[NC]{2}[NT]{3}[NCT]" slippage_offset=1 slippage_frameshift=1 db="flua_db" V4_Ribosomal_Slippage="-10/+1/[BCDHKMNSTVWY][BDGKNRSV][BCDGHKMNRSTVWY][ABCDGHKMNRSVWY][ABCDGHKMNRSTVWY][ABCDGHKMNRSTVWY][ABCDGHKMNRSTVWY][ABCDHKMNRSTVWY][ABCDGHKMNRSTVWY][BCDGHKMNRSTVWY][BDHKNTWY][BCDHKMNSTVWY][ABCDHKMNRSTVWY][ABCDGHKMNRSTVWY][BCDGHKMNRSTVWY][ABCDHKMNRSTVWY][ABDGHKMNRSTVWY][ABDGHKMNRSTVWY][BCDGHKMNRSTVWY][BCDHKMNSTVWY][ABCDHKMNRSTVWY][BDGKNRSV]" length=252
+         Query: seg3prot2A gene="PA-X" shared_cds="PA" product="PA-X protein" splice_form="e573i1e183" ribosomal_slippage=Y slippage_motif="[NC]{2}[NT]{3}[NCT]" slippage_offset=1 slippage_frameshift=1 db="flua_db" V4_Ribosomal_Slippage="-4/+1/[BCDHKMNSTVWY][BDGKNRSV][BCDGHKMNRSTVWY][ABCDGHKMNRSVWY][ABCDGHKMNRSTVWY][ABCDGHKMNRSTVWY][ABCDGHKMNRSTVWY][ABCDHKMNRSTVWY][ABCDGHKMNRSTVWY][BCDGHKMNRSTVWY][BDHKNTWY][BCDHKMNSTVWY][ABCDHKMNRSTVWY][ABCDGHKMNRSTVWY][BCDGHKMNRSTVWY][ABCDHKMNRSTVWY][ABDGHKMNRSTVWY][ABDGHKMNRSTVWY][BCDGHKMNRSTVWY][BCDHKMNSTVWY][ABCDHKMNRSTVWY][BDGKNRSV]" length=252
         Target: gi|260907760|gb|GU060481.1| Influenza A Virus (A/goose/Czech Republic/1848-K9/2009(H7N9)) segment 3 polymerase PA (PA) gene, complete cds
          Model: protein2genome:local
      Raw score: 1205

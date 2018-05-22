@@ -123,6 +123,9 @@ public class GenerateVigorOutput {
                 }
             }
             bw.write("\t\t\tcodon_start\t" + codon_start + "\n");
+            if(model.getReplaceStopCodonRange()!=null){
+                bw.write("\t\t\ttransl_except\t" + String.format("(pos:%s..%s,aa:R))",model.getReplaceStopCodonRange().getBegin(),model.getReplaceStopCodonRange().getEnd())+ "\n");
+            }
             bw.write("\t\t\tprotein_id\t" + model.getGeneID() + "\n");
             if (writeLocus) {
                 bw.write("\t\t\tlocus_tag\t" +  VigorUtils.nameToLocus(model.getGeneSymbol(), locusPrefix, model.isPseudogene()) + "\n");

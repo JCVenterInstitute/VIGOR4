@@ -63,6 +63,10 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 	   NucleotideSequence cds = model.getAlignment().getVirusGenome().getSequence().toBuilder(Range.of(CDSStart,CDSEnd))
 				.build();
 	   List<Range> matches = new ArrayList<Range>();
+	   int offset = riboSlippage.getSlippage_offset();
+	   if(offset<0){
+	   	offset=offset+1;
+	   }
 	   matches = cds.findMatches(riboSlippage.getSlippage_motif()).collect(Collectors.toList());
 	   matches=matches.stream().map(x->x=Range.of(x.getBegin()+CDSStart,x.getEnd()+CDSStart)).sequential().collect(Collectors.toList());
 	   for(Range match:matches){
@@ -80,14 +84,14 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 					 Exon exon = new Exon();
 					 exon = newModel.getExons().get(i).clone();
 					 exon.set_5p_adjusted(true);
-					 exon.setRange(Range.of(slippagePoint.getBegin()+1+riboSlippage.getSlippage_frameshift(),exonRange.getEnd()));
+					 exon.setRange(Range.of(slippagePoint.getBegin()+riboSlippage.getSlippage_frameshift(),exonRange.getEnd()));
 					 exon.setFrame(Frame.ONE);
 					 newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(),slippagePoint.getBegin()));
 					 newModel.getExons().get(i).set_3p_adjusted(true);
 					 newModel.getExons().add(exon);
 										 
 				 } else if(pointOfOccurance.equals("start")){
-					 newModel.getExons().get(i).setRange(Range.of(slippagePoint.getBegin()+1+riboSlippage.getSlippage_frameshift(),exonRange.getEnd()));
+					 newModel.getExons().get(i).setRange(Range.of(slippagePoint.getBegin()+riboSlippage.getSlippage_frameshift(),exonRange.getEnd()));
 					 newModel.getExons().get(i).set_5p_adjusted(true);
 					 if(i!=0){
 					 Range prevExonRange = newModel.getExons().get(i-1).getRange();
@@ -99,7 +103,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 					 newModel.getExons().get(i).set_3p_adjusted(true);
 					 if(i!=newModel.getExons().size()-1){
 					 Range nextExonRange = newModel.getExons().get(i+1).getRange();
-					 newModel.getExons().get(i+1).setRange(Range.of(slippagePoint.getBegin()+1+riboSlippage.getSlippage_frameshift(),nextExonRange.getEnd()));
+					 newModel.getExons().get(i+1).setRange(Range.of(slippagePoint.getBegin()+riboSlippage.getSlippage_frameshift(),nextExonRange.getEnd()));
 					 newModel.getExons().get(i+1).set_5p_adjusted(true);
 					 }
 				 }
@@ -108,7 +112,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 				 if(slippagePoint.intersects(Range.of(exonRange.getEnd()+1,nextExonRange.getBegin()-1))){
 					 newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(),slippagePoint.getBegin()));
 					 newModel.getExons().get(i).set_3p_adjusted(true);
-                     newModel.getExons().get(i+1).setRange(Range.of(slippagePoint.getBegin()+1+riboSlippage.getSlippage_frameshift(),nextExonRange.getEnd()));
+                     newModel.getExons().get(i+1).setRange(Range.of(slippagePoint.getBegin()+riboSlippage.getSlippage_frameshift(),nextExonRange.getEnd()));
                      newModel.getExons().get(i+1).set_5p_adjusted(true);
 				 }
 			 }
@@ -138,7 +142,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 		matches=matches.stream().map(x->x=Range.of(x.getBegin()+CDSStart,x.getEnd()+CDSStart)).sequential().collect(Collectors.toList());
 		int offset = rna_editing.getOffset();
 		if(rna_editing.getOffset()<0){
-		    offset=offset-1;
+		    offset=offset+1;
         }
 		for(Range match:matches){
 			  Model newModel;
@@ -190,6 +194,10 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 
 	public Model checkForLeakyStop(Model model){
 		Range range;
+		if(model.getAlignment().getViralProtein().getProteinID().equals("399240871_NSP")){
+			System.out.println("break");
+		}
+
 		StopTranslationException stopTransExce = model.getAlignment().getViralProtein().getGeneAttributes().getStopTranslationException();
 		Map<String,Double> scores = model.getScores();
 		if(stopTransExce.isHasStopTranslationException()){
@@ -200,7 +208,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 			Optional<Range> match = cds.findMatches(stopTransExce.getMotif()).distinct().findFirst();
 			int offset = stopTransExce.getOffset();
 			if(offset<0){
-			    offset=offset-1;
+			    offset=offset+1;
             }
 			if(match.isPresent()){
 			   Range leakyStopRange =  Range.of(match.get().getBegin()+CDSStart,match.get().getEnd()+CDSStart);

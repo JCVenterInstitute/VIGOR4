@@ -82,16 +82,16 @@ public class VigorFunctionalUtils {
 			long bases;
 			if(i==0) {
 				bases = exons.get(i).getRange().getBegin();
-				refBases=bases;
 			}else{
 				bases = exons.get(i).getRange().getBegin()-exons.get(i-1).getRange().getEnd()-1;
 			}
-		   refCurLength=exons.get(i).getRange().getLength()-bases+refCurLength;
+			refBases = refBases+bases;
+			refCurLength=exons.get(i).getRange().getEnd()-refBases;
 		   if(refCurLength>=CDSNTCoordinate){
 			    outputStart=CDSNTCoordinate+refBases;
 			    break;
 		   }
-		   if(i!=0) refBases = refBases+bases;
+
 		}
 		return outputStart;
 	}
