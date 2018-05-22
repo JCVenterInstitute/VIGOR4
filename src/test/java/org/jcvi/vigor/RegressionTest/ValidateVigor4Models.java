@@ -77,7 +77,7 @@ public class ValidateVigor4Models {
                 new Object[]{
                         "vigor3Output/flu/PRODUCTION/flu.tbl",
                         "vigor3Output/flu/PRODUCTION/flu.pep",
-                        "vigorRegressionTestInput/flu.fasta",
+                        "vigorRegressionTestInput/flua.fasta",
                         "vigor4Output","flua_db"
                 });
 
