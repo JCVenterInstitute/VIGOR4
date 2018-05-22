@@ -116,4 +116,24 @@ public class SequenceUtils {
 		similarity = (maxLength - numberOfGaps - misMatches - (maxLength - minLength)) / maxLength;
 		return similarity;
 	}
+
+	/**
+	 *
+	 * @param first
+	 * @param second
+	 * @param matrix
+	 * @return
+	 */
+	public static double computeMismatches(ProteinSequence first, ProteinSequence second, AminoAcidSubstitutionMatrix matrix) {
+		assert (first.getLength() == second.getLength());
+		double misMatches = 0;
+
+		for (int i = 0; i < first.getLength(); i++) {
+			if (first.isGap(i) || second.isGap(i)) {
+				continue;
+			}
+			misMatches += matrix.getValue(first.get(i), second.get(i)) <= 0? 1: 0;
+		}
+		return misMatches;
+	}
 }
