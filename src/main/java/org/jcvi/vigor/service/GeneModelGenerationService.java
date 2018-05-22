@@ -61,11 +61,11 @@ public class GeneModelGenerationService {
 		return geneModels;
 
 	}
-	private List<Model> sortModels(List<Model> models){
+	private List<Model> sortModels(List<Model> models,String scoreType){
         models.sort(new Comparator<Model>() {
             @Override
             public int compare(Model m1, Model m2) {
-                return Double.compare(m1.getScores().get("totalScore"), m2.getScores().get("totalScore"));
+                return Double.compare(m1.getScores().get(scoreType), m2.getScores().get(scoreType));
             }
         });
         return models;
@@ -77,7 +77,7 @@ public class GeneModelGenerationService {
        Set<String> proteinIDs = groupedModels.keySet();
        for(String proteinID : proteinIDs){
            List<Model> similarModels = groupedModels.get(proteinID);
-           similarModels = sortModels(similarModels);
+           similarModels = sortModels(similarModels,"totalScore");
            filteredModels.add(similarModels.get(similarModels.size()-1));
        }
 
@@ -88,13 +88,13 @@ public class GeneModelGenerationService {
        Map<String,List<Model>> genewiseModels = filteredModels.stream().collect(Collectors.groupingBy(x -> x.getGeneSymbol()));
        for(Map.Entry<String,List<Model>> entry : genewiseModels.entrySet()){
            List<Model> tempModels = entry.getValue();
-           tempModels=sortModels(tempModels);
+           tempModels=sortModels(tempModels,"modelScore");
            candidateGenes.add(tempModels.get(tempModels.size()-1));
        }
         if(isDebug) {
             FormatVigorOutput.printAllGeneModelsWithScores(candidateGenes,"Candidate Gene Models");
         }
-        candidateGenes=sortModels(candidateGenes);
+        candidateGenes=sortModels(candidateGenes,"modelScore");
         Model geneModel = candidateGenes.get(candidateGenes.size()-1);
         candidateGenes.remove(geneModel);
         String genomeID = geneModel.getAlignment().getVirusGenome().getId();
