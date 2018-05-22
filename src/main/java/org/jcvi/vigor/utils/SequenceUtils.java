@@ -90,20 +90,30 @@ public class SequenceUtils {
 				sequenceString.substring(sequenceString.length() -1 - trailing, sequenceString.length() - 1));
 	}
 
+	/**
+	 * Compute the similarity for two aligned, gapped protein sequences.
+	 *
+	 * @param first
+	 * @param second
+	 * @param matrix
+	 * @return
+	 */
 	public static double computeSimilarity(ProteinSequence first, ProteinSequence second, AminoAcidSubstitutionMatrix matrix) {
+		assert(first.getLength() == second.getLength());
+
 		double similarity = 0;
 		double maxLength = Math.max(first.getLength(), second.getLength());
 		double minLength = Math.min(first.getLength(), second.getLength());
 		// TODO gaps in the same place?
 		double numberOfGaps = first.getNumberOfGaps() + second.getNumberOfGaps();
 		double misMatches = 0;
-		for (int i = 0; i <= minLength; i++) {
+		for (int i = 0; i < minLength; i++) {
 			if (first.isGap(i) || second.isGap(i)) {
 				continue;
 			}
 			misMatches += matrix.getValue(first.get(i), second.get(i)) <= 0? 1: 0;
 		}
-		similarity = (maxLength - numberOfGaps - misMatches) / maxLength;
+		similarity = (maxLength - numberOfGaps - misMatches - (maxLength - minLength)) / maxLength;
 		return similarity;
 	}
 }
