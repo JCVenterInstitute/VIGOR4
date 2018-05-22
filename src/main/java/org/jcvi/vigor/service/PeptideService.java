@@ -422,7 +422,10 @@ public class PeptideService implements PeptideMatchingService {
                 computeSimilarity(match.alignment.getNumberOfGapOpenings(),
                         match.peptide.getSequence().getLength(),
                         match.alignment.getAlignmentLength(),
-                        match.alignment.getNumberOfMismatches())
+                        SequenceUtils.computeMismatches(match.alignment.getGappedQueryAlignment(),
+                                match.alignment.getGappedSubjectAlignment(),
+                                BlosumMatrices.blosum40())
+                )
         );
 
     }
