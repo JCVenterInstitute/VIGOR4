@@ -1,11 +1,14 @@
 package org.jcvi.vigor.service;
 import java.util.*;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.ConfigurationParameters;
+import org.jcvi.vigor.utils.IDGenerator;
 import org.jcvi.vigor.utils.NoteType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -58,6 +61,15 @@ public class GeneModelGenerationService {
 		return geneModels;
 
 	}
+	private List<Model> sortModels(List<Model> models,String scoreType){
+        models.sort(new Comparator<Model>() {
+            @Override
+            public int compare(Model m1, Model m2) {
+                return Double.compare(m1.getScores().get(scoreType), m2.getScores().get(scoreType));
+            }
+        });
+        return models;
+    }
 	public List<Model> filterGeneModels(List<Model> models){
        Map<String,List<Model>> groupedModels = models.stream().collect(groupingBy(model -> model.getAlignment().getViralProtein().getProteinID()));
        List<Model> filteredModels = new ArrayList<Model>();
@@ -65,53 +77,66 @@ public class GeneModelGenerationService {
        Set<String> proteinIDs = groupedModels.keySet();
        for(String proteinID : proteinIDs){
            List<Model> similarModels = groupedModels.get(proteinID);
-           similarModels.sort(new Comparator<Model>() {
-               @Override
-               public int compare(Model m1, Model m2) {
-                   return Double.compare(m1.getScores().get("totalScore"), m2.getScores().get("totalScore"));
-               }
-           });
+           similarModels = sortModels(similarModels,"totalScore");
            filteredModels.add(similarModels.get(similarModels.size()-1));
        }
-        filteredModels.sort(new Comparator<Model>() {
-            @Override
-            public int compare(Model m1, Model m2) {
-                return Double.compare(m1.getScores().get("modelScore"), m2.getScores().get("modelScore"));
-            }
-        });
-       if(isDebug) {
-           FormatVigorOutput.printAllGeneModelsWithScores(filteredModels,"Candidate Gene Models");
-       }
 
-       Model geneModel = filteredModels.get(filteredModels.size()-1);
-       int x=1;
-       String genomeID = geneModel.getAlignment().getVirusGenome().getId();
-        String regex = Pattern.quote("|");
-        String[] genomeIDParts = genomeID.split(regex);
-        String geneID="";
-        if(genomeIDParts.length>=2) {
-            geneID = genomeIDParts[0] + "_" + genomeIDParts[1];
-        }else{
-            geneID=genomeIDParts[0];
+       List<Model> candidateGenes = new ArrayList<Model>();
+        if(isDebug) {
+            FormatVigorOutput.printAllGeneModelsWithScores(filteredModels,"All Gene Models");
         }
-       geneModel.setGeneID(geneID+"."+x);
-       geneModels.add(geneModel);
-       filteredModels.remove(geneModel);
-       List<String> sharedCDSList = geneModel.getAlignment().getViralProtein().getGeneAttributes().getStructuralSpecifications().getShared_cds();
-       if(! (sharedCDSList ==null || filteredModels.isEmpty()) ){
-           for(String sharedCDS : sharedCDSList){
-               for(int j=filteredModels.size()-1;j >= 0; j--){
-               	Model model = filteredModels.get(j);
-                   if(model.getGeneSymbol().equals(sharedCDS)){
-                       x++;
-                       model.setGeneID(geneID+"."+x);
-                       geneModels.add(model);
-                       break;
-                   }
-               }
-           }
+       Map<String,List<Model>> genewiseModels = filteredModels.stream().collect(Collectors.groupingBy(x -> x.getGeneSymbol()));
+       for(Map.Entry<String,List<Model>> entry : genewiseModels.entrySet()){
+           List<Model> tempModels = entry.getValue();
+           tempModels=sortModels(tempModels,"modelScore");
+           candidateGenes.add(tempModels.get(tempModels.size()-1));
        }
+        if(isDebug) {
+            FormatVigorOutput.printAllGeneModelsWithScores(candidateGenes,"Candidate Gene Models");
+        }
+        candidateGenes=sortModels(candidateGenes,"modelScore");
+        Model geneModel = candidateGenes.get(candidateGenes.size()-1);
+        candidateGenes.remove(geneModel);
+        String genomeID = geneModel.getAlignment().getVirusGenome().getId();
+        String[] genomeIDParts = genomeID.split(Pattern.quote("|"));
+        String proteinIDOfGenome;
+        if (genomeIDParts.length >= 2) {
+            proteinIDOfGenome = genomeIDParts[0] + "_" + genomeIDParts[1];
+        } else {
+            proteinIDOfGenome = genomeIDParts[0];
+        }
 
+        IDGenerator idGenerator = IDGenerator.of(proteinIDOfGenome);
+        geneModel.setGeneID(idGenerator.next());
+        geneModels.add(geneModel);
+        List<String> sharedCDSList = geneModel.getAlignment().getViralProtein().getGeneAttributes().getStructuralSpecifications().getShared_cds();
+        for(int j=candidateGenes.size()-1;j>=0;j--){
+            Model candidateGene = candidateGenes.get(j);
+            List<Exon> candidateExons = candidateGene.getExons();
+            boolean overlap = false;
+            for(Model model : geneModels){
+                List<Exon> exons = model.getExons();
+                for(Exon candidateExon : candidateExons){
+                    for(Exon exon : exons){
+                        if(candidateExon.getRange().intersects(exon.getRange())){
+                            overlap=true;
+                        }
+                    }
+                }
+            }
+            if(overlap && sharedCDSList!=null){
+                for(String sharedCDS : sharedCDSList){
+                    if(candidateGene.getGeneSymbol().equals(sharedCDS)){
+                        candidateGene.setGeneID(idGenerator.next());
+                        geneModels.add(candidateGene);
+                    }
+                }
+            }else if(!overlap){
+                candidateGene.setGeneID(idGenerator.next());
+                geneModels.add(candidateGene);
+            }
+
+        }
        return geneModels;
     }
 

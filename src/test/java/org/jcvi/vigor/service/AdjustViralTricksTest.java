@@ -66,16 +66,15 @@ public class AdjustViralTricksTest {
         List<Model> outputModels = adjustViralTricks.adjustRibosomalSlippage(testModel);
         Range actual = outputModels.get(0).getExons().get(0).getRange();
         //581 was earlier value
-        assertEquals(Range.of(9,579),actual);
+        assertEquals(Range.of(9,581),actual);
     }
 
     @Test
-    public void checkForLeakyStopTest() throws VigorException {
+    public void checkForLeakyStopTest() throws VigorException,CloneNotSupportedException {
         VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
         String referenceDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
         assertThat("reference database path must be set", referenceDBPath, is(notNullValue()));
         String referenceDB = Paths.get(referenceDBPath, "veev_db").toString();
-
         List<Alignment> alignments;
         List<Model> models=new ArrayList<Model>();
         File resources = new File("src/test/resources");
@@ -90,9 +89,10 @@ public class AdjustViralTricksTest {
             models.addAll(modelGenerationService.alignmentToModels(x, "exonerate"));
         });
         Model testModel = models.get(0);
-        Model outputModel = adjustViralTricks.checkForLeakyStop(testModel);
+        Model outputModel = adjustViralTricks.checkForLeakyStop(testModel).get(0);
         Range actual = outputModel.getReplaceStopCodonRange();
-        assertEquals(Range.of(5226,5228),actual);
+        assertEquals("TGA",outputModel.getAlignment().getVirusGenome().getSequence().toBuilder().trim(Range.of(5627,5629)).build().toString());
+        assertEquals(Range.of(5627,5629),actual);
     }
 
 

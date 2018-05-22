@@ -90,13 +90,12 @@ public class CheckCoverageTest {
         long PCoordinate = checkCoverage.getTranslatedProteinCooridnate(exons,11,Range.of(11,12));
         assertEquals(4,PCoordinate);
     }
-
     @Test
     public void getInternalStopsTest(){
         Model model = new Model();
         List<Exon> exons =  new ArrayList<Exon>();
         Exon exon1 = new Exon();
-        exon1.setRange(Range.of(4,11));
+        exon1.setRange(Range.of(1,11));
         exon1.setFrame(Frame.ONE);
         Exon exon2 = new Exon();
         exon2.setRange(Range.of(12,22));
@@ -117,7 +116,6 @@ public class CheckCoverageTest {
         List<Range> internalStops = checkCoverage.getInternalStops(model);
         assertEquals(2,internalStops.size());
     }
-
     public Model getTestModel(){
         Model model = new Model();
         List<Exon> exons =  new ArrayList<Exon>();
