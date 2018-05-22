@@ -1,6 +1,9 @@
 package org.jcvi.vigor.utils;
+import org.jcvi.jillion.align.AminoAcidSubstitutionMatrix;
 import org.jcvi.jillion.core.Sequence;
 import org.jcvi.jillion.core.residue.Frame;
+import org.jcvi.jillion.core.residue.aa.AminoAcid;
+import org.jcvi.jillion.core.residue.aa.ProteinSequence;
 import org.jcvi.jillion.core.residue.nt.Nucleotide;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.jillion.core.residue.nt.Triplet;
@@ -85,5 +88,22 @@ public class SequenceUtils {
 		return String.join("...",
 				sequenceString.substring(0,leading),
 				sequenceString.substring(sequenceString.length() -1 - trailing, sequenceString.length() - 1));
+	}
+
+	public static double computeSimilarity(ProteinSequence first, ProteinSequence second, AminoAcidSubstitutionMatrix matrix) {
+		double similarity = 0;
+		double maxLength = Math.max(first.getLength(), second.getLength());
+		double minLength = Math.min(first.getLength(), second.getLength());
+		// TODO gaps in the same place?
+		double numberOfGaps = first.getNumberOfGaps() + second.getNumberOfGaps();
+		double misMatches = 0;
+		for (int i = 0; i <= minLength; i++) {
+			if (first.isGap(i) || second.isGap(i)) {
+				continue;
+			}
+			misMatches += matrix.getValue(first.get(i), second.get(i)) <= 0? 1: 0;
+		}
+		similarity = (maxLength - numberOfGaps - misMatches) / maxLength;
+		return similarity;
 	}
 }
