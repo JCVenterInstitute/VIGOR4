@@ -17,6 +17,7 @@ import org.jcvi.jillion.core.residue.aa.ProteinSequence;
 import org.jcvi.jillion.core.residue.aa.ProteinSequenceBuilder;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
+import org.jcvi.vigor.Vigor;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.forms.VigorForm;
@@ -161,12 +162,7 @@ public class CheckCoverage implements EvaluateModel {
 
 	public List<Range> getInternalStops(Model model){
 	    List<Range> internalStops = new ArrayList<Range>();
-        NucleotideSequence virusGenomeSeq = model.getAlignment().getVirusGenome().getSequence();
-        NucleotideSequenceBuilder NTSeqBuilder=new NucleotideSequenceBuilder("");
-        for(Exon exon : model.getExons()){
-            NTSeqBuilder.append(virusGenomeSeq.toBuilder(exon.getRange()));
-        }
-		NucleotideSequence cds = NTSeqBuilder.build();
+        NucleotideSequence cds = VigorFunctionalUtils.getCDS(model);
         Map<Frame,List<Long>> stops = IupacTranslationTables.STANDARD.findStops(cds);
         Frame fFrame = model.getExons().get(0).getFrame();
 		for(Map.Entry<Frame,List<Long>> pair :stops.entrySet()){
@@ -175,15 +171,17 @@ public class CheckCoverage implements EvaluateModel {
 			for(Long stop : cdsStops){
 				long NTStop = VigorFunctionalUtils.getNTRange(model.getExons(), stop);
 				Range NTStopRange= Range.of(NTStop,NTStop+2);
-				//if(model.getAlignment().getViralProtein().getProteinID().equals("399240871_NSP")){
-				/*System.out.println(virusGenomeSeq.toBuilder().trim(NTStopRange).build());
+				/*if(model.getAlignment().getViralProtein().getProteinID().equals("399240871_NSP")){
+				System.out.println(model.getAlignment().getVirusGenome().getSequence().toBuilder().trim(NTStopRange).build());
 				System.out.println(NTStopRange);
-				System.out.println(model.getReplaceStopCodonRange());//}*/
-				if(model.getReplaceStopCodonRange()!=null&&!NTStopRange.equals(model.getReplaceStopCodonRange()) && !Range.of(stop).equals(Range.of(cds.getLength()-3))){
-				        internalStops.add(NTStopRange);
-                }else if(!Range.of(stop).equals(Range.of(cds.getLength()-3))){
-                    internalStops.add(NTStopRange);
+				System.out.println(model.getReplaceStopCodonRange());}*/
+				boolean internalStop=true;
+				if(model.getReplaceStopCodonRange()!=null&& NTStopRange.equals(model.getReplaceStopCodonRange())){
+				        internalStop=false;
+                }else if(Range.of(stop).equals(Range.of(cds.getLength()-3))){
+                    internalStop=false;
                 }
+                if(internalStop) internalStops.add(NTStopRange);
 			}
 		}
 		}

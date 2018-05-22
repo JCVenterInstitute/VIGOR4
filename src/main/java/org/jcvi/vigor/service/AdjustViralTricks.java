@@ -11,6 +11,7 @@ import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
+import org.jcvi.vigor.Vigor;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.VigorFunctionalUtils;
@@ -43,13 +44,12 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 			for (Model riboAdjustedModel : riboAdjustedmodels) {
 				rnaEditedModels.addAll(adjustRNAEditing(riboAdjustedModel));
 			}
+            for(Model rnaEditeddModel : rnaEditedModels){
+                outputModels.addAll(checkForLeakyStop(rnaEditeddModel));
+            }
 		} catch (CloneNotSupportedException e) {
 			throw new ServiceException(String.format("Problem adjusting model %s for viral tricks", model),e);
 		}
-		for(Model rnaEditeddModel : rnaEditedModels){
-			outputModels.add(checkForLeakyStop(rnaEditeddModel));
-		}
-
 		return outputModels;
 	}
 	
@@ -192,39 +192,47 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 			return models;
 	}
 
-	public Model checkForLeakyStop(Model model){
-		Range range;
-		if(model.getAlignment().getViralProtein().getProteinID().equals("399240871_NSP")){
+	public List<Model> checkForLeakyStop(Model model) throws CloneNotSupportedException{
+		List<Model> newModels= new ArrayList<Model>();
+		/*if(model.getAlignment().getViralProtein().getProteinID().equals("399240871_NSP")){
 			System.out.println("break");
-		}
-
+		}*/
 		StopTranslationException stopTransExce = model.getAlignment().getViralProtein().getGeneAttributes().getStopTranslationException();
-		Map<String,Double> scores = model.getScores();
-		if(stopTransExce.isHasStopTranslationException()){
-            long CDSStart =model.getExons().get(0).getRange().getBegin();
-            long CDSEnd = model.getExons().get(model.getExons().size()-1).getRange().getEnd();
-            NucleotideSequence cds = model.getAlignment().getVirusGenome().getSequence().toBuilder(Range.of(CDSStart,CDSEnd))
-                    .build();
-			Optional<Range> match = cds.findMatches(stopTransExce.getMotif()).distinct().findFirst();
-			int offset = stopTransExce.getOffset();
-			if(offset<0){
-			    offset=offset+1;
+		if(stopTransExce.isHasStopTranslationException()) {
+            NucleotideSequence cds = VigorFunctionalUtils.getCDS(model);
+            List<Range> matches = cds.findMatches(stopTransExce.getMotif()).distinct().collect(Collectors.toList());
+            int offset = stopTransExce.getOffset();
+            if (offset < 0) {
+                offset = offset + 1;
             }
-			if(match.isPresent()){
-			   Range leakyStopRange =  Range.of(match.get().getBegin()+CDSStart,match.get().getEnd()+CDSStart);
-			   long start = leakyStopRange.getEnd()+offset;
-			   range = Range.of(start,start+2);
-			   scores.put("leakyStopScore",100.00);
-			   model.setReplaceStopCodonRange(range);			 			   
-			 }else{
-			   scores.put("leakyStopScore", (double)leakyStopNotFoundScore);				
-			}
-			model.setScores(scores);
-		}		
-		return model;	
+            if (matches != null) {
+                for (Range match : matches) {
+                    long leakyStopStart = VigorFunctionalUtils.getNTRange(model.getExons(), match.getBegin());
+                    Range leakyStopRange = Range.of(leakyStopStart, leakyStopStart + match.getLength() - 1);
+                    long start = leakyStopRange.getEnd() + offset;
+                    if (VigorFunctionalUtils.isInFrameWithExon(model.getExons(), start)) {
+                        Model newModel;
+                        newModel = model.clone();
+                        Map<String, Double> scores = newModel.getScores();
+                        scores.put("leakyStopScore", 100.00);
+                        newModel.setReplaceStopCodonRange(Range.of(start, start + 2));
+                        newModel.setScores(scores);
+                        newModels.add(newModel);
+                    }
+                }
+            }
+            if(newModels.size()<=0){
+                Map<String,Double> scores = model.getScores();
+                scores.put("leakyStopScore", (double)leakyStopNotFoundScore);
+                model.setScores(scores);
+                newModels.add(model);
+            }
+        } else newModels.add(model);
+
+		return newModels;
 	}
-	
-	
+
+
 	public String determineLocation(Range searchRange,Range inputRange, int noOfLocations){
 		long length = searchRange.getLength();
 		if(noOfLocations==3){

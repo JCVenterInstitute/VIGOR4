@@ -70,7 +70,7 @@ public class AdjustViralTricksTest {
     }
 
     @Test
-    public void checkForLeakyStopTest() throws VigorException {
+    public void checkForLeakyStopTest() throws VigorException,CloneNotSupportedException {
         VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
         String referenceDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
         assertThat("reference database path must be set", referenceDBPath, is(notNullValue()));
@@ -89,10 +89,10 @@ public class AdjustViralTricksTest {
             models.addAll(modelGenerationService.alignmentToModels(x, "exonerate"));
         });
         Model testModel = models.get(0);
-        Model outputModel = adjustViralTricks.checkForLeakyStop(testModel);
+        Model outputModel = adjustViralTricks.checkForLeakyStop(testModel).get(0);
         Range actual = outputModel.getReplaceStopCodonRange();
-        assertEquals("TGA",outputModel.getAlignment().getVirusGenome().getSequence().toBuilder().trim(Range.of(5227,5229)).build().toString());
-        assertEquals(Range.of(5227,5229),actual);
+        assertEquals("TGA",outputModel.getAlignment().getVirusGenome().getSequence().toBuilder().trim(Range.of(5627,5629)).build().toString());
+        assertEquals(Range.of(5627,5629),actual);
     }
 
 

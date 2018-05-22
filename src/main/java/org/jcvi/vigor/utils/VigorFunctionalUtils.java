@@ -8,15 +8,18 @@ import java.util.stream.Collectors;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.jillion.core.residue.aa.IupacTranslationTables;
+import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
+import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
 import org.jcvi.vigor.component.AlignmentFragment;
 import org.jcvi.vigor.component.Exon;
+import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.component.VirusGenome;
 
 
 
 public class VigorFunctionalUtils {
 	
-	public static AlignmentFragment mergeTwoFragments(AlignmentFragment frag1 , AlignmentFragment frag2){
+	/*public static AlignmentFragment mergeTwoFragments(AlignmentFragment frag1 , AlignmentFragment frag2){
 		Range prevExonNTRange = frag1.getNucleotideSeqRange();
 		Range nextExonNTRange = frag2.getNucleotideSeqRange();
 		Range prevExonAARange = frag1.getProteinSeqRange();
@@ -26,8 +29,18 @@ public class VigorFunctionalUtils {
 		frag1.setProteinSeqRange(mergedExonAARange);
 		frag1.setNucleotideSeqRange(mergedExonNTRange);
 		return frag1;
-	}
+	}*/
 
+	public static NucleotideSequence getCDS(Model model){
+        NucleotideSequence virusGenomeSeq = model.getAlignment().getVirusGenome().getSequence();
+        NucleotideSequenceBuilder NTSeqBuilder=new NucleotideSequenceBuilder("");
+        for(Exon exon : model.getExons()){
+            NTSeqBuilder.append(virusGenomeSeq.toBuilder(exon.getRange()));
+        }
+        NucleotideSequence cds = NTSeqBuilder.build();
+
+	    return cds;
+    }
 	private static Frame[] FRAMES = { Frame.ONE, Frame.TWO, Frame.THREE};
 	public static Frame getSequenceFrame(long coordinate){
 		return FRAMES[(int) coordinate % 3];
@@ -44,13 +57,25 @@ public class VigorFunctionalUtils {
 				distance = pointOfOccurance - referenceCoordinate;
 			}
 			
-			  
 			  score = 100f/(1f+distance);
 			 				
 		return score;
 	}
-		 
-	public static Map<Frame,List<Long>> frameToSequenceFrame(Map<Frame,List<Long>> rangeFrameMaP){
+
+	public static boolean isInFrameWithExon(List<Exon> exons,long match){
+	    boolean isInFrame=false;
+	    for(Exon exon: exons){
+	        if(exon.getRange().intersects(Range.of(match))){
+	            Frame exonFrame = getSequenceFrame(exon.getRange().getBegin()+exon.getFrame().getFrame()-1);
+	            Frame matchFrame = getSequenceFrame(match);
+	            if(exonFrame.equals(matchFrame)) isInFrame=true;
+            }
+        }
+
+	    return isInFrame;
+    }
+
+    public static Map<Frame,List<Long>> frameToSequenceFrame(Map<Frame,List<Long>> rangeFrameMaP){
 		Map<Frame,List<Long>> outRangeFrameMap = new HashMap<Frame,List<Long>>();
 		for(Frame frame : rangeFrameMaP.keySet()){
 			if(rangeFrameMaP.get(frame).size()>0){
@@ -62,7 +87,7 @@ public class VigorFunctionalUtils {
 		}
 		return outRangeFrameMap;
 	}
-	public static List<Range> rangesMatchingSequenceFrame(List<Range> ranges, Frame frame){
+	/*public static List<Range> rangesMatchingSequenceFrame(List<Range> ranges, Frame frame){
 		List<Range> outRanges = new ArrayList<Range>();
 		for(Range range: ranges){
 			Frame outFrame = getSequenceFrame(range.getBegin());
@@ -71,7 +96,7 @@ public class VigorFunctionalUtils {
 			}
 		}
 		return outRanges;
-	}
+	}*/
 		
 	public static long getNTRange(List<Exon> exons,long CDSNTCoordinate){
 		exons.sort(Exon.Comparators.Ascending);

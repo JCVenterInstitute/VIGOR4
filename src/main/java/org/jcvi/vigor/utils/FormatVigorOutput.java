@@ -88,7 +88,7 @@ public class FormatVigorOutput {
                 content.append(String.format("%-20s",start+".."+end));
                 cdsBases=cdsBases+exon.getRange().getLength();
             }
-            content.append(String.format("%-10s",cdsBases/3));
+            content.append(String.format("%-10s",cdsBases-3/3));
             content.append(String.format("%-10s",viralProtein.getSequence().getLength()));
             content.append(String.format("%-20s",model.getGeneSymbol() +" | " +viralProtein.getProduct()));
             content.append(System.lineSeparator());
@@ -168,18 +168,18 @@ public class FormatVigorOutput {
                 content.append(String.format("%-20s",start+".."+end));
                 cdsBases=cdsBases+exon.getRange().getLength();
             }
-            content.append(String.format("%-10s",cdsBases/3));
+            content.append(String.format("%-10s",(cdsBases-3)/3));
             content.append(String.format("%-10s",viralProtein.getSequence().getLength()));
             content.append(String.format("%-20s",viralProtein.getProteinID()));
             content.append(String.format("%-20s",model.getGeneSymbol() +" | " +viralProtein.getProduct()));
             content.append(System.lineSeparator());
-            cdsBases=cdsBases-3; // excluding stop codon
             totalCDSBases = totalCDSBases+cdsBases;
+            totalPepBases=cdsBases-3+totalPepBases;
             identityAvg = identityAvg+scores.get("%identity");
             similarityAvg = similarityAvg +scores.get("%similarity");
             coverageAvg = coverageAvg+scores.get("%coverage");
         }
-        totalPepBases = totalCDSBases/3;
+        totalPepBases = totalPepBases/3;
         identityAvg = identityAvg/geneModels.size();
         similarityAvg = similarityAvg/geneModels.size();
         coverageAvg = coverageAvg/geneModels.size();
