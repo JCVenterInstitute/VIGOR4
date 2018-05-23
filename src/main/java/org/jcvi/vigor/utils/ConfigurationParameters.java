@@ -29,7 +29,7 @@ public enum ConfigurationParameters {
     IntronMinimumSize("min_intron_size", "Minimum sequence length of an intron", Flags.VERSION_3, Flags.VERSION_4),
 
     JCVIRules("jcvi_rules", ""),
-    Verbose("verbose","",Flags.VERSION_3,Flags.VERSION_4),
+    Verbose("verbose","Make console and .rpt file output more detailed",Flags.VERSION_3,Flags.VERSION_4),
 
     MaturePeptideMinimumCoverage("mature_pep_mincoverage", "",  Flags.VERSION_3, Flags.VERSION_4),
     MaturePeptideMinimumSimilarity("mature_pep_minsimilarity", "",  Flags.VERSION_3, Flags.VERSION_4),
@@ -60,7 +60,7 @@ public enum ConfigurationParameters {
     StopCodonSearchWindow("stop_codon_search_window", "Number of nucleotides before and after a candidate site to check for a stop codon"),
 
     TemporaryDirectory("temporary_directory", "Directory under which Vigor creates temporary files and directories", Flags.VERSION_4), 
-    Locustag("locus_tag", "Include locus tags in output", Flags.VERSION_3, Flags.VERSION_4),
+    Locustag("locus_tag", "Locus tag prefix to use in output", Flags.VERSION_3, Flags.VERSION_4),
 
     AAOverlap_offset("AAOverlap_offset", ""),
     NTOverlap_offset("NTOverlap_offset", ""),
