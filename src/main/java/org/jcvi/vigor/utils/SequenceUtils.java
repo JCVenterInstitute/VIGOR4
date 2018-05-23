@@ -99,7 +99,6 @@ public class SequenceUtils {
 	 * @return
 	 */
 	public static double computeSimilarity(ProteinSequence first, ProteinSequence second, AminoAcidSubstitutionMatrix matrix) {
-		assert(first.getLength() == second.getLength());
 
 		double similarity = 0;
 		double maxLength = Math.max(first.getLength(), second.getLength());
