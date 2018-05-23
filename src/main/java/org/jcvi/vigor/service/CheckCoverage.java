@@ -76,23 +76,22 @@ public class CheckCoverage implements EvaluateModel {
             scores.putAll(model.getScores());
         }
         double percentIdentity = actual.getPercentIdentity()*100;
-        /*int mismatches = actual.getNumberOfMismatches()+actual.getNumberOfGapOpenings();
-        int matches = actual.getAlignmentLength()-mismatches;
-        long maxSeqLength = Long.max(querySeq.getLength(),subSeq.getLength());*/
-        double percentSimilarity = SequenceUtils.computePercentSimilarity(actual.getGappedQueryAlignment(),actual.getGappedSubjectAlignment(),actual.getAlignmentLength(),blosom62);
-       // double percentSimilarity = ((double)matches/maxSeqLength)*100;
-        //long coverage = Long.max(actual.getQueryRange().getLength(),actual.getSubjectRange().getLength());
-      //  double percentCoverage = ((double)actual.getAlignmentLength()/subSeq.getLength())*100;
-        double partialGeneCoverage = ((int)(1000*actual.getQueryRange().getLength()/subSeq.getLength()))/10;
+        long maxSeqLength = Long.max(querySeq.getLength(),subSeq.getLength());
+        double percentSimilarity = SequenceUtils.computePercentSimilarity(actual.getGappedQueryAlignment(),actual.getGappedSubjectAlignment(),maxSeqLength, blosom62);
+        /*double partialGeneCoverage = ((int)(1000*actual.getQueryRange().getLength()/subSeq.getLength()))/10;
         if(partialGeneCoverage>100) partialGeneCoverage=100;
         double queryCoverage = ((int)(1000*actual.getQueryRange().getLength()/querySeq.getLength()))/10;
         if(queryCoverage>100) queryCoverage=100;
         double  subjectCoverage = ((int)(1000*actual.getSubjectRange().getLength()/subSeq.getLength()))/10;
-        if(subjectCoverage>100) subjectCoverage=100;
+        if(subjectCoverage>100) subjectCoverage=100;*//*
+
         double percentCoverage;
         if(model.isPartial5p()||model.isPartial3p()){
             percentCoverage=partialGeneCoverage;
-        }else percentCoverage = Math.max(queryCoverage,subjectCoverage);
+        }else percentCoverage = Math.max(queryCoverage,subjectCoverage);*/
+        double maxAlignmentLength = Long.max(actual.getQueryRange().getLength(),actual.getSubjectRange().getLength());
+        double percentCoverage = (maxAlignmentLength/maxSeqLength)*100;
+        if(percentCoverage>100)percentCoverage=100;
         scores.put("%identity",percentIdentity);
         scores.put("%similarity",percentSimilarity);
         scores.put("%coverage",percentCoverage);
@@ -109,14 +108,18 @@ public class CheckCoverage implements EvaluateModel {
         boolean inserted=false;
         NucleotideSequenceBuilder NTSeqBuilder=new NucleotideSequenceBuilder("");
         NucleotideSequence NTSeq;
-        for(Exon exon : exons){
-            if(!inserted && model.getInsertRNAEditingRange()!=null && model.getInsertRNAEditingRange().getBegin()==(exon.getRange().getEnd()+1)){
-                NTSeqBuilder.append(virusGenomeSeq.toBuilder(exon.getRange()));
+        for(int i=0;i<exons.size();i++){
+            Range exonRange = exons.get(i).getRange();
+            if(i==exons.size()-1 && !model.isPartial3p()){
+                exonRange = Range.of(exonRange.getBegin(),exonRange.getEnd()-3);
+            }
+            if(!inserted && model.getInsertRNAEditingRange()!=null && model.getInsertRNAEditingRange().getBegin()==(exonRange.getEnd()+1)){
+                NTSeqBuilder.append(virusGenomeSeq.toBuilder(exonRange));
                 String insertionString = model.getAlignment().getViralProtein().getGeneAttributes().getRna_editing().getInsertionString();
                     NTSeqBuilder.append(insertionString);
                     inserted=true;
             }else {
-                NTSeqBuilder.append(virusGenomeSeq.toBuilder(exon.getRange()));
+                NTSeqBuilder.append(virusGenomeSeq.toBuilder(exonRange));
             }
         }
         NTSeq = NTSeqBuilder.build();

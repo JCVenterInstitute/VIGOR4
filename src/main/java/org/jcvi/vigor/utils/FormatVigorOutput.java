@@ -88,7 +88,10 @@ public class FormatVigorOutput {
                 content.append(String.format("%-20s",start+".."+end));
                 cdsBases=cdsBases+exon.getRange().getLength();
             }
-            content.append(String.format("%-10s",(cdsBases-3)/3));
+            if(model.isPartial3p()){
+                content.append(String.format("%-10s",(cdsBases)/3));
+            }else{
+            content.append(String.format("%-10s",(cdsBases-3)/3));}
             content.append(String.format("%-10s",viralProtein.getSequence().getLength()));
             content.append(String.format("%-20s",model.getGeneSymbol() +" | " +viralProtein.getProduct()));
             content.append(System.lineSeparator());
@@ -168,13 +171,14 @@ public class FormatVigorOutput {
                 content.append(String.format("%-20s",start+".."+end));
                 cdsBases=cdsBases+exon.getRange().getLength();
             }
-            content.append(String.format("%-10s",(cdsBases-3)/3));
+            if(!model.isPartial3p()) cdsBases=cdsBases-3;
+            content.append(String.format("%-10s",(cdsBases)/3));
             content.append(String.format("%-10s",viralProtein.getSequence().getLength()));
             content.append(String.format("%-20s",viralProtein.getProteinID()));
             content.append(String.format("%-20s",model.getGeneSymbol() +" | " +viralProtein.getProduct()));
             content.append(System.lineSeparator());
             totalCDSBases = totalCDSBases+cdsBases;
-            totalPepBases=cdsBases-3+totalPepBases;
+            totalPepBases=cdsBases+totalPepBases;
             identityAvg = identityAvg+scores.get("%identity");
             similarityAvg = similarityAvg +scores.get("%similarity");
             coverageAvg = coverageAvg+scores.get("%coverage");
