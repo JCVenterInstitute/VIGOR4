@@ -50,6 +50,7 @@ public class PeptideService implements PeptideMatchingService {
         public final ProteinFastaRecord peptide;
         public final ProteinSequence protein;
         public final ProteinPairwiseSequenceAlignment alignment;
+        private Scores scores = Scores.of(-1,-1,-1);
 
         public PeptideMatch(ProteinFastaRecord peptide, ProteinSequence protein, ProteinPairwiseSequenceAlignment alignment) {
             this.peptide = peptide;
@@ -59,6 +60,14 @@ public class PeptideService implements PeptideMatchingService {
 
         public static PeptideMatch of(ProteinFastaRecord peptide, ProteinSequence protein, ProteinPairwiseSequenceAlignment alignment) {
             return new PeptideMatch(peptide, protein, alignment);
+        }
+
+        public Scores getScores() {
+            return scores;
+        }
+
+        public void setScores(Scores scores) {
+            this.scores = scores;
         }
 
     }
@@ -136,7 +145,7 @@ public class PeptideService implements PeptideMatchingService {
         // filter
         Predicate<PeptideMatch> filterByScore = match -> {
             ProteinPairwiseSequenceAlignment alignment = match.alignment;
-            Scores matchScores = getMatchScores(match);
+            Scores matchScores = match.getScores();
 
             LOGGER.debug("alignment for subject {} to query {} ({}) %ident {} min %ident {} %sim {} min %sim {} %cov {}  min %cov {}",
                     alignment.getGappedSubjectAlignment(),
@@ -175,7 +184,8 @@ public class PeptideService implements PeptideMatchingService {
                 return subjectRange;
             };
 
-            Map<Range, List<PeptideMatch>> alignmentsByRange = alignments.filter(filterByScore)
+            Map<Range, List<PeptideMatch>> alignmentsByRange = alignments.peek(m -> m.setScores(getMatchScores(m)))
+                                                                         .filter(filterByScore)
                                                                          .sorted(byQueryAlignment::compare)
                                                                          .collect(Collectors.groupingBy(binByRange));
 
@@ -197,11 +207,13 @@ public class PeptideService implements PeptideMatchingService {
                                            .sorted(Range.Comparators.ARRIVAL)
                                            .map((x) -> {
                                                PeptideMatch match = alignmentsByRange.get(x).stream()
-                                                                                     .max(Comparator.comparing(p -> {Scores s = PeptideService.getMatchScores(p); return s.coverage + s.identity + s.similarity + p.alignment.getScore();}))
+                                                                                     .max(Comparator.comparing(p -> {Scores s = p.getScores(); return s.coverage * 100 + s.identity * 100 + s.similarity * 100 + p.alignment.getScore();}))
                                                                                      .get();
-                                               LOGGER.debug("With score {} %identity {} returning range {}\nS>{}\nQ>{}\nP>{}",
+                                               LOGGER.debug("With score {} %ident {} %sim {} %cov {} returning range {}\nS>{}\nQ>{}\nP>{}",
                                                        match.alignment.getScore(),
-                                                       match.alignment.getPercentIdentity(),
+                                                       match.getScores().identity,
+                                                       match.getScores().similarity,
+                                                       match.getScores().coverage,
                                                        getRangeString(match),
                                                        match.alignment.getGappedSubjectAlignment(),
                                                        match.alignment.getGappedQueryAlignment(),
@@ -241,6 +253,13 @@ public class PeptideService implements PeptideMatchingService {
                         current.setProteinRange(currentRange.toBuilder().setBegin(0).build());
                     } else {
                         adjustPeptideEdges(protein, prev, current);
+                        // TODO this removes zero length, but what about short ranges > 0?
+                        if (prev.getProteinRange().getLength() == 0) {
+                            peptides.remove(peptides.size() - 1);
+                        }
+                        if (current.getProteinRange().getLength() == 0) {
+                            continue;
+                        }
                     }
                 }
                 peptides.add(current);
@@ -419,7 +438,8 @@ public class PeptideService implements PeptideMatchingService {
                         match.alignment.getQueryRange().asRange(),
                         match.peptide.getSequence(),
                         match.alignment.getSubjectRange().asRange()),
-                computeSimilarity(match.alignment.getNumberOfGapOpenings(),
+                computeSimilarity(
+                        match.alignment.getNumberOfGapOpenings(),
                         match.peptide.getSequence().getLength(),
                         match.alignment.getAlignmentLength(),
                         SequenceUtils.computeMismatches(match.alignment.getGappedQueryAlignment(),
