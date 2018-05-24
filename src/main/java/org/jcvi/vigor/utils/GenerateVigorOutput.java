@@ -9,6 +9,7 @@ import org.jcvi.vigor.component.*;
 import org.springframework.stereotype.Service;
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.Iterator;
@@ -187,7 +188,7 @@ public class GenerateVigorOutput {
     }
 
     private void writeDefline(BufferedWriter bw, Model model) throws IOException {
-        String reference_db = model.getAlignment().getAlignmentEvidence().getReference_db();
+
         ViralProtein refProtein = model.getAlignment().getViralProtein();
         StringBuilder defline = new StringBuilder();
         defline.append(">" + model.getGeneID());
@@ -209,8 +210,11 @@ public class GenerateVigorOutput {
         }
         defline.append(" codon_start=" + codon_start);
         defline.append(String.format(" gene=\"%s\"" , refProtein.getGeneSymbol()));
-        defline.append(String.format(" product=\"%s\"" , refProtein.getProduct()));
-        defline.append(String.format(" ref_db=\"%s\"" , reference_db));
+        defline.append(String.format(" product=\"%s\"" , VigorUtils.putativeName(refProtein.getProduct(), model.isPartial3p(), model.isPartial5p())));
+        String reference_db = model.getAlignment().getAlignmentEvidence().getReference_db();
+        if (! (reference_db == null || reference_db.isEmpty())) {
+            defline.append(String.format(" ref_db=\"%s\"", Paths.get(reference_db).getFileName().toString()));
+        }
         defline.append(String.format(" ref_id=\"%s\"" , refProtein.getProteinID()));
         bw.write(defline.toString());
         bw.newLine();
@@ -244,28 +248,30 @@ public class GenerateVigorOutput {
 
             IDGenerator idGenerator = IDGenerator.of(model.getGeneID());
 
-            if (model.getMaturePeptides() != null && !model.getMaturePeptides().isEmpty()) {
-                for (MaturePeptideMatch match : model.getMaturePeptides()) {
-                    defline = new StringBuilder();
-                    defline.append(">" + idGenerator.next());
-                    if (model.isPseudogene()) {
-                        defline.append(" pseudogene");
-                    }
-                    defline.append(" mat_peptide");
-                    defline.append(String.format(" location=%s..%s", formatMaturePeptideRange(match)));
-                    // TODO make sure this is correct
-                    defline.append(String.format(" gene=\"%s\"", model.getGeneSymbol()));
-                    // TODO this needs some formatting
-                    defline.append(String.format(" product=\"%s\"", match.getReference().getProduct()));
-                    defline.append(String.format(" ref_db=\"%s\"", model.getAlignment().getAlignmentEvidence().getMatpep_db()));
-                    defline.append(String.format(" ref_id=\"%s\"", match.getReference().getProteinID()));
-                    bw.write(defline.toString());
-                    bw.newLine();
-                    writeSequence(bw, match.getProtein().toBuilder().trim(match.getProteinRange()).build());
+            for (MaturePeptideMatch match : model.getMaturePeptides()) {
+                defline = new StringBuilder();
+                defline.append(">" + idGenerator.next());
+                if (model.isPseudogene()) {
+                    defline.append(" pseudogene");
                 }
-
+                defline.append(" mat_peptide");
+                defline.append(String.format(" location=%s..%s", formatMaturePeptideRange(match)));
+                // TODO make sure this is correct
+                defline.append(String.format(" gene=\"%s\"", model.getGeneSymbol()));
+                // TODO this needs some formatting
+                defline.append(String.format(" product=\"%s\"", VigorUtils.putativeName(match.getReference().getProduct(), model.isPartial3p(), model.isPartial5p())));
+                String refDB = model.getAlignment().getAlignmentEvidence().getMatpep_db();
+                if (! (refDB == null || refDB.isEmpty() )) {
+                    defline.append(String.format(" ref_db=\"%s\"", Paths.get(refDB).getFileName().toString()));
+                }
+                defline.append(String.format(" ref_id=\"%s\"", match.getReference().getProteinID()));
+                bw.write(defline.toString());
+                bw.newLine();
+                writeSequence(bw, match.getProtein().toBuilder().trim(match.getProteinRange()).build());
             }
+
         }
+
     }
 
     private static Object[] formatMaturePeptideRange(MaturePeptideMatch match) {
