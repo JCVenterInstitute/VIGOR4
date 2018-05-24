@@ -111,9 +111,9 @@ public class SequenceUtils {
 	 * @param matrix
 	 * @return
 	 */
-	public static double computeMismatches(ProteinSequence first, ProteinSequence second, AminoAcidSubstitutionMatrix matrix) {
+	public static int computeMismatches(ProteinSequence first, ProteinSequence second, AminoAcidSubstitutionMatrix matrix) {
 		assert (first.getLength() == second.getLength());
-		double misMatches = 0;
+		int misMatches = 0;
 
 		for (int i = 0; i < first.getLength(); i++) {
 			if (first.isGap(i) || second.isGap(i)) {
