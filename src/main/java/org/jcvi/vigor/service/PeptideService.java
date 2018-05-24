@@ -138,23 +138,33 @@ public class PeptideService implements PeptideMatchingService {
                 Scores.of(DEFAULT_MIN_IDENTITY, DEFAULT_MIN_COVERAGE, DEFAULT_MIN_SIMILARITY));
     }
 
+    private static String formatMatchForLogging(PeptideMatch match) {
+        Scores matchScores = match.getScores();
+        ProteinPairwiseSequenceAlignment alignment = match.alignment;
+
+        return String.format("%-20s     %04d    %04d-%04d     %04d-%04d   %.04f   %.04f   %.04f   %s",
+                match.peptide.getId(),
+                match.peptide.getLength(),
+                alignment.getSubjectRange().getBegin(),
+                alignment.getSubjectRange().getEnd(),
+                alignment.getQueryRange().getBegin(),
+                alignment.getQueryRange().getEnd(),
+                matchScores.identity,
+                matchScores.similarity,
+                matchScores.coverage,
+                match.peptide.getComment()
+                );
+    }
     @Override
     public List<MaturePeptideMatch> findPeptides(ProteinSequence protein, File peptideDatabase, Scores minscores) throws ServiceException {
 
 
         // filter
         Predicate<PeptideMatch> filterByScore = match -> {
-            ProteinPairwiseSequenceAlignment alignment = match.alignment;
+
+            LOGGER.debug(formatMatchForLogging(match));
+
             Scores matchScores = match.getScores();
-
-            LOGGER.debug("alignment for subject {} to query {} ({}) %ident {} min %ident {} %sim {} min %sim {} %cov {}  min %cov {}",
-                    alignment.getGappedSubjectAlignment(),
-                    alignment.getGappedQueryAlignment(),
-                    match.peptide.getSequence(),
-                    alignment.getPercentIdentity(), minscores.identity,
-                    matchScores.similarity, minscores.similarity,
-                    matchScores.coverage, minscores.coverage);
-
             return matchScores.identity >= minscores.identity &&
                     matchScores.similarity >= minscores.similarity &&
                     matchScores.coverage >= minscores.coverage;
@@ -318,7 +328,7 @@ public class PeptideService implements PeptideMatchingService {
             testCurrent = subjectSequence.toBuilder().trim(testCurrentRange).build();
 
             testScore = scorePeptideByProfile(testPrevious, previousReferenceProfile) + scorePeptideByProfile(testCurrent, currentReferenceProfile);
-            LOGGER.debug("checking {}-{} and {}-{} got score {}",
+            LOGGER.trace("checking {}-{} and {}-{} got score {}",
                     previousRange.getBegin(),start,
                     start+1, currentRange.getEnd(),
                     testScore);
@@ -354,11 +364,7 @@ public class PeptideService implements PeptideMatchingService {
         ViralProtein referenceProtein = new ViralProtein();
         referenceProtein.setSequence(match.peptide.getSequence());
         referenceProtein.setDefline(String.join(" ", ">" + match.peptide.getId(), match.peptide.getComment()));
-        Matcher m = productPattern.matcher(referenceProtein.getDefline());
-
-        if (m.find()) {
-            referenceProtein.setProduct(m.group("product"));
-        }
+        referenceProtein.setProduct(extractProduct(referenceProtein.getDefline()));
         referenceProtein.setProteinID(match.peptide.getId());
 
 
@@ -418,6 +424,8 @@ public class PeptideService implements PeptideMatchingService {
     Stream<PeptideMatch> getAlignments(ProteinSequence protein, File peptideDatabase) throws IOException {
 
         LOGGER.info("finding alignments in {} for seq {}", peptideDatabase, SequenceUtils.elipsedSequenceString(protein, 40,20));
+        LOGGER.debug(String.format("%-20s     %-4s    %-9s     %-9s   %-6s   %-6s   %-6s   %s",
+                "id","len","sub","qry","%id","%sim","%cov","comment"));
 
         ProteinFastaFileDataStore peptideDataStore = ProteinFastaFileDataStore.fromFile(peptideDatabase);
         // TODO configurable gap penalties and blosum matrix
@@ -450,6 +458,15 @@ public class PeptideService implements PeptideMatchingService {
                 )
         );
 
+    }
+
+    public static String extractProduct(String defline) {
+        Matcher m = productPattern.matcher(defline);
+
+        if (m.find()) {
+            return m.group("product");
+        }
+        return "";
     }
 
 }
