@@ -7,8 +7,13 @@ import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.FormatVigorOutput;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import org.apache.logging.log4j.LogManager;
@@ -41,7 +46,7 @@ public class AlignmentGenerationService {
 		VigorConfiguration vigorConfig = form.getConfiguration();
 
 		String min_gap_length = vigorConfig.get(ConfigurationParameters.SequenceGapMinimumLength);
-		String workspace = vigorConfig.get(ConfigurationParameters.OutputDirectory);
+		String tempDir = vigorConfig.get(ConfigurationParameters.TemporaryDirectory);
 		String referenceDB = alignmentEvidence.getReference_db();
 
 		List<Range> sequenceGaps = VirusGenomeService.findSequenceGapRanges(min_gap_length,
@@ -51,7 +56,27 @@ public class AlignmentGenerationService {
 		virusGenome.setSequenceGaps(sequenceGaps);
 		List<Alignment> alignments = Collections.EMPTY_LIST;
 		AlignmentService alignmentService = getAlignmentService(alignmentTool, form);
-		alignments = alignmentService.getAlignment(form.getAlignmentEvidence(), virusGenome, referenceDB, workspace);
+		Path workspace = null;
+		try {
+			try {
+				workspace = Files.createTempDirectory(Paths.get(tempDir), "vigor4");
+			} catch (IOException e) {
+				throw new VigorException(String.format("Unable to create temporary directory under %s", tempDir));
+			}
+			alignments = alignmentService.getAlignment(form.getAlignmentEvidence(), virusGenome, referenceDB, workspace.toString());
+		} finally {
+			try {
+				// clean up
+				if (workspace != null) {
+					Files.walk(workspace)
+						 .map(Path::toFile)
+						 .sorted(Comparator.reverseOrder())
+						 .forEach(File::delete);
+				}
+			} catch (IOException e) {
+				LOGGER.warn("Error deleting temporary working directory {}", workspace);
+			}
+		}
 		for (int i=0; i < alignments.size(); i++ ) {
 			alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), form));
 		}
