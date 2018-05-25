@@ -35,25 +35,10 @@ public class Model implements Cloneable{
 
    public Model clone() throws CloneNotSupportedException {
 	   Model model = (Model) super.clone();
-	   model.exons = exons.stream().map(x->x.clone()).collect(Collectors.toList());
-	   model.setScores(null);
-	   Map<String,Double> scoresCopy = new HashMap<String,Double>();
-	   String key;
-	   if(this.scores!=null) {
-		   Iterator<String> it = this.scores.keySet().iterator();
-		   while (it.hasNext()) {
-			   key = it.next();
-			   scoresCopy.put(key, this.scores.get(key));
-		   }
-	   }
-       List<String> statusCopy = new ArrayList<String>();
-	   if(this.status!=null) {
-		   statusCopy.addAll(this.status);
+	   model.setExons(this.getExons().stream().map(x->x.clone()).collect(Collectors.toList()));
+	   model.setScores(new HashMap<>(this.scores));
+	   model.setStatus(new ArrayList<>(this.status));
 
-	   }
-
-	   model.setStatus(statusCopy);
-	   model.setScores(scoresCopy);
 	   return model;
    }
 

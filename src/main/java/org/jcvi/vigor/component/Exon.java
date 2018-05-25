@@ -30,6 +30,7 @@ public class Exon implements Cloneable {
 		this.range = range;
 		this.frame = frame;
 	}
+
 	public Exon clone(){
 		
 		Exon exon=null;
