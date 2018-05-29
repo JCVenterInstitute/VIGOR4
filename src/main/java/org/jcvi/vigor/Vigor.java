@@ -1,8 +1,10 @@
 package org.jcvi.vigor;
 
 import net.sourceforge.argparse4j.inf.Namespace;
+import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.LoggerContext;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.datastore.DataStoreException;
 import org.jcvi.jillion.core.datastore.DataStoreProviderHint;
@@ -26,7 +28,6 @@ import java.nio.charset.Charset;
 import java.nio.file.*;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Component
 public class Vigor {
@@ -61,7 +62,10 @@ public class Vigor {
 	public void run(String ... args) {
 
         Namespace parsedArgs = parseArgs(args);
-
+        if (parsedArgs.getBoolean(CommandLineParameters.verbose)) {
+            setVerboseLogging();
+            LOGGER.debug("verbose logging enabled");
+        }
         String inputFileName = parsedArgs.getString("input_fasta");
         File inputFile = new File(inputFileName);
         if (! inputFile.exists()) {
@@ -139,6 +143,12 @@ public class Vigor {
             System.exit(1);
         }
 
+    }
+
+    private void setVerboseLogging() {
+        LoggerContext lc = (LoggerContext) LogManager.getContext(false);
+        lc.getConfiguration().getLoggerConfig("org.jcvi.vigor").setLevel(Level.DEBUG);
+        lc.updateLoggers();
     }
 
     private PeptideMatchingService.Scores getPeptideScores(VigorConfiguration config) {
