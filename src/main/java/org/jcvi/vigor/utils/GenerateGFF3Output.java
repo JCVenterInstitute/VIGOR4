@@ -25,8 +25,6 @@ public class GenerateGFF3Output {
 
     public void printGFF3Features(VigorConfiguration config, BufferedWriter bw, List<Model> geneModels) throws IOException{
 
-
-        bw.newLine();
         for(Model geneModel : geneModels){
             EnumMap<NoteType,String> notes = geneModel.getNotes();
             int i=1;

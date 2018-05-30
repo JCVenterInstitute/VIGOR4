@@ -96,7 +96,7 @@ public class Vigor {
             try (GenerateVigorOutput.Outfiles outfiles = getOutfiles(outputDir,
                     outputPrefix,
                     vigorForm.getConfiguration().get(ConfigurationParameters.OverwriteOutputFiles) == "true")) {
-                outfiles.get(GenerateVigorOutput.Outfile.GFF3).write("##gff-version 3");
+                outfiles.get(GenerateVigorOutput.Outfile.GFF3).write("##gff-version 3\n");
                 PeptideMatchingService.Scores peptideScores = getPeptideScores(vigorParameters);
                 Iterator<NucleotideFastaRecord> i = dataStore.records().iterator();
                 while (i.hasNext()) {
