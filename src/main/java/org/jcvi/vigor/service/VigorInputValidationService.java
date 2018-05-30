@@ -213,6 +213,11 @@ public class VigorInputValidationService {
               .dest(CommandLineParameters.overwriteOutputFiles)
               .help("overwrite existing output files if they exist");
 
+        parser.addArgument("--temporary-directory")
+			  .action(Arguments.store())
+			  .dest(CommandLineParameters.temporaryDirectory)
+			  .help("Root directory to use for temporary directories");
+
 		return parser;
 	}
 

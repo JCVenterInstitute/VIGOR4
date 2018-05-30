@@ -39,7 +39,7 @@ public class PeptideService implements PeptideMatchingService {
      */
     private static final long PROXIMITY_MAX = 30L;
     private static final long MAX_GAP = 15L;
-    private static Pattern productPattern = Pattern.compile("product\\s*=\\s*\"?(?<product>.*)\"?\\b");
+    private static Pattern productPattern = Pattern.compile("product\\s*=\\s*\"(?<product>[^\"]+)\"");
     private static Logger LOGGER = LogManager.getLogger(PeptideService.class);
     private static double DEFAULT_MIN_IDENTITY = 0.25d;
     private static double DEFAULT_MIN_COVERAGE = 0.50d;
@@ -335,6 +335,7 @@ public class PeptideService implements PeptideMatchingService {
         referenceProtein.setSequence(match.peptide.getSequence());
         referenceProtein.setDefline(String.join(" ", ">" + match.peptide.getId(), match.peptide.getComment()));
         Matcher m = productPattern.matcher(referenceProtein.getDefline());
+
         if (m.find()) {
             referenceProtein.setProduct(m.group("product"));
         }
