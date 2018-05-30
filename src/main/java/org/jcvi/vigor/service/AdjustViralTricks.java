@@ -32,6 +32,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 	
 	@Override
 	public List<Model> determine(Model model,VigorForm form) throws ServiceException {
+
 		List<Model> outputModels = new ArrayList<>();
 		List<Model> rnaEditedModels= new ArrayList<>();
 
@@ -58,6 +59,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 	   Ribosomal_Slippage riboSlippage= model.getAlignment().getViralProtein().getGeneAttributes().getRibosomal_slippage();
 	   List<Model> models = new ArrayList<Model>();
 	   if(riboSlippage.isHas_ribosomal_slippage()){
+	   List<Range> sequenceGaps = model.getAlignment().getVirusGenome().getSequenceGaps();
 	   long CDSStart =model.getExons().get(0).getRange().getBegin();
 	   long CDSEnd = model.getExons().get(model.getExons().size()-1).getRange().getEnd();
 	   NucleotideSequence cds = model.getAlignment().getVirusGenome().getSequence().toBuilder(Range.of(CDSStart,CDSEnd))
@@ -70,7 +72,8 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 	   matches = cds.findMatches(riboSlippage.getSlippage_motif()).collect(Collectors.toList());
 	   matches=matches.stream().map(x->x=Range.of(x.getBegin()+CDSStart,x.getEnd()+CDSStart)).sequential().collect(Collectors.toList());
 	   for(Range match:matches){
-		  Model newModel = new Model();
+	     if(!VigorFunctionalUtils.intheSequenceGap(sequenceGaps,match)){
+		  Model newModel ;
 		  newModel = model.clone();
 		 // Range slippagePoint = Range.of(match.getEnd()+riboSlippage.getSlippage_offset(),match.getEnd()+riboSlippage.getSlippage_offset());
 		 //test logic(vigor3 annotation)
@@ -120,7 +123,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 
 		 models.add(newModel);
 
-	   }
+	   } }
 	   }
 	  if(models.size()==0){
 		  models.add(model);
@@ -131,59 +134,62 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 	
 	public List<Model> adjustRNAEditing(Model model) throws CloneNotSupportedException{
 		List<Model> models = new ArrayList<Model>();
-		if(model.getAlignment().getViralProtein().getGeneAttributes().getRna_editing().isHas_RNA_editing()){
-		RNA_Editing rna_editing = model.getAlignment().getViralProtein().getGeneAttributes().getRna_editing();
-		long CDSStart =model.getExons().get(0).getRange().getBegin();
-		long CDSEnd = model.getExons().get(model.getExons().size()-1).getRange().getEnd();
-		NucleotideSequence cds = model.getAlignment().getVirusGenome().getSequence().toBuilder(Range.of(CDSStart,CDSEnd))
-					.build();
-		List<Range> matches = cds.findMatches(rna_editing.getRegExp()).distinct().collect(Collectors.toList());
-		//offset must be used to determine pointOfInsertion
-		matches=matches.stream().map(x->x=Range.of(x.getBegin()+CDSStart,x.getEnd()+CDSStart)).sequential().collect(Collectors.toList());
-		int offset = rna_editing.getOffset();
-		if(rna_editing.getOffset()<0){
-		    offset=offset+1;
+		if(model.getAlignment().getViralProtein().getGeneAttributes().getRna_editing().isHas_RNA_editing()) {
+            RNA_Editing rna_editing = model.getAlignment().getViralProtein().getGeneAttributes().getRna_editing();
+            long CDSStart = model.getExons().get(0).getRange().getBegin();
+            long CDSEnd = model.getExons().get(model.getExons().size() - 1).getRange().getEnd();
+            NucleotideSequence cds = model.getAlignment().getVirusGenome().getSequence().toBuilder(Range.of(CDSStart, CDSEnd))
+                    .build();
+            List<Range> matches = cds.findMatches(rna_editing.getRegExp()).distinct().collect(Collectors.toList());
+            //offset must be used to determine pointOfInsertion
+            matches = matches.stream().map(x -> x = Range.of(x.getBegin() + CDSStart, x.getEnd() + CDSStart)).sequential().collect(Collectors.toList());
+            List<Range> sequenceGaps = model.getAlignment().getVirusGenome().getSequenceGaps();
+            int offset = rna_editing.getOffset();
+            if (rna_editing.getOffset() < 0) {
+                offset = offset + 1;
+            }
+            for (Range match : matches) {
+                if (!VigorFunctionalUtils.intheSequenceGap(sequenceGaps, match)){
+                    Model newModel;
+                newModel = model.clone();
+                Range pointOfInsertion = Range.of(match.getEnd() + offset, match.getEnd() + rna_editing.getInsertionString().length() - 1);
+                newModel.setInsertRNAEditingRange(pointOfInsertion);
+                for (int i = 0; i < newModel.getExons().size(); i++) {
+                    Range exonRange = newModel.getExons().get(i).getRange();
+                    if (exonRange.intersects(pointOfInsertion)) {
+                        String pointOfOccurance = determineLocation(exonRange, pointOfInsertion, 2);
+                        if (pointOfOccurance.equals("start")) {
+                            newModel.getExons().get(i).setRange(Range.of(pointOfInsertion.getBegin(), exonRange.getEnd()));
+                            if (i != 0) {
+                                Range prevExonRange = newModel.getExons().get(i - 1).getRange();
+                                newModel.getExons().get(i - 1).setRange(Range.of(prevExonRange.getBegin(), pointOfInsertion.getBegin() - 1));
+                            }
+                        } else {
+                            newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(), pointOfInsertion.getBegin() - 1));
+                            if (i != newModel.getExons().size() - 1) {
+                                Range nextExonRange = newModel.getExons().get(i + 1).getRange();
+                                newModel.getExons().get(i + 1).setRange(Range.of(pointOfInsertion.getBegin(), nextExonRange.getEnd()));
+                            } else {
+                                Exon exon = new Exon();
+                                exon.setRange(Range.of(pointOfInsertion.getEnd() + 1, exonRange.getEnd()));
+                                exon.setFrame(Frame.ONE);
+                                Frame sequenceFrame = VigorFunctionalUtils.getSequenceFrame(exon.getRange().getBegin() + exon.getFrame().getFrame() - 1);
+                                exon.setSequenceFrame(sequenceFrame);
+                                exon.setAlignmentFragment(newModel.getExons().get(i).getAlignmentFragment());
+                                newModel.getExons().add(exon);
+                            }
+                        }
+                    } else if (i != newModel.getExons().size() - 1) {
+                        Range nextExonRange = newModel.getExons().get(i + 1).getRange();
+                        if (pointOfInsertion.intersects(Range.of(exonRange.getEnd() + 1, nextExonRange.getBegin() - 1))) {
+                            newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(), pointOfInsertion.getBegin() - 1));
+                            newModel.getExons().get(i + 1).setRange(Range.of(pointOfInsertion.getBegin(), nextExonRange.getEnd()));
+                        }
+                    }
+                }
+                models.add(newModel);
+            }
         }
-		for(Range match:matches){
-			  Model newModel;
-			  newModel = model.clone();
-			  Range pointOfInsertion=Range.of(match.getEnd()+offset,match.getEnd()+rna_editing.getInsertionString().length()-1);
-			  newModel.setInsertRNAEditingRange(pointOfInsertion);
-			  for(int i=0;i<newModel.getExons().size();i++){
-					 Range exonRange = newModel.getExons().get(i).getRange();
-					 if(exonRange.intersects(pointOfInsertion)){
-						String pointOfOccurance = determineLocation(exonRange,pointOfInsertion,2);
-						 if(pointOfOccurance.equals("start")){
-							 newModel.getExons().get(i).setRange(Range.of(pointOfInsertion.getBegin(),exonRange.getEnd()));
-							 if(i!=0){
-							 Range prevExonRange = newModel.getExons().get(i-1).getRange();
-							 newModel.getExons().get(i-1).setRange(Range.of(prevExonRange.getBegin(),pointOfInsertion.getBegin()-1));
-							 }
-						 }else{
-							 newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(),pointOfInsertion.getBegin()-1));
-							 if(i!=newModel.getExons().size()-1){
-							 Range nextExonRange = newModel.getExons().get(i+1).getRange();
-							 newModel.getExons().get(i+1).setRange(Range.of(pointOfInsertion.getBegin(),nextExonRange.getEnd()));
-							 }else{
-							     Exon exon = new Exon();
-							     exon.setRange(Range.of(pointOfInsertion.getEnd()+1,exonRange.getEnd()));
-							     exon.setFrame(Frame.ONE);
-                                 Frame sequenceFrame= VigorFunctionalUtils.getSequenceFrame(exon.getRange().getBegin()+exon.getFrame().getFrame()-1);
-                                 exon.setSequenceFrame(sequenceFrame);
-                                 exon.setAlignmentFragment(newModel.getExons().get(i).getAlignmentFragment());
-                                 newModel.getExons().add(exon);
-                             }
-						 }
-					 }else if(i!=newModel.getExons().size()-1){
-						 Range nextExonRange = newModel.getExons().get(i+1).getRange();
-						 if(pointOfInsertion.intersects(Range.of(exonRange.getEnd()+1,nextExonRange.getBegin()-1))){
-							 newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(),pointOfInsertion.getBegin()-1));
-		                     newModel.getExons().get(i+1).setRange(Range.of(pointOfInsertion.getBegin(),nextExonRange.getEnd()));
-						 }
-					 }
-			}
-			 models.add(newModel);
-		}
 		
 		}
 		if(models.size()==0){
@@ -194,9 +200,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 
 	public List<Model> checkForLeakyStop(Model model) throws CloneNotSupportedException{
 		List<Model> newModels= new ArrayList<Model>();
-		/*if(model.getAlignment().getViralProtein().getProteinID().equals("399240871_NSP")){
-			System.out.println("break");
-		}*/
+		List<Range> sequenceGaps = model.getAlignment().getVirusGenome().getSequenceGaps();
 		StopTranslationException stopTransExce = model.getAlignment().getViralProtein().getGeneAttributes().getStopTranslationException();
 		if(stopTransExce.isHasStopTranslationException()) {
             NucleotideSequence cds = VigorFunctionalUtils.getCDS(model);
@@ -210,9 +214,11 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                     long leakyStopStart = VigorFunctionalUtils.getNTRange(model.getExons(), match.getBegin());
                     Range leakyStopRange = Range.of(leakyStopStart, leakyStopStart + match.getLength() - 1);
                     long start = leakyStopRange.getEnd() + offset;
-                    if (VigorFunctionalUtils.isInFrameWithExon(model.getExons(), start)) {
+                    if (VigorFunctionalUtils.isInFrameWithExon(model.getExons(), start) && !VigorFunctionalUtils.intheSequenceGap(sequenceGaps,leakyStopRange)) {
                         Model newModel;
                         newModel = model.clone();
+                        System.out.println("Stop codon read through "+start);
+                        System.out.println(model.getAlignment().getVirusGenome().getSequence().toBuilder().trim(Range.of(start,start+2)).build());
                         Map<String, Double> scores = newModel.getScores();
                         scores.put("leakyStopScore", 100.00);
                         newModel.setReplaceStopCodonRange(Range.of(start, start + 2));

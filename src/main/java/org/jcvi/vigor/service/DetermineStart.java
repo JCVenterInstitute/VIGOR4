@@ -101,7 +101,7 @@ public class DetermineStart implements DetermineGeneFeatures {
 			}
 		}
 		Exon firstExon = model.getExons().get(0);
-		Frame firstExonFrame = VigorFunctionalUtils.getSequenceFrame(firstExon.getRange().getBegin());
+		Frame firstExonFrame = VigorFunctionalUtils.getSequenceFrame(firstExon.getRange().getBegin()+firstExon.getFrame().getFrame()-1);
 		long expectedStart = firstExon.getRange().getBegin()
 					- ((firstExon.getAlignmentFragment().getProteinSeqRange()
 							.getBegin()) * 3);

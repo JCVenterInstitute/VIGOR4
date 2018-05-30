@@ -46,7 +46,7 @@ public class ModelGenerationService {
 	}
 
 	public List<Alignment> mergeIdenticalProteinAlignments(List<Alignment> alignments){
-		
+
 		List<Alignment> allOutAlignments = new ArrayList<Alignment>();
 		Map<String,List<Alignment>> protein2AlignmentsMap = new HashMap<String,List<Alignment>>();
 	    for(Alignment alignment : alignments){
@@ -328,6 +328,7 @@ public class ModelGenerationService {
 							boolean temp = true;
 							for (int k = 0; k < validSequenceGaps.size(); k++) {
 								if (diffRange.intersects(validSequenceGaps.get(k)) && temp) {
+									//Todo adjust 5' partial and 3' partail. ie: cooridnates of the exons till the sequence gap
 									secondModel= model.clone();
 									firstModel = model.clone();
 									if(currentExon.getRange().getEnd()<validSequenceGaps.get(k).getBegin()){
@@ -430,41 +431,10 @@ public class ModelGenerationService {
 					}
 				}
 				
-			/*
-				if (compatibleFragsList.size() > 2 && generateSubChains(alignmentTool)) {
-					int temp = 1;
-					for (int k = 0; k < compatibleFragsList.size() - 2; k++) {
-						List<AlignmentFragment> subChain = new ArrayList<AlignmentFragment>();
-						for(AlignmentFragment alignFrag : compatibleFragsList){
-							subChain.add(alignFrag);
-						}
-						for (int j = 1; j <= temp; j++) {
-							subChain.remove(1);
-						}
-						ListOfCompatibleFragsList.add(subChain);
-						temp++;
-					}
-				}*/
-			
-			
+
 		
 		return ListOfCompatibleFragsList;
 	}
-
-	/**
-	 *
-	 * @return returns true if subChains has to be generated. eg: for exonerate
-	 *         this function returns false as subChains are not required to be
-	 *         generated
-	 */
-
-	/*public boolean generateSubChains(String alignmentTool) {
-
-		if (alignmentTool.equals("blast")) {
-			return true;
-		}
-		return false;
-	}*/
 
 	/**
 	 *

@@ -31,6 +31,21 @@ public class ModelGenerationServiceTest {
 	private ModelGenerationService modelGenerationService;
 
 	@Test
+	public void testest() throws CloneNotSupportedException {
+		Model model = new Model();
+		Exon exon = new Exon();
+		exon.setRange(Range.of(2,3));
+		List<Exon> exons = new ArrayList<Exon>();
+		exons.add(exon);
+		model.setExons(exons);
+		Model clonedModel = model.clone();
+		assertEquals(model.getExons().get(0).getRange(),clonedModel.getExons().get(0).getRange());
+		model.getExons().get(0).setRange(Range.of(3,4));
+		assertEquals(model.getExons().get(0).getRange(),clonedModel.getExons().get(0).getRange());
+
+	}
+
+	@Test
 	public void splitModelAtSequenceGapsTest() throws CloneNotSupportedException {
 		Model model = new Model();
 		List<Exon> exons = new ArrayList<Exon>();

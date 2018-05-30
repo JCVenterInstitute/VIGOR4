@@ -38,7 +38,6 @@ public class VigorFunctionalUtils {
             NTSeqBuilder.append(virusGenomeSeq.toBuilder(exon.getRange()));
         }
         NucleotideSequence cds = NTSeqBuilder.build();
-
 	    return cds;
     }
 	private static Frame[] FRAMES = { Frame.ONE, Frame.TWO, Frame.THREE};
@@ -73,6 +72,17 @@ public class VigorFunctionalUtils {
         }
 
 	    return isInFrame;
+    }
+
+    public static boolean intheSequenceGap(List<Range> sequenceGaps,Range match){
+        if (sequenceGaps != null) {
+            for (Range range : sequenceGaps) {
+                if (range.intersects(match)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public static Map<Frame,List<Long>> frameToSequenceFrame(Map<Frame,List<Long>> rangeFrameMaP){

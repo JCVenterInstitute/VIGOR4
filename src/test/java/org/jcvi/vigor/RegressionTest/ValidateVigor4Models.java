@@ -1,12 +1,14 @@
 package org.jcvi.vigor.RegressionTest;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.*;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.assertj.core.api.SoftAssertions;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.vigor.Application;
 import org.jcvi.vigor.component.Exon;
@@ -52,9 +54,6 @@ public class ValidateVigor4Models {
     @Rule
     public final SpringMethodRule springMethodRule = new SpringMethodRule();
 
-    @Rule
-    public ErrorCollector collector = new ErrorCollector();
-
     public ValidateVigor4Models(String vigor3OutputTBL, String vigor3OutputPep, String inputFasta, String workspace,String refDB) {
         this.vigor3OutputTBL = vigor3OutputTBL;
         this.vigor3OutputPep = vigor3OutputPep;
@@ -78,7 +77,7 @@ public class ValidateVigor4Models {
                         "vigor3Output/flu/PRODUCTION/flu.tbl",
                         "vigor3Output/flu/PRODUCTION/flu.pep",
                         "vigorRegressionTestInput/flua.fasta",
-                        "vigor4Output","flua_db"
+                        "vigor4Output","flua_db",
                 });
 
      return testData;
@@ -118,40 +117,85 @@ public class ValidateVigor4Models {
 
 	@Test
 	public void validate() throws IOException,VigorException{
-       Map<String,List<Model>> allVigor4Models = getVigor4Models();
-       Map<String,List<Model>> allVigor3Models = getVigor3Models();
-	  allVigor4Models.entrySet().forEach(entry -> { if(allVigor3Models.containsKey(entry.getKey())){
-			  List<Model> vigor4Models = entry.getValue();
-			  List<Model> vigor3Models = allVigor3Models.get(entry.getKey());
-			  for(Model vigor3Model : vigor3Models){
-				  String vigor3ProteinID = vigor3Model.getAlignment().getViralProtein().getProteinID();
-				  String vigor3GenomeID = vigor3Model.getAlignment().getVirusGenome().getId();
-				  List<Exon> vigor3Exons = vigor3Model.getExons();
-				  boolean flag = false;
-				 for(Model vigor4Model : vigor4Models ){
-				  String vigor4ProteinID = vigor4Model.getAlignment().getViralProtein().getProteinID();
-				  List<Exon> vigor4Exons = vigor4Model.getExons();
-				  if(vigor3ProteinID.equals(vigor4ProteinID)){
-					  flag= true;
-					  if(vigor4Exons.size()!=vigor3Exons.size()){
-					      System.out.println("Break");
-                      }
-					  collector.checkThat(String.format("Exon count differs for Vigor3 & Vigor4 model with gene ID %s of VirusGenome Sequence %s",vigor3ProteinID,vigor3GenomeID),vigor4Exons.size(),equalTo(vigor3Exons.size()));
-					  for(int i=0;i<vigor3Exons.size();i++){
-					      Range temp = vigor4Exons.get(i).getRange();
-					      Range vigor4ExonRange = Range.of(temp.getBegin()+1,temp.getEnd()+1);
-					      collector.checkThat(String.format("Exon range differs for Vigor3 & Vigor4 model with gene ID %s of VirusGenome Sequence %s",vigor3ProteinID,vigor3GenomeID),vigor4ExonRange,equalTo(vigor3Exons.get(i).getRange()));
-                      }
-				  }
-				 }
+        Map<String,List<Model>> allVigor4Models = getVigor4Models();
+        Map<String,List<Model>> allVigor3Models = getVigor3Models();
+        File errorReport = new File(workspace+File.separator+"ErrorReport.txt");
+        final FileWriter writer=new FileWriter(errorReport);
+        writer.write("***********************Error Report**************************\n");
+        allVigor3Models.entrySet().forEach(entry -> { if(allVigor4Models.containsKey(entry.getKey())) {
+             try{
+            List<Model> vigor3Models = entry.getValue();
+            List<Model> vigor4Models = allVigor4Models.get(entry.getKey());
+            boolean failed=false;
+            for (Model vigor3Model : vigor3Models) {
+                SoftAssertions softly = new SoftAssertions();
+                String vigor3GeneID = vigor3Model.getGeneID();
+                String vigor3GenomeID = vigor3Model.getAlignment().getVirusGenome().getId();
+                List<Exon> vigor3Exons = vigor3Model.getExons();
+                boolean flag = false;
+                for (Model vigor4Model : vigor4Models) {
+                    List<Exon> vigor4Exons = vigor4Model.getExons();
+                    if (vigor3Model.getGeneID().equals(vigor4Model.getGeneID())) {
+                        flag = true;
+                        if (vigor4Model.isPartial3p() != vigor3Model.isPartial3p()) {
+                            writer.write(String.format("Partial 3' gene feature mismatch found for gene symbol %s of VirusGenome Sequence %s. partial 3' %s expected \n", vigor3GeneID, vigor3GenomeID, vigor3Model.isPartial3p()));
+                            failed = true;
+                        }
+                        /*if(vigor3Model.getAlignment().getViralProtein().getProduct() != vigor4Model.getAlignment().getViralProtein().getProduct()) {
+                            writer.write(String.format("product id mismatch found for gene symbol %s of VirusGenome Sequence %s. partial 5' %s expected \n", vigor3GeneID, vigor3GenomeID, vigor3Model.isPartial5p()));
+                            failed = true;
+                        }*/
 
-				collector.checkThat(String.format("Vigor3 & Vigor4 gene models do not match for VirusGenome Sequence %s.Expected gene ID %s ",vigor3GenomeID,vigor3ProteinID),flag,equalTo(true) );
+                        if(vigor3Model.isPartial5p() != vigor4Model.isPartial5p()) {
+                            writer.write(String.format("Partial 5' gene feature mismatch found for gene symbol %s of VirusGenome Sequence %s. partial 5' %s expected \n", vigor3GeneID, vigor3GenomeID, vigor3Model.isPartial5p()));
+                            failed = true;
+                        }
+                        if((vigor3Model.getRibosomalSlippageRange()!=null && vigor4Model.getRibosomalSlippageRange()==null)||(vigor3Model.getRibosomalSlippageRange()==null && vigor4Model.getRibosomalSlippageRange()!=null)){
+                            writer.write(String.format("Ribosomal Slippage mismatch found for gene %s of VirusGenome Sequence \n", vigor3GeneID, vigor3GenomeID));
+                            failed=true;
+                        }
+                        if((vigor3Model.getRibosomalSlippageRange()!=null && vigor4Model.getRibosomalSlippageRange()==null)||(vigor3Model.getRibosomalSlippageRange()==null && vigor4Model.getRibosomalSlippageRange()!=null)){
+                            writer.write(String.format("Ribosomal Slippage mismatch found for gene %s of VirusGenome Sequence \n", vigor3GeneID, vigor3GenomeID));
+                            failed=true;
+                        }
+                        if((vigor3Model.getReplaceStopCodonRange()!= null && vigor4Model.getReplaceStopCodonRange()!=null) &&(vigor3Model.getReplaceStopCodonRange()!=vigor4Model.getReplaceStopCodonRange())){
+                            writer.write(String.format("Stop Codon Readthrough feature mismatch for gene %s of VirusGenome Sequence \n", vigor3GeneID, vigor3GenomeID));
+                            failed=true;
+                        }
+                        if(vigor3Model.isPseudogene()!=vigor4Model.isPseudogene()) {
+                            writer.write(String.format("Pseudogene feature mismatch found for gene %s of VirusGenome Sequence %s. pseudogene %s expected \n", vigor3GeneID, vigor3GenomeID, vigor3Model.isPseudogene()));
+                            failed = true;
+                        }
+                        if(vigor4Exons.size()!=vigor3Exons.size()) {
+                            writer.write(String.format("Exon count differs for Vigor3 & Vigor4 model with gene symbol %s of VirusGenome Sequence %s \n", vigor3GeneID, vigor3GenomeID));
+                            failed = true;
+                        }
+                        if(vigor4Exons.size()==vigor3Exons.size()){
+                        for (int i = 0; i < vigor3Exons.size(); i++) {
+                            Range temp = vigor4Exons.get(i).getRange();
+                            Range vigor4ExonRange = Range.of(temp.getBegin() + 1, temp.getEnd() + 1);
+                            if(vigor4ExonRange!=vigor3Exons.get(i).getRange()) {
+                                writer.write(String.format("Exon range differs for Vigor3 & Vigor4 model with gene symbol %s of VirusGenome Sequence %s \n", vigor3GeneID, vigor3GenomeID));
+                                failed = true;
+                            }
+                        }}
+                        break;
+                    }
+                }
+                if(!flag) {
+                    writer.write(String.format("Vigor3 & Vigor4 gene models do not match for VirusGenome Sequence %s.Expected gene symbol %s \n", vigor3GenomeID, vigor3GeneID));
+                    failed=true;
+                }
 
-			  }
-		      
-	          }
-		  		  
+            } if(failed) {
+                writer.write(">Genome "+entry.getKey());
+                writer.write("\n***************************************************************************************************************************************************" + "\n");
+                 }
+            }catch(IOException e){e.printStackTrace();}
+        }
+
 	  });
+        writer.close();
 	  				
 	}
 

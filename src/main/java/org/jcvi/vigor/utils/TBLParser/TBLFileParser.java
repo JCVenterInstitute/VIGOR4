@@ -36,30 +36,40 @@ public class TBLFileParser {
 			List<Exon> exons = null;
 			Exon exon = null;
 			String virusGenomeID = "";
-			Pattern startPattern = Pattern
-					.compile("(\\s*)?([\\d*]+)([\\s*]+)(>)?([\\d*]+)(\\s*)?(CDS)");
-			Pattern pattern10 = Pattern.compile("(\\s*)?([\\d*]+)([\\s*]+)([\\d*]+)(\\s*)?(misc_feature)");
-			Pattern pattern2 = Pattern
-					.compile("(<)(\\s*)?([\\d*]+)([\\s*]+)(>)([\\d*]+)(\\s*)?(CDS)");
-			Pattern pattern3 = Pattern
-					.compile("(<)(\\s*)?([\\d*]+)([\\s*]+)([\\d*]+)(\\s*)?(CDS)");
-			Pattern pattern4 = Pattern.compile("(protein_id)([\\s*]+)(.*)");
-			Pattern pattern5 = Pattern.compile("(product)([\\s*]+)(.*)");
-			Pattern pattern6 = Pattern.compile("(note)([\\s*]+)(.*)");
-			Pattern pattern7 = Pattern.compile("^(\\s*)?(gene)(\\s*)(.*)$");
-			Pattern pattern9 = Pattern
+			Pattern startPattern = Pattern.compile("(<)?(\\s*)?([\\d*]+)([\\s*]+)(>)?([\\d*]+)(\\s*)?(CDS)");
+			Pattern proteinIdPattern = Pattern.compile("(\\s*)?(protein_id)([\\s*]+)(.*)");
+			Pattern productPattern = Pattern.compile("(\\s*)?(product)([\\s*]+)(.*)");
+			Pattern notePattern = Pattern.compile("(\\s*)?(note)([\\s*]+)(.*)");
+			Pattern geneNamePattern = Pattern.compile("^(\\s*)?(gene)(\\s*)(.*)$");
+			Pattern nextFragment = Pattern
 					.compile("(\\s*)?([\\d*]+)([\\s*]+)(>)?([\\d*]+)(\\s*)?$");
-			Pattern pattern8 = Pattern
-					.compile("(\\s*)?([\\d*]+)([\\s*]+)(>)?([\\d*]+)(\\s*)?(gene)");
-			// TBLFragment fragment = new TBLFragment();
+			Pattern pseudogenePattern = Pattern.compile("(\\s*)?(pseudogene)(.*)");
+            Pattern riboSlippagePattern = Pattern.compile("(\\s*)?(ribosomal_slippage)(.*)");
+            Pattern stopReadThroughPattern = Pattern.compile("(\\s*)?(transl_except)(\\s*)(\\((pos:)(\\d*)(..)(\\d*)(,.*)\\))");
+			Pattern geneLinePattern = Pattern
+					.compile("(<)?(\\s*)?([\\d*]+)([\\s*]+)(>)?([\\d*]+)(\\s*)?(gene)");
+			Pattern miscFeaturePattern = Pattern.compile("(<)?(\\s*)?([\\d*]+)([\\s*]+)(>)?([\\d*]+)(\\s*)?(misc_feature)");
 			boolean isPseudoGene=false;
+			boolean is5Partial=false;
+			boolean is3Partial=false;
+			boolean isRiboSlippage=false;
+			Range stopCodonReadThrough=null;
 			for (String s : (Iterable<String>) tblFile::iterator) {
-				if (s.startsWith(">")) {
+                Matcher geneLineMatcher = geneLinePattern.matcher(s);
+				if (s.startsWith(">") || geneLineMatcher.matches()) {
 					if (model != null && exons != null && exons.size() > 0) {
 						model.setExons(exons);
 						model.setPseudoGene(isPseudoGene);
+						model.set5Partial(is5Partial);
+						model.set3Partial(is3Partial);
+						model.setRiboSlippage(isRiboSlippage);
+						model.setStopCodonReadThrough(stopCodonReadThrough);
 						models.add(model);
 						isPseudoGene=false;
+						is5Partial=false;
+						is3Partial=false;
+						isRiboSlippage=false;
+						stopCodonReadThrough=null;
 					}
 					model = null;
 					pattern = Pattern.compile("Features[\\s](\\S*)");
@@ -67,98 +77,95 @@ public class TBLFileParser {
 					if (matcher.find()) {
 						virusGenomeID = matcher.group(1).toString();
 					}
+					if(geneLineMatcher.matches()){
+                        model = new TBLModel();
+                        model.setVirusGenomeID(virusGenomeID);
+                        exons = new ArrayList<Exon>();
+                    }
 
 				} else {
 
 					matcher = startPattern.matcher(s);
-					Matcher matcher2 = pattern2.matcher(s);
-					Matcher matcher3 = pattern3.matcher(s);
-
-					Matcher matcher4 = pattern4.matcher(s);
-
-					Matcher matcher5 = pattern5.matcher(s);
-
-					Matcher matcher6 = pattern6.matcher(s);
-
-					Matcher matcher7 = pattern7.matcher(s);
-
-					Matcher matcher8 = pattern8.matcher(s);
-					Matcher matcher10 = pattern10.matcher(s);
-
-					Matcher matcher9 = pattern9.matcher(s);
-
-					if (matcher4.find() && model != null) {
-						model.setViralProteinID((matcher4.group(3)));
-					} else if (matcher5.find() && model != null) {
-						model.setProduct(matcher5.group(3));
-					} else if (matcher6.find() && model != null) {
-						model.setNote(matcher6.group(3));
-					} else if (matcher7.find() && model != null) {
-
-						model.setGene(matcher7.group(4));
-
-					} else if (matcher8.find()) {
-						if (model != null && exons != null && exons.size() > 0) {
-							model.setExons(exons);
-							model.setPseudoGene(isPseudoGene);
-							models.add(model);
-							isPseudoGene=false;
-						}
-						model = new TBLModel();
-						model.setVirusGenomeID(virusGenomeID);
-						exons = new ArrayList<Exon>();
+					Matcher miscMatcher = miscFeaturePattern.matcher(s);
+					Matcher proteinIDMatcher = proteinIdPattern.matcher(s);
+					Matcher productMatcher = productPattern.matcher(s);
+					Matcher noteMatcher = notePattern.matcher(s);
+					Matcher geneNameMatcher = geneNamePattern.matcher(s);
+                    Matcher riboSlippageMatcher = riboSlippagePattern.matcher(s);
+					Matcher nextFragMatcher = nextFragment.matcher(s);
+                    Matcher pseudogeneMatcher = pseudogenePattern.matcher(s);
+                    Matcher stopReadThroughMatcher = stopReadThroughPattern.matcher(s);
+					if (proteinIDMatcher.find() && model != null) {
+						model.setViralProteinID((proteinIDMatcher.group(4)));
+						model.setGeneID(proteinIDMatcher.group(4));
+					} else if (productMatcher.find() && model != null) {
+						model.setProduct(productMatcher.group(4));
+					} else if (noteMatcher.find() && model != null) {
+						model.setNote(noteMatcher.group(4));
+					} else if (geneNameMatcher.find() && model != null) {
+						model.setGene(geneNameMatcher.group(4));
 					} else if (matcher.matches()) {
 						exon = new Exon();
-						Range range = null;
-						range = Range.of(Long.parseLong(matcher.group(2)),
-								Long.parseLong(matcher.group(5)));
+						Range range;
+						range = Range.of(Long.parseLong(matcher.group(3)),
+								Long.parseLong(matcher.group(6)));
+						if(matcher.group(1)!=null && matcher.group(1).equals("<")){
+							is5Partial=true;
+						}
+						if(matcher.group(5)!=null && matcher.group(5).equals(">")){
+							is3Partial=true;
+						}
 						exon.setRange(range);
 						exons.add(exon);
-					} else if (matcher10.matches()){
+
+					}else if(miscMatcher.matches()){
+                         if(isPseudoGene){
+                           Range range = Range.of(Long.parseLong(miscMatcher.group(3)),
+                                     Long.parseLong(miscMatcher.group(6)));
+                           exon = new Exon();
+                           exon.setRange(range);
+                           exons.add(exon);
+                             if(miscMatcher.group(1)!=null && miscMatcher.group(1).equals("<")){
+                                 is5Partial=true;
+                             }
+                             if(miscMatcher.group(5)!=null && miscMatcher.group(5).equals(">")){
+                                 is3Partial=true;
+                             }
+                         }
+
+                    }else if (nextFragMatcher.matches()) {
 						exon = new Exon();
-						Range range = null;
-						range = Range.of(Long.parseLong(matcher10.group(2)),
-								Long.parseLong(matcher10.group(4)));
-						exon.setRange(range);
-						exons.add(exon);	
-						isPseudoGene = true;
-					}
-					  else if (matcher2.matches()) {
-						exon = new Exon();
-						Range range = null;
-						range = Range.of(Long.parseLong(matcher2.group(3)),
-								Long.parseLong(matcher2.group(6)));
-						exon.setRange(range);
-						exons.add(exon);
-					} else if (matcher3.matches()) {
-						exon = new Exon();
-						Range range = null;
-						range = Range.of(Long.parseLong(matcher3.group(3)),
-								Long.parseLong(matcher3.group(5)));
-						exon.setRange(range);
-						exons.add(exon);
-					} else if (matcher9.matches()) {
-						exon = new Exon();
-						Range range = null;
-						range = Range.of(Long.parseLong(matcher9.group(2)),
-								Long.parseLong(matcher9.group(5)));
+						Range range;
+						range = Range.of(Long.parseLong(nextFragMatcher.group(2)),
+								Long.parseLong(nextFragMatcher.group(5)));
+						if(nextFragMatcher.group(4)!=null && nextFragMatcher.group(4).equals(">")){
+						    is3Partial=true;
+                        }
 						exon.setRange(range);
 						exons.add(exon);
-					}
+					}else if(pseudogeneMatcher.matches()){
+					    isPseudoGene=true;
+                    }else if(riboSlippageMatcher.matches()){
+					    isRiboSlippage=true;
+                    }else if(stopReadThroughMatcher.matches()){
+                        stopCodonReadThrough = Range.of(Long.parseLong(stopReadThroughMatcher.group(5)),
+                                Long.parseLong(stopReadThroughMatcher.group(7)));
+                    }
 				}
 			}
 			if (model != null && exons != null && exons.size() > 0) {
 				model.setExons(exons);
 				model.setPseudoGene(isPseudoGene);
+				model.set5Partial(is5Partial);
+				model.set3Partial(is3Partial);
+				model.setRiboSlippage(isRiboSlippage);
+				model.setStopCodonReadThrough(stopCodonReadThrough);
 				models.add(model);
-				isPseudoGene = false;
 			}
 			tblFile.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		// map protein id's from pep file
-		// models.stream().forEach(System.out::println);
 		return models;
 	}
 
