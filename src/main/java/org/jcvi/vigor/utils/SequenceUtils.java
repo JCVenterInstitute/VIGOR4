@@ -88,7 +88,7 @@ public class SequenceUtils {
 				sequenceString.substring(sequenceString.length() -1 - trailing, sequenceString.length() - 1));
 	}
 
-	public static double computePercentSimilarity(ProteinSequence first, ProteinSequence second, long maxSeqLength,AminoAcidSubstitutionMatrix matrix) {
+	public static double computePercentSimilarity(ProteinSequence first, ProteinSequence second, long maxSeqLength, AminoAcidSubstitutionMatrix matrix) {
 		double similarity ;
 		double minLength = Math.min(first.getLength(), second.getLength());
 		// TODO gaps in the same place?
@@ -102,5 +102,25 @@ public class SequenceUtils {
 		similarity = (matches/maxSeqLength)*100;
 		if(similarity>100) similarity=100;
         return similarity;
+	}
+
+	/**
+	 *
+	 * @param first
+	 * @param second
+	 * @param matrix
+	 * @return
+	 */
+	public static double computeMismatches(ProteinSequence first, ProteinSequence second, AminoAcidSubstitutionMatrix matrix) {
+		assert (first.getLength() == second.getLength());
+		double misMatches = 0;
+
+		for (int i = 0; i < first.getLength(); i++) {
+			if (first.isGap(i) || second.isGap(i)) {
+				continue;
+			}
+			misMatches += matrix.getValue(first.get(i), second.get(i)) <= 0? 1: 0;
+		}
+		return misMatches;
 	}
 }
