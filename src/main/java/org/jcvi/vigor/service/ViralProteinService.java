@@ -222,7 +222,7 @@ public class ViralProteinService {
             if (matPepDB != null && matPepDB.contains("<vigordata>")) {
                     matPepDB = matPepDB.replace("<vigordata>", form.getConfiguration().get(ConfigurationParameters.ReferenceDatabasePath));
             }
-
+            LOGGER.debug("For protein {} setting mapPepDB to {}", viralProtein.getProteinID(), matPepDB);
             /* Move all the different attribute objects to geneAttributes */
             geneAttributes.setRibosomal_slippage(ribosomal_slippage);
             geneAttributes.setRna_editing(rna_editing);
