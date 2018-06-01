@@ -97,7 +97,6 @@ public class Vigor {
                     outputPrefix,
                     vigorForm.getConfiguration().get(ConfigurationParameters.OverwriteOutputFiles) == "true")) {
                 outfiles.get(GenerateVigorOutput.Outfile.GFF3).write("##gff-version 3\n");
-                PeptideMatchingService.Scores peptideScores = getPeptideScores(vigorParameters);
                 Iterator<NucleotideFastaRecord> i = dataStore.records().iterator();
                 while (i.hasNext()) {
                     NucleotideFastaRecord record = i.next();
@@ -112,7 +111,7 @@ public class Vigor {
                     LOGGER.info("{} candidate model(s) found for sequence {}", candidateModels.size(), record.getId());
                     List<Model> geneModels = generateGeneModels(candidateModels, vigorForm);
                     LOGGER.info("{} gene model(s) found for sequence {}", geneModels.size(), record.getId());
-                    geneModels = findPeptides(vigorParameters, geneModels, vigorForm);
+                    geneModels = findPeptides(vigorParameters, geneModels);
                     if (geneModels.isEmpty()) {
                         LOGGER.warn("No gene models generated for sequence {}", record.getId());
                         continue;
@@ -155,7 +154,7 @@ public class Vigor {
         return PeptideMatchingService.Scores.of(minIdentity, minCoverage, minSimilarity);
     }
 
-    private List<Model> findPeptides(VigorConfiguration config, List<Model> geneModels, VigorForm vigorForm) throws VigorException {
+    private List<Model> findPeptides(VigorConfiguration config, List<Model> geneModels) throws VigorException {
 
 	    PeptideMatchingService.Scores scores = getPeptideScores(config);
 

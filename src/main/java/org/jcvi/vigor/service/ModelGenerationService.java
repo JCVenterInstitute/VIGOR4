@@ -168,7 +168,7 @@ public class ModelGenerationService {
 					alignmentFragsGroupedList.get(iter.next()), alignmentTool);
 			Iterator<List<AlignmentFragment>> iter1 = ListOfCompatibleFragsList.iterator();
 			while (iter1.hasNext()) {
-				List<AlignmentFragment> compatibleFragsList = (List<AlignmentFragment>) iter1.next();
+				List<AlignmentFragment> compatibleFragsList = iter1.next();
 			    compatibleFragsList=mergeAlignmentFragments(compatibleFragsList, alignment.getVirusGenome());
 			    alignment.setAlignmentFragments(compatibleFragsList);
 				List<Exon> exons = determineVirusGenomeExons(compatibleFragsList);
