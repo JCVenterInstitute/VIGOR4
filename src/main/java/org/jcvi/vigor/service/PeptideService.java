@@ -174,8 +174,9 @@ public class PeptideService implements PeptideMatchingService {
                     if (Math.abs(rangeKey.getBegin() - subjectRange.getBegin()) < PROXIMITY_MAX &&
                             Math.abs(rangeKey.getEnd() - subjectRange.getEnd()) < PROXIMITY_MAX) {
                         return rangeKey;
-                        // fully contained in the range
-                    } else if (subjectRange.getBegin() >= rangeKey.getBegin() && subjectRange.getEnd() <= rangeKey.getEnd()) {
+                        // bin more than 80% overlap together.
+                        // TODO make this settable
+                    } else if ( (double) subjectRange.intersection(rangeKey).getLength()/ (double) subjectRange.getLength() >= .8d) {
                         return rangeKey;
                     }
 
