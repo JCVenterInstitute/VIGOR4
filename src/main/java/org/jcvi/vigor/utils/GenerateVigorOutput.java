@@ -83,8 +83,6 @@ public class GenerateVigorOutput {
         bw.write(">Features " + genomeID + "\n");
         for (int i = 0; i < geneModels.size(); i++) {
             Model model = geneModels.get(i);
-            String proteinIDOfGenome = model.getGeneID();
-            IDGenerator idGenerator = IDGenerator.of(proteinIDOfGenome);
             Ribosomal_Slippage riboSlippage = model.getAlignment().getViralProtein().getGeneAttributes().getRibosomal_slippage();
             RNA_Editing rna_editing = model.getAlignment().getViralProtein().getGeneAttributes().getRna_editing();
             Splicing splicing = model.getAlignment().getViralProtein().getGeneAttributes().getSplicing();
@@ -153,7 +151,7 @@ public class GenerateVigorOutput {
             }
 
             if (model.getMaturePeptides()!=null && !model.getMaturePeptides().isEmpty()) {
-                bw.write(">Features " + idGenerator.next());
+                bw.write(">Features " + model.getGeneID());
                 bw.newLine();
                 String product;
                 for (MaturePeptideMatch match : model.getMaturePeptides()) {
