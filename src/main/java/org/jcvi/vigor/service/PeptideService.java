@@ -275,7 +275,7 @@ public class PeptideService implements PeptideMatchingService {
                 }
                 peptides.add(current);
                 prev = current;
-                previousRange = currentRange;
+                previousRange = current.getProteinRange();
             }
             return peptides;
         } catch (IOException e) {
