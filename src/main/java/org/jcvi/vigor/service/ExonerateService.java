@@ -75,7 +75,6 @@ public class ExonerateService implements AlignmentService {
 				alignmentScores.put("exonerateScore", (double) Jalignment.getScore());
 				alignment.setAlignmentScore(alignmentScores);
 				alignment.setAlignmentTool_name("exonerate");
-				alignment.setAlignmentEvidence(alignmentEvidence);
 				List<AlignmentFragment> alignmentFragments = new ArrayList<>();
 
 				for (VulgarProtein2Genome2.AlignmentFragment fragment: Jalignment.getAlignmentFragments()) {
@@ -94,7 +93,7 @@ public class ExonerateService implements AlignmentService {
 				alignment.setAlignmentFragments(alignmentFragments);
 				alignment.setViralProtein(viralProtein);
 				alignment.setVirusGenome(virusGenome);
-				alignment.setAlignmentEvidence(alignmentEvidence);
+				alignment.setAlignmentEvidence(alignmentEvidence.copy());
 				alignments.add(alignment);
 			}
 		} catch (IOException e) {

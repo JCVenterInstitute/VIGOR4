@@ -25,6 +25,10 @@ public class AlignmentEvidence {
 		
 	}
 
+	public AlignmentEvidence copy() {
+		return new AlignmentEvidence(this.reference_db, this.matpep_db);
+	}
+
 }
 
 
