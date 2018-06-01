@@ -155,6 +155,19 @@ public class PeptideService implements PeptideMatchingService {
                 match.peptide.getComment()
                 );
     }
+
+    private static String formatMatchForLogging(MaturePeptideMatch match) {
+        return String.format("%-20s     %04d    %04d-%04d    %04d-%04d   %s",
+                match.getReference().getProteinID(),
+                match.getProtein().getLength(),
+                match.getReferenceRange().getBegin(),
+                match.getReferenceRange().getEnd(),
+                match.getProteinRange().getBegin(),
+                match.getProteinRange().getEnd(),
+                match.getReference().getDefline()
+        );
+
+    }
     @Override
     public List<MaturePeptideMatch> findPeptides(ProteinSequence protein, File peptideDatabase, Scores minscores) throws ServiceException {
 
@@ -212,26 +225,14 @@ public class PeptideService implements PeptideMatchingService {
                                      .collect(Collectors.joining(", "))
             ));
 
-
-            // TODO don't just use score, but also %identity %similarity %coverage as well as edges
             List<PeptideMatch> bestMatches = alignmentsByRange.keySet().stream()
-                                           .sorted(Range.Comparators.ARRIVAL)
-                                           .map((x) -> {
-                                               PeptideMatch match = alignmentsByRange.get(x).stream()
-                                                                                     .max(Comparator.comparing(p -> {Scores s = p.getScores(); return s.coverage * 100 + s.identity * 100 + s.similarity * 100 + p.alignment.getScore();}))
-                                                                                     .get();
-                                               LOGGER.debug("With score {} %ident {} %sim {} %cov {} returning range {}\nS>{}\nQ>{}\nP>{}",
-                                                       match.alignment.getScore(),
-                                                       match.getScores().identity,
-                                                       match.getScores().similarity,
-                                                       match.getScores().coverage,
-                                                       getRangeString(match),
-                                                       match.alignment.getGappedSubjectAlignment(),
-                                                       match.alignment.getGappedQueryAlignment(),
-                                                       match.peptide.getSequence());
-                                               return match;
-                                           }).collect(Collectors.toList());
+                                                              .sorted(Range.Comparators.ARRIVAL)
+                                                              .map(x -> alignmentsByRange.get(x).stream()
+                                                                                         .max(Comparator.comparing(p -> {Scores s = p.getScores(); return s.coverage * 100 + s.identity * 100 + s.similarity * 100 + p.alignment.getScore();}))
+                                                                                         .get())
+                                                              .collect(Collectors.toList());
 
+            LOGGER.debug( bestMatches.stream().map(m -> formatMatchForLogging(m)).collect(Collectors.joining("\n","Best matches:\n","\n")));
             List<MaturePeptideMatch> peptides = new ArrayList<>(alignmentsByRange.size());
             MaturePeptideMatch prev = null;
             MaturePeptideMatch current = null;
@@ -277,6 +278,10 @@ public class PeptideService implements PeptideMatchingService {
                 prev = current;
                 previousRange = current.getProteinRange();
             }
+            LOGGER.debug(peptides.stream()
+            .map(m -> formatMatchForLogging(m))
+            .collect(Collectors.joining("\n","After adjusting edges:\n","\n")));
+
             return peptides;
         } catch (IOException e) {
             throw new ServiceException(String.format("Problem finding peptide matches for sequence %s in database %s. got %s: %s",
