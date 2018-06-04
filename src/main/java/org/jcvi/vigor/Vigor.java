@@ -173,7 +173,7 @@ public class Vigor {
             // TODO check peptides for psuedogenes?
             if (! (maturePeptideDB == null || maturePeptideDB.isEmpty()) ) {
                 LOGGER.debug("finding mature peptides for {} using db {}", model.getGeneID(), maturePeptideDB);
-                model.setMaturePeptides(peptideMatchingService.findPeptides(model.getTanslatedSeq(),
+                model.setMaturePeptides(peptideMatchingService.findPeptides(model.getTranslatedSeq(),
                         new File(maturePeptideDB), scores));
                 LOGGER.debug("for {} found {} peptides.", model.getGeneID(), model.getMaturePeptides().size() );
 

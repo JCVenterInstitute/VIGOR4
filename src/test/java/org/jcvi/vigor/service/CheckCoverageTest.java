@@ -68,7 +68,7 @@ public class CheckCoverageTest {
         Model model = getTestModel();
         NucleotideSequence cds = checkCoverage.determineCDS(model);
         model = checkCoverage.determineHomology(model,cds);
-        assertEquals("VT*KS*R",model.getTanslatedSeq().toString());
+        assertEquals("VT*KS*R",model.getTranslatedSeq().toString());
     }
 
     @Test

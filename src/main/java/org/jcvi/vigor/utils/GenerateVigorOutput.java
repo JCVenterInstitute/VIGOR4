@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.regex.Pattern;
 
 @Service
 public class GenerateVigorOutput {
@@ -230,7 +229,7 @@ public class GenerateVigorOutput {
     public void generateCDSReport(VigorConfiguration config, BufferedWriter bw ,List<Model> geneModels) throws IOException {
         for (Model model: geneModels) {
             writeDefline(bw, model);
-            writeSequence(bw, model.getTanslatedSeq());
+            writeSequence(bw, model.getTranslatedSeq());
         }
     }
 
@@ -242,7 +241,7 @@ public class GenerateVigorOutput {
         for (Model model : geneModels) {
 
             writeDefline(bw, model);
-            writeSequence(bw, model.getTanslatedSeq());
+            writeSequence(bw, model.getTranslatedSeq());
 
             IDGenerator idGenerator = IDGenerator.of(model.getGeneID());
 

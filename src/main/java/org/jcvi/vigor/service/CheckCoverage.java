@@ -64,7 +64,7 @@ public class CheckCoverage implements EvaluateModel {
             proteinSeqBuilder.replace((int)replacementOffset,replacementAA);
         }
         ProteinSequence querySeq = proteinSeqBuilder.build();
-        model.setTanslatedSeq(querySeq);
+        model.setTranslatedSeq(querySeq);
        	ProteinSequence subSeq = model.getAlignment().getViralProtein().getSequence();
     	AminoAcidSubstitutionMatrix blosom62 = BlosumMatrices.blosum62();
     	ProteinPairwiseSequenceAlignment actual = PairwiseAlignmentBuilder
