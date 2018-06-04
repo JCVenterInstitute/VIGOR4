@@ -205,13 +205,7 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
 		int downNucleotides = downExonFrame.getFrame()-1;
 		int extendedUpNucleotides = Math.abs((int)(upExonRange.getEnd()-foundUpExonRange.getEnd()));
 		int extendedDownNucleotides=Math.abs((int)(downExonRange.getBegin()-foundDownExonRange.getBegin()));
-		int sum = upNucleotides+downNucleotides+extendedDownNucleotides+extendedUpNucleotides;
-		sum = sum%3;
-		if(sum==0){
-			return true;
-		}else{
-			return false;
-		}
+		return (upNucleotides+downNucleotides+extendedDownNucleotides+extendedUpNucleotides) % 3 == 0;
 	}
 	
 	
