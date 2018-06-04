@@ -5,6 +5,7 @@ import lombok.Data;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -16,8 +17,14 @@ import java.util.List;
 @Data
 public class StartTranslationException{
 
-   private boolean hasStartTranslationException=false;
-   private List<String> alternateStartCodons;
- 
+   private final boolean hasStartTranslationException;
+   private final List<String> alternateStartCodons;
+
+   public StartTranslationException(boolean hasStartTranslationException, List<String> alternateStartCodons) {
+      this.hasStartTranslationException = hasStartTranslationException;
+      this.alternateStartCodons = alternateStartCodons;
+   }
+
+   public static StartTranslationException NO_EXCEPTION = new StartTranslationException(false, Collections.EMPTY_LIST);
 
 }

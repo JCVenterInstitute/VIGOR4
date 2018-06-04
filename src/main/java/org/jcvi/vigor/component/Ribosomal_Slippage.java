@@ -13,8 +13,18 @@ import org.springframework.stereotype.Component;
 
 public class Ribosomal_Slippage {
 
-    private boolean has_ribosomal_slippage=false;
-    private String slippage_motif;
-    private int slippage_offset=0;
-    private int slippage_frameshift=-1;
+    private final boolean has_ribosomal_slippage;
+    private final String slippage_motif;
+    private final int slippage_offset;
+    private final int slippage_frameshift;
+
+    public Ribosomal_Slippage(boolean has_slippage, String motif, int offset, int frameshift ) {
+        this.has_ribosomal_slippage = has_slippage;
+        this.slippage_motif = motif;
+        this.slippage_offset = offset;
+        this.slippage_frameshift = frameshift;
+    }
+
+    public final static Ribosomal_Slippage NO_SLIPPAGE = new Ribosomal_Slippage(false, "", 0, 0);
+
 }
