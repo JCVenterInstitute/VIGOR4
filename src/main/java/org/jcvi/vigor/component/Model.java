@@ -27,7 +27,6 @@ public class Model implements Cloneable{
     private Range replaceStopCodonRange;
     private Range ribosomalSlippageRange;
     private Range insertRNAEditingRange;
-    private NucleotideSequence cds;
     private ProteinSequence translatedSeq;
     private String geneID;
     private List<MaturePeptideMatch> maturePeptides = Collections.EMPTY_LIST;

@@ -123,7 +123,6 @@ public class CheckCoverage implements EvaluateModel {
             }
         }
         NTSeq = NTSeqBuilder.build();
-        model.setCds(NTSeq);
         return NTSeq;
     }
 
