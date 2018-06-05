@@ -13,6 +13,6 @@ import org.junit.runners.Suite;
         AdjustViralTricksTest.class,
         AdjustUneditedExonBoundariesTest.class
 })
-public class TestSuit {
+public class TestSuite {
 }
 
