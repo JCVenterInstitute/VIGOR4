@@ -110,6 +110,7 @@ public class CheckCoverage implements EvaluateModel {
         NucleotideSequence NTSeq;
         for(int i=0;i<exons.size();i++){
             Range exonRange = exons.get(i).getRange();
+            // trim off stop codon unless the model is already partial
             if(i==exons.size()-1 && !model.isPartial3p()){
                 exonRange = Range.of(exonRange.getBegin(),exonRange.getEnd()-3);
             }

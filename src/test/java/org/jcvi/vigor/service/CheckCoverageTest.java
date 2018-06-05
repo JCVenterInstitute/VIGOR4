@@ -68,7 +68,7 @@ public class CheckCoverageTest {
         Model model = getTestModel();
         NucleotideSequence cds = checkCoverage.determineCDS(model);
         model = checkCoverage.determineHomology(model,cds);
-        assertEquals("VT*KS*R",model.getTranslatedSeq().toString());
+        assertEquals("VT*KS*",model.getTranslatedSeq().toString());
     }
 
     @Test
@@ -157,7 +157,7 @@ public class CheckCoverageTest {
         NucleotideSequence cds = checkCoverage.determineCDS(model);
         //  ProteinSequence translatedSeq = IupacTranslationTables.STANDARD.translate(cds);
         //  System.out.println(translatedSeq);
-        assertEquals("GTCTTCTAAAAATCGTGACGT",cds.toString());
+        assertEquals("GTCTTCTAAAAATCGTGA",cds.toString());
     }
 
 }
