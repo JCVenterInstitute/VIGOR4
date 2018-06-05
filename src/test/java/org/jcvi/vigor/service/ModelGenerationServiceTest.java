@@ -31,7 +31,7 @@ public class ModelGenerationServiceTest {
 	private ModelGenerationService modelGenerationService;
 
 	@Test
-	public void testest() throws CloneNotSupportedException {
+	public void testClone() throws CloneNotSupportedException {
 		Model model = new Model();
 		Exon exon = new Exon();
 		exon.setRange(Range.of(2,3));
@@ -39,9 +39,12 @@ public class ModelGenerationServiceTest {
 		exons.add(exon);
 		model.setExons(exons);
 		Model clonedModel = model.clone();
-		assertEquals(model.getExons().get(0).getRange(),clonedModel.getExons().get(0).getRange());
+		assertEquals("Cloned model should have the same exons",
+				model.getExons().get(0).getRange(),
+				clonedModel.getExons().get(0).getRange());
 		model.getExons().get(0).setRange(Range.of(3,4));
-		assertEquals(model.getExons().get(0).getRange(),clonedModel.getExons().get(0).getRange());
+		assertEquals("Changing an exon on the original model should not change exons in cloned models",
+				Range.of(2,3),clonedModel.getExons().get(0).getRange());
 
 	}
 
