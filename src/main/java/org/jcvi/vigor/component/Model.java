@@ -29,7 +29,7 @@ public class Model implements Cloneable{
     private Range insertRNAEditingRange;
     private ProteinSequence translatedSeq;
     private String geneID;
-    private List<NoteType> notes;
+    private List<NoteType> notes=Collections.EMPTY_LIST;
     private List<MaturePeptideMatch> maturePeptides = Collections.EMPTY_LIST;
 
    public Model clone() throws CloneNotSupportedException {

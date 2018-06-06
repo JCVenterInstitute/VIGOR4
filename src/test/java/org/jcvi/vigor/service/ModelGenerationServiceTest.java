@@ -9,6 +9,7 @@ import org.jcvi.jillion.core.Direction;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.vigor.component.Alignment;
+import org.jcvi.vigor.utils.NoteType;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.jcvi.vigor.Application;
@@ -66,6 +67,7 @@ public class ModelGenerationServiceTest {
 		sequenceGaps.add(Range.of(8508,8698));
 		sequenceGaps.add(Range.of(9906,9965));
 		sequenceGaps.add(Range.of(11619,11759));
+		model.setNotes(new ArrayList<>());
 		List<Model> models = modelGenerationService.splitModelAtSequenceGaps(model, sequenceGaps);
 		assertEquals(3,models.size());
 

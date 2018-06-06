@@ -370,7 +370,6 @@ public class ModelGenerationService {
 	 *         returned
 	 */
 	public List<Model> splitModelAtSequenceGaps(Model initModel, List<Range> validSequenceGaps) throws CloneNotSupportedException {
-	    long seqLength = initModel.getAlignment().getVirusGenome().getSequence().getLength();
 	    initModel = splitExonsAtSequenceGaps(initModel,validSequenceGaps);
 		List<Model> newModels = new ArrayList<Model>();
 		Model model = initModel.clone();
@@ -378,9 +377,7 @@ public class ModelGenerationService {
 			Exon nextExon;
 			Exon currentExon;
 			Range diffRange;
-            Range startDiffRange=null;
-            Range endDiffRange = null;
-			List<Exon> firstGroup = new ArrayList<Exon>();
+             List<Exon> firstGroup = new ArrayList<Exon>();
 			List<Exon> secondGroup = new ArrayList<Exon>();
 			Model firstModel;
 			Model secondModel=null;
@@ -391,8 +388,6 @@ public class ModelGenerationService {
              	if (j != modelExons.size() - 1) {
 						nextExon = modelExons.get(j + 1);
 						currentExon = modelExons.get(j);
-						if(j==0) startDiffRange=Range.of(0,currentExon.getRange().getBegin());
-						if(j==modelExons.size()-2) endDiffRange=Range.of(nextExon.getRange().getEnd(),seqLength-1);
 						diffRange = Range.of(currentExon.getRange().getEnd(), nextExon.getRange().getBegin());
 						if (diffRange.getLength() >= 20) {
 							firstGroup.add(modelExons.get(j));
@@ -440,13 +435,7 @@ public class ModelGenerationService {
 									firstGroup.clear();
 									temp = false;
 
-								}/*else if(startDiffRange!=null && startDiffRange.intersects(validSequenceGaps.get(k))){
-								    model.setPartial5p(true);
-								    startDiffRange=null;
-                                }else if(endDiffRange!=null && endDiffRange.intersects(validSequenceGaps.get(k))){
-						            model.setPartial3p(true);
-                                    endDiffRange=null;
-                                }*/
+								}
 							}
 						}
 					}
