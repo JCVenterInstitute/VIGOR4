@@ -106,8 +106,17 @@ public class VigorFunctionalUtils {
 			}
 		}
 		return outRanges;
+
 	}*/
-		
+
+	public static Range get5pNearestSequenceGap(List<Range> sequenceGaps , Range exonRange){
+	    Range nearestRange = null;
+	    for(Range range : sequenceGaps){
+	       if(range.getEnd()<exonRange.getBegin())
+             nearestRange=range;
+        }
+        return nearestRange;
+    }
 	public static long getNTRange(List<Exon> exons,long CDSNTCoordinate){
 		exons.sort(Exon.Comparators.Ascending);
 		long outputStart=0;

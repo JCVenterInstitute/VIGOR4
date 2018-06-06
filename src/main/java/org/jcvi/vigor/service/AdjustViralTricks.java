@@ -1,9 +1,6 @@
 package org.jcvi.vigor.service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
@@ -14,6 +11,7 @@ import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.vigor.Vigor;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.ConfigurationParameters;
+import org.jcvi.vigor.utils.NoteType;
 import org.jcvi.vigor.utils.VigorFunctionalUtils;
 import org.jcvi.vigor.utils.VigorUtils;
 import org.jcvi.vigor.component.Exon;
@@ -187,6 +185,9 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                         }
                     }
                 }
+				List<NoteType> notes = newModel.getNotes();
+                notes.add(NoteType.RNA_Editing);
+                newModel.setNotes(notes);
                 models.add(newModel);
             }
         }
@@ -217,12 +218,15 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                     if (VigorFunctionalUtils.isInFrameWithExon(model.getExons(), start) && !VigorFunctionalUtils.intheSequenceGap(sequenceGaps,leakyStopRange)) {
                         Model newModel;
                         newModel = model.clone();
-                        System.out.println("Stop codon read through "+start);
-                        System.out.println(model.getAlignment().getVirusGenome().getSequence().toBuilder().trim(Range.of(start,start+2)).build());
+                       // System.out.println("Stop codon read through "+start);
+                       // System.out.println(model.getAlignment().getVirusGenome().getSequence().toBuilder().trim(Range.of(start,start+2)).build());
                         Map<String, Double> scores = newModel.getScores();
                         scores.put("leakyStopScore", 100.00);
                         newModel.setReplaceStopCodonRange(Range.of(start, start + 2));
                         newModel.setScores(scores);
+						List<NoteType> notes = newModel.getNotes();
+						notes.add(NoteType.StopCodonReadThrough);
+						newModel.setNotes(notes);
                         newModels.add(newModel);
                     }
                 }

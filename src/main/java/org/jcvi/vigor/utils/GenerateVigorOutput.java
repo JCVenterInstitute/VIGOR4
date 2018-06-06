@@ -81,8 +81,10 @@ public class GenerateVigorOutput {
         boolean writeLocus = !(locusPrefix == null || locusPrefix.isEmpty());
         String genomeID = geneModels.get(0).getAlignment().getVirusGenome().getId();
         bw.write(">Features " + genomeID + "\n");
+        String proteinID ="";
         for (int i = 0; i < geneModels.size(); i++) {
             Model model = geneModels.get(i);
+            List<NoteType> modelNotes = model.getNotes();
             String proteinIDOfGenome = model.getGeneID();
             IDGenerator idGenerator = IDGenerator.of(proteinIDOfGenome);
             Ribosomal_Slippage riboSlippage = model.getAlignment().getViralProtein().getGeneAttributes().getRibosomal_slippage();
@@ -94,42 +96,47 @@ public class GenerateVigorOutput {
             String start = Long.toString(firstExon.getRange().getBegin(oneBased));
             int codon_start = firstExon.getFrame().getFrame();
             String end = Long.toString(exons.get(exons.size() - 1).getRange().getEnd(oneBased));
-            if(model.isPartial5p()) start="<"+start;
-            if(model.isPartial3p()) end=">"+end;
-            bw.write(start);
-            bw.write("\t");
-            bw.write(end);
-            bw.write("\tgene\n");
-            if (writeLocus) {
-                bw.write("\t\t\tlocus_tag\t" + VigorUtils.nameToLocus(model.getGeneSymbol(), locusPrefix, model.isPseudogene()) + "\n");
+            if (model.isPartial5p()) start = "<" + start;
+            if (model.isPartial3p()) end = ">" + end;
+            if (!model.getAlignment().getViralProtein().getProteinID().equals(proteinID)) {
+                /* bw.write(start);
+                bw.write("\t");
+                bw.write(end);*/
+               bw.write(getGeneCoordinates(model,geneModels));
+                bw.write("\tgene\n");
+                if (writeLocus) {
+                    bw.write("\t\t\tlocus_tag\t" + VigorUtils.nameToLocus(model.getGeneSymbol(), locusPrefix, model.isPseudogene()) + "\n");
+                }
+                bw.write("\t\t\tgene\t" + model.getGeneSymbol() + "\n");
+
             }
-            bw.write("\t\t\tgene\t" + model.getGeneSymbol() + "\n");
+            proteinID = model.getAlignment().getViralProtein().getProteinID();
             String geneSynonym = model.getAlignment().getViralProtein().getGeneSynonym();
-            if(geneSynonym!=null && geneSynonym!=""){
+            if (geneSynonym != null && geneSynonym != "") {
                 bw.write("\t\t\tgene_syn\t" + geneSynonym + "\n");
             }
             for (int j = 0; j < exons.size(); j++) {
                 Exon exon = exons.get(j);
-                String Cstart=Long.toString(exon.getRange().getBegin(oneBased));
-                String Cend=Long.toString(exon.getRange().getEnd(oneBased));
-                if(j==0 && model.isPartial5p()) Cstart = "<"+Cstart;
-                if(j==exons.size()-1 && model.isPartial3p()) Cend = ">"+Cend;
+                String Cstart = Long.toString(exon.getRange().getBegin(oneBased));
+                String Cend = Long.toString(exon.getRange().getEnd(oneBased));
+                if (j == 0 && model.isPartial5p()) Cstart = "<" + Cstart;
+                if (j == exons.size() - 1 && model.isPartial3p()) Cend = ">" + Cend;
                 if (j == 0) {
                     bw.write(String.join("\t",
                             Cstart,
-                           Cend,"CDS"));
+                            Cend, "CDS"));
                     bw.newLine();
                 } else {
                     bw.write(Cstart + "\t" + Cend + "\n");
                 }
             }
             bw.write("\t\t\tcodon_start\t" + codon_start + "\n");
-            if(model.getReplaceStopCodonRange()!=null){
-                bw.write("\t\t\ttransl_except\t" + String.format("(pos:%s..%s,aa:R)",model.getReplaceStopCodonRange().getBegin(oneBased),model.getReplaceStopCodonRange().getEnd(oneBased))+ "\n");
+            if (model.getReplaceStopCodonRange() != null) {
+                bw.write("\t\t\ttransl_except\t" + String.format("(pos:%s..%s,aa:R)", model.getReplaceStopCodonRange().getBegin(oneBased), model.getReplaceStopCodonRange().getEnd(oneBased)) + "\n");
             }
             bw.write("\t\t\tprotein_id\t" + model.getGeneID() + "\n");
             if (writeLocus) {
-                bw.write("\t\t\tlocus_tag\t" +  VigorUtils.nameToLocus(model.getGeneSymbol(), locusPrefix, model.isPseudogene()) + "\n");
+                bw.write("\t\t\tlocus_tag\t" + VigorUtils.nameToLocus(model.getGeneSymbol(), locusPrefix, model.isPseudogene()) + "\n");
             }
             bw.write("\t\t\tgene\t" + model.getGeneSymbol() + "\n");
             bw.write("\t\t\tproduct\t" + VigorUtils.putativeName(model.getAlignment().getViralProtein().getProduct(), model.isPartial3p(), model.isPartial5p()) + "\n");
@@ -151,40 +158,66 @@ public class GenerateVigorOutput {
                 NucleotideSequence subSeq = model.getAlignment().getVirusGenome().getSequence().toBuilder(model.getInsertRNAEditingRange()).build();
                 bw.write("\t\t\tnote\tlocation of RNA editing (" + subSeq + "," + rna_editing.getInsertionString() + ") in " + model.getAlignment().getViralProtein().getProduct() + "\n");
             }
-
-            if (model.getMaturePeptides()!=null && !model.getMaturePeptides().isEmpty()) {
-                bw.write(">Features " + idGenerator.next());
-                bw.newLine();
-                String product;
-                for (MaturePeptideMatch match : model.getMaturePeptides()) {
-
-                    bw.write(String.format("%s\t%s\t", formatMaturePeptideRange(match)));
-                    product = match.getReference().getProduct();
-                    if (product.contains("signal")) {
-                        // TODO pre-classify type
-                        bw.write("sig_peptide");
-                    } else {
-                        bw.write("mat_peptide");
-                        bw.newLine();
-                        bw.write("\t\t\tproduct\t");
-                        // TODO check that there aren't other factors here.
-                        bw.write(VigorUtils.putativeName(product, model.isPartial3p(), model.isPartial5p()));
-                    }
-                    bw.newLine();
-                    String geneSymbol = model.getGeneSymbol();
-                    if (!(geneSymbol == null || geneSymbol.isEmpty())) {
-                        if (writeLocus) {
-                            bw.write("\t\t\tlocus_tag\t");
-                            bw.write(VigorUtils.nameToLocus(geneSymbol, locusPrefix, model.isPseudogene()));
-                            bw.newLine();
-                        }
-                        bw.write("\t\t\tgene\t");
-                        bw.write(geneSymbol);
-                        bw.newLine();
-                    }
-                }
+            if (modelNotes.contains(NoteType.Sequence_Gap)) {
+                bw.write("\t\t\tnote\t" + NoteType.Sequence_Gap + "\n");
             }
         }
+       for(Model model : geneModels) {
+              if (model.getMaturePeptides() != null && !model.getMaturePeptides().isEmpty()) {
+                    bw.write(">Features " + model.getGeneID());
+                    bw.newLine();
+                    String product;
+                    for (MaturePeptideMatch match : model.getMaturePeptides()) {
+
+                        bw.write(String.format("%s\t%s\t", formatMaturePeptideRange(match)));
+                        product = match.getReference().getProduct();
+                        if (product.contains("signal")) {
+                            // TODO pre-classify type
+                            bw.write("sig_peptide");
+                        } else {
+                            bw.write("mat_peptide");
+                            bw.newLine();
+                            bw.write("\t\t\tproduct\t");
+                            // TODO check that there aren't other factors here.
+                            bw.write(VigorUtils.putativeName(product, model.isPartial3p(), model.isPartial5p()));
+                        }
+                        bw.newLine();
+                        String geneSymbol = model.getGeneSymbol();
+                        if (!(geneSymbol == null || geneSymbol.isEmpty())) {
+                            if (writeLocus) {
+                                bw.write("\t\t\tlocus_tag\t");
+                                bw.write(VigorUtils.nameToLocus(geneSymbol, locusPrefix, model.isPseudogene()));
+                                bw.newLine();
+                            }
+                            bw.write("\t\t\tgene\t");
+                            bw.write(geneSymbol);
+                            bw.newLine();
+                        }
+                    }
+                }
+           }
+    }
+
+    private String getGeneCoordinates(Model model, List<Model> geneModels){
+        long start=model.getExons().get(0).getRange().getBegin()+1;
+        long end =0;
+        String startString="";
+        String endString ="";
+        Model endGeneModel=model;
+        for(Model geneModel : geneModels){
+            if(model.getAlignment().getViralProtein().getProteinID().equals(geneModel.getAlignment().getViralProtein().getProteinID())){
+                endGeneModel=geneModel;
+            }
+        }
+        end = endGeneModel.getExons().get(endGeneModel.getExons().size()-1).getRange().getEnd()+1;
+        if(model.isPartial5p()){
+            startString="<"+start;
+        }else startString=""+start;
+        if(endGeneModel.isPartial3p()){
+            endString=">"+end;
+        }else endString=""+end;
+
+        return startString+"\t"+endString;
     }
 
     private void writeDefline(BufferedWriter bw, Model model) throws IOException {

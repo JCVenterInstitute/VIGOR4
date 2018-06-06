@@ -8,6 +8,7 @@ import java.util.List;
 import org.jcvi.jillion.core.Direction;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
+import org.jcvi.vigor.component.Alignment;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.jcvi.vigor.Application;
@@ -66,6 +67,21 @@ public class ModelGenerationServiceTest {
 		assertEquals(3,models.size());
 
 	}
+
+	@Test
+    public void splitExonsAtSequenceGaps(){
+	 Model model = new Model();
+	 model.setAlignment(new Alignment());
+	 List<Exon> exons = new ArrayList<>();
+	 exons.add(new Exon(Range.of(771,7484),Frame.ONE));
+	 model.setExons(exons);
+	 List<Range> sequenceGaps = new ArrayList<>();
+	 sequenceGaps.add(Range.of(1401,1555));
+	 sequenceGaps.add(Range.of(2939,3011));
+	 sequenceGaps.add(Range.of(4551,4905));
+	 model = modelGenerationService.splitExonsAtSequenceGaps(model,sequenceGaps);
+	 assertEquals(4,model.getExons().size());
+    }
 
 	@Test
 	public void generateCompatibleFragsChainsTest(){

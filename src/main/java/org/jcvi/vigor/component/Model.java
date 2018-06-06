@@ -31,7 +31,7 @@ public class Model implements Cloneable{
     private ProteinSequence tanslatedSeq;
     private String geneID;
     private List<MaturePeptideMatch> maturePeptides;
-    private EnumMap<NoteType,String> notes;
+    private List<NoteType> notes;
 
    public Model clone() throws CloneNotSupportedException {
 	   Model model = (Model) super.clone();

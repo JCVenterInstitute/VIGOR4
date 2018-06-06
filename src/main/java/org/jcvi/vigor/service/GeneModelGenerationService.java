@@ -64,9 +64,13 @@ public class GeneModelGenerationService {
 
 	}
 	private List<Model> sortModels(List<Model> models,String scoreType){
+
         Collections.sort(models, new Comparator<Model>() {
             @Override
             public int compare(Model m1, Model m2) {
+                if(Double.compare(m2.getScores().get(scoreType),m1.getScores().get(scoreType))==0){
+                    return Double.compare(m1.getExons().size(),m2.getExons().size());
+                }else
                 return Double.compare(m2.getScores().get(scoreType), m1.getScores().get(scoreType));
             }
         });
@@ -83,12 +87,24 @@ public class GeneModelGenerationService {
         return false;
     }
     private boolean isUnoverlappedCandidateModel(List<Model> models , Model model) {
+        boolean overlap=false;
         for (Model model1 : models) {
-            if (!checkExonOverlap(model1, model)) {
-                return true;
+            if (checkExonOverlap(model1, model)) {
+                overlap=true;
             }
         }
-        return false;
+        if(overlap) {
+            return false;
+        }else return true;
+    }
+
+    private double calculateTotalModelsScore(List<Model> models){
+        double totalScore=0;
+        for(Model model:models){
+          double score= model.getScores().get("modelScore");
+          totalScore=totalScore+score;
+        }
+        return totalScore;
     }
 
   	public List<Model> filterGeneModels(List<Model> models){
@@ -115,18 +131,40 @@ public class GeneModelGenerationService {
         }
        Map<String,List<Model>> genewiseModels = filteredModels.stream().collect(Collectors.groupingBy(x -> x.getGeneSymbol()));
        for(Map.Entry<String,List<Model>> entry : genewiseModels.entrySet()){
-           List<Model> tempModels = entry.getValue();
-           tempModels=sortModels(tempModels,"modelScore");
-           List<Model> aGeneModels = new ArrayList<Model>();
-           aGeneModels.add(tempModels.get(0));
-           tempModels.remove(0);
-           for(Model tempModel : tempModels){
+           List<Model> aGeneModels = entry.getValue();
+           Map<String,List<Model>> aGeneModelsProteinWise = aGeneModels.stream().collect(Collectors.groupingBy(x-> x.getAlignment().getViralProtein().getProteinID()));
+           double highScore=0;
+           List<Model> highScoredModels=new ArrayList<>();
+           for(Map.Entry<String,List<Model>> aProteinModelsOfGene : aGeneModelsProteinWise.entrySet()){
+
+               List<Model> aProteinModels = aProteinModelsOfGene.getValue();
+               double totalModelsScore=calculateTotalModelsScore(aProteinModels);
+               if(totalModelsScore>highScore){
+                   highScoredModels= new ArrayList<>();
+                   highScoredModels.addAll(aProteinModels);
+                   highScore=totalModelsScore;
+               }
+
+           }
+           if(highScoredModels.size()>1){
+              highScoredModels=highScoredModels.stream()
+                       .sorted(Comparator.comparing(g -> g.getRange(), Range.Comparators.ARRIVAL))
+                       .collect(Collectors.toList());
+              char alphabet = 'a';
+              for(Model fragmentModel : highScoredModels){
+                  fragmentModel.setGeneID(Character.toString(alphabet));
+                  alphabet++;
+              }
+           }
+           candidateGenes.addAll(highScoredModels);
+           aGeneModels.removeAll(highScoredModels);
+           for(Model tempModel : aGeneModels){
                if (isUnoverlappedCandidateModel(aGeneModels, tempModel)) {
-                   aGeneModels.add(tempModel);
+                   candidateGenes.add(tempModel);
                }
            }
-           candidateGenes.addAll(aGeneModels);
        }
+
         if(isDebug) {
             FormatVigorOutput.printAllGeneModelsWithScores(candidateGenes,"Candidate Gene Models");
         }
@@ -173,7 +211,20 @@ public class GeneModelGenerationService {
         geneModels = geneModels.stream()
                 .sorted(Comparator.comparing(g -> g.getRange(), Range.Comparators.ARRIVAL))
                 .collect(Collectors.toList());
-        geneModels.stream().forEach(x->x.setGeneID(idGenerator.next()));
+        String proteinID="";
+        String id = "";
+        for(Model tempGeneModel : geneModels) {
+            if(proteinID.equals(tempGeneModel.getAlignment().getViralProtein().getProteinID())) {
+                tempGeneModel.setGeneID(id+tempGeneModel.getGeneID());
+            }else {
+                id=idGenerator.next();
+                if(tempGeneModel.getGeneID()!=null){
+                    tempGeneModel.setGeneID(id+tempGeneModel.getGeneID());
+                }else tempGeneModel.setGeneID(id);
+                proteinID=tempGeneModel.getAlignment().getViralProtein().getProteinID();
+            }
+
+         }
 
        return geneModels;
     }
