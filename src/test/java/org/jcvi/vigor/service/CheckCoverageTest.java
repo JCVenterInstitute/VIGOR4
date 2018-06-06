@@ -68,7 +68,7 @@ public class CheckCoverageTest {
         Model model = getTestModel();
         NucleotideSequence cds = checkCoverage.determineCDS(model);
         model = checkCoverage.determineHomology(model,cds);
-        assertEquals("VT*KS*R",model.getTanslatedSeq().toString());
+        assertEquals("VT*KS*",model.getTranslatedSeq().toString());
     }
 
     @Test
@@ -139,11 +139,9 @@ public class CheckCoverageTest {
         ViralProtein vp = new ViralProtein();
         vp.setSequence(new ProteinSequenceBuilder("VFTKSRR").build());
         GeneAttributes attributes = new GeneAttributes();
-        StopTranslationException translationEx = new StopTranslationException();
-        translationEx.setReplacementAA(AminoAcid.Threonine);
+        StopTranslationException translationEx = new StopTranslationException(true, AminoAcid.Threonine, "", 0);
         attributes.setStopTranslationException(translationEx);
-        RNA_Editing rna_editing = new RNA_Editing();
-        rna_editing.setInsertionString("AAA");
+        RNA_Editing rna_editing = new RNA_Editing(true, 0, "", "AAA", "");
         attributes.setRna_editing(rna_editing);
         vp.setGeneAttributes(attributes);
         alignment.setViralProtein(vp);
@@ -159,7 +157,7 @@ public class CheckCoverageTest {
         NucleotideSequence cds = checkCoverage.determineCDS(model);
         //  ProteinSequence translatedSeq = IupacTranslationTables.STANDARD.translate(cds);
         //  System.out.println(translatedSeq);
-        assertEquals("GTCTTCTAAAAATCGTGACGT",cds.toString());
+        assertEquals("GTCTTCTAAAAATCGTGA",cds.toString());
     }
 
 }

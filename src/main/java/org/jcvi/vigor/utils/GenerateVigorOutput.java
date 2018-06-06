@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.regex.Pattern;
 
 @Service
 public class GenerateVigorOutput {
@@ -85,8 +84,6 @@ public class GenerateVigorOutput {
         for (int i = 0; i < geneModels.size(); i++) {
             Model model = geneModels.get(i);
             List<NoteType> modelNotes = model.getNotes();
-            String proteinIDOfGenome = model.getGeneID();
-            IDGenerator idGenerator = IDGenerator.of(proteinIDOfGenome);
             Ribosomal_Slippage riboSlippage = model.getAlignment().getViralProtein().getGeneAttributes().getRibosomal_slippage();
             RNA_Editing rna_editing = model.getAlignment().getViralProtein().getGeneAttributes().getRna_editing();
             Splicing splicing = model.getAlignment().getViralProtein().getGeneAttributes().getSplicing();
@@ -265,7 +262,7 @@ public class GenerateVigorOutput {
     public void generateCDSReport(VigorConfiguration config, BufferedWriter bw ,List<Model> geneModels) throws IOException {
         for (Model model: geneModels) {
             writeDefline(bw, model);
-            writeSequence(bw, model.getTanslatedSeq());
+            writeSequence(bw, model.getTranslatedSeq());
         }
     }
 
@@ -277,7 +274,7 @@ public class GenerateVigorOutput {
         for (Model model : geneModels) {
 
             writeDefline(bw, model);
-            writeSequence(bw, model.getTanslatedSeq());
+            writeSequence(bw, model.getTranslatedSeq());
 
             IDGenerator idGenerator = IDGenerator.of(model.getGeneID());
 

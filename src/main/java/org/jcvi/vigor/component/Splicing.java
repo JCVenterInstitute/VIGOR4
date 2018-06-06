@@ -5,6 +5,7 @@ import lombok.Data;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import java.util.Collections;
 import java.util.List;
 
 
@@ -17,24 +18,27 @@ import java.util.List;
 @Data
 public class Splicing {
 
-    private boolean isSpliced=false;
-    private List<SpliceSite> nonCanonical_spliceSites; 
-    private String spliceform;
+    private final boolean isSpliced;
+    private final List<SpliceSite> nonCanonical_spliceSites;
+    private final String spliceform;
 
     public class SpliceSite{
-    	public String donor;
-    	public String acceptor;
+    	public final String donor;
+    	public final String acceptor;
+
     	public SpliceSite(String donor,String acceptor){
     		this.donor=donor;
     		this.acceptor=acceptor;
     	}
-    	public SpliceSite(){
-    		
-    	}
-    	    	
-    	
+
     }
-  
+
+    public Splicing (boolean splicing, List<SpliceSite> spliceSites, String spliceform) {
+    	this.isSpliced = splicing;
+    	this.nonCanonical_spliceSites = spliceSites;
+    	this.spliceform = spliceform;
+	}
+    public static Splicing NO_SPLICING = new Splicing(false,Collections.EMPTY_LIST, "");
 
 }
 

@@ -1,8 +1,10 @@
 package org.jcvi.vigor;
 
 import net.sourceforge.argparse4j.inf.Namespace;
+import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.LoggerContext;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.datastore.DataStoreException;
 import org.jcvi.jillion.core.datastore.DataStoreProviderHint;
@@ -26,7 +28,6 @@ import java.nio.charset.Charset;
 import java.nio.file.*;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Component
 public class Vigor {
@@ -61,7 +62,10 @@ public class Vigor {
 	public void run(String ... args) {
 
         Namespace parsedArgs = parseArgs(args);
-
+        if (parsedArgs.getBoolean(CommandLineParameters.verbose)) {
+            setVerboseLogging();
+            LOGGER.debug("verbose logging enabled");
+        }
         String inputFileName = parsedArgs.getString("input_fasta");
         File inputFile = new File(inputFileName);
         if (! inputFile.exists()) {
@@ -97,7 +101,6 @@ public class Vigor {
                     outputPrefix,
                     vigorForm.getConfiguration().get(ConfigurationParameters.OverwriteOutputFiles) == "true")) {
                 outfiles.get(GenerateVigorOutput.Outfile.GFF3).write("##gff-version 3\n");
-                PeptideMatchingService.Scores peptideScores = getPeptideScores(vigorParameters);
                 Iterator<NucleotideFastaRecord> i = dataStore.records().iterator();
                 while (i.hasNext()) {
                     NucleotideFastaRecord record = i.next();
@@ -112,7 +115,7 @@ public class Vigor {
                     LOGGER.info("{} candidate model(s) found for sequence {}", candidateModels.size(), record.getId());
                     List<Model> geneModels = generateGeneModels(candidateModels, vigorForm);
                     LOGGER.info("{} gene model(s) found for sequence {}", geneModels.size(), record.getId());
-                    geneModels = findPeptides(vigorParameters, geneModels, vigorForm);
+                    geneModels = findPeptides(vigorParameters, geneModels);
                     if (geneModels.isEmpty()) {
                         LOGGER.warn("No gene models generated for sequence {}", record.getId());
                         continue;
@@ -142,6 +145,12 @@ public class Vigor {
 
     }
 
+    private void setVerboseLogging() {
+        LoggerContext lc = (LoggerContext) LogManager.getContext(false);
+        lc.getConfiguration().getLoggerConfig("org.jcvi.vigor").setLevel(Level.DEBUG);
+        lc.updateLoggers();
+    }
+
     private PeptideMatchingService.Scores getPeptideScores(VigorConfiguration config) {
 	    String minIdentityString = config.get(ConfigurationParameters.MaturePeptideMinimumIdentity);
 	    double minIdentity = Double.parseDouble(minIdentityString)/ 100.0d;
@@ -155,7 +164,7 @@ public class Vigor {
         return PeptideMatchingService.Scores.of(minIdentity, minCoverage, minSimilarity);
     }
 
-    private List<Model> findPeptides(VigorConfiguration config, List<Model> geneModels, VigorForm vigorForm) throws VigorException {
+    private List<Model> findPeptides(VigorConfiguration config, List<Model> geneModels) throws VigorException {
 
 	    PeptideMatchingService.Scores scores = getPeptideScores(config);
 
@@ -163,8 +172,11 @@ public class Vigor {
             String maturePeptideDB = model.getAlignment().getAlignmentEvidence().getMatpep_db();
             // TODO check peptides for psuedogenes?
             if (! (maturePeptideDB == null || maturePeptideDB.isEmpty()) ) {
-                model.setMaturePeptides(peptideMatchingService.findPeptides(model.getTanslatedSeq(),
+                LOGGER.debug("finding mature peptides for {} using db {}", model.getGeneID(), maturePeptideDB);
+                model.setMaturePeptides(peptideMatchingService.findPeptides(model.getTranslatedSeq(),
                         new File(maturePeptideDB), scores));
+                LOGGER.debug("for {} found {} peptides.", model.getGeneID(), model.getMaturePeptides().size() );
+
             }
         }
         return geneModels;

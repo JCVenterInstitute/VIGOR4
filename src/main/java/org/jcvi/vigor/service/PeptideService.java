@@ -50,6 +50,7 @@ public class PeptideService implements PeptideMatchingService {
         public final ProteinFastaRecord peptide;
         public final ProteinSequence protein;
         public final ProteinPairwiseSequenceAlignment alignment;
+        private Scores scores = Scores.of(-1,-1,-1);
 
         public PeptideMatch(ProteinFastaRecord peptide, ProteinSequence protein, ProteinPairwiseSequenceAlignment alignment) {
             this.peptide = peptide;
@@ -59,6 +60,14 @@ public class PeptideService implements PeptideMatchingService {
 
         public static PeptideMatch of(ProteinFastaRecord peptide, ProteinSequence protein, ProteinPairwiseSequenceAlignment alignment) {
             return new PeptideMatch(peptide, protein, alignment);
+        }
+
+        public Scores getScores() {
+            return scores;
+        }
+
+        public void setScores(Scores scores) {
+            this.scores = scores;
         }
 
     }
@@ -129,23 +138,46 @@ public class PeptideService implements PeptideMatchingService {
                 Scores.of(DEFAULT_MIN_IDENTITY, DEFAULT_MIN_COVERAGE, DEFAULT_MIN_SIMILARITY));
     }
 
+    private static String formatMatchForLogging(PeptideMatch match) {
+        Scores matchScores = match.getScores();
+        ProteinPairwiseSequenceAlignment alignment = match.alignment;
+
+        return String.format("%-20s     %04d    %04d-%04d     %04d-%04d   %.04f   %.04f   %.04f   %s",
+                match.peptide.getId(),
+                match.peptide.getLength(),
+                alignment.getSubjectRange().getBegin(),
+                alignment.getSubjectRange().getEnd(),
+                alignment.getQueryRange().getBegin(),
+                alignment.getQueryRange().getEnd(),
+                matchScores.identity,
+                matchScores.similarity,
+                matchScores.coverage,
+                match.peptide.getComment()
+                );
+    }
+
+    private static String formatMatchForLogging(MaturePeptideMatch match) {
+        return String.format("%-20s     %04d    %04d-%04d    %04d-%04d   %s",
+                match.getReference().getProteinID(),
+                match.getProtein().getLength(),
+                match.getReferenceRange().getBegin(),
+                match.getReferenceRange().getEnd(),
+                match.getProteinRange().getBegin(),
+                match.getProteinRange().getEnd(),
+                match.getReference().getDefline()
+        );
+
+    }
     @Override
     public List<MaturePeptideMatch> findPeptides(ProteinSequence protein, File peptideDatabase, Scores minscores) throws ServiceException {
 
 
         // filter
         Predicate<PeptideMatch> filterByScore = match -> {
-            ProteinPairwiseSequenceAlignment alignment = match.alignment;
-            Scores matchScores = getMatchScores(match);
 
-            LOGGER.debug("alignment for subject {} to query {} ({}) %ident {} min %ident {} %sim {} min %sim {} %cov {}  min %cov {}",
-                    alignment.getGappedSubjectAlignment(),
-                    alignment.getGappedQueryAlignment(),
-                    match.peptide.getSequence(),
-                    alignment.getPercentIdentity(), minscores.identity,
-                    matchScores.similarity, minscores.similarity,
-                    matchScores.coverage, minscores.coverage);
+            LOGGER.debug(formatMatchForLogging(match));
 
+            Scores matchScores = match.getScores();
             return matchScores.identity >= minscores.identity &&
                     matchScores.similarity >= minscores.similarity &&
                     matchScores.coverage >= minscores.coverage;
@@ -165,8 +197,9 @@ public class PeptideService implements PeptideMatchingService {
                     if (Math.abs(rangeKey.getBegin() - subjectRange.getBegin()) < PROXIMITY_MAX &&
                             Math.abs(rangeKey.getEnd() - subjectRange.getEnd()) < PROXIMITY_MAX) {
                         return rangeKey;
-                        // fully contained in the range
-                    } else if (subjectRange.getBegin() >= rangeKey.getBegin() && subjectRange.getEnd() <= rangeKey.getEnd()) {
+                        // bin more than 80% overlap together.
+                        // TODO make this settable
+                    } else if ( (double) subjectRange.intersection(rangeKey).getLength()/ (double) subjectRange.getLength() >= .8d) {
                         return rangeKey;
                     }
 
@@ -175,7 +208,8 @@ public class PeptideService implements PeptideMatchingService {
                 return subjectRange;
             };
 
-            Map<Range, List<PeptideMatch>> alignmentsByRange = alignments.filter(filterByScore)
+            Map<Range, List<PeptideMatch>> alignmentsByRange = alignments.peek(m -> m.setScores(getMatchScores(m)))
+                                                                         .filter(filterByScore)
                                                                          .sorted(byQueryAlignment::compare)
                                                                          .collect(Collectors.groupingBy(binByRange));
 
@@ -191,24 +225,14 @@ public class PeptideService implements PeptideMatchingService {
                                      .collect(Collectors.joining(", "))
             ));
 
-
-            // TODO don't just use score, but also %identity %similarity %coverage as well as edges
             List<PeptideMatch> bestMatches = alignmentsByRange.keySet().stream()
-                                           .sorted(Range.Comparators.ARRIVAL)
-                                           .map((x) -> {
-                                               PeptideMatch match = alignmentsByRange.get(x).stream()
-                                                                                     .max(Comparator.comparing(p -> {Scores s = PeptideService.getMatchScores(p); return s.coverage + s.identity + s.similarity + p.alignment.getScore();}))
-                                                                                     .get();
-                                               LOGGER.debug("With score {} %identity {} returning range {}\nS>{}\nQ>{}\nP>{}",
-                                                       match.alignment.getScore(),
-                                                       match.alignment.getPercentIdentity(),
-                                                       getRangeString(match),
-                                                       match.alignment.getGappedSubjectAlignment(),
-                                                       match.alignment.getGappedQueryAlignment(),
-                                                       match.peptide.getSequence());
-                                               return match;
-                                           }).collect(Collectors.toList());
+                                                              .sorted(Range.Comparators.ARRIVAL)
+                                                              .map(x -> alignmentsByRange.get(x).stream()
+                                                                                         .max(Comparator.comparing(p -> {Scores s = p.getScores(); return s.coverage * 100 + s.identity * 100 + s.similarity * 100 + p.alignment.getScore();}))
+                                                                                         .get())
+                                                              .collect(Collectors.toList());
 
+            LOGGER.debug( bestMatches.stream().map(m -> formatMatchForLogging(m)).collect(Collectors.joining("\n","Best matches:\n","\n")));
             List<MaturePeptideMatch> peptides = new ArrayList<>(alignmentsByRange.size());
             MaturePeptideMatch prev = null;
             MaturePeptideMatch current = null;
@@ -241,12 +265,23 @@ public class PeptideService implements PeptideMatchingService {
                         current.setProteinRange(currentRange.toBuilder().setBegin(0).build());
                     } else {
                         adjustPeptideEdges(protein, prev, current);
+                        // TODO this removes zero length, but what about short ranges > 0?
+                        if (prev.getProteinRange().getLength() == 0) {
+                            peptides.remove(peptides.size() - 1);
+                        }
+                        if (current.getProteinRange().getLength() == 0) {
+                            continue;
+                        }
                     }
                 }
                 peptides.add(current);
                 prev = current;
-                previousRange = currentRange;
+                previousRange = current.getProteinRange();
             }
+            LOGGER.debug(peptides.stream()
+            .map(m -> formatMatchForLogging(m))
+            .collect(Collectors.joining("\n","After adjusting edges:\n","\n")));
+
             return peptides;
         } catch (IOException e) {
             throw new ServiceException(String.format("Problem finding peptide matches for sequence %s in database %s. got %s: %s",
@@ -298,7 +333,7 @@ public class PeptideService implements PeptideMatchingService {
             testCurrent = subjectSequence.toBuilder().trim(testCurrentRange).build();
 
             testScore = scorePeptideByProfile(testPrevious, previousReferenceProfile) + scorePeptideByProfile(testCurrent, currentReferenceProfile);
-            LOGGER.debug("checking {}-{} and {}-{} got score {}",
+            LOGGER.trace("checking {}-{} and {}-{} got score {}",
                     previousRange.getBegin(),start,
                     start+1, currentRange.getEnd(),
                     testScore);
@@ -334,11 +369,7 @@ public class PeptideService implements PeptideMatchingService {
         ViralProtein referenceProtein = new ViralProtein();
         referenceProtein.setSequence(match.peptide.getSequence());
         referenceProtein.setDefline(String.join(" ", ">" + match.peptide.getId(), match.peptide.getComment()));
-        Matcher m = productPattern.matcher(referenceProtein.getDefline());
-
-        if (m.find()) {
-            referenceProtein.setProduct(m.group("product"));
-        }
+        referenceProtein.setProduct(extractProduct(referenceProtein.getDefline()));
         referenceProtein.setProteinID(match.peptide.getId());
 
 
@@ -398,6 +429,8 @@ public class PeptideService implements PeptideMatchingService {
     Stream<PeptideMatch> getAlignments(ProteinSequence protein, File peptideDatabase) throws IOException {
 
         LOGGER.info("finding alignments in {} for seq {}", peptideDatabase, SequenceUtils.elipsedSequenceString(protein, 40,20));
+        LOGGER.debug(String.format("%-20s     %-4s    %-9s     %-9s   %-6s   %-6s   %-6s   %s",
+                "id","len","sub","qry","%id","%sim","%cov","comment"));
 
         ProteinFastaFileDataStore peptideDataStore = ProteinFastaFileDataStore.fromFile(peptideDatabase);
         // TODO configurable gap penalties and blosum matrix
@@ -420,12 +453,25 @@ public class PeptideService implements PeptideMatchingService {
                         match.alignment.getQueryRange().asRange(),
                         match.peptide.getSequence(),
                         match.alignment.getSubjectRange().asRange()),
-                computeSimilarity(match.alignment.getNumberOfGapOpenings(),
+                computeSimilarity(
+                        match.alignment.getNumberOfGapOpenings(),
                         match.peptide.getSequence().getLength(),
                         match.alignment.getAlignmentLength(),
-                        match.alignment.getNumberOfMismatches())
+                        SequenceUtils.computeMismatches(match.alignment.getGappedQueryAlignment(),
+                                match.alignment.getGappedSubjectAlignment(),
+                                BlosumMatrices.blosum40())
+                )
         );
 
+    }
+
+    public static String extractProduct(String defline) {
+        Matcher m = productPattern.matcher(defline);
+
+        if (m.find()) {
+            return m.group("product");
+        }
+        return "";
     }
 
 }

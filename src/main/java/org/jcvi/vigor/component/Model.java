@@ -15,11 +15,11 @@ import lombok.Data;
 @Data
 public class Model implements Cloneable{
 	
-	private List<Exon> exons;
+	private List<Exon> exons = Collections.EMPTY_LIST;
 	private Alignment alignment;
-	private Map<String,Double> scores;
+	private Map<String,Double> scores = Collections.EMPTY_MAP;
 	private String geneSymbol;
-	private List<String> status;
+	private List<String> status = Collections.EMPTY_LIST;
 	private Direction direction;
     private boolean partial5p=false;
     private boolean partial3p=false;
@@ -27,33 +27,17 @@ public class Model implements Cloneable{
     private Range replaceStopCodonRange;
     private Range ribosomalSlippageRange;
     private Range insertRNAEditingRange;
-    private NucleotideSequence cds;
-    private ProteinSequence tanslatedSeq;
+    private ProteinSequence translatedSeq;
     private String geneID;
-    private List<MaturePeptideMatch> maturePeptides;
     private List<NoteType> notes;
+    private List<MaturePeptideMatch> maturePeptides = Collections.EMPTY_LIST;
 
    public Model clone() throws CloneNotSupportedException {
 	   Model model = (Model) super.clone();
-	   model.exons = exons.stream().map(x->x.clone()).collect(Collectors.toList());
-	   model.setScores(null);
-	   Map<String,Double> scoresCopy = new HashMap<String,Double>();
-	   String key;
-	   if(this.scores!=null) {
-		   Iterator<String> it = this.scores.keySet().iterator();
-		   while (it.hasNext()) {
-			   key = it.next();
-			   scoresCopy.put(key, this.scores.get(key));
-		   }
-	   }
-       List<String> statusCopy = new ArrayList<String>();
-	   if(this.status!=null) {
-		   statusCopy.addAll(this.status);
+	   model.setExons(this.getExons().stream().map(x->x.clone()).collect(Collectors.toList()));
+	   model.setScores(new HashMap<>(this.scores));
+	   model.setStatus(new ArrayList<>(this.status));
 
-	   }
-
-	   model.setStatus(statusCopy);
-	   model.setScores(scoresCopy);
 	   return model;
    }
 

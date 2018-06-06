@@ -170,7 +170,8 @@ public class ModelGenerationService {
 					alignmentFragsGroupedList.get(iter.next()), alignmentTool);
 			Iterator<List<AlignmentFragment>> iter1 = ListOfCompatibleFragsList.iterator();
 			while (iter1.hasNext()) {
-				List<AlignmentFragment> compatibleFragsList = (List<AlignmentFragment>) iter1.next();
+
+				List<AlignmentFragment> compatibleFragsList =iter1.next();
 				int size=0;
 				for(int i=0;i<2;i++) {
 				    if(i==0)
@@ -200,6 +201,7 @@ public class ModelGenerationService {
                         models.add(model);
                     }
                 }
+
 			}
 
 		}
