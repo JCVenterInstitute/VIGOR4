@@ -26,6 +26,7 @@ import java.io.File;
 import java.net.URL;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -33,6 +34,7 @@ import static org.hamcrest.CoreMatchers.hasItem;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 @RunWith(Parameterized.class)
 @ContextConfiguration(classes = Application.class)
@@ -79,9 +81,17 @@ public class PeptideServiceTest {
         List<MaturePeptideMatch> matches = peptideService.findPeptides(protein, peptideDB);
         LOGGER.debug(() -> String.format("peptides:%s", matches.stream().map(String::valueOf).collect(Collectors.joining("\n> ", "\n> ", ""))));
 
-        assertThat(String.format("peptide mismatches for %s", id), matches.size(), equalTo(expected.size()));
-
-        assertThat("matches count should be that same as expected count",matches.size(), equalTo(expected.size()));
+        Function<MaturePeptideMatch,ProteinSequence> matchToSeq = m -> m.getProtein().toBuilder().trim(m.getProteinRange()).build();
+        if ( matches.size() != expected.size()) {
+            fail(String.format("for %s expected %s:\n%s\nactual %s:\n%s",
+                    id,
+                    expected.size(),
+                    expected.stream().map(e->e[2]).collect(Collectors.joining("\n")),
+                    matches.size(),
+                    matches.stream().map(m -> matchToSeq.apply(m).toString()).collect(Collectors.joining("\n"))
+                    )
+            );
+        }
 
         String expectedProduct;
         String expectedID;
@@ -97,7 +107,7 @@ public class PeptideServiceTest {
             expectedID = expected.get(i)[0];
             expectedProduct = expected.get(i)[1];
             expectedSequence = ProteinSequence.of(expected.get(i)[2]);
-            matchedSequence =  match.getProtein().toBuilder().trim(match.getProteinRange()).build();
+            matchedSequence =  matchToSeq.apply(match);
             assertThat(matchedSequence, equalTo(expectedSequence));
             assertThat(match.getReference().getProduct(), equalTo(expectedProduct));
 
