@@ -166,7 +166,7 @@ public class GenerateVigorOutput {
                     String product;
                     for (MaturePeptideMatch match : model.getMaturePeptides()) {
 
-                        bw.write(String.format("%s\t%s\t", formatMaturePeptideRange(match)));
+                        bw.write(String.format("%s\t%s\t", formatMaturePeptideRange(match, model)));
                         product = match.getReference().getProduct();
                         if (product.contains("signal")) {
                             // TODO pre-classify type
@@ -285,7 +285,7 @@ public class GenerateVigorOutput {
                     defline.append(" pseudogene");
                 }
                 defline.append(" mat_peptide");
-                defline.append(String.format(" location=%s..%s", formatMaturePeptideRange(match)));
+                defline.append(String.format(" location=%s..%s", formatMaturePeptideRange(match, model)));
                 // TODO make sure this is correct
                 defline.append(String.format(" gene=\"%s\"", model.getGeneSymbol()));
                 // TODO this needs some formatting
@@ -304,16 +304,19 @@ public class GenerateVigorOutput {
 
     }
 
-    private static Object[] formatMaturePeptideRange(MaturePeptideMatch match) {
-        String start = String.valueOf(match.getProteinRange().getBegin(oneBased));
-        if (match.isFuzzyBegin()) {
-            start = "<" + start;
+    private static Object[] formatMaturePeptideRange(MaturePeptideMatch match, Model model) {
+        long start = match.getProteinRange().getBegin(oneBased);
+        String startStr = String.valueOf(start);
+        if (match.isFuzzyBegin() || model.isPartial5p() && start == 1 ) {
+            startStr = "<" + startStr;
         }
-        String end = String.valueOf(match.getProteinRange().getEnd(oneBased));
-        if (match.isFuzzyEnd()) {
-            end = ">" + end;
+        long end = match.getProteinRange().getEnd(oneBased);
+
+        String endStr = String.valueOf(end);
+        if (match.isFuzzyEnd() || model.isPartial3p() && end == match.getProtein().getLength()) {
+            endStr = ">" + endStr;
         }
-        return new Object[] {start, end};
+        return new Object[] {startStr, endStr};
     }
 
 
