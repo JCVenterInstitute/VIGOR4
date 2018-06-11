@@ -45,20 +45,9 @@ public class VigorFunctionalUtils {
 		return FRAMES[(int) coordinate % 3];
 	}
 
+	// TODO more descriptive name?
 	public static double generateScore(long referenceCoordinate,long pointOfOccurance){
-		long distance = 0;
-		double score =0;
-			
-			if (pointOfOccurance - referenceCoordinate < 0) {
-				distance = referenceCoordinate - pointOfOccurance;
-				
-			} else {
-				distance = pointOfOccurance - referenceCoordinate;
-			}
-			
-			  score = 100f/(1f+distance);
-			 				
-		return score;
+		return 100d/(1d + Math.abs(pointOfOccurance - referenceCoordinate));
 	}
 
 	public static boolean isInFrameWithExon(List<Exon> exons,long match){
