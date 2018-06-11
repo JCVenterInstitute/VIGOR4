@@ -52,11 +52,15 @@ public class VigorFunctionalUtils {
 
 	public static boolean isInFrameWithExon(List<Exon> exons,long match){
 	    boolean isInFrame=false;
+	    Range matchRange = Range.of(match);
 	    for(Exon exon: exons){
-	        if(exon.getRange().intersects(Range.of(match))){
+	        if(exon.getRange().intersects(matchRange)){
 	            Frame exonFrame = getSequenceFrame(exon.getRange().getBegin()+exon.getFrame().getFrame()-1);
 	            Frame matchFrame = getSequenceFrame(match);
-	            if(exonFrame.equals(matchFrame)) isInFrame=true;
+	            if(exonFrame.equals(matchFrame))  {
+	            	isInFrame=true;
+	            	break;
+				}
             }
         }
 
