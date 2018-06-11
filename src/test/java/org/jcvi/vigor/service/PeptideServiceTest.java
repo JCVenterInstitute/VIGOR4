@@ -11,7 +11,7 @@ import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.VigorConfiguration;
-import org.jcvi.vigor.utils.VigorUtils;
+import org.jcvi.vigor.utils.VigorTestUtils;
 import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;
@@ -74,6 +74,8 @@ public class PeptideServiceTest {
         ProteinSequence protein = ProteinSequence.of(sequence);
         VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
         String refDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
+        VigorTestUtils.assumeReferenceDB(refDBPath);
+
         assertThat("Reference database path must be set", refDBPath, notNullValue());
         String refDB = Paths.get(refDBPath, mp_ref_db).toString();
         File peptideDB = getPeptideDB(refDBPath, mp_ref_db);

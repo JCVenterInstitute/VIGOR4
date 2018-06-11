@@ -47,6 +47,7 @@ public class AdjustViralTricksTest {
     public void adjustRibosomalSlippageTest() throws VigorException, CloneNotSupportedException {
         VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
         String referenceDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
+        VigorTestUtils.assumeReferenceDB(referenceDBPath);
         assertThat("reference database path must be set", referenceDBPath, is(notNullValue()));
         String referenceDB = Paths.get(referenceDBPath, "flua_db").toString();
         List<Alignment> alignments;
@@ -73,6 +74,7 @@ public class AdjustViralTricksTest {
     public void checkForLeakyStopTest() throws VigorException,CloneNotSupportedException {
         VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
         String referenceDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
+        VigorTestUtils.assumeReferenceDB(referenceDBPath);
         assertThat("reference database path must be set", referenceDBPath, is(notNullValue()));
         String referenceDB = Paths.get(referenceDBPath, "veev_db").toString();
         List<Alignment> alignments;
@@ -101,6 +103,7 @@ public class AdjustViralTricksTest {
 
         VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
         String referenceDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
+        VigorTestUtils.assumeReferenceDB(referenceDBPath);
         assertThat("reference database path must be set", referenceDBPath, is(notNullValue()));
         Path referenceDB = Paths.get(referenceDBPath, "mmp_db");
         assumeTrue("This test requires the mmp_db", referenceDB.toFile().exists());
