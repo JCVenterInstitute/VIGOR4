@@ -10,10 +10,7 @@ import org.springframework.stereotype.Service;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.EnumMap;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class GenerateVigorOutput {
@@ -166,7 +163,13 @@ public class GenerateVigorOutput {
                     String product;
                     for (MaturePeptideMatch match : model.getMaturePeptides()) {
 
-                        bw.write(String.format("%s\t%s\t", formatMaturePeptideRange(match, model)));
+                        bw.write(formatMaturePeptideRange(model,
+                                match,
+                                Arrays.asList(match.getProteinRange()),
+                                Range.CoordinateSystem.RESIDUE_BASED,
+                                "\t",
+                                match.getProtein().getLength()));
+                        bw.write("\t");
                         product = match.getReference().getProduct();
                         if (product.contains("signal")) {
                             // TODO pre-classify type
@@ -285,10 +288,15 @@ public class GenerateVigorOutput {
                     defline.append(" pseudogene");
                 }
                 defline.append(" mat_peptide");
-                defline.append(String.format(" location=%s..%s", formatMaturePeptideRange(match, model)));
-                // TODO make sure this is correct
+                List<Range> cdsRanges = VigorFunctionalUtils.proteinRangeToCDSRanges(model, match.getProteinRange());
+                // TODO handle truncation etc
+                defline.append(String.format(" location=%s", formatMaturePeptideRange(model,
+                        match,
+                        cdsRanges,
+                        Range.CoordinateSystem.RESIDUE_BASED,
+                        "..",
+                        model.getRange().getEnd())));
                 defline.append(String.format(" gene=\"%s\"", model.getGeneSymbol()));
-                // TODO this needs some formatting
                 defline.append(String.format(" product=\"%s\"", VigorUtils.putativeName(match.getReference().getProduct(), model.isPartial3p(), model.isPartial5p())));
                 String refDB = model.getAlignment().getAlignmentEvidence().getMatpep_db();
                 if (! (refDB == null || refDB.isEmpty() )) {
@@ -304,21 +312,28 @@ public class GenerateVigorOutput {
 
     }
 
-    private static Object[] formatMaturePeptideRange(MaturePeptideMatch match, Model model) {
-        long start = match.getProteinRange().getBegin(oneBased);
-        String startStr = String.valueOf(start);
-        if (match.isFuzzyBegin() || model.isPartial5p() && start == 1 ) {
-            startStr = "<" + startStr;
+    private static String formatMaturePeptideRange(Model model,
+                                                   MaturePeptideMatch match,
+                                                   List<Range> ranges,
+                                                   Range.CoordinateSystem coordinateSystem,
+                                                   String rangeDelimiter,
+                                                   long endCoordinate) {
+        List<String> rangeStrings = new ArrayList<>(ranges.size());
+        for (int i=0; i < ranges.size(); i++) {
+            Range range = ranges.get(i);
+            long start = range.getBegin(coordinateSystem);
+            String startStr = String.valueOf(start);
+            if (match.isFuzzyBegin() || model.isPartial5p() && start == 1) {
+                startStr = "<" + startStr;
+            }
+            long end = range.getEnd(coordinateSystem);
+            String endStr = String.valueOf(end);
+            if (match.isFuzzyEnd() || (model.isPartial3p() && end == endCoordinate) ) {
+                endStr = ">" + endStr;
+            }
+            rangeStrings.add(String.format("%s%s%s", startStr, rangeDelimiter, endStr));
         }
-        long end = match.getProteinRange().getEnd(oneBased);
-
-        String endStr = String.valueOf(end);
-        if (match.isFuzzyEnd() || model.isPartial3p() && end == match.getProtein().getLength()) {
-            endStr = ">" + endStr;
-        }
-        return new Object[] {startStr, endStr};
+        return String.join(",", rangeStrings);
     }
-
-
 
 }
