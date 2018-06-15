@@ -62,8 +62,9 @@ public class Vigor {
 	public void run(String ... args) {
 
         Namespace parsedArgs = parseArgs(args);
-        if (parsedArgs.getBoolean(CommandLineParameters.verbose)) {
-            setVerboseLogging();
+        int verbosity = parsedArgs.getInt(CommandLineParameters.verbose);
+        if ( verbosity > 0) {
+            setVerboseLogging(verbosity);
             LOGGER.debug("verbose logging enabled");
         }
         String inputFileName = parsedArgs.getString("input_fasta");
@@ -145,9 +146,11 @@ public class Vigor {
 
     }
 
-    private void setVerboseLogging() {
+    private void setVerboseLogging(int verbosity) {
+	    Level verboseLevel = verbosity == 1 ? Level.DEBUG : Level.TRACE;
+
         LoggerContext lc = (LoggerContext) LogManager.getContext(false);
-        lc.getConfiguration().getLoggerConfig("org.jcvi.vigor").setLevel(Level.DEBUG);
+        lc.getConfiguration().getLoggerConfig("org.jcvi.vigor").setLevel(verboseLevel);
         lc.updateLoggers();
     }
 
