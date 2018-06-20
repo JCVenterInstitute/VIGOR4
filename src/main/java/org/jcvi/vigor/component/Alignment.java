@@ -14,7 +14,7 @@ import lombok.Data;
 @SuppressWarnings("serial")
 public class Alignment implements Serializable {
 
-	private transient String alignmentTool_name;
+	private transient AlignmentTool alignmentTool;
 	private List<AlignmentFragment> alignmentFragments;
 	private Map<String,Double> alignmentScore;
 	private transient VirusGenome virusGenome;

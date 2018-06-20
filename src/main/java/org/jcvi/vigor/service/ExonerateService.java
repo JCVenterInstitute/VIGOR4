@@ -1,12 +1,10 @@
 package org.jcvi.vigor.service;
 
-import org.jcvi.vigor.component.Alignment;
-import org.jcvi.vigor.component.AlignmentEvidence;
-import org.jcvi.vigor.component.AlignmentFragment;
-import org.jcvi.vigor.component.ViralProtein;
-import org.jcvi.vigor.component.VirusGenome;
+import org.jcvi.vigor.component.*;
 import org.jcvi.vigor.exception.VigorException;
+import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.service.exception.ServiceException;
+import org.jcvi.vigor.utils.GenerateVigorOutput;
 import org.jcvi.vigor.utils.GenerateExonerateOutput;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -45,22 +43,25 @@ public class ExonerateService implements AlignmentService {
 	}
 
 	@Override
-	public List<Alignment> getAlignment(AlignmentEvidence alignmentEvidence, VirusGenome virusGenome, String referenceDB, String workspace) throws ServiceException {
+	public List<Alignment> getAlignment(VigorForm form, VirusGenome virusGenome, String referenceDB, String workspace) throws ServiceException {
 
 		try {
 			String outputFilePath = GenerateExonerateOutput.queryExonerate(virusGenome, referenceDB, workspace, null, exoneratePath.toString());
 			File outputFile = new File(outputFilePath);
-			return parseExonerateOutput(outputFile, alignmentEvidence, virusGenome, referenceDB);
+			form.setAlignmentOutputTempFile(outputFile.getAbsolutePath());
+			return parseExonerateOutput(outputFile, form, virusGenome, referenceDB);
 		} catch (VigorException e ) {
 			throw new ServiceException(String.format("error getting alignment got %s: %s", e.getClass().getSimpleName(), e.getMessage()), e);
 		}
 
 	}
 
-	public List<Alignment> parseExonerateOutput(File exonerateOutput, AlignmentEvidence alignmentEvidence,
+	public List<Alignment> parseExonerateOutput(File exonerateOutput, VigorForm form,
 			VirusGenome virusGenome, String referenceDB) throws ServiceException{
 		List<Alignment> alignments = new ArrayList<Alignment>();
 		List<VulgarProtein2Genome2> Jalignments;
+		AlignmentEvidence alignmentEvidence = form.getAlignmentEvidence();
+		AlignmentTool alignmentTool = form.getAlignmentTool();
 		try {
 			Jalignments = Exonerate2.parseVulgarOutput(exonerateOutput);
 		} catch (IOException e) {
@@ -72,9 +73,9 @@ public class ExonerateService implements AlignmentService {
 			for (VulgarProtein2Genome2 Jalignment: Jalignments) {
 				Alignment alignment = new Alignment();
 				Map<String, Double> alignmentScores = new HashMap<String, Double>();
-				alignmentScores.put("exonerateScore", (double) Jalignment.getScore());
+				alignmentScores.put("alignmentScore", (double) Jalignment.getScore());
 				alignment.setAlignmentScore(alignmentScores);
-				alignment.setAlignmentTool_name("exonerate");
+				alignment.setAlignmentTool(alignmentTool);
 				List<AlignmentFragment> alignmentFragments = new ArrayList<>();
 
 				for (VulgarProtein2Genome2.AlignmentFragment fragment: Jalignment.getAlignmentFragments()) {

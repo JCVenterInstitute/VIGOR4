@@ -66,7 +66,7 @@ public class AdjustUneditedExonBoundariesTest {
         }
         logger.info("found {} alignments", alignments.size());
         List<Model> models = alignments.stream()
-                                       .flatMap(x -> modelGenerationService.alignmentToModels(x, "exonerate").stream())
+                                       .flatMap(x -> modelGenerationService.alignmentToModels(x).stream())
                                        .collect(Collectors.toList());
         logger.info("{} models for {} alignments", models.size(), alignments.size());
         assertTrue("no models found for alignments", models.size() > 0);

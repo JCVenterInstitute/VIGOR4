@@ -69,6 +69,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 			List<Range>matches = cds.findMatches(riboSlippage.getSlippage_motif()).map(x->x=Range.of(x.getBegin()+CDSStart,x.getEnd()+CDSStart))
 									.sequential()
 									.collect(Collectors.toList());
+			// if match is not found and if model is not partial then mark the model as a pseudogene
 			for(Range match:matches){
 				if(!VigorFunctionalUtils.intheSequenceGap(sequenceGaps,match)){
 					Model newModel ;

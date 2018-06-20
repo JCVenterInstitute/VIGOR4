@@ -42,13 +42,12 @@ public class AlignmentGenerationService {
 	public List<Alignment> generateAlignment(VirusGenome virusGenome, VigorForm form) throws VigorException {
 		isDebug = form.getConfiguration().get(ConfigurationParameters.Verbose).equals("true") ? true : false;
 		AlignmentEvidence alignmentEvidence = form.getAlignmentEvidence();
-		String alignmentTool = chooseAlignmentTool(alignmentEvidence);
+		AlignmentTool alignmentTool = AlignmentToolFactory.getAlignmentTool(alignmentEvidence.getReference_db());
+        form.setAlignmentTool(alignmentTool);
 		VigorConfiguration vigorConfig = form.getConfiguration();
-
 		String min_gap_length = vigorConfig.get(ConfigurationParameters.SequenceGapMinimumLength);
 		String tempDir = vigorConfig.get(ConfigurationParameters.TemporaryDirectory);
 		String referenceDB = alignmentEvidence.getReference_db();
-
 		List<Range> sequenceGaps = VirusGenomeService.findSequenceGapRanges(min_gap_length,
 				virusGenome.getSequence());
 		Map<Frame,List<Long>> internalStops =VirusGenomeService.findInternalStops(virusGenome.getSequence());
@@ -57,26 +56,13 @@ public class AlignmentGenerationService {
 		List<Alignment> alignments = Collections.EMPTY_LIST;
 		AlignmentService alignmentService = getAlignmentService(alignmentTool, form);
 		Path workspace = null;
-		try {
 			try {
 				workspace = Files.createTempDirectory(Paths.get(tempDir), "vigor4");
+				form.setTempDirectoryPath(workspace.toString());
 			} catch (IOException e) {
 				throw new VigorException(String.format("Unable to create temporary directory under %s", tempDir));
 			}
-			alignments = alignmentService.getAlignment(form.getAlignmentEvidence(), virusGenome, referenceDB, workspace.toString());
-		} finally {
-			try {
-				// clean up
-				if (workspace != null) {
-					Files.walk(workspace)
-						 .map(Path::toFile)
-						 .sorted(Comparator.reverseOrder())
-						 .forEach(File::delete);
-				}
-			} catch (IOException e) {
-				LOGGER.warn("Error deleting temporary working directory {}", workspace);
-			}
-		}
+			alignments = alignmentService.getAlignment(form, virusGenome, referenceDB, workspace.toString());
 		for (int i=0; i < alignments.size(); i++ ) {
 			alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), form));
 		}
@@ -86,14 +72,10 @@ public class AlignmentGenerationService {
 
 		return alignments;
 	}
-	
-	// TODO why does this take alignmentEvidence rather than the configuration?
-	public String chooseAlignmentTool(AlignmentEvidence alignmentEvidence) {
-		return "exonerate";
-	}
 
-	private AlignmentService getAlignmentService(String alignmentTool, VigorForm form) throws ServiceException {
-		if ("exonerate".equals(alignmentTool)) {
+
+	private AlignmentService getAlignmentService(AlignmentTool alignmentTool, VigorForm form) throws ServiceException {
+		if (alignmentTool !=null && "exonerate".equals(alignmentTool.getToolName())) {
 			try {
 				String exoneratePath = form.getConfiguration().get(ConfigurationParameters.ExoneratePath);
 				LOGGER.debug("Using exonerate path {}", exoneratePath);

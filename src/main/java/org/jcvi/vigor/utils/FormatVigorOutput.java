@@ -30,9 +30,10 @@ public class FormatVigorOutput {
         content.append(
 				"*********************************"+message+"*****************************************************");
         content.append(System.lineSeparator());
-		content.append(String.format("%-32s%-20s%-20s%-20s%-20s", "Protein_ID", "Direction","spliceform", "NTSeqRange", "AASeqRange"));
+		content.append(String.format("%-32s%-20s%-20s%-20s%-20s%-30s", "Protein_ID", "Direction","spliceform", "NTSeqRange", "AASeqRange" , "Scores"));
         content.append(System.lineSeparator());
 		for (Model model : models) {
+		    Map<String,Double> scores = model.getScores();
 			List<Exon> exons = model.getExons();
             content.append(String.format("%-32s", model.getAlignment().getViralProtein().getProteinID()));
             content.append(String.format("%-20s", model.getDirection()));
@@ -40,6 +41,7 @@ public class FormatVigorOutput {
 			List<Range> NTranges =exons.stream().map(e -> e.getRange()).collect(Collectors.toList());
 			List<Range> AAranges = exons.stream().map(e -> e.getAlignmentFragment().getProteinSeqRange())
 					.collect(Collectors.toList());
+
 			for (int i = 0; i < NTranges.size(); i++) {
                 String start = Long.toString(NTranges.get(i).getBegin(oneBased));
                 String end = Long.toString(NTranges.get(i).getEnd(oneBased));
@@ -50,6 +52,13 @@ public class FormatVigorOutput {
                 content.append(System.lineSeparator());
                 content.append(String.format("%-72s", ""));
 			}
+           content.append(String.format("%-40s", ""));
+            for(String key : scores.keySet()){
+                content.append(String.format("%-30s",key+"="+scores.get(key)));
+                content.append(System.lineSeparator());
+                content.append(String.format("%-112s",""));
+            }
+
             content.append(System.lineSeparator());
 		}
         LOGGER.info(content);
@@ -62,7 +71,7 @@ public class FormatVigorOutput {
         content.append(
                 "*********************************"+msg+"*****************************************************");
         content.append(System.lineSeparator());
-        content.append(String.format("%-32s%-10s%-10s%-10s%-10s%-10s%-10s%-20s%-10s%-10s%-20s", "Reference_ID", "%id","%sim","%cov", "%t5","%gap","%t3","start..stop","pep_sz","ref_sz","definition"));
+        content.append(String.format("%-32s%-10s%-10s%-10s%-10s%-10s%-10s%-20s%-10s%-10s%-20s", "Reference_ID", "%id","%sim","%cov", "%t5","%gap","%t3","start..stop","pep_size","ref_size","definition"));
         content.append(System.lineSeparator());
         for(Model model : geneModels){
             ViralProtein viralProtein = model.getAlignment().getViralProtein();
@@ -106,11 +115,11 @@ public class FormatVigorOutput {
         content.append(
                 "*********************************Initial list of Alignments*****************************************************");
         content.append(System.lineSeparator());
-        content.append(String.format("%-32s%-20s%-20s%-20s%-20s", "Protein_ID","Alignment_Tool","NTSeqRange", "AASeqRange","Frame"));
+        content.append(String.format("%-32s%-20s%-20s%-20s%-20s", "Protein_ID","Alignment_Algorithm","NTSeqRange", "AASeqRange","Frame"));
         content.append(System.lineSeparator());
         for (Alignment alignment : alignments) {
             content.append(String.format("%-32s", alignment.getViralProtein().getProteinID()));
-            content.append(String.format("%-20s", alignment.getAlignmentTool_name()));
+            content.append(String.format("%-20s", alignment.getAlignmentTool().getToolName()));
             List<Range> NTranges = alignment.getAlignmentFragments().stream().map(e -> e.getNucleotideSeqRange())
                     .collect(Collectors.toList());
             List<Frame> frames = alignment.getAlignmentFragments().stream().map(e->e.getFrame()).collect(Collectors.toList());
@@ -144,7 +153,7 @@ public class FormatVigorOutput {
         StringBuffer content = new StringBuffer("");
         content.append(System.lineSeparator());
         content.append(System.lineSeparator());
-        content.append(String.format("%-20s%-10s%-10s%-10s%-10s%-10s%-10s%-20s%-10s%-10s%-20s%-20s", "gene_id", "%id","%sim","%cov", "%t5","%gap","%t3","start..stop","pep_sz","ref_sz","ref_id","definition"));
+        content.append(String.format("%-20s%-10s%-10s%-10s%-10s%-10s%-10s%-20s%-10s%-10s%-20s%-20s", "gene_id", "%id","%sim","%cov", "%t5","%gap","%t3","start..stop","pep_size","ref_size","ref_id","definition"));
         content.append(System.lineSeparator());
         for(Model model : geneModels){
            ViralProtein viralProtein = model.getAlignment().getViralProtein();

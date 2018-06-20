@@ -47,7 +47,7 @@ public enum ConfigurationParameters {
 
     ReferenceDatabasePath("reference_database_path", "Directory containing reference database files", Flags.VERSION_4, Flags.REQUIRED),
 
-    ScoreFactorExonerate("exonerate_score_factor", "weight of exonerate score in evaluating alignment", Flags.VERSION_4),
+    ScoreFactorAlignment("alignment_score_factor", "weight of alignment score in evaluating alignment", Flags.VERSION_4),
     ScoreFactorStart("start_score_factor", ""),
     ScoreFactorSplicing("splicing_score_factor", ""),
     ScoreFactorStop("stop_score_factor", ""),

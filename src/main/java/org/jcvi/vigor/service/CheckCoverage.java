@@ -32,6 +32,7 @@ public class CheckCoverage implements EvaluateModel {
 
 	@Override
 	public Model evaluate(Model model,VigorForm form) {
+
 	    NucleotideSequence cds = determineCDS(model);
 		List<Range> internalStops = getInternalStops(model);
 		if(internalStops.size()>0){

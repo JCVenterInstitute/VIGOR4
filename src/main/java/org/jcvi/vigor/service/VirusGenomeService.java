@@ -18,7 +18,6 @@ import org.jcvi.vigor.utils.VigorUtils;
 		/**
 		 * 
 		 * @param sequence
-		 * @param form
 		 * @return List<Range>: Only ranges having length greater or equal to
 		 *         min_gap_length will be considered as a sequence gap
 		 */
