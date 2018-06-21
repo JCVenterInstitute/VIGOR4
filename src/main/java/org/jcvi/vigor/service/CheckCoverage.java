@@ -128,6 +128,7 @@ public class CheckCoverage implements EvaluateModel {
         return NTSeq;
     }
 
+
 	public long getTranslatedProteinCooridnate(List<Exon> exons,long NTOffset,Range insertionRange){
 		long translatedProteinLength=0;
 		long proteinCoordinate=0;

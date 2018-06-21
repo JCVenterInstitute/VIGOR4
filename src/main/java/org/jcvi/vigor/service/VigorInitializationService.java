@@ -54,7 +54,7 @@ public class VigorInitializationService {
             VigorConfiguration configuration =  form.getConfiguration();
             String outputDir = configuration.get(ConfigurationParameters.OutputDirectory);
             String outputPrefix = configuration.get(ConfigurationParameters.OutputPrefix);
-            initiateReportFile(outputDir,outputPrefix, "true".equals(configuration.get(ConfigurationParameters.Verbose)) );
+            initiateReportFile(outputDir,outputPrefix, inputs.getInt(CommandLineParameters.verbose));
             form.getConfiguration().put(ConfigurationParameters.CircularGene, isCircular ? "1" : "0");
             form.getConfiguration().put(ConfigurationParameters.CompleteGene, isComplete ? "1" : "0");
             return form;
@@ -320,7 +320,7 @@ public class VigorInitializationService {
 			commandLineConfig.put(ConfigurationParameters.VirusSpecificConfiguration, virus_specific_path);
 		}
         commandLineConfig.put(ConfigurationParameters.Verbose,
-                inputs.getBoolean(CommandLineParameters.verbose) ? "true": "false");
+                inputs.getInt(CommandLineParameters.verbose) > 0 ? "true": "false");
 
 		configurations.add(commandLineConfig);
 
@@ -378,7 +378,7 @@ public class VigorInitializationService {
 		return vigorConfiguration;
 	}
 
-	public void initiateReportFile(String outputDir, String outputPrefix, boolean verbose){
+	public void initiateReportFile(String outputDir, String outputPrefix, int verbose){
         LoggerContext lc = (LoggerContext) LogManager.getContext(false);
         FileAppender fa = FileAppender.newBuilder().withName("mylogger").withAppend(false).withFileName(new File(outputDir, outputPrefix+".rpt").toString())
                 .build();
@@ -386,8 +386,9 @@ public class VigorInitializationService {
         lc.getConfiguration().addAppender(fa);
 
 		lc.getLogger("org.jcvi.vigor").addAppender(lc.getConfiguration().getAppender(fa.getName()));
-		if (verbose) {
-			lc.getConfiguration().getLoggerConfig("org.jcvi.vigor").setLevel(Level.DEBUG);
+
+		if (verbose > 0) {
+			lc.getConfiguration().getLoggerConfig("org.jcvi.vigor").setLevel(verbose == 1 ? Level.DEBUG: Level.TRACE);
 		}
         lc.updateLoggers();
     }

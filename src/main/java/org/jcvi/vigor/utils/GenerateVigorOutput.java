@@ -10,10 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.*;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.EnumMap;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class GenerateVigorOutput {
@@ -165,7 +162,13 @@ public class GenerateVigorOutput {
                     String product;
                     for (MaturePeptideMatch match : model.getMaturePeptides()) {
 
-                        bw.write(String.format("%s\t%s\t", formatMaturePeptideRange(match)));
+                        bw.write(formatMaturePeptideRange(model,
+                                match,
+                                Arrays.asList(match.getProteinRange()),
+                                Range.CoordinateSystem.RESIDUE_BASED,
+                                "\t",
+                                match.getProtein().getLength()));
+                        bw.write("\t");
                         product = match.getReference().getProduct();
                         if (product.contains("signal")) {
                             // TODO pre-classify type
@@ -284,10 +287,15 @@ public class GenerateVigorOutput {
                     defline.append(" pseudogene");
                 }
                 defline.append(" mat_peptide");
-                defline.append(String.format(" location=%s..%s", formatMaturePeptideRange(match)));
-                // TODO make sure this is correct
+                List<Range> cdsRanges = VigorFunctionalUtils.proteinRangeToCDSRanges(model, match.getProteinRange());
+                // TODO handle truncation etc
+                defline.append(String.format(" location=%s", formatMaturePeptideRange(model,
+                        match,
+                        cdsRanges,
+                        Range.CoordinateSystem.RESIDUE_BASED,
+                        "..",
+                        model.getRange().getEnd())));
                 defline.append(String.format(" gene=\"%s\"", model.getGeneSymbol()));
-                // TODO this needs some formatting
                 defline.append(String.format(" product=\"%s\"", VigorUtils.putativeName(match.getReference().getProduct(), model.isPartial3p(), model.isPartial5p())));
                 String refDB = model.getAlignment().getAlignmentEvidence().getMatpep_db();
                 if (! (refDB == null || refDB.isEmpty() )) {
@@ -303,18 +311,28 @@ public class GenerateVigorOutput {
 
     }
 
-    private static Object[] formatMaturePeptideRange(MaturePeptideMatch match) {
-        String start = String.valueOf(match.getProteinRange().getBegin(oneBased));
-        if (match.isFuzzyBegin()) {
-            start = "<" + start;
+    private static String formatMaturePeptideRange(Model model,
+                                                   MaturePeptideMatch match,
+                                                   List<Range> ranges,
+                                                   Range.CoordinateSystem coordinateSystem,
+                                                   String rangeDelimiter,
+                                                   long endCoordinate) {
+        List<String> rangeStrings = new ArrayList<>(ranges.size());
+        for (int i=0; i < ranges.size(); i++) {
+            Range range = ranges.get(i);
+            long start = range.getBegin(coordinateSystem);
+            String startStr = String.valueOf(start);
+            if (match.isFuzzyBegin() || model.isPartial5p() && start == 1) {
+                startStr = "<" + startStr;
+            }
+            long end = range.getEnd(coordinateSystem);
+            String endStr = String.valueOf(end);
+            if (match.isFuzzyEnd() || (model.isPartial3p() && end == endCoordinate) ) {
+                endStr = ">" + endStr;
+            }
+            rangeStrings.add(String.format("%s%s%s", startStr, rangeDelimiter, endStr));
         }
-        String end = String.valueOf(match.getProteinRange().getEnd(oneBased));
-        if (match.isFuzzyEnd()) {
-            end = ">" + end;
-        }
-        return new Object[] {start, end};
+        return String.join(",", rangeStrings);
     }
-
-
 
 }

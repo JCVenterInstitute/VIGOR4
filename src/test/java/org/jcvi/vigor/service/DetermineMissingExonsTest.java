@@ -58,6 +58,7 @@ public class DetermineMissingExonsTest {
 		File virusGenomeSeqFile = new File(resources.getAbsolutePath()+File.separator+"vigorUnitTestInput/sequence_flua.fasta");
         File alignmentOutput = new File(resources.getAbsolutePath()+File.separator+"vigorUnitTestInput/sequence_flua_alignmentTest.txt");
 		String refDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
+		VigorTestUtils.assumeReferenceDB(refDBPath);
 		assertThat("Reference database path must be set", refDBPath, is(notNullValue()));
 		String referenceDB = Paths.get(refDBPath, "flua_db").toString();
 

@@ -1,13 +1,14 @@
 package org.jcvi.vigor.utils;
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.ArrayList;
 import java.util.stream.Collectors;
+
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.jillion.core.residue.aa.IupacTranslationTables;
@@ -20,61 +21,100 @@ import org.jcvi.vigor.component.VirusGenome;
 
 
 public class VigorFunctionalUtils {
-	
-	/*public static AlignmentFragment mergeTwoFragments(AlignmentFragment frag1 , AlignmentFragment frag2){
-		Range prevExonNTRange = frag1.getNucleotideSeqRange();
-		Range nextExonNTRange = frag2.getNucleotideSeqRange();
-		Range prevExonAARange = frag1.getProteinSeqRange();
-		Range nextExonAARange = frag2.getProteinSeqRange();
-		Range mergedExonNTRange = Range.of(prevExonNTRange.getBegin(),nextExonNTRange.getEnd());
-		Range mergedExonAARange = Range.of(prevExonAARange.getBegin(),nextExonAARange.getEnd());
-		frag1.setProteinSeqRange(mergedExonAARange);
-		frag1.setNucleotideSeqRange(mergedExonNTRange);
-		return frag1;
-	}*/
+	private static final Logger LOGGER = LogManager.getLogger(VigorFunctionalUtils.class);
 
-	public static NucleotideSequence getCDS(Model model) {
-		NucleotideSequence virusGenomeSeq = model.getAlignment().getVirusGenome().getSequence();
-		NucleotideSequenceBuilder NTSeqBuilder = new NucleotideSequenceBuilder("");
-		for (Exon exon : model.getExons()) {
-			NTSeqBuilder.append(virusGenomeSeq.toBuilder(exon.getRange()));
-		}
-		NucleotideSequence cds = NTSeqBuilder.build();
-		return cds;
-	}
+	public static NucleotideSequence getCDS(Model model){
+        NucleotideSequence virusGenomeSeq = model.getAlignment().getVirusGenome().getSequence();
+        NucleotideSequenceBuilder NTSeqBuilder=new NucleotideSequenceBuilder("");
+        for(Exon exon : model.getExons()){
+            NTSeqBuilder.append(virusGenomeSeq.toBuilder(exon.getRange()));
+        }
+        NucleotideSequence cds = NTSeqBuilder.build();
+	    return cds;
+    }
 
-	private static Frame[] FRAMES = {Frame.ONE, Frame.TWO, Frame.THREE};
-
-	public static Frame getSequenceFrame(long coordinate) {
+	private static Frame[] FRAMES = { Frame.ONE, Frame.TWO, Frame.THREE};
+	public static Frame getSequenceFrame(long coordinate){
 		return FRAMES[(int) coordinate % 3];
 	}
 
-	public static double generateScore(long referenceCoordinate, long pointOfOccurance) {
-		long distance = 0;
-		double score = 0;
+	public static List<Range> proteinRangeToCDSRanges(Model model, Range proteinRange) {
+		List<Range> ranges = new ArrayList<>();
 
-		if (pointOfOccurance - referenceCoordinate < 0) {
-			distance = referenceCoordinate - pointOfOccurance;
+		long pBegin = proteinRange.getBegin() * 3;
 
-		} else {
-			distance = pointOfOccurance - referenceCoordinate;
-		}
+		long proteinNTLength = proteinRange.getLength() * 3;
 
-		score = 100f / (1f + distance);
+		LOGGER.trace("getting ranges for proteinRange {}, ntBegin {}, ntLength {}", proteinRange, pBegin, proteinNTLength);
+		List<Exon> exons = model.getExons();
+		exons.sort(Exon.Comparators.Ascending);
+		boolean inserted=false;
+		long proteinBases = 0;
+		int insertedLength = 0;
+		long exonLength = 0;
+		Range addedRange;
+		long rangeStart;
+		for(int i=0;i<exons.size() && proteinNTLength > 0;i++){
+			Range exonRange = exons.get(i).getRange();
+			long adjustedBegin = exonRange.getBegin();
+			long adjustedEnd = exonRange.getEnd();
 
-		return score;
-	}
+			// TODO should ranges include stop codons?
+			// trim off stop codon unless the model is already partial
+			if(i==exons.size()-1 && !model.isPartial3p()){
+				adjustedEnd -= 3;
+			}
+			exonLength = adjustedEnd - adjustedBegin;
 
-	public static boolean isInFrameWithExon(List<Exon> exons, long match) {
-		boolean isInFrame = false;
-		for (Exon exon : exons) {
-			if (exon.getRange().intersects(Range.of(match))) {
-				Frame exonFrame = getSequenceFrame(exon.getRange().getBegin() + exon.getFrame().getFrame() - 1);
-				Frame matchFrame = getSequenceFrame(match);
-				if (exonFrame.equals(matchFrame)) isInFrame = true;
+			LOGGER.trace("checking range {}-{}, ntBegin {} against ntcount {}",adjustedBegin, adjustedEnd, pBegin,proteinBases);
+			if (proteinBases + exonLength > pBegin) {
+				rangeStart = adjustedBegin + (pBegin - proteinBases);
+				if (proteinNTLength > exonLength) {
+					addedRange = Range.of(rangeStart,adjustedEnd);
+				} else {
+					addedRange = Range.of(rangeStart,rangeStart + proteinNTLength -1 );
+				}
+				ranges.add(addedRange);
+				LOGGER.trace("added range {}", addedRange);
+
+				proteinNTLength -= addedRange.getLength();
+				LOGGER.trace("{} bases left to to account for", proteinNTLength > 0 ? proteinNTLength: 0);
+			}
+			proteinBases += exonLength;
+			if(!inserted && model.getInsertRNAEditingRange()!=null && model.getInsertRNAEditingRange().getBegin()==adjustedEnd + 1){
+				insertedLength =  model.getAlignment().getViralProtein().getGeneAttributes().getRna_editing().getInsertionString().length();
+
+				proteinBases += insertedLength;
+				if (proteinBases > pBegin) {
+					LOGGER.trace("accounting for RNA editing of legth {}",insertedLength);
+					proteinNTLength -= (proteinBases - pBegin);
+				}
+				inserted=true;
 			}
 		}
 
+		return ranges;
+	}
+
+	// TODO more descriptive name?
+	public static double generateScore(long referenceCoordinate,long pointOfOccurance){
+		return 100d/(1d + Math.abs(pointOfOccurance - referenceCoordinate));
+	}
+
+
+	public static boolean isInFrameWithExon(List<Exon> exons,long match) {
+		boolean isInFrame = false;
+		Range matchRange = Range.of(match);
+		for (Exon exon : exons) {
+			if (exon.getRange().intersects(matchRange)) {
+				Frame exonFrame = getSequenceFrame(exon.getRange().getBegin() + exon.getFrame().getFrame() - 1);
+				Frame matchFrame = getSequenceFrame(match);
+				if (exonFrame.equals(matchFrame)) {
+					isInFrame = true;
+					break;
+				}
+			}
+		}
 		return isInFrame;
 	}
 

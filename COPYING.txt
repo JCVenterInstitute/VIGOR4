@@ -1,0 +1,31 @@
+Copyright (c) 2009 - 2018 J. Craig Venter Institute.
+  This file is part of JCVI VIGOR
+
+  JCVI VIGOR is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  JCVI VIGOR is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+   
+  You should have received a copy of the GNU General Public License
+  along with JCVI VIGOR.  If not, see <http://www.gnu.org/licenses/>.
+
+Contributors:
+
+    VIGOR3
+
+        Shiliang Wang - Initial idea and implementation.
+        Jeff Hoover - Redesigning, refactoring, and expanding the scope.
+        Susmita Shrivastava and Neha Gupta - Creation and curation of sequence databases.
+        Paolo Amedeo and Danny Katzel - Maintenance and further improvements.
+
+    VIGOR4
+
+        Swetha Nettem - Initial implementation, maintenance and futher improvements
+        Paolo Amedeo - Overall architecting and design, curation of VIGOR4 compatible sequence databases, maintenance and futher improvements
+        Indresh Singh - Planning and development guidance
+        James Christensen - Maintenance and further improvements

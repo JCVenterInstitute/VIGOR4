@@ -2,9 +2,9 @@ package org.jcvi.vigor.service;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.jcvi.vigor.service.CommandLineParameters.referenceDB;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assume.assumeThat;
 
 import java.io.File;
 import java.nio.file.Paths;
@@ -37,6 +37,7 @@ public class AlignmentGenerationServiceTest {
 		File alignmentOutput = new File(resources.getAbsolutePath()+File.separator+"vigorUnitTestInput/sequence_flua.txt");
         VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
         String refereceDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
+        VigorTestUtils.assumeReferenceDB(refereceDBPath);
         assertThat("reference database path is required", refereceDBPath, is(notNullValue()));
         String referenceDB = Paths.get(refereceDBPath, "flua_db").toString();
         List<Alignment> alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile,referenceDB,alignmentOutput, config);

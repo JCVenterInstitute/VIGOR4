@@ -173,7 +173,7 @@ public class VigorInputValidationService {
 			  .metavar("<gene size>")
 			  .help("minimum size (aa) of product required to report a gene, by default size is ignored");
 		parser.addArgument("-v","--verbose")
-			  .action(Arguments.storeTrue())
+			  .action(Arguments.count())
 			  .dest(CommandLineParameters.verbose)
 			  .help("verbose logging (default=terse)");
 

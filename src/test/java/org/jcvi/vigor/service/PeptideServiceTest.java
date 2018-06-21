@@ -6,12 +6,10 @@ import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.aa.ProteinSequence;
 import org.jcvi.vigor.Application;
 import org.jcvi.vigor.component.MaturePeptideMatch;
-import org.jcvi.vigor.component.ViralProtein;
 import org.jcvi.vigor.exception.VigorException;
-import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.VigorConfiguration;
-import org.jcvi.vigor.utils.VigorUtils;
+import org.jcvi.vigor.utils.VigorTestUtils;
 import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;
@@ -23,14 +21,12 @@ import org.springframework.test.context.junit4.rules.SpringClassRule;
 import org.springframework.test.context.junit4.rules.SpringMethodRule;
 
 import java.io.File;
-import java.net.URL;
 import java.nio.file.Paths;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.hasItem;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
@@ -74,6 +70,8 @@ public class PeptideServiceTest {
         ProteinSequence protein = ProteinSequence.of(sequence);
         VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
         String refDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
+        VigorTestUtils.assumeReferenceDB(refDBPath);
+
         assertThat("Reference database path must be set", refDBPath, notNullValue());
         String refDB = Paths.get(refDBPath, mp_ref_db).toString();
         File peptideDB = getPeptideDB(refDBPath, mp_ref_db);
