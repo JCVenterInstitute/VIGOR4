@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class EvaluateScores implements EvaluateModel {
-	private float exonerateScoreFactor=1;
+	private float alignmentScoreFactor=1;
 	private float startScoreFactor=1;
 	private float splicingScoreFactor=1;
 	private float stopScoreFactor=1;
@@ -22,8 +22,8 @@ public class EvaluateScores implements EvaluateModel {
 		
 		Map<String,Double> scores = model.getScores();
 		VigorConfiguration configuration = form.getConfiguration();
-		if (VigorUtils.is_Integer(configuration.get(ConfigurationParameters.ScoreFactorExonerate))) {
-			exonerateScoreFactor = Integer.parseInt(configuration.get(ConfigurationParameters.ScoreFactorExonerate));
+		if (VigorUtils.is_Integer(configuration.get(ConfigurationParameters.ScoreFactorAlignment))) {
+			alignmentScoreFactor = Integer.parseInt(configuration.get(ConfigurationParameters.ScoreFactorAlignment));
 		}
 		if (VigorUtils.is_Integer(configuration.get(ConfigurationParameters.ScoreFactorStart))) {
 			startScoreFactor = Integer.parseInt(configuration.get(ConfigurationParameters.ScoreFactorStart));
@@ -37,14 +37,14 @@ public class EvaluateScores implements EvaluateModel {
 		if (VigorUtils.is_Integer(configuration.get(ConfigurationParameters.ScoreFactorLeakyStop))) {
 			leakyStopScoreFactor = Integer.parseInt(configuration.get(ConfigurationParameters.ScoreFactorLeakyStop));
 		}
-		double exonerateScore=0;
+		double alignmentScore=0;
 		double startCodonScore=0;
 		double splicingScore=0;
 		double leakyStopScore=0;
 		double stopScore=0;
 		double totalScore=0;
-		if(scores.get("exonerateScore")!=null){
-		exonerateScore = scores.get("exonerateScore")*exonerateScoreFactor;
+		if(scores.get("alignmentScore")!=null){
+			alignmentScore = scores.get("alignmentScore")*alignmentScoreFactor;
 		}
 		if(scores.get("startCodonScore")!=null){
 	    startCodonScore = scores.get("startCodonScore")*startScoreFactor;
@@ -58,12 +58,12 @@ public class EvaluateScores implements EvaluateModel {
 		if(scores.get("stopCodonScore")!=null){
 	    stopScore = scores.get("stopCodonScore")*stopScoreFactor;
 		}		
-		scores.put("exonerateScore",exonerateScore);
+		scores.put("alignmentScore",alignmentScore);
 		scores.put("startCodonScore",startCodonScore);
 		scores.put("leakyStopScore",leakyStopScore);
 		scores.put("spliceScore",splicingScore);
 		scores.put("stopCodonScore",stopScore);
-		totalScore = exonerateScore + startCodonScore + leakyStopScore + splicingScore + stopScore;
+		totalScore = alignmentScore + startCodonScore + leakyStopScore + splicingScore + stopScore;
 		scores.put("totalScore", totalScore);
 		return model;
 	}

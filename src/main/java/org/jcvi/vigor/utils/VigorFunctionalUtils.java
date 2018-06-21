@@ -1,19 +1,19 @@
 package org.jcvi.vigor.utils;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-import org.apache.commons.logging.LogFactory;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.jillion.core.residue.aa.IupacTranslationTables;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
-import org.jcvi.vigor.component.AlignmentFragment;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.component.VirusGenome;
@@ -101,42 +101,42 @@ public class VigorFunctionalUtils {
 		return 100d/(1d + Math.abs(pointOfOccurance - referenceCoordinate));
 	}
 
-	public static boolean isInFrameWithExon(List<Exon> exons,long match){
-	    boolean isInFrame=false;
-	    Range matchRange = Range.of(match);
-	    for(Exon exon: exons){
-	        if(exon.getRange().intersects(matchRange)){
-	            Frame exonFrame = getSequenceFrame(exon.getRange().getBegin()+exon.getFrame().getFrame()-1);
-	            Frame matchFrame = getSequenceFrame(match);
-	            if(exonFrame.equals(matchFrame))  {
-	            	isInFrame=true;
-	            	break;
+
+	public static boolean isInFrameWithExon(List<Exon> exons,long match) {
+		boolean isInFrame = false;
+		Range matchRange = Range.of(match);
+		for (Exon exon : exons) {
+			if (exon.getRange().intersects(matchRange)) {
+				Frame exonFrame = getSequenceFrame(exon.getRange().getBegin() + exon.getFrame().getFrame() - 1);
+				Frame matchFrame = getSequenceFrame(match);
+				if (exonFrame.equals(matchFrame)) {
+					isInFrame = true;
+					break;
 				}
-            }
-        }
+			}
+		}
+		return isInFrame;
+	}
 
-	    return isInFrame;
-    }
+	public static boolean intheSequenceGap(List<Range> sequenceGaps, Range match) {
+		if (sequenceGaps != null) {
+			for (Range range : sequenceGaps) {
+				if (range.intersects(match)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 
-    public static boolean intheSequenceGap(List<Range> sequenceGaps,Range match){
-        if (sequenceGaps != null) {
-            for (Range range : sequenceGaps) {
-                if (range.intersects(match)) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    public static Map<Frame,List<Long>> frameToSequenceFrame(Map<Frame,List<Long>> rangeFrameMaP){
-		Map<Frame,List<Long>> outRangeFrameMap = new HashMap<Frame,List<Long>>();
-		for(Frame frame : rangeFrameMaP.keySet()){
-			if(rangeFrameMaP.get(frame).size()>0){
-			List<Long> ranges = rangeFrameMaP.get(frame);
-			Long coordinate = ranges.get(0);
-			Frame seqFrame = getSequenceFrame(coordinate);
-			outRangeFrameMap.put(seqFrame, ranges);	
+	public static Map<Frame, List<Long>> frameToSequenceFrame(Map<Frame, List<Long>> rangeFrameMaP) {
+		Map<Frame, List<Long>> outRangeFrameMap = new HashMap<Frame, List<Long>>();
+		for (Frame frame : rangeFrameMaP.keySet()) {
+			if (rangeFrameMaP.get(frame).size() > 0) {
+				List<Long> ranges = rangeFrameMaP.get(frame);
+				Long coordinate = ranges.get(0);
+				Frame seqFrame = getSequenceFrame(coordinate);
+				outRangeFrameMap.put(seqFrame, ranges);
 			}
 		}
 		return outRangeFrameMap;
@@ -153,57 +153,66 @@ public class VigorFunctionalUtils {
 
 	}*/
 
-	public static Range get5pNearestSequenceGap(List<Range> sequenceGaps , Range exonRange){
-	    Range nearestRange = null;
-	    for(Range range : sequenceGaps){
-	       if(range.getEnd()<exonRange.getBegin())
-             nearestRange=range;
+	public static Range get5pNearestSequenceGap(List<Range> sequenceGaps, Range exonRange) {
+		Range nearestRange = null;
+		for (Range range : sequenceGaps) {
+			if (range.getEnd() <= exonRange.getBegin())
+				nearestRange = range;
+		}
+		return nearestRange;
+	}
+
+	/*public static Range get3pNearestSequenceGap(List<Range> sequenceGaps , Range exonRange){
+        Range nearestRange = null;
+        for(Range range : sequenceGaps){
+            if(range.getBegin()>=exonRange.getEnd())
+                nearestRange=range;
+                break;
         }
         return nearestRange;
-    }
-	public static long getNTRange(List<Exon> exons,long CDSNTCoordinate){
+    }*/
+	public static long getNTRange(List<Exon> exons, long CDSNTCoordinate) {
 		exons.sort(Exon.Comparators.Ascending);
-		long outputStart=0;
-		long refCurLength=0;
-		long refBases=0;
-		for(int i=0;i<exons.size();i++){
+		long outputStart = 0;
+		long refCurLength = 0;
+		long refBases = 0;
+		for (int i = 0; i < exons.size(); i++) {
 			long bases;
-			if(i==0) {
+			if (i == 0) {
 				bases = exons.get(i).getRange().getBegin();
-			}else{
-				bases = exons.get(i).getRange().getBegin()-exons.get(i-1).getRange().getEnd()-1;
+			} else {
+				bases = exons.get(i).getRange().getBegin() - exons.get(i - 1).getRange().getEnd() - 1;
 			}
-			refBases = refBases+bases;
-			refCurLength=exons.get(i).getRange().getEnd()-refBases;
-		   if(refCurLength>=CDSNTCoordinate){
-			    outputStart=CDSNTCoordinate+refBases;
-			    break;
-		   }
+			refBases = refBases + bases;
+			refCurLength = exons.get(i).getRange().getEnd() - refBases;
+			if (refCurLength >= CDSNTCoordinate) {
+				outputStart = CDSNTCoordinate + refBases;
+				break;
+			}
 
 		}
 		return outputStart;
 	}
 
-	public static Map<Frame,List<Long>> findStopsInSequenceFrame(VirusGenome virusGenome,Range searchRange){
-		Map<Frame,List<Long>> stops = IupacTranslationTables.STANDARD.findStops(virusGenome.getSequence().toBuilder(searchRange).build());
-		Map<Frame,List<Long>> stopsTemp = new HashMap<Frame,List<Long>>();
+	public static Map<Frame, List<Long>> findStopsInSequenceFrame(VirusGenome virusGenome, Range searchRange) {
+		Map<Frame, List<Long>> stops = IupacTranslationTables.STANDARD.findStops(virusGenome.getSequence().toBuilder(searchRange).build());
+		Map<Frame, List<Long>> stopsTemp = new HashMap<Frame, List<Long>>();
 		final long startCoordinate = searchRange.getBegin();
-		for(Frame frame : stops.keySet()){
-			List<Long> temp = stops.get(frame).stream().map(x->x+startCoordinate).collect(Collectors.toList());
+		for (Frame frame : stops.keySet()) {
+			List<Long> temp = stops.get(frame).stream().map(x -> x + startCoordinate).collect(Collectors.toList());
 			stopsTemp.put(frame, temp);
 		}
-		Map<Frame,List<Long>> outStopsMap = VigorFunctionalUtils.frameToSequenceFrame(stopsTemp);
+		Map<Frame, List<Long>> outStopsMap = VigorFunctionalUtils.frameToSequenceFrame(stopsTemp);
 		return outStopsMap;
-		
-	}
-   /* public static long get5partialStart(){
-	    long start=0;
 
-    }*/
+	}
+
+	/* public static long get5partialStart(){
+         long start=0;
+
+     }*/
 	/*public Range getGenomeSequenceCoordinates(List<Exon> exons, Range insertRNAEditingRange,Range proteinRange){
 
     }*/
-	
-	
-			
+
 }

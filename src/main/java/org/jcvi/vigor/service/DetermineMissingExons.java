@@ -1,10 +1,7 @@
 package org.jcvi.vigor.service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.align.AminoAcidSubstitutionMatrix;
@@ -176,9 +173,11 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
                 if (missingNTRange.getLength() > temp) {
                     missingNTRange = Range.of(missingNTRange.getBegin(), missingNTRange.getBegin() + temp);
                 }
+
                 boolean sequenceGap = false;
                 if (sequenceGaps != null) {
-                    for (Range range : sequenceGaps) {
+                    for (int k=sequenceGaps.size()-1;k>=0;k--) {
+                        Range range = sequenceGaps.get(k);
                         if (range.intersects(missingNTRange)) {
                             Range intersection = range.intersection(missingNTRange);
                             Range leftOver = null;
@@ -198,7 +197,7 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
 
                 }
                 if (!sequenceGap) {
-                    if (missingAARange.getLength() >= min_missing_AA_size) {
+                    if (missingAARange.getLength() >= min_missing_AA_size && missingNTRange.getLength()>min_missing_AA_size*3) {
                         Exon determinedExon = performJillionPairWiseAlignment(missingNTRange,
                                 missingAARange, NTSeq, AASeq, model.getDirection());
                         if (determinedExon.getRange().getLength() >= minExonSize) {

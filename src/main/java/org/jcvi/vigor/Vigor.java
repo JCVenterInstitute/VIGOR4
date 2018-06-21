@@ -58,6 +58,9 @@ public class Vigor {
 	@Autowired
     private PeptideMatchingService peptideMatchingService;
 
+	@Autowired
+    private GenerateAlignmentOuput generateAlignmentOuput;
+
 
 	public void run(String ... args) {
 
@@ -125,6 +128,7 @@ public class Vigor {
                     geneModels = geneModels.stream()
                                            .sorted(Comparator.comparing(g -> g.getRange(), Range.Comparators.ARRIVAL))
                                            .collect(Collectors.toList());
+                    generateAlignmentOutput(outfiles, vigorForm);
                     generateOutput(vigorParameters, geneModels, outfiles);
                     generateGFF3Output(vigorParameters, geneModels, outfiles);
                     FormatVigorOutput.printSequenceFeatures(geneModels,"GeneModels");
@@ -213,7 +217,9 @@ public class Vigor {
     public void generateGFF3Output(VigorConfiguration config, List<Model> models, GenerateVigorOutput.Outfiles outfiles) throws IOException {
         generateGFF3Output.generateOutputFile(config, outfiles, models);
     }
-
+    public void generateAlignmentOutput(GenerateVigorOutput.Outfiles outfiles,VigorForm form) throws IOException {
+        generateAlignmentOuput.generateOutputFile(outfiles, form);
+    }
 
     private GenerateVigorOutput.Outfiles getOutfiles(String outputDir, String outputPrefix, boolean overwrite) throws IOException {
 

@@ -2,6 +2,7 @@ package org.jcvi.vigor.forms;
 
 
 import org.jcvi.vigor.component.AlignmentEvidence;
+import org.jcvi.vigor.component.AlignmentTool;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.utils.LoadDefaultParameters;
 import org.jcvi.vigor.utils.VigorConfiguration;
@@ -14,8 +15,10 @@ public class VigorForm {
 
 	private VigorConfiguration configuration;
 	private AlignmentEvidence alignmentEvidence;
-	private String alignmentTool;
+	private AlignmentTool alignmentTool;
 	private boolean debug;
+	private String AlignmentOutputTempFile;
+	private String tempDirectoryPath;
 
 	public VigorForm() throws VigorException
 	{

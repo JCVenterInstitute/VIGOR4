@@ -22,6 +22,7 @@ import java.util.stream.Collectors;
 public class ModelGenerationService {
 	
 	private long minCondensation=10;
+	private long sequenceGapSearchWindow=50;
 	private long minIntronLength=30;
 	private long relaxIntronLength=900;
 	private long relaxCondensation=300;
@@ -36,6 +37,9 @@ public class ModelGenerationService {
 		if(VigorUtils.is_Integer(configuration.get(ConfigurationParameters.AAOverlap_offset))){
 			AAOverlapOffset=Integer.parseInt(configuration.get(ConfigurationParameters.AAOverlap_offset));
 		}
+        if(VigorUtils.is_Integer(configuration.get(ConfigurationParameters.StopCodonSearchWindow))){
+            sequenceGapSearchWindow=Integer.parseInt(configuration.get(ConfigurationParameters.StopCodonSearchWindow));
+        }
 		if(VigorUtils.is_Integer(configuration.get(ConfigurationParameters.NTOverlap_offset))){
 			NTOverlapOffset=Integer.parseInt(configuration.get(ConfigurationParameters.NTOverlap_offset));
 		}
@@ -75,9 +79,9 @@ public class ModelGenerationService {
 	    	for(Alignment alignment : alignmentsTemp){
 	    		mergedAlignment.getAlignmentFragments().addAll(alignment.getAlignmentFragments());
 	    		Map<String,Double> scores = mergedAlignment.getAlignmentScore();
-	    		double score = scores.get("exonerateScore");
-	    		score = score+alignment.getAlignmentScore().get("exonerateScore");
-	    		scores.put("exonerateScore", score);
+	    		double score = scores.get("alignmentScore");
+	    		score = score+alignment.getAlignmentScore().get("alignmentScore");
+	    		scores.put("alignmentScore", score);
 	    		mergedAlignment.setAlignmentScore(scores);
 	    	}
 	    	allOutAlignments.add(mergedAlignment);
@@ -99,7 +103,7 @@ public class ModelGenerationService {
 		for (int i = 0; i < alignments.size(); i++) {
 			Alignment alignment = alignments.get(i);
 			alignment.getAlignmentFragments().sort(AlignmentFragment.Comparators.Ascending);
-			initialModels.addAll(alignmentToModels(alignment, alignment.getAlignmentTool_name()));
+			initialModels.addAll(alignmentToModels(alignment));
 		}
 		if (isDebug) {
 			FormatVigorOutput.printModels(initialModels,"Initial Models");
@@ -130,23 +134,14 @@ public class ModelGenerationService {
 		// split models at sequence gaps
 
 		for (Model model : initialModels) {
-			Range diffRange = null;
-			for (int i = 0; i < model.getExons().size() - 1; i++) {
-				if (model.getExons().get(i).getRange().getEnd() < model.getExons().get(i + 1).getRange().getBegin()) {
 
-					diffRange = Range.of(model.getExons().get(i).getRange().getEnd(), model.getExons().get(i + 1).getRange().getBegin());
-				}
-			}
-			if (diffRange != null && diffRange.getLength() >= 20) {
 				try {
 					candidateModels.addAll(splitModelAtSequenceGaps(model, validSequenceGaps));
 				} catch (CloneNotSupportedException e) {
 					LOGGER.error("problem splitting model {}", model);
 					throw new ServiceException(String.format("problem splitting model %s", model),e);
 				}
-			} else {
-				candidateModels.add(model);
-			}
+
 		}
 
 		return candidateModels;
@@ -155,11 +150,10 @@ public class ModelGenerationService {
 	/**
 	 * 
 	 * @param alignment
-	 * @param alignmentTool
 	 * @return Models of each alignment.
 	 */
-	public List<Model> alignmentToModels(Alignment alignment, String alignmentTool) {
-				
+	public List<Model> alignmentToModels(Alignment alignment) {
+
 		Map<Direction, List<AlignmentFragment>> alignmentFragsGroupedList = alignment.getAlignmentFragments().stream()
 				.collect(Collectors.groupingBy(w -> w.getDirection()));
 		Set<Direction> keyset = alignmentFragsGroupedList.keySet();
@@ -167,7 +161,7 @@ public class ModelGenerationService {
 		List<Model> models = new ArrayList<Model>();
 		for (Direction direction : keyset) {
 			List<List<AlignmentFragment>> ListOfCompatibleFragsList = generateCompatibleFragsChains(
-					alignmentFragsGroupedList.get(iter.next()), alignmentTool);
+					alignmentFragsGroupedList.get(iter.next()));
 			Iterator<List<AlignmentFragment>> iter1 = ListOfCompatibleFragsList.iterator();
 			while (iter1.hasNext()) {
 
@@ -175,10 +169,10 @@ public class ModelGenerationService {
 				int size=0;
 				for(int i=0;i<2;i++) {
 				    if(i==0)
-				        compatibleFragsList = mergeAlignmentFragments(compatibleFragsList, alignment.getVirusGenome(), minIntronLength, minCondensation);
+				        compatibleFragsList = mergeAlignmentFragments(compatibleFragsList, alignment.getVirusGenome(), minIntronLength, minCondensation,alignment.getViralProtein());
 				   if(i==1) {
 				       compatibleFragsList=compatibleFragsList.stream().map(x->x.clone()).collect(Collectors.toList());
-                       compatibleFragsList = mergeAlignmentFragments(compatibleFragsList, alignment.getVirusGenome(), relaxIntronLength, relaxCondensation);
+                       compatibleFragsList = mergeAlignmentFragments(compatibleFragsList, alignment.getVirusGenome(), relaxIntronLength, relaxCondensation,alignment.getViralProtein());
                    }
 				    if(size!=compatibleFragsList.size()) {
 				        size=compatibleFragsList.size();
@@ -219,9 +213,10 @@ public class ModelGenerationService {
      * @return merge two fragments if the intron length is <minIntronLength and if there are no stops in between and if intron length is divisible by 3. Also merge fragments if the missing protein alignment length between two
      * fragments is less than the minimum_condensation;
      */
-    public List<AlignmentFragment> mergeAlignmentFragments(List<AlignmentFragment> fragments,VirusGenome virusGenome,long thisMinIntronLength,long thisMinCondensation){
+    public List<AlignmentFragment> mergeAlignmentFragments(List<AlignmentFragment> fragments,VirusGenome virusGenome,long thisMinIntronLength,long thisMinCondensation,ViralProtein viralProtein){
         fragments.sort(AlignmentFragment.Comparators.Ascending);
         List<AlignmentFragment> outFragments = new ArrayList<AlignmentFragment>();
+        StopTranslationException stopTransExce = viralProtein.getGeneAttributes().getStopTranslationException();
         List<Range> sequenceGaps = virusGenome.getSequenceGaps();
         boolean isPreMerge = false;
         if (fragments.size() == 1) {
@@ -258,6 +253,7 @@ public class ModelGenerationService {
 
                     if ((intronRange.getLength() <= thisMinIntronLength && missingAAalignRange.getLength() <= thisMinCondensation && !VigorFunctionalUtils.intheSequenceGap(sequenceGaps,intronRange))) {
                         Map<Frame, List<Long>> intronStops = VigorFunctionalUtils.findStopsInSequenceFrame(virusGenome, intronRange);
+
                         List<Long> upStops = new ArrayList<Long>();
                         List<Long> downStops = new ArrayList<Long>();
                         Frame upSeqFrame = VigorFunctionalUtils.getSequenceFrame(upFragment.getNucleotideSeqRange().getBegin() + upFragment.getFrame().getFrame() - 1);
@@ -267,6 +263,18 @@ public class ModelGenerationService {
                         Frame downSeqFrame = VigorFunctionalUtils.getSequenceFrame(upFragment.getNucleotideSeqRange().getBegin() + upFragment.getFrame().getFrame() - 1);
                         if (intronStops.get(downSeqFrame) != null) {
                             downStops = intronStops.get(downSeqFrame);
+                        }
+                        if(stopTransExce.isHasStopTranslationException()) {
+                            List<Range> matches = virusGenome.getSequence().findMatches(stopTransExce.getMotif()).distinct().collect(Collectors.toList());
+                            int offset=stopTransExce.getOffset();
+                            if (offset < 0) {
+                                offset = offset + 1;
+                            }
+                            for (Range match : matches) {
+                                long start = match.getEnd() + offset;
+                                if (upStops.contains(start)) upStops.remove(start);
+                                if (downStops.contains(start)) downStops.remove(start);
+                            }
                         }
                         if (upStops.size() == 0 && downStops.size() == 0 && (intronRange.getLength() % 3 == 0)) {
 
@@ -312,7 +320,7 @@ public class ModelGenerationService {
 
 
     public Model splitExonsAtSequenceGaps(Model model,List<Range> sequenceGaps){
-	    List<Exon> exons = model.getExons();
+        List<Exon> exons = model.getExons();
 	    List<Exon> newExons = new ArrayList<Exon>();
 	    for(Exon exon : exons){
 	        for(int i=0;i<sequenceGaps.size();i++){
@@ -370,7 +378,8 @@ public class ModelGenerationService {
 	 *         returned
 	 */
 	public List<Model> splitModelAtSequenceGaps(Model initModel, List<Range> validSequenceGaps) throws CloneNotSupportedException {
-	    initModel = splitExonsAtSequenceGaps(initModel,validSequenceGaps);
+
+        initModel = splitExonsAtSequenceGaps(initModel,validSequenceGaps);
 		List<Model> newModels = new ArrayList<Model>();
 		Model model = initModel.clone();
 		if (validSequenceGaps.size() > 0) {
@@ -385,66 +394,86 @@ public class ModelGenerationService {
 				secondGroup.addAll(modelExons);
 				boolean startExist = true;
          		for (int j = 0; j < modelExons.size(); j++) {
+         		    if(j==modelExons.size()-1){
+         		        Exon lastExon = modelExons.get(j);
+                        long proteinSeqLength = model.getAlignment().getViralProtein().getSequence().getLength();
+                        Range lastExonAARange = lastExon.getAlignmentFragment().getProteinSeqRange();
+                        long expectedStart=lastExon.getRange().getEnd();
+                        if(lastExonAARange.getEnd()< proteinSeqLength-1){
+                            long difference = (proteinSeqLength-1)-lastExonAARange.getEnd();
+                            expectedStart = lastExon.getRange().getEnd()+difference*3;
+                        }
+                        Range searchRangeTemp = Range.of(lastExon.getRange().getEnd(),expectedStart);
+                        for(Range gap : validSequenceGaps){
+                            if(gap.intersects(searchRangeTemp)){
+                                model.setPartial3p(true);
+                                lastExon.setRange(Range.of(lastExon.getRange().getBegin(),gap.getBegin()-1));
+                                break;
+                            }
+                        }
+         		    }
              	if (j != modelExons.size() - 1) {
 						nextExon = modelExons.get(j + 1);
 						currentExon = modelExons.get(j);
-						diffRange = Range.of(currentExon.getRange().getEnd(), nextExon.getRange().getBegin());
-						if (diffRange.getLength() >= 20) {
-							firstGroup.add(modelExons.get(j));
-	     					boolean temp = true;
-							for (int k = 0; k < validSequenceGaps.size(); k++) {
-								if (diffRange.intersects(validSequenceGaps.get(k)) && temp) {
-								    secondModel= model.clone();
-									firstModel = model.clone();
-									if(currentExon.getRange().getEnd()<validSequenceGaps.get(k).getBegin()-1){
-								    currentExon.setRange(Range.of(currentExon.getRange().getBegin(),validSequenceGaps.get(k).getBegin()-1));
-								    currentExon.set_3p_adjusted(true);
-									}
-								    if(nextExon.getRange().getBegin()>validSequenceGaps.get(k).getEnd()+1){
-									    Range seqGapRange = VigorFunctionalUtils.get5pNearestSequenceGap(validSequenceGaps,nextExon.getRange());
-									    int reminder = (int)((nextExon.getRange().getBegin()-1-(seqGapRange.getEnd()+1))+1)%3;
-                                        nextExon.setRange(Range.of(seqGapRange.getEnd()+1,nextExon.getRange().getEnd()));
-                                        if(reminder>0){
-                                           nextExon.setFrame(currentExon.getFrame().shift(reminder));
+						if(nextExon.getRange().getBegin()>currentExon.getRange().getEnd()) {
+                            diffRange = Range.of(currentExon.getRange().getEnd(), nextExon.getRange().getBegin());
+                            if (diffRange.getLength() >= 20) {
+                                firstGroup.add(modelExons.get(j));
+                                boolean temp = true;
+                                for (int k = 0; k < validSequenceGaps.size(); k++) {
+                                    if (diffRange.intersects(validSequenceGaps.get(k)) && temp) {
+                                        secondModel = model.clone();
+                                        firstModel = model.clone();
+                                        if (currentExon.getRange().getEnd() < validSequenceGaps.get(k).getBegin() - 1) {
+                                            currentExon.setRange(Range.of(currentExon.getRange().getBegin(), validSequenceGaps.get(k).getBegin() - 1));
+                                            currentExon.set_3p_adjusted(true);
                                         }
-								    	nextExon.set_5p_adjusted(true);
-								    }
-									List<Exon> tempFirst = new ArrayList<>();
-									tempFirst.addAll(firstGroup);
-									List<Exon> tempSecond = new ArrayList<>();
-									tempSecond.addAll(secondGroup);
-									firstModel.setExons(tempFirst);
-									firstModel.setPartial3p(true);
-                                    List<NoteType> fnotes = firstModel.getNotes();
-                                    fnotes.add(NoteType.Sequence_Gap);
-                                    firstModel.setNotes(fnotes);
-									firstModel.getStatus().add("Model split at sequence gaps");
-									if (!startExist) {
-										firstModel.setPartial5p(true);
-									}
-									secondGroup.removeAll(tempFirst);
-									tempSecond.removeAll(tempFirst);
-									secondModel.setExons(tempSecond);
-									secondModel.setPartial5p(true);
-									List<NoteType> snotes = secondModel.getNotes();
-									snotes.add(NoteType.Sequence_Gap);
-									secondModel.setNotes(snotes);
-                                    secondModel.getStatus().add("Model split at sequence gaps");
-									newModels.add(firstModel);
-									startExist = false;
-									firstGroup.clear();
-									temp = false;
+                                        if (nextExon.getRange().getBegin() > validSequenceGaps.get(k).getEnd() + 1) {
+                                            Range seqGapRange = VigorFunctionalUtils.get5pNearestSequenceGap(validSequenceGaps, nextExon.getRange());
+                                            int reminder = (int) ((nextExon.getRange().getBegin() - 1 - (seqGapRange.getEnd() + 1)) + 1) % 3;
+                                            nextExon.setRange(Range.of(seqGapRange.getEnd() + 1, nextExon.getRange().getEnd()));
+                                            if (reminder > 0) {
+                                                nextExon.setFrame(currentExon.getFrame().shift(reminder));
+                                            }
+                                            nextExon.set_5p_adjusted(true);
+                                        }
+                                        List<Exon> tempFirst = new ArrayList<>();
+                                        tempFirst.addAll(firstGroup);
+                                        List<Exon> tempSecond = new ArrayList<>();
+                                        tempSecond.addAll(secondGroup);
+                                        firstModel.setExons(tempFirst);
+                                        firstModel.setPartial3p(true);
+                                        List<NoteType> fnotes = firstModel.getNotes();
+                                        fnotes.add(NoteType.Sequence_Gap);
+                                        firstModel.setNotes(fnotes);
+                                        firstModel.getStatus().add("Model split at sequence gaps");
+                                        if (!startExist) {
+                                            firstModel.setPartial5p(true);
+                                        }
+                                        secondGroup.removeAll(tempFirst);
+                                        tempSecond.removeAll(tempFirst);
+                                        secondModel.setExons(tempSecond);
+                                        secondModel.setPartial5p(true);
+                                        List<NoteType> snotes = secondModel.getNotes();
+                                        snotes.add(NoteType.Sequence_Gap);
+                                        secondModel.setNotes(snotes);
+                                        secondModel.getStatus().add("Model split at sequence gaps");
+                                        newModels.add(firstModel);
+                                        startExist = false;
+                                        firstGroup.clear();
+                                        temp = false;
 
-								}
-							}
-						}
+                                    }
+                                }
+                            }
+                        }
 					}
 				}
 				if (secondModel !=null && secondModel.getExons().size() > 0) {
 					newModels.add(secondModel);
 				}
 				if(newModels.size()==0){
-					newModels.add(initModel);
+					newModels.add(model);
 				}
 
 				return newModels;
@@ -467,9 +496,8 @@ public class ModelGenerationService {
 	 *         of alignment fragments and their permutations and combinations is
 	 *         grouped
 	 */
-
-	public List<List<AlignmentFragment>> generateCompatibleFragsChains(List<AlignmentFragment> alignmentFragments,
-			String alignmentTool) {
+	// If AlignmentTool is exonerate only then this function should be called.
+	public List<List<AlignmentFragment>> generateCompatibleFragsChains(List<AlignmentFragment> alignmentFragments) {
 		
 				List<AlignmentFragment> compatibleFragsList = new ArrayList<AlignmentFragment>();
 				List<AlignmentFragment> clonedCompatibleFragsList = null;
@@ -480,11 +508,10 @@ public class ModelGenerationService {
 				if (alignmentFragments.size() >1) {
 					for (int j = 1; j < alignmentFragments.size(); j++) {
 						boolean temp=true;
-						tempList = new ArrayList<List<AlignmentFragment>>();
+						tempList = new ArrayList<>();
 						for(int k=0;k<ListOfCompatibleFragsList.size();k++){
 						List<AlignmentFragment> currentList = ListOfCompatibleFragsList.get(k);
 						AlignmentFragment currentFrag = currentList.get(currentList.size()-1);
-						clonedCompatibleFragsList=null;
 						long NTEnd = currentFrag.getNucleotideSeqRange().getEnd();
 						long AAEnd = currentFrag.getProteinSeqRange().getEnd();
 						long nextNTStart = alignmentFragments.get(j).getNucleotideSeqRange().getBegin();
@@ -492,7 +519,7 @@ public class ModelGenerationService {
 						if (nextNTStart >= NTEnd - NTOverlapOffset && nextAAStart >= AAEnd - AAOverlapOffset) {
 							currentList.add(alignmentFragments.get(j).clone());
 						}else if(temp){
-							clonedCompatibleFragsList = new ArrayList<AlignmentFragment>();
+							clonedCompatibleFragsList = new ArrayList<>();
 							for(int i=0;i<currentList.size()-1;i++){
 								clonedCompatibleFragsList.add(currentList.get(i).clone());
 							}

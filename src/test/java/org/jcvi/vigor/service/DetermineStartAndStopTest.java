@@ -55,6 +55,9 @@ public class DetermineStartAndStopTest {
 				+ "TAGAACAAATAATAATGGAAGAAGCATGGAAACTAGCAGCACACATAGTACAAGAATAACTGATGTCATT"
 				+ "ACCAACCCAAGTCCAGAGCTTGAAGATGCCGTTCTACAAAGGAATAAAAGACGGCCGACGACCATCAAGC").build();
 		virusGenome.setSequence(seq);
+		List<Range> sequenceGaps = VirusGenomeService.findSequenceGapRanges("20",
+				virusGenome.getSequence());
+		virusGenome.setSequenceGaps(sequenceGaps);
 		ViralProtein viralProtein = new ViralProtein();
 		//Dummy protein sequence
 		ProteinSequence proteinSeq = new ProteinSequenceBuilder("MNRPFFQNFGRRPFPAPSIAWRPRRRRSAAPAFQAPRFGLANQIQQLTSAVSALVIGQSA"
@@ -67,7 +70,7 @@ public class DetermineStartAndStopTest {
 		viralProtein.setSequence(proteinSeq);
 		List<Exon> exons = new ArrayList<Exon>();
 		Exon exon = new Exon();
-		exon.setRange(Range.of(236,732));
+		exon.setRange(Range.of(236,728));
 		exon.setFrame(Frame.ONE);
 		Exon exon1 = new Exon();
 		exon1.setFrame(Frame.TWO);

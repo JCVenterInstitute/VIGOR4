@@ -5,17 +5,16 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang.RandomStringUtils;
 import org.jcvi.jillion.core.Direction;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
-import org.jcvi.vigor.component.Alignment;
+import org.jcvi.jillion.core.residue.aa.ProteinSequence;
+import org.jcvi.vigor.component.*;
 import org.jcvi.vigor.utils.NoteType;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.jcvi.vigor.Application;
-import org.jcvi.vigor.component.AlignmentFragment;
-import org.jcvi.vigor.component.Exon;
-import org.jcvi.vigor.component.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -57,7 +56,13 @@ public class ModelGenerationServiceTest {
 		exons.add(new Exon(Range.of(20, 500),Frame.ONE));
 		exons.add(new Exon(Range.of(600,1300),Frame.TWO));
 		exons.add(new Exon(Range.of(1600,2800),Frame.ONE));
-		exons.add(new Exon(Range.of(3011,4500),Frame.ONE));
+		Exon lastExon = new Exon();
+		lastExon.setRange(Range.of(3011,4500));
+		lastExon.setFrame(Frame.ONE);
+        AlignmentFragment fragment = new AlignmentFragment();
+        fragment.setProteinSeqRange(Range.of(6,1550));
+		lastExon.setAlignmentFragment(fragment);
+		exons.add(lastExon);
 		model.setExons(exons);
 		model.setStatus(new ArrayList<String>());
 		List<Range> sequenceGaps = new ArrayList<Range>();
@@ -68,6 +73,12 @@ public class ModelGenerationServiceTest {
 		sequenceGaps.add(Range.of(9906,9965));
 		sequenceGaps.add(Range.of(11619,11759));
 		model.setNotes(new ArrayList<>());
+		ProteinSequence sequence = ProteinSequence.of(RandomStringUtils.random(1550,"R"));
+		ViralProtein viralProtein = new ViralProtein();
+		viralProtein.setSequence(sequence);
+		Alignment alignment = new Alignment();
+		alignment.setViralProtein(viralProtein);
+		model.setAlignment(alignment);
 		List<Model> models = modelGenerationService.splitModelAtSequenceGaps(model, sequenceGaps);
 		assertEquals(3,models.size());
 
@@ -97,7 +108,7 @@ public class ModelGenerationServiceTest {
 		alignmentFrags.add(new AlignmentFragment(Range.of(121,150),Range.of(370,460),1000,Direction.FORWARD,Frame.ONE));
 		alignmentFrags.add(new AlignmentFragment(Range.of(130,170),Range.of(330,500),1000,Direction.FORWARD,Frame.ONE));
 		alignmentFrags.add(new AlignmentFragment(Range.of(171,180),Range.of(650,670),1000,Direction.FORWARD,Frame.ONE));
-		List<List<AlignmentFragment>> outList = modelGenerationService.generateCompatibleFragsChains(alignmentFrags, "exonerate");
+		List<List<AlignmentFragment>> outList = modelGenerationService.generateCompatibleFragsChains(alignmentFrags);
 		assertEquals(outList.size(),6);
 	}
 }

@@ -53,6 +53,7 @@ public class GeneModelGenerationService {
 				pseudoGenes.add(model);
 			}
 		});
+       // FormatVigorOutput.printAllGeneModelsWithScores(pseudoGenes,"Pseudogenes");
 		processedModels.removeAll(pseudoGenes);
 		processedModels.stream().forEach(model -> evaluateScores.evaluate(model, form));
 		if(processedModels.size()<=0){
@@ -238,8 +239,9 @@ public class GeneModelGenerationService {
 	 	List<Model> modelsAfterDeterminingStop = new ArrayList<Model>();
 
         if (isDebug) {
-            FormatVigorOutput.printModels(models, "Candidate models after processing fragments");
+            FormatVigorOutput.printModels(models, "Models after processing fragments");
         }
+
 		/* Determine Start */
 		for (Model model: models) {
 		    if(!model.isPartial5p()) {

@@ -7,8 +7,8 @@ import org.jcvi.jillion.core.Sequence;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.vigor.component.*;
 import org.springframework.stereotype.Service;
-import java.io.BufferedWriter;
-import java.io.IOException;
+
+import java.io.*;
 import java.nio.file.Paths;
 import java.util.*;
 
@@ -19,7 +19,8 @@ public class GenerateVigorOutput {
         TBL("tbl"),
         CDS("cds"),
         GFF3("gff3"),
-        PEP("pep");
+        PEP("pep"),
+        ALN("aln");
 
         final public String extension;
         Outfile(String extension) {
@@ -41,9 +42,7 @@ public class GenerateVigorOutput {
                 } catch (IOException e) {
                     exceptions.add(e);
                 }
-
             }
-
             if (! exceptions.isEmpty()) {
                 // TODO join all exceptions somehow meaningfully
                 throw exceptions.get(0);
@@ -64,6 +63,7 @@ public class GenerateVigorOutput {
         generateTBLReport(config, outfiles.get(Outfile.TBL),geneModels);
         generateCDSReport(config, outfiles.get(Outfile.CDS),geneModels);
         generatePEPReport(config, outfiles.get(Outfile.PEP),geneModels);
+
     }
 
 
@@ -72,7 +72,6 @@ public class GenerateVigorOutput {
             LOGGER.warn("no gene models to write to file");
             return;
         }
-
         String locusPrefix = config.get(ConfigurationParameters.Locustag);
         boolean writeLocus = !(locusPrefix == null || locusPrefix.isEmpty());
         String genomeID = geneModels.get(0).getAlignment().getVirusGenome().getId();
