@@ -1,6 +1,13 @@
-# Building and installing VIGOR4
+# Building and Installing VIGOR4
 
-## Dependencies
+## Build Dependencies
+
+### Maven
+
+VIGOR4 uses Maven to build and package the program. Version 3.5 or
+later is recommended.
+
+## Runtime Dependencies
 
 ### A Unix environment
 
@@ -12,19 +19,14 @@ tested in a linux environment.
 VIGOR4 uses features, such as lambda expressions and the `Stream` API,
 that are only available in Java 8 or above.
 
-### Maven
-
-VIGOR4 uses Maven to build and package the program. Version 3.5 or
-later is recommended.
-
 ### Exonerate
 
 By default, VIGOR4 uses exonerate to generate its initial
 alignments. Exonerate is licensed under the GPL and is available from
 the European Bioinformatics Institute at
 [Exonerate](https://www.ebi.ac.uk/about/vertebrate-genomics/software/exonerate).
-VIGOR4 has been tested with exonerate version 2.2.0 and has known
-incompatibilities with version 2.4.0.
+VIGOR4 has been tested with the latest released exonerate version
+2.2.0 and has known incompatibilities with the development version 2.4.0.
 
 ### Vigor Viral Database
 
@@ -47,6 +49,7 @@ vigor4.reference_database_path system property on the commandlline
 ```
 %mvn clean package -Dvigor4.reference_database_path=PATH_TO_DATABASE
 ```
+
 
 ## Installing and Configuring
 
@@ -91,4 +94,13 @@ Configuration parameters may be set in a number of ways:
 - on the commandline by using the -P or --parameter options
 - in the configuration file
 
+Where conflicting configuration parameters are set, values are resolved in the following order:
+
+- Parameters set via the command line
+- Parameters set via environment variables
+- Parameters set via system properties
+- Parameters set in the viral specific config file, if any
+- Parameters set in the general config file
+
 VIGOR4 will print a warning for any unrecognized configuration parameters.
+
