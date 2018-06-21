@@ -64,7 +64,8 @@ public class VigorInitializationService {
 	public List<VigorConfiguration> getDefaultConfigurations() throws VigorException {
 		List<VigorConfiguration> configurations = new ArrayList<>();
 		VigorConfiguration defaultConfiguration = LoadDefaultParameters
-				.loadVigorConfiguration("defaults",Thread.currentThread().getContextClassLoader().getResource(VigorUtils.getVigorParametersPath()));
+				.loadVigorConfiguration("defaults",
+										Thread.currentThread().getContextClassLoader().getResource(VigorUtils.getDefaultConfigurationPath()));
 
 		configurations.add(defaultConfiguration);
 

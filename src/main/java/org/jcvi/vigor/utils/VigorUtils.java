@@ -111,8 +111,8 @@ public class VigorUtils {
 		return filepath;
 	}*/
 
-	public static String getVigorParametersPath() {
-		return Paths.get("vigorResources", "config", "vigor.ini").toString();
+	public static String getDefaultConfigurationPath() {
+		return Paths.get("vigorResources", "config", "defaults.ini").toString();
 	}
 	/*public static String getVirusSpecificParametersPath(){
         String virusParamsPath = "vigorResources" + File.separator + "config" + File.separator + "virusSpecificParams";
