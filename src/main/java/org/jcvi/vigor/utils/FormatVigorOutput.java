@@ -191,6 +191,22 @@ public class FormatVigorOutput {
             identityAvg = identityAvg+scores.get("%identity");
             similarityAvg = similarityAvg +scores.get("%similarity");
             coverageAvg = coverageAvg+scores.get("%coverage");
+
+            //mature peptides
+           /* if (model.getMaturePeptides() != null && !model.getMaturePeptides().isEmpty()) {
+                int i=1;
+                for (MaturePeptideMatch match : model.getMaturePeptides()) {
+                    match.
+                    content.append(String.format("%-20s", model.getGeneID()+"."+i));
+                    content.append(String.format("%-10s",String.format("%.02f",scores.get("%identity"))));
+                    content.append(String.format("%-10s",String.format("%.02f",scores.get("%similarity"))));
+                    content.append(String.format("%-10s",String.format("%.02f",scores.get("%coverage"))));
+                    content.append(String.format("%-10s","0.0"));
+                    content.append(String.format("%-10s","0.0"));
+                    content.append(String.format("%-10s","0.0"));
+                    i++;
+                }
+            }*/
         }
         totalPepBases = totalPepBases/3;
         identityAvg = identityAvg/geneModels.size();

@@ -169,10 +169,10 @@ public class ModelGenerationService {
 				int size=0;
 				for(int i=0;i<2;i++) {
 				    if(i==0)
-				        compatibleFragsList = mergeAlignmentFragments(compatibleFragsList, alignment.getVirusGenome(), minIntronLength, minCondensation);
+				        compatibleFragsList = mergeAlignmentFragments(compatibleFragsList, alignment.getVirusGenome(), minIntronLength, minCondensation,alignment.getViralProtein());
 				   if(i==1) {
 				       compatibleFragsList=compatibleFragsList.stream().map(x->x.clone()).collect(Collectors.toList());
-                       compatibleFragsList = mergeAlignmentFragments(compatibleFragsList, alignment.getVirusGenome(), relaxIntronLength, relaxCondensation);
+                       compatibleFragsList = mergeAlignmentFragments(compatibleFragsList, alignment.getVirusGenome(), relaxIntronLength, relaxCondensation,alignment.getViralProtein());
                    }
 				    if(size!=compatibleFragsList.size()) {
 				        size=compatibleFragsList.size();
@@ -213,9 +213,10 @@ public class ModelGenerationService {
      * @return merge two fragments if the intron length is <minIntronLength and if there are no stops in between and if intron length is divisible by 3. Also merge fragments if the missing protein alignment length between two
      * fragments is less than the minimum_condensation;
      */
-    public List<AlignmentFragment> mergeAlignmentFragments(List<AlignmentFragment> fragments,VirusGenome virusGenome,long thisMinIntronLength,long thisMinCondensation){
+    public List<AlignmentFragment> mergeAlignmentFragments(List<AlignmentFragment> fragments,VirusGenome virusGenome,long thisMinIntronLength,long thisMinCondensation,ViralProtein viralProtein){
         fragments.sort(AlignmentFragment.Comparators.Ascending);
         List<AlignmentFragment> outFragments = new ArrayList<AlignmentFragment>();
+        StopTranslationException stopTransExce = viralProtein.getGeneAttributes().getStopTranslationException();
         List<Range> sequenceGaps = virusGenome.getSequenceGaps();
         boolean isPreMerge = false;
         if (fragments.size() == 1) {
@@ -262,6 +263,18 @@ public class ModelGenerationService {
                         Frame downSeqFrame = VigorFunctionalUtils.getSequenceFrame(upFragment.getNucleotideSeqRange().getBegin() + upFragment.getFrame().getFrame() - 1);
                         if (intronStops.get(downSeqFrame) != null) {
                             downStops = intronStops.get(downSeqFrame);
+                        }
+                        if(stopTransExce.isHasStopTranslationException()) {
+                            List<Range> matches = virusGenome.getSequence().findMatches(stopTransExce.getMotif()).distinct().collect(Collectors.toList());
+                            int offset=stopTransExce.getOffset();
+                            if (offset < 0) {
+                                offset = offset + 1;
+                            }
+                            for (Range match : matches) {
+                                long start = match.getEnd() + offset;
+                                if (upStops.contains(start)) upStops.remove(start);
+                                if (downStops.contains(start)) downStops.remove(start);
+                            }
                         }
                         if (upStops.size() == 0 && downStops.size() == 0 && (intronRange.getLength() % 3 == 0)) {
 

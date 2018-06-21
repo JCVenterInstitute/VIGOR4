@@ -86,6 +86,7 @@ public class DetermineStart implements DetermineGeneFeatures {
 
     public List<Model> findStart(List<Triplet> startCodons, Model model,
                                  String startCodonWindowParam) throws CloneNotSupportedException {
+
         List<Model> newModels = new ArrayList<Model>();
         List<Range> sequenceGaps = model.getAlignment().getVirusGenome().getSequenceGaps();
         long start;
@@ -151,7 +152,7 @@ public class DetermineStart implements DetermineGeneFeatures {
                 }
 
 
-            final long tempStart = start;
+            final long tempStart = startSearchRange.getBegin();
             NucleotideSequence NTSequence = model.getAlignment().getVirusGenome()
                     .getSequence().toBuilder(startSearchRange).build();
             for (Triplet triplet : startCodons) {

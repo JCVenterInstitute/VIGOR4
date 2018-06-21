@@ -241,6 +241,7 @@ public class GeneModelGenerationService {
         if (isDebug) {
             FormatVigorOutput.printModels(models, "Models after processing fragments");
         }
+
 		/* Determine Start */
 		for (Model model: models) {
 		    if(!model.isPartial5p()) {
