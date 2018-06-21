@@ -167,6 +167,7 @@ public class GenerateVigorOutput {
                                 Arrays.asList(match.getProteinRange()),
                                 Range.CoordinateSystem.RESIDUE_BASED,
                                 "\t",
+                                1,
                                 match.getProtein().getLength()));
                         bw.write("\t");
                         product = match.getReference().getProduct();
@@ -289,11 +290,14 @@ public class GenerateVigorOutput {
                 defline.append(" mat_peptide");
                 List<Range> cdsRanges = VigorFunctionalUtils.proteinRangeToCDSRanges(model, match.getProteinRange());
                 // TODO handle truncation etc
+                Exon initialExon = model.getExons().get(0);
                 defline.append(String.format(" location=%s", formatMaturePeptideRange(model,
                         match,
                         cdsRanges,
                         Range.CoordinateSystem.RESIDUE_BASED,
                         "..",
+                        // start_codon adjustment
+                        initialExon.getRange().getBegin(Range.CoordinateSystem.RESIDUE_BASED) + initialExon.getFrame().getFrame() - 1,
                         model.getRange().getEnd())));
                 defline.append(String.format(" gene=\"%s\"", model.getGeneSymbol()));
                 defline.append(String.format(" product=\"%s\"", VigorUtils.putativeName(match.getReference().getProduct(), model.isPartial3p(), model.isPartial5p())));
@@ -316,13 +320,14 @@ public class GenerateVigorOutput {
                                                    List<Range> ranges,
                                                    Range.CoordinateSystem coordinateSystem,
                                                    String rangeDelimiter,
+                                                   long startCoordinate,
                                                    long endCoordinate) {
         List<String> rangeStrings = new ArrayList<>(ranges.size());
         for (int i=0; i < ranges.size(); i++) {
             Range range = ranges.get(i);
             long start = range.getBegin(coordinateSystem);
             String startStr = String.valueOf(start);
-            if (match.isFuzzyBegin() || model.isPartial5p() && start == 1) {
+            if (match.isFuzzyBegin() || model.isPartial5p() && start == startCoordinate) {
                 startStr = "<" + startStr;
             }
             long end = range.getEnd(coordinateSystem);

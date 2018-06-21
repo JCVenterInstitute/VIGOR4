@@ -54,10 +54,14 @@ public class VigorFunctionalUtils {
 		long exonLength = 0;
 		Range addedRange;
 		long rangeStart;
+		long frameAdjustment;
+		Exon exon;
 		for(int i=0;i<exons.size() && proteinNTLength > 0;i++){
-			Range exonRange = exons.get(i).getRange();
-			long adjustedBegin = exonRange.getBegin();
-			long adjustedEnd = exonRange.getEnd();
+			exon = exons.get(i);
+			frameAdjustment = exon.getFrame().getFrame() - 1;
+			Range exonRange = exon.getRange();
+			long adjustedBegin = exonRange.getBegin() + frameAdjustment;
+			long adjustedEnd = exonRange.getEnd() + frameAdjustment;
 
 			// TODO should ranges include stop codons?
 			// trim off stop codon unless the model is already partial
