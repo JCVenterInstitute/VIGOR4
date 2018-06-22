@@ -10,6 +10,7 @@ import org.jcvi.jillion.align.pairwise.PairwiseAlignmentBuilder;
 import org.jcvi.jillion.align.pairwise.ProteinPairwiseSequenceAlignment;
 import org.jcvi.jillion.core.DirectedRange;
 import org.jcvi.jillion.core.Range;
+import org.jcvi.jillion.core.residue.aa.AminoAcid;
 import org.jcvi.jillion.core.residue.aa.ProteinSequence;
 import org.jcvi.jillion.fasta.aa.ProteinFastaFileDataStore;
 ;
@@ -183,6 +184,10 @@ public class PeptideService implements PeptideMatchingService {
     @Override
     public List<MaturePeptideMatch> findPeptides(ProteinSequence protein, File peptideDatabase, Scores minscores) throws ServiceException {
 
+        if (protein.get(protein.getLength() -1) == AminoAcid.STOP) {
+            protein = protein.toBuilder().delete(Range.of(protein.getLength() - 1)).build();
+        }
+
         Predicate<PeptideMatch> filterByScore = match -> {
 
             LOGGER.debug(formatMatchForLogging(match));
@@ -248,6 +253,16 @@ public class PeptideService implements PeptideMatchingService {
                 peptides.add(current);
                 prev = current;
                 previousRange = current.getProteinRange();
+            }
+            if (! peptides.isEmpty()) {
+                // if last peptide is close to end, adjust to end
+                MaturePeptideMatch lastPeptide = peptides.get(peptides.size() -1);
+                if (lastPeptide.getProteinRange().getEnd() + MAX_GAP >= protein.getLength()) {
+                    lastPeptide.setProteinRange(lastPeptide.getProteinRange()
+                                                           .toBuilder()
+                                                           .setEnd(protein.getLength() -1)
+                                                           .build());
+                }
             }
             LOGGER.debug(peptides.stream()
             .map(m -> formatMatchForLogging(m))
