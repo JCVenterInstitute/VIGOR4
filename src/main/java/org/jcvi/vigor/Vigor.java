@@ -13,6 +13,7 @@ import org.jcvi.jillion.fasta.nt.NucleotideFastaFileDataStoreBuilder;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaRecord;
 import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.Model;
+import org.jcvi.vigor.component.PartialProteinSequence;
 import org.jcvi.vigor.component.VirusGenome;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.forms.VigorForm;
@@ -180,8 +181,10 @@ public class Vigor {
             // TODO check peptides for psuedogenes?
             if (! (maturePeptideDB == null || maturePeptideDB.isEmpty()) ) {
                 LOGGER.debug("finding mature peptides for {} using db {}", model.getGeneID(), maturePeptideDB);
-                model.setMaturePeptides(peptideMatchingService.findPeptides(model.getTranslatedSeq(),
-                        new File(maturePeptideDB), scores));
+                model.setMaturePeptides(peptideMatchingService.findPeptides(
+                        PartialProteinSequence.of(model.getTranslatedSeq(),model.isPartial3p(), model.isPartial5p()),
+                        new File(maturePeptideDB),
+                        scores));
                 LOGGER.debug("for {} found {} peptides.", model.getGeneID(), model.getMaturePeptides().size() );
 
             }

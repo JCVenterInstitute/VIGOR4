@@ -3,9 +3,12 @@ package org.jcvi.vigor.service;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
+import org.jcvi.jillion.core.residue.aa.AminoAcid;
 import org.jcvi.jillion.core.residue.aa.ProteinSequence;
+import org.jcvi.jillion.core.residue.aa.ProteinSequenceBuilder;
 import org.jcvi.vigor.Application;
 import org.jcvi.vigor.component.MaturePeptideMatch;
+import org.jcvi.vigor.component.PartialProteinSequence;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.VigorConfiguration;
@@ -76,10 +79,17 @@ public class PeptideServiceTest {
         String refDB = Paths.get(refDBPath, mp_ref_db).toString();
         File peptideDB = getPeptideDB(refDBPath, mp_ref_db);
 
-        List<MaturePeptideMatch> matches = peptideService.findPeptides(protein, peptideDB);
+        PeptideMatchingService.Scores scores = PeptideMatchingService.Scores.of(.25d, .4d, .5d);
+        List<MaturePeptideMatch> matches = peptideService.findPeptides(PartialProteinSequence.of(protein,false, false), peptideDB, scores);
         LOGGER.debug(() -> String.format("peptides:%s", matches.stream().map(String::valueOf).collect(Collectors.joining("\n> ", "\n> ", ""))));
 
-        Function<MaturePeptideMatch,ProteinSequence> matchToSeq = m -> m.getProtein().toBuilder().trim(m.getProteinRange()).build();
+        Function<MaturePeptideMatch,ProteinSequence> matchToSeq = (m) -> {
+            ProteinSequenceBuilder pb = m.getProtein().toBuilder().trim(m.getProteinRange());
+            if (pb.get((int) pb.getLength() -1) == AminoAcid.STOP) {
+                pb.delete(Range.of(pb.getLength() -1 ));
+            }
+            return  pb.build();
+        };
         if ( matches.size() != expected.size()) {
             fail(String.format("for %s expected %s:\n%s\nactual %s:\n%s",
                     id,
