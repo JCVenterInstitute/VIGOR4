@@ -10,6 +10,7 @@ import org.jcvi.jillion.align.pairwise.PairwiseAlignmentBuilder;
 import org.jcvi.jillion.align.pairwise.ProteinPairwiseSequenceAlignment;
 import org.jcvi.jillion.core.DirectedRange;
 import org.jcvi.jillion.core.Range;
+import org.jcvi.jillion.core.residue.aa.AminoAcid;
 import org.jcvi.jillion.core.residue.aa.ProteinSequence;
 import org.jcvi.jillion.fasta.aa.ProteinFastaFileDataStore;
 ;
@@ -174,6 +175,13 @@ public class PeptideService implements PeptideMatchingService {
     }
     @Override
     public List<MaturePeptideMatch> findPeptides(PartialProteinSequence partialProtein, File peptideDatabase, Scores minscores) throws ServiceException {
+
+        long lastAAIndex = partialProtein.getSequence().getLength() -1;
+        if (partialProtein.getSequence().get(lastAAIndex) == AminoAcid.STOP) {
+            partialProtein = PartialProteinSequence.of(partialProtein.getSequence().toBuilder().delete(Range.of(lastAAIndex)).build(),
+                                                       partialProtein.isPartial3p(),
+                                                       partialProtein.isPartial5p());
+        }
 
         Predicate<PeptideMatch> filterByScore = match -> {
 
