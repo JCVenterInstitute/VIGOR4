@@ -9,9 +9,9 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ValidateVigor4ModelsTestRunner {
+public class Vigor4RegressionTestRunner {
 
-    private static Logger LOGGER = LogManager.getLogger(ValidateVigor4ModelsTestRunner.class);
+    private static Logger LOGGER = LogManager.getLogger(Vigor4RegressionTestRunner.class);
 
     public static void main ( String[] args ) {
 

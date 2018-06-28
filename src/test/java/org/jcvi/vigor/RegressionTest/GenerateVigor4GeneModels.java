@@ -16,7 +16,6 @@ import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.component.VirusGenome;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.forms.VigorForm;
-import org.jcvi.vigor.service.*;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.*;
 import org.junit.runner.RunWith;
@@ -24,57 +23,71 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
+
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.OpenOption;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.*;
 import java.util.stream.Collectors;
-
 
 @Service
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = Application.class)
 public class GenerateVigor4GeneModels {
-    private final static Logger LOGGER = LogManager.getLogger(ValidateVigor4Models.class);
 
+    private final static Logger LOGGER = LogManager.getLogger(ValidateVigor4Models.class);
     @Autowired
     Vigor vigor;
-    public Map<String, List<Model>> generateModels(String inputFASTA, String refDB,VigorConfiguration config)
-    {
+
+    public Map<String, List<Model>> generateModels ( String inputFASTA, String refDB, VigorConfiguration config ) {
+
         Map<String, List<Model>> vigor4Models = new HashMap<String, List<Model>>();
-       try{
-           NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(new File(inputFASTA))
-                   .hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)
-                   .build();
-           Iterator<NucleotideFastaRecord> i = dataStore.records().iterator();
-           VigorForm vigorForm = new VigorForm(config);
-           AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
-           alignmentEvidence.setReference_db(refDB);
-           vigorForm.setAlignmentEvidence(alignmentEvidence);
-           while (i.hasNext()) {
-               NucleotideFastaRecord record = i.next();
-               VirusGenome virusGenome = new VirusGenome(record.getSequence(), record.getComment(), record.getId(),
-                       "1".equals(config.get(ConfigurationParameters.CompleteGene)),
-                       "1".equals(config.get(ConfigurationParameters.CircularGene)));
-
-               // Call referenceDBGenerationService methods to generate alignmentEvidence.
-               List<Alignment> alignments = vigor.generateAlignments(virusGenome, vigorForm);
-               LOGGER.info("{} alignment(s) found for sequence {}", alignments.size(), record.getId());
-               List<Model> candidateModels = vigor.generateModels(alignments, vigorForm);
-               LOGGER.info("{} candidate model(s) found for sequence {}", candidateModels.size(), record.getId());
-               List<Model> geneModels = vigor.generateGeneModels(candidateModels, vigorForm);
-               LOGGER.info("{} gene model(s) found for sequence {}", geneModels.size(), record.getId());
-               if (geneModels.isEmpty()) {
-                   LOGGER.warn("No gene models generated for sequence {}", record.getId());
-                   continue;
-               }
-               geneModels = geneModels.stream()
-                       .sorted(Comparator.comparing(g -> g.getRange(), Range.Comparators.ARRIVAL))
-                       .collect(Collectors.toList());
-               vigor4Models.put(virusGenome.getId(), geneModels);
-
-           }
-
-      } catch (DataStoreException e) {
+        String outputPrefix = config.get(ConfigurationParameters.OutputPrefix);
+        VigorForm vigorForm = new VigorForm(config);
+        String outputDir = config.get(ConfigurationParameters.OutputDirectory);
+        try {
+            GenerateVigorOutput.Outfiles outfiles = new GenerateVigorOutput.Outfiles();
+            List<OpenOption> openOptionsList = new ArrayList<>();
+            openOptionsList.add(StandardOpenOption.CREATE_NEW);
+            OpenOption[] openOptions = openOptionsList.toArray(new OpenOption[] {});
+            for (GenerateVigorOutput.Outfile outfile : GenerateVigorOutput.Outfile.values()) {
+                outfiles.put(outfile, Files.newBufferedWriter(Paths.get(outputDir, outputPrefix + "." + outfile.extension),
+                        Charset.forName("UTF-8"), openOptions));
+            }
+            outfiles.get(GenerateVigorOutput.Outfile.GFF3).write("##gff-version 3\n");
+            NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(new File(inputFASTA))
+                    .hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)
+                    .build();
+            Iterator<NucleotideFastaRecord> i = dataStore.records().iterator();
+            AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
+            alignmentEvidence.setReference_db(refDB);
+            vigorForm.setAlignmentEvidence(alignmentEvidence);
+            while (i.hasNext()) {
+                NucleotideFastaRecord record = i.next();
+                VirusGenome virusGenome = new VirusGenome(record.getSequence(), record.getComment(), record.getId(),
+                        "1".equals(config.get(ConfigurationParameters.CompleteGene)),
+                        "1".equals(config.get(ConfigurationParameters.CircularGene)));
+                List<Alignment> alignments = vigor.generateAlignments(virusGenome, vigorForm);
+                LOGGER.info("{} alignment(s) found for sequence {}", alignments.size(), record.getId());
+                List<Model> candidateModels = vigor.generateModels(alignments, vigorForm);
+                LOGGER.info("{} candidate model(s) found for sequence {}", candidateModels.size(), record.getId());
+                List<Model> geneModels = vigor.generateGeneModels(candidateModels, vigorForm);
+                LOGGER.info("{} gene model(s) found for sequence {}", geneModels.size(), record.getId());
+                VigorUtils.deleteTempFiles(vigorForm.getTempDirectoryPath());
+                if (geneModels.isEmpty()) {
+                    LOGGER.warn("No gene models generated for sequence {}", record.getId());
+                    continue;
+                }
+                geneModels = geneModels.stream()
+                        .sorted(Comparator.comparing(g -> g.getRange(), Range.Comparators.ARRIVAL))
+                        .collect(Collectors.toList());
+                vigor4Models.put(virusGenome.getId(), geneModels);
+            }
+        } catch (DataStoreException e) {
             LOGGER.error(String.format("problem reading input file %s", inputFASTA)
                     , e);
             System.exit(1);
@@ -84,20 +97,10 @@ public class GenerateVigor4GeneModels {
         } catch (ServiceException e) {
             LOGGER.error(e);
             System.exit(1);
-        }
-        catch(VigorException e){
+        } catch (VigorException e) {
             LOGGER.error(e);
             System.exit(1);
         }
-    return vigor4Models;
-
-    }
-
-
-    public VigorForm setVigorParameters(VigorForm form, String workspace){
-        VigorConfiguration configuration = new VigorConfiguration("test");
-        configuration.put(ConfigurationParameters.OutputDirectory,workspace+"/TEST");
-        form.setConfiguration(configuration);
-        return form;
+        return vigor4Models;
     }
 }
