@@ -33,36 +33,26 @@ import java.util.stream.Collectors;
 public class Vigor {
 
     private static Logger LOGGER = LogManager.getLogger(Vigor.class);
-
     @Autowired
     private VigorInitializationService initializationService;
-
     @Autowired
-	private AlignmentGenerationService alignmentGenerationService;
-
+    private AlignmentGenerationService alignmentGenerationService;
     @Autowired
     ModelGenerationService modelGenerationService;
-
     @Autowired
     private VigorInputValidationService inputValidationService;
-
     @Autowired
-	private GeneModelGenerationService geneModelGenerationService;
-
-	@Autowired
+    private GeneModelGenerationService geneModelGenerationService;
+    @Autowired
     private GenerateVigorOutput generateVigorOutput;
-
-	@Autowired
+    @Autowired
     private GenerateGFF3Output generateGFF3Output;
-
-	@Autowired
+    @Autowired
     private PeptideMatchingService peptideMatchingService;
-
-	@Autowired
+    @Autowired
     private GenerateAlignmentOuput generateAlignmentOuput;
 
-
-	public void run(String ... args) {
+    public void run ( String... args ) {
 
         Namespace parsedArgs = parseArgs(args);
         if (parsedArgs.getBoolean(CommandLineParameters.verbose)) {
@@ -71,31 +61,30 @@ public class Vigor {
         }
         String inputFileName = parsedArgs.getString("input_fasta");
         File inputFile = new File(inputFileName);
-        if (! inputFile.exists()) {
+        if (!inputFile.exists()) {
             LOGGER.error("input file {} doesn't exists.", inputFileName);
             System.exit(1);
-        } else if (! inputFile.canRead()) {
+        } else if (!inputFile.canRead()) {
             LOGGER.error("input file {} isn't readable.", inputFileName);
             System.exit(1);
         }
-        try{
+        try {
             VigorForm vigorForm = getVigorForm(parsedArgs);
             VigorConfiguration vigorParameters = vigorForm.getConfiguration();
             VigorConfiguration.ValueWithSource unset = VigorConfiguration.ValueWithSource.of("NOTSET", "unknown");
-            LOGGER.info( () ->  vigorParameters.entrySet()
-                                               .stream()
-                                               .sorted(Comparator.comparing(es -> es.getKey().configKey, String.CASE_INSENSITIVE_ORDER))
-                                               .map( e -> String.format("%-50s%s (%s)",
-                                                       e.getKey().configKey,
-                                                       e.getValue(),
-                                                       vigorParameters.getWithSource(e.getKey()).orElse(unset).source))
-                                               .collect(Collectors.joining("\n")) );
+            LOGGER.info(() -> vigorParameters.entrySet()
+                    .stream()
+                    .sorted(Comparator.comparing(es -> es.getKey().configKey, String.CASE_INSENSITIVE_ORDER))
+                    .map(e -> String.format("%-50s%s (%s)",
+                            e.getKey().configKey,
+                            e.getValue(),
+                            vigorParameters.getWithSource(e.getKey()).orElse(unset).source))
+                    .collect(Collectors.joining("\n")));
             // TODO check file exists and is readable
             // TODO check output directory and permissions
             NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(inputFile)
                     .hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)
                     .build();
-
             // TODO move all this file handling to method
             // TODO checkout output earlier.
             String outputDir = vigorForm.getConfiguration().get(ConfigurationParameters.OutputDirectory);
@@ -110,7 +99,6 @@ public class Vigor {
                     VirusGenome virusGenome = new VirusGenome(record.getSequence(), record.getComment(), record.getId(),
                             "1".equals(vigorParameters.get(ConfigurationParameters.CompleteGene)),
                             "1".equals(vigorParameters.get(ConfigurationParameters.CircularGene)));
-
                     // Call referenceDBGenerationService methods to generate alignmentEvidence.
                     List<Alignment> alignments = generateAlignments(virusGenome, vigorForm);
                     LOGGER.info("{} alignment(s) found for sequence {}", alignments.size(), record.getId());
@@ -125,17 +113,15 @@ public class Vigor {
                     }
                     // sort by begin,end
                     geneModels = geneModels.stream()
-                                           .sorted(Comparator.comparing(g -> g.getRange(), Range.Comparators.ARRIVAL))
-                                           .collect(Collectors.toList());
+                            .sorted(Comparator.comparing(g -> g.getRange(), Range.Comparators.ARRIVAL))
+                            .collect(Collectors.toList());
                     generateAlignmentOutput(outfiles, vigorForm);
                     generateOutput(vigorParameters, geneModels, outfiles);
-                    generateGFF3Output(vigorParameters, geneModels, outfiles);
-                    FormatVigorOutput.printSequenceFeatures(geneModels,"GeneModels");
+                    generateGFF3Output(geneModels, outfiles);
+                    FormatVigorOutput.printSequenceFeatures(geneModels, "GeneModels");
                     outfiles.flush();
                 }
             }
-
-
         } catch (DataStoreException e) {
             LOGGER.error(String.format("problem reading input file %s", inputFileName), e);
             System.exit(1);
@@ -146,79 +132,83 @@ public class Vigor {
             LOGGER.error(e);
             System.exit(1);
         }
-
     }
 
-    private void setVerboseLogging() {
+    private void setVerboseLogging () {
+
         LoggerContext lc = (LoggerContext) LogManager.getContext(false);
         lc.getConfiguration().getLoggerConfig("org.jcvi.vigor").setLevel(Level.DEBUG);
         lc.updateLoggers();
     }
 
-    private PeptideMatchingService.Scores getPeptideScores(VigorConfiguration config) {
-	    String minIdentityString = config.get(ConfigurationParameters.MaturePeptideMinimumIdentity);
-	    double minIdentity = Double.parseDouble(minIdentityString)/ 100.0d;
+    private PeptideMatchingService.Scores getPeptideScores ( VigorConfiguration config ) {
 
+        String minIdentityString = config.get(ConfigurationParameters.MaturePeptideMinimumIdentity);
+        double minIdentity = Double.parseDouble(minIdentityString) / 100.0d;
         String minCoverageString = config.get(ConfigurationParameters.MaturePeptideMinimumCoverage);
-        double minCoverage = Double.parseDouble(minCoverageString)/ 100.0d;
-
+        double minCoverage = Double.parseDouble(minCoverageString) / 100.0d;
         String minSimilarityString = config.get(ConfigurationParameters.MaturePeptideMinimumSimilarity);
-        double minSimilarity = Double.parseDouble(minSimilarityString) /100.0d;
-
+        double minSimilarity = Double.parseDouble(minSimilarityString) / 100.0d;
         return PeptideMatchingService.Scores.of(minIdentity, minCoverage, minSimilarity);
     }
 
-    private List<Model> findPeptides(VigorConfiguration config, List<Model> geneModels) throws VigorException {
+    private List<Model> findPeptides ( VigorConfiguration config, List<Model> geneModels ) throws VigorException {
 
-	    PeptideMatchingService.Scores scores = getPeptideScores(config);
-
-	    for (Model model: geneModels) {
+        PeptideMatchingService.Scores scores = getPeptideScores(config);
+        for (Model model : geneModels) {
             String maturePeptideDB = model.getAlignment().getAlignmentEvidence().getMatpep_db();
             // TODO check peptides for psuedogenes?
-            if (! (maturePeptideDB == null || maturePeptideDB.isEmpty()) ) {
+            if (!( maturePeptideDB == null || maturePeptideDB.isEmpty() )) {
                 LOGGER.debug("finding mature peptides for {} using db {}", model.getGeneID(), maturePeptideDB);
                 model.setMaturePeptides(peptideMatchingService.findPeptides(model.getTranslatedSeq(),
                         new File(maturePeptideDB), scores));
-                LOGGER.debug("for {} found {} peptides.", model.getGeneID(), model.getMaturePeptides().size() );
-
+                LOGGER.debug("for {} found {} peptides.", model.getGeneID(), model.getMaturePeptides().size());
             }
         }
         return geneModels;
     }
 
+    public Namespace parseArgs ( String[] args ) {
 
-
-    public Namespace parseArgs(String[] args) {
         return inputValidationService.processInput(args);
     }
 
-    public VigorForm getVigorForm(Namespace args) throws VigorException {
+    public VigorForm getVigorForm ( Namespace args ) throws VigorException {
+
         return initializationService.initializeVigor(args);
     }
 
-    public List<Alignment> generateAlignments(VirusGenome genome, VigorForm form) throws VigorException{
+    public List<Alignment> generateAlignments ( VirusGenome genome, VigorForm form ) throws VigorException {
+
         return alignmentGenerationService.generateAlignment(genome, form);
     }
 
-    public List<Model> generateModels(List<Alignment> alignments, VigorForm form) throws ServiceException {
+    public List<Model> generateModels ( List<Alignment> alignments, VigorForm form ) throws ServiceException {
+
         return modelGenerationService.generateModels(alignments, form);
     }
 
-    public List<Model> generateGeneModels(List<Model> models, VigorForm form) throws ServiceException {
+    public List<Model> generateGeneModels ( List<Model> models, VigorForm form ) throws ServiceException {
+
         return geneModelGenerationService.generateGeneModel(models, form);
     }
 
-    public void generateOutput(VigorConfiguration config, List<Model> models, GenerateVigorOutput.Outfiles outfiles) throws ServiceException, IOException{
+    public void generateOutput ( VigorConfiguration config, List<Model> models, GenerateVigorOutput.Outfiles outfiles ) throws IOException {
+
         generateVigorOutput.generateOutputFiles(config, outfiles, models);
     }
-    public void generateGFF3Output(VigorConfiguration config, List<Model> models, GenerateVigorOutput.Outfiles outfiles) throws IOException {
-        generateGFF3Output.generateOutputFile(config, outfiles, models);
+
+    public void generateGFF3Output ( List<Model> models, GenerateVigorOutput.Outfiles outfiles ) throws IOException {
+
+        generateGFF3Output.generateOutputFile(outfiles, models);
     }
-    public void generateAlignmentOutput(GenerateVigorOutput.Outfiles outfiles,VigorForm form) throws IOException {
+
+    public void generateAlignmentOutput ( GenerateVigorOutput.Outfiles outfiles, VigorForm form ) {
+
         generateAlignmentOuput.generateOutputFile(outfiles, form);
     }
 
-    private GenerateVigorOutput.Outfiles getOutfiles(String outputDir, String outputPrefix, boolean overwrite) throws IOException {
+    private GenerateVigorOutput.Outfiles getOutfiles ( String outputDir, String outputPrefix, boolean overwrite ) throws IOException {
 
         GenerateVigorOutput.Outfiles outfiles = new GenerateVigorOutput.Outfiles();
         List<OpenOption> openOptionsList = new ArrayList<>();
@@ -228,14 +218,12 @@ public class Vigor {
         } else {
             openOptionsList.add(StandardOpenOption.CREATE_NEW);
         }
-
-        OpenOption[] openOptions = openOptionsList.toArray(new OpenOption[]{});
-            for (GenerateVigorOutput.Outfile outfile : GenerateVigorOutput.Outfile.values()) {
-                outfiles.put(outfile, Files.newBufferedWriter(Paths.get(outputDir, outputPrefix + "." + outfile.extension),
-                        Charset.forName("UTF-8"), openOptions));
-            }
+        OpenOption[] openOptions = openOptionsList.toArray(new OpenOption[] {});
+        for (GenerateVigorOutput.Outfile outfile : GenerateVigorOutput.Outfile.values()) {
+            outfiles.put(outfile, Files.newBufferedWriter(Paths.get(outputDir, outputPrefix + "." + outfile.extension),
+                    Charset.forName("UTF-8"), openOptions));
+        }
         return outfiles;
     }
-
 }
 

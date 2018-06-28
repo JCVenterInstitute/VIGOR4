@@ -1,4 +1,5 @@
 package org.jcvi.vigor.service;
+
 import org.jcvi.vigor.component.*;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.service.exception.ServiceException;
@@ -23,20 +24,21 @@ import java.util.stream.Collectors;
  */
 @Service
 public class ViralProteinService {
+
     private static final Logger LOGGER = LogManager.getLogger(ViralProteinService.class);
     private String matPepDB = "";
     private int min_intron_length;
 
     /**
-     *
      * @param alignment
      * @return viralProtein: For the given protein ID ViralProtein object is
-     *         generated and all the properties are defined;
+     * generated and all the properties are defined;
      */
-    public Alignment setViralProteinAttributes(Alignment alignment,VigorForm form) throws VigorException {
+    public Alignment setViralProteinAttributes ( Alignment alignment, VigorForm form ) throws VigorException {
+
         String min_intronSize_param = form.getConfiguration().get(ConfigurationParameters.IntronMinimumSize);
-        if(VigorUtils.is_Integer(min_intronSize_param)){
-            min_intron_length=Integer.parseInt(min_intronSize_param);
+        if (VigorUtils.is_Integer(min_intronSize_param)) {
+            min_intron_length = Integer.parseInt(min_intronSize_param);
         }
         ViralProtein viralProtein = setGeneAttributes(alignment.getViralProtein(), form);
         AlignmentEvidence alignmentEvidence = alignment.getAlignmentEvidence();
@@ -47,91 +49,81 @@ public class ViralProteinService {
     }
 
     /**
-     *
      * @param viralProtein
      * @return viralProtein object which has all the gene attributes set.
      */
-
-    public ViralProtein setGeneAttributes(ViralProtein viralProtein, VigorForm form) throws VigorException {
+    public ViralProtein setGeneAttributes ( ViralProtein viralProtein, VigorForm form ) throws VigorException {
 
         GeneAttributes geneAttributes = new GeneAttributes();
         String defline = viralProtein.getDefline();
         defline = StringUtils.normalizeSpace(defline);
         List<String> deflineAttributes = parseDeflineAttributes(defline);
         Map<String, String> attributes = deflineAttributes.stream()
-                                                          .map(s -> s.split("=", 2))
-                                                          .collect(Collectors.toMap(a -> a[0].trim(),
-                                                                  a -> a.length > 1 ? VigorUtils.removeQuotes(a[1]) : "",
-                                                                  (s1, s2) -> s1));
-
+                .map(s -> s.split("=", 2))
+                .collect(Collectors.toMap(a -> a[ 0 ].trim(),
+                        a -> a.length > 1 ? VigorUtils.removeQuotes(a[ 1 ]) : "",
+                        ( s1, s2 ) -> s1));
         StructuralSpecifications structuralSpecifications = new StructuralSpecifications();
         Splicing splicing = Splicing.NO_SPLICING;
         Ribosomal_Slippage ribosomal_slippage = Ribosomal_Slippage.NO_SLIPPAGE;
         RNA_Editing rna_editing = RNA_Editing.NO_EDITING;
-
         StopTranslationException stopTranslationException = StopTranslationException.NO_EXCEPTION;
         StartTranslationException startTranslationException = StartTranslationException.NO_EXCEPTION;
 
         /* Set product attribute */
         if (attributes.containsKey("product")) {
-            String product = attributes.get("product").replaceAll("\"","");
+            String product = attributes.get("product").replaceAll("\"", "");
             viralProtein.setProduct(product);
         }
 
         /* Set gene symbol */
-        if(attributes.containsKey("gene")){
+        if (attributes.containsKey("gene")) {
             String geneSymbol = attributes.get("gene");
             viralProtein.setGeneSymbol(geneSymbol);
         }
         /* Set gene symbol */
-        if(attributes.containsKey("gene_synonym")){
+        if (attributes.containsKey("gene_synonym")) {
             String geneSynonym = attributes.get("gene_synonym");
             viralProtein.setGeneSynonym(geneSynonym);
         }
 
         /* Set Splicing attributes */
         if (attributes.containsKey("splice_form")) {
-            if (!(attributes.get("splice_form").equals(""))) {
+            if (!( attributes.get("splice_form").equals("") )) {
                 List<SpliceSite> splicePairs = new ArrayList<SpliceSite>();
                 if (attributes.containsKey("noncanonical_splicing")) {
-                    if (!(attributes.get("noncanonical_splicing").equalsIgnoreCase("N"))) {
-
+                    if (!( attributes.get("noncanonical_splicing").equalsIgnoreCase("N") )) {
                         List<String> spliceSites = Pattern.compile(";").splitAsStream(attributes.get("noncanonical_splicing").trim()).collect(Collectors.toList());
-
                         for (String spliceSite : spliceSites) {
                             String[] temp = spliceSite.split(Pattern.quote("+"));
-                            splicePairs.add(splicing.new SpliceSite(temp[0], temp[1]));
-
+                            splicePairs.add(splicing.new SpliceSite(temp[ 0 ], temp[ 1 ]));
                         }
                     }
                 }
                 SpliceSite defaultSpliceSite = splicing.new SpliceSite("GT", "AG");
                 splicePairs.add(defaultSpliceSite);
                 splicing = new Splicing(true, splicePairs, attributes.get("splice_form"));
-
                 if (attributes.containsKey("tiny_exon3")) {
                     String attribute = attributes.get("tiny_exon3");
                     int offset = 0;
                     String[] temp = attribute.split(":");
-                    String regex = temp[0];
-                    if (VigorUtils.is_Integer(temp[1])) {
-                        offset = Integer.parseInt(temp[1]);
-
+                    String regex = temp[ 0 ];
+                    if (VigorUtils.is_Integer(temp[ 1 ])) {
+                        offset = Integer.parseInt(temp[ 1 ]);
                     }
                     Map<String, Integer> temp1 = new HashMap<String, Integer>();
                     temp1.put(regex, offset);
                     structuralSpecifications.setTiny_exon3(temp1);
                 }
-
                 if (attributes.containsKey("tiny_exon5")) {
                     String attribute = attributes.get("tiny_exon5");
                     String regex = null;
                     int offset = 0;
                     if (attribute.matches(".*?:.*")) {
                         String[] temp = attribute.split(":");
-                        regex = temp[0];
-                        if (VigorUtils.is_Integer(temp[1])) {
-                            offset = Integer.parseInt(temp[1]);
+                        regex = temp[ 0 ];
+                        if (VigorUtils.is_Integer(temp[ 1 ])) {
+                            offset = Integer.parseInt(temp[ 1 ]);
                         } else {
                             regex = attribute;
                         }
@@ -149,7 +141,7 @@ public class ViralProteinService {
             String attribute = attributes.get("V4_Ribosomal_Slippage");
             String[] temp = attribute.split("/");
             if (temp.length == 3) {
-                ribosomal_slippage = new Ribosomal_Slippage(true, temp[2], Integer.parseInt(temp[0]), Integer.parseInt(temp[1]));
+                ribosomal_slippage = new Ribosomal_Slippage(true, temp[ 2 ], Integer.parseInt(temp[ 0 ]), Integer.parseInt(temp[ 1 ]));
             } else {
                 LOGGER.warn("bad ribosomal slippage attribute {}", attribute);
             }
@@ -159,7 +151,7 @@ public class ViralProteinService {
         if (attributes.containsKey("V4_stop_codon_readthrough")) {
             String attribute = attributes.get("V4_stop_codon_readthrough");
             String[] temp = attribute.split("/");
-            stopTranslationException = new StopTranslationException(true, AminoAcid.parse(temp[1]), temp[2], Integer.parseInt(temp[0]));
+            stopTranslationException = new StopTranslationException(true, AminoAcid.parse(temp[ 1 ]), temp[ 2 ], Integer.parseInt(temp[ 0 ]));
         }
 
         /* Set StartTranslationException attributes */
@@ -173,17 +165,16 @@ public class ViralProteinService {
             String attribute = attributes.get("V4_rna_editing");
             String[] temp = attribute.split("/");
             int rna_editing_offset = 0;
-            if (VigorUtils.is_Integer(temp[0])) {
-                rna_editing_offset = Integer.parseInt(temp[0]);
+            if (VigorUtils.is_Integer(temp[ 0 ])) {
+                rna_editing_offset = Integer.parseInt(temp[ 0 ]);
             }
-            rna_editing = new RNA_Editing(true, rna_editing_offset, temp[2], temp[1], temp[3]);
+            rna_editing = new RNA_Editing(true, rna_editing_offset, temp[ 2 ], temp[ 1 ], temp[ 3 ]);
         }
 
         /* Set StructuralSpecifications */
         if (attributes.containsKey("shared_cds")) {
             String attribute = attributes.get("shared_cds");
             structuralSpecifications.setShared_cds(Arrays.asList(attribute.split(",")));
-
         }
         if (attributes.containsKey("is_optional")) {
             structuralSpecifications.set_required(true);
@@ -203,7 +194,7 @@ public class ViralProteinService {
         }
 
         /* Set maturepeptide DB attribute */
-        matPepDB = attributes.getOrDefault("matpepdb","");
+        matPepDB = attributes.getOrDefault("matpepdb", "");
         if (matPepDB != null && matPepDB.contains("<vigordata>")) {
             matPepDB = matPepDB.replace("<vigordata>", form.getConfiguration().get(ConfigurationParameters.ReferenceDatabasePath));
         }
@@ -221,10 +212,7 @@ public class ViralProteinService {
 
         /* set geneStructure property of viralProtein */
         viralProtein = DetermineGeneStructure(viralProtein);
-
-
         return viralProtein;
-
     }
 
     /*
@@ -233,27 +221,25 @@ public class ViralProteinService {
      * @return GeneStructure: has list of exons and introns of the viralProtein.
      *         These are determined from spliceform annotated in the defline*/
 
-    public ViralProtein DetermineGeneStructure(ViralProtein viralProtein) throws ServiceException {
+    public ViralProtein DetermineGeneStructure ( ViralProtein viralProtein ) throws ServiceException {
 
         boolean is_ribosomal_slippage = viralProtein.getGeneAttributes().getRibosomal_slippage()
-                                                    .isHas_ribosomal_slippage();
+                .isHas_ribosomal_slippage();
         boolean is_spliced = viralProtein.getGeneAttributes().getSplicing().isSpliced();
         List<Range> NTFragments = new ArrayList<Range>();
         List<Range> introns = new ArrayList<Range>();
-        if (!(is_ribosomal_slippage) && !(is_spliced)) {
-            Range range = Range.of(0, 3 * (viralProtein.getSequence().getLength()-1));
+        if (!( is_ribosomal_slippage ) && !( is_spliced )) {
+            Range range = Range.of(0, 3 * ( viralProtein.getSequence().getLength() - 1 ));
             NTFragments.add(range);
-
         } else {
             String spliceform = viralProtein.getGeneAttributes().getSplicing().getSpliceform();
             if (spliceform != null) {
-                if (spliceform.equals("") || !(spliceform.matches("([i,e]-?[0-9]*)+"))) {
+                if (spliceform.equals("") || !( spliceform.matches("([i,e]-?[0-9]*)+") )) {
                     String exception = String.format("For protein %s spliced reference missing/malformed splice_form tag: %s",
                             viralProtein.getProteinID(), spliceform);
                     LOGGER.warn(exception);
                     throw new ServiceException(exception);
                 } else {
-
                     List<String> splices = new ArrayList<String>();
                     Matcher m = Pattern.compile("[e,i]-?[0-9]*").matcher(spliceform);
                     while (m.find()) {
@@ -262,25 +248,23 @@ public class ViralProteinService {
                     Long dnaOffset = 0l;
                     for (int i = 0; i < splices.size(); i++) {
                         long nucleotides = Long.parseLong(splices.get(i).substring(1));
-                        if(nucleotides>0){
-                            Range range = Range.of(dnaOffset, (dnaOffset + nucleotides) - 1);
+                        if (nucleotides > 0) {
+                            Range range = Range.of(dnaOffset, ( dnaOffset + nucleotides ) - 1);
                             if (splices.get(i).matches("e-?[0-9]*")) {
                                 dnaOffset = range.getEnd() + 1;
                                 NTFragments.add(range);
                             } else {
-                                if(nucleotides>=min_intron_length){
+                                if (nucleotides >= min_intron_length) {
                                     introns.add(range);
                                 }
                                 dnaOffset = range.getEnd() + 1;
-                            }}
-                        else{
-                            dnaOffset=dnaOffset-nucleotides;
+                            }
+                        } else {
+                            dnaOffset = dnaOffset - nucleotides;
                         }
                     }
                 }
-
             } else {
-
                 String exception = "Spliced reference missing for " + viralProtein.getProteinID();
                 LOGGER.debug(exception);
             }
@@ -291,12 +275,11 @@ public class ViralProteinService {
     }
 
     /**
-     * @param defline
-     *            of the protein
+     * @param defline of the protein
      * @return List of attributes in the defline
      */
+    public List<String> parseDeflineAttributes ( String defline ) throws VigorException {
 
-    public List<String> parseDeflineAttributes(String defline) throws VigorException {
         Pattern pattern;
         Matcher matcher;
         List<String> deflineAttributes = new ArrayList<String>();
@@ -317,22 +300,19 @@ public class ViralProteinService {
             if (matcher.find()) {
                 deflineAttributes.add(matcher.group(0));
             }
-
             pattern = Pattern.compile("product=\"([^\"]*\")");
             matcher = pattern.matcher(defline);
-            if(matcher.find()){
+            if (matcher.find()) {
                 deflineAttributes.add(matcher.group(0));
             }
-
             pattern = Pattern.compile("gene=\"\\S*\"");
             matcher = pattern.matcher(defline);
-            if(matcher.find()){
+            if (matcher.find()) {
                 deflineAttributes.add(matcher.group(0));
             }
-
             pattern = Pattern.compile("gene_synonym=\"\\S*\"");
             matcher = pattern.matcher(defline);
-            if(matcher.find()){
+            if (matcher.find()) {
                 deflineAttributes.add(matcher.group(0));
             }
 
@@ -347,7 +327,6 @@ public class ViralProteinService {
             if (matcher.find()) {
                 deflineAttributes.add(matcher.group(0));
             }
-
             pattern = Pattern.compile("alternate_startcodon=\"[a-zA-Z,]*\"");
             matcher = pattern.matcher(defline);
             if (matcher.find()) {
@@ -399,16 +378,14 @@ public class ViralProteinService {
             if (matcher.find()) {
                 deflineAttributes.add(matcher.group(0));
             }
-
             pattern = Pattern.compile("min_functional_len=\\d*");
             matcher = pattern.matcher(defline);
             if (matcher.find()) {
                 deflineAttributes.add(matcher.group(0));
             }
-
         } catch (Exception e) {
             String message = String.format("Problem parsing defline %s", defline);
-            LOGGER.error(message,e);
+            LOGGER.error(message, e);
             throw new VigorException(message);
         }
         return deflineAttributes;

@@ -9,11 +9,11 @@ import org.springframework.stereotype.Component;
 @Data
 public abstract class AlignmentTool {
 
-    public abstract String getToolName();
+    public abstract String getToolName ();
 
     @Override
-    public String toString() {
+    public String toString () {
+
         return this.getToolName();
     }
-
 }

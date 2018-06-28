@@ -1,95 +1,109 @@
 package org.jcvi.vigor.blast;
+
 import java.util.LinkedList;
 import java.util.List;
 
 import org.jcvi.jillion.experimental.align.blast.BlastHit;
 import org.jcvi.jillion.experimental.align.blast.BlastVisitor;
 
+//Not part of current release
 public class BlastVistorImpl implements BlastVisitor {
-	
-	private String programName;
-	private String programVersion;
-	private String blastDb;
-	private String queryId;
-	private List<BlastHit> blastHitList;
 
-	@Override
-	public void visitEnd() {
-		System.out.println("***************** in visit End *******************");
-	}
+    private String programName;
+    private String programVersion;
+    private String blastDb;
+    private String queryId;
+    private List<BlastHit> blastHitList;
 
-	@Override
-	public void visitInfo(String programName, String programVersion, String blastDb, String queryId) {
-		System.out.println("***************** in visitInfo *******************");
-		System.out.println("programName: "+programName);
-		System.out.println("programVersion: "+programVersion);
-		System.out.println("blastDb: "+blastDb);
-		System.out.println("queryId: "+queryId);
-		System.out.println("***************** in visitInfo *******************");
-		this.programName = programName;
-		this.programVersion = programVersion;
-		this.blastDb = blastDb;
-		this.queryId = queryId;
-	}
+    @Override
+    public void visitEnd () {
 
-	@Override
-	public void visitHit(BlastHit hit) {
-		System.out.println("***************** in visitHit *******************");
-		System.out.println(hit.getBlastDbName());
-		System.out.println(hit.getBlastProgramName());
-		System.out.println(hit.getQueryId());
-		System.out.println(hit.getSubjectDefinition());
-		System.out.println(hit.getSubjectId());
-		System.out.println(hit.getHsps());
-		System.out.println(hit.getQueryLength());
-		System.out.println(hit.getSubjectLength());
-		System.out.println("***************** in visitHit *******************");
-		if(blastHitList!=null){
-			blastHitList.add(hit);
-		}else{
-			blastHitList = new LinkedList<BlastHit>();
-			blastHitList.add(hit);
-		}
-	}
+        System.out.println("***************** in visit End *******************");
+    }
 
-	public List<BlastHit> getBlastHitList() {
-		return blastHitList;
-	}
+    @Override
+    public void visitInfo ( String programName, String programVersion, String blastDb, String queryId ) {
 
-	public void setBlastHitList(List<BlastHit> blastHitList) {
-		this.blastHitList = blastHitList;
-	}
+        System.out.println("***************** in visitInfo *******************");
+        System.out.println("programName: " + programName);
+        System.out.println("programVersion: " + programVersion);
+        System.out.println("blastDb: " + blastDb);
+        System.out.println("queryId: " + queryId);
+        System.out.println("***************** in visitInfo *******************");
+        this.programName = programName;
+        this.programVersion = programVersion;
+        this.blastDb = blastDb;
+        this.queryId = queryId;
+    }
 
-	public String getProgramName() {
-		return programName;
-	}
+    @Override
+    public void visitHit ( BlastHit hit ) {
 
-	public void setProgramName(String programName) {
-		this.programName = programName;
-	}
+        System.out.println("***************** in visitHit *******************");
+        System.out.println(hit.getBlastDbName());
+        System.out.println(hit.getBlastProgramName());
+        System.out.println(hit.getQueryId());
+        System.out.println(hit.getSubjectDefinition());
+        System.out.println(hit.getSubjectId());
+        System.out.println(hit.getHsps());
+        System.out.println(hit.getQueryLength());
+        System.out.println(hit.getSubjectLength());
+        System.out.println("***************** in visitHit *******************");
+        if (blastHitList != null) {
+            blastHitList.add(hit);
+        } else {
+            blastHitList = new LinkedList<BlastHit>();
+            blastHitList.add(hit);
+        }
+    }
 
-	public String getProgramVersion() {
-		return programVersion;
-	}
+    public List<BlastHit> getBlastHitList () {
 
-	public void setProgramVersion(String programVersion) {
-		this.programVersion = programVersion;
-	}
+        return blastHitList;
+    }
 
-	public String getBlastDb() {
-		return blastDb;
-	}
+    public void setBlastHitList ( List<BlastHit> blastHitList ) {
 
-	public void setBlastDb(String blastDb) {
-		this.blastDb = blastDb;
-	}
+        this.blastHitList = blastHitList;
+    }
 
-	public String getQueryId() {
-		return queryId;
-	}
+    public String getProgramName () {
 
-	public void setQueryId(String queryId) {
-		this.queryId = queryId;
-	}
- 
+        return programName;
+    }
+
+    public void setProgramName ( String programName ) {
+
+        this.programName = programName;
+    }
+
+    public String getProgramVersion () {
+
+        return programVersion;
+    }
+
+    public void setProgramVersion ( String programVersion ) {
+
+        this.programVersion = programVersion;
+    }
+
+    public String getBlastDb () {
+
+        return blastDb;
+    }
+
+    public void setBlastDb ( String blastDb ) {
+
+        this.blastDb = blastDb;
+    }
+
+    public String getQueryId () {
+
+        return queryId;
+    }
+
+    public void setQueryId ( String queryId ) {
+
+        this.queryId = queryId;
+    }
 }

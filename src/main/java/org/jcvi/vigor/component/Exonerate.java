@@ -7,16 +7,18 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope("prototype")
 @Data
-public class Exonerate extends AlignmentTool{
+public class Exonerate extends AlignmentTool {
 
     private String name;
 
-    public Exonerate(String name){
-        this.name=name;
-    }
-    @Override
-    public String getToolName(){
-        return this.name;
+    public Exonerate ( String name ) {
+
+        this.name = name;
     }
 
+    @Override
+    public String getToolName () {
+
+        return this.name;
+    }
 }

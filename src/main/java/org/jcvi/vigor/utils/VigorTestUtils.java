@@ -6,8 +6,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.datastore.DataStoreProviderHint;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaDataStore;
@@ -26,42 +24,33 @@ import org.jcvi.vigor.service.exception.ServiceException;
 
 public class VigorTestUtils {
 
-	private static final Logger LOGGER = LogManager.getLogger(VigorTestUtils.class);
-	
-	
-	
-	public static List<Alignment> getAlignments(File inputSeqFile, String refDB,File alignmentOutput, VigorConfiguration config) throws VigorException {
+    public static List<Alignment> getAlignments ( File inputSeqFile, String refDB, File alignmentOutput, VigorConfiguration config ) throws VigorException {
 
-		ExonerateService exonerateService = new ExonerateService();
-		ViralProteinService viralProteinService = new ViralProteinService();
-		try (NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(inputSeqFile).hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED).build();) {
-			Stream<NucleotideFastaRecord> records = dataStore.records();
-			Iterator<NucleotideFastaRecord> iter = records.iterator();
-			NucleotideFastaRecord record = iter.next();
-			VirusGenome virusGenome = new VirusGenome(record.getSequence(), record.getComment(), record.getId(), false,
-					false);
-			List<Range> sequenceGaps = VirusGenomeService.findSequenceGapRanges("20",virusGenome.getSequence());
-			virusGenome.setSequenceGaps(sequenceGaps);
-			// create alignment evidence
-			AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
-			VigorForm form = new VigorForm();
-			alignmentEvidence.setReference_db(refDB);
-			form.setAlignmentEvidence(alignmentEvidence);
-			form.setAlignmentTool(AlignmentToolFactory.getAlignmentTool(refDB));
-			List<Alignment> alignments = exonerateService.parseExonerateOutput(alignmentOutput,
-							form, virusGenome, refDB);
-			for (int i = 0; i < alignments.size(); i++) {
-				alignments.set(i, viralProteinService
-						.setViralProteinAttributes(alignments.get(i), new VigorForm(config)));
-			}
-			return alignments;
-		} catch (IOException e) {
-			throw new ServiceException(String.format("Problem reading fasta file %s", inputSeqFile), e);
-		}
-	}
-	
-		
-	
-	
-
+        ExonerateService exonerateService = new ExonerateService();
+        ViralProteinService viralProteinService = new ViralProteinService();
+        try (NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(inputSeqFile).hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED).build();) {
+            Stream<NucleotideFastaRecord> records = dataStore.records();
+            Iterator<NucleotideFastaRecord> iter = records.iterator();
+            NucleotideFastaRecord record = iter.next();
+            VirusGenome virusGenome = new VirusGenome(record.getSequence(), record.getComment(), record.getId(), false,
+                    false);
+            List<Range> sequenceGaps = VirusGenomeService.findSequenceGapRanges("20", virusGenome.getSequence());
+            virusGenome.setSequenceGaps(sequenceGaps);
+            // create alignment evidence
+            AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
+            VigorForm form = new VigorForm();
+            alignmentEvidence.setReference_db(refDB);
+            form.setAlignmentEvidence(alignmentEvidence);
+            form.setAlignmentTool(AlignmentToolFactory.getAlignmentTool(refDB));
+            List<Alignment> alignments = exonerateService.parseExonerateOutput(alignmentOutput,
+                    form, virusGenome, refDB);
+            for (int i = 0; i < alignments.size(); i++) {
+                alignments.set(i, viralProteinService
+                        .setViralProteinAttributes(alignments.get(i), new VigorForm(config)));
+            }
+            return alignments;
+        } catch (IOException e) {
+            throw new ServiceException(String.format("Problem reading fasta file %s", inputSeqFile), e);
+        }
+    }
 }

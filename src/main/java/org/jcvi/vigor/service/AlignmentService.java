@@ -9,5 +9,5 @@ import java.util.List;
 
 public interface AlignmentService {
 
-    List<Alignment> getAlignment(VigorForm form, VirusGenome virusGenome, String referenceDB, String workspace) throws ServiceException;
+    List<Alignment> getAlignment ( VigorForm form, VirusGenome virusGenome, String referenceDB, String workspace ) throws ServiceException;
 }

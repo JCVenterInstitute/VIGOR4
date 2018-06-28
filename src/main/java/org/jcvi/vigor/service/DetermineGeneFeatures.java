@@ -8,5 +8,5 @@ import org.jcvi.vigor.service.exception.ServiceException;
 
 public interface DetermineGeneFeatures {
 
-	List<Model> determine(Model model,VigorForm form) throws ServiceException;
+    List<Model> determine ( Model model, VigorForm form ) throws ServiceException;
 }
