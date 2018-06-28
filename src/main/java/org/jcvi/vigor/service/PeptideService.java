@@ -242,6 +242,12 @@ public class PeptideService implements PeptideMatchingService {
                         }
                     }
                 }
+                if (partialProtein.isPartial5p() && current.getProteinRange().getBegin() == 0) {
+                    current.setFuzzyBegin(true);
+                }
+                if (partialProtein.isPartial3p() && current.getProteinRange().getEnd() == partialProtein.getSequence().getLength() -1) {
+                    current.setFuzzyEnd(true);
+                }
                 peptides.add(current);
                 prev = current;
                 previousRange = current.getProteinRange();
@@ -348,12 +354,12 @@ public class PeptideService implements PeptideMatchingService {
         ProteinSequence subjectSequence = partialSubjectSequence.getSequence();
         Range previousRange = prev.getProteinRange();
         Range currentRange = current.getProteinRange();
-        LOGGER.debug("adjusting edges for\n[{}-{}] {}\n[{}-{}] {}",
-                () -> previousRange.getBegin(), () -> previousRange.getEnd(),
-                () -> SequenceUtils.elipsedSequenceString(prev.getProtein().toBuilder().trim(prev.getProteinRange()).build(),30,30),
-                () -> currentRange.getBegin(), () -> currentRange.getEnd(),
-                () -> SequenceUtils.elipsedSequenceString(current.getProtein().toBuilder().trim(current.getProteinRange()).build(), 30, 30)
-                );
+        LOGGER.debug(() -> String.format("adjusting edges for\n[%s-%s] %s\n[%s-%s] %s",
+                previousRange.getBegin(), previousRange.getEnd(),
+                SequenceUtils.elipsedSequenceString(prev.getProtein().toBuilder().trim(prev.getProteinRange()).build(),30,30),
+                currentRange.getBegin(),currentRange.getEnd(),
+                SequenceUtils.elipsedSequenceString(current.getProtein().toBuilder().trim(current.getProteinRange()).build(), 30, 30)
+                ));
 
         PeptideProfile previousReferenceProfile = PeptideProfile.profileFromSequence(prev.getReference().getSequence());
         PeptideProfile currentReferenceProfile = PeptideProfile.profileFromSequence(current.getReference().getSequence());
