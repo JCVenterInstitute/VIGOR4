@@ -26,94 +26,93 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
-
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = Application.class)
 public class DetermineStartAndStopTest {
 
-	private Model model = new Model();
-	@Autowired
-	private DetermineStart determineStart ;
-	@Autowired
-	private DetermineStop determineStop;
+    private Model model = new Model();
+    @Autowired
+    private DetermineStart determineStart;
+    @Autowired
+    private DetermineStop determineStop;
 
-	@Before
-	public void getModel() {
-		VirusGenome virusGenome = new VirusGenome();
-		NucleotideSequence seq = new NucleotideSequenceBuilder("CGAAGGCTGGCCGATAGAAAACAGAAACTAAGCCAAGCAAGCAACAAACGAGACATCAGCAGTGATGC"
-				+ "TGATTATGAAAATGATGATGATGCTACAGCGGCTGCAGGGATAGGAGGAATTTAACAGGATAATTGGACA"
-				+ "GTAGAAACCAGATCAAAAGTAAGAAAAACTTAGGGTGAATGGCAATTCACAGATCAGCTCAACCAGACAT"
-				+ "CATCAGCATACACGAAACCAACCTTCACATGGGATACCTCAGCATCCAAAACTCTCCTTCCCGAATGGAT"
-				+ "CAGGATGCCTTCTTTTTTGAGAGGGATCCTGAGGCCGAAGGAGAGGCACCACGAAAACAAGAATCACTCT"
-				+ "CAGATGTCATCGGACTCCTTGACGTCGTCCTATCCTACAAGCCCACCGAAATTGGAGAAGACAGAAGCTG"
-				+ "GCTCCATAGTATCATCGACAACCCAAAAGAAAACAAGTCATCATGCAAATCTGACGATAACGATAAAGAC"
-				+ "AGAGCAATCTCGACGTCGACCCAAGATCATAGATCAAGTGAGGAGAGTAGAGTCTCTAGGAGAACAGGTG"
-				+ "AGTCAAAAACAGAGACACATGCTAGAATCCTTGATCAACAAGGTGTACACAGGGCCTCTAGGCGAGGAAC"
-				+ "TAGTCCAAACCCTCTACCTGAGAATATGGGCAATGAAAGAAACACCAGAATAGAGGAAGATCCTTCAAAT"
-				+ "GAGAGAAGACATCAGAGATCAGTATCTACGGNNNNNNNNNNNNNNNNNNNNNNNNNNTTTAATAAGAGGG"
-				+ "AAGAAGACCAAGTTGAGGGATTTCCAGAAGAGGTACGAGGAAGTACATCCTTATCTGATGATGGAGAGAG"
-				+ "TAGAACAAATAATAATGGAAGAAGCATGGAAACTAGCAGCACACATAGTACAAGAATAACTGATGTCATT"
-				+ "ACCAACCCAAGTCCAGAGCTTGAAGATGCCGTTCTACAAAGGAATAAAAGACGGCCGACGACCATCAAGC").build();
-		virusGenome.setSequence(seq);
-		List<Range> sequenceGaps = VirusGenomeService.findSequenceGapRanges("20",
-				virusGenome.getSequence());
-		virusGenome.setSequenceGaps(sequenceGaps);
-		ViralProtein viralProtein = new ViralProtein();
-		//Dummy protein sequence
-		ProteinSequence proteinSeq = new ProteinSequenceBuilder("MNRPFFQNFGRRPFPAPSIAWRPRRRRSAAPAFQAPRFGLANQIQQLTSAVSALVIGQSA"
-				+"RTQPPRARQQPRRPPPKKKQPPPPKKEKPTKKQPKKPTKPKPGKRQRMVLKLEADRLFDV"
-				+"KNEQGDVVGHALAMEGKVMKPLHVKGTIDHPVLSKLKFTKSSAYDMEFAPLPVNMKSEAF"
-				+"NYTSEHPEGFYNWHHGAVQYSGGRFTVPRGVGGKGDSGRPIMDNTGKVVAIVLGGADEGA"
-				+"RTALSVVTWNAKGKTIKTTPEGTEEWSAAAAITTLCLIGNMTFPCDRPPTCYNVNPATTL"
-				+"DILEQNVDHPLYDTLLTSITRCSSRRHKRSITDDFTLTSPYLGTCSYCHHTEPCFSPIKI"
-				+"EQVWDDADDGTIRIQTSAQFGYNQNGAADN").build();
-		viralProtein.setSequence(proteinSeq);
-		List<Exon> exons = new ArrayList<Exon>();
-		Exon exon = new Exon();
-		exon.setRange(Range.of(236,728));
-		exon.setFrame(Frame.ONE);
-		Exon exon1 = new Exon();
-		exon1.setFrame(Frame.TWO);
-		exon1.setRange(Range.of(756,977));
-		AlignmentFragment frag = new AlignmentFragment();
-		AlignmentFragment frag1 = new AlignmentFragment();
-		frag.setProteinSeqRange(Range.of(0,166));
-		frag1.setProteinSeqRange(Range.of(167,389));
-		exon.setAlignmentFragment(frag);
-		exon1.setAlignmentFragment(frag1);
-		exons.add(exon);
-		exons.add(exon1);
-		model.setExons(exons);
-		Alignment alignment = new Alignment();
-		virusGenome.setInternalStops(VirusGenomeService.findInternalStops(seq));
-		alignment.setVirusGenome(virusGenome);
-		alignment.setViralProtein(viralProtein);
-		model.setAlignment(alignment);
-	}
+    @Before
+    public void getModel () {
 
-	@Test
-	public void findStart() throws CloneNotSupportedException{
-		List<Triplet> startCodons = new ArrayList<Triplet>();
-		Triplet triplet4 = Triplet.create('A','T','G');
-		Triplet triplet1 = Triplet.create('A', 'C', 'G');
-		Triplet triplet2 = Triplet.create('C', 'C', 'G');
-		Triplet triplet3 = Triplet.create('G', 'T', 'G');
-		startCodons.add(triplet1);
-		startCodons.add(triplet2);
-		startCodons.add(triplet3);
-		startCodons.add(triplet4);
-		List<Model> outputModels = determineStart.findStart(startCodons, model, "50");
-		assertEquals("Expected 2 models, but got " + outputModels.size(), 2,outputModels.size());
-	}
+        VirusGenome virusGenome = new VirusGenome();
+        NucleotideSequence seq = new NucleotideSequenceBuilder("CGAAGGCTGGCCGATAGAAAACAGAAACTAAGCCAAGCAAGCAACAAACGAGACATCAGCAGTGATGC"
+                + "TGATTATGAAAATGATGATGATGCTACAGCGGCTGCAGGGATAGGAGGAATTTAACAGGATAATTGGACA"
+                + "GTAGAAACCAGATCAAAAGTAAGAAAAACTTAGGGTGAATGGCAATTCACAGATCAGCTCAACCAGACAT"
+                + "CATCAGCATACACGAAACCAACCTTCACATGGGATACCTCAGCATCCAAAACTCTCCTTCCCGAATGGAT"
+                + "CAGGATGCCTTCTTTTTTGAGAGGGATCCTGAGGCCGAAGGAGAGGCACCACGAAAACAAGAATCACTCT"
+                + "CAGATGTCATCGGACTCCTTGACGTCGTCCTATCCTACAAGCCCACCGAAATTGGAGAAGACAGAAGCTG"
+                + "GCTCCATAGTATCATCGACAACCCAAAAGAAAACAAGTCATCATGCAAATCTGACGATAACGATAAAGAC"
+                + "AGAGCAATCTCGACGTCGACCCAAGATCATAGATCAAGTGAGGAGAGTAGAGTCTCTAGGAGAACAGGTG"
+                + "AGTCAAAAACAGAGACACATGCTAGAATCCTTGATCAACAAGGTGTACACAGGGCCTCTAGGCGAGGAAC"
+                + "TAGTCCAAACCCTCTACCTGAGAATATGGGCAATGAAAGAAACACCAGAATAGAGGAAGATCCTTCAAAT"
+                + "GAGAGAAGACATCAGAGATCAGTATCTACGGNNNNNNNNNNNNNNNNNNNNNNNNNNTTTAATAAGAGGG"
+                + "AAGAAGACCAAGTTGAGGGATTTCCAGAAGAGGTACGAGGAAGTACATCCTTATCTGATGATGGAGAGAG"
+                + "TAGAACAAATAATAATGGAAGAAGCATGGAAACTAGCAGCACACATAGTACAAGAATAACTGATGTCATT"
+                + "ACCAACCCAAGTCCAGAGCTTGAAGATGCCGTTCTACAAAGGAATAAAAGACGGCCGACGACCATCAAGC").build();
+        virusGenome.setSequence(seq);
+        List<Range> sequenceGaps = VirusGenomeService.findSequenceGapRanges("20",
+                virusGenome.getSequence());
+        virusGenome.setSequenceGaps(sequenceGaps);
+        ViralProtein viralProtein = new ViralProtein();
+        ProteinSequence proteinSeq = new ProteinSequenceBuilder("MNRPFFQNFGRRPFPAPSIAWRPRRRRSAAPAFQAPRFGLANQIQQLTSAVSALVIGQSA"
+                + "RTQPPRARQQPRRPPPKKKQPPPPKKEKPTKKQPKKPTKPKPGKRQRMVLKLEADRLFDV"
+                + "KNEQGDVVGHALAMEGKVMKPLHVKGTIDHPVLSKLKFTKSSAYDMEFAPLPVNMKSEAF"
+                + "NYTSEHPEGFYNWHHGAVQYSGGRFTVPRGVGGKGDSGRPIMDNTGKVVAIVLGGADEGA"
+                + "RTALSVVTWNAKGKTIKTTPEGTEEWSAAAAITTLCLIGNMTFPCDRPPTCYNVNPATTL"
+                + "DILEQNVDHPLYDTLLTSITRCSSRRHKRSITDDFTLTSPYLGTCSYCHHTEPCFSPIKI"
+                + "EQVWDDADDGTIRIQTSAQFGYNQNGAADN").build();
+        viralProtein.setSequence(proteinSeq);
+        List<Exon> exons = new ArrayList<Exon>();
+        Exon exon = new Exon();
+        exon.setRange(Range.of(236, 728));
+        exon.setFrame(Frame.ONE);
+        Exon exon1 = new Exon();
+        exon1.setFrame(Frame.TWO);
+        exon1.setRange(Range.of(756, 977));
+        AlignmentFragment frag = new AlignmentFragment();
+        AlignmentFragment frag1 = new AlignmentFragment();
+        frag.setProteinSeqRange(Range.of(0, 166));
+        frag1.setProteinSeqRange(Range.of(167, 389));
+        exon.setAlignmentFragment(frag);
+        exon1.setAlignmentFragment(frag1);
+        exons.add(exon);
+        exons.add(exon1);
+        model.setExons(exons);
+        Alignment alignment = new Alignment();
+        virusGenome.setInternalStops(VirusGenomeService.findInternalStops(seq));
+        alignment.setVirusGenome(virusGenome);
+        alignment.setViralProtein(viralProtein);
+        model.setAlignment(alignment);
+    }
 
-	@Test
-	public void findStop() throws CloneNotSupportedException{
-		List<Model> models = determineStop.findStop(model);
-		assertEquals("Expected 2 models, but got " +models.size(), 2, models.size());
-		assertEquals(2,models.size());
-		//stop codons in frame with the last exon are at 928,952;
-		assertEquals(954,models.get(0).getExons().get(model.getExons().size()-1).getRange().getEnd());
-		assertEquals(930,models.get(1).getExons().get(model.getExons().size()-1).getRange().getEnd());
-	}
+    @Test
+    public void findStart () throws CloneNotSupportedException {
 
+        List<Triplet> startCodons = new ArrayList<Triplet>();
+        Triplet triplet4 = Triplet.create('A', 'T', 'G');
+        Triplet triplet1 = Triplet.create('A', 'C', 'G');
+        Triplet triplet2 = Triplet.create('C', 'C', 'G');
+        Triplet triplet3 = Triplet.create('G', 'T', 'G');
+        startCodons.add(triplet1);
+        startCodons.add(triplet2);
+        startCodons.add(triplet3);
+        startCodons.add(triplet4);
+        List<Model> outputModels = determineStart.findStart(startCodons, model, "50");
+        assertEquals("Expected 2 models, but got " + outputModels.size(), 2, outputModels.size());
+    }
+
+    @Test
+    public void findStop () throws CloneNotSupportedException {
+
+        List<Model> models = determineStop.findStop(model);
+        assertEquals("Expected 2 models, but got " + models.size(), 2, models.size());
+        assertEquals(2, models.size());
+        assertEquals(954, models.get(0).getExons().get(model.getExons().size() - 1).getRange().getEnd());
+        assertEquals(930, models.get(1).getExons().get(model.getExons().size() - 1).getRange().getEnd());
+    }
 }

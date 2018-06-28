@@ -30,104 +30,95 @@ import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.utils.VigorTestUtils;
-import org.jcvi.vigor.utils.VigorUtils;
 import org.jcvi.vigor.forms.VigorForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
-
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = Application.class)
 public class DetermineMissingExonsTest {
-	@Autowired
-	private ModelGenerationService modelGenerationService;
-	@Autowired
-	private DetermineMissingExons determineMissingExons ;
-	@Autowired
-	private ViralProteinService viralProteinService ;
-	@Autowired
-	private VigorInitializationService initializationService;
 
-	@Test
-	public void findMissingExonsWithSpliceFormPresent() throws VigorException {
-		VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
+    @Autowired
+    private ModelGenerationService modelGenerationService;
+    @Autowired
+    private DetermineMissingExons determineMissingExons;
+    @Autowired
+    private ViralProteinService viralProteinService;
+    @Autowired
+    private VigorInitializationService initializationService;
 
-		ClassLoader classLoader = DetermineMissingExonsTest.class.getClassLoader();
-		File resources = new File("src/test/resources");
-		File virusGenomeSeqFile = new File(resources.getAbsolutePath()+File.separator+"vigorUnitTestInput/sequence_flua.fasta");
-        File alignmentOutput = new File(resources.getAbsolutePath()+File.separator+"vigorUnitTestInput/sequence_flua_alignmentTest.txt");
-		String refDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
-		assertThat("Reference database path must be set", refDBPath, is(notNullValue()));
-		String referenceDB = Paths.get(refDBPath, "flua_db").toString();
+    @Test
+    public void findMissingExonsWithSpliceFormPresent () throws VigorException {
 
-		List<Alignment> alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile,referenceDB,
+        VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
+        ClassLoader classLoader = DetermineMissingExonsTest.class.getClassLoader();
+        File resources = new File("src/test/resources");
+        File virusGenomeSeqFile = new File(resources.getAbsolutePath() + File.separator + "vigorUnitTestInput/sequence_flua.fasta");
+        File alignmentOutput = new File(resources.getAbsolutePath() + File.separator + "vigorUnitTestInput/sequence_flua_alignmentTest.txt");
+        String refDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
+        assertThat("Reference database path must be set", refDBPath, is(notNullValue()));
+        String referenceDB = Paths.get(refDBPath, "flua_db").toString();
+        List<Alignment> alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile, referenceDB,
                 alignmentOutput, config);
-
-		List<Model> models = new ArrayList<>();
-        for (int i=0; i<alignments.size(); i++) {
+        List<Model> models = new ArrayList<>();
+        for (int i = 0; i < alignments.size(); i++) {
             alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm(config)));
         }
-		models.addAll(modelGenerationService.alignmentToModels(alignments.get(0)));
-		assertTrue(String.format("Expected at least 1 model, got %s", models.size()), 1 >= models.size());
-		Model model = models.get(0);
-		assertTrue(String.format("Expected models %s to have at least 2 exons, got %s", model, model.getExons().size()),
-				2 <=model.getExons().size());
-		model.getExons().remove(1);
-		int exons = determineMissingExons.findMissingExons(model).getExons().size();
-		assertEquals(2, exons);
-	}
+        models.addAll(modelGenerationService.alignmentToModels(alignments.get(0)));
+        assertTrue(String.format("Expected at least 1 model, got %s", models.size()), 1 >= models.size());
+        Model model = models.get(0);
+        assertTrue(String.format("Expected models %s to have at least 2 exons, got %s", model, model.getExons().size()),
+                2 <= model.getExons().size());
+        model.getExons().remove(1);
+        int exons = determineMissingExons.findMissingExons(model).getExons().size();
+        assertEquals(2, exons);
+    }
 
-	@Test
-	public void performPairWiseAlignment() {
+    @Test
+    public void performPairWiseAlignment () {
 
-		Range NTRange = Range.of(579, 2199);
-		Range AARange = Range.of(190, 231);
+        Range NTRange = Range.of(579, 2199);
+        Range AARange = Range.of(190, 231);
+        NucleotideSequence NTSequence = new NucleotideSequenceBuilder(
+                "TGATCCAAAATGGAAGATTTTGTGCGACAATGCTTCAATCCAATGATTGTCGAGCTTGCGGAAAAGGCAATGAAAGAATATGGGGAAGATCCGAAAATCGAAACGAACAAATTTGCCGCAATAT"
+                        + "GCACACACTTAGAGGTCTGTTTCATGTATTCGGATTTCCACTTTATTGATGAACGGGGCGAATCAATAATTGTAGAATCTGGCGATCCAAATGCATTATTGAAACACCGATTTGAGATAATTGAAGGGAGAGACCGAA"
+                        + "CGATGGCCTGGACAGTGGTGAATAGTATCTGCAACACCACAGGAGTCGAGAAACCTAAATTTCTCCCAGATTTGTATGACTACAAAGAGAATCGATTCATTGAAATTGGAGTAACACGGAGGGAAGTTCATATATAC"
+                        + "TATCTAGAAAAGGCCAACAAGATAAAATCAGAGAAGACACACATTCACATATTCTCATTCACTGGAGAGGAAATGGCCACCAAAGCGGACTACACTCTTGACGAAGAGAGTAGGGCAAGAATCAAAACCAGGCTGTTC"
+                        + "ACTATAAGGCAGGAAATGGCCAGTAGGGGTCTATGGGATTCCTTTCGTCAGTCCGAGAGAGGCGAAGAGACAGTTGAAGAAAGATTTGAAATCACAGGAACCATGCGCAGGCTTGCCGACCAAAGTCTCCCACCGAACT"
+                        + "TCTCCAGCCTTGAAAACTTTAGAGCCTATGTGGATGGATTCGAACCGAACGGCTGCATTGAGGGCAAGCTTTCTCAAATGTCAAAAGAAGTGAACGCCCGAATTGAGCCATTTCTGAAGACAACACCACGCCCTCTCA"
+                        + "AACTACCTGACGGGCCTCCCTGCTCTCAACGGTCGAAGTTCCTGCTGATGGATGCCCTTAAATTAAGCATCGAAGACCCGAGTCATGAGGGGGAGGGTATACCGCTATATGATGCAATCAAATGCATGAAGACATTTTT"
+                        + "CGGCTGGAAAGAGCCCAACATTGTAAAACCACATGAAAAGGGCATAAACCCCAATTACCTCCTGGCTTGGAAGCAAGTGCTGGCAGAACTCCAAGATATTGAAAATGAGGAGAAAATCCCAAAAACAAAGAACATGAAGAA"
+                        + "AACGAGCCAGTTGAAGTGGGCACTTGGTGAGAATATGGCACCGGAGAAGGTAGACTTTGAGGATTGCAAGGATGTTAGCGATCTGAGACAGTATGACAGTGATGAACCAGAGTCTAGATCGCTAGCAAGCTGGATCCAGAGT"
+                        + "GAATTCAACAAGGCATGTGAATTGACAGATTCAAGTTGGATTGAGCTTGATGAAATAGGGGAAGACATTGCTCCAATTGAGCACATTGCGAGTATGAGAAGAAACTACTTCACAGCGGAAGTATCCCATTGCAGGGCTACTGAA"
+                        + "TACATAATGAAAGGAGTGTACATAAACACAGCCTTGTTGAATGCATCCTGTGCAGCCATGGATGACTTCCAACTGATTCCAATGATAAGCAAATGCAGGACCAAAGAAGGGAGGCGGAAGACTAATCTGTATGGATTCATTATA"
+                        + "AAAGGAAGATCCCATTTGAGAAATGACACCGATGTAGTAAACTTTGTGAGCATGGAATTCTCTCTTACTGACCCGAGGCTGGAGCCACACAAGTGGGAAAAGTACTGTGTTCTCGAGATAGGAGACATGCTCCTACGGACTGC"
+                        + "AATAGGCCAAGTGTCAAGGCCCATGTTCCTGTATGTGAGAACCAATGGGACTTCCAAGATCAAGATGAAGTGGGGCATGGAAATGAGGCGATGCCTTCTTCAATCCCTTCAACAAATTGAGAGCATGATTGAAGCCGAGTCTTC"
+                        + "TGTCAAAGAGAAGGACATGACCAAAGAATTCTTTGAAAACAAATCAGAAACATGGCCAATTGGAGAGTCACCCAAAGGGGTGGAGGAAGGCTCCATTGGGAAGGTGTGCAGAACCTTACTGGCAAAATCTGTATTCAACAGCCTATA"
+                        + "TGCATCTCCACAACTCGAGGGATTTTCAGCTGAATCAAGAAAGTTGCTTCTCATTGTCCAGGCACTTAGGGACAACCTGGAACCTGGGACCTTCGATCTTGGGGGGCTATATGAAGCAATTGAGGAGTGCCTGATTAATGATCCCTGGG"
+                        + "TTTTGCTTAATGCGTCTTGGTTCAACTCCTTCCTCACACATGCACTGAAATAGTTGTGGCAATGCTACTATTTGCTATCCATACTGTCCAAAA")
+                .build();
+        ProteinSequence AASequence = new ProteinSequenceBuilder(
+                "MEDFVRQCFNPMIVELAEKTMKEYGEDLKIETNKFAAICTHLEVCFMYSDFHFINEQGESIIVELGDPNALLKHRFEIIEGRDRTMAWTVVNSICNTTGAEKPKFLPDLYDYKENRFIEIGVTRREVHIYYLEKANKI"
+                        + "KSEKTHIHIFSFTGEEMATKADYTLDEESRARIKTRLFTIRQEMASRGLWDSFVSPREEKRQLKKGLKSQEQCASLPTKVSRRTSPALKILEPM")
+                .build();
+        Exon exon = determineMissingExons.performJillionPairWiseAlignment(NTRange, AARange, NTSequence,
+                AASequence, Direction.FORWARD);
+        assertEquals(exon.getAlignmentFragment().getProteinSeqRange(), AARange);
+    }
 
-		NucleotideSequence NTSequence = new NucleotideSequenceBuilder(
-				"TGATCCAAAATGGAAGATTTTGTGCGACAATGCTTCAATCCAATGATTGTCGAGCTTGCGGAAAAGGCAATGAAAGAATATGGGGAAGATCCGAAAATCGAAACGAACAAATTTGCCGCAATAT"
-						+ "GCACACACTTAGAGGTCTGTTTCATGTATTCGGATTTCCACTTTATTGATGAACGGGGCGAATCAATAATTGTAGAATCTGGCGATCCAAATGCATTATTGAAACACCGATTTGAGATAATTGAAGGGAGAGACCGAA"
-						+ "CGATGGCCTGGACAGTGGTGAATAGTATCTGCAACACCACAGGAGTCGAGAAACCTAAATTTCTCCCAGATTTGTATGACTACAAAGAGAATCGATTCATTGAAATTGGAGTAACACGGAGGGAAGTTCATATATAC"
-						+ "TATCTAGAAAAGGCCAACAAGATAAAATCAGAGAAGACACACATTCACATATTCTCATTCACTGGAGAGGAAATGGCCACCAAAGCGGACTACACTCTTGACGAAGAGAGTAGGGCAAGAATCAAAACCAGGCTGTTC"
-						+ "ACTATAAGGCAGGAAATGGCCAGTAGGGGTCTATGGGATTCCTTTCGTCAGTCCGAGAGAGGCGAAGAGACAGTTGAAGAAAGATTTGAAATCACAGGAACCATGCGCAGGCTTGCCGACCAAAGTCTCCCACCGAACT"
-						+ "TCTCCAGCCTTGAAAACTTTAGAGCCTATGTGGATGGATTCGAACCGAACGGCTGCATTGAGGGCAAGCTTTCTCAAATGTCAAAAGAAGTGAACGCCCGAATTGAGCCATTTCTGAAGACAACACCACGCCCTCTCA"
-						+ "AACTACCTGACGGGCCTCCCTGCTCTCAACGGTCGAAGTTCCTGCTGATGGATGCCCTTAAATTAAGCATCGAAGACCCGAGTCATGAGGGGGAGGGTATACCGCTATATGATGCAATCAAATGCATGAAGACATTTTT"
-						+ "CGGCTGGAAAGAGCCCAACATTGTAAAACCACATGAAAAGGGCATAAACCCCAATTACCTCCTGGCTTGGAAGCAAGTGCTGGCAGAACTCCAAGATATTGAAAATGAGGAGAAAATCCCAAAAACAAAGAACATGAAGAA"
-						+ "AACGAGCCAGTTGAAGTGGGCACTTGGTGAGAATATGGCACCGGAGAAGGTAGACTTTGAGGATTGCAAGGATGTTAGCGATCTGAGACAGTATGACAGTGATGAACCAGAGTCTAGATCGCTAGCAAGCTGGATCCAGAGT"
-						+ "GAATTCAACAAGGCATGTGAATTGACAGATTCAAGTTGGATTGAGCTTGATGAAATAGGGGAAGACATTGCTCCAATTGAGCACATTGCGAGTATGAGAAGAAACTACTTCACAGCGGAAGTATCCCATTGCAGGGCTACTGAA"
-						+ "TACATAATGAAAGGAGTGTACATAAACACAGCCTTGTTGAATGCATCCTGTGCAGCCATGGATGACTTCCAACTGATTCCAATGATAAGCAAATGCAGGACCAAAGAAGGGAGGCGGAAGACTAATCTGTATGGATTCATTATA"
-						+ "AAAGGAAGATCCCATTTGAGAAATGACACCGATGTAGTAAACTTTGTGAGCATGGAATTCTCTCTTACTGACCCGAGGCTGGAGCCACACAAGTGGGAAAAGTACTGTGTTCTCGAGATAGGAGACATGCTCCTACGGACTGC"
-						+ "AATAGGCCAAGTGTCAAGGCCCATGTTCCTGTATGTGAGAACCAATGGGACTTCCAAGATCAAGATGAAGTGGGGCATGGAAATGAGGCGATGCCTTCTTCAATCCCTTCAACAAATTGAGAGCATGATTGAAGCCGAGTCTTC"
-						+ "TGTCAAAGAGAAGGACATGACCAAAGAATTCTTTGAAAACAAATCAGAAACATGGCCAATTGGAGAGTCACCCAAAGGGGTGGAGGAAGGCTCCATTGGGAAGGTGTGCAGAACCTTACTGGCAAAATCTGTATTCAACAGCCTATA"
-						+ "TGCATCTCCACAACTCGAGGGATTTTCAGCTGAATCAAGAAAGTTGCTTCTCATTGTCCAGGCACTTAGGGACAACCTGGAACCTGGGACCTTCGATCTTGGGGGGCTATATGAAGCAATTGAGGAGTGCCTGATTAATGATCCCTGGG"
-						+ "TTTTGCTTAATGCGTCTTGGTTCAACTCCTTCCTCACACATGCACTGAAATAGTTGTGGCAATGCTACTATTTGCTATCCATACTGTCCAAAA")
-				.build();
+    @Test
+    public void testJillionPairwiseAlignment () {
 
-		ProteinSequence AASequence = new ProteinSequenceBuilder(
-				"MEDFVRQCFNPMIVELAEKTMKEYGEDLKIETNKFAAICTHLEVCFMYSDFHFINEQGESIIVELGDPNALLKHRFEIIEGRDRTMAWTVVNSICNTTGAEKPKFLPDLYDYKENRFIEIGVTRREVHIYYLEKANKI"
-						+ "KSEKTHIHIFSFTGEEMATKADYTLDEESRARIKTRLFTIRQEMASRGLWDSFVSPREEKRQLKKGLKSQEQCASLPTKVSRRTSPALKILEPM")
-				.build();
-
-		Exon exon = determineMissingExons.performJillionPairWiseAlignment(NTRange, AARange, NTSequence,
-				AASequence,Direction.FORWARD);
-		assertEquals(exon.getAlignmentFragment().getProteinSeqRange(), AARange);
-
-	}
-
-	@Test
-	public void testJillionPairwiseAlignment(){
-		ProteinSequence querySequence = new ProteinSequenceBuilder("MEDFVRQCFNPMIVELAEKTMKEYGEDLKIETNKFAAICTHLEVCFMYSDFHFI").build();
-		ProteinSequence subjectSequence = new ProteinSequenceBuilder("MEDFVRQCFNPMIVELAEKTMKEYGEDLKIETNKFAAICTHLEVCFMYSDFHFINEQGESIIVELGDPNALLKHRFEIIEGRDRTMAWTVVNSICNTTGAEKPKF").build();
-		AminoAcidSubstitutionMatrix blosom50 = BlosumMatrices.blosum50();
-		ProteinPairwiseSequenceAlignment actual = PairwiseAlignmentBuilder
-				.createProtienAlignmentBuilder(querySequence, subjectSequence, blosom50).gapPenalty(-8, -8)
-				.build();
-		DirectedRange expected;
-		expected =DirectedRange.create((Range.of(0,53)),Direction.FORWARD );
-		DirectedRange queryRange = actual.getQueryRange();
-		assertEquals(expected,queryRange);
-
-	}
-	
-
+        ProteinSequence querySequence = new ProteinSequenceBuilder("MEDFVRQCFNPMIVELAEKTMKEYGEDLKIETNKFAAICTHLEVCFMYSDFHFI").build();
+        ProteinSequence subjectSequence = new ProteinSequenceBuilder("MEDFVRQCFNPMIVELAEKTMKEYGEDLKIETNKFAAICTHLEVCFMYSDFHFINEQGESIIVELGDPNALLKHRFEIIEGRDRTMAWTVVNSICNTTGAEKPKF").build();
+        AminoAcidSubstitutionMatrix blosom50 = BlosumMatrices.blosum50();
+        ProteinPairwiseSequenceAlignment actual = PairwiseAlignmentBuilder
+                .createProtienAlignmentBuilder(querySequence, subjectSequence, blosom50).gapPenalty(-8, -8)
+                .build();
+        DirectedRange expected;
+        expected = DirectedRange.create(( Range.of(0, 53) ), Direction.FORWARD);
+        DirectedRange queryRange = actual.getQueryRange();
+        assertEquals(expected, queryRange);
+    }
 }

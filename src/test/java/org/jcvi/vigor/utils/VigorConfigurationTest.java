@@ -1,19 +1,20 @@
 package org.jcvi.vigor.utils;
 
-import jdk.nashorn.internal.runtime.options.Option;
 import org.junit.Test;
 
 import java.util.*;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
+
 public class VigorConfigurationTest {
 
     /**
      * Test that default values are accessible and overrideable
      */
     @Test
-    public void testDefaultValues() {
+    public void testDefaultValues () {
+
         VigorConfiguration defaults = new VigorConfiguration("defaults");
 
         String defaultOutputPrefix = "/usr/local/scratch/1234";
@@ -88,7 +89,8 @@ public class VigorConfigurationTest {
                 ));
     }
 
-    private Map.Entry<ConfigurationParameters, String> entryOf(ConfigurationParameters parameter, String value) {
+    private Map.Entry<ConfigurationParameters, String> entryOf ( ConfigurationParameters parameter, String value ) {
+
         return new AbstractMap.SimpleEntry(parameter, value);
     }
 }
