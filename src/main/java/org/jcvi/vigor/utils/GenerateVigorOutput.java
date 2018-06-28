@@ -179,7 +179,7 @@ public class GenerateVigorOutput {
                             bw.newLine();
                             bw.write("\t\t\tproduct\t");
                             // TODO check that there aren't other factors here.
-                            bw.write(VigorUtils.putativeName(product, model.isPartial3p(), model.isPartial5p()));
+                            bw.write(VigorUtils.putativeName(product, match.isFuzzyEnd(), match.isFuzzyBegin()));
                         }
                         bw.newLine();
                         String geneSymbol = model.getGeneSymbol();
@@ -301,7 +301,7 @@ public class GenerateVigorOutput {
                         initialExon.getRange().getBegin(Range.CoordinateSystem.RESIDUE_BASED) + initialExon.getFrame().getFrame() - 1,
                         endCoordinate)));
                 defline.append(String.format(" gene=\"%s\"", model.getGeneSymbol()));
-                defline.append(String.format(" product=\"%s\"", VigorUtils.putativeName(match.getReference().getProduct(), model.isPartial3p(), model.isPartial5p())));
+                defline.append(String.format(" product=\"%s\"", VigorUtils.putativeName(match.getReference().getProduct(), match.isFuzzyEnd(), match.isFuzzyBegin())));
                 String refDB = model.getAlignment().getAlignmentEvidence().getMatpep_db();
                 if (! (refDB == null || refDB.isEmpty() )) {
                     defline.append(String.format(" ref_db=\"%s\"", Paths.get(refDB).getFileName().toString()));
