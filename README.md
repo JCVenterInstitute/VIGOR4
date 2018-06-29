@@ -1,6 +1,7 @@
 # VIGOR - Viral Genome ORF Reader
-VIGOR4 (Viral Genome ORF Reader) is a Java application to predict protein sequences encoded in viral genomes.
-VIGOR4 determines the protein coding sequences by sequence similarity searching against curated viral protein databases.
+VIGOR4 (Viral Genome ORF Reader) is a Java application to predict protein sequences encoded in viral genomes.<br>
+VIGOR4 determines the protein coding sequences by sequence similarity searching against curated viral protein databases.<br>
+
 This project is funded by The National Institute of Allergy and Infectious Diseases (NIH / DHHS) under Contract No.HHSN272201400028C and is a collaboration 
 between Northrop Grumman Health IT, J. Craig Venter Institute, and Vecna Technologies.Research reported in this publication was supported by the National Institute Of Allergy And Infectious Diseases of the 
 National Institutes of Health under Award Number U19AI110819. The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health.
