@@ -18,7 +18,7 @@ This project is funded by the National Institute Of Allergy And Infectious Disea
 #### Build Dependencies
 Vigor4 uses 'Maven' to build & package the program <br>
 #### Runtime Dependencies
-VIGOR4 runs on Unix environment <br>
+VIGOR4 runs on Linux environment <br>
 JAVA8 or above<br>
 [Exonerate2.2.0](https://www.ebi.ac.uk/about/vertebrate-genomics/software/exonerate)<br>
 Vigor Viral databse (Available at [VIGOR_DB](https://github.com/JCVenterInstitute/VIGOR_DB))
