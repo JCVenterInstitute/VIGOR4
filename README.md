@@ -78,6 +78,51 @@ Refer to [INSTALL.md](https://github.com/JCVenterInstitute/VIGOR4/blob/master/IN
  outputprefix.aln   -  alignment  of  predicted  protein  to  reference, and
                                     reference protein to genome
 ```
+#### Currently unimplemented VIGOR3 Command Line Options:
+```
+-a, --autoselect-reference
+                         auto-select the reference  database, equivalent to
+                         '-d any ', default behavior unless overridden by -
+                         d or -G, (-A is  a  synonym for this option). This
+                         feature is not yet implemented
+  -A                     synonym for -a/--autoselect-reference
+  -G <genback file>, --genbank-reference <genback file>
+                         use a  genbank  file  as  the  reference database,
+                         caution:   VIGOR   genbank   parsing   is   fairly
+                         rudimentary   and   many    genbank    files   are
+                         unparseable.   Partial  genes   will  be  ignored.
+                         Note:  genbank   files   do   not   record  enough
+                         information to handle  RNA  editing.  This feature
+                         is not yet implemented.
+  -e EVALUE, --evalue EVALUE
+                         override  the  default  evalue  used  to  identify
+                         potential genes, the default  is usually 1E-5, but
+                         varies by reference database
+  -C, --complete         complete (linear) genome  (do  not  treat edges as
+                         gaps). This feature is currently unimplemented
+  -0, --circular         complete circular  genome  (allows  gene  to  span
+                         origin). This feature is currently unimplemented
+  -f {0,1,2}, --frameshift-sensitivity {0,1,2}
+                         frameshift  sensitivity,   0=ignore   frameshifts,
+                         1=normal (default), 2=sensitive. 
+  -K <value>, --skip-candidate-selection <value>
+                         value=0 skip candidate selection (default=1)
+  -j, --jcvi-rules-off   turn off JCVI  rules,  JCVI  rules  treat gaps and
+                         ambiguity codes  conservatively,  use  this option
+                         to relax  these  constraints  and  produce  a more
+                         speculative annotation
+  -m, --ignore-reference-requirements
+                         ignore      reference      match      requirements
+                         (coverage/identity/similarity),  sometimes  useful
+                         when running VIGOR  to  evaluate  raw  contigs and
+                         rough draft sequences
+  -x <ref_id,...,ref_id>, --ignore-refID <ref_id,...,ref_id>
+                         comma separated list of  reference sequence IDs to
+                         ignore  (useful   when   debugging   a   reference
+                         database). Not currently implemented
+```
+
+
 ## Reference Databases:
 
  | Name  | Description |
