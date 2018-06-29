@@ -34,13 +34,11 @@ public class VigorInputValidationService {
 											   .usage("${prog} -i inputfasta -o outputprefix [ -d refdb ]")
 				.epilog(String.join("\n","Outputs:",
 						"  outputprefix.rpt   - summary of program results",
-						"  outputprefix.stats - run statistics (per genome sequence) in tab-delimited format",
 						"  outputprefix.cds   - fasta file of predicted CDSs",
 						"  outputprefix.pep   - fasta file of predicted proteins",
 						"  outputprefix.tbl   - predicted features in GenBank tbl format",
-						"  outputprefix.aln   - alignment of predicted protein to reference, and reference protein to genome",
-						"  outputprefix.fs    - subset of aln report for those genes with potential sequencing issues",
-						"  outputprefix.at    - potential sequencing issues in tab-delimited format"));
+						"  outputprefix.aln   - alignment of predicted protein to reference, and reference protein to genome"
+						));
 
 		MutuallyExclusiveGroup inputGroup = parser.addMutuallyExclusiveGroup().required(true);
 		MutuallyExclusiveGroup outputGroup = parser.addMutuallyExclusiveGroup().required(true);
