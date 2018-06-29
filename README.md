@@ -26,7 +26,7 @@ Vigor Viral databse (Available at [VIGOR_DB](https://github.com/JCVenterInstitut
 
 Refer to [INSTALL.md](https://github.com/JCVenterInstitute/VIGOR4/blob/master/INSTALL.md) for detailed instructions
 
-#### Running VIGOR4
+## Running VIGOR4
 
 *usage*: vigor4 -i inputfasta -o outputprefix  -d refdb
 
@@ -79,7 +79,7 @@ Refer to [INSTALL.md](https://github.com/JCVenterInstitute/VIGOR4/blob/master/IN
  outputprefix.aln   -  alignment  of  predicted  protein  to  reference, and
                                     reference protein to genome
 ```
-#### Reference Databases:
+## Reference Databases:
 
  | Name  | Description |
  | :-----: | :----------:|
