@@ -365,8 +365,16 @@ public class PeptideService implements PeptideMatchingService {
         PeptideProfile currentReferenceProfile = PeptideProfile.profileFromSequence(current.getReference().getSequence());
 
         long previousEnd = previousRange.getEnd();
-        long currentBegin = currentRange.getBegin();
+        long prevReferenceLength = prev.getReference().getSequence().getLength();
 
+        if (prev.getReferenceRange().getEnd() < prevReferenceLength -1) {
+            previousEnd += ((prevReferenceLength - 1) - prev.getReferenceRange().getEnd());
+        }
+
+        long currentBegin = currentRange.getBegin();
+        if (current.getReferenceRange().getBegin() > 0) {
+            currentBegin -= current.getReferenceRange().getBegin();
+        }
         long start, end;
         if (previousEnd >= currentBegin) {
             // Overlap
@@ -384,15 +392,29 @@ public class PeptideService implements PeptideMatchingService {
         Range[] bestRange = {previousRange, currentRange};
         double bestScore = 0;
         double testScore = 0;
+        double previousWeight = 1.0;
+        double currentWeight = 1.0;
         for (; start < end; start++) {
+            previousWeight = 1.0;
+            currentWeight = 1.0;
+
             // profile and score new sequences
             testPreviousRange = previousRange.toBuilder().setEnd(start).build();
             testCurrentRange = currentRange.toBuilder().setBegin(start+1).build();
             // now we need the sequence for the new test ranges
             testPrevious = subjectSequence.toBuilder().trim(testPreviousRange).build();
             testCurrent = subjectSequence.toBuilder().trim(testCurrentRange).build();
-
-            testScore = scorePeptideByProfile(testPrevious, previousReferenceProfile) + scorePeptideByProfile(testCurrent, currentReferenceProfile);
+            if (start > previousEnd) {
+                previousWeight = .9;
+            } else if (start == previousEnd) {
+                previousWeight = 1.1;
+            }
+            if (start +1 < currentBegin) {
+                currentWeight = .9;
+            } else if (start + 1 == currentBegin) {
+                currentWeight = 1.1;
+            }
+            testScore = scorePeptideByProfile(testPrevious, previousReferenceProfile) * previousWeight + scorePeptideByProfile(testCurrent, currentReferenceProfile) * currentWeight;
             LOGGER.trace("checking {}-{} and {}-{} got score {}",
                     previousRange.getBegin(),start,
                     start+1, currentRange.getEnd(),

@@ -43,6 +43,12 @@ public class VigorInputValidationService {
 						"  outputprefix.at    - potential sequencing issues in tab-delimited format"));
 
 		MutuallyExclusiveGroup inputGroup = parser.addMutuallyExclusiveGroup().required(true);
+		MutuallyExclusiveGroup outputGroup = parser.addMutuallyExclusiveGroup().required(true);
+		MutuallyExclusiveGroup referenceGroup = parser.addMutuallyExclusiveGroup("reference database");
+		MutuallyExclusiveGroup locusGroup = parser.addMutuallyExclusiveGroup("locus tag usage");
+
+		ArgumentGroup unImplementedGroup = parser.addArgumentGroup("unimplemented");
+
 		inputGroup.addArgument("-i","--input-fasta")
 				  .action(Arguments.store())
 				  .dest(CommandLineParameters.inputFile)
@@ -55,7 +61,6 @@ public class VigorInputValidationService {
 				  .metavar("<input fasta>")
 				  .help("synonym for -i/--input-fasta)");
 
-		MutuallyExclusiveGroup outputGroup = parser.addMutuallyExclusiveGroup().required(true);
 		outputGroup.addArgument("-o","--output-prefix")
 				   .action(Arguments.store())
 				   .dest(CommandLineParameters.outputPrefix)
@@ -68,16 +73,12 @@ public class VigorInputValidationService {
 				   .metavar("<output prefix>")
 				   .help("synonym for -o/--output-prefix");
 
-
-		MutuallyExclusiveGroup referenceGroup = parser.addMutuallyExclusiveGroup("reference database");
-
-
-		referenceGroup.addArgument("-a", "--autoselect-reference")
+		unImplementedGroup.addArgument("-a", "--autoselect-reference")
 					  .dest(CommandLineParameters.referenceDB)
 					  .action(Arguments.storeConst())
 					  .setConst("any")
 					  .help("auto-select the reference database, equivalent to '-d any ', default behavior unless overridden by -d or -G, (-A is a synonym for this option). This feature is not yet implemented");
-		referenceGroup.addArgument("-A")
+		unImplementedGroup.addArgument("-A")
 					  .dest(CommandLineParameters.referenceDB)
 					  .action(Arguments.storeConst())
 					  .setConst("any")
@@ -93,14 +94,14 @@ public class VigorInputValidationService {
 					  .action(Arguments.store())
 					  .metavar("<ref db>")
 					  .help("synonym for -d/--reference-database");
-		referenceGroup.addArgument("-G", "--genbank-reference")
+		unImplementedGroup.addArgument("-G", "--genbank-reference")
 					  .metavar("<genback file>")
 					  .dest(CommandLineParameters.genbankDB)
 					  .action(Arguments.store())
 					  .help("use a genbank file as the reference database, caution: VIGOR genbank parsing is fairly rudimentary and many genbank files are unparseable.  Partial genes will be ignored. Note: genbank files do not record enough information to handle RNA editing. This feature is not yet implemented.");
 
 		// TODO what are acceptable values for this
-		parser.addArgument("-e", "--evalue")
+		unImplementedGroup.addArgument("-e", "--evalue")
 			  .action(Arguments.store())
 			  .type(Integer.class)
 			  .dest(CommandLineParameters.eValue)
@@ -112,29 +113,28 @@ public class VigorInputValidationService {
 			  .action(Arguments.store())
 			  .help("minimum coverage of reference product (0-100) required to report a gene, by default coverage is ignored");
 
-		parser.addArgument("-C", "--complete")
+		unImplementedGroup.addArgument("-C", "--complete")
 				   .help("complete (linear) genome (do not treat edges as gaps). This feature is currently unimplemented")
 				   .dest(CommandLineParameters.completeGene)
 				   .action(Arguments.storeTrue());
-		parser.addArgument("-0", "--circular")
+		unImplementedGroup.addArgument("-0", "--circular")
 				   .dest(CommandLineParameters.circularGene)
 				   .help("complete circular genome (allows gene to span origin). This feature is currently unimplemented")
 				   .action(Arguments.storeTrue());
-		parser.addArgument("-f", "--frameshift-sensitivity")
+		unImplementedGroup.addArgument("-f", "--frameshift-sensitivity")
 			  .action(Arguments.store())
 			  .dest(CommandLineParameters.frameshiftSensitivity)
 			  .choices("0","1","2")
 			  .setDefault("1")
 			  .help("frameshift sensitivity, 0=ignore frameshifts, 1=normal (default), 2=sensitive. ");
 
-		parser.addArgument("-K", "--skip-candidate-selection")
+		unImplementedGroup.addArgument("-K", "--skip-candidate-selection")
 			  .choices("0", "1")
 			  .setDefault("1")
 			  .dest(CommandLineParameters.skipSelection)
 			  .metavar("<value>")
 			  .help("value=0 skip candidate selection (default=1)");
 
-		MutuallyExclusiveGroup locusGroup = parser.addMutuallyExclusiveGroup("locus tag usage");
 		// use storeConst rather than storeTrue to avoid automatically setting a default value
 		locusGroup.addArgument("-l", "--no-locus-tags")
 				  .dest(CommandLineParameters.locusTag)
@@ -157,12 +157,12 @@ public class VigorInputValidationService {
 			  .dest(CommandLineParameters.parameters)
 			  .metavar("<parameter=value~~...~~parameter=value>")
 			  .help("~~ separated list of VIGOR parameters to override default values. Use --list-config-parameters to see settable parameters.");
-		parser.addArgument("-j", "--jcvi-rules-off")
+		unImplementedGroup.addArgument("-j", "--jcvi-rules-off")
 			  .action(Arguments.storeFalse())
 			  .dest(CommandLineParameters.jcviRules)
 			  .setDefault(true)
 			  .help("turn off JCVI rules, JCVI rules treat gaps and ambiguity codes conservatively, use this option to relax these constraints and produce a more speculative annotation");
-		parser.addArgument("-m","--ignore-reference-requirements")
+		unImplementedGroup.addArgument("-m","--ignore-reference-requirements")
 			  .action(Arguments.storeTrue())
 			  .dest(CommandLineParameters.ignoreReferenceRequirements)
 			  .help("ignore reference match requirements (coverage/identity/similarity), sometimes useful when running VIGOR to evaluate raw contigs and rough draft sequences");
@@ -177,7 +177,7 @@ public class VigorInputValidationService {
 			  .dest(CommandLineParameters.verbose)
 			  .help("verbose logging (default=terse)");
 
-		parser.addArgument("-x", "--ignore-refID")
+		unImplementedGroup.addArgument("-x", "--ignore-refID")
 			  .action(Arguments.append())
 			  .dest(CommandLineParameters.ignoreRefID)
 			  .metavar("<ref_id,...,ref_id>")
