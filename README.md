@@ -2,9 +2,7 @@
 VIGOR4 (Viral Genome ORF Reader) is a Java application to predict protein sequences encoded in viral genomes.<br>
 VIGOR4 determines the protein coding sequences by sequence similarity searching against curated viral protein databases.<br>
 
-This project is funded by The National Institute of Allergy and Infectious Diseases (NIH / DHHS) under Contract No.HHSN272201400028C and is a collaboration 
-between Northrop Grumman Health IT, J. Craig Venter Institute, and Vecna Technologies.Research reported in this publication was supported by the National Institute Of Allergy And Infectious Diseases of the 
-National Institutes of Health under Award Number U19AI110819. The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health.
+This project is funded by The National Institute of Allergy and Infectious Diseases (NIH / DHHS) under Contract No.HHSN272201400028C and is a collaboration between Northrop Grumman Health IT, J. Craig Venter Institute, Vecna Technologies and supported by the National Institute Of Allergy And Infectious Diseases of the National Institutes of Health under Award Number U19AI110819
 
 ### VIGOR4 currently annotates the following viruses:
 * Influenza (A & B for human, avian, and swine)
@@ -22,7 +20,7 @@ Vigor4 uses 'Maven' to build & package the program <br>
 #### Runtime Dependencies
 VIGOR4 runs on Unix environment <br>
 JAVA8 or above<br>
-Exonerate2.2.0<br>
+[Exonerate2.2.0](https://www.ebi.ac.uk/about/vertebrate-genomics/software/exonerate)<br>
 Vigor Viral databse (Available at [VIGOR_DB](https://github.com/JCVenterInstitute/VIGOR_DB))
 
 Refer to [INSTALL.md](https://github.com/JCVenterInstitute/VIGOR4/blob/master/INSTALL.md) for detailed instructions
