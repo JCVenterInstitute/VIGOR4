@@ -31,7 +31,7 @@ Refer to [INSTALL.md](https://github.com/JCVenterInstitute/VIGOR4/blob/master/IN
 
  Named Arguments:
 ```
-    -h, --help             show this help message and exit
+  -h, --help             show this help message and exit
   -i <input fasta>, --input-fasta <input fasta>
                          path to fasta  file  of  genomic  sequences  to be
                          annotated, (-I is a synonym for this option)
