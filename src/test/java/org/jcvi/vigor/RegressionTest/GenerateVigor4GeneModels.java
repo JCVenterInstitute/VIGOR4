@@ -16,6 +16,8 @@ import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.component.VirusGenome;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.forms.VigorForm;
+import org.jcvi.vigor.service.CommandLineParameters;
+import org.jcvi.vigor.service.VigorInitializationService;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.*;
 import org.junit.runner.RunWith;
@@ -42,6 +44,8 @@ public class GenerateVigor4GeneModels {
     private final static Logger LOGGER = LogManager.getLogger(ValidateVigor4Models.class);
     @Autowired
     Vigor vigor;
+    @Autowired
+    VigorInitializationService vigorInitializationService;
 
     public Map<String, List<Model>> generateModels ( String inputFASTA, String refDB, VigorConfiguration config ) {
 
@@ -59,6 +63,15 @@ public class GenerateVigor4GeneModels {
                         Charset.forName("UTF-8"), openOptions));
             }
             outfiles.get(GenerateVigorOutput.Outfile.GFF3).write("##gff-version 3\n");
+            VigorConfiguration.ValueWithSource unset = VigorConfiguration.ValueWithSource.of("NOTSET", "unknown");
+            LOGGER.info(() -> config.entrySet()
+                    .stream()
+                    .sorted(Comparator.comparing(es -> es.getKey().configKey, String.CASE_INSENSITIVE_ORDER))
+                    .map(e -> String.format("%-50s%s (%s)",
+                            e.getKey().configKey,
+                            e.getValue(),
+                            config.getWithSource(e.getKey()).orElse(unset).source))
+                    .collect(Collectors.joining("\n")));
             NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(new File(inputFASTA))
                     .hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)
                     .build();
@@ -68,6 +81,7 @@ public class GenerateVigor4GeneModels {
             vigorForm.setAlignmentEvidence(alignmentEvidence);
             while (i.hasNext()) {
                 NucleotideFastaRecord record = i.next();
+                vigorInitializationService.initiateReportFile(outputDir, outputPrefix, 0);
                 VirusGenome virusGenome = new VirusGenome(record.getSequence(), record.getComment(), record.getId(),
                         "1".equals(config.get(ConfigurationParameters.CompleteGene)),
                         "1".equals(config.get(ConfigurationParameters.CircularGene)));

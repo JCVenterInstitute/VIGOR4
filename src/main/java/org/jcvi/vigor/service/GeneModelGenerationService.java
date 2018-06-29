@@ -8,6 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.vigor.component.Exon;
+import org.jcvi.vigor.component.Pseudogene;
 import org.jcvi.vigor.component.StructuralSpecifications;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.*;
@@ -56,7 +57,9 @@ public class GeneModelGenerationService {
         });
         processedModels.removeAll(pseudoGenes);
         List<Model> processedPseudoGenes = processPseudogenes(pseudoGenes);
-        FormatVigorOutput.printAllGeneModelsWithScores(processedPseudoGenes, "Pseudogenes");
+        if (processedPseudoGenes.size() > 0 && isDebug) {
+            FormatVigorOutput.printAllGeneModelsWithScores(processedPseudoGenes, "Pseudogenes");
+        }
         processedModels = filterModelsWithStructuralSpecifications(processedModels, form.getConfiguration());
         processedPseudoGenes = filterModelsWithStructuralSpecifications(processedPseudoGenes, form.getConfiguration());
         if (processedModels.size() <= 0) {
