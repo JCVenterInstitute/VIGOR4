@@ -195,12 +195,12 @@ public class PeptideService implements PeptideMatchingService {
 
 
         try (Stream<PeptideMatch> alignments = getAlignments(partialProtein, peptideDatabase).peek(m -> m.setScores(getMatchScores(m)))) {
-            LOGGER.debug(String.format("%-20s     %-4s    %-9s     %-9s   %-6s   %-6s   %-6s   %s",
+            LOGGER.info(String.format("%-20s     %-4s    %-9s     %-9s   %-6s   %-6s   %-6s   %s",
                                        "id","len","sub","qry","%id","%sim","%cov","comment"));
             List<PeptideMatch> bestMatches = getBestMatches(alignments.sorted(bySubjectRange::compare)
                                                                       .filter(filterByScore));
 
-            LOGGER.debug( bestMatches.stream().map(m -> formatMatchForLogging(m)).collect(Collectors.joining("\n","Best matches:\n","\n")));
+            LOGGER.info( bestMatches.stream().map(m -> formatMatchForLogging(m)).collect(Collectors.joining("\n","Best matches:\n","\n")));
             List<MaturePeptideMatch> peptides = new ArrayList<>(bestMatches.size());
             MaturePeptideMatch prev = null;
             MaturePeptideMatch current = null;
@@ -456,9 +456,15 @@ public class PeptideService implements PeptideMatchingService {
 
 
         return MaturePeptideMatch.of(match.protein.getSequence(),
-                referenceProtein,
-                match.alignment.getSubjectRange().asRange(),
-                match.alignment.getQueryRange().asRange());
+                                     referenceProtein,
+                                     match.alignment.getSubjectRange().asRange(),
+                                     match.alignment.getQueryRange().asRange(),
+                                     false,
+                                     false,
+                                     match.scores.identity,
+                                     match.scores.similarity,
+                                     match.scores.coverage
+                                     );
     }
 
     private static double computeSimilarity(double numberOfGaps, double peptideLength, double alignmentLength, double mismatchCount) {

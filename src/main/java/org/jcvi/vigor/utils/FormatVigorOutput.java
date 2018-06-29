@@ -184,21 +184,16 @@ public class FormatVigorOutput {
             identityAvg = identityAvg + scores.get("%identity");
             similarityAvg = similarityAvg + scores.get("%similarity");
             coverageAvg = coverageAvg + scores.get("%coverage");
-            //mature peptides
-           /* if (model.getMaturePeptides() != null && !model.getMaturePeptides().isEmpty()) {
 
-                for (MaturePeptideMatch match : model.getMaturePeptides()) {
-                    match.
-                    content.append(String.format("%-20s", model.getGeneID()+"." ));
-                    content.append(String.format("%-10s",String.format("%.02f",scores.get("%identity"))));
-                    content.append(String.format("%-10s",String.format("%.02f",scores.get("%similarity"))));
-                    content.append(String.format("%-10s",String.format("%.02f",scores.get("%coverage"))));
-                    content.append(String.format("%-10s","0.0"));
-                    content.append(String.format("%-10s","0.0"));
-                    content.append(String.format("%-10s","0.0"));
-                    i++;
-                }
-            }*/
+            for (MaturePeptideMatch match : model.getMaturePeptides()) {
+                content.append(String.format("%-20s", model.getGeneID()+"." ));
+                content.append(String.format("%-10s",String.format("%.02f",match.getIdentity())));
+                content.append(String.format("%-10s",String.format("%.02f",match.getSimilarity())));
+                content.append(String.format("%-10s",String.format("%.02f",match.getCoverage())));
+                content.append(String.format("%-10s","0.0"));
+                content.append(String.format("%-10s","0.0"));
+                content.append(String.format("%-10s","0.0"));
+            }
         }
         totalPepBases = totalPepBases / 3;
         identityAvg = identityAvg / geneModels.size();
