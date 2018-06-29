@@ -85,6 +85,11 @@ public class GenerateVigor4GeneModels {
                 geneModels = geneModels.stream()
                         .sorted(Comparator.comparing(g -> g.getRange(), Range.Comparators.ARRIVAL))
                         .collect(Collectors.toList());
+                vigor.generateAlignmentOutput(outfiles, vigorForm);
+                vigor.generateOutput(vigorForm.getConfiguration(), geneModels, outfiles);
+                vigor.generateGFF3Output(geneModels, outfiles);
+                FormatVigorOutput.printSequenceFeatures(geneModels, "GeneModels");
+                outfiles.flush();
                 vigor4Models.put(virusGenome.getId(), geneModels);
             }
         } catch (DataStoreException e) {
