@@ -6,6 +6,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.datastore.DataStoreProviderHint;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaDataStore;
@@ -22,7 +24,11 @@ import org.jcvi.vigor.service.ViralProteinService;
 import org.jcvi.vigor.service.VirusGenomeService;
 import org.jcvi.vigor.service.exception.ServiceException;
 
+import static org.junit.Assume.assumeTrue;
+
 public class VigorTestUtils {
+
+    private static final Logger LOGGER = LogManager.getLogger(VigorTestUtils.class);
 
     public static List<Alignment> getAlignments ( File inputSeqFile, String refDB, File alignmentOutput, VigorConfiguration config ) throws VigorException {
 
@@ -51,6 +57,17 @@ public class VigorTestUtils {
             return alignments;
         } catch (IOException e) {
             throw new ServiceException(String.format("Problem reading fasta file %s", inputSeqFile), e);
+        }
+    }
+
+    public static void assumeReferenceDB ( String referenceDBPath ) {
+
+        String skipReferenceDBTests = System.getProperty("vigor.skip_reference_db_tests");
+        LOGGER.info("skip reference db tests '{}'", skipReferenceDBTests);
+        LOGGER.info("reference database path is '{}'", referenceDBPath);
+        if (!( skipReferenceDBTests == null || skipReferenceDBTests.isEmpty() )) {
+            LOGGER.info("skipping test if reference database pathis not set");
+            assumeTrue("Skipping test requiring reference database path", !( referenceDBPath == null || referenceDBPath.isEmpty() ));
         }
     }
 }

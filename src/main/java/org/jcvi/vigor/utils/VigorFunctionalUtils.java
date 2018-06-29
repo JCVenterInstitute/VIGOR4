@@ -1,10 +1,13 @@
 package org.jcvi.vigor.utils;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.jillion.core.residue.aa.IupacTranslationTables;
@@ -15,6 +18,8 @@ import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.component.VirusGenome;
 
 public class VigorFunctionalUtils {
+
+    private static final Logger LOGGER = LogManager.getLogger(VigorFunctionalUtils.class);
 
     public static NucleotideSequence getCDS ( Model model ) {
 
@@ -34,27 +39,78 @@ public class VigorFunctionalUtils {
         return FRAMES[ (int) coordinate % 3 ];
     }
 
-    public static double generateScore ( long referenceCoordinate, long pointOfOccurance ) {
+    public static List<Range> proteinRangeToCDSRanges ( Model model, Range proteinRange ) {
 
-        long distance;
-        double score;
-        if (pointOfOccurance - referenceCoordinate < 0) {
-            distance = referenceCoordinate - pointOfOccurance;
-        } else {
-            distance = pointOfOccurance - referenceCoordinate;
+        List<Range> ranges = new ArrayList<>();
+        long pBegin = proteinRange.getBegin() * 3;
+        long proteinNTLength = proteinRange.getLength() * 3;
+        LOGGER.trace("getting ranges for proteinRange {}, ntBegin {}, ntLength {}", proteinRange, pBegin, proteinNTLength);
+        List<Exon> exons = model.getExons();
+        exons.sort(Exon.Comparators.Ascending);
+        boolean inserted = false;
+        long proteinBases = 0;
+        int insertedLength;
+        long exonLength;
+        Range addedRange;
+        long rangeStart;
+        long frameAdjustment;
+        Exon exon;
+        for (int i = 0; i < exons.size() && proteinNTLength > 0; i++) {
+            exon = exons.get(i);
+            frameAdjustment = exon.getFrame().getFrame() - 1;
+            Range exonRange = exon.getRange();
+            long adjustedBegin = exonRange.getBegin() + frameAdjustment;
+            long adjustedEnd = exonRange.getEnd() + frameAdjustment;
+            // TODO should ranges include stop codons?
+            // trim off stop codon unless the model is already partial
+            if (i == exons.size() - 1 && !model.isPartial3p()) {
+                adjustedEnd -= 3;
+            }
+            exonLength = adjustedEnd - adjustedBegin;
+            LOGGER.trace("checking range {}-{}, ntBegin {} against ntcount {}", adjustedBegin, adjustedEnd, pBegin, proteinBases);
+            if (proteinBases + exonLength > pBegin) {
+                rangeStart = adjustedBegin + ( pBegin - proteinBases );
+                if (proteinNTLength > exonLength) {
+                    addedRange = Range.of(rangeStart, adjustedEnd);
+                } else {
+                    addedRange = Range.of(rangeStart, rangeStart + proteinNTLength - 1);
+                }
+                ranges.add(addedRange);
+                LOGGER.trace("added range {}", addedRange);
+                proteinNTLength -= addedRange.getLength();
+                LOGGER.trace("{} bases left to to account for", proteinNTLength > 0 ? proteinNTLength : 0);
+            }
+            proteinBases += exonLength;
+            if (!inserted && model.getInsertRNAEditingRange() != null && model.getInsertRNAEditingRange().getBegin() == adjustedEnd + 1) {
+                insertedLength = model.getAlignment().getViralProtein().getGeneAttributes().getRna_editing().getInsertionString().length();
+                proteinBases += insertedLength;
+                if (proteinBases > pBegin) {
+                    LOGGER.trace("accounting for RNA editing of legth {}", insertedLength);
+                    proteinNTLength -= ( proteinBases - pBegin );
+                }
+                inserted = true;
+            }
         }
-        score = 100f / ( 1f + distance );
-        return score;
+        return ranges;
+    }
+
+    public static double generateProximityScore ( long referenceCoordinate, long pointOfOccurance ) {
+
+        return 100d / ( 1d + Math.abs(pointOfOccurance - referenceCoordinate) );
     }
 
     public static boolean isInFrameWithExon ( List<Exon> exons, long match ) {
 
         boolean isInFrame = false;
+        Range matchRange = Range.of(match);
         for (Exon exon : exons) {
-            if (exon.getRange().intersects(Range.of(match))) {
+            if (exon.getRange().intersects(matchRange)) {
                 Frame exonFrame = getSequenceFrame(exon.getRange().getBegin() + exon.getFrame().getFrame() - 1);
                 Frame matchFrame = getSequenceFrame(match);
-                if (exonFrame.equals(matchFrame)) isInFrame = true;
+                if (exonFrame.equals(matchFrame)) {
+                    isInFrame = true;
+                    break;
+                }
             }
         }
         return isInFrame;
@@ -74,7 +130,7 @@ public class VigorFunctionalUtils {
 
     public static Map<Frame, List<Long>> frameToSequenceFrame ( Map<Frame, List<Long>> rangeFrameMaP ) {
 
-        Map<Frame, List<Long>> outRangeFrameMap = new HashMap<Frame, List<Long>>();
+        Map<Frame, List<Long>> outRangeFrameMap = new HashMap<>();
         for (Frame frame : rangeFrameMaP.keySet()) {
             if (rangeFrameMaP.get(frame).size() > 0) {
                 List<Long> ranges = rangeFrameMaP.get(frame);
@@ -122,7 +178,7 @@ public class VigorFunctionalUtils {
     public static Map<Frame, List<Long>> findStopsInSequenceFrame ( VirusGenome virusGenome, Range searchRange ) {
 
         Map<Frame, List<Long>> stops = IupacTranslationTables.STANDARD.findStops(virusGenome.getSequence().toBuilder(searchRange).build());
-        Map<Frame, List<Long>> stopsTemp = new HashMap<Frame, List<Long>>();
+        Map<Frame, List<Long>> stopsTemp = new HashMap<>();
         final long startCoordinate = searchRange.getBegin();
         for (Frame frame : stops.keySet()) {
             List<Long> temp = stops.get(frame).stream().map(x -> x + startCoordinate).collect(Collectors.toList());

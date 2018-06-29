@@ -2,7 +2,6 @@ package org.jcvi.vigor.utils;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.jcvi.vigor.Vigor;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,7 +13,7 @@ import java.util.regex.Pattern;
 
 public class VigorUtils {
 
-    private static Logger LOGGER = LogManager.getLogger(Vigor.class);
+    private static Logger LOGGER = LogManager.getLogger(VigorUtils.class);
     private static Pattern hypPattern = Pattern.compile("^HYP\\b");
 
     public static String getVigorParametersPath () {
@@ -30,6 +29,11 @@ public class VigorUtils {
         } catch (NumberFormatException e) {
             return false;
         }
+    }
+
+    public static String getDefaultConfigurationPath () {
+
+        return Paths.get("vigorResources", "config", "defaults.ini").toString();
     }
 
     public static String removeQuotes ( String in ) {

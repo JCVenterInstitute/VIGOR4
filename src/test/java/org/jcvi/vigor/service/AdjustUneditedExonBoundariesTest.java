@@ -52,6 +52,7 @@ public class AdjustUneditedExonBoundariesTest {
         File virusGenomeSeqFile = new File(resources.getAbsolutePath() + File.separator + "vigorUnitTestInput/Flua_SpliceSites_Test.fasta");
         File alignmentOutput = new File(resources.getAbsolutePath() + File.separator + "vigorUnitTestInput/Flua_SpliceSites_Test.txt");
         String referenceDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
+        VigorTestUtils.assumeReferenceDB(referenceDBPath);
         assertThat("reference database path must be set", referenceDBPath, is(notNullValue()));
         String referenceDB = Paths.get(referenceDBPath, "flua_db").toString();
         assertTrue("couldn't find reference DB", referenceDB != null);

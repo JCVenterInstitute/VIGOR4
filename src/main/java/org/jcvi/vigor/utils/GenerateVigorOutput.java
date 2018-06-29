@@ -10,10 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.*;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.EnumMap;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class GenerateVigorOutput {
@@ -166,7 +163,14 @@ public class GenerateVigorOutput {
                 bw.newLine();
                 String product;
                 for (MaturePeptideMatch match : model.getMaturePeptides()) {
-                    bw.write(String.format("%s\t%s\t", formatMaturePeptideRange(match)));
+                    bw.write(formatMaturePeptideRange(model,
+                            match,
+                            Arrays.asList(match.getProteinRange()),
+                            Range.CoordinateSystem.RESIDUE_BASED,
+                            "\t",
+                            1,
+                            match.getProtein().getLength()));
+                    bw.write("\t");
                     product = match.getReference().getProduct();
                     if (product.contains("signal")) {
                         // TODO pre-classify type
@@ -198,7 +202,7 @@ public class GenerateVigorOutput {
     private String getGeneCoordinates ( Model model, List<Model> geneModels ) {
 
         long start = model.getExons().get(0).getRange().getBegin() + 1;
-        long end = 0;
+        long end;
         String startString = "";
         String endString = "";
         Model endGeneModel = model;
@@ -281,10 +285,19 @@ public class GenerateVigorOutput {
                     defline.append(" pseudogene");
                 }
                 defline.append(" mat_peptide");
-                defline.append(String.format(" location=%s..%s", formatMaturePeptideRange(match)));
-                // TODO make sure this is correct
+                List<Range> cdsRanges = VigorFunctionalUtils.proteinRangeToCDSRanges(model, match.getProteinRange());
+                // TODO handle truncation etc
+                Exon initialExon = model.getExons().get(0);
+                long endCoordinate = model.getRange().getEnd(Range.CoordinateSystem.RESIDUE_BASED);
+                defline.append(String.format(" location=%s", formatMaturePeptideRange(model,
+                        match,
+                        cdsRanges,
+                        Range.CoordinateSystem.RESIDUE_BASED,
+                        "..",
+                        // start_codon adjustment
+                        initialExon.getRange().getBegin(Range.CoordinateSystem.RESIDUE_BASED) + initialExon.getFrame().getFrame() - 1,
+                        endCoordinate)));
                 defline.append(String.format(" gene=\"%s\"", model.getGeneSymbol()));
-                // TODO this needs some formatting
                 defline.append(String.format(" product=\"%s\"", VigorUtils.putativeName(match.getReference().getProduct(), model.isPartial3p(), model.isPartial5p())));
                 String refDB = model.getAlignment().getAlignmentEvidence().getMatpep_db();
                 if (!( refDB == null || refDB.isEmpty() )) {
@@ -298,16 +311,38 @@ public class GenerateVigorOutput {
         }
     }
 
-    private static Object[] formatMaturePeptideRange ( MaturePeptideMatch match ) {
+    private static String formatMaturePeptideRange ( Model model,
+                                                     MaturePeptideMatch match,
+                                                     List<Range> ranges,
+                                                     Range.CoordinateSystem coordinateSystem, String rangeDelimiter,
+                                                     long startCoordinate,
+                                                     long endCoordinate ) {
 
-        String start = String.valueOf(match.getProteinRange().getBegin(oneBased));
-        if (match.isFuzzyBegin()) {
-            start = "<" + start;
+        List<String> rangeStrings = new ArrayList<>(ranges.size());
+        Exon initialExon = model.getExons().get(0);
+        Exon lastExon = model.getExons().get(model.getExons().size() - 1);
+        for (Range range : ranges) {
+            LOGGER.trace("range {}-{} start {} sframe {} end {} eframe {} 5p {} 3p {}",
+                    range.getBegin(coordinateSystem),
+                    range.getEnd(coordinateSystem),
+                    startCoordinate,
+                    initialExon.getFrame().getFrame(),
+                    endCoordinate,
+                    lastExon.getFrame().getFrame(),
+                    model.isPartial5p(),
+                    model.isPartial3p());
+            long start = range.getBegin(coordinateSystem);
+            String startStr = String.valueOf(start);
+            if (match.isFuzzyBegin() || model.isPartial5p() && start == startCoordinate) {
+                startStr = "<" + startStr;
+            }
+            long end = range.getEnd(coordinateSystem);
+            String endStr = String.valueOf(end);
+            if (match.isFuzzyEnd() || ( model.isPartial3p() && end == endCoordinate )) {
+                endStr = ">" + endStr;
+            }
+            rangeStrings.add(String.format("%s%s%s", startStr, rangeDelimiter, endStr));
         }
-        String end = String.valueOf(match.getProteinRange().getEnd(oneBased));
-        if (match.isFuzzyEnd()) {
-            end = ">" + end;
-        }
-        return new Object[] { start, end };
+        return String.join(",", rangeStrings);
     }
 }

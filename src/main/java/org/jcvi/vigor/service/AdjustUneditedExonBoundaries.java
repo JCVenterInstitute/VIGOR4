@@ -166,8 +166,8 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
                                                 Model newModel = newModelprev.clone();
                                                 newModel.getExons().get(i).setRange(foundUpExonRange);
                                                 newModel.getExons().get(i + 1).setRange(foundDownExonRange);
-                                                double donorScore = VigorFunctionalUtils.generateScore(currentExon.getEnd(), donorRange.getBegin());
-                                                double acceptorScore = VigorFunctionalUtils.generateScore(nextExon.getBegin(), acceptorRange.getBegin());
+                                                double donorScore = VigorFunctionalUtils.generateProximityScore(currentExon.getEnd(), donorRange.getBegin());
+                                                double acceptorScore = VigorFunctionalUtils.generateProximityScore(nextExon.getBegin(), acceptorRange.getBegin());
                                                 double spliceScore = donorScore + acceptorScore;
                                                 Map<String, Double> scores = newModel.getScores();
                                                 if (scores.containsKey("spliceScore")) {

@@ -146,8 +146,8 @@ public class TBLFileParser {
                     } else if (riboSlippageMatcher.matches()) {
                         isRiboSlippage = true;
                     } else if (stopReadThroughMatcher.matches()) {
-                        stopCodonReadThrough = Range.of(Long.parseLong(stopReadThroughMatcher.group(5)),
-                                Long.parseLong(stopReadThroughMatcher.group(7)));
+                        stopCodonReadThrough = Range.of(Long.parseLong(stopReadThroughMatcher.group(6)),
+                                Long.parseLong(stopReadThroughMatcher.group(8)));
                     }
                 }
             }
@@ -162,6 +162,8 @@ public class TBLFileParser {
             }
             tblFile.close();
         } catch (IOException e) {
+            e.printStackTrace();
+        }catch(Exception e){
             e.printStackTrace();
         }
         return models;

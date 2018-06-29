@@ -98,7 +98,7 @@ public class DetermineStop implements DetermineGeneFeatures {
         }
         if (stopsInFrame != null && stopsInFrame.size() > 0) {
             for (Long stop : stopsInFrame) {
-                rangeScoreMap.put(Range.of(stop, stop + 2), VigorFunctionalUtils.generateScore(lastExon.getRange().getEnd(), stop));
+                rangeScoreMap.put(Range.of(stop, stop + 2), VigorFunctionalUtils.generateProximityScore(lastExon.getRange().getEnd(), stop));
             }
             rangeScoreMap
                     .entrySet()

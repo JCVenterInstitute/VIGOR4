@@ -177,7 +177,7 @@ public class DetermineStart implements DetermineGeneFeatures {
                         }
                     }
                     if (isValid) {
-                        rangeScoreMap.put(range, VigorFunctionalUtils.generateScore(firstExon.getRange().getBegin(), range.getBegin()));
+                        rangeScoreMap.put(range, VigorFunctionalUtils.generateProximityScore(firstExon.getRange().getBegin(), range.getBegin()));
                     }
                 }
             }

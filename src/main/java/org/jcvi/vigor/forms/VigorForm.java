@@ -21,7 +21,7 @@ public class VigorForm {
     public VigorForm () throws VigorException {
 
         configuration = LoadDefaultParameters
-                .loadVigorConfiguration("defaults", Thread.currentThread().getContextClassLoader().getResource(VigorUtils.getVigorParametersPath()));
+                .loadVigorConfiguration("defaults", Thread.currentThread().getContextClassLoader().getResource(VigorUtils.getDefaultConfigurationPath()));
     }
 
     public VigorForm ( VigorConfiguration configuration ) {

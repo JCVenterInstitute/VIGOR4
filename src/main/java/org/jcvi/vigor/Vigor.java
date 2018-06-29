@@ -12,6 +12,7 @@ import org.jcvi.jillion.fasta.nt.NucleotideFastaDataStore;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaFileDataStoreBuilder;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaRecord;
 import org.jcvi.vigor.component.Alignment;
+import org.jcvi.vigor.component.PartialProteinSequence;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.component.VirusGenome;
 import org.jcvi.vigor.exception.VigorException;
@@ -55,8 +56,9 @@ public class Vigor {
     public void run ( String... args ) {
 
         Namespace parsedArgs = parseArgs(args);
-        if (parsedArgs.getBoolean(CommandLineParameters.verbose)) {
-            setVerboseLogging();
+        int verbosity = parsedArgs.getInt(CommandLineParameters.verbose);
+        if (verbosity > 0) {
+            setVerboseLogging(verbosity);
             LOGGER.debug("verbose logging enabled");
         }
         String inputFileName = parsedArgs.getString("input_fasta");
@@ -134,10 +136,11 @@ public class Vigor {
         }
     }
 
-    private void setVerboseLogging () {
+    private void setVerboseLogging ( int verbosity ) {
 
+        Level verboseLevel = verbosity == 1 ? Level.DEBUG : Level.TRACE;
         LoggerContext lc = (LoggerContext) LogManager.getContext(false);
-        lc.getConfiguration().getLoggerConfig("org.jcvi.vigor").setLevel(Level.DEBUG);
+        lc.getConfiguration().getLoggerConfig("org.jcvi.vigor").setLevel(verboseLevel);
         lc.updateLoggers();
     }
 
@@ -160,8 +163,10 @@ public class Vigor {
             // TODO check peptides for psuedogenes?
             if (!( maturePeptideDB == null || maturePeptideDB.isEmpty() )) {
                 LOGGER.debug("finding mature peptides for {} using db {}", model.getGeneID(), maturePeptideDB);
-                model.setMaturePeptides(peptideMatchingService.findPeptides(model.getTranslatedSeq(),
-                        new File(maturePeptideDB), scores));
+                model.setMaturePeptides(peptideMatchingService.findPeptides(
+                        PartialProteinSequence.of(model.getTranslatedSeq(), model.isPartial3p(), model.isPartial5p()),
+                        new File(maturePeptideDB),
+                        scores));
                 LOGGER.debug("for {} found {} peptides.", model.getGeneID(), model.getMaturePeptides().size());
             }
         }
