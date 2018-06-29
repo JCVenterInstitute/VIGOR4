@@ -31,52 +31,66 @@ Refer to [INSTALL.md](https://github.com/JCVenterInstitute/VIGOR4/blob/master/IN
 
  Named Arguments:
 ```
-   -h, --help             show this help message and exit
-   -i <input fasta>, --input-fasta <input fasta>
-                            path to fasta  file  of  genomic  sequences  to be
-                            annotated, (-I is a synonym for this option)
-   -I <input fasta>       synonym for -i/--input-fasta)
-   -o <output prefix>, --output-prefix <output prefix>
-                            prefix for outputfile  files,  e.g.  if  the ouput
-                            prefix is  /mydir/anno  VIGOR  will  create output
-                            files /mydir/anno.tbl, /mydir/anno.stats, etc.,
-                            (-O is a synonym for this option)
-   -O <output prefix>     synonym for -o/--output-prefix
-   -c MIN_COVERAGE, --min-coverage MIN_COVERAGE
-                            minimum  coverage  of  reference  product  (0-100)
-                            required to report a gene,  by default coverage is
-                            ignored
-   -P <parameter=value~~...~~parameter=value>, --parameter <parameter=value~~...~~parameter=value>
-                            ~~ separated list of  VIGOR parameters to override
-                            default values.  Use  --list-config-parameters  to
-                            see settable parameters.
-   -s <gene size>, --min-gene-size <gene size>
-                            minimum size (aa) of product  required to report a
-                            gene, by default size is ignored
-   -v, --verbose           verbose logging (default=terse)
-   --list-config-parameters
-                            list available configuration parameters and exit
-   --config-file CONFIG_FILE
-                            config file to use
-   --reference-database-path REFERENCE_DATABASE_PATH
-                            reference database path
-   --virus-config VIRUSSPECIFICCONFIG
-                            Path to virus specific configuration
-   --virus-config-path VIRUSSPECIFICCONFIGPATH
-                            Path  to  directory   containing   virus  specific
-                            config files.
-   --overwrite-output     overwrite existing output files if they exist
-   --temporary-directory  TEMPORARYDIRECTORY
-                            Root directory to use for temporary directories
+    -h, --help             show this help message and exit
+  -i <input fasta>, --input-fasta <input fasta>
+                         path to fasta  file  of  genomic  sequences  to be
+                         annotated, (-I is a synonym for this option)
+  -I <input fasta>       synonym for -i/--input-fasta)
+  -o <output prefix>, --output-prefix <output prefix>
+                         prefix for outputfile  files,  e.g.  if  the ouput
+                         prefix is  /mydir/anno  VIGOR  will  create output
+                         files /mydir/anno.tbl, /mydir/anno.stats, etc., (-
+                         O is a synonym for this option)
+  -O <output prefix>     synonym for -o/--output-prefix
+  -c MIN_COVERAGE, --min-coverage MIN_COVERAGE
+                         minimum  coverage  of  reference  product  (0-100)
+                         required to report a gene,  by default coverage is
+                         ignored
+  -P <parameter=value~~...~~parameter=value>, --parameter <parameter=value~~...~~parameter=value>
+                         ~~ separated list of  VIGOR parameters to override
+                         default values.  Use  --list-config-parameters  to
+                         see settable parameters.
+  -s <gene size>, --min-gene-size <gene size>
+                         minimum size (aa) of product  required to report a
+                         gene, by default size is ignored
+  -v, --verbose          verbose logging (default=terse)
+  --list-config-parameters
+                         list available configuration parameters and exit
+  --config-file CONFIG_FILE
+                         config file to use
+  --reference-database-path REFERENCE_DATABASE_PATH
+                         reference database path
+  --virus-config VIRUSSPECIFICCONFIG
+                         Path to virus specific configuration
+  --virus-config-path VIRUSSPECIFICCONFIGPATH
+                         Path  to  directory   containing   virus  specific
+                         config files.
+  --overwrite-output     overwrite existing output files if they exist
+  --temporary-directory TEMPORARYDIRECTORY
+                         Root directory to use for temporary directories
+
+reference database:
+  -d <ref db>, --reference-database <ref db>
+                         specify the reference database to  be used, (-D is
+                         a synonym for this option)
+  -D <ref db>            synonym for -d/--reference-database
+
+locus tag usage:
+  -l, --no-locus-tags    do  NOT  use   locus_tags   in   TBL  file  output
+                         (incompatible with -L)
+  -L [<locus_tag_prefix>], --locus-tags [<locus_tag_prefix>]
+                         USE locus_tags in  TBL  file  output (incompatible
+                         with -l). If  no  prefix  is  provided, the prefix
+                         "vigor_" will be used.
 ```
 #### Outputs:
 ```
  outputprefix.rpt   -  summary of program results
  outputprefix.cds   -  fasta file of predicted CDSs
- outputprefix.pep  -  fasta file of predicted proteins
- outputprefix.tbl    -  predicted features in GenBank tbl format
+ outputprefix.pep   -  fasta file of predicted proteins
+ outputprefix.tbl   -  predicted features in GenBank tbl format
  outputprefix.aln   -  alignment  of  predicted  protein  to  reference, and
-                                    reference protein to genome
+                       reference protein to genome
 ```
 #### Currently unimplemented VIGOR3 Command Line Options:
 ```
