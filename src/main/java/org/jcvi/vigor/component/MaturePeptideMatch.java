@@ -40,12 +40,15 @@ public class MaturePeptideMatch {
      */
     private boolean fuzzyEnd = false;
 
+    private double identity;
+    private double coverage;
+    private double similarity;
 
     public static MaturePeptideMatch of(ProteinSequence protein, ViralProtein reference, Range proteinRange, Range referenceRange) {
-        return of(protein, reference, proteinRange, referenceRange, false, false);
+        return of(protein, reference, proteinRange, referenceRange, false, false, 0, 0, 0);
     }
 
-    public static MaturePeptideMatch of(ProteinSequence protein, ViralProtein reference, Range proteinRange, Range referenceRange, boolean fuzzyBegin, boolean fuzzyEnd) {
+    public static MaturePeptideMatch of(ProteinSequence protein, ViralProtein reference, Range proteinRange, Range referenceRange, boolean fuzzyBegin, boolean fuzzyEnd, double identity, double similarity, double coverage) {
         MaturePeptideMatch mpMatch = new MaturePeptideMatch();
         mpMatch.setProtein(protein);
         mpMatch.setReference(reference);
@@ -53,6 +56,9 @@ public class MaturePeptideMatch {
         mpMatch.setReferenceRange(referenceRange);
         mpMatch.setFuzzyBegin(fuzzyBegin);
         mpMatch.setFuzzyEnd(fuzzyEnd);
+        mpMatch.setIdentity(identity);
+        mpMatch.setSimilarity(similarity);
+        mpMatch.setCoverage(coverage);
         return mpMatch;
     }
 }

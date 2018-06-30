@@ -16,11 +16,6 @@ public class VigorUtils {
     private static Logger LOGGER = LogManager.getLogger(VigorUtils.class);
     private static Pattern hypPattern = Pattern.compile("^HYP\\b");
 
-    public static String getVigorParametersPath () {
-
-        return Paths.get("vigorResources", "config", "vigor.ini").toString();
-    }
-
     public static boolean is_Integer ( String value ) {
 
         try {
