@@ -39,7 +39,8 @@ public class AlignmentGenerationService {
 
         isDebug = form.getConfiguration().get(ConfigurationParameters.Verbose).equals("true") ? true : false;
         AlignmentEvidence alignmentEvidence = form.getAlignmentEvidence();
-        AlignmentTool alignmentTool = AlignmentToolFactory.getAlignmentTool(alignmentEvidence.getReference_db());
+        String alignmentModule = form.getConfiguration().get(ConfigurationParameters.AlignmentModule);
+        AlignmentTool alignmentTool = AlignmentToolFactory.getAlignmentTool(alignmentModule);
         form.setAlignmentTool(alignmentTool);
         VigorConfiguration vigorConfig = form.getConfiguration();
         String min_gap_length = vigorConfig.get(ConfigurationParameters.SequenceGapMinimumLength);

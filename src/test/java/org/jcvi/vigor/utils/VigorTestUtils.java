@@ -47,7 +47,7 @@ public class VigorTestUtils {
             VigorForm form = new VigorForm();
             alignmentEvidence.setReference_db(refDB);
             form.setAlignmentEvidence(alignmentEvidence);
-            form.setAlignmentTool(AlignmentToolFactory.getAlignmentTool(refDB));
+            form.setAlignmentTool(AlignmentToolFactory.getAlignmentTool("exonerate"));
             List<Alignment> alignments = exonerateService.parseExonerateOutput(alignmentOutput,
                     form, virusGenome, refDB);
             for (int i = 0; i < alignments.size(); i++) {

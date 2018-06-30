@@ -68,7 +68,10 @@ public enum ConfigurationParameters {
     VirusSpecificConfiguration("virusSpecific_config", "Path to virus specific configuration file.", Flags.VERSION_4),
     VirusSpecificConfigurationPath("virusSpecific_config_path","Directory containing virus specific configurations.",Flags.VERSION_4),
 
-    MaxGeneOverlap("max_gene_overlap"," In reporting gene models, maximum overlap of genes allowed.",Flags.VERSION_4);
+    MaxGeneOverlap("max_gene_overlap"," In reporting gene models, maximum overlap of genes allowed.",Flags.VERSION_4),
+
+    AlignmentModule("alignment_module", "Alignment Module");
+
 
     static final Map<String, ConfigurationParameters> byConfigKey;
     static {
