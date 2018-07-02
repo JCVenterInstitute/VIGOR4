@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.vigor.component.*;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -185,14 +186,30 @@ public class FormatVigorOutput {
             similarityAvg = similarityAvg + scores.get("%similarity");
             coverageAvg = coverageAvg + scores.get("%coverage");
 
+            IDGenerator idGenerator = IDGenerator.of(model.getGeneID());
             for (MaturePeptideMatch match : model.getMaturePeptides()) {
-                content.append(String.format("%-20s", model.getGeneID()+"." ));
-                content.append(String.format("%-10s",String.format("%.02f",match.getIdentity())));
-                content.append(String.format("%-10s",String.format("%.02f",match.getSimilarity())));
-                content.append(String.format("%-10s",String.format("%.02f",match.getCoverage())));
+                content.append(String.format("%-20s", idGenerator.next()));
+                content.append(String.format("%-10s",String.format("%.02f",match.getIdentity() * 100)));
+                content.append(String.format("%-10s",String.format("%.02f",match.getSimilarity() * 100)));
+                content.append(String.format("%-10s",String.format("%.02f",match.getCoverage() * 100)));
                 content.append(String.format("%-10s","0.0"));
                 content.append(String.format("%-10s","0.0"));
                 content.append(String.format("%-10s","0.0"));
+                List<Range> cdRanges = VigorFunctionalUtils.proteinRangeToCDSRanges(model, match.getProteinRange());
+
+                content.append(String.format("%-20s",GenerateVigorOutput.formatMaturePeptideRange(model,
+                                                                                                  match,
+                                                                                                  cdRanges,
+                                                                                                  Range.CoordinateSystem.RESIDUE_BASED,
+                                                                                                  "..",
+                                                                                                  model.getRange().getBegin(Range.CoordinateSystem.RESIDUE_BASED) + model.getExons().get(0).getFrame().getFrame() - 1 ,
+                                                                                                  model.getRange().getEnd(Range.CoordinateSystem.RESIDUE_BASED)
+                )));
+                content.append(String.format("%-10s",match.getProteinRange().getLength()));
+                content.append(String.format("%-10s",match.getReference().getSequence().getLength()));
+                content.append(String.format("%-20s",match.getReference().getProteinID()));
+                content.append(String.format("%-20s",String.join("|", model.getGeneSymbol(), VigorUtils.putativeName(match.getReference().getProduct(), match.isFuzzyEnd(), match.isFuzzyBegin()))));
+                content.append(System.lineSeparator());
             }
         }
         totalPepBases = totalPepBases / 3;

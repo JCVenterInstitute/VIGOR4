@@ -316,7 +316,7 @@ public class GenerateVigorOutput {
 
     }
 
-    private static String formatMaturePeptideRange(Model model,
+    public static String formatMaturePeptideRange(Model model,
                                                    MaturePeptideMatch match,
                                                    List<Range> ranges,
                                                    Range.CoordinateSystem coordinateSystem,

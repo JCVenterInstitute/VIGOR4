@@ -195,12 +195,13 @@ public class PeptideService implements PeptideMatchingService {
 
 
         try (Stream<PeptideMatch> alignments = getAlignments(partialProtein, peptideDatabase).peek(m -> m.setScores(getMatchScores(m)))) {
-            LOGGER.info(String.format("%-20s     %-4s    %-9s     %-9s   %-6s   %-6s   %-6s   %s",
-                                       "id","len","sub","qry","%id","%sim","%cov","comment"));
+            String header = String.format("%-20s     %-4s    %-9s     %-9s   %-6s   %-6s   %-6s   %s",
+                                          "id","len","sub","qry","%id","%sim","%cov","comment");
+            LOGGER.debug(header);
             List<PeptideMatch> bestMatches = getBestMatches(alignments.sorted(bySubjectRange::compare)
                                                                       .filter(filterByScore));
 
-            LOGGER.info( bestMatches.stream().map(m -> formatMatchForLogging(m)).collect(Collectors.joining("\n","Best matches:\n","\n")));
+            LOGGER.info( bestMatches.stream().map(m -> formatMatchForLogging(m)).collect(Collectors.joining("\n","Best matches:\n" + header + "\n","\n")));
             List<MaturePeptideMatch> peptides = new ArrayList<>(bestMatches.size());
             MaturePeptideMatch prev = null;
             MaturePeptideMatch current = null;
