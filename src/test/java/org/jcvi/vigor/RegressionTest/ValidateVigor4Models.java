@@ -72,22 +72,22 @@ public class ValidateVigor4Models {
         List<Object[]> testData = new ArrayList<>();
         testData.add(
                 new Object[] {
-                        "vigor3Output/flu/PRODUCTION/flu.tbl",
-                        "vigor3Output/flu/PRODUCTION/flu.pep",
+                        "vigor3Output/flu/flu.tbl",
+                        "vigor3Output/flu/flu.pep",
                         "vigorRegressionTestInput/flua.fasta",
                         "flua_db",
                 });
         testData.add(
                 new Object[] {
-                        "vigor3Output/veev/PRODUCTION/veev.tbl",
-                        "vigor3Output/veev/PRODUCTION/veev.pep",
+                        "vigor3Output/veev/veev.tbl",
+                        "vigor3Output/veev/veev.pep",
                         "vigorRegressionTestInput/veev.fasta",
                         "veev_db",
                 });
         testData.add(
                 new Object[] {
-                        "vigor3Output/veev/PRODUCTION/rsv.tbl",
-                        "vigor3Output/veev/PRODUCTION/rsv.pep",
+                        "vigor3Output/rsv/rsv.tbl",
+                        "vigor3Output/rsv/rsv.pep",
                         "vigorRegressionTestInput/rsv.fasta",
                         "rsv_db",
                 });
