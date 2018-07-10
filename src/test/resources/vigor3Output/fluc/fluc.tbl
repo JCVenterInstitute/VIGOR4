@@ -1,0 +1,19 @@
+>Features gi|298354674|dbj|AB126196.2|
+26	982	gene
+			locus_tag	vigor_CM1
+			gene	CM1
+			pseudogene	unitary
+26	982	misc_feature
+			locus_tag	vigor_CM1
+			gene	CM1
+			product	CM1 protein
+			note	missing exon 2
+731	1150	gene
+			locus_tag	vigor_CM2protein
+			gene	CM2 protein
+731	1150	CDS
+			codon_start	1
+			protein_id	gi_298354674.2
+			locus_tag	vigor_CM2protein
+			gene	CM2 protein
+			product	CM2 protein

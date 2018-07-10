@@ -1,0 +1,198 @@
+HA_1_615	flua_db	21..>615	seg4protA	HA	putative hemagglutinin, N-terminal	T3	1107
+HA_1129_1753	flua_db	<1..593	seg4protA	HA	putative hemagglutinin, C-terminal	T5	1110
+MP	flua_db	1..759	seg7prot1	M1	matrix protein 1	OK	
+MP	flua_db	1..26,715..982	seg7prot2ADR2_S31N	M2	matrix protein 2	OK	
+NA	flua_db	9..1418	seg6prot1A	NA	neuraminidase	OK	
+NP	flua_db	19..1515	seg5prot	NP	nucleocapsid protein	OK	
+NS	flua_db	1..660	seg8prot1G	NS1	nonstructural protein 1	OK	
+NS	flua_db	1..30,503..838	seg8prot2A	NEP	nuclear export protein	OK	
+PA_1_500	flua_db	9..>499	seg3prot	PA	putative polymerase PA, N-terminal	T3	1662
+PA_1_500	flua_db	9..>499	seg3prot2B	PA-X	putative PA-X protein, N-terminal	T3	210
+PA_971_1191	flua_db	<1..>220	seg3prot	PA	putative polymerase PA, fragment	T5	963
+PA_971_1191	flua_db	<1..>220	seg3prot	PA	putative polymerase PA, fragment	T3	969
+PA_1732_2178	flua_db	<1..428	seg3prot	PA	putative polymerase PA, C-terminal	T5	1725
+PB1_1_402	flua_db	13..>401	seg2prot1A	PB1	putative polymerase PB1, N-terminal	T3	1890
+PB1_1_402	flua_db	107..370	seg2prot2M	PB1-F2	PB1-F2 protein	ES	140..142
+PB1_1_402	flua_db	107..370	seg2prot2M	PB1-F2	PB1-F2 protein	ES	278..280
+PB1_1981_2317	flua_db	<1..306	seg2prot1A	PB1	putative polymerase PB1, C-terminal	T5	1968
+PB2_1_539	flua_db	12..>538	Seg1prot	PB2	putative polymerase PB2, N-terminal	T3	1755
+PB2_1767_2307	flua_db	<1..525	Seg1prot	PB2	putative polymerase PB2, C-terminal	T5	1755
+gi|482680053|gb|KC853764.2|	flua_db	1..759	seg7prot1	M1	matrix protein 1	OK	
+gi|482680053|gb|KC853764.2|	flua_db	1..26,715..982	seg7prot2ADR2_S31N	M2	matrix protein 2	OK	
+gi|475662453|gb|KC853766.1|	flua_db	1..1683	seg4prot7F	HA	hemagglutinin	OK	
+gi|475662451|gb|KC853765.1|	flua_db	1..1398	seg6prot1G	NA	neuraminidase	OK	
+gi|260907768|gb|GU060485.1|	flua_db	12..704	seg8prot1I	NS1	nonstructural protein 1	OK	
+gi|260907768|gb|GU060485.1|	flua_db	12..41,514..849	seg8prot2A	NEP	nuclear export protein	OK	
+gi|260907766|gb|GU060484.1|	flua_db	4..1416	seg6prot1G	NA	neuraminidase	OK	
+gi|260907764|gb|GU060483.1|	flua_db	31..1527	seg5prot	NP	nucleocapsid protein	OK	
+gi|260907762|gb|GU060482.1|	flua_db	9..1691	seg4protO	HA	hemagglutinin	OK	
+gi|260907760|gb|GU060481.1|	flua_db	10..582,584..769	seg3prot2A	PA-X	PA-X protein	OK	
+gi|260907760|gb|GU060481.1|	flua_db	10..2160	seg3prot	PA	polymerase PA	OK	
+gi|260907757|gb|GU060480.1|	flua_db	11..2284	seg2prot1B	PB1	polymerase PB1	OK	
+gi|260907757|gb|GU060480.1|	flua_db	105..410	seg2prot2F	PB1-F2	PB1-F2 protein	ES	375..377
+gi|260907755|gb|GU060479.1|	flua_db	14..2293	Seg1prot	PB2	polymerase PB2	OK	
+gi|307141877|gb|HQ244419.1|	flua_db	12..704	seg8prot1I	NS1	nonstructural protein 1	OK	
+gi|307141877|gb|HQ244419.1|	flua_db	12..41,514..849	seg8prot2A	NEP	nuclear export protein	OK	
+gi|307141874|gb|HQ244418.1|	flua_db	11..769	seg7prot1	M1	matrix protein 1	OK	
+gi|307141874|gb|HQ244418.1|	flua_db	11..36,725..>991	seg7prot2A	M2	putative matrix protein 2, N-terminal	T3	3
+gi|307141872|gb|HQ244417.1|	flua_db	4..1416	seg6prot1G	NA	neuraminidase	OK	
+gi|307141870|gb|HQ244416.1|	flua_db	31..1527	seg5prot	NP	nucleocapsid protein	OK	
+gi|307141868|gb|HQ244415.1|	flua_db	8..1690	seg4protO	HA	hemagglutinin	OK	
+gi|307141866|gb|HQ244414.1|	flua_db	10..582,584..769	seg3prot2A	PA-X	PA-X protein	OK	
+gi|307141866|gb|HQ244414.1|	flua_db	10..2160	seg3prot	PA	polymerase PA	OK	
+gi|307141863|gb|HQ244413.1|	flua_db	11..2284	seg2prot1B	PB1	polymerase PB1	OK	
+gi|307141863|gb|HQ244413.1|	flua_db	105..410	seg2prot2F	PB1-F2	PB1-F2 protein	ES	375..377
+gi|307141861|gb|HQ244412.1|	flua_db	14..2293	Seg1prot	PB2	polymerase PB2	OK	
+gi|155016340|gb|CY024825.1|	flua_db	13..2292	Seg1prot	PB2	polymerase PB2	OK	
+gi|155016337|gb|CY024824.1|	flua_db	11..2284	seg2prot1B	PB1	polymerase PB1	OK	
+gi|155016337|gb|CY024824.1|	flua_db	105..410	seg2prot2F	PB1-F2	PB1-F2 protein	ES	375..377
+gi|155016335|gb|CY024823.1|	flua_db	6..578,580..765	seg3prot2A	PA-X	PA-X protein	OK	
+gi|155016335|gb|CY024823.1|	flua_db	6..2156	seg3prot	PA	polymerase PA	OK	
+gi|155016332|gb|CY024822.1|	flua_db	12..704	seg8prot1I	NS1	nonstructural protein 1	OK	
+gi|155016332|gb|CY024822.1|	flua_db	12..41,514..849	seg8prot2A	NEP	nuclear export protein	OK	
+gi|155016330|gb|CY024821.1|	flua_db	31..1527	seg5prot	NP	nucleocapsid protein	OK	
+gi|155016328|gb|CY024820.1|	flua_db	2..1414	seg6prot1G	NA	neuraminidase	OK	
+gi|155016325|gb|CY024819.1|	flua_db	9..767	seg7prot1	M1	matrix protein 1	OK	
+gi|155016325|gb|CY024819.1|	flua_db	9..34,723..990	seg7prot2A	M2	matrix protein 2	OK	
+gi|155016323|gb|CY024818.1|	flua_db	8..1690	seg4prot7A	HA	hemagglutinin	OK	
+gi|525338705|gb|CY147019.1|	flua_db	1..567,569..760	seg3prot2C	PA-X	PA-X protein	OK	
+gi|525338705|gb|CY147019.1|	flua_db	1..2151	seg3prot	PA	polymerase PA	OK	
+gi|514391082|gb|KF277196.1|	flua_db	1..2280	Seg1prot	PB2	polymerase PB2	OK	
+gi|514391079|gb|KF277195.1|	flua_db	1..573,575..760	seg3prot2A	PA-X	PA-X protein	OK	
+gi|514391079|gb|KF277195.1|	flua_db	1..2151	seg3prot	PA	polymerase PA	OK	
+gi|514391076|gb|KF277194.1|	flua_db	1..654	seg8prot1I	NS1	nonstructural protein 1	OK	
+gi|514391076|gb|KF277194.1|	flua_db	1..30,503..838	seg8prot2A	NEP	nuclear export protein	OK	
+gi|514391074|gb|KF277193.1|	flua_db	1..1497	seg5prot	NP	nucleocapsid protein	OK	
+gi|514391071|gb|KF277192.1|	flua_db	1..759	seg7prot1	M1	matrix protein 1	OK	
+gi|514391071|gb|KF277192.1|	flua_db	1..26,715..982	seg7prot2ADR2_S31N	M2	matrix protein 2	OK	
+gi|513857262|gb|KF261988.1|	flua_db	1..1683	seg4prot7F	HA	hemagglutinin	OK	
+gi|482578116|gb|KC896766.1|	flua_db	1..1497	seg5prot	NP	nucleocapsid protein	OK	
+gi|480326663|gb|KC896768.1|	flua_db	1..573,575..760	seg3prot2A	PA-X	PA-X protein	OK	
+gi|480326663|gb|KC896768.1|	flua_db	1..2151	seg3prot	PA	polymerase PA	OK	
+gi|479285790|gb|KC896770.1|	flua_db	1..2280	Seg1prot	PB2	polymerase PB2	OK	
+gi|479285787|gb|KC896769.1|	flua_db	1..2274	seg2prot1B	PB1	polymerase PB1	OK	
+gi|442796555|gb|KC422455.1|	flua_db	25..597,599..724	seg3prot2A	PA-X	PA-X protein	OK	
+gi|442796555|gb|KC422455.1|	flua_db	25..2175	seg3prot	PA	polymerase PA	OK	
+gi|442796551|gb|KC422454.1|	flua_db	25..2298	seg2prot1B	PB1	polymerase PB1	OK	
+gi|442796551|gb|KC422454.1|	flua_db	233..391	seg2prot2H_putative	PB1-F2	PB1-F2 protein	OK	
+gi|442796549|gb|KC422453.1|	flua_db	28..2307	Seg1prot	PB2	polymerase PB2	OK	
+gi|410699083|gb|JX963597.1|	flua_db	1..30,503..>693	seg8prot2A	NEP	putative nuclear export protein, N-terminal	T3	147
+gi|410699083|gb|JX963597.1|	flua_db	1..693	seg8prot1I	NS1	nonstructural protein 1	OK	
+gi|410699080|gb|JX963596.1|	flua_db	1..759	seg7prot1	M1	matrix protein 1	OK	
+gi|410699080|gb|JX963596.1|	flua_db	1..26,715..982	seg7prot2ADR2_S31N	M2	matrix protein 2	OK	
+gi|410699078|gb|JX963595.1|	flua_db	1..1497	seg5prot	NP	nucleocapsid protein	OK	
+gi|410699076|gb|JX963594.1|	flua_db	1..573,575..760	seg3prot2A	PA-X	PA-X protein	OK	
+gi|410699076|gb|JX963594.1|	flua_db	1..2151	seg3prot	PA	polymerase PA	OK	
+gi|410699074|gb|JX963593.1|	flua_db	1..2280	Seg1prot	PB2	polymerase PB2	OK	
+gi|410699072|gb|JX963592.1|	flua_db	1..2274	seg2prot1B	PB1	polymerase PB1	OK	
+gi|410699072|gb|JX963592.1|	flua_db	209..367	seg2prot2H_putative	PB1-F2	PB1-F2 protein	OK	
+gi|410699054|gb|JX963599.1|	flua_db	1..1410	seg6prot1A	NA	neuraminidase	OK	
+gi|410699052|gb|JX963598.1|	flua_db	1..1701	seg4protA	HA	hemagglutinin	OK	
+gi|410699047|gb|JX963611.1|	flua_db	1..30,503..>693	seg8prot2A	NEP	putative nuclear export protein, N-terminal	T3	147
+gi|410699047|gb|JX963611.1|	flua_db	1..693	seg8prot1I	NS1	nonstructural protein 1	OK	
+gi|410699044|gb|JX963610.1|	flua_db	1..759	seg7prot1	M1	matrix protein 1	OK	
+gi|410699044|gb|JX963610.1|	flua_db	1..26,715..982	seg7prot2ADR2_S31N	M2	matrix protein 2	OK	
+gi|410699042|gb|JX963609.1|	flua_db	1..573,575..760	seg3prot2A	PA-X	PA-X protein	OK	
+gi|410699042|gb|JX963609.1|	flua_db	1..2151	seg3prot	PA	polymerase PA	OK	
+gi|410699040|gb|JX963608.1|	flua_db	1..2280	Seg1prot	PB2	polymerase PB2	OK	
+gi|410699038|gb|JX963607.1|	flua_db	1..2274	seg2prot1B	PB1	polymerase PB1	OK	
+gi|410699038|gb|JX963607.1|	flua_db	209..367	seg2prot2H_putative	PB1-F2	PB1-F2 protein	OK	
+gi|410699036|gb|JX963606.1|	flua_db	1..1410	seg6prot1A	NA	neuraminidase	OK	
+gi|410699034|gb|JX963605.1|	flua_db	1..1701	seg4protA	HA	hemagglutinin	OK	
+gi|408830545|gb|JX860691.1|	flua_db	1..1497	seg5prot	NP	nucleocapsid protein	OK	
+gi|459254143|gb|KC616698.1|	flua_db	1..2274	seg2prot1B	PB1	polymerase PB1	OK	
+gi|459254143|gb|KC616698.1|	flua_db	95..400	seg2prot2F	PB1-F2	PB1-F2 protein	ES	128..130
+gi|459254143|gb|KC616698.1|	flua_db	95..400	seg2prot2F	PB1-F2	PB1-F2 protein	ES	266..268
+gi|459254143|gb|KC616698.1|	flua_db	95..400	seg2prot2F	PB1-F2	PB1-F2 protein	ES	356..358
+gi|459254143|gb|KC616698.1|	flua_db	95..400	seg2prot2F	PB1-F2	PB1-F2 protein	ES	365..367
+gi|459254069|gb|KC616678.1|	flua_db	1..2274	seg2prot1B	PB1	polymerase PB1	OK	
+gi|459254069|gb|KC616678.1|	flua_db	95..367	seg2prot2M	PB1-F2	PB1-F2 protein	ES	332..334
+gi|451330202|gb|KC508584.1|	flua_db	1..2274	seg2prot1B	PB1	polymerase PB1	OK	
+gi|451330202|gb|KC508584.1|	flua_db	95..400	seg2prot2F	PB1-F2	PB1-F2 protein	ES	128..130
+gi|451330202|gb|KC508584.1|	flua_db	95..400	seg2prot2F	PB1-F2	PB1-F2 protein	ES	356..358
+gi|451330202|gb|KC508584.1|	flua_db	95..400	seg2prot2F	PB1-F2	PB1-F2 protein	ES	365..367
+gi|451330113|gb|KC508546.1|	flua_db	1..2274	seg2prot1B	PB1	polymerase PB1	OK	
+gi|451330113|gb|KC508546.1|	flua_db	95..400	seg2prot2F	PB1-F2	PB1-F2 protein	ES	128..130
+gi|451330113|gb|KC508546.1|	flua_db	95..400	seg2prot2F	PB1-F2	PB1-F2 protein	ES	266..268
+gi|451330113|gb|KC508546.1|	flua_db	95..400	seg2prot2F	PB1-F2	PB1-F2 protein	ES	356..358
+gi|451330113|gb|KC508546.1|	flua_db	95..400	seg2prot2F	PB1-F2	PB1-F2 protein	ES	365..367
+gi|451330091|gb|KC508536.1|	flua_db	1..2274	seg2prot1B	PB1	polymerase PB1	OK	
+gi|451330091|gb|KC508536.1|	flua_db	95..400	seg2prot2F	PB1-F2	PB1-F2 protein	ES	128..130
+gi|451330091|gb|KC508536.1|	flua_db	95..400	seg2prot2F	PB1-F2	PB1-F2 protein	ES	266..268
+gi|451330091|gb|KC508536.1|	flua_db	95..400	seg2prot2F	PB1-F2	PB1-F2 protein	ES	365..367
+gi|445069079|gb|KC464602.1|	flua_db	1..654	seg8prot1D	NS1	non-structual protein 1	OK	
+gi|445069079|gb|KC464602.1|	flua_db	1..30,503..838	seg8prot2A	NEP	nuclear export protein	OK	
+gi|445069076|gb|KC464601.1|	flua_db	1..759	seg7prot1	M1	matrix protein 1	OK	
+gi|445069076|gb|KC464601.1|	flua_db	1..26,715..982	seg7prot2ADR2_S31N	M2	matrix protein 2	OK	
+gi|445069074|gb|KC464600.1|	flua_db	1..1401	seg6prot1B	NA	neuraminidase	OK	
+gi|445069072|gb|KC464599.1|	flua_db	1..1497	seg5prot	NP	nucleocapsid protein	OK	
+gi|445069070|gb|KC464598.1|	flua_db	1..1683	seg4protJ	HA	hemagglutinin	OK	
+gi|445069068|gb|KC464597.1|	flua_db	1..573,575..760	seg3prot2A	PA-X	PA-X protein	OK	
+gi|445069068|gb|KC464597.1|	flua_db	1..2151	seg3prot	PA	polymerase PA	OK	
+gi|445069066|gb|KC464596.1|	flua_db	1..2274	seg2prot1B	PB1	polymerase PB1	OK	
+gi|402485390|gb|JX465644.1|	flua_db	27..719	seg8prot1I	NS1	nonstructural protein 1	OK	
+gi|402485390|gb|JX465644.1|	flua_db	27..56,529..864	seg8prot2A	NEP	nuclear export protein	OK	
+gi|402485387|gb|JX465643.1|	flua_db	26..784	seg7prot1	M1	matrix protein 1	OK	
+gi|402485387|gb|JX465643.1|	flua_db	26..51,740..1007	seg7prot2A	M2	matrix protein 2	OK	
+gi|402485385|gb|JX465642.1|	flua_db	21..1439	seg6prot1D	NA	neuraminidase	OK	
+gi|402485383|gb|JX465641.1|	flua_db	46..1542	seg5prot	NP	nucleocapsid protein	OK	
+gi|402485381|gb|JX465640.1|	flua_db	18..1718	seg4protF	HA	hemagglutinin	OK	
+gi|402485379|gb|JX465639.1|	flua_db	25..597,599..784	seg3prot2A	PA-X	PA-X protein	OK	
+gi|402485379|gb|JX465639.1|	flua_db	25..2175	seg3prot	PA	polymerase PA	OK	
+gi|402485375|gb|JX465638.1|	flua_db	25..2298	seg2prot1B	PB1	polymerase PB1	OK	
+gi|402485373|gb|JX465637.1|	flua_db	28..2307	Seg1prot	PB2	polymerase PB2	OK	
+gi|395628603|gb|JX195354.1|	flua_db	1..2274	seg2prot1B	PB1	polymerase PB1	OK	
+gi|395628603|gb|JX195354.1|	flua_db	209..367	seg2prot2H_putative	PB1-F2	PB1-F2 protein	OK	
+gi|356471843|gb|JN869514.1|	flua_db	1..2280	Seg1prot	PB2	polymerase PB2	OK	
+gi|356471841|gb|JN869515.1|	flua_db	1..2274	seg2prot1B	PB1	polymerase PB1	OK	
+gi|356471839|gb|JN869516.1|	flua_db	1..573,575..760	seg3prot2A	PA-X	PA-X protein	OK	
+gi|356471839|gb|JN869516.1|	flua_db	1..2151	seg3prot	PA	polymerase PA	OK	
+gi|356471837|gb|JN869517.1|	flua_db	1..1497	seg5prot	NP	nucleocapsid protein	OK	
+gi|356471835|gb|JN869518.1|	flua_db	1..1410	seg6prot1B	NA	neuraminidase	OK	
+gi|356471832|gb|JN869519.1|	flua_db	1..759	seg7prot1	M1	matrix protein 1	OK	
+gi|356471832|gb|JN869519.1|	flua_db	1..26,715..982	seg7prot2A	M2	matrix protein 2	OK	
+gi|356471829|gb|JN869520.1|	flua_db	1..654	seg8prot1I	NS1	nonstructural protein 1	OK	
+gi|356471829|gb|JN869520.1|	flua_db	1..30,503..838	seg8prot2A	NEP	nuclear export protein	OK	
+gi|401715778|gb|JX442027.1|	flua_db	1..2274	seg2prot1B	PB1	polymerase PB1	OK	
+gi|401715778|gb|JX442027.1|	flua_db	95..400	seg2prot2F	PB1-F2	PB1-F2 protein	ES	128..130
+gi|401715778|gb|JX442027.1|	flua_db	95..400	seg2prot2F	PB1-F2	PB1-F2 protein	ES	266..268
+gi|401715778|gb|JX442027.1|	flua_db	95..400	seg2prot2F	PB1-F2	PB1-F2 protein	ES	356..358
+gi|401715778|gb|JX442027.1|	flua_db	95..400	seg2prot2F	PB1-F2	PB1-F2 protein	ES	365..367
+gi|395485889|gb|JX151014.1|	flua_db	29..2308	Seg1prot	PB2	polymerase PB2	OK	
+gi|395485886|gb|JX151013.1|	flua_db	25..2298	seg2prot1B	PB1	polymerase PB1	OK	
+gi|395485884|gb|JX151012.1|	flua_db	19..591,593..778	seg3prot2A	PA-X	PA-X protein	OK	
+gi|395485884|gb|JX151012.1|	flua_db	19..2169	seg3prot	PA	polymerase PA	OK	
+gi|395485881|gb|JX151011.1|	flua_db	27..719	seg8prot1I	NS1	nonstructural protein 1	OK	
+gi|395485881|gb|JX151011.1|	flua_db	27..56,529..864	seg8prot2A	NEP	nuclear export protein	OK	
+gi|395485877|gb|JX151009.1|	flua_db	48..1460	seg6prot1D	NA	neuraminidase	OK	
+gi|395485874|gb|JX151008.1|	flua_db	26..784	seg7prot1	M1	matrix protein 1	OK	
+gi|395485874|gb|JX151008.1|	flua_db	26..51,740..1007	seg7prot2A	M2	matrix protein 2	OK	
+gi|395485872|gb|JX151007.1|	flua_db	31..1725	seg4protG	HA	hemagglutinin	OK	
+gi|393192451|gb|JX163260.1|	flua_db	27..719	seg8prot1I	NS1	nonstructural protein 1	OK	
+gi|393192451|gb|JX163260.1|	flua_db	27..56,529..864	seg8prot2A	NEP	nuclear export protein	OK	
+gi|393192446|gb|JX163258.1|	flua_db	20..1429	seg6prot1B	NA	neuraminidase	OK	
+gi|393192435|gb|JX163253.1|	flua_db	28..2307	Seg1prot	PB2	polymerase PB2	OK	
+gi|391886505|gb|JX096508.1|	flua_db	1..693	seg8prot1I	NS1	nonstructural protein 1	OK	
+gi|391886505|gb|JX096508.1|	flua_db	1..30,503..838	seg8prot2A	NEP	nuclear export protein	OK	
+gi|391886502|gb|JX096507.1|	flua_db	29..787	seg7prot1	M1	matrix protein 1	OK	
+gi|391886502|gb|JX096507.1|	flua_db	29..54,743..1010	seg7prot2A	M2	matrix protein 2	OK	
+gi|391886496|gb|JX096504.1|	flua_db	1..1701	seg4prot3A	HA	hemagglutinin	OK	
+gi|391886494|gb|JX096503.1|	flua_db	1..573,575..760	seg3prot2A	PA-X	PA-X protein	OK	
+gi|391886494|gb|JX096503.1|	flua_db	1..2151	seg3prot	PA	polymerase PA	OK	
+gi|391886491|gb|JX096502.1|	flua_db	24..2297	seg2prot1B	PB1	polymerase PB1	OK	
+gi|391886489|gb|JX096501.1|	flua_db	1..2280	Seg1prot	PB2	polymerase PB2	OK	
+gi|395485869|gb|JX175257.1|	flua_db	27..719	seg8prot1I	NS1	nonstructural protein 1	OK	
+gi|395485869|gb|JX175257.1|	flua_db	27..56,529..864	seg8prot2A	NEP	nuclear export protein	OK	
+gi|395485866|gb|JX175256.1|	flua_db	26..784	seg7prot1	M1	matrix protein 1	OK	
+gi|395485866|gb|JX175256.1|	flua_db	26..51,740..1007	seg7prot2A	M2	matrix protein 2	OK	
+gi|395485864|gb|JX175255.1|	flua_db	1..1410	seg6prot1B	NA	neuraminidase	OK	
+gi|395485862|gb|JX175254.1|	flua_db	46..1542	seg5prot	NP	nucleocapsid protein	OK	
+gi|395485860|gb|JX175253.1|	flua_db	1..1701	seg4prot3A	HA	hemagglutinin	OK	
+gi|395485858|gb|JX175252.1|	flua_db	25..597,599..784	seg3prot2A	PA-X	PA-X protein	OK	
+gi|395485858|gb|JX175252.1|	flua_db	25..2175	seg3prot	PA	polymerase PA	OK	
+gi|395485855|gb|JX175251.1|	flua_db	25..2298	seg2prot1B	PB1	polymerase PB1	OK	
+gi|395485853|gb|JX175250.1|	flua_db	28..2307	Seg1prot	PB2	polymerase PB2	OK	
+gi|388564036|gb|JQ990152.1|	flua_db	27..719	seg8prot1Ib	NS1	nonstructural protein 1	OK	
+gi|388564036|gb|JQ990152.1|	flua_db	27..56,529..864	seg8prot2A	NEP	nuclear export protein	OK	
+gi|388564033|gb|JQ990151.1|	flua_db	26..784	seg7prot1	M1	matrix protein 1	OK	
+gi|388564033|gb|JQ990151.1|	flua_db	26..51,740..1007	seg7prot2A	M2	matrix protein 2	OK	
