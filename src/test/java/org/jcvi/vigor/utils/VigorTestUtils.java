@@ -44,7 +44,7 @@ public class VigorTestUtils {
             virusGenome.setSequenceGaps(sequenceGaps);
             // create alignment evidence
             AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
-            VigorForm form = new VigorForm();
+            VigorForm form = new VigorForm(config);
             alignmentEvidence.setReference_db(refDB);
             form.setAlignmentEvidence(alignmentEvidence);
             form.setAlignmentTool(AlignmentToolFactory.getAlignmentTool("exonerate"));
