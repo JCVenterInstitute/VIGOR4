@@ -13,6 +13,7 @@ import org.jcvi.vigor.utils.*;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -231,10 +232,22 @@ public class VigorInitializationService {
 		    config_file = System.getenv("VIGOR_CONFIG_FILE");
         }
 		if (! (config_file == null || config_file.isEmpty()) ) {
+			if (config_file.startsWith("~")) {
+				try {
+					config_file = VigorUtils.expandTilde(config_file);
+				} catch (IOException e) {
+					throw new VigorException(String.format("problem expanding ~ in config file %s", config_file), e);
+				}
+			}
+			File config_path = new File(config_file).getAbsoluteFile();
+			if (! config_path.exists()) {
+				throw new VigorException(String.format("config file %s does not exist", config_path.toString()));
+			} else if (! config_path.canRead()) {
+				throw new VigorException(String.format("config file %s is not readable", config_path.toString()));
+			}
 		    LOGGER.debug("loading config file {}", config_file);
 		    // use the file as configuration name so it's unambigious
-			VigorConfiguration configFileConfiguration = LoadDefaultParameters.loadVigorConfiguration(config_file,
-					new File(config_file));
+			VigorConfiguration configFileConfiguration = LoadDefaultParameters.loadVigorConfiguration(config_file,config_path);
 			configurations.add(configFileConfiguration);
 		}
 

@@ -3,8 +3,10 @@ package org.jcvi.vigor.utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -82,5 +84,10 @@ public class VigorUtils {
         } catch (IOException e) {
             LOGGER.warn("Error deleting temporary working directory {}", workspace);
         }
+    }
+
+    // TODO this is a security issue but it requires the user's assistance in that they pass the file path
+    public static String expandTilde(String path) throws IOException {
+        return new BufferedReader(new InputStreamReader(Runtime.getRuntime().exec(new String[] {"/bin/bash", "-c", "echo " + path}).getInputStream())).readLine();
     }
 }
