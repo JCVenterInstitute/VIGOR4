@@ -64,6 +64,16 @@ public class Vigor {
             LOGGER.debug("verbose logging enabled");
         }
         String inputFileName = parsedArgs.getString("input_fasta");
+        try {
+            VigorForm vigorForm = getVigorForm(parsedArgs);
+            generateAnnotations(inputFileName, vigorForm);
+        } catch (VigorException e) {
+            LOGGER.error(e);
+            System.exit(1);
+        }
+    }
+
+    public void generateAnnotations(String inputFileName, VigorForm vigorForm) throws VigorException {
         File inputFile = new File(inputFileName);
         if (!inputFile.exists()) {
             LOGGER.error("input file {} doesn't exists.", inputFileName);
@@ -73,17 +83,16 @@ public class Vigor {
             System.exit(1);
         }
         try {
-            VigorForm vigorForm = getVigorForm(parsedArgs);
             VigorConfiguration vigorParameters = vigorForm.getConfiguration();
             VigorConfiguration.ValueWithSource unset = VigorConfiguration.ValueWithSource.of("NOTSET", "unknown");
             LOGGER.info(() -> vigorParameters.entrySet()
-                    .stream()
-                    .sorted(Comparator.comparing(es -> es.getKey().configKey, String.CASE_INSENSITIVE_ORDER))
-                    .map(e -> String.format("%-50s%s (%s)",
-                            e.getKey().configKey,
-                            e.getValue(),
-                            vigorParameters.getWithSource(e.getKey()).orElse(unset).source))
-                    .collect(Collectors.joining("\n")));
+                                             .stream()
+                                             .sorted(Comparator.comparing(es -> es.getKey().configKey, String.CASE_INSENSITIVE_ORDER))
+                                             .map(e -> String.format("%-50s%s (%s)",
+                                                                     e.getKey().configKey,
+                                                                     e.getValue(),
+                                                                     vigorParameters.getWithSource(e.getKey()).orElse(unset).source))
+                                             .collect(Collectors.joining("\n")));
             // TODO check file exists and is readable
             // TODO check output directory and permissions
             NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(inputFile)
@@ -95,31 +104,17 @@ public class Vigor {
             String outputPrefix = vigorForm.getConfiguration().get(ConfigurationParameters.OutputPrefix);
             writeEffectiveConfig(outputDir, vigorParameters);
             try (GenerateVigorOutput.Outfiles outfiles = getOutfiles(outputDir,
-                    outputPrefix,
-                    vigorForm.getConfiguration().get(ConfigurationParameters.OverwriteOutputFiles) == "true")) {
+                                                                     outputPrefix,
+                                                                     vigorForm.getConfiguration().get(ConfigurationParameters.OverwriteOutputFiles) == "true")) {
                 outfiles.get(GenerateVigorOutput.Outfile.GFF3).write("##gff-version 3\n");
                 Iterator<NucleotideFastaRecord> i = dataStore.records().iterator();
                 while (i.hasNext()) {
                     NucleotideFastaRecord record = i.next();
-                    VirusGenome virusGenome = new VirusGenome(record.getSequence(), record.getComment(), record.getId(),
-                            "1".equals(vigorParameters.get(ConfigurationParameters.CompleteGene)),
-                            "1".equals(vigorParameters.get(ConfigurationParameters.CircularGene)));
-                    // Call referenceDBGenerationService methods to generate alignmentEvidence.
-                    List<Alignment> alignments = generateAlignments(virusGenome, vigorForm);
-                    LOGGER.info("{} alignment(s) found for sequence {}", alignments.size(), record.getId());
-                    List<Model> candidateModels = generateModels(alignments, vigorForm);
-                    LOGGER.info("{} candidate model(s) found for sequence {}", candidateModels.size(), record.getId());
-                    List<Model> geneModels = generateGeneModels(candidateModels, vigorForm);
-                    LOGGER.info("{} gene model(s) found for sequence {}", geneModels.size(), record.getId());
-                    geneModels = findPeptides(vigorParameters, geneModels);
+                    List<Model> geneModels = modelsFromNucleotideRecord(record, vigorForm, vigorParameters);
                     if (geneModels.isEmpty()) {
                         LOGGER.warn("No gene models generated for sequence {}", record.getId());
                         continue;
                     }
-                    // sort by begin,end
-                    geneModels = geneModels.stream()
-                            .sorted(Comparator.comparing(g -> g.getRange(), Range.Comparators.ARRIVAL))
-                            .collect(Collectors.toList());
                     generateAlignmentOutput(outfiles, vigorForm);
                     generateOutput(vigorParameters, geneModels, outfiles);
                     generateGFF3Output(geneModels, outfiles);
@@ -128,15 +123,28 @@ public class Vigor {
                 }
             }
         } catch (DataStoreException e) {
-            LOGGER.error(String.format("problem reading input file %s", inputFileName), e);
-            System.exit(1);
+            throw new VigorException(String.format("problem reading input file %s", inputFileName), e);
         } catch (IOException e) {
-            LOGGER.error("file problem", e);
-            System.exit(1);
-        } catch (VigorException e) {
-            LOGGER.error(e);
-            System.exit(1);
+            throw new VigorException("File issue", e);
         }
+    }
+
+    public List<Model> modelsFromNucleotideRecord(NucleotideFastaRecord record, VigorForm vigorForm, VigorConfiguration vigorParameters) throws VigorException {
+        VirusGenome virusGenome = new VirusGenome(record.getSequence(), record.getComment(), record.getId(),
+                                                  "1".equals(vigorParameters.get(ConfigurationParameters.CompleteGene)),
+                                                  "1".equals(vigorParameters.get(ConfigurationParameters.CircularGene)));
+        List<Alignment> alignments = generateAlignments(virusGenome, vigorForm);
+        LOGGER.info("{} alignment(s) found for sequence {}", alignments.size(), record.getId());
+        List<Model> candidateModels = generateModels(alignments, vigorForm);
+        LOGGER.info("{} candidate model(s) found for sequence {}", candidateModels.size(), record.getId());
+        List<Model> geneModels = generateGeneModels(candidateModels, vigorForm);
+        LOGGER.info("{} gene model(s) found for sequence {}", geneModels.size(), record.getId());
+        geneModels = findPeptides(vigorParameters, geneModels);
+        // sort by begin,end
+        return geneModels.stream()
+                         .sorted(Comparator.comparing(g -> g.getRange(), Range.Comparators.ARRIVAL))
+                         .collect(Collectors.toList());
+
     }
 
     private void setVerboseLogging ( int verbosity ) {
