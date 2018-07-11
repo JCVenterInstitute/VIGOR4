@@ -23,10 +23,12 @@ import org.jcvi.vigor.utils.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.*;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -91,6 +93,7 @@ public class Vigor {
             // TODO checkout output earlier.
             String outputDir = vigorForm.getConfiguration().get(ConfigurationParameters.OutputDirectory);
             String outputPrefix = vigorForm.getConfiguration().get(ConfigurationParameters.OutputPrefix);
+            writeEffectiveConfig(outputDir, vigorParameters);
             try (GenerateVigorOutput.Outfiles outfiles = getOutfiles(outputDir,
                     outputPrefix,
                     vigorForm.getConfiguration().get(ConfigurationParameters.OverwriteOutputFiles) == "true")) {
@@ -229,6 +232,27 @@ public class Vigor {
                     Charset.forName("UTF-8"), openOptions));
         }
         return outfiles;
+    }
+
+    private void writeEffectiveConfig(String outputDir, VigorConfiguration configuration) throws IOException {
+
+        String dateString = new SimpleDateFormat("yyyyMMdd-HHmmss").format(new Date());
+        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(outputDir, String.format("vigor-%s.ini", dateString)),
+                                                             Charset.forName("UTF-8"),
+                                                             StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)) {
+            writer.write(String.format("# Effective configuration %s\n\n", dateString));
+            VigorConfiguration.ValueWithSource val;
+            for (ConfigurationParameters param: configuration.keySet()) {
+                val = configuration.getWithSource(param).get();
+                writer.write("# source: ");
+                writer.write(val.source);
+                writer.newLine();
+                writer.write(String.format("%s = \"%s\"", param.configKey, val.value));
+                writer.newLine();
+                writer.newLine();
+            }
+        }
+
     }
 }
 
