@@ -3,6 +3,7 @@ package org.jcvi.vigor.RegressionTest;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -30,42 +31,47 @@ import org.springframework.test.context.junit4.rules.SpringMethodRule;
 @RunWith(Parameterized.class)
 @ContextConfiguration(classes = Application.class)
 public class ValidateVigor4Models {
-
+    private final static Logger LOGGER = LogManager.getLogger(ValidateVigor4Models.class);
     private static String outputDirectory;
-    private String virusSpecifcDirectory;
+
     private String vigor3OutputTBL;
     private String vigor3OutputPep;
     private String inputFasta;
-    private String refDB;
+    private String referenceDatabaseName;
+
     @Autowired
     GenerateVigor4GeneModels generateVigor4GeneModels;
-    private Map<String, List<Model>> allVigor3Models = new HashMap<String, List<Model>>();
-    private final static Logger LOGGER = LogManager.getLogger(ValidateVigor4Models.class);
+
     @Autowired
     private VigorInitializationService initializationService;
+
     @ClassRule
     public static final SpringClassRule springClassRule = new SpringClassRule();
     @Rule
     public final SpringMethodRule springMethodRule = new SpringMethodRule();
 
-    public ValidateVigor4Models ( String vigor3OutputTBL, String vigor3OutputPep, String inputFasta, String refDB ) {
+    public ValidateVigor4Models ( String vigor3OutputTBL, String vigor3OutputPep, String inputFasta, String referenceDatabaseName ) {
 
-        this.vigor3OutputTBL = vigor3OutputTBL;
-        this.vigor3OutputPep = vigor3OutputPep;
-        this.inputFasta = inputFasta;
-        this.refDB = refDB;
+        this.vigor3OutputTBL = getResource(vigor3OutputTBL).orElseThrow(
+                () -> new IllegalArgumentException(String.format("%s not found", vigor3OutputTBL)));
+        this.vigor3OutputPep = getResource(vigor3OutputPep).orElseThrow(
+                () -> new IllegalArgumentException(String.format("%s not found", vigor3OutputPep)));
+        this.inputFasta = getResource(inputFasta).orElseThrow(
+                () -> new IllegalArgumentException(String.format("%s not found", inputFasta)));
+        this.referenceDatabaseName = referenceDatabaseName;
     }
 
     public static void prepare ( String outputDir ) {
-
         ValidateVigor4Models.outputDirectory = outputDir;
     }
 
-    private void isAppPackagedCorrectly ( String res ) throws VigorException {
+    private Optional<String> getResource (String resource) {
 
-        if (ValidateVigor4Models.class.getClassLoader().getResource(res) == null) {
-            throw new VigorException("Missing regression test resource  " + res);
+        URL url = ValidateVigor4Models.class.getClassLoader().getResource(resource);
+        if ( url == null) {
+            return Optional.empty();
         }
+        return Optional.of(Paths.get(url.getFile()).toAbsolutePath().toString());
     }
 
     @Parameterized.Parameters(name = "ValidateVigor4Models[#{index} {0}]")
@@ -96,34 +102,39 @@ public class ValidateVigor4Models {
         return testData;
     }
 
-    private void setAbsolutePathOfTestResource () {
-        this.vigor3OutputTBL = ValidateVigor4Models.class.getClassLoader().getResource(vigor3OutputTBL).getFile();
-        this.vigor3OutputPep = ValidateVigor4Models.class.getClassLoader().getResource(vigor3OutputPep).getFile();
-        this.inputFasta = ValidateVigor4Models.class.getClassLoader().getResource(inputFasta).getFile();
+    public Map<String, List<Model>> getVigor4Models (VigorConfiguration config, String inputFasta) throws VigorException, IOException {
+        checkConfig(config);
+        String referenceDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
+        String referenceDB = Paths.get(referenceDBPath, referenceDatabaseName).toString();
+        VigorUtils.checkFilePath("reference database", referenceDB,
+                                 VigorUtils.FileCheck.EXISTS,
+                                 VigorUtils.FileCheck.READ,
+                                 VigorUtils.FileCheck.DIRECTORY);
+        return generateVigor4GeneModels.generateModels(inputFasta, referenceDB, config);
     }
 
-    public Map<String, List<Model>> getVigor4Models () throws VigorException, IOException {
+    public Map<String, List<Model>> getVigor3Models () throws IOException {
+        return new GenerateVigor3Models().generateModels(vigor3OutputTBL, vigor3OutputPep, inputFasta);
+    }
 
+    @Test
+    public void validate() throws IOException, VigorException {
+        VigorConfiguration config = getConfiguration();
+        String errorReportPath = Paths.get(config.get(ConfigurationParameters.OutputDirectory), "differenceReport.txt")
+                                      .toAbsolutePath().toString();
+        validate(getVigor4Models(config, inputFasta), getVigor3Models(), errorReportPath);
+    }
+
+    private VigorConfiguration getConfiguration() throws IOException, VigorException {
         VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
-        String referenceDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
-        String referenceDB = Paths.get(referenceDBPath, refDB).toString();
-        if (referenceDB == null) {
-            LOGGER.error("{} reference db does not exist", referenceDB);
-        }
-        refDB = referenceDB;
-        Map<String, List<Model>> vigor4Models;
-        isAppPackagedCorrectly(inputFasta);
-        isAppPackagedCorrectly(vigor3OutputPep);
-        isAppPackagedCorrectly(vigor3OutputTBL);
-        setAbsolutePathOfTestResource();
-        File refDBFile = new File(refDB);
-        String outputPrefix = refDBFile.getName().replace("_db", "");
+        String outputPrefix = new File(referenceDatabaseName).getName().replace("_db", "");
         config.put(ConfigurationParameters.OutputPrefix, outputPrefix);
         String virusSpecificPath = outputDirectory + File.separator + config.get(ConfigurationParameters.OutputPrefix);
         File virusSpecificDir = new File(virusSpecificPath);
-        if (!virusSpecificDir.exists()) virusSpecificDir.mkdir();
-        virusSpecifcDirectory = virusSpecificDir.getAbsolutePath();
-        config.put(ConfigurationParameters.OutputDirectory, virusSpecifcDirectory);
+        if (!virusSpecificDir.exists())  {
+            virusSpecificDir.mkdir();
+        }
+        config.put(ConfigurationParameters.OutputDirectory, virusSpecificDir.getAbsolutePath());
         config.put(ConfigurationParameters.Verbose, "false");
         if (config.get(ConfigurationParameters.OverwriteOutputFiles) == null) {
             config.put(ConfigurationParameters.OverwriteOutputFiles, "true");
@@ -135,25 +146,23 @@ public class ValidateVigor4Models {
             Runtime.getRuntime().addShutdownHook(new Thread(() -> VigorUtils.deleteDirectory(tempDir)));
             config.put(ConfigurationParameters.TemporaryDirectory, tempDir.toString());
         }
-        vigor4Models = generateVigor4GeneModels.generateModels(inputFasta, refDB, config);
-        return vigor4Models;
+
+        checkConfig(config);
+        return config;
     }
 
-    public Map<String, List<Model>> getVigor3Models () throws IOException {
-
-        GenerateVigor3Models generateVigor3Models = new GenerateVigor3Models();
-        allVigor3Models = generateVigor3Models.generateModels(vigor3OutputTBL, vigor3OutputPep, inputFasta);
-        return allVigor3Models;
+    private void checkConfig(VigorConfiguration config) throws VigorException {
+        VigorUtils.checkFilePath("reference database path", config.get(ConfigurationParameters.ReferenceDatabasePath),
+                                 VigorUtils.FileCheck.EXISTS, VigorUtils.FileCheck.READ);
+        VigorUtils.checkFilePath("temporary directory path", config.get(ConfigurationParameters.TemporaryDirectory),
+                                 VigorUtils.FileCheck.EXISTS, VigorUtils.FileCheck.READ, VigorUtils.FileCheck.WRITE);
+        // must be set, (but will be created if it doesn't exist?)
+        VigorUtils.checkFilePath("output directory", config.get(ConfigurationParameters.OutputDirectory));
     }
 
-    @Test
-    public void validate() throws IOException, VigorException {
-        validate(getVigor4Models(), getVigor3Models());
-    }
+    public void validate (Map<String, List<Model>> allVigor4Models, Map<String, List<Model>> allVigor3Models, String errorReportPath) {
 
-    public void validate (Map<String, List<Model>> allVigor4Models, Map<String, List<Model>> allVigor3Models) {
-
-        File errorReport = new File(virusSpecifcDirectory, "differencesReport.txt");
+        File errorReport = new File(errorReportPath);
         try (FileWriter writer = new FileWriter(errorReport, false)) {
             writer.write("***********************Differences Report**************************\n");
             for (String genome: allVigor3Models.keySet()) {
