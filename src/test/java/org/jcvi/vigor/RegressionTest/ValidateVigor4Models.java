@@ -72,23 +72,23 @@ public class ValidateVigor4Models {
         List<Object[]> testData = new ArrayList<>();
         testData.add(
                 new Object[] {
-                        "vigor3Output/flu/flu.tbl",
-                        "vigor3Output/flu/flu.pep",
-                        "vigorRegressionTestInput/flua.fasta",
+                        "vigor3Output/flua/flua.tbl",
+                        "vigor3Output/flua/flua.pep",
+                        "vigor3Output/flua/flua.fasta",
                         "flua_db",
                 });
         testData.add(
                 new Object[] {
                         "vigor3Output/veev/veev.tbl",
                         "vigor3Output/veev/veev.pep",
-                        "vigorRegressionTestInput/veev.fasta",
+                        "vigor3Output/veev/veev.fasta",
                         "veev_db",
                 });
         testData.add(
                 new Object[] {
                         "vigor3Output/rsv/rsv.tbl",
                         "vigor3Output/rsv/rsv.pep",
-                        "vigorRegressionTestInput/rsv.fasta",
+                        "vigor3Output/rsv/rsv.fasta",
                         "rsv_db",
                 });
         return testData;
@@ -96,10 +96,9 @@ public class ValidateVigor4Models {
 
     private void setAbsolutePathOfTestResource () {
 
-        File resources = new File("src/test/resources");
-        this.vigor3OutputTBL = resources.getAbsolutePath() + File.separator + vigor3OutputTBL;
-        this.vigor3OutputPep = resources.getAbsolutePath() + File.separator + vigor3OutputPep;
-        this.inputFasta = resources.getAbsolutePath() + File.separator + inputFasta;
+        this.vigor3OutputTBL = ValidateVigor4Models.class.getClassLoader().getResource(vigor3OutputTBL).getFile();
+        this.vigor3OutputPep = ValidateVigor4Models.class.getClassLoader().getResource(vigor3OutputPep).getFile();
+        this.inputFasta = ValidateVigor4Models.class.getClassLoader().getResource(inputFasta).getFile();
     }
 
     public Map<String, List<Model>> getVigor4Models () throws VigorException {

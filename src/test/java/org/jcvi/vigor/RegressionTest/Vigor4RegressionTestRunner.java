@@ -59,7 +59,7 @@ public class Vigor4RegressionTestRunner {
         } else throw new VigorException("Please provide output directory \"(-o <outputDirectory> )\"");
         File outputDir = new File(outputDirectory);
         if (!outputDir.exists()) {
-            throw new VigorException("Output Directory does not exist");
+            throw new VigorException(String.format("Output directory %s does not exist", outputDirectory));
         }
         return outputDir.getAbsolutePath();
     }
