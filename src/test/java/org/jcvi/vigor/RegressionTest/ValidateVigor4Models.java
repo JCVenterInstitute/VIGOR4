@@ -109,7 +109,7 @@ public class ValidateVigor4Models {
         VigorUtils.checkFilePath("reference database", referenceDB,
                                  VigorUtils.FileCheck.EXISTS,
                                  VigorUtils.FileCheck.READ,
-                                 VigorUtils.FileCheck.DIRECTORY);
+                                 VigorUtils.FileCheck.FILE);
         return generateVigor4GeneModels.generateModels(inputFasta, referenceDB, config);
     }
 
