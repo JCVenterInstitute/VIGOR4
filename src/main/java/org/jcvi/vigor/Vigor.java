@@ -73,20 +73,23 @@ public class Vigor {
         }
     }
 
+    private void printConfiguration(VigorConfiguration vigorParameters){
+        VigorConfiguration.ValueWithSource unset = VigorConfiguration.ValueWithSource.of("NOTSET", "unknown");
+        LOGGER.info(() -> vigorParameters.entrySet()
+                                         .stream()
+                                         .sorted(Comparator.comparing(es -> es.getKey().configKey, String.CASE_INSENSITIVE_ORDER))
+                                         .map(e -> String.format("%-50s%s (%s)",
+                                                                 e.getKey().configKey,
+                                                                 e.getValue(),
+                                                                 vigorParameters.getWithSource(e.getKey()).orElse(unset).source))
+                                         .collect(Collectors.joining("\n")));
+    }
+
     public void generateAnnotations(String inputFileName, VigorForm vigorForm) throws VigorException {
         VigorUtils.checkFilePath("input file", inputFileName, VigorUtils.FileCheck.EXISTS, VigorUtils.FileCheck.READ);
         try {
             VigorConfiguration vigorParameters = vigorForm.getConfiguration();
-            VigorConfiguration.ValueWithSource unset = VigorConfiguration.ValueWithSource.of("NOTSET", "unknown");
-            LOGGER.info(() -> vigorParameters.entrySet()
-                                             .stream()
-                                             .sorted(Comparator.comparing(es -> es.getKey().configKey, String.CASE_INSENSITIVE_ORDER))
-                                             .map(e -> String.format("%-50s%s (%s)",
-                                                                     e.getKey().configKey,
-                                                                     e.getValue(),
-                                                                     vigorParameters.getWithSource(e.getKey()).orElse(unset).source))
-                                             .collect(Collectors.joining("\n")));
-            // TODO check file exists and is readable
+            printConfiguration(vigorParameters);
             // TODO check output directory and permissions
             NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(new File(inputFileName))
                     .hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)
