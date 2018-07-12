@@ -2,6 +2,7 @@ package org.jcvi.vigor.RegressionTest;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,11 +24,19 @@ public class GenerateVigor3Models {
 
     private final static Logger LOGGER = LogManager.getLogger(GenerateVigor3Models.class);
 
+    public Map<String, List<Model>> generateModels (String outputDirectory, String outputPrefix) throws IOException {
+        String tblFile = Paths.get(outputDirectory, outputPrefix + ".tbl").toString();
+        String pepFile = Paths.get(outputDirectory, outputPrefix + ".pep").toString();
+        return generateModels(tblFile, pepFile, null);
+    }
+
     public Map<String, List<Model>> generateModels ( String TBLFilePath, String PEPFilePath, String fastaFilePath ) throws IOException {
 
         Map<String, List<Model>> vigor3Models = new HashMap<String, List<Model>>();
-        NucleotideFastaDataStore datastore = new NucleotideFastaFileDataStoreBuilder(new File(fastaFilePath)).build();
-        LOGGER.debug("Number of records in the fasta file are : " + datastore.getNumberOfRecords());
+        if (fastaFilePath != null) {
+            NucleotideFastaDataStore datastore = new NucleotideFastaFileDataStoreBuilder(new File(fastaFilePath)).build();
+            LOGGER.debug("Number of records in the fasta file are : " + datastore.getNumberOfRecords());
+        }
         TBLFileParser TBLParser = new TBLFileParser();
         List<TBLModel> TBLModels = TBLParser.getModels(TBLFilePath, PEPFilePath);
         LOGGER.debug("Total Number of models are :" + TBLModels.size());

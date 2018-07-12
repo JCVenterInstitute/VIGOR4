@@ -44,8 +44,6 @@ public class GenerateVigor4GeneModels {
     private final static Logger LOGGER = LogManager.getLogger(ValidateVigor4Models.class);
     @Autowired
     Vigor vigor;
-    @Autowired
-    VigorInitializationService vigorInitializationService;
 
     public Map<String, List<Model>> generateModels ( String inputFASTA, String refDB, VigorConfiguration config) throws VigorException {
 
@@ -55,16 +53,20 @@ public class GenerateVigor4GeneModels {
             alignmentEvidence.setReference_db(refDB);
             vigorForm.setAlignmentEvidence(alignmentEvidence);
             vigor.generateAnnotations(inputFASTA, vigorForm);
-            GenerateVigor3Models modelGenerator = new GenerateVigor3Models();
             String outputDir = config.get(ConfigurationParameters.OutputDirectory);
             String outputPrefix = config.get(ConfigurationParameters.OutputPrefix);
-
-            String tblFile = Paths.get(outputDir, outputPrefix + ".tbl").toString();
-            String pepFile = Paths.get(outputDir, outputPrefix + ".pep").toString();
-
-            return modelGenerator.generateModels(tblFile, pepFile, inputFASTA);
+            return modelsFromResults(outputDir, outputPrefix);
         } catch (IOException e) {
             throw new VigorException("Error generating vigor4 models", e);
         }
+    }
+
+    public  Map<String, List<Model>> modelsFromResults(String outputDirectory, String outputPrefix) throws IOException {
+        return modelsFromResults(outputDirectory, outputPrefix, null);
+    }
+    public  Map<String, List<Model>> modelsFromResults(String outputDirectory, String outputPrefix, String inputFasta) throws IOException {
+        String tblFile = Paths.get(outputDirectory, outputPrefix + ".tbl").toString();
+        String pepFile = Paths.get(outputDirectory, outputPrefix + ".pep").toString();
+        return new GenerateVigor3Models().generateModels(tblFile, pepFile, inputFasta);
     }
 }

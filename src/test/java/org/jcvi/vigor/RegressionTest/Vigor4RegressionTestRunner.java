@@ -3,6 +3,7 @@ package org.jcvi.vigor.RegressionTest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.vigor.exception.VigorException;
+import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.junit.runner.JUnitCore;
 
 import java.io.File;
@@ -18,8 +19,9 @@ public class Vigor4RegressionTestRunner {
         try {
             Map<String, String> optsList = parseArguments(args);
             String outputDir = getOutputDirectory(optsList);
+            System.setProperty(ConfigurationParameters.OutputDirectory.getSystemPropertyName(), outputDir);
+            System.setProperty("vigor.regression_test.write_report","true");
             JUnitCore jUnitCore = new JUnitCore();
-            ValidateVigor4Models.prepare(outputDir);
             jUnitCore.run(ValidateVigor4Models.class);
         } catch (VigorException e) {
             LOGGER.error(e);
