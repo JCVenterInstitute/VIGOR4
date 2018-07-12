@@ -264,8 +264,12 @@ public class VigorInitializationService {
 		commandLineConfig.put(ConfigurationParameters.OutputPrefix,outputFile.getName());
 		commandLineConfig.put(ConfigurationParameters.OutputDirectory,outputFile.getParentFile().getAbsolutePath());
 
-		commandLineConfig.put(ConfigurationParameters.OverwriteOutputFiles,
-				inputs.getBoolean(CommandLineParameters.overwriteOutputFiles) ? "true": "false");
+		// defaults to false on commandline, so set it in the commandline configuration if true, so we don't override
+		// a value in the vigor.ini file
+		if (inputs.getBoolean(CommandLineParameters.overwriteOutputFiles)) {
+			commandLineConfig.put(ConfigurationParameters.OverwriteOutputFiles,
+								  inputs.getBoolean(CommandLineParameters.overwriteOutputFiles) ? "true" : "false");
+		}
 
 		Integer min_gene_size = inputs.getInt(CommandLineParameters.minGeneSize);
 		if (min_gene_size != null) {
