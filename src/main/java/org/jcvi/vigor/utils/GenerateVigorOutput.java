@@ -95,7 +95,7 @@ public class GenerateVigorOutput {
                 /* bw.write(start);
                 bw.write("\t");
                 bw.write(end);*/
-               bw.write(getGeneCoordinates(model,geneModels));
+               bw.write(getGeneCoordinatesString(model, geneModels));
                 bw.write("\tgene\n");
                 if (writeLocus) {
                     bw.write("\t\t\tlocus_tag\t" + VigorUtils.nameToLocus(model.getGeneSymbol(), locusPrefix, model.isPseudogene()) + "\n");
@@ -198,26 +198,15 @@ public class GenerateVigorOutput {
            }
     }
 
-    private String getGeneCoordinates(Model model, List<Model> geneModels){
-        long start=model.getExons().get(0).getRange().getBegin()+1;
-        long end =0;
-        String startString="";
-        String endString ="";
-        Model endGeneModel=model;
-        for(Model geneModel : geneModels){
-            if(model.getAlignment().getViralProtein().getProteinID().equals(geneModel.getAlignment().getViralProtein().getProteinID())){
-                endGeneModel=geneModel;
-            }
-        }
-        end = endGeneModel.getExons().get(endGeneModel.getExons().size()-1).getRange().getEnd()+1;
-        if(model.isPartial5p()){
-            startString="<"+start;
-        }else startString=""+start;
-        if(endGeneModel.isPartial3p()){
-            endString=">"+end;
-        }else endString=""+end;
-
-        return startString+"\t"+endString;
+    private String getGeneCoordinatesString(Model model, List<Model> geneModels){
+        long start = model.getRange().getBegin(Range.CoordinateSystem.RESIDUE_BASED);
+        Model endGeneModel = geneModels.stream()
+                                      .filter(m -> model.getProteinID().equals(m.getProteinID()))
+                                      .findFirst().orElse(model);
+        long end = endGeneModel.getRange().getEnd(Range.CoordinateSystem.RESIDUE_BASED);
+        return String.join("\t",
+                           (model.isPartial5p() ? "<" : "") + start,
+                           (endGeneModel.isPartial3p() ? ">" : "") + end);
     }
 
     private void writeDefline(BufferedWriter bw, Model model) throws IOException {
