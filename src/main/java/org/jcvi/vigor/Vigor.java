@@ -100,12 +100,12 @@ public class Vigor {
                     .build();
             // TODO move all this file handling to method
             // TODO checkout output earlier.
-            String outputDir = vigorForm.getConfiguration().get(ConfigurationParameters.OutputDirectory);
-            String outputPrefix = vigorForm.getConfiguration().get(ConfigurationParameters.OutputPrefix);
+            String outputDir = vigorParameters.get(ConfigurationParameters.OutputDirectory);
+            String outputPrefix =vigorParameters.get(ConfigurationParameters.OutputPrefix);
             writeEffectiveConfig(outputDir, vigorParameters);
             try (GenerateVigorOutput.Outfiles outfiles = getOutfiles(outputDir,
                                                                      outputPrefix,
-                                                                     vigorForm.getConfiguration().get(ConfigurationParameters.OverwriteOutputFiles) == "true")) {
+                                                                     vigorParameters.get(ConfigurationParameters.OverwriteOutputFiles) == "true")) {
                 outfiles.get(GenerateVigorOutput.Outfile.GFF3).write("##gff-version 3\n");
                 Iterator<NucleotideFastaRecord> i = dataStore.records().iterator();
                 while (i.hasNext()) {
