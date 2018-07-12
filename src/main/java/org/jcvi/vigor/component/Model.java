@@ -52,4 +52,8 @@ public class Model implements Cloneable {
         }
         return Range.ofLength(0);
     }
+
+    public String getProteinID() {
+        return getAlignment().getViralProtein().getProteinID();
+    }
 }
