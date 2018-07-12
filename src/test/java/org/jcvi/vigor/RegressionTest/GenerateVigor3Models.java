@@ -62,7 +62,7 @@ public class GenerateVigor3Models {
         }
         LOGGER.debug(vigor3Models.entrySet().size());
         vigor3Models.entrySet().forEach(entry -> {
-            System.out.println("key:" + entry.getKey() + "value:" + entry.getValue().size());
+            LOGGER.trace("genome ID: \"{}\" model count: {}",entry.getKey(), entry.getValue().size());
         });
         return vigor3Models;
     }
