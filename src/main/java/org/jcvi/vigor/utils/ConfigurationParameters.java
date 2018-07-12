@@ -39,7 +39,7 @@ public enum ConfigurationParameters {
 
     OutputDirectory("output_directory", "Write output to this directory",  Flags.VERSION_3, Flags.VERSION_4, Flags.COMMANDLINE),
     OutputPrefix("output_prefix", "Use this prefix output files", Flags.VERSION_3, Flags.VERSION_4, Flags.COMMANDLINE),
-    OverwriteOutputFiles("overwrite_output_files", "Overwirt output files if they exist", Flags.VERSION_4),
+    OverwriteOutputFiles("overwrite_output_files", "Overwrite output files if they exist", Flags.VERSION_4),
 
     PseudoGeneMinimumIdentity("min_pseudogene_identity", ""),
     PseudoGeneMinimumSimilarity("min_pseudogene_similarity", ""),
