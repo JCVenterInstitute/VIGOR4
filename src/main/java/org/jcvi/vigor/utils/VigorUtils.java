@@ -2,16 +2,14 @@ package org.jcvi.vigor.utils;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.jcvi.vigor.exception.VigorException;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.file.Files;
-import java.nio.file.NoSuchFileException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Comparator;
+import java.nio.file.*;
+import java.util.*;
 import java.util.regex.Pattern;
 
 public class VigorUtils {
@@ -99,5 +97,59 @@ public class VigorUtils {
     // TODO this is a security issue but it requires the user's assistance in that they pass the file path
     public static String expandTilde(String path) throws IOException {
         return new BufferedReader(new InputStreamReader(Runtime.getRuntime().exec(new String[] {"/bin/bash", "-c", "echo " + path}).getInputStream())).readLine();
+    }
+
+    public enum FileCheck {
+        READ, WRITE, EXISTS, NOT_EXISTS, EXECUTE, ABSOLUTE, RELATIVE, DIRECTORY, FILE
+    }
+
+    public static String checkFilePath(String description, String path, FileCheck ... modes) throws VigorException {
+        if (path == null) {
+            throw new VigorException(String.format("%s not set", description));
+        }
+        File testFile = new File(path);
+        EnumSet<FileCheck> checks = EnumSet.copyOf(Arrays.asList(modes));
+
+        if (checks.contains(FileCheck.EXISTS) && ! testFile.exists()) {
+            throw new VigorException(String.format("%s %s does not exist", description, path));
+        }
+        if (checks.contains(FileCheck.NOT_EXISTS) && testFile.exists()) {
+            throw new VigorException(String.format("%s %s exists", description, path));
+        }
+
+        List<String> errors = new ArrayList<>();
+
+        if (checks.contains(FileCheck.READ) && ! testFile.canRead()) {
+            errors.add("not readable");
+        }
+
+        if (checks.contains(FileCheck.WRITE) && ! testFile.canWrite()) {
+            errors.add("not writable");
+        }
+
+        if (checks.contains(FileCheck.EXECUTE) && ! testFile.canExecute()) {
+            errors.add("not executable");
+        }
+
+        if (checks.contains(FileCheck.ABSOLUTE) && ! testFile.isAbsolute()) {
+            errors.add("not an absolute path");
+        }
+
+        if (checks.contains(FileCheck.RELATIVE) && testFile.isAbsolute()) {
+            errors.add("not a relative path");
+        }
+
+        if (checks.contains(FileCheck.DIRECTORY) && ! testFile.isDirectory()) {
+            errors.add("not a directory");
+        }
+        if (checks.contains(FileCheck.FILE) && ! testFile.isFile()) {
+            errors.add("not a file");
+        }
+
+        if (! errors.isEmpty()) {
+            throw new VigorException(String.format("%s %s is %s", description, path, String.join(",", errors)));
+        }
+
+        return path;
     }
 }
