@@ -108,7 +108,11 @@ public class VigorUtils {
             throw new VigorException(String.format("%s not set", description));
         }
         File testFile = new File(path);
-        EnumSet<FileCheck> checks = EnumSet.copyOf(Arrays.asList(modes));
+
+        EnumSet<FileCheck> checks = EnumSet.noneOf(FileCheck.class);
+        if (modes.length > 0) {
+            checks = EnumSet.copyOf(Arrays.asList(modes));
+        }
 
         if (checks.contains(FileCheck.EXISTS) && ! testFile.exists()) {
             throw new VigorException(String.format("%s %s does not exist", description, path));
