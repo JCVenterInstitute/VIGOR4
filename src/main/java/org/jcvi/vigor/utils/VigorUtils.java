@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Comparator;
@@ -72,18 +73,27 @@ public class VigorUtils {
 
     public static void deleteTempFiles ( String path ) {
 
-        Path workspace = new File(path).toPath();
+        if (! deleteDirectory(new File(path).toPath())) {
+            LOGGER.warn("Error deleting temporary working directory {}", path);
+        }
+    }
+
+    public static boolean deleteDirectory (Path path) {
         try {
             // clean up
-            if (workspace != null) {
-                Files.walk(workspace)
-                        .map(Path:: toFile)
-                        .sorted(Comparator.reverseOrder())
-                        .forEach(File:: delete);
+            if (path != null) {
+                Files.walk(path)
+                     .map(Path::toFile)
+                     .sorted(Comparator.reverseOrder())
+                     .forEach(File::delete);
             }
+            return true;
+        } catch (NoSuchFileException e) {
+            return true;
         } catch (IOException e) {
-            LOGGER.warn("Error deleting temporary working directory {}", workspace);
+            return false;
         }
+
     }
 
     // TODO this is a security issue but it requires the user's assistance in that they pass the file path
