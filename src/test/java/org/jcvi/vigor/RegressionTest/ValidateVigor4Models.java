@@ -3,6 +3,8 @@ package org.jcvi.vigor.RegressionTest;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
@@ -95,13 +97,12 @@ public class ValidateVigor4Models {
     }
 
     private void setAbsolutePathOfTestResource () {
-
         this.vigor3OutputTBL = ValidateVigor4Models.class.getClassLoader().getResource(vigor3OutputTBL).getFile();
         this.vigor3OutputPep = ValidateVigor4Models.class.getClassLoader().getResource(vigor3OutputPep).getFile();
         this.inputFasta = ValidateVigor4Models.class.getClassLoader().getResource(inputFasta).getFile();
     }
 
-    public Map<String, List<Model>> getVigor4Models () throws VigorException {
+    public Map<String, List<Model>> getVigor4Models () throws VigorException, IOException {
 
         VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
         String referenceDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
@@ -124,6 +125,16 @@ public class ValidateVigor4Models {
         virusSpecifcDirectory = virusSpecificDir.getAbsolutePath();
         config.put(ConfigurationParameters.OutputDirectory, virusSpecifcDirectory);
         config.put(ConfigurationParameters.Verbose, "false");
+        if (config.get(ConfigurationParameters.OverwriteOutputFiles) == null) {
+            config.put(ConfigurationParameters.OverwriteOutputFiles, "true");
+        }
+        // TODO allow user to set this
+        if (config.get(ConfigurationParameters.TemporaryDirectory) == null) {
+            final Path tempDir = Files.createTempDirectory(Paths.get(outputDirectory), "vigor-tmp");
+            // delete on shutdown
+            Runtime.getRuntime().addShutdownHook(new Thread(() -> VigorUtils.deleteDirectory(tempDir)));
+            config.put(ConfigurationParameters.TemporaryDirectory, tempDir.toString());
+        }
         vigor4Models = generateVigor4GeneModels.generateModels(inputFasta, refDB, config);
         return vigor4Models;
     }
@@ -136,92 +147,89 @@ public class ValidateVigor4Models {
     }
 
     @Test
-    public void validate () {
+    public void validate() throws IOException, VigorException {
+        validate(getVigor4Models(), getVigor3Models());
+    }
 
-        try {
-            Map<String, List<Model>> allVigor4Models = getVigor4Models();
-            Map<String, List<Model>> allVigor3Models = getVigor3Models();
-            File errorReport = new File(virusSpecifcDirectory, "differencesReport.txt");
-            final FileWriter writer = new FileWriter(errorReport, false);
+    public void validate (Map<String, List<Model>> allVigor4Models, Map<String, List<Model>> allVigor3Models) {
+
+        File errorReport = new File(virusSpecifcDirectory, "differencesReport.txt");
+        try (FileWriter writer = new FileWriter(errorReport, false)) {
             writer.write("***********************Differences Report**************************\n");
-            allVigor3Models.entrySet().forEach(entry -> {
-                if (allVigor4Models.containsKey(entry.getKey())) {
-                    try {
-                        List<Model> vigor3Models = entry.getValue();
-                        List<Model> vigor4Models = allVigor4Models.get(entry.getKey());
-                        boolean failed = false;
-                        for (Model vigor3Model : vigor3Models) {
-                            String vigor3GeneID = vigor3Model.getGeneSymbol();
-                            String vigor3GenomeID = vigor3Model.getAlignment().getVirusGenome().getId();
-                            List<Exon> vigor3Exons = vigor3Model.getExons();
-                            boolean flag = false;
-                            for (Model vigor4Model : vigor4Models) {
-                                List<Exon> vigor4Exons = vigor4Model.getExons();
-                                if (vigor3Model.getGeneSymbol().equals(vigor4Model.getGeneSymbol())) {
-                                    flag = true;
-                                    if (vigor4Model.isPartial3p() != vigor3Model.isPartial3p()) {
-                                        writer.write(String.format("Partial 3' gene feature mismatch found for gene symbol %s of VirusGenome Sequence %s. partial 3' %s expected \n", vigor3GeneID, vigor3GenomeID, vigor3Model.isPartial3p()));
-                                        failed = true;
-                                    }
-                                    if (vigor3Model.isPartial5p() != vigor4Model.isPartial5p()) {
-                                        writer.write(String.format("Partial 5' gene feature mismatch found for gene symbol %s of VirusGenome Sequence %s. partial 5' %s expected \n", vigor3GeneID, vigor3GenomeID, vigor3Model.isPartial5p()));
-                                        failed = true;
-                                    }
-                                    if (( vigor3Model.getRibosomalSlippageRange() != null && vigor4Model.getRibosomalSlippageRange() == null ) || ( vigor3Model.getRibosomalSlippageRange() == null && vigor4Model.getRibosomalSlippageRange() != null )) {
-                                        writer.write(String.format("Ribosomal Slippage mismatch found for gene %s of VirusGenome Sequence \n", vigor3GeneID, vigor3GenomeID));
-                                        failed = true;
-                                    }
-                                    if (( vigor3Model.getRibosomalSlippageRange() != null && vigor4Model.getRibosomalSlippageRange() == null ) || ( vigor3Model.getRibosomalSlippageRange() == null && vigor4Model.getRibosomalSlippageRange() != null )) {
-                                        writer.write(String.format("Ribosomal Slippage mismatch found for gene %s of VirusGenome Sequence \n", vigor3GeneID, vigor3GenomeID));
-                                        failed = true;
-                                    }
-                                    if (( vigor3Model.getReplaceStopCodonRange() != null && vigor4Model.getReplaceStopCodonRange() != null ) && ( vigor3Model.getReplaceStopCodonRange() != vigor4Model.getReplaceStopCodonRange() )) {
-                                        writer.write(String.format("Stop Codon Readthrough feature mismatch for gene %s of VirusGenome Sequence \n", vigor3GeneID, vigor3GenomeID));
-                                        failed = true;
-                                    }
-                                    if (vigor3Model.isPseudogene() != vigor4Model.isPseudogene()) {
-                                        writer.write(String.format("Pseudogene feature mismatch found for gene %s of VirusGenome Sequence %s. pseudogene %s expected \n", vigor3GeneID, vigor3GenomeID, vigor3Model.isPseudogene()));
-                                        failed = true;
-                                    }
-                                    if (vigor4Exons.size() != vigor3Exons.size()) {
-                                        writer.write(String.format("Exon count differs for Vigor3 & Vigor4 model with gene symbol %s of VirusGenome Sequence %s \n", vigor3GeneID, vigor3GenomeID));
-                                        failed = true;
-                                    }
-                                    if (vigor4Exons.size() == vigor3Exons.size()) {
-                                        for (int i = 0; i < vigor3Exons.size(); i++) {
-                                            Range temp = vigor4Exons.get(i).getRange();
-                                            Range vigor4ExonRange = Range.of(temp.getBegin() + 1, temp.getEnd() + 1);
-                                            if (vigor4ExonRange != vigor3Exons.get(i).getRange()) {
-                                                writer.write(String.format("Exon range differs for Vigor3 & Vigor4 model with gene symbol %s of VirusGenome Sequence %s \n", vigor3GeneID, vigor3GenomeID));
-                                                failed = true;
-                                            }
-                                        }
-                                    }
-                                    break;
-                                }
-                            }
-                            if (!flag) {
-                                writer.write(String.format("Vigor3 & Vigor4 gene models do not match for VirusGenome Sequence %s.Expected gene symbol %s \n", vigor3GenomeID, vigor3GeneID));
-                                failed = true;
-                            }
+            for (String genome: allVigor3Models.keySet()) {
+                List<Model> vigor4Models = allVigor4Models.getOrDefault(genome, Collections.EMPTY_LIST);
+                if (vigor4Models.isEmpty()) {
+                    writer.write(String.format("\nNo vigor4 models found for genome %s\n", genome));
+                    continue;
+                }
+                List<Model> vigor3Models = allVigor3Models.get(genome);
+
+                for (Model vigor3Model : vigor3Models) {
+                    List<String> errors = new ArrayList<>();
+                    String vigor3GeneID = vigor3Model.getGeneSymbol();
+                    String vigor3GenomeID = vigor3Model.getAlignment().getVirusGenome().getId();
+                    Optional<Model> vigor4Model = vigor4Models.stream().filter(m -> vigor3GeneID.equals(m.getGeneSymbol())).findFirst();
+                    if (!vigor4Model.isPresent()) {
+                        errors.add(String.format("Vigor3 & Vigor4 gene models do not match for VirusGenome Sequence %s.Expected gene symbol %s \n", vigor3GenomeID, vigor3GeneID));
+                    } else {
+                        errors.addAll(compareModels(vigor3Model, vigor4Model.get()));
+                    }
+
+                    if (!errors.isEmpty()) {
+                        writer.write("\n***************************************************************************************************************************************************" + "\n");
+                        writer.write(String.format(">Genome %s\n", genome));
+                        for (String error : errors) {
+                            writer.write(error);
+                            writer.write("\n");
                         }
-                        if (failed) {
-                            writer.write(">Genome " + entry.getKey());
-                            writer.write("\n***************************************************************************************************************************************************" + "\n");
-                        }
-                    } catch (IOException e) {
-                        LOGGER.error(e);
-                        System.exit(1);
+                        writer.write("\n***************************************************************************************************************************************************" + "\n");
                     }
                 }
-            });
-            writer.close();
-        } catch (VigorException e) {
-            LOGGER.error(e);
-            System.exit(1);
+            }
         } catch (Exception e) {
             LOGGER.error(e);
             System.exit(1);
         }
+    }
+    
+    List<String> compareModels(Model vigor3Model, Model vigor4Model) {
+        List<String> errors = new ArrayList<>();
+
+        List<Exon> vigor4Exons = vigor4Model.getExons();
+        List<Exon> vigor3Exons = vigor3Model.getExons();
+        String vigor3GeneID = vigor3Model.getGeneSymbol();
+        String vigor3GenomeID = vigor3Model.getAlignment().getVirusGenome().getId();
+        
+        if (vigor4Model.isPartial3p() != vigor3Model.isPartial3p()) {
+            errors.add(String.format("Partial 3' gene feature mismatch found for gene symbol %s of VirusGenome Sequence %s. partial 3' %s expected", vigor3GeneID, vigor3GenomeID, vigor3Model.isPartial3p()));
+        }
+        if (vigor3Model.isPartial5p() != vigor4Model.isPartial5p()) {
+            errors.add(String.format("Partial 5' gene feature mismatch found for gene symbol %s of VirusGenome Sequence %s. partial 5' %s expected", vigor3GeneID, vigor3GenomeID, vigor3Model.isPartial5p()));
+        }
+        if (vigor3Model.getRibosomalSlippageRange() == null ^ vigor4Model.getRibosomalSlippageRange() == null ) {
+            errors.add(String.format("Ribosomal Slippage mismatch found for gene %s of VirusGenome Sequence %s", vigor3GeneID, vigor3GenomeID));
+        }
+        if (vigor3Model.getReplaceStopCodonRange() == null ^ vigor4Model.getReplaceStopCodonRange() == null ) {
+            errors.add(String.format("Stop Codon Readthrough feature mismatch for gene %s of VirusGenome Sequence %s", vigor3GeneID, vigor3GenomeID));
+        }
+        if (vigor3Model.isPseudogene() != vigor4Model.isPseudogene()) {
+            errors.add(String.format("Pseudogene feature mismatch found for gene %s of VirusGenome Sequence %s. pseudogene %s expected", vigor3GeneID, vigor3GenomeID, vigor3Model.isPseudogene()));
+        }
+        if (vigor4Exons.size() != vigor3Exons.size()) {
+            errors.add(String.format("Exon count differs for Vigor3 (%s) & Vigor4 (s) models with gene symbol %s of VirusGenome Sequence %s",
+                                     vigor3Exons.size(), vigor4Exons.size(), vigor3GeneID, vigor3GenomeID));
+        } else {
+            for (int i = 0; i < vigor3Exons.size(); i++) {
+                Range vigor3ExonRange = vigor3Exons.get(i).getRange(); 
+                Range vigor4ExonRange = vigor4Exons.get(i).getRange();
+                if (! vigor4ExonRange.equals(vigor3ExonRange)) {
+                    errors.add(String.format("Exon range differs for Vigor3 (%s) & Vigor4 (%s) model with gene symbol %s of VirusGenome Sequence %s",
+                                             vigor3ExonRange.toString(Range.CoordinateSystem.RESIDUE_BASED),
+                                             vigor4ExonRange.toString(Range.CoordinateSystem.RESIDUE_BASED),
+                                             vigor3GeneID, vigor3GenomeID));
+                }
+            }
+        }
+        return errors;
     }
 }
