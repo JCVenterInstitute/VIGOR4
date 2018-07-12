@@ -87,42 +87,49 @@ public class Vigor {
 
     public void generateAnnotations(String inputFileName, VigorForm vigorForm) throws VigorException {
         VigorUtils.checkFilePath("input file", inputFileName, VigorUtils.FileCheck.EXISTS, VigorUtils.FileCheck.READ);
-        try {
-            VigorConfiguration vigorParameters = vigorForm.getConfiguration();
-            printConfiguration(vigorParameters);
-            // TODO check output directory and permissions
-            NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(new File(inputFileName))
-                    .hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)
-                    .build();
+        VigorConfiguration vigorParameters = vigorForm.getConfiguration();
+        printConfiguration(vigorParameters);
+        String outputDir = vigorParameters.get(ConfigurationParameters.OutputDirectory);
+        String outputPrefix =vigorParameters.get(ConfigurationParameters.OutputPrefix);
+        VigorUtils.checkFilePath("output directory", outputDir,
+                                 VigorUtils.FileCheck.EXISTS,
+                                 VigorUtils.FileCheck.WRITE,
+                                 VigorUtils.FileCheck.DIRECTORY);
+        try (NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(new File(inputFileName))
+                .hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)
+                .build();
+             GenerateVigorOutput.Outfiles outfiles = getOutfiles(outputDir,
+                                                                 outputPrefix,
+                                                                 vigorParameters.get(ConfigurationParameters.OverwriteOutputFiles) == "true")
+        ) {
             // TODO move all this file handling to method
             // TODO checkout output earlier.
-            String outputDir = vigorParameters.get(ConfigurationParameters.OutputDirectory);
-            String outputPrefix =vigorParameters.get(ConfigurationParameters.OutputPrefix);
             writeEffectiveConfig(outputDir, vigorParameters);
-            try (GenerateVigorOutput.Outfiles outfiles = getOutfiles(outputDir,
-                                                                     outputPrefix,
-                                                                     vigorParameters.get(ConfigurationParameters.OverwriteOutputFiles) == "true")) {
-                outfiles.get(GenerateVigorOutput.Outfile.GFF3).write("##gff-version 3\n");
-                Iterator<NucleotideFastaRecord> i = dataStore.records().iterator();
-                while (i.hasNext()) {
-                    NucleotideFastaRecord record = i.next();
-                    List<Model> geneModels = modelsFromNucleotideRecord(record, vigorForm, vigorParameters);
-                    if (geneModels.isEmpty()) {
-                        LOGGER.warn("No gene models generated for sequence {}", record.getId());
-                        continue;
-                    }
-                    generateAlignmentOutput(outfiles, vigorForm);
-                    generateOutput(vigorParameters, geneModels, outfiles);
-                    generateGFF3Output(geneModels, outfiles);
-                    FormatVigorOutput.printSequenceFeatures(geneModels, "GeneModels");
-                    outfiles.flush();
+            outfiles.get(GenerateVigorOutput.Outfile.GFF3).write("##gff-version 3\n");
+            Iterator<NucleotideFastaRecord> recordIterator = dataStore.records().iterator();
+            while (recordIterator.hasNext()) {
+                NucleotideFastaRecord record = recordIterator.next();
+                List<Model> geneModels = modelsFromNucleotideRecord(record, vigorForm, vigorParameters);
+                if (geneModels.isEmpty()) {
+                    LOGGER.warn("No gene models generated for sequence {}", record.getId());
+                    continue;
                 }
+                outputModels(vigorForm, outfiles, geneModels);
             }
         } catch (DataStoreException e) {
             throw new VigorException(String.format("problem reading input file %s", inputFileName), e);
         } catch (IOException e) {
             throw new VigorException("File issue", e);
         }
+    }
+
+    public void outputModels(VigorForm vigorForm, GenerateVigorOutput.Outfiles outfiles, List<Model> geneModels) throws IOException {
+        VigorConfiguration vigorParameters = vigorForm.getConfiguration();
+        generateAlignmentOutput(outfiles, vigorForm);
+        generateOutput(vigorParameters, geneModels, outfiles);
+        generateGFF3Output(geneModels, outfiles);
+        FormatVigorOutput.printSequenceFeatures(geneModels, "GeneModels");
+        outfiles.flush();
     }
 
     public List<Model> modelsFromNucleotideRecord(NucleotideFastaRecord record, VigorForm vigorForm, VigorConfiguration vigorParameters) throws VigorException {
