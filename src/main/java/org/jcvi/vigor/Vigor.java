@@ -74,14 +74,7 @@ public class Vigor {
     }
 
     public void generateAnnotations(String inputFileName, VigorForm vigorForm) throws VigorException {
-        File inputFile = new File(inputFileName);
-        if (!inputFile.exists()) {
-            LOGGER.error("input file {} doesn't exists.", inputFileName);
-            System.exit(1);
-        } else if (!inputFile.canRead()) {
-            LOGGER.error("input file {} isn't readable.", inputFileName);
-            System.exit(1);
-        }
+        VigorUtils.checkFilePath("input file", inputFileName, VigorUtils.FileCheck.EXISTS, VigorUtils.FileCheck.READ);
         try {
             VigorConfiguration vigorParameters = vigorForm.getConfiguration();
             VigorConfiguration.ValueWithSource unset = VigorConfiguration.ValueWithSource.of("NOTSET", "unknown");
@@ -95,7 +88,7 @@ public class Vigor {
                                              .collect(Collectors.joining("\n")));
             // TODO check file exists and is readable
             // TODO check output directory and permissions
-            NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(inputFile)
+            NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(new File(inputFileName))
                     .hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)
                     .build();
             // TODO move all this file handling to method
