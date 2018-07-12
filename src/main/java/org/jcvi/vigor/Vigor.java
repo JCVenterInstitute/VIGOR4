@@ -244,11 +244,11 @@ public class Vigor {
         try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(outputDir, String.format("vigor-%s.ini", dateString)),
                                                              Charset.forName("UTF-8"),
                                                              StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)) {
-            writer.write(String.format("# Effective configuration %s\n\n", dateString));
+            writer.write(String.format("; Effective configuration %s\n\n", dateString));
             VigorConfiguration.ValueWithSource val;
             for (ConfigurationParameters param: configuration.keySet()) {
                 val = configuration.getWithSource(param).get();
-                writer.write("# source: ");
+                writer.write("; source: ");
                 writer.write(val.source);
                 writer.newLine();
                 writer.write(String.format("%s = \"%s\"", param.configKey, val.value));
