@@ -103,4 +103,12 @@ public enum ConfigurationParameters {
         return flags.contains(configFlag);
     }
 
+    public String getEnvVarName() {
+        return "VIGOR_" + configKey.toUpperCase();
+    }
+
+    public String getSystemPropertyName() {
+        return "vigor." + configKey;
+    }
+
 }

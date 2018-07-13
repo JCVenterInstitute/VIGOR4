@@ -72,15 +72,13 @@ public class VigorInitializationService {
 
 		VigorConfiguration propConfiguration = new VigorConfiguration("system-properties");
 		String val;
-		String key;
 		for (ConfigurationParameters param: ConfigurationParameters.values()) {
-			key = "vigor."+ param.configKey;
-			val = System.getProperty(key);
+			val = System.getProperty(param.getSystemPropertyName());
 			if (val != null) {
 				if (param.hasFlag(ConfigurationParameters.Flags.VERSION_4)) {
 					propConfiguration.put(param, val);
 				} else {
-					LOGGER.debug("Ignoring non VIGOR4 parameter {}={} set via system properties", param.configKey, val, key);
+					LOGGER.debug("Ignoring non VIGOR4 parameter {}={} set via system properties", param.configKey, val, param.getSystemPropertyName());
 				}
 			}
 		}
@@ -89,13 +87,12 @@ public class VigorInitializationService {
 
 		VigorConfiguration envConfiguration = new VigorConfiguration("environment");
 		for (ConfigurationParameters param: ConfigurationParameters.values()) {
-			key = "VIGOR_" + param.configKey.toUpperCase();
-			val = System.getenv(key);
+			val = System.getenv(param.getEnvVarName());
 			if (val != null) {
 				if (param.hasFlag(ConfigurationParameters.Flags.VERSION_4)) {
 					envConfiguration.put(param, val);
 				} else {
-					LOGGER.debug("ignoring non-VIGOR4 parameter {}={} set via environment variable {}", param.configKey, val, key);
+					LOGGER.debug("ignoring non-VIGOR4 parameter {}={} set via environment variable {}", param.configKey, val, param.getEnvVarName());
 				}
 			}
 		}
