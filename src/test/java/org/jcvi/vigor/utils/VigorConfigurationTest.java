@@ -1,12 +1,16 @@
 package org.jcvi.vigor.utils;
 
+import org.jcvi.vigor.testing.category.Fast;
+import org.jcvi.vigor.testing.category.Isolated;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import java.util.*;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
+@Category({Fast.class, Isolated.class})
 public class VigorConfigurationTest {
 
     /**

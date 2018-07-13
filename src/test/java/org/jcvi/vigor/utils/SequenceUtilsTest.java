@@ -6,11 +6,15 @@ import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.aa.AminoAcid;
 import org.jcvi.jillion.core.residue.aa.ProteinSequence;
 import org.jcvi.jillion.core.residue.aa.ProteinSequenceBuilder;
+import org.jcvi.vigor.testing.category.Fast;
+import org.jcvi.vigor.testing.category.Isolated;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
+@Category({Isolated.class, Fast.class})
 public class SequenceUtilsTest {
 
     @Test

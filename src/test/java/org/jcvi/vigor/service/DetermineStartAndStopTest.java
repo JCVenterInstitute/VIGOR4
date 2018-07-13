@@ -5,8 +5,11 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.jcvi.vigor.testing.category.Fast;
+import org.jcvi.vigor.testing.category.Isolated;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
@@ -26,6 +29,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
+@Category({Fast.class, Isolated.class})
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = Application.class)
 public class DetermineStartAndStopTest {

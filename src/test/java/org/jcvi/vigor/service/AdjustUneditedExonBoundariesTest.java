@@ -17,19 +17,24 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.vigor.Application;
+import org.jcvi.vigor.testing.category.Fast;
+import org.jcvi.vigor.testing.category.Isolated;
 import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.forms.VigorForm;
+import org.jcvi.vigor.testing.category.ReferenceDatabase;
 import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.VigorConfiguration;
 import org.jcvi.vigor.utils.VigorTestUtils;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
+@Category({ReferenceDatabase.class, Fast.class})
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = Application.class)
 public class AdjustUneditedExonBoundariesTest {

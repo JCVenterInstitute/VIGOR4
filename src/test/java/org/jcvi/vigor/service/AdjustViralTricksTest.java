@@ -11,10 +11,14 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.jcvi.vigor.testing.category.Fast;
+import org.jcvi.vigor.testing.category.Isolated;
 import org.jcvi.vigor.exception.VigorException;
+import org.jcvi.vigor.testing.category.ReferenceDatabase;
 import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.VigorConfiguration;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.vigor.Application;
@@ -26,6 +30,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
+@Category({Fast.class, ReferenceDatabase.class})
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = Application.class)
 public class AdjustViralTricksTest {

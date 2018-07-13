@@ -104,7 +104,7 @@ public class VigorUtils {
     }
 
     public static String checkFilePath(String description, String path, FileCheck ... modes) throws VigorException {
-        if (path == null) {
+        if (path == null || path.isEmpty()) {
             throw new VigorException(String.format("%s not set", description));
         }
         File testFile = new File(path);

@@ -10,8 +10,11 @@ import org.jcvi.jillion.core.Direction;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.jillion.core.residue.aa.ProteinSequence;
+import org.jcvi.vigor.testing.category.Fast;
+import org.jcvi.vigor.testing.category.Isolated;
 import org.jcvi.vigor.component.*;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.jcvi.vigor.Application;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +24,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 /**
  * Created by snettem on 5/19/2017.
  */
+@Category({Fast.class, Isolated.class})
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = Application.class)
 public class ModelGenerationServiceTest {

@@ -22,7 +22,7 @@ public class Vigor4RegressionTestRunner {
             System.setProperty(ConfigurationParameters.OutputDirectory.getSystemPropertyName(), outputDir);
             System.setProperty("vigor.regression_test.write_report","true");
             JUnitCore jUnitCore = new JUnitCore();
-            jUnitCore.run(ValidateVigor4Models.class);
+            jUnitCore.run(ValidateVigor4ModelsTest.class);
         } catch (VigorException e) {
             LOGGER.error(e);
             System.exit(1);

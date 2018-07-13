@@ -7,8 +7,11 @@ import org.jcvi.jillion.core.residue.aa.ProteinSequenceBuilder;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
 import org.jcvi.vigor.Application;
+import org.jcvi.vigor.testing.category.Fast;
+import org.jcvi.vigor.testing.category.Isolated;
 import org.jcvi.vigor.component.*;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -19,6 +22,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
+@Category({Fast.class, Isolated.class})
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = Application.class)
 public class CheckCoverageTest {

@@ -268,7 +268,7 @@
       </plugin>
 
       <plugin>
-         <groupId>org.apache.maven.plugins</groupId>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${surefire-version}</version>
         <configuration>
@@ -276,6 +276,8 @@
             <vigor.skip_reference_db_tests>${vigor.skip_reference_db_tests}</vigor.skip_reference_db_tests>
             <vigor.reference_database_path>${vigor.reference_database_path}</vigor.reference_database_path>
           </systemPropertyVariables>
+          <groups>org.jcvi.vigor.testing.category.Fast</groups>
+          <excludedGroups>!org.jcvi.vigor.testing.category.Isolated</excludedGroups>
         </configuration>
       </plugin>
 
@@ -283,4 +285,71 @@
 
   </build>
 
+  <profiles>
+
+    <profile>
+      <id>regression-tests</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>${surefire-version}</version>
+            <configuration>
+              <systemPropertyVariables>
+                <vigor.skip_reference_db_tests>${vigor.skip_reference_db_tests}</vigor.skip_reference_db_tests>
+                <vigor.reference_database_path>${vigor.reference_database_path}</vigor.reference_database_path>
+              </systemPropertyVariables>
+              <groups>org.jcvi.vigor.testing.category.Regression</groups>
+              <excludedGroups>org.jcvi.vigor.testing.category.Dummy</excludedGroups>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>integration-tests</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>${surefire-version}</version>
+            <configuration>
+              <systemPropertyVariables>
+                <vigor.skip_reference_db_tests>${vigor.skip_reference_db_tests}</vigor.skip_reference_db_tests>
+                <vigor.reference_database_path>${vigor.reference_database_path}</vigor.reference_database_path>
+              </systemPropertyVariables>
+              <groups>org.jcvi.vigor.testing.category.ReferenceDatabase,org.jcvi.vigor.testing.category.Integration</groups>
+              <excludedGroups>org.jcvi.vigor.testing.category.Dummy</excludedGroups>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    
+      <profile>
+        <id>all-tests</id>
+        <build>
+          <plugins>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-surefire-plugin</artifactId>
+              <version>${surefire-version}</version>
+              <configuration>
+                <systemPropertyVariables>
+                  <vigor.skip_reference_db_tests>${vigor.skip_reference_db_tests}</vigor.skip_reference_db_tests>
+                  <vigor.reference_database_path>${vigor.reference_database_path}</vigor.reference_database_path>
+                </systemPropertyVariables>
+                <groups>org.jcvi.vigor.testing.category.Fast,org.jcvi.vigor.testing.category.Slow,org.jcvi.vigor.testing.category.Regression,org.jcvi.vigor.testing.category.Integration,org.jcvi.vigor.testing.category.Isolated,org.jcvi.vigor.testing.category.ReferenceDatabase</groups>
+              <excludedGroups>org.jcvi.vigor.testing.category.Dummy</excludedGroups>
+              </configuration>
+            </plugin>
+          </plugins>
+        </build>
+        
+    </profile>
+    
+  </profiles>
 </project>

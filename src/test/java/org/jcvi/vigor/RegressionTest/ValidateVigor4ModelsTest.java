@@ -2,7 +2,6 @@ package org.jcvi.vigor.RegressionTest;
 
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.charset.Charset;
@@ -13,6 +12,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.vigor.Application;
+import org.jcvi.vigor.testing.category.Regression;
+import org.jcvi.vigor.testing.category.Slow;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.exception.VigorException;
@@ -21,6 +22,7 @@ import org.jcvi.vigor.utils.*;
 import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,10 +32,11 @@ import org.springframework.test.context.junit4.rules.SpringMethodRule;
 
 import static org.junit.Assert.fail;
 
+@Category({Slow.class, Regression.class})
 @RunWith(Parameterized.class)
 @ContextConfiguration(classes = Application.class)
-public class ValidateVigor4Models {
-    private final static Logger LOGGER = LogManager.getLogger(ValidateVigor4Models.class);
+public class ValidateVigor4ModelsTest {
+    private final static Logger LOGGER = LogManager.getLogger(ValidateVigor4ModelsTest.class);
 
     private String vigor3OutputTBL;
     private String vigor3OutputPep;
@@ -51,7 +54,7 @@ public class ValidateVigor4Models {
     @Rule
     public final SpringMethodRule springMethodRule = new SpringMethodRule();
 
-    public ValidateVigor4Models ( String vigor3OutputTBL, String vigor3OutputPep, String inputFasta, String referenceDatabaseName ) {
+    public ValidateVigor4ModelsTest(String vigor3OutputTBL, String vigor3OutputPep, String inputFasta, String referenceDatabaseName ) {
 
         this.vigor3OutputTBL = getResource(vigor3OutputTBL).orElseThrow(
                 () -> new IllegalArgumentException(String.format("%s not found", vigor3OutputTBL)));
@@ -64,14 +67,14 @@ public class ValidateVigor4Models {
 
     private Optional<String> getResource (String resource) {
 
-        URL url = ValidateVigor4Models.class.getClassLoader().getResource(resource);
+        URL url = ValidateVigor4ModelsTest.class.getClassLoader().getResource(resource);
         if ( url == null) {
             return Optional.empty();
         }
         return Optional.of(Paths.get(url.getFile()).toAbsolutePath().toString());
     }
 
-    @Parameterized.Parameters(name = "ValidateVigor4Models[#{index} {0}]")
+    @Parameterized.Parameters(name = "ValidateVigor4ModelsTest[#{index} {0}]")
     public static Collection<Object[]> getTestData () {
 
         List<Object[]> testData = new ArrayList<>();

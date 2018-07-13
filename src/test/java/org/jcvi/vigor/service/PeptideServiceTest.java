@@ -7,15 +7,19 @@ import org.jcvi.jillion.core.residue.aa.AminoAcid;
 import org.jcvi.jillion.core.residue.aa.ProteinSequence;
 import org.jcvi.jillion.core.residue.aa.ProteinSequenceBuilder;
 import org.jcvi.vigor.Application;
+import org.jcvi.vigor.testing.category.Fast;
+import org.jcvi.vigor.testing.category.Isolated;
 import org.jcvi.vigor.component.MaturePeptideMatch;
 import org.jcvi.vigor.component.PartialProteinSequence;
 import org.jcvi.vigor.exception.VigorException;
+import org.jcvi.vigor.testing.category.ReferenceDatabase;
 import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.VigorConfiguration;
 import org.jcvi.vigor.utils.VigorTestUtils;
 import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +39,7 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+@Category({Fast.class, ReferenceDatabase.class})
 @RunWith(Parameterized.class)
 @ContextConfiguration(classes = Application.class)
 public class PeptideServiceTest {
