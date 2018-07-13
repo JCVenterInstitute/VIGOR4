@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.utils.ConfigurationParameters;
+import org.jcvi.vigor.utils.VigorUtils;
 import org.junit.runner.JUnitCore;
 
 import java.io.File;
@@ -58,12 +59,14 @@ public class Vigor4RegressionTestRunner {
         String outputDirectory = "";
         if (optsList.get("-o") != null) {
             outputDirectory = optsList.get("-o");
-        } else throw new VigorException("Please provide output directory \"(-o <outputDirectory> )\"");
-        File outputDir = new File(outputDirectory);
-        if (!outputDir.exists()) {
-            throw new VigorException(String.format("Output directory %s does not exist", outputDirectory));
+        } else {
+            throw new VigorException("Please provide output directory \"(-o <outputDirectory> )\"");
         }
-        return outputDir.getAbsolutePath();
+        VigorUtils.checkFilePath("Output directory", outputDirectory,
+                                 VigorUtils.FileCheck.EXISTS,
+                                 VigorUtils.FileCheck.DIRECTORY,
+                                 VigorUtils.FileCheck.WRITE);
+        return new File(outputDirectory).getAbsolutePath();
     }
 
     private static void printHelp () {

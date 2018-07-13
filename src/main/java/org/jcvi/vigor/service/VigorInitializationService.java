@@ -150,17 +150,10 @@ public class VigorInitializationService {
 			throw new VigorException("reference database is required");
 		}
 		File referenceDBFile = new File(reference_db);
-		if (! referenceDBFile.exists() ) {
-			throw new VigorException(String.format("Reference database file \"%s\" does not exist", reference_db));
-		}
-
-		if (! referenceDBFile.isFile()) {
-			throw new VigorException(String.format("Reference database \"%s\" is not a file", reference_db));
-		}
-
-		if (! referenceDBFile.canRead()) {
-			throw new VigorException(String.format("Reference database \"%s\" is not readable", reference_db));
-		}
+		VigorUtils.checkFilePath("Reference database file", reference_db,
+								 VigorUtils.FileCheck.EXISTS,
+								 VigorUtils.FileCheck.FILE,
+								 VigorUtils.FileCheck.READ );
 
 		String virusSpecificConfig = getConfigValue(ConfigurationParameters.VirusSpecificConfiguration, configurations);
 		String virusSpecificConfigPath = getConfigValue(ConfigurationParameters.VirusSpecificConfigurationPath, configurations);
@@ -181,12 +174,10 @@ public class VigorInitializationService {
 
 		File tempDir = Paths.get(temporaryDirectory).toFile();
 		if (tempDir.exists()) {
-			if (! tempDir.isDirectory()) {
-				throw new VigorException(String.format("temporary directory %s exists but is not a directory", temporaryDirectory));
-			}
-			if (! (tempDir.canRead() && tempDir.canWrite())) {
-				throw new VigorException(String.format("temporary directory %s is not readable or not writable", temporaryDirectory));
-			}
+			VigorUtils.checkFilePath("temporary directory", temporaryDirectory,
+									 VigorUtils.FileCheck.DIRECTORY,
+									 VigorUtils.FileCheck.READ,
+									 VigorUtils.FileCheck.WRITE);
 		} else {
 			if (! tempDir.mkdirs()) {
 				throw new VigorException(String.format("unable to create temporary directory %s", tempDir));
@@ -236,15 +227,13 @@ public class VigorInitializationService {
 					throw new VigorException(String.format("problem expanding ~ in config file %s", config_file), e);
 				}
 			}
-			File config_path = new File(config_file).getAbsoluteFile();
-			if (! config_path.exists()) {
-				throw new VigorException(String.format("config file %s does not exist", config_path.toString()));
-			} else if (! config_path.canRead()) {
-				throw new VigorException(String.format("config file %s is not readable", config_path.toString()));
-			}
+			VigorUtils.checkFilePath("config file", config_file,
+									 VigorUtils.FileCheck.EXISTS,
+									 VigorUtils.FileCheck.READ,
+									 VigorUtils.FileCheck.FILE);
 		    LOGGER.debug("loading config file {}", config_file);
 		    // use the file as configuration name so it's unambigious
-			VigorConfiguration configFileConfiguration = LoadDefaultParameters.loadVigorConfiguration(config_file,config_path);
+			VigorConfiguration configFileConfiguration = LoadDefaultParameters.loadVigorConfiguration(config_file, new File(config_file));
 			configurations.add(configFileConfiguration);
 		}
 
@@ -382,7 +371,7 @@ public class VigorInitializationService {
 		LOGGER.debug("virus specific config file for reference_db {} is {}", reference_db, configPath);
 		// config file was specified, but doesn't exist
 		if ( (! configFile.exists())  && virusSpecificConfig != null) {
-			throw new VigorException("Virus specific config file {} doesn't exist or is not readable");
+			throw new VigorException(String.format("Virus specific config file %sdoesn't exist or is not readable", virusSpecificConfig));
 		}
 		// virus specific configuration files may not exist
 		if (configFile.exists()) {
