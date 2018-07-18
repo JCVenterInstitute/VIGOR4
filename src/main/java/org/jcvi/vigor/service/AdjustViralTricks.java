@@ -27,14 +27,13 @@ import org.springframework.stereotype.Service;
 public class AdjustViralTricks implements DetermineGeneFeatures {
 
     private static final Logger LOGGER = LogManager.getLogger(ModelGenerationService.class);
-    private double leakyStopNotFoundScore = 80;
 
     @Override
     public List<Model> determine ( Model model, VigorForm form ) throws ServiceException {
 
         List<Model> outputModels = new ArrayList<>();
         List<Model> rnaEditedModels = new ArrayList<>();
-        leakyStopNotFoundScore = form.getConfiguration().getOrDefault(ConfigurationParameters.ScoreFactorLeakyStopNotFound, 80);
+        double leakyStopNotFoundScore = form.getConfiguration().getOrDefault(ConfigurationParameters.ScoreFactorLeakyStopNotFound, 80);
 
         try {
             List<Model> riboAdjustedmodels = adjustRibosomalSlippage(model);
@@ -42,7 +41,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                 rnaEditedModels.addAll(adjustRNAEditing(riboAdjustedModel));
             }
             for (Model rnaEditeddModel : rnaEditedModels) {
-                outputModels.addAll(checkForLeakyStop(rnaEditeddModel));
+                outputModels.addAll(checkForLeakyStop(rnaEditeddModel, leakyStopNotFoundScore));
             }
         } catch (CloneNotSupportedException e) {
             throw new ServiceException(String.format("Problem adjusting model %s for viral tricks", model), e);
@@ -212,7 +211,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
      * @return List of models. Cloned model for each match found.
      * @throws CloneNotSupportedException
      */
-    public List<Model> checkForLeakyStop ( Model model ) throws CloneNotSupportedException {
+    public List<Model> checkForLeakyStop (Model model, double leakyStopNotFoundScore ) throws CloneNotSupportedException {
 
         List<Model> newModels = new ArrayList<Model>();
         List<Range> sequenceGaps = model.getAlignment().getVirusGenome().getSequenceGaps();

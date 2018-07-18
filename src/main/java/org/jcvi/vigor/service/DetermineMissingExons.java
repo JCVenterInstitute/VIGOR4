@@ -22,20 +22,17 @@ import org.jcvi.jillion.core.Direction;
 @Service
 public class DetermineMissingExons implements DetermineGeneFeatures {
 
-    private int minExonSize = 30;
-    private int maxIntronSize = 2500;
-    private int min_missing_AA_size = 10;
 
     @Override
     public List<Model> determine ( Model model, VigorForm form ) {
 
         List<Model> outModels = new ArrayList<Model>();
-        minExonSize = form.getConfiguration().getOrDefault(ConfigurationParameters.ExonMinimumSize, 30);
-        maxIntronSize = form.getConfiguration().getOrDefault(ConfigurationParameters.IntronMinimumSize, 2500);
-        min_missing_AA_size = form.getConfiguration().getOrDefault(ConfigurationParameters.MinimumMissingAASize, 10);
+        int minExonSize = form.getConfiguration().getOrDefault(ConfigurationParameters.ExonMinimumSize, 30);
+        int maxIntronSize = form.getConfiguration().getOrDefault(ConfigurationParameters.IntronMinimumSize, 2500);
+        int min_missing_AA_size = form.getConfiguration().getOrDefault(ConfigurationParameters.MinimumMissingAASize, 10);
 
         model.getExons().sort(Exon.Comparators.Ascending);
-        model = findMissingExons(model);
+        model = findMissingExons(model, maxIntronSize, minExonSize, min_missing_AA_size);
         model.getExons().sort(Exon.Comparators.Ascending);
         outModels.add(model);
         return outModels;
@@ -113,7 +110,7 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
      * @param model
      * @return
      */
-    public Model findMissingExons ( Model model ) {
+    public Model findMissingExons ( Model model, int maxIntronSize, int minExonSize, int min_missing_AA_size ) {
 
         List<Exon> exons = model.getExons();
         List<Exon> missingExons = new ArrayList<Exon>();

@@ -113,7 +113,9 @@ public class DetermineStartAndStopTest {
     @Test
     public void findStop () throws CloneNotSupportedException {
 
-        List<Model> models = determineStop.findStop(model);
+        int stopCodonWindow = 50;
+        boolean isDebug = false;
+        List<Model> models = determineStop.findStop(model, stopCodonWindow, isDebug);
         assertEquals("Expected 2 models, but got " + models.size(), 2, models.size());
         assertEquals(2, models.size());
         assertEquals(954, models.get(0).getExons().get(model.getExons().size() - 1).getRange().getEnd());

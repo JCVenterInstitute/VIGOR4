@@ -27,7 +27,6 @@ public class ViralProteinService {
 
     private static final Logger LOGGER = LogManager.getLogger(ViralProteinService.class);
     private String matPepDB = "";
-    private int min_intron_length;
 
     /**
      * @param alignment
@@ -36,7 +35,6 @@ public class ViralProteinService {
      */
     public Alignment setViralProteinAttributes ( Alignment alignment, VigorForm form ) throws VigorException {
 
-        min_intron_length = form.getConfiguration().getOrDefault(ConfigurationParameters.IntronMinimumSize, 0);
         ViralProtein viralProtein = setGeneAttributes(alignment.getViralProtein(), form);
         AlignmentEvidence alignmentEvidence = alignment.getAlignmentEvidence();
         alignmentEvidence.setMatpep_db(matPepDB);
@@ -208,7 +206,8 @@ public class ViralProteinService {
         viralProtein.setGeneAttributes(geneAttributes);
 
         /* set geneStructure property of viralProtein */
-        viralProtein = DetermineGeneStructure(viralProtein);
+        int min_intron_length = form.getConfiguration().getOrDefault(ConfigurationParameters.IntronMinimumSize, 0);
+        viralProtein = DetermineGeneStructure(viralProtein, min_intron_length);
         return viralProtein;
     }
 
@@ -218,7 +217,7 @@ public class ViralProteinService {
      * @return GeneStructure: has list of exons and introns of the viralProtein.
      *         These are determined from spliceform annotated in the defline*/
 
-    public ViralProtein DetermineGeneStructure ( ViralProtein viralProtein ) throws ServiceException {
+    public ViralProtein DetermineGeneStructure ( ViralProtein viralProtein, int min_intron_length ) throws ServiceException {
 
         boolean is_ribosomal_slippage = viralProtein.getGeneAttributes().getRibosomal_slippage()
                 .isHas_ribosomal_slippage();

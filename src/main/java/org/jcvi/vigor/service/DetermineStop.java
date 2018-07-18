@@ -23,19 +23,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class DetermineStop implements DetermineGeneFeatures {
 
-    long stopCodonWindow = 50;
-    boolean isDebug = false;
 
     @Override
     public List<Model> determine ( Model model, VigorForm form ) throws ServiceException {
 
-        Integer stopCodonWindowParam = form.getConfiguration().get(ConfigurationParameters.StopCodonSearchWindow);
-        isDebug = form.getConfiguration().get(ConfigurationParameters.Verbose).equals("true") ? true : false;
-        if (stopCodonWindowParam != null) {
-            stopCodonWindow = stopCodonWindowParam;
-        }
+        Integer stopCodonWindow = form.getConfiguration().getOrDefault(ConfigurationParameters.StopCodonSearchWindow, 50);
+        boolean isDebug = form.getConfiguration().get(ConfigurationParameters.Verbose).equals("true") ? true : false;
         try {
-            return findStop(model);
+            return findStop(model, stopCodonWindow, isDebug);
         } catch (CloneNotSupportedException e) {
             throw new ServiceException(String.format("Problem determine stop for model %s", model), e);
         }
@@ -47,7 +42,7 @@ public class DetermineStop implements DetermineGeneFeatures {
      * @throws CloneNotSupportedException
      */
     @SuppressWarnings("Duplicates")
-    public List<Model> findStop ( Model model )
+    public List<Model> findStop ( Model model, int stopCodonWindow, boolean isDebug )
             throws CloneNotSupportedException {
 
         List<Model> newModels = new ArrayList<Model>();

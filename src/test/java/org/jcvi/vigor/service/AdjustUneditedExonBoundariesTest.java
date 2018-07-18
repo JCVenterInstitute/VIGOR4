@@ -76,7 +76,9 @@ public class AdjustUneditedExonBoundariesTest {
         Model testModel = models.get(0);
         assertTrue(String.format("no exons found for test model %s", testModel), testModel.getExons().size() > 0);
         testModel.getExons().get(0).setRange(Range.of(11, 30));
-        List<Model> outModels = adjustUneditedExonBoundaries.adjustSpliceSites(testModel);
+        int defaultSearchWindow = 50;
+        int minIntronLength = 20;
+        List<Model> outModels = adjustUneditedExonBoundaries.adjustSpliceSites(testModel, defaultSearchWindow, minIntronLength);
         Comparator<Model> bySpliceScore = Comparator.comparing(( m ) -> m.getScores().get("spliceScore"));
         Optional<Model> outModel = outModels.stream().sorted(bySpliceScore.reversed()).findFirst();
         assertTrue("No adjusted model found", outModel.isPresent());

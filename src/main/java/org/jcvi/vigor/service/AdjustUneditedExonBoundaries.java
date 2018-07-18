@@ -24,20 +24,17 @@ import org.springframework.stereotype.Service;
 @Service
 public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
 
-    private int defaultSearchWindow = 50;
-    private int minIntronLength = 20;
-
     @Override
     public List<Model> determine ( Model model, VigorForm form ) throws ServiceException {
 
         VigorConfiguration configuration = form.getConfiguration();
-        defaultSearchWindow = configuration.getOrDefault(ConfigurationParameters.StopCodonSearchWindow, 50);
-        minIntronLength = configuration.getOrDefault(ConfigurationParameters.IntronMinimumSize, 20);
+        int defaultSearchWindow = configuration.getOrDefault(ConfigurationParameters.StopCodonSearchWindow, 50);
+        int minIntronLength = configuration.getOrDefault(ConfigurationParameters.IntronMinimumSize, 20);
 
 
         List<Model> models = null;
         try {
-            models = adjustSpliceSites(model);
+            models = adjustSpliceSites(model, defaultSearchWindow, minIntronLength);
         } catch (CloneNotSupportedException e) {
             throw new ServiceException(String.format("Problem adjusting exon boundaries for model %s", model), e);
         }
@@ -49,7 +46,7 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
      * @return : models with permutations and combinations of different splice sites found for each splice region. Exon boundaries are adjusted to the splice region.
      * @throws CloneNotSupportedException
      */
-    public List<Model> adjustSpliceSites ( Model model ) throws CloneNotSupportedException {
+    public List<Model> adjustSpliceSites ( Model model, int defaultSearchWindow, int minIntronLength ) throws CloneNotSupportedException {
 
         List<Model> models = new ArrayList<Model>();
         if (model.getAlignment().getViralProtein().getIntrons().size() >= 1) {

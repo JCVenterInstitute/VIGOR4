@@ -36,19 +36,16 @@ public class GeneModelGenerationService {
     private CheckCoverage checkCoverage;
     @Autowired
     private EvaluateScores evaluateScores;
-    private long max_gene_overlap = 0;
-    boolean isDebug = false;
+
     private static final Logger LOGGER = LogManager.getLogger(GeneModelGenerationService.class);
 
     public List<Model> generateGeneModel ( List<Model> models, VigorForm form ) throws ServiceException {
 
         List<Model> pseudoGenes = new ArrayList<>();
-        isDebug = form.getConfiguration().getOrDefault(ConfigurationParameters.Verbose, false);
+        boolean isDebug = form.getConfiguration().getOrDefault(ConfigurationParameters.Verbose, false);
+        int max_gene_overlap = form.getConfiguration().getOrDefault(ConfigurationParameters.MaxGeneOverlap, 0);
 
-        if (form.getConfiguration().get(ConfigurationParameters.MaxGeneOverlap) != null) {
-            max_gene_overlap = form.getConfiguration().get(ConfigurationParameters.MaxGeneOverlap);
-        }
-        List<Model> processedModels = determineGeneFeatures(models, form);
+        List<Model> processedModels = determineGeneFeatures(models, form, isDebug);
         // TODO process pseudogenes/partial genes, Not included in initial release
         processedModels.stream().forEach(model -> checkCoverage.evaluate(model, form));
         processedModels.stream().forEach(model -> evaluateScores.evaluate(model, form));
@@ -68,7 +65,7 @@ public class GeneModelGenerationService {
             LOGGER.error("No gene models found. Currently Vigor4 does not support annotating Pseudogenes ");
             return Collections.EMPTY_LIST;
         }
-        List<Model> geneModels = filterGeneModels(processedModels, processedPseudoGenes);
+        List<Model> geneModels = filterGeneModels(processedModels, processedPseudoGenes, max_gene_overlap, isDebug);
         return geneModels;
     }
 
@@ -241,7 +238,7 @@ public class GeneModelGenerationService {
      * @param pseudogenes
      * @return
      */
-    private List<Model> filterGeneModels ( List<Model> models, List<Model> pseudogenes ) {
+    private List<Model> filterGeneModels ( List<Model> models, List<Model> pseudogenes, int max_gene_overlap, boolean isDebug ) {
 
         List<Model> geneModels = new ArrayList<>();
         List<Model> filteredModels = filterModelsOfaGene(models);
@@ -327,7 +324,7 @@ public class GeneModelGenerationService {
      * @return
      * @throws ServiceException
      */
-    private List<Model> determineGeneFeatures ( List<Model> models, VigorForm form ) throws ServiceException {
+    private List<Model> determineGeneFeatures ( List<Model> models, VigorForm form, boolean isDebug ) throws ServiceException {
 
         List<Model> modelsWithMissingExonsDetermined = new ArrayList<Model>();
         List<Model> modelsAfterDeterminingStart = new ArrayList<Model>();

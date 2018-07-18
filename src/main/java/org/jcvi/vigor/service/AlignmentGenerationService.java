@@ -29,7 +29,6 @@ import org.springframework.stereotype.Service;
 public class AlignmentGenerationService {
 
     private static final Logger LOGGER = LogManager.getLogger(AlignmentGenerationService.class);
-    private boolean isDebug = false;
     @Autowired
     private ViralProteinService viralProteinService;
     @Autowired
@@ -37,9 +36,9 @@ public class AlignmentGenerationService {
 
     public List<Alignment> generateAlignment ( VirusGenome virusGenome, VigorForm form ) throws VigorException {
 
-        if (form.getConfiguration().containsKey(ConfigurationParameters.Verbose)) {
-            isDebug = form.getConfiguration().get(ConfigurationParameters.Verbose);
-        }
+
+        boolean isDebug = form.getConfiguration().getOrDefault(ConfigurationParameters.Verbose, false);
+
         AlignmentEvidence alignmentEvidence = form.getAlignmentEvidence();
         String alignmentModule = form.getConfiguration().get(ConfigurationParameters.AlignmentModule);
         AlignmentTool alignmentTool = AlignmentToolFactory.getAlignmentTool(alignmentModule);
@@ -54,7 +53,7 @@ public class AlignmentGenerationService {
         virusGenome.setInternalStops(internalStops);
         virusGenome.setSequenceGaps(sequenceGaps);
         List<Alignment> alignments;
-        AlignmentService alignmentService = getAlignmentService(alignmentTool, form);
+        AlignmentService alignmentService = getAlignmentService(alignmentTool, form, isDebug);
         Path workspace;
         try {
             workspace = Files.createTempDirectory(Paths.get(tempDir), "vigor4");
@@ -78,20 +77,10 @@ public class AlignmentGenerationService {
      * @return AlignmentService with alignment algorithm
      * @throws ServiceException
      */
-    private AlignmentService getAlignmentService ( AlignmentTool alignmentTool, VigorForm form ) throws ServiceException {
+    private AlignmentService getAlignmentService ( AlignmentTool alignmentTool, VigorForm form, boolean isDebug ) throws ServiceException {
 
         if (alignmentTool != null && "exonerate".equals(alignmentTool.getToolName())) {
-            try {
-                String exoneratePath = form.getConfiguration().get(ConfigurationParameters.ExoneratePath);
-                LOGGER.debug("Using exonerate path {}", exoneratePath);
-                if (exoneratePath == null || exoneratePath.isEmpty()) {
-                    throw new VigorException("Exonerate path is not set");
-                }
-                exonerateService.setExoneratePath(Paths.get(exoneratePath));
                 return exonerateService;
-            } catch (VigorException e) {
-                throw new ServiceException(e);
-            }
         }
         throw new ServiceException(String.format("Unsupported alignment tool %s", alignmentTool));
     }

@@ -93,7 +93,8 @@ public class AdjustViralTricksTest {
             models.addAll(modelGenerationService.alignmentToModels(x));
         });
         Model testModel = models.get(0);
-        Model outputModel = adjustViralTricks.checkForLeakyStop(testModel).get(0);
+        double leakStopNotFoundScore = 1;
+        Model outputModel = adjustViralTricks.checkForLeakyStop(testModel, leakStopNotFoundScore).get(0);
         Range actual = outputModel.getReplaceStopCodonRange();
         assertEquals("TGA", outputModel.getAlignment().getVirusGenome().getSequence().toBuilder().trim(Range.of(5627, 5629)).build().toString());
         assertEquals(Range.of(5627, 5629), actual);

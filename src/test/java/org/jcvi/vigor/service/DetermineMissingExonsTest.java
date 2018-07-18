@@ -76,7 +76,10 @@ public class DetermineMissingExonsTest {
         assertTrue(String.format("Expected models %s to have at least 2 exons, got %s", model, model.getExons().size()),
                 2 <= model.getExons().size());
         model.getExons().remove(1);
-        int exons = determineMissingExons.findMissingExons(model).getExons().size();
+        int maxIntronSize = 2500;
+        int minExonSize = 30;
+        int minMissingAASize = 10;
+        int exons = determineMissingExons.findMissingExons(model, maxIntronSize, minExonSize, minMissingAASize).getExons().size();
         assertEquals(2, exons);
     }
 
