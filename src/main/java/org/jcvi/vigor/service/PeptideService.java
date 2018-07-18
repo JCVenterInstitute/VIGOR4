@@ -16,6 +16,7 @@ import org.jcvi.jillion.fasta.aa.ProteinFastaFileDataStore;
 ;
 import org.jcvi.jillion.fasta.aa.ProteinFastaRecord;
 import org.jcvi.vigor.component.MaturePeptideMatch;
+import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.component.PartialProteinSequence;
 import org.jcvi.vigor.component.ViralProtein;
 import org.jcvi.vigor.service.exception.ServiceException;
@@ -174,15 +175,15 @@ public class PeptideService implements PeptideMatchingService {
 
     }
     @Override
-    public List<MaturePeptideMatch> findPeptides(PartialProteinSequence partialProtein, File peptideDatabase, Scores minscores) throws ServiceException {
+    public List<MaturePeptideMatch> findPeptides(Model model, File peptideDatabase, Scores minscores) throws ServiceException {
 
-        long lastAAIndex = partialProtein.getSequence().getLength() -1;
-        if (partialProtein.getSequence().get(lastAAIndex) == AminoAcid.STOP) {
-            partialProtein = PartialProteinSequence.of(partialProtein.getSequence().toBuilder().delete(Range.of(lastAAIndex)).build(),
-                                                       partialProtein.isPartial3p(),
-                                                       partialProtein.isPartial5p());
+        ProteinSequence sequence = model.getTranslatedSeq();
+
+        long lastAAIndex = sequence.getLength() -1;
+        if (sequence.get(lastAAIndex) == AminoAcid.STOP) {
+            sequence = sequence.toBuilder().delete(Range.of(lastAAIndex)).build();
         }
-
+        PartialProteinSequence partialProtein = PartialProteinSequence.of(sequence, model.isPartial3p(), model.isPartial5p());
         Predicate<PeptideMatch> filterByScore = match -> {
 
             LOGGER.debug(formatMatchForLogging(match));

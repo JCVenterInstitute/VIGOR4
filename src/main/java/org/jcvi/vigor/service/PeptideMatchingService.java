@@ -1,7 +1,7 @@
 package org.jcvi.vigor.service;
 
 import org.jcvi.vigor.component.MaturePeptideMatch;
-import org.jcvi.vigor.component.PartialProteinSequence;
+import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.service.exception.ServiceException;
 
 import java.io.File;
@@ -29,5 +29,5 @@ public interface PeptideMatchingService {
 
     }
 
-   List<MaturePeptideMatch> findPeptides(PartialProteinSequence protein, File peptideDatabase, Scores scores) throws ServiceException;
+   List<MaturePeptideMatch> findPeptides(Model model, File peptideDatabase, Scores scores) throws ServiceException;
 }

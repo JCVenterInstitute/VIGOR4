@@ -7,6 +7,7 @@ import org.jcvi.jillion.core.residue.aa.AminoAcid;
 import org.jcvi.jillion.core.residue.aa.ProteinSequence;
 import org.jcvi.jillion.core.residue.aa.ProteinSequenceBuilder;
 import org.jcvi.vigor.Application;
+import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.testing.category.Fast;
 import org.jcvi.vigor.testing.category.Isolated;
 import org.jcvi.vigor.component.MaturePeptideMatch;
@@ -77,7 +78,11 @@ public class PeptideServiceTest {
         String refDB = Paths.get(refDBPath, mp_ref_db).toString();
         File peptideDB = getPeptideDB(refDBPath, mp_ref_db);
         PeptideMatchingService.Scores scores = PeptideMatchingService.Scores.of(.25d, .4d, .5d);
-        List<MaturePeptideMatch> matches = peptideService.findPeptides(PartialProteinSequence.of(protein, false, false), peptideDB, scores);
+        Model model = new Model();
+        model.setTranslatedSeq(protein);
+        model.setPartial3p(false);
+        model.setPartial5p(false);
+        List<MaturePeptideMatch> matches = peptideService.findPeptides(model, peptideDB, scores);
         LOGGER.debug(() -> String.format("peptides:%s", matches.stream().map(String:: valueOf).collect(Collectors.joining("\n> ", "\n> ", ""))));
         Function<MaturePeptideMatch, ProteinSequence> matchToSeq = ( m ) -> {
             ProteinSequenceBuilder pb = m.getProtein().toBuilder().trim(m.getProteinRange());
