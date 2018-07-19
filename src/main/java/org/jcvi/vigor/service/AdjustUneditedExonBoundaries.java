@@ -31,14 +31,11 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
         int defaultSearchWindow = configuration.getOrDefault(ConfigurationParameters.StopCodonSearchWindow, 50);
         int minIntronLength = configuration.getOrDefault(ConfigurationParameters.IntronMinimumSize, 20);
 
-
-        List<Model> models = null;
         try {
-            models = adjustSpliceSites(model, defaultSearchWindow, minIntronLength);
+            return adjustSpliceSites(model, defaultSearchWindow, minIntronLength);
         } catch (CloneNotSupportedException e) {
             throw new ServiceException(String.format("Problem adjusting exon boundaries for model %s", model), e);
         }
-        return models;
     }
 
     /**
