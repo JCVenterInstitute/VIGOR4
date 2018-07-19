@@ -158,12 +158,9 @@ public class ViralProteinService {
         /* Set RNA_Editing attributes */
         if (attributes.containsKey("V4_rna_editing")) {
             String attribute = attributes.get("V4_rna_editing");
-            String[] temp = attribute.split("/");
-            int rna_editing_offset = 0;
-            if (VigorUtils.is_Integer(temp[ 0 ])) {
-                rna_editing_offset = Integer.parseInt(temp[ 0 ]);
+            if (! (attribute == null || attribute.isEmpty())) {
+                rna_editing = RNA_Editing.parseFromString(attribute);
             }
-            rna_editing = new RNA_Editing(true, rna_editing_offset, temp[ 2 ], temp[ 1 ], temp[ 3 ]);
         }
 
         /* Set StructuralSpecifications */
