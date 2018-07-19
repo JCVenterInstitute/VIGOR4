@@ -134,11 +134,8 @@ public class ViralProteinService {
         /* Set RibosomalSlippage attributes */
         if (attributes.containsKey("V4_Ribosomal_Slippage")) {
             String attribute = attributes.get("V4_Ribosomal_Slippage");
-            String[] temp = attribute.split("/");
-            if (temp.length == 3) {
-                ribosomal_slippage = new Ribosomal_Slippage(true, temp[ 2 ], Integer.parseInt(temp[ 0 ]), Integer.parseInt(temp[ 1 ]));
-            } else {
-                LOGGER.warn("bad ribosomal slippage attribute {}", attribute);
+            if (! (attribute == null || attribute.isEmpty() )) {
+                ribosomal_slippage = Ribosomal_Slippage.parseFromString(attribute);
             }
         }
 

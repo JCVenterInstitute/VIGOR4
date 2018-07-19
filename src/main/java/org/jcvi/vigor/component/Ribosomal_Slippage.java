@@ -25,5 +25,15 @@ public class Ribosomal_Slippage {
         this.slippage_frameshift = frameshift;
     }
 
+    public static Ribosomal_Slippage parseFromString(String slippageString) throws IllegalArgumentException {
+        String[] temp = slippageString.split("/");
+        if (temp.length == 3) {
+            return new Ribosomal_Slippage(true, temp[2], Integer.parseInt(temp[0]), Integer.parseInt(temp[1]));
+        }
+        throw new IllegalArgumentException(
+                String.format("Invalid ribsomal slippage format\"%s\". Format is OFFSET/FRAMESHIFT/MOTIF_REGEX", slippageString)
+        );
+    }
+
     public final static Ribosomal_Slippage NO_SLIPPAGE = new Ribosomal_Slippage(false, "", 0, 0);
 }
