@@ -52,12 +52,7 @@ public class ViralProteinService {
         GeneAttributes geneAttributes = new GeneAttributes();
         String defline = viralProtein.getDefline();
         defline = StringUtils.normalizeSpace(defline);
-        List<String> deflineAttributes = parseDeflineAttributes(defline);
-        Map<String, String> attributes = deflineAttributes.stream()
-                .map(s -> s.split("=", 2))
-                .collect(Collectors.toMap(a -> a[ 0 ].trim(),
-                        a -> a.length > 1 ? VigorUtils.removeQuotes(a[ 1 ]) : "",
-                        ( s1, s2 ) -> s1));
+        Map<String, String> attributes = parseDeflineAttributes(defline, viralProtein.getProteinID());
         StructuralSpecifications structuralSpecifications = new StructuralSpecifications();
         Splicing splicing = Splicing.NO_SPLICING;
         Ribosomal_Slippage ribosomal_slippage = Ribosomal_Slippage.NO_SLIPPAGE;
@@ -83,50 +78,46 @@ public class ViralProteinService {
         }
 
         /* Set Splicing attributes */
-        if (attributes.containsKey("splice_form")) {
-            if (!( attributes.get("splice_form").equals("") )) {
-                List<SpliceSite> splicePairs = new ArrayList<SpliceSite>();
-                if (attributes.containsKey("noncanonical_splicing")) {
-                    if (!( attributes.get("noncanonical_splicing").equalsIgnoreCase("N") )) {
-                        List<String> spliceSites = Pattern.compile(";").splitAsStream(attributes.get("noncanonical_splicing").trim()).collect(Collectors.toList());
-                        for (String spliceSite : spliceSites) {
-                            String[] temp = spliceSite.split(Pattern.quote("+"));
-                            splicePairs.add(splicing.new SpliceSite(temp[ 0 ], temp[ 1 ]));
-                        }
-                    }
+        if (! attributes.getOrDefault("splice_form","").isEmpty()) {
+            List<SpliceSite> splicePairs = new ArrayList<SpliceSite>();
+            if (! attributes.getOrDefault("noncanonical_splicing","N").equalsIgnoreCase("N")) {
+                Pattern.compile(";").splitAsStream(attributes.get("noncanonical_splicing").trim())
+                       .map(s -> s.split(Pattern.quote("+")))
+                       .map(a -> new Splicing.SpliceSite(a[ 0 ], a[ 1 ]))
+                       .forEach(splicePairs::add);
+            }
+            splicePairs.add(new Splicing.SpliceSite("GT", "AG"));
+            splicing = new Splicing(true, splicePairs, attributes.get("splice_form"));
+            //TODO this only set if splicing?
+            if (attributes.containsKey("tiny_exon3")) {
+                String attribute = attributes.get("tiny_exon3");
+                int offset = 0;
+                String[] temp = attribute.split(":");
+                String regex = temp[ 0 ];
+                if (VigorUtils.is_Integer(temp[ 1 ])) {
+                    offset = Integer.parseInt(temp[ 1 ]);
                 }
-                SpliceSite defaultSpliceSite = splicing.new SpliceSite("GT", "AG");
-                splicePairs.add(defaultSpliceSite);
-                splicing = new Splicing(true, splicePairs, attributes.get("splice_form"));
-                if (attributes.containsKey("tiny_exon3")) {
-                    String attribute = attributes.get("tiny_exon3");
-                    int offset = 0;
+                Map<String, Integer> temp1 = new HashMap<String, Integer>();
+                temp1.put(regex, offset);
+                structuralSpecifications.setTiny_exon3(temp1);
+            }
+            //TODO this only set if splicing?
+            if (attributes.containsKey("tiny_exon5")) {
+                String attribute = attributes.get("tiny_exon5");
+                String regex = null;
+                int offset = 0;
+                if (attribute.matches(".*?:.*")) {
                     String[] temp = attribute.split(":");
-                    String regex = temp[ 0 ];
+                    regex = temp[ 0 ];
                     if (VigorUtils.is_Integer(temp[ 1 ])) {
                         offset = Integer.parseInt(temp[ 1 ]);
+                    } else {
+                        regex = attribute;
                     }
-                    Map<String, Integer> temp1 = new HashMap<String, Integer>();
-                    temp1.put(regex, offset);
-                    structuralSpecifications.setTiny_exon3(temp1);
                 }
-                if (attributes.containsKey("tiny_exon5")) {
-                    String attribute = attributes.get("tiny_exon5");
-                    String regex = null;
-                    int offset = 0;
-                    if (attribute.matches(".*?:.*")) {
-                        String[] temp = attribute.split(":");
-                        regex = temp[ 0 ];
-                        if (VigorUtils.is_Integer(temp[ 1 ])) {
-                            offset = Integer.parseInt(temp[ 1 ]);
-                        } else {
-                            regex = attribute;
-                        }
-                    }
-                    Map<String, Integer> temp = new HashMap<String, Integer>();
-                    temp.put(regex, offset);
-                    structuralSpecifications.setTiny_exon5(temp);
-                }
+                Map<String, Integer> temp = new HashMap<String, Integer>();
+                temp.put(regex, offset);
+                structuralSpecifications.setTiny_exon5(temp);
             }
         }
 
@@ -268,116 +259,42 @@ public class ViralProteinService {
      * @param defline of the protein
      * @return List of attributes in the defline
      */
-    public List<String> parseDeflineAttributes ( String defline ) throws VigorException {
+    public static Map<String,String> parseDeflineAttributes ( String defline, String id ) throws VigorException {
 
-        Pattern pattern;
-        Matcher matcher;
-        List<String> deflineAttributes = new ArrayList<String>();
-        try {
-            /* parsing splicing attributes */
-            pattern = Pattern.compile("splice_form=\"?(-?[a-zA-Z_0-9])*\"?");
-            matcher = pattern.matcher(defline);
-            if (matcher.find()) {
-                deflineAttributes.add(matcher.group(0));
-            }
-            pattern = Pattern.compile("spliced=[YyNn]");
-            matcher = pattern.matcher(defline);
-            if (matcher.find()) {
-                deflineAttributes.add(matcher.group(0));
-            }
-            pattern = Pattern.compile("(noncanonical_splicing=([a-zA-Z]*\\+[a-zA-Z]*,?)+)");
-            matcher = pattern.matcher(defline);
-            if (matcher.find()) {
-                deflineAttributes.add(matcher.group(0));
-            }
-            pattern = Pattern.compile("product=\"([^\"]*\")");
-            matcher = pattern.matcher(defline);
-            if (matcher.find()) {
-                deflineAttributes.add(matcher.group(0));
-            }
-            pattern = Pattern.compile("gene=\"\\S*\"");
-            matcher = pattern.matcher(defline);
-            if (matcher.find()) {
-                deflineAttributes.add(matcher.group(0));
-            }
-            pattern = Pattern.compile("gene_synonym=\"\\S*\"");
-            matcher = pattern.matcher(defline);
-            if (matcher.find()) {
-                deflineAttributes.add(matcher.group(0));
-            }
+        Pattern attributePattern = Pattern.compile("(?<key>\\b(?<!>)\\w+\\b)(?:\\s*=\\s*(?<value>\"[^\"]*\"|\\w+))?");
+        Matcher matcher = attributePattern.matcher(defline);
+        Map<String,String> attributes = new HashMap<>();
+        String key,value,error;
+        List<String> errors = new ArrayList<>();
+        List<String> warnings = new ArrayList<>();
 
-            /* parsing ribosomal slippage attributes */
-            pattern = Pattern.compile("V4_Ribosomal_Slippage=\\\"(-?\\+?\\d*)/(-?\\+?\\d*)/(\\S*)\\\"");
-            matcher = pattern.matcher(defline);
-            if (matcher.find()) {
-                deflineAttributes.add(matcher.group(0));
+        while (matcher.find()) {
+            key = matcher.group("key");
+            value = VigorUtils.removeQuotes(VigorUtils.nullElse(matcher.group("value"),"").trim());
+            if (attributes.containsKey(key)) {
+                error = String.format("duplicate key \"%s\" previous value \"%s\" new value \"%s\"", key, attributes.get(key), value);
+                if (value.equals(attributes.get(key))) {
+                    warnings.add(error);
+                } else {
+                    errors.add(error);
+                }
+            } else {
+                attributes.put(key, value);
             }
-            pattern = Pattern.compile("V4_stop_codon_readthrough=\\\"(-?\\+?\\d*)/[A-Z]/(\\S*)\\\"");
-            matcher = pattern.matcher(defline);
-            if (matcher.find()) {
-                deflineAttributes.add(matcher.group(0));
-            }
-            pattern = Pattern.compile("alternate_startcodon=\"[a-zA-Z,]*\"");
-            matcher = pattern.matcher(defline);
-            if (matcher.find()) {
-                deflineAttributes.add(matcher.group(0));
-            }
-
-            /* parsing rna_editing attribute */
-            pattern = Pattern.compile("V4_rna_editing=\\\"(-?\\+?\\d*)/([A-Z]*)/(\\S*)/(.*?)\\\"");
-            matcher = pattern.matcher(defline);
-            if (matcher.find()) {
-                deflineAttributes.add(matcher.group(0));
-            }
-
-            /* parsing Polyprotein mature peptide attributes */
-            pattern = Pattern.compile("matpepdb=\"\\S*\"");
-            matcher = pattern.matcher(defline);
-            if (matcher.find()) {
-                deflineAttributes.add(matcher.group(0));
-            }
-
-            /* Parsing other structural tags */
-            pattern = Pattern.compile("shared_cds=\"\\S*\"");
-            matcher = pattern.matcher(defline);
-            if (matcher.find()) {
-                deflineAttributes.add(matcher.group(0));
-            }
-            pattern = Pattern.compile("\\bis_optional\\b");
-            matcher = pattern.matcher(defline);
-            if (matcher.find()) {
-                deflineAttributes.add(matcher.group(0));
-            }
-            pattern = Pattern.compile("\\bis_required\\b");
-            matcher = pattern.matcher(defline);
-            if (matcher.find()) {
-                deflineAttributes.add(matcher.group(0));
-            }
-            pattern = Pattern.compile("excludes_gene=\"[a-zA-Z,]*\"");
-            matcher = pattern.matcher(defline);
-            if (matcher.find()) {
-                deflineAttributes.add(matcher.group(0));
-            }
-            pattern = Pattern.compile("tiny_exon3=\"\\w*(:\\w*)?\"");
-            matcher = pattern.matcher(defline);
-            if (matcher.find()) {
-                deflineAttributes.add(matcher.group(0));
-            }
-            pattern = Pattern.compile("tiny_exon5=\"\\w*(:\\w*)?\"");
-            matcher = pattern.matcher(defline);
-            if (matcher.find()) {
-                deflineAttributes.add(matcher.group(0));
-            }
-            pattern = Pattern.compile("min_functional_len=\\d*");
-            matcher = pattern.matcher(defline);
-            if (matcher.find()) {
-                deflineAttributes.add(matcher.group(0));
-            }
-        } catch (Exception e) {
-            String message = String.format("Problem parsing defline %s", defline);
-            LOGGER.error(message, e);
-            throw new VigorException(message);
         }
-        return deflineAttributes;
+        if (! warnings.isEmpty()) {
+            LOGGER.warn(warnings.stream()
+                                .collect(Collectors.joining("\n",
+                                                            String.format("Problem parsing defline attributes for %s:\n", id),
+                                                            "\nattributes line: " + defline)));
+        }
+        if (! errors.isEmpty()) {
+            throw new VigorException(errors.stream()
+                                           .collect(Collectors.joining("\n",
+                                                                       String.format("Problem parsing defline attributes for %s:\n", id),
+                                                                       "\nattributes line: " + defline))
+            );
+        }
+        return attributes;
     }
 }
