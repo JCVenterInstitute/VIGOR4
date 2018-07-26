@@ -99,6 +99,10 @@ public class VigorUtils {
         return new BufferedReader(new InputStreamReader(Runtime.getRuntime().exec(new String[] {"/bin/bash", "-c", "echo " + path}).getInputStream())).readLine();
     }
 
+    public static <T> T nullElse(T value, T defaultValue) {
+        return value != null ? value : defaultValue;
+    }
+
     public enum FileCheck {
         READ, WRITE, EXISTS, NOT_EXISTS, EXECUTE, ABSOLUTE, RELATIVE, DIRECTORY, FILE
     }
