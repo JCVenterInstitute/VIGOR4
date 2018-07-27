@@ -33,6 +33,7 @@ import java.util.Map;
 public class ExonerateService implements AlignmentService {
 
     private static final Logger LOGGER = LogManager.getLogger(ExonerateService.class);
+    private final AlignmentTool alignmentTool = new Exonerate("exonerate");
 
      /**
      * @param form
@@ -62,6 +63,11 @@ public class ExonerateService implements AlignmentService {
         }
     }
 
+    @Override
+    public AlignmentTool getAlignmentTool() {
+        return alignmentTool;
+    }
+
     /**
      * @param exonerateOutput
      * @param form
@@ -76,7 +82,7 @@ public class ExonerateService implements AlignmentService {
         List<Alignment> alignments = new ArrayList<Alignment>();
         List<VulgarProtein2Genome2> Jalignments;
         AlignmentEvidence alignmentEvidence = form.getAlignmentEvidence();
-        AlignmentTool alignmentTool = form.getAlignmentTool();
+        AlignmentTool alignmentTool = getAlignmentTool();
         try {
             Jalignments = Exonerate2.parseVulgarOutput(exonerateOutput);
         } catch (IOException e) {

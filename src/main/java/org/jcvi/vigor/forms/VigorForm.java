@@ -1,11 +1,7 @@
 package org.jcvi.vigor.forms;
 
 import org.jcvi.vigor.component.AlignmentEvidence;
-import org.jcvi.vigor.component.AlignmentTool;
-import org.jcvi.vigor.exception.VigorException;
-import org.jcvi.vigor.utils.LoadDefaultParameters;
 import org.jcvi.vigor.utils.VigorConfiguration;
-import org.jcvi.vigor.utils.VigorUtils;
 import lombok.Data;
 
 @Data
@@ -13,8 +9,8 @@ public class VigorForm {
 
     private VigorConfiguration configuration;
     private AlignmentEvidence alignmentEvidence;
-    private AlignmentTool alignmentTool;
-    private boolean debug;
+
+    // TODO remove these
     private String AlignmentOutputTempFile;
     private String tempDirectoryPath;
 
