@@ -70,7 +70,7 @@ public class DetermineMissingExonsTest {
         for (int i = 0; i < alignments.size(); i++) {
             alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm(config)));
         }
-        models.addAll(modelGenerationService.alignmentToModels(alignments.get(0)));
+        models.addAll(modelGenerationService.alignmentToModels(alignments.get(0), config));
         assertTrue(String.format("Expected at least 1 model, got %s", models.size()), 1 >= models.size());
         Model model = models.get(0);
         assertTrue(String.format("Expected models %s to have at least 2 exons, got %s", model, model.getExons().size()),

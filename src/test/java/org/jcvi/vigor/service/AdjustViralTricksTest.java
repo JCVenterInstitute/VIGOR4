@@ -63,7 +63,7 @@ public class AdjustViralTricksTest {
         }
         alignments = modelGenerationService.mergeIdenticalProteinAlignments(alignments);
         alignments.stream().forEach(x -> {
-            models.addAll(modelGenerationService.alignmentToModels(x));
+            models.addAll(modelGenerationService.alignmentToModels(x, config));
         });
         Model testModel = models.get(0);
         List<Model> outputModels = adjustViralTricks.adjustRibosomalSlippage(testModel);
@@ -90,7 +90,7 @@ public class AdjustViralTricksTest {
         }
         alignments = modelGenerationService.mergeIdenticalProteinAlignments(alignments);
         alignments.stream().forEach(x -> {
-            models.addAll(modelGenerationService.alignmentToModels(x));
+            models.addAll(modelGenerationService.alignmentToModels(x, config));
         });
         Model testModel = models.get(0);
         double leakStopNotFoundScore = 1;
@@ -120,7 +120,7 @@ public class AdjustViralTricksTest {
         }
         alignments = modelGenerationService.mergeIdenticalProteinAlignments(alignments);
         alignments.stream().forEach(x -> {
-            models.addAll(modelGenerationService.alignmentToModels(x));
+            models.addAll(modelGenerationService.alignmentToModels(x, config));
         });
         Model testModel = models.get(0);
         List<Model> outputModels = adjustViralTricks.adjustRNAEditing(testModel);
