@@ -272,9 +272,11 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${surefire-version}</version>
         <configuration>
+          <trimStackTrace>false</trimStackTrace>    
           <systemPropertyVariables>
             <vigor.skip_reference_db_tests>${vigor.skip_reference_db_tests}</vigor.skip_reference_db_tests>
             <vigor.reference_database_path>${vigor.reference_database_path}</vigor.reference_database_path>
+            <log4j.configurationFile>${log4j.configurationFile}</log4j.configurationFile>
           </systemPropertyVariables>
           <groups>org.jcvi.vigor.testing.category.Fast</groups>
           <excludedGroups>!org.jcvi.vigor.testing.category.Isolated</excludedGroups>
