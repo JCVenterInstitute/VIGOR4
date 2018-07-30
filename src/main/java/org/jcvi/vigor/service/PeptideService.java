@@ -1,5 +1,6 @@
 package org.jcvi.vigor.service;
 
+import com.google.common.collect.AbstractIterator;
 import com.google.common.collect.Sets;
 import com.google.common.graph.GraphBuilder;
 import com.google.common.graph.MutableGraph;
@@ -306,11 +307,7 @@ public class PeptideService implements PeptideMatchingService {
         List<PeptideMatch> matches = alignments.collect(Collectors.toList());
         MutableGraph<PeptideMatch> graph = matchesToGraph(matches);
 
-        List<List<PeptideMatch>> paths = new ArrayList<>();
-        List<PeptideMatch> starts = matches.stream().filter(m -> graph.inDegree(m) == 0).collect(Collectors.toList());
-        for (PeptideMatch start: starts) {
-            paths.addAll(findPaths(graph, start));
-        }
+
         Function<Scores,Double> sumScores = (s) -> s.identity + s.similarity + s.coverage;
         Function<List<PeptideMatch>, Double> scorePath = a -> {
             //
@@ -318,7 +315,7 @@ public class PeptideService implements PeptideMatchingService {
                 return 0d;
             }
             double scoreSum = a.stream()
-             .collect(Collectors.summingDouble(m->sumScores.apply(m.getScores())));
+                               .collect(Collectors.summingDouble(m->sumScores.apply(m.getScores())));
 
             double coverageScore = 0;
             if (! a.isEmpty()) {
@@ -327,27 +324,54 @@ public class PeptideService implements PeptideMatchingService {
             return scoreSum +  coverageScore;
         };
 
-        return paths.stream()
-                    .max( Comparator.comparing( (a) -> scorePath.apply(a)))
-                    .orElse(Collections.EMPTY_LIST);
-    }
+        List<PeptideMatch> bestPath = Collections.EMPTY_LIST;
+        double bestScore = 0d;
 
-    private List<List<PeptideMatch>> findPaths(MutableGraph<PeptideMatch> graph, PeptideMatch node) {
-        List<PeptideMatch> path = new ArrayList<>();
-        path.add(node);
-        List<PeptideMatch> tempPath;
-        List<List<PeptideMatch>> paths = new ArrayList<>();
-        for (PeptideMatch nextNode: graph.successors(node)) {
-            for (List<PeptideMatch> nextPath: findPaths(graph, nextNode)) {
-                tempPath = new ArrayList<>(path);
-                tempPath.addAll(nextPath);
-                paths.add(tempPath);
+        List<PeptideMatch> testPath;
+        double testScore;
+
+        List<PeptideMatch> starts = matches.stream().filter(m -> graph.inDegree(m) == 0).collect(Collectors.toList());
+        for (PeptideMatch start: starts) {
+            Iterator<List<PeptideMatch>> pathIter = findPaths(graph, start);
+            while (pathIter.hasNext()) {
+                testPath = pathIter.next();
+                testScore = scorePath.apply(testPath);
+                if (testScore > bestScore) {
+                    bestScore = testScore;
+                    bestPath = testPath;
+                }
             }
         }
-        if (paths.isEmpty()) {
-            paths.add(path);
-        }
-        return paths;
+        return bestPath;
+    }
+
+    private Iterator<List<PeptideMatch>> findPaths(MutableGraph<PeptideMatch> graph, PeptideMatch node) {
+
+        AbstractIterator<List<PeptideMatch>> pathIterator = new AbstractIterator<List<PeptideMatch>>() {
+            private List<PeptideMatch> path = Arrays.asList(node);
+            private Iterator<PeptideMatch> successorsIter = graph.successors(node).iterator();
+            private Iterator<List<PeptideMatch>> successorPathIter = Collections.EMPTY_LIST.iterator();
+
+            private int hadSuccessors = 0;
+
+            @Override
+            protected List<PeptideMatch> computeNext() {
+                if ( (! successorPathIter.hasNext()) && successorsIter.hasNext()) {
+                        hadSuccessors++;
+                        successorPathIter = findPaths(graph, successorsIter.next());
+                }
+                if (successorPathIter.hasNext()) {
+                    List<PeptideMatch> temp = new ArrayList<>(path);
+                    temp.addAll(successorPathIter.next());
+                    return temp;
+                } else if (hadSuccessors == 0) {
+                    hadSuccessors++;
+                    return path;
+                }
+                return endOfData();
+            }
+        };
+        return pathIterator;
     }
 
     // TODO return new MaturePeptideMatch objects rather than altering the existing ones.
