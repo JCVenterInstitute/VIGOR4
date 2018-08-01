@@ -23,7 +23,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AdjustViralTricks implements DetermineGeneFeatures {
 
-    private static final Logger LOGGER = LogManager.getLogger(ModelGenerationService.class);
+    private static final Logger LOGGER = LogManager.getLogger(AdjustViralTricks.class);
     private static double DEFAULT_LEAKYSTOP_NOTFOUND_SCORE = .80d;
     @Override
     public List<Model> determine ( Model model, VigorForm form ) throws ServiceException {
@@ -38,8 +38,8 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
             }
             for (Model rnaEditeddModel : rnaEditedModels) {
                 LOGGER.trace("checking for leaky stop using {}", () -> {
-                    VigorConfiguration.ValueWithSource val = model.getAlignment().getViralProtein().getConfiguration().getWithSource(ConfigurationParameters.ScoreFactorLeakyStopNotFound).orElse(VigorConfiguration.ValueWithSource.of("service default", String.valueOf(DEFAULT_LEAKYSTOP_NOTFOUND_SCORE)));
-                    return String.format("%s = %s from %s", ConfigurationParameters.ScoreFactorLeakyStopNotFound.configKey, val.source, val.value);
+                    VigorConfiguration.ValueWithSource val = model.getAlignment().getViralProtein().getConfiguration().getWithSource(ConfigurationParameters.ScoreFactorLeakyStopNotFound).orElse(VigorConfiguration.ValueWithSource.of(String.valueOf(DEFAULT_LEAKYSTOP_NOTFOUND_SCORE),"service default"));
+                    return String.format("%s=%s from %s", ConfigurationParameters.ScoreFactorLeakyStopNotFound.configKey, val.source, val.value);
                 });
                 outputModels.addAll(checkForLeakyStop(rnaEditeddModel, leakyStopNotFoundScore));
             }
@@ -232,7 +232,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                         Model newModel;
                         newModel = model.clone();
                         LOGGER.trace("Stop codon read through " + start);
-                        LOGGER.debug("Sequence {}", () -> model.getAlignment().getVirusGenome().getSequence().toBuilder().trim(Range.of(start, start + 2)).build());
+                        LOGGER.trace("Sequence {}", () -> model.getAlignment().getVirusGenome().getSequence().toBuilder().trim(Range.of(start, start + 2)).build());
                         Map<String, Double> scores = newModel.getScores();
                         scores.put("leakyStopScore", 100.00);
                         newModel.setReplaceStopCodonRange(Range.of(start, start + 2));
@@ -244,13 +244,16 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                     }
                 }
             }
-            if (newModels.size() <= 0) {
+            if (newModels.isEmpty()) {
                 Map<String, Double> scores = model.getScores();
                 scores.put("leakyStopScore", (double) leakyStopNotFoundScore);
                 model.setScores(scores);
-                newModels.add(model);
             }
-        } else newModels.add(model);
+        }
+
+        if (newModels.isEmpty()) {
+            newModels.add(model);
+        }
         return newModels;
     }
 
