@@ -9,10 +9,10 @@ import lombok.Data;
 @Data
 public class GeneAttributes {
 
-    private Ribosomal_Slippage ribosomal_slippage;
-    private Splicing splicing;
-    private StartTranslationException startTranslationException;
-    private StopTranslationException stopTranslationException;
-    private RNA_Editing rna_editing;
-    private StructuralSpecifications structuralSpecifications;
+    private Ribosomal_Slippage ribosomal_slippage = Ribosomal_Slippage.NO_SLIPPAGE;
+    private Splicing splicing = Splicing.NO_SPLICING;
+    private StartTranslationException startTranslationException = StartTranslationException.NO_EXCEPTION;
+    private StopTranslationException stopTranslationException = StopTranslationException.NO_EXCEPTION;
+    private RNA_Editing rna_editing = RNA_Editing.NO_EDITING;
+    private StructuralSpecifications structuralSpecifications = new StructuralSpecifications();
 }
