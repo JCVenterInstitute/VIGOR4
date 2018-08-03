@@ -28,7 +28,6 @@ public class ModelGenerationService {
 
     public List<Model> generateModels ( List<Alignment> alignments, VigorForm form ) throws ServiceException {
 
-        VigorConfiguration configuration = form.getConfiguration();
         alignments = mergeIdenticalProteinAlignments(alignments);
         return determineCandidateModels(alignments, form);
     }
@@ -80,7 +79,7 @@ public class ModelGenerationService {
         for (int i = 0; i < alignments.size(); i++) {
             Alignment alignment = alignments.get(i);
             alignment.getAlignmentFragments().sort(AlignmentFragment.Comparators.Ascending);
-            initialModels.addAll(alignmentToModels(alignment, form.getConfiguration()));
+            initialModels.addAll(alignmentToModels(alignment, alignment.getViralProtein().getConfiguration()));
         }
         if (form.getConfiguration().getOrDefault(ConfigurationParameters.Verbose,false))  {
             FormatVigorOutput.printModels(initialModels, "Initial Models");
@@ -92,7 +91,7 @@ public class ModelGenerationService {
         }
         List<Range> validSequenceGaps = new ArrayList<Range>();
         if (sequenceGaps != null && sequenceGaps.size() > 0) {
-            long minGapLength = form.getConfiguration().getOrDefault(ConfigurationParameters.SequenceGapMinimumLength, 0);
+            int minGapLength = form.getConfiguration().getOrDefault(ConfigurationParameters.SequenceGapMinimumLength, 0);
             for (Range gapRange : sequenceGaps) {
                 if (gapRange.getLength() >= minGapLength) {
                     validSequenceGaps.add(gapRange);

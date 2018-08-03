@@ -11,10 +11,7 @@ import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.vigor.service.exception.ServiceException;
-import org.jcvi.vigor.utils.ConfigurationParameters;
-import org.jcvi.vigor.utils.NoteType;
-import org.jcvi.vigor.utils.VigorFunctionalUtils;
-import org.jcvi.vigor.utils.VigorUtils;
+import org.jcvi.vigor.utils.*;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.component.RNA_Editing;
@@ -27,20 +24,23 @@ import org.springframework.stereotype.Service;
 public class AdjustViralTricks implements DetermineGeneFeatures {
 
     private static final Logger LOGGER = LogManager.getLogger(ModelGenerationService.class);
-
+    private static double DEFAULT_LEAKYSTOP_NOTFOUND_SCORE = .80d;
     @Override
     public List<Model> determine ( Model model, VigorForm form ) throws ServiceException {
 
         List<Model> outputModels = new ArrayList<>();
         List<Model> rnaEditedModels = new ArrayList<>();
-        double leakyStopNotFoundScore = form.getConfiguration().getOrDefault(ConfigurationParameters.ScoreFactorLeakyStopNotFound, 80d);
-
+        double leakyStopNotFoundScore = model.getAlignment().getViralProtein().getConfiguration().getOrDefault(ConfigurationParameters.ScoreFactorLeakyStopNotFound, DEFAULT_LEAKYSTOP_NOTFOUND_SCORE);
         try {
             List<Model> riboAdjustedmodels = adjustRibosomalSlippage(model);
             for (Model riboAdjustedModel : riboAdjustedmodels) {
                 rnaEditedModels.addAll(adjustRNAEditing(riboAdjustedModel));
             }
             for (Model rnaEditeddModel : rnaEditedModels) {
+                LOGGER.trace("checking for leaky stop using {}", () -> {
+                    VigorConfiguration.ValueWithSource val = model.getAlignment().getViralProtein().getConfiguration().getWithSource(ConfigurationParameters.ScoreFactorLeakyStopNotFound).orElse(VigorConfiguration.ValueWithSource.of("service default", String.valueOf(DEFAULT_LEAKYSTOP_NOTFOUND_SCORE)));
+                    return String.format("%s = %s from %s", ConfigurationParameters.ScoreFactorLeakyStopNotFound.configKey, val.source, val.value);
+                });
                 outputModels.addAll(checkForLeakyStop(rnaEditeddModel, leakyStopNotFoundScore));
             }
         } catch (CloneNotSupportedException e) {

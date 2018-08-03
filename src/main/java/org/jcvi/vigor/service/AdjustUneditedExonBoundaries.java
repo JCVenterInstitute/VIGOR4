@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
@@ -23,12 +25,19 @@ import org.springframework.stereotype.Service;
 @Service
 public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
 
+    private static Logger LOGGER = LogManager.getLogger(AdjustUneditedExonBoundaries.class);
+    private static final int DEFAULT_STOP_CODON_SEARCH_WINDOW = 50;
+    private static final int DEFAULT_MIN_INTRON_SIZE = 20;
     @Override
     public List<Model> determine ( Model model, VigorForm form ) throws ServiceException {
 
-        VigorConfiguration configuration = form.getConfiguration();
-        int defaultSearchWindow = configuration.getOrDefault(ConfigurationParameters.StopCodonSearchWindow, 50);
-        int minIntronLength = configuration.getOrDefault(ConfigurationParameters.IntronMinimumSize, 20);
+        VigorConfiguration configuration = model.getAlignment().getViralProtein().getConfiguration();
+        int defaultSearchWindow = configuration.getOrDefault(ConfigurationParameters.StopCodonSearchWindow,
+                                                             DEFAULT_STOP_CODON_SEARCH_WINDOW);
+        int minIntronLength = configuration.getOrDefault(ConfigurationParameters.IntronMinimumSize,
+                                                         DEFAULT_MIN_INTRON_SIZE);
+
+        LOGGER.trace("adjusting unedited exon boundaries using", () -> {return "TODO print values and sources"; });
 
         try {
             return adjustSpliceSites(model, defaultSearchWindow, minIntronLength);

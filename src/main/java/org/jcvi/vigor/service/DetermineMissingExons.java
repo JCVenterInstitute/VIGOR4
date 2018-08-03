@@ -2,6 +2,8 @@ package org.jcvi.vigor.service;
 
 import java.util.*;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.align.AminoAcidSubstitutionMatrix;
 import org.jcvi.jillion.align.BlosumMatrices;
 import org.jcvi.jillion.align.pairwise.PairwiseAlignmentBuilder;
@@ -22,15 +24,37 @@ import org.jcvi.jillion.core.Direction;
 @Service
 public class DetermineMissingExons implements DetermineGeneFeatures {
 
+    private static Logger LOGGER = LogManager.getLogger(DetermineMissingExons.class);
 
     @Override
     public List<Model> determine ( Model model, VigorForm form ) {
 
         List<Model> outModels = new ArrayList<Model>();
-        int minExonSize = form.getConfiguration().getOrDefault(ConfigurationParameters.ExonMinimumSize, 30);
-        int maxIntronSize = form.getConfiguration().getOrDefault(ConfigurationParameters.IntronMinimumSize, 2500);
-        int min_missing_AA_size = form.getConfiguration().getOrDefault(ConfigurationParameters.MinimumMissingAASize, 10);
+        VigorConfiguration config = model.getAlignment().getViralProtein().getConfiguration();
+        int minExonSize = config.getOrDefault(ConfigurationParameters.ExonMinimumSize, 30);
+        int maxIntronSize = config.getOrDefault(ConfigurationParameters.IntronMaximumSize, 2500);
+        int min_missing_AA_size = config.getOrDefault(ConfigurationParameters.MinimumMissingAASize, 10);
+        String proteinID = model.getProteinID();
+        LOGGER.trace(() ->
+                     {
+                         VigorConfiguration.ValueWithSource serviceDefault = VigorConfiguration.ValueWithSource.of("",
+                                                                                                                   "service default");
+                         return String.format("Determining missing exons for %s using %s=%s (%s) %s=%s (%s) %s=%s (%s)",
+                                       proteinID,
+                                       ConfigurationParameters.ExonMinimumSize.configKey,
+                                       minExonSize,
+                                       config.getWithSource(ConfigurationParameters.ExonMinimumSize)
+                                             .orElse(serviceDefault).source,
+                                       ConfigurationParameters.IntronMaximumSize.configKey,
+                                       maxIntronSize,
+                                       config.getWithSource(ConfigurationParameters.IntronMaximumSize)
+                                             .orElse(serviceDefault).source,
+                                       ConfigurationParameters.MinimumMissingAASize.configKey,
+                                       min_missing_AA_size,
+                                       config.getWithSource(ConfigurationParameters.MinimumMissingAASize)
+                         .orElse(serviceDefault).source);
 
+                     });
         model.getExons().sort(Exon.Comparators.Ascending);
         model = findMissingExons(model, maxIntronSize, minExonSize, min_missing_AA_size);
         model.getExons().sort(Exon.Comparators.Ascending);

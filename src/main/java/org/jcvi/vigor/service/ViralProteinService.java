@@ -47,7 +47,7 @@ public class ViralProteinService {
         viralProtein.setConfiguration(getGeneConfiguration(viralProtein, defaultConfig, attributes));
         /* set geneStructure property of viralProtein */
         viralProtein = setGeneAttributes(alignment, defaultConfig);
-        viralProtein = setGeneAttributesFromConfig(alignment, viralProtein.getConfiguration());
+        viralProtein = setAttributesFromConfig(alignment, viralProtein.getConfiguration());
         int min_intron_length = viralProtein.getConfiguration().getOrDefault(ConfigurationParameters.IntronMinimumSize, 0);
         viralProtein = determineGeneStructure(viralProtein, min_intron_length);
 
@@ -56,12 +56,23 @@ public class ViralProteinService {
     }
 
     // TODO make sure configuration values are appropriate
-    private ViralProtein setGeneAttributesFromConfig(Alignment alignment, VigorConfiguration geneConfig) {
+    private ViralProtein setAttributesFromConfig(Alignment alignment, VigorConfiguration geneConfig) {
         ViralProtein viralProtein = alignment.getViralProtein();
+        String product = viralProtein.getProduct();
+        viralProtein.setProduct(product != null ? product : geneConfig.getOrDefault(ConfigurationParameters.DBProduct,""));
+        String geneSynonym = viralProtein.getGeneSynonym();
+        viralProtein.setGeneSynonym(geneSynonym != null ? geneSynonym : geneConfig.getOrDefault(ConfigurationParameters.DBGeneSynonym,""));
+
+        String matpepDB = alignment.getAlignmentEvidence().getMatpep_db();
+        matpepDB = ! VigorUtils.nullElse(matpepDB,"").isEmpty() ? matpepDB: geneConfig.getOrDefault(ConfigurationParameters.MaturePeptideDB, "");
+        matpepDB = matpepDB.replace("<vigordata>", geneConfig.get(ConfigurationParameters.ReferenceDatabasePath));
+        LOGGER.trace("setting mature peptide db for {} (gene {}) to {}", viralProtein.getProteinID(), viralProtein.getGeneSymbol(), matpepDB);
+        alignment.getAlignmentEvidence().setMatpep_db(matpepDB);
+
         GeneAttributes attributes = viralProtein.getGeneAttributes();
-        attributes.setRibosomal_slippage(geneConfig.get(ConfigurationParameters.RibosomalSlippage));
-        attributes.setRna_editing(geneConfig.get(ConfigurationParameters.RNAEditing));
-        List<SpliceSite> nonCanonicalSpliceSites = geneConfig.get(ConfigurationParameters.NonCanonicalSplicing);
+        attributes.setRibosomal_slippage(geneConfig.getOrDefault(ConfigurationParameters.RibosomalSlippage, Ribosomal_Slippage.NO_SLIPPAGE));
+        attributes.setRna_editing(geneConfig.getOrDefault(ConfigurationParameters.RNAEditing, RNA_Editing.NO_EDITING));
+        List<SpliceSite> nonCanonicalSpliceSites = geneConfig.getOrDefault(ConfigurationParameters.NonCanonicalSplicing, Collections.EMPTY_LIST);
         if (nonCanonicalSpliceSites.isEmpty()) {
             attributes.setSpliceSites(SpliceSite.DEFAULT_SPLICE_SITES);
         } else {
@@ -69,19 +80,19 @@ public class ViralProteinService {
                                                     SpliceSite.DEFAULT_SPLICE_SITES.stream())
                                             .collect(ImmutableList.toImmutableList()));
         }
-        attributes.setStopTranslationException(geneConfig.get(ConfigurationParameters.StopCodonReadthrough));
-
+        attributes.setStopTranslationException(geneConfig.getOrDefault(ConfigurationParameters.StopCodonReadthrough, StopTranslationException.NO_EXCEPTION));
+        attributes.setSpliceForms(geneConfig.getOrDefault(ConfigurationParameters.SpliceForm, Collections.EMPTY_LIST));
         // TODO unify start codons specified via config or command line and these.
-        List<String> alternateStarts = geneConfig.getOrDefault(ConfigurationParameters.AlternateStartCodons, Collections.EMPTY_MAP);
+        List<String> alternateStarts = geneConfig.getOrDefault(ConfigurationParameters.AlternateStartCodons, Collections.EMPTY_LIST);
         if (! alternateStarts.isEmpty()) {
             attributes.setStartTranslationException(new StartTranslationException(true, alternateStarts));
         }
         StructuralSpecifications specs = attributes.getStructuralSpecifications();
-        specs.setShared_cds(geneConfig.get(ConfigurationParameters.SharedCDS));
-        specs.setMinFunctionalLength(geneConfig.get(ConfigurationParameters.MinFunctionalLength));
-        specs.setExcludes_gene(geneConfig.get(ConfigurationParameters.ExcludesGene));
-        specs.setTiny_exon3(geneConfig.get(ConfigurationParameters.TinyExon3));
-        specs.setTiny_exon5(geneConfig.get(ConfigurationParameters.TinyExon5));
+        specs.setShared_cds(geneConfig.getOrDefault(ConfigurationParameters.SharedCDS, Collections.EMPTY_LIST));
+        specs.setMinFunctionalLength(geneConfig.getOrDefault(ConfigurationParameters.MinFunctionalLength, 0));
+        specs.setExcludes_gene(geneConfig.getOrDefault(ConfigurationParameters.ExcludesGene, Collections.EMPTY_LIST));
+        specs.setTiny_exon3(geneConfig.getOrDefault(ConfigurationParameters.TinyExon3, Collections.EMPTY_MAP));
+        specs.setTiny_exon5(geneConfig.getOrDefault(ConfigurationParameters.TinyExon5, Collections.EMPTY_MAP));
         // TODO more
 
         return viralProtein;
@@ -265,7 +276,7 @@ public class ViralProteinService {
         List<SpliceForm> splices = viralProtein.getGeneAttributes().getSpliceForms();
         List<Range> NTFragments = new ArrayList<Range>();
         List<Range> introns = new ArrayList<Range>();
-        if (!( is_ribosomal_slippage) && splices.isEmpty()) {
+        if (! is_ribosomal_slippage && splices.isEmpty()) {
             Range range = Range.of(0, 3 * ( viralProtein.getSequence().getLength() - 1 ));
             NTFragments.add(range);
         } else {
@@ -300,7 +311,7 @@ public class ViralProteinService {
      */
     public static Map<String,String> parseDeflineAttributes ( String defline, String id ) throws VigorException {
 
-        Pattern attributePattern = Pattern.compile("(?<key>\\b(?<!>)\\w+\\b)(?:\\s*=\\s*(?<value>\"[^\"]*\"|\\w+))?");
+        Pattern attributePattern = Pattern.compile("(?<key>\\b(?<!>)\\w+\\b)(?:\\s*=\\s*(?<value>\"[^\"]*\"|\\S+))?");
         Matcher matcher = attributePattern.matcher(defline);
         Map<String,String> attributes = new HashMap<>();
         String key,value,error;
@@ -342,17 +353,21 @@ public class ViralProteinService {
                                                     Map<String, String> attributes) throws VigorException {
         VigorConfiguration deflineConfig = new VigorConfiguration("defline: " + viralProtein.getProteinID());
         if (! attributes.isEmpty()) {
-            deflineConfig = ConfigurationUtils.configurationFromMap("defline: " + viralProtein.getProteinID(),attributes);
+            // use defline config entries where they exist
+            deflineConfig = ConfigurationUtils.configurationFromMap("defline: " + viralProtein.getProteinID(), p->p.deflineConfigKey, attributes, ConfigurationParameters.Flags.GENE_SET);
         }
 
         String geneSection = ConfigurationUtils.getGeneSectionName(viralProtein.getGeneSymbol());
         if (defaultConfig.hasSection(geneSection)) {
+            LOGGER.trace("found gene section for {}", viralProtein.getGeneSymbol());
             Map<ConfigurationParameters,Object> geneConfigMap = defaultConfig.getSectionConfig(geneSection);
             if (! geneConfigMap.isEmpty()) {
                 VigorConfiguration geneConfig = new VigorConfiguration("config: " + viralProtein.getGeneSymbol(), defaultConfig);
                 geneConfig.putAll(geneConfigMap);
                 defaultConfig = geneConfig;
             }
+        } else {
+            LOGGER.trace("No gene section for {}", viralProtein.getGeneSymbol());
         }
         deflineConfig.setDefaults(defaultConfig);
         return deflineConfig;

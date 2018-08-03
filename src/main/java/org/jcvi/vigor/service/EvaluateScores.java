@@ -17,7 +17,7 @@ public class EvaluateScores implements EvaluateModel {
     public Model evaluate ( Model model, VigorForm form ) {
 
         Map<String, Double> scores = model.getScores();
-        VigorConfiguration configuration = form.getConfiguration();
+        VigorConfiguration configuration = model.getAlignment().getViralProtein().getConfiguration();
         double alignmentScoreFactor = configuration.getOrDefault(ConfigurationParameters.ScoreFactorAlignment, 1d);
 
         double startScoreFactor = configuration.getOrDefault(ConfigurationParameters.ScoreFactorStart, 1d);

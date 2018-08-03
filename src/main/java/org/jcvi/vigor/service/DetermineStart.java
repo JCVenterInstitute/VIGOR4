@@ -1,12 +1,6 @@
 package org.jcvi.vigor.service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -33,12 +27,14 @@ public class DetermineStart implements DetermineGeneFeatures {
     @Override
     public List<Model> determine ( Model model, VigorForm form ) throws ServiceException {
 
+        VigorConfiguration config = model.getAlignment().getViralProtein().getConfiguration();
         List<Triplet> startCodons = loadStartCodons(model.getAlignment()
                         .getViralProtein().getGeneAttributes()
                         .getStartTranslationException().getAlternateStartCodons(),
-                form.getConfiguration());
-        Integer startCodonWindowParam = form.getConfiguration().get(
-                ConfigurationParameters.StartCodonSearchWindow);
+                config);
+        Integer startCodonWindowParam = config.getOrDefault(ConfigurationParameters.StartCodonSearchWindow, 50);
+        LOGGER.trace("determining starts using {}", () -> "TODO");
+
         try {
             List<Model> models = findStart(startCodons, model, startCodonWindowParam);
             return models;
@@ -59,27 +55,12 @@ public class DetermineStart implements DetermineGeneFeatures {
     public List<Triplet> loadStartCodons ( List<String> alternateStartCodons,
                                            VigorConfiguration vigorParameters ) {
 
-        String startCodonsParam;
-        List<String> startCodonStrings = new ArrayList<String>();
-        if (vigorParameters.containsKey(ConfigurationParameters.StartCodons)) {
-            startCodonsParam = vigorParameters.get(ConfigurationParameters.StartCodons);
-            startCodonStrings = Arrays.asList(StringUtils.normalizeSpace(
-                    startCodonsParam).split(","));
-        } else {
-            startCodonStrings.add("ATG");
-        }
-        if (alternateStartCodons != null) {
-            startCodonStrings.addAll(alternateStartCodons);
-        }
-        List<Triplet> startCodons = new ArrayList<Triplet>();
-        for (String startCodonString : startCodonStrings) {
-            if (startCodonString.length() == 3) {
-                Triplet triplet = Triplet.create(startCodonString.charAt(0),
-                        startCodonString.charAt(1), startCodonString.charAt(2));
-                startCodons.add(triplet);
-            }
-        }
-        return startCodons;
+        alternateStartCodons = alternateStartCodons != null ? alternateStartCodons: Collections.EMPTY_LIST;
+        List<String> startCodonStrings = vigorParameters.getOrDefault(ConfigurationParameters.StartCodons,
+                                                                      Arrays.asList("ATG"));
+        return Stream.concat(startCodonStrings.stream(), alternateStartCodons.stream())
+                     .map(s -> Triplet.create(s.charAt(0),s.charAt(1), s.charAt(2)))
+                     .collect(Collectors.toList());
     }
 
     /**

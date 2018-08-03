@@ -8,6 +8,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
@@ -16,19 +18,20 @@ import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.ConfigurationParameters;
+import org.jcvi.vigor.utils.VigorConfiguration;
 import org.jcvi.vigor.utils.VigorFunctionalUtils;
-import org.jcvi.vigor.utils.VigorUtils;
 import org.springframework.stereotype.Service;
 
 @Service
 public class DetermineStop implements DetermineGeneFeatures {
 
-
+    private static Logger LOGGER = LogManager.getLogger(DetermineStop.class);
     @Override
     public List<Model> determine ( Model model, VigorForm form ) throws ServiceException {
 
-        Integer stopCodonWindow = form.getConfiguration().getOrDefault(ConfigurationParameters.StopCodonSearchWindow, 50);
-        boolean isDebug = form.getConfiguration().get(ConfigurationParameters.Verbose).equals("true") ? true : false;
+        VigorConfiguration config = model.getAlignment().getViralProtein().getConfiguration();
+        Integer stopCodonWindow = config.getOrDefault(ConfigurationParameters.StopCodonSearchWindow, 50);
+        boolean isDebug = config.get(ConfigurationParameters.Verbose).equals("true") ? true : false;
         try {
             return findStop(model, stopCodonWindow, isDebug);
         } catch (CloneNotSupportedException e) {
