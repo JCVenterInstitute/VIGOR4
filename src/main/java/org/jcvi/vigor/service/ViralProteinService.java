@@ -4,6 +4,8 @@ import org.jcvi.vigor.component.*;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.ConfigurationParameters;
+import org.jcvi.vigor.utils.ConfigurationUtils;
+import org.jcvi.vigor.utils.VigorConfiguration;
 import org.jcvi.vigor.utils.VigorUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.jcvi.vigor.component.Splicing.SpliceSite;
@@ -13,6 +15,7 @@ import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.aa.AminoAcid;
 import org.springframework.stereotype.Service;
+import sun.security.krb5.Config;
 
 import java.util.*;
 import java.util.regex.Matcher;
@@ -33,45 +36,85 @@ public class ViralProteinService {
      * generated and all the properties are defined;
      */
     public Alignment setViralProteinAttributes ( Alignment alignment, VigorForm form ) throws VigorException {
+        ViralProtein viralProtein = alignment.getViralProtein();
+        Map<String, String> attributes = parseDeflineAttributes(StringUtils.normalizeSpace(viralProtein.getDefline()),
+                                                                viralProtein.getProteinID());
 
-        ViralProtein viralProtein = setGeneAttributes(alignment, form);
+
+        VigorConfiguration defaultConfig = form.getConfiguration();
+        viralProtein = setProteinAttributes(viralProtein, attributes);
+        viralProtein.setConfiguration(getGeneConfiguration(viralProtein, defaultConfig, attributes));
         /* set geneStructure property of viralProtein */
-        int min_intron_length = form.getConfiguration().getOrDefault(ConfigurationParameters.IntronMinimumSize, 0);
+        viralProtein = setGeneAttributes(alignment, defaultConfig);
+        viralProtein = setGeneAttributesFromConfig(alignment, viralProtein.getConfiguration());
+        int min_intron_length = viralProtein.getConfiguration().getOrDefault(ConfigurationParameters.IntronMinimumSize, 0);
         viralProtein = determineGeneStructure(viralProtein, min_intron_length);
 
         alignment.setViralProtein(viralProtein);
         return alignment;
     }
 
-    /**
-     * @param alignment
-     * @return viralProtein object which has all the gene attributes set.
-     */
-    public ViralProtein setGeneAttributes ( Alignment alignment, VigorForm form ) throws VigorException {
-
+    // TODO make sure configuration values are appropriate
+    private ViralProtein setGeneAttributesFromConfig(Alignment alignment, VigorConfiguration geneConfig) {
         ViralProtein viralProtein = alignment.getViralProtein();
-        GeneAttributes geneAttributes = new GeneAttributes();
-        String defline = viralProtein.getDefline();
-        defline = StringUtils.normalizeSpace(defline);
-        Map<String, String> attributes = parseDeflineAttributes(defline, viralProtein.getProteinID());
-        StructuralSpecifications structuralSpecifications = geneAttributes.getStructuralSpecifications();
+        GeneAttributes attributes = viralProtein.getGeneAttributes();
+        attributes.setRibosomal_slippage(geneConfig.get(ConfigurationParameters.RibosomalSlippage));
+        attributes.setRna_editing(geneConfig.get(ConfigurationParameters.RNAEditing));
+        attributes.setSplicing(geneConfig.get(ConfigurationParameters.Splicing));
+        attributes.setStopTranslationException(geneConfig.get(ConfigurationParameters.StopCodonReadthrough));
+
+        List<String> alternateStarts = geneConfig.getOrDefault(ConfigurationParameters.AlternateStartCodons, Collections.EMPTY_MAP);
+        if (! alternateStarts.isEmpty()) {
+            attributes.setStartTranslationException(new StartTranslationException(true, alternateStarts));
+        }
+        StructuralSpecifications specs = attributes.getStructuralSpecifications();
+        specs.setShared_cds(geneConfig.get(ConfigurationParameters.SharedCDS));
+        specs.setMinFunctionalLength(geneConfig.get(ConfigurationParameters.MinFunctionalLength));
+        specs.setExcludes_gene(geneConfig.get(ConfigurationParameters.ExcludesGene));
+        specs.setTiny_exon3(geneConfig.get(ConfigurationParameters.TinyExon3));
+        specs.setTiny_exon5(geneConfig.get(ConfigurationParameters.TinyExon5));
+        // TODO more
+
+        return viralProtein;
+    }
+
+    public ViralProtein setGeneAttributes ( Alignment alignment, VigorConfiguration configuration ) throws VigorException {
+        ViralProtein viralProtein = alignment.getViralProtein();
+        Map<String, String> attributes = parseDeflineAttributes(StringUtils.normalizeSpace(viralProtein.getDefline()),
+                                                                viralProtein.getProteinID());
+        return setGeneAttributes(alignment, attributes, configuration);
+    }
+
+    public ViralProtein setProteinAttributes(ViralProtein viralProtein, Map<String,String> attributes) {
 
         /* Set product attribute */
         if (attributes.containsKey("product")) {
-            String product = attributes.get("product").replaceAll("\"", "");
-            viralProtein.setProduct(product);
+            viralProtein.setProduct(VigorUtils.removeQuotes(attributes.get("product")));
         }
 
         /* Set gene symbol */
         if (attributes.containsKey("gene")) {
-            String geneSymbol = attributes.get("gene");
-            viralProtein.setGeneSymbol(geneSymbol);
+            viralProtein.setGeneSymbol(attributes.get("gene"));
         }
         /* Set gene symbol */
         if (attributes.containsKey("gene_synonym")) {
-            String geneSynonym = attributes.get("gene_synonym");
-            viralProtein.setGeneSynonym(geneSynonym);
+            viralProtein.setGeneSynonym(attributes.get("gene_synonym"));
         }
+        return viralProtein;
+    }
+
+    /**
+     * @param alignment
+     * @return viralProtein object which has all the gene attributes set.
+     */
+    public ViralProtein setGeneAttributes ( Alignment alignment,
+                                            Map<String,String> attributes,
+                                            VigorConfiguration configuration ) throws VigorException {
+
+        ViralProtein viralProtein = alignment.getViralProtein();
+        GeneAttributes geneAttributes = new GeneAttributes();
+        StructuralSpecifications structuralSpecifications = geneAttributes.getStructuralSpecifications();
+
 
         /* Set Splicing attributes */
         if (! attributes.getOrDefault("splice_form","").isEmpty()) {
@@ -165,10 +208,10 @@ public class ViralProteinService {
             structuralSpecifications.setShared_cds(Arrays.asList(attribute.split(",")));
         }
         if (attributes.containsKey("is_optional")) {
-            structuralSpecifications.set_required(true);
+            structuralSpecifications.set_required(false);
         }
         if (attributes.containsKey("is_required")) {
-            structuralSpecifications.set_required(false);
+            structuralSpecifications.set_required(true);
         }
         if (attributes.containsKey("excludes_gene")) {
             String attribute = attributes.get("excludes_gene");
@@ -187,7 +230,7 @@ public class ViralProteinService {
         /* Set maturepeptide DB attribute */
         String matPepDB = attributes.getOrDefault("matpepdb", "");
         if (matPepDB != null && matPepDB.contains("<vigordata>")) {
-            matPepDB = matPepDB.replace("<vigordata>", form.getConfiguration().get(ConfigurationParameters.ReferenceDatabasePath));
+            matPepDB = matPepDB.replace("<vigordata>", configuration.get(ConfigurationParameters.ReferenceDatabasePath));
         }
 
         AlignmentEvidence alignmentEvidence = alignment.getAlignmentEvidence();
@@ -299,5 +342,26 @@ public class ViralProteinService {
             );
         }
         return attributes;
+    }
+
+    private VigorConfiguration getGeneConfiguration(ViralProtein viralProtein,
+                                                    VigorConfiguration defaultConfig,
+                                                    Map<String, String> attributes) throws VigorException {
+        VigorConfiguration deflineConfig = new VigorConfiguration("defline: " + viralProtein.getProteinID());
+        if (! attributes.isEmpty()) {
+            deflineConfig = ConfigurationUtils.configurationFromMap("defline: " + viralProtein.getProteinID(),attributes);
+        }
+
+        String geneSection = ConfigurationUtils.getGeneSectionName(viralProtein.getGeneSymbol());
+        if (defaultConfig.hasSection(geneSection)) {
+            Map<ConfigurationParameters,Object> geneConfigMap = defaultConfig.getSectionConfig(geneSection);
+            if (! geneConfigMap.isEmpty()) {
+                VigorConfiguration geneConfig = new VigorConfiguration("config: " + viralProtein.getGeneSymbol(), defaultConfig);
+                geneConfig.putAll(geneConfigMap);
+                defaultConfig = geneConfig;
+            }
+        }
+        deflineConfig.setDefaults(defaultConfig);
+        return deflineConfig;
     }
 }
