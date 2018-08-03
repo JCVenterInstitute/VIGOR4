@@ -82,7 +82,7 @@ public class GenerateVigorOutput {
             List<NoteType> modelNotes = model.getNotes();
             Ribosomal_Slippage riboSlippage = model.getAlignment().getViralProtein().getGeneAttributes().getRibosomal_slippage();
             RNA_Editing rna_editing = model.getAlignment().getViralProtein().getGeneAttributes().getRna_editing();
-            Splicing splicing = model.getAlignment().getViralProtein().getGeneAttributes().getSplicing();
+            List<SpliceSite> spliceSites = model.getAlignment().getViralProtein().getGeneAttributes().getSpliceSites();
             StringBuilder notes = new StringBuilder("");
             List<Exon> exons = model.getExons();
             Exon firstExon = exons.get(0);
@@ -140,7 +140,7 @@ public class GenerateVigorOutput {
                 bw.write("\t\t\texception\tRNA editing\n");
                 notes = notes.append(rna_editing.getNote() + ";");
             }
-            if (splicing.getNonCanonical_spliceSites() != null && splicing.getNonCanonical_spliceSites().size() > 1) {
+            if (spliceSites != SpliceSite.DEFAULT_SPLICE_SITES) {
                 notes.append("non-canonical splicing");
             }
 

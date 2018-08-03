@@ -12,13 +12,12 @@ import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.component.VirusGenome;
-import org.jcvi.vigor.component.Splicing.SpliceSite;
+import org.jcvi.vigor.component.SpliceSite;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.VigorConfiguration;
 import org.jcvi.vigor.utils.VigorFunctionalUtils;
-import org.jcvi.vigor.utils.VigorUtils;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -49,10 +48,7 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
         if (model.getAlignment().getViralProtein().getIntrons().size() >= 1) {
             List<Model> tempModels = new ArrayList<Model>();
             VirusGenome virusGenome = model.getAlignment().getVirusGenome();
-            List<SpliceSite> splicePairs = new ArrayList<SpliceSite>();
-            if (model.getAlignment().getViralProtein().getGeneAttributes().getSplicing().getNonCanonical_spliceSites() != null) {
-                splicePairs.addAll(model.getAlignment().getViralProtein().getGeneAttributes().getSplicing().getNonCanonical_spliceSites());
-            }
+            List<SpliceSite> splicePairs = model.getAlignment().getViralProtein().getGeneAttributes().getSpliceSites();
             for (int i = 0; i < model.getExons().size() - 1; i++) {
                 if (i != model.getExons().size() - 1) {
                     Exon upExon = model.getExons().get(i);
