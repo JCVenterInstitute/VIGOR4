@@ -40,7 +40,7 @@ public class VigorTestUtils {
             NucleotideFastaRecord record = iter.next();
             VirusGenome virusGenome = new VirusGenome(record.getSequence(), record.getComment(), record.getId(), false,
                     false);
-            List<Range> sequenceGaps = VirusGenomeService.findSequenceGapRanges("20", virusGenome.getSequence());
+            List<Range> sequenceGaps = VirusGenomeService.findSequenceGapRanges(20, virusGenome.getSequence());
             virusGenome.setSequenceGaps(sequenceGaps);
             // create alignment evidence
             AlignmentEvidence alignmentEvidence = new AlignmentEvidence();

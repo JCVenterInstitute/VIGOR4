@@ -20,13 +20,10 @@ public class VirusGenomeService {
      * @return List<Range>: Only ranges having length greater or equal to
      * min_gap_length will be considered as a sequence gap
      */
-    public static List<Range> findSequenceGapRanges ( String minGapLenString, NucleotideSequence sequence ) {
+    public static List<Range> findSequenceGapRanges ( Integer minGapLength, NucleotideSequence sequence ) {
 
         List<Range> rangesOfNs = sequence.getRangesOfNs();
-        long minGapLength = 20;
-        if (VigorUtils.is_Integer(minGapLenString)) {
-            minGapLength = Long.parseLong(minGapLenString);
-        }
+
         List<Range> filteredRangesOfNs = new ArrayList<Range>();
         if (!rangesOfNs.isEmpty()) {
             Range previousRange = Range.of(0, 0);

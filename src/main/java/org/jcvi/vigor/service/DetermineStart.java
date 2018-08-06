@@ -37,7 +37,7 @@ public class DetermineStart implements DetermineGeneFeatures {
                         .getViralProtein().getGeneAttributes()
                         .getStartTranslationException().getAlternateStartCodons(),
                 form.getConfiguration());
-        String startCodonWindowParam = form.getConfiguration().get(
+        Integer startCodonWindowParam = form.getConfiguration().get(
                 ConfigurationParameters.StartCodonSearchWindow);
         try {
             List<Model> models = findStart(startCodons, model, startCodonWindowParam);
@@ -91,7 +91,7 @@ public class DetermineStart implements DetermineGeneFeatures {
      */
     @SuppressWarnings("Duplicates")
     public List<Model> findStart ( List<Triplet> startCodons, Model model,
-                                   String startCodonWindowParam ) throws CloneNotSupportedException {
+                                   Integer startCodonWindowParam ) throws CloneNotSupportedException {
 
         List<Model> newModels = new ArrayList<Model>();
         List<Range> sequenceGaps = model.getAlignment().getVirusGenome().getSequenceGaps();
@@ -103,9 +103,7 @@ public class DetermineStart implements DetermineGeneFeatures {
         boolean isSequenceMissing = false;
         boolean isSequenceGap = false;
         if (startCodonWindowParam != null) {
-            if (VigorUtils.is_Integer(startCodonWindowParam)) {
-                windowSize = Integer.parseInt(startCodonWindowParam);
-            }
+                windowSize = startCodonWindowParam;
         }
         Exon firstExon = model.getExons().get(0);
         Frame firstExonFrame = VigorFunctionalUtils.getSequenceFrame(firstExon.getRange().getBegin() + firstExon.getFrame().getFrame() - 1);

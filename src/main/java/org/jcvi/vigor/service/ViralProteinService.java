@@ -36,10 +36,7 @@ public class ViralProteinService {
      */
     public Alignment setViralProteinAttributes ( Alignment alignment, VigorForm form ) throws VigorException {
 
-        String min_intronSize_param = form.getConfiguration().get(ConfigurationParameters.IntronMinimumSize);
-        if (VigorUtils.is_Integer(min_intronSize_param)) {
-            min_intron_length = Integer.parseInt(min_intronSize_param);
-        }
+        min_intron_length = form.getConfiguration().getOrDefault(ConfigurationParameters.IntronMinimumSize, 0);
         ViralProtein viralProtein = setGeneAttributes(alignment.getViralProtein(), form);
         AlignmentEvidence alignmentEvidence = alignment.getAlignmentEvidence();
         alignmentEvidence.setMatpep_db(matPepDB);

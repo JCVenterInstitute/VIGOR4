@@ -37,13 +37,15 @@ public class AlignmentGenerationService {
 
     public List<Alignment> generateAlignment ( VirusGenome virusGenome, VigorForm form ) throws VigorException {
 
-        isDebug = form.getConfiguration().get(ConfigurationParameters.Verbose).equals("true") ? true : false;
+        if (form.getConfiguration().containsKey(ConfigurationParameters.Verbose)) {
+            isDebug = form.getConfiguration().get(ConfigurationParameters.Verbose);
+        }
         AlignmentEvidence alignmentEvidence = form.getAlignmentEvidence();
         String alignmentModule = form.getConfiguration().get(ConfigurationParameters.AlignmentModule);
         AlignmentTool alignmentTool = AlignmentToolFactory.getAlignmentTool(alignmentModule);
         form.setAlignmentTool(alignmentTool);
         VigorConfiguration vigorConfig = form.getConfiguration();
-        String min_gap_length = vigorConfig.get(ConfigurationParameters.SequenceGapMinimumLength);
+        Integer min_gap_length = vigorConfig.get(ConfigurationParameters.SequenceGapMinimumLength);
         String tempDir = vigorConfig.get(ConfigurationParameters.TemporaryDirectory);
         String referenceDB = alignmentEvidence.getReference_db();
         List<Range> sequenceGaps = VirusGenomeService.findSequenceGapRanges(min_gap_length,

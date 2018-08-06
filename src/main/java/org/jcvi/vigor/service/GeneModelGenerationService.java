@@ -43,9 +43,11 @@ public class GeneModelGenerationService {
     public List<Model> generateGeneModel ( List<Model> models, VigorForm form ) throws ServiceException {
 
         List<Model> pseudoGenes = new ArrayList<>();
-        isDebug = form.getConfiguration().get(ConfigurationParameters.Verbose).equals("true") ? true : false;
-        if (VigorUtils.is_Integer(form.getConfiguration().get(ConfigurationParameters.MaxGeneOverlap)))
-            max_gene_overlap = Integer.parseInt(form.getConfiguration().get(ConfigurationParameters.MaxGeneOverlap));
+        isDebug = form.getConfiguration().getOrDefault(ConfigurationParameters.Verbose, false);
+
+        if (form.getConfiguration().get(ConfigurationParameters.MaxGeneOverlap) != null) {
+            max_gene_overlap = form.getConfiguration().get(ConfigurationParameters.MaxGeneOverlap);
+        }
         List<Model> processedModels = determineGeneFeatures(models, form);
         // TODO process pseudogenes/partial genes, Not included in initial release
         processedModels.stream().forEach(model -> checkCoverage.evaluate(model, form));
@@ -221,12 +223,8 @@ public class GeneModelGenerationService {
     private List<Model> filterModelsWithStructuralSpecifications ( List<Model> models, VigorConfiguration config ) {
 
         List<Model> filteredModels = new ArrayList<>();
-        int min_gene_size = 0;
-        int min_coverage = 0;
-        String min_gene_size_str = config.get(ConfigurationParameters.GeneMinimumSize);
-        if (VigorUtils.is_Integer(min_gene_size_str)) min_gene_size = Integer.parseInt(min_gene_size_str);
-        String min_coverage_str = config.get(ConfigurationParameters.GeneMinimumCoverage);
-        if (VigorUtils.is_Integer(min_coverage_str)) min_coverage = Integer.parseInt(min_coverage_str);
+        int min_gene_size = config.getOrDefault(ConfigurationParameters.GeneMinimumSize,0);
+        int min_coverage = config.getOrDefault(ConfigurationParameters.GeneMinimumCoverage, 0);
         for (Model model : models) {
             StructuralSpecifications specs = model.getAlignment().getViralProtein().getGeneAttributes().getStructuralSpecifications();
             int minFunLength = specs.getMinFunctionalLength();

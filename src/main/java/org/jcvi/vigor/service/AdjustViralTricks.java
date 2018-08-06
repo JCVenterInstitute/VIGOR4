@@ -27,17 +27,15 @@ import org.springframework.stereotype.Service;
 public class AdjustViralTricks implements DetermineGeneFeatures {
 
     private static final Logger LOGGER = LogManager.getLogger(ModelGenerationService.class);
-    private int leakyStopNotFoundScore = 80;
+    private double leakyStopNotFoundScore = 80;
 
     @Override
     public List<Model> determine ( Model model, VigorForm form ) throws ServiceException {
 
         List<Model> outputModels = new ArrayList<>();
         List<Model> rnaEditedModels = new ArrayList<>();
-        String leakyStopScoreParam = form.getConfiguration().get(ConfigurationParameters.ScoreFactorLeakyStopNotFound);
-        if (VigorUtils.is_Integer(leakyStopScoreParam)) {
-            leakyStopNotFoundScore = Integer.parseInt(leakyStopScoreParam);
-        }
+        leakyStopNotFoundScore = form.getConfiguration().getOrDefault(ConfigurationParameters.ScoreFactorLeakyStopNotFound, 80);
+
         try {
             List<Model> riboAdjustedmodels = adjustRibosomalSlippage(model);
             for (Model riboAdjustedModel : riboAdjustedmodels) {

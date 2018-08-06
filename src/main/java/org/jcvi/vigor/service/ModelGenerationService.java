@@ -32,16 +32,10 @@ public class ModelGenerationService {
     public List<Model> generateModels ( List<Alignment> alignments, VigorForm form ) throws ServiceException {
 
         VigorConfiguration configuration = form.getConfiguration();
-        isDebug = configuration.get(ConfigurationParameters.Verbose).equals("true") ? true : false;
-        if (VigorUtils.is_Integer(configuration.get(ConfigurationParameters.AAOverlap_offset))) {
-            AAOverlapOffset = Integer.parseInt(configuration.get(ConfigurationParameters.AAOverlap_offset));
-        }
-        if (VigorUtils.is_Integer(configuration.get(ConfigurationParameters.NTOverlap_offset))) {
-            NTOverlapOffset = Integer.parseInt(configuration.get(ConfigurationParameters.NTOverlap_offset));
-        }
-        if (VigorUtils.is_Integer(configuration.get(ConfigurationParameters.CondensationMinimum))) {
-            minCondensation = Integer.parseInt(configuration.get(ConfigurationParameters.CondensationMinimum));
-        }
+        isDebug = configuration.getOrDefault(ConfigurationParameters.Verbose, false);
+        AAOverlapOffset = configuration.getOrDefault(ConfigurationParameters.AAOverlap_offset, AAOverlapOffset);
+        NTOverlapOffset = configuration.getOrDefault(ConfigurationParameters.NTOverlap_offset, NTOverlapOffset);
+        minCondensation = configuration.getOrDefault(ConfigurationParameters.CondensationMinimum, minCondensation);
         minIntronLength = minCondensation * 3;
         alignments = mergeIdenticalProteinAlignments(alignments);
         return determineCandidateModels(alignments, form);
@@ -105,13 +99,8 @@ public class ModelGenerationService {
             sequenceGaps = initialModels.get(0).getAlignment().getVirusGenome().getSequenceGaps();
         }
         List<Range> validSequenceGaps = new ArrayList<Range>();
-        String minGapLenString = "";
         if (sequenceGaps != null && sequenceGaps.size() > 0) {
-            minGapLenString = form.getConfiguration().get(ConfigurationParameters.SequenceGapMinimumLength);
-            long minGapLength = 0;
-            if (VigorUtils.is_Integer(minGapLenString)) {
-                minGapLength = Long.parseLong(minGapLenString);
-            }
+            long minGapLength = form.getConfiguration().getOrDefault(ConfigurationParameters.SequenceGapMinimumLength, 0);
             for (Range gapRange : sequenceGaps) {
                 if (gapRange.getLength() >= minGapLength) {
                     validSequenceGaps.add(gapRange);

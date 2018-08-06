@@ -29,10 +29,10 @@ public class DetermineStop implements DetermineGeneFeatures {
     @Override
     public List<Model> determine ( Model model, VigorForm form ) throws ServiceException {
 
-        String stopCodonWindowParam = form.getConfiguration().get(ConfigurationParameters.StopCodonSearchWindow);
+        Integer stopCodonWindowParam = form.getConfiguration().get(ConfigurationParameters.StopCodonSearchWindow);
         isDebug = form.getConfiguration().get(ConfigurationParameters.Verbose).equals("true") ? true : false;
-        if (VigorUtils.is_Integer(stopCodonWindowParam)) {
-            stopCodonWindow = Integer.parseInt(stopCodonWindowParam);
+        if (stopCodonWindowParam != null) {
+            stopCodonWindow = stopCodonWindowParam;
         }
         try {
             return findStop(model);

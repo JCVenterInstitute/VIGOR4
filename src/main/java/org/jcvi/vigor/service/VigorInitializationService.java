@@ -4,8 +4,13 @@ import net.sourceforge.argparse4j.inf.Namespace;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.Filter;
+import org.apache.logging.log4j.core.Layout;
 import org.apache.logging.log4j.core.LoggerContext;
 import org.apache.logging.log4j.core.appender.FileAppender;
+import org.apache.logging.log4j.core.config.Configuration;
+import org.apache.logging.log4j.core.filter.LevelRangeFilter;
+import org.apache.logging.log4j.core.layout.PatternLayout;
 import org.jcvi.vigor.component.AlignmentEvidence;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.forms.VigorForm;
@@ -52,12 +57,8 @@ public class VigorInitializationService {
                 isCircular = true;
             }
             VigorForm form = loadParameters(inputs);
-            VigorConfiguration configuration =  form.getConfiguration();
-            String outputDir = configuration.get(ConfigurationParameters.OutputDirectory);
-            String outputPrefix = configuration.get(ConfigurationParameters.OutputPrefix);
-            initiateReportFile(outputDir,outputPrefix, inputs.getInt(CommandLineParameters.verbose));
-            form.getConfiguration().put(ConfigurationParameters.CircularGene, isCircular ? "1" : "0");
-            form.getConfiguration().put(ConfigurationParameters.CompleteGene, isComplete ? "1" : "0");
+            form.getConfiguration().putString(ConfigurationParameters.CircularGene, isCircular ? "1" : "0");
+            form.getConfiguration().putString(ConfigurationParameters.CompleteGene, isComplete ? "1" : "0");
             return form;
 
 	}
@@ -66,7 +67,8 @@ public class VigorInitializationService {
 		List<VigorConfiguration> configurations = new ArrayList<>();
 		VigorConfiguration defaultConfiguration = LoadDefaultParameters
 				.loadVigorConfiguration("defaults",
-										Thread.currentThread().getContextClassLoader().getResource(VigorUtils.getDefaultConfigurationPath()));
+										Thread.currentThread().getContextClassLoader().getResource(VigorUtils.getDefaultConfigurationPath()),
+										ConfigurationParameters.Flags.PROGRAM_CONFIG_SET);
 
 		configurations.add(defaultConfiguration);
 
@@ -76,7 +78,7 @@ public class VigorInitializationService {
 			val = System.getProperty(param.getSystemPropertyName());
 			if (val != null) {
 				if (param.hasFlag(ConfigurationParameters.Flags.VERSION_4)) {
-					propConfiguration.put(param, val);
+					propConfiguration.putString(param, val);
 				} else {
 					LOGGER.debug("Ignoring non VIGOR4 parameter {}={} set via system properties", param.configKey, val, param.getSystemPropertyName());
 				}
@@ -90,7 +92,7 @@ public class VigorInitializationService {
 			val = System.getenv(param.getEnvVarName());
 			if (val != null) {
 				if (param.hasFlag(ConfigurationParameters.Flags.VERSION_4)) {
-					envConfiguration.put(param, val);
+					envConfiguration.putString(param, val);
 				} else {
 					LOGGER.debug("ignoring non-VIGOR4 parameter {}={} set via environment variable {}", param.configKey, val, param.getEnvVarName());
 				}
@@ -117,7 +119,7 @@ public class VigorInitializationService {
 		configurations.addAll(getDefaultConfigurations());
 		configurations.addAll(getCommandLineConfiguration(inputs));
 
-		String reference_db_dir = getConfigValue(ConfigurationParameters.ReferenceDatabasePath, configurations);
+		String reference_db_dir = (String) getConfigValue(ConfigurationParameters.ReferenceDatabasePath, configurations);
 		LOGGER.debug("Reference database path is {}", reference_db_dir);
 
 		String reference_db= inputs.getString(CommandLineParameters.referenceDB);
@@ -149,14 +151,14 @@ public class VigorInitializationService {
 		if ( reference_db == null || reference_db.isEmpty()) {
 			throw new VigorException("reference database is required");
 		}
-		File referenceDBFile = new File(reference_db);
+
 		VigorUtils.checkFilePath("Reference database file", reference_db,
 								 VigorUtils.FileCheck.EXISTS,
 								 VigorUtils.FileCheck.FILE,
 								 VigorUtils.FileCheck.READ );
 
-		String virusSpecificConfig = getConfigValue(ConfigurationParameters.VirusSpecificConfiguration, configurations);
-		String virusSpecificConfigPath = getConfigValue(ConfigurationParameters.VirusSpecificConfigurationPath, configurations);
+		String virusSpecificConfig = (String) getConfigValue(ConfigurationParameters.VirusSpecificConfiguration, configurations);
+		String virusSpecificConfigPath = (String) getConfigValue(ConfigurationParameters.VirusSpecificConfigurationPath, configurations);
 		if (virusSpecificConfigPath == null || virusSpecificConfigPath.isEmpty()) {
 			virusSpecificConfigPath = reference_db_dir;
 		}
@@ -214,6 +216,16 @@ public class VigorInitializationService {
 
 		List<VigorConfiguration> configurations = new ArrayList<>();
 
+		String outputPath = inputs.getString(CommandLineParameters.outputPrefix);
+		File outputFile= new File(outputPath);
+		if (! (outputFile.getParentFile().exists() || outputFile.getParentFile().mkdirs()) ) {
+			throw new VigorException(String.format("unable to create directory %s", outputFile.getParent()));
+		}
+		if( ! (outputFile.getParentFile().exists() && outputFile.getParentFile().isDirectory()) ){
+			throw new VigorException(String.format("Invalid output prefix %s. Please provide a directory followed by a file prefix", outputPath));
+		}
+		initiateReportFile(outputFile.getParentFile().getAbsolutePath(), outputFile.getName(), inputs.getInt(CommandLineParameters.verbose));
+
 		String config_file = inputs.get(CommandLineParameters.configFile);
 		if (config_file == null || config_file.isEmpty()) {
 		    LOGGER.debug("checking environment variable VIGOR_CONFIG_FILE for config file");
@@ -233,51 +245,45 @@ public class VigorInitializationService {
 									 VigorUtils.FileCheck.FILE);
 		    LOGGER.debug("loading config file {}", config_file);
 		    // use the file as configuration name so it's unambigious
-			VigorConfiguration configFileConfiguration = LoadDefaultParameters.loadVigorConfiguration(config_file, new File(config_file));
+			VigorConfiguration configFileConfiguration = LoadDefaultParameters.loadVigorConfiguration(config_file, new File(config_file),
+																									  ConfigurationParameters.Flags.COMMANDLINE_SET,
+																									  ConfigurationParameters.Flags.PROGRAM_CONFIG_SET);
 			configurations.add(configFileConfiguration);
 		}
 
 		VigorConfiguration commandLineConfig = new VigorConfiguration("commandline");
 
-		String outputPath = inputs.getString(CommandLineParameters.outputPrefix);
-		File outputFile= new File(outputPath);
-		if (! (outputFile.getParentFile().exists() || outputFile.getParentFile().mkdirs()) ) {
-			throw new VigorException(String.format("unable to create directory %s", outputFile.getParent()));
-		}
-		if( ! (outputFile.getParentFile().exists() && outputFile.getParentFile().isDirectory()) ){
-			throw new VigorException(String.format("Invalid output prefix %s. Please provide a directory followed by a file prefix", outputPath));
-		}
-		commandLineConfig.put(ConfigurationParameters.OutputPrefix,outputFile.getName());
-		commandLineConfig.put(ConfigurationParameters.OutputDirectory,outputFile.getParentFile().getAbsolutePath());
+		commandLineConfig.putString(ConfigurationParameters.OutputPrefix, outputFile.getName());
+		commandLineConfig.putString(ConfigurationParameters.OutputDirectory, outputFile.getParentFile().getAbsolutePath());
 
 		// defaults to false on commandline, so set it in the commandline configuration if true, so we don't override
 		// a value in the vigor.ini file
 		if (inputs.getBoolean(CommandLineParameters.overwriteOutputFiles)) {
-			commandLineConfig.put(ConfigurationParameters.OverwriteOutputFiles,
-								  inputs.getBoolean(CommandLineParameters.overwriteOutputFiles) ? "true" : "false");
+			commandLineConfig.putString(ConfigurationParameters.OverwriteOutputFiles,
+										inputs.getBoolean(CommandLineParameters.overwriteOutputFiles) ? "true" : "false");
 		}
 
 		Integer min_gene_size = inputs.getInt(CommandLineParameters.minGeneSize);
 		if (min_gene_size != null) {
-			commandLineConfig.put(ConfigurationParameters.GeneMinimumSize, min_gene_size.toString());
+			commandLineConfig.putString(ConfigurationParameters.GeneMinimumSize, min_gene_size.toString());
 		}
 
 		String min_gene_coverage = inputs.getString(CommandLineParameters.minCoverage);
 		if (min_gene_coverage != null ) {
-			commandLineConfig.put(ConfigurationParameters.GeneMinimumCoverage, min_gene_coverage);
+			commandLineConfig.putString(ConfigurationParameters.GeneMinimumCoverage, min_gene_coverage);
 		}
 		String frameshift_sensitivity = inputs.getString(CommandLineParameters.frameshiftSensitivity);
 		if (frameshift_sensitivity != null ) {
-			commandLineConfig.put(ConfigurationParameters.FrameShiftSensitivity, frameshift_sensitivity);
+			commandLineConfig.putString(ConfigurationParameters.FrameShiftSensitivity, frameshift_sensitivity);
 		}
 		String candidate_selection = inputs.getString(CommandLineParameters.skipSelection);
 		if (candidate_selection != null ) {
-			commandLineConfig.put(ConfigurationParameters.CandidateSelection, candidate_selection);
+			commandLineConfig.putString(ConfigurationParameters.CandidateSelection, candidate_selection);
 		}
 
 		String locus_tag = inputs.getString(CommandLineParameters.locusTag);
 		if (locus_tag != null) {
-			commandLineConfig.put(ConfigurationParameters.Locustag, locus_tag);
+			commandLineConfig.putString(ConfigurationParameters.Locustag, locus_tag);
 		}
 
 		Boolean ignore_reference_requirements = inputs.getBoolean(CommandLineParameters.ignoreReferenceRequirements);
@@ -299,7 +305,7 @@ public class VigorInitializationService {
 		if (reference_database != null) {
 			Path referenceDBPath = Paths.get(reference_database);
 			if (referenceDBPath.isAbsolute()) {
-				commandLineConfig.put(ConfigurationParameters.ReferenceDatabasePath, referenceDBPath.getParent().toString());
+				commandLineConfig.putString(ConfigurationParameters.ReferenceDatabasePath, referenceDBPath.getParent().toString());
 			}
 		}
 
@@ -311,20 +317,20 @@ public class VigorInitializationService {
 						reference_database_path,
 						reference_database));
 			}
-			commandLineConfig.put(ConfigurationParameters.ReferenceDatabasePath, reference_database_path);
+			commandLineConfig.putString(ConfigurationParameters.ReferenceDatabasePath, reference_database_path);
 		}
 
 		String virus_specific_path = inputs.getString(CommandLineParameters.virusSpecificConfigPath);
 		if (virus_specific_path != null) {
-			commandLineConfig.put(ConfigurationParameters.VirusSpecificConfigurationPath, virus_specific_path);
+			commandLineConfig.putString(ConfigurationParameters.VirusSpecificConfigurationPath, virus_specific_path);
 		}
 
 		virus_specific_path = inputs.getString(CommandLineParameters.virusSpecificConfig);
 		if (virus_specific_path != null) {
-			commandLineConfig.put(ConfigurationParameters.VirusSpecificConfiguration, virus_specific_path);
+			commandLineConfig.putString(ConfigurationParameters.VirusSpecificConfiguration, virus_specific_path);
 		}
-        commandLineConfig.put(ConfigurationParameters.Verbose,
-                inputs.getInt(CommandLineParameters.verbose) > 0 ? "true": "false");
+        commandLineConfig.putString(ConfigurationParameters.Verbose,
+									inputs.getInt(CommandLineParameters.verbose) > 0 ? "true": "false");
 
 		configurations.add(commandLineConfig);
 
@@ -336,7 +342,9 @@ public class VigorInitializationService {
 												 .flatMap(p -> splitter.splitAsStream(p.trim()))
 												 .map(s -> s.split("=", 2))
 												 .collect(Collectors.toMap(a -> a[0], a -> a.length > 1 ? a[1] : ""));
-			VigorConfiguration commandLineParametersConfig = LoadDefaultParameters.configurationFromMap("commandline-parameters", temp);
+			VigorConfiguration commandLineParametersConfig = LoadDefaultParameters.configurationFromMap("commandline-parameters", temp,
+																										ConfigurationParameters.Flags.PROGRAM_CONFIG_SET,
+																										ConfigurationParameters.Flags.COMMANDLINE_SET);
 			configurations.add(commandLineParametersConfig);
 		}
 
@@ -371,11 +379,14 @@ public class VigorInitializationService {
 		LOGGER.debug("virus specific config file for reference_db {} is {}", reference_db, configPath);
 		// config file was specified, but doesn't exist
 		if ( (! configFile.exists())  && virusSpecificConfig != null) {
-			throw new VigorException(String.format("Virus specific config file %sdoesn't exist or is not readable", virusSpecificConfig));
+			throw new VigorException(String.format("Virus specific config file %s doesn't exist or is not readable", virusSpecificConfig));
 		}
 		// virus specific configuration files may not exist
 		if (configFile.exists()) {
-			VigorConfiguration virusSpecificParameters = LoadDefaultParameters.loadVigorConfiguration(configPath, configFile);
+			VigorConfiguration virusSpecificParameters = LoadDefaultParameters.loadVigorConfiguration(configPath, configFile,
+																									  ConfigurationParameters.Flags.VIRUS_SET,
+																									  ConfigurationParameters.Flags.GENE_SET
+																									  );
 			virusSpecificParameters.setDefaults(vigorConfiguration);
 			return virusSpecificParameters;
 		}
@@ -384,12 +395,36 @@ public class VigorInitializationService {
 
 	public void initiateReportFile(String outputDir, String outputPrefix, int verbose){
         LoggerContext lc = (LoggerContext) LogManager.getContext(false);
-        FileAppender fa = FileAppender.newBuilder().withName("mylogger").withAppend(false).withFileName(new File(outputDir, outputPrefix+".rpt").toString())
-                .build();
-        fa.start();
-        lc.getConfiguration().addAppender(fa);
+        Configuration config = lc.getConfiguration();
 
-		lc.getLogger("org.jcvi.vigor").addAppender(lc.getConfiguration().getAppender(fa.getName()));
+        FileAppender fa = FileAppender.newBuilder()
+									  .withName("mylogger")
+									  .withAppend(false)
+									  .withFileName(new File(outputDir, outputPrefix+".rpt").toString())
+									  .build();
+        fa.start();
+        config.addAppender(fa);
+
+        Layout warningLayout = PatternLayout.newBuilder()
+				.withConfiguration(config)
+				.withPattern("%level %msg %exception{full}\n")
+				.build();
+
+		Filter warningFilter = LevelRangeFilter.createFilter(Level.FATAL, Level.WARN, Filter.Result.ACCEPT, Filter.Result.DENY);
+
+		FileAppender warnings = FileAppender.newBuilder()
+											.withName("__warnings")
+											.withAppend(false)
+											.withLayout(warningLayout)
+											.withFileName(new File(outputDir, outputPrefix + ".warnings").toString())
+											.build();
+		warningFilter.start();
+		warnings.addFilter(warningFilter);
+		warnings.start();
+		config.addAppender(warnings);
+
+		lc.getLogger("org.jcvi.vigor").addAppender(warnings);
+		lc.getLogger("org.jcvi.vigor").addAppender(fa);
 
 		if (verbose > 0) {
 			lc.getConfiguration().getLoggerConfig("org.jcvi.vigor").setLevel(verbose == 1 ? Level.DEBUG: Level.TRACE);
@@ -397,8 +432,8 @@ public class VigorInitializationService {
         lc.updateLoggers();
     }
 
-    private String getConfigValue(ConfigurationParameters param, List<VigorConfiguration> configurations) {
-		String value = null;
+    private Object getConfigValue(ConfigurationParameters param, List<VigorConfiguration> configurations) {
+		Object value = null;
 		for (int i = configurations.size() - 1; i >= 0; i--) {
 			value = configurations.get(i).get(param);
 			if (value != null) {

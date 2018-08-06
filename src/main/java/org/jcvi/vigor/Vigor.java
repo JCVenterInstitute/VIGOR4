@@ -65,10 +65,33 @@ public class Vigor {
         String inputFileName = parsedArgs.getString("input_fasta");
         try {
             VigorForm vigorForm = getVigorForm(parsedArgs);
+            checkConfig(vigorForm.getConfiguration());
             generateAnnotations(inputFileName, vigorForm);
-        } catch (VigorException e) {
-            LOGGER.error(e);
+        } catch (Exception e) {
+            LOGGER.error("Exception encountered: exiting 1",e);
             System.exit(1);
+        }
+    }
+
+    /**
+     * Check that required parameters are set
+     * @param config
+     * @throws VigorException
+     */
+    private void checkConfig(VigorConfiguration config) throws VigorException {
+        List<String> errors =  new ArrayList<>();
+        Object val;
+        for (ConfigurationParameters parameter: Arrays.stream(ConfigurationParameters.values())
+                                                      .filter(p -> p.hasFlag(ConfigurationParameters.Flags.REQUIRED))
+                                                      .collect(Collectors.toList())) {
+            val = config.get(parameter);
+            if (val == null || (val instanceof String && ((String) val).isEmpty())) {
+                errors.add(String.format("parameter %s is not set but is required", parameter.configKey));
+            }
+        }
+
+        if (! errors.isEmpty()) {
+            throw new VigorException(String.join("\n", errors));
         }
     }
 
@@ -99,7 +122,7 @@ public class Vigor {
                 .build();
              GenerateVigorOutput.Outfiles outfiles = getOutfiles(outputDir,
                                                                  outputPrefix,
-                                                                 vigorParameters.get(ConfigurationParameters.OverwriteOutputFiles) == "true")
+                                                                 vigorParameters.getOrDefault(ConfigurationParameters.OverwriteOutputFiles, false))
         ) {
             // TODO move all this file handling to method
             // TODO checkout output earlier.
@@ -118,7 +141,7 @@ public class Vigor {
         } catch (DataStoreException e) {
             throw new VigorException(String.format("problem reading input file %s", inputFileName), e);
         } catch (IOException e) {
-            throw new VigorException("File issue", e);
+            throw new VigorException(String.format("File issue. Got %s: %s", e.getClass().getSimpleName(), e.getMessage()), e);
         }
     }
 
@@ -133,8 +156,8 @@ public class Vigor {
 
     public List<Model> modelsFromNucleotideRecord(NucleotideFastaRecord record, VigorForm vigorForm, VigorConfiguration vigorParameters) throws VigorException {
         VirusGenome virusGenome = new VirusGenome(record.getSequence(), record.getComment(), record.getId(),
-                                                  "1".equals(vigorParameters.get(ConfigurationParameters.CompleteGene)),
-                                                  "1".equals(vigorParameters.get(ConfigurationParameters.CircularGene)));
+                                                  vigorParameters.getOrDefault(ConfigurationParameters.CompleteGene, false),
+                                                  vigorParameters.getOrDefault(ConfigurationParameters.CircularGene, false));
         List<Alignment> alignments = generateAlignments(virusGenome, vigorForm);
         LOGGER.info("{} alignment(s) found for sequence {}", alignments.size(), record.getId());
         List<Model> candidateModels = generateModels(alignments, vigorForm);
@@ -159,12 +182,12 @@ public class Vigor {
 
     private PeptideMatchingService.Scores getPeptideScores ( VigorConfiguration config ) {
 
-        String minIdentityString = config.get(ConfigurationParameters.MaturePeptideMinimumIdentity);
-        double minIdentity = Double.parseDouble(minIdentityString) / 100.0d;
-        String minCoverageString = config.get(ConfigurationParameters.MaturePeptideMinimumCoverage);
-        double minCoverage = Double.parseDouble(minCoverageString) / 100.0d;
-        String minSimilarityString = config.get(ConfigurationParameters.MaturePeptideMinimumSimilarity);
-        double minSimilarity = Double.parseDouble(minSimilarityString) / 100.0d;
+        double minIdentity = config.get(ConfigurationParameters.MaturePeptideMinimumIdentity);
+        minIdentity = minIdentity / 100.0d;
+        double minCoverage = config.get(ConfigurationParameters.MaturePeptideMinimumCoverage);
+        minCoverage = minCoverage / 100.0d;
+        double minSimilarity = config.get(ConfigurationParameters.MaturePeptideMinimumSimilarity);
+        minSimilarity = minSimilarity / 100.0d;
         return PeptideMatchingService.Scores.of(minIdentity, minCoverage, minSimilarity);
     }
 

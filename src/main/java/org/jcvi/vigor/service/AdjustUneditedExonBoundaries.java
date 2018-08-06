@@ -24,19 +24,17 @@ import org.springframework.stereotype.Service;
 @Service
 public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
 
-    private long defaultSearchWindow = 50;
-    private long minIntronLength = 20;
+    private int defaultSearchWindow = 50;
+    private int minIntronLength = 20;
 
     @Override
     public List<Model> determine ( Model model, VigorForm form ) throws ServiceException {
 
         VigorConfiguration configuration = form.getConfiguration();
-        if (VigorUtils.is_Integer(configuration.get(ConfigurationParameters.StopCodonSearchWindow))) {
-            defaultSearchWindow = Integer.parseInt(configuration.get(ConfigurationParameters.StopCodonSearchWindow));
-        }
-        if (VigorUtils.is_Integer(configuration.get(ConfigurationParameters.IntronMinimumSize))) {
-            minIntronLength = Integer.parseInt(configuration.get(ConfigurationParameters.IntronMinimumSize));
-        }
+        defaultSearchWindow = configuration.getOrDefault(ConfigurationParameters.StopCodonSearchWindow, 50);
+        minIntronLength = configuration.getOrDefault(ConfigurationParameters.IntronMinimumSize, 20);
+
+
         List<Model> models = null;
         try {
             models = adjustSpliceSites(model);
