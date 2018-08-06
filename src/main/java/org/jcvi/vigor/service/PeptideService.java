@@ -218,14 +218,12 @@ public class PeptideService implements PeptideMatchingService {
                 currentRange = currentMatch.alignment.getSubjectRange().getRange();
                 current = peptideFromMatch(currentMatch);
 
-                if (currentRange.getBegin() - previousRange.getEnd() > MAX_GAP) {
+                if (currentRange.getBegin() - previousRange.getEnd() > MAX_GAP && prev != null) {
                     LOGGER.debug("difference between range [{}:{}] and [{}:{}] > max gap {}. Setting fuzzy edges",
                             previousRange.getBegin(), previousRange.getEnd(),
                             currentRange.getBegin(), currentRange.getEnd(),
                             MAX_GAP);
-                    if (prev != null) {
-                        prev.setFuzzyEnd(true);
-                    }
+                    prev.setFuzzyEnd(true);
                     current.setFuzzyBegin(true);
                 } else if (currentRange.getBegin() != previousRange.getEnd() + 1) {
                     LOGGER.debug("Range [{}:{}] doesn't align to following range [{}:{}]. Adjusting edges",
