@@ -33,7 +33,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
 
         List<Model> outputModels = new ArrayList<>();
         List<Model> rnaEditedModels = new ArrayList<>();
-        double leakyStopNotFoundScore = form.getConfiguration().getOrDefault(ConfigurationParameters.ScoreFactorLeakyStopNotFound, 80);
+        double leakyStopNotFoundScore = form.getConfiguration().getOrDefault(ConfigurationParameters.ScoreFactorLeakyStopNotFound, 80d);
 
         try {
             List<Model> riboAdjustedmodels = adjustRibosomalSlippage(model);

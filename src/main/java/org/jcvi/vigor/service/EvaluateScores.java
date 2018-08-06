@@ -18,12 +18,12 @@ public class EvaluateScores implements EvaluateModel {
 
         Map<String, Double> scores = model.getScores();
         VigorConfiguration configuration = form.getConfiguration();
-        double alignmentScoreFactor = configuration.getOrDefault(ConfigurationParameters.ScoreFactorAlignment, 1);
+        double alignmentScoreFactor = configuration.getOrDefault(ConfigurationParameters.ScoreFactorAlignment, 1d);
 
-        double startScoreFactor = configuration.getOrDefault(ConfigurationParameters.ScoreFactorStart, 1);
-        double splicingScoreFactor = configuration.getOrDefault(ConfigurationParameters.ScoreFactorSplicing, 1);
-        double stopScoreFactor = configuration.getOrDefault(ConfigurationParameters.ScoreFactorStop, 1);
-        double leakyStopScoreFactor = configuration.getOrDefault(ConfigurationParameters.ScoreFactorLeakyStop, 1);
+        double startScoreFactor = configuration.getOrDefault(ConfigurationParameters.ScoreFactorStart, 1d);
+        double splicingScoreFactor = configuration.getOrDefault(ConfigurationParameters.ScoreFactorSplicing, 1d);
+        double stopScoreFactor = configuration.getOrDefault(ConfigurationParameters.ScoreFactorStop, 1d);
+        double leakyStopScoreFactor = configuration.getOrDefault(ConfigurationParameters.ScoreFactorLeakyStop, 1d);
 
         double alignmentScore = 0;
         double startCodonScore = 0;
