@@ -200,8 +200,8 @@ public class PeptideService implements PeptideMatchingService {
             String header = String.format("%-20s     %-4s    %-9s     %-9s   %-6s   %-6s   %-6s   %s",
                                           "id","len","sub","qry","%id","%sim","%cov","comment");
             LOGGER.debug(header);
-            List<PeptideMatch> bestMatches = getBestMatches(alignments.sorted(bySubjectRange::compare)
-                                                                      .filter(filterByScore));
+            List<PeptideMatch> bestMatches = getBestMatches(alignments.filter(filterByScore)
+                                                                      .sorted(bySubjectRange::compare));
 
             LOGGER.info( bestMatches.stream().map(m -> formatMatchForLogging(m)).collect(Collectors.joining("\n","Best matches:\n" + header + "\n","\n")));
             List<MaturePeptideMatch> peptides = new ArrayList<>(bestMatches.size());
@@ -276,7 +276,10 @@ public class PeptideService implements PeptideMatchingService {
 
     private MutableGraph<PeptideMatch> matchesToGraph(List<PeptideMatch> matches) {
 
-        MutableGraph<PeptideMatch> graph = GraphBuilder.directed().build();
+        MutableGraph<PeptideMatch> graph = GraphBuilder.directed()
+                                                       .expectedNodeCount(matches.size())
+                                                       .allowsSelfLoops(false)
+                                                       .build();
         PeptideMatch current;
         PeptideMatch next;
         Range currentRange;
@@ -301,12 +304,26 @@ public class PeptideService implements PeptideMatchingService {
         }
         return graph;
     }
+
     private List<PeptideMatch> getBestMatches(Stream<PeptideMatch> alignments) {
         List<PeptideMatch> matches = alignments.collect(Collectors.toList());
-        MutableGraph<PeptideMatch> graph = matchesToGraph(matches);
-
-
+        LOGGER.trace("{} alignments after filtering", matches.size());
         Function<Scores,Double> sumScores = (s) -> s.identity + s.similarity + s.coverage;
+
+        // for identical ranges take only the "best" one
+        Map<Range,PeptideMatch> bestRanges = new HashMap<>();
+        for (PeptideMatch match: matches) {
+            Range r = match.alignment.getSubjectRange().asRange();
+            if (! (bestRanges.containsKey(r) && (sumScores.apply(bestRanges.get(r).scores) >= sumScores.apply(match.scores)))) {
+                bestRanges.put(r, match);
+            }
+        }
+        matches = new ArrayList<>(bestRanges.values());
+        matches.sort(bySubjectRange);
+
+        LOGGER.trace("{} alignments after removing redundant matches", matches.size());
+
+        MutableGraph<PeptideMatch> graph = matchesToGraph(matches);
         Function<List<PeptideMatch>, Double> scorePath = a -> {
             //
             if (a.stream().map(m -> extractProduct(m.peptide.getComment())).distinct().count() != a.size()) {
@@ -329,9 +346,14 @@ public class PeptideService implements PeptideMatchingService {
         double testScore;
 
         List<PeptideMatch> starts = matches.stream().filter(m -> graph.inDegree(m) == 0).collect(Collectors.toList());
+        LOGGER.trace("Found {} path starts", starts.size());
+        int totalPaths = 0;
         for (PeptideMatch start: starts) {
+            int pathCount = 0;
+            LOGGER.trace("Finding paths starting at {}", start.peptide.getId());
             Iterator<List<PeptideMatch>> pathIter = findPaths(graph, start);
             while (pathIter.hasNext()) {
+                pathCount++;
                 testPath = pathIter.next();
                 testScore = scorePath.apply(testPath);
                 if (testScore > bestScore) {
@@ -339,7 +361,10 @@ public class PeptideService implements PeptideMatchingService {
                     bestPath = testPath;
                 }
             }
+            LOGGER.trace("{} path(s) checked for {}", pathCount, start.peptide.getId());
+            totalPaths += pathCount;
         }
+        LOGGER.trace("{} path(s) examined", totalPaths);
         return bestPath;
     }
 
