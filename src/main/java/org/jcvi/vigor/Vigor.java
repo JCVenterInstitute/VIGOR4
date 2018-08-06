@@ -29,6 +29,7 @@ import java.nio.charset.Charset;
 import java.nio.file.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Component
@@ -131,6 +132,7 @@ public class Vigor {
             Iterator<NucleotideFastaRecord> recordIterator = dataStore.records().iterator();
             while (recordIterator.hasNext()) {
                 NucleotideFastaRecord record = recordIterator.next();
+                LOGGER.debug("processing {}", record.getId());
                 List<Model> geneModels = modelsFromNucleotideRecord(record, vigorForm, vigorParameters);
                 if (geneModels.isEmpty()) {
                     LOGGER.warn("No gene models generated for sequence {}", record.getId());
@@ -158,6 +160,7 @@ public class Vigor {
         VirusGenome virusGenome = new VirusGenome(record.getSequence(), record.getComment(), record.getId(),
                                                   vigorParameters.getOrDefault(ConfigurationParameters.CompleteGene, false),
                                                   vigorParameters.getOrDefault(ConfigurationParameters.CircularGene, false));
+        LOGGER.info("Getting alignments for {}", record.getId());
         List<Alignment> alignments = generateAlignments(virusGenome, vigorForm);
         LOGGER.info("{} alignment(s) found for sequence {}", alignments.size(), record.getId());
         List<Model> candidateModels = generateModels(alignments, vigorForm);
@@ -165,6 +168,13 @@ public class Vigor {
         List<Model> geneModels = generateGeneModels(candidateModels, vigorForm);
         LOGGER.info("{} gene model(s) found for sequence {}", geneModels.size(), record.getId());
         geneModels = findPeptides(vigorParameters, geneModels);
+        LOGGER.debug("Found {} peptides for {} models for sequence {}",
+                     geneModels.stream()
+                               .map( m -> m.getMaturePeptides().size() )
+                               .reduce(Integer::sum).orElse(0),
+                     geneModels.size(),
+                     record.getId());
+
         // sort by begin,end
         return geneModels.stream()
                          .sorted(Comparator.comparing(g -> g.getRange(), Range.Comparators.ARRIVAL))
