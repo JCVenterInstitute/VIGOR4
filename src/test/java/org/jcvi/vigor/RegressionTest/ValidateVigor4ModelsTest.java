@@ -123,7 +123,7 @@ public class ValidateVigor4ModelsTest {
         Map<String, List<String>> errors = validate(getVigor4Models(config, inputFasta), getVigor3Models());
         boolean hasErrors = errors.entrySet()
                                   .stream()
-                                  .filter( e -> ! e.getValue().isEmpty())
+                                  .filter( e -> !(e.getValue() == null ||  e.getValue().isEmpty()))
                                   .findAny().isPresent();
         if (hasErrors) {
             StringBuilder sb = new StringBuilder();
@@ -166,7 +166,7 @@ public class ValidateVigor4ModelsTest {
     private VigorConfiguration getConfiguration() throws IOException, VigorException {
         VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
         String outputPrefix = new File(referenceDatabaseName).getName().replace("_db", "");
-        config.put(ConfigurationParameters.OutputPrefix, outputPrefix);
+        config.putString(ConfigurationParameters.OutputPrefix, outputPrefix);
         String outDir = config.get(ConfigurationParameters.OutputDirectory);
         String tmpDir = config.get(ConfigurationParameters.TemporaryDirectory);
         if (outDir == null) {
@@ -179,22 +179,22 @@ public class ValidateVigor4ModelsTest {
             outDir = outDirPath.toString();
             Runtime.getRuntime().addShutdownHook(new Thread(() -> VigorUtils.deleteDirectory(outDirPath)));
         }
-        String virusSpecificPath = Paths.get(outDir,config.get(ConfigurationParameters.OutputPrefix)).toString();
+        String virusSpecificPath = Paths.get(outDir,outputPrefix).toString();
         File virusSpecificDir = new File(virusSpecificPath);
         if (! (virusSpecificDir.exists() || virusSpecificDir.mkdir()))  {
             throw new VigorException(String.format("virus specific output directory %s doesn't exist and could not be created", virusSpecificPath));
         }
-        config.put(ConfigurationParameters.OutputDirectory, virusSpecificDir.getAbsolutePath());
-        config.put(ConfigurationParameters.Verbose, "false");
+        config.putString(ConfigurationParameters.OutputDirectory, virusSpecificDir.getAbsolutePath());
+        config.putString(ConfigurationParameters.Verbose, "false");
         if (config.get(ConfigurationParameters.OverwriteOutputFiles) == null) {
-            config.put(ConfigurationParameters.OverwriteOutputFiles, "true");
+            config.putString(ConfigurationParameters.OverwriteOutputFiles, "true");
         }
         // TODO allow user to set this
         if (tmpDir == null) {
             final Path tempDir = Files.createTempDirectory(Paths.get(outDir), "vigor-tmp");
             // delete on shutdown
             Runtime.getRuntime().addShutdownHook(new Thread(() -> VigorUtils.deleteDirectory(tempDir)));
-            config.put(ConfigurationParameters.TemporaryDirectory, tempDir.toString());
+            config.putString(ConfigurationParameters.TemporaryDirectory, tempDir.toString());
         }
 
         checkConfig(config);

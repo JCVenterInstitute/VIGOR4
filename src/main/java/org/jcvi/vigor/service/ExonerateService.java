@@ -4,6 +4,7 @@ import org.jcvi.vigor.component.*;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.service.exception.ServiceException;
+import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.GenerateExonerateOutput;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -13,11 +14,13 @@ import org.jcvi.jillion.core.datastore.DataStoreProviderHint;
 import org.jcvi.jillion.fasta.aa.ProteinFastaDataStore;
 import org.jcvi.jillion.fasta.aa.ProteinFastaFileDataStoreBuilder;
 import org.jcvi.jillion.fasta.aa.ProteinFastaRecord;
+import org.jcvi.vigor.utils.VigorUtils;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,18 +33,9 @@ import java.util.Map;
 public class ExonerateService implements AlignmentService {
 
     private static final Logger LOGGER = LogManager.getLogger(ExonerateService.class);
-    private Path exoneratePath;
+    private final AlignmentTool alignmentTool = new Exonerate("exonerate");
 
-    public void setExoneratePath ( Path exoneratePath ) throws VigorException {
-
-        if (!( exoneratePath.toFile().exists() && exoneratePath.toFile().canExecute() )) {
-            LOGGER.warn("exonerate path {} does not exist or is not executable", exoneratePath);
-            throw new VigorException(String.format("exonerate path %s does not exist or is not executable", exoneratePath));
-        }
-        this.exoneratePath = exoneratePath;
-    }
-
-    /**
+     /**
      * @param form
      * @param virusGenome
      * @param referenceDB
@@ -50,9 +44,16 @@ public class ExonerateService implements AlignmentService {
      * @throws ServiceException
      */
     @Override
-    public List<Alignment> getAlignment ( VigorForm form, VirusGenome virusGenome, String referenceDB, String workspace ) throws ServiceException {
+    public List<Alignment> getAlignment (VigorForm form, VirusGenome virusGenome, String referenceDB, String workspace ) throws ServiceException {
 
         try {
+            String exoneratePathString = form.getConfiguration().get(ConfigurationParameters.ExoneratePath);
+
+            LOGGER.debug("Using exonerate path {}", exoneratePathString);
+
+            VigorUtils.checkFilePath("exonerate path via config value " + ConfigurationParameters.ExoneratePath.configKey,
+                                     exoneratePathString, VigorUtils.FileCheck.EXISTS, VigorUtils.FileCheck.EXECUTE);
+            Path exoneratePath = Paths.get(exoneratePathString);
             String outputFilePath = GenerateExonerateOutput.queryExonerate(virusGenome, referenceDB, workspace, null, exoneratePath.toString());
             File outputFile = new File(outputFilePath);
             form.setAlignmentOutputTempFile(outputFile.getAbsolutePath());
@@ -60,6 +61,11 @@ public class ExonerateService implements AlignmentService {
         } catch (VigorException e) {
             throw new ServiceException(String.format("error getting alignment got %s: %s", e.getClass().getSimpleName(), e.getMessage()), e);
         }
+    }
+
+    @Override
+    public AlignmentTool getAlignmentTool() {
+        return alignmentTool;
     }
 
     /**
@@ -76,7 +82,7 @@ public class ExonerateService implements AlignmentService {
         List<Alignment> alignments = new ArrayList<Alignment>();
         List<VulgarProtein2Genome2> Jalignments;
         AlignmentEvidence alignmentEvidence = form.getAlignmentEvidence();
-        AlignmentTool alignmentTool = form.getAlignmentTool();
+        AlignmentTool alignmentTool = getAlignmentTool();
         try {
             Jalignments = Exonerate2.parseVulgarOutput(exonerateOutput);
         } catch (IOException e) {

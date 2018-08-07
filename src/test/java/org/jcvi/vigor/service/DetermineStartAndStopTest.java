@@ -59,7 +59,7 @@ public class DetermineStartAndStopTest {
                 + "TAGAACAAATAATAATGGAAGAAGCATGGAAACTAGCAGCACACATAGTACAAGAATAACTGATGTCATT"
                 + "ACCAACCCAAGTCCAGAGCTTGAAGATGCCGTTCTACAAAGGAATAAAAGACGGCCGACGACCATCAAGC").build();
         virusGenome.setSequence(seq);
-        List<Range> sequenceGaps = VirusGenomeService.findSequenceGapRanges("20",
+        List<Range> sequenceGaps = VirusGenomeService.findSequenceGapRanges(20,
                 virusGenome.getSequence());
         virusGenome.setSequenceGaps(sequenceGaps);
         ViralProtein viralProtein = new ViralProtein();
@@ -106,14 +106,16 @@ public class DetermineStartAndStopTest {
         startCodons.add(triplet2);
         startCodons.add(triplet3);
         startCodons.add(triplet4);
-        List<Model> outputModels = determineStart.findStart(startCodons, model, "50");
+        List<Model> outputModels = determineStart.findStart(startCodons, model, 50);
         assertEquals("Expected 2 models, but got " + outputModels.size(), 2, outputModels.size());
     }
 
     @Test
     public void findStop () throws CloneNotSupportedException {
 
-        List<Model> models = determineStop.findStop(model);
+        int stopCodonWindow = 50;
+        boolean isDebug = false;
+        List<Model> models = determineStop.findStop(model, stopCodonWindow, isDebug);
         assertEquals("Expected 2 models, but got " + models.size(), 2, models.size());
         assertEquals(2, models.size());
         assertEquals(954, models.get(0).getExons().get(model.getExons().size() - 1).getRange().getEnd());

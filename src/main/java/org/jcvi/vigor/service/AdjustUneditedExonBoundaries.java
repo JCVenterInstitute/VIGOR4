@@ -6,44 +6,44 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.component.VirusGenome;
-import org.jcvi.vigor.component.Splicing.SpliceSite;
+import org.jcvi.vigor.component.SpliceSite;
 import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.VigorConfiguration;
 import org.jcvi.vigor.utils.VigorFunctionalUtils;
-import org.jcvi.vigor.utils.VigorUtils;
 import org.springframework.stereotype.Service;
 
 @Service
 public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
 
-    private long defaultSearchWindow = 50;
-    private long minIntronLength = 20;
-
+    private static Logger LOGGER = LogManager.getLogger(AdjustUneditedExonBoundaries.class);
+    private static final int DEFAULT_STOP_CODON_SEARCH_WINDOW = 50;
+    private static final int DEFAULT_MIN_INTRON_SIZE = 20;
     @Override
     public List<Model> determine ( Model model, VigorForm form ) throws ServiceException {
 
-        VigorConfiguration configuration = form.getConfiguration();
-        if (VigorUtils.is_Integer(configuration.get(ConfigurationParameters.StopCodonSearchWindow))) {
-            defaultSearchWindow = Integer.parseInt(configuration.get(ConfigurationParameters.StopCodonSearchWindow));
-        }
-        if (VigorUtils.is_Integer(configuration.get(ConfigurationParameters.IntronMinimumSize))) {
-            minIntronLength = Integer.parseInt(configuration.get(ConfigurationParameters.IntronMinimumSize));
-        }
-        List<Model> models = null;
+        VigorConfiguration configuration = model.getAlignment().getViralProtein().getConfiguration();
+        int defaultSearchWindow = configuration.getOrDefault(ConfigurationParameters.StopCodonSearchWindow,
+                                                             DEFAULT_STOP_CODON_SEARCH_WINDOW);
+        int minIntronLength = configuration.getOrDefault(ConfigurationParameters.IntronMinimumSize,
+                                                         DEFAULT_MIN_INTRON_SIZE);
+
+        LOGGER.trace("adjusting unedited exon boundaries using", () -> {return "TODO print values and sources"; });
+
         try {
-            models = adjustSpliceSites(model);
+            return adjustSpliceSites(model, defaultSearchWindow, minIntronLength);
         } catch (CloneNotSupportedException e) {
             throw new ServiceException(String.format("Problem adjusting exon boundaries for model %s", model), e);
         }
-        return models;
     }
 
     /**
@@ -51,16 +51,13 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
      * @return : models with permutations and combinations of different splice sites found for each splice region. Exon boundaries are adjusted to the splice region.
      * @throws CloneNotSupportedException
      */
-    public List<Model> adjustSpliceSites ( Model model ) throws CloneNotSupportedException {
+    public List<Model> adjustSpliceSites ( Model model, int defaultSearchWindow, int minIntronLength ) throws CloneNotSupportedException {
 
         List<Model> models = new ArrayList<Model>();
         if (model.getAlignment().getViralProtein().getIntrons().size() >= 1) {
             List<Model> tempModels = new ArrayList<Model>();
             VirusGenome virusGenome = model.getAlignment().getVirusGenome();
-            List<SpliceSite> splicePairs = new ArrayList<SpliceSite>();
-            if (model.getAlignment().getViralProtein().getGeneAttributes().getSplicing().getNonCanonical_spliceSites() != null) {
-                splicePairs.addAll(model.getAlignment().getViralProtein().getGeneAttributes().getSplicing().getNonCanonical_spliceSites());
-            }
+            List<SpliceSite> splicePairs = model.getAlignment().getViralProtein().getGeneAttributes().getSpliceSites();
             for (int i = 0; i < model.getExons().size() - 1; i++) {
                 if (i != model.getExons().size() - 1) {
                     Exon upExon = model.getExons().get(i);

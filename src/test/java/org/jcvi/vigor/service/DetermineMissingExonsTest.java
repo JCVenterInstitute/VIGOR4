@@ -70,13 +70,16 @@ public class DetermineMissingExonsTest {
         for (int i = 0; i < alignments.size(); i++) {
             alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm(config)));
         }
-        models.addAll(modelGenerationService.alignmentToModels(alignments.get(0)));
+        models.addAll(modelGenerationService.alignmentToModels(alignments.get(0), config));
         assertTrue(String.format("Expected at least 1 model, got %s", models.size()), 1 >= models.size());
         Model model = models.get(0);
         assertTrue(String.format("Expected models %s to have at least 2 exons, got %s", model, model.getExons().size()),
                 2 <= model.getExons().size());
         model.getExons().remove(1);
-        int exons = determineMissingExons.findMissingExons(model).getExons().size();
+        int maxIntronSize = 2500;
+        int minExonSize = 30;
+        int minMissingAASize = 10;
+        int exons = determineMissingExons.findMissingExons(model, maxIntronSize, minExonSize, minMissingAASize).getExons().size();
         assertEquals(2, exons);
     }
 

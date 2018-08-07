@@ -35,7 +35,7 @@ public class FormatVigorOutput {
             content.append(String.format("%-32s", model.getAlignment().getViralProtein().getProteinID()));
             content.append(String.format("%-20s", model.getGeneSymbol()));
             content.append(String.format("%-20s", model.getDirection()));
-            content.append(String.format("%-20s", model.getAlignment().getViralProtein().getGeneAttributes().getSplicing().getSpliceform()));
+            content.append(String.format("%-20s", SpliceForm.spliceFormsToString(model.getAlignment().getViralProtein().getGeneAttributes().getSpliceForms())));
             List<Range> NTranges = exons.stream().map(e -> e.getRange()).collect(Collectors.toList());
             List<Range> AAranges = exons.stream().map(e -> e.getAlignmentFragment().getProteinSeqRange())
                     .collect(Collectors.toList());

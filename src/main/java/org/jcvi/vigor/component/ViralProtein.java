@@ -1,6 +1,7 @@
 package org.jcvi.vigor.component;
 
 import org.jcvi.jillion.core.residue.aa.ProteinSequence;
+import org.jcvi.vigor.utils.VigorConfiguration;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -23,4 +24,5 @@ public class ViralProtein {
     private String geneSynonym;
     private String defline;
     private String product;
+    private VigorConfiguration configuration;
 }

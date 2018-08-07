@@ -1,6 +1,7 @@
 package org.jcvi.vigor.service;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
@@ -8,8 +9,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.vigor.component.Exon;
-import org.jcvi.vigor.component.Pseudogene;
-import org.jcvi.vigor.component.StructuralSpecifications;
+import org.jcvi.vigor.component.ViralProtein;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,17 +36,22 @@ public class GeneModelGenerationService {
     private CheckCoverage checkCoverage;
     @Autowired
     private EvaluateScores evaluateScores;
-    private long max_gene_overlap = 0;
-    boolean isDebug = false;
+
     private static final Logger LOGGER = LogManager.getLogger(GeneModelGenerationService.class);
+
+    private static Function<Model,Integer> getMinFunctionalLength = (model) -> model.getAlignment()
+                                                                                    .getViralProtein()
+                                                                                    .getGeneAttributes()
+                                                                                    .getStructuralSpecifications()
+                                                                                    .getMinFunctionalLength();
 
     public List<Model> generateGeneModel ( List<Model> models, VigorForm form ) throws ServiceException {
 
         List<Model> pseudoGenes = new ArrayList<>();
-        isDebug = form.getConfiguration().get(ConfigurationParameters.Verbose).equals("true") ? true : false;
-        if (VigorUtils.is_Integer(form.getConfiguration().get(ConfigurationParameters.MaxGeneOverlap)))
-            max_gene_overlap = Integer.parseInt(form.getConfiguration().get(ConfigurationParameters.MaxGeneOverlap));
-        List<Model> processedModels = determineGeneFeatures(models, form);
+        boolean isDebug = form.getConfiguration().getOrDefault(ConfigurationParameters.Verbose, false);
+        int max_gene_overlap = form.getConfiguration().getOrDefault(ConfigurationParameters.MaxGeneOverlap, 0);
+
+        List<Model> processedModels = determineGeneFeatures(models, form, isDebug);
         // TODO process pseudogenes/partial genes, Not included in initial release
         processedModels.stream().forEach(model -> checkCoverage.evaluate(model, form));
         processedModels.stream().forEach(model -> evaluateScores.evaluate(model, form));
@@ -66,7 +71,7 @@ public class GeneModelGenerationService {
             LOGGER.error("No gene models found. Currently Vigor4 does not support annotating Pseudogenes ");
             return Collections.EMPTY_LIST;
         }
-        List<Model> geneModels = filterGeneModels(processedModels, processedPseudoGenes);
+        List<Model> geneModels = filterGeneModels(processedModels, processedPseudoGenes, max_gene_overlap, isDebug);
         return geneModels;
     }
 
@@ -126,11 +131,10 @@ public class GeneModelGenerationService {
         for (Model model1 : models) {
             if (checkExonOverlap(model1, model)) {
                 overlap = true;
+                break;
             }
         }
-        if (overlap) {
-            return false;
-        } else return true;
+        return ! overlap;
     }
 
     /**
@@ -155,16 +159,15 @@ public class GeneModelGenerationService {
 
         Map<String, List<Model>> groupedModels = models.stream().collect(groupingBy(model -> model.getGeneSymbol()));
         List<Model> filteredModels = new ArrayList<Model>();
-        Set<String> geneIDs = groupedModels.keySet();
-        for (String geneID : geneIDs) {
+        for (String geneID : groupedModels.keySet()) {
             List<Model> similarModels = groupedModels.get(geneID);
             similarModels = sortModels(similarModels, "totalScore");
             List<Model> unOverlappedModels = new ArrayList<>();
-            Model highScoringModel = similarModels.get(0);
-            unOverlappedModels.add(highScoringModel);
-            similarModels.remove(highScoringModel);
+            unOverlappedModels.add(similarModels.remove(0));
             for (Model checkModel : similarModels) {
-                if (isUnoverlappedCandidateModel(unOverlappedModels, checkModel)) unOverlappedModels.add(checkModel);
+                if (isUnoverlappedCandidateModel(unOverlappedModels, checkModel)) {
+                    unOverlappedModels.add(checkModel);
+                }
             }
             filteredModels.addAll(unOverlappedModels);
         }
@@ -218,24 +221,17 @@ public class GeneModelGenerationService {
      * @param models
      * @return
      */
-    private List<Model> filterModelsWithStructuralSpecifications ( List<Model> models, VigorConfiguration config ) {
+    private List<Model> filterModelsWithStructuralSpecifications(List<Model> models, VigorConfiguration config) {
 
-        List<Model> filteredModels = new ArrayList<>();
-        int min_gene_size = 0;
-        int min_coverage = 0;
-        String min_gene_size_str = config.get(ConfigurationParameters.GeneMinimumSize);
-        if (VigorUtils.is_Integer(min_gene_size_str)) min_gene_size = Integer.parseInt(min_gene_size_str);
-        String min_coverage_str = config.get(ConfigurationParameters.GeneMinimumCoverage);
-        if (VigorUtils.is_Integer(min_coverage_str)) min_coverage = Integer.parseInt(min_coverage_str);
-        for (Model model : models) {
-            StructuralSpecifications specs = model.getAlignment().getViralProtein().getGeneAttributes().getStructuralSpecifications();
-            int minFunLength = specs.getMinFunctionalLength();
-            if (( model.getTranslatedSeq().getLength() >= minFunLength ) && ( model.getScores().get("%coverage") >= min_coverage ) &&
-                    ( model.getTranslatedSeq().getLength() >= min_gene_size )) {
-                filteredModels.add(model);
-            }
-        }
-        return filteredModels;
+        int min_gene_size = config.getOrDefault(ConfigurationParameters.GeneMinimumSize, 0);
+        int min_coverage = config.getOrDefault(ConfigurationParameters.GeneMinimumCoverage, 0);
+
+        return models.stream()
+                     .filter(
+                             m -> m.getTranslatedSeq().getLength() >= Math.max(getMinFunctionalLength.apply(m), min_gene_size) &&
+                                     m.getScores().get("%coverage") >= min_coverage
+                     )
+                     .collect(Collectors.toList());
     }
 
     /**
@@ -243,7 +239,7 @@ public class GeneModelGenerationService {
      * @param pseudogenes
      * @return
      */
-    private List<Model> filterGeneModels ( List<Model> models, List<Model> pseudogenes ) {
+    private List<Model> filterGeneModels ( List<Model> models, List<Model> pseudogenes, int max_gene_overlap, boolean isDebug ) {
 
         List<Model> geneModels = new ArrayList<>();
         List<Model> filteredModels = filterModelsOfaGene(models);
@@ -252,8 +248,9 @@ public class GeneModelGenerationService {
             FormatVigorOutput.printAllGeneModelsWithScores(candidateGenes, "All Gene Models");
         }
         candidateGenes = sortModels(candidateGenes, "modelScore");
-        Model geneModel = candidateGenes.get(0);
-        candidateGenes.remove(geneModel);
+        Model geneModel = candidateGenes.remove(0);
+        geneModels.add(geneModel);
+
         String genomeID = geneModel.getAlignment().getVirusGenome().getId();
         String[] genomeIDParts = genomeID.split(Pattern.quote("|"));
         String proteinIDOfGenome;
@@ -263,12 +260,20 @@ public class GeneModelGenerationService {
             proteinIDOfGenome = genomeIDParts[ 0 ];
         }
         IDGenerator idGenerator = IDGenerator.of(proteinIDOfGenome);
-        geneModels.add(geneModel);
-        List<String> sharedCDSList = geneModel.getAlignment().getViralProtein().getGeneAttributes().getStructuralSpecifications().getShared_cds();
+        ViralProtein protein = geneModel.getAlignment().getViralProtein();
+        List<String> sharedCDSList = VigorUtils.nullElse(protein.getGeneAttributes().getStructuralSpecifications().getShared_cds(), Collections.EMPTY_LIST);
+        LOGGER.debug("for proteinID {}, gene {} checking for candidate models with shared cds: {}",
+                     protein.getProteinID(),
+                     protein.getGeneSymbol(),
+                     String.join(",",sharedCDSList));
+
+        LOGGER.debug("checking {} models for non overlapping models", candidateGenes.size());
         for (int j = candidateGenes.size() - 1; j >= 0; j--) {
             Model candidateGene = candidateGenes.get(j);
             List<Exon> candidateExons = candidateGene.getExons();
             boolean overlap = false;
+
+            CHECKOVERLAP:
             for (Model model : geneModels) {
                 List<Exon> exons = model.getExons();
                 for (Exon candidateExon : candidateExons) {
@@ -276,49 +281,60 @@ public class GeneModelGenerationService {
                         Range intersection = candidateExon.getRange().intersection(exon.getRange());
                         if (intersection.getLength() > max_gene_overlap) {
                             overlap = true;
+                            break CHECKOVERLAP;
                         }
                     }
                 }
             }
-            if (!overlap) geneModels.add(candidateGene);
+            if (!overlap) {
+                LOGGER.debug("for protein {}, gene {} adding non-overlapping candidate {}",
+                             protein.getProteinID(),
+                             protein.getGeneSymbol(),
+                             candidateGene);
+                geneModels.add(candidateGene);
+                candidateGenes.remove(j);
+            }
         }
         // add shared_cds model to gene models
-        candidateGenes.removeAll(geneModels);
-        if (sharedCDSList != null) {
-            for (String sharedCDS : sharedCDSList) {
-                boolean found = false;
-                for (Model model : candidateGenes) {
-                    if (model.getGeneSymbol().equals(sharedCDS)) {
-                        geneModels.add(model);
-                        found = true;
-                        break;
-                    }
-                }
-                if (!found) {
-                    for (Model pseudoModel : pseudogenes) {
-                        if (pseudoModel.getGeneSymbol().equals(sharedCDS)) {
-                            geneModels.add(pseudoModel);
-                            break;
-                        }
-                    }
+        for (String sharedCDS : sharedCDSList) {
+            Optional<Model> model = candidateGenes.stream()
+                                                  .filter(m -> m.getGeneSymbol().equals(sharedCDS))
+                                                  .findAny();
+            LOGGER.debug("for proteinID {} gene {} checking {} candidate models for shared CDs model {}: found {}",
+                         protein.getProteinID(),
+                         protein.getGeneSymbol(),
+                         candidateGenes.size(),
+                         sharedCDS,
+                         model.isPresent());
+
+            if (model.isPresent()) {
+                geneModels.add(model.get());
+            } else {
+
+                model = pseudogenes.stream()
+                        .filter(m -> m.getGeneSymbol().equals((sharedCDS)))
+                        .findAny();
+                LOGGER.debug("for proteinID {} gene {} checking {} pseudogenes for shared CDs model {}: found {}",
+                             protein.getProteinID(),
+                             protein.getGeneSymbol(),
+                             pseudogenes.size(),
+                             sharedCDS,
+                             model.isPresent());
+                if (model.isPresent()) {
+                    geneModels.add(model.get());
                 }
             }
         }
-        geneModels = geneModels.stream()
-                .sorted(Comparator.comparing(g -> g.getRange(), Range.Comparators.ARRIVAL))
-                .collect(Collectors.toList());
+        geneModels.sort(Comparator.comparing(g -> g.getRange(), Range.Comparators.ARRIVAL));
+
         String proteinID = "";
         String id = "";
         for (Model tempGeneModel : geneModels) {
-            if (proteinID.equals(tempGeneModel.getAlignment().getViralProtein().getProteinID())) {
-                tempGeneModel.setGeneID(id + tempGeneModel.getGeneID());
-            } else {
+            if (! proteinID.equals(tempGeneModel.getAlignment().getViralProtein().getProteinID())) {
                 id = idGenerator.next();
-                if (tempGeneModel.getGeneID() != null) {
-                    tempGeneModel.setGeneID(id + tempGeneModel.getGeneID());
-                } else tempGeneModel.setGeneID(id);
                 proteinID = tempGeneModel.getAlignment().getViralProtein().getProteinID();
             }
+            tempGeneModel.setGeneID(id + VigorUtils.nullElse(tempGeneModel.getGeneID(),""));
         }
         return geneModels;
     }
@@ -329,7 +345,7 @@ public class GeneModelGenerationService {
      * @return
      * @throws ServiceException
      */
-    private List<Model> determineGeneFeatures ( List<Model> models, VigorForm form ) throws ServiceException {
+    private List<Model> determineGeneFeatures ( List<Model> models, VigorForm form, boolean isDebug ) throws ServiceException {
 
         List<Model> modelsWithMissingExonsDetermined = new ArrayList<Model>();
         List<Model> modelsAfterDeterminingStart = new ArrayList<Model>();

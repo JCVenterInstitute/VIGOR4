@@ -10,9 +10,11 @@ import org.jcvi.jillion.core.Direction;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.jillion.core.residue.aa.ProteinSequence;
+import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.testing.category.Fast;
 import org.jcvi.vigor.testing.category.Isolated;
 import org.jcvi.vigor.component.*;
+import org.jcvi.vigor.utils.VigorConfiguration;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
@@ -31,6 +33,9 @@ public class ModelGenerationServiceTest {
 
     @Autowired
     private ModelGenerationService modelGenerationService;
+
+    @Autowired
+    private VigorInitializationService initializationService;
 
     @Test
     public void testClone () throws CloneNotSupportedException {
@@ -102,8 +107,9 @@ public class ModelGenerationServiceTest {
     }
 
     @Test
-    public void generateCompatibleFragsChainsTest () {
+    public void generateCompatibleFragsChainsTest () throws VigorException {
 
+        VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
         List<AlignmentFragment> alignmentFrags = new ArrayList<AlignmentFragment>();
         alignmentFrags.add(new AlignmentFragment(Range.of(0, 100), Range.of(10, 300), 1000, Direction.FORWARD, Frame.ONE));
         alignmentFrags.add(new AlignmentFragment(Range.of(60, 120), Range.of(180, 360), 1000, Direction.FORWARD, Frame.ONE));
@@ -111,7 +117,7 @@ public class ModelGenerationServiceTest {
         alignmentFrags.add(new AlignmentFragment(Range.of(121, 150), Range.of(370, 460), 1000, Direction.FORWARD, Frame.ONE));
         alignmentFrags.add(new AlignmentFragment(Range.of(130, 170), Range.of(330, 500), 1000, Direction.FORWARD, Frame.ONE));
         alignmentFrags.add(new AlignmentFragment(Range.of(171, 180), Range.of(650, 670), 1000, Direction.FORWARD, Frame.ONE));
-        List<List<AlignmentFragment>> outList = modelGenerationService.generateCompatibleFragsChains(alignmentFrags);
+        List<List<AlignmentFragment>> outList = modelGenerationService.generateCompatibleFragsChains(alignmentFrags, config);
         assertEquals(outList.size(), 6);
     }
 }

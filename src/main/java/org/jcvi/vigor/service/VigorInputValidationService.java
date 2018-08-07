@@ -226,10 +226,8 @@ public class VigorInputValidationService {
 			System.out.println("Configuration Parameters\n");
 			for (ConfigurationParameters param: Arrays.stream(ConfigurationParameters.values())
 													  .sorted(Comparator.comparing(p-> p.configKey, String.CASE_INSENSITIVE_ORDER))
+													  .filter(p -> p.hasFlag(ConfigurationParameters.Flags.VERSION_4))
 													  .collect(Collectors.toList())) {
-				if (! param.hasFlag(ConfigurationParameters.Flags.VERSION_4)) {
-					continue;
-				}
 				System.out.println(param.configKey);
 				System.out.println();
 				System.out.println(String.format("\t%-30s VIGOR_%s","Environment variable:",param.configKey.toUpperCase()));

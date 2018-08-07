@@ -20,29 +20,14 @@ import java.util.stream.Collectors;
 @Service
 public class ModelGenerationService {
 
-    private long minCondensation = 10;
-    private long minIntronLength = 30;
-    private long relaxIntronLength = 900;
-    private long relaxCondensation = 300;
-    private static boolean isDebug = false;
-    private int AAOverlapOffset = 10;
-    private int NTOverlapOffset = 30;
     private static final Logger LOGGER = LogManager.getLogger(ModelGenerationService.class);
+    private static final int DEFAULT_MIN_CONDENSATION = 10;
+    private static final int DEFAULT_RELAX_CONDENSATION = 300;
+    private static final int DEFAULT_NTOVERLAP_OFFSET = 30;
+    private static final int DEFAULT_AAOVERLAP_OFFSET = 10;
 
     public List<Model> generateModels ( List<Alignment> alignments, VigorForm form ) throws ServiceException {
 
-        VigorConfiguration configuration = form.getConfiguration();
-        isDebug = configuration.get(ConfigurationParameters.Verbose).equals("true") ? true : false;
-        if (VigorUtils.is_Integer(configuration.get(ConfigurationParameters.AAOverlap_offset))) {
-            AAOverlapOffset = Integer.parseInt(configuration.get(ConfigurationParameters.AAOverlap_offset));
-        }
-        if (VigorUtils.is_Integer(configuration.get(ConfigurationParameters.NTOverlap_offset))) {
-            NTOverlapOffset = Integer.parseInt(configuration.get(ConfigurationParameters.NTOverlap_offset));
-        }
-        if (VigorUtils.is_Integer(configuration.get(ConfigurationParameters.CondensationMinimum))) {
-            minCondensation = Integer.parseInt(configuration.get(ConfigurationParameters.CondensationMinimum));
-        }
-        minIntronLength = minCondensation * 3;
         alignments = mergeIdenticalProteinAlignments(alignments);
         return determineCandidateModels(alignments, form);
     }
@@ -94,9 +79,9 @@ public class ModelGenerationService {
         for (int i = 0; i < alignments.size(); i++) {
             Alignment alignment = alignments.get(i);
             alignment.getAlignmentFragments().sort(AlignmentFragment.Comparators.Ascending);
-            initialModels.addAll(alignmentToModels(alignment));
+            initialModels.addAll(alignmentToModels(alignment, alignment.getViralProtein().getConfiguration()));
         }
-        if (isDebug) {
+        if (form.getConfiguration().getOrDefault(ConfigurationParameters.Verbose,false))  {
             FormatVigorOutput.printModels(initialModels, "Initial Models");
         }
         List<Range> sequenceGaps = new ArrayList<Range>();
@@ -105,13 +90,8 @@ public class ModelGenerationService {
             sequenceGaps = initialModels.get(0).getAlignment().getVirusGenome().getSequenceGaps();
         }
         List<Range> validSequenceGaps = new ArrayList<Range>();
-        String minGapLenString = "";
         if (sequenceGaps != null && sequenceGaps.size() > 0) {
-            minGapLenString = form.getConfiguration().get(ConfigurationParameters.SequenceGapMinimumLength);
-            long minGapLength = 0;
-            if (VigorUtils.is_Integer(minGapLenString)) {
-                minGapLength = Long.parseLong(minGapLenString);
-            }
+            int minGapLength = form.getConfiguration().getOrDefault(ConfigurationParameters.SequenceGapMinimumLength, 0);
             for (Range gapRange : sequenceGaps) {
                 if (gapRange.getLength() >= minGapLength) {
                     validSequenceGaps.add(gapRange);
@@ -134,7 +114,16 @@ public class ModelGenerationService {
      * @param alignment
      * @return Models of each alignment.
      */
-    public List<Model> alignmentToModels ( Alignment alignment ) {
+    // TODO configuration values from viral proteins?
+    public List<Model> alignmentToModels ( Alignment alignment, VigorConfiguration defaultConfiguration ) {
+        // TODO rely on viral protein having configuration
+        VigorConfiguration configuration = alignment.getViralProtein().getConfiguration();
+        configuration = configuration != null ? configuration : defaultConfiguration;
+
+        int minCondensation = configuration.getOrDefault(ConfigurationParameters.CondensationMinimum, DEFAULT_MIN_CONDENSATION);
+        int minIntronLength = minCondensation * 3;
+        int relaxCondensation = configuration.getOrDefault(ConfigurationParameters.RelaxCondensationMinimum, DEFAULT_RELAX_CONDENSATION);
+        int relaxIntronLength = relaxCondensation * 3;
 
         Map<Direction, List<AlignmentFragment>> alignmentFragsGroupedList = alignment.getAlignmentFragments().stream()
                 .collect(Collectors.groupingBy(w -> w.getDirection()));
@@ -143,7 +132,7 @@ public class ModelGenerationService {
         List<Model> models = new ArrayList<Model>();
         for (Direction direction : keyset) {
             List<List<AlignmentFragment>> ListOfCompatibleFragsList = generateCompatibleFragsChains(
-                    alignmentFragsGroupedList.get(iter.next()));
+                    alignmentFragsGroupedList.get(iter.next()), configuration);
             Iterator<List<AlignmentFragment>> iter1 = ListOfCompatibleFragsList.iterator();
             while (iter1.hasNext()) {
                 List<AlignmentFragment> compatibleFragsList = iter1.next();
@@ -449,8 +438,10 @@ public class ModelGenerationService {
      * of alignment fragments and their permutations and combinations is
      * grouped
      */
-    public List<List<AlignmentFragment>> generateCompatibleFragsChains ( List<AlignmentFragment> alignmentFragments ) {
+    public List<List<AlignmentFragment>> generateCompatibleFragsChains ( List<AlignmentFragment> alignmentFragments, VigorConfiguration configuration) {
 
+        int NTOverlapOffset = configuration.getOrDefault(ConfigurationParameters.NTOverlap_offset, DEFAULT_NTOVERLAP_OFFSET);
+        int AAOverlapOffset = configuration.getOrDefault(ConfigurationParameters.AAOverlap_offset, DEFAULT_AAOVERLAP_OFFSET);
         List<AlignmentFragment> compatibleFragsList = new ArrayList<AlignmentFragment>();
         List<AlignmentFragment> clonedCompatibleFragsList;
         List<List<AlignmentFragment>> ListOfCompatibleFragsList = new ArrayList<List<AlignmentFragment>>();

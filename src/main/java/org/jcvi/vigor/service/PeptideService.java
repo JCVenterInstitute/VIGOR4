@@ -184,7 +184,7 @@ public class PeptideService implements PeptideMatchingService {
         if (sequence.get(lastAAIndex) == AminoAcid.STOP) {
             sequence = sequence.toBuilder().delete(Range.of(lastAAIndex)).build();
         }
-        PartialProteinSequence partialProtein = PartialProteinSequence.of(sequence, model.isPartial3p(), model.isPartial5p());
+        PartialProteinSequence partialProtein = PartialProteinSequence.of(model.getProteinID(), sequence, model.isPartial3p(), model.isPartial5p());
         Predicate<PeptideMatch> filterByScore = match -> {
 
             LOGGER.debug(formatMatchForLogging(match));
@@ -580,7 +580,7 @@ public class PeptideService implements PeptideMatchingService {
 
     Stream<PeptideMatch> getAlignments(PartialProteinSequence protein, File peptideDatabase) throws IOException {
 
-        LOGGER.info("finding alignments in {} for seq {}", peptideDatabase, SequenceUtils.elipsedSequenceString(protein.getSequence(), 40,20));
+        LOGGER.info("finding alignments in {} for seq {}", peptideDatabase,protein.getProteinID());
 
         ProteinFastaFileDataStore peptideDataStore = ProteinFastaFileDataStore.fromFile(peptideDatabase);
         // TODO configurable gap penalties and blosum matrix

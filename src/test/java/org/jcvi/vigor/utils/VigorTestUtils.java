@@ -40,14 +40,13 @@ public class VigorTestUtils {
             NucleotideFastaRecord record = iter.next();
             VirusGenome virusGenome = new VirusGenome(record.getSequence(), record.getComment(), record.getId(), false,
                     false);
-            List<Range> sequenceGaps = VirusGenomeService.findSequenceGapRanges("20", virusGenome.getSequence());
+            List<Range> sequenceGaps = VirusGenomeService.findSequenceGapRanges(20, virusGenome.getSequence());
             virusGenome.setSequenceGaps(sequenceGaps);
             // create alignment evidence
             AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
             VigorForm form = new VigorForm(config);
             alignmentEvidence.setReference_db(refDB);
             form.setAlignmentEvidence(alignmentEvidence);
-            form.setAlignmentTool(AlignmentToolFactory.getAlignmentTool("exonerate"));
             List<Alignment> alignments = exonerateService.parseExonerateOutput(alignmentOutput,
                     form, virusGenome, refDB);
             for (int i = 0; i < alignments.size(); i++) {
