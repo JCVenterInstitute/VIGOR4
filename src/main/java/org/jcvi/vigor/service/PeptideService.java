@@ -209,6 +209,7 @@ public class PeptideService implements PeptideMatchingService {
             MaturePeptideMatch current = null;
             Range currentRange;
             Range previousRange = null;
+            long gapLength;
             for (PeptideMatch currentMatch: bestMatches) {
                 // handle first one with a previous range before the start
                 if (previousRange == null) {
@@ -217,14 +218,16 @@ public class PeptideService implements PeptideMatchingService {
 
                 currentRange = currentMatch.alignment.getSubjectRange().getRange();
                 current = peptideFromMatch(currentMatch);
-
-                if (currentRange.getBegin() - previousRange.getEnd() > MAX_GAP && prev != null) {
-                    LOGGER.debug("difference between range [{}:{}] and [{}:{}] > max gap {}. Setting fuzzy edges",
-                            previousRange.getBegin(), previousRange.getEnd(),
-                            currentRange.getBegin(), currentRange.getEnd(),
-                            MAX_GAP);
-                    prev.setFuzzyEnd(true);
-                    current.setFuzzyBegin(true);
+                gapLength = Math.abs(currentRange.getBegin() - previousRange.getEnd());
+                if ( gapLength > MAX_GAP) {
+                    if (prev != null) {
+                        LOGGER.debug("difference between range [{}:{}] and [{}:{}] > max gap {}. Setting fuzzy edges",
+                                     previousRange.getBegin(), previousRange.getEnd(),
+                                     currentRange.getBegin(), currentRange.getEnd(),
+                                     MAX_GAP);
+                        prev.setFuzzyEnd(true);
+                        current.setFuzzyBegin(true);
+                    }
                 } else if (currentRange.getBegin() != previousRange.getEnd() + 1) {
                     LOGGER.debug("Range [{}:{}] doesn't align to following range [{}:{}]. Adjusting edges",
                             previousRange.getBegin(), previousRange.getEnd(),
