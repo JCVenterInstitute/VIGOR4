@@ -56,4 +56,12 @@ public class Model implements Cloneable {
     public String getProteinID() {
         return getAlignment().getViralProtein().getProteinID();
     }
+
+    @Override
+    public String toString(){
+        return "Gene Symbol : "+geneSymbol+", Direction : "+direction+", isPseudogene : "+isPseudogene
+                +", RibosmalSlippageRange : "+ribosomalSlippageRange+", ReplaceStopCodonRange :"+ replaceStopCodonRange
+                +", InsertRNAEditingRange : "+insertRNAEditingRange+", Exons : "+exons.stream().map(Object::toString).collect(Collectors.joining(","));
+    }
+
 }

@@ -68,7 +68,7 @@ public class AdjustViralTricksTest {
         Model testModel = models.get(0);
         List<Model> outputModels = adjustViralTricks.adjustRibosomalSlippage(testModel);
         Range actual = outputModels.get(0).getExons().get(0).getRange();
-        assertEquals(Range.of(9, 581), actual);
+        assertEquals(Range.of(9, 578), actual);
     }
 
     @Test

@@ -59,4 +59,9 @@ public class Exon implements Cloneable {
             }
         };
     }
+    @Override
+    public String toString(){
+        return "Range : "+range+", Frame : "+frame;
+    }
+
 }
