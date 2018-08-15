@@ -56,7 +56,6 @@ public class ExonerateService implements AlignmentService {
             Path exoneratePath = Paths.get(exoneratePathString);
             String outputFilePath = GenerateExonerateOutput.queryExonerate(virusGenome, referenceDB, workspace, null, exoneratePath.toString());
             File outputFile = new File(outputFilePath);
-            form.setAlignmentOutputTempFile(outputFile.getAbsolutePath());
             return parseExonerateOutput(outputFile, form, virusGenome, referenceDB);
         } catch (VigorException e) {
             throw new ServiceException(String.format("error getting alignment got %s: %s", e.getClass().getSimpleName(), e.getMessage()), e);
@@ -81,7 +80,11 @@ public class ExonerateService implements AlignmentService {
 
         List<Alignment> alignments = new ArrayList<Alignment>();
         List<VulgarProtein2Genome2> Jalignments;
-        AlignmentEvidence alignmentEvidence = form.getAlignmentEvidence();
+
+        AlignmentEvidence evidence = form.getAlignmentEvidence().copy();
+        // TODO results directory
+        evidence.setRaw_alignment(exonerateOutput);
+        evidence.setResults_directory(exonerateOutput.getParentFile());
         AlignmentTool alignmentTool = getAlignmentTool();
         try {
             Jalignments = Exonerate2.parseVulgarOutput(exonerateOutput);
@@ -114,7 +117,7 @@ public class ExonerateService implements AlignmentService {
                 alignment.setAlignmentFragments(alignmentFragments);
                 alignment.setViralProtein(viralProtein);
                 alignment.setVirusGenome(virusGenome);
-                alignment.setAlignmentEvidence(alignmentEvidence.copy());
+                alignment.setAlignmentEvidence(evidence.copy());
                 alignments.add(alignment);
             }
         } catch (IOException e) {

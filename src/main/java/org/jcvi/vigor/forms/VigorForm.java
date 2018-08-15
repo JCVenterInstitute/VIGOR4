@@ -10,10 +10,6 @@ public class VigorForm {
     private VigorConfiguration configuration;
     private AlignmentEvidence alignmentEvidence;
 
-    // TODO remove these
-    private String AlignmentOutputTempFile;
-    private String tempDirectoryPath;
-
     public VigorForm ( VigorConfiguration configuration ) {
         this.configuration = new VigorConfiguration(configuration);
     }

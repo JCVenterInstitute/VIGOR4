@@ -149,7 +149,7 @@ public class Vigor {
 
     public void outputModels(VigorForm vigorForm, GenerateVigorOutput.Outfiles outfiles, List<Model> geneModels) throws IOException {
         VigorConfiguration vigorParameters = vigorForm.getConfiguration();
-        generateAlignmentOutput(outfiles, vigorForm);
+        generateAlignmentOutput(geneModels, outfiles);
         generateOutput(vigorParameters, geneModels, outfiles);
         generateGFF3Output(geneModels, outfiles);
         FormatVigorOutput.printSequenceFeatures(geneModels, "GeneModels");
@@ -253,9 +253,9 @@ public class Vigor {
         generateGFF3Output.generateOutputFile(outfiles, models);
     }
 
-    public void generateAlignmentOutput ( GenerateVigorOutput.Outfiles outfiles, VigorForm form ) {
+    public void generateAlignmentOutput ( List<Model> models, GenerateVigorOutput.Outfiles outfiles) {
 
-        generateAlignmentOuput.generateOutputFile(outfiles, form);
+        generateAlignmentOuput.generateOutputFile(outfiles, models);
     }
 
     private GenerateVigorOutput.Outfiles getOutfiles ( String outputDir, String outputPrefix, boolean overwrite ) throws IOException {

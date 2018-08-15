@@ -56,7 +56,6 @@ public class AlignmentGenerationService {
         Path workspace;
         try {
             workspace = Files.createTempDirectory(Paths.get(tempDir), "vigor4");
-            form.setTempDirectoryPath(workspace.toString());
         } catch (IOException e) {
             throw new VigorException(String.format("Unable to create temporary directory under %s", tempDir));
         }
