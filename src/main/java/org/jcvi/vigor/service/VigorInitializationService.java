@@ -11,9 +11,7 @@ import org.apache.logging.log4j.core.appender.FileAppender;
 import org.apache.logging.log4j.core.config.Configuration;
 import org.apache.logging.log4j.core.filter.LevelRangeFilter;
 import org.apache.logging.log4j.core.layout.PatternLayout;
-import org.jcvi.vigor.component.AlignmentEvidence;
 import org.jcvi.vigor.exception.VigorException;
-import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.utils.*;
 import org.springframework.stereotype.Service;
 
@@ -43,7 +41,7 @@ public class VigorInitializationService {
 	 *            sequence from the input file and determine AlignmentEvidence
 	 */
 
-	public VigorForm initializeVigor(Namespace inputs) throws VigorException {
+	public VigorConfiguration initializeVigor(Namespace inputs) throws VigorException {
 
             boolean isComplete = false;
             boolean isCircular = false;
@@ -56,10 +54,10 @@ public class VigorInitializationService {
                 isComplete = true;
                 isCircular = true;
             }
-            VigorForm form = loadParameters(inputs);
-            form.getConfiguration().putString(ConfigurationParameters.CircularGene, isCircular ? "1" : "0");
-            form.getConfiguration().putString(ConfigurationParameters.CompleteGene, isComplete ? "1" : "0");
-            return form;
+            VigorConfiguration configuration = loadParameters(inputs);
+            configuration.putString(ConfigurationParameters.CircularGene, isCircular ? "1" : "0");
+            configuration.putString(ConfigurationParameters.CompleteGene, isComplete ? "1" : "0");
+            return configuration;
 
 	}
 
@@ -113,7 +111,7 @@ public class VigorInitializationService {
 	 *         VigorParametersList attribute of the form.
 	 */
 
-	public VigorForm loadParameters(Namespace inputs) throws VigorException{
+	public VigorConfiguration loadParameters(Namespace inputs) throws VigorException{
 
 		List<VigorConfiguration> configurations = new ArrayList<>();
 		configurations.addAll(getDefaultConfigurations());
@@ -157,6 +155,8 @@ public class VigorInitializationService {
 								 VigorUtils.FileCheck.FILE,
 								 VigorUtils.FileCheck.READ );
 
+		configurations.get(configurations.size() -1).put(ConfigurationParameters.ReferenceDatabaseFile, reference_db);
+
 		String virusSpecificConfig = (String) getConfigValue(ConfigurationParameters.VirusSpecificConfiguration, configurations);
 		String virusSpecificConfigPath = (String) getConfigValue(ConfigurationParameters.VirusSpecificConfigurationPath, configurations);
 		if (virusSpecificConfigPath == null || virusSpecificConfigPath.isEmpty()) {
@@ -185,14 +185,9 @@ public class VigorInitializationService {
 				throw new VigorException(String.format("unable to create temporary directory %s", tempDir));
 			}
 		}
-		AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
-		VigorForm form = new VigorForm(defaultConfiguration);
 
-		form.setConfiguration(defaultConfiguration);
-		form.setAlignmentEvidence(alignmentEvidence);
-		alignmentEvidence.setReference_db(reference_db);
 
-		return form;
+		return defaultConfiguration;
 	}
 
 

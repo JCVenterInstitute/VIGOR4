@@ -17,7 +17,6 @@ import org.springframework.stereotype.Service;
 import org.jcvi.vigor.component.AlignmentFragment;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
-import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.utils.*;
 import org.jcvi.jillion.core.Direction;
 
@@ -27,7 +26,7 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
     private static Logger LOGGER = LogManager.getLogger(DetermineMissingExons.class);
 
     @Override
-    public List<Model> determine ( Model model, VigorForm form ) {
+    public List<Model> determine ( Model model ) {
 
         List<Model> outModels = new ArrayList<Model>();
         VigorConfiguration config = model.getAlignment().getViralProtein().getConfiguration();

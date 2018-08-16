@@ -10,7 +10,6 @@ import org.jcvi.vigor.utils.VigorConfiguration;
 import org.jcvi.vigor.utils.VigorUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.jcvi.vigor.component.SpliceSite;
-import org.jcvi.vigor.forms.VigorForm;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
@@ -35,13 +34,13 @@ public class ViralProteinService {
      * @return viralProtein: For the given protein ID ViralProtein object is
      * generated and all the properties are defined;
      */
-    public Alignment setViralProteinAttributes ( Alignment alignment, VigorForm form ) throws VigorException {
+    public Alignment setViralProteinAttributes ( Alignment alignment, VigorConfiguration config ) throws VigorException {
         ViralProtein viralProtein = alignment.getViralProtein();
         Map<String, String> attributes = parseDeflineAttributes(StringUtils.normalizeSpace(viralProtein.getDefline()),
                                                                 viralProtein.getProteinID());
 
 
-        VigorConfiguration defaultConfig = form.getConfiguration();
+        VigorConfiguration defaultConfig = config;
         viralProtein = setProteinAttributes(viralProtein, attributes);
         viralProtein.setConfiguration(getGeneConfiguration(viralProtein, defaultConfig, attributes));
         /* set geneStructure property of viralProtein */

@@ -4,14 +4,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.vigor.Vigor;
 import org.jcvi.vigor.component.Model;
-import org.jcvi.vigor.forms.VigorForm;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service

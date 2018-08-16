@@ -1,7 +1,6 @@
 package org.jcvi.vigor.service;
 
 import org.jcvi.vigor.component.*;
-import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.*;
 import org.apache.logging.log4j.LogManager;
@@ -26,10 +25,10 @@ public class ModelGenerationService {
     private static final int DEFAULT_NTOVERLAP_OFFSET = 30;
     private static final int DEFAULT_AAOVERLAP_OFFSET = 10;
 
-    public List<Model> generateModels ( List<Alignment> alignments, VigorForm form ) throws ServiceException {
+    public List<Model> generateModels ( List<Alignment> alignments, VigorConfiguration configuration ) throws ServiceException {
 
         alignments = mergeIdenticalProteinAlignments(alignments);
-        return determineCandidateModels(alignments, form);
+        return determineCandidateModels(alignments, configuration);
     }
 
     public List<Alignment> mergeIdenticalProteinAlignments ( List<Alignment> alignments ) {
@@ -68,11 +67,11 @@ public class ModelGenerationService {
 
     /**
      * @param alignments
-     * @param form
+     * @param configuration
      * @return all the possible models of each alignment and after splitting
      * models at the sequence gaps
      */
-    public List<Model> determineCandidateModels ( List<Alignment> alignments, VigorForm form ) throws ServiceException {
+    public List<Model> determineCandidateModels ( List<Alignment> alignments, VigorConfiguration configuration) throws ServiceException {
 
         List<Model> initialModels = new ArrayList<Model>();
         List<Model> candidateModels = new ArrayList<Model>();
@@ -81,7 +80,7 @@ public class ModelGenerationService {
             alignment.getAlignmentFragments().sort(AlignmentFragment.Comparators.Ascending);
             initialModels.addAll(alignmentToModels(alignment, alignment.getViralProtein().getConfiguration()));
         }
-        if (form.getConfiguration().getOrDefault(ConfigurationParameters.Verbose,false))  {
+        if (configuration.getOrDefault(ConfigurationParameters.Verbose,false))  {
             FormatVigorOutput.printModels(initialModels, "Initial Models");
         }
         List<Range> sequenceGaps = new ArrayList<Range>();
@@ -91,7 +90,7 @@ public class ModelGenerationService {
         }
         List<Range> validSequenceGaps = new ArrayList<Range>();
         if (sequenceGaps != null && sequenceGaps.size() > 0) {
-            int minGapLength = form.getConfiguration().getOrDefault(ConfigurationParameters.SequenceGapMinimumLength, 0);
+            int minGapLength = configuration.getOrDefault(ConfigurationParameters.SequenceGapMinimumLength, 0);
             for (Range gapRange : sequenceGaps) {
                 if (gapRange.getLength() >= minGapLength) {
                     validSequenceGaps.add(gapRange);

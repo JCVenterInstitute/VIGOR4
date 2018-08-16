@@ -19,7 +19,6 @@ import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
-import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.utils.*;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class CheckCoverage implements EvaluateModel {
 
     @Override
-    public Model evaluate ( Model model, VigorForm form ) {
+    public Model evaluate ( Model model, VigorConfiguration configuration ) {
 
         NucleotideSequence cds = determineCDS(model);
         List<Range> internalStops = getInternalStops(model);

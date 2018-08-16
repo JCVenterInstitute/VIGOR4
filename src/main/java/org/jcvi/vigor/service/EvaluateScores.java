@@ -3,10 +3,8 @@ package org.jcvi.vigor.service;
 import java.util.Map;
 
 import org.jcvi.vigor.component.Model;
-import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.VigorConfiguration;
-import org.jcvi.vigor.utils.VigorUtils;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,7 +12,7 @@ public class EvaluateScores implements EvaluateModel {
 
 
     @Override
-    public Model evaluate ( Model model, VigorForm form ) {
+    public Model evaluate ( Model model, VigorConfiguration defaultConfiguration ) {
 
         Map<String, Double> scores = model.getScores();
         VigorConfiguration configuration = model.getAlignment().getViralProtein().getConfiguration();

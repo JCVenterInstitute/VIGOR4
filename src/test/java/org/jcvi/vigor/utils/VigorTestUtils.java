@@ -17,8 +17,6 @@ import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.AlignmentEvidence;
 import org.jcvi.vigor.component.VirusGenome;
 import org.jcvi.vigor.exception.VigorException;
-import org.jcvi.vigor.forms.VigorForm;
-import org.jcvi.vigor.service.AlignmentToolFactory;
 import org.jcvi.vigor.service.ExonerateService;
 import org.jcvi.vigor.service.ViralProteinService;
 import org.jcvi.vigor.service.VirusGenomeService;
@@ -44,14 +42,12 @@ public class VigorTestUtils {
             virusGenome.setSequenceGaps(sequenceGaps);
             // create alignment evidence
             AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
-            VigorForm form = new VigorForm(config);
-            alignmentEvidence.setReference_db(refDB);
-            form.setAlignmentEvidence(alignmentEvidence);
+            config.put(ConfigurationParameters.ReferenceDatabaseFile, refDB);
             List<Alignment> alignments = exonerateService.parseExonerateOutput(alignmentOutput,
-                    form, virusGenome, refDB);
+                     virusGenome, refDB);
             for (int i = 0; i < alignments.size(); i++) {
                 alignments.set(i, viralProteinService
-                        .setViralProteinAttributes(alignments.get(i), new VigorForm(config)));
+                        .setViralProteinAttributes(alignments.get(i), config));
             }
             return alignments;
         } catch (IOException e) {

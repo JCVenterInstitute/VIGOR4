@@ -15,7 +15,6 @@ import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.component.VirusGenome;
 import org.jcvi.vigor.exception.VigorException;
-import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.service.*;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.*;
@@ -29,7 +28,6 @@ import java.nio.charset.Charset;
 import java.nio.file.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Component
@@ -65,9 +63,10 @@ public class Vigor {
         }
         String inputFileName = parsedArgs.getString("input_fasta");
         try {
-            VigorForm vigorForm = getVigorForm(parsedArgs);
-            checkConfig(vigorForm.getConfiguration());
-            generateAnnotations(inputFileName, vigorForm);
+            VigorConfiguration vigorConfiguration = getVigorConfiguration(parsedArgs);
+            checkConfig(vigorConfiguration);
+            String referenceDB = vigorConfiguration.get(ConfigurationParameters.ReferenceDatabaseFile);
+            generateAnnotations(inputFileName, referenceDB, vigorConfiguration);
         } catch (Exception e) {
             LOGGER.error("Exception encountered: exiting 1",e);
             System.exit(1);
@@ -108,12 +107,11 @@ public class Vigor {
                                          .collect(Collectors.joining("\n")));
     }
 
-    public void generateAnnotations(String inputFileName, VigorForm vigorForm) throws VigorException {
+    public void generateAnnotations(String inputFileName, String referenceDB, VigorConfiguration vigorParameters) throws VigorException {
         VigorUtils.checkFilePath("input file", inputFileName, VigorUtils.FileCheck.EXISTS, VigorUtils.FileCheck.READ);
-        VigorConfiguration vigorParameters = vigorForm.getConfiguration();
         printConfiguration(vigorParameters);
         String outputDir = vigorParameters.get(ConfigurationParameters.OutputDirectory);
-        String outputPrefix =vigorParameters.get(ConfigurationParameters.OutputPrefix);
+        String outputPrefix = vigorParameters.get(ConfigurationParameters.OutputPrefix);
         VigorUtils.checkFilePath("output directory", outputDir,
                                  VigorUtils.FileCheck.EXISTS,
                                  VigorUtils.FileCheck.WRITE,
@@ -133,12 +131,12 @@ public class Vigor {
             while (recordIterator.hasNext()) {
                 NucleotideFastaRecord record = recordIterator.next();
                 LOGGER.debug("processing {}", record.getId());
-                List<Model> geneModels = modelsFromNucleotideRecord(record, vigorForm, vigorParameters);
+                List<Model> geneModels = modelsFromNucleotideRecord(record, referenceDB, vigorParameters);
                 if (geneModels.isEmpty()) {
                     LOGGER.warn("No gene models generated for sequence {}", record.getId());
                     continue;
                 }
-                outputModels(vigorForm, outfiles, geneModels);
+                outputModels(vigorParameters, outfiles, geneModels);
             }
         } catch (DataStoreException e) {
             throw new VigorException(String.format("problem reading input file %s", inputFileName), e);
@@ -147,8 +145,7 @@ public class Vigor {
         }
     }
 
-    public void outputModels(VigorForm vigorForm, GenerateVigorOutput.Outfiles outfiles, List<Model> geneModels) throws IOException {
-        VigorConfiguration vigorParameters = vigorForm.getConfiguration();
+    public void outputModels(VigorConfiguration vigorParameters, GenerateVigorOutput.Outfiles outfiles, List<Model> geneModels) throws IOException {
         generateAlignmentOutput(geneModels, outfiles);
         generateOutput(vigorParameters, geneModels, outfiles);
         generateGFF3Output(geneModels, outfiles);
@@ -156,16 +153,14 @@ public class Vigor {
         outfiles.flush();
     }
 
-    public List<Model> modelsFromNucleotideRecord(NucleotideFastaRecord record, VigorForm vigorForm, VigorConfiguration vigorParameters) throws VigorException {
-        VirusGenome virusGenome = new VirusGenome(record.getSequence(), record.getComment(), record.getId(),
-                                                  vigorParameters.getOrDefault(ConfigurationParameters.CompleteGene, false),
-                                                  vigorParameters.getOrDefault(ConfigurationParameters.CircularGene, false));
+    public List<Model> modelsFromNucleotideRecord(NucleotideFastaRecord record, String referenceDB, VigorConfiguration vigorParameters) throws VigorException {
         LOGGER.info("Getting alignments for {}", record.getId());
-        List<Alignment> alignments = generateAlignments(virusGenome, vigorForm);
+        VirusGenome virusGenome = VirusGenomeService.fastaRecordToVirusGenome(record, vigorParameters);
+        List<Alignment> alignments = generateAlignments(virusGenome, referenceDB, vigorParameters);
         LOGGER.info("{} alignment(s) found for sequence {}", alignments.size(), record.getId());
-        List<Model> candidateModels = generateModels(alignments, vigorForm);
+        List<Model> candidateModels = generateModels(alignments, vigorParameters);
         LOGGER.info("{} candidate model(s) found for sequence {}", candidateModels.size(), record.getId());
-        List<Model> geneModels = generateGeneModels(candidateModels, vigorForm);
+        List<Model> geneModels = generateGeneModels(candidateModels, vigorParameters);
         LOGGER.info("{} gene model(s) found for sequence {}", geneModels.size(), record.getId());
         geneModels = findPeptides(vigorParameters, geneModels);
         LOGGER.debug("Found {} peptides for {} models for sequence {}",
@@ -223,24 +218,24 @@ public class Vigor {
         return inputValidationService.processInput(args);
     }
 
-    public VigorForm getVigorForm ( Namespace args ) throws VigorException {
+    public VigorConfiguration getVigorConfiguration ( Namespace args ) throws VigorException {
 
         return initializationService.initializeVigor(args);
     }
 
-    public List<Alignment> generateAlignments ( VirusGenome genome, VigorForm form ) throws VigorException {
+    public List<Alignment> generateAlignments ( VirusGenome genome, String referenceDB, VigorConfiguration configuration ) throws VigorException {
 
-        return alignmentGenerationService.generateAlignment(genome, form);
+        return alignmentGenerationService.generateAlignment(genome, referenceDB, configuration);
     }
 
-    public List<Model> generateModels ( List<Alignment> alignments, VigorForm form ) throws ServiceException {
+    public List<Model> generateModels ( List<Alignment> alignments, VigorConfiguration configuration ) throws ServiceException {
 
-        return modelGenerationService.generateModels(alignments, form);
+        return modelGenerationService.generateModels(alignments, configuration);
     }
 
-    public List<Model> generateGeneModels ( List<Model> models, VigorForm form ) throws ServiceException {
+    public List<Model> generateGeneModels ( List<Model> models, VigorConfiguration configuration ) throws ServiceException {
 
-        return geneModelGenerationService.generateGeneModel(models, form);
+        return geneModelGenerationService.generateGeneModel(models, configuration);
     }
 
     public void generateOutput ( VigorConfiguration config, List<Model> models, GenerateVigorOutput.Outfiles outfiles ) throws IOException {
@@ -296,5 +291,7 @@ public class Vigor {
         }
 
     }
+
+
 }
 
