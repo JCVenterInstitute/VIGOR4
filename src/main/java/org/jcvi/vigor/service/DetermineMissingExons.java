@@ -74,10 +74,10 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
 
         Exon exon = null;
         NucleotideSequence NTSubSequence = NTSequence.toBuilder(NTRange)
-                .build();
+                                                     .build();
         ProteinPairwiseSequenceAlignment actual = null;
         ProteinSequence subjectAASequence = AASequence.toBuilder(AARange)
-                .build();
+                                                      .build();
         Map<Frame, ProteinPairwiseSequenceAlignment> alignments = new HashMap<Frame, ProteinPairwiseSequenceAlignment>();
         ProteinPairwiseSequenceAlignment bestAlignment = null;
         for (Frame frame : Frame.forwardFrames()) {
@@ -85,47 +85,46 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
             AminoAcidSubstitutionMatrix blosom62 = BlosumMatrices.blosum62();
             actual = PairwiseAlignmentBuilder
                     .createProtienAlignmentBuilder(queryAASequence,
-                            subjectAASequence, blosom62).gapPenalty(-8, -8)
+                                                   subjectAASequence, blosom62).gapPenalty(-8, -8)
                     .build();
             alignments.put(frame, actual);
         }
-        if (alignments != null && alignments.size() > 0) {
-            Set<Frame> frameSet = alignments.keySet();
-            for (Frame myFrame : frameSet) {
-                if (bestAlignment == null) {
-                    bestAlignment = alignments.get(myFrame);
-                }
-                if (bestAlignment.getScore() < alignments.get(myFrame).getScore()) {
-                    bestAlignment = alignments.get(myFrame);
-                    if (myFrame == Frame.TWO) {
-                        NTRange = Range.of(NTRange.getBegin() + 1, NTRange.getEnd());
-                    } else if (myFrame == Frame.THREE) {
-                        NTRange = Range.of(NTRange.getBegin() + 2, NTRange.getEnd());
-                    }
-                }
+
+        for (Frame myFrame : alignments.keySet()) {
+            if (bestAlignment == null) {
+                bestAlignment = alignments.get(myFrame);
             }
-            if (bestAlignment.getQueryRange().getDirection().equals(modelDirection)) {
-                Range modelExonAARange = Range.of(bestAlignment.getSubjectRange()
-                        .getRange().getBegin()
-                        + AARange.getBegin(), bestAlignment.getSubjectRange()
-                        .getRange().getEnd()
-                        + AARange.getBegin());
-                exon = new Exon();
-                Range range = bestAlignment.getQueryRange().getRange();
-                Range modelExonNTRange = Range.of(
-                        ( range.getBegin() * 3 ) + NTRange.getBegin(),
-                        ( ( ( range.getEnd() + 1 ) * 3 ) - 1 ) + NTRange.getBegin());
-                exon.setRange(modelExonNTRange);
-                AlignmentFragment alignmentFragment = new AlignmentFragment();
-                alignmentFragment.setDirection(bestAlignment.getQueryRange()
-                        .getDirection());
-                alignmentFragment.setNucleotideSeqRange(modelExonNTRange);
-                alignmentFragment.setProteinSeqRange(modelExonAARange);
-                alignmentFragment.setScore(bestAlignment.getScore());
-                exon.setAlignmentFragment(alignmentFragment);
-                exon.setFrame(Frame.ONE);
+            if (bestAlignment.getScore() < alignments.get(myFrame).getScore()) {
+                bestAlignment = alignments.get(myFrame);
+                if (myFrame == Frame.TWO) {
+                    NTRange = Range.of(NTRange.getBegin() + 1, NTRange.getEnd());
+                } else if (myFrame == Frame.THREE) {
+                    NTRange = Range.of(NTRange.getBegin() + 2, NTRange.getEnd());
+                }
             }
         }
+
+        if (bestAlignment != null && bestAlignment.getQueryRange().getDirection().equals(modelDirection)) {
+            Range modelExonAARange = Range.of(bestAlignment.getSubjectRange()
+                                                           .getRange().getBegin()
+                                                      + AARange.getBegin(), bestAlignment.getSubjectRange()
+                                                                                         .getRange().getEnd()
+                                                      + AARange.getBegin());
+            exon = new Exon();
+            Range range = bestAlignment.getQueryRange().getRange();
+            Range modelExonNTRange = Range.of(
+                    (range.getBegin() * 3) + NTRange.getBegin(),
+                    (((range.getEnd() + 1) * 3) - 1) + NTRange.getBegin());
+            exon.setRange(modelExonNTRange);
+            AlignmentFragment alignmentFragment = new AlignmentFragment();
+            alignmentFragment.setDirection(bestAlignment.getQueryRange()
+                                                        .getDirection());
+            alignmentFragment.setNucleotideSeqRange(modelExonNTRange);
+            alignmentFragment.setProteinSeqRange(modelExonAARange);
+            exon.setAlignmentFragment(alignmentFragment);
+            exon.setFrame(Frame.ONE);
+        }
+
         return exon;
     }
 
