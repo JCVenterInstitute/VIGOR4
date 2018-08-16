@@ -101,12 +101,10 @@ public class ExonerateService implements AlignmentService {
                 alignment.setAlignmentTool(alignmentTool);
                 List<AlignmentFragment> alignmentFragments = new ArrayList<>();
                 for (VulgarProtein2Genome2.AlignmentFragment fragment : Jalignment.getAlignmentFragments()) {
-                    AlignmentFragment alignmentFragment = new AlignmentFragment();
-                    alignmentFragment.setDirection(fragment.getDirection());
-                    alignmentFragment.setFrame(fragment.getFrame());
-                    alignmentFragment.setNucleotideSeqRange(fragment.getNucleotideSeqRange());
-                    alignmentFragment.setProteinSeqRange(fragment.getProteinSeqRange());
-                    alignmentFragments.add(alignmentFragment);
+                    alignmentFragments.add(new AlignmentFragment(fragment.getProteinSeqRange(),
+                                                                 fragment.getNucleotideSeqRange(),
+                                                                 fragment.getDirection(),
+                                                                 fragment.getFrame()));
                 }
                 ProteinFastaRecord fasta = datastore.get(Jalignment.getQueryId());
                 ViralProtein viralProtein = new ViralProtein();
