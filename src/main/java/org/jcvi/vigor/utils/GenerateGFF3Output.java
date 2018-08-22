@@ -97,7 +97,7 @@ public class GenerateGFF3Output {
                 bw.write("+" + "\t");
             } else bw.write("-" + "\t");
             bw.write(exons.get(0).getFrame().getFrame() - 1 + "\t");
-            bw.write(String.format("ID=%s;Parent=%s;", idGenerator.next(), mRnaID));
+            bw.write(String.format("ID=%s;Parent=%s;", idGenerator.next(), geneModel.getGeneID()));
             if (geneModel.isPartial3p() || geneModel.isPartial5p()) {
                 bw.write("Partial" + ";");
             }

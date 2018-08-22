@@ -20,9 +20,9 @@ import org.jcvi.vigor.component.VirusGenome;
 import org.jcvi.vigor.utils.TBLParser.TBLFileParser;
 import org.jcvi.vigor.utils.TBLParser.TBLModel;
 
-public class GenerateVigor3Models {
+public class GenerateReferenceModels {
 
-    private final static Logger LOGGER = LogManager.getLogger(GenerateVigor3Models.class);
+    private final static Logger LOGGER = LogManager.getLogger(GenerateReferenceModels.class);
 
     public Map<String, List<Model>> generateModels (String outputDirectory, String outputPrefix) throws IOException {
         String tblFile = Paths.get(outputDirectory, outputPrefix + ".tbl").toString();
