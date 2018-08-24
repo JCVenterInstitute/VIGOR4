@@ -59,9 +59,10 @@ public class Model implements Cloneable {
 
     @Override
     public String toString(){
-        return "Gene Symbol : "+geneSymbol+", Direction : "+direction+", isPseudogene : "+isPseudogene
-                +", RibosmalSlippageRange : "+ribosomalSlippageRange+", ReplaceStopCodonRange :"+ replaceStopCodonRange
-                +", InsertRNAEditingRange : "+insertRNAEditingRange+", Exons : "+exons.stream().map(Object::toString).collect(Collectors.joining(","));
+        return "\n Gene Symbol : "+geneSymbol+"\n isPseudogene : "+isPseudogene
+                +"\n isPartial3p : "+partial3p
+                +"\n isPartial5p : "+partial5p
+                +"\n Exons : "+exons.stream().map(Object::toString).collect(Collectors.joining("\n "));
     }
 
 }
