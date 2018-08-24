@@ -2,7 +2,6 @@ package org.jcvi.vigor.RegressionTest;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -24,21 +23,15 @@ public class GenerateReferenceModels {
 
     private final static Logger LOGGER = LogManager.getLogger(GenerateReferenceModels.class);
 
-    public Map<String, List<Model>> generateModels (String outputDirectory, String outputPrefix) throws IOException {
-        String tblFile = Paths.get(outputDirectory, outputPrefix + ".tbl").toString();
-        String pepFile = Paths.get(outputDirectory, outputPrefix + ".pep").toString();
-        return generateModels(tblFile, pepFile, null);
-    }
+    public Map<String, List<Model>> generateModels ( String TBLFilePath, String fastaFilePath ) throws IOException {
 
-    public Map<String, List<Model>> generateModels ( String TBLFilePath, String PEPFilePath, String fastaFilePath ) throws IOException {
-
-        Map<String, List<Model>> vigor3Models = new HashMap<String, List<Model>>();
+        Map<String, List<Model>> referenceModels = new HashMap<>();
         if (fastaFilePath != null) {
             NucleotideFastaDataStore datastore = new NucleotideFastaFileDataStoreBuilder(new File(fastaFilePath)).build();
             LOGGER.debug("Number of records in the fasta file are : " + datastore.getNumberOfRecords());
         }
         TBLFileParser TBLParser = new TBLFileParser();
-        List<TBLModel> TBLModels = TBLParser.getModels(TBLFilePath, PEPFilePath);
+        List<TBLModel> TBLModels = TBLParser.getModels(TBLFilePath);
         LOGGER.debug("Total Number of models are :" + TBLModels.size());
         for (TBLModel tblModel : TBLModels) {
             Model model = new Model();
@@ -63,16 +56,16 @@ public class GenerateReferenceModels {
             if (tblModel.isRiboSlippage())
                 model.setRibosomalSlippageRange(Range.of(0)); //since in TBL there is no specific row for range.we just capture if this feature exists for model
             String virusGenomeID = model.getAlignment().getVirusGenome().getId();
-            if (vigor3Models.containsKey(virusGenomeID)) {
-                models = vigor3Models.get(virusGenomeID);
+            if (referenceModels.containsKey(virusGenomeID)) {
+                models = referenceModels.get(virusGenomeID);
             }
             models.add(model);
-            vigor3Models.put(virusGenomeID, models);
+            referenceModels.put(virusGenomeID, models);
         }
-        LOGGER.debug(vigor3Models.entrySet().size());
-        vigor3Models.entrySet().forEach(entry -> {
-            LOGGER.trace("genome ID: \"{}\" model count: {}",entry.getKey(), entry.getValue().size());
+        LOGGER.debug(referenceModels.entrySet().size());
+        referenceModels.entrySet().forEach(entry -> {
+            LOGGER.trace("genome ID: \"{}\" model count: {}", entry.getKey(), entry.getValue().size());
         });
-        return vigor3Models;
+        return referenceModels;
     }
 }
