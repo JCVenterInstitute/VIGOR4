@@ -1,5 +1,6 @@
 package org.jcvi.vigor.RegressionTest;
 
+import javafx.util.Pair;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.vigor.Application;
@@ -15,7 +16,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
@@ -28,28 +32,39 @@ public class GenerateVigor4GeneModels {
     @Autowired
     Vigor vigor;
 
-    public Map<String, List<Model>> generateModels ( String inputFASTA, String refDB, VigorConfiguration config) throws VigorException {
+    public Map<String, List<Model>> generateModels ( String inputFASTA, String refDB, VigorConfiguration config ) throws VigorException {
 
         try {
             VigorForm vigorForm = new VigorForm(config);
             AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
             alignmentEvidence.setReference_db(refDB);
             vigorForm.setAlignmentEvidence(alignmentEvidence);
-            vigor.generateAnnotations(inputFASTA, vigorForm);
             String outputDir = config.get(ConfigurationParameters.OutputDirectory);
             String outputPrefix = config.get(ConfigurationParameters.OutputPrefix);
-            return modelsFromResults(outputDir, outputPrefix);
+            Pair<String, Boolean> outputFile = getVigor4OutputFiles(outputDir, outputPrefix);
+            if (!( outputFile.getValue() )) {
+                vigor.generateAnnotations(inputFASTA, vigorForm);
+            }
+            return modelsFromResults(outputFile.getKey());
         } catch (IOException e) {
             throw new VigorException("Error generating vigor4 models", e);
         }
     }
 
-    public  Map<String, List<Model>> modelsFromResults(String outputDirectory, String outputPrefix) throws IOException {
-        return modelsFromResults(outputDirectory, outputPrefix, null);
+    public Map<String, List<Model>> modelsFromResults ( String tblFile ) throws IOException {
+
+        return modelsFromResults(tblFile, null);
     }
-    public  Map<String, List<Model>> modelsFromResults(String outputDirectory, String outputPrefix, String inputFasta) throws IOException {
-        String tblFile = Paths.get(outputDirectory, outputPrefix + ".tbl").toString();
-        String pepFile = Paths.get(outputDirectory, outputPrefix + ".pep").toString();
-        return new GenerateVigor3Models().generateModels(tblFile, pepFile, inputFasta);
+
+    public Map<String, List<Model>> modelsFromResults ( String tblFile, String inputFasta ) throws IOException {
+
+        return new GenerateReferenceModels().generateModels(tblFile, inputFasta);
+    }
+
+    private Pair<String, Boolean> getVigor4OutputFiles ( String outputDirectory, String outputPrefix ) {
+
+        String tblFilePath = Paths.get(outputDirectory, outputPrefix + ".tbl").toString();
+        Path tblPath = Paths.get(tblFilePath);
+        return new Pair<>(tblFilePath, Files.exists(tblPath));
     }
 }
