@@ -12,6 +12,7 @@ import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 import org.jcvi.jillion.core.Range;
+import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.jillion.core.util.iter.StreamingIterator;
 import org.jcvi.jillion.fasta.aa.ProteinFastaDataStore;
 import org.jcvi.jillion.fasta.aa.ProteinFastaFileDataStoreBuilder;
@@ -20,16 +21,16 @@ import org.jcvi.vigor.component.Exon;
 
 public class TBLFileParser {
 
-    public List<TBLModel> getModels ( String TBLFilePath, String PEPFilePath ) {
+    public List<TBLModel> getModels ( String TBLFilePath ) {
 
         List<TBLModel> TBLModels = parseFile(TBLFilePath);
-        TBLModels = setReferenceViralProteinID(TBLModels, PEPFilePath);
+        //TBLModels = setReferenceViralProteinID(TBLModels, PEPFilePath);
         return TBLModels;
     }
 
     public List<TBLModel> parseFile ( String TBLFilePath ) {
 
-        List<TBLModel> models = new ArrayList<TBLModel>();
+        List<TBLModel> models = new ArrayList<>();
         try {
             Stream<String> tblFile = Files.lines(Paths.get(TBLFilePath));
             Pattern pattern;
@@ -38,19 +39,20 @@ public class TBLFileParser {
             List<Exon> exons = null;
             Exon exon = null;
             String virusGenomeID = "";
-            Pattern startPattern = Pattern.compile("(<)?(\\s*)?([\\d*]+)([\\s*]+)(>)?([\\d*]+)(\\s*)?(CDS)");
-            Pattern proteinIdPattern = Pattern.compile("(\\s*)?(protein_id)([\\s*]+)(.*)");
-            Pattern productPattern = Pattern.compile("(\\s*)?(product)([\\s*]+)(.*)");
-            Pattern notePattern = Pattern.compile("(\\s*)?(note)([\\s*]+)(.*)");
+            Pattern startPattern = Pattern.compile("(<)?(\\s*)?([\\d*]+)([\\s*]+)(>)?([\\d*]+)(\\s*)?(CDS)(\\s*)?$");
+            Pattern proteinIdPattern = Pattern.compile("(\\s*)?(protein_id)([\\s*]+)(.*)(\\s*)?$");
+            Pattern productPattern = Pattern.compile("(\\s*)?(product)([\\s*]+)(.*)(\\s*)?$");
+            Pattern notePattern = Pattern.compile("(\\s*)?(note)([\\s*]+)(.*)(\\s*)?$");
             Pattern geneNamePattern = Pattern.compile("^(\\s*)?(gene)(\\s*)(.*)$");
+            Pattern codonStartPattern = Pattern.compile("^(\\s*)?(codon_start)(\\s*)?([0-9])(\\s*)?$");
             Pattern nextFragment = Pattern
                     .compile("(\\s*)?([\\d*]+)([\\s*]+)(>)?([\\d*]+)(\\s*)?$");
-            Pattern pseudogenePattern = Pattern.compile("(\\s*)?(pseudogene)(.*)");
-            Pattern riboSlippagePattern = Pattern.compile("(\\s*)?(ribosomal_slippage)(.*)");
-            Pattern stopReadThroughPattern = Pattern.compile("(\\s*)?(transl_except)(\\s*)(\\((pos:)(\\d*)(..)(\\d*)(,.*)\\))");
+            Pattern pseudogenePattern = Pattern.compile("(\\s*)?(pseudogene)(.*)(\\s*)?$");
+            Pattern riboSlippagePattern = Pattern.compile("(\\s*)?(ribosomal(_?\\s?)slippage)(.*)(\\s*)?$");
+            Pattern stopReadThroughPattern = Pattern.compile("(\\s*)?(transl_except)(\\s*)(\\((pos:)(\\d*)(..)(\\d*)(,.*)\\))(\\s*)?$");
             Pattern geneLinePattern = Pattern
-                    .compile("(<)?(\\s*)?([\\d*]+)([\\s*]+)(>)?([\\d*]+)(\\s*)?(gene)");
-            Pattern miscFeaturePattern = Pattern.compile("(<)?(\\s*)?([\\d*]+)([\\s*]+)(>)?([\\d*]+)(\\s*)?(misc_feature)");
+                    .compile("(<)?(\\s*)?([\\d*]+)([\\s*]+)(>)?([\\d*]+)(\\s*)?(gene)(\\s*)?$");
+            Pattern miscFeaturePattern = Pattern.compile("(<)?(\\s*)?([\\d*]+)([\\s*]+)(>)?([\\d*]+)(\\s*)?(misc_feature)(\\s*)?$");
             boolean isPseudoGene = false;
             boolean is5Partial = false;
             boolean is3Partial = false;
@@ -74,10 +76,10 @@ public class TBLFileParser {
                         stopCodonReadThrough = null;
                     }
                     model = null;
-                    pattern = Pattern.compile("Features[\\s](\\S*)");
+                    pattern = Pattern.compile("Feature(s?)[\\s](\\S*)");
                     matcher = pattern.matcher(s);
                     if (matcher.find()) {
-                        virusGenomeID = matcher.group(1).toString();
+                        virusGenomeID = matcher.group(2).toString();
                     }
                     if (geneLineMatcher.matches()) {
                         model = new TBLModel();
@@ -95,6 +97,7 @@ public class TBLFileParser {
                     Matcher nextFragMatcher = nextFragment.matcher(s);
                     Matcher pseudogeneMatcher = pseudogenePattern.matcher(s);
                     Matcher stopReadThroughMatcher = stopReadThroughPattern.matcher(s);
+                    Matcher codonStartMatcher = codonStartPattern.matcher(s);
                     if (proteinIDMatcher.find() && model != null) {
                         model.setViralProteinID(( proteinIDMatcher.group(4) ));
                         model.setGeneID(proteinIDMatcher.group(4));
@@ -107,9 +110,10 @@ public class TBLFileParser {
                     } else if (matcher.matches()) {
                         exon = new Exon();
                         Range range;
+                        exon.setFrame(Frame.ONE);
                         range = Range.of(Range.CoordinateSystem.RESIDUE_BASED,
-                                         Long.parseLong(matcher.group(3)),
-                                         Long.parseLong(matcher.group(6)));
+                                Long.parseLong(matcher.group(3)),
+                                Long.parseLong(matcher.group(6)));
                         if (matcher.group(1) != null && matcher.group(1).equals("<")) {
                             is5Partial = true;
                         }
@@ -118,7 +122,11 @@ public class TBLFileParser {
                         }
                         exon.setRange(range);
                         exons.add(exon);
+                    } else if (codonStartMatcher.matches()) {
+                        Frame frame = Frame.parseFrame(Integer.parseInt(codonStartMatcher.group(4)));
+                        exons.get(0).setFrame(frame);
                     } else if (miscMatcher.matches()) {
+                        isPseudoGene = true;
                         if (isPseudoGene) {
                             Range range = Range.of(Long.parseLong(miscMatcher.group(3)),
                                     Long.parseLong(miscMatcher.group(6)));
@@ -144,7 +152,7 @@ public class TBLFileParser {
                         exons.add(exon);
                     } else if (pseudogeneMatcher.matches()) {
                         isPseudoGene = true;
-                    } else if (riboSlippageMatcher.matches()) {
+                    } else if (riboSlippageMatcher.find()) {
                         isRiboSlippage = true;
                     } else if (stopReadThroughMatcher.matches()) {
                         stopCodonReadThrough = Range.of(Long.parseLong(stopReadThroughMatcher.group(6)),
@@ -164,7 +172,7 @@ public class TBLFileParser {
             tblFile.close();
         } catch (IOException e) {
             e.printStackTrace();
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return models;
