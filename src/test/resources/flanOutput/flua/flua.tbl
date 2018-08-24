@@ -1,0 +1,1484 @@
+>Feature HA_1_615
+21	>615	gene		
+			gene	HA
+21	>615	CDS		
+			product	hemagglutinin
+			function	receptor binding and fusion protein
+			gene	HA
+21	71	sig_peptide
+72	615	mat_peptide
+			product HA1
+    
+===================================================================
+>Feature HA_1129_1753
+<1	593	gene		
+			gene	HA
+<1	593	CDS		
+			codon_start	3
+			product	hemagglutinin
+			function	receptor binding and fusion protein
+			gene	HA
+<1	590	mat_peptide
+			product HA2
+    
+===================================================================
+>Feature MP
+1	759	gene		
+			gene	M1
+1	759	CDS		
+			product	matrix protein 1
+			gene	M1
+1	982	gene		
+			gene	M2
+1	26	CDS		
+715	982			
+			product	matrix protein 2
+			gene	M2
+    
+===================================================================
+>Feature NA
+9	1418	gene		
+			gene	NA
+9	1418	CDS		
+			product	neuraminidase
+			gene	NA
+    
+===================================================================
+>Feature NP
+19	1515	gene		
+			gene	NP
+19	1515	CDS		
+			product	nucleocapsid protein
+			gene	NP
+    
+===================================================================
+>Feature NS
+1	660	gene		
+			gene	NS1
+1	660	CDS		
+			product	nonstructural protein 1
+			gene	NS1
+1	838	gene		
+			gene	NEP
+			gene_syn	NS2
+1	30	CDS		
+503	838			
+			product	nuclear export protein
+			note	nonstructural protein 2
+			gene	NEP
+    
+===================================================================
+>Feature PA_1_500
+9	>499	gene		
+			gene	PA
+9	>499	CDS		
+			product	polymerase PA
+			gene	PA
+9	>499	gene		
+			gene	PA-X
+9	>499	CDS		
+			product	PA-X protein
+			exception	ribosomal slippage
+			gene	PA-X
+    
+===================================================================
+>Feature PA_971_1191
+<1	>220	gene		
+			gene	PA
+<1	>220	CDS		
+			codon_start	2
+			product	polymerase PA
+			gene	PA
+    
+===================================================================
+>Feature PA_1732_2178
+<1	428	gene		
+			gene	PA
+<1	428	CDS		
+			codon_start	3
+			product	polymerase PA
+			gene	PA
+    
+===================================================================
+>Feature PB1_1_402
+13	>401	gene		
+			gene	PB1
+13	>401	CDS		
+			product	polymerase PB1
+			gene	PB1
+221	379	gene		
+			gene	PB1-F2
+221	379	misc_feature		
+			note	nonfunctional PB1-F2 protein due to mutation
+    
+===================================================================
+>Feature PB1_1981_2317
+<1	306	gene		
+			gene	PB1
+<1	306	CDS		
+			product	polymerase PB1
+			gene	PB1
+    
+===================================================================
+>Feature PB2_1_539
+12	>538	gene		
+			gene	PB2
+12	>538	CDS		
+			product	polymerase PB2
+			gene	PB2
+    
+===================================================================
+>Feature PB2_1767_2307
+<1	525	gene		
+			gene	PB2
+<1	525	CDS		
+			product	polymerase PB2
+			gene	PB2
+    
+===================================================================
+>Feature gi|482680053|gb|KC853764.2|
+1	759	gene		
+			gene	M1
+1	759	CDS		
+			product	matrix protein 1
+			gene	M1
+1	982	gene		
+			gene	M2
+1	26	CDS		
+715	982			
+			product	matrix protein 2
+			gene	M2
+    
+===================================================================
+>Feature gi|475662453|gb|KC853766.1|
+1	1683	gene		
+			gene	HA
+1	1683	CDS		
+			product	hemagglutinin
+			function	receptor binding and fusion protein
+			gene	HA
+1	54	sig_peptide
+55	1017	mat_peptide
+			product HA1
+1018	1680	mat_peptide
+			product HA2
+    
+===================================================================
+>Feature gi|475662451|gb|KC853765.1|
+1	1398	gene		
+			gene	NA
+1	1398	CDS		
+			product	neuraminidase
+			gene	NA
+    
+===================================================================
+>Feature gi|260907768|gb|GU060485.1|
+12	704	gene		
+			gene	NS1
+12	704	CDS		
+			product	nonstructural protein 1
+			gene	NS1
+12	849	gene		
+			gene	NEP
+			gene_syn	NS2
+12	41	CDS		
+514	849			
+			product	nuclear export protein
+			note	nonstructural protein 2
+			gene	NEP
+    
+===================================================================
+>Feature gi|260907766|gb|GU060484.1|
+4	1416	gene		
+			gene	NA
+4	1416	CDS		
+			product	neuraminidase
+			gene	NA
+    
+===================================================================
+>Feature gi|260907764|gb|GU060483.1|
+31	1527	gene		
+			gene	NP
+31	1527	CDS		
+			product	nucleocapsid protein
+			gene	NP
+    
+===================================================================
+>Feature gi|260907762|gb|GU060482.1|
+9	1691	gene		
+			gene	HA
+9	1691	CDS		
+			product	hemagglutinin
+			function	receptor binding and fusion protein
+			gene	HA
+9	62	sig_peptide
+63	1025	mat_peptide
+			product HA1
+1026	1688	mat_peptide
+			product HA2
+    
+===================================================================
+>Feature gi|260907760|gb|GU060481.1|
+10	2160	gene		
+			gene	PA
+10	2160	CDS		
+			product	polymerase PA
+			gene	PA
+10	769	gene		
+			gene	PA-X
+10	579	CDS		
+581	769			
+			product	PA-X protein
+			exception	ribosomal slippage
+			gene	PA-X
+    
+===================================================================
+>Feature gi|260907757|gb|GU060480.1|
+11	2284	gene		
+			gene	PB1
+11	2284	CDS		
+			product	polymerase PB1
+			gene	PB1
+105	377	gene		
+			gene	PB1-F2
+105	377	CDS		
+			product	PB1-F2 protein
+			gene	PB1-F2
+    
+===================================================================
+>Feature gi|260907755|gb|GU060479.1|
+14	2293	gene		
+			gene	PB2
+14	2293	CDS		
+			product	polymerase PB2
+			gene	PB2
+    
+===================================================================
+>Feature gi|307141877|gb|HQ244419.1|
+12	704	gene		
+			gene	NS1
+12	704	CDS		
+			product	nonstructural protein 1
+			gene	NS1
+12	849	gene		
+			gene	NEP
+			gene_syn	NS2
+12	41	CDS		
+514	849			
+			product	nuclear export protein
+			note	nonstructural protein 2
+			gene	NEP
+    
+===================================================================
+>Feature gi|307141874|gb|HQ244418.1|
+11	769	gene		
+			gene	M1
+11	769	CDS		
+			product	matrix protein 1
+			gene	M1
+11	>991	gene		
+			gene	M2
+11	36	CDS		
+725	>991			
+			product	matrix protein 2
+			gene	M2
+    
+===================================================================
+>Feature gi|307141872|gb|HQ244417.1|
+4	1416	gene		
+			gene	NA
+4	1416	CDS		
+			product	neuraminidase
+			gene	NA
+    
+===================================================================
+>Feature gi|307141870|gb|HQ244416.1|
+31	1527	gene		
+			gene	NP
+31	1527	CDS		
+			product	nucleocapsid protein
+			gene	NP
+    
+===================================================================
+>Feature gi|307141868|gb|HQ244415.1|
+8	1690	gene		
+			gene	HA
+8	1690	CDS		
+			product	hemagglutinin
+			function	receptor binding and fusion protein
+			gene	HA
+8	61	sig_peptide
+62	1024	mat_peptide
+			product HA1
+1025	1687	mat_peptide
+			product HA2
+    
+===================================================================
+>Feature gi|307141866|gb|HQ244414.1|
+10	2160	gene		
+			gene	PA
+10	2160	CDS		
+			product	polymerase PA
+			gene	PA
+10	769	gene		
+			gene	PA-X
+10	579	CDS		
+581	769			
+			product	PA-X protein
+			exception	ribosomal slippage
+			gene	PA-X
+    
+===================================================================
+>Feature gi|307141863|gb|HQ244413.1|
+11	2284	gene		
+			gene	PB1
+11	2284	CDS		
+			product	polymerase PB1
+			gene	PB1
+105	377	gene		
+			gene	PB1-F2
+105	377	CDS		
+			product	PB1-F2 protein
+			gene	PB1-F2
+    
+===================================================================
+>Feature gi|307141861|gb|HQ244412.1|
+14	2293	gene		
+			gene	PB2
+14	2293	CDS		
+			product	polymerase PB2
+			gene	PB2
+    
+===================================================================
+>Feature gi|155016340|gb|CY024825.1|
+13	2292	gene		
+			gene	PB2
+13	2292	CDS		
+			product	polymerase PB2
+			gene	PB2
+    
+===================================================================
+>Feature gi|155016337|gb|CY024824.1|
+11	2284	gene		
+			gene	PB1
+11	2284	CDS		
+			product	polymerase PB1
+			gene	PB1
+105	377	gene		
+			gene	PB1-F2
+105	377	CDS		
+			product	PB1-F2 protein
+			gene	PB1-F2
+    
+===================================================================
+>Feature gi|155016335|gb|CY024823.1|
+6	2156	gene		
+			gene	PA
+6	2156	CDS		
+			product	polymerase PA
+			gene	PA
+6	765	gene		
+			gene	PA-X
+6	575	CDS		
+577	765			
+			product	PA-X protein
+			exception	ribosomal slippage
+			gene	PA-X
+    
+===================================================================
+>Feature gi|155016332|gb|CY024822.1|
+12	704	gene		
+			gene	NS1
+12	704	CDS		
+			product	nonstructural protein 1
+			gene	NS1
+12	849	gene		
+			gene	NEP
+			gene_syn	NS2
+12	41	CDS		
+514	849			
+			product	nuclear export protein
+			note	nonstructural protein 2
+			gene	NEP
+    
+===================================================================
+>Feature gi|155016330|gb|CY024821.1|
+31	1527	gene		
+			gene	NP
+31	1527	CDS		
+			product	nucleocapsid protein
+			gene	NP
+    
+===================================================================
+>Feature gi|155016328|gb|CY024820.1|
+2	1414	gene		
+			gene	NA
+2	1414	CDS		
+			product	neuraminidase
+			gene	NA
+    
+===================================================================
+>Feature gi|155016325|gb|CY024819.1|
+9	767	gene		
+			gene	M1
+9	767	CDS		
+			product	matrix protein 1
+			gene	M1
+9	990	gene		
+			gene	M2
+9	34	CDS		
+723	990			
+			product	matrix protein 2
+			gene	M2
+    
+===================================================================
+>Feature gi|155016323|gb|CY024818.1|
+8	1690	gene		
+			gene	HA
+8	1690	CDS		
+			product	hemagglutinin
+			function	receptor binding and fusion protein
+			gene	HA
+8	61	sig_peptide
+62	1024	mat_peptide
+			product HA1
+1025	1687	mat_peptide
+			product HA2
+    
+===================================================================
+>Feature gi|525338705|gb|CY147019.1|
+1	2151	gene		
+			gene	PA
+1	2151	CDS		
+			product	polymerase PA
+			gene	PA
+1	760	gene		
+			gene	PA-X
+1	760	misc_feature		
+			note	nonfunctional PA-X protein due to mutation
+    
+===================================================================
+>Feature gi|514391082|gb|KF277196.1|
+1	2280	gene		
+			gene	PB2
+1	2280	CDS		
+			product	polymerase PB2
+			gene	PB2
+    
+===================================================================
+>Feature gi|514391079|gb|KF277195.1|
+1	2151	gene		
+			gene	PA
+1	2151	CDS		
+			product	polymerase PA
+			gene	PA
+1	760	gene		
+			gene	PA-X
+1	570	CDS		
+572	760			
+			product	PA-X protein
+			exception	ribosomal slippage
+			gene	PA-X
+    
+===================================================================
+>Feature gi|514391076|gb|KF277194.1|
+1	654	gene		
+			gene	NS1
+1	654	CDS		
+			product	nonstructural protein 1
+			gene	NS1
+1	838	gene		
+			gene	NEP
+			gene_syn	NS2
+1	30	CDS		
+503	838			
+			product	nuclear export protein
+			note	nonstructural protein 2
+			gene	NEP
+    
+===================================================================
+>Feature gi|514391074|gb|KF277193.1|
+1	1497	gene		
+			gene	NP
+1	1497	CDS		
+			product	nucleocapsid protein
+			gene	NP
+    
+===================================================================
+>Feature gi|514391071|gb|KF277192.1|
+1	759	gene		
+			gene	M1
+1	759	CDS		
+			product	matrix protein 1
+			gene	M1
+1	982	gene		
+			gene	M2
+1	26	CDS		
+715	982			
+			product	matrix protein 2
+			gene	M2
+    
+===================================================================
+>Feature gi|513857262|gb|KF261988.1|
+1	1683	gene		
+			gene	HA
+1	1683	CDS		
+			product	hemagglutinin
+			function	receptor binding and fusion protein
+			gene	HA
+1	54	sig_peptide
+55	1017	mat_peptide
+			product HA1
+1018	1680	mat_peptide
+			product HA2
+    
+===================================================================
+>Feature gi|482578116|gb|KC896766.1|
+1	1497	gene		
+			gene	NP
+1	1497	CDS		
+			product	nucleocapsid protein
+			gene	NP
+    
+===================================================================
+>Feature gi|480326663|gb|KC896768.1|
+1	2151	gene		
+			gene	PA
+1	2151	CDS		
+			product	polymerase PA
+			gene	PA
+1	760	gene		
+			gene	PA-X
+1	570	CDS		
+572	760			
+			product	PA-X protein
+			exception	ribosomal slippage
+			gene	PA-X
+    
+===================================================================
+>Feature gi|479285790|gb|KC896770.1|
+1	2280	gene		
+			gene	PB2
+1	2280	CDS		
+			product	polymerase PB2
+			gene	PB2
+    
+===================================================================
+>Feature gi|479285787|gb|KC896769.1|
+1	2274	gene		
+			gene	PB1
+1	2274	CDS		
+			product	polymerase PB1
+			gene	PB1
+95	367	gene		
+			gene	PB1-F2
+95	367	CDS		
+			product	PB1-F2 protein
+			gene	PB1-F2
+    
+===================================================================
+>Feature gi|442796555|gb|KC422455.1|
+25	2175	gene		
+			gene	PA
+25	2175	CDS		
+			product	polymerase PA
+			gene	PA
+25	724	gene		
+			gene	PA-X
+25	594	CDS		
+596	724			
+			product	PA-X protein
+			exception	ribosomal slippage
+			gene	PA-X
+    
+===================================================================
+>Feature gi|442796551|gb|KC422454.1|
+25	2298	gene		
+			gene	PB1
+25	2298	CDS		
+			product	polymerase PB1
+			gene	PB1
+119	391	gene		
+			gene	PB1-F2
+119	391	CDS		
+			product	PB1-F2 protein
+			gene	PB1-F2
+    
+===================================================================
+>Feature gi|442796549|gb|KC422453.1|
+28	2307	gene		
+			gene	PB2
+28	2307	CDS		
+			product	polymerase PB2
+			gene	PB2
+    
+===================================================================
+>Feature gi|410699083|gb|JX963597.1|
+1	693	gene		
+			gene	NS1
+1	693	CDS		
+			product	nonstructural protein 1
+			gene	NS1
+1	>693	gene		
+			gene	NEP
+			gene_syn	NS2
+1	30	CDS		
+503	>693			
+			product	nuclear export protein
+			note	nonstructural protein 2
+			gene	NEP
+    
+===================================================================
+>Feature gi|410699080|gb|JX963596.1|
+1	759	gene		
+			gene	M1
+1	759	CDS		
+			product	matrix protein 1
+			gene	M1
+1	982	gene		
+			gene	M2
+1	26	CDS		
+715	982			
+			product	matrix protein 2
+			gene	M2
+    
+===================================================================
+>Feature gi|410699078|gb|JX963595.1|
+1	1497	gene		
+			gene	NP
+1	1497	CDS		
+			product	nucleocapsid protein
+			gene	NP
+    
+===================================================================
+>Feature gi|410699076|gb|JX963594.1|
+1	2151	gene		
+			gene	PA
+1	2151	CDS		
+			product	polymerase PA
+			gene	PA
+1	760	gene		
+			gene	PA-X
+1	570	CDS		
+572	760			
+			product	PA-X protein
+			exception	ribosomal slippage
+			gene	PA-X
+    
+===================================================================
+>Feature gi|410699074|gb|JX963593.1|
+1	2280	gene		
+			gene	PB2
+1	2280	CDS		
+			product	polymerase PB2
+			gene	PB2
+    
+===================================================================
+>Feature gi|410699072|gb|JX963592.1|
+1	2274	gene		
+			gene	PB1
+1	2274	CDS		
+			product	polymerase PB1
+			gene	PB1
+209	367	gene		
+			gene	PB1-F2
+209	367	CDS		
+			product	putative PB1-F2 protein
+			gene	PB1-F2
+    
+===================================================================
+>Feature gi|410699054|gb|JX963599.1|
+1	1410	gene		
+			gene	NA
+1	1410	CDS		
+			product	neuraminidase
+			gene	NA
+    
+===================================================================
+>Feature gi|410699052|gb|JX963598.1|
+1	1701	gene		
+			gene	HA
+1	1701	CDS		
+			product	hemagglutinin
+			function	receptor binding and fusion protein
+			gene	HA
+1	51	sig_peptide
+52	1032	mat_peptide
+			product HA1
+1033	1698	mat_peptide
+			product HA2
+    
+===================================================================
+>Feature gi|410699047|gb|JX963611.1|
+1	693	gene		
+			gene	NS1
+1	693	CDS		
+			product	nonstructural protein 1
+			gene	NS1
+1	>693	gene		
+			gene	NEP
+			gene_syn	NS2
+1	30	CDS		
+503	>693			
+			product	nuclear export protein
+			note	nonstructural protein 2
+			gene	NEP
+    
+===================================================================
+>Feature gi|410699044|gb|JX963610.1|
+1	759	gene		
+			gene	M1
+1	759	CDS		
+			product	matrix protein 1
+			gene	M1
+1	982	gene		
+			gene	M2
+1	26	CDS		
+715	982			
+			product	matrix protein 2
+			gene	M2
+    
+===================================================================
+>Feature gi|410699042|gb|JX963609.1|
+1	2151	gene		
+			gene	PA
+1	2151	CDS		
+			product	polymerase PA
+			gene	PA
+1	760	gene		
+			gene	PA-X
+1	570	CDS		
+572	760			
+			product	PA-X protein
+			exception	ribosomal slippage
+			gene	PA-X
+    
+===================================================================
+>Feature gi|410699040|gb|JX963608.1|
+1	2280	gene		
+			gene	PB2
+1	2280	CDS		
+			product	polymerase PB2
+			gene	PB2
+    
+===================================================================
+>Feature gi|410699038|gb|JX963607.1|
+1	2274	gene		
+			gene	PB1
+1	2274	CDS		
+			product	polymerase PB1
+			gene	PB1
+209	367	gene		
+			gene	PB1-F2
+209	367	CDS		
+			product	putative PB1-F2 protein
+			gene	PB1-F2
+    
+===================================================================
+>Feature gi|410699036|gb|JX963606.1|
+1	1410	gene		
+			gene	NA
+1	1410	CDS		
+			product	neuraminidase
+			gene	NA
+    
+===================================================================
+>Feature gi|410699034|gb|JX963605.1|
+1	1701	gene		
+			gene	HA
+1	1701	CDS		
+			product	hemagglutinin
+			function	receptor binding and fusion protein
+			gene	HA
+1	51	sig_peptide
+52	1032	mat_peptide
+			product HA1
+1033	1698	mat_peptide
+			product HA2
+    
+===================================================================
+>Feature gi|408830545|gb|JX860691.1|
+1	1497	gene		
+			gene	NP
+1	1497	CDS		
+			product	nucleocapsid protein
+			gene	NP
+    
+===================================================================
+>Feature gi|459254143|gb|KC616698.1|
+1	2274	gene		
+			gene	PB1
+1	2274	CDS		
+			product	polymerase PB1
+			gene	PB1
+95	367	gene		
+			gene	PB1-F2
+95	367	misc_feature		
+			note	nonfunctional PB1-F2 protein due to mutation
+    
+===================================================================
+>Feature gi|459254069|gb|KC616678.1|
+1	2274	gene		
+			gene	PB1
+1	2274	CDS		
+			product	polymerase PB1
+			gene	PB1
+95	334	gene		
+			gene	PB1-F2
+95	334	CDS		
+			product	PB1-F2 protein
+			gene	PB1-F2
+    
+===================================================================
+>Feature gi|451330202|gb|KC508584.1|
+1	2274	gene		
+			gene	PB1
+1	2274	CDS		
+			product	polymerase PB1
+			gene	PB1
+95	367	gene		
+			gene	PB1-F2
+95	367	misc_feature		
+			note	nonfunctional PB1-F2 protein due to mutation
+    
+===================================================================
+>Feature gi|451330113|gb|KC508546.1|
+1	2274	gene		
+			gene	PB1
+1	2274	CDS		
+			product	polymerase PB1
+			gene	PB1
+95	367	gene		
+			gene	PB1-F2
+95	367	misc_feature		
+			note	nonfunctional PB1-F2 protein due to mutation
+    
+===================================================================
+>Feature gi|451330091|gb|KC508536.1|
+1	2274	gene		
+			gene	PB1
+1	2274	CDS		
+			product	polymerase PB1
+			gene	PB1
+95	367	gene		
+			gene	PB1-F2
+95	367	misc_feature		
+			note	nonfunctional PB1-F2 protein due to mutation
+    
+===================================================================
+>Feature gi|445069079|gb|KC464602.1|
+1	654	gene		
+			gene	NS1
+1	654	CDS		
+			product	nonstructural protein 1
+			gene	NS1
+1	838	gene		
+			gene	NEP
+			gene_syn	NS2
+1	30	CDS		
+503	838			
+			product	nuclear export protein
+			note	nonstructural protein 2
+			gene	NEP
+    
+===================================================================
+>Feature gi|445069076|gb|KC464601.1|
+1	759	gene		
+			gene	M1
+1	759	CDS		
+			product	matrix protein 1
+			gene	M1
+1	982	gene		
+			gene	M2
+1	26	CDS		
+715	982			
+			product	matrix protein 2
+			gene	M2
+    
+===================================================================
+>Feature gi|445069074|gb|KC464600.1|
+1	1401	gene		
+			gene	NA
+1	1401	CDS		
+			product	neuraminidase
+			gene	NA
+    
+===================================================================
+>Feature gi|445069072|gb|KC464599.1|
+1	1497	gene		
+			gene	NP
+1	1497	CDS		
+			product	nucleocapsid protein
+			gene	NP
+    
+===================================================================
+>Feature gi|445069070|gb|KC464598.1|
+1	1683	gene		
+			gene	HA
+1	1683	CDS		
+			product	hemagglutinin
+			function	receptor binding and fusion protein
+			gene	HA
+1	54	sig_peptide
+55	1014	mat_peptide
+			product HA1
+1015	1680	mat_peptide
+			product HA2
+    
+===================================================================
+>Feature gi|445069068|gb|KC464597.1|
+1	2151	gene		
+			gene	PA
+1	2151	CDS		
+			product	polymerase PA
+			gene	PA
+1	760	gene		
+			gene	PA-X
+1	570	CDS		
+572	760			
+			product	PA-X protein
+			exception	ribosomal slippage
+			gene	PA-X
+    
+===================================================================
+>Feature gi|445069066|gb|KC464596.1|
+1	2274	gene		
+			gene	PB1
+1	2274	CDS		
+			product	polymerase PB1
+			gene	PB1
+95	367	gene		
+			gene	PB1-F2
+95	367	CDS		
+			product	PB1-F2 protein
+			gene	PB1-F2
+    
+===================================================================
+>Feature gi|402485390|gb|JX465644.1|
+27	719	gene		
+			gene	NS1
+27	719	CDS		
+			product	nonstructural protein 1
+			gene	NS1
+27	864	gene		
+			gene	NEP
+			gene_syn	NS2
+27	56	CDS		
+529	864			
+			product	nuclear export protein
+			note	nonstructural protein 2
+			gene	NEP
+    
+===================================================================
+>Feature gi|402485387|gb|JX465643.1|
+26	784	gene		
+			gene	M1
+26	784	CDS		
+			product	matrix protein 1
+			gene	M1
+26	1007	gene		
+			gene	M2
+26	51	CDS		
+740	1007			
+			product	matrix protein 2
+			gene	M2
+    
+===================================================================
+>Feature gi|402485385|gb|JX465642.1|
+21	1439	gene		
+			gene	NA
+21	1439	CDS		
+			product	neuraminidase
+			gene	NA
+    
+===================================================================
+>Feature gi|402485383|gb|JX465641.1|
+46	1542	gene		
+			gene	NP
+46	1542	CDS		
+			product	nucleocapsid protein
+			gene	NP
+    
+===================================================================
+>Feature gi|402485381|gb|JX465640.1|
+18	1718	gene		
+			gene	HA
+18	1718	CDS		
+			product	hemagglutinin
+			function	receptor binding and fusion protein
+			gene	HA
+18	65	sig_peptide
+66	1049	mat_peptide
+			product HA1
+1050	1715	mat_peptide
+			product HA2
+    
+===================================================================
+>Feature gi|402485379|gb|JX465639.1|
+25	2175	gene		
+			gene	PA
+25	2175	CDS		
+			product	polymerase PA
+			gene	PA
+25	784	gene		
+			gene	PA-X
+25	594	CDS		
+596	784			
+			product	PA-X protein
+			exception	ribosomal slippage
+			gene	PA-X
+    
+===================================================================
+>Feature gi|402485375|gb|JX465638.1|
+25	2298	gene		
+			gene	PB1
+25	2298	CDS		
+			product	polymerase PB1
+			gene	PB1
+119	391	gene		
+			gene	PB1-F2
+119	391	CDS		
+			product	PB1-F2 protein
+			gene	PB1-F2
+    
+===================================================================
+>Feature gi|402485373|gb|JX465637.1|
+28	2307	gene		
+			gene	PB2
+28	2307	CDS		
+			product	polymerase PB2
+			gene	PB2
+    
+===================================================================
+>Feature gi|395628603|gb|JX195354.1|
+1	2274	gene		
+			gene	PB1
+1	2274	CDS		
+			product	polymerase PB1
+			gene	PB1
+95	367	gene		
+			gene	PB1-F2
+95	367	CDS		
+			product	PB1-F2 protein
+			gene	PB1-F2
+    
+===================================================================
+>Feature gi|356471843|gb|JN869514.1|
+1	2280	gene		
+			gene	PB2
+1	2280	CDS		
+			product	polymerase PB2
+			gene	PB2
+    
+===================================================================
+>Feature gi|356471841|gb|JN869515.1|
+1	2274	gene		
+			gene	PB1
+1	2274	CDS		
+			product	polymerase PB1
+			gene	PB1
+95	334	gene		
+			gene	PB1-F2
+95	334	CDS		
+			product	PB1-F2 protein
+			gene	PB1-F2
+    
+===================================================================
+>Feature gi|356471839|gb|JN869516.1|
+1	2151	gene		
+			gene	PA
+1	2151	CDS		
+			product	polymerase PA
+			gene	PA
+1	760	gene		
+			gene	PA-X
+1	570	CDS		
+572	760			
+			product	PA-X protein
+			exception	ribosomal slippage
+			gene	PA-X
+    
+===================================================================
+>Feature gi|356471837|gb|JN869517.1|
+1	1497	gene		
+			gene	NP
+1	1497	CDS		
+			product	nucleocapsid protein
+			gene	NP
+    
+===================================================================
+>Feature gi|356471835|gb|JN869518.1|
+1	1410	gene		
+			gene	NA
+1	1410	CDS		
+			product	neuraminidase
+			gene	NA
+    
+===================================================================
+>Feature gi|356471832|gb|JN869519.1|
+1	759	gene		
+			gene	M1
+1	759	CDS		
+			product	matrix protein 1
+			gene	M1
+1	982	gene		
+			gene	M2
+1	26	CDS		
+715	982			
+			product	matrix protein 2
+			gene	M2
+    
+===================================================================
+>Feature gi|356471829|gb|JN869520.1|
+1	654	gene		
+			gene	NS1
+1	654	CDS		
+			product	nonstructural protein 1
+			gene	NS1
+1	838	gene		
+			gene	NEP
+			gene_syn	NS2
+1	30	CDS		
+503	838			
+			product	nuclear export protein
+			note	nonstructural protein 2
+			gene	NEP
+    
+===================================================================
+>Feature gi|401715778|gb|JX442027.1|
+1	2274	gene		
+			gene	PB1
+1	2274	CDS		
+			product	polymerase PB1
+			gene	PB1
+95	367	gene		
+			gene	PB1-F2
+95	367	misc_feature		
+			note	nonfunctional PB1-F2 protein due to mutation
+    
+===================================================================
+>Feature gi|395485889|gb|JX151014.1|
+29	2308	gene		
+			gene	PB2
+29	2308	CDS		
+			product	polymerase PB2
+			gene	PB2
+    
+===================================================================
+>Feature gi|395485886|gb|JX151013.1|
+25	2298	gene		
+			gene	PB1
+25	2298	CDS		
+			product	polymerase PB1
+			gene	PB1
+119	391	gene		
+			gene	PB1-F2
+119	391	CDS		
+			product	PB1-F2 protein
+			gene	PB1-F2
+    
+===================================================================
+>Feature gi|395485884|gb|JX151012.1|
+19	2169	gene		
+			gene	PA
+19	2169	CDS		
+			product	polymerase PA
+			gene	PA
+19	778	gene		
+			gene	PA-X
+19	588	CDS		
+590	778			
+			product	PA-X protein
+			exception	ribosomal slippage
+			gene	PA-X
+    
+===================================================================
+>Feature gi|395485881|gb|JX151011.1|
+27	719	gene		
+			gene	NS1
+27	719	CDS		
+			product	nonstructural protein 1
+			gene	NS1
+27	864	gene		
+			gene	NEP
+			gene_syn	NS2
+27	56	CDS		
+529	864			
+			product	nuclear export protein
+			note	nonstructural protein 2
+			gene	NEP
+    
+===================================================================
+>Feature gi|395485877|gb|JX151009.1|
+48	1460	gene		
+			gene	NA
+48	1460	CDS		
+			product	neuraminidase
+			gene	NA
+    
+===================================================================
+>Feature gi|395485874|gb|JX151008.1|
+26	784	gene		
+			gene	M1
+26	784	CDS		
+			product	matrix protein 1
+			gene	M1
+26	1007	gene		
+			gene	M2
+26	51	CDS		
+740	1007			
+			product	matrix protein 2
+			gene	M2
+    
+===================================================================
+>Feature gi|395485872|gb|JX151007.1|
+31	1725	gene		
+			gene	HA
+31	1725	CDS		
+			product	hemagglutinin
+			function	receptor binding and fusion protein
+			gene	HA
+31	78	sig_peptide
+79	1059	mat_peptide
+			product HA1
+1060	1722	mat_peptide
+			product HA2
+    
+===================================================================
+>Feature gi|393192451|gb|JX163260.1|
+27	719	gene		
+			gene	NS1
+27	719	CDS		
+			product	nonstructural protein 1
+			gene	NS1
+27	864	gene		
+			gene	NEP
+			gene_syn	NS2
+27	56	CDS		
+529	864			
+			product	nuclear export protein
+			note	nonstructural protein 2
+			gene	NEP
+    
+===================================================================
+>Feature gi|393192446|gb|JX163258.1|
+20	1429	gene		
+			gene	NA
+20	1429	CDS		
+			product	neuraminidase
+			gene	NA
+    
+===================================================================
+>Feature gi|393192435|gb|JX163253.1|
+28	2307	gene		
+			gene	PB2
+28	2307	CDS		
+			product	polymerase PB2
+			gene	PB2
+    
+===================================================================
+>Feature gi|391886505|gb|JX096508.1|
+1	693	gene		
+			gene	NS1
+1	693	CDS		
+			product	nonstructural protein 1
+			gene	NS1
+1	838	gene		
+			gene	NEP
+			gene_syn	NS2
+1	30	CDS		
+503	838			
+			product	nuclear export protein
+			note	nonstructural protein 2
+			gene	NEP
+    
+===================================================================
+>Feature gi|391886502|gb|JX096507.1|
+29	787	gene		
+			gene	M1
+29	787	CDS		
+			product	matrix protein 1
+			gene	M1
+29	1010	gene		
+			gene	M2
+29	54	CDS		
+743	1010			
+			product	matrix protein 2
+			gene	M2
+    
+===================================================================
+>Feature gi|391886496|gb|JX096504.1|
+1	1701	gene		
+			gene	HA
+1	1701	CDS		
+			product	hemagglutinin
+			function	receptor binding and fusion protein
+			gene	HA
+1	48	sig_peptide
+49	1035	mat_peptide
+			product HA1
+1036	1698	mat_peptide
+			product HA2
+    
+===================================================================
+>Feature gi|391886494|gb|JX096503.1|
+1	2151	gene		
+			gene	PA
+1	2151	CDS		
+			product	polymerase PA
+			gene	PA
+1	760	gene		
+			gene	PA-X
+1	570	CDS		
+572	760			
+			product	PA-X protein
+			exception	ribosomal slippage
+			gene	PA-X
+    
+===================================================================
+>Feature gi|391886491|gb|JX096502.1|
+24	2297	gene		
+			gene	PB1
+24	2297	CDS		
+			product	polymerase PB1
+			gene	PB1
+118	390	gene		
+			gene	PB1-F2
+118	390	CDS		
+			product	PB1-F2 protein
+			gene	PB1-F2
+    
+===================================================================
+>Feature gi|391886489|gb|JX096501.1|
+1	2280	gene		
+			gene	PB2
+1	2280	CDS		
+			product	polymerase PB2
+			gene	PB2
+    
+===================================================================
+>Feature gi|395485869|gb|JX175257.1|
+27	719	gene		
+			gene	NS1
+27	719	CDS		
+			product	nonstructural protein 1
+			gene	NS1
+27	864	gene		
+			gene	NEP
+			gene_syn	NS2
+27	56	CDS		
+529	864			
+			product	nuclear export protein
+			note	nonstructural protein 2
+			gene	NEP
+    
+===================================================================
+>Feature gi|395485866|gb|JX175256.1|
+26	784	gene		
+			gene	M1
+26	784	CDS		
+			product	matrix protein 1
+			gene	M1
+26	1007	gene		
+			gene	M2
+26	51	CDS		
+740	1007			
+			product	matrix protein 2
+			gene	M2
+    
+===================================================================
+>Feature gi|395485864|gb|JX175255.1|
+1	1410	gene		
+			gene	NA
+1	1410	CDS		
+			product	neuraminidase
+			gene	NA
+    
+===================================================================
+>Feature gi|395485862|gb|JX175254.1|
+46	1542	gene		
+			gene	NP
+46	1542	CDS		
+			product	nucleocapsid protein
+			gene	NP
+    
+===================================================================
+>Feature gi|395485860|gb|JX175253.1|
+1	1701	gene		
+			gene	HA
+1	1701	CDS		
+			product	hemagglutinin
+			function	receptor binding and fusion protein
+			gene	HA
+1	48	sig_peptide
+49	1035	mat_peptide
+			product HA1
+1036	1698	mat_peptide
+			product HA2
+    
+===================================================================
+>Feature gi|395485858|gb|JX175252.1|
+25	2175	gene		
+			gene	PA
+25	2175	CDS		
+			product	polymerase PA
+			gene	PA
+25	784	gene		
+			gene	PA-X
+25	594	CDS		
+596	784			
+			product	PA-X protein
+			exception	ribosomal slippage
+			gene	PA-X
+    
+===================================================================
+>Feature gi|395485855|gb|JX175251.1|
+25	2298	gene		
+			gene	PB1
+25	2298	CDS		
+			product	polymerase PB1
+			gene	PB1
+119	391	gene		
+			gene	PB1-F2
+119	391	CDS		
+			product	PB1-F2 protein
+			gene	PB1-F2
+    
+===================================================================
+>Feature gi|395485853|gb|JX175250.1|
+28	2307	gene		
+			gene	PB2
+28	2307	CDS		
+			product	polymerase PB2
+			gene	PB2
+    
+===================================================================
+>Feature gi|388564036|gb|JQ990152.1|
+27	719	gene		
+			gene	NS1
+27	719	CDS		
+			product	nonstructural protein 1
+			gene	NS1
+27	864	gene		
+			gene	NEP
+			gene_syn	NS2
+27	56	CDS		
+529	864			
+			product	nuclear export protein
+			note	nonstructural protein 2
+			gene	NEP
+    
+===================================================================
+>Feature gi|388564033|gb|JQ990151.1|
+26	784	gene		
+			gene	M1
+26	784	CDS		
+			product	matrix protein 1
+			gene	M1
+26	1007	gene		
+			gene	M2
+26	51	CDS		
+740	1007			
+			product	matrix protein 2
+			gene	M2
+    
