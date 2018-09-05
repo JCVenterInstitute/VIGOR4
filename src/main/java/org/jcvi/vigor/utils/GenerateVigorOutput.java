@@ -118,15 +118,11 @@ public class GenerateVigorOutput {
                 String Cend = Long.toString(exon.getRange().getEnd(oneBased));
                 if (j == 0 && model.isPartial5p()) Cstart = "<" + Cstart;
                 if (j == exons.size() - 1 && model.isPartial3p()) Cend = ">" + Cend;
-                if (j == 0 && !model.isPseudogene()) {
+                if (j == 0 )  {
                     bw.write(String.join("\t",
-                            Cstart,
-                            Cend, "CDS"));
-                    bw.newLine();
-                } else if (model.isPseudogene() && j == 0) {
-                    bw.write(String.join("\t",
-                            Cstart,
-                            Cend, "misc_feature"));
+                                         Cstart,
+                                         Cend,
+                                         model.isPseudogene() ? "misc_feature": "CDS"));
                     bw.newLine();
                 } else {
                     bw.write(Cstart + "\t" + Cend + "\n");
