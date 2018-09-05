@@ -150,8 +150,9 @@ public enum ConfigurationParameters {
     DBStopCodonReadThru("stopcodon_readthru", "", Flags.GENE_SET, Flags.VERSION_3_5, Flags.IGNORE),
     DBOrganism("organism", "", Flags.GENE_SET,  Flags.IGNORE),
     DBCluser("cluster", "", Flags.GENE_SET, Flags.IGNORE),
-    DBGeneSynonym("gene_synonym", "gene_synonym", "", Flags.GENE_SET, Flags.METADATA)
-
+    DBGeneSynonym("gene_synonym", "gene_synonym", "", Flags.GENE_SET, Flags.METADATA),
+    GeneOptional("is_optional", "Gene is optional for valid model", ConfigurationParameterFunctions.isPresentOrBoolean, Flags.GENE_SET),
+    GeneRequired("is_required", "Gene is required for valid model", ConfigurationParameterFunctions.isPresentOrBoolean, Flags.GENE_SET)
     ;
 
 
