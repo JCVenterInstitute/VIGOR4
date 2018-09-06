@@ -1,0 +1,4 @@
+referenceOutputTBL,inputFasta,referenceDatabase,referenceType
+flanOutput/flua/flua.tbl,flanOutput/flua/flua.fasta,flua_db,Flan
+vigor3Output/flua/flua.tbl,vigor3Output/flua/flua.fasta,flua_db,Vigor3
+vigor4ReferenceOutput/flua/flua.tbl,vigor4ReferenceOutput/flua/flua.fasta,flua_db,Vigor4

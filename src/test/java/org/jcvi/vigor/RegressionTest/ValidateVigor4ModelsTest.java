@@ -1,13 +1,13 @@
 package org.jcvi.vigor.RegressionTest;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.file.*;
 import java.util.*;
-
+import java.util.stream.Collectors;
+import com.opencsv.CSVReader;
+import com.opencsv.CSVReaderBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
@@ -71,9 +71,17 @@ public class ValidateVigor4ModelsTest {
     }
 
     @Parameterized.Parameters(name = "ValidateVigor4ModelsTest[#{index} {0}]")
-    public static Collection<Object[]> getTestData () {
+    public static Collection<Object[]> getTestData () throws IOException {
 
         List<Object[]> testData = new ArrayList<>();
+        URL config = ValidateVigor4ModelsTest.class.getClassLoader().getResource("config/RegressionTestConfig.csv");
+        final CSVReader reader = new CSVReaderBuilder(new FileReader(config.getFile())).withSkipLines(1).build();
+        String[] nextLine;
+        while((nextLine= reader.readNext()) !=null){
+             Object[] data = new Object[]{nextLine[0],nextLine[1],nextLine[2],nextLine[3]};
+             testData.add(data);
+         }
+
         testData.add(
                 new Object[] {
                         "vigor3Output/flua/flua.tbl",
@@ -229,23 +237,40 @@ public class ValidateVigor4ModelsTest {
                 continue;
             }
             List<Model> refModels = allReferenceModels.get(genome);
+            List<String> actualGeneSymbs = vigor4Models.stream().map(Model::getGeneSymbol).collect(Collectors.toCollection(ArrayList::new));
+            List<String> refGeneSymbs = refModels.stream().map(Model::getGeneSymbol).collect(Collectors.toCollection(ArrayList::new));
+            Set<String> vigor4Difference = actualGeneSymbs.stream().filter(t->!refGeneSymbs.contains(t)).collect(Collectors.toSet());
+            if(vigor4Difference.size()>0) {
+                errors.add(String.format("Vigor4 reported additional/different geneModels for VirusGenome Sequence %s ", genome));
+                vigor4Difference.stream().forEach(g->{
+                    Model diffModel = vigor4Models.stream().filter(m -> g.equals(m.getGeneSymbol())).findFirst().get();
+                    errors.add("\n"+diffModel+"\n");
+
+                });
+            }
             for (Model refModel : refModels) {
                 boolean errorFound = false;
                 String refGeneID = refModel.getGeneSymbol();
                 String refGenomeID = refModel.getAlignment().getVirusGenome().getId();
-                Optional<Model> vigor4Model = vigor4Models.stream().filter(m -> refGeneID.equals(m.getGeneSymbol())).findFirst();
-                if (!vigor4Model.isPresent()) {
-                    errors.add(String.format(referenceType + " reference models & latest Vigor4 models do not match for VirusGenome Sequence %s. Expected gene symbol %s", refGenomeID, refGeneID));
-                    errorFound = true;
+
+                Model vigor4Model=null;
+                for(Model tempVigo4Model : vigor4Models){
+                    if(tempVigo4Model.getGeneSymbol().equals(refModel.getGeneSymbol())) {
+                        vigor4Model = tempVigo4Model;
+                        break;
+                    }
+                }
+                if (vigor4Model==null) {
+                    errors.add(String.format(referenceType + " reference models & Vigor4 models do not match for VirusGenome Sequence %s. Expected gene symbol %s", refGenomeID, refGeneID));
                 } else {
-                    List<String> outErrors = compareModels(refModel, vigor4Model.get());
+                    List<String> outErrors = compareModels(refModel, vigor4Model);
                     if (outErrors.size() > 0) {
                         errorFound = true;
                     }
                     errors.addAll(outErrors);
                 }
                 if (errorFound) {
-                    errors.add(String.format("\nReferenceModel :%s \n\nVigor4Model :%s", refModel.toString(), vigor4Model.get().toString()));
+                    errors.add(String.format("\nReferenceModel :%s \n\nVigor4Model :%s", refModel.toString(), vigor4Model.toString()));
                 }
             }
             LOGGER.debug("{} errors for genome {}", errors.size(), genome);
@@ -283,8 +308,8 @@ public class ValidateVigor4ModelsTest {
                 Range vigor4ExonRange = foundExons.get(i).getRange();
                 if (!vigor4ExonRange.equals(vigor3ExonRange)) {
                     errors.add(String.format("Exon range differs for models with gene symbol %s of VirusGenome Sequence %s. Expected %s , found %s ",
-                            expectedGeneSymbol, refGenomeID, vigor3ExonRange.toString(Range.CoordinateSystem.RESIDUE_BASED),
-                            vigor4ExonRange.toString(Range.CoordinateSystem.RESIDUE_BASED)
+                            expectedGeneSymbol, refGenomeID, vigor3ExonRange,
+                            vigor4ExonRange
                     ));
                 }
             }
