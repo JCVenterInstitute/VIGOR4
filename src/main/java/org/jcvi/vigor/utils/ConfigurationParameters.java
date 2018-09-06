@@ -124,7 +124,7 @@ public enum ConfigurationParameters {
     SharedCDS("shared_cds", "Shared CDS. Format is CDS[,CDS]",
               ConfigurationParameterFunctions.toListOfStrings,
               Flags.VERSION_4, Flags.GENE_SET),
-    MinFunctionalLength("min_functional_length", "Minimum functional length", toInteger, Flags.VERSION_4, Flags.GENE_SET),
+    MinFunctionalLength("min_functional_length","min_functional_len", "Minimum functional length", toInteger, Flags.VERSION_4, Flags.GENE_SET),
     MaturePeptideDB("matpepdb", "Mature peptide database to use for gene", Flags.VERSION_4, Flags.GENE_SET),
     NonCanonicalSplicing("nancanonical_splicing", "Alternate splice sites", Flags.VERSION_4, Flags.VIRUS_SET, Flags.GENE_SET),
     ExcludesGene("excludes_gene", "Excludes gene. TODO",
