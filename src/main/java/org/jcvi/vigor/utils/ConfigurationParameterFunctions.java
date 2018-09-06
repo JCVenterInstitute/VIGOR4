@@ -55,8 +55,8 @@ public class ConfigurationParameterFunctions {
     private static final Set<String> booleanNo = new HashSet<>();
 
     static {
-        booleanYes.addAll(Arrays.asList("true","t","yes","1"));
-        booleanNo.addAll(Arrays.asList("false","f","no","0"));
+        booleanYes.addAll(Arrays.asList("true","t","yes","y","1"));
+        booleanNo.addAll(Arrays.asList("false","f","no","n","0"));
     }
 
     public static ValueFunction toBoolean = of(Boolean.class, s -> {
@@ -69,6 +69,20 @@ public class ConfigurationParameterFunctions {
         throw new InvalidValue(String.format("acceptable values are %s or %s",
                                              String.join(",", booleanYes),
                                              String.join(",", booleanNo)));
+    });
+
+    public static ValueFunction isPresent = of(Boolean.class, (s) -> {
+        if (! (s == null || s.isEmpty())) {
+            throw new InvalidValue("No value allowed");
+        }
+        return Boolean.TRUE;
+    });
+
+    public static ValueFunction isPresentOrBoolean = of(Boolean.class, (s) -> {
+        if ( s == null || s.isEmpty()) {
+            return Boolean.TRUE;
+        }
+        return toBoolean.valueFunction.apply(s);
     });
 
     public static ValueFunction toInteger = of(Integer.class, Integer::parseInt);
