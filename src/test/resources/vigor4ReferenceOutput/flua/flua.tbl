@@ -94,24 +94,24 @@
 			product	nuclear export protein
 >Features PA_1_500
 9	>499	gene
+			locus_tag	vigor_PA-X
+			gene	PA-X
+9	>499	CDS
+			codon_start	1
+			protein_id	PA_1_500.1
+			locus_tag	vigor_PA-X
+			gene	PA-X
+			product	putative PA-X protein, N-terminal
+			ribosomal_slippage
+9	>499	gene
 			locus_tag	vigor_PA
 			gene	PA
 9	>499	CDS
 			codon_start	1
-			protein_id	PA_1_500.1
+			protein_id	PA_1_500.2
 			locus_tag	vigor_PA
 			gene	PA
 			product	putative polymerase PA, N-terminal
-9	>499	gene
-			locus_tag	vigor_PApX
-			gene	PA-X
-9	>499	misc_feature
-			codon_start	1
-			protein_id	PA_1_500.2
-			locus_tag	vigor_PApX
-			gene	PA-X
-			product	putative PA-X protein, N-terminal
-			ribosomal_slippage
 >Features PA_971_1191
 <1	>220	gene
 			locus_tag	vigor_PA
@@ -1163,15 +1163,16 @@
 			locus_tag	vigor_PB1
 			gene	PB1
 			product	polymerase PB1
-209	358	gene
-			locus_tag	vigor_PB1-F2
+95	400	gene
+			locus_tag	vigor_PB1pF2
 			gene	PB1-F2
-209	358	CDS
+95	400	misc_feature
 			codon_start	1
 			protein_id	gi_451330202.2
-			locus_tag	vigor_PB1-F2
+			locus_tag	vigor_PB1pF2
 			gene	PB1-F2
 			product	PB1-F2 protein
+			note	CDS interrupted by many stop codons
 >Features gi|451330113|gb|KC508546.1|
 1	2274	gene
 			locus_tag	vigor_PB1

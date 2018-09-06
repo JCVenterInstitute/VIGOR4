@@ -533,37 +533,22 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2A
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2A 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2A 
-WARN Unrecognized parameters in config defline: seg2prot2A
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2C 
-WARN Unrecognized parameters in config defline: seg2prot2C
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2L 
-WARN Unrecognized parameters in config defline: seg2prot2L
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2E 
-WARN Unrecognized parameters in config defline: seg2prot2E
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2G 
-WARN Unrecognized parameters in config defline: seg2prot2G
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring deprecated parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1B 
@@ -572,59 +557,37 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2M
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2M 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2M 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2M 
-WARN Unrecognized parameters in config defline: seg2prot2M
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2D 
-WARN Unrecognized parameters in config defline: seg2prot2D
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2J 
-WARN Unrecognized parameters in config defline: seg2prot2J
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
-WARN Unrecognized parameters in config defline: seg2prot2H_putative
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2K 
-WARN Unrecognized parameters in config defline: seg2prot2K
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2B 
-WARN Unrecognized parameters in config defline: seg2prot2B
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Unrecognized parameters in config defline: seg2prot2F
-	min_functional_len: 50
 	seg2prot2F: 
  
 WARN Ignoring parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2I 
-WARN Unrecognized parameters in config defline: seg2prot2I
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 758 in config sourcedefline: seg2prot1A 
 WARN Ignoring deprecated parameter length with value 758 in config sourcedefline: seg2prot1A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1A 
@@ -1203,37 +1166,22 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2A
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2A 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2A 
-WARN Unrecognized parameters in config defline: seg2prot2A
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2C 
-WARN Unrecognized parameters in config defline: seg2prot2C
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2L 
-WARN Unrecognized parameters in config defline: seg2prot2L
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2E 
-WARN Unrecognized parameters in config defline: seg2prot2E
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2G 
-WARN Unrecognized parameters in config defline: seg2prot2G
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring deprecated parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1B 
@@ -1242,59 +1190,37 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2M
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2M 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2M 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2M 
-WARN Unrecognized parameters in config defline: seg2prot2M
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2D 
-WARN Unrecognized parameters in config defline: seg2prot2D
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2J 
-WARN Unrecognized parameters in config defline: seg2prot2J
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
-WARN Unrecognized parameters in config defline: seg2prot2H_putative
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2K 
-WARN Unrecognized parameters in config defline: seg2prot2K
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2B 
-WARN Unrecognized parameters in config defline: seg2prot2B
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Unrecognized parameters in config defline: seg2prot2F
-	min_functional_len: 50
 	seg2prot2F: 
  
 WARN Ignoring parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2I 
-WARN Unrecognized parameters in config defline: seg2prot2I
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 759 in config sourcedefline: Seg1prot 
 WARN Ignoring deprecated parameter length with value 759 in config sourcedefline: Seg1prot 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: Seg1prot 
@@ -1717,37 +1643,22 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2A
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2A 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2A 
-WARN Unrecognized parameters in config defline: seg2prot2A
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2C 
-WARN Unrecognized parameters in config defline: seg2prot2C
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2L 
-WARN Unrecognized parameters in config defline: seg2prot2L
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2E 
-WARN Unrecognized parameters in config defline: seg2prot2E
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2G 
-WARN Unrecognized parameters in config defline: seg2prot2G
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring deprecated parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1B 
@@ -1756,59 +1667,37 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2M
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2M 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2M 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2M 
-WARN Unrecognized parameters in config defline: seg2prot2M
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2D 
-WARN Unrecognized parameters in config defline: seg2prot2D
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2J 
-WARN Unrecognized parameters in config defline: seg2prot2J
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
-WARN Unrecognized parameters in config defline: seg2prot2H_putative
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2K 
-WARN Unrecognized parameters in config defline: seg2prot2K
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2B 
-WARN Unrecognized parameters in config defline: seg2prot2B
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Unrecognized parameters in config defline: seg2prot2F
-	min_functional_len: 50
 	seg2prot2F: 
  
 WARN Ignoring parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2I 
-WARN Unrecognized parameters in config defline: seg2prot2I
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 759 in config sourcedefline: Seg1prot 
 WARN Ignoring deprecated parameter length with value 759 in config sourcedefline: Seg1prot 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: Seg1prot 
@@ -1825,37 +1714,22 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2A
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2A 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2A 
-WARN Unrecognized parameters in config defline: seg2prot2A
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2C 
-WARN Unrecognized parameters in config defline: seg2prot2C
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2L 
-WARN Unrecognized parameters in config defline: seg2prot2L
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2E 
-WARN Unrecognized parameters in config defline: seg2prot2E
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2G 
-WARN Unrecognized parameters in config defline: seg2prot2G
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring deprecated parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1B 
@@ -1864,59 +1738,37 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2M
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2M 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2M 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2M 
-WARN Unrecognized parameters in config defline: seg2prot2M
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2D 
-WARN Unrecognized parameters in config defline: seg2prot2D
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2J 
-WARN Unrecognized parameters in config defline: seg2prot2J
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
-WARN Unrecognized parameters in config defline: seg2prot2H_putative
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2K 
-WARN Unrecognized parameters in config defline: seg2prot2K
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2B 
-WARN Unrecognized parameters in config defline: seg2prot2B
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Unrecognized parameters in config defline: seg2prot2F
-	min_functional_len: 50
 	seg2prot2F: 
  
 WARN Ignoring parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2I 
-WARN Unrecognized parameters in config defline: seg2prot2I
-	min_functional_len: 50
- 
 WARN Problem parsing defline attributes for seg3prot:
 duplicate key "shared_cds" previous value "PA-X" new value "PA-X"
 attributes line: db="flua_db" gene="PA" shared_cds="PA-X" product="polymerase PA" shared_cds="PA-X" length=716 splice_form="e2148" 
@@ -3033,37 +2885,22 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2A
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2A 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2A 
-WARN Unrecognized parameters in config defline: seg2prot2A
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2C 
-WARN Unrecognized parameters in config defline: seg2prot2C
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2L 
-WARN Unrecognized parameters in config defline: seg2prot2L
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2E 
-WARN Unrecognized parameters in config defline: seg2prot2E
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2G 
-WARN Unrecognized parameters in config defline: seg2prot2G
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring deprecated parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1B 
@@ -3072,59 +2909,37 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2M
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2M 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2M 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2M 
-WARN Unrecognized parameters in config defline: seg2prot2M
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2D 
-WARN Unrecognized parameters in config defline: seg2prot2D
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2J 
-WARN Unrecognized parameters in config defline: seg2prot2J
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
-WARN Unrecognized parameters in config defline: seg2prot2H_putative
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2K 
-WARN Unrecognized parameters in config defline: seg2prot2K
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2B 
-WARN Unrecognized parameters in config defline: seg2prot2B
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Unrecognized parameters in config defline: seg2prot2F
-	min_functional_len: 50
 	seg2prot2F: 
  
 WARN Ignoring parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2I 
-WARN Unrecognized parameters in config defline: seg2prot2I
-	min_functional_len: 50
- 
 WARN Problem parsing defline attributes for seg3prot:
 duplicate key "shared_cds" previous value "PA-X" new value "PA-X"
 attributes line: db="flua_db" gene="PA" shared_cds="PA-X" product="polymerase PA" shared_cds="PA-X" length=716 splice_form="e2148" 
@@ -3291,37 +3106,22 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2A
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2A 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2A 
-WARN Unrecognized parameters in config defline: seg2prot2A
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2C 
-WARN Unrecognized parameters in config defline: seg2prot2C
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2L 
-WARN Unrecognized parameters in config defline: seg2prot2L
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2E 
-WARN Unrecognized parameters in config defline: seg2prot2E
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2G 
-WARN Unrecognized parameters in config defline: seg2prot2G
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring deprecated parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1B 
@@ -3330,59 +3130,37 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2M
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2M 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2M 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2M 
-WARN Unrecognized parameters in config defline: seg2prot2M
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2D 
-WARN Unrecognized parameters in config defline: seg2prot2D
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2J 
-WARN Unrecognized parameters in config defline: seg2prot2J
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
-WARN Unrecognized parameters in config defline: seg2prot2H_putative
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2K 
-WARN Unrecognized parameters in config defline: seg2prot2K
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2B 
-WARN Unrecognized parameters in config defline: seg2prot2B
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Unrecognized parameters in config defline: seg2prot2F
-	min_functional_len: 50
 	seg2prot2F: 
  
 WARN Ignoring parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2I 
-WARN Unrecognized parameters in config defline: seg2prot2I
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 759 in config sourcedefline: Seg1prot 
 WARN Ignoring deprecated parameter length with value 759 in config sourcedefline: Seg1prot 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: Seg1prot 
@@ -3665,37 +3443,22 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2A
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2A 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2A 
-WARN Unrecognized parameters in config defline: seg2prot2A
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2C 
-WARN Unrecognized parameters in config defline: seg2prot2C
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2L 
-WARN Unrecognized parameters in config defline: seg2prot2L
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2E 
-WARN Unrecognized parameters in config defline: seg2prot2E
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2G 
-WARN Unrecognized parameters in config defline: seg2prot2G
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring deprecated parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1B 
@@ -3704,59 +3467,37 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2M
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2M 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2M 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2M 
-WARN Unrecognized parameters in config defline: seg2prot2M
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2D 
-WARN Unrecognized parameters in config defline: seg2prot2D
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2J 
-WARN Unrecognized parameters in config defline: seg2prot2J
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
-WARN Unrecognized parameters in config defline: seg2prot2H_putative
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2K 
-WARN Unrecognized parameters in config defline: seg2prot2K
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2B 
-WARN Unrecognized parameters in config defline: seg2prot2B
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Unrecognized parameters in config defline: seg2prot2F
-	min_functional_len: 50
 	seg2prot2F: 
  
 WARN Ignoring parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2I 
-WARN Unrecognized parameters in config defline: seg2prot2I
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 472 in config sourcedefline: seg6prot1D 
 WARN Ignoring deprecated parameter length with value 472 in config sourcedefline: seg6prot1D 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg6prot1D 
@@ -4195,37 +3936,22 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2A
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2A 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2A 
-WARN Unrecognized parameters in config defline: seg2prot2A
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2C 
-WARN Unrecognized parameters in config defline: seg2prot2C
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2L 
-WARN Unrecognized parameters in config defline: seg2prot2L
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2E 
-WARN Unrecognized parameters in config defline: seg2prot2E
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2G 
-WARN Unrecognized parameters in config defline: seg2prot2G
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring deprecated parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1B 
@@ -4234,59 +3960,37 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2M
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2M 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2M 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2M 
-WARN Unrecognized parameters in config defline: seg2prot2M
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2D 
-WARN Unrecognized parameters in config defline: seg2prot2D
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2J 
-WARN Unrecognized parameters in config defline: seg2prot2J
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
-WARN Unrecognized parameters in config defline: seg2prot2H_putative
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2K 
-WARN Unrecognized parameters in config defline: seg2prot2K
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2B 
-WARN Unrecognized parameters in config defline: seg2prot2B
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Unrecognized parameters in config defline: seg2prot2F
-	min_functional_len: 50
 	seg2prot2F: 
  
 WARN Ignoring parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2I 
-WARN Unrecognized parameters in config defline: seg2prot2I
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 472 in config sourcedefline: seg6prot1D 
 WARN Ignoring deprecated parameter length with value 472 in config sourcedefline: seg6prot1D 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg6prot1D 
@@ -4463,37 +4167,22 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2A
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2A 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2A 
-WARN Unrecognized parameters in config defline: seg2prot2A
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2C 
-WARN Unrecognized parameters in config defline: seg2prot2C
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2L 
-WARN Unrecognized parameters in config defline: seg2prot2L
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2E 
-WARN Unrecognized parameters in config defline: seg2prot2E
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2G 
-WARN Unrecognized parameters in config defline: seg2prot2G
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring deprecated parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1B 
@@ -4502,59 +4191,37 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2M
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2M 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2M 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2M 
-WARN Unrecognized parameters in config defline: seg2prot2M
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2D 
-WARN Unrecognized parameters in config defline: seg2prot2D
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2J 
-WARN Unrecognized parameters in config defline: seg2prot2J
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
-WARN Unrecognized parameters in config defline: seg2prot2H_putative
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2K 
-WARN Unrecognized parameters in config defline: seg2prot2K
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2B 
-WARN Unrecognized parameters in config defline: seg2prot2B
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Unrecognized parameters in config defline: seg2prot2F
-	min_functional_len: 50
 	seg2prot2F: 
  
 WARN Ignoring parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2I 
-WARN Unrecognized parameters in config defline: seg2prot2I
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 758 in config sourcedefline: seg2prot1A 
 WARN Ignoring deprecated parameter length with value 758 in config sourcedefline: seg2prot1A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1A 
@@ -4563,37 +4230,22 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2A
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2A 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2A 
-WARN Unrecognized parameters in config defline: seg2prot2A
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2C 
-WARN Unrecognized parameters in config defline: seg2prot2C
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2L 
-WARN Unrecognized parameters in config defline: seg2prot2L
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2E 
-WARN Unrecognized parameters in config defline: seg2prot2E
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2G 
-WARN Unrecognized parameters in config defline: seg2prot2G
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring deprecated parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1B 
@@ -4602,59 +4254,37 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2M
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2M 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2M 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2M 
-WARN Unrecognized parameters in config defline: seg2prot2M
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2D 
-WARN Unrecognized parameters in config defline: seg2prot2D
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2J 
-WARN Unrecognized parameters in config defline: seg2prot2J
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
-WARN Unrecognized parameters in config defline: seg2prot2H_putative
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2K 
-WARN Unrecognized parameters in config defline: seg2prot2K
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2B 
-WARN Unrecognized parameters in config defline: seg2prot2B
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Unrecognized parameters in config defline: seg2prot2F
-	min_functional_len: 50
 	seg2prot2F: 
  
 WARN Ignoring parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2I 
-WARN Unrecognized parameters in config defline: seg2prot2I
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 758 in config sourcedefline: seg2prot1A 
 WARN Ignoring deprecated parameter length with value 758 in config sourcedefline: seg2prot1A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1A 
@@ -4663,37 +4293,22 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2A
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2A 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2A 
-WARN Unrecognized parameters in config defline: seg2prot2A
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2C 
-WARN Unrecognized parameters in config defline: seg2prot2C
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2L 
-WARN Unrecognized parameters in config defline: seg2prot2L
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2E 
-WARN Unrecognized parameters in config defline: seg2prot2E
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2G 
-WARN Unrecognized parameters in config defline: seg2prot2G
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring deprecated parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1B 
@@ -4702,59 +4317,37 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2M
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2M 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2M 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2M 
-WARN Unrecognized parameters in config defline: seg2prot2M
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2D 
-WARN Unrecognized parameters in config defline: seg2prot2D
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2J 
-WARN Unrecognized parameters in config defline: seg2prot2J
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
-WARN Unrecognized parameters in config defline: seg2prot2H_putative
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2K 
-WARN Unrecognized parameters in config defline: seg2prot2K
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2B 
-WARN Unrecognized parameters in config defline: seg2prot2B
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Unrecognized parameters in config defline: seg2prot2F
-	min_functional_len: 50
 	seg2prot2F: 
  
 WARN Ignoring parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2I 
-WARN Unrecognized parameters in config defline: seg2prot2I
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 758 in config sourcedefline: seg2prot1A 
 WARN Ignoring deprecated parameter length with value 758 in config sourcedefline: seg2prot1A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1A 
@@ -4763,37 +4356,22 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2A
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2A 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2A 
-WARN Unrecognized parameters in config defline: seg2prot2A
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2C 
-WARN Unrecognized parameters in config defline: seg2prot2C
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2L 
-WARN Unrecognized parameters in config defline: seg2prot2L
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2E 
-WARN Unrecognized parameters in config defline: seg2prot2E
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2G 
-WARN Unrecognized parameters in config defline: seg2prot2G
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring deprecated parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1B 
@@ -4802,59 +4380,37 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2M
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2M 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2M 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2M 
-WARN Unrecognized parameters in config defline: seg2prot2M
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2D 
-WARN Unrecognized parameters in config defline: seg2prot2D
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2J 
-WARN Unrecognized parameters in config defline: seg2prot2J
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
-WARN Unrecognized parameters in config defline: seg2prot2H_putative
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2K 
-WARN Unrecognized parameters in config defline: seg2prot2K
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2B 
-WARN Unrecognized parameters in config defline: seg2prot2B
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Unrecognized parameters in config defline: seg2prot2F
-	min_functional_len: 50
 	seg2prot2F: 
  
 WARN Ignoring parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2I 
-WARN Unrecognized parameters in config defline: seg2prot2I
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 758 in config sourcedefline: seg2prot1A 
 WARN Ignoring deprecated parameter length with value 758 in config sourcedefline: seg2prot1A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1A 
@@ -4863,37 +4419,22 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2A
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2A 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2A 
-WARN Unrecognized parameters in config defline: seg2prot2A
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2C 
-WARN Unrecognized parameters in config defline: seg2prot2C
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2L 
-WARN Unrecognized parameters in config defline: seg2prot2L
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2E 
-WARN Unrecognized parameters in config defline: seg2prot2E
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2G 
-WARN Unrecognized parameters in config defline: seg2prot2G
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring deprecated parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1B 
@@ -4902,59 +4443,37 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2M
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2M 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2M 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2M 
-WARN Unrecognized parameters in config defline: seg2prot2M
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2D 
-WARN Unrecognized parameters in config defline: seg2prot2D
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2J 
-WARN Unrecognized parameters in config defline: seg2prot2J
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
-WARN Unrecognized parameters in config defline: seg2prot2H_putative
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2K 
-WARN Unrecognized parameters in config defline: seg2prot2K
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2B 
-WARN Unrecognized parameters in config defline: seg2prot2B
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Unrecognized parameters in config defline: seg2prot2F
-	min_functional_len: 50
 	seg2prot2F: 
  
 WARN Ignoring parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2I 
-WARN Unrecognized parameters in config defline: seg2prot2I
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 197 in config sourcedefline: seg8prot1H 
 WARN Ignoring deprecated parameter length with value 197 in config sourcedefline: seg8prot1H 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg8prot1H 
@@ -5377,37 +4896,22 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2A
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2A 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2A 
-WARN Unrecognized parameters in config defline: seg2prot2A
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2C 
-WARN Unrecognized parameters in config defline: seg2prot2C
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2L 
-WARN Unrecognized parameters in config defline: seg2prot2L
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2E 
-WARN Unrecognized parameters in config defline: seg2prot2E
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2G 
-WARN Unrecognized parameters in config defline: seg2prot2G
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring deprecated parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1B 
@@ -5416,59 +4920,37 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2M
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2M 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2M 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2M 
-WARN Unrecognized parameters in config defline: seg2prot2M
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2D 
-WARN Unrecognized parameters in config defline: seg2prot2D
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2J 
-WARN Unrecognized parameters in config defline: seg2prot2J
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
-WARN Unrecognized parameters in config defline: seg2prot2H_putative
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2K 
-WARN Unrecognized parameters in config defline: seg2prot2K
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2B 
-WARN Unrecognized parameters in config defline: seg2prot2B
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Unrecognized parameters in config defline: seg2prot2F
-	min_functional_len: 50
 	seg2prot2F: 
  
 WARN Ignoring parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2I 
-WARN Unrecognized parameters in config defline: seg2prot2I
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 197 in config sourcedefline: seg8prot1H 
 WARN Ignoring deprecated parameter length with value 197 in config sourcedefline: seg8prot1H 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg8prot1H 
@@ -5891,37 +5373,22 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2A
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2A 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2A 
-WARN Unrecognized parameters in config defline: seg2prot2A
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2C 
-WARN Unrecognized parameters in config defline: seg2prot2C
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2L 
-WARN Unrecognized parameters in config defline: seg2prot2L
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2E 
-WARN Unrecognized parameters in config defline: seg2prot2E
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2G 
-WARN Unrecognized parameters in config defline: seg2prot2G
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring deprecated parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1B 
@@ -5930,59 +5397,37 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2M
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2M 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2M 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2M 
-WARN Unrecognized parameters in config defline: seg2prot2M
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2D 
-WARN Unrecognized parameters in config defline: seg2prot2D
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2J 
-WARN Unrecognized parameters in config defline: seg2prot2J
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
-WARN Unrecognized parameters in config defline: seg2prot2H_putative
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2K 
-WARN Unrecognized parameters in config defline: seg2prot2K
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2B 
-WARN Unrecognized parameters in config defline: seg2prot2B
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Unrecognized parameters in config defline: seg2prot2F
-	min_functional_len: 50
 	seg2prot2F: 
  
 WARN Ignoring parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2I 
-WARN Unrecognized parameters in config defline: seg2prot2I
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 759 in config sourcedefline: Seg1prot 
 WARN Ignoring deprecated parameter length with value 759 in config sourcedefline: Seg1prot 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: Seg1prot 
@@ -5995,37 +5440,22 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2A
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2A 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2A 
-WARN Unrecognized parameters in config defline: seg2prot2A
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2C 
-WARN Unrecognized parameters in config defline: seg2prot2C
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2L 
-WARN Unrecognized parameters in config defline: seg2prot2L
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2E 
-WARN Unrecognized parameters in config defline: seg2prot2E
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2G 
-WARN Unrecognized parameters in config defline: seg2prot2G
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring deprecated parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1B 
@@ -6034,59 +5464,37 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2M
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2M 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2M 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2M 
-WARN Unrecognized parameters in config defline: seg2prot2M
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2D 
-WARN Unrecognized parameters in config defline: seg2prot2D
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2J 
-WARN Unrecognized parameters in config defline: seg2prot2J
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
-WARN Unrecognized parameters in config defline: seg2prot2H_putative
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2K 
-WARN Unrecognized parameters in config defline: seg2prot2K
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2B 
-WARN Unrecognized parameters in config defline: seg2prot2B
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Unrecognized parameters in config defline: seg2prot2F
-	min_functional_len: 50
 	seg2prot2F: 
  
 WARN Ignoring parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2I 
-WARN Unrecognized parameters in config defline: seg2prot2I
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 759 in config sourcedefline: Seg1prot 
 WARN Ignoring deprecated parameter length with value 759 in config sourcedefline: Seg1prot 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: Seg1prot 
@@ -6099,37 +5507,22 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2A
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2A 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2A 
-WARN Unrecognized parameters in config defline: seg2prot2A
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2C 
-WARN Unrecognized parameters in config defline: seg2prot2C
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2L 
-WARN Unrecognized parameters in config defline: seg2prot2L
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2E 
-WARN Unrecognized parameters in config defline: seg2prot2E
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2G 
-WARN Unrecognized parameters in config defline: seg2prot2G
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring deprecated parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1B 
@@ -6138,59 +5531,37 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2M
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2M 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2M 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2M 
-WARN Unrecognized parameters in config defline: seg2prot2M
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2D 
-WARN Unrecognized parameters in config defline: seg2prot2D
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2J 
-WARN Unrecognized parameters in config defline: seg2prot2J
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
-WARN Unrecognized parameters in config defline: seg2prot2H_putative
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2K 
-WARN Unrecognized parameters in config defline: seg2prot2K
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2B 
-WARN Unrecognized parameters in config defline: seg2prot2B
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Unrecognized parameters in config defline: seg2prot2F
-	min_functional_len: 50
 	seg2prot2F: 
  
 WARN Ignoring parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2I 
-WARN Unrecognized parameters in config defline: seg2prot2I
-	min_functional_len: 50
- 
 WARN Problem parsing defline attributes for seg3prot:
 duplicate key "shared_cds" previous value "PA-X" new value "PA-X"
 attributes line: db="flua_db" gene="PA" shared_cds="PA-X" product="polymerase PA" shared_cds="PA-X" length=716 splice_form="e2148" 
@@ -6505,37 +5876,22 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2A
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2A 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2A 
-WARN Unrecognized parameters in config defline: seg2prot2A
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2C 
-WARN Unrecognized parameters in config defline: seg2prot2C
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2L 
-WARN Unrecognized parameters in config defline: seg2prot2L
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2E 
-WARN Unrecognized parameters in config defline: seg2prot2E
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2G 
-WARN Unrecognized parameters in config defline: seg2prot2G
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring deprecated parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1B 
@@ -6544,59 +5900,37 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2M
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2M 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2M 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2M 
-WARN Unrecognized parameters in config defline: seg2prot2M
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2D 
-WARN Unrecognized parameters in config defline: seg2prot2D
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2J 
-WARN Unrecognized parameters in config defline: seg2prot2J
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
-WARN Unrecognized parameters in config defline: seg2prot2H_putative
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2K 
-WARN Unrecognized parameters in config defline: seg2prot2K
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2B 
-WARN Unrecognized parameters in config defline: seg2prot2B
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Unrecognized parameters in config defline: seg2prot2F
-	min_functional_len: 50
 	seg2prot2F: 
  
 WARN Ignoring parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2I 
-WARN Unrecognized parameters in config defline: seg2prot2I
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 759 in config sourcedefline: Seg1prot 
 WARN Ignoring deprecated parameter length with value 759 in config sourcedefline: Seg1prot 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: Seg1prot 
@@ -6609,37 +5943,22 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2A
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2A 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2A 
-WARN Unrecognized parameters in config defline: seg2prot2A
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2C 
-WARN Unrecognized parameters in config defline: seg2prot2C
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2L 
-WARN Unrecognized parameters in config defline: seg2prot2L
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2E 
-WARN Unrecognized parameters in config defline: seg2prot2E
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2G 
-WARN Unrecognized parameters in config defline: seg2prot2G
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring deprecated parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1B 
@@ -6648,59 +5967,37 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2M
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2M 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2M 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2M 
-WARN Unrecognized parameters in config defline: seg2prot2M
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2D 
-WARN Unrecognized parameters in config defline: seg2prot2D
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2J 
-WARN Unrecognized parameters in config defline: seg2prot2J
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
-WARN Unrecognized parameters in config defline: seg2prot2H_putative
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2K 
-WARN Unrecognized parameters in config defline: seg2prot2K
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2B 
-WARN Unrecognized parameters in config defline: seg2prot2B
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Unrecognized parameters in config defline: seg2prot2F
-	min_functional_len: 50
 	seg2prot2F: 
  
 WARN Ignoring parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2I 
-WARN Unrecognized parameters in config defline: seg2prot2I
-	min_functional_len: 50
- 
 WARN Problem parsing defline attributes for seg3prot:
 duplicate key "shared_cds" previous value "PA-X" new value "PA-X"
 attributes line: db="flua_db" gene="PA" shared_cds="PA-X" product="polymerase PA" shared_cds="PA-X" length=716 splice_form="e2148" 
@@ -7581,37 +6878,22 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2A
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2A 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2A 
-WARN Unrecognized parameters in config defline: seg2prot2A
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2C 
-WARN Unrecognized parameters in config defline: seg2prot2C
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2L 
-WARN Unrecognized parameters in config defline: seg2prot2L
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2E 
-WARN Unrecognized parameters in config defline: seg2prot2E
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2G 
-WARN Unrecognized parameters in config defline: seg2prot2G
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring deprecated parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1B 
@@ -7620,59 +6902,37 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2M
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2M 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2M 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2M 
-WARN Unrecognized parameters in config defline: seg2prot2M
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2D 
-WARN Unrecognized parameters in config defline: seg2prot2D
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2J 
-WARN Unrecognized parameters in config defline: seg2prot2J
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
-WARN Unrecognized parameters in config defline: seg2prot2H_putative
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2K 
-WARN Unrecognized parameters in config defline: seg2prot2K
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2B 
-WARN Unrecognized parameters in config defline: seg2prot2B
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Unrecognized parameters in config defline: seg2prot2F
-	min_functional_len: 50
 	seg2prot2F: 
  
 WARN Ignoring parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2I 
-WARN Unrecognized parameters in config defline: seg2prot2I
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 759 in config sourcedefline: Seg1prot 
 WARN Ignoring deprecated parameter length with value 759 in config sourcedefline: Seg1prot 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: Seg1prot 
@@ -8095,37 +7355,22 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2A
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2A 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2A 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2A 
-WARN Unrecognized parameters in config defline: seg2prot2A
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter length with value 79 in config sourcedefline: seg2prot2C 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2C 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2C 
-WARN Unrecognized parameters in config defline: seg2prot2C
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter length with value 76 in config sourcedefline: seg2prot2L 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2L 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2L 
-WARN Unrecognized parameters in config defline: seg2prot2L
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter length with value 59 in config sourcedefline: seg2prot2E 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2E 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2E 
-WARN Unrecognized parameters in config defline: seg2prot2E
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter length with value 63 in config sourcedefline: seg2prot2G 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2G 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2G 
-WARN Unrecognized parameters in config defline: seg2prot2G
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring deprecated parameter length with value 757 in config sourcedefline: seg2prot1B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot1B 
@@ -8134,59 +7379,37 @@ WARN Ignoring parameter length with value 90 in config sourcedefline: seg2prot2M
 WARN Ignoring deprecated parameter length with value 90 in config sourcedefline: seg2prot2M 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2M 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2M 
-WARN Unrecognized parameters in config defline: seg2prot2M
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter length with value 57 in config sourcedefline: seg2prot2D 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2D 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2D 
-WARN Unrecognized parameters in config defline: seg2prot2D
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter length with value 56 in config sourcedefline: seg2prot2J 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2J 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2J 
-WARN Unrecognized parameters in config defline: seg2prot2J
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter length with value 52 in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2H_putative 
-WARN Unrecognized parameters in config defline: seg2prot2H_putative
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter length with value 81 in config sourcedefline: seg2prot2K 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2K 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2K 
-WARN Unrecognized parameters in config defline: seg2prot2K
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter length with value 87 in config sourcedefline: seg2prot2B 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2B 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2B 
-WARN Unrecognized parameters in config defline: seg2prot2B
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter length with value 101 in config sourcedefline: seg2prot2F 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2F 
 WARN Unrecognized parameters in config defline: seg2prot2F
-	min_functional_len: 50
 	seg2prot2F: 
  
 WARN Ignoring parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter length with value 78 in config sourcedefline: seg2prot2I 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: seg2prot2I 
 WARN Ignoring deprecated parameter db with value flua_db in config sourcedefline: seg2prot2I 
-WARN Unrecognized parameters in config defline: seg2prot2I
-	min_functional_len: 50
- 
 WARN Ignoring parameter length with value 759 in config sourcedefline: Seg1prot 
 WARN Ignoring deprecated parameter length with value 759 in config sourcedefline: Seg1prot 
 WARN Ignoring parameter db with value flua_db in config sourcedefline: Seg1prot 

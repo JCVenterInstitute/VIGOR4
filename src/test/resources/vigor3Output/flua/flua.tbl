@@ -1,12 +1,12 @@
 >Features HA_1_615
 21	>615	gene
 			locus_tag	vigor_HA
-			gene	HA
+			gene	PA-X
 21	>615	CDS
 			codon_start	1
 			protein_id	HA_1_615.1
 			locus_tag	vigor_HA
-			gene	HA
+			gene	PA-X
 			product	putative hemagglutinin, N-terminal
 
 >Features HA_1_615.1
