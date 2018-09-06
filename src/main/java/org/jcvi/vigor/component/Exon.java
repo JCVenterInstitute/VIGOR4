@@ -62,7 +62,7 @@ public class Exon implements Cloneable {
     @Override
     public String toString(){
         String frame = getFrame()==null ? "" : " frame:"+getFrame();
-        return " "+range.toString(Range.CoordinateSystem.RESIDUE_BASED)+frame;
+        return " "+range.toString()+frame;
     }
 
 }
