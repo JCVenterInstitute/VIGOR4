@@ -122,6 +122,7 @@ public class DetermineStop implements DetermineGeneFeatures {
         if (rangeScoreMap.isEmpty() && isSequenceMissing) {
             Model newModel = model.clone();
             newModel.setPartial3p(true);
+            newModel.setPseudogene(false);
             Exon lExon = newModel.getExons().get(newModel.getExons().size() - 1);
             Range lExonRange = lExon.getRange();
             lExon.setRange(Range.of(lExonRange.getBegin(), ( seq.getLength() - 1 )));
