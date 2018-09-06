@@ -20,8 +20,8 @@ public enum ConfigurationParameters {
     CircularGene("circular_gene", "Gene is circular", toBoolean,  Flags.UNIMPLEMENTED, Flags.VERSION_3, Flags.VERSION_4),
     CompleteGene("complete_gene", "Gene is complete", toBoolean, Flags.UNIMPLEMENTED, Flags.VERSION_3, Flags.VERSION_4),
 
-    CondensationMinimum("min_condensation", "", toInteger, Flags.VERSION_4),
-    RelaxCondensationMinimum("relax_min_condenstaion", "", toInteger, Flags.VERSION_4),
+    MaxAlignMergeAAGap("max_align_merge_aa_gap", "", toInteger, Flags.VERSION_4),
+    RelaxAlignMergeAAGap("relax_align_merge_aa_gap", "", toInteger, Flags.VERSION_4),
 
     ExonMaximumSize("max_exon_size", "Maximum sequence length of an exon", toInteger),
     ExonMinimumSize("min_exon_size", "Minimum sequence length of an exon", toInteger),
@@ -124,7 +124,7 @@ public enum ConfigurationParameters {
     SharedCDS("shared_cds", "Shared CDS. Format is CDS[,CDS]",
               ConfigurationParameterFunctions.toListOfStrings,
               Flags.VERSION_4, Flags.GENE_SET),
-    MinFunctionalLength("min_functional_length","min_functional_len", "Minimum functional length", toInteger, Flags.VERSION_4, Flags.GENE_SET),
+    MinFunctionalLength("min_functional_length", "min_functional_len","Minimum functional length", toInteger, Flags.VERSION_4, Flags.GENE_SET),
     MaturePeptideDB("matpepdb", "Mature peptide database to use for gene", Flags.VERSION_4, Flags.GENE_SET),
     NonCanonicalSplicing("nancanonical_splicing", "Alternate splice sites", Flags.VERSION_4, Flags.VIRUS_SET, Flags.GENE_SET),
     ExcludesGene("excludes_gene", "Excludes gene. TODO",
@@ -150,8 +150,9 @@ public enum ConfigurationParameters {
     DBStopCodonReadThru("stopcodon_readthru", "", Flags.GENE_SET, Flags.VERSION_3_5, Flags.IGNORE),
     DBOrganism("organism", "", Flags.GENE_SET,  Flags.IGNORE),
     DBCluser("cluster", "", Flags.GENE_SET, Flags.IGNORE),
-    DBGeneSynonym("gene_synonym", "gene_synonym", "", Flags.GENE_SET, Flags.METADATA)
-
+    DBGeneSynonym("gene_synonym", "gene_synonym", "", Flags.GENE_SET, Flags.METADATA),
+    GeneOptional("is_optional", "Gene is optional for valid model", ConfigurationParameterFunctions.isPresentOrBoolean, Flags.GENE_SET),
+    GeneRequired("is_required", "Gene is required for valid model", ConfigurationParameterFunctions.isPresentOrBoolean, Flags.GENE_SET)
     ;
 
 

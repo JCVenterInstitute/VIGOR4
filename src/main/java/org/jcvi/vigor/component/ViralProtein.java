@@ -18,7 +18,7 @@ public class ViralProtein {
     private List<Range> NTfragments;
     private List<Range> introns;
     private ProteinSequence sequence;
-    private GeneAttributes geneAttributes;
+    private GeneAttributes geneAttributes = new GeneAttributes();
     private String proteinID;
     private String geneSymbol;
     private String geneSynonym;
