@@ -111,8 +111,7 @@ public class TBLFileParser {
                         exon = new Exon();
                         Range range;
                         exon.setFrame(Frame.ONE);
-                        range = Range.of(Range.CoordinateSystem.RESIDUE_BASED,
-                                Long.parseLong(matcher.group(3)),
+                        range = Range.of(Long.parseLong(matcher.group(3)),
                                 Long.parseLong(matcher.group(6)));
                         if (matcher.group(1) != null && matcher.group(1).equals("<")) {
                             is5Partial = true;
