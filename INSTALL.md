@@ -26,7 +26,10 @@ alignments. Exonerate is licensed under the GPL and is available from
 the European Bioinformatics Institute at
 [Exonerate](https://www.ebi.ac.uk/about/vertebrate-genomics/software/exonerate).
 VIGOR4 has been tested with the latest released exonerate version
-2.2.0 and has known incompatibilities with the development version 2.4.0.
+2.2.0 and with the development version 2.4.0. 
+
+Note: exonerate should be compiled with assertions disabled to work
+sucessfully with VIGOR4. 
 
 ### Vigor Viral Database
 
