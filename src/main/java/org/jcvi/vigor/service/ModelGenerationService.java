@@ -175,7 +175,7 @@ public class ModelGenerationService {
      * Also merge fragments if the missing protein alignment length between two fragments is less than the max align merge aa gap;
      * @param:alignment
      */
-    public List<AlignmentFragment> mergeAlignmentFragments ( List<AlignmentFragment> fragments, VirusGenome virusGenome, long thisMinIntronLength, long thisMaxAlignMergeAAGap, ViralProtein viralProtein ) {
+    public List<AlignmentFragment> mergeAlignmentFragments ( List<AlignmentFragment> fragments, VirusGenome virusGenome, long minIntronLength, long maxAlignMergeAAGap, ViralProtein viralProtein ) {
 
         fragments.sort(AlignmentFragment.Comparators.Ascending);
         List<AlignmentFragment> outFragments = new ArrayList<AlignmentFragment>();
@@ -211,7 +211,7 @@ public class ModelGenerationService {
                             missingAAalignRange = Range.of(downFragment.getProteinSeqRange().getBegin() - 1, upFragment.getProteinSeqRange().getEnd() + 1);
                         }
                     }
-                    if (( intronRange.getLength() <= thisMinIntronLength && missingAAalignRange.getLength() <= thisMaxAlignMergeAAGap && !VigorFunctionalUtils.intheSequenceGap(sequenceGaps, intronRange) )) {
+                    if (( intronRange.getLength() <= minIntronLength && missingAAalignRange.getLength() <= maxAlignMergeAAGap && !VigorFunctionalUtils.intheSequenceGap(sequenceGaps, intronRange) )) {
                         Map<Frame, List<Long>> intronStops = VigorFunctionalUtils.findStopsInSequenceFrame(virusGenome, intronRange);
                         List<Long> upStops = new ArrayList<Long>();
                         List<Long> downStops = new ArrayList<Long>();
