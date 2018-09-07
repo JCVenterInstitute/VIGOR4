@@ -141,9 +141,9 @@ locus tag usage:
 
  | Name  | Description |
  | :-----: | :----------:|
- | flua |  Flu A |
- | flub |  Flu B|
- |fluc  |   Flu C |
+ | flua |  Influenza A |
+ | flub |  Influenza B|
+ |fluc  |   Influenza C |
  |rsv |        Respiratory syntactical virus (RSV)   |
  | rtva   |     Rotavirus A   |                                
   |rtvb    |    Rotavirus B     |                              
