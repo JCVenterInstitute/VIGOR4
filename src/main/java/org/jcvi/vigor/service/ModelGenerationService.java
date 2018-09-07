@@ -21,8 +21,8 @@ import java.util.stream.Collectors;
 public class ModelGenerationService {
 
     private static final Logger LOGGER = LogManager.getLogger(ModelGenerationService.class);
-    private static final int DEFAULT_MIN_CONDENSATION = 10;
-    private static final int DEFAULT_RELAX_CONDENSATION = 300;
+    private static final int DEFAULT_MAX_ALIGN_MERGE_AA_GAP = 10;
+    private static final int DEFAULT_RELAX_MERGE_AA_GAP = 300;
     private static final int DEFAULT_NTOVERLAP_OFFSET = 30;
     private static final int DEFAULT_AAOVERLAP_OFFSET = 10;
 
@@ -120,10 +120,10 @@ public class ModelGenerationService {
         VigorConfiguration configuration = alignment.getViralProtein().getConfiguration();
         configuration = configuration != null ? configuration : defaultConfiguration;
 
-        int minCondensation = configuration.getOrDefault(ConfigurationParameters.CondensationMinimum, DEFAULT_MIN_CONDENSATION);
-        int minIntronLength = minCondensation * 3;
-        int relaxCondensation = configuration.getOrDefault(ConfigurationParameters.RelaxCondensationMinimum, DEFAULT_RELAX_CONDENSATION);
-        int relaxIntronLength = relaxCondensation * 3;
+        int maxAlignMergeAAGap = configuration.getOrDefault(ConfigurationParameters.MaxAlignMergeAAGap, DEFAULT_MAX_ALIGN_MERGE_AA_GAP);
+        int minIntronLength = maxAlignMergeAAGap * 3;
+        int relaxMergeAAGap = configuration.getOrDefault(ConfigurationParameters.RelaxAlignMergeAAGap, DEFAULT_RELAX_MERGE_AA_GAP);
+        int relaxIntronLength = relaxMergeAAGap * 3;
 
         Map<Direction, List<AlignmentFragment>> alignmentFragsGroupedList = alignment.getAlignmentFragments().stream()
                 .collect(Collectors.groupingBy(w -> w.getDirection()));
@@ -139,10 +139,10 @@ public class ModelGenerationService {
                 int size = 0;
                 for (int i = 0; i < 2; i++) {
                     if (i == 0)
-                        compatibleFragsList = mergeAlignmentFragments(compatibleFragsList, alignment.getVirusGenome(), minIntronLength, minCondensation, alignment.getViralProtein());
+                        compatibleFragsList = mergeAlignmentFragments(compatibleFragsList, alignment.getVirusGenome(), minIntronLength, maxAlignMergeAAGap, alignment.getViralProtein());
                     if (i == 1) {
                         compatibleFragsList = compatibleFragsList.stream().map(x -> x.clone()).collect(Collectors.toList());
-                        compatibleFragsList = mergeAlignmentFragments(compatibleFragsList, alignment.getVirusGenome(), relaxIntronLength, relaxCondensation, alignment.getViralProtein());
+                        compatibleFragsList = mergeAlignmentFragments(compatibleFragsList, alignment.getVirusGenome(), relaxIntronLength, relaxMergeAAGap, alignment.getViralProtein());
                     }
                     if (size != compatibleFragsList.size()) {
                         size = compatibleFragsList.size();
@@ -172,10 +172,10 @@ public class ModelGenerationService {
 
     /**
      * @return merge two fragments if the intron length is <minIntronLength and if there are no stops in between and if intron length is divisible by 3.
-     * Also merge fragments if the missing protein alignment length between two fragments is less than the minimum_condensation;
+     * Also merge fragments if the missing protein alignment length between two fragments is less than the max align merge aa gap;
      * @param:alignment
      */
-    public List<AlignmentFragment> mergeAlignmentFragments ( List<AlignmentFragment> fragments, VirusGenome virusGenome, long thisMinIntronLength, long thisMinCondensation, ViralProtein viralProtein ) {
+    public List<AlignmentFragment> mergeAlignmentFragments ( List<AlignmentFragment> fragments, VirusGenome virusGenome, long thisMinIntronLength, long thisMaxAlignMergeAAGap, ViralProtein viralProtein ) {
 
         fragments.sort(AlignmentFragment.Comparators.Ascending);
         List<AlignmentFragment> outFragments = new ArrayList<AlignmentFragment>();
@@ -211,7 +211,7 @@ public class ModelGenerationService {
                             missingAAalignRange = Range.of(downFragment.getProteinSeqRange().getBegin() - 1, upFragment.getProteinSeqRange().getEnd() + 1);
                         }
                     }
-                    if (( intronRange.getLength() <= thisMinIntronLength && missingAAalignRange.getLength() <= thisMinCondensation && !VigorFunctionalUtils.intheSequenceGap(sequenceGaps, intronRange) )) {
+                    if (( intronRange.getLength() <= thisMinIntronLength && missingAAalignRange.getLength() <= thisMaxAlignMergeAAGap && !VigorFunctionalUtils.intheSequenceGap(sequenceGaps, intronRange) )) {
                         Map<Frame, List<Long>> intronStops = VigorFunctionalUtils.findStopsInSequenceFrame(virusGenome, intronRange);
                         List<Long> upStops = new ArrayList<Long>();
                         List<Long> downStops = new ArrayList<Long>();

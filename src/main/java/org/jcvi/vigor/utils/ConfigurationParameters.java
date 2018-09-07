@@ -20,8 +20,8 @@ public enum ConfigurationParameters {
     CircularGene("circular_gene", "Gene is circular", toBoolean,  Flags.UNIMPLEMENTED, Flags.VERSION_3, Flags.VERSION_4),
     CompleteGene("complete_gene", "Gene is complete", toBoolean, Flags.UNIMPLEMENTED, Flags.VERSION_3, Flags.VERSION_4),
 
-    CondensationMinimum("min_condensation", "", toInteger, Flags.VERSION_4),
-    RelaxCondensationMinimum("relax_min_condenstaion", "", toInteger, Flags.VERSION_4),
+    MaxAlignMergeAAGap("max_align_merge_aa_gap", "", toInteger, Flags.VERSION_4),
+    RelaxAlignMergeAAGap("relax_align_merge_aa_gap", "", toInteger, Flags.VERSION_4),
 
     ExonMaximumSize("max_exon_size", "Maximum sequence length of an exon", toInteger),
     ExonMinimumSize("min_exon_size", "Minimum sequence length of an exon", toInteger),
