@@ -51,7 +51,7 @@ public class ValidateVigor4ModelsTest {
     @Rule
     public final SpringMethodRule springMethodRule = new SpringMethodRule();
 
-    public ValidateVigor4ModelsTest ( String referenceOutputTBL, String inputFasta, String referenceDatabaseName, String referenceType ) {
+    public ValidateVigor4ModelsTest ( String referenceOutputTBL, String inputFasta, String referenceDatabaseName, String referenceType ) throws Exception{
 
         this.referenceOutputTBL = getResource(referenceOutputTBL).orElseThrow(
                 () -> new IllegalArgumentException(String.format("%s not found", referenceOutputTBL)));
@@ -82,38 +82,7 @@ public class ValidateVigor4ModelsTest {
              testData.add(data);
          }
 
-        testData.add(
-                new Object[] {
-                        "vigor3Output/flua/flua.tbl",
-                        "vigor3Output/flua/flua.fasta",
-                        "flua_db", "Vigor3"
-                });
-        testData.add(
-                new Object[] {
-                        "vigor3Output/veev/veev.tbl",
-                        "vigor3Output/veev/veev.fasta",
-                        "veev_db","Vigor3" ,
-                });
-        testData.add(
-                new Object[] {
-                        "vigor3Output/rsv/rsv.tbl",
-                        "vigor3Output/rsv/rsv.fasta",
-                        "rsv_db", "Vigor3",
-                });
-        testData.add(
-                new Object[] {
-                        "vigor4ReferenceOutput/flua/flua.tbl",
-                        "vigor4ReferenceOutput/flua/flua.fasta",
-                        "flua_db", "Vigor4"
-                });
-        testData.add(
-                new Object[] {
-                        "flanOutput/flua/flua.tbl",
-                        "flanOutput/flua/flua.fasta",
-                        "flua_db", "Flan"
-                });
-
-        return testData;
+       return testData;
     }
 
     public Map<String, List<Model>> getVigor4Models ( VigorConfiguration config, String inputFasta ) throws VigorException, IOException {
@@ -245,8 +214,10 @@ public class ValidateVigor4ModelsTest {
                 vigor4Difference.stream().forEach(g->{
                     Model diffModel = vigor4Models.stream().filter(m -> g.equals(m.getGeneSymbol())).findFirst().get();
                     errors.add("\n"+diffModel+"\n");
-
                 });
+                errors.add(String.format("\nReferenceModels:\n %s \n\nVigor4Models:\n %s", refModels.stream().map(Object::toString)
+                        .collect(Collectors.joining("\n")),vigor4Models.stream().map(Object::toString)
+                        .collect(Collectors.joining("\n"))));
             }
             for (Model refModel : refModels) {
                 boolean errorFound = false;
@@ -286,28 +257,28 @@ public class ValidateVigor4ModelsTest {
         String refGenomeID = refModel.getAlignment().getVirusGenome().getId();
         String expectedGeneSymbol = refModel.getGeneSymbol();
         if (model.isPartial3p() != refModel.isPartial3p()) {
-            errors.add(String.format("Partial 3' gene feature mismatch found for gene %s of VirusGenome Sequence %s", expectedGeneSymbol, refGenomeID));
+            errors.add(String.format("\nPartial 3' gene feature mismatch found for gene %s of VirusGenome Sequence %s", expectedGeneSymbol, refGenomeID));
         }
         if (refModel.isPartial5p() != model.isPartial5p()) {
-            errors.add(String.format("Partial 5' gene feature mismatch found for gene %s of VirusGenome Sequence %s", expectedGeneSymbol, refGenomeID));
+            errors.add(String.format("\nPartial 5' gene feature mismatch found for gene %s of VirusGenome Sequence %s", expectedGeneSymbol, refGenomeID));
         }
         if (refModel.getRibosomalSlippageRange() == null ^ model.getRibosomalSlippageRange() == null) {
-            errors.add(String.format("Ribosomal Slippage mismatch found for gene %s of VirusGenome Sequence %s", expectedGeneSymbol, refGenomeID));
+            errors.add(String.format("\nRibosomal Slippage mismatch found for gene %s of VirusGenome Sequence %s", expectedGeneSymbol, refGenomeID));
         }
         if (refModel.getReplaceStopCodonRange() == null ^ model.getReplaceStopCodonRange() == null) {
-            errors.add(String.format("Stop Codon Readthrough feature mismatch found for gene %s of VirusGenome Sequence %s", expectedGeneSymbol, refGenomeID));
+            errors.add(String.format("\nStop Codon Readthrough feature mismatch found for gene %s of VirusGenome Sequence %s", expectedGeneSymbol, refGenomeID));
         }
         if (refModel.isPseudogene() != model.isPseudogene()) {
-            errors.add(String.format("Pseudogene feature mismatch found for gene %s of VirusGenome Sequence %s", expectedGeneSymbol, refGenomeID));
+            errors.add(String.format("\nPseudogene feature mismatch found for gene %s of VirusGenome Sequence %s", expectedGeneSymbol, refGenomeID));
         }
         if (foundExons.size() != refExons.size()) {
-            errors.add(String.format("Exon count differs for models with gene symbol %s of VirusGenome Sequence %s", expectedGeneSymbol, refGenomeID));
+            errors.add(String.format("\nExon count differs for models with gene symbol %s of VirusGenome Sequence %s", expectedGeneSymbol, refGenomeID));
         } else {
             for (int i = 0; i < refExons.size(); i++) {
                 Range vigor3ExonRange = refExons.get(i).getRange();
                 Range vigor4ExonRange = foundExons.get(i).getRange();
                 if (!vigor4ExonRange.equals(vigor3ExonRange)) {
-                    errors.add(String.format("Exon range differs for models with gene symbol %s of VirusGenome Sequence %s. Expected %s , found %s ",
+                    errors.add(String.format("\nExon range differs for models with gene symbol %s of VirusGenome Sequence %s. Expected %s , found %s ",
                             expectedGeneSymbol, refGenomeID, vigor3ExonRange,
                             vigor4ExonRange
                     ));
