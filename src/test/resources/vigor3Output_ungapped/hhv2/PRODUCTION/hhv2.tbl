@@ -1,0 +1,3509 @@
+>Features NC_001798.2
+440	1379	gene
+			locus_tag	vigor_RL1
+			gene	RL1
+440	934	CDS
+1089	1379
+			codon_start	1
+			protein_id	NC_001798.2.1
+			locus_tag	vigor_RL1
+			gene	RL1
+			product	neurovirulence protein ICP34.5
+2303	5395	gene
+			locus_tag	vigor_RL2
+			gene	RL2
+2303	2377	CDS
+2788	3463
+3645	5395
+			codon_start	1
+			protein_id	NC_001798.2.2
+			locus_tag	vigor_RL2
+			gene	RL2
+			product	ubiquitin E3 ligase ICP0
+9463	10137	gene
+			locus_tag	vigor_UL1
+			gene	UL1
+9463	10137	CDS
+			codon_start	1
+			protein_id	NC_001798.2.3
+			locus_tag	vigor_UL1
+			gene	UL1
+			product	envelope glycoprotein L
+10010	11014	gene
+			locus_tag	vigor_UL2
+			gene	UL2
+10010	11014	CDS
+			codon_start	1
+			protein_id	NC_001798.2.4
+			locus_tag	vigor_UL2
+			gene	UL2
+			product	uracil-DNA glycosylase
+11069	11770	gene
+			locus_tag	vigor_UL3
+			gene	UL3
+11069	11770	CDS
+			codon_start	1
+			protein_id	NC_001798.2.5
+			locus_tag	vigor_UL3
+			gene	UL3
+			product	nuclear protein UL3
+12575	11970	gene
+			locus_tag	vigor_UL4
+			gene	UL4
+12575	11970	CDS
+			codon_start	1
+			protein_id	NC_001798.2.6
+			locus_tag	vigor_UL4
+			gene	UL4
+			product	nuclear protein UL4
+15286	17322	gene
+			locus_tag	vigor_UL6
+			gene	UL6
+15286	17322	CDS
+			codon_start	1
+			protein_id	NC_001798.2.7
+			locus_tag	vigor_UL6
+			gene	UL6
+			product	capsid portal protein
+15287	12642	gene
+			locus_tag	vigor_UL5
+			gene	UL5
+15287	12642	CDS
+			codon_start	1
+			protein_id	NC_001798.2.8
+			locus_tag	vigor_UL5
+			gene	UL5
+			product	helicase-primase helicase subunit
+17297	18187	gene
+			locus_tag	vigor_UL7
+			gene	UL7
+17297	18187	CDS
+			codon_start	1
+			protein_id	NC_001798.2.9
+			locus_tag	vigor_UL7
+			gene	UL7
+			product	tegument protein UL7
+20703	18445	gene
+			locus_tag	vigor_UL8
+			gene	UL8
+20703	18445	CDS
+			codon_start	1
+			protein_id	NC_001798.2.10
+			locus_tag	vigor_UL8
+			gene	UL8
+			product	helicase-primase subunit
+23247	24650	gene
+			locus_tag	vigor_UL10
+			gene	UL10
+23247	24650	CDS
+			codon_start	1
+			protein_id	NC_001798.2.11
+			locus_tag	vigor_UL10
+			gene	UL10
+			product	envelope glycoprotein M
+23356	20753	gene
+			locus_tag	vigor_UL9
+			gene	UL9
+23356	20753	CDS
+			codon_start	1
+			protein_id	NC_001798.2.12
+			locus_tag	vigor_UL9
+			gene	UL9
+			product	DNA replication origin-binding helicase
+25138	24848	gene
+			locus_tag	vigor_UL11
+			gene	UL11
+25138	24848	CDS
+			codon_start	1
+			protein_id	NC_001798.2.13
+			locus_tag	vigor_UL11
+			gene	UL11
+			product	myristylated tegument protein
+26916	25054	gene
+			locus_tag	vigor_UL12
+			gene	UL12
+26916	25054	CDS
+			codon_start	1
+			protein_id	NC_001798.2.14
+			locus_tag	vigor_UL12
+			gene	UL12
+			product	deoxyribonuclease
+28513	26957	gene
+			locus_tag	vigor_UL13
+			gene	UL13
+28513	26957	CDS
+			codon_start	1
+			protein_id	NC_001798.2.15
+			locus_tag	vigor_UL13
+			gene	UL13
+			product	tegument serine/threonine protein kinase
+28926	28267	gene
+			locus_tag	vigor_UL14
+			gene	UL14
+28926	28267	CDS
+			codon_start	1
+			protein_id	NC_001798.2.16
+			locus_tag	vigor_UL14
+			gene	UL14
+			product	tegument protein UL14
+29007	34810	gene
+			locus_tag	vigor_UL15
+			gene	UL15
+29007	30035	CDS
+33635	34810
+			codon_start	1
+			protein_id	NC_001798.2.17
+			locus_tag	vigor_UL15
+			gene	UL15
+			product	DNA packaging terminase subunit 1
+31299	30181	gene
+			locus_tag	vigor_UL16
+			gene	UL16
+31299	30181	CDS
+			codon_start	1
+			transl_except	(pos:31299..31297,aa:M)
+			protein_id	NC_001798.2.18
+			locus_tag	vigor_UL16
+			gene	UL16
+			product	tegument protein UL16
+33509	31401	gene
+			locus_tag	vigor_UL17
+			gene	UL17
+33509	31401	CDS
+			codon_start	1
+			protein_id	NC_001798.2.19
+			locus_tag	vigor_UL17
+			gene	UL17
+			product	DNA packaging tegument protein UL17
+36109	35153	gene
+			locus_tag	vigor_UL18
+			gene	UL18
+36109	35153	CDS
+			codon_start	1
+			protein_id	NC_001798.2.20
+			locus_tag	vigor_UL18
+			gene	UL18
+			product	capsid triplex subunit 2
+40610	36486	gene
+			locus_tag	vigor_UL19
+			gene	UL19
+40610	36486	CDS
+			codon_start	1
+			protein_id	NC_001798.2.21
+			locus_tag	vigor_UL19
+			gene	UL19
+			product	major capsid protein
+41590	40922	gene
+			locus_tag	vigor_UL20
+			gene	UL20
+41590	40922	CDS
+			codon_start	1
+			protein_id	NC_001798.2.22
+			locus_tag	vigor_UL20
+			gene	UL20
+			product	envelope protein UL20
+42239	43837	gene
+			locus_tag	vigor_UL21
+			gene	UL21
+42239	43837	CDS
+			codon_start	1
+			protein_id	NC_001798.2.23
+			locus_tag	vigor_UL21
+			gene	UL21
+			product	tegument protein UL21
+46570	44054	gene
+			locus_tag	vigor_UL22
+			gene	UL22
+46570	44054	CDS
+			codon_start	1
+			protein_id	NC_001798.2.24
+			locus_tag	vigor_UL22
+			gene	UL22
+			product	envelope glycoprotein H
+47941	48786	gene
+			locus_tag	vigor_UL24
+			gene	UL24
+47941	48786	CDS
+			codon_start	1
+			protein_id	NC_001798.2.25
+			locus_tag	vigor_UL24
+			gene	UL24
+			product	nuclear protein UL24
+48039	46909	gene
+			locus_tag	vigor_UL23
+			gene	UL23
+48039	46909	CDS
+			codon_start	1
+			protein_id	NC_001798.2.26
+			locus_tag	vigor_UL23
+			gene	UL23
+			product	thymidine kinase
+49074	50831	gene
+			locus_tag	vigor_UL25
+			gene	UL25
+49074	50831	CDS
+			codon_start	1
+			protein_id	NC_001798.2.27
+			locus_tag	vigor_UL25
+			gene	UL25
+			product	DNA packaging tegument protein UL25
+51065	52978	gene
+			locus_tag	vigor_UL26
+			gene	UL26
+51065	52978	CDS
+			codon_start	1
+			protein_id	NC_001798.2.28
+			locus_tag	vigor_UL26
+			gene	UL26
+			product	capsid maturation protease
+51989	52978	gene
+			locus_tag	vigor_UL265
+			gene	UL26.5
+51989	52978	CDS
+			codon_start	1
+			protein_id	NC_001798.2.29
+			locus_tag	vigor_UL265
+			gene	UL26.5
+			product	capsid scaffold protein
+56152	53438	gene
+			locus_tag	vigor_UL27
+			gene	UL27
+56152	53438	CDS
+			codon_start	1
+			protein_id	NC_001798.2.30
+			locus_tag	vigor_UL27
+			gene	UL27
+			product	envelope glycoprotein B
+58517	56160	gene
+			locus_tag	vigor_UL28
+			gene	UL28
+58517	56160	CDS
+			codon_start	1
+			protein_id	NC_001798.2.31
+			locus_tag	vigor_UL28
+			gene	UL28
+			product	DNA packaging terminase subunit 2
+62482	58892	gene
+			locus_tag	vigor_UL29
+			gene	UL29
+62482	58892	CDS
+			codon_start	1
+			protein_id	NC_001798.2.32
+			locus_tag	vigor_UL29
+			gene	UL29
+			product	single-stranded DNA-binding protein
+63300	67022	gene
+			locus_tag	vigor_UL30
+			gene	UL30
+63300	67022	CDS
+			codon_start	1
+			protein_id	NC_001798.2.33
+			locus_tag	vigor_UL30
+			gene	UL30
+			product	DNA polymerase catalytic subunit
+67884	66967	gene
+			locus_tag	vigor_UL31
+			gene	UL31
+67884	66967	CDS
+			codon_start	1
+			protein_id	NC_001798.2.34
+			locus_tag	vigor_UL31
+			gene	UL31
+			product	nuclear egress lamina protein
+69672	70064	gene
+			locus_tag	vigor_UL33
+			gene	UL33
+69672	70064	CDS
+			codon_start	1
+			protein_id	NC_001798.2.35
+			locus_tag	vigor_UL33
+			gene	UL33
+			product	DNA packaging protein UL33
+69673	67877	gene
+			locus_tag	vigor_UL32
+			gene	UL32
+69673	67877	CDS
+			codon_start	1
+			protein_id	NC_001798.2.36
+			locus_tag	vigor_UL32
+			gene	UL32
+			product	DNA packaging protein UL32
+70154	70984	gene
+			locus_tag	vigor_UL34
+			gene	UL34
+70154	70984	CDS
+			codon_start	1
+			protein_id	NC_001798.2.37
+			locus_tag	vigor_UL34
+			gene	UL34
+			product	nuclear egress membrane protein
+71096	71434	gene
+			locus_tag	vigor_UL35
+			gene	UL35
+71096	71434	CDS
+			codon_start	1
+			protein_id	NC_001798.2.38
+			locus_tag	vigor_UL35
+			gene	UL35
+			product	small capsid protein
+80969	71601	gene
+			locus_tag	vigor_UL36
+			gene	UL36
+80969	71601	CDS
+			codon_start	1
+			protein_id	NC_001798.2.39
+			locus_tag	vigor_UL36
+			gene	UL36
+			product	large tegument protein
+84614	81270	gene
+			locus_tag	vigor_UL37
+			gene	UL37
+84614	81270	CDS
+			codon_start	1
+			protein_id	NC_001798.2.40
+			locus_tag	vigor_UL37
+			gene	UL37
+			product	tegument protein UL37
+85097	86497	gene
+			locus_tag	vigor_UL38
+			gene	UL38
+85097	86497	CDS
+			codon_start	1
+			protein_id	NC_001798.2.41
+			locus_tag	vigor_UL38
+			gene	UL38
+			product	capsid triplex subunit 1
+87060	90488	gene
+			locus_tag	vigor_UL39
+			gene	UL39
+87060	90488	CDS
+			codon_start	1
+			protein_id	NC_001798.2.42
+			locus_tag	vigor_UL39
+			gene	UL39
+			product	ribonucleotide reductase subunit 1
+90541	91554	gene
+			locus_tag	vigor_UL40
+			gene	UL40
+90541	91554	CDS
+			codon_start	1
+			protein_id	NC_001798.2.43
+			locus_tag	vigor_UL40
+			gene	UL40
+			product	ribonucleotide reductase subunit 2
+93311	91833	gene
+			locus_tag	vigor_UL41
+			gene	UL41
+93311	91833	CDS
+			codon_start	1
+			protein_id	NC_001798.2.44
+			locus_tag	vigor_UL41
+			gene	UL41
+			product	tegument host shutoff protein
+93805	95217	gene
+			locus_tag	vigor_UL42
+			gene	UL42
+93805	95217	CDS
+			codon_start	1
+			protein_id	NC_001798.2.45
+			locus_tag	vigor_UL42
+			gene	UL42
+			product	DNA polymerase processivity subunit
+95469	96713	gene
+			locus_tag	vigor_UL43
+			gene	UL43
+95469	96713	CDS
+			codon_start	1
+			protein_id	NC_001798.2.46
+			locus_tag	vigor_UL43
+			gene	UL43
+			product	envelope protein UL43
+97015	98457	gene
+			locus_tag	vigor_UL44
+			gene	UL44
+97015	98457	CDS
+			codon_start	1
+			protein_id	NC_001798.2.47
+			locus_tag	vigor_UL44
+			gene	UL44
+			product	envelope glycoprotein C
+98687	99205	gene
+			locus_tag	vigor_UL45
+			gene	UL45
+98687	99205	CDS
+			codon_start	1
+			protein_id	NC_001798.2.48
+			locus_tag	vigor_UL45
+			gene	UL45
+			product	membrane protein UL45
+101634	99466	gene
+			locus_tag	vigor_UL46
+			gene	UL46
+101634	99466	CDS
+			codon_start	1
+			protein_id	NC_001798.2.49
+			locus_tag	vigor_UL46
+			gene	UL46
+			product	tegument protein VP11/12
+103809	101719	gene
+			locus_tag	vigor_UL47
+			gene	UL47
+103809	101719	CDS
+			codon_start	1
+			protein_id	NC_001798.2.50
+			locus_tag	vigor_UL47
+			gene	UL47
+			product	tegument protein VP13/14
+105802	104330	gene
+			locus_tag	vigor_UL48
+			gene	UL48
+105802	104330	CDS
+			codon_start	1
+			protein_id	NC_001798.2.51
+			locus_tag	vigor_UL48
+			gene	UL48
+			product	transactivating tegument protein VP16
+107185	106283	gene
+			locus_tag	vigor_UL49
+			gene	UL49
+107185	106283	CDS
+			codon_start	1
+			protein_id	NC_001798.2.52
+			locus_tag	vigor_UL49
+			gene	UL49
+			product	tegument protein VP22
+107787	107524	gene
+			locus_tag	vigor_UL49A
+			gene	UL49A
+107787	107524	CDS
+			codon_start	1
+			protein_id	NC_001798.2.53
+			locus_tag	vigor_UL49A
+			gene	UL49A
+			product	envelope glycoprotein N
+107795	108904	gene
+			locus_tag	vigor_UL50
+			gene	UL50
+107795	108904	CDS
+			codon_start	1
+			protein_id	NC_001798.2.54
+			locus_tag	vigor_UL50
+			gene	UL50
+			product	deoxyuridine triphosphatase
+109842	109108	gene
+			locus_tag	vigor_UL51
+			gene	UL51
+109842	109108	CDS
+			codon_start	1
+			protein_id	NC_001798.2.55
+			locus_tag	vigor_UL51
+			gene	UL51
+			product	tegument protein UL51
+109910	113110	gene
+			locus_tag	vigor_UL52
+			gene	UL52
+109910	113110	CDS
+			codon_start	1
+			protein_id	NC_001798.2.56
+			locus_tag	vigor_UL52
+			gene	UL52
+			product	helicase-primase primase subunit
+113062	114078	gene
+			locus_tag	vigor_UL53
+			gene	UL53
+113062	114078	CDS
+			codon_start	1
+			protein_id	NC_001798.2.57
+			locus_tag	vigor_UL53
+			gene	UL53
+			product	envelope glycoprotein K
+114624	116162	gene
+			locus_tag	vigor_UL54
+			gene	UL54
+114624	116162	CDS
+			codon_start	1
+			protein_id	NC_001798.2.58
+			locus_tag	vigor_UL54
+			gene	UL54
+			product	multifunctional expression regulator
+116377	116937	gene
+			locus_tag	vigor_UL55
+			gene	UL55
+116377	116937	CDS
+			codon_start	1
+			protein_id	NC_001798.2.59
+			locus_tag	vigor_UL55
+			gene	UL55
+			product	nuclear protein UL55
+117817	117110	gene
+			locus_tag	vigor_UL56
+			gene	UL56
+117817	117110	CDS
+			codon_start	1
+			protein_id	NC_001798.2.60
+			locus_tag	vigor_UL56
+			gene	UL56
+			product	membrane protein UL56
+125018	121926	gene
+			locus_tag	vigor_RL2dii
+			gene	RL2-ii
+125018	124944	CDS
+124533	123858
+123676	121926
+			codon_start	1
+			protein_id	NC_001798.2.61
+			locus_tag	vigor_RL2dii
+			gene	RL2-ii
+			product	ubiquitin E3 ligase ICP0
+			note	duplication of RL2 ubiquitin E3 ligase ICP0
+126881	125942	gene
+			locus_tag	vigor_RL1dii
+			gene	RL1-ii
+126881	126387	CDS
+126232	125942
+			codon_start	1
+			protein_id	NC_001798.2.62
+			locus_tag	vigor_RL1dii
+			gene	RL1-ii
+			product	neurovirulence protein ICP34.5
+			note	duplication of RL1 neurovirulence protein ICP34.5
+132102	128146	gene
+			locus_tag	vigor_RS1
+			gene	RS1
+132102	128146	CDS
+			codon_start	1
+			protein_id	NC_001798.2.63
+			locus_tag	vigor_RS1
+			gene	RS1
+			product	transcriptional regulator ICP4
+133741	134985	gene
+			locus_tag	vigor_US1
+			gene	US1
+133741	134985	CDS
+			codon_start	1
+			protein_id	NC_001798.2.64
+			locus_tag	vigor_US1
+			gene	US1
+			product	regulatory protein ICP22
+136043	135168	gene
+			locus_tag	vigor_US2
+			gene	US2
+136043	135168	CDS
+			codon_start	1
+			protein_id	NC_001798.2.65
+			locus_tag	vigor_US2
+			gene	US2
+			product	virion protein US2
+136329	137774	gene
+			locus_tag	vigor_US3
+			gene	US3
+136329	137774	CDS
+			codon_start	1
+			protein_id	NC_001798.2.66
+			locus_tag	vigor_US3
+			gene	US3
+			product	serine/threonine protein kinase US3
+137882	139981	gene
+			locus_tag	vigor_US4
+			gene	US4
+137882	139981	CDS
+			codon_start	1
+			protein_id	NC_001798.2.67
+			locus_tag	vigor_US4
+			gene	US4
+			product	envelope glycoprotein G
+140291	140569	gene
+			locus_tag	vigor_US5
+			gene	US5
+140291	140569	CDS
+			codon_start	1
+			protein_id	NC_001798.2.68
+			locus_tag	vigor_US5
+			gene	US5
+			product	envelope glycoprotein J
+141016	142197	gene
+			locus_tag	vigor_US6
+			gene	US6
+141016	142197	CDS
+			codon_start	1
+			protein_id	NC_001798.2.69
+			locus_tag	vigor_US6
+			gene	US6
+			product	envelope glycoprotein D
+142399	143517	gene
+			locus_tag	vigor_US7
+			gene	US7
+142399	143517	CDS
+			codon_start	1
+			protein_id	NC_001798.2.70
+			locus_tag	vigor_US7
+			gene	US7
+			product	envelope glycoprotein I
+143840	145477	gene
+			locus_tag	vigor_US8
+			gene	US8
+143840	145477	CDS
+			codon_start	1
+			protein_id	NC_001798.2.71
+			locus_tag	vigor_US8
+			gene	US8
+			product	envelope glycoprotein E
+145326	145766	gene
+			locus_tag	vigor_US8A
+			gene	US8A
+145326	145766	CDS
+			codon_start	1
+			protein_id	NC_001798.2.72
+			locus_tag	vigor_US8A
+			gene	US8A
+			product	membrane protein US8A
+145866	146135	gene
+			locus_tag	vigor_US9
+			gene	US9
+145866	146135	CDS
+			codon_start	1
+			protein_id	NC_001798.2.73
+			locus_tag	vigor_US9
+			gene	US9
+			product	membrane protein US9
+147531	146623	gene
+			locus_tag	vigor_US10
+			gene	US10
+147531	146623	CDS
+			codon_start	1
+			protein_id	NC_001798.2.74
+			locus_tag	vigor_US10
+			gene	US10
+			product	virion protein US10
+147697	147242	gene
+			locus_tag	vigor_US11
+			gene	US11
+147697	147242	CDS
+			codon_start	1
+			protein_id	NC_001798.2.75
+			locus_tag	vigor_US11
+			gene	US11
+			product	tegument protein US11
+148033	147773	gene
+			locus_tag	vigor_US12
+			gene	US12
+148033	147773	CDS
+			codon_start	1
+			protein_id	NC_001798.2.76
+			locus_tag	vigor_US12
+			gene	US12
+			product	TAP transporter inhibitor ICP47
+149640	153596	gene
+			locus_tag	vigor_RS1dii
+			gene	RS1-ii
+149640	153596	CDS
+			codon_start	1
+			protein_id	NC_001798.2.77
+			locus_tag	vigor_RS1dii
+			gene	RS1-ii
+			product	transcriptional regulator ICP4
+			note	duplication of RS1 transcriptional regulator ICP4
+>Features MF564037.1
+1	856	gene
+			locus_tag	vigor_RL1dii
+			gene	RL1-ii
+			pseudogene	unitary
+1	856	misc_feature
+			locus_tag	vigor_RL1dii
+			gene	RL1-ii
+			product	neurovirulence protein ICP34.5
+			note	invalid splicing for intron; duplication of RL1 neurovirulence protein ICP34.5
+1780	4784	gene
+			locus_tag	vigor_RL2
+			gene	RL2
+			pseudogene	unitary
+1780	4784	misc_feature
+			locus_tag	vigor_RL2
+			gene	RL2
+			product	ubiquitin E3 ligase ICP0
+			note	invalid splicing for intron
+8697	9371	gene
+			locus_tag	vigor_UL1
+			gene	UL1
+8697	9371	CDS
+			codon_start	1
+			protein_id	MF564037.1.3
+			locus_tag	vigor_UL1
+			gene	UL1
+			product	envelope glycoprotein L
+9244	10248	gene
+			locus_tag	vigor_UL2
+			gene	UL2
+9244	10248	CDS
+			codon_start	1
+			protein_id	MF564037.1.4
+			locus_tag	vigor_UL2
+			gene	UL2
+			product	uracil-DNA glycosylase
+10303	11004	gene
+			locus_tag	vigor_UL3
+			gene	UL3
+10303	11004	CDS
+			codon_start	1
+			protein_id	MF564037.1.5
+			locus_tag	vigor_UL3
+			gene	UL3
+			product	nuclear protein UL3
+11808	11203	gene
+			locus_tag	vigor_UL4
+			gene	UL4
+11808	11203	CDS
+			codon_start	1
+			protein_id	MF564037.1.6
+			locus_tag	vigor_UL4
+			gene	UL4
+			product	nuclear protein UL4
+14519	16555	gene
+			locus_tag	vigor_UL6
+			gene	UL6
+14519	16555	CDS
+			codon_start	1
+			protein_id	MF564037.1.7
+			locus_tag	vigor_UL6
+			gene	UL6
+			product	capsid portal protein
+14520	11875	gene
+			locus_tag	vigor_UL5
+			gene	UL5
+14520	11875	CDS
+			codon_start	1
+			protein_id	MF564037.1.8
+			locus_tag	vigor_UL5
+			gene	UL5
+			product	helicase-primase helicase subunit
+16530	17420	gene
+			locus_tag	vigor_UL7
+			gene	UL7
+16530	17420	CDS
+			codon_start	1
+			protein_id	MF564037.1.9
+			locus_tag	vigor_UL7
+			gene	UL7
+			product	tegument protein UL7
+19930	17678	gene
+			locus_tag	vigor_UL8
+			gene	UL8
+19930	17678	CDS
+			codon_start	1
+			protein_id	MF564037.1.10
+			locus_tag	vigor_UL8
+			gene	UL8
+			product	helicase-primase subunit
+22474	23877	gene
+			locus_tag	vigor_UL10
+			gene	UL10
+22474	23877	CDS
+			codon_start	1
+			protein_id	MF564037.1.11
+			locus_tag	vigor_UL10
+			gene	UL10
+			product	envelope glycoprotein M
+22583	19980	gene
+			locus_tag	vigor_UL9
+			gene	UL9
+22583	19980	CDS
+			codon_start	1
+			protein_id	MF564037.1.12
+			locus_tag	vigor_UL9
+			gene	UL9
+			product	DNA replication origin-binding helicase
+24369	24079	gene
+			locus_tag	vigor_UL11
+			gene	UL11
+24369	24079	CDS
+			codon_start	1
+			protein_id	MF564037.1.13
+			locus_tag	vigor_UL11
+			gene	UL11
+			product	myristylated tegument protein
+26147	24285	gene
+			locus_tag	vigor_UL12
+			gene	UL12
+26147	24285	CDS
+			codon_start	1
+			protein_id	MF564037.1.14
+			locus_tag	vigor_UL12
+			gene	UL12
+			product	deoxyribonuclease
+27744	26188	gene
+			locus_tag	vigor_UL13
+			gene	UL13
+27744	26188	CDS
+			codon_start	1
+			protein_id	MF564037.1.15
+			locus_tag	vigor_UL13
+			gene	UL13
+			product	tegument serine/threonine protein kinase
+28157	27498	gene
+			locus_tag	vigor_UL14
+			gene	UL14
+28157	27498	CDS
+			codon_start	1
+			protein_id	MF564037.1.16
+			locus_tag	vigor_UL14
+			gene	UL14
+			product	tegument protein UL14
+28238	34035	gene
+			locus_tag	vigor_UL15
+			gene	UL15
+28238	29266	CDS
+32860	34035
+			codon_start	1
+			protein_id	MF564037.1.17
+			locus_tag	vigor_UL15
+			gene	UL15
+			product	DNA packaging terminase subunit 1
+30529	29411	gene
+			locus_tag	vigor_UL16
+			gene	UL16
+30529	29411	CDS
+			codon_start	1
+			transl_except	(pos:30529..30527,aa:M)
+			protein_id	MF564037.1.18
+			locus_tag	vigor_UL16
+			gene	UL16
+			product	tegument protein UL16
+32734	30629	gene
+			locus_tag	vigor_UL17
+			gene	UL17
+32734	30629	CDS
+			codon_start	1
+			protein_id	MF564037.1.19
+			locus_tag	vigor_UL17
+			gene	UL17
+			product	DNA packaging tegument protein UL17
+35337	34381	gene
+			locus_tag	vigor_UL18
+			gene	UL18
+35337	34381	CDS
+			codon_start	1
+			protein_id	MF564037.1.20
+			locus_tag	vigor_UL18
+			gene	UL18
+			product	capsid triplex subunit 2
+39840	35716	gene
+			locus_tag	vigor_UL19
+			gene	UL19
+39840	35716	CDS
+			codon_start	1
+			protein_id	MF564037.1.21
+			locus_tag	vigor_UL19
+			gene	UL19
+			product	major capsid protein
+40821	40153	gene
+			locus_tag	vigor_UL20
+			gene	UL20
+40821	40153	CDS
+			codon_start	1
+			protein_id	MF564037.1.22
+			locus_tag	vigor_UL20
+			gene	UL20
+			product	envelope protein UL20
+41471	43069	gene
+			locus_tag	vigor_UL21
+			gene	UL21
+41471	43069	CDS
+			codon_start	1
+			protein_id	MF564037.1.23
+			locus_tag	vigor_UL21
+			gene	UL21
+			product	tegument protein UL21
+45804	43288	gene
+			locus_tag	vigor_UL22
+			gene	UL22
+45804	43288	CDS
+			codon_start	1
+			protein_id	MF564037.1.24
+			locus_tag	vigor_UL22
+			gene	UL22
+			product	envelope glycoprotein H
+47175	48020	gene
+			locus_tag	vigor_UL24
+			gene	UL24
+47175	48020	CDS
+			codon_start	1
+			protein_id	MF564037.1.25
+			locus_tag	vigor_UL24
+			gene	UL24
+			product	nuclear protein UL24
+47273	46143	gene
+			locus_tag	vigor_UL23
+			gene	UL23
+47273	46143	CDS
+			codon_start	1
+			protein_id	MF564037.1.26
+			locus_tag	vigor_UL23
+			gene	UL23
+			product	thymidine kinase
+48299	50056	gene
+			locus_tag	vigor_UL25
+			gene	UL25
+48299	50056	CDS
+			codon_start	1
+			protein_id	MF564037.1.27
+			locus_tag	vigor_UL25
+			gene	UL25
+			product	DNA packaging tegument protein UL25
+50289	52205	gene
+			locus_tag	vigor_UL26
+			gene	UL26
+50289	52205	CDS
+			codon_start	1
+			protein_id	MF564037.1.28
+			locus_tag	vigor_UL26
+			gene	UL26
+			product	capsid maturation protease
+51216	52205	gene
+			locus_tag	vigor_UL265
+			gene	UL26.5
+51216	52205	CDS
+			codon_start	1
+			protein_id	MF564037.1.29
+			locus_tag	vigor_UL265
+			gene	UL26.5
+			product	capsid scaffold protein
+55363	52658	gene
+			locus_tag	vigor_UL27
+			gene	UL27
+55363	52658	CDS
+			codon_start	1
+			protein_id	MF564037.1.30
+			locus_tag	vigor_UL27
+			gene	UL27
+			product	envelope glycoprotein B
+57728	55371	gene
+			locus_tag	vigor_UL28
+			gene	UL28
+57728	55371	CDS
+			codon_start	1
+			protein_id	MF564037.1.31
+			locus_tag	vigor_UL28
+			gene	UL28
+			product	DNA packaging terminase subunit 2
+61686	58099	gene
+			locus_tag	vigor_UL29
+			gene	UL29
+61686	58099	CDS
+			codon_start	1
+			protein_id	MF564037.1.32
+			locus_tag	vigor_UL29
+			gene	UL29
+			product	single-stranded DNA-binding protein
+62503	66225	gene
+			locus_tag	vigor_UL30
+			gene	UL30
+62503	66225	CDS
+			codon_start	1
+			protein_id	MF564037.1.33
+			locus_tag	vigor_UL30
+			gene	UL30
+			product	DNA polymerase catalytic subunit
+67087	66170	gene
+			locus_tag	vigor_UL31
+			gene	UL31
+67087	66170	CDS
+			codon_start	1
+			protein_id	MF564037.1.34
+			locus_tag	vigor_UL31
+			gene	UL31
+			product	nuclear egress lamina protein
+68875	69267	gene
+			locus_tag	vigor_UL33
+			gene	UL33
+68875	69267	CDS
+			codon_start	1
+			protein_id	MF564037.1.35
+			locus_tag	vigor_UL33
+			gene	UL33
+			product	DNA packaging protein UL33
+68876	67080	gene
+			locus_tag	vigor_UL32
+			gene	UL32
+68876	67080	CDS
+			codon_start	1
+			protein_id	MF564037.1.36
+			locus_tag	vigor_UL32
+			gene	UL32
+			product	DNA packaging protein UL32
+69357	70187	gene
+			locus_tag	vigor_UL34
+			gene	UL34
+69357	70187	CDS
+			codon_start	1
+			protein_id	MF564037.1.37
+			locus_tag	vigor_UL34
+			gene	UL34
+			product	nuclear egress membrane protein
+70299	70637	gene
+			locus_tag	vigor_UL35
+			gene	UL35
+70299	70637	CDS
+			codon_start	1
+			protein_id	MF564037.1.38
+			locus_tag	vigor_UL35
+			gene	UL35
+			product	small capsid protein
+80172	70804	gene
+			locus_tag	vigor_UL36
+			gene	UL36
+80172	70804	CDS
+			codon_start	1
+			protein_id	MF564037.1.39
+			locus_tag	vigor_UL36
+			gene	UL36
+			product	large tegument protein
+83818	80474	gene
+			locus_tag	vigor_UL37
+			gene	UL37
+83818	80474	CDS
+			codon_start	1
+			protein_id	MF564037.1.40
+			locus_tag	vigor_UL37
+			gene	UL37
+			product	tegument protein UL37
+84307	85707	gene
+			locus_tag	vigor_UL38
+			gene	UL38
+84307	85707	CDS
+			codon_start	1
+			protein_id	MF564037.1.41
+			locus_tag	vigor_UL38
+			gene	UL38
+			product	capsid triplex subunit 1
+86270	89704	gene
+			locus_tag	vigor_UL39
+			gene	UL39
+86270	89704	CDS
+			codon_start	1
+			protein_id	MF564037.1.42
+			locus_tag	vigor_UL39
+			gene	UL39
+			product	ribonucleotide reductase subunit 1
+89757	90770	gene
+			locus_tag	vigor_UL40
+			gene	UL40
+89757	90770	CDS
+			codon_start	1
+			protein_id	MF564037.1.43
+			locus_tag	vigor_UL40
+			gene	UL40
+			product	ribonucleotide reductase subunit 2
+92527	91049	gene
+			locus_tag	vigor_UL41
+			gene	UL41
+92527	91049	CDS
+			codon_start	1
+			protein_id	MF564037.1.44
+			locus_tag	vigor_UL41
+			gene	UL41
+			product	tegument host shutoff protein
+93022	94434	gene
+			locus_tag	vigor_UL42
+			gene	UL42
+93022	94434	CDS
+			codon_start	1
+			protein_id	MF564037.1.45
+			locus_tag	vigor_UL42
+			gene	UL42
+			product	DNA polymerase processivity subunit
+94683	95927	gene
+			locus_tag	vigor_UL43
+			gene	UL43
+94683	95927	CDS
+			codon_start	1
+			protein_id	MF564037.1.46
+			locus_tag	vigor_UL43
+			gene	UL43
+			product	envelope protein UL43
+96229	97668	gene
+			locus_tag	vigor_UL44
+			gene	UL44
+96229	97668	CDS
+			codon_start	1
+			protein_id	MF564037.1.47
+			locus_tag	vigor_UL44
+			gene	UL44
+			product	envelope glycoprotein C
+97898	98416	gene
+			locus_tag	vigor_UL45
+			gene	UL45
+97898	98416	CDS
+			codon_start	1
+			protein_id	MF564037.1.48
+			locus_tag	vigor_UL45
+			gene	UL45
+			product	membrane protein UL45
+100835	98676	gene
+			locus_tag	vigor_UL46
+			gene	UL46
+100835	98676	CDS
+			codon_start	1
+			protein_id	MF564037.1.49
+			locus_tag	vigor_UL46
+			gene	UL46
+			product	tegument protein VP11/12
+103010	100920	gene
+			locus_tag	vigor_UL47
+			gene	UL47
+103010	100920	CDS
+			codon_start	1
+			protein_id	MF564037.1.50
+			locus_tag	vigor_UL47
+			gene	UL47
+			product	tegument protein VP13/14
+105002	103530	gene
+			locus_tag	vigor_UL48
+			gene	UL48
+105002	103530	CDS
+			codon_start	1
+			protein_id	MF564037.1.51
+			locus_tag	vigor_UL48
+			gene	UL48
+			product	transactivating tegument protein VP16
+106372	105482	gene
+			locus_tag	vigor_UL49
+			gene	UL49
+106372	105482	CDS
+			codon_start	1
+			protein_id	MF564037.1.52
+			locus_tag	vigor_UL49
+			gene	UL49
+			product	tegument protein VP22
+106974	106711	gene
+			locus_tag	vigor_UL49A
+			gene	UL49A
+106974	106711	CDS
+			codon_start	1
+			protein_id	MF564037.1.53
+			locus_tag	vigor_UL49A
+			gene	UL49A
+			product	envelope glycoprotein N
+106982	108091	gene
+			locus_tag	vigor_UL50
+			gene	UL50
+106982	108091	CDS
+			codon_start	1
+			protein_id	MF564037.1.54
+			locus_tag	vigor_UL50
+			gene	UL50
+			product	deoxyuridine triphosphatase
+109032	108298	gene
+			locus_tag	vigor_UL51
+			gene	UL51
+109032	108298	CDS
+			codon_start	1
+			protein_id	MF564037.1.55
+			locus_tag	vigor_UL51
+			gene	UL51
+			product	tegument protein UL51
+109100	112300	gene
+			locus_tag	vigor_UL52
+			gene	UL52
+109100	112300	CDS
+			codon_start	1
+			protein_id	MF564037.1.56
+			locus_tag	vigor_UL52
+			gene	UL52
+			product	helicase-primase primase subunit
+112252	113268	gene
+			locus_tag	vigor_UL53
+			gene	UL53
+112252	113268	CDS
+			codon_start	1
+			protein_id	MF564037.1.57
+			locus_tag	vigor_UL53
+			gene	UL53
+			product	envelope glycoprotein K
+113814	115352	gene
+			locus_tag	vigor_UL54
+			gene	UL54
+113814	115352	CDS
+			codon_start	1
+			protein_id	MF564037.1.58
+			locus_tag	vigor_UL54
+			gene	UL54
+			product	multifunctional expression regulator
+115567	116127	gene
+			locus_tag	vigor_UL55
+			gene	UL55
+115567	116127	CDS
+			codon_start	1
+			protein_id	MF564037.1.59
+			locus_tag	vigor_UL55
+			gene	UL55
+			product	nuclear protein UL55
+117007	116300	gene
+			locus_tag	vigor_UL56
+			gene	UL56
+117007	116300	CDS
+			codon_start	1
+			protein_id	MF564037.1.60
+			locus_tag	vigor_UL56
+			gene	UL56
+			product	membrane protein UL56
+124100	121082	gene
+			locus_tag	vigor_RL2dii
+			gene	RL2-ii
+			pseudogene	unitary
+124100	121082	misc_feature
+			locus_tag	vigor_RL2dii
+			gene	RL2-ii
+			product	ubiquitin E3 ligase ICP0
+			note	invalid splicing for intron; duplication of RL2 ubiquitin E3 ligase ICP0
+125936	125024	gene
+			locus_tag	vigor_RL1
+			gene	RL1
+125936	125457	CDS
+125314	125024
+			codon_start	1
+			protein_id	MF564037.1.62
+			locus_tag	vigor_RL1
+			gene	RL1
+			product	neurovirulence protein ICP34.5
+			note	non-canonical splicing
+131143	127193	gene
+			locus_tag	vigor_RS1
+			gene	RS1
+131143	127193	CDS
+			codon_start	1
+			protein_id	MF564037.1.63
+			locus_tag	vigor_RS1
+			gene	RS1
+			product	transcriptional regulator ICP4
+132775	134016	gene
+			locus_tag	vigor_US1
+			gene	US1
+132775	134016	CDS
+			codon_start	1
+			protein_id	MF564037.1.64
+			locus_tag	vigor_US1
+			gene	US1
+			product	regulatory protein ICP22
+135073	134198	gene
+			locus_tag	vigor_US2
+			gene	US2
+135073	134198	CDS
+			codon_start	1
+			protein_id	MF564037.1.65
+			locus_tag	vigor_US2
+			gene	US2
+			product	virion protein US2
+135358	136803	gene
+			locus_tag	vigor_US3
+			gene	US3
+135358	136803	CDS
+			codon_start	1
+			protein_id	MF564037.1.66
+			locus_tag	vigor_US3
+			gene	US3
+			product	serine/threonine protein kinase US3
+136911	139007	gene
+			locus_tag	vigor_US4
+			gene	US4
+136911	139007	CDS
+			codon_start	1
+			protein_id	MF564037.1.67
+			locus_tag	vigor_US4
+			gene	US4
+			product	envelope glycoprotein G
+139316	139594	gene
+			locus_tag	vigor_US5
+			gene	US5
+139316	139594	CDS
+			codon_start	1
+			protein_id	MF564037.1.68
+			locus_tag	vigor_US5
+			gene	US5
+			product	envelope glycoprotein J
+140032	141213	gene
+			locus_tag	vigor_US6
+			gene	US6
+140032	141213	CDS
+			codon_start	1
+			protein_id	MF564037.1.69
+			locus_tag	vigor_US6
+			gene	US6
+			product	envelope glycoprotein D
+141415	142533	gene
+			locus_tag	vigor_US7
+			gene	US7
+141415	142533	CDS
+			codon_start	1
+			protein_id	MF564037.1.70
+			locus_tag	vigor_US7
+			gene	US7
+			product	envelope glycoprotein I
+142851	144497	gene
+			locus_tag	vigor_US8
+			gene	US8
+142851	144497	CDS
+			codon_start	1
+			protein_id	MF564037.1.71
+			locus_tag	vigor_US8
+			gene	US8
+			product	envelope glycoprotein E
+144346	144786	gene
+			locus_tag	vigor_US8A
+			gene	US8A
+144346	144786	CDS
+			codon_start	1
+			protein_id	MF564037.1.72
+			locus_tag	vigor_US8A
+			gene	US8A
+			product	membrane protein US8A
+144886	145155	gene
+			locus_tag	vigor_US9
+			gene	US9
+144886	145155	CDS
+			codon_start	1
+			protein_id	MF564037.1.73
+			locus_tag	vigor_US9
+			gene	US9
+			product	membrane protein US9
+146549	145641	gene
+			locus_tag	vigor_US10
+			gene	US10
+146549	145641	CDS
+			codon_start	1
+			protein_id	MF564037.1.74
+			locus_tag	vigor_US10
+			gene	US10
+			product	virion protein US10
+146715	146260	gene
+			locus_tag	vigor_US11
+			gene	US11
+146715	146260	CDS
+			codon_start	1
+			protein_id	MF564037.1.75
+			locus_tag	vigor_US11
+			gene	US11
+			product	tegument protein US11
+147051	146791	gene
+			locus_tag	vigor_US12
+			gene	US12
+147051	146791	CDS
+			codon_start	1
+			protein_id	MF564037.1.76
+			locus_tag	vigor_US12
+			gene	US12
+			product	TAP transporter inhibitor ICP47
+148643	152593	gene
+			locus_tag	vigor_RS1dii
+			gene	RS1-ii
+148643	152593	CDS
+			codon_start	1
+			protein_id	MF564037.1.77
+			locus_tag	vigor_RS1dii
+			gene	RS1-ii
+			product	transcriptional regulator ICP4
+			note	duplication of RS1 transcriptional regulator ICP4
+>Features MF564035.1
+1	898	gene
+			locus_tag	vigor_RL1
+			gene	RL1
+1	468	CDS
+608	898
+			codon_start	1
+			protein_id	MF564035.1.1
+			locus_tag	vigor_RL1
+			gene	RL1
+			product	neurovirulence protein ICP34.5
+1822	4826	gene
+			locus_tag	vigor_RL2
+			gene	RL2
+			pseudogene	unitary
+1822	4826	misc_feature
+			locus_tag	vigor_RL2
+			gene	RL2
+			product	ubiquitin E3 ligase ICP0
+			note	invalid splicing for intron
+8749	9423	gene
+			locus_tag	vigor_UL1
+			gene	UL1
+8749	9423	CDS
+			codon_start	1
+			protein_id	MF564035.1.3
+			locus_tag	vigor_UL1
+			gene	UL1
+			product	envelope glycoprotein L
+9296	10300	gene
+			locus_tag	vigor_UL2
+			gene	UL2
+9296	10300	CDS
+			codon_start	1
+			protein_id	MF564035.1.4
+			locus_tag	vigor_UL2
+			gene	UL2
+			product	uracil-DNA glycosylase
+10355	11056	gene
+			locus_tag	vigor_UL3
+			gene	UL3
+10355	11056	CDS
+			codon_start	1
+			protein_id	MF564035.1.5
+			locus_tag	vigor_UL3
+			gene	UL3
+			product	nuclear protein UL3
+11860	11255	gene
+			locus_tag	vigor_UL4
+			gene	UL4
+11860	11255	CDS
+			codon_start	1
+			protein_id	MF564035.1.6
+			locus_tag	vigor_UL4
+			gene	UL4
+			product	nuclear protein UL4
+14571	16607	gene
+			locus_tag	vigor_UL6
+			gene	UL6
+14571	16607	CDS
+			codon_start	1
+			protein_id	MF564035.1.7
+			locus_tag	vigor_UL6
+			gene	UL6
+			product	capsid portal protein
+14572	11927	gene
+			locus_tag	vigor_UL5
+			gene	UL5
+14572	11927	CDS
+			codon_start	1
+			protein_id	MF564035.1.8
+			locus_tag	vigor_UL5
+			gene	UL5
+			product	helicase-primase helicase subunit
+16582	17472	gene
+			locus_tag	vigor_UL7
+			gene	UL7
+16582	17472	CDS
+			codon_start	1
+			protein_id	MF564035.1.9
+			locus_tag	vigor_UL7
+			gene	UL7
+			product	tegument protein UL7
+19987	17729	gene
+			locus_tag	vigor_UL8
+			gene	UL8
+19987	17729	CDS
+			codon_start	1
+			protein_id	MF564035.1.10
+			locus_tag	vigor_UL8
+			gene	UL8
+			product	helicase-primase subunit
+22531	23934	gene
+			locus_tag	vigor_UL10
+			gene	UL10
+22531	23934	CDS
+			codon_start	1
+			protein_id	MF564035.1.11
+			locus_tag	vigor_UL10
+			gene	UL10
+			product	envelope glycoprotein M
+22640	20037	gene
+			locus_tag	vigor_UL9
+			gene	UL9
+22640	20037	CDS
+			codon_start	1
+			protein_id	MF564035.1.12
+			locus_tag	vigor_UL9
+			gene	UL9
+			product	DNA replication origin-binding helicase
+24421	24131	gene
+			locus_tag	vigor_UL11
+			gene	UL11
+24421	24131	CDS
+			codon_start	1
+			protein_id	MF564035.1.13
+			locus_tag	vigor_UL11
+			gene	UL11
+			product	myristylated tegument protein
+26199	24337	gene
+			locus_tag	vigor_UL12
+			gene	UL12
+26199	24337	CDS
+			codon_start	1
+			protein_id	MF564035.1.14
+			locus_tag	vigor_UL12
+			gene	UL12
+			product	deoxyribonuclease
+27796	26240	gene
+			locus_tag	vigor_UL13
+			gene	UL13
+27796	26240	CDS
+			codon_start	1
+			protein_id	MF564035.1.15
+			locus_tag	vigor_UL13
+			gene	UL13
+			product	tegument serine/threonine protein kinase
+28209	27550	gene
+			locus_tag	vigor_UL14
+			gene	UL14
+28209	27550	CDS
+			codon_start	1
+			protein_id	MF564035.1.16
+			locus_tag	vigor_UL14
+			gene	UL14
+			product	tegument protein UL14
+28290	34088	gene
+			locus_tag	vigor_UL15
+			gene	UL15
+28290	29318	CDS
+32913	34088
+			codon_start	1
+			protein_id	MF564035.1.17
+			locus_tag	vigor_UL15
+			gene	UL15
+			product	DNA packaging terminase subunit 1
+30581	29463	gene
+			locus_tag	vigor_UL16
+			gene	UL16
+30581	29463	CDS
+			codon_start	1
+			transl_except	(pos:30581..30579,aa:M)
+			protein_id	MF564035.1.18
+			locus_tag	vigor_UL16
+			gene	UL16
+			product	tegument protein UL16
+32787	30682	gene
+			locus_tag	vigor_UL17
+			gene	UL17
+32787	30682	CDS
+			codon_start	1
+			protein_id	MF564035.1.19
+			locus_tag	vigor_UL17
+			gene	UL17
+			product	DNA packaging tegument protein UL17
+35387	34431	gene
+			locus_tag	vigor_UL18
+			gene	UL18
+35387	34431	CDS
+			codon_start	1
+			protein_id	MF564035.1.20
+			locus_tag	vigor_UL18
+			gene	UL18
+			product	capsid triplex subunit 2
+39887	35763	gene
+			locus_tag	vigor_UL19
+			gene	UL19
+39887	35763	CDS
+			codon_start	1
+			protein_id	MF564035.1.21
+			locus_tag	vigor_UL19
+			gene	UL19
+			product	major capsid protein
+40868	40200	gene
+			locus_tag	vigor_UL20
+			gene	UL20
+40868	40200	CDS
+			codon_start	1
+			protein_id	MF564035.1.22
+			locus_tag	vigor_UL20
+			gene	UL20
+			product	envelope protein UL20
+41517	43115	gene
+			locus_tag	vigor_UL21
+			gene	UL21
+41517	43115	CDS
+			codon_start	1
+			protein_id	MF564035.1.23
+			locus_tag	vigor_UL21
+			gene	UL21
+			product	tegument protein UL21
+45851	43335	gene
+			locus_tag	vigor_UL22
+			gene	UL22
+45851	43335	CDS
+			codon_start	1
+			protein_id	MF564035.1.24
+			locus_tag	vigor_UL22
+			gene	UL22
+			product	envelope glycoprotein H
+47222	48067	gene
+			locus_tag	vigor_UL24
+			gene	UL24
+47222	48067	CDS
+			codon_start	1
+			protein_id	MF564035.1.25
+			locus_tag	vigor_UL24
+			gene	UL24
+			product	nuclear protein UL24
+47320	46190	gene
+			locus_tag	vigor_UL23
+			gene	UL23
+47320	46190	CDS
+			codon_start	1
+			protein_id	MF564035.1.26
+			locus_tag	vigor_UL23
+			gene	UL23
+			product	thymidine kinase
+48347	50104	gene
+			locus_tag	vigor_UL25
+			gene	UL25
+48347	50104	CDS
+			codon_start	1
+			protein_id	MF564035.1.27
+			locus_tag	vigor_UL25
+			gene	UL25
+			product	DNA packaging tegument protein UL25
+50334	52247	gene
+			locus_tag	vigor_UL26
+			gene	UL26
+50334	52247	CDS
+			codon_start	1
+			protein_id	MF564035.1.28
+			locus_tag	vigor_UL26
+			gene	UL26
+			product	capsid maturation protease
+51258	52247	gene
+			locus_tag	vigor_UL265
+			gene	UL26.5
+51258	52247	CDS
+			codon_start	1
+			protein_id	MF564035.1.29
+			locus_tag	vigor_UL265
+			gene	UL26.5
+			product	capsid scaffold protein
+55397	52692	gene
+			locus_tag	vigor_UL27
+			gene	UL27
+55397	52692	CDS
+			codon_start	1
+			protein_id	MF564035.1.30
+			locus_tag	vigor_UL27
+			gene	UL27
+			product	envelope glycoprotein B
+57762	55405	gene
+			locus_tag	vigor_UL28
+			gene	UL28
+57762	55405	CDS
+			codon_start	1
+			protein_id	MF564035.1.31
+			locus_tag	vigor_UL28
+			gene	UL28
+			product	DNA packaging terminase subunit 2
+61730	58140	gene
+			locus_tag	vigor_UL29
+			gene	UL29
+61730	58140	CDS
+			codon_start	1
+			protein_id	MF564035.1.32
+			locus_tag	vigor_UL29
+			gene	UL29
+			product	single-stranded DNA-binding protein
+62547	66269	gene
+			locus_tag	vigor_UL30
+			gene	UL30
+62547	66269	CDS
+			codon_start	1
+			protein_id	MF564035.1.33
+			locus_tag	vigor_UL30
+			gene	UL30
+			product	DNA polymerase catalytic subunit
+67131	66214	gene
+			locus_tag	vigor_UL31
+			gene	UL31
+67131	66214	CDS
+			codon_start	1
+			protein_id	MF564035.1.34
+			locus_tag	vigor_UL31
+			gene	UL31
+			product	nuclear egress lamina protein
+68913	69305	gene
+			locus_tag	vigor_UL33
+			gene	UL33
+68913	69305	CDS
+			codon_start	1
+			protein_id	MF564035.1.35
+			locus_tag	vigor_UL33
+			gene	UL33
+			product	DNA packaging protein UL33
+68914	67124	gene
+			locus_tag	vigor_UL32
+			gene	UL32
+68914	67124	CDS
+			codon_start	1
+			protein_id	MF564035.1.36
+			locus_tag	vigor_UL32
+			gene	UL32
+			product	DNA packaging protein UL32
+69395	70219	gene
+			locus_tag	vigor_UL34
+			gene	UL34
+69395	70219	CDS
+			codon_start	1
+			protein_id	MF564035.1.37
+			locus_tag	vigor_UL34
+			gene	UL34
+			product	nuclear egress membrane protein
+70331	70669	gene
+			locus_tag	vigor_UL35
+			gene	UL35
+70331	70669	CDS
+			codon_start	1
+			protein_id	MF564035.1.38
+			locus_tag	vigor_UL35
+			gene	UL35
+			product	small capsid protein
+80203	70835	gene
+			locus_tag	vigor_UL36
+			gene	UL36
+80203	70835	CDS
+			codon_start	1
+			protein_id	MF564035.1.39
+			locus_tag	vigor_UL36
+			gene	UL36
+			product	large tegument protein
+83850	80506	gene
+			locus_tag	vigor_UL37
+			gene	UL37
+83850	80506	CDS
+			codon_start	1
+			protein_id	MF564035.1.40
+			locus_tag	vigor_UL37
+			gene	UL37
+			product	tegument protein UL37
+84330	85730	gene
+			locus_tag	vigor_UL38
+			gene	UL38
+84330	85730	CDS
+			codon_start	1
+			protein_id	MF564035.1.41
+			locus_tag	vigor_UL38
+			gene	UL38
+			product	capsid triplex subunit 1
+86293	89727	gene
+			locus_tag	vigor_UL39
+			gene	UL39
+86293	89727	CDS
+			codon_start	1
+			protein_id	MF564035.1.42
+			locus_tag	vigor_UL39
+			gene	UL39
+			product	ribonucleotide reductase subunit 1
+89780	90793	gene
+			locus_tag	vigor_UL40
+			gene	UL40
+89780	90793	CDS
+			codon_start	1
+			protein_id	MF564035.1.43
+			locus_tag	vigor_UL40
+			gene	UL40
+			product	ribonucleotide reductase subunit 2
+92550	91072	gene
+			locus_tag	vigor_UL41
+			gene	UL41
+92550	91072	CDS
+			codon_start	1
+			protein_id	MF564035.1.44
+			locus_tag	vigor_UL41
+			gene	UL41
+			product	tegument host shutoff protein
+93043	94455	gene
+			locus_tag	vigor_UL42
+			gene	UL42
+93043	94455	CDS
+			codon_start	1
+			protein_id	MF564035.1.45
+			locus_tag	vigor_UL42
+			gene	UL42
+			product	DNA polymerase processivity subunit
+94705	95949	gene
+			locus_tag	vigor_UL43
+			gene	UL43
+94705	95949	CDS
+			codon_start	1
+			protein_id	MF564035.1.46
+			locus_tag	vigor_UL43
+			gene	UL43
+			product	envelope protein UL43
+96251	97693	gene
+			locus_tag	vigor_UL44
+			gene	UL44
+96251	97693	CDS
+			codon_start	1
+			protein_id	MF564035.1.47
+			locus_tag	vigor_UL44
+			gene	UL44
+			product	envelope glycoprotein C
+97923	98441	gene
+			locus_tag	vigor_UL45
+			gene	UL45
+97923	98441	CDS
+			codon_start	1
+			protein_id	MF564035.1.48
+			locus_tag	vigor_UL45
+			gene	UL45
+			product	membrane protein UL45
+100854	98698	gene
+			locus_tag	vigor_UL46
+			gene	UL46
+100854	98698	CDS
+			codon_start	1
+			protein_id	MF564035.1.49
+			locus_tag	vigor_UL46
+			gene	UL46
+			product	tegument protein VP11/12
+103029	100939	gene
+			locus_tag	vigor_UL47
+			gene	UL47
+103029	100939	CDS
+			codon_start	1
+			protein_id	MF564035.1.50
+			locus_tag	vigor_UL47
+			gene	UL47
+			product	tegument protein VP13/14
+105020	103548	gene
+			locus_tag	vigor_UL48
+			gene	UL48
+105020	103548	CDS
+			codon_start	1
+			protein_id	MF564035.1.51
+			locus_tag	vigor_UL48
+			gene	UL48
+			product	transactivating tegument protein VP16
+106403	105501	gene
+			locus_tag	vigor_UL49
+			gene	UL49
+106403	105501	CDS
+			codon_start	1
+			protein_id	MF564035.1.52
+			locus_tag	vigor_UL49
+			gene	UL49
+			product	tegument protein VP22
+107006	106743	gene
+			locus_tag	vigor_UL49A
+			gene	UL49A
+107006	106743	CDS
+			codon_start	1
+			protein_id	MF564035.1.53
+			locus_tag	vigor_UL49A
+			gene	UL49A
+			product	envelope glycoprotein N
+107014	108123	gene
+			locus_tag	vigor_UL50
+			gene	UL50
+107014	108123	CDS
+			codon_start	1
+			protein_id	MF564035.1.54
+			locus_tag	vigor_UL50
+			gene	UL50
+			product	deoxyuridine triphosphatase
+109064	108330	gene
+			locus_tag	vigor_UL51
+			gene	UL51
+109064	108330	CDS
+			codon_start	1
+			protein_id	MF564035.1.55
+			locus_tag	vigor_UL51
+			gene	UL51
+			product	tegument protein UL51
+109132	112332	gene
+			locus_tag	vigor_UL52
+			gene	UL52
+109132	112332	CDS
+			codon_start	1
+			protein_id	MF564035.1.56
+			locus_tag	vigor_UL52
+			gene	UL52
+			product	helicase-primase primase subunit
+112284	113300	gene
+			locus_tag	vigor_UL53
+			gene	UL53
+112284	113300	CDS
+			codon_start	1
+			protein_id	MF564035.1.57
+			locus_tag	vigor_UL53
+			gene	UL53
+			product	envelope glycoprotein K
+113846	115384	gene
+			locus_tag	vigor_UL54
+			gene	UL54
+113846	115384	CDS
+			codon_start	1
+			protein_id	MF564035.1.58
+			locus_tag	vigor_UL54
+			gene	UL54
+			product	multifunctional expression regulator
+115599	116159	gene
+			locus_tag	vigor_UL55
+			gene	UL55
+115599	116159	CDS
+			codon_start	1
+			protein_id	MF564035.1.59
+			locus_tag	vigor_UL55
+			gene	UL55
+			product	nuclear protein UL55
+117039	116332	gene
+			locus_tag	vigor_UL56
+			gene	UL56
+117039	116332	CDS
+			codon_start	1
+			protein_id	MF564035.1.60
+			locus_tag	vigor_UL56
+			gene	UL56
+			product	membrane protein UL56
+124098	121105	gene
+			locus_tag	vigor_RL2dii
+			gene	RL2-ii
+			pseudogene	unitary
+124098	121105	misc_feature
+			locus_tag	vigor_RL2dii
+			gene	RL2-ii
+			product	ubiquitin E3 ligase ICP0
+			note	invalid splicing for intron; duplication of RL2 ubiquitin E3 ligase ICP0
+125934	125022	gene
+			locus_tag	vigor_RL1dii
+			gene	RL1-ii
+125934	125455	CDS
+125312	125022
+			codon_start	1
+			protein_id	MF564035.1.62
+			locus_tag	vigor_RL1dii
+			gene	RL1-ii
+			product	neurovirulence protein ICP34.5
+			note	duplication of RL1 neurovirulence protein ICP34.5; non-canonical splicing
+131153	127197	gene
+			locus_tag	vigor_RS1
+			gene	RS1
+131153	127197	CDS
+			codon_start	1
+			protein_id	MF564035.1.63
+			locus_tag	vigor_RS1
+			gene	RS1
+			product	transcriptional regulator ICP4
+132769	134013	gene
+			locus_tag	vigor_US1
+			gene	US1
+132769	134013	CDS
+			codon_start	1
+			protein_id	MF564035.1.64
+			locus_tag	vigor_US1
+			gene	US1
+			product	regulatory protein ICP22
+135070	134195	gene
+			locus_tag	vigor_US2
+			gene	US2
+135070	134195	CDS
+			codon_start	1
+			protein_id	MF564035.1.65
+			locus_tag	vigor_US2
+			gene	US2
+			product	virion protein US2
+135356	136801	gene
+			locus_tag	vigor_US3
+			gene	US3
+135356	136801	CDS
+			codon_start	1
+			protein_id	MF564035.1.66
+			locus_tag	vigor_US3
+			gene	US3
+			product	serine/threonine protein kinase US3
+136909	139005	gene
+			locus_tag	vigor_US4
+			gene	US4
+136909	139005	CDS
+			codon_start	1
+			protein_id	MF564035.1.67
+			locus_tag	vigor_US4
+			gene	US4
+			product	envelope glycoprotein G
+139315	139593	gene
+			locus_tag	vigor_US5
+			gene	US5
+139315	139593	CDS
+			codon_start	1
+			protein_id	MF564035.1.68
+			locus_tag	vigor_US5
+			gene	US5
+			product	envelope glycoprotein J
+140042	141223	gene
+			locus_tag	vigor_US6
+			gene	US6
+140042	141223	CDS
+			codon_start	1
+			protein_id	MF564035.1.69
+			locus_tag	vigor_US6
+			gene	US6
+			product	envelope glycoprotein D
+141425	142543	gene
+			locus_tag	vigor_US7
+			gene	US7
+141425	142543	CDS
+			codon_start	1
+			protein_id	MF564035.1.70
+			locus_tag	vigor_US7
+			gene	US7
+			product	envelope glycoprotein I
+142864	144510	gene
+			locus_tag	vigor_US8
+			gene	US8
+142864	144510	CDS
+			codon_start	1
+			protein_id	MF564035.1.71
+			locus_tag	vigor_US8
+			gene	US8
+			product	envelope glycoprotein E
+144359	144799	gene
+			locus_tag	vigor_US8A
+			gene	US8A
+144359	144799	CDS
+			codon_start	1
+			protein_id	MF564035.1.72
+			locus_tag	vigor_US8A
+			gene	US8A
+			product	membrane protein US8A
+144899	145168	gene
+			locus_tag	vigor_US9
+			gene	US9
+144899	145168	CDS
+			codon_start	1
+			protein_id	MF564035.1.73
+			locus_tag	vigor_US9
+			gene	US9
+			product	membrane protein US9
+146558	145650	gene
+			locus_tag	vigor_US10
+			gene	US10
+146558	145650	CDS
+			codon_start	1
+			protein_id	MF564035.1.74
+			locus_tag	vigor_US10
+			gene	US10
+			product	virion protein US10
+146724	146269	gene
+			locus_tag	vigor_US11
+			gene	US11
+146724	146269	CDS
+			codon_start	1
+			protein_id	MF564035.1.75
+			locus_tag	vigor_US11
+			gene	US11
+			product	tegument protein US11
+147061	146801	gene
+			locus_tag	vigor_US12
+			gene	US12
+147061	146801	CDS
+			codon_start	1
+			protein_id	MF564035.1.76
+			locus_tag	vigor_US12
+			gene	US12
+			product	TAP transporter inhibitor ICP47
+148653	152609	gene
+			locus_tag	vigor_RS1dii
+			gene	RS1-ii
+148653	152609	CDS
+			codon_start	1
+			protein_id	MF564035.1.77
+			locus_tag	vigor_RS1dii
+			gene	RS1-ii
+			product	transcriptional regulator ICP4
+			note	duplication of RS1 transcriptional regulator ICP4
+>Features MF564034.1
+1	898	gene
+			locus_tag	vigor_RL1
+			gene	RL1
+1	468	CDS
+608	898
+			codon_start	1
+			protein_id	MF564034.1.1
+			locus_tag	vigor_RL1
+			gene	RL1
+			product	neurovirulence protein ICP34.5
+1822	4826	gene
+			locus_tag	vigor_RL2
+			gene	RL2
+			pseudogene	unitary
+1822	4826	misc_feature
+			locus_tag	vigor_RL2
+			gene	RL2
+			product	ubiquitin E3 ligase ICP0
+			note	invalid splicing for intron
+8749	9423	gene
+			locus_tag	vigor_UL1
+			gene	UL1
+8749	9423	CDS
+			codon_start	1
+			protein_id	MF564034.1.3
+			locus_tag	vigor_UL1
+			gene	UL1
+			product	envelope glycoprotein L
+9296	10300	gene
+			locus_tag	vigor_UL2
+			gene	UL2
+9296	10300	CDS
+			codon_start	1
+			protein_id	MF564034.1.4
+			locus_tag	vigor_UL2
+			gene	UL2
+			product	uracil-DNA glycosylase
+10355	11056	gene
+			locus_tag	vigor_UL3
+			gene	UL3
+10355	11056	CDS
+			codon_start	1
+			protein_id	MF564034.1.5
+			locus_tag	vigor_UL3
+			gene	UL3
+			product	nuclear protein UL3
+11860	11255	gene
+			locus_tag	vigor_UL4
+			gene	UL4
+11860	11255	CDS
+			codon_start	1
+			protein_id	MF564034.1.6
+			locus_tag	vigor_UL4
+			gene	UL4
+			product	nuclear protein UL4
+14571	16607	gene
+			locus_tag	vigor_UL6
+			gene	UL6
+14571	16607	CDS
+			codon_start	1
+			protein_id	MF564034.1.7
+			locus_tag	vigor_UL6
+			gene	UL6
+			product	capsid portal protein
+14572	11927	gene
+			locus_tag	vigor_UL5
+			gene	UL5
+14572	11927	CDS
+			codon_start	1
+			protein_id	MF564034.1.8
+			locus_tag	vigor_UL5
+			gene	UL5
+			product	helicase-primase helicase subunit
+16582	17472	gene
+			locus_tag	vigor_UL7
+			gene	UL7
+16582	17472	CDS
+			codon_start	1
+			protein_id	MF564034.1.9
+			locus_tag	vigor_UL7
+			gene	UL7
+			product	tegument protein UL7
+19987	17729	gene
+			locus_tag	vigor_UL8
+			gene	UL8
+19987	17729	CDS
+			codon_start	1
+			protein_id	MF564034.1.10
+			locus_tag	vigor_UL8
+			gene	UL8
+			product	helicase-primase subunit
+22531	23934	gene
+			locus_tag	vigor_UL10
+			gene	UL10
+22531	23934	CDS
+			codon_start	1
+			protein_id	MF564034.1.11
+			locus_tag	vigor_UL10
+			gene	UL10
+			product	envelope glycoprotein M
+22640	20037	gene
+			locus_tag	vigor_UL9
+			gene	UL9
+22640	20037	CDS
+			codon_start	1
+			protein_id	MF564034.1.12
+			locus_tag	vigor_UL9
+			gene	UL9
+			product	DNA replication origin-binding helicase
+24421	24131	gene
+			locus_tag	vigor_UL11
+			gene	UL11
+24421	24131	CDS
+			codon_start	1
+			protein_id	MF564034.1.13
+			locus_tag	vigor_UL11
+			gene	UL11
+			product	myristylated tegument protein
+26199	24337	gene
+			locus_tag	vigor_UL12
+			gene	UL12
+26199	24337	CDS
+			codon_start	1
+			protein_id	MF564034.1.14
+			locus_tag	vigor_UL12
+			gene	UL12
+			product	deoxyribonuclease
+27796	26240	gene
+			locus_tag	vigor_UL13
+			gene	UL13
+27796	26240	CDS
+			codon_start	1
+			protein_id	MF564034.1.15
+			locus_tag	vigor_UL13
+			gene	UL13
+			product	tegument serine/threonine protein kinase
+28209	27550	gene
+			locus_tag	vigor_UL14
+			gene	UL14
+28209	27550	CDS
+			codon_start	1
+			protein_id	MF564034.1.16
+			locus_tag	vigor_UL14
+			gene	UL14
+			product	tegument protein UL14
+28290	34088	gene
+			locus_tag	vigor_UL15
+			gene	UL15
+28290	29318	CDS
+32913	34088
+			codon_start	1
+			protein_id	MF564034.1.17
+			locus_tag	vigor_UL15
+			gene	UL15
+			product	DNA packaging terminase subunit 1
+30581	29463	gene
+			locus_tag	vigor_UL16
+			gene	UL16
+30581	29463	CDS
+			codon_start	1
+			transl_except	(pos:30581..30579,aa:M)
+			protein_id	MF564034.1.18
+			locus_tag	vigor_UL16
+			gene	UL16
+			product	tegument protein UL16
+32787	30682	gene
+			locus_tag	vigor_UL17
+			gene	UL17
+32787	30682	CDS
+			codon_start	1
+			protein_id	MF564034.1.19
+			locus_tag	vigor_UL17
+			gene	UL17
+			product	DNA packaging tegument protein UL17
+35387	34431	gene
+			locus_tag	vigor_UL18
+			gene	UL18
+35387	34431	CDS
+			codon_start	1
+			protein_id	MF564034.1.20
+			locus_tag	vigor_UL18
+			gene	UL18
+			product	capsid triplex subunit 2
+39887	35763	gene
+			locus_tag	vigor_UL19
+			gene	UL19
+39887	35763	CDS
+			codon_start	1
+			protein_id	MF564034.1.21
+			locus_tag	vigor_UL19
+			gene	UL19
+			product	major capsid protein
+40868	40200	gene
+			locus_tag	vigor_UL20
+			gene	UL20
+40868	40200	CDS
+			codon_start	1
+			protein_id	MF564034.1.22
+			locus_tag	vigor_UL20
+			gene	UL20
+			product	envelope protein UL20
+41517	43115	gene
+			locus_tag	vigor_UL21
+			gene	UL21
+41517	43115	CDS
+			codon_start	1
+			protein_id	MF564034.1.23
+			locus_tag	vigor_UL21
+			gene	UL21
+			product	tegument protein UL21
+45851	43335	gene
+			locus_tag	vigor_UL22
+			gene	UL22
+45851	43335	CDS
+			codon_start	1
+			protein_id	MF564034.1.24
+			locus_tag	vigor_UL22
+			gene	UL22
+			product	envelope glycoprotein H
+47222	48067	gene
+			locus_tag	vigor_UL24
+			gene	UL24
+47222	48067	CDS
+			codon_start	1
+			protein_id	MF564034.1.25
+			locus_tag	vigor_UL24
+			gene	UL24
+			product	nuclear protein UL24
+47320	46190	gene
+			locus_tag	vigor_UL23
+			gene	UL23
+47320	46190	CDS
+			codon_start	1
+			protein_id	MF564034.1.26
+			locus_tag	vigor_UL23
+			gene	UL23
+			product	thymidine kinase
+48347	50104	gene
+			locus_tag	vigor_UL25
+			gene	UL25
+48347	50104	CDS
+			codon_start	1
+			protein_id	MF564034.1.27
+			locus_tag	vigor_UL25
+			gene	UL25
+			product	DNA packaging tegument protein UL25
+50334	52247	gene
+			locus_tag	vigor_UL26
+			gene	UL26
+50334	52247	CDS
+			codon_start	1
+			protein_id	MF564034.1.28
+			locus_tag	vigor_UL26
+			gene	UL26
+			product	capsid maturation protease
+51258	52247	gene
+			locus_tag	vigor_UL265
+			gene	UL26.5
+51258	52247	CDS
+			codon_start	1
+			protein_id	MF564034.1.29
+			locus_tag	vigor_UL265
+			gene	UL26.5
+			product	capsid scaffold protein
+55397	52692	gene
+			locus_tag	vigor_UL27
+			gene	UL27
+55397	52692	CDS
+			codon_start	1
+			protein_id	MF564034.1.30
+			locus_tag	vigor_UL27
+			gene	UL27
+			product	envelope glycoprotein B
+57762	55405	gene
+			locus_tag	vigor_UL28
+			gene	UL28
+57762	55405	CDS
+			codon_start	1
+			protein_id	MF564034.1.31
+			locus_tag	vigor_UL28
+			gene	UL28
+			product	DNA packaging terminase subunit 2
+61730	58140	gene
+			locus_tag	vigor_UL29
+			gene	UL29
+61730	58140	CDS
+			codon_start	1
+			protein_id	MF564034.1.32
+			locus_tag	vigor_UL29
+			gene	UL29
+			product	single-stranded DNA-binding protein
+62547	66269	gene
+			locus_tag	vigor_UL30
+			gene	UL30
+62547	66269	CDS
+			codon_start	1
+			protein_id	MF564034.1.33
+			locus_tag	vigor_UL30
+			gene	UL30
+			product	DNA polymerase catalytic subunit
+67131	66214	gene
+			locus_tag	vigor_UL31
+			gene	UL31
+67131	66214	CDS
+			codon_start	1
+			protein_id	MF564034.1.34
+			locus_tag	vigor_UL31
+			gene	UL31
+			product	nuclear egress lamina protein
+68913	69305	gene
+			locus_tag	vigor_UL33
+			gene	UL33
+68913	69305	CDS
+			codon_start	1
+			protein_id	MF564034.1.35
+			locus_tag	vigor_UL33
+			gene	UL33
+			product	DNA packaging protein UL33
+68914	67124	gene
+			locus_tag	vigor_UL32
+			gene	UL32
+68914	67124	CDS
+			codon_start	1
+			protein_id	MF564034.1.36
+			locus_tag	vigor_UL32
+			gene	UL32
+			product	DNA packaging protein UL32
+69395	70219	gene
+			locus_tag	vigor_UL34
+			gene	UL34
+69395	70219	CDS
+			codon_start	1
+			protein_id	MF564034.1.37
+			locus_tag	vigor_UL34
+			gene	UL34
+			product	nuclear egress membrane protein
+70331	70669	gene
+			locus_tag	vigor_UL35
+			gene	UL35
+70331	70669	CDS
+			codon_start	1
+			protein_id	MF564034.1.38
+			locus_tag	vigor_UL35
+			gene	UL35
+			product	small capsid protein
+80203	70835	gene
+			locus_tag	vigor_UL36
+			gene	UL36
+80203	70835	CDS
+			codon_start	1
+			protein_id	MF564034.1.39
+			locus_tag	vigor_UL36
+			gene	UL36
+			product	large tegument protein
+83850	80506	gene
+			locus_tag	vigor_UL37
+			gene	UL37
+83850	80506	CDS
+			codon_start	1
+			protein_id	MF564034.1.40
+			locus_tag	vigor_UL37
+			gene	UL37
+			product	tegument protein UL37
+84330	85730	gene
+			locus_tag	vigor_UL38
+			gene	UL38
+84330	85730	CDS
+			codon_start	1
+			protein_id	MF564034.1.41
+			locus_tag	vigor_UL38
+			gene	UL38
+			product	capsid triplex subunit 1
+86293	89727	gene
+			locus_tag	vigor_UL39
+			gene	UL39
+86293	89727	CDS
+			codon_start	1
+			protein_id	MF564034.1.42
+			locus_tag	vigor_UL39
+			gene	UL39
+			product	ribonucleotide reductase subunit 1
+89780	90793	gene
+			locus_tag	vigor_UL40
+			gene	UL40
+89780	90793	CDS
+			codon_start	1
+			protein_id	MF564034.1.43
+			locus_tag	vigor_UL40
+			gene	UL40
+			product	ribonucleotide reductase subunit 2
+92550	91072	gene
+			locus_tag	vigor_UL41
+			gene	UL41
+92550	91072	CDS
+			codon_start	1
+			protein_id	MF564034.1.44
+			locus_tag	vigor_UL41
+			gene	UL41
+			product	tegument host shutoff protein
+93043	94455	gene
+			locus_tag	vigor_UL42
+			gene	UL42
+93043	94455	CDS
+			codon_start	1
+			protein_id	MF564034.1.45
+			locus_tag	vigor_UL42
+			gene	UL42
+			product	DNA polymerase processivity subunit
+94705	95949	gene
+			locus_tag	vigor_UL43
+			gene	UL43
+94705	95949	CDS
+			codon_start	1
+			protein_id	MF564034.1.46
+			locus_tag	vigor_UL43
+			gene	UL43
+			product	envelope protein UL43
+96251	97693	gene
+			locus_tag	vigor_UL44
+			gene	UL44
+96251	97693	CDS
+			codon_start	1
+			protein_id	MF564034.1.47
+			locus_tag	vigor_UL44
+			gene	UL44
+			product	envelope glycoprotein C
+97923	98441	gene
+			locus_tag	vigor_UL45
+			gene	UL45
+97923	98441	CDS
+			codon_start	1
+			protein_id	MF564034.1.48
+			locus_tag	vigor_UL45
+			gene	UL45
+			product	membrane protein UL45
+100854	98698	gene
+			locus_tag	vigor_UL46
+			gene	UL46
+100854	98698	CDS
+			codon_start	1
+			protein_id	MF564034.1.49
+			locus_tag	vigor_UL46
+			gene	UL46
+			product	tegument protein VP11/12
+103029	100939	gene
+			locus_tag	vigor_UL47
+			gene	UL47
+103029	100939	CDS
+			codon_start	1
+			protein_id	MF564034.1.50
+			locus_tag	vigor_UL47
+			gene	UL47
+			product	tegument protein VP13/14
+105020	103548	gene
+			locus_tag	vigor_UL48
+			gene	UL48
+105020	103548	CDS
+			codon_start	1
+			protein_id	MF564034.1.51
+			locus_tag	vigor_UL48
+			gene	UL48
+			product	transactivating tegument protein VP16
+106403	105501	gene
+			locus_tag	vigor_UL49
+			gene	UL49
+106403	105501	CDS
+			codon_start	1
+			protein_id	MF564034.1.52
+			locus_tag	vigor_UL49
+			gene	UL49
+			product	tegument protein VP22
+107006	106743	gene
+			locus_tag	vigor_UL49A
+			gene	UL49A
+107006	106743	CDS
+			codon_start	1
+			protein_id	MF564034.1.53
+			locus_tag	vigor_UL49A
+			gene	UL49A
+			product	envelope glycoprotein N
+107014	108123	gene
+			locus_tag	vigor_UL50
+			gene	UL50
+107014	108123	CDS
+			codon_start	1
+			protein_id	MF564034.1.54
+			locus_tag	vigor_UL50
+			gene	UL50
+			product	deoxyuridine triphosphatase
+109064	108330	gene
+			locus_tag	vigor_UL51
+			gene	UL51
+109064	108330	CDS
+			codon_start	1
+			protein_id	MF564034.1.55
+			locus_tag	vigor_UL51
+			gene	UL51
+			product	tegument protein UL51
+109132	112332	gene
+			locus_tag	vigor_UL52
+			gene	UL52
+109132	112332	CDS
+			codon_start	1
+			protein_id	MF564034.1.56
+			locus_tag	vigor_UL52
+			gene	UL52
+			product	helicase-primase primase subunit
+112284	113300	gene
+			locus_tag	vigor_UL53
+			gene	UL53
+112284	113300	CDS
+			codon_start	1
+			protein_id	MF564034.1.57
+			locus_tag	vigor_UL53
+			gene	UL53
+			product	envelope glycoprotein K
+113846	115384	gene
+			locus_tag	vigor_UL54
+			gene	UL54
+113846	115384	CDS
+			codon_start	1
+			protein_id	MF564034.1.58
+			locus_tag	vigor_UL54
+			gene	UL54
+			product	multifunctional expression regulator
+115599	116159	gene
+			locus_tag	vigor_UL55
+			gene	UL55
+115599	116159	CDS
+			codon_start	1
+			protein_id	MF564034.1.59
+			locus_tag	vigor_UL55
+			gene	UL55
+			product	nuclear protein UL55
+117039	116332	gene
+			locus_tag	vigor_UL56
+			gene	UL56
+117039	116332	CDS
+			codon_start	1
+			protein_id	MF564034.1.60
+			locus_tag	vigor_UL56
+			gene	UL56
+			product	membrane protein UL56
+124110	121106	gene
+			locus_tag	vigor_RL2dii
+			gene	RL2-ii
+			pseudogene	unitary
+124110	121106	misc_feature
+			locus_tag	vigor_RL2dii
+			gene	RL2-ii
+			product	ubiquitin E3 ligase ICP0
+			note	invalid splicing for intron; duplication of RL2 ubiquitin E3 ligase ICP0
+125958	125034	gene
+			locus_tag	vigor_RL1dii
+			gene	RL1-ii
+125958	125464	CDS
+125324	125034
+			codon_start	1
+			protein_id	MF564034.1.62
+			locus_tag	vigor_RL1dii
+			gene	RL1-ii
+			product	neurovirulence protein ICP34.5
+			note	duplication of RL1 neurovirulence protein ICP34.5
+131177	127221	gene
+			locus_tag	vigor_RS1
+			gene	RS1
+131177	127221	CDS
+			codon_start	1
+			protein_id	MF564034.1.63
+			locus_tag	vigor_RS1
+			gene	RS1
+			product	transcriptional regulator ICP4
+132793	134037	gene
+			locus_tag	vigor_US1
+			gene	US1
+132793	134037	CDS
+			codon_start	1
+			protein_id	MF564034.1.64
+			locus_tag	vigor_US1
+			gene	US1
+			product	regulatory protein ICP22
+135094	134219	gene
+			locus_tag	vigor_US2
+			gene	US2
+135094	134219	CDS
+			codon_start	1
+			protein_id	MF564034.1.65
+			locus_tag	vigor_US2
+			gene	US2
+			product	virion protein US2
+135380	136825	gene
+			locus_tag	vigor_US3
+			gene	US3
+135380	136825	CDS
+			codon_start	1
+			protein_id	MF564034.1.66
+			locus_tag	vigor_US3
+			gene	US3
+			product	serine/threonine protein kinase US3
+136933	139029	gene
+			locus_tag	vigor_US4
+			gene	US4
+136933	139029	CDS
+			codon_start	1
+			protein_id	MF564034.1.67
+			locus_tag	vigor_US4
+			gene	US4
+			product	envelope glycoprotein G
+139339	139617	gene
+			locus_tag	vigor_US5
+			gene	US5
+139339	139617	CDS
+			codon_start	1
+			protein_id	MF564034.1.68
+			locus_tag	vigor_US5
+			gene	US5
+			product	envelope glycoprotein J
+140066	141247	gene
+			locus_tag	vigor_US6
+			gene	US6
+140066	141247	CDS
+			codon_start	1
+			protein_id	MF564034.1.69
+			locus_tag	vigor_US6
+			gene	US6
+			product	envelope glycoprotein D
+141449	142567	gene
+			locus_tag	vigor_US7
+			gene	US7
+141449	142567	CDS
+			codon_start	1
+			protein_id	MF564034.1.70
+			locus_tag	vigor_US7
+			gene	US7
+			product	envelope glycoprotein I
+142888	144534	gene
+			locus_tag	vigor_US8
+			gene	US8
+142888	144534	CDS
+			codon_start	1
+			protein_id	MF564034.1.71
+			locus_tag	vigor_US8
+			gene	US8
+			product	envelope glycoprotein E
+144383	144823	gene
+			locus_tag	vigor_US8A
+			gene	US8A
+144383	144823	CDS
+			codon_start	1
+			protein_id	MF564034.1.72
+			locus_tag	vigor_US8A
+			gene	US8A
+			product	membrane protein US8A
+144923	145192	gene
+			locus_tag	vigor_US9
+			gene	US9
+144923	145192	CDS
+			codon_start	1
+			protein_id	MF564034.1.73
+			locus_tag	vigor_US9
+			gene	US9
+			product	membrane protein US9
+146582	145674	gene
+			locus_tag	vigor_US10
+			gene	US10
+146582	145674	CDS
+			codon_start	1
+			protein_id	MF564034.1.74
+			locus_tag	vigor_US10
+			gene	US10
+			product	virion protein US10
+146748	146293	gene
+			locus_tag	vigor_US11
+			gene	US11
+146748	146293	CDS
+			codon_start	1
+			protein_id	MF564034.1.75
+			locus_tag	vigor_US11
+			gene	US11
+			product	tegument protein US11
+147085	146825	gene
+			locus_tag	vigor_US12
+			gene	US12
+147085	146825	CDS
+			codon_start	1
+			protein_id	MF564034.1.76
+			locus_tag	vigor_US12
+			gene	US12
+			product	TAP transporter inhibitor ICP47
+148677	152633	gene
+			locus_tag	vigor_RS1dii
+			gene	RS1-ii
+148677	152633	CDS
+			codon_start	1
+			protein_id	MF564034.1.77
+			locus_tag	vigor_RS1dii
+			gene	RS1-ii
+			product	transcriptional regulator ICP4
+			note	duplication of RS1 transcriptional regulator ICP4
+>Features KF781518.1
+440	1363	gene
+			locus_tag	vigor_RL1
+			gene	RL1
+440	907	CDS
+1070	1363
+			codon_start	1
+			protein_id	KF781518.1.1
+			locus_tag	vigor_RL1
+			gene	RL1
+			product	neurovirulence protein ICP34.5
+2287	5301	gene
+			locus_tag	vigor_RL2
+			gene	RL2
+2287	2361	CDS
+2777	3452
+3632	5301
+			codon_start	1
+			protein_id	KF781518.1.2
+			locus_tag	vigor_RL2
+			gene	RL2
+			product	ubiquitin E3 ligase ICP0
+9403	10077	gene
+			locus_tag	vigor_UL1
+			gene	UL1
+9403	10077	CDS
+			codon_start	1
+			protein_id	KF781518.1.3
+			locus_tag	vigor_UL1
+			gene	UL1
+			product	envelope glycoprotein L
+9950	10954	gene
+			locus_tag	vigor_UL2
+			gene	UL2
+9950	10954	CDS
+			codon_start	1
+			protein_id	KF781518.1.4
+			locus_tag	vigor_UL2
+			gene	UL2
+			product	uracil-DNA glycosylase
+11009	11710	gene
+			locus_tag	vigor_UL3
+			gene	UL3
+11009	11710	CDS
+			codon_start	1
+			protein_id	KF781518.1.5
+			locus_tag	vigor_UL3
+			gene	UL3
+			product	nuclear protein UL3
+12515	11910	gene
+			locus_tag	vigor_UL4
+			gene	UL4
+12515	11910	CDS
+			codon_start	1
+			protein_id	KF781518.1.6
+			locus_tag	vigor_UL4
+			gene	UL4
+			product	nuclear protein UL4
+15226	17262	gene
+			locus_tag	vigor_UL6
+			gene	UL6
+15226	17262	CDS
+			codon_start	1
+			protein_id	KF781518.1.7
+			locus_tag	vigor_UL6
+			gene	UL6
+			product	capsid portal protein
+15227	12582	gene
+			locus_tag	vigor_UL5
+			gene	UL5
+15227	12582	CDS
+			codon_start	1
+			protein_id	KF781518.1.8
+			locus_tag	vigor_UL5
+			gene	UL5
+			product	helicase-primase helicase subunit
+17237	18127	gene
+			locus_tag	vigor_UL7
+			gene	UL7
+17237	18127	CDS
+			codon_start	1
+			protein_id	KF781518.1.9
+			locus_tag	vigor_UL7
+			gene	UL7
+			product	tegument protein UL7
+20642	18384	gene
+			locus_tag	vigor_UL8
+			gene	UL8
+20642	18384	CDS
+			codon_start	1
+			protein_id	KF781518.1.10
+			locus_tag	vigor_UL8
+			gene	UL8
+			product	helicase-primase subunit
+23186	24589	gene
+			locus_tag	vigor_UL10
+			gene	UL10
+23186	24589	CDS
+			codon_start	1
+			protein_id	KF781518.1.11
+			locus_tag	vigor_UL10
+			gene	UL10
+			product	envelope glycoprotein M
+23295	20692	gene
+			locus_tag	vigor_UL9
+			gene	UL9
+23295	20692	CDS
+			codon_start	1
+			protein_id	KF781518.1.12
+			locus_tag	vigor_UL9
+			gene	UL9
+			product	DNA replication origin-binding helicase
+25075	24785	gene
+			locus_tag	vigor_UL11
+			gene	UL11
+25075	24785	CDS
+			codon_start	1
+			protein_id	KF781518.1.13
+			locus_tag	vigor_UL11
+			gene	UL11
+			product	myristylated tegument protein
+26853	24991	gene
+			locus_tag	vigor_UL12
+			gene	UL12
+26853	24991	CDS
+			codon_start	1
+			protein_id	KF781518.1.14
+			locus_tag	vigor_UL12
+			gene	UL12
+			product	deoxyribonuclease
+28450	26894	gene
+			locus_tag	vigor_UL13
+			gene	UL13
+28450	26894	CDS
+			codon_start	1
+			protein_id	KF781518.1.15
+			locus_tag	vigor_UL13
+			gene	UL13
+			product	tegument serine/threonine protein kinase
+28863	28204	gene
+			locus_tag	vigor_UL14
+			gene	UL14
+28863	28204	CDS
+			codon_start	1
+			protein_id	KF781518.1.16
+			locus_tag	vigor_UL14
+			gene	UL14
+			product	tegument protein UL14
+28944	34744	gene
+			locus_tag	vigor_UL15
+			gene	UL15
+28944	29972	CDS
+33569	34744
+			codon_start	1
+			protein_id	KF781518.1.17
+			locus_tag	vigor_UL15
+			gene	UL15
+			product	DNA packaging terminase subunit 1
+31233	30115	gene
+			locus_tag	vigor_UL16
+			gene	UL16
+31233	30115	CDS
+			codon_start	1
+			transl_except	(pos:31233..31231,aa:M)
+			protein_id	KF781518.1.18
+			locus_tag	vigor_UL16
+			gene	UL16
+			product	tegument protein UL16
+33443	31335	gene
+			locus_tag	vigor_UL17
+			gene	UL17
+33443	31335	CDS
+			codon_start	1
+			protein_id	KF781518.1.19
+			locus_tag	vigor_UL17
+			gene	UL17
+			product	DNA packaging tegument protein UL17
+36040	35084	gene
+			locus_tag	vigor_UL18
+			gene	UL18
+36040	35084	CDS
+			codon_start	1
+			protein_id	KF781518.1.20
+			locus_tag	vigor_UL18
+			gene	UL18
+			product	capsid triplex subunit 2
+40541	36417	gene
+			locus_tag	vigor_UL19
+			gene	UL19
+40541	36417	CDS
+			codon_start	1
+			protein_id	KF781518.1.21
+			locus_tag	vigor_UL19
+			gene	UL19
+			product	major capsid protein
+41523	40855	gene
+			locus_tag	vigor_UL20
+			gene	UL20
+41523	40855	CDS
+			codon_start	1
+			protein_id	KF781518.1.22
+			locus_tag	vigor_UL20
+			gene	UL20
+			product	envelope protein UL20
+42173	43771	gene
+			locus_tag	vigor_UL21
+			gene	UL21
+42173	43771	CDS
+			codon_start	1
+			protein_id	KF781518.1.23
+			locus_tag	vigor_UL21
+			gene	UL21
+			product	tegument protein UL21
+46506	43990	gene
+			locus_tag	vigor_UL22
+			gene	UL22
+46506	43990	CDS
+			codon_start	1
+			protein_id	KF781518.1.24
+			locus_tag	vigor_UL22
+			gene	UL22
+			product	envelope glycoprotein H
+47875	48720	gene
+			locus_tag	vigor_UL24
+			gene	UL24
+47875	48720	CDS
+			codon_start	1
+			protein_id	KF781518.1.25
+			locus_tag	vigor_UL24
+			gene	UL24
+			product	nuclear protein UL24
+47973	46843	gene
+			locus_tag	vigor_UL23
+			gene	UL23
+47973	46843	CDS
+			codon_start	1
+			protein_id	KF781518.1.26
+			locus_tag	vigor_UL23
+			gene	UL23
+			product	thymidine kinase
+49001	50758	gene
+			locus_tag	vigor_UL25
+			gene	UL25
+49001	50758	CDS
+			codon_start	1
+			protein_id	KF781518.1.27
+			locus_tag	vigor_UL25
+			gene	UL25
+			product	DNA packaging tegument protein UL25
+50989	52905	gene
+			locus_tag	vigor_UL26
+			gene	UL26
+50989	52905	CDS
+			codon_start	1
+			protein_id	KF781518.1.28
+			locus_tag	vigor_UL26
+			gene	UL26
+			product	capsid maturation protease
+51916	52905	gene
+			locus_tag	vigor_UL265
+			gene	UL26.5
+51916	52905	CDS
+			codon_start	1
+			protein_id	KF781518.1.29
+			locus_tag	vigor_UL265
+			gene	UL26.5
+			product	capsid scaffold protein
+56057	53352	gene
+			locus_tag	vigor_UL27
+			gene	UL27
+56057	53352	CDS
+			codon_start	1
+			protein_id	KF781518.1.30
+			locus_tag	vigor_UL27
+			gene	UL27
+			product	envelope glycoprotein B
+58422	56065	gene
+			locus_tag	vigor_UL28
+			gene	UL28
+58422	56065	CDS
+			codon_start	1
+			protein_id	KF781518.1.31
+			locus_tag	vigor_UL28
+			gene	UL28
+			product	DNA packaging terminase subunit 2
+62385	58795	gene
+			locus_tag	vigor_UL29
+			gene	UL29
+62385	58795	CDS
+			codon_start	1
+			protein_id	KF781518.1.32
+			locus_tag	vigor_UL29
+			gene	UL29
+			product	single-stranded DNA-binding protein
+63203	66925	gene
+			locus_tag	vigor_UL30
+			gene	UL30
+63203	66925	CDS
+			codon_start	1
+			protein_id	KF781518.1.33
+			locus_tag	vigor_UL30
+			gene	UL30
+			product	DNA polymerase catalytic subunit
+67787	66870	gene
+			locus_tag	vigor_UL31
+			gene	UL31
+67787	66870	CDS
+			codon_start	1
+			protein_id	KF781518.1.34
+			locus_tag	vigor_UL31
+			gene	UL31
+			product	nuclear egress lamina protein
+69569	69961	gene
+			locus_tag	vigor_UL33
+			gene	UL33
+69569	69961	CDS
+			codon_start	1
+			protein_id	KF781518.1.35
+			locus_tag	vigor_UL33
+			gene	UL33
+			product	DNA packaging protein UL33
+69570	67780	gene
+			locus_tag	vigor_UL32
+			gene	UL32
+69570	67780	CDS
+			codon_start	1
+			protein_id	KF781518.1.36
+			locus_tag	vigor_UL32
+			gene	UL32
+			product	DNA packaging protein UL32
+70051	70881	gene
+			locus_tag	vigor_UL34
+			gene	UL34
+70051	70881	CDS
+			codon_start	1
+			protein_id	KF781518.1.37
+			locus_tag	vigor_UL34
+			gene	UL34
+			product	nuclear egress membrane protein
+70993	71331	gene
+			locus_tag	vigor_UL35
+			gene	UL35
+70993	71331	CDS
+			codon_start	1
+			protein_id	KF781518.1.38
+			locus_tag	vigor_UL35
+			gene	UL35
+			product	small capsid protein
+80866	71498	gene
+			locus_tag	vigor_UL36
+			gene	UL36
+80866	71498	CDS
+			codon_start	1
+			protein_id	KF781518.1.39
+			locus_tag	vigor_UL36
+			gene	UL36
+			product	large tegument protein
+84515	81171	gene
+			locus_tag	vigor_UL37
+			gene	UL37
+84515	81171	CDS
+			codon_start	1
+			protein_id	KF781518.1.40
+			locus_tag	vigor_UL37
+			gene	UL37
+			product	tegument protein UL37
+84999	86399	gene
+			locus_tag	vigor_UL38
+			gene	UL38
+84999	86399	CDS
+			codon_start	1
+			protein_id	KF781518.1.41
+			locus_tag	vigor_UL38
+			gene	UL38
+			product	capsid triplex subunit 1
+86968	90393	gene
+			locus_tag	vigor_UL39
+			gene	UL39
+86968	90393	CDS
+			codon_start	1
+			protein_id	KF781518.1.42
+			locus_tag	vigor_UL39
+			gene	UL39
+			product	ribonucleotide reductase subunit 1
+90446	91459	gene
+			locus_tag	vigor_UL40
+			gene	UL40
+90446	91459	CDS
+			codon_start	1
+			protein_id	KF781518.1.43
+			locus_tag	vigor_UL40
+			gene	UL40
+			product	ribonucleotide reductase subunit 2
+93219	91741	gene
+			locus_tag	vigor_UL41
+			gene	UL41
+93219	91741	CDS
+			codon_start	1
+			protein_id	KF781518.1.44
+			locus_tag	vigor_UL41
+			gene	UL41
+			product	tegument host shutoff protein
+93714	95126	gene
+			locus_tag	vigor_UL42
+			gene	UL42
+93714	95126	CDS
+			codon_start	1
+			protein_id	KF781518.1.45
+			locus_tag	vigor_UL42
+			gene	UL42
+			product	DNA polymerase processivity subunit
+95377	96621	gene
+			locus_tag	vigor_UL43
+			gene	UL43
+95377	96621	CDS
+			codon_start	1
+			protein_id	KF781518.1.46
+			locus_tag	vigor_UL43
+			gene	UL43
+			product	envelope protein UL43
+96923	98365	gene
+			locus_tag	vigor_UL44
+			gene	UL44
+96923	98365	CDS
+			codon_start	1
+			protein_id	KF781518.1.47
+			locus_tag	vigor_UL44
+			gene	UL44
+			product	envelope glycoprotein C
+98595	99113	gene
+			locus_tag	vigor_UL45
+			gene	UL45
+98595	99113	CDS
+			codon_start	1
+			protein_id	KF781518.1.48
+			locus_tag	vigor_UL45
+			gene	UL45
+			product	membrane protein UL45
+101545	99377	gene
+			locus_tag	vigor_UL46
+			gene	UL46
+101545	99377	CDS
+			codon_start	1
+			protein_id	KF781518.1.49
+			locus_tag	vigor_UL46
+			gene	UL46
+			product	tegument protein VP11/12
+103720	101630	gene
+			locus_tag	vigor_UL47
+			gene	UL47
+103720	101630	CDS
+			codon_start	1
+			protein_id	KF781518.1.50
+			locus_tag	vigor_UL47
+			gene	UL47
+			product	tegument protein VP13/14
+105712	104240	gene
+			locus_tag	vigor_UL48
+			gene	UL48
+105712	104240	CDS
+			codon_start	1
+			protein_id	KF781518.1.51
+			locus_tag	vigor_UL48
+			gene	UL48
+			product	transactivating tegument protein VP16
+107104	106196	gene
+			locus_tag	vigor_UL49
+			gene	UL49
+107104	106196	CDS
+			codon_start	1
+			protein_id	KF781518.1.52
+			locus_tag	vigor_UL49
+			gene	UL49
+			product	tegument protein VP22
+107706	107443	gene
+			locus_tag	vigor_UL49A
+			gene	UL49A
+107706	107443	CDS
+			codon_start	1
+			protein_id	KF781518.1.53
+			locus_tag	vigor_UL49A
+			gene	UL49A
+			product	envelope glycoprotein N
+107714	108823	gene
+			locus_tag	vigor_UL50
+			gene	UL50
+107714	108823	CDS
+			codon_start	1
+			protein_id	KF781518.1.54
+			locus_tag	vigor_UL50
+			gene	UL50
+			product	deoxyuridine triphosphatase
+109762	109028	gene
+			locus_tag	vigor_UL51
+			gene	UL51
+109762	109028	CDS
+			codon_start	1
+			protein_id	KF781518.1.55
+			locus_tag	vigor_UL51
+			gene	UL51
+			product	tegument protein UL51
+109830	113030	gene
+			locus_tag	vigor_UL52
+			gene	UL52
+109830	113030	CDS
+			codon_start	1
+			protein_id	KF781518.1.56
+			locus_tag	vigor_UL52
+			gene	UL52
+			product	helicase-primase primase subunit
+112982	113998	gene
+			locus_tag	vigor_UL53
+			gene	UL53
+112982	113998	CDS
+			codon_start	1
+			protein_id	KF781518.1.57
+			locus_tag	vigor_UL53
+			gene	UL53
+			product	envelope glycoprotein K
+114544	116082	gene
+			locus_tag	vigor_UL54
+			gene	UL54
+114544	116082	CDS
+			codon_start	1
+			protein_id	KF781518.1.58
+			locus_tag	vigor_UL54
+			gene	UL54
+			product	multifunctional expression regulator
+116297	116857	gene
+			locus_tag	vigor_UL55
+			gene	UL55
+116297	116857	CDS
+			codon_start	1
+			protein_id	KF781518.1.59
+			locus_tag	vigor_UL55
+			gene	UL55
+			product	nuclear protein UL55
+117737	117030	gene
+			locus_tag	vigor_UL56
+			gene	UL56
+117737	117030	CDS
+			codon_start	1
+			protein_id	KF781518.1.60
+			locus_tag	vigor_UL56
+			gene	UL56
+			product	membrane protein UL56
+124930	121916	gene
+			locus_tag	vigor_RL2dii
+			gene	RL2-ii
+124930	124856	CDS
+124440	123765
+123585	121916
+			codon_start	1
+			protein_id	KF781518.1.61
+			locus_tag	vigor_RL2dii
+			gene	RL2-ii
+			product	ubiquitin E3 ligase ICP0
+			note	duplication of RL2 ubiquitin E3 ligase ICP0
+126777	125854	gene
+			locus_tag	vigor_RL1dii
+			gene	RL1-ii
+126777	126310	CDS
+126147	125854
+			codon_start	1
+			protein_id	KF781518.1.62
+			locus_tag	vigor_RL1dii
+			gene	RL1-ii
+			product	neurovirulence protein ICP34.5
+			note	duplication of RL1 neurovirulence protein ICP34.5
+132012	127603	gene
+			locus_tag	vigor_RS1
+			gene	RS1
+132012	127603	CDS
+			codon_start	1
+			protein_id	KF781518.1.63
+			locus_tag	vigor_RS1
+			gene	RS1
+			product	transcriptional regulator ICP4
+133419	134663	gene
+			locus_tag	vigor_US1
+			gene	US1
+133419	134663	CDS
+			codon_start	1
+			protein_id	KF781518.1.64
+			locus_tag	vigor_US1
+			gene	US1
+			product	regulatory protein ICP22
+135720	134845	gene
+			locus_tag	vigor_US2
+			gene	US2
+135720	134845	CDS
+			codon_start	1
+			protein_id	KF781518.1.65
+			locus_tag	vigor_US2
+			gene	US2
+			product	virion protein US2
+136006	137451	gene
+			locus_tag	vigor_US3
+			gene	US3
+136006	137451	CDS
+			codon_start	1
+			protein_id	KF781518.1.66
+			locus_tag	vigor_US3
+			gene	US3
+			product	serine/threonine protein kinase US3
+137558	139654	gene
+			locus_tag	vigor_US4
+			gene	US4
+137558	139654	CDS
+			codon_start	1
+			protein_id	KF781518.1.67
+			locus_tag	vigor_US4
+			gene	US4
+			product	envelope glycoprotein G
+139963	140241	gene
+			locus_tag	vigor_US5
+			gene	US5
+139963	140241	CDS
+			codon_start	1
+			protein_id	KF781518.1.68
+			locus_tag	vigor_US5
+			gene	US5
+			product	envelope glycoprotein J
+140686	141867	gene
+			locus_tag	vigor_US6
+			gene	US6
+140686	141867	CDS
+			codon_start	1
+			protein_id	KF781518.1.69
+			locus_tag	vigor_US6
+			gene	US6
+			product	envelope glycoprotein D
+142069	143187	gene
+			locus_tag	vigor_US7
+			gene	US7
+142069	143187	CDS
+			codon_start	1
+			protein_id	KF781518.1.70
+			locus_tag	vigor_US7
+			gene	US7
+			product	envelope glycoprotein I
+143506	145152	gene
+			locus_tag	vigor_US8
+			gene	US8
+143506	145152	CDS
+			codon_start	1
+			protein_id	KF781518.1.71
+			locus_tag	vigor_US8
+			gene	US8
+			product	envelope glycoprotein E
+145001	145441	gene
+			locus_tag	vigor_US8A
+			gene	US8A
+145001	145441	CDS
+			codon_start	1
+			protein_id	KF781518.1.72
+			locus_tag	vigor_US8A
+			gene	US8A
+			product	membrane protein US8A
+145541	145810	gene
+			locus_tag	vigor_US9
+			gene	US9
+145541	145810	CDS
+			codon_start	1
+			protein_id	KF781518.1.73
+			locus_tag	vigor_US9
+			gene	US9
+			product	membrane protein US9
+147198	146290	gene
+			locus_tag	vigor_US10
+			gene	US10
+147198	146290	CDS
+			codon_start	1
+			protein_id	KF781518.1.74
+			locus_tag	vigor_US10
+			gene	US10
+			product	virion protein US10
+147364	146909	gene
+			locus_tag	vigor_US11
+			gene	US11
+147364	146909	CDS
+			codon_start	1
+			protein_id	KF781518.1.75
+			locus_tag	vigor_US11
+			gene	US11
+			product	tegument protein US11
+147702	147442	gene
+			locus_tag	vigor_US12
+			gene	US12
+147702	147442	CDS
+			codon_start	1
+			protein_id	KF781518.1.76
+			locus_tag	vigor_US12
+			gene	US12
+			product	TAP transporter inhibitor ICP47
+149077	153486	gene
+			locus_tag	vigor_RS1dii
+			gene	RS1-ii
+149077	153486	CDS
+			codon_start	1
+			protein_id	KF781518.1.77
+			locus_tag	vigor_RS1dii
+			gene	RS1-ii
+			product	transcriptional regulator ICP4
+			note	duplication of RS1 transcriptional regulator ICP4

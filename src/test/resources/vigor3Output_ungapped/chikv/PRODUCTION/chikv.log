@@ -1,0 +1,657 @@
+2018-09-07 15:13:08
+
+parameters
+	bl2seq_extend_hsp	25
+	bl2seq_extend_span	50
+	candidate_blastopts	-p blastx -M BLOSUM80 -e 1E-5 -g F -v 0 -F \"\" -z 3000000 -b 1000
+	candidate_evalue	
+	candidate_overlap_threshold	0.8
+	candidate_refdb	
+	command_line	/opt/www/vigor/vigor3/prod3/VIGOR3.pl -D chikv -O /usr/local/scratch/CORE/snettem/chikv/PRODUCTION/chikv -i /opt/www/vigor/vigor3/regr_testing/chikv.ungapped.fasta
+	default_gene_optional	0
+	default_gene_required	0
+	default_gene_variation	1
+	frameshift_sensitivity	1
+	gene_variations	
+	jcvi_rules	1
+	mature_pep_mincoverage	50
+	mature_pep_minidentity	25
+	mature_pep_minsimilarity	40
+	mature_pep_refdb	../data3/virus_mp
+	max_intron_size	7000
+	min_candidate_pctsimilarity	70
+	min_candidate_sbjcoverage	33
+	min_exon_size	3
+	min_intron_size	30
+	min_pseudogene_coverage	80
+	min_pseudogene_identity	75
+	min_pseudogene_similarity	80
+	noncanonical_splicing_genes	
+	optional_genes	
+	reference_db	/opt/www/vigor/vigor3/data3/chikv_db
+	reference_dbsize	93248
+	required_genes	
+	ribosomal_slippage_genes	
+	rna_editing_genes	
+	selectivity	0.985
+	slippage_frameshift	-1
+	slippage_motif	[NT][NT][NT]AAAC
+	slippage_offset	0
+	spliced_genes	
+	splicesite_extend_range	0
+	tile_overlap	1000000
+	tile_size	10000000
+	use_locus_tags	1
+	variation	0.975
+	verbose	0
+	vigorspace	/opt/www/vigor/vigor3/prod3/vigorscratch/27118.8782799108
+
+
+genomic sequence EU037962.1, length=11805
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 22 permutations for gene NSP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAU95734.1        2494   1-2494         1   77-7489        11  2  0  N   65.7   78.2   86.2   0        NSP | non-structural polyprotein precursor P1234
+    ABB45865.1        2474   1-2474         1   77-7489        10  2  0  N   65.8   78.5   84.4   0        NSP | non-structural polyprotein precursor P1234
+    ABL84686.1        2494   1-2494         1   77-7489        11  2  0  N   65.8   78.3   86.2   0        NSP | non-structural polyprotein precursor P1234
+    ABB45867.1        2471   1-2471         1   77-7489        10  2  0  N   65.8   78.4   84.5   0        NSP | non-structural polyprotein precursor P1234
+    NP_632021.2       2493   1-2493         1   77-7489        12  2  0  N   65.5   78.1   86.2   0        NSP | non-structural polyprotein precursor P1234
+    53854780_NSP      2494   1-2494         1   77-7489        11  2  0  N   65.7   78.2   86.2   0        NSP | non-structural polyprotein precursor P1234
+    AAT96377.1        2494   1-2494         1   77-7489        11  2  0  N   65.7   78.3   86.2   0        NSP | non-structural polyprotein precursor P1234
+    AAT96379.1        2494   1-2494         1   77-7489        11  2  0  N   65.8   78.3   86.2   0        NSP | non-structural polyprotein precursor P1234
+    ABL84688.1        2480   1-2480         1   77-7489        10  2  0  N   64.0   77.3   89.5   0        NSP | non-structural polyprotein precursor P1234
+    ABQ63085.1        2494   1-2494         1   77-7489        11  2  0  N   65.7   78.2   86.2   0        NSP | non-structural polyprotein precursor P1234
+    AAD14562.1        2506   1-2506         1   77-7489        7   2  0  N   67.5   79.3   81.0   0        NSP | non-structural polyprotein precursor P1234
+    19073904_NSP      2437   1-2437         1   77-7498        9   2  0  N   72.3   84.0   96.1   0        NSP | non-structural polyprotein precursor P1234
+    gi|659902276      2474   1-2474         1   77-7498        1   2  0  N   98.4   99.0   100.0  0        NSP | non-structural polyprotein precursor P1234
+    gi|9627008        2514   1-2514         1   77-7498        4   2  0  N   89.0   94.3   95.9   0        NSP | non-structural polyprotein precursor P1234
+    399240871_NSP     2474   1-2474         1   77-7498        1   2  0  N   99.2   99.3   100.0  0        NSP | non-structural polyprotein precursor P1234
+    gi|22789217       2474   1-2474         1   77-7498        1   2  0  N   98.4   99.0   100.0  0        NSP | non-structural polyprotein precursor P1234
+    339267591_NSP     2529   8-2528         1   86-7486        12  2  0  N   62.7   76.3   84.3   0        NSP | non-structural polyprotein precursor P1234
+    379765038_NSP     2471   6-2471         1   86-7498        13  2  0  N   64.6   78.8   87.9   0        NSP | non-structural polyprotein precursor P1234
+    NC_001786_NSP     2411   6-2411         1   86-7498        8   2  0  N   66.7   79.5   92.0   0        NSP | non-structural polyprotein precursor P1234
+    380034914_NSP     2430   6-2430         1   86-7498        8   2  0  N   63.7   78.2   86.3   0        NSP | non-structural polyprotein precursor P1234
+    170293257_NSP     2432   5-2432         1   86-7507        6   2  0  N   75.4   86.5   94.4   0        NSP | non-structural polyprotein precursor P1234
+    NP_598184.1       2593   15-2592        1   86-7486        13  2  0  N   58.7   73.7   53.1   0        NSP | non-structural polyprotein precursor P1234
+        found 1 gene
+
+    found 5 permutations for gene truncated gp3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    gi|392990021      821    1-568          1   7567-9273      6   1  0  N   66.1   79.8   66.5   0        truncated gp3 | truncated polyprotein
+    gi|388584021      830    1-580          1   7567-9282      5   1  0  N   70.1   80.9   65.7   0        truncated gp3 | truncated polyprotein
+    gi|392990023      830    1-803          1   7567-9957      7   1  0  N   64.0   76.6   90.9   0        truncated gp3 | truncated polyprotein
+    gi|392976865      824    1-824          1   7567-10037     2   0  1  N   96.7   97.8   100.0  0        truncated gp3 | truncated polyprotein
+    gi|392976861      823    1-823          1   7567-10037     3   0  1  N   83.6   91.6   100.0  0        truncated gp3 | truncated polyprotein
+        found 1 gene
+
+    found 6 permutations for gene SP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    19073904_SP       1242   1-1242         1   7567-11307     9   1  0  N   59.8   75.8   97.8   0        SP | structural polyprotein
+    gi|27754752       1249   1-1249         1   7567-11310     2   1  0  N   97.2   98.1   100.0  0        SP | structural polyprotein
+    gi|659902277      1248   1-1248         1   7567-11310     1   1  0  N   97.9   98.7   100.0  0        SP | structural polyprotein
+    ADG95902.1        1248   1-1248         1   7567-11310     1   1  0  N   98.4   99.1   100.0  0        SP | structural polyprotein
+    339267585_SP      1240   67-1235        1   7741-11295     9   1  0  N   55.8   72.8   88.8   0        SP | structural polyprotein
+    gi|9627009        1247   1-1247         1   7567-11310     2   1  0  N   85.1   92.9   100.0  0        SP | structural polyprotein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+EU037962.1              11805      3            0      13647           4546           98.6             99.3          100.0   chikv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+EU037962.1.1       99.3   99.5   100.0  0.0   0.0   0.0   77..7501         2474   2474   399240871_NSP     NSP | non-structural polyprotein precursor P1234
+EU037962.1.1.1     98.3   99.4   100.0  0.0   0.0   0.0   77..1681         535    535    AID69220.1_1-535  mRNA-capping enzyme nsp1
+EU037962.1.1.2     98.9   99.4   100.0  0.0   0.0   0.0   1682..4075       798    798    Q8JUX6_536-1333   protease nsp2
+EU037962.1.1.3     99.4   99.6   100.0  0.0   0.0   0.0   4076..5665       530    530    JX088705.1        non-structural protein nsp3
+EU037962.1.1.4     98.7   99.3   99.5   0.5   0.0   0.0   5666..7498       611    614    AID69220.1_1861-2 RNA-directed RNA polymerase nsp4
+EU037962.1.2       96.7   98.4   100.0  0.0   0.0   0.0   7567..9969       824    824    gi|392976865      truncated gp3 | truncated polyprotein
+                                                          9969..10040                                      
+EU037962.1.2.4     92.1   97.0   100.0  0.0   0.0   0.0   9811..9969       76     76     gi|392976866      transframe fusion protein
+                                                          9969..10037                                      
+EU037962.1.3       98.5   99.5   100.0  0.0   0.0   0.0   7567..11313      1248   1248   ADG95902.1        SP | structural polyprotein
+EU037962.1.3.1     98.1   98.5   99.6   0.0   0.0   0.4   7567..8349       261    262    AID69221.1_1-262  capsid protein
+EU037962.1.3.2     100.0  100.0  100.0  0.0   0.0   0.0   8350..8541       64     64     296124511_E3      E3 protein
+EU037962.1.3.3     96.7   98.6   100.0  0.0   0.0   0.0   8542..9810       423    423    Q8JUX5_326-748    E2 envelope glycoprotein
+EU037962.1.3.4     96.7   100.0  96.8   1.6   0.0   1.6   9811..9993       61     63     AID69221.1_748-81 6K protein
+EU037962.1.3.5     99.1   99.9   100.0  0.0   0.0   0.0   9994..11310      439    439    Q8JUX5_810-1248   E1 envelope glycoprotein
+
+
+genomic sequence KX702402.1, length=12037
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 22 permutations for gene NSP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAU95734.1        2494   1-2494         1   77-7477        11  2  0  N   65.8   78.2   86.2   0        NSP | non-structural polyprotein precursor P1234
+    ABB45867.1        2471   1-2471         1   77-7477        10  2  0  N   65.8   78.4   84.5   0        NSP | non-structural polyprotein precursor P1234
+    53854780_NSP      2494   1-2494         1   77-7477        11  2  0  N   65.8   78.2   86.2   0        NSP | non-structural polyprotein precursor P1234
+    AAT96379.1        2494   1-2494         1   77-7477        12  2  0  N   65.6   78.2   87.0   0        NSP | non-structural polyprotein precursor P1234
+    ABL84688.1        2480   1-2480         1   77-7477        11  2  0  N   64.6   78.0   88.6   0        NSP | non-structural polyprotein precursor P1234
+    AAD14562.1        2506   1-2506         1   77-7477        7   2  0  N   67.5   79.2   81.0   0        NSP | non-structural polyprotein precursor P1234
+    ABB45865.1        2474   1-2474         1   77-7477        11  2  0  N   64.3   77.5   89.6   0        NSP | non-structural polyprotein precursor P1234
+    ABL84686.1        2494   1-2494         1   77-7477        12  2  0  N   65.6   78.2   87.0   0        NSP | non-structural polyprotein precursor P1234
+    NP_632021.2       2493   1-2493         1   77-7477        12  2  0  N   65.6   78.1   86.2   0        NSP | non-structural polyprotein precursor P1234
+    AAT96377.1        2494   1-2494         1   77-7477        12  2  0  N   65.5   78.2   87.0   0        NSP | non-structural polyprotein precursor P1234
+    ABQ63085.1        2494   1-2494         1   77-7477        12  2  0  N   65.5   78.1   87.0   0        NSP | non-structural polyprotein precursor P1234
+    19073904_NSP      2437   1-2437         1   77-7486        10  2  0  N   72.3   84.2   95.9   0        NSP | non-structural polyprotein precursor P1234
+    gi|22789217       2474   1-2474         1   77-7486        2   2  0  N   97.4   98.6   99.8   0        NSP | non-structural polyprotein precursor P1234
+    gi|659902276      2474   1-2474         1   77-7486        2   2  0  N   97.4   98.6   99.8   0        NSP | non-structural polyprotein precursor P1234
+    gi|9627008        2514   1-2514         1   77-7486        4   2  0  N   88.9   94.6   95.5   0        NSP | non-structural polyprotein precursor P1234
+    399240871_NSP     2474   1-2474         1   77-7486        2   2  0  N   97.1   98.1   99.8   0        NSP | non-structural polyprotein precursor P1234
+    380034914_NSP     2430   5-2430         1   83-7486        11  2  0  N   63.6   78.3   87.4   0        NSP | non-structural polyprotein precursor P1234
+    339267591_NSP     2529   8-2528         1   86-7474        12  2  0  N   62.8   76.5   83.9   0        NSP | non-structural polyprotein precursor P1234
+    379765038_NSP     2471   6-2471         1   86-7486        14  2  0  N   64.3   78.7   88.5   0        NSP | non-structural polyprotein precursor P1234
+    NC_001786_NSP     2411   6-2411         1   86-7486        8   2  0  N   66.4   79.5   92.0   0        NSP | non-structural polyprotein precursor P1234
+    170293257_NSP     2432   5-2432         1   86-7495        6   2  0  N   75.0   86.5   94.4   0        NSP | non-structural polyprotein precursor P1234
+    NP_598184.1       2593   14-2592        1   83-7474        12  2  0  N   58.9   74.2   51.7   0        NSP | non-structural polyprotein precursor P1234
+        found 1 gene
+
+    found 5 permutations for gene truncated gp3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    gi|392990023      830    1-576          1   7555-9261      4   1  0  N   65.8   77.9   66.7   0        truncated gp3 | truncated polyprotein
+    gi|392990021      821    1-568          1   7555-9261      6   1  0  N   66.0   80.2   66.6   0        truncated gp3 | truncated polyprotein
+    gi|388584021      830    1-580          1   7555-9270      5   1  0  N   70.2   81.1   65.9   0        truncated gp3 | truncated polyprotein
+    gi|392976865      824    1-824          1   7555-10025     2   0  1  N   95.2   97.2   100.0  0        truncated gp3 | truncated polyprotein
+    gi|392976861      823    1-823          1   7555-10025     3   0  1  N   83.4   91.7   100.0  0        truncated gp3 | truncated polyprotein
+        found 1 gene
+
+    found 16 permutations for gene SP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    19073904_SP       1242   1-1242         1   7555-11295     9   1  0  N   60.2   76.1   97.9   0        SP | structural polyprotein
+    ADG95902.1        1248   1-1248         1   7555-11298     1   1  0  N   96.7   98.3   100.0  0        SP | structural polyprotein
+    gi|27754752       1249   1-1249         1   7555-11298     2   1  0  N   95.9   97.6   100.0  0        SP | structural polyprotein
+    gi|659902277      1248   1-1248         1   7555-11298     1   1  0  N   96.2   97.9   100.0  0        SP | structural polyprotein
+    AAD14561.1        1253   25-1235        1   7603-11250     8   1  0  N   52.6   69.7   61.6   0        SP | structural polyprotein
+    339267585_SP      1240   67-1235        1   7729-11283     10  1  0  N   56.4   73.5   89.4   0        SP | structural polyprotein
+    gi|9627009        1247   1-1247         1   7555-11298     2   1  0  N   84.6   93.1   100.0  0        SP | structural polyprotein
+    ABL84687.1        1242   67-1238        1   7756-11289     8   1  0  N   54.0   70.8   67.1   0        SP | structural polyprotein
+    AAU95735.1        1242   67-1238        1   7756-11289     8   1  0  N   53.6   70.6   67.1   0        SP | structural polyprotein
+    AAT96378.1        1242   67-1238        1   7756-11289     8   1  0  N   54.0   70.8   67.1   0        SP | structural polyprotein
+    53854780_SP       1242   67-1238        1   7756-11289     8   1  0  N   53.6   70.6   67.1   0        SP | structural polyprotein
+    ABQ63086.1        1242   67-1238        1   7756-11289     8   1  0  N   54.0   70.8   67.1   0        SP | structural polyprotein
+    ABB45868.1        1242   82-1239        1   7801-11292     7   1  0  N   54.5   72.2   62.2   0        SP | structural polyprotein
+    NP_632022.1       1241   81-1237        1   7801-11289     7   1  0  N   55.3   72.2   62.1   0        SP | structural polyprotein
+    ABL84689.1        1242   82-1239        1   7801-11292     7   1  0  N   53.9   71.8   64.0   0        SP | structural polyprotein
+    AAD14567.1        1254   12-1243        1   7597-11274     10  1  0  N   51.1   69.7   77.3   0        SP | structural polyprotein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KX702402.1              12037      3            0      13635           4542           96.8             99.0          100.0   chikv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KX702402.1.1       97.4   99.0   100.0  0.0   0.0   0.0   77..7489         2470   2474   gi|22789217       NSP | non-structural polyprotein precursor P1234
+                    translation exception 5633..5635:R
+KX702402.1.1.1     97.2   98.9   100.0  0.0   0.0   0.0   77..1681         535    535    Q8JUX6_1-535      mRNA-capping enzyme nsp1
+KX702402.1.1.2     98.9   99.4   100.0  0.0   0.0   0.0   1682..4075       798    798    Q8JUX6_536-1333   protease nsp2
+KX702402.1.1.3     94.9   97.8   99.2   0.8   0.0   0.0   4076..5644       523    531    AID69220.1_1330-1 non-structural protein nsp3
+KX702402.1.1.4     97.7   99.4   100.0  0.0   0.0   0.0   5645..7486       614    614    AID69220.1_1861-2 RNA-directed RNA polymerase nsp4
+KX702402.1.2       95.1   98.4   100.0  0.0   0.0   0.0   7555..9957       824    824    gi|392976865      truncated gp3 | truncated polyprotein
+                                                          9957..10028                                      
+KX702402.1.2.4     89.5   95.7   100.0  0.0   0.0   0.0   9799..9957       76     76     gi|392976866      transframe fusion protein
+                                                          9957..10025                                      
+KX702402.1.3       96.8   99.4   100.0  0.0   0.0   0.0   7555..11301      1248   1248   ADG95902.1        SP | structural polyprotein
+KX702402.1.3.1     98.1   99.8   99.6   0.0   0.0   0.4   7555..8337       261    262    AID69221.1_1-262  capsid protein
+KX702402.1.3.2     93.8   98.4   100.0  0.0   0.0   0.0   8338..8529       64     64     296124511_E3      E3 protein
+KX702402.1.3.3     94.1   98.1   100.0  0.0   0.0   0.0   8530..9798       423    423    Q8JUX5_326-748    E2 envelope glycoprotein
+KX702402.1.3.4     91.8   98.4   96.8   1.6   0.0   1.6   9799..9981       61     63     AID69221.1_748-81 6K protein
+KX702402.1.3.5     98.4   99.8   100.0  0.0   0.0   0.0   9982..11298      439    439    Q8JUX5_810-1248   E1 envelope glycoprotein
+
+
+genomic sequence KX702401.1, length=12037
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 22 permutations for gene NSP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAU95734.1        2494   1-2494         1   77-7477        11  2  0  N   65.8   78.2   86.2   0        NSP | non-structural polyprotein precursor P1234
+    ABB45867.1        2471   1-2471         1   77-7477        10  2  0  N   65.8   78.4   84.5   0        NSP | non-structural polyprotein precursor P1234
+    53854780_NSP      2494   1-2494         1   77-7477        11  2  0  N   65.8   78.2   86.2   0        NSP | non-structural polyprotein precursor P1234
+    AAT96379.1        2494   1-2494         1   77-7477        12  2  0  N   65.6   78.2   87.0   0        NSP | non-structural polyprotein precursor P1234
+    ABL84688.1        2480   1-2480         1   77-7477        11  2  0  N   64.6   78.0   88.6   0        NSP | non-structural polyprotein precursor P1234
+    AAD14562.1        2506   1-2506         1   77-7477        7   2  0  N   67.5   79.2   81.0   0        NSP | non-structural polyprotein precursor P1234
+    ABB45865.1        2474   1-2474         1   77-7477        11  2  0  N   64.3   77.5   89.6   0        NSP | non-structural polyprotein precursor P1234
+    ABL84686.1        2494   1-2494         1   77-7477        12  2  0  N   65.6   78.2   87.0   0        NSP | non-structural polyprotein precursor P1234
+    NP_632021.2       2493   1-2493         1   77-7477        12  2  0  N   65.6   78.1   86.2   0        NSP | non-structural polyprotein precursor P1234
+    AAT96377.1        2494   1-2494         1   77-7477        12  2  0  N   65.5   78.2   87.0   0        NSP | non-structural polyprotein precursor P1234
+    ABQ63085.1        2494   1-2494         1   77-7477        12  2  0  N   65.5   78.1   87.0   0        NSP | non-structural polyprotein precursor P1234
+    19073904_NSP      2437   1-2437         1   77-7486        10  2  0  N   72.3   84.2   95.9   0        NSP | non-structural polyprotein precursor P1234
+    gi|22789217       2474   1-2474         1   77-7486        2   2  0  N   97.4   98.6   99.8   0        NSP | non-structural polyprotein precursor P1234
+    gi|659902276      2474   1-2474         1   77-7486        2   2  0  N   97.4   98.6   99.8   0        NSP | non-structural polyprotein precursor P1234
+    gi|9627008        2514   1-2514         1   77-7486        4   2  0  N   88.9   94.6   95.5   0        NSP | non-structural polyprotein precursor P1234
+    399240871_NSP     2474   1-2474         1   77-7486        2   2  0  N   97.1   98.1   99.8   0        NSP | non-structural polyprotein precursor P1234
+    380034914_NSP     2430   5-2430         1   83-7486        11  2  0  N   63.6   78.3   87.4   0        NSP | non-structural polyprotein precursor P1234
+    339267591_NSP     2529   8-2528         1   86-7474        12  2  0  N   62.8   76.5   83.9   0        NSP | non-structural polyprotein precursor P1234
+    379765038_NSP     2471   6-2471         1   86-7486        14  2  0  N   64.3   78.7   88.5   0        NSP | non-structural polyprotein precursor P1234
+    NC_001786_NSP     2411   6-2411         1   86-7486        8   2  0  N   66.4   79.5   92.0   0        NSP | non-structural polyprotein precursor P1234
+    170293257_NSP     2432   5-2432         1   86-7495        6   2  0  N   75.0   86.5   94.4   0        NSP | non-structural polyprotein precursor P1234
+    NP_598184.1       2593   14-2592        1   83-7474        12  2  0  N   58.9   74.2   51.7   0        NSP | non-structural polyprotein precursor P1234
+        found 1 gene
+
+    found 5 permutations for gene truncated gp3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    gi|392990023      830    1-576          1   7555-9261      4   1  0  N   65.8   77.9   66.7   0        truncated gp3 | truncated polyprotein
+    gi|392990021      821    1-568          1   7555-9261      6   1  0  N   66.0   80.2   66.6   0        truncated gp3 | truncated polyprotein
+    gi|388584021      830    1-580          1   7555-9270      5   1  0  N   70.2   81.1   65.9   0        truncated gp3 | truncated polyprotein
+    gi|392976865      824    1-824          1   7555-10025     2   0  1  N   95.2   97.2   100.0  0        truncated gp3 | truncated polyprotein
+    gi|392976861      823    1-823          1   7555-10025     3   0  1  N   83.4   91.7   100.0  0        truncated gp3 | truncated polyprotein
+        found 1 gene
+
+    found 16 permutations for gene SP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    19073904_SP       1242   1-1242         1   7555-11295     9   1  0  N   60.2   76.1   97.9   0        SP | structural polyprotein
+    ADG95902.1        1248   1-1248         1   7555-11298     1   1  0  N   96.7   98.3   100.0  0        SP | structural polyprotein
+    gi|27754752       1249   1-1249         1   7555-11298     2   1  0  N   95.9   97.6   100.0  0        SP | structural polyprotein
+    gi|659902277      1248   1-1248         1   7555-11298     1   1  0  N   96.2   97.9   100.0  0        SP | structural polyprotein
+    AAD14561.1        1253   25-1235        1   7603-11250     8   1  0  N   52.6   69.7   61.6   0        SP | structural polyprotein
+    339267585_SP      1240   67-1235        1   7729-11283     10  1  0  N   56.4   73.5   89.4   0        SP | structural polyprotein
+    gi|9627009        1247   1-1247         1   7555-11298     2   1  0  N   84.6   93.1   100.0  0        SP | structural polyprotein
+    ABL84687.1        1242   67-1238        1   7756-11289     8   1  0  N   54.0   70.8   67.1   0        SP | structural polyprotein
+    AAU95735.1        1242   67-1238        1   7756-11289     8   1  0  N   53.6   70.6   67.1   0        SP | structural polyprotein
+    AAT96378.1        1242   67-1238        1   7756-11289     8   1  0  N   54.0   70.8   67.1   0        SP | structural polyprotein
+    53854780_SP       1242   67-1238        1   7756-11289     8   1  0  N   53.6   70.6   67.1   0        SP | structural polyprotein
+    ABQ63086.1        1242   67-1238        1   7756-11289     8   1  0  N   54.0   70.8   67.1   0        SP | structural polyprotein
+    ABB45868.1        1242   82-1239        1   7801-11292     7   1  0  N   54.5   72.2   62.2   0        SP | structural polyprotein
+    NP_632022.1       1241   81-1237        1   7801-11289     7   1  0  N   55.3   72.2   62.1   0        SP | structural polyprotein
+    ABL84689.1        1242   82-1239        1   7801-11292     7   1  0  N   53.9   71.8   64.0   0        SP | structural polyprotein
+    AAD14567.1        1254   12-1243        1   7597-11274     10  1  0  N   51.1   69.7   77.3   0        SP | structural polyprotein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KX702401.1              12037      3            0      13635           4542           96.8             99.0          100.0   chikv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KX702401.1.1       97.4   99.0   100.0  0.0   0.0   0.0   77..7489         2470   2474   gi|22789217       NSP | non-structural polyprotein precursor P1234
+                    translation exception 5633..5635:R
+KX702401.1.1.1     97.2   98.9   100.0  0.0   0.0   0.0   77..1681         535    535    Q8JUX6_1-535      mRNA-capping enzyme nsp1
+KX702401.1.1.2     98.9   99.4   100.0  0.0   0.0   0.0   1682..4075       798    798    Q8JUX6_536-1333   protease nsp2
+KX702401.1.1.3     94.9   97.8   99.2   0.8   0.0   0.0   4076..5644       523    531    AID69220.1_1330-1 non-structural protein nsp3
+KX702401.1.1.4     97.7   99.4   100.0  0.0   0.0   0.0   5645..7486       614    614    AID69220.1_1861-2 RNA-directed RNA polymerase nsp4
+KX702401.1.2       95.1   98.4   100.0  0.0   0.0   0.0   7555..9957       824    824    gi|392976865      truncated gp3 | truncated polyprotein
+                                                          9957..10028                                      
+KX702401.1.2.4     89.5   95.7   100.0  0.0   0.0   0.0   9799..9957       76     76     gi|392976866      transframe fusion protein
+                                                          9957..10025                                      
+KX702401.1.3       96.8   99.4   100.0  0.0   0.0   0.0   7555..11301      1248   1248   ADG95902.1        SP | structural polyprotein
+KX702401.1.3.1     98.1   99.8   99.6   0.0   0.0   0.4   7555..8337       261    262    AID69221.1_1-262  capsid protein
+KX702401.1.3.2     93.8   98.4   100.0  0.0   0.0   0.0   8338..8529       64     64     296124511_E3      E3 protein
+KX702401.1.3.3     94.1   98.1   100.0  0.0   0.0   0.0   8530..9798       423    423    Q8JUX5_326-748    E2 envelope glycoprotein
+KX702401.1.3.4     91.8   98.4   96.8   1.6   0.0   1.6   9799..9981       61     63     AID69221.1_748-81 6K protein
+KX702401.1.3.5     98.4   99.8   100.0  0.0   0.0   0.0   9982..11298      439    439    Q8JUX5_810-1248   E1 envelope glycoprotein
+
+
+genomic sequence JF274082.1, length=11829
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 22 permutations for gene NSP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAU95734.1        2494   1-2494         1   64-7476        11  1  0  N   65.7   78.3   86.2   0        NSP | non-structural polyprotein precursor P1234
+    ABB45867.1        2471   1-2471         1   64-7476        9   1  0  N   66.0   78.6   83.7   0        NSP | non-structural polyprotein precursor P1234
+    53854780_NSP      2494   1-2494         1   64-7476        11  1  0  N   65.7   78.3   86.2   0        NSP | non-structural polyprotein precursor P1234
+    AAT96379.1        2494   1-2494         1   64-7476        11  1  0  N   65.8   78.4   86.2   0        NSP | non-structural polyprotein precursor P1234
+    ABL84688.1        2480   1-2480         1   64-7476        10  1  0  N   64.0   77.4   89.5   0        NSP | non-structural polyprotein precursor P1234
+    AAD14562.1        2506   1-2506         1   64-7476        7   1  0  N   67.5   79.3   81.0   0        NSP | non-structural polyprotein precursor P1234
+    ABB45865.1        2474   1-2474         1   64-7476        10  1  0  N   64.5   77.6   88.8   0        NSP | non-structural polyprotein precursor P1234
+    ABL84686.1        2494   1-2494         1   64-7476        11  1  0  N   65.7   78.4   86.2   0        NSP | non-structural polyprotein precursor P1234
+    NP_632021.2       2493   1-2493         1   64-7476        12  1  0  N   65.5   78.2   86.2   0        NSP | non-structural polyprotein precursor P1234
+    AAT96377.1        2494   1-2494         1   64-7476        11  1  0  N   65.7   78.4   86.2   0        NSP | non-structural polyprotein precursor P1234
+    ABQ63085.1        2494   1-2494         1   64-7476        11  1  0  N   65.7   78.3   86.2   0        NSP | non-structural polyprotein precursor P1234
+    19073904_NSP      2437   1-2437         1   64-7485        9   1  0  N   72.4   84.3   96.1   0        NSP | non-structural polyprotein precursor P1234
+    gi|22789217       2474   1-2474         1   64-7485        1   1  0  N   98.5   99.1   100.0  0        NSP | non-structural polyprotein precursor P1234
+    gi|659902276      2474   1-2474         1   64-7485        1   1  0  N   98.5   99.1   100.0  0        NSP | non-structural polyprotein precursor P1234
+    gi|9627008        2514   1-2514         1   64-7485        4   1  0  N   89.2   94.5   95.9   0        NSP | non-structural polyprotein precursor P1234
+    399240871_NSP     2474   1-2474         1   64-7485        1   1  0  N   99.5   99.7   100.0  0        NSP | non-structural polyprotein precursor P1234
+    339267591_NSP     2529   8-2528         1   73-7473        12  1  0  N   62.9   76.6   83.9   0        NSP | non-structural polyprotein precursor P1234
+    379765038_NSP     2471   6-2471         1   73-7485        13  1  0  N   64.6   79.0   87.9   0        NSP | non-structural polyprotein precursor P1234
+    NC_001786_NSP     2411   6-2411         1   73-7485        8   1  0  N   66.8   79.7   92.0   0        NSP | non-structural polyprotein precursor P1234
+    380034914_NSP     2430   6-2430         1   73-7485        8   1  0  N   63.6   78.2   86.3   0        NSP | non-structural polyprotein precursor P1234
+    170293257_NSP     2432   5-2432         1   73-7494        6   1  0  N   75.5   86.7   94.4   0        NSP | non-structural polyprotein precursor P1234
+    NP_598184.1       2593   15-2592        1   73-7473        13  1  0  N   58.6   73.7   53.0   0        NSP | non-structural polyprotein precursor P1234
+        found 1 gene
+
+    found 5 permutations for gene truncated gp3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    gi|392990021      821    1-568          1   7554-9260      6   3  0  N   66.7   80.4   66.6   0        truncated gp3 | truncated polyprotein
+    gi|388584021      830    1-580          1   7554-9269      5   3  0  N   70.9   81.5   65.9   0        truncated gp3 | truncated polyprotein
+    gi|392990023      830    1-803          1   7554-9944      6   3  0  N   63.4   76.1   92.4   0        truncated gp3 | truncated polyprotein
+    gi|392976865      824    1-824          1   7554-10024     2   0  1  N   97.1   98.1   100.0  0        truncated gp3 | truncated polyprotein
+    gi|392976861      823    1-823          1   7554-10024     3   0  1  N   84.0   92.0   100.0  0        truncated gp3 | truncated polyprotein
+        found 1 gene
+
+    found 7 permutations for gene SP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    19073904_SP       1242   1-1242         1   7554-11294     9   3  0  N   60.2   76.1   97.9   0        SP | structural polyprotein
+    ADG95902.1        1248   1-1248         1   7554-11297     1   3  0  N   98.7   99.4   100.0  0        SP | structural polyprotein
+    gi|27754752       1249   1-1249         1   7554-11297     2   3  0  N   97.6   98.4   100.0  0        SP | structural polyprotein
+    gi|659902277      1248   1-1248         1   7554-11297     1   3  0  N   98.2   99.0   100.0  0        SP | structural polyprotein
+    339267585_SP      1240   23-1235        1   7641-11282     10  3  0  N   56.2   73.3   89.3   0        SP | structural polyprotein
+    gi|9627009        1247   1-1247         1   7554-11297     2   3  0  N   85.4   93.2   100.0  0        SP | structural polyprotein
+    AAD14561.1        1253   72-1235        1   7728-11249     7   3  0  N   52.2   69.3   61.1   0        SP | structural polyprotein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+JF274082.1              11829      3            0      13647           4546           98.9             99.6          100.0   chikv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+JF274082.1.1       99.6   99.8   100.0  0.0   0.0   0.0   64..7488         2474   2474   399240871_NSP     NSP | non-structural polyprotein precursor P1234
+JF274082.1.1.1     98.1   99.3   100.0  0.0   0.0   0.0   64..1668         535    535    Q8JUX6_1-535      mRNA-capping enzyme nsp1
+JF274082.1.1.2     99.1   99.7   100.0  0.0   0.0   0.0   1669..4062       798    798    Q8JUX6_536-1333   protease nsp2
+JF274082.1.1.3     99.6   99.6   100.0  0.0   0.0   0.0   4063..5652       530    530    JX088705.1        non-structural protein nsp3
+JF274082.1.1.4     99.0   99.7   99.5   0.5   0.0   0.0   5653..7485       611    614    AID69220.1_1861-2 RNA-directed RNA polymerase nsp4
+JF274082.1.2       97.1   98.8   100.0  0.0   0.0   0.0   7554..9956       824    824    gi|392976865      truncated gp3 | truncated polyprotein
+                                                          9956..10027                                      
+JF274082.1.2.4     92.1   97.0   100.0  0.0   0.0   0.0   9798..9956       76     76     gi|392976866      transframe fusion protein
+                                                          9956..10024                                      
+JF274082.1.3       98.8   99.8   100.0  0.0   0.0   0.0   7554..11300      1248   1248   ADG95902.1        SP | structural polyprotein
+JF274082.1.3.1     99.2   99.9   99.6   0.0   0.0   0.4   7554..8336       261    262    AID69221.1_1-262  capsid protein
+JF274082.1.3.2     100.0  100.0  100.0  0.0   0.0   0.0   8337..8528       64     64     296124511_E3      E3 protein
+JF274082.1.3.3     96.7   98.6   100.0  0.0   0.0   0.0   8529..9797       423    423    Q8JUX5_326-748    E2 envelope glycoprotein
+JF274082.1.3.4     96.7   100.0  96.8   1.6   0.0   1.6   9798..9980       61     63     AID69221.1_748-81 6K protein
+JF274082.1.3.5     99.3   99.9   100.0  0.0   0.0   0.0   9981..11297      439    439    Q8JUX5_810-1248   E1 envelope glycoprotein
+
+
+genomic sequence KY751908.1, length=11796
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 22 permutations for gene NSP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAU95734.1        2494   1-2494         1   61-7473        11  1  0  N   65.8   78.4   86.2   0        NSP | non-structural polyprotein precursor P1234
+    ABB45867.1        2471   1-2471         1   61-7473        10  1  0  N   65.9   78.5   84.5   0        NSP | non-structural polyprotein precursor P1234
+    53854780_NSP      2494   1-2494         1   61-7473        11  1  0  N   65.8   78.4   86.2   0        NSP | non-structural polyprotein precursor P1234
+    AAT96379.1        2494   1-2494         1   61-7473        12  1  0  N   65.7   78.3   87.0   0        NSP | non-structural polyprotein precursor P1234
+    ABL84688.1        2480   1-2480         1   61-7473        10  1  0  N   64.1   77.5   89.5   0        NSP | non-structural polyprotein precursor P1234
+    AAD14562.1        2506   1-2506         1   61-7473        7   1  0  N   67.6   79.4   81.0   0        NSP | non-structural polyprotein precursor P1234
+    ABB45865.1        2474   1-2474         1   61-7473        11  1  0  N   64.4   77.6   89.6   0        NSP | non-structural polyprotein precursor P1234
+    ABL84686.1        2494   1-2494         1   61-7473        12  1  0  N   65.6   78.3   87.0   0        NSP | non-structural polyprotein precursor P1234
+    NP_632021.2       2493   1-2493         1   61-7473        12  1  0  N   65.6   78.3   86.2   0        NSP | non-structural polyprotein precursor P1234
+    AAT96377.1        2494   1-2494         1   61-7473        12  1  0  N   65.6   78.3   87.0   0        NSP | non-structural polyprotein precursor P1234
+    ABQ63085.1        2494   1-2494         1   61-7473        12  1  0  N   65.6   78.3   87.0   0        NSP | non-structural polyprotein precursor P1234
+    19073904_NSP      2437   1-2437         1   61-7482        9   1  0  N   72.4   84.2   96.1   0        NSP | non-structural polyprotein precursor P1234
+    gi|22789217       2474   1-2474         1   61-7482        1   1  0  N   98.4   99.1   100.0  0        NSP | non-structural polyprotein precursor P1234
+    gi|659902276      2474   1-2474         1   61-7482        1   1  0  N   98.4   99.1   100.0  0        NSP | non-structural polyprotein precursor P1234
+    gi|9627008        2514   1-2514         1   61-7482        4   1  0  N   89.7   95.0   95.0   0        NSP | non-structural polyprotein precursor P1234
+    399240871_NSP     2474   1-2474         1   61-7482        1   1  0  N   99.4   99.7   100.0  0        NSP | non-structural polyprotein precursor P1234
+    339267591_NSP     2529   8-2528         1   70-7470        12  1  0  N   62.9   76.6   83.9   0        NSP | non-structural polyprotein precursor P1234
+    379765038_NSP     2471   6-2471         1   70-7482        14  1  0  N   64.2   78.8   88.5   0        NSP | non-structural polyprotein precursor P1234
+    NC_001786_NSP     2411   6-2411         1   70-7482        8   1  0  N   66.8   79.8   92.0   0        NSP | non-structural polyprotein precursor P1234
+    380034914_NSP     2430   6-2430         1   70-7482        8   1  0  N   63.7   78.2   86.2   0        NSP | non-structural polyprotein precursor P1234
+    170293257_NSP     2432   5-2432         1   70-7491        6   1  0  N   75.4   86.6   94.4   0        NSP | non-structural polyprotein precursor P1234
+    NP_598184.1       2593   15-2592        1   70-7470        13  1  0  N   58.7   73.9   53.0   0        NSP | non-structural polyprotein precursor P1234
+        found 1 gene
+
+    found 5 permutations for gene truncated gp3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    gi|392990021      821    1-568          1   7551-9257      6   3  0  N   66.7   80.4   66.6   0        truncated gp3 | truncated polyprotein
+    gi|388584021      830    1-580          1   7551-9266      5   3  0  N   70.9   81.5   65.9   0        truncated gp3 | truncated polyprotein
+    gi|392990023      830    1-803          1   7551-9941      6   3  0  N   63.4   76.2   92.4   0        truncated gp3 | truncated polyprotein
+    gi|392976865      824    1-824          1   7551-10021     2   0  1  N   96.9   98.0   100.0  0        truncated gp3 | truncated polyprotein
+    gi|392976861      823    1-823          1   7551-10021     3   0  1  N   84.0   92.0   100.0  0        truncated gp3 | truncated polyprotein
+        found 1 gene
+
+    found 7 permutations for gene SP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    19073904_SP       1242   1-1242         1   7551-11291     9   3  0  N   60.2   76.1   97.9   0        SP | structural polyprotein
+    ADG95902.1        1248   1-1248         1   7551-11294     1   3  0  N   98.5   99.3   100.0  0        SP | structural polyprotein
+    gi|27754752       1249   1-1249         1   7551-11294     2   3  0  N   97.3   98.4   100.0  0        SP | structural polyprotein
+    gi|659902277      1248   1-1248         1   7551-11294     1   3  0  N   97.9   98.9   100.0  0        SP | structural polyprotein
+    339267585_SP      1240   23-1235        1   7638-11279     10  3  0  N   56.1   73.3   89.3   0        SP | structural polyprotein
+    gi|9627009        1247   1-1247         1   7551-11294     2   3  0  N   85.4   93.2   100.0  0        SP | structural polyprotein
+    AAD14561.1        1253   72-1235        1   7725-11246     7   3  0  N   52.2   69.3   61.1   0        SP | structural polyprotein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KY751908.1              11796      3            0      13647           4546           98.8             99.6          100.0   chikv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KY751908.1.1       99.5   99.8   100.0  0.0   0.0   0.0   61..7485         2474   2474   399240871_NSP     NSP | non-structural polyprotein precursor P1234
+                    translation exception 5629..5631:R
+KY751908.1.1.1     98.1   99.3   100.0  0.0   0.0   0.0   61..1665         535    535    Q8JUX6_1-535      mRNA-capping enzyme nsp1
+KY751908.1.1.2     99.1   99.8   100.0  0.0   0.0   0.0   1666..4059       798    798    Q8JUX6_536-1333   protease nsp2
+KY751908.1.1.3     99.6   99.8   100.0  0.0   0.0   0.0   4060..5649       530    530    JX088705.1        non-structural protein nsp3
+KY751908.1.1.4     98.7   99.5   99.5   0.5   0.0   0.0   5650..7482       611    614    AID69220.1_1861-2 RNA-directed RNA polymerase nsp4
+KY751908.1.2       97.0   98.8   100.0  0.0   0.0   0.0   7551..9953       824    824    gi|392976865      truncated gp3 | truncated polyprotein
+                                                          9953..10024                                      
+KY751908.1.2.4     92.1   97.0   100.0  0.0   0.0   0.0   9795..9953       76     76     gi|392976866      transframe fusion protein
+                                                          9953..10021                                      
+KY751908.1.3       98.6   99.8   100.0  0.0   0.0   0.0   7551..11297      1248   1248   ADG95902.1        SP | structural polyprotein
+KY751908.1.3.1     99.2   99.9   99.6   0.0   0.0   0.4   7551..8333       261    262    AID69221.1_1-262  capsid protein
+KY751908.1.3.2     100.0  100.0  100.0  0.0   0.0   0.0   8334..8525       64     64     296124511_E3      E3 protein
+KY751908.1.3.3     96.5   98.6   100.0  0.0   0.0   0.0   8526..9794       423    423    Q8JUX5_326-748    E2 envelope glycoprotein
+KY751908.1.3.4     96.7   100.0  96.8   1.6   0.0   1.6   9795..9977       61     63     AID69221.1_748-81 6K protein
+KY751908.1.3.5     98.9   99.9   100.0  0.0   0.0   0.0   9978..11294      439    439    Q8JUX5_810-1248   E1 envelope glycoprotein
+
+
+genomic sequence KY057363.1, length=11834
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 22 permutations for gene NSP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAU95734.1        2494   1-2494         1   77-7489        11  2  0  N   65.8   78.3   86.2   0        NSP | non-structural polyprotein precursor P1234
+    ABB45867.1        2471   1-2471         1   77-7489        10  2  0  N   65.9   78.5   84.5   0        NSP | non-structural polyprotein precursor P1234
+    53854780_NSP      2494   1-2494         1   77-7489        11  2  0  N   65.8   78.3   86.2   0        NSP | non-structural polyprotein precursor P1234
+    AAT96379.1        2494   1-2494         1   77-7489        12  2  0  N   65.7   78.3   87.0   0        NSP | non-structural polyprotein precursor P1234
+    ABL84688.1        2480   1-2480         1   77-7489        10  2  0  N   64.1   77.5   89.5   0        NSP | non-structural polyprotein precursor P1234
+    AAD14562.1        2506   1-2506         1   77-7489        7   2  0  N   67.6   79.4   81.0   0        NSP | non-structural polyprotein precursor P1234
+    ABB45865.1        2474   1-2474         1   77-7489        11  2  0  N   64.4   77.5   89.6   0        NSP | non-structural polyprotein precursor P1234
+    ABL84686.1        2494   1-2494         1   77-7489        12  2  0  N   65.6   78.3   87.0   0        NSP | non-structural polyprotein precursor P1234
+    NP_632021.2       2493   1-2493         1   77-7489        12  2  0  N   65.6   78.2   86.2   0        NSP | non-structural polyprotein precursor P1234
+    AAT96377.1        2494   1-2494         1   77-7489        12  2  0  N   65.6   78.3   87.0   0        NSP | non-structural polyprotein precursor P1234
+    ABQ63085.1        2494   1-2494         1   77-7489        12  2  0  N   65.6   78.2   87.0   0        NSP | non-structural polyprotein precursor P1234
+    19073904_NSP      2437   1-2437         1   77-7498        9   2  0  N   72.4   84.3   96.1   0        NSP | non-structural polyprotein precursor P1234
+    gi|22789217       2474   1-2474         1   77-7498        1   2  0  N   98.5   99.2   100.0  0        NSP | non-structural polyprotein precursor P1234
+    gi|659902276      2474   1-2474         1   77-7498        1   2  0  N   98.5   99.2   100.0  0        NSP | non-structural polyprotein precursor P1234
+    gi|9627008        2514   1-2514         1   77-7498        4   2  0  N   89.1   94.5   95.9   0        NSP | non-structural polyprotein precursor P1234
+    399240871_NSP     2474   1-2474         1   77-7498        1   2  0  N   99.5   99.7   100.0  0        NSP | non-structural polyprotein precursor P1234
+    339267591_NSP     2529   8-2528         1   86-7486        12  2  0  N   62.9   76.6   83.9   0        NSP | non-structural polyprotein precursor P1234
+    379765038_NSP     2471   6-2471         1   86-7498        14  2  0  N   64.3   78.8   88.5   0        NSP | non-structural polyprotein precursor P1234
+    NC_001786_NSP     2411   6-2411         1   86-7498        8   2  0  N   66.8   79.7   92.0   0        NSP | non-structural polyprotein precursor P1234
+    380034914_NSP     2430   6-2430         1   86-7498        8   2  0  N   63.6   78.2   86.2   0        NSP | non-structural polyprotein precursor P1234
+    170293257_NSP     2432   5-2432         1   86-7507        6   2  0  N   75.4   86.7   94.4   0        NSP | non-structural polyprotein precursor P1234
+    NP_598184.1       2593   15-2592        1   86-7486        13  2  0  N   58.6   73.8   53.0   0        NSP | non-structural polyprotein precursor P1234
+        found 1 gene
+
+    found 5 permutations for gene truncated gp3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    gi|392990021      821    1-568          1   7567-9273      6   1  0  N   66.7   80.4   66.6   0        truncated gp3 | truncated polyprotein
+    gi|388584021      830    1-580          1   7567-9282      5   1  0  N   70.9   81.5   65.9   0        truncated gp3 | truncated polyprotein
+    gi|392990023      830    1-803          1   7567-9957      6   1  0  N   63.4   76.2   92.4   0        truncated gp3 | truncated polyprotein
+    gi|392976865      824    1-824          1   7567-10037     2   0  1  N   96.9   98.0   100.0  0        truncated gp3 | truncated polyprotein
+    gi|392976861      823    1-823          1   7567-10037     3   0  1  N   84.0   92.0   100.0  0        truncated gp3 | truncated polyprotein
+        found 1 gene
+
+    found 7 permutations for gene SP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    19073904_SP       1242   1-1242         1   7567-11307     9   1  0  N   60.2   76.1   97.9   0        SP | structural polyprotein
+    ADG95902.1        1248   1-1248         1   7567-11310     1   1  0  N   98.5   99.3   100.0  0        SP | structural polyprotein
+    gi|27754752       1249   1-1249         1   7567-11310     2   1  0  N   97.3   98.4   100.0  0        SP | structural polyprotein
+    gi|659902277      1248   1-1248         1   7567-11310     1   1  0  N   97.9   98.9   100.0  0        SP | structural polyprotein
+    339267585_SP      1240   23-1235        1   7654-11295     10  1  0  N   56.1   73.3   89.3   0        SP | structural polyprotein
+    gi|9627009        1247   1-1247         1   7567-11310     2   1  0  N   85.4   93.2   100.0  0        SP | structural polyprotein
+    AAD14561.1        1253   72-1235        1   7741-11262     7   1  0  N   52.2   69.3   61.1   0        SP | structural polyprotein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KY057363.1              11834      3            0      13647           4546           98.9             99.6          100.0   chikv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KY057363.1.1       99.6   99.8   100.0  0.0   0.0   0.0   77..7501         2474   2474   399240871_NSP     NSP | non-structural polyprotein precursor P1234
+                    translation exception 5645..5647:R
+KY057363.1.1.1     98.3   99.4   100.0  0.0   0.0   0.0   77..1681         535    535    Q8JUX6_1-535      mRNA-capping enzyme nsp1
+KY057363.1.1.2     99.1   99.8   100.0  0.0   0.0   0.0   1682..4075       798    798    Q8JUX6_536-1333   protease nsp2
+KY057363.1.1.3     99.8   99.8   100.0  0.0   0.0   0.0   4076..5665       530    530    JX088705.1        non-structural protein nsp3
+KY057363.1.1.4     98.5   99.5   99.5   0.5   0.0   0.0   5666..7498       611    614    AID69220.1_1861-2 RNA-directed RNA polymerase nsp4
+KY057363.1.2       97.0   98.8   100.0  0.0   0.0   0.0   7567..9969       824    824    gi|392976865      truncated gp3 | truncated polyprotein
+                                                          9969..10040                                      
+KY057363.1.2.4     92.1   97.0   100.0  0.0   0.0   0.0   9811..9969       76     76     gi|392976866      transframe fusion protein
+                                                          9969..10037                                      
+KY057363.1.3       98.6   99.8   100.0  0.0   0.0   0.0   7567..11313      1248   1248   ADG95902.1        SP | structural polyprotein
+KY057363.1.3.1     99.2   99.9   99.6   0.0   0.0   0.4   7567..8349       261    262    AID69221.1_1-262  capsid protein
+KY057363.1.3.2     100.0  100.0  100.0  0.0   0.0   0.0   8350..8541       64     64     296124511_E3      E3 protein
+KY057363.1.3.3     96.5   98.6   100.0  0.0   0.0   0.0   8542..9810       423    423    Q8JUX5_326-748    E2 envelope glycoprotein
+KY057363.1.3.4     96.7   100.0  96.8   1.6   0.0   1.6   9811..9993       61     63     AID69221.1_748-81 6K protein
+KY057363.1.3.5     98.9   99.9   100.0  0.0   0.0   0.0   9994..11310      439    439    Q8JUX5_810-1248   E1 envelope glycoprotein
+
+
+genomic sequence KX496989.1, length=12037
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 22 permutations for gene NSP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAU95734.1        2494   1-2494         1   77-7477        11  2  0  N   65.8   78.2   86.2   0        NSP | non-structural polyprotein precursor P1234
+    ABB45867.1        2471   1-2471         1   77-7477        10  2  0  N   65.8   78.4   84.5   0        NSP | non-structural polyprotein precursor P1234
+    53854780_NSP      2494   1-2494         1   77-7477        11  2  0  N   65.8   78.2   86.2   0        NSP | non-structural polyprotein precursor P1234
+    AAT96379.1        2494   1-2494         1   77-7477        12  2  0  N   65.6   78.2   87.0   0        NSP | non-structural polyprotein precursor P1234
+    ABL84688.1        2480   1-2480         1   77-7477        11  2  0  N   64.6   78.0   88.6   0        NSP | non-structural polyprotein precursor P1234
+    AAD14562.1        2506   1-2506         1   77-7477        7   2  0  N   67.5   79.2   81.0   0        NSP | non-structural polyprotein precursor P1234
+    ABB45865.1        2474   1-2474         1   77-7477        11  2  0  N   64.3   77.5   89.6   0        NSP | non-structural polyprotein precursor P1234
+    ABL84686.1        2494   1-2494         1   77-7477        12  2  0  N   65.6   78.2   87.0   0        NSP | non-structural polyprotein precursor P1234
+    NP_632021.2       2493   1-2493         1   77-7477        12  2  0  N   65.6   78.1   86.2   0        NSP | non-structural polyprotein precursor P1234
+    AAT96377.1        2494   1-2494         1   77-7477        12  2  0  N   65.5   78.2   87.0   0        NSP | non-structural polyprotein precursor P1234
+    ABQ63085.1        2494   1-2494         1   77-7477        12  2  0  N   65.5   78.1   87.0   0        NSP | non-structural polyprotein precursor P1234
+    19073904_NSP      2437   1-2437         1   77-7486        10  2  0  N   72.3   84.2   95.9   0        NSP | non-structural polyprotein precursor P1234
+    gi|22789217       2474   1-2474         1   77-7486        2   2  0  N   97.4   98.6   99.8   0        NSP | non-structural polyprotein precursor P1234
+    gi|659902276      2474   1-2474         1   77-7486        2   2  0  N   97.4   98.6   99.8   0        NSP | non-structural polyprotein precursor P1234
+    gi|9627008        2514   1-2514         1   77-7486        4   2  0  N   88.9   94.6   95.5   0        NSP | non-structural polyprotein precursor P1234
+    399240871_NSP     2474   1-2474         1   77-7486        2   2  0  N   97.1   98.1   99.8   0        NSP | non-structural polyprotein precursor P1234
+    380034914_NSP     2430   5-2430         1   83-7486        11  2  0  N   63.6   78.3   87.4   0        NSP | non-structural polyprotein precursor P1234
+    339267591_NSP     2529   8-2528         1   86-7474        12  2  0  N   62.8   76.5   83.9   0        NSP | non-structural polyprotein precursor P1234
+    379765038_NSP     2471   6-2471         1   86-7486        14  2  0  N   64.3   78.7   88.5   0        NSP | non-structural polyprotein precursor P1234
+    NC_001786_NSP     2411   6-2411         1   86-7486        8   2  0  N   66.4   79.5   92.0   0        NSP | non-structural polyprotein precursor P1234
+    170293257_NSP     2432   5-2432         1   86-7495        6   2  0  N   75.0   86.5   94.4   0        NSP | non-structural polyprotein precursor P1234
+    NP_598184.1       2593   14-2592        1   83-7474        12  2  0  N   58.9   74.2   51.7   0        NSP | non-structural polyprotein precursor P1234
+        found 1 gene
+
+    found 5 permutations for gene truncated gp3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    gi|392990023      830    1-576          1   7555-9261      4   1  0  N   66.0   77.9   66.7   0        truncated gp3 | truncated polyprotein
+    gi|392990021      821    1-568          1   7555-9261      6   1  0  N   66.2   80.2   66.6   0        truncated gp3 | truncated polyprotein
+    gi|388584021      830    1-580          1   7555-9270      5   1  0  N   70.2   81.1   65.9   0        truncated gp3 | truncated polyprotein
+    gi|392976865      824    1-824          1   7555-10025     2   0  1  N   95.4   97.2   100.0  0        truncated gp3 | truncated polyprotein
+    gi|392976861      823    1-823          1   7555-10025     3   0  1  N   83.5   91.7   100.0  0        truncated gp3 | truncated polyprotein
+        found 1 gene
+
+    found 16 permutations for gene SP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    19073904_SP       1242   1-1242         1   7555-11295     9   1  0  N   60.2   76.1   97.9   0        SP | structural polyprotein
+    ADG95902.1        1248   1-1248         1   7555-11298     1   1  0  N   96.8   98.3   100.0  0        SP | structural polyprotein
+    gi|27754752       1249   1-1249         1   7555-11298     2   1  0  N   96.0   97.6   100.0  0        SP | structural polyprotein
+    gi|659902277      1248   1-1248         1   7555-11298     1   1  0  N   96.3   97.9   100.0  0        SP | structural polyprotein
+    AAD14561.1        1253   25-1235        1   7603-11250     8   1  0  N   52.6   69.7   61.6   0        SP | structural polyprotein
+    339267585_SP      1240   67-1235        1   7729-11283     10  1  0  N   56.4   73.5   89.4   0        SP | structural polyprotein
+    gi|9627009        1247   1-1247         1   7555-11298     2   1  0  N   84.7   93.1   100.0  0        SP | structural polyprotein
+    ABL84687.1        1242   67-1238        1   7756-11289     8   1  0  N   54.0   70.8   67.1   0        SP | structural polyprotein
+    AAU95735.1        1242   67-1238        1   7756-11289     8   1  0  N   53.6   70.6   67.1   0        SP | structural polyprotein
+    AAT96378.1        1242   67-1238        1   7756-11289     8   1  0  N   54.0   70.8   67.1   0        SP | structural polyprotein
+    53854780_SP       1242   67-1238        1   7756-11289     8   1  0  N   53.6   70.6   67.1   0        SP | structural polyprotein
+    ABQ63086.1        1242   67-1238        1   7756-11289     8   1  0  N   54.0   70.8   67.1   0        SP | structural polyprotein
+    ABB45868.1        1242   82-1239        1   7801-11292     7   1  0  N   54.5   72.2   62.2   0        SP | structural polyprotein
+    NP_632022.1       1241   81-1237        1   7801-11289     7   1  0  N   55.3   72.2   62.1   0        SP | structural polyprotein
+    ABL84689.1        1242   82-1239        1   7801-11292     7   1  0  N   53.9   71.8   64.0   0        SP | structural polyprotein
+    AAD14567.1        1254   12-1243        1   7597-11274     10  1  0  N   51.1   69.7   77.3   0        SP | structural polyprotein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KX496989.1              12037      3            0      13635           4542           96.9             99.0          100.0   chikv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KX496989.1.1       97.4   99.0   100.0  0.0   0.0   0.0   77..7489         2470   2474   gi|22789217       NSP | non-structural polyprotein precursor P1234
+                    translation exception 5633..5635:R
+KX496989.1.1.1     97.2   98.9   100.0  0.0   0.0   0.0   77..1681         535    535    Q8JUX6_1-535      mRNA-capping enzyme nsp1
+KX496989.1.1.2     98.9   99.4   100.0  0.0   0.0   0.0   1682..4075       798    798    Q8JUX6_536-1333   protease nsp2
+KX496989.1.1.3     94.9   97.8   99.2   0.8   0.0   0.0   4076..5644       523    531    AID69220.1_1330-1 non-structural protein nsp3
+KX496989.1.1.4     97.7   99.4   100.0  0.0   0.0   0.0   5645..7486       614    614    AID69220.1_1861-2 RNA-directed RNA polymerase nsp4
+KX496989.1.2       95.3   98.4   100.0  0.0   0.0   0.0   7555..9957       824    824    gi|392976865      truncated gp3 | truncated polyprotein
+                                                          9957..10028                                      
+KX496989.1.2.4     89.5   95.7   100.0  0.0   0.0   0.0   9799..9957       76     76     gi|392976866      transframe fusion protein
+                                                          9957..10025                                      
+KX496989.1.3       96.9   99.4   100.0  0.0   0.0   0.0   7555..11301      1248   1248   ADG95902.1        SP | structural polyprotein
+KX496989.1.3.1     98.5   99.8   99.6   0.0   0.0   0.4   7555..8337       261    262    AID69221.1_1-262  capsid protein
+KX496989.1.3.2     93.8   98.4   100.0  0.0   0.0   0.0   8338..8529       64     64     296124511_E3      E3 protein
+KX496989.1.3.3     94.1   98.1   100.0  0.0   0.0   0.0   8530..9798       423    423    Q8JUX5_326-748    E2 envelope glycoprotein
+KX496989.1.3.4     91.8   98.4   96.8   1.6   0.0   1.6   9799..9981       61     63     AID69221.1_748-81 6K protein
+KX496989.1.3.5     98.4   99.8   100.0  0.0   0.0   0.0   9982..11298      439    439    Q8JUX5_810-1248   E1 envelope glycoprotein
+
+
+genomic sequence KX168429.1, length=11900
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 22 permutations for gene NSP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAU95734.1        2494   1-2494         1   77-7696        11  2  0  N   65.8   78.2   86.2   0        NSP | non-structural polyprotein precursor P1234
+    ABB45867.1        2471   1-2471         1   77-7696        10  2  0  N   65.7   78.4   84.5   0        NSP | non-structural polyprotein precursor P1234
+    53854780_NSP      2494   1-2494         1   77-7696        11  2  0  N   65.8   78.2   86.2   0        NSP | non-structural polyprotein precursor P1234
+    AAT96379.1        2494   1-2494         1   77-7696        12  2  0  N   65.6   78.1   87.0   0        NSP | non-structural polyprotein precursor P1234
+    ABL84688.1        2480   1-2480         1   77-7696        11  2  0  N   64.5   77.9   88.6   0        NSP | non-structural polyprotein precursor P1234
+    AAD14562.1        2506   1-2506         1   77-7696        7   2  0  N   67.5   79.3   81.0   0        NSP | non-structural polyprotein precursor P1234
+    ABB45865.1        2474   1-2474         1   77-7696        11  2  0  N   64.3   77.4   89.6   0        NSP | non-structural polyprotein precursor P1234
+    ABL84686.1        2494   1-2494         1   77-7696        12  2  0  N   65.6   78.2   87.0   0        NSP | non-structural polyprotein precursor P1234
+    NP_632021.2       2493   1-2493         1   77-7696        12  2  0  N   65.6   78.1   86.2   0        NSP | non-structural polyprotein precursor P1234
+    AAT96377.1        2494   1-2494         1   77-7696        12  2  0  N   65.5   78.1   87.0   0        NSP | non-structural polyprotein precursor P1234
+    ABQ63085.1        2494   1-2494         1   77-7696        12  2  0  N   65.5   78.1   87.0   0        NSP | non-structural polyprotein precursor P1234
+    19073904_NSP      2437   1-2437         1   77-7705        10  2  0  N   72.4   84.2   95.8   0        NSP | non-structural polyprotein precursor P1234
+    gi|22789217       2474   1-2474         1   77-7705        2   2  0  N   96.8   98.3   100.0  0        NSP | non-structural polyprotein precursor P1234
+    gi|659902276      2474   1-2474         1   77-7705        2   2  0  N   96.8   98.3   100.0  0        NSP | non-structural polyprotein precursor P1234
+    gi|9627008        2514   1-2514         1   77-7705        4   2  0  N   88.6   94.5   95.5   0        NSP | non-structural polyprotein precursor P1234
+    399240871_NSP     2474   1-2474         1   77-7705        2   2  0  N   96.5   97.8   100.0  0        NSP | non-structural polyprotein precursor P1234
+    380034914_NSP     2430   5-2430         1   83-7705        11  2  0  N   63.6   78.4   87.4   0        NSP | non-structural polyprotein precursor P1234
+    339267591_NSP     2529   8-2528         1   86-7693        12  2  0  N   62.7   76.4   83.9   0        NSP | non-structural polyprotein precursor P1234
+    379765038_NSP     2471   6-2471         1   86-7705        14  2  0  N   64.1   78.7   88.5   0        NSP | non-structural polyprotein precursor P1234
+    NC_001786_NSP     2411   6-2411         1   86-7705        8   2  0  N   66.4   79.5   92.0   0        NSP | non-structural polyprotein precursor P1234
+    170293257_NSP     2432   5-2432         1   86-7714        6   2  0  N   74.9   86.4   94.4   0        NSP | non-structural polyprotein precursor P1234
+    NP_598184.1       2593   14-2592        1   83-7693        12  2  0  N   58.9   74.1   51.7   0        NSP | non-structural polyprotein precursor P1234
+        found 1 gene
+
+    found 5 permutations for gene truncated gp3
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    gi|392990023      830    1-331          1   7774-8748      3   1  0  N   73.7   84.1   37.2   0        truncated gp3 | truncated polyprotein
+    gi|388584021      830    1-580          1   7774-9489      5   1  0  N   69.1   80.1   66.3   0        truncated gp3 | truncated polyprotein
+    gi|392990021      821    1-572          1   7774-9492      5   1  0  N   64.0   78.8   67.4   0        truncated gp3 | truncated polyprotein
+    gi|392976865      824    1-824          1   7774-10244     2   0  1  N   94.6   96.7   100.0  0        truncated gp3 | truncated polyprotein
+    gi|392976861      823    1-823          1   7774-10244     3   0  1  N   82.5   91.2   100.0  0        truncated gp3 | truncated polyprotein
+        found 1 gene
+
+    found 16 permutations for gene SP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    19073904_SP       1242   1-1242         1   7774-11514     8   1  0  N   59.6   75.7   98.4   0        SP | structural polyprotein
+    gi|659902277      1248   1-1248         1   7774-11517     1   1  0  N   95.7   97.5   100.0  0        SP | structural polyprotein
+    gi|27754752       1249   1-1249         1   7774-11517     2   1  0  N   95.3   97.1   100.0  0        SP | structural polyprotein
+    ADG95902.1        1248   1-1248         1   7774-11517     1   1  0  N   96.3   97.9   100.0  0        SP | structural polyprotein
+    339267585_SP      1240   67-1235        1   7948-11502     10  1  0  N   56.0   73.3   89.8   0        SP | structural polyprotein
+    gi|9627009        1247   1-1247         1   7774-11517     2   1  0  N   84.0   92.7   100.0  0        SP | structural polyprotein
+    AAU95735.1        1242   67-1238        1   7975-11508     8   1  0  N   53.6   70.6   67.1   0        SP | structural polyprotein
+    53854780_SP       1242   67-1238        1   7975-11508     8   1  0  N   53.6   70.6   67.1   0        SP | structural polyprotein
+    ABQ63086.1        1242   67-1238        1   7975-11508     8   1  0  N   54.0   70.8   67.1   0        SP | structural polyprotein
+    ABL84687.1        1242   67-1238        1   7975-11508     8   1  0  N   54.0   70.8   67.1   0        SP | structural polyprotein
+    AAT96378.1        1242   67-1238        1   7975-11508     8   1  0  N   54.0   70.8   67.1   0        SP | structural polyprotein
+    ABB45868.1        1242   82-1239        1   8020-11511     7   1  0  N   54.5   72.2   62.2   0        SP | structural polyprotein
+    NP_632022.1       1241   81-1237        1   8020-11508     7   1  0  N   55.3   72.2   62.1   0        SP | structural polyprotein
+    ABL84689.1        1242   82-1239        1   8020-11511     7   1  0  N   53.9   71.8   64.0   0        SP | structural polyprotein
+    AAD14567.1        1254   53-1243        1   8020-11493     10  1  0  N   50.9   69.7   77.9   0        SP | structural polyprotein
+    AAD14561.1        1253   72-1235        1   7948-11469     7   1  0  N   52.5   69.6   61.1   0        SP | structural polyprotein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KX168429.1              11900      3            0      13854           4615           95.0             97.2          100.0   chikv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KX168429.1.1       94.5   96.2   100.0  0.0   0.0   0.0   77..7708         2543   2474   gi|22789217       NSP | non-structural polyprotein precursor P1234
+                    translation exception 5852..5854:R
+KX168429.1.1.1     96.6   98.6   100.0  0.0   0.0   0.0   77..1681         535    535    Q8JUX6_1-535      mRNA-capping enzyme nsp1
+KX168429.1.1.2     98.4   99.4   100.0  0.0   0.0   0.0   1682..4075       798    798    Q8JUX6_536-1333   protease nsp2
+KX168429.1.1.3     83.3   86.4   100.0  0.0   0.0   0.0   4076..5872       599    530    JX088705.1        non-structural protein nsp3
+KX168429.1.1.4     97.7   99.4   99.5   0.5   0.0   0.0   5873..7705       611    614    AID69220.1_1861-2 RNA-directed RNA polymerase nsp4
+KX168429.1.2       94.5   97.7   100.0  0.0   0.0   0.0   7774..10176      824    824    gi|392976865      truncated gp3 | truncated polyprotein
+                                                          10176..10247                                     
+KX168429.1.2.4     90.8   95.7   100.0  0.0   0.0   0.0   10018..10176     76     76     gi|392976866      transframe fusion protein
+                                                          10176..10244                                     
+KX168429.1.3       96.3   98.9   100.0  0.0   0.0   0.0   7774..11520      1248   1248   ADG95902.1        SP | structural polyprotein
+KX168429.1.3.1     97.3   99.0   99.6   0.0   0.0   0.4   7774..8556       261    262    AID69221.1_1-262  capsid protein
+KX168429.1.3.2     93.8   98.4   100.0  0.0   0.0   0.0   8557..8748       64     64     296124511_E3      E3 protein
+KX168429.1.3.3     93.4   97.4   100.0  0.0   0.0   0.0   8749..10017      423    423    Q8JUX5_326-748    E2 envelope glycoprotein
+KX168429.1.3.4     93.4   98.4   96.8   1.6   0.0   1.6   10018..10200     61     63     AID69221.1_748-81 6K protein
+KX168429.1.3.5     97.9   99.6   100.0  0.0   0.0   0.0   10201..11517     439    439    Q8JUX5_810-1248   E1 envelope glycoprotein
+

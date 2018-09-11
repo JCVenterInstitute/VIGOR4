@@ -1,0 +1,208 @@
+2018-09-07 15:53:03
+
+parameters
+	bl2seq_extend_hsp	25
+	bl2seq_extend_span	50
+	candidate_blastopts	-p blastx -M BLOSUM80 -e 1E-5 -g F -v 0 -F \"\" -z 3000000 -b 1000
+	candidate_evalue	
+	candidate_overlap_threshold	0.8
+	candidate_refdb	
+	command_line	/opt/www/vigor/vigor3/prod3/VIGOR3.pl -D yfv -O /usr/local/scratch/CORE/snettem/yfv/PRODUCTION/yfv -i /opt/www/vigor/vigor3/regr_testing/yfv.ungapped.fasta
+	default_gene_optional	0
+	default_gene_required	0
+	default_gene_variation	1
+	frameshift_sensitivity	1
+	gene_variations	
+	jcvi_rules	1
+	mature_pep_mincoverage	50
+	mature_pep_minidentity	25
+	mature_pep_minsimilarity	40
+	mature_pep_refdb	../data3/virus_mp
+	max_intron_size	7000
+	min_candidate_pctsimilarity	70
+	min_candidate_sbjcoverage	33
+	min_exon_size	3
+	min_intron_size	30
+	min_pseudogene_coverage	80
+	min_pseudogene_identity	75
+	min_pseudogene_similarity	80
+	noncanonical_splicing_genes	
+	optional_genes	
+	reference_db	/opt/www/vigor/vigor3/data3/yfv_db
+	reference_dbsize	63356
+	required_genes	
+	ribosomal_slippage_genes	
+	rna_editing_genes	
+	selectivity	0.985
+	slippage_frameshift	-1
+	slippage_motif	[NCT][NC][NC][NT][NT][NT][NCT]
+	slippage_offset	0
+	spliced_genes	
+	splicesite_extend_range	0
+	tile_overlap	1000000
+	tile_size	10000000
+	use_locus_tags	1
+	variation	0.975
+	verbose	0
+	vigorspace	/opt/www/vigor/vigor3/prod3/vigorscratch/169923.181020753
+
+
+genomic sequence gi|399764449|gb|JQ928174.1|, length=10714
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 10 permutations for gene GP2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABP88817_GP2      1197   1-1154         1   66-3521        3   3  0  N   74.3   88.3   96.4   0        GP2 | truncated polyprotein
+    AAF05296_GP2      1197   1-1154         1   66-3521        2   3  0  N   76.6   88.2   96.1   0        GP2 | truncated polyprotein
+    ADX31663_GP2      1198   1-1198         1   66-3649        5   0  1  N   77.7   89.5   97.7   0        GP2 | truncated polyprotein
+    BAK19337_GP2      1198   1-1177         1   66-3586        4   0  1  N   76.2   89.7   97.1   0        GP2 | truncated polyprotein
+    YP_006355435.1    1198   1-1198         1   66-3649        5   0  1  N   75.9   89.5   98.2   0        GP2 | truncated polyprotein
+    AAX82481_GP2      1198   1-1182         1   66-3601        4   0  1  N   75.4   87.5   97.9   0        GP2 | truncated polyprotein
+    ACH99532_GP2      1194   1-1194         1   66-3649        3   0  1  N   83.1   92.5   100.0  0        GP2 | truncated polyprotein
+    AAW81711_GP2      1195   1-1195         1   66-3649        2   0  1  N   87.2   94.7   100.0  0        GP2 | truncated polyprotein
+    CAX41890_GP2      1195   1-1195         1   66-3649        2   0  1  N   99.3   99.4   100.0  0        GP2 | truncated polyprotein
+    ABC40712_GP2      1195   1-1195         1   66-3649        2   0  1  N   91.9   96.7   100.0  0        GP2 | truncated polyprotein
+        found 1 gene
+
+    found 12 permutations for gene GP1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACT31738.1        3429   1-3417         1   66-10331       5   3  0  N   68.1   82.5   99.1   0        GP1 | genome polyprotein
+    ADX31663          3433   1-3433         1   66-10364       5   3  0  N   77.9   89.3   99.2   0        GP1 | genome polyprotein
+    ACH99532          3432   1-3432         1   66-10364       2   3  0  N   88.1   95.4   100.0  0        GP1 | genome polyprotein
+    AAX82481          3434   1-3434         1   66-10364       5   3  0  N   76.8   88.4   99.5   0        GP1 | genome polyprotein
+    ACZ67479.1        3432   1-3432         1   66-10364       4   3  0  N   76.6   89.0   99.4   0        GP1 | genome polyprotein
+    ABC40712          3433   1-3433         1   66-10364       1   3  0  N   93.4   97.7   100.0  0        GP1 | genome polyprotein
+    AAF05296          3434   1-3434         1   66-10364       4   3  0  N   77.3   89.0   99.3   0        GP1 | genome polyprotein
+    AAW81711          3433   1-3433         1   66-10364       1   3  0  N   90.4   96.3   100.0  0        GP1 | genome polyprotein
+    ABP88817          3434   1-3434         1   66-10364       5   3  0  N   76.3   89.0   99.5   0        GP1 | genome polyprotein
+    CAX41890          3433   1-3433         1   66-10364       1   3  0  N   99.5   99.7   100.0  0        GP1 | genome polyprotein
+    BAK19337          3432   1-3432         1   66-10364       4   3  0  N   76.8   89.2   99.3   0        GP1 | genome polyprotein
+    YP_950478.1       3405   147-3392       1   534-10331      16  3  0  N   52.7   71.2   71.1   0        GP1 | genome polyprotein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|399764449|gb|JQ92    10714      2            0      13890           4628           99.6             99.9          100.0   yfv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_399764449.1     99.5   99.8   100.0  0.0   0.0   0.0   66..3521         1195   1195   CAX41890_GP2      GP2 | truncated polyprotein
+                                                          3521..3652                                       
+gi_399764449.1.4   100.0  100.0  100.0  0.0   0.0   0.0   2439..3521       404    404    399764449_NS1p    non-structural protein NS1'
+                                                          3521..3649                                       
+gi_399764449.2     99.6   99.9   100.0  0.0   0.0   0.0   66..10367        3433   3433   CAX41890          GP1 | genome polyprotein
+gi_399764449.2.1   89.4   98.4   100.0  0.0   0.0   0.0   66..434          123    123    sp|P06935_C       anchored capsid protein C
+gi_399764449.2.2   95.8   99.9   100.0  0.0   0.0   0.0   435..935         167    167    sp|P06935_M       M protein
+gi_399764449.2.3   94.6   97.9   100.0  0.0   0.0   0.0   936..2438        501    497    sp|P06935_E       envelope protein E
+gi_399764449.2.4   91.2   98.4   100.0  0.0   0.0   0.0   2439..3494       352    352    sp|P06935_1       non-structural protein NS1
+gi_399764449.2.5   88.7   98.7   100.0  0.0   0.0   0.0   3495..4187       231    231    sp|P06935_2a      non-structural protein NS2a
+gi_399764449.2.6   97.7   99.8   100.0  0.0   0.0   0.0   4188..4580       131    131    sp|P06935_2b      non-structural protein NS2b
+gi_399764449.2.7   95.6   99.3   100.0  0.0   0.0   0.0   4581..6437       619    619    sp|P06935_3       non-structural protein NS3
+gi_399764449.2.8   92.9   98.0   100.0  0.0   0.0   0.0   6438..6815       126    126    sp|P06935_4a      non-structural protein NS4a
+gi_399764449.2.9   91.3   98.9   100.0  0.0   0.0   0.0   6816..6884       23     23     sp|P06935_2k      2k protein
+gi_399764449.2.10  90.2   97.3   100.0  0.0   0.0   0.0   6885..7649       255    256    sp|P06935_4b      non-structural protein NS4b
+gi_399764449.2.11  94.7   99.0   100.0  0.0   0.0   0.0   7650..10364      905    905    sp|P06935_5       RNA-directed RNA polymerase NS5
+
+
+genomic sequence gi|399764451|gb|JQ928175.1|, length=10477
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 10 permutations for gene GP2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAF05296_GP2      1197   1-1154         1   79-3534        2   1  0  N   76.7   88.2   96.1   0        GP2 | truncated polyprotein
+    ABP88817_GP2      1197   1-1154         1   79-3534        3   1  0  N   74.2   88.3   96.4   0        GP2 | truncated polyprotein
+    BAK19337_GP2      1198   1-1177         1   79-3599        4   0  1  N   76.3   89.8   96.9   0        GP2 | truncated polyprotein
+    ADX31663_GP2      1198   1-1198         1   79-3662        5   0  1  N   77.7   89.5   97.7   0        GP2 | truncated polyprotein
+    YP_006355435.1    1198   1-1198         1   79-3662        5   0  1  N   75.9   89.5   98.2   0        GP2 | truncated polyprotein
+    AAX82481_GP2      1198   1-1182         1   79-3614        4   0  1  N   75.4   87.5   97.9   0        GP2 | truncated polyprotein
+    ABC40712_GP2      1195   1-1195         1   79-3662        2   0  1  N   91.8   96.6   100.0  0        GP2 | truncated polyprotein
+    ACH99532_GP2      1194   1-1194         1   79-3662        3   0  1  N   83.1   92.4   100.0  0        GP2 | truncated polyprotein
+    CAX41890_GP2      1195   1-1195         1   79-3662        2   0  1  N   99.4   99.4   100.0  0        GP2 | truncated polyprotein
+    AAW81711_GP2      1195   1-1195         1   79-3662        2   0  1  N   87.2   94.7   100.0  0        GP2 | truncated polyprotein
+        found 1 gene
+
+    found 12 permutations for gene GP1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACT31738.1        3429   1-3417         1   79-10344       5   1  0  N   68.1   82.6   99.1   0        GP1 | genome polyprotein
+    ACZ67479.1        3432   1-3432         1   79-10377       4   1  0  N   76.6   89.1   99.3   0        GP1 | genome polyprotein
+    ABC40712          3433   1-3433         1   79-10377       1   1  0  N   93.5   97.8   100.0  0        GP1 | genome polyprotein
+    BAK19337          3432   1-3432         1   79-10377       4   1  0  N   76.9   89.4   99.2   0        GP1 | genome polyprotein
+    ACH99532          3432   1-3432         1   79-10377       2   1  0  N   88.2   95.5   100.0  0        GP1 | genome polyprotein
+    AAW81711          3433   1-3433         1   79-10377       1   1  0  N   90.4   96.4   100.0  0        GP1 | genome polyprotein
+    CAX41890          3433   1-3433         1   79-10377       1   1  0  N   99.6   99.8   100.0  0        GP1 | genome polyprotein
+    ADX31663          3433   1-3433         1   79-10377       5   1  0  N   78.0   89.4   99.2   0        GP1 | genome polyprotein
+    AAX82481          3434   1-3434         1   79-10377       5   1  0  N   76.8   88.5   99.5   0        GP1 | genome polyprotein
+    AAF05296          3434   1-3434         1   79-10377       4   1  0  N   77.4   89.0   99.3   0        GP1 | genome polyprotein
+    ABP88817          3434   1-3434         1   79-10377       5   1  0  N   76.4   89.0   99.5   0        GP1 | genome polyprotein
+    YP_950478.1       3405   147-3392       1   547-10344      17  0  2  N   52.8   71.3   71.4   0        GP1 | genome polyprotein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|399764451|gb|JQ92    10477      2            0      13890           4628           99.7             99.9          100.0   yfv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_399764451.1     99.6   99.8   100.0  0.0   0.0   0.0   79..3534         1195   1195   CAX41890_GP2      GP2 | truncated polyprotein
+                                                          3534..3665                                       
+gi_399764451.1.4   99.5   99.7   100.0  0.0   0.0   0.0   2452..3534       404    404    399764449_NS1p    non-structural protein NS1'
+                                                          3534..3662                                       
+gi_399764451.2     99.7   99.9   100.0  0.0   0.0   0.0   79..10380        3433   3433   CAX41890          GP1 | genome polyprotein
+gi_399764451.2.1   90.2   98.4   100.0  0.0   0.0   0.0   79..447          123    123    sp|P06935_C       anchored capsid protein C
+gi_399764451.2.2   95.8   99.9   100.0  0.0   0.0   0.0   448..948         167    167    sp|P06935_M       M protein
+gi_399764451.2.3   94.6   97.9   100.0  0.0   0.0   0.0   949..2451        501    497    sp|P06935_E       envelope protein E
+gi_399764451.2.4   91.2   98.4   100.0  0.0   0.0   0.0   2452..3507       352    352    sp|P06935_1       non-structural protein NS1
+gi_399764451.2.5   89.2   99.1   100.0  0.0   0.0   0.0   3508..4200       231    231    sp|P06935_2a      non-structural protein NS2a
+gi_399764451.2.6   98.5   100.0  100.0  0.0   0.0   0.0   4201..4593       131    131    sp|P06935_2b      non-structural protein NS2b
+gi_399764451.2.7   95.8   99.3   100.0  0.0   0.0   0.0   4594..6450       619    619    sp|P06935_3       non-structural protein NS3
+gi_399764451.2.8   93.7   98.8   100.0  0.0   0.0   0.0   6451..6828       126    126    sp|P06935_4a      non-structural protein NS4a
+gi_399764451.2.9   91.3   98.9   100.0  0.0   0.0   0.0   6829..6897       23     23     sp|P06935_2k      2k protein
+gi_399764451.2.10  90.2   97.3   100.0  0.0   0.0   0.0   6898..7662       255    256    sp|P06935_4b      non-structural protein NS4b
+gi_399764451.2.11  94.7   99.0   100.0  0.0   0.0   0.0   7663..10377      905    905    sp|P06935_5       RNA-directed RNA polymerase NS5
+
+
+genomic sequence 1, length=10811
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 11 permutations for gene GP1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    CAA27332.1        3411   1-3411         1   92-10324       1   2  0  N   99.8   99.9   100.0  0        GP1 | genome polyprotein
+    ACH70606.1        3405   8-3392         1   104-10288      12  2  0  N   62.2   79.6   98.5   0        GP1 | genome polyprotein
+    YP_950477.1       3411   11-3386        1   152-10252      16  2  0  N   55.6   72.8   81.9   0        GP1 | genome polyprotein
+    YP_950478.1       3405   8-3392         1   104-10288      13  2  0  N   62.3   79.1   98.1   0        GP1 | genome polyprotein
+    ACZ67479.1        3432   199-3415       1   659-10270      16  2  0  N   52.6   70.4   71.6   0        GP1 | genome polyprotein
+    BAK19337          3432   199-3421       1   659-10288      17  2  0  N   53.1   70.7   71.5   0        GP1 | genome polyprotein
+    ADX31663          3433   201-3422       1   665-10288      15  2  0  N   53.1   70.2   72.0   0        GP1 | genome polyprotein
+    AAX82481          3434   203-3423       1   671-10288      16  2  0  N   51.7   70.6   74.6   0        GP1 | genome polyprotein
+    AAF05296          3434   199-3423       1   665-10288      18  2  0  N   54.4   72.1   70.9   0        GP1 | genome polyprotein
+    ABC40712          3433   153-3422       1   530-10288      17  2  0  N   53.5   71.7   68.8   0        GP1 | genome polyprotein
+    ACH99532          3432   196-3421       1   665-10288      15  2  0  N   52.3   70.8   72.5   0        GP1 | genome polyprotein
+        found 1 gene
+
+    found 7 permutations for gene GP2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADX31663_GP2      1198   201-1025       1   665-3121       5   2  0  N   47.0   66.6   61.5   0        GP2 | truncated polyprotein
+    ABP88817_GP2      1197   202-1024       1   671-3121       5   2  0  N   47.1   66.6   61.0   0        GP2 | truncated polyprotein
+    AAX82481_GP2      1198   203-1025       1   671-3121       5   2  0  N   45.7   66.5   61.6   0        GP2 | truncated polyprotein
+    BAK19337_GP2      1198   199-1146       1   659-3481       7   2  0  N   47.5   66.9   70.8   0        GP2 | truncated polyprotein
+    AAF05296_GP2      1197   199-1145       1   665-3481       8   2  0  N   48.2   68.6   70.5   0        GP2 | truncated polyprotein
+    YP_006355435.1    1198   199-1146       1   659-3481       7   2  0  N   47.5   66.9   70.8   0        GP2 | truncated polyprotein
+    ABC40712_GP2      1195   153-1143       1   530-3481       6   2  0  N   46.1   67.0   71.1   0        GP2 | truncated polyprotein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+1                       10811      1            0      10236           3411           99.9            100.0          100.0   yfv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+1.1                99.9   100.0  100.0  0.0   0.0   0.0   92..10327        3411   3411   CAA27332.1        GP1 | genome polyprotein
+1.1.1              100.0  100.0  100.0  0.0   0.0   0.0   92..454          121    121    gi|9627245_C      anchored capsid protein C
+1.1.2              100.0  100.0  100.0  0.0   0.0   0.0   455..946         164    164    NP_776000_M       M protein
+1.1.3              95.5   98.6   100.0  0.0   0.0   0.0   947..2425        493    493    AAA92695_E        envelope protein E
+1.1.4              96.3   99.9   100.0  0.0   0.0   0.0   2426..3481       352    352    gi|222778_1       non-structural protein NS1
+1.1.5              99.6   100.0  100.0  0.0   0.0   0.0   3482..4153       224    224    ACN41908_2a       non-structural protein NS2a
+1.1.6              100.0  100.0  100.0  0.0   0.0   0.0   4154..4543       130    130    NP_776004_2b      non-structural protein NS2b
+1.1.7              100.0  100.0  100.0  0.0   0.0   0.0   4544..6412       623    623    NP_776005_3       non-structural protein NS3
+1.1.8              100.0  100.0  100.0  0.0   0.0   0.0   6413..6790       126    126    ACN41908_4a       non-structural protein NS4a
+1.1.9              100.0  100.0  100.0  0.0   0.0   0.0   6791..6859       23     23     NP_041726_2k      2k protein
+1.1.10             100.0  100.0  100.0  0.0   0.0   0.0   6860..7609       250    250    ACN41908_4b       non-structural protein NS4b
+1.1.11             99.9   100.0  100.0  0.0   0.0   0.0   7610..10324      905    905    NP_776009_5       RNA-directed RNA polymerase NS5
+

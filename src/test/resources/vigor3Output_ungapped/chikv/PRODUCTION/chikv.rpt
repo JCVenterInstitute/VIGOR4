@@ -1,0 +1,231 @@
+2018-09-07 15:13:08
+
+
+parameters
+	bl2seq_extend_hsp	25
+	bl2seq_extend_span	50
+	candidate_blastopts	-p blastx -M BLOSUM80 -e 1E-5 -g F -v 0 -F \"\" -z 3000000 -b 1000
+	candidate_evalue	
+	candidate_overlap_threshold	0.8
+	candidate_refdb	
+	command_line	/opt/www/vigor/vigor3/prod3/VIGOR3.pl -D chikv -O /usr/local/scratch/CORE/snettem/chikv/PRODUCTION/chikv -i /opt/www/vigor/vigor3/regr_testing/chikv.ungapped.fasta
+	default_gene_optional	0
+	default_gene_required	0
+	default_gene_variation	1
+	frameshift_sensitivity	1
+	gene_variations	
+	jcvi_rules	1
+	mature_pep_mincoverage	50
+	mature_pep_minidentity	25
+	mature_pep_minsimilarity	40
+	mature_pep_refdb	../data3/virus_mp
+	max_intron_size	7000
+	min_candidate_pctsimilarity	70
+	min_candidate_sbjcoverage	33
+	min_exon_size	3
+	min_intron_size	30
+	min_pseudogene_coverage	80
+	min_pseudogene_identity	75
+	min_pseudogene_similarity	80
+	noncanonical_splicing_genes	
+	optional_genes	
+	reference_db	/opt/www/vigor/vigor3/data3/chikv_db
+	reference_dbsize	93248
+	required_genes	
+	ribosomal_slippage_genes	
+	rna_editing_genes	
+	selectivity	0.985
+	slippage_frameshift	-1
+	slippage_motif	[NT][NT][NT]AAAC
+	slippage_offset	0
+	spliced_genes	
+	splicesite_extend_range	0
+	tile_overlap	1000000
+	tile_size	10000000
+	use_locus_tags	1
+	variation	0.975
+	verbose	0
+	vigorspace	/opt/www/vigor/vigor3/prod3/vigorscratch/27118.8782799108
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+EU037962.1              11805      3            0      13647           4546           98.6             99.3          100.0   chikv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+EU037962.1.1       99.3   99.5   100.0  0.0   0.0   0.0   77..7501         2474   2474   399240871_NSP     NSP | non-structural polyprotein precursor P1234
+EU037962.1.1.1     98.3   99.4   100.0  0.0   0.0   0.0   77..1681         535    535    AID69220.1_1-535  mRNA-capping enzyme nsp1
+EU037962.1.1.2     98.9   99.4   100.0  0.0   0.0   0.0   1682..4075       798    798    Q8JUX6_536-1333   protease nsp2
+EU037962.1.1.3     99.4   99.6   100.0  0.0   0.0   0.0   4076..5665       530    530    JX088705.1        non-structural protein nsp3
+EU037962.1.1.4     98.7   99.3   99.5   0.5   0.0   0.0   5666..7498       611    614    AID69220.1_1861-2 RNA-directed RNA polymerase nsp4
+EU037962.1.2       96.7   98.4   100.0  0.0   0.0   0.0   7567..9969       824    824    gi|392976865      truncated gp3 | truncated polyprotein
+                                                          9969..10040                                      
+EU037962.1.2.4     92.1   97.0   100.0  0.0   0.0   0.0   9811..9969       76     76     gi|392976866      transframe fusion protein
+                                                          9969..10037                                      
+EU037962.1.3       98.5   99.5   100.0  0.0   0.0   0.0   7567..11313      1248   1248   ADG95902.1        SP | structural polyprotein
+EU037962.1.3.1     98.1   98.5   99.6   0.0   0.0   0.4   7567..8349       261    262    AID69221.1_1-262  capsid protein
+EU037962.1.3.2     100.0  100.0  100.0  0.0   0.0   0.0   8350..8541       64     64     296124511_E3      E3 protein
+EU037962.1.3.3     96.7   98.6   100.0  0.0   0.0   0.0   8542..9810       423    423    Q8JUX5_326-748    E2 envelope glycoprotein
+EU037962.1.3.4     96.7   100.0  96.8   1.6   0.0   1.6   9811..9993       61     63     AID69221.1_748-81 6K protein
+EU037962.1.3.5     99.1   99.9   100.0  0.0   0.0   0.0   9994..11310      439    439    Q8JUX5_810-1248   E1 envelope glycoprotein
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KX702402.1              12037      3            0      13635           4542           96.8             99.0          100.0   chikv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KX702402.1.1       97.4   99.0   100.0  0.0   0.0   0.0   77..7489         2470   2474   gi|22789217       NSP | non-structural polyprotein precursor P1234
+                    translation exception 5633..5635:R
+KX702402.1.1.1     97.2   98.9   100.0  0.0   0.0   0.0   77..1681         535    535    Q8JUX6_1-535      mRNA-capping enzyme nsp1
+KX702402.1.1.2     98.9   99.4   100.0  0.0   0.0   0.0   1682..4075       798    798    Q8JUX6_536-1333   protease nsp2
+KX702402.1.1.3     94.9   97.8   99.2   0.8   0.0   0.0   4076..5644       523    531    AID69220.1_1330-1 non-structural protein nsp3
+KX702402.1.1.4     97.7   99.4   100.0  0.0   0.0   0.0   5645..7486       614    614    AID69220.1_1861-2 RNA-directed RNA polymerase nsp4
+KX702402.1.2       95.1   98.4   100.0  0.0   0.0   0.0   7555..9957       824    824    gi|392976865      truncated gp3 | truncated polyprotein
+                                                          9957..10028                                      
+KX702402.1.2.4     89.5   95.7   100.0  0.0   0.0   0.0   9799..9957       76     76     gi|392976866      transframe fusion protein
+                                                          9957..10025                                      
+KX702402.1.3       96.8   99.4   100.0  0.0   0.0   0.0   7555..11301      1248   1248   ADG95902.1        SP | structural polyprotein
+KX702402.1.3.1     98.1   99.8   99.6   0.0   0.0   0.4   7555..8337       261    262    AID69221.1_1-262  capsid protein
+KX702402.1.3.2     93.8   98.4   100.0  0.0   0.0   0.0   8338..8529       64     64     296124511_E3      E3 protein
+KX702402.1.3.3     94.1   98.1   100.0  0.0   0.0   0.0   8530..9798       423    423    Q8JUX5_326-748    E2 envelope glycoprotein
+KX702402.1.3.4     91.8   98.4   96.8   1.6   0.0   1.6   9799..9981       61     63     AID69221.1_748-81 6K protein
+KX702402.1.3.5     98.4   99.8   100.0  0.0   0.0   0.0   9982..11298      439    439    Q8JUX5_810-1248   E1 envelope glycoprotein
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KX702401.1              12037      3            0      13635           4542           96.8             99.0          100.0   chikv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KX702401.1.1       97.4   99.0   100.0  0.0   0.0   0.0   77..7489         2470   2474   gi|22789217       NSP | non-structural polyprotein precursor P1234
+                    translation exception 5633..5635:R
+KX702401.1.1.1     97.2   98.9   100.0  0.0   0.0   0.0   77..1681         535    535    Q8JUX6_1-535      mRNA-capping enzyme nsp1
+KX702401.1.1.2     98.9   99.4   100.0  0.0   0.0   0.0   1682..4075       798    798    Q8JUX6_536-1333   protease nsp2
+KX702401.1.1.3     94.9   97.8   99.2   0.8   0.0   0.0   4076..5644       523    531    AID69220.1_1330-1 non-structural protein nsp3
+KX702401.1.1.4     97.7   99.4   100.0  0.0   0.0   0.0   5645..7486       614    614    AID69220.1_1861-2 RNA-directed RNA polymerase nsp4
+KX702401.1.2       95.1   98.4   100.0  0.0   0.0   0.0   7555..9957       824    824    gi|392976865      truncated gp3 | truncated polyprotein
+                                                          9957..10028                                      
+KX702401.1.2.4     89.5   95.7   100.0  0.0   0.0   0.0   9799..9957       76     76     gi|392976866      transframe fusion protein
+                                                          9957..10025                                      
+KX702401.1.3       96.8   99.4   100.0  0.0   0.0   0.0   7555..11301      1248   1248   ADG95902.1        SP | structural polyprotein
+KX702401.1.3.1     98.1   99.8   99.6   0.0   0.0   0.4   7555..8337       261    262    AID69221.1_1-262  capsid protein
+KX702401.1.3.2     93.8   98.4   100.0  0.0   0.0   0.0   8338..8529       64     64     296124511_E3      E3 protein
+KX702401.1.3.3     94.1   98.1   100.0  0.0   0.0   0.0   8530..9798       423    423    Q8JUX5_326-748    E2 envelope glycoprotein
+KX702401.1.3.4     91.8   98.4   96.8   1.6   0.0   1.6   9799..9981       61     63     AID69221.1_748-81 6K protein
+KX702401.1.3.5     98.4   99.8   100.0  0.0   0.0   0.0   9982..11298      439    439    Q8JUX5_810-1248   E1 envelope glycoprotein
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+JF274082.1              11829      3            0      13647           4546           98.9             99.6          100.0   chikv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+JF274082.1.1       99.6   99.8   100.0  0.0   0.0   0.0   64..7488         2474   2474   399240871_NSP     NSP | non-structural polyprotein precursor P1234
+JF274082.1.1.1     98.1   99.3   100.0  0.0   0.0   0.0   64..1668         535    535    Q8JUX6_1-535      mRNA-capping enzyme nsp1
+JF274082.1.1.2     99.1   99.7   100.0  0.0   0.0   0.0   1669..4062       798    798    Q8JUX6_536-1333   protease nsp2
+JF274082.1.1.3     99.6   99.6   100.0  0.0   0.0   0.0   4063..5652       530    530    JX088705.1        non-structural protein nsp3
+JF274082.1.1.4     99.0   99.7   99.5   0.5   0.0   0.0   5653..7485       611    614    AID69220.1_1861-2 RNA-directed RNA polymerase nsp4
+JF274082.1.2       97.1   98.8   100.0  0.0   0.0   0.0   7554..9956       824    824    gi|392976865      truncated gp3 | truncated polyprotein
+                                                          9956..10027                                      
+JF274082.1.2.4     92.1   97.0   100.0  0.0   0.0   0.0   9798..9956       76     76     gi|392976866      transframe fusion protein
+                                                          9956..10024                                      
+JF274082.1.3       98.8   99.8   100.0  0.0   0.0   0.0   7554..11300      1248   1248   ADG95902.1        SP | structural polyprotein
+JF274082.1.3.1     99.2   99.9   99.6   0.0   0.0   0.4   7554..8336       261    262    AID69221.1_1-262  capsid protein
+JF274082.1.3.2     100.0  100.0  100.0  0.0   0.0   0.0   8337..8528       64     64     296124511_E3      E3 protein
+JF274082.1.3.3     96.7   98.6   100.0  0.0   0.0   0.0   8529..9797       423    423    Q8JUX5_326-748    E2 envelope glycoprotein
+JF274082.1.3.4     96.7   100.0  96.8   1.6   0.0   1.6   9798..9980       61     63     AID69221.1_748-81 6K protein
+JF274082.1.3.5     99.3   99.9   100.0  0.0   0.0   0.0   9981..11297      439    439    Q8JUX5_810-1248   E1 envelope glycoprotein
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KY751908.1              11796      3            0      13647           4546           98.8             99.6          100.0   chikv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KY751908.1.1       99.5   99.8   100.0  0.0   0.0   0.0   61..7485         2474   2474   399240871_NSP     NSP | non-structural polyprotein precursor P1234
+                    translation exception 5629..5631:R
+KY751908.1.1.1     98.1   99.3   100.0  0.0   0.0   0.0   61..1665         535    535    Q8JUX6_1-535      mRNA-capping enzyme nsp1
+KY751908.1.1.2     99.1   99.8   100.0  0.0   0.0   0.0   1666..4059       798    798    Q8JUX6_536-1333   protease nsp2
+KY751908.1.1.3     99.6   99.8   100.0  0.0   0.0   0.0   4060..5649       530    530    JX088705.1        non-structural protein nsp3
+KY751908.1.1.4     98.7   99.5   99.5   0.5   0.0   0.0   5650..7482       611    614    AID69220.1_1861-2 RNA-directed RNA polymerase nsp4
+KY751908.1.2       97.0   98.8   100.0  0.0   0.0   0.0   7551..9953       824    824    gi|392976865      truncated gp3 | truncated polyprotein
+                                                          9953..10024                                      
+KY751908.1.2.4     92.1   97.0   100.0  0.0   0.0   0.0   9795..9953       76     76     gi|392976866      transframe fusion protein
+                                                          9953..10021                                      
+KY751908.1.3       98.6   99.8   100.0  0.0   0.0   0.0   7551..11297      1248   1248   ADG95902.1        SP | structural polyprotein
+KY751908.1.3.1     99.2   99.9   99.6   0.0   0.0   0.4   7551..8333       261    262    AID69221.1_1-262  capsid protein
+KY751908.1.3.2     100.0  100.0  100.0  0.0   0.0   0.0   8334..8525       64     64     296124511_E3      E3 protein
+KY751908.1.3.3     96.5   98.6   100.0  0.0   0.0   0.0   8526..9794       423    423    Q8JUX5_326-748    E2 envelope glycoprotein
+KY751908.1.3.4     96.7   100.0  96.8   1.6   0.0   1.6   9795..9977       61     63     AID69221.1_748-81 6K protein
+KY751908.1.3.5     98.9   99.9   100.0  0.0   0.0   0.0   9978..11294      439    439    Q8JUX5_810-1248   E1 envelope glycoprotein
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KY057363.1              11834      3            0      13647           4546           98.9             99.6          100.0   chikv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KY057363.1.1       99.6   99.8   100.0  0.0   0.0   0.0   77..7501         2474   2474   399240871_NSP     NSP | non-structural polyprotein precursor P1234
+                    translation exception 5645..5647:R
+KY057363.1.1.1     98.3   99.4   100.0  0.0   0.0   0.0   77..1681         535    535    Q8JUX6_1-535      mRNA-capping enzyme nsp1
+KY057363.1.1.2     99.1   99.8   100.0  0.0   0.0   0.0   1682..4075       798    798    Q8JUX6_536-1333   protease nsp2
+KY057363.1.1.3     99.8   99.8   100.0  0.0   0.0   0.0   4076..5665       530    530    JX088705.1        non-structural protein nsp3
+KY057363.1.1.4     98.5   99.5   99.5   0.5   0.0   0.0   5666..7498       611    614    AID69220.1_1861-2 RNA-directed RNA polymerase nsp4
+KY057363.1.2       97.0   98.8   100.0  0.0   0.0   0.0   7567..9969       824    824    gi|392976865      truncated gp3 | truncated polyprotein
+                                                          9969..10040                                      
+KY057363.1.2.4     92.1   97.0   100.0  0.0   0.0   0.0   9811..9969       76     76     gi|392976866      transframe fusion protein
+                                                          9969..10037                                      
+KY057363.1.3       98.6   99.8   100.0  0.0   0.0   0.0   7567..11313      1248   1248   ADG95902.1        SP | structural polyprotein
+KY057363.1.3.1     99.2   99.9   99.6   0.0   0.0   0.4   7567..8349       261    262    AID69221.1_1-262  capsid protein
+KY057363.1.3.2     100.0  100.0  100.0  0.0   0.0   0.0   8350..8541       64     64     296124511_E3      E3 protein
+KY057363.1.3.3     96.5   98.6   100.0  0.0   0.0   0.0   8542..9810       423    423    Q8JUX5_326-748    E2 envelope glycoprotein
+KY057363.1.3.4     96.7   100.0  96.8   1.6   0.0   1.6   9811..9993       61     63     AID69221.1_748-81 6K protein
+KY057363.1.3.5     98.9   99.9   100.0  0.0   0.0   0.0   9994..11310      439    439    Q8JUX5_810-1248   E1 envelope glycoprotein
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KX496989.1              12037      3            0      13635           4542           96.9             99.0          100.0   chikv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KX496989.1.1       97.4   99.0   100.0  0.0   0.0   0.0   77..7489         2470   2474   gi|22789217       NSP | non-structural polyprotein precursor P1234
+                    translation exception 5633..5635:R
+KX496989.1.1.1     97.2   98.9   100.0  0.0   0.0   0.0   77..1681         535    535    Q8JUX6_1-535      mRNA-capping enzyme nsp1
+KX496989.1.1.2     98.9   99.4   100.0  0.0   0.0   0.0   1682..4075       798    798    Q8JUX6_536-1333   protease nsp2
+KX496989.1.1.3     94.9   97.8   99.2   0.8   0.0   0.0   4076..5644       523    531    AID69220.1_1330-1 non-structural protein nsp3
+KX496989.1.1.4     97.7   99.4   100.0  0.0   0.0   0.0   5645..7486       614    614    AID69220.1_1861-2 RNA-directed RNA polymerase nsp4
+KX496989.1.2       95.3   98.4   100.0  0.0   0.0   0.0   7555..9957       824    824    gi|392976865      truncated gp3 | truncated polyprotein
+                                                          9957..10028                                      
+KX496989.1.2.4     89.5   95.7   100.0  0.0   0.0   0.0   9799..9957       76     76     gi|392976866      transframe fusion protein
+                                                          9957..10025                                      
+KX496989.1.3       96.9   99.4   100.0  0.0   0.0   0.0   7555..11301      1248   1248   ADG95902.1        SP | structural polyprotein
+KX496989.1.3.1     98.5   99.8   99.6   0.0   0.0   0.4   7555..8337       261    262    AID69221.1_1-262  capsid protein
+KX496989.1.3.2     93.8   98.4   100.0  0.0   0.0   0.0   8338..8529       64     64     296124511_E3      E3 protein
+KX496989.1.3.3     94.1   98.1   100.0  0.0   0.0   0.0   8530..9798       423    423    Q8JUX5_326-748    E2 envelope glycoprotein
+KX496989.1.3.4     91.8   98.4   96.8   1.6   0.0   1.6   9799..9981       61     63     AID69221.1_748-81 6K protein
+KX496989.1.3.5     98.4   99.8   100.0  0.0   0.0   0.0   9982..11298      439    439    Q8JUX5_810-1248   E1 envelope glycoprotein
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KX168429.1              11900      3            0      13854           4615           95.0             97.2          100.0   chikv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KX168429.1.1       94.5   96.2   100.0  0.0   0.0   0.0   77..7708         2543   2474   gi|22789217       NSP | non-structural polyprotein precursor P1234
+                    translation exception 5852..5854:R
+KX168429.1.1.1     96.6   98.6   100.0  0.0   0.0   0.0   77..1681         535    535    Q8JUX6_1-535      mRNA-capping enzyme nsp1
+KX168429.1.1.2     98.4   99.4   100.0  0.0   0.0   0.0   1682..4075       798    798    Q8JUX6_536-1333   protease nsp2
+KX168429.1.1.3     83.3   86.4   100.0  0.0   0.0   0.0   4076..5872       599    530    JX088705.1        non-structural protein nsp3
+KX168429.1.1.4     97.7   99.4   99.5   0.5   0.0   0.0   5873..7705       611    614    AID69220.1_1861-2 RNA-directed RNA polymerase nsp4
+KX168429.1.2       94.5   97.7   100.0  0.0   0.0   0.0   7774..10176      824    824    gi|392976865      truncated gp3 | truncated polyprotein
+                                                          10176..10247                                     
+KX168429.1.2.4     90.8   95.7   100.0  0.0   0.0   0.0   10018..10176     76     76     gi|392976866      transframe fusion protein
+                                                          10176..10244                                     
+KX168429.1.3       96.3   98.9   100.0  0.0   0.0   0.0   7774..11520      1248   1248   ADG95902.1        SP | structural polyprotein
+KX168429.1.3.1     97.3   99.0   99.6   0.0   0.0   0.4   7774..8556       261    262    AID69221.1_1-262  capsid protein
+KX168429.1.3.2     93.8   98.4   100.0  0.0   0.0   0.0   8557..8748       64     64     296124511_E3      E3 protein
+KX168429.1.3.3     93.4   97.4   100.0  0.0   0.0   0.0   8749..10017      423    423    Q8JUX5_326-748    E2 envelope glycoprotein
+KX168429.1.3.4     93.4   98.4   96.8   1.6   0.0   1.6   10018..10200     61     63     AID69221.1_748-81 6K protein
+KX168429.1.3.5     97.9   99.6   100.0  0.0   0.0   0.0   10201..11517     439    439    Q8JUX5_810-1248   E1 envelope glycoprotein
+

@@ -1,0 +1,1273 @@
+>Features NC_001490.1
+629	7168	gene
+			locus_tag	vigor_POL
+			gene	POL
+629	7168	CDS
+			codon_start	1
+			protein_id	NC_001490.1.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	genome polyprotein
+
+>Features NC_001490.1.1
+1	69	mat_peptide
+			product	capsid protein VP4
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1A, protein 1A, virion protein 4
+70	331	mat_peptide
+			product	capsid protein VP2
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1B, protein 1B, virion protein 2
+332	567	mat_peptide
+			product	capsid protein VP3
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1C, protein 1C, virion protein 3
+568	858	mat_peptide
+			product	capsid protein VP1
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1D, protein 1D, virion protein 1
+859	1002	mat_peptide
+			product	protease 2A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P2A, protein 2A, proteinase 2A, picornain 2A
+1003	1099	mat_peptide
+			product	protein 2B
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2B
+1100	1429	mat_peptide
+			product	protein 2C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2C
+1430	1514	mat_peptide
+			product	protein 3A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P3A
+1515	1537	mat_peptide
+			product	viral protein genome-linked
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3B, VPg, protein 3B
+1538	1719	mat_peptide
+			product	protease 3C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3C, protein 3C, protease 3C, picornain 3C
+1720	2179	mat_peptide
+			product	RNA-directed RNA polymerase
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3D-POL, protein 3D
+>Features NC_009996.1
+616	7050	gene
+			locus_tag	vigor_POL
+			gene	POL
+616	7050	CDS
+			codon_start	1
+			protein_id	NC_009996.1.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	genome polyprotein
+
+>Features NC_009996.1.1
+1	67	mat_peptide
+			product	capsid protein VP4
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1A, protein 1A, virion protein 4
+68	328	mat_peptide
+			product	capsid protein VP2
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1B, protein 1B, virion protein 2
+329	563	mat_peptide
+			product	capsid protein VP3
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1C, protein 1C, virion protein 3
+564	837	mat_peptide
+			product	capsid protein VP1
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1D, protein 1D, virion protein 1
+838	979	mat_peptide
+			product	protease 2A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P2A, protein 2A, proteinase 2A, picornain 2A
+980	1078	mat_peptide
+			product	protein 2B
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2B
+1079	1404	mat_peptide
+			product	protein 2C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2C
+1405	1479	mat_peptide
+			product	protein 3A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P3A
+1480	1501	mat_peptide
+			product	viral protein genome-linked
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3B, VPg, protein 3B
+1502	1684	mat_peptide
+			product	protease 3C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3C, protein 3C, protease 3C, picornain 3C
+1685	2144	mat_peptide
+			product	RNA-directed RNA polymerase
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3D-POL, protein 3D
+>Features DQ473512.1
+609	7058	gene
+			locus_tag	vigor_POL
+			gene	POL
+609	7058	CDS
+			codon_start	1
+			protein_id	DQ473512.1.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	genome polyprotein
+
+>Features DQ473512.1.1
+1	69	mat_peptide
+			product	capsid protein VP4
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1A, protein 1A, virion protein 4
+70	330	mat_peptide
+			product	capsid protein VP2
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1B, protein 1B, virion protein 2
+331	566	mat_peptide
+			product	capsid protein VP3
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1C, protein 1C, virion protein 3
+567	849	mat_peptide
+			product	capsid protein VP1
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1D, protein 1D, virion protein 1
+850	991	mat_peptide
+			product	protease 2A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P2A, protein 2A, proteinase 2A, picornain 2A
+992	1086	mat_peptide
+			product	protein 2B
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2B
+1087	1408	mat_peptide
+			product	protein 2C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2C
+1409	1485	mat_peptide
+			product	protein 3A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P3A
+1486	1506	mat_peptide
+			product	viral protein genome-linked
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3B, VPg, protein 3B
+1507	1689	mat_peptide
+			product	protease 3C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3C, protein 3C, protease 3C, picornain 3C
+1690	2149	mat_peptide
+			product	RNA-directed RNA polymerase
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3D-POL, protein 3D
+>Features DQ473511.1
+523	6990	gene
+			locus_tag	vigor_POL
+			gene	POL
+523	6990	CDS
+			codon_start	1
+			protein_id	DQ473511.1.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	genome polyprotein
+
+>Features DQ473511.1.1
+1	69	mat_peptide
+			product	capsid protein VP4
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1A, protein 1A, virion protein 4
+70	330	mat_peptide
+			product	capsid protein VP2
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1B, protein 1B, virion protein 2
+331	568	mat_peptide
+			product	capsid protein VP3
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1C, protein 1C, virion protein 3
+569	855	mat_peptide
+			product	capsid protein VP1
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1D, protein 1D, virion protein 1
+856	997	mat_peptide
+			product	protease 2A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P2A, protein 2A, proteinase 2A, picornain 2A
+998	1092	mat_peptide
+			product	protein 2B
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2B
+1093	1414	mat_peptide
+			product	protein 2C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2C
+1415	1491	mat_peptide
+			product	protein 3A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P3A
+1492	1512	mat_peptide
+			product	viral protein genome-linked
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3B, VPg, protein 3B
+1513	1695	mat_peptide
+			product	protease 3C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3C, protein 3C, protease 3C, picornain 3C
+1696	2155	mat_peptide
+			product	RNA-directed RNA polymerase
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3D-POL, protein 3D
+>Features DQ473510.1
+618	7094	gene
+			locus_tag	vigor_POL
+			gene	POL
+618	7094	CDS
+			codon_start	1
+			protein_id	DQ473510.1.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	genome polyprotein
+
+>Features DQ473510.1.1
+1	69	mat_peptide
+			product	capsid protein VP4
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1A, protein 1A, virion protein 4
+70	331	mat_peptide
+			product	capsid protein VP2
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1B, protein 1B, virion protein 2
+332	569	mat_peptide
+			product	capsid protein VP3
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1C, protein 1C, virion protein 3
+570	858	mat_peptide
+			product	capsid protein VP1
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1D, protein 1D, virion protein 1
+859	1000	mat_peptide
+			product	protease 2A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P2A, protein 2A, proteinase 2A, picornain 2A
+1001	1095	mat_peptide
+			product	protein 2B
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2B
+1096	1417	mat_peptide
+			product	protein 2C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2C
+1418	1494	mat_peptide
+			product	protein 3A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P3A
+1495	1515	mat_peptide
+			product	viral protein genome-linked
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3B, VPg, protein 3B
+1516	1698	mat_peptide
+			product	protease 3C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3C, protein 3C, protease 3C, picornain 3C
+1699	2158	mat_peptide
+			product	RNA-directed RNA polymerase
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3D-POL, protein 3D
+>Features DQ473508.1
+622	7107	gene
+			locus_tag	vigor_POL
+			gene	POL
+622	7107	CDS
+			codon_start	1
+			protein_id	DQ473508.1.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	genome polyprotein
+
+>Features DQ473508.1.1
+1	69	mat_peptide
+			product	capsid protein VP4
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1A, protein 1A, virion protein 4
+70	332	mat_peptide
+			product	capsid protein VP2
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1B, protein 1B, virion protein 2
+333	570	mat_peptide
+			product	capsid protein VP3
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1C, protein 1C, virion protein 3
+571	861	mat_peptide
+			product	capsid protein VP1
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1D, protein 1D, virion protein 1
+862	1004	mat_peptide
+			product	protease 2A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P2A, protein 2A, proteinase 2A, picornain 2A
+1005	1099	mat_peptide
+			product	protein 2B
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2B
+1100	1420	mat_peptide
+			product	protein 2C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2C
+1421	1498	mat_peptide
+			product	protein 3A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P3A
+1499	1519	mat_peptide
+			product	viral protein genome-linked
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3B, VPg, protein 3B
+1520	1702	mat_peptide
+			product	protease 3C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3C, protein 3C, protease 3C, picornain 3C
+1703	2161	mat_peptide
+			product	RNA-directed RNA polymerase
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3D-POL, protein 3D
+>Features DQ473507.1
+613	7101	gene
+			locus_tag	vigor_POL
+			gene	POL
+613	7101	CDS
+			codon_start	1
+			protein_id	DQ473507.1.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	genome polyprotein
+
+>Features DQ473507.1.1
+1	69	mat_peptide
+			product	capsid protein VP4
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1A, protein 1A, virion protein 4
+70	332	mat_peptide
+			product	capsid protein VP2
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1B, protein 1B, virion protein 2
+333	570	mat_peptide
+			product	capsid protein VP3
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1C, protein 1C, virion protein 3
+571	862	mat_peptide
+			product	capsid protein VP1
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1D, protein 1D, virion protein 1
+863	1005	mat_peptide
+			product	protease 2A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P2A, protein 2A, proteinase 2A, picornain 2A
+1006	1100	mat_peptide
+			product	protein 2B
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2B
+1101	1421	mat_peptide
+			product	protein 2C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2C
+1422	1499	mat_peptide
+			product	protein 3A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P3A
+1500	1520	mat_peptide
+			product	viral protein genome-linked
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3B, VPg, protein 3B
+1521	1703	mat_peptide
+			product	protease 3C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3C, protein 3C, protease 3C, picornain 3C
+1704	2162	mat_peptide
+			product	RNA-directed RNA polymerase
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3D-POL, protein 3D
+>Features DQ473506.1
+613	7107	gene
+			locus_tag	vigor_POL
+			gene	POL
+613	7107	CDS
+			codon_start	1
+			protein_id	DQ473506.1.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	genome polyprotein
+
+>Features DQ473506.1.1
+1	69	mat_peptide
+			product	capsid protein VP4
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1A, protein 1A, virion protein 4
+70	333	mat_peptide
+			product	capsid protein VP2
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1B, protein 1B, virion protein 2
+334	571	mat_peptide
+			product	capsid protein VP3
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1C, protein 1C, virion protein 3
+572	864	mat_peptide
+			product	capsid protein VP1
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1D, protein 1D, virion protein 1
+865	1007	mat_peptide
+			product	protease 2A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P2A, protein 2A, proteinase 2A, picornain 2A
+1008	1102	mat_peptide
+			product	protein 2B
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2B
+1103	1423	mat_peptide
+			product	protein 2C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2C
+1424	1501	mat_peptide
+			product	protein 3A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P3A
+1502	1522	mat_peptide
+			product	viral protein genome-linked
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3B, VPg, protein 3B
+1523	1705	mat_peptide
+			product	protease 3C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3C, protein 3C, protease 3C, picornain 3C
+1706	2164	mat_peptide
+			product	RNA-directed RNA polymerase
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3D-POL, protein 3D
+>Features DQ473505.1
+617	7102	gene
+			locus_tag	vigor_POL
+			gene	POL
+617	7102	CDS
+			codon_start	1
+			protein_id	DQ473505.1.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	genome polyprotein
+
+>Features DQ473505.1.1
+1	69	mat_peptide
+			product	capsid protein VP4
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1A, protein 1A, virion protein 4
+70	336	mat_peptide
+			product	capsid protein VP2
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1B, protein 1B, virion protein 2
+337	574	mat_peptide
+			product	capsid protein VP3
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1C, protein 1C, virion protein 3
+575	863	mat_peptide
+			product	capsid protein VP1
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1D, protein 1D, virion protein 1
+864	1005	mat_peptide
+			product	protease 2A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P2A, protein 2A, proteinase 2A, picornain 2A
+1006	1100	mat_peptide
+			product	protein 2B
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2B
+1101	1421	mat_peptide
+			product	protein 2C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2C
+1422	1497	mat_peptide
+			product	protein 3A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P3A
+1498	1518	mat_peptide
+			product	viral protein genome-linked
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3B, VPg, protein 3B
+1519	1701	mat_peptide
+			product	protease 3C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3C, protein 3C, protease 3C, picornain 3C
+1702	2161	mat_peptide
+			product	RNA-directed RNA polymerase
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3D-POL, protein 3D
+>Features DQ473504.1
+622	7104	gene
+			locus_tag	vigor_POL
+			gene	POL
+622	7104	CDS
+			codon_start	1
+			protein_id	DQ473504.1.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	genome polyprotein
+
+>Features DQ473504.1.1
+1	69	mat_peptide
+			product	capsid protein VP4
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1A, protein 1A, virion protein 4
+70	334	mat_peptide
+			product	capsid protein VP2
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1B, protein 1B, virion protein 2
+335	572	mat_peptide
+			product	capsid protein VP3
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1C, protein 1C, virion protein 3
+573	862	mat_peptide
+			product	capsid protein VP1
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1D, protein 1D, virion protein 1
+863	1004	mat_peptide
+			product	protease 2A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P2A, protein 2A, proteinase 2A, picornain 2A
+1005	1099	mat_peptide
+			product	protein 2B
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2B
+1100	1420	mat_peptide
+			product	protein 2C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2C
+1421	1496	mat_peptide
+			product	protein 3A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P3A
+1497	1517	mat_peptide
+			product	viral protein genome-linked
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3B, VPg, protein 3B
+1518	1700	mat_peptide
+			product	protease 3C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3C, protein 3C, protease 3C, picornain 3C
+1701	2160	mat_peptide
+			product	RNA-directed RNA polymerase
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3D-POL, protein 3D
+>Features DQ473503.1
+619	7107	gene
+			locus_tag	vigor_POL
+			gene	POL
+619	7107	CDS
+			codon_start	1
+			protein_id	DQ473503.1.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	genome polyprotein
+
+>Features DQ473503.1.1
+1	69	mat_peptide
+			product	capsid protein VP4
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1A, protein 1A, virion protein 4
+70	334	mat_peptide
+			product	capsid protein VP2
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1B, protein 1B, virion protein 2
+335	573	mat_peptide
+			product	capsid protein VP3
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1C, protein 1C, virion protein 3
+574	864	mat_peptide
+			product	capsid protein VP1
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1D, protein 1D, virion protein 1
+865	1006	mat_peptide
+			product	protease 2A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P2A, protein 2A, proteinase 2A, picornain 2A
+1007	1101	mat_peptide
+			product	protein 2B
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2B
+1102	1422	mat_peptide
+			product	protein 2C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2C
+1423	1498	mat_peptide
+			product	protein 3A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P3A
+1499	1519	mat_peptide
+			product	viral protein genome-linked
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3B, VPg, protein 3B
+1520	1702	mat_peptide
+			product	protease 3C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3C, protein 3C, protease 3C, picornain 3C
+1703	2162	mat_peptide
+			product	RNA-directed RNA polymerase
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3D-POL, protein 3D
+>Features DQ473502.1
+620	7087	gene
+			locus_tag	vigor_POL
+			gene	POL
+620	7087	CDS
+			codon_start	1
+			protein_id	DQ473502.1.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	genome polyprotein
+
+>Features DQ473502.1.1
+1	69	mat_peptide
+			product	capsid protein VP4
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1A, protein 1A, virion protein 4
+70	331	mat_peptide
+			product	capsid protein VP2
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1B, protein 1B, virion protein 2
+332	569	mat_peptide
+			product	capsid protein VP3
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1C, protein 1C, virion protein 3
+570	855	mat_peptide
+			product	capsid protein VP1
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1D, protein 1D, virion protein 1
+856	997	mat_peptide
+			product	protease 2A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P2A, protein 2A, proteinase 2A, picornain 2A
+998	1092	mat_peptide
+			product	protein 2B
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2B
+1093	1414	mat_peptide
+			product	protein 2C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2C
+1415	1491	mat_peptide
+			product	protein 3A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P3A
+1492	1512	mat_peptide
+			product	viral protein genome-linked
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3B, VPg, protein 3B
+1513	1695	mat_peptide
+			product	protease 3C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3C, protein 3C, protease 3C, picornain 3C
+1696	2155	mat_peptide
+			product	RNA-directed RNA polymerase
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3D-POL, protein 3D
+>Features DQ473501.1
+612	7073	gene
+			locus_tag	vigor_POL
+			gene	POL
+612	7073	CDS
+			codon_start	1
+			protein_id	DQ473501.1.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	genome polyprotein
+
+>Features DQ473501.1.1
+1	69	mat_peptide
+			product	capsid protein VP4
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1A, protein 1A, virion protein 4
+70	328	mat_peptide
+			product	capsid protein VP2
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1B, protein 1B, virion protein 2
+329	566	mat_peptide
+			product	capsid protein VP3
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1C, protein 1C, virion protein 3
+567	853	mat_peptide
+			product	capsid protein VP1
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1D, protein 1D, virion protein 1
+854	995	mat_peptide
+			product	protease 2A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P2A, protein 2A, proteinase 2A, picornain 2A
+996	1090	mat_peptide
+			product	protein 2B
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2B
+1091	1412	mat_peptide
+			product	protein 2C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2C
+1413	1489	mat_peptide
+			product	protein 3A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P3A
+1490	1510	mat_peptide
+			product	viral protein genome-linked
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3B, VPg, protein 3B
+1511	1693	mat_peptide
+			product	protease 3C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3C, protein 3C, protease 3C, picornain 3C
+1694	2153	mat_peptide
+			product	RNA-directed RNA polymerase
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3D-POL, protein 3D
+>Features DQ473500.1
+612	7088	gene
+			locus_tag	vigor_POL
+			gene	POL
+612	7088	CDS
+			codon_start	1
+			protein_id	DQ473500.1.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	genome polyprotein
+
+>Features DQ473500.1.1
+1	69	mat_peptide
+			product	capsid protein VP4
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1A, protein 1A, virion protein 4
+70	334	mat_peptide
+			product	capsid protein VP2
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1B, protein 1B, virion protein 2
+335	572	mat_peptide
+			product	capsid protein VP3
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1C, protein 1C, virion protein 3
+573	858	mat_peptide
+			product	capsid protein VP1
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1D, protein 1D, virion protein 1
+859	1000	mat_peptide
+			product	protease 2A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P2A, protein 2A, proteinase 2A, picornain 2A
+1001	1095	mat_peptide
+			product	protein 2B
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2B
+1096	1417	mat_peptide
+			product	protein 2C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2C
+1418	1494	mat_peptide
+			product	protein 3A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P3A
+1495	1515	mat_peptide
+			product	viral protein genome-linked
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3B, VPg, protein 3B
+1516	1698	mat_peptide
+			product	protease 3C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3C, protein 3C, protease 3C, picornain 3C
+1699	2158	mat_peptide
+			product	RNA-directed RNA polymerase
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3D-POL, protein 3D
+>Features DQ473499.1
+613	7077	gene
+			locus_tag	vigor_POL
+			gene	POL
+613	7077	CDS
+			codon_start	1
+			protein_id	DQ473499.1.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	genome polyprotein
+
+>Features DQ473499.1.1
+1	69	mat_peptide
+			product	capsid protein VP4
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1A, protein 1A, virion protein 4
+70	335	mat_peptide
+			product	capsid protein VP2
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1B, protein 1B, virion protein 2
+336	573	mat_peptide
+			product	capsid protein VP3
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1C, protein 1C, virion protein 3
+574	854	mat_peptide
+			product	capsid protein VP1
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1D, protein 1D, virion protein 1
+855	996	mat_peptide
+			product	protease 2A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P2A, protein 2A, proteinase 2A, picornain 2A
+997	1091	mat_peptide
+			product	protein 2B
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2B
+1092	1413	mat_peptide
+			product	protein 2C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2C
+1414	1490	mat_peptide
+			product	protein 3A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P3A
+1491	1511	mat_peptide
+			product	viral protein genome-linked
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3B, VPg, protein 3B
+1512	1694	mat_peptide
+			product	protease 3C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3C, protein 3C, protease 3C, picornain 3C
+1695	2154	mat_peptide
+			product	RNA-directed RNA polymerase
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3D-POL, protein 3D
+>Features DQ473498.1
+609	7091	gene
+			locus_tag	vigor_POL
+			gene	POL
+609	7091	CDS
+			codon_start	1
+			protein_id	DQ473498.1.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	genome polyprotein
+
+>Features DQ473498.1.1
+1	69	mat_peptide
+			product	capsid protein VP4
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1A, protein 1A, virion protein 4
+70	334	mat_peptide
+			product	capsid protein VP2
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1B, protein 1B, virion protein 2
+335	572	mat_peptide
+			product	capsid protein VP3
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1C, protein 1C, virion protein 3
+573	860	mat_peptide
+			product	capsid protein VP1
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1D, protein 1D, virion protein 1
+861	1002	mat_peptide
+			product	protease 2A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P2A, protein 2A, proteinase 2A, picornain 2A
+1003	1097	mat_peptide
+			product	protein 2B
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2B
+1098	1419	mat_peptide
+			product	protein 2C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2C
+1420	1496	mat_peptide
+			product	protein 3A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P3A
+1497	1517	mat_peptide
+			product	viral protein genome-linked
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3B, VPg, protein 3B
+1518	1700	mat_peptide
+			product	protease 3C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3C, protein 3C, protease 3C, picornain 3C
+1701	2160	mat_peptide
+			product	RNA-directed RNA polymerase
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3D-POL, protein 3D
+>Features DQ473497.1
+535	6984	gene
+			locus_tag	vigor_POL
+			gene	POL
+535	6984	CDS
+			codon_start	1
+			protein_id	DQ473497.1.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	genome polyprotein
+
+>Features DQ473497.1.1
+1	69	mat_peptide
+			product	capsid protein VP4
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1A, protein 1A, virion protein 4
+70	330	mat_peptide
+			product	capsid protein VP2
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1B, protein 1B, virion protein 2
+331	566	mat_peptide
+			product	capsid protein VP3
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1C, protein 1C, virion protein 3
+567	849	mat_peptide
+			product	capsid protein VP1
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1D, protein 1D, virion protein 1
+850	991	mat_peptide
+			product	protease 2A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P2A, protein 2A, proteinase 2A, picornain 2A
+992	1086	mat_peptide
+			product	protein 2B
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2B
+1087	1408	mat_peptide
+			product	protein 2C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2C
+1409	1485	mat_peptide
+			product	protein 3A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P3A
+1486	1506	mat_peptide
+			product	viral protein genome-linked
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3B, VPg, protein 3B
+1507	1689	mat_peptide
+			product	protease 3C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3C, protein 3C, protease 3C, picornain 3C
+1690	2149	mat_peptide
+			product	RNA-directed RNA polymerase
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3D-POL, protein 3D
+>Features DQ473496.1
+613	7065	gene
+			locus_tag	vigor_POL
+			gene	POL
+613	7065	CDS
+			codon_start	1
+			protein_id	DQ473496.1.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	genome polyprotein
+
+>Features DQ473496.1.1
+1	69	mat_peptide
+			product	capsid protein VP4
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1A, protein 1A, virion protein 4
+70	330	mat_peptide
+			product	capsid protein VP2
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1B, protein 1B, virion protein 2
+331	567	mat_peptide
+			product	capsid protein VP3
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1C, protein 1C, virion protein 3
+568	850	mat_peptide
+			product	capsid protein VP1
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1D, protein 1D, virion protein 1
+851	992	mat_peptide
+			product	protease 2A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P2A, protein 2A, proteinase 2A, picornain 2A
+993	1087	mat_peptide
+			product	protein 2B
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2B
+1088	1409	mat_peptide
+			product	protein 2C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2C
+1410	1486	mat_peptide
+			product	protein 3A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P3A
+1487	1507	mat_peptide
+			product	viral protein genome-linked
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3B, VPg, protein 3B
+1508	1690	mat_peptide
+			product	protease 3C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3C, protein 3C, protease 3C, picornain 3C
+1691	2150	mat_peptide
+			product	RNA-directed RNA polymerase
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3D-POL, protein 3D
+>Features DQ473495.1
+611	7090	gene
+			locus_tag	vigor_POL
+			gene	POL
+611	7090	CDS
+			codon_start	1
+			protein_id	DQ473495.1.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	genome polyprotein
+
+>Features DQ473495.1.1
+1	69	mat_peptide
+			product	capsid protein VP4
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1A, protein 1A, virion protein 4
+70	331	mat_peptide
+			product	capsid protein VP2
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1B, protein 1B, virion protein 2
+332	569	mat_peptide
+			product	capsid protein VP3
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1C, protein 1C, virion protein 3
+570	859	mat_peptide
+			product	capsid protein VP1
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P1D, protein 1D, virion protein 1
+860	1001	mat_peptide
+			product	protease 2A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P2A, protein 2A, proteinase 2A, picornain 2A
+1002	1096	mat_peptide
+			product	protein 2B
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2B
+1097	1418	mat_peptide
+			product	protein 2C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P2C
+1419	1495	mat_peptide
+			product	protein 3A
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: P3A
+1496	1516	mat_peptide
+			product	viral protein genome-linked
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3B, VPg, protein 3B
+1517	1699	mat_peptide
+			product	protease 3C
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3C, protein 3C, protease 3C, picornain 3C
+1700	2159	mat_peptide
+			product	RNA-directed RNA polymerase
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: P3D-POL, protein 3D

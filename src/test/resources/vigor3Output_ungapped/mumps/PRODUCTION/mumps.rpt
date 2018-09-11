@@ -1,0 +1,203 @@
+2018-09-11 15:29:31
+
+
+parameters
+	bl2seq_extend_hsp	25
+	bl2seq_extend_span	50
+	candidate_blastopts	-p blastx -M BLOSUM45 -e 1E-10 -g F -F \"\" -b 2000 -v 0
+	candidate_evalue	
+	candidate_overlap_threshold	0.8
+	candidate_refdb	
+	command_line	/opt/www/vigor/vigor3/prod3/VIGOR3.pl -i /opt/www/vigor/vigor3/regr_testing/mumps.ungapped.fasta -o /usr/local/scratch/CORE/snettem/mumps/PRODUCTION/mumps
+	default_gene_optional	0
+	default_gene_required	0
+	default_gene_variation	1
+	frameshift_sensitivity	1
+	gene_variations	
+	jcvi_rules	1
+	mature_pep_mincoverage	50
+	mature_pep_minidentity	25
+	mature_pep_minsimilarity	40
+	mature_pep_refdb	../data3/virus_mp
+	max_intron_size	7000
+	min_candidate_pctsimilarity	60
+	min_candidate_sbjcoverage	33
+	min_exon_size	3
+	min_intron_size	30
+	min_pseudogene_coverage	80
+	min_pseudogene_identity	70
+	min_pseudogene_similarity	80
+	noncanonical_splicing_genes	
+	optional_genes	
+	reference_db	/opt/www/vigor/vigor3/data3/virus_db
+	required_genes	
+	ribosomal_slippage_genes	
+	rna_editing_genes	
+	selectivity	0.985
+	slippage_frameshift	-1
+	slippage_motif	[NT][NT][NT]AAAC
+	slippage_offset	0
+	spliced_genes	
+	splicesite_extend_range	0
+	tile_overlap	1000000
+	tile_size	10000000
+	use_locus_tags	1
+	variation	0.975
+	verbose	0
+	vigorspace	/opt/www/vigor/vigor3/prod3/vigorscratch/738794.841411622
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+AF345290.1              15384      9            0      15471           5148           97.5             99.4          100.0   mmp_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+AF345290.1.1       98.7   99.4   100.0  0.0   0.0   0.0   146..1795        549    549    Q77IS8.1          NP | nucleocapsid protein
+AF345290.1.2       98.2   99.3   100.0  0.0   0.0   0.0   1979..2490       171    171    CBA10119.1        I | I protein
+                    transcription exception 2435..2441:AAGAGGGGGGG
+AF345290.1.3       94.2   98.7   100.0  0.0   0.0   0.0   1979..2653       224    224    BAK26765.1        V | V protein
+AF345290.1.4       94.9   98.5   100.0  0.0   0.0   0.0   1979..3152       391    391    NP_054708.1       P | phosphoprotein
+                    transcription exception 2435..2441:AAGAGGGGG
+AF345290.1.5       99.2   99.9   100.0  0.0   0.0   0.0   3264..4391       375    375    NP_054710.1       M | membrane protein
+AF345290.1.6       96.7   99.3   100.0  0.0   0.0   0.0   4546..6162       538    538    AAT81469.1        F | fusion protein
+AF345290.1.7       91.2   94.7   100.0  0.0   0.0   0.0   6268..6441       57     57     P69465.1          SH | small hydrophobic protein
+AF345290.1.8       94.5   98.9   100.0  0.0   0.0   0.0   6614..8362       582    582    AAT81471.1        HN | hemagglutinin-neuraminidase
+AF345290.1.9       98.7   99.7   100.0  0.0   0.0   0.0   8438..15223      2261   2261   P30929.1          L | large protein
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+AY685921.1              15384      9            0      15471           5148           98.4             99.6          100.0   mmp_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+AY685921.1.1       98.4   99.4   100.0  0.0   0.0   0.0   146..1795        549    549    Q77IS8.1          NP | nucleocapsid protein
+AY685921.1.2       97.1   98.0   100.0  0.0   0.0   0.0   1979..2490       171    171    AEY76114.1        I | I protein
+                    transcription exception 2435..2441:AAGAGGGGGGG
+AY685921.1.3       96.9   99.6   100.0  0.0   0.0   0.0   1979..2653       224    224    BAK26765.1        V | V protein
+AY685921.1.4       98.0   99.6   100.0  0.0   0.0   0.0   1979..3152       391    391    NP_054708.1       P | phosphoprotein
+                    transcription exception 2435..2441:AAGAGGGGG
+AY685921.1.5       98.9   99.7   100.0  0.0   0.0   0.0   3264..4391       375    375    NP_054710.1       M | membrane protein
+AY685921.1.6       97.6   99.6   100.0  0.0   0.0   0.0   4546..6162       538    538    AAT81469.1        F | fusion protein
+AY685921.1.7       96.5   98.2   100.0  0.0   0.0   0.0   6268..6441       57     57     P28087.1          SH | small hydrophobic protein
+AY685921.1.8       97.1   99.5   100.0  0.0   0.0   0.0   6614..8362       582    582    AAT81471.1        HN | hemagglutinin-neuraminidase
+AY685921.1.9       99.3   99.7   100.0  0.0   0.0   0.0   8438..15223      2261   2261   P30929.1          L | large protein
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KM385447.1              15384      9            0      15471           5148           98.1             99.6          100.0   mmp_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KM385447.1.1       98.0   99.3   100.0  0.0   0.0   0.0   146..1795        549    549    Q77IS8.1          NP | nucleocapsid protein
+KM385447.1.2       95.3   98.1   100.0  0.0   0.0   0.0   1979..2490       171    171    AEY76114.1        I | I protein
+                    transcription exception 2435..2441:AAGAGGGGGGG
+KM385447.1.3       96.4   99.6   100.0  0.0   0.0   0.0   1979..2653       224    224    BAK26765.1        V | V protein
+KM385447.1.4       97.4   99.7   100.0  0.0   0.0   0.0   1979..3152       391    391    NP_054708.1       P | phosphoprotein
+                    transcription exception 2435..2441:AAGAGGGGG
+KM385447.1.5       98.1   99.9   100.0  0.0   0.0   0.0   3264..4391       375    375    NP_054710.1       M | membrane protein
+KM385447.1.6       98.0   99.6   100.0  0.0   0.0   0.0   4546..6162       538    538    AAT81469.1        F | fusion protein
+KM385447.1.7       91.2   96.1   100.0  0.0   0.0   0.0   6268..6441       57     57     AAL68456.1        SH | small hydrophobic protein
+KM385447.1.8       96.0   99.1   100.0  0.0   0.0   0.0   6614..8362       582    582    AAT81471.1        HN | hemagglutinin-neuraminidase
+KM385447.1.9       99.4   99.8   100.0  0.0   0.0   0.0   8438..15223      2261   2261   P30929.1          L | large protein
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KM597072.1              15263      6            3      12129           4037           98.1             99.5          100.0   mmp_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KM597072.1.1       97.6   99.1   100.0  0.0   0.0   0.0   84..422          549    549    Q77IS8.1          NP | nucleocapsid protein
+                                                          422..1732                                        
+                    frameshift in genome at or near position 422..422 (+3=>+2)
+KM597072.1.2       97.7   98.7   100.0  0.0   0.0   0.0   1916..2374       170    171    AEY76114.1        I | I protein
+                                                          2374..2427                                       
+                    frameshift in genome at or near position 2374..2374 (+2=>+1)
+KM597072.1.3       97.8   98.5   100.0  0.0   0.0   0.0   1916..2590       224    224    BAK26765.1        V | V protein
+KM597072.1.4       97.4   99.0   100.0  0.0   0.0   0.0   1916..2374       391    391    NP_054708.1       P | phosphoprotein
+                                                          2373..3089                                       
+                    frameshift in genome at or near position 2374..2373 (+2=>+3)
+KM597072.1.5       99.7   99.9   100.0  0.0   0.0   0.0   3201..4328       375    375    NP_054710.1       M | membrane protein
+KM597072.1.6       96.1   99.2   100.0  0.0   0.0   0.0   4483..6099       538    538    AAT81469.1        F | fusion protein
+KM597072.1.7       87.7   96.5   100.0  0.0   0.0   0.0   6205..6378       57     57     P28087.1          SH | small hydrophobic protein
+KM597072.1.8       95.5   98.9   100.0  0.0   0.0   0.0   6551..8299       582    582    AAT81471.1        HN | hemagglutinin-neuraminidase
+KM597072.1.9       99.3   99.8   100.0  0.0   0.0   0.0   8375..15160      2261   2261   P30929.1          L | large protein
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KF738114.1              15384      9            0      15471           5148           98.2             99.5          100.0   mmp_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KF738114.1.1       98.4   99.3   100.0  0.0   0.0   0.0   146..1795        549    549    Q77IS8.1          NP | nucleocapsid protein
+KF738114.1.2       98.8   99.4   100.0  0.0   0.0   0.0   1979..2490       171    171    AEY76114.1        I | I protein
+                    transcription exception 2435..2441:AAGAGGGGGGG
+KF738114.1.3       97.8   98.9   100.0  0.0   0.0   0.0   1979..2653       224    224    BAK26765.1        V | V protein
+KF738114.1.4       97.7   99.0   100.0  0.0   0.0   0.0   1979..3152       391    391    NP_054708.1       P | phosphoprotein
+                    transcription exception 2435..2441:AAGAGGGGG
+KF738114.1.5       99.7   99.9   100.0  0.0   0.0   0.0   3264..4391       375    375    NP_054710.1       M | membrane protein
+KF738114.1.6       96.5   98.9   100.0  0.0   0.0   0.0   4546..6162       538    538    AAT81469.1        F | fusion protein
+KF738114.1.7       89.5   98.2   100.0  0.0   0.0   0.0   6268..6441       57     57     P28087.1          SH | small hydrophobic protein
+KF738114.1.8       95.7   99.5   100.0  0.0   0.0   0.0   6614..8362       582    582    AAT81471.1        HN | hemagglutinin-neuraminidase
+KF738114.1.9       99.2   99.7   100.0  0.0   0.0   0.0   8438..15223      2261   2261   P30929.1          L | large protein
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KF738113.1              15384      8            1      14955           4977           98.5             99.5          100.0   mmp_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KF738113.1.1       98.0   99.1   100.0  0.0   0.0   0.0   146..1795        549    549    Q77IS8.1          NP | nucleocapsid protein
+KF738113.1.2       97.1   99.1   100.0  0.0   0.0   0.0   1979..2487       171    171    AEY76114.1        I | I protein
+                    transcription exception 2435..2441:AAGAGGGGGGG
+                    could not find valid stop codon
+KF738113.1.3       97.3   98.9   100.0  0.0   0.0   0.0   1979..2653       224    224    BAK26765.1        V | V protein
+KF738113.1.4       96.4   98.7   100.0  0.0   0.0   0.0   1979..3152       391    391    NP_054708.1       P | phosphoprotein
+                    transcription exception 2435..2441:AAGAGGGGG
+KF738113.1.5       99.7   99.9   100.0  0.0   0.0   0.0   3264..4391       375    375    NP_054710.1       M | membrane protein
+KF738113.1.6       97.6   99.2   100.0  0.0   0.0   0.0   4546..6162       538    538    AAT81469.1        F | fusion protein
+KF738113.1.7       93.0   98.2   100.0  0.0   0.0   0.0   6268..6441       57     57     P28087.1          SH | small hydrophobic protein
+KF738113.1.8       96.7   99.4   100.0  0.0   0.0   0.0   6614..8362       582    582    AAT81471.1        HN | hemagglutinin-neuraminidase
+KF738113.1.9       99.6   99.8   100.0  0.0   0.0   0.0   8438..15223      2261   2261   P30929.1          L | large protein
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KJ810514.1              15263      5            4      11454           3813           98.1             99.6          100.0   mmp_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KJ810514.1.1       97.6   99.1   100.0  0.0   0.0   0.0   84..422          549    549    Q77IS8.1          NP | nucleocapsid protein
+                                                          422..1732                                        
+                    frameshift in genome at or near position 422..422 (+3=>+2)
+KJ810514.1.2       97.1   98.1   100.0  0.0   0.0   0.0   1916..2374       170    171    AEY76114.1        I | I protein
+                                                          2374..2427                                       
+                    frameshift in genome at or near position 2374..2374 (+2=>+1)
+                    stop codon embedded in CDS at 2372..2374
+KJ810514.1.3       97.3   98.1   100.0  0.0   0.0   0.0   1916..2590       224    224    BAK26765.1        V | V protein
+                    stop codon embedded in CDS at 2372..2374
+KJ810514.1.4       97.2   98.7   100.0  0.0   0.0   0.0   1916..2371       391    391    NP_054708.1       P | phosphoprotein
+                                                          2370..3089                                       
+                    frameshift in genome at or near position 2371..2370 (+2=>+3)
+KJ810514.1.5       99.7   99.9   100.0  0.0   0.0   0.0   3201..4328       375    375    NP_054710.1       M | membrane protein
+KJ810514.1.6       96.1   99.2   100.0  0.0   0.0   0.0   4483..6099       538    538    AAT81469.1        F | fusion protein
+KJ810514.1.7       87.7   96.5   100.0  0.0   0.0   0.0   6205..6378       57     57     P28087.1          SH | small hydrophobic protein
+KJ810514.1.8       95.5   98.9   100.0  0.0   0.0   0.0   6551..8299       582    582    AAT81471.1        HN | hemagglutinin-neuraminidase
+KJ810514.1.9       99.3   99.8   100.0  0.0   0.0   0.0   8375..15160      2261   2261   P30929.1          L | large protein
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+AY685920.1              15384      9            0      15471           5148           98.4             99.6          100.0   mmp_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+AY685920.1.1       98.4   99.4   100.0  0.0   0.0   0.0   146..1795        549    549    Q77IS8.1          NP | nucleocapsid protein
+AY685920.1.2       97.1   98.0   100.0  0.0   0.0   0.0   1979..2490       171    171    AEY76114.1        I | I protein
+                    transcription exception 2435..2441:AAGAGGGGGGG
+AY685920.1.3       96.9   99.6   100.0  0.0   0.0   0.0   1979..2653       224    224    BAK26765.1        V | V protein
+AY685920.1.4       98.0   99.6   100.0  0.0   0.0   0.0   1979..3152       391    391    NP_054708.1       P | phosphoprotein
+                    transcription exception 2435..2441:AAGAGGGGG
+AY685920.1.5       98.9   99.7   100.0  0.0   0.0   0.0   3264..4391       375    375    NP_054710.1       M | membrane protein
+AY685920.1.6       97.6   99.6   100.0  0.0   0.0   0.0   4546..6162       538    538    AAT81469.1        F | fusion protein
+AY685920.1.7       96.5   98.2   100.0  0.0   0.0   0.0   6268..6441       57     57     P28087.1          SH | small hydrophobic protein
+AY685920.1.8       97.1   99.5   100.0  0.0   0.0   0.0   6614..8362       582    582    AAT81471.1        HN | hemagglutinin-neuraminidase
+AY685920.1.9       99.3   99.7   100.0  0.0   0.0   0.0   8438..15223      2261   2261   P30929.1          L | large protein
+

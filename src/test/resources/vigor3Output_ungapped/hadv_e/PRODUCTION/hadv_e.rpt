@@ -1,0 +1,545 @@
+2018-09-06 23:26:30
+
+
+parameters
+	bl2seq_extend_hsp	25
+	bl2seq_extend_span	50
+	candidate_blastopts	-p blastx -M PAM30 -e 1E-5 -g F -v 0 -F \"\" -z 3000000 -b 1000
+	candidate_evalue	
+	candidate_overlap_threshold	0.8
+	candidate_refdb	
+	command_line	/opt/www/vigor/vigor3/prod3/VIGOR3.pl -D hadv_e -O /usr/local/scratch/CORE/snettem/hadv_e/PRODUCTION/hadv_e -i /opt/www/vigor/vigor3/regr_testing/hadve.ungapped.fasta
+	default_gene_optional	0
+	default_gene_required	0
+	default_gene_variation	1
+	frameshift_sensitivity	1
+	gene_variations	E1A-3:3,E1A-2:3,E1A:3
+	jcvi_rules	1
+	mature_pep_mincoverage	50
+	mature_pep_minidentity	25
+	mature_pep_minsimilarity	40
+	mature_pep_refdb	../data3/virus_mp
+	max_intron_size	7000
+	min_candidate_pctsimilarity	75
+	min_candidate_sbjcoverage	33
+	min_exon_size	3
+	min_intron_size	30
+	min_pseudogene_coverage	80
+	min_pseudogene_identity	70
+	min_pseudogene_similarity	80
+	noncanonical_splicing_genes	E1A:AA+GT,E1A-2:GA+GT,E1A-3:AA+AG;GG+AG,E2B:TT+AG,E4-2:GT+TA,E4-4a:AG+TC,IVa2:GG+CA,L4-2a:GG+CA
+	optional_genes	
+	reference_db	/opt/www/vigor/vigor3/data3/hadve_db
+	reference_dbsize	90246
+	required_genes	
+	ribosomal_slippage_genes	
+	rna_editing_genes	
+	selectivity	0.985
+	slippage_frameshift	-1
+	slippage_motif	[NT][NT][NT]AAAC
+	slippage_offset	0
+	spliced_genes	
+	splicesite_extend_range	0
+	tile_overlap	1000000
+	tile_size	10000000
+	use_locus_tags	1
+	variation	0.975
+	verbose	0
+	vigorspace	/opt/www/vigor/vigor3/prod3/vigorscratch/204276.783698337
+
+
+dropping pseudogene 37.11, fails match requirements: %id 60.1 < 70
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+37.11              60.1   85.1   96.8   0.0   0.0   3.2   5151..5702       183    189    AAW33296.1        HYP-4 | hypothetical protein
+                    stop codons embedded in CDS at 5421..5423, 5526..5528 and 5652..5654
+
+dropping pseudogene 37.15, fails match requirements: %id 59.6 < 70
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+37.15              59.6   88.2   100.0  -2.1  0.0   0.0   7857..7862       230    224    AAT97489.1        HYP-6 | hypothetical protein
+                                                          8567..9253                                       
+                    stop codon embedded in CDS at 8975..8977
+                    non-canonical splicing for intron at 7863..8566
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+37                      34763     39            1      34425          11437           77.6             90.7          100.0   hadve_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+37.1               56.3   74.2   100.0  0.0   0.0   0.0   588..1181        197    181    AAW33284.1        HYP-1 | hypothetical protein
+37.2               56.2   78.9   100.0  0.0   0.0   0.0   588..1074        231    226    AAL35511.1        E1A-2 | E1A 24.6 kDa protein
+                                                          1252..1460                                       
+37.3               57.9   79.5   100.0  0.0   0.0   0.0   588..1167        262    257    AP_000299.1       E1A | E1A 28 kDa protein
+                                                          1252..1460                                       
+37.4               60.0   84.7   100.0  0.0   0.0   0.0   1617..2159       180    171    YP_068019.1       E1B | E1B small T antigen
+37.5               50.0   68.5   100.0  0.0   0.0   0.0   1922..2185       89     93     AAL35516.1        HYP-3 | hypothetical protein
+                                                          3321..3326                                       
+37.6               64.1   82.2   100.0  0.0   0.0   0.0   1922..2202       163    169    AAL35514.1        HYP-2 | hypothetical protein
+                                                          3196..3406                                       
+37.7               70.5   88.9   100.0  0.0   0.0   0.0   1922..3406       494    498    AP_000301.1       E1B-2 | E1B large T antigen
+37.8               75.4   94.4   100.0  0.0   0.0   0.0   3489..3908       139    142    AAS10430.1        IX | hexon associated protein
+37.9               89.5   97.0   100.0  0.0   0.0   0.0   5600..5588       448    448    AP_000303.1       IVa2 | maturation protein
+                                                          5309..3976                                       
+37.10              83.0   91.3   100.0  0.0   0.0   0.0   6172..6492       106    106    ABR27497.1        HYP-5 | hypothetical protein
+37.11              66.9   94.1   100.0  0.0   0.0   0.0   7857..8255       139    139    YP_001661328.1    L1-3 | L1 13.6 kDa protein
+                                                          9505..9525                                       
+37.12              85.4   92.9   100.0  0.0   0.0   0.0   10658..11818     386    391    AAS10362.1        L1-2 | L1 52 kDa protein
+37.13              87.9   95.6   100.0  0.0   0.0   0.0   11844..13607     587    586    AAS10435.1        L1 | IIIa capsid protein
+37.14              85.0   95.8   100.0  0.0   0.0   0.0   13640..13632     1193   1196   AP_000304.1       E2B | DNA polymerase
+                                                          8651..5079                                       
+37.15              89.8   95.6   100.0  0.0   0.0   0.0   13640..13632     656    646    AP_000305.1       pTP | DNA terminal protein
+                                                          10411..8450                                      
+37.16              84.2   91.1   99.8   0.2   0.0   0.0   13688..15361     557    534    AP_000308.1       L2 | penton base
+37.17              88.6   97.0   100.0  0.0   0.0   0.0   15366..15944     192    193    YP_068028.1       L2-2 | VII core protein
+37.18              77.2   89.6   100.0  0.0   0.0   0.0   15987..17042     351    345    AAS10402.1        L2-3 | V core protein
+37.19              84.6   91.7   100.0  0.0   0.0   0.0   17071..17301     76     77     AP_000311.1       L2-4 | X core protein
+37.20              77.0   92.2   100.0  0.0   0.0   0.0   17384..18124     246    242    AAT97497-T5       L3 | VI capsid protein
+37.21              84.7   93.5   100.0  0.0   0.0   0.0   18240..21080     946    933    AP_000313.1       L3-2 | hexon
+37.22              85.2   95.6   99.5   0.0   0.0   0.5   21120..21749     209    206    AP_000314.1       L3-3 | protease
+37.23              73.5   91.3   100.0  0.0   0.0   0.0   23383..21827     518    512    AAS10443.1        E2A | ssDNA-binding protein
+37.24              77.9   88.5   100.0  0.0   0.0   0.0   23414..25852     812    802    AP_000316.1       L4 | hexon-assembly protein
+37.25              65.8   79.3   100.0  0.0   0.0   0.0   25584..26159     191    188    AP_000318.1       L4-2 | L4 encapsidation protein
+37.26              68.6   82.0   100.0  0.0   0.0   0.0   25584..25915     225    222    AP_000317.1       L4-3 | splicing factor
+                                                          26088..26433                                     
+                    non-canonical splicing for intron at 25916..26087
+37.27              90.3   97.4   100.0  0.0   0.0   0.0   26483..27166     227    227    AP_000319.1       L4-4 | VIII capsid protein
+37.28              76.4   94.3   100.0  0.0   0.0   0.0   27166..27483     105    106    AAW33314.1        E3 | E3 12.5 kDa immune modulating protein
+37.29              56.5   78.7   100.0  0.0   0.0   0.0   27817..28317     166    176    AAL35531.1        E3-3 | E3 immune modulating protein
+37.30              72.5   94.2   100.0  0.0   0.0   0.0   29495..29770     91     91     AAS10417.1        E3-7 | E3 RID-alpha
+37.31              54.9   78.0   100.0  0.0   0.0   0.0   29775..30179     134    143    AP_000327.1       E3-8 | E3 RID-beta
+37.32              80.7   93.7   100.0  0.0   0.0   0.0   30172..30579     135    133    AAW33321.1        E3-9 | E3 control protein 14.7 kDa
+37.33              71.7   89.2   100.0  0.0   0.0   0.0   30767..>30609    53     50     AP_000329.1       U | putative protein U, N-terminal
+37.34              81.7   96.3   93.8   6.3   0.0   0.0   31977..31795     60     64     AAT97515.1        E4-7 | E4 7.4 kDa protein
+                    could not find valid start codon
+37.35              67.1   86.0   100.0  0.0   0.0   0.0   32942..32769     141    140    AAW33324.1        E4 | E4 control protein orf6/7
+                                                          32046..31795                                     
+37.36              70.9   90.5   100.0  0.0   0.0   0.0   32942..32043     299    301    AAS10458.1        E4-2 | E4 control protein 34 kDa
+37.37              55.7   81.8   100.0  0.0   0.0   0.0   33213..32845     122    121    AP_000333.1       E4-3 | E4 control protein orf4
+37.38              85.5   97.4   100.0  0.0   0.0   0.0   33575..33222     117    117    AAS10460.1        E4-4 | E4 control protein orf3
+37.39              62.0   88.8   100.0  0.0   0.0   0.0   33961..33572     129    129    AAS10425.1        E4-5 | E4 control protein orf2
+37.40              70.4   89.2   100.0  0.0   0.0   0.0   34383..34006     125    124    AAW33329.1        E4-6 | E4 control protein orf1
+
+
+dropping pseudogene 57.1, fails match requirements: %id 39.4 < 70, %sim 66.8 < 80
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+57.1               39.4   66.8   95.0   0.0   0.0   5.0   479..1030        184    181    AAW33284.1        HYP-1 | hypothetical protein
+                    could not find valid stop codon
+
+dropping pseudogene 57.21, fails match requirements: %id 69.2 < 70
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+57.21              69.2   86.8   86.5   13.1  0.0   0.4   22826..24919     697    800    AAS10408.1        L4 | hexon-assembly protein
+                    could not find valid start codon
+
+dropping pseudogene 57.27, fails match requirements: %id 57.4 < 70
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+57.27              57.4   83.5   84.4   15.6  0.0   0.0   31903..31142     253    301    AP_000332.1       E4-2 | E4 control protein 34 kDa
+                    could not find valid start codon
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+57                      33802     25            2      23862           7929           65.3             83.9           99.9   hadve_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+57.1               39.6   67.6   100.0  0.0   0.0   0.0   479..1057        258    258    AAS10427.1        E1A | E1A 28 kDa protein
+                                                          1154..1351                                       
+                    non-canonical splicing for intron at 1058..1153
+57.2               43.9   77.3   100.0  0.0   0.0   0.0   1488..1958       156    171    YP_068019.1       E1B | E1B small T antigen
+57.3               47.5   72.9   99.8   0.0   0.0   0.2   1793..3211       472    494    AAW33291.1        E1B-2 | E1B large T antigen
+57.4               49.7   77.6   100.0  0.0   0.0   0.0   3290..3724       144    142    AP_000302.1       IX | hexon associated protein
+57.5               76.2   92.7   100.0  0.0   0.0   0.0   5384..5372       449    448    AP_000303.1       IVa2 | maturation protein
+                                                          5093..3757                                       
+57.6               70.6   83.1   96.2   3.8   0.0   0.0   5968..6276       102    106    ABR27497.1        HYP-5 | hypothetical protein
+                    could not find valid start codon
+57.7               35.7   74.1   100.0  0.0   0.0   0.0   7644..8040       137    139    YP_001661328.1    L1-3 | L1 13.6 kDa protein
+                                                          9263..9279                                       
+                    non-canonical splicing for intron at 8041..9262
+57.8               74.6   89.5   99.5   0.5   0.0   0.0   <10117..8222     631    647    AAS10397.1        pTP | putative DNA terminal protein, C-terminal
+                    missing exon 1
+57.9               72.1   88.3   100.0  0.0   0.0   0.0   10310..11413     367    391    AAS10362.1        L1-2 | L1 52 kDa protein
+57.10              73.8   87.7   100.0  0.0   0.0   0.0   11435..13171     578    592    AP_000307.1       L1 | IIIa capsid protein
+57.11              70.4   89.1   100.0  0.0   0.0   0.0   13201..13193     1184   1190   AAS10396.1        E2B | DNA polymerase
+                                                          8411..4866                                       
+57.12              78.0   86.6   99.8   0.2   0.0   0.0   13246..14763     505    534    AP_000308.1       L2 | penton base
+57.13              71.9   88.3   100.0  0.0   0.0   0.0   14777..15340     187    194    AAS10437.1        L2-2 | VII core protein
+57.14              61.0   80.6   99.7   0.0   0.0   0.3   15382..16416     344    345    AAS10438.1        L2-3 | V core protein
+57.15              68.8   84.4   100.0  0.0   0.0   0.0   16440..16658     72     77     AAS10439.1        L2-4 | X core protein
+57.16              67.2   79.8   100.0  0.0   0.0   0.0   16734..17516     260    237    AAW333060T5       L3 | VI capsid protein
+57.17              80.9   91.8   100.0  0.0   0.0   0.0   17616..20384     922    933    AP_000313.1       L3-2 | hexon
+57.18              82.3   93.1   98.1   1.0   0.0   1.0   20411..21022     203    206    AP_000314.1       L3-3 | protease
+57.19              50.0   76.3   100.0  0.0   0.0   0.0   22563..21106     485    510    AAW33309.1        E2A | ssDNA-binding protein
+57.20              41.4   64.3   100.0  0.0   0.0   0.0   24657..25187     176    179    YP_068037.1       L4-2 | L4 encapsidation protein
+57.21              45.5   71.7   100.0  0.0   0.0   0.0   24657..24971     201    206    AAW33312.1        L4-3 | splicing factor
+                                                          25144..25434                                     
+57.22              78.2   90.1   100.0  0.0   0.0   0.0   25493..26194     233    227    AP_000319.1       L4-4 | VIII capsid protein
+57.23              71.7   91.0   100.0  0.0   0.0   0.0   26194..26511     105    106    AAW33314.1        E3 | E3 12.5 kDa immune modulating protein
+57.24              52.6   74.6   100.0  0.0   0.0   0.0   28635..29021     128    133    YP_068046.1       E3-9 | E3 control protein 14.7 kDa
+57.25              45.5   74.0   100.0  0.0   0.0   0.0   32306..31944     120    121    AAS10423.1        E4-3 | E4 control protein orf4
+57.26              65.8   87.6   100.0  0.0   0.0   0.0   32662..32312     116    117    AP_000334.1       E4-4 | E4 control protein orf3
+57.27              48.0   81.1   100.0  0.0   0.0   0.0   33469..33086     127    124    AAW33329.1        E4-6 | E4 control protein orf1
+
+
+dropping pseudogene 47.2, fails match requirements: %id 39.4 < 70, %sim 65.2 < 80
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+47.2               39.4   65.2   70.4   0.0   0.0   29.6  560..>1090       177    257    AP_000299.1       E1A | putative E1A 28 kDa protein, N-terminal
+                    missing exon 2
+
+dropping pseudogene 47.9, fails match requirements: %id 58.6 < 70
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+47.9               58.6   80.0   95.8   1.1   0.0   3.2   5268..5813       181    189    AAW33296.1        HYP-4 | hypothetical protein
+                    could not find valid start codon
+
+dropping pseudogene 47.13, fails match requirements: %id 68.0 < 70
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+47.13              68.0   89.0   95.5   0.0   0.0   4.5   7971..7976       219    224    AAT97489.1        HYP-6 | hypothetical protein
+                                                          8693..9343                                       
+                    stop codons embedded in CDS at 8852..8854 and 9275..9277
+                    non-canonical splicing for intron at 7977..8692
+                    could not find valid stop codon
+
+dropping pseudogene 47.24, fails match requirements: %id 64.9 < 70, %sim 79.8 < 80
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+47.24              64.9   79.8   98.6   1.4   0.0   0.0   24280..26520     746    785    AAW33310.1        L4 | hexon-assembly protein
+                    could not find valid start codon
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+47                      35931     33            0      30796          10234           67.0             83.9           99.6   hadve_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+47.1               38.6   65.8   99.0   0.0   0.0   1.0   560..1120        186    192    AAT97474.1        HYP-1 | hypothetical protein
+47.2               48.9   75.8   98.9   0.0   0.0   1.1   1714..2241       175    190    AAS10392.1        E1B | E1B small T antigen
+47.3               52.0   74.2   100.0  0.0   0.0   0.0   2019..2305       170    169    AAL35514.1        HYP-2 | hypothetical protein
+                                                          3281..3506                                       
+                    non-canonical splicing for intron at 2306..3280
+47.4               56.8   82.5   100.0  0.0   0.0   0.0   2019..3506       495    498    AP_000301.1       E1B-2 | E1B large T antigen
+47.5               45.1   80.6   100.0  0.0   0.0   0.0   3603..4025       140    142    YP_068021.1       IX | hexon associated protein
+47.6               83.5   94.3   100.0  0.0   0.0   0.0   5711..5699       449    448    AAS10359.1        IVa2 | maturation protein
+                                                          5420..4084                                       
+47.7               81.1   84.7   100.0  0.0   0.0   0.0   6283..6603       106    106    ABR27497.1        HYP-5 | hypothetical protein
+47.8               46.4   77.7   97.1   0.0   0.0   2.9   7971..8368       137    139    YP_001661328.1    L1-3 | L1 13.6 kDa protein
+                                                          9596..9609                                       
+                    non-canonical splicing for intron at 8369..9595
+47.9               70.0   85.7   100.0  0.0   0.0   0.0   11042..12289     415    390    AAS10398.1        L1-2 | L1 52 kDa protein
+47.10              77.2   89.8   100.0  0.0   0.0   0.0   12310..14067     585    587    AAS10399.1        L1 | IIIa capsid protein
+47.11              77.8   90.8   100.0  0.0   0.0   0.0   14112..14104     1198   1192   AAS10360.1        E2B | DNA polymerase
+                                                          8777..5190                                       
+47.12              81.4   90.1   100.0  0.0   0.0   0.0   14112..14104     671    642    YP_068024.1       pTP | DNA terminal protein
+                                                          10582..8576                                      
+47.13              72.6   83.6   100.0  0.0   0.0   0.0   14149..15864     571    534    AP_000308.1       L2 | penton base
+47.14              71.4   87.6   100.0  0.0   0.0   0.0   15871..16467     198    193    YP_068028.1       L2-2 | VII core protein
+47.15              62.3   77.5   99.7   0.0   0.0   0.3   16537..17643     368    345    AAS10438.1        L2-3 | V core protein
+47.16              69.1   83.3   100.0  0.0   0.0   0.0   17671..17913     80     77     AP_000311.1       L2-4 | X core protein
+47.17              68.4   83.1   100.0  0.0   0.0   0.0   17996..18748     250    237    AAW333060T5       L3 | VI capsid protein
+47.18              78.1   90.0   100.0  0.0   0.0   0.0   18833..21739     968    942    AAS10405.1        L3-2 | hexon
+47.19              77.1   94.0   99.0   1.0   0.0   0.0   21773..22387     204    206    YP_068033.1       L3-3 | protease
+47.20              55.6   80.2   100.0  0.0   0.0   0.0   24074..22485     529    512    ABR27508.1        E2A | ssDNA-binding protein
+47.21              47.5   64.1   100.0  0.0   0.0   0.0   26234..26821     195    171    AAW33311.1        L4-2 | L4 encapsidation protein
+47.22              52.9   72.0   100.0  0.0   0.0   0.0   26234..26597     234    222    AP_000317.1       L4-3 | splicing factor
+                                                          26782..27122                                     
+                    non-canonical splicing for intron at 26598..26781
+47.23              80.2   93.5   100.0  0.0   0.0   0.0   27210..27893     227    227    AP_000319.1       L4-4 | VIII capsid protein
+47.24              57.4   76.9   100.0  0.0   0.0   0.0   27894..28217     107    106    AP_000320.1       E3 | E3 12.5 kDa immune modulating protein
+47.25              57.1   82.4   100.0  0.0   0.0   0.0   29776..30051     91     91     AAS10417.1        E3-7 | E3 RID-alpha
+47.26              49.3   79.7   100.0  0.0   0.0   0.0   30439..30825     128    133    YP_068046.1       E3-9 | E3 control protein 14.7 kDa
+47.27              72.1   84.9   76.0   0.0   0.0   24.0  31014..>30886    43     50     AP_000329.1       U | putative protein U, N-terminal
+47.28              41.9   63.0   100.0  0.0   0.0   0.0   31025..32773     582    443    AAS10420.1        L5 | fiber
+47.29              54.5   82.2   100.0  -3.0  0.0   0.0   33109..32909     66     64     AAW33323.1        E4-7 | E4 7.4 kDa protein
+47.30              49.0   75.3   100.0  0.0   0.0   0.0   34072..33883     142    140    AAS10421.1        E4 | E4 control protein orf6/7
+                                                          33147..32909                                     
+47.31              65.0   83.3   98.0   0.0   0.0   2.0   34072..33188     294    301    AAS10386.1        E4-2 | E4 control protein 34 kDa
+47.32              58.8   84.4   94.2   0.0   0.0   5.8   34337..33993     114    121    AP_000333.1       E4-3 | E4 control protein orf4
+47.33              52.5   77.8   100.0  0.0   0.0   0.0   34699..34349     116    117    AAS10460.1        E4-4 | E4 control protein orf3
+
+
+dropping pseudogene 64.12, fails match requirements: %id 69.4 < 70
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+64.12              69.4   89.6   94.2   0.0   0.0   5.8   7755..7760       216    224    AAT97489.1        HYP-6 | hypothetical protein
+                                                          8411..9052                                       
+                    non-canonical splicing for intron at 7761..8410
+                    could not find valid stop codon
+
+dropping pseudogene 64.34, fails match requirements: %id 50.7 < 70, %sim 75.7 < 80
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+64.34              50.7   75.7   92.2   7.8   0.0   0.0   32341..32138     67     64     AAT97515.1        E4-7 | E4 7.4 kDa protein
+                    could not find valid start codon
+
+dropping pseudogene 64.39, fails match requirements: %id 44.4 < 70, %sim 79.8 < 80
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+64.39              44.4   79.8   100.0  0.0   0.0   0.0   34712..34623     125    124    AP_000336.1       E4-6 | E4 control protein orf1
+                                                          34623..34336                                     
+                    frameshift in genome at or near position 34623..34623 (-2=>-1)
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+64                      35151     33            3      26293           8733           69.1             85.1           99.5   hadve_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+64.1               44.6   68.1   100.0  0.0   0.0   0.0   538..1116        192    192    AAT97474.1        HYP-1 | hypothetical protein
+64.2               50.8   78.1   100.0  0.0   0.0   0.0   1546..2094       182    186    AP_000300.1       E1B | E1B small T antigen
+64.3               53.8   77.0   100.0  0.0   0.0   0.0   1851..2141       164    169    AAL35514.1        HYP-2 | hypothetical protein
+                                                          3135..3338                                       
+                    non-canonical splicing for intron at 2142..3134
+64.4               56.4   81.4   100.0  0.0   0.0   0.0   1851..3338       495    502    AAS10357.1        E1B-2 | E1B large T antigen
+64.5               58.6   81.4   100.0  0.0   0.0   0.0   3423..3827       134    142    AP_000302.1       IX | hexon associated protein
+64.6               67.2   85.6   100.0  0.0   0.0   0.0   5046..5615       189    189    AAT97486.1        HYP-4 | hypothetical protein
+64.7               87.1   96.1   100.0  0.0   0.0   0.0   5495..5483       448    448    YP_068022.1       IVa2 | maturation protein
+                                                          5204..3871                                       
+64.8               84.0   88.4   100.0  0.0   0.0   0.0   6067..6387       106    106    ABR27497.1        HYP-5 | hypothetical protein
+                    stop codon embedded in CDS at 6082..6084
+64.9               51.4   78.6   100.0  0.0   0.0   0.0   7755..8148       134    129    EYP_001974467.1   L1-3 | L1 13.6 kDa protein
+                                                          9346..9354                                       
+64.10              76.8   86.9   100.0  0.0   0.0   0.0   10607..11731     374    391    AP_000306.1       L1-2 | L1 52 kDa protein
+64.11              81.3   90.4   100.0  0.0   0.0   0.0   11754..13445     563    586    AAS10435.1        L1 | IIIa capsid protein
+64.12              80.2   91.1   100.0  0.0   0.0   0.0   13472..13460     1186   1193   YP_068023.1       E2B | DNA polymerase
+                                                          8521..4974                                       
+                    stop codons embedded in CDS at 8519..8517 and 8510..8508
+64.13              83.3   93.0   100.0  0.0   0.0   0.0   13472..13464     635    645    AAS10433.1        pTP | DNA terminal protein
+                                                          10192..8294                                      
+64.14              77.8   90.2   100.0  0.0   0.0   0.0   13499..15058     519    531    AAS10436.1        L2 | penton base
+64.15              83.4   91.5   100.0  0.0   0.0   0.0   15062..15652     196    194    AAS10437.1        L2-2 | VII core protein
+64.16              66.9   81.2   99.7   0.0   0.0   0.3   15685..16689     334    347    AAS10366.1        L2-3 | V core protein
+64.17              72.7   90.6   100.0  0.0   0.0   0.0   16719..16943     74     77     YP_068030.1       L2-4 | X core protein
+64.18              75.6   86.7   100.0  0.0   0.0   0.0   16999..17703     234    242    AAT97497-T5       L3 | VI capsid protein
+64.19              87.0   95.1   100.0  0.0   0.0   0.0   17774..20593     939    942    AAS10405.1        L3-2 | hexon
+64.20              81.7   91.2   100.0  0.0   0.0   0.0   20596..21219     207    206    AP_000314.1       L3-3 | protease
+64.21              60.9   83.1   100.0  0.0   0.0   0.0   22746..21274     490    512    AAS10407.1        E2A | ssDNA-binding protein
+64.22              71.0   86.0   97.0   2.6   0.0   0.4   22787..24961     724    797    AAS10372.1        L4 | hexon-assembly protein
+                    could not find valid start codon
+64.23              53.7   71.0   91.6   0.0   0.0   8.4   24744..25157     137    179    YP_068037.1       L4-2 | L4 encapsidation protein
+64.24              58.7   72.8   100.0  0.0   0.0   0.0   24744..24978     179    213    AAT97455.1        L4-3 | splicing factor
+                                                          25133..25437                                     
+                    non-canonical splicing for intron at 24979..25132
+64.25              84.1   94.3   100.0  0.0   0.0   0.0   25483..26166     227    227    AP_000319.1       L4-4 | VIII capsid protein
+64.26              67.0   86.1   100.0  0.0   0.0   0.0   26167..26487     106    106    AP_000320.1       E3 | E3 12.5 kDa immune modulating protein
+64.27              33.1   64.7   100.0  0.0   0.0   0.0   26998..27498     166    174    AAW33316.1        E3-3 | E3 immune modulating protein
+64.28              61.5   89.0   100.0  0.0   0.0   0.0   29685..29960     91     91     AAS10453.1        E3-7 | E3 RID-alpha
+64.29              40.7   67.9   100.0  0.0   0.0   0.0   29963..30355     130    144    AAS10382.1        E3-8 | E3 RID-beta
+64.30              71.1   90.4   100.0  0.0   0.0   0.0   30348..30740     130    133    YP_068046.1       E3-9 | E3 control protein 14.7 kDa
+64.31              81.6   93.4   76.0   0.0   0.0   24.0  30991..>30881    37     50     AP_000329.1       U | putative protein U, N-terminal
+64.32              38.4   60.9   100.0  0.0   0.0   0.0   31007..32104     365    441    AAS10456.1        L5 | fiber
+64.33              48.6   73.0   94.2   5.8   0.0   0.0   33258..33106     133    139    AP_000331.1       E4 | E4 control protein orf6/7
+                                                          32386..32138                                     
+64.34              70.4   89.5   97.3   2.7   0.0   0.0   33258..32380     292    301    AAS10386.1        E4-2 | E4 control protein 34 kDa
+64.35              41.8   82.6   100.0  0.0   0.0   0.0   33550..33188     120    122    AAW33326.1        E4-3 | E4 control protein orf4
+64.36              77.8   91.2   100.0  0.0   0.0   0.0   33906..33553     117    117    YP_068052.1       E4-4 | E4 control protein orf3
+
+
+dropping pseudogene gi_51527264.35, fails match requirements: %cov 48.5 < 80
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_51527264.35     77.0   87.5   48.5   51.5  0.0   0.0   29127..29420     97     204    AAS10451.1        E3-5 | E3 CR1-gamma
+                    could not find valid start codon
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|51527264|ref|NC_0    35994     48            1      39312          13057          100.0            100.0          100.0   hadve_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_51527264.1      100.0  100.0  100.0  0.0   0.0   0.0   576..1154        192    192    AAT97474.1        HYP-1 | hypothetical protein
+gi_51527264.2      100.0  100.0  100.0  0.0   0.0   0.0   576..647         59     59     AAT97427.1        E1A-3 | E1A 6.8 kDa protein
+                                                          1233..1340                                       
+gi_51527264.3      100.0  100.0  100.0  0.0   0.0   0.0   576..1047        226    226    AAT97477.1        E1A-2 | E1A 24.6 kDa protein
+                                                          1233..1441                                       
+gi_51527264.4      100.0  100.0  100.0  0.0   0.0   0.0   576..1140        257    257    YP_068018.1       E1A | E1A 28 kDa protein
+                                                          1233..1441                                       
+gi_51527264.5      100.0  100.0  100.0  0.0   0.0   0.0   1600..2115       171    171    YP_068019.1       E1B | E1B small T antigen
+gi_51527264.6      100.0  100.0  100.0  0.0   0.0   0.0   1905..2122       78     78     AAT97480.1        HYP-3 | hypothetical protein
+                                                          3258..3276                                       
+gi_51527264.7      100.0  100.0  100.0  0.0   0.0   0.0   1905..2152       154    154    AAT97482.1        HYP-2 | hypothetical protein
+                                                          3140..3356                                       
+gi_51527264.8      100.0  100.0  100.0  0.0   0.0   0.0   1905..3356       483    483    YP_068020.1       E1B-2 | E1B large T antigen
+gi_51527264.9      100.0  100.0  100.0  0.0   0.0   0.0   3441..3869       142    142    YP_068021.1       IX | hexon associated protein
+gi_51527264.10     100.0  100.0  100.0  0.0   0.0   0.0   5105..5674       189    189    AAT97486.1        HYP-4 | hypothetical protein
+gi_51527264.11     100.0  100.0  100.0  0.0   0.0   0.0   5554..5542       448    448    YP_068022.1       IVa2 | maturation protein
+                                                          5263..3930                                       
+gi_51527264.12     100.0  100.0  100.0  0.0   0.0   0.0   6126..6446       106    106    ABR27497.1        HYP-5 | hypothetical protein
+gi_51527264.13     99.6   99.6   99.6   0.4   0.0   0.0   7814..7815       223    224    AAT97489.1        HYP-6 | hypothetical protein
+                                                          8535..9204                                       
+                    non-canonical splicing for intron at 7816..8534
+                    could not find valid start codon
+gi_51527264.14     100.0  100.0  100.0  0.0   0.0   0.0   7814..8212       139    139    YP_001661328.1    L1-3 | L1 13.6 kDa protein
+                                                          9456..9476                                       
+gi_51527264.15     100.0  100.0  100.0  0.0   0.0   0.0   10765..11937     390    390    YP_068025.1       L1-2 | L1 52 kDa protein
+gi_51527264.16     100.0  100.0  100.0  0.0   0.0   0.0   11961..13736     591    591    YP_068026.1       L1 | IIIa capsid protein
+gi_51527264.17     100.0  100.0  100.0  0.0   0.0   0.0   13773..13765     1193   1193   YP_068023.1       E2B | DNA polymerase
+                                                          8605..5033                                       
+gi_51527264.18     100.0  100.0  100.0  0.0   0.0   0.0   13773..13765     642    642    YP_068024.1       pTP | DNA terminal protein
+                                                          10323..8404                                      
+gi_51527264.19     100.0  100.0  100.0  0.0   0.0   0.0   13815..15422     535    535    YP_068027.1       L2 | penton base
+gi_51527264.20     100.0  100.0  100.0  0.0   0.0   0.0   15426..16007     193    193    YP_068028.1       L2-2 | VII core protein
+gi_51527264.21     100.0  100.0  100.0  0.0   0.0   0.0   16055..17080     341    341    YP_068029.1       L2-3 | V core protein
+gi_51527264.22     100.0  100.0  100.0  0.0   0.0   0.0   17103..17336     77     77     YP_068030.1       L2-4 | X core protein
+gi_51527264.23     100.0  100.0  100.0  0.0   0.0   0.0   17413..18141     242    242    AAT97497-T5       L3 | VI capsid protein
+gi_51527264.24     100.0  100.0  100.0  0.0   0.0   0.0   18248..21058     936    936    YP_068032.1       L3-2 | hexon
+gi_51527264.25     100.0  100.0  100.0  0.0   0.0   0.0   21082..21702     206    206    YP_068033.1       L3-3 | protease
+gi_51527264.26     100.0  100.0  100.0  0.0   0.0   0.0   23312..21774     512    512    YP_068034.1       E2A | ssDNA-binding protein
+gi_51527264.27     99.7   99.7   100.0  0.0   0.0   0.0   23341..25716     791    789    YP_068035.1       L4 | hexon-assembly protein
+gi_51527264.28     100.0  100.0  100.0  0.0   0.0   0.0   25439..25978     179    179    YP_068037.1       L4-2 | L4 encapsidation protein
+gi_51527264.29     100.0  100.0  100.0  0.0   0.0   0.0   25439..25760     214    214    YP_068036.1       L4-3 | splicing factor
+                                                          25930..26252                                     
+gi_51527264.30     100.0  100.0  100.0  0.0   0.0   0.0   26321..27004     227    227    YP_068038.1       L4-4 | VIII capsid protein
+gi_51527264.31     100.0  100.0  100.0  0.0   0.0   0.0   27005..27325     106    106    YP_068039.1       E3 | E3 12.5 kDa immune modulating protein
+gi_51527264.32     100.0  100.0  100.0  0.0   0.0   0.0   27279..27911     210    210    YP_068040.1       E3-2 | E3 CR1-alpha
+gi_51527264.33     100.0  100.0  100.0  0.0   0.0   0.0   27893..28417     174    174    YP_068041.1       E3-3 | E3 immune modulating protein
+gi_51527264.34     100.0  100.0  100.0  0.0   0.0   0.0   28449..29111     220    220    YP_068042.1       E3-4 | E3 CR1-beta
+gi_51527264.35     100.0  100.0  100.0  0.0   0.0   0.0   29279..29443     54     54     AAT97509.1        E3-11 | E3 6.3 kDa protein
+gi_51527264.36     100.0  100.0  100.0  0.0   0.0   0.0   29440..30264     274    274    YP_068043.1       E3-6 | E3 CR1-delta
+gi_51527264.37     100.0  100.0  100.0  0.0   0.0   0.0   30273..30548     91     91     YP_068044.1       E3-7 | E3 RID-alpha
+gi_51527264.38     100.0  100.0  100.0  0.0   0.0   0.0   30554..30994     146    146    YP_068045.1       E3-8 | E3 RID-beta
+gi_51527264.39     100.0  100.0  100.0  0.0   0.0   0.0   30987..31388     133    133    YP_068046.1       E3-9 | E3 control protein 14.7 kDa
+gi_51527264.40     94.0   98.0   100.0  0.0   0.0   0.0   31632..>31483    50     50     AP_000329.1       U | putative protein U, N-terminal
+gi_51527264.41     100.0  100.0  100.0  0.0   0.0   0.0   31649..32926     425    425    YP_068048.1       L5 | fiber
+gi_51527264.42     100.0  100.0  100.0  0.0   0.0   0.0   33216..33022     64     64     AAT97515.1        E4-7 | E4 7.4 kDa protein
+gi_51527264.43     100.0  100.0  100.0  0.0   0.0   0.0   33288..34085     265    265    ABR27524.1        E3-10 | E3 27 kDa protein
+gi_51527264.44     100.0  100.0  100.0  0.0   0.0   0.0   34169..33996     141    141    YP_068049.1       E4 | E4 control protein orf6/7
+                                                          33273..33022                                     
+gi_51527264.45     100.0  100.0  100.0  0.0   0.0   0.0   34169..33270     299    299    YP_068050.1       E4-2 | E4 control protein 34 kDa
+gi_51527264.46     100.0  100.0  100.0  0.0   0.0   0.0   34440..34072     122    122    YP_068051.1       E4-3 | E4 control protein orf4
+gi_51527264.47     100.0  100.0  100.0  0.0   0.0   0.0   34802..34449     117    117    YP_068052.1       E4-4 | E4 control protein orf3
+gi_51527264.48     100.0  100.0  100.0  0.0   0.0   0.0   35188..34799     129    129    YP_068053.1       E4-5 | E4 control protein orf2
+gi_51527264.49     100.0  100.0  100.0  0.0   0.0   0.0   35610..35236     124    124    YP_068054.1       E4-6 | E4 control protein orf1
+
+
+dropping pseudogene gi_9626553.7, fails match requirements: %id 51.3 < 70, %sim 79.9 < 80
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_9626553.7       51.3   79.9   100.0  0.0   0.0   0.0   4822..5388       188    189    AAT97486.1        HYP-4 | hypothetical protein
+                    many stop codons embedded in CDS
+                    could not find valid start codon
+
+dropping pseudogene gi_9626553.11, fails match requirements: %id 57.3 < 70
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_9626553.11      57.3   85.4   83.5   -2.1  0.0   16.5  7528..7533       192    224    AAT97489.1        HYP-6 | hypothetical protein
+                                                          8223..8792                                       
+                    stop codon embedded in CDS at 8631..8633
+                    non-canonical splicing for intron at 7534..8222
+                    could not find valid stop codon
+
+dropping pseudogene gi_9626553.21, fails match requirements: %id 52.0 < 70, %sim 76.9 < 80
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_9626553.21      52.0   76.9   89.7   9.9   0.0   0.4   22362..21100     420    513    AAS10371.1        E2A | ssDNA-binding protein
+                    could not find valid start codon
+
+dropping pseudogene gi_9626553.22, fails match requirements: %id 68.9 < 70
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_9626553.22      68.9   85.4   88.4   11.6  0.0   0.0   22725..24857     710    785    AAW33219.1        L4 | hexon-assembly protein
+                    could not find valid start codon
+
+dropping pseudogene gi_9626553.27, fails match requirements: %id 54.1 < 70
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_9626553.27      54.1   82.6   89.6   10.4  0.0   0.0   28204..28560     118    135    AAS10383.1        E3-9 | E3 control protein 14.7 kDa
+                    could not find valid start codon
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|9626553|ref|NC_00    34214     24            1      24072           8001           67.3             85.2           99.5   hadve_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_9626553.1       40.9   69.2   97.2   1.7   0.0   1.1   486..1019        177    181    AAW33284.1        HYP-1 | hypothetical protein
+gi_9626553.2       46.2   77.5   100.0  0.0   0.0   0.0   1414..1917       167    171    YP_068019.1       E1B | E1B small T antigen
+gi_9626553.3       47.8   77.1   99.6   0.0   0.0   0.4   1719..3149       476    483    YP_068020.1       E1B-2 | E1B large T antigen
+gi_9626553.4       55.3   77.1   95.1   0.0   0.0   4.9   3217..3615       132    142    YP_068021.1       IX | hexon associated protein
+gi_9626553.5       80.3   93.3   99.8   0.0   0.0   0.2   5268..5256       446    448    AP_000303.1       IVa2 | maturation protein
+                                                          4977..3650                                       
+gi_9626553.6       74.5   83.0   100.0  0.0   0.0   0.0   5840..6160       106    106    ABR27497.1        HYP-5 | hypothetical protein
+                    stop codon embedded in CDS at 5900..5902
+gi_9626553.7       42.4   73.1   100.0  0.0   0.0   0.0   7528..7926       142    139    YP_001661328.1    L1-3 | L1 13.6 kDa protein
+                                                          9250..9279                                       
+gi_9626553.8       75.6   89.2   99.2   0.0   0.0   0.8   10254..11396     380    391    AP_000306.1       L1-2 | L1 52 kDa protein
+gi_9626553.9       72.3   87.8   100.0  0.0   0.0   0.0   11420..13150     576    586    AAS10435.1        L1 | IIIa capsid protein
+gi_9626553.10      71.0   88.8   100.0  0.0   0.0   0.0   13188..13180     1188   1190   AAS10396.1        E2B | DNA polymerase
+                                                          8307..4750                                       
+gi_9626553.11      75.1   89.1   100.0  0.0   0.0   0.0   13188..13180     646    642    YP_068024.1       pTP | DNA terminal protein
+                                                          10037..8106                                      
+gi_9626553.12      76.0   87.1   99.4   0.6   0.0   0.0   13271..14755     494    531    AAS10436.1        L2 | penton base
+gi_9626553.13      70.1   86.5   100.0  0.0   0.0   0.0   14757..15314     185    193    AP_000309.1       L2-2 | VII core protein
+gi_9626553.14      62.0   78.9   100.0  0.0   0.0   0.0   15380..16456     358    341    YP_068029.1       L2-3 | V core protein
+gi_9626553.15      64.9   84.7   100.0  0.0   0.0   0.0   16480..16692     70     77     YP_068030.1       L2-4 | X core protein
+gi_9626553.16      63.2   80.1   100.0  0.0   0.0   0.0   16745..17548     267    242    AAT97497-T5       L3 | VI capsid protein
+gi_9626553.17      80.4   92.5   100.0  0.0   0.0   0.0   17643..20414     923    936    YP_068032.1       L3-2 | hexon
+gi_9626553.18      80.5   92.0   99.0   1.0   0.0   0.0   20426..21043     205    206    AP_000314.1       L3-3 | protease
+gi_9626553.19      42.8   67.5   100.0  0.0   0.0   0.0   24559..25119     186    171    AAW33220.1        L4-2 | L4 encapsidation protein
+gi_9626553.20      45.9   74.3   100.0  0.0   0.0   0.0   24559..24901     214    214    YP_068036.1       L4-3 | splicing factor
+                                                          25071..25372                                     
+                    non-canonical splicing for intron at 24902..25070
+gi_9626553.21      80.7   90.5   100.0  0.0   0.0   0.0   25416..26117     233    227    AP_000319.1       L4-4 | VIII capsid protein
+gi_9626553.22      36.3   74.5   100.0  0.0   0.0   0.0   27607..27879     90     91     AAS10417.1        E3-7 | E3 RID-alpha
+gi_9626553.23      59.5   70.8   78.0   0.0   0.0   22.0  28743..>28621    41     50     AP_000329.1       U | putative protein U, N-terminal
+gi_9626553.24      48.8   75.2   98.0   2.0   0.0   0.0   32745..31876     289    301    AAS10422.1        E4-2 | E4 control protein 34 kDa
+gi_9626553.25      59.0   85.7   100.0  0.0   0.0   0.0   33390..33040     116    117    AAS10460.1        E4-4 | E4 control protein orf3
+
+
+dropping pseudogene gi_61602086.9, fails match requirements: %id 53.4 < 70, %sim 77.1 < 80
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_61602086.9      53.4   77.1   96.8   3.2   0.0   0.0   4792..5364       190    189    AAT97486.1        HYP-4 | hypothetical protein
+                    stop codon embedded in CDS at 4933..4935
+                    could not find valid start codon
+
+dropping pseudogene gi_61602086.11, fails match requirements: %id 45.8 < 70, %sim 73.9 < 80
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_61602086.11     45.8   73.9   98.6   1.4   0.0   0.0   7483..7881       140    139    YP_001661328.1    L1-3 | L1 13.6 kDa protein
+                                                          9190..9210                                       
+                    non-canonical splicing for intron at 7882..9189
+                    could not find valid start codon and could not find valid stop codon
+
+dropping pseudogene gi_61602086.13, fails match requirements: %id 65.6 < 70
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_61602086.13     65.6   91.3   72.8   10.7  0.0   16.5  <8244..8732      163    224    AAT97489.1        HYP-6 | putative hypothetical protein, C-terminal
+                    could not find valid stop codon and missing exon 1
+
+dropping pseudogene gi_61602086.23, fails match requirements: %id 56.9 < 70, %cov 78.5 < 80
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_61602086.23     56.9   83.7   78.5   21.5  0.0   0.0   22189..20984     401    512    ABR27508.1        E2A | ssDNA-binding protein
+                    could not find valid start codon
+
+dropping pseudogene gi_61602086.24, fails match requirements: %id 65.6 < 70
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_61602086.24     65.6   81.9   97.8   2.0   0.0   0.1   22390..24681     763    785    AAW33219.1        L4 | hexon-assembly protein
+                    could not find valid start codon
+
+dropping pseudogene gi_61602086.29, fails match requirements: %id 47.5 < 70, %sim 76.3 < 80
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_61602086.29     47.5   76.3   92.2   7.8   0.0   0.0   31734..31564     56     64     AAT97515.1        E4-7 | E4 7.4 kDa protein
+                    could not find valid start codon
+
+dropping pseudogene gi_61602086.30, fails match requirements: %id 51.3 < 70, %sim 77.9 < 80
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_61602086.30     51.3   77.9   87.7   12.3  0.0   0.0   32576..31794     260    301    AP_000332.1       E4-2 | E4 control protein 34 kDa
+                    could not find valid start codon
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|61602086|ref|NC_0    34450     23            2      23526           7819           68.8             85.2           99.8   hadve_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_61602086.1      41.9   70.1   98.9   0.0   0.0   1.1   474..968         164    181    AAW33284.1        HYP-1 | hypothetical protein
+gi_61602086.2      40.8   65.9   100.0  0.0   0.0   0.0   474..966         231    258    AAS10355.1        E1A | E1A 28 kDa protein
+                                                          1050..1252                                       
+                    non-canonical splicing for intron at 967..1049
+gi_61602086.3      42.1   72.3   99.5   0.0   0.0   0.5   1365..1871       168    183    AAW33289.1        E1B | E1B small T antigen
+gi_61602086.4      47.4   72.4   98.7   0.0   0.0   1.3   1670..1907       148    154    AAT97482.1        HYP-2 | hypothetical protein
+                                                          2880..3088                                       
+gi_61602086.5      50.0   77.7   99.6   0.0   0.0   0.4   1670..3088       472    483    YP_068020.1       E1B-2 | E1B large T antigen
+gi_61602086.6      55.7   82.9   96.5   0.0   0.0   3.5   3150..3560       136    142    AP_000302.1       IX | hexon associated protein
+gi_61602086.7      81.5   93.1   100.0  0.0   0.0   0.0   5220..5208       447    448    AAS10431.1        IVa2 | maturation protein
+                                                          4929..3599                                       
+gi_61602086.8      75.5   84.2   100.0  0.0   0.0   0.0   5789..6109       106    106    ABR27497.1        HYP-5 | hypothetical protein
+                    stop codon embedded in CDS at 5804..5806
+gi_61602086.9      73.4   87.4   100.0  0.0   0.0   0.0   10190..11317     375    391    AP_000306.1       L1-2 | L1 52 kDa protein
+gi_61602086.10     72.3   89.1   100.0  0.0   0.0   0.0   11338..13047     569    591    YP_068026.1       L1 | IIIa capsid protein
+gi_61602086.11     74.3   89.3   100.0  0.0   0.0   0.0   13078..13070     1184   1193   YP_068023.1       E2B | DNA polymerase
+                                                          8247..4702                                       
+gi_61602086.12     77.7   89.4   100.0  0.0   0.0   0.0   13078..13066     644    642    AAT97490.1        pTP | DNA terminal protein
+                                                          9967..8046                                       
+gi_61602086.13     76.3   87.2   99.8   0.2   0.0   0.0   13129..14640     503    534    AP_000308.1       L2 | penton base
+gi_61602086.14     70.8   87.3   100.0  0.0   0.0   0.0   14643..15206     187    193    AP_000309.1       L2-2 | VII core protein
+gi_61602086.15     63.4   81.3   99.7   0.0   0.0   0.3   15263..16300     345    341    YP_068029.1       L2-3 | V core protein
+gi_61602086.16     63.6   83.4   100.0  0.0   0.0   0.0   16320..16532     70     77     YP_068030.1       L2-4 | X core protein
+gi_61602086.17     61.6   76.6   100.0  0.0   0.0   0.0   16586..17425     279    242    AP_000312         L3 | VI capsid protein
+gi_61602086.18     79.3   90.7   100.0  0.0   0.0   0.0   17513..20308     931    932    ABR27507.1        L3-2 | hexon
+gi_61602086.19     84.4   92.7   99.0   1.0   0.0   0.0   20317..20934     205    206    AP_000314.1       L3-3 | protease
+gi_61602086.20     48.4   68.3   98.8   0.0   0.0   1.2   24386..24931     181    171    AAW33220.1        L4-2 | L4 encapsidation protein
+gi_61602086.21     72.3   88.3   41.4   58.6  0.0   0.0   <24942..25211    89     222    AP_000317.1       L4-3 | putative splicing factor, C-terminal
+                    missing exon 1
+gi_61602086.22     82.0   91.5   100.0  0.0   0.0   0.0   25263..25964     233    227    AAS10446.1        L4-4 | VIII capsid protein
+gi_61602086.23     59.4   82.8   100.0  0.0   0.0   0.0   25964..26281     105    106    AAW33314.1        E3 | E3 12.5 kDa immune modulating protein
+gi_61602086.24     63.6   85.0   100.0  0.0   0.0   0.0   33301..32951     116    117    AAS10460.1        E4-4 | E4 control protein orf3
+gi_61602086.25     55.6   79.0   100.0  0.0   0.0   0.0   34095..33715     126    124    AAS10462.1        E4-6 | E4 control protein orf1
+

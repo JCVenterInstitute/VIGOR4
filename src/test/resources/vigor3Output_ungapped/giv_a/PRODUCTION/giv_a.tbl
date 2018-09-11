@@ -1,0 +1,402 @@
+>Features NC_026438.1
+1	2280	gene
+			locus_tag	vigor_PB2
+			gene	PB2
+1	2280	CDS
+			codon_start	1
+			protein_id	NC_026438.1.1
+			locus_tag	vigor_PB2
+			gene	PB2
+			product	polymerase PB2
+>Features NC_026435.1
+1	2274	gene
+			locus_tag	vigor_PB1
+			gene	PB1
+1	2274	CDS
+			codon_start	1
+			protein_id	NC_026435.1.1
+			locus_tag	vigor_PB1
+			gene	PB1
+			product	polymerase PB1
+95	400	gene
+			locus_tag	vigor_PB1-F2
+			gene	PB1-F2
+			pseudogene	unitary
+95	400	misc_feature
+			locus_tag	vigor_PB1-F2
+			gene	PB1-F2
+			product	PB1-F2 protein
+			note	CDS interrupted by many stop codons
+>Features NC_026437.1
+1	700	gene
+			locus_tag	vigor_PA-X
+			gene	PA-X
+1	573	CDS
+575	700
+			codon_start	1
+			protein_id	NC_026437.1.1
+			locus_tag	vigor_PA-X
+			gene	PA-X
+			product	PA-X protein
+			ribosomal_slippage
+1	2151	gene
+			locus_tag	vigor_PA
+			gene	PA
+1	2151	CDS
+			codon_start	1
+			protein_id	NC_026437.1.2
+			locus_tag	vigor_PA
+			gene	PA
+			product	polymerase PA
+>Features NC_026433.1
+1	1701	gene
+			locus_tag	vigor_HA
+			gene	HA
+1	1701	CDS
+			codon_start	1
+			protein_id	NC_026433.1.1
+			locus_tag	vigor_HA
+			gene	HA
+			product	hemagglutinin
+
+>Features NC_026433.1.1
+1	17	sig_peptide
+			locus_tag	vigor_HA
+			gene	HA
+18	344	mat_peptide
+			product	HA1
+			locus_tag	vigor_HA
+			gene	HA
+345	566	mat_peptide
+			product	HA2
+			locus_tag	vigor_HA
+			gene	HA
+>Features NC_026436.1
+1	1497	gene
+			locus_tag	vigor_NP
+			gene	NP
+1	1497	CDS
+			codon_start	1
+			protein_id	NC_026436.1.1
+			locus_tag	vigor_NP
+			gene	NP
+			product	nucleocapsid protein
+>Features NC_026434.1
+1	1410	gene
+			locus_tag	vigor_NA
+			gene	NA
+1	1410	CDS
+			codon_start	1
+			protein_id	NC_026434.1.1
+			locus_tag	vigor_NA
+			gene	NA
+			product	neuraminidase
+>Features NC_026431.1
+1	759	gene
+			locus_tag	vigor_M1
+			gene	M1
+1	759	CDS
+			codon_start	1
+			protein_id	NC_026431.1.1
+			locus_tag	vigor_M1
+			gene	M1
+			product	matrix protein 1
+1	982	gene
+			locus_tag	vigor_M2
+			gene	M2
+1	26	CDS
+715	982
+			codon_start	1
+			protein_id	NC_026431.1.2
+			locus_tag	vigor_M2
+			gene	M2
+			product	matrix protein 2
+>Features NC_026432.1
+1	660	gene
+			locus_tag	vigor_NS1
+			gene	NS1
+1	660	CDS
+			codon_start	1
+			protein_id	NC_026432.1.1
+			locus_tag	vigor_NS1
+			gene	NS1
+			product	nonstructural protein 1
+1	838	gene
+			locus_tag	vigor_NEP
+			gene	NEP
+			gene_syn	NS2
+1	30	CDS
+503	838
+			codon_start	1
+			protein_id	NC_026432.1.2
+			locus_tag	vigor_NEP
+			gene	NEP
+			product	nuclear export protein
+>Features NC_007373.1
+28	2307	gene
+			locus_tag	vigor_PB2
+			gene	PB2
+28	2307	CDS
+			codon_start	1
+			protein_id	NC_007373.1.1
+			locus_tag	vigor_PB2
+			gene	PB2
+			product	polymerase PB2
+>Features NC_007372.1
+25	2298	gene
+			locus_tag	vigor_PB1
+			gene	PB1
+25	2298	CDS
+			codon_start	1
+			protein_id	NC_007372.1.1
+			locus_tag	vigor_PB1
+			gene	PB1
+			product	polymerase PB1
+119	391	gene
+			locus_tag	vigor_PB1-F2
+			gene	PB1-F2
+119	391	CDS
+			codon_start	1
+			protein_id	NC_007372.1.2
+			locus_tag	vigor_PB1-F2
+			gene	PB1-F2
+			product	PB1-F2 protein
+>Features NC_007371.1
+25	784	gene
+			locus_tag	vigor_PA-X
+			gene	PA-X
+25	597	CDS
+599	784
+			codon_start	1
+			protein_id	NC_007371.1.1
+			locus_tag	vigor_PA-X
+			gene	PA-X
+			product	PA-X protein
+			ribosomal_slippage
+25	2175	gene
+			locus_tag	vigor_PA
+			gene	PA
+25	2175	CDS
+			codon_start	1
+			protein_id	NC_007371.1.2
+			locus_tag	vigor_PA
+			gene	PA
+			product	polymerase PA
+>Features NC_007366.1
+30	1730	gene
+			locus_tag	vigor_HA
+			gene	HA
+30	1730	CDS
+			codon_start	1
+			protein_id	NC_007366.1.1
+			locus_tag	vigor_HA
+			gene	HA
+			product	hemagglutinin
+
+>Features NC_007366.1.1
+1	16	sig_peptide
+			locus_tag	vigor_HA
+			gene	HA
+17	345	mat_peptide
+			product	HA1
+			locus_tag	vigor_HA
+			gene	HA
+346	566	mat_peptide
+			product	HA2
+			locus_tag	vigor_HA
+			gene	HA
+>Features NC_007369.1
+46	1542	gene
+			locus_tag	vigor_NP
+			gene	NP
+46	1542	CDS
+			codon_start	1
+			protein_id	NC_007369.1.1
+			locus_tag	vigor_NP
+			gene	NP
+			product	nucleocapsid protein
+>Features NC_007368.1
+20	1429	gene
+			locus_tag	vigor_NA
+			gene	NA
+20	1429	CDS
+			codon_start	1
+			protein_id	NC_007368.1.1
+			locus_tag	vigor_NA
+			gene	NA
+			product	neuraminidase
+>Features NC_007367.1
+26	784	gene
+			locus_tag	vigor_M1
+			gene	M1
+26	784	CDS
+			codon_start	1
+			protein_id	NC_007367.1.1
+			locus_tag	vigor_M1
+			gene	M1
+			product	matrix protein 1
+26	1007	gene
+			locus_tag	vigor_M2
+			gene	M2
+26	51	CDS
+740	1007
+			codon_start	1
+			protein_id	NC_007367.1.2
+			locus_tag	vigor_M2
+			gene	M2
+			product	matrix protein 2
+>Features NC_007370.1
+27	719	gene
+			locus_tag	vigor_NS1
+			gene	NS1
+27	719	CDS
+			codon_start	1
+			protein_id	NC_007370.1.1
+			locus_tag	vigor_NS1
+			gene	NS1
+			product	nonstructural protein 1
+27	864	gene
+			locus_tag	vigor_NEP
+			gene	NEP
+			gene_syn	NS2
+27	56	CDS
+529	864
+			codon_start	1
+			protein_id	NC_007370.1.2
+			locus_tag	vigor_NEP
+			gene	NEP
+			product	nuclear export protein
+>Features NC_026422.1
+1	2280	gene
+			locus_tag	vigor_PB2
+			gene	PB2
+1	2280	CDS
+			codon_start	1
+			protein_id	NC_026422.1.1
+			locus_tag	vigor_PB2
+			gene	PB2
+			product	polymerase PB2
+>Features NC_026423.1
+1	2274	gene
+			locus_tag	vigor_PB1
+			gene	PB1
+1	2274	CDS
+			codon_start	1
+			protein_id	NC_026423.1.1
+			locus_tag	vigor_PB1
+			gene	PB1
+			product	polymerase PB1
+95	367	gene
+			locus_tag	vigor_PB1-F2
+			gene	PB1-F2
+95	367	CDS
+			codon_start	1
+			protein_id	NC_026423.1.2
+			locus_tag	vigor_PB1-F2
+			gene	PB1-F2
+			product	PB1-F2 protein
+>Features NC_026424.1
+1	760	gene
+			locus_tag	vigor_PA-X
+			gene	PA-X
+1	573	CDS
+575	760
+			codon_start	1
+			protein_id	NC_026424.1.1
+			locus_tag	vigor_PA-X
+			gene	PA-X
+			product	PA-X protein
+			ribosomal_slippage
+1	2151	gene
+			locus_tag	vigor_PA
+			gene	PA
+1	2151	CDS
+			codon_start	1
+			protein_id	NC_026424.1.2
+			locus_tag	vigor_PA
+			gene	PA
+			product	polymerase PA
+>Features NC_026425.1
+1	1683	gene
+			locus_tag	vigor_HA
+			gene	HA
+1	1683	CDS
+			codon_start	1
+			protein_id	NC_026425.1.1
+			locus_tag	vigor_HA
+			gene	HA
+			product	hemagglutinin
+
+>Features NC_026425.1.1
+1	18	sig_peptide
+			locus_tag	vigor_HA
+			gene	HA
+19	339	mat_peptide
+			product	HA1
+			locus_tag	vigor_HA
+			gene	HA
+340	560	mat_peptide
+			product	HA2
+			locus_tag	vigor_HA
+			gene	HA
+>Features NC_026426.1
+1	1497	gene
+			locus_tag	vigor_NP
+			gene	NP
+1	1497	CDS
+			codon_start	1
+			protein_id	NC_026426.1.1
+			locus_tag	vigor_NP
+			gene	NP
+			product	nucleocapsid protein
+>Features NC_026429.1
+1	1398	gene
+			locus_tag	vigor_NA
+			gene	NA
+1	1398	CDS
+			codon_start	1
+			protein_id	NC_026429.1.1
+			locus_tag	vigor_NA
+			gene	NA
+			product	neuraminidase
+>Features NC_026427.1
+1	759	gene
+			locus_tag	vigor_M1
+			gene	M1
+1	759	CDS
+			codon_start	1
+			protein_id	NC_026427.1.1
+			locus_tag	vigor_M1
+			gene	M1
+			product	matrix protein 1
+1	982	gene
+			locus_tag	vigor_M2
+			gene	M2
+1	26	CDS
+715	982
+			codon_start	1
+			protein_id	NC_026427.1.2
+			locus_tag	vigor_M2
+			gene	M2
+			product	matrix protein 2
+>Features NC_026428.1
+1	654	gene
+			locus_tag	vigor_NS1
+			gene	NS1
+1	654	CDS
+			codon_start	1
+			protein_id	NC_026428.1.1
+			locus_tag	vigor_NS1
+			gene	NS1
+			product	nonstructural protein 1
+1	838	gene
+			locus_tag	vigor_NEP
+			gene	NEP
+			gene_syn	NS2
+1	30	CDS
+503	838
+			codon_start	1
+			protein_id	NC_026428.1.2
+			locus_tag	vigor_NEP
+			gene	NEP
+			product	nuclear export protein

@@ -1,0 +1,552 @@
+>Features KX394404.1
+75	3661	gene
+			locus_tag	vigor_GP2
+			gene	GP2
+75	3530	CDS
+3530	3661
+			codon_start	1
+			protein_id	KX394404.1.1
+			locus_tag	vigor_GP2
+			gene	GP2
+			product	truncated polyprotein
+			ribosomal_slippage
+75	7708	gene
+			locus_tag	vigor_GP3
+			gene	GP3
+75	7301	CDS
+7301	7708
+			codon_start	1
+			protein_id	KX394404.1.2
+			locus_tag	vigor_GP3
+			gene	GP3
+			product	West Nile Alternative Reading Frame 4 protein
+			ribosomal_slippage
+75	10376	gene
+			locus_tag	vigor_GP1
+			gene	GP1
+75	10376	CDS
+			codon_start	1
+			protein_id	KX394404.1.3
+			locus_tag	vigor_GP1
+			gene	GP1
+			product	genome polyprotein
+
+>Features KX394404.1.1
+792	1195	mat_peptide
+			product	NS1' protein
+			locus_tag	vigor_GP2
+			gene	GP2
+			note	transframe fusion protein expressed via programmed ribosomal frameshifting; when frameshifting occurs, cleavage between NS1 and NS2A fails to occur
+
+>Features KX394404.1.2
+2274	2544	mat_peptide
+			product	West Nile Alternative Reading Frame 4 protein (WARF4)
+			locus_tag	vigor_GP3
+			gene	GP3
+
+>Features KX394404.1.3
+1	123	mat_peptide
+			product	anchored capsid protein C
+			locus_tag	vigor_GP1
+			gene	GP1
+124	290	mat_peptide
+			product	small envelope protein M
+			locus_tag	vigor_GP1
+			gene	GP1
+			note	synonym: membrane glycoprotein M
+291	791	mat_peptide
+			product	envelope protein E
+			locus_tag	vigor_GP1
+			gene	GP1
+792	1143	mat_peptide
+			product	non-structural protein NS1
+			locus_tag	vigor_GP1
+			gene	GP1
+1144	1374	mat_peptide
+			product	non-structural protein NS2A
+			locus_tag	vigor_GP1
+			gene	GP1
+1375	1505	mat_peptide
+			product	serine protease NS2B
+			locus_tag	vigor_GP1
+			gene	GP1
+1506	2124	mat_peptide
+			product	serine protease NS3
+			locus_tag	vigor_GP1
+			gene	GP1
+2125	2250	mat_peptide
+			product	non-structural protein NS4A
+			locus_tag	vigor_GP1
+			gene	GP1
+2251	2273	mat_peptide
+			product	2K protein
+			locus_tag	vigor_GP1
+			gene	GP1
+2274	2528	mat_peptide
+			product	non-structural protein NS4B
+			locus_tag	vigor_GP1
+			gene	GP1
+2529	3433	mat_peptide
+			product	RNA-directed RNA polymerase NS5
+			locus_tag	vigor_GP1
+			gene	GP1
+>Features DQ211652.1
+97	3683	gene
+			locus_tag	vigor_GP2
+			gene	GP2
+97	3552	CDS
+3552	3683
+			codon_start	1
+			protein_id	DQ211652.1.1
+			locus_tag	vigor_GP2
+			gene	GP2
+			product	truncated polyprotein
+			ribosomal_slippage
+97	7757	gene
+			locus_tag	vigor_GP3
+			gene	GP3
+97	7323	CDS
+7323	7757
+			codon_start	1
+			protein_id	DQ211652.1.2
+			locus_tag	vigor_GP3
+			gene	GP3
+			product	West Nile Alternative Reading Frame 4 protein
+			ribosomal_slippage
+97	10398	gene
+			locus_tag	vigor_GP1
+			gene	GP1
+97	10398	CDS
+			codon_start	1
+			protein_id	DQ211652.1.3
+			locus_tag	vigor_GP1
+			gene	GP1
+			product	genome polyprotein
+
+>Features DQ211652.1.1
+792	1195	mat_peptide
+			product	NS1' protein
+			locus_tag	vigor_GP2
+			gene	GP2
+			note	transframe fusion protein expressed via programmed ribosomal frameshifting; when frameshifting occurs, cleavage between NS1 and NS2A fails to occur
+
+>Features DQ211652.1.2
+2274	2553	mat_peptide
+			product	West Nile Alternative Reading Frame 4 protein (WARF4)
+			locus_tag	vigor_GP3
+			gene	GP3
+
+>Features DQ211652.1.3
+1	123	mat_peptide
+			product	anchored capsid protein C
+			locus_tag	vigor_GP1
+			gene	GP1
+124	290	mat_peptide
+			product	small envelope protein M
+			locus_tag	vigor_GP1
+			gene	GP1
+			note	synonym: membrane glycoprotein M
+291	791	mat_peptide
+			product	envelope protein E
+			locus_tag	vigor_GP1
+			gene	GP1
+792	1143	mat_peptide
+			product	non-structural protein NS1
+			locus_tag	vigor_GP1
+			gene	GP1
+1144	1374	mat_peptide
+			product	non-structural protein NS2A
+			locus_tag	vigor_GP1
+			gene	GP1
+1375	1505	mat_peptide
+			product	serine protease NS2B
+			locus_tag	vigor_GP1
+			gene	GP1
+1506	2124	mat_peptide
+			product	serine protease NS3
+			locus_tag	vigor_GP1
+			gene	GP1
+2125	2250	mat_peptide
+			product	non-structural protein NS4A
+			locus_tag	vigor_GP1
+			gene	GP1
+2251	2273	mat_peptide
+			product	2K protein
+			locus_tag	vigor_GP1
+			gene	GP1
+2274	2528	mat_peptide
+			product	non-structural protein NS4B
+			locus_tag	vigor_GP1
+			gene	GP1
+2529	3433	mat_peptide
+			product	RNA-directed RNA polymerase NS5
+			locus_tag	vigor_GP1
+			gene	GP1
+>Features HM488120.1
+97	3683	gene
+			locus_tag	vigor_GP2
+			gene	GP2
+97	3552	CDS
+3552	3683
+			codon_start	1
+			protein_id	HM488120.1.1
+			locus_tag	vigor_GP2
+			gene	GP2
+			product	truncated polyprotein
+			ribosomal_slippage
+97	7757	gene
+			locus_tag	vigor_GP3
+			gene	GP3
+97	7323	CDS
+7323	7757
+			codon_start	1
+			protein_id	HM488120.1.2
+			locus_tag	vigor_GP3
+			gene	GP3
+			product	West Nile Alternative Reading Frame 4 protein
+			ribosomal_slippage
+97	10398	gene
+			locus_tag	vigor_GP1
+			gene	GP1
+97	10398	CDS
+			codon_start	1
+			protein_id	HM488120.1.3
+			locus_tag	vigor_GP1
+			gene	GP1
+			product	genome polyprotein
+
+>Features HM488120.1.1
+792	1195	mat_peptide
+			product	NS1' protein
+			locus_tag	vigor_GP2
+			gene	GP2
+			note	transframe fusion protein expressed via programmed ribosomal frameshifting; when frameshifting occurs, cleavage between NS1 and NS2A fails to occur
+
+>Features HM488120.1.2
+2274	2553	mat_peptide
+			product	West Nile Alternative Reading Frame 4 protein (WARF4)
+			locus_tag	vigor_GP3
+			gene	GP3
+
+>Features HM488120.1.3
+1	123	mat_peptide
+			product	anchored capsid protein C
+			locus_tag	vigor_GP1
+			gene	GP1
+124	290	mat_peptide
+			product	small envelope protein M
+			locus_tag	vigor_GP1
+			gene	GP1
+			note	synonym: membrane glycoprotein M
+291	791	mat_peptide
+			product	envelope protein E
+			locus_tag	vigor_GP1
+			gene	GP1
+792	1143	mat_peptide
+			product	non-structural protein NS1
+			locus_tag	vigor_GP1
+			gene	GP1
+1144	1374	mat_peptide
+			product	non-structural protein NS2A
+			locus_tag	vigor_GP1
+			gene	GP1
+1375	1505	mat_peptide
+			product	serine protease NS2B
+			locus_tag	vigor_GP1
+			gene	GP1
+1506	2124	mat_peptide
+			product	serine protease NS3
+			locus_tag	vigor_GP1
+			gene	GP1
+2125	2250	mat_peptide
+			product	non-structural protein NS4A
+			locus_tag	vigor_GP1
+			gene	GP1
+2251	2273	mat_peptide
+			product	2K protein
+			locus_tag	vigor_GP1
+			gene	GP1
+2274	2528	mat_peptide
+			product	non-structural protein NS4B
+			locus_tag	vigor_GP1
+			gene	GP1
+2529	3433	mat_peptide
+			product	RNA-directed RNA polymerase NS5
+			locus_tag	vigor_GP1
+			gene	GP1
+>Features HM488149.1
+97	3683	gene
+			locus_tag	vigor_GP2
+			gene	GP2
+97	3552	CDS
+3552	3683
+			codon_start	1
+			protein_id	HM488149.1.1
+			locus_tag	vigor_GP2
+			gene	GP2
+			product	truncated polyprotein
+			ribosomal_slippage
+97	7757	gene
+			locus_tag	vigor_GP3
+			gene	GP3
+97	7323	CDS
+7323	7757
+			codon_start	1
+			protein_id	HM488149.1.2
+			locus_tag	vigor_GP3
+			gene	GP3
+			product	West Nile Alternative Reading Frame 4 protein
+			ribosomal_slippage
+97	10398	gene
+			locus_tag	vigor_GP1
+			gene	GP1
+97	10398	CDS
+			codon_start	1
+			protein_id	HM488149.1.3
+			locus_tag	vigor_GP1
+			gene	GP1
+			product	genome polyprotein
+
+>Features HM488149.1.1
+792	1195	mat_peptide
+			product	NS1' protein
+			locus_tag	vigor_GP2
+			gene	GP2
+			note	transframe fusion protein expressed via programmed ribosomal frameshifting; when frameshifting occurs, cleavage between NS1 and NS2A fails to occur
+
+>Features HM488149.1.2
+2274	2553	mat_peptide
+			product	West Nile Alternative Reading Frame 4 protein (WARF4)
+			locus_tag	vigor_GP3
+			gene	GP3
+
+>Features HM488149.1.3
+1	123	mat_peptide
+			product	anchored capsid protein C
+			locus_tag	vigor_GP1
+			gene	GP1
+124	290	mat_peptide
+			product	small envelope protein M
+			locus_tag	vigor_GP1
+			gene	GP1
+			note	synonym: membrane glycoprotein M
+291	791	mat_peptide
+			product	envelope protein E
+			locus_tag	vigor_GP1
+			gene	GP1
+792	1143	mat_peptide
+			product	non-structural protein NS1
+			locus_tag	vigor_GP1
+			gene	GP1
+1144	1374	mat_peptide
+			product	non-structural protein NS2A
+			locus_tag	vigor_GP1
+			gene	GP1
+1375	1505	mat_peptide
+			product	serine protease NS2B
+			locus_tag	vigor_GP1
+			gene	GP1
+1506	2124	mat_peptide
+			product	serine protease NS3
+			locus_tag	vigor_GP1
+			gene	GP1
+2125	2250	mat_peptide
+			product	non-structural protein NS4A
+			locus_tag	vigor_GP1
+			gene	GP1
+2251	2273	mat_peptide
+			product	2K protein
+			locus_tag	vigor_GP1
+			gene	GP1
+2274	2528	mat_peptide
+			product	non-structural protein NS4B
+			locus_tag	vigor_GP1
+			gene	GP1
+2529	3433	mat_peptide
+			product	RNA-directed RNA polymerase NS5
+			locus_tag	vigor_GP1
+			gene	GP1
+>Features JX556213.1
+5	3591	gene
+			locus_tag	vigor_GP2
+			gene	GP2
+5	3460	CDS
+3460	3591
+			codon_start	1
+			protein_id	JX556213.1.1
+			locus_tag	vigor_GP2
+			gene	GP2
+			product	truncated polyprotein
+			ribosomal_slippage
+5	7665	gene
+			locus_tag	vigor_GP3
+			gene	GP3
+5	7231	CDS
+7231	7665
+			codon_start	1
+			protein_id	JX556213.1.2
+			locus_tag	vigor_GP3
+			gene	GP3
+			product	West Nile Alternative Reading Frame 4 protein
+			ribosomal_slippage
+5	10306	gene
+			locus_tag	vigor_GP1
+			gene	GP1
+5	10306	CDS
+			codon_start	1
+			protein_id	JX556213.1.3
+			locus_tag	vigor_GP1
+			gene	GP1
+			product	genome polyprotein
+
+>Features JX556213.1.1
+792	1195	mat_peptide
+			product	NS1' protein
+			locus_tag	vigor_GP2
+			gene	GP2
+			note	transframe fusion protein expressed via programmed ribosomal frameshifting; when frameshifting occurs, cleavage between NS1 and NS2A fails to occur
+
+>Features JX556213.1.2
+2274	2553	mat_peptide
+			product	West Nile Alternative Reading Frame 4 protein (WARF4)
+			locus_tag	vigor_GP3
+			gene	GP3
+
+>Features JX556213.1.3
+1	123	mat_peptide
+			product	anchored capsid protein C
+			locus_tag	vigor_GP1
+			gene	GP1
+124	290	mat_peptide
+			product	small envelope protein M
+			locus_tag	vigor_GP1
+			gene	GP1
+			note	synonym: membrane glycoprotein M
+291	791	mat_peptide
+			product	envelope protein E
+			locus_tag	vigor_GP1
+			gene	GP1
+792	1143	mat_peptide
+			product	non-structural protein NS1
+			locus_tag	vigor_GP1
+			gene	GP1
+1144	1374	mat_peptide
+			product	non-structural protein NS2A
+			locus_tag	vigor_GP1
+			gene	GP1
+1375	1505	mat_peptide
+			product	serine protease NS2B
+			locus_tag	vigor_GP1
+			gene	GP1
+1506	2124	mat_peptide
+			product	serine protease NS3
+			locus_tag	vigor_GP1
+			gene	GP1
+2125	2250	mat_peptide
+			product	non-structural protein NS4A
+			locus_tag	vigor_GP1
+			gene	GP1
+2251	2273	mat_peptide
+			product	2K protein
+			locus_tag	vigor_GP1
+			gene	GP1
+2274	2528	mat_peptide
+			product	non-structural protein NS4B
+			locus_tag	vigor_GP1
+			gene	GP1
+2529	3433	mat_peptide
+			product	RNA-directed RNA polymerase NS5
+			locus_tag	vigor_GP1
+			gene	GP1
+>Features MF797870.1
+77	3663	gene
+			locus_tag	vigor_GP2
+			gene	GP2
+77	3532	CDS
+3532	3663
+			codon_start	1
+			protein_id	MF797870.1.1
+			locus_tag	vigor_GP2
+			gene	GP2
+			product	truncated polyprotein
+			ribosomal_slippage
+77	7737	gene
+			locus_tag	vigor_GP3
+			gene	GP3
+77	7303	CDS
+7303	7737
+			codon_start	1
+			protein_id	MF797870.1.2
+			locus_tag	vigor_GP3
+			gene	GP3
+			product	West Nile Alternative Reading Frame 4 protein
+			ribosomal_slippage
+77	10378	gene
+			locus_tag	vigor_GP1
+			gene	GP1
+77	10378	CDS
+			codon_start	1
+			protein_id	MF797870.1.3
+			locus_tag	vigor_GP1
+			gene	GP1
+			product	genome polyprotein
+
+>Features MF797870.1.1
+792	1195	mat_peptide
+			product	NS1' protein
+			locus_tag	vigor_GP2
+			gene	GP2
+			note	transframe fusion protein expressed via programmed ribosomal frameshifting; when frameshifting occurs, cleavage between NS1 and NS2A fails to occur
+
+>Features MF797870.1.2
+2274	2553	mat_peptide
+			product	West Nile Alternative Reading Frame 4 protein (WARF4)
+			locus_tag	vigor_GP3
+			gene	GP3
+
+>Features MF797870.1.3
+1	123	mat_peptide
+			product	anchored capsid protein C
+			locus_tag	vigor_GP1
+			gene	GP1
+124	290	mat_peptide
+			product	small envelope protein M
+			locus_tag	vigor_GP1
+			gene	GP1
+			note	synonym: membrane glycoprotein M
+291	791	mat_peptide
+			product	envelope protein E
+			locus_tag	vigor_GP1
+			gene	GP1
+792	1143	mat_peptide
+			product	non-structural protein NS1
+			locus_tag	vigor_GP1
+			gene	GP1
+1144	1374	mat_peptide
+			product	non-structural protein NS2A
+			locus_tag	vigor_GP1
+			gene	GP1
+1375	1505	mat_peptide
+			product	serine protease NS2B
+			locus_tag	vigor_GP1
+			gene	GP1
+1506	2124	mat_peptide
+			product	serine protease NS3
+			locus_tag	vigor_GP1
+			gene	GP1
+2125	2250	mat_peptide
+			product	non-structural protein NS4A
+			locus_tag	vigor_GP1
+			gene	GP1
+2251	2273	mat_peptide
+			product	2K protein
+			locus_tag	vigor_GP1
+			gene	GP1
+2274	2528	mat_peptide
+			product	non-structural protein NS4B
+			locus_tag	vigor_GP1
+			gene	GP1
+2529	3433	mat_peptide
+			product	RNA-directed RNA polymerase NS5
+			locus_tag	vigor_GP1
+			gene	GP1

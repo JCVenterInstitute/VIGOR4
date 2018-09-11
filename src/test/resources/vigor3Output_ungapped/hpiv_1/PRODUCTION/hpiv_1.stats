@@ -1,0 +1,5 @@
+Sequence	Length	Genes	Pseudogenes	CDS Bases	Peptide Bases	%Ref Identity	%Ref Similarity	%Ref Coverage	Ref DB
+gi|399605591|gb|JQ902007.1|	15442	10	0	16746	5572	98.0	99.5	100.0	hpiv1_db
+gi|399605563|gb|JQ902003.1|	15443	10	0	16746	5572	97.8	99.3	100.0	hpiv1_db
+gi|399605437|gb|JQ901985.1|	15516	10	0	16746	5572	97.8	99.3	100.0	hpiv1_db
+gi|399605486|gb|JQ901992.1|	15534	10	0	16746	5572	97.8	99.4	100.0	hpiv1_db

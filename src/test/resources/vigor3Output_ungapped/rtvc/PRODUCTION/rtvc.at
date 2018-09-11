@@ -1,0 +1,34 @@
+NC_007547.1	rtvc_db	12..3284	gi_338841004_VP1	VP1	RNA-dependent RNA Polymerase VP1	OK	
+NC_007546.1	rtvc_db	37..2691	gi_311223070_VP2	VP2	core capsid protein VP2	OK	
+NC_007572.1	rtvc_db	21..2255	gi_78609220_VP4	VP4	outer capsid spike protein VP4	OK	
+NC_007574.1	rtvc_db	55..2136	gi_1234902_VP3	VP3	RNA capping protein VP3	OK	
+NC_007570.1	rtvc_db	23..1210	gi_145688270_VP6	VP6	inner capsid protein VP6	OK	
+NC_007543.1	rtvc_db	25..1233	gi_5734507_NSP3	NSP3	non-structural protein 3	OK	
+NC_007544.1	rtvc_db	38..1222	gi_81021557_NSP1	NSP1	non-structural protein 1	OK	
+NC_007571.1	rtvc_db	49..1047	gi_379046926_VP7	VP7	capsid glycoprotein VP7	OK	
+NC_007545.1	rtvc_db	43..981	gi_5734511_NSP2	NSP2	non-structural protein 2	OK	
+NC_007569.1	rtvc_db	20..658	gi_81097465_NSP5	NSP5	non-structural protein 5	OK	
+NC_007573.1	rtvc_db	39..491	gi_78761397_NSP4	NSP4	non-structural protein 4	OK	
+AY795898.1	rtvc_db	23..1210	gi_145688270_VP6	VP6	inner capsid protein VP6	OK	
+AY803725.1	rtvc_db	49..1047	gi_241661614_VP7	VP7	capsid glycoprotein VP7	OK	
+AY770980.1	rtvc_db	23..1210	gi_145688270_VP6	VP6	inner capsid protein VP6	OK	
+AY770978.1	rtvc_db	20..658	gi_59805076_NSP5	NSP5	non-structural protein 5	OK	
+AY770979.1	rtvc_db	43..981	gi_59805078_NSP2	NSP2	non-structural protein 2	OK	
+AY770977.1	rtvc_db	38..1222	gi_59805074_NSP1	NSP1	non-structural protein 1	OK	
+AY795895.1	rtvc_db	21..2255	gi_341604039_VP4	VP4	outer capsid spike protein VP4	OK	
+AY941781.1	rtvc_db	25..1233	gi_60476167_NSP3	NSP3	non-structural protein 3	OK	
+HQ185629.1	rtvc_db	12..3284	gi_338841004_VP1	VP1	RNA-dependent RNA Polymerase VP1	OK	
+HQ185630.1	rtvc_db	37..2691	gi_311223070_VP2	VP2	core capsid protein VP2	OK	
+HQ185631.1	rtvc_db	55..2136	gi_311223050_VP3	VP3	RNA capping protein VP3	OK	
+AY770976.1	rtvc_db	39..491	gi_60476173_NSP4	NSP4	non-structural protein 4	OK	
+HQ185661.1	rtvc_db	39..491	gi_311223098_NSP4	NSP4	non-structural protein 4	OK	
+HQ185662.1	rtvc_db	20..658	gi_311223092_NSP5	NSP5	non-structural protein 5	OK	
+HQ185660.1	rtvc_db	25..1233	gi_311223110_NSP3	NSP3	non-structural protein 3	OK	
+HQ185659.1	rtvc_db	43..981	gi_311223122_NSP2	NSP2	non-structural protein 2	OK	
+HQ185658.1	rtvc_db	38..1222	gi_311223128_NSP1	NSP1	non-structural protein 1	OK	
+HQ185657.1	rtvc_db	49..1047	gi_241661614_VP7	VP7	capsid glycoprotein VP7	OK	
+HQ185656.1	rtvc_db	23..1210	gi_145688270_VP6	VP6	inner capsid protein VP6	OK	
+HQ185655.1	rtvc_db	21..2255	gi_341604039_VP4	VP4	outer capsid spike protein VP4	OK	
+HQ185654.1	rtvc_db	55..2136	gi_311223056_VP3	VP3	RNA capping protein VP3	OK	
+HQ185652.1	rtvc_db	12..3284	gi_311223084_VP1	VP1	RNA-dependent RNA Polymerase VP1	OK	
+HQ185653.1	rtvc_db	37..2691	gi_311223070_VP2	VP2	core capsid protein VP2	OK	

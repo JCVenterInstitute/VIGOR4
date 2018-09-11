@@ -1,0 +1,349 @@
+2018-09-07 15:50:10
+
+parameters
+	bl2seq_extend_hsp	25
+	bl2seq_extend_span	50
+	candidate_blastopts	-p blastx -M BLOSUM80 -e 1E-5 -g F -v 0 -F \"\" -z 3000000 -b 1000
+	candidate_evalue	
+	candidate_overlap_threshold	0.8
+	candidate_refdb	
+	command_line	/opt/www/vigor/vigor3/prod3/VIGOR3.pl -D hantavirus -O /usr/local/scratch/CORE/snettem/hantavirus/PRODUCTION/hantavirus -i /opt/www/vigor/vigor3/regr_testing/hantavirus.ungapped.fasta
+	default_gene_optional	0
+	default_gene_required	0
+	default_gene_variation	1
+	frameshift_sensitivity	1
+	gene_variations	
+	jcvi_rules	1
+	mature_pep_mincoverage	50
+	mature_pep_minidentity	25
+	mature_pep_minsimilarity	40
+	mature_pep_refdb	../data3/virus_mp
+	max_intron_size	7000
+	min_candidate_pctsimilarity	60
+	min_candidate_sbjcoverage	33
+	min_exon_size	3
+	min_intron_size	30
+	min_pseudogene_coverage	80
+	min_pseudogene_identity	70
+	min_pseudogene_similarity	80
+	noncanonical_splicing_genes	
+	optional_genes	
+	reference_db	/opt/www/vigor/vigor3/data3/hantavirus_db
+	reference_dbsize	45021
+	required_genes	
+	ribosomal_slippage_genes	
+	rna_editing_genes	
+	selectivity	0.985
+	slippage_frameshift	-1
+	slippage_motif	[NT][NT][NT]AAAC
+	slippage_offset	0
+	spliced_genes	
+	splicesite_extend_range	0
+	tile_overlap	1000000
+	tile_size	10000000
+	use_locus_tags	1
+	variation	0.975
+	verbose	0
+	vigorspace	/opt/www/vigor/vigor3/prod3/vigorscratch/631432.850686
+
+
+genomic sequence NC_006435.1, length=6533
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 11 permutations for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    CCH22849.1        2156   1-2156         1   38-6490        5   2  0  N   70.2   83.7   98.7   0        L | RNA-dependent RNA polymerase L
+    AFH88146.1        2153   1-2153         1   38-6490        5   2  0  N   69.9   83.8   98.8   0        L | RNA-dependent RNA polymerase L
+    YP_001911124.1    2150   1-2150         1   38-6490        5   2  0  N   62.7   79.4   99.2   0        L | RNA-dependent RNA polymerase L
+    NP_604473.1       2153   1-2153         1   38-6490        5   2  0  N   69.4   84.5   98.7   0        L | RNA-dependent RNA polymerase L
+    NP_942558.1       2151   1-2151         1   38-6490        1   2  0  N   85.3   93.9   100.0  0        L | RNA-dependent RNA polymerase L
+    NP_941982.1       2151   1-2151         1   38-6490        1   2  0  N   97.2   99.1   100.0  0        L | RNA-dependent RNA polymerase L
+    NP_942124.1       2153   1-2153         1   38-6490        2   2  0  N   68.5   83.6   100.0  0        L | RNA-dependent RNA polymerase L
+    YP_138530.1       2151   1-2151         1   38-6490        1   2  0  N   100.0  100.0  100.0  0        L | RNA-dependent RNA polymerase L
+    NP_942555.1       2151   1-2151         1   38-6490        1   2  0  N   85.4   93.4   100.0  0        L | RNA-dependent RNA polymerase L
+    NP_941976.1       2153   1-2153         1   38-6490        5   2  0  N   69.7   84.1   99.0   0        L | RNA-dependent RNA polymerase L
+    AFI98398.1        2151   1-2151         1   38-6490        1   2  0  N   85.6   93.6   100.0  0        L | RNA-dependent RNA polymerase L
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_006435.1              6533      1            0       6456           2151          100.0            100.0          100.0   hantavirus_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_006435.1.1      100.0  100.0  100.0  0.0   0.0   0.0   38..6493         2151   2151   YP_138530.1       L | RNA-dependent RNA polymerase L
+
+
+genomic sequence NC_006437.1, length=3616
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 12 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_138532.1       1135   1-1135         1   41-3445        1   2  0  N   100.0  100.0  100.0  0        M | M polyprotein
+    AFI98397.1        1135   1-1135         1   41-3445        1   2  0  N   75.5   87.8   100.0  0        M | M polyprotein
+    NP_941978.1       1135   1-1135         1   41-3445        1   2  0  N   95.3   98.6   100.0  0        M | M polyprotein
+    NP_942557.1       1133   1-1133         1   47-3445        1   2  0  N   76.4   87.7   100.0  0        M | M polyprotein
+    NP_942554.1       1135   18-1135        1   92-3445        1   2  0  N   77.2   89.3   98.5   0        M | M polyprotein
+    NP_941983.1       1148   25-1139        1   98-3430        4   2  0  N   56.2   73.0   92.5   0        M | M polyprotein
+    CCH22848.1        1148   25-1139        1   98-3430        4   2  0  N   56.8   73.4   92.5   0        M | M polyprotein
+    NP_941974.1       1140   21-1136        1   98-3439        6   2  0  N   58.0   75.3   92.1   0        M | M polyprotein
+    NP_942586.1       1141   20-1138        1   98-3442        6   2  0  N   58.3   75.0   94.0   0        M | M polyprotein
+    NP_604472.1       1138   21-1137        1   98-3445        5   2  0  N   57.5   75.1   92.6   0        M | M polyprotein
+    AFH88147.1        1138   17-1137        1   86-3445        6   2  0  N   57.6   74.9   95.4   0        M | M polyprotein
+    YP_001911125.1    1121   230-1120       1   749-3439       5   2  0  N   52.4   69.8   68.4   0        M | M polyprotein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_006437.1              3616      1            0       3408           1135          100.0            100.0          100.0   hantavirus_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_006437.1.1      100.0  100.0  100.0  0.0   0.0   0.0   41..3448         1135   1135   YP_138532.1       M | M polyprotein
+NC_006437.1.1.1    100.0  100.0  100.0  0.0   0.0   0.0   41..94           18     18     gi|55733705_SP    signal peptide
+NC_006437.1.1.2    94.8   99.5   100.0  0.0   0.0   0.0   95..1984         630    630    sp|P08668_G1      glycoprotein G1
+NC_006437.1.1.3    96.5   99.8   100.0  0.0   0.0   0.0   1985..3445       487    487    sp|P08668_G2      glycoprotein G2
+
+
+genomic sequence NC_006433.1, length=1701
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 11 permutations for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFI98396.1        429    1-429          1   37-1323        1   1  0  N   82.7   93.0   100.0  0        N | nucleocapsid protein
+    YP_004928153.1    429    1-429          1   37-1323        2   1  0  N   69.3   83.8   88.1   0        N | nucleocapsid protein
+    NP_941977.1       429    1-429          1   37-1323        1   1  0  N   97.2   98.1   100.0  0        N | nucleocapsid protein
+    NP_941975.1       428    1-428          1   37-1323        2   1  0  N   63.7   80.4   97.8   0        N | nucleocapsid protein
+    NP_942556.1       429    1-429          1   37-1323        1   1  0  N   82.0   91.6   100.0  0        N | nucleocapsid protein
+    CCH22846.1        433    1-433          1   37-1323        2   1  0  N   66.8   84.6   87.0   0        N | nucleocapsid protein
+    NP_942553.1       429    1-429          1   37-1323        1   1  0  N   82.7   93.0   100.0  0        N | nucleocapsid protein
+    AFH88145.1        428    1-428          1   37-1323        2   1  0  N   68.3   82.3   91.5   0        N | nucleocapsid protein
+    YP_138528.1       429    1-429          1   37-1323        1   1  0  N   100.0  100.0  100.0  0        N | nucleocapsid protein
+    NP_604471.1       428    1-428          1   37-1323        2   1  0  N   69.0   82.6   92.7   0        N | nucleocapsid protein
+    YP_001911121.1    435    87-435         1   265-1323       2   1  0  N   58.1   77.0   69.1   6.0-e128 N | nucleocapsid protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_006433.1              1701      1            0       1290            429          100.0            100.0          100.0   hantavirus_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_006433.1.1      100.0  100.0  100.0  0.0   0.0   0.0   37..1326         429    429    YP_138528.1       N | nucleocapsid protein
+
+
+genomic sequence AF288297.1, length=6530
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 11 permutations for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFH88146.1        2153   1-2153         1   37-6489        4   1  0  N   69.1   83.9   99.5   0        L | RNA-dependent RNA polymerase L
+    NP_942558.1       2151   1-2151         1   37-6489        1   1  0  N   99.0   99.3   100.0  0        L | RNA-dependent RNA polymerase L
+    NP_942124.1       2153   1-2153         1   37-6489        3   1  0  N   69.0   83.6   99.5   0        L | RNA-dependent RNA polymerase L
+    NP_941976.1       2153   1-2153         1   37-6489        5   1  0  N   69.6   84.5   99.0   0        L | RNA-dependent RNA polymerase L
+    AFI98398.1        2151   1-2151         1   37-6489        1   1  0  N   85.5   93.8   100.0  0        L | RNA-dependent RNA polymerase L
+    CCH22849.1        2156   1-2156         1   37-6489        3   1  0  N   68.8   83.2   99.4   0        L | RNA-dependent RNA polymerase L
+    NP_604473.1       2153   1-2153         1   37-6489        4   1  0  N   68.4   84.2   99.5   0        L | RNA-dependent RNA polymerase L
+    NP_941982.1       2151   1-2151         1   37-6489        1   1  0  N   85.2   93.8   100.0  0        L | RNA-dependent RNA polymerase L
+    YP_138530.1       2151   1-2151         1   37-6489        1   1  0  N   85.5   93.8   100.0  0        L | RNA-dependent RNA polymerase L
+    NP_942555.1       2151   1-2151         1   37-6489        1   1  0  N   85.5   93.6   100.0  0        L | RNA-dependent RNA polymerase L
+    YP_001911124.1    2150   21-2150        1   97-6489        5   1  0  N   64.1   80.8   94.6   0        L | RNA-dependent RNA polymerase L
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+AF288297.1               6530      1            0       6456           2151           99.1             99.6          100.0   hantavirus_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+AF288297.1.1       99.1   99.6   100.0  0.0   0.0   0.0   37..6492         2151   2151   NP_942558.1       L | RNA-dependent RNA polymerase L
+
+
+genomic sequence AF288299.1, length=1764
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 11 permutations for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFI98396.1        429    1-429          1   43-1329        1   1  0  N   81.8   92.3   100.0  0        N | nucleocapsid protein
+    YP_004928153.1    429    1-429          1   43-1329        3   1  0  N   70.4   85.3   87.4   0        N | nucleocapsid protein
+    NP_941977.1       429    1-429          1   43-1329        1   1  0  N   83.4   91.8   100.0  0        N | nucleocapsid protein
+    NP_941975.1       428    1-428          1   43-1329        2   1  0  N   67.2   83.6   91.3   0        N | nucleocapsid protein
+    NP_942556.1       429    1-429          1   43-1329        1   1  0  N   99.3   99.5   100.0  0        N | nucleocapsid protein
+    CCH22846.1        433    1-433          1   43-1329        2   1  0  N   68.1   84.7   87.7   0        N | nucleocapsid protein
+    NP_942553.1       429    1-429          1   43-1329        1   1  0  N   81.3   92.0   100.0  0        N | nucleocapsid protein
+    AFH88145.1        428    1-428          1   43-1329        2   1  0  N   67.8   82.1   92.9   0        N | nucleocapsid protein
+    YP_138528.1       429    1-429          1   43-1329        1   1  0  N   82.2   91.6   100.0  0        N | nucleocapsid protein
+    NP_604471.1       428    1-428          1   43-1329        2   1  0  N   69.1   83.3   92.5   0        N | nucleocapsid protein
+    YP_001911121.1    435    90-435         1   280-1329       2   1  0  N   55.5   74.4   71.9   9.5-e125 N | nucleocapsid protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+AF288299.1               1764      1            0       1290            429           99.3             99.8          100.0   hantavirus_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+AF288299.1.1       99.3   99.8   100.0  0.0   0.0   0.0   43..1332         429    429    NP_942556.1       N | nucleocapsid protein
+
+
+genomic sequence AF288298.1, length=3653
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 12 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFI98397.1        1135   2-1135         1   44-3445        1   2  0  N   76.3   88.7   99.9   0        M | M polyprotein
+    NP_942554.1       1135   2-1135         1   44-3445        1   2  0  N   76.8   88.6   99.9   0        M | M polyprotein
+    YP_138532.1       1135   3-1135         1   47-3445        1   2  0  N   76.4   87.9   99.8   0        M | M polyprotein
+    NP_942557.1       1133   1-1133         1   47-3445        1   2  0  N   98.1   99.3   100.0  0        M | M polyprotein
+    NP_941978.1       1135   3-1135         1   47-3445        1   2  0  N   76.8   88.1   99.8   0        M | M polyprotein
+    NP_942586.1       1141   18-1138        1   92-3442        4   2  0  N   56.3   73.8   95.4   0        M | M polyprotein
+    AFH88147.1        1138   20-1137        1   95-3445        5   2  0  N   56.1   73.7   95.6   0        M | M polyprotein
+    NP_941983.1       1148   25-1139        1   98-3430        5   2  0  N   57.0   74.6   90.6   0        M | M polyprotein
+    CCH22848.1        1148   25-1139        1   98-3430        5   2  0  N   57.5   75.0   90.6   0        M | M polyprotein
+    NP_941974.1       1140   21-1136        1   98-3439        7   2  0  N   56.6   74.7   92.4   0        M | M polyprotein
+    NP_604472.1       1138   21-1137        1   98-3445        6   2  0  N   60.1   76.7   82.2   0        M | M polyprotein
+    YP_001911125.1    1121   230-1120       1   749-3439       4   2  0  N   53.2   71.8   46.9   0        M | M polyprotein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+AF288298.1               3653      1            0       3402           1133           98.1             99.6          100.0   hantavirus_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+AF288298.1.1       98.1   99.6   100.0  0.0   0.0   0.0   47..3448         1133   1133   NP_942557.1       M | M polyprotein
+AF288298.1.1.1     100.0  100.0  100.0  0.0   0.0   0.0   47..94           16     16     gi|38505531_SP    signal peptide
+AF288298.1.1.2     94.6   96.7   100.0  0.0   0.0   0.0   95..1984         630    630    sp|P28729_G1      glycoprotein G1
+AF288298.1.1.3     97.7   99.0   100.0  0.0   0.0   0.0   1985..3445       487    488    sp|P28729_G2      glycoprotein G2
+
+
+genomic sequence KU934010.1, length=1908
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 11 permutations for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    CCH22846.1        433    3-433          1   44-1330        2   2  0  N   63.7   82.1   95.6   0        N | nucleocapsid protein
+    AFH88145.1        428    3-428          1   44-1330        2   2  0  N   63.1   78.8   99.5   0        N | nucleocapsid protein
+    AFI98396.1        429    4-429          1   47-1330        2   2  0  N   67.1   84.0   96.5   0        N | nucleocapsid protein
+    YP_004928153.1    429    4-429          1   47-1330        2   2  0  N   64.6   80.0   96.9   0        N | nucleocapsid protein
+    NP_941977.1       429    4-429          1   47-1330        2   2  0  N   70.0   85.2   98.1   0        N | nucleocapsid protein
+    NP_941975.1       428    4-428          1   47-1330        2   2  0  N   61.3   79.6   98.5   0        N | nucleocapsid protein
+    NP_942556.1       429    4-429          1   47-1330        2   2  0  N   66.0   82.8   98.1   0        N | nucleocapsid protein
+    NP_942553.1       429    4-429          1   47-1330        2   2  0  N   67.3   83.8   96.5   0        N | nucleocapsid protein
+    YP_138528.1       429    4-429          1   47-1330        2   2  0  N   69.4   84.2   99.3   0        N | nucleocapsid protein
+    NP_604471.1       428    4-428          1   47-1330        2   2  0  N   64.0   81.6   96.7   0        N | nucleocapsid protein
+    YP_001911121.1    435    86-435         1   263-1330       3   2  0  N   58.6   77.6   72.8   4.4-e140 N | nucleocapsid protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KU934010.1               1908      1            0       1287            428           69.2             90.7           99.3   hantavirus_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KU934010.1.1       69.2   90.6   99.3   0.7   0.0   0.0   47..1333         428    429    YP_138528.1       N | nucleocapsid protein
+
+
+genomic sequence KU934009.1, length=3594
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 12 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_942586.1       1141   8-1132         1   62-3427        5   2  0  N   56.4   73.9   92.4   0        M | M polyprotein
+    AFI98397.1        1135   18-1134        1   92-3445        2   2  0  N   60.0   76.8   98.4   0        M | M polyprotein
+    NP_942554.1       1135   18-1134        1   92-3445        2   2  0  N   58.4   75.8   98.4   0        M | M polyprotein
+    NP_942557.1       1133   16-1132        1   92-3445        2   2  0  N   59.9   76.7   98.4   0        M | M polyprotein
+    AFH88147.1        1138   20-1136        1   95-3445        8   2  0  N   56.3   74.7   93.4   0        M | M polyprotein
+    NP_941974.1       1140   21-1136        1   98-3442        6   2  0  N   56.7   72.9   93.4   0        M | M polyprotein
+    NP_604472.1       1138   21-1136        1   98-3445        5   2  0  N   55.9   73.6   92.7   0        M | M polyprotein
+    NP_941983.1       1148   10-1137        1   53-3427        4   2  0  N   55.7   71.7   92.3   0        M | M polyprotein
+    CCH22848.1        1148   10-1137        1   53-3427        4   2  0  N   56.3   72.1   92.3   0        M | M polyprotein
+    YP_138532.1       1135   91-1134        1   314-3445       1   2  0  N   60.4   77.2   91.9   0        M | M polyprotein
+    NP_941978.1       1135   91-1134        1   314-3445       1   2  0  N   59.7   77.6   91.9   0        M | M polyprotein
+    YP_001911125.1    1121   128-1120       1   425-3442       8   2  0  N   50.2   69.7   77.7   0        M | M polyprotein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KU934009.1               3594      1            0       3411           1136           59.4             85.8          100.0   hantavirus_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KU934009.1.1       59.4   85.8   100.0  0.0   0.0   0.0   41..3451         1136   1135   AFI98397.1        M | M polyprotein
+KU934009.1.1.1     53.7   84.1   100.0  0.0   0.0   0.0   95..1987         631    630    sp|P08668_G1      glycoprotein G1
+KU934009.1.1.2     64.9   89.7   100.0  0.0   0.0   0.0   1988..3448       487    487    sp|P08668_G2      glycoprotein G2
+
+
+genomic sequence KU934008.1, length=6532
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 11 permutations for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFH88146.1        2153   1-2153         1   38-6490        4   2  0  N   69.5   84.1   99.3   0        L | RNA-dependent RNA polymerase L
+    NP_942558.1       2151   1-2151         1   38-6490        1   2  0  N   76.6   89.9   100.0  0        L | RNA-dependent RNA polymerase L
+    NP_942124.1       2153   1-2153         1   38-6490        4   2  0  N   68.8   84.5   98.9   0        L | RNA-dependent RNA polymerase L
+    NP_941976.1       2153   1-2153         1   38-6490        4   2  0  N   69.6   84.6   99.4   0        L | RNA-dependent RNA polymerase L
+    AFI98398.1        2151   1-2151         1   38-6490        1   2  0  N   77.8   90.6   100.0  0        L | RNA-dependent RNA polymerase L
+    CCH22849.1        2156   1-2156         1   38-6490        3   2  0  N   69.3   83.2   99.5   0        L | RNA-dependent RNA polymerase L
+    YP_001911124.1    2150   1-2150         1   38-6490        6   2  0  N   63.8   79.7   98.4   0        L | RNA-dependent RNA polymerase L
+    NP_604473.1       2153   1-2153         1   38-6490        4   2  0  N   69.0   84.6   99.3   0        L | RNA-dependent RNA polymerase L
+    NP_941982.1       2151   1-2151         1   38-6490        1   2  0  N   77.7   89.6   100.0  0        L | RNA-dependent RNA polymerase L
+    YP_138530.1       2151   1-2151         1   38-6490        1   2  0  N   77.8   89.5   100.0  0        L | RNA-dependent RNA polymerase L
+    NP_942555.1       2151   1-2151         1   38-6490        1   2  0  N   77.9   90.2   100.0  0        L | RNA-dependent RNA polymerase L
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KU934008.1               6532      1            0       6456           2151           77.8             94.0          100.0   hantavirus_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KU934008.1.1       77.8   94.0   100.0  0.0   0.0   0.0   38..6493         2151   2151   AFI98398.1        L | RNA-dependent RNA polymerase L
+
+
+genomic sequence AF288293.1, length=3616
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 12 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFI98397.1        1135   1-1135         1   41-3445        1   2  0  N   76.0   87.6   100.0  0        M | M polyprotein
+    YP_138532.1       1135   1-1135         1   41-3445        1   2  0  N   94.7   97.9   100.0  0        M | M polyprotein
+    NP_941978.1       1135   1-1135         1   41-3445        1   2  0  N   99.0   99.2   100.0  0        M | M polyprotein
+    NP_942557.1       1133   1-1133         1   47-3445        1   2  0  N   76.6   87.6   100.0  0        M | M polyprotein
+    NP_942554.1       1135   18-1135        1   92-3445        1   2  0  N   77.6   89.0   98.5   0        M | M polyprotein
+    NP_941974.1       1140   21-1136        1   98-3439        6   2  0  N   57.9   75.0   92.1   0        M | M polyprotein
+    NP_942586.1       1141   20-1138        1   98-3442        6   2  0  N   57.5   74.5   94.0   0        M | M polyprotein
+    NP_941983.1       1148   94-1139        1   296-3430       5   2  0  N   56.1   73.3   89.1   0        M | M polyprotein
+    CCH22848.1        1148   94-1139        1   296-3430       5   2  0  N   56.6   73.6   89.1   0        M | M polyprotein
+    NP_604472.1       1138   91-1137        1   299-3445       4   2  0  N   58.9   75.5   86.9   0        M | M polyprotein
+    AFH88147.1        1138   20-1137        1   95-3445        6   2  0  N   57.2   74.5   95.4   0        M | M polyprotein
+    YP_001911125.1    1121   230-1120       1   749-3439       5   2  0  N   50.8   67.4   74.0   0        M | M polyprotein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+AF288293.1               3616      1            0       3408           1135           99.0             99.5          100.0   hantavirus_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+AF288293.1.1       99.0   99.5   100.0  0.0   0.0   0.0   41..3448         1135   1135   NP_941978.1       M | M polyprotein
+AF288293.1.1.1     100.0  100.0  100.0  0.0   0.0   0.0   41..94           18     18     gi|38371712_SP    signal peptide
+AF288293.1.1.2     98.7   99.4   100.0  0.0   0.0   0.0   95..1984         630    630    sp|P08668_G1      glycoprotein G1
+AF288293.1.1.3     99.4   99.6   100.0  0.0   0.0   0.0   1985..3445       487    487    sp|P08668_G2      glycoprotein G2
+
+
+genomic sequence AF288294.1, length=1692
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 11 permutations for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFI98396.1        429    1-429          1   37-1323        1   1  0  N   83.2   93.9   100.0  0        N | nucleocapsid protein
+    YP_004928153.1    429    1-429          1   37-1323        2   1  0  N   69.5   84.1   88.1   0        N | nucleocapsid protein
+    NP_941977.1       429    1-429          1   37-1323        1   1  0  N   98.8   99.3   100.0  0        N | nucleocapsid protein
+    NP_941975.1       428    1-428          1   37-1323        2   1  0  N   63.9   80.4   97.8   0        N | nucleocapsid protein
+    NP_942556.1       429    1-429          1   37-1323        1   1  0  N   82.9   92.0   100.0  0        N | nucleocapsid protein
+    CCH22846.1        433    1-433          1   37-1323        2   1  0  N   67.3   84.6   87.0   0        N | nucleocapsid protein
+    NP_942553.1       429    1-429          1   37-1323        1   1  0  N   82.7   93.9   100.0  0        N | nucleocapsid protein
+    AFH88145.1        428    1-428          1   37-1323        2   1  0  N   68.3   82.1   91.5   0        N | nucleocapsid protein
+    YP_138528.1       429    1-429          1   37-1323        1   1  0  N   96.5   97.9   100.0  0        N | nucleocapsid protein
+    NP_604471.1       428    1-428          1   37-1323        2   1  0  N   68.7   82.1   92.7   0        N | nucleocapsid protein
+    YP_001911121.1    435    87-435         1   265-1323       2   1  0  N   58.4   77.4   69.1   1.4-e129 N | nucleocapsid protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+AF288294.1               1692      1            0       1290            429           98.8             99.8          100.0   hantavirus_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+AF288294.1.1       98.8   99.7   100.0  0.0   0.0   0.0   37..1326         429    429    NP_941977.1       N | nucleocapsid protein
+

@@ -1,0 +1,39 @@
+NC_026438.1	flua_db	1..2280	Seg1prot	PB2	polymerase PB2	OK	
+NC_026435.1	flua_db	1..2274	seg2prot1B	PB1	polymerase PB1	OK	
+NC_026435.1	flua_db	95..400	seg2prot2F	PB1-F2	PB1-F2 protein	ES	128..130
+NC_026435.1	flua_db	95..400	seg2prot2F	PB1-F2	PB1-F2 protein	ES	266..268
+NC_026435.1	flua_db	95..400	seg2prot2F	PB1-F2	PB1-F2 protein	ES	356..358
+NC_026435.1	flua_db	95..400	seg2prot2F	PB1-F2	PB1-F2 protein	ES	365..367
+NC_026437.1	flua_db	1..573,575..700	seg3prot2A	PA-X	PA-X protein	OK	
+NC_026437.1	flua_db	1..2151	seg3prot	PA	polymerase PA	OK	
+NC_026433.1	flua_db	1..1701	seg4protA	HA	hemagglutinin	OK	
+NC_026436.1	flua_db	1..1497	seg5prot	NP	nucleocapsid protein	OK	
+NC_026434.1	flua_db	1..1410	seg6prot1A	NA	neuraminidase	OK	
+NC_026431.1	flua_db	1..759	seg7prot1	M1	matrix protein 1	OK	
+NC_026431.1	flua_db	1..26,715..982	seg7prot2ADR2_S31N	M2	matrix protein 2	OK	
+NC_026432.1	flua_db	1..660	seg8prot1G	NS1	nonstructural protein 1	OK	
+NC_026432.1	flua_db	1..30,503..838	seg8prot2A	NEP	nuclear export protein	OK	
+NC_007373.1	flua_db	28..2307	Seg1prot	PB2	polymerase PB2	OK	
+NC_007372.1	flua_db	25..2298	seg2prot1B	PB1	polymerase PB1	OK	
+NC_007372.1	flua_db	119..391	seg2prot2A	PB1-F2	PB1-F2 protein	OK	
+NC_007371.1	flua_db	25..597,599..784	seg3prot2A	PA-X	PA-X protein	OK	
+NC_007371.1	flua_db	25..2175	seg3prot	PA	polymerase PA	OK	
+NC_007366.1	flua_db	30..1730	seg4protB	HA	hemagglutinin	OK	
+NC_007369.1	flua_db	46..1542	seg5prot	NP	nucleocapsid protein	OK	
+NC_007368.1	flua_db	20..1429	seg6prot1B	NA	neuraminidase	OK	
+NC_007367.1	flua_db	26..784	seg7prot1	M1	matrix protein 1	OK	
+NC_007367.1	flua_db	26..51,740..1007	seg7prot2A	M2	matrix protein 2	OK	
+NC_007370.1	flua_db	27..719	seg8prot1B	NS1	nonstructural protein 1	OK	
+NC_007370.1	flua_db	27..56,529..864	seg8prot2A	NEP	nuclear export protein	OK	
+NC_026422.1	flua_db	1..2280	Seg1prot	PB2	polymerase PB2	OK	
+NC_026423.1	flua_db	1..2274	seg2prot1B	PB1	polymerase PB1	OK	
+NC_026423.1	flua_db	95..367	AKN08864.1	PB1-F2	PB1-F2 protein	OK	
+NC_026424.1	flua_db	1..573,575..760	seg3prot2A	PA-X	PA-X protein	OK	
+NC_026424.1	flua_db	1..2151	seg3prot	PA	polymerase PA	OK	
+NC_026425.1	flua_db	1..1683	seg4prot7F	HA	hemagglutinin	OK	
+NC_026426.1	flua_db	1..1497	seg5prot	NP	nucleocapsid protein	OK	
+NC_026429.1	flua_db	1..1398	seg6prot1G	NA	neuraminidase	OK	
+NC_026427.1	flua_db	1..759	seg7prot1	M1	matrix protein 1	OK	
+NC_026427.1	flua_db	1..26,715..982	seg7prot2ADR2_S31N	M2	matrix protein 2	OK	
+NC_026428.1	flua_db	1..654	seg8prot1I	NS1	nonstructural protein 1	OK	
+NC_026428.1	flua_db	1..30,503..838	seg8prot2A	NEP	nuclear export protein	OK	

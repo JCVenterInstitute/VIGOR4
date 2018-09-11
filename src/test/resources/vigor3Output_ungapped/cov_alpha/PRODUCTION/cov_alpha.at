@@ -1,0 +1,42 @@
+gi|564131295|gb|KF668605.1|	cov_alpha_db	<10..8073	YP_001552234.1	1ab	putative polyprotein 1ab, C-terminal	T5	12150
+gi|564131295|gb|KF668605.1|	cov_alpha_db	12182..12862	YP_003770.1	M	membrane protein	OK	
+gi|30271926|ref|NC_004718.3|	cov_alpha_db	<13398..21485	YP_001718596.1	1ab	putative polyprotein 1ab, C-terminal	T5	12945
+gi|30271926|ref|NC_004718.3|	cov_alpha_db	26398..27063	YP_001351687.1	M	membrane protein	OK	
+gi|384038902|gb|JN634064.1|	cov_alpha_db	313..12168	AAY32595.1	1a	polyprotein 1a	OK	
+gi|384038902|gb|JN634064.1|	cov_alpha_db	313..12138,12138..20168	AAY32594.1	1ab	polyprotein 1ab	OK	
+gi|384038902|gb|JN634064.1|	cov_alpha_db	20165..24517	AFG19742.1	S	spike glycoprotein	OK	
+gi|384038902|gb|JN634064.1|	cov_alpha_db	24602..24817	AFG19739.1	3a	non-structural protein 3a	OK	
+gi|384038902|gb|JN634064.1|	cov_alpha_db	24762..24995	AFG19740.1	3b	3b	ES	24927..24929
+gi|384038902|gb|JN634064.1|	cov_alpha_db	24762..24995	AFG19740.1	3b	3b	ES	24930..24932
+gi|384038902|gb|JN634064.1|	cov_alpha_db	25011..25652	AEM55568.1	3c	nonstructural protein 3c	C5	
+gi|384038902|gb|JN634064.1|	cov_alpha_db	25719..25928	AFG19731.1	E	envelope protein	C5	
+gi|384038902|gb|JN634064.1|	cov_alpha_db	25909..26565,26565..26729	AFG19744.1	M	membrane protein	FS	26565..26565,+1=>+3
+gi|384038902|gb|JN634064.1|	cov_alpha_db	26742..27872	ADL71503.1	N	nucleocapsid protein	OK	
+gi|384038902|gb|JN634064.1|	cov_alpha_db	27877..28182	YP_004070200.1	7a	non-structural protein 7a	OK	
+gi|384038902|gb|JN634064.1|	cov_alpha_db	28187..28690	ADL71505.1	7b	non-structural protein 7b	ES	28610..28612
+gi|384038902|gb|JN634064.1|	cov_alpha_db	28187..28690	ADL71505.1	7b	non-structural protein 7b	ES	28658..28660
+gi|509265008|gb|KC189944.1|	cov_alpha_db	293..12622	YP_001718611.1	1a	polyprotein 1a	OK	
+gi|509265008|gb|KC189944.1|	cov_alpha_db	293..12592,12592..20613	NP_598309.1	1ab	polyprotein 1ab	OK	
+gi|509265008|gb|KC189944.1|	cov_alpha_db	20610..24758	AFE85962.1	S	spike glycoprotein	OK	
+gi|509265008|gb|KC189944.1|	cov_alpha_db	24758..25000,25000..25383	AFE85963.1	3c	non-structural protein 3c	FS	25000..25000,+2=>+1
+gi|509265008|gb|KC189944.1|	cov_alpha_db	25364..25594	NP_598312.1	E	envelope protein	OK	
+gi|509265008|gb|KC189944.1|	cov_alpha_db	25602..26282	NP_598313.1	M	membrane protein	OK	
+gi|509265008|gb|KC189944.1|	cov_alpha_db	26294..27619	AFE85973.1	N	nucleocapsid protein	OK	
+gi|343781332|gb|HM776941.1|	cov_alpha_db	314..4990,4990..7818,7818..11276,11276..12364	ADY39739.1	1a	polyprotein 1a	FS	4990..4990,+2=>+1
+gi|343781332|gb|HM776941.1|	cov_alpha_db	314..4990,4990..7818,7818..11276,11276..12364	ADY39739.1	1a	polyprotein 1a	FS	7818..7818,+1=>+3
+gi|343781332|gb|HM776941.1|	cov_alpha_db	314..4990,4990..7818,7818..11276,11276..12364	ADY39739.1	1a	polyprotein 1a	FS	11276..11276,+3=>+2
+gi|343781332|gb|HM776941.1|	cov_alpha_db	314..4990,4990..7818,7818..11279,11279..12334,12334..20364	ABG89333.2	1ab	polyprotein 1ab	FS	4990..4990,+2=>+1
+gi|343781332|gb|HM776941.1|	cov_alpha_db	314..4990,4990..7818,7818..11279,11279..12334,12334..20364	ABG89333.2	1ab	polyprotein 1ab	FS	7818..7818,+1=>+3
+gi|343781332|gb|HM776941.1|	cov_alpha_db	314..4990,4990..7818,7818..11279,11279..12334,12334..20364	ABG89333.2	1ab	polyprotein 1ab	FS	11279..11279,+3=>+2
+gi|343781332|gb|HM776941.1|	cov_alpha_db	20990..24703	ABG89317.1	S	spike glycoprotein	OK	
+gi|343781332|gb|HM776941.1|	cov_alpha_db	24822..24866,24866..25036	ADY39741.1	3a	non-structural protein 3a	FS	24866..24866,+3=>+2
+gi|343781332|gb|HM776941.1|	cov_alpha_db	24981..25133	AFG19740.1	3b	3b	ES	25026..25028
+gi|343781332|gb|HM776941.1|	cov_alpha_db	25130..25864	AEM55568.1	3c	nonstructural protein 3c	OK	
+gi|343781332|gb|HM776941.1|	cov_alpha_db	25851..26099	AFG19743.1	E	envelope protein	OK	
+gi|343781332|gb|HM776941.1|	cov_alpha_db	26029..26898	AFG19730.1	M	membrane protein	OK	
+gi|343781332|gb|HM776941.1|	cov_alpha_db	26911..28059	AEM55571.1	N	nucleocapsid protein	OK	
+gi|343781332|gb|HM776941.1|	cov_alpha_db	28065..28301	AEM55572.1	7a	nonstructural protein 7a	OK	
+gi|564131295|gb|KF668605.1|	cov_alpha_db	<1..1467	AFI49430.1	1a	putative polyprotein 1a, C-terminal	T5	10902
+gi|564131295|gb|KF668605.1|	cov_alpha_db	<1..1437,1437..9500	YP_001552234.1	1ab	putative polyprotein 1ab, C-terminal	T5	10815
+gi|564131295|gb|KF668605.1|	cov_alpha_db	13609..14289	YP_003770.1	M	membrane protein	OK	
+gi|597503885|gb|KJ556336.1|	cov_alpha_db	27637..28296	NP_598313.1	M	membrane protein	OK	

@@ -1,0 +1,1337 @@
+2018-09-06 22:58:42
+
+parameters
+	bl2seq_extend_hsp	25
+	bl2seq_extend_span	50
+	candidate_blastopts	-p blastx -M BLOSUM80 -e 1E-5 -g F -v 0 -F \"\" -z 3000000 -b 1000
+	candidate_evalue	
+	candidate_overlap_threshold	0.8
+	candidate_refdb	
+	command_line	/opt/www/vigor/vigor3/prod3/VIGOR3.pl -D mmp -O /usr/local/scratch/CORE/snettem/mmp/PRODUCTION/mmp -i /opt/www/vigor/vigor3/regr_testing/mumps.ungapped.fasta
+	default_gene_optional	0
+	default_gene_required	0
+	default_gene_variation	1
+	frameshift_sensitivity	1
+	gene_variations	
+	jcvi_rules	1
+	mature_pep_mincoverage	50
+	mature_pep_minidentity	25
+	mature_pep_minsimilarity	40
+	mature_pep_refdb	../data3/virus_mp
+	max_intron_size	7000
+	min_candidate_pctsimilarity	60
+	min_candidate_sbjcoverage	33
+	min_exon_size	3
+	min_intron_size	30
+	min_pseudogene_coverage	80
+	min_pseudogene_identity	70
+	min_pseudogene_similarity	80
+	noncanonical_splicing_genes	
+	optional_genes	
+	reference_db	/opt/www/vigor/vigor3/data3/mmp_db
+	reference_dbsize	81547
+	required_genes	
+	ribosomal_slippage_genes	
+	rna_editing_genes	
+	selectivity	0.985
+	slippage_frameshift	-1
+	slippage_motif	[NT][NT][NT]AAAC
+	slippage_offset	0
+	spliced_genes	
+	splicesite_extend_range	0
+	tile_overlap	1000000
+	tile_size	10000000
+	use_locus_tags	1
+	variation	0.975
+	verbose	0
+	vigorspace	/opt/www/vigor/vigor3/prod3/vigorscratch/929794.811018841
+
+
+genomic sequence AF345290.1, length=15384
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 17 permutations for gene NP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADI80709.1        519    1-401          1   146-1348       1   2  0  N   59.6   79.8   77.2   0        NP | nucleocapsid protein
+    BAE00051.1        543    1-402          1   146-1351       1   2  0  N   59.9   78.3   74.0   0        NP | nucleocapsid protein
+    NP_598401.1       542    1-401          1   146-1351       2   2  0  N   59.1   77.2   73.9   0        NP | nucleocapsid protein
+    AFB82772.1        551    1-405          1   146-1360       1   2  0  N   50.3   71.8   73.5   3.4-e153 NP | nucleocapsid protein
+    BAJ11741.1        551    1-405          1   146-1360       1   2  0  N   50.8   71.6   73.5   4.3-e154 NP | nucleocapsid protein
+    BAJ11748.1        551    1-405          1   146-1360       1   2  0  N   50.3   71.8   73.5   3.4-e153 NP | nucleocapsid protein
+    ACF59811.1        551    1-405          1   146-1360       1   2  0  N   50.6   72.0   73.5   8.5-e154 NP | nucleocapsid protein
+    YP_138504.1       543    1-406          1   146-1363       1   2  0  N   57.6   78.5   74.7   0        NP | nucleocapsid protein
+    ADI80723.1        513    1-406          1   146-1363       1   2  0  N   56.1   74.3   79.1   0        NP | nucleocapsid protein
+    YP_001331027.1    545    1-417          1   146-1396       1   2  0  N   67.6   80.8   76.5   0        NP | nucleocapsid protein
+    YP_138511.1       509    1-417          1   146-1396       1   2  0  N   63.7   79.6   81.9   0        NP | nucleocapsid protein
+    DAA06041.1        545    1-417          1   146-1396       1   2  0  N   67.6   80.8   76.5   0        NP | nucleocapsid protein
+    ADI80716.1        523    1-425          1   146-1420       1   2  0  N   57.6   76.2   81.2   0        NP | nucleocapsid protein
+    YP_001249270.1    537    1-425          1   146-1420       1   2  0  N   60.2   77.6   79.1   0        NP | nucleocapsid protein
+    ABQ23934.1        537    1-425          1   146-1420       1   2  0  N   60.2   77.6   79.1   0        NP | nucleocapsid protein
+    Q77IS8.1          549    1-549          1   146-1792       1   2  0  N   98.7   99.2   100.0  0        NP | nucleocapsid protein
+    P21277.1          553    1-552          1   146-1802       2   0  1  N   98.0   98.5   99.8   0        NP | nucleocapsid protein
+        found 1 gene
+
+    found 2 permutations for gene I
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    CBA10119.1        171    1-171          1   1979-2487      2   0  1  N   97.6   98.2   100.0  6.6-e127 I | I protein
+    AEY76114.1        171    1-171          1   1979-2487      2   0  1  N   90.7   93.0   100.0  6.4-e116 I | I protein
+        found 1 gene
+
+    found 6 permutations for gene V
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAK26765.1        224    1-224          1   1979-2650      1   2  0  N   94.1   95.5   100.0  1.4-e176 V | V protein
+    YP_138513.1       222    123-221        1   2330-2638      2   2  0  N   62.5   76.2   36.0   6.3-e039 V | V protein
+    YP_138506.1       225    68-224         1   2132-2638      3   2  0  N   54.9   73.6   40.4   4.5-e033 V | V protein
+    BAE00052.1        225    124-225        1   2336-2641      2   2  0  N   56.6   77.1   36.8   5.4-e036 V | V protein
+    NP_598402.1       225    124-225        1   2336-2641      2   2  0  N   55.4   77.1   36.8   2.1-e035 V | V protein
+    ABL84841.1        191    95-160         1   2447-2644      1   2  0  N   56.0   69.6   34.5   9.7-e027 V | V protein
+        found 1 gene
+
+    found 10 permutations for gene P
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_054708.1       391    1-391          1   1979-3149      2   0  1  N   94.9   96.1   100.0  0        P | phosphoprotein
+    ADI80724.1        401    141-313        1   2035-2885      2   0  1  N   43.4   62.7   36.1   1.1-e028 P | phosphoprotein
+    YP_138512.1       392    123-392        1   2330-3149      3   0  1  N   43.6   69.6   53.8   4.0-e061 P | phosphoprotein
+    NP_599019.1       395    124-395        1   2336-3149      2   0  1  N   42.6   63.2   64.0   1.1-e070 P | phosphoprotein
+    YP_138505.1       395    68-395         1   2132-3149      4   0  1  N   44.7   65.3   62.7   1.3-e062 P | phosphoprotein
+    YP_001249271.1    391    172-390        1   2496-3146      4   3  0  N   49.7   70.6   45.2   2.7-e044 P | phosphoprotein
+    DAA06045.1        404    185-403        1   2496-3146      3   3  0  N   48.5   67.0   49.5   2.0-e051 P | phosphoprotein
+    ABL84843.1        391    172-390        1   2496-3146      4   3  0  N   49.7   70.6   45.2   2.7-e044 P | phosphoprotein
+    YP_001331028.1    404    185-403        1   2496-3146      3   3  0  N   48.5   67.0   49.5   2.0-e051 P | phosphoprotein
+    ADI80717.1        401    198-400        1   2538-3146      2   3  0  N   35.7   60.0   41.1   3.2-e031 P | phosphoprotein
+        found 1 gene
+
+    found 16 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADI80726.1        377    1-372          1   3264-4367      2   3  0  N   41.4   64.2   96.5   7.0-e111 M | membrane protein
+    NP_054710.1       375    1-375          1   3264-4388      1   3  0  N   99.2   99.7   100.0  0        M | membrane protein
+    YP_001331032.1    369    6-369          1   3282-4367      2   3  0  N   46.1   68.4   98.6   1.1-e124 M | membrane protein
+    DAA06046.1        369    6-369          1   3282-4367      2   3  0  N   46.1   68.4   98.6   1.1-e124 M | membrane protein
+    ABQ23935.1        371    6-369          1   3282-4367      2   3  0  N   45.4   67.5   97.3   4.8-e119 M | membrane protein
+    YP_001249275.1    371    6-369          1   3282-4367      2   3  0  N   45.4   67.5   97.3   4.8-e119 M | membrane protein
+    BAJ11751.1        382    33-377         1   3354-4388      1   3  0  N   48.4   66.0   90.3   4.3-e126 M | membrane protein
+    BAJ11744.1        382    33-377         1   3354-4388      1   3  0  N   48.9   66.0   90.3   1.5-e126 M | membrane protein
+    AFB82775.1        382    33-377         1   3354-4388      1   3  0  N   48.4   65.7   90.3   2.4-e125 M | membrane protein
+    ACF59814.1        382    33-377         1   3354-4388      1   3  0  N   48.6   66.0   90.3   3.4-e125 M | membrane protein
+    ADI80719.1        376    37-373         1   3360-4370      1   3  0  N   43.3   64.3   89.6   3.2-e108 M | membrane protein
+    ADI80712.1        378    1-374          1   3255-4370      2   3  0  N   46.1   68.1   92.3   1.8-e126 M | membrane protein
+    NP_598403.1       377    32-373         1   3363-4388      2   3  0  N   43.8   65.8   87.7   3.4-e100 M | membrane protein
+    BAE00053.1        377    32-373         1   3363-4388      2   3  0  N   43.5   65.8   87.7   9.5-e100 M | membrane protein
+    YP_138507.1       382    32-373         1   3363-4388      1   3  0  N   42.1   66.3   89.5   8.6-e105 M | membrane protein
+    YP_138514.1       377    4-373          1   3285-4388      3   3  0  N   43.6   64.2   94.1   6.4-e101 M | membrane protein
+        found 1 gene
+
+    found 15 permutations for gene F
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT81469.1        538    1-538          1   4546-6159      1   1  0  N   96.6   98.8   100.0  0        F | fusion protein
+    DAA06047.1        541    16-473         1   4582-5955      1   1  0  N   44.7   65.5   84.6   1.8-e149 F | fusion protein
+    YP_001331033.1    541    16-473         1   4582-5955      1   1  0  N   44.7   65.5   84.6   1.8-e149 F | fusion protein
+    ADI80720.1        539    18-502         1   4588-6042      2   1  0  N   38.7   63.8   85.7   1.4-e121 F | fusion protein
+    ADI80727.1        537    16-473         1   4594-5967      1   1  0  N   39.0   60.9   85.2   5.0-e121 F | fusion protein
+    BAJ11745.1        543    21-481         1   4603-5985      1   1  0  N   41.6   60.9   84.8   2.0-e127 F | fusion protein
+    AFB82776.1        543    21-519         1   4603-6099      1   1  0  N   41.4   61.3   91.8   1.5-e137 F | fusion protein
+    BAJ11752.1        543    21-519         1   4603-6099      1   1  0  N   41.0   61.1   91.8   4.5-e136 F | fusion protein
+    ACF59815.1        543    21-519         1   4603-6099      1   1  0  N   41.2   61.1   91.8   2.9-e137 F | fusion protein
+    YP_138508.1       561    32-477         1   4618-5955      1   1  0  N   44.8   66.3   79.5   6.7-e146 F | fusion protein
+    BAE00054.1        551    29-475         1   4618-5958      1   1  0  N   43.6   66.6   81.1   1.3-e142 F | fusion protein
+    NP_598404.1       551    29-475         1   4618-5958      1   1  0  N   43.6   66.6   81.1   1.3-e142 F | fusion protein
+    ABQ23936.1        537    24-488         1   4618-6012      1   1  0  N   47.5   69.0   86.5   1.6-e164 F | fusion protein
+    YP_001249276.1    537    24-488         1   4618-6012      1   1  0  N   47.5   69.0   86.5   1.6-e164 F | fusion protein
+    YP_138515.1       529    25-503         1   4618-6054      1   1  0  N   46.7   67.4   90.5   2.5-e163 F | fusion protein
+        found 1 gene
+
+    found 9 permutations for gene SH
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAD13721.1        50     1-50           1   6268-6417      1   1  0  N   78.0   82.0   100.0  5.6-e022 SH | small hydrophobic protein
+    AAC56597.1        57     1-57           1   6268-6438      1   1  0  N   71.9   73.6   100.0  1.0-e022 SH | small hydrophobic protein
+    AAL68456.1        57     1-57           1   6268-6438      1   1  0  N   78.9   82.4   100.0  2.2-e028 SH | small hydrophobic protein
+    AAL68460.1        57     1-57           1   6268-6438      1   1  0  N   75.4   77.1   100.0  1.1-e025 SH | small hydrophobic protein
+    P28087.1          57     1-57           1   6268-6438      1   1  0  N   80.7   85.9   100.0  7.9-e029 SH | small hydrophobic protein
+    P69465.1          57     1-57           1   6268-6438      1   1  0  N   91.2   92.9   100.0  2.7-e033 SH | small hydrophobic protein
+    P69188.1          57     1-57           1   6268-6438      1   1  0  N   73.6   82.4   100.0  1.5-e025 SH | small hydrophobic protein
+    AAL68490.1        57     1-57           1   6268-6438      1   1  0  N   78.9   82.4   100.0  6.9-e027 SH | small hydrophobic protein
+    BAD13736.1        85     1-85           1   6268-6522      1   1  0  N   72.9   76.4   100.0  1.2-e038 SH | small hydrophobic protein
+        found 1 gene
+
+    found 13 permutations for gene HN
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT81471.1        582    1-582          1   6614-8359      1   2  0  N   94.5   97.2   100.0  0        HN | hemagglutinin-neuraminidase
+    YP_138509.1       568    10-568         1   6689-8359      3   2  0  N   45.5   67.7   67.6   2.8-e168 HN | hemagglutinin-neuraminidase
+    DAA06048.1        576    75-572         1   6857-8356      4   2  0  N   49.7   67.2   73.2   2.3-e145 HN | hemagglutinin-neuraminidase
+    YP_001331034.1    576    75-572         1   6857-8356      4   2  0  N   49.7   67.2   73.2   2.3-e145 HN | hemagglutinin-neuraminidase
+    NP_598405.1       571    72-569         1   6863-8350      4   2  0  N   45.4   66.0   81.6   6.0-e140 HN | hemagglutinin-neuraminidase
+    BAE00055.1        571    72-569         1   6863-8350      4   2  0  N   45.4   66.0   81.6   6.0-e140 HN | hemagglutinin-neuraminidase
+    YP_138517.1       565    71-565         1   6875-8359      3   2  0  N   50.0   69.7   83.1   1.1-e174 HN | hemagglutinin-neuraminidase
+    ACF59816.1        579    121-571        1   6989-8341      5   2  0  N   50.0   66.5   66.6   1.2-e126 HN | hemagglutinin-neuraminidase
+    AFB82777.1        574    121-572        1   6989-8344      6   2  0  N   50.6   67.7   64.2   4.7-e119 HN | hemagglutinin-neuraminidase
+    BAJ11746.1        574    121-572        1   6989-8344      5   2  0  N   51.9   67.8   48.2   3.4-e106 HN | hemagglutinin-neuraminidase
+    BAJ11753.1        574    121-572        1   6989-8344      6   2  0  N   50.6   67.7   64.2   1.3-e118 HN | hemagglutinin-neuraminidase
+    YP_001249277.1    582    159-484        1   7097-8074      3   2  0  N   57.0   72.2   46.3   1.1-e151 HN | hemagglutinin-neuraminidase
+    ABQ23937.1        582    159-484        1   7097-8074      3   2  0  N   57.0   72.2   46.3   1.1-e151 HN | hemagglutinin-neuraminidase
+        found 1 gene
+
+    found 16 permutations for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADI80729.1        2271   1-2002         1   8438-14419     11  2  0  N   59.1   77.0   79.7   0        L | large protein
+    ADI80715.1        2274   1-2043         1   8438-14530     11  2  0  N   60.9   77.1   77.4   0        L | large protein
+    DAA06049.1        2251   1-2045         1   8438-14590     8   2  0  N   61.4   77.2   85.7   0        L | large protein
+    YP_001331035.1    2251   1-2045         1   8438-14590     8   2  0  N   61.4   77.2   85.7   0        L | large protein
+    BAJ11754.1        2279   1-2279         1   8438-15220     12  2  0  N   58.3   76.0   89.5   0        L | large protein
+    AFB82778.1        2279   1-2279         1   8438-15220     12  2  0  N   58.5   76.2   89.5   0        L | large protein
+    ACF59817.1        2279   1-2279         1   8438-15220     11  2  0  N   59.6   77.1   86.6   0        L | large protein
+    BAJ11747.1        2279   1-2181         1   8438-14950     11  2  0  N   59.9   77.1   85.4   0        L | large protein
+    YP_001249278.1    2253   1-2221         1   8438-15118     6   2  0  N   64.2   79.3   88.1   0        L | large protein
+    ABQ23938.1        2253   1-2221         1   8438-15118     6   2  0  N   64.2   79.3   88.1   0        L | large protein
+    ADI80722.1        2267   1-2267         1   8438-15220     9   2  0  N   59.2   76.1   83.0   0        L | large protein
+    NP_598406.1       2262   1-2230         1   8438-15130     9   2  0  N   62.1   77.3   92.7   0        L | large protein
+    YP_138510.1       2269   1-2237         1   8438-15130     9   2  0  N   62.1   77.6   93.7   0        L | large protein
+    YP_138518.1       2255   1-2225         1   8438-15130     7   2  0  N   61.1   77.3   95.0   0        L | large protein
+    BAE00056.1        2263   1-2231         1   8438-15130     8   2  0  N   62.0   77.3   93.9   0        L | large protein
+    P30929.1          2261   1-2261         1   8438-15220     1   2  0  N   98.7   99.4   100.0  0        L | large protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+AF345290.1              15384      9            0      15471           5148           97.5             99.4          100.0   mmp_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+AF345290.1.1       98.7   99.4   100.0  0.0   0.0   0.0   146..1795        549    549    Q77IS8.1          NP | nucleocapsid protein
+AF345290.1.2       98.2   99.3   100.0  0.0   0.0   0.0   1979..2490       171    171    CBA10119.1        I | I protein
+                    transcription exception 2435..2441:AAGAGGGGGGG
+AF345290.1.3       94.2   98.7   100.0  0.0   0.0   0.0   1979..2653       224    224    BAK26765.1        V | V protein
+AF345290.1.4       94.9   98.5   100.0  0.0   0.0   0.0   1979..3152       391    391    NP_054708.1       P | phosphoprotein
+                    transcription exception 2435..2441:AAGAGGGGG
+AF345290.1.5       99.2   99.9   100.0  0.0   0.0   0.0   3264..4391       375    375    NP_054710.1       M | membrane protein
+AF345290.1.6       96.7   99.3   100.0  0.0   0.0   0.0   4546..6162       538    538    AAT81469.1        F | fusion protein
+AF345290.1.7       91.2   94.7   100.0  0.0   0.0   0.0   6268..6441       57     57     P69465.1          SH | small hydrophobic protein
+AF345290.1.8       94.5   98.9   100.0  0.0   0.0   0.0   6614..8362       582    582    AAT81471.1        HN | hemagglutinin-neuraminidase
+AF345290.1.9       98.7   99.7   100.0  0.0   0.0   0.0   8438..15223      2261   2261   P30929.1          L | large protein
+
+
+genomic sequence AY685921.1, length=15384
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 17 permutations for gene NP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADI80709.1        519    1-401          1   146-1348       1   2  0  N   59.8   80.0   77.2   0        NP | nucleocapsid protein
+    BAE00051.1        543    1-402          1   146-1351       1   2  0  N   60.1   78.6   74.0   0        NP | nucleocapsid protein
+    NP_598401.1       542    1-401          1   146-1351       2   2  0  N   59.4   77.5   73.9   0        NP | nucleocapsid protein
+    AFB82772.1        551    1-405          1   146-1360       1   2  0  N   50.6   72.0   73.5   3.1-e154 NP | nucleocapsid protein
+    BAJ11741.1        551    1-405          1   146-1360       1   2  0  N   51.1   71.8   73.5   3.9-e155 NP | nucleocapsid protein
+    BAJ11748.1        551    1-405          1   146-1360       1   2  0  N   50.6   72.0   73.5   3.1-e154 NP | nucleocapsid protein
+    ACF59811.1        551    1-405          1   146-1360       1   2  0  N   50.8   72.3   73.5   7.7-e155 NP | nucleocapsid protein
+    YP_138504.1       543    1-406          1   146-1363       1   2  0  N   57.8   78.8   74.7   0        NP | nucleocapsid protein
+    ADI80723.1        513    1-406          1   146-1363       1   2  0  N   56.1   74.6   79.1   0        NP | nucleocapsid protein
+    YP_001331027.1    545    1-417          1   146-1396       1   2  0  N   67.6   80.8   76.5   0        NP | nucleocapsid protein
+    YP_138511.1       509    1-417          1   146-1396       1   2  0  N   64.0   79.8   81.9   0        NP | nucleocapsid protein
+    DAA06041.1        545    1-417          1   146-1396       1   2  0  N   67.6   80.8   76.5   0        NP | nucleocapsid protein
+    ADI80716.1        523    1-425          1   146-1420       1   2  0  N   57.8   76.4   81.2   0        NP | nucleocapsid protein
+    YP_001249270.1    537    1-425          1   146-1420       1   2  0  N   60.2   77.6   79.1   0        NP | nucleocapsid protein
+    ABQ23934.1        537    1-425          1   146-1420       1   2  0  N   60.2   77.6   79.1   0        NP | nucleocapsid protein
+    Q77IS8.1          549    1-549          1   146-1792       1   2  0  N   98.3   99.0   100.0  0        NP | nucleocapsid protein
+    P21277.1          553    1-553          1   146-1805       2   0  1  N   96.2   97.1   100.0  0        NP | nucleocapsid protein
+        found 1 gene
+
+    found 2 permutations for gene I
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    CBA10119.1        171    1-171          1   1979-2487      2   0  1  N   93.0   95.3   100.0  3.2-e120 I | I protein
+    AEY76114.1        171    1-171          1   1979-2487      2   0  1  N   96.5   96.5   100.0  2.4-e123 I | I protein
+        found 1 gene
+
+    found 5 permutations for gene V
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAK26765.1        224    1-224          1   1979-2650      1   2  0  N   96.8   98.2   100.0  0        V | V protein
+    YP_138513.1       222    123-221        1   2330-2638      2   2  0  N   62.5   76.2   36.0   1.6-e039 V | V protein
+    YP_138506.1       225    124-224        1   2336-2638      2   2  0  N   56.4   73.0   34.6   1.7-e032 V | V protein
+    BAE00052.1        225    124-225        1   2336-2641      2   2  0  N   56.6   77.1   36.8   2.1-e035 V | V protein
+    NP_598402.1       225    124-225        1   2336-2641      2   2  0  N   55.4   77.1   36.8   7.9-e035 V | V protein
+        found 1 gene
+
+    found 8 permutations for gene P
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_054708.1       391    1-391          1   1979-3149      2   0  1  N   97.9   98.7   100.0  0        P | phosphoprotein
+    YP_138512.1       392    123-392        1   2330-3149      4   0  1  N   46.4   73.7   50.5   3.0-e058 P | phosphoprotein
+    NP_599019.1       395    124-395        1   2336-3149      3   0  1  N   45.6   66.6   61.5   2.5-e068 P | phosphoprotein
+    YP_138505.1       395    124-395        1   2336-3149      3   0  1  N   45.3   65.8   54.1   1.2-e057 P | phosphoprotein
+    YP_001249271.1    391    172-390        1   2496-3146      4   3  0  N   50.5   71.1   46.0   2.5-e046 P | phosphoprotein
+    ABL84843.1        391    172-390        1   2496-3146      4   3  0  N   50.5   71.1   46.0   2.5-e046 P | phosphoprotein
+    DAA06045.1        404    212-403        1   2577-3146      3   3  0  N   50.2   70.4   41.8   9.7-e047 P | phosphoprotein
+    YP_001331028.1    404    212-403        1   2577-3146      3   3  0  N   50.2   70.4   41.8   9.7-e047 P | phosphoprotein
+        found 1 gene
+
+    found 16 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADI80726.1        377    1-372          1   3264-4367      2   3  0  N   41.7   64.2   96.5   6.4-e112 M | membrane protein
+    NP_054710.1       375    1-375          1   3264-4388      1   3  0  N   98.9   99.7   100.0  0        M | membrane protein
+    YP_001331032.1    369    6-369          1   3282-4367      2   3  0  N   46.7   68.4   98.6   5.1-e126 M | membrane protein
+    DAA06046.1        369    6-369          1   3282-4367      2   3  0  N   46.7   68.4   98.6   5.1-e126 M | membrane protein
+    ABQ23935.1        371    6-369          1   3282-4367      2   3  0  N   45.9   68.1   97.3   5.7-e121 M | membrane protein
+    YP_001249275.1    371    6-369          1   3282-4367      2   3  0  N   45.9   68.1   97.3   5.7-e121 M | membrane protein
+    BAJ11751.1        382    33-377         1   3354-4388      1   3  0  N   48.4   66.0   90.3   1.5-e126 M | membrane protein
+    BAJ11744.1        382    33-377         1   3354-4388      1   3  0  N   48.9   66.0   90.3   2.8-e127 M | membrane protein
+    AFB82775.1        382    33-377         1   3354-4388      1   3  0  N   48.4   65.7   90.3   8.6-e126 M | membrane protein
+    ACF59814.1        382    33-377         1   3354-4388      1   3  0  N   48.6   66.0   90.3   1.2-e125 M | membrane protein
+    ADI80719.1        376    37-373         1   3360-4370      1   3  0  N   43.6   64.3   89.6   2.1-e109 M | membrane protein
+    ADI80712.1        378    1-374          1   3255-4370      2   3  0  N   46.4   68.4   92.3   6.0-e128 M | membrane protein
+    NP_598403.1       377    32-373         1   3363-4388      2   3  0  N   43.8   65.5   87.7   1.3-e099 M | membrane protein
+    BAE00053.1        377    32-373         1   3363-4388      2   3  0  N   43.5   65.5   87.7   3.7-e099 M | membrane protein
+    YP_138507.1       382    32-373         1   3363-4388      1   3  0  N   42.3   66.0   89.5   8.6-e105 M | membrane protein
+    YP_138514.1       377    4-373          1   3285-4388      3   3  0  N   44.2   63.9   94.1   4.6-e101 M | membrane protein
+        found 1 gene
+
+    found 15 permutations for gene F
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT81469.1        538    1-538          1   4546-6159      1   1  0  N   97.5   99.0   100.0  0        F | fusion protein
+    ADI80720.1        539    18-477         1   4588-5967      2   1  0  N   40.2   64.3   81.0   2.0-e121 F | fusion protein
+    ADI80727.1        537    16-473         1   4594-5967      1   1  0  N   39.3   61.3   85.2   4.5-e122 F | fusion protein
+    DAA06047.1        541    23-473         1   4603-5955      1   1  0  N   45.4   66.0   83.3   8.1-e151 F | fusion protein
+    YP_001331033.1    541    23-473         1   4603-5955      1   1  0  N   45.4   66.0   83.3   8.1-e151 F | fusion protein
+    BAJ11745.1        543    21-478         1   4603-5976      1   1  0  N   41.9   60.9   84.3   2.5-e128 F | fusion protein
+    AFB82776.1        543    21-478         1   4603-5976      1   1  0  N   43.0   62.2   84.3   1.2-e134 F | fusion protein
+    BAJ11752.1        543    21-478         1   4603-5976      1   1  0  N   42.7   62.2   84.3   2.2-e133 F | fusion protein
+    ACF59815.1        543    21-478         1   4603-5976      1   1  0  N   43.0   62.2   84.3   2.5-e134 F | fusion protein
+    YP_138508.1       561    32-477         1   4618-5955      1   1  0  N   44.8   66.5   79.5   2.2-e147 F | fusion protein
+    BAE00054.1        551    29-475         1   4618-5958      1   1  0  N   42.9   67.1   81.1   1.3-e142 F | fusion protein
+    NP_598404.1       551    29-475         1   4618-5958      1   1  0  N   42.9   67.1   81.1   1.3-e142 F | fusion protein
+    ABQ23936.1        537    24-487         1   4618-6009      1   1  0  N   46.9   68.9   86.4   5.5-e162 F | fusion protein
+    YP_001249276.1    537    24-487         1   4618-6009      1   1  0  N   46.9   68.9   86.4   5.5-e162 F | fusion protein
+    YP_138515.1       529    25-503         1   4618-6054      1   1  0  N   46.3   67.4   90.5   3.5-e163 F | fusion protein
+        found 1 gene
+
+    found 9 permutations for gene SH
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAD13721.1        50     1-50           1   6268-6417      1   1  0  N   88.0   92.0   100.0  1.4-e026 SH | small hydrophobic protein
+    AAC56597.1        57     1-57           1   6268-6438      1   1  0  N   82.4   84.2   100.0  8.8-e028 SH | small hydrophobic protein
+    AAL68456.1        57     1-57           1   6268-6438      1   1  0  N   89.4   94.7   100.0  1.7-e034 SH | small hydrophobic protein
+    AAL68460.1        57     1-57           1   6268-6438      1   1  0  N   87.7   89.4   100.0  3.0-e032 SH | small hydrophobic protein
+    P28087.1          57     1-57           1   6268-6438      1   1  0  N   96.4   98.2   100.0  5.1-e037 SH | small hydrophobic protein
+    P69465.1          57     1-57           1   6268-6438      1   1  0  N   82.4   87.7   100.0  1.6-e028 SH | small hydrophobic protein
+    P69188.1          57     1-57           1   6268-6438      1   1  0  N   82.4   91.2   100.0  5.1-e030 SH | small hydrophobic protein
+    AAL68490.1        57     1-57           1   6268-6438      1   1  0  N   87.7   87.7   100.0  1.7-e031 SH | small hydrophobic protein
+    BAD13736.1        85     1-85           1   6268-6522      1   1  0  N   82.3   87.0   100.0  2.2-e049 SH | small hydrophobic protein
+        found 1 gene
+
+    found 13 permutations for gene HN
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT81471.1        582    1-582          1   6614-8359      1   2  0  N   97.0   98.4   100.0  0        HN | hemagglutinin-neuraminidase
+    YP_138509.1       568    9-568          1   6686-8359      3   2  0  N   45.4   67.7   67.7   1.3-e169 HN | hemagglutinin-neuraminidase
+    NP_598405.1       571    72-569         1   6863-8350      4   2  0  N   45.2   65.8   81.6   3.0-e140 HN | hemagglutinin-neuraminidase
+    BAE00055.1        571    72-569         1   6863-8350      4   2  0  N   45.2   65.8   81.6   3.0-e140 HN | hemagglutinin-neuraminidase
+    YP_138517.1       565    71-565         1   6875-8359      3   2  0  N   49.8   69.7   84.7   1.1-e178 HN | hemagglutinin-neuraminidase
+    BAJ11746.1        574    32-567         1   6716-8329      7   2  0  N   52.4   70.8   53.1   1.3-e106 HN | hemagglutinin-neuraminidase
+    AFB82777.1        574    19-571         1   6689-8341      7   2  0  N   49.3   67.7   68.1   2.4-e119 HN | hemagglutinin-neuraminidase
+    ACF59816.1        579    19-571         1   6689-8341      6   2  0  N   48.4   66.4   70.9   1.2-e126 HN | hemagglutinin-neuraminidase
+    BAJ11753.1        574    19-571         1   6689-8341      7   2  0  N   49.3   67.7   68.1   6.6-e119 HN | hemagglutinin-neuraminidase
+    YP_001249277.1    582    159-484        1   7097-8074      3   2  0  N   57.4   71.8   46.3   1.4-e148 HN | hemagglutinin-neuraminidase
+    ABQ23937.1        582    159-484        1   7097-8074      3   2  0  N   57.4   71.8   46.3   1.4-e148 HN | hemagglutinin-neuraminidase
+    DAA06048.1        576    158-572        1   7106-8356      3   2  0  N   53.5   68.4   61.6   7.2-e147 HN | hemagglutinin-neuraminidase
+    YP_001331034.1    576    158-572        1   7106-8356      3   2  0  N   53.5   68.4   61.6   7.2-e147 HN | hemagglutinin-neuraminidase
+        found 1 gene
+
+    found 16 permutations for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADI80729.1        2271   1-2002         1   8438-14419     11  2  0  N   58.7   76.7   80.5   0        L | large protein
+    ADI80715.1        2274   1-2006         1   8438-14419     10  2  0  N   61.3   77.2   76.2   0        L | large protein
+    DAA06049.1        2251   1-2045         1   8438-14590     8   2  0  N   61.2   77.2   85.8   0        L | large protein
+    YP_001331035.1    2251   1-2045         1   8438-14590     8   2  0  N   61.2   77.2   85.8   0        L | large protein
+    BAJ11754.1        2279   1-2279         1   8438-15220     11  2  0  N   58.9   76.1   87.8   0        L | large protein
+    AFB82778.1        2279   1-2279         1   8438-15220     11  2  0  N   59.1   76.3   87.8   0        L | large protein
+    ACF59817.1        2279   1-2279         1   8438-15220     11  2  0  N   59.7   76.9   86.6   0        L | large protein
+    BAJ11747.1        2279   1-2181         1   8438-14950     11  2  0  N   59.8   76.8   85.7   0        L | large protein
+    YP_001249278.1    2253   1-2221         1   8438-15118     6   2  0  N   64.2   79.3   88.1   0        L | large protein
+    ABQ23938.1        2253   1-2221         1   8438-15118     6   2  0  N   64.2   79.3   88.1   0        L | large protein
+    ADI80722.1        2267   1-2267         1   8438-15220     10  2  0  N   59.2   76.0   83.6   0        L | large protein
+    NP_598406.1       2262   1-2230         1   8438-15130     8   2  0  N   61.8   76.6   93.7   0        L | large protein
+    YP_138510.1       2269   1-2237         1   8438-15130     9   2  0  N   62.0   77.6   93.7   0        L | large protein
+    YP_138518.1       2255   1-2225         1   8438-15130     7   2  0  N   61.0   77.2   95.0   0        L | large protein
+    BAE00056.1        2263   1-2231         1   8438-15130     7   2  0  N   61.8   76.7   95.0   0        L | large protein
+    P30929.1          2261   1-2261         1   8438-15220     1   2  0  N   99.2   99.5   100.0  0        L | large protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+AY685921.1              15384      9            0      15471           5148           98.4             99.6          100.0   mmp_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+AY685921.1.1       98.4   99.4   100.0  0.0   0.0   0.0   146..1795        549    549    Q77IS8.1          NP | nucleocapsid protein
+AY685921.1.2       97.1   98.0   100.0  0.0   0.0   0.0   1979..2490       171    171    AEY76114.1        I | I protein
+                    transcription exception 2435..2441:AAGAGGGGGGG
+AY685921.1.3       96.9   99.6   100.0  0.0   0.0   0.0   1979..2653       224    224    BAK26765.1        V | V protein
+AY685921.1.4       98.0   99.6   100.0  0.0   0.0   0.0   1979..3152       391    391    NP_054708.1       P | phosphoprotein
+                    transcription exception 2435..2441:AAGAGGGGG
+AY685921.1.5       98.9   99.7   100.0  0.0   0.0   0.0   3264..4391       375    375    NP_054710.1       M | membrane protein
+AY685921.1.6       97.6   99.6   100.0  0.0   0.0   0.0   4546..6162       538    538    AAT81469.1        F | fusion protein
+AY685921.1.7       96.5   98.2   100.0  0.0   0.0   0.0   6268..6441       57     57     P28087.1          SH | small hydrophobic protein
+AY685921.1.8       97.1   99.5   100.0  0.0   0.0   0.0   6614..8362       582    582    AAT81471.1        HN | hemagglutinin-neuraminidase
+AY685921.1.9       99.3   99.7   100.0  0.0   0.0   0.0   8438..15223      2261   2261   P30929.1          L | large protein
+
+
+genomic sequence KM385447.1, length=15384
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 17 permutations for gene NP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADI80709.1        519    1-401          1   146-1348       1   2  0  N   59.8   80.0   77.2   0        NP | nucleocapsid protein
+    BAE00051.1        543    1-402          1   146-1351       1   2  0  N   59.9   78.6   74.0   0        NP | nucleocapsid protein
+    NP_598401.1       542    1-401          1   146-1351       2   2  0  N   59.1   77.5   73.9   0        NP | nucleocapsid protein
+    AFB82772.1        551    1-405          1   146-1360       1   2  0  N   50.6   72.0   73.5   2.2-e154 NP | nucleocapsid protein
+    BAJ11741.1        551    1-405          1   146-1360       1   2  0  N   51.1   71.8   73.5   2.8-e155 NP | nucleocapsid protein
+    BAJ11748.1        551    1-405          1   146-1360       1   2  0  N   50.6   72.0   73.5   2.2-e154 NP | nucleocapsid protein
+    ACF59811.1        551    1-405          1   146-1360       1   2  0  N   50.8   72.3   73.5   5.5-e155 NP | nucleocapsid protein
+    YP_138504.1       543    1-406          1   146-1363       1   2  0  N   57.6   78.8   74.7   0        NP | nucleocapsid protein
+    ADI80723.1        513    1-406          1   146-1363       1   2  0  N   56.1   74.6   79.1   0        NP | nucleocapsid protein
+    YP_001331027.1    545    1-417          1   146-1396       1   2  0  N   67.8   81.0   76.5   0        NP | nucleocapsid protein
+    YP_138511.1       509    1-417          1   146-1396       1   2  0  N   63.7   79.8   81.9   0        NP | nucleocapsid protein
+    DAA06041.1        545    1-417          1   146-1396       1   2  0  N   67.8   81.0   76.5   0        NP | nucleocapsid protein
+    ADI80716.1        523    1-425          1   146-1420       1   2  0  N   57.6   76.4   81.2   0        NP | nucleocapsid protein
+    YP_001249270.1    537    1-425          1   146-1420       1   2  0  N   60.4   77.8   79.1   0        NP | nucleocapsid protein
+    ABQ23934.1        537    1-425          1   146-1420       1   2  0  N   60.4   77.8   79.1   0        NP | nucleocapsid protein
+    Q77IS8.1          549    1-549          1   146-1792       1   2  0  N   97.9   98.7   100.0  0        NP | nucleocapsid protein
+    P21277.1          553    1-553          1   146-1805       2   0  1  N   95.8   96.7   100.0  0        NP | nucleocapsid protein
+        found 1 gene
+
+    found 2 permutations for gene I
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    CBA10119.1        171    1-171          1   1979-2487      2   0  1  N   92.4   95.3   100.0  3.5-e119 I | I protein
+    AEY76114.1        171    1-171          1   1979-2487      2   0  1  N   94.7   97.1   100.0  2.0-e121 I | I protein
+        found 1 gene
+
+    found 6 permutations for gene V
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAK26765.1        224    1-224          1   1979-2650      1   2  0  N   96.4   97.7   100.0  0        V | V protein
+    YP_138513.1       222    123-221        1   2330-2638      2   2  0  N   62.5   76.2   36.0   1.2-e038 V | V protein
+    YP_138506.1       225    124-224        1   2336-2638      2   2  0  N   56.4   73.0   34.6   1.3-e031 V | V protein
+    BAE00052.1        225    124-225        1   2336-2641      2   2  0  N   56.6   77.1   36.8   1.6-e034 V | V protein
+    NP_598402.1       225    124-225        1   2336-2641      2   2  0  N   55.4   77.1   36.8   5.9-e034 V | V protein
+    ABL84841.1        191    95-160         1   2447-2644      1   2  0  N   56.0   69.6   34.5   9.7-e027 V | V protein
+        found 1 gene
+
+    found 8 permutations for gene P
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_054708.1       391    1-391          1   1979-3149      2   0  1  N   97.4   98.4   100.0  0        P | phosphoprotein
+    YP_138512.1       392    123-392        1   2330-3149      4   0  1  N   46.4   73.7   50.5   2.3-e057 P | phosphoprotein
+    NP_599019.1       395    124-395        1   2336-3149      3   0  1  N   45.2   66.2   61.5   2.0-e066 P | phosphoprotein
+    YP_138505.1       395    124-395        1   2336-3149      3   0  1  N   45.7   66.3   54.1   6.1-e058 P | phosphoprotein
+    YP_001249271.1    391    172-390        1   2496-3146      4   3  0  N   50.0   70.5   46.0   2.6-e045 P | phosphoprotein
+    DAA06045.1        404    185-403        1   2496-3146      4   3  0  N   50.8   69.5   46.2   8.9-e048 P | phosphoprotein
+    ABL84843.1        391    172-390        1   2496-3146      4   3  0  N   50.0   70.5   46.0   2.6-e045 P | phosphoprotein
+    YP_001331028.1    404    185-403        1   2496-3146      4   3  0  N   50.8   69.5   46.2   8.9-e048 P | phosphoprotein
+        found 1 gene
+
+    found 16 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADI80726.1        377    1-372          1   3264-4367      2   3  0  N   41.2   64.8   96.5   1.8-e111 M | membrane protein
+    NP_054710.1       375    1-375          1   3264-4388      1   3  0  N   98.1   99.4   100.0  0        M | membrane protein
+    YP_001331032.1    369    6-369          1   3282-4367      2   3  0  N   46.4   68.7   98.6   1.4-e125 M | membrane protein
+    DAA06046.1        369    6-369          1   3282-4367      2   3  0  N   46.4   68.7   98.6   1.4-e125 M | membrane protein
+    ABQ23935.1        371    6-369          1   3282-4367      2   3  0  N   45.4   68.1   97.3   2.2-e120 M | membrane protein
+    YP_001249275.1    371    6-369          1   3282-4367      2   3  0  N   45.4   68.1   97.3   2.2-e120 M | membrane protein
+    BAJ11751.1        382    33-377         1   3354-4388      1   3  0  N   47.8   66.3   90.3   6.1-e126 M | membrane protein
+    BAJ11744.1        382    33-377         1   3354-4388      1   3  0  N   48.4   66.3   90.3   2.2-e126 M | membrane protein
+    AFB82775.1        382    33-377         1   3354-4388      1   3  0  N   47.8   66.0   90.3   3.4-e125 M | membrane protein
+    ACF59814.1        382    33-377         1   3354-4388      1   3  0  N   48.1   66.3   90.3   4.8-e125 M | membrane protein
+    ADI80719.1        376    37-373         1   3360-4370      1   3  0  N   43.0   64.9   89.6   2.3-e108 M | membrane protein
+    ADI80712.1        378    1-374          1   3255-4370      2   3  0  N   45.8   69.0   92.3   4.7-e127 M | membrane protein
+    YP_138507.1       382    32-373         1   3363-4388      1   3  0  N   41.8   66.3   89.5   4.8-e104 M | membrane protein
+    YP_138514.1       377    4-373          1   3285-4388      3   3  0  N   43.3   63.6   94.1   7.1-e100 M | membrane protein
+    NP_598403.1       377    32-373         1   3363-4388      2   3  0  N   43.5   65.5   87.7   7.8-e099 M | membrane protein
+    BAE00053.1        377    32-373         1   3363-4388      2   3  0  N   43.2   65.5   87.7   2.2-e098 M | membrane protein
+        found 1 gene
+
+    found 16 permutations for gene F
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT81469.1        538    1-538          1   4546-6159      1   1  0  N   97.9   99.0   100.0  0        F | fusion protein
+    ADI80720.1        539    7-499          1   4555-6033      2   1  0  N   38.9   63.4   87.1   3.4-e123 F | fusion protein
+    ADI80727.1        537    16-473         1   4594-5967      1   1  0  N   39.3   61.5   85.2   1.2-e122 F | fusion protein
+    DAA06047.1        541    23-473         1   4603-5955      1   1  0  N   45.4   66.2   83.3   1.5-e151 F | fusion protein
+    YP_001331033.1    541    23-473         1   4603-5955      1   1  0  N   45.4   66.2   83.3   1.5-e151 F | fusion protein
+    BAJ11745.1        543    21-478         1   4603-5976      1   1  0  N   41.9   61.3   84.3   2.3-e129 F | fusion protein
+    AFB82776.1        543    21-478         1   4603-5976      1   1  0  N   43.0   62.6   84.3   9.9-e135 F | fusion protein
+    BAJ11752.1        543    21-478         1   4603-5976      1   1  0  N   42.7   62.6   84.3   2.0-e134 F | fusion protein
+    ACF59815.1        543    21-478         1   4603-5976      1   1  0  N   43.0   62.6   84.3   5.0-e135 F | fusion protein
+    ADI80713.1        532    22-519         1   4603-6096      1   1  0  N   39.1   60.0   93.6   1.3-e131 F | fusion protein
+    YP_138508.1       561    32-477         1   4618-5955      1   1  0  N   44.8   67.0   79.5   1.1-e147 F | fusion protein
+    BAE00054.1        551    29-475         1   4618-5958      1   1  0  N   43.6   67.3   81.1   5.8-e144 F | fusion protein
+    NP_598404.1       551    29-475         1   4618-5958      1   1  0  N   43.6   67.3   81.1   5.8-e144 F | fusion protein
+    ABQ23936.1        537    24-487         1   4618-6009      1   1  0  N   47.1   69.3   86.4   6.4-e164 F | fusion protein
+    YP_001249276.1    537    24-487         1   4618-6009      1   1  0  N   47.1   69.3   86.4   6.4-e164 F | fusion protein
+    YP_138515.1       529    25-503         1   4618-6054      1   1  0  N   46.7   67.8   90.5   1.6-e164 F | fusion protein
+        found 1 gene
+
+    found 9 permutations for gene SH
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAD13721.1        50     1-50           1   6268-6417      1   1  0  N   80.0   86.0   100.0  1.8-e023 SH | small hydrophobic protein
+    AAC56597.1        57     1-57           1   6268-6438      1   1  0  N   75.4   78.9   100.0  1.2-e024 SH | small hydrophobic protein
+    AAL68456.1        57     1-57           1   6268-6438      1   1  0  N   91.2   94.7   100.0  4.9-e034 SH | small hydrophobic protein
+    AAL68460.1        57     1-57           1   6268-6438      1   1  0  N   78.9   82.4   100.0  1.2-e027 SH | small hydrophobic protein
+    P28087.1          57     1-57           1   6268-6438      1   1  0  N   84.2   89.4   100.0  6.5-e031 SH | small hydrophobic protein
+    P69465.1          57     1-57           1   6268-6438      1   1  0  N   75.4   80.7   100.0  1.2-e024 SH | small hydrophobic protein
+    P69188.1          57     1-57           1   6268-6438      1   1  0  N   78.9   85.9   100.0  1.2-e027 SH | small hydrophobic protein
+    AAL68490.1        57     1-57           1   6268-6438      1   1  0  N   80.7   82.4   100.0  4.4-e028 SH | small hydrophobic protein
+    BAD13736.1        85     1-85           1   6268-6522      1   1  0  N   80.0   83.5   100.0  1.3-e044 SH | small hydrophobic protein
+        found 1 gene
+
+    found 13 permutations for gene HN
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT81471.1        582    1-582          1   6614-8359      1   2  0  N   96.0   98.2   100.0  0        HN | hemagglutinin-neuraminidase
+    YP_138509.1       568    9-568          1   6686-8359      3   2  0  N   45.9   67.7   67.7   2.6-e169 HN | hemagglutinin-neuraminidase
+    YP_138517.1       565    71-565         1   6875-8359      3   2  0  N   50.4   70.2   83.1   1.2-e177 HN | hemagglutinin-neuraminidase
+    BAJ11746.1        574    118-567        1   6980-8329      6   2  0  N   53.7   70.3   50.5   3.1-e108 HN | hemagglutinin-neuraminidase
+    BAJ11753.1        574    118-571        1   6980-8341      6   2  0  N   50.4   68.0   64.2   6.6-e119 HN | hemagglutinin-neuraminidase
+    AFB82777.1        574    121-571        1   6989-8341      6   2  0  N   50.5   68.3   63.7   4.7-e119 HN | hemagglutinin-neuraminidase
+    ACF59816.1        579    121-571        1   6989-8341      5   2  0  N   49.2   66.5   66.6   1.7-e125 HN | hemagglutinin-neuraminidase
+    YP_001249277.1    582    159-484        1   7097-8074      3   2  0  N   57.4   72.5   46.3   2.5-e149 HN | hemagglutinin-neuraminidase
+    ABQ23937.1        582    159-484        1   7097-8074      3   2  0  N   57.4   72.5   46.3   2.5-e149 HN | hemagglutinin-neuraminidase
+    NP_598405.1       571    151-569        1   7100-8350      3   2  0  N   48.0   66.5   70.0   6.6-e139 HN | hemagglutinin-neuraminidase
+    BAE00055.1        571    151-569        1   7100-8350      3   2  0  N   48.0   66.5   70.0   6.6-e139 HN | hemagglutinin-neuraminidase
+    DAA06048.1        576    158-572        1   7106-8356      2   2  0  N   60.1   74.2   35.7   2.1-e146 HN | hemagglutinin-neuraminidase
+    YP_001331034.1    576    158-572        1   7106-8356      2   2  0  N   60.1   74.2   35.7   2.1-e146 HN | hemagglutinin-neuraminidase
+        found 1 gene
+
+    found 16 permutations for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADI80729.1        2271   1-2002         1   8438-14419     12  2  0  N   59.5   77.3   79.4   0        L | large protein
+    ADI80715.1        2274   1-2043         1   8438-14530     11  2  0  N   60.9   77.0   77.4   0        L | large protein
+    DAA06049.1        2251   1-2045         1   8438-14590     8   2  0  N   61.4   77.3   85.8   0        L | large protein
+    YP_001331035.1    2251   1-2045         1   8438-14590     8   2  0  N   61.4   77.3   85.8   0        L | large protein
+    BAJ11754.1        2279   1-2279         1   8438-15220     13  0  2  N   58.4   75.9   89.7   0        L | large protein
+    AFB82778.1        2279   1-2279         1   8438-15220     13  0  2  N   58.6   76.1   89.7   0        L | large protein
+    ACF59817.1        2279   1-2279         1   8438-15220     11  2  0  N   59.7   77.0   86.6   0        L | large protein
+    BAJ11747.1        2279   1-2181         1   8438-14950     11  2  0  N   60.0   77.0   85.4   0        L | large protein
+    YP_001249278.1    2253   1-2221         1   8438-15118     6   2  0  N   64.4   79.4   88.1   0        L | large protein
+    ABQ23938.1        2253   1-2221         1   8438-15118     6   2  0  N   64.4   79.4   88.1   0        L | large protein
+    ADI80722.1        2267   1-2236         1   8438-15127     9   2  0  N   59.8   76.6   81.6   0        L | large protein
+    NP_598406.1       2262   1-2230         1   8438-15130     9   2  0  N   62.1   77.1   93.1   0        L | large protein
+    YP_138510.1       2269   1-2237         1   8438-15130     9   2  0  N   61.8   77.5   93.9   0        L | large protein
+    YP_138518.1       2255   1-2225         1   8438-15130     7   2  0  N   61.1   77.3   95.0   0        L | large protein
+    BAE00056.1        2263   1-2231         1   8438-15130     8   2  0  N   62.0   77.1   94.4   0        L | large protein
+    P30929.1          2261   1-2261         1   8438-15220     1   2  0  N   99.3   99.6   100.0  0        L | large protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KM385447.1              15384      9            0      15471           5148           98.1             99.6          100.0   mmp_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KM385447.1.1       98.0   99.3   100.0  0.0   0.0   0.0   146..1795        549    549    Q77IS8.1          NP | nucleocapsid protein
+KM385447.1.2       95.3   98.1   100.0  0.0   0.0   0.0   1979..2490       171    171    AEY76114.1        I | I protein
+                    transcription exception 2435..2441:AAGAGGGGGGG
+KM385447.1.3       96.4   99.6   100.0  0.0   0.0   0.0   1979..2653       224    224    BAK26765.1        V | V protein
+KM385447.1.4       97.4   99.7   100.0  0.0   0.0   0.0   1979..3152       391    391    NP_054708.1       P | phosphoprotein
+                    transcription exception 2435..2441:AAGAGGGGG
+KM385447.1.5       98.1   99.9   100.0  0.0   0.0   0.0   3264..4391       375    375    NP_054710.1       M | membrane protein
+KM385447.1.6       98.0   99.6   100.0  0.0   0.0   0.0   4546..6162       538    538    AAT81469.1        F | fusion protein
+KM385447.1.7       91.2   96.1   100.0  0.0   0.0   0.0   6268..6441       57     57     AAL68456.1        SH | small hydrophobic protein
+KM385447.1.8       96.0   99.1   100.0  0.0   0.0   0.0   6614..8362       582    582    AAT81471.1        HN | hemagglutinin-neuraminidase
+KM385447.1.9       99.4   99.8   100.0  0.0   0.0   0.0   8438..15223      2261   2261   P30929.1          L | large protein
+
+
+genomic sequence KM597072.1, length=15263
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 17 permutations for gene NP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADI80709.1        519    1-401          1   84-1285        2   0  1  N   59.7   79.7   77.0   0        NP | nucleocapsid protein
+    BAE00051.1        543    1-402          1   84-1288        2   0  1  N   60.7   78.8   73.1   0        NP | nucleocapsid protein
+    NP_598401.1       542    1-401          1   84-1288        3   0  1  N   59.9   77.7   73.0   0        NP | nucleocapsid protein
+    AFB82772.1        551    1-405          1   84-1297        2   0  1  N   50.4   72.6   72.9   2.7-e148 NP | nucleocapsid protein
+    BAJ11741.1        551    1-405          1   84-1297        2   0  1  N   50.9   72.3   72.9   3.5-e149 NP | nucleocapsid protein
+    BAJ11748.1        551    1-405          1   84-1297        2   0  1  N   50.4   72.6   72.9   2.7-e148 NP | nucleocapsid protein
+    ACF59811.1        551    1-405          1   84-1297        2   0  1  N   50.7   72.8   72.9   6.8-e149 NP | nucleocapsid protein
+    YP_138504.1       543    1-406          1   84-1300        2   0  1  N   58.1   79.0   73.8   0        NP | nucleocapsid protein
+    ADI80723.1        513    1-406          1   84-1300        2   0  1  N   55.9   74.8   78.3   7.5-e174 NP | nucleocapsid protein
+    YP_001331027.1    545    1-417          1   84-1333        2   0  1  N   67.5   81.0   76.3   0        NP | nucleocapsid protein
+    YP_138511.1       509    1-417          1   84-1333        2   0  1  N   63.9   79.8   81.7   0        NP | nucleocapsid protein
+    DAA06041.1        545    1-417          1   84-1333        2   0  1  N   67.5   81.0   76.3   0        NP | nucleocapsid protein
+    ADI80716.1        523    1-425          1   84-1357        2   0  1  N   57.7   76.7   80.4   0        NP | nucleocapsid protein
+    YP_001249270.1    537    1-425          1   84-1357        2   0  1  N   60.1   77.8   78.9   0        NP | nucleocapsid protein
+    ABQ23934.1        537    1-425          1   84-1357        2   0  1  N   60.1   77.8   78.9   0        NP | nucleocapsid protein
+    Q77IS8.1          549    1-549          1   84-1729        2   0  1  N   97.8   98.9   99.8   0        NP | nucleocapsid protein
+    P21277.1          553    1-553          1   84-1742        3   0  2  N   95.6   97.4   99.8   0        NP | nucleocapsid protein
+        found 1 gene
+
+    found 2 permutations for gene I
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    CBA10119.1        171    1-171          1   1916-2424      2   0  1  N   92.5   93.6   100.0  6.8-e119 I | I protein
+    AEY76114.1        171    1-171          1   1916-2424      2   0  1  N   97.1   97.7   100.0  2.0-e125 I | I protein
+        found 1 gene
+
+    found 6 permutations for gene V
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAK26765.1        224    1-224          1   1916-2587      1   2  0  N   97.7   97.7   100.0  0        V | V protein
+    YP_138513.1       222    123-221        1   2267-2575      2   2  0  N   62.5   76.2   36.0   1.6-e039 V | V protein
+    YP_138506.1       225    124-224        1   2273-2575      2   2  0  N   56.4   73.0   34.6   4.4-e033 V | V protein
+    BAE00052.1        225    124-225        1   2273-2578      2   2  0  N   56.6   77.1   36.8   2.0-e035 V | V protein
+    NP_598402.1       225    124-225        1   2273-2578      2   2  0  N   55.4   77.1   36.8   7.7-e035 V | V protein
+    ABL84841.1        191    20-160         1   2093-2581      2   2  0  N   57.3   70.6   39.2   9.6-e027 V | V protein
+        found 1 gene
+
+    found 9 permutations for gene P
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_054708.1       391    1-391          1   1916-3086      2   0  1  N   97.2   97.7   100.0  0        P | phosphoprotein
+    YP_138512.1       392    123-392        1   2267-3086      4   0  1  N   45.0   70.4   54.3   1.4-e059 P | phosphoprotein
+    NP_599019.1       395    124-395        1   2273-3086      3   0  1  N   44.8   65.8   61.5   2.7-e066 P | phosphoprotein
+    YP_138505.1       395    124-395        1   2273-3086      3   0  1  N   44.6   64.2   59.4   1.3-e061 P | phosphoprotein
+    YP_001249271.1    391    172-390        1   2433-3083      4   3  0  N   50.0   70.5   46.0   2.6-e045 P | phosphoprotein
+    DAA06045.1        404    185-403        1   2433-3083      3   3  0  N   47.9   66.6   49.0   2.2-e049 P | phosphoprotein
+    ABL84843.1        391    172-390        1   2433-3083      4   3  0  N   50.0   70.5   46.0   2.6-e045 P | phosphoprotein
+    YP_001331028.1    404    185-403        1   2433-3083      3   3  0  N   47.9   66.6   49.0   2.2-e049 P | phosphoprotein
+    ADI80710.1        409    204-409        1   2469-3086      1   3  0  N   40.7   60.1   50.3   3.8-e054 P | phosphoprotein
+        found 1 gene
+
+    found 16 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADI80726.1        377    1-372          1   3201-4304      2   3  0  N   41.4   64.5   96.5   9.0-e112 M | membrane protein
+    NP_054710.1       375    1-375          1   3201-4325      1   3  0  N   99.7   100.0  100.0  0        M | membrane protein
+    YP_001331032.1    369    6-369          1   3219-4304      2   3  0  N   46.4   68.7   98.6   1.0-e125 M | membrane protein
+    DAA06046.1        369    6-369          1   3219-4304      2   3  0  N   46.4   68.7   98.6   1.0-e125 M | membrane protein
+    ABQ23935.1        371    6-369          1   3219-4304      2   3  0  N   45.7   68.1   97.3   2.2-e120 M | membrane protein
+    YP_001249275.1    371    6-369          1   3219-4304      2   3  0  N   45.7   68.1   97.3   2.2-e120 M | membrane protein
+    BAJ11751.1        382    33-377         1   3291-4325      1   3  0  N   48.4   66.3   90.3   5.5-e127 M | membrane protein
+    BAJ11744.1        382    33-377         1   3291-4325      1   3  0  N   48.9   66.3   90.3   2.0-e127 M | membrane protein
+    AFB82775.1        382    33-377         1   3291-4325      1   3  0  N   48.4   66.0   90.3   3.0-e126 M | membrane protein
+    ACF59814.1        382    33-377         1   3291-4325      1   3  0  N   48.6   66.3   90.3   4.3-e126 M | membrane protein
+    ADI80719.1        376    37-373         1   3297-4307      1   3  0  N   43.3   64.6   89.6   5.8-e109 M | membrane protein
+    ADI80712.1        378    2-374          1   3195-4307      2   3  0  N   46.2   68.6   92.0   2.3-e127 M | membrane protein
+    NP_598403.1       377    32-373         1   3300-4325      2   3  0  N   43.8   65.5   87.7   9.4-e100 M | membrane protein
+    BAE00053.1        377    32-373         1   3300-4325      2   3  0  N   43.5   65.5   87.7   2.6-e099 M | membrane protein
+    YP_138507.1       382    32-373         1   3300-4325      1   3  0  N   42.1   66.0   89.5   3.4-e104 M | membrane protein
+    YP_138514.1       377    4-373          1   3222-4325      3   3  0  N   43.6   63.9   94.1   2.5-e100 M | membrane protein
+        found 1 gene
+
+    found 15 permutations for gene F
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT81469.1        538    1-538          1   4483-6096      1   1  0  N   96.0   98.6   100.0  0        F | fusion protein
+    ADI80727.1        537    16-473         1   4531-5904      1   1  0  N   39.3   61.1   85.2   1.1-e122 F | fusion protein
+    DAA06047.1        541    23-473         1   4540-5892      1   1  0  N   45.4   66.2   83.3   2.9-e151 F | fusion protein
+    YP_001331033.1    541    23-473         1   4540-5892      1   1  0  N   45.4   66.2   83.3   2.9-e151 F | fusion protein
+    BAJ11745.1        543    21-478         1   4540-5913      1   1  0  N   42.3   60.9   84.3   2.3-e129 F | fusion protein
+    AFB82776.1        543    21-478         1   4540-5913      1   1  0  N   43.2   62.2   84.3   1.6-e135 F | fusion protein
+    BAJ11752.1        543    21-478         1   4540-5913      1   1  0  N   43.2   62.2   84.3   2.0-e134 F | fusion protein
+    ACF59815.1        543    21-478         1   4540-5913      1   1  0  N   43.2   62.2   84.3   3.2-e135 F | fusion protein
+    ADI80720.1        539    23-502         1   4540-5979      2   1  0  N   39.6   64.1   84.7   6.6-e123 F | fusion protein
+    YP_138508.1       561    32-477         1   4555-5892      1   1  0  N   44.3   66.5   79.5   1.3-e145 F | fusion protein
+    BAE00054.1        551    29-475         1   4555-5895      1   1  0  N   43.1   67.1   81.1   7.0-e142 F | fusion protein
+    NP_598404.1       551    29-475         1   4555-5895      1   1  0  N   43.1   67.1   81.1   7.0-e142 F | fusion protein
+    ABQ23936.1        537    24-488         1   4555-5949      1   1  0  N   47.0   69.0   86.5   7.7-e162 F | fusion protein
+    YP_001249276.1    537    24-488         1   4555-5949      1   1  0  N   47.0   69.0   86.5   7.7-e162 F | fusion protein
+    YP_138515.1       529    25-503         1   4555-5991      1   1  0  N   46.9   67.4   90.5   1.8-e163 F | fusion protein
+        found 1 gene
+
+    found 9 permutations for gene SH
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAD13721.1        50     1-49           1   6205-6351      1   1  0  N   85.7   89.7   98.0   3.0-e025 SH | small hydrophobic protein
+    AAC56597.1        57     1-57           1   6205-6375      1   1  0  N   78.9   82.4   100.0  2.4-e027 SH | small hydrophobic protein
+    AAL68456.1        57     1-57           1   6205-6375      1   1  0  N   84.2   91.2   100.0  1.5-e032 SH | small hydrophobic protein
+    AAL68460.1        57     1-57           1   6205-6375      1   1  0  N   84.2   85.9   100.0  9.1-e031 SH | small hydrophobic protein
+    P28087.1          57     1-57           1   6205-6375      1   1  0  N   87.7   94.7   100.0  1.9-e033 SH | small hydrophobic protein
+    P69465.1          57     1-57           1   6205-6375      1   1  0  N   77.1   84.2   100.0  1.4-e026 SH | small hydrophobic protein
+    P69188.1          57     1-57           1   6205-6375      1   1  0  N   78.9   87.7   100.0  1.1-e028 SH | small hydrophobic protein
+    AAL68490.1        57     1-57           1   6205-6375      1   1  0  N   82.4   87.7   100.0  1.0-e029 SH | small hydrophobic protein
+    BAD13736.1        85     1-85           1   6205-6459      1   1  0  N   76.4   83.5   100.0  7.1-e044 SH | small hydrophobic protein
+        found 1 gene
+
+    found 13 permutations for gene HN
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT81471.1        582    1-582          1   6551-8296      1   2  0  N   95.5   98.1   100.0  0        HN | hemagglutinin-neuraminidase
+    YP_138509.1       568    9-568          1   6623-8296      3   2  0  N   45.4   67.5   67.7   1.2-e170 HN | hemagglutinin-neuraminidase
+    YP_138517.1       565    71-565         1   6812-8296      3   2  0  N   49.4   69.3   84.7   9.4-e177 HN | hemagglutinin-neuraminidase
+    BAJ11746.1        574    118-567        1   6917-8266      5   2  0  N   49.8   66.4   54.5   2.2-e108 HN | hemagglutinin-neuraminidase
+    AFB82777.1        574    14-571         1   6611-8278      5   2  0  N   50.0   70.0   38.3   9.3-e120 HN | hemagglutinin-neuraminidase
+    ACF59816.1        579    14-571         1   6611-8278      5   2  0  N   45.1   63.7   75.8   3.3-e127 HN | hemagglutinin-neuraminidase
+    BAJ11753.1        574    14-571         1   6611-8278      5   2  0  N   50.0   70.0   38.3   2.6-e119 HN | hemagglutinin-neuraminidase
+    DAA06048.1        576    119-572        1   6926-8293      4   2  0  N   53.4   68.7   65.6   1.1-e142 HN | hemagglutinin-neuraminidase
+    YP_001331034.1    576    119-572        1   6926-8293      4   2  0  N   53.4   68.7   65.6   1.1-e142 HN | hemagglutinin-neuraminidase
+    YP_001249277.1    582    159-484        1   7034-8011      3   2  0  N   57.0   71.4   46.3   3.5-e149 HN | hemagglutinin-neuraminidase
+    ABQ23937.1        582    159-484        1   7034-8011      3   2  0  N   57.0   71.4   46.3   3.5-e149 HN | hemagglutinin-neuraminidase
+    NP_598405.1       571    151-569        1   7037-8287      3   2  0  N   47.7   66.7   70.0   8.3-e140 HN | hemagglutinin-neuraminidase
+    BAE00055.1        571    151-569        1   7037-8287      3   2  0  N   47.7   66.7   70.0   8.3-e140 HN | hemagglutinin-neuraminidase
+        found 1 gene
+
+    found 16 permutations for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADI80729.1        2271   1-2002         1   8375-14356     12  2  0  N   59.5   77.3   79.4   0        L | large protein
+    ADI80715.1        2274   1-2006         1   8375-14356     10  2  0  N   61.5   77.3   76.0   0        L | large protein
+    DAA06049.1        2251   1-2045         1   8375-14527     8   2  0  N   61.3   77.2   85.8   0        L | large protein
+    YP_001331035.1    2251   1-2045         1   8375-14527     8   2  0  N   61.3   77.2   85.8   0        L | large protein
+    BAJ11754.1        2279   1-2279         1   8375-15157     13  0  2  N   58.3   75.9   89.7   0        L | large protein
+    AFB82778.1        2279   1-2279         1   8375-15157     13  0  2  N   58.5   76.1   89.7   0        L | large protein
+    ACF59817.1        2279   1-2279         1   8375-15157     11  2  0  N   59.6   77.0   86.6   0        L | large protein
+    BAJ11747.1        2279   1-2181         1   8375-14887     11  2  0  N   59.7   76.9   85.7   0        L | large protein
+    YP_001249278.1    2253   1-2221         1   8375-15055     6   2  0  N   64.3   79.4   88.1   0        L | large protein
+    ABQ23938.1        2253   1-2221         1   8375-15055     6   2  0  N   64.3   79.4   88.1   0        L | large protein
+    ADI80722.1        2267   1-2267         1   8375-15157     10  2  0  N   59.5   76.4   82.7   0        L | large protein
+    NP_598406.1       2262   1-2230         1   8375-15067     9   2  0  N   62.1   77.1   93.1   0        L | large protein
+    YP_138510.1       2269   1-2237         1   8375-15067     9   2  0  N   61.9   77.6   93.7   0        L | large protein
+    YP_138518.1       2255   1-2225         1   8375-15067     7   2  0  N   61.1   77.3   95.0   0        L | large protein
+    BAE00056.1        2263   1-2231         1   8375-15067     8   2  0  N   62.1   77.1   94.4   0        L | large protein
+    P30929.1          2261   1-2261         1   8375-15157     1   2  0  N   99.2   99.6   100.0  0        L | large protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KM597072.1              15263      6            3      12129           4037           98.1             99.5          100.0   mmp_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KM597072.1.1       97.6   99.1   100.0  0.0   0.0   0.0   84..422          549    549    Q77IS8.1          NP | nucleocapsid protein
+                                                          422..1732                                        
+                    frameshift in genome at or near position 422..422 (+3=>+2)
+KM597072.1.2       97.7   98.7   100.0  0.0   0.0   0.0   1916..2374       170    171    AEY76114.1        I | I protein
+                                                          2374..2427                                       
+                    frameshift in genome at or near position 2374..2374 (+2=>+1)
+KM597072.1.3       97.8   98.5   100.0  0.0   0.0   0.0   1916..2590       224    224    BAK26765.1        V | V protein
+KM597072.1.4       97.4   99.0   100.0  0.0   0.0   0.0   1916..2374       391    391    NP_054708.1       P | phosphoprotein
+                                                          2373..3089                                       
+                    frameshift in genome at or near position 2374..2373 (+2=>+3)
+KM597072.1.5       99.7   99.9   100.0  0.0   0.0   0.0   3201..4328       375    375    NP_054710.1       M | membrane protein
+KM597072.1.6       96.1   99.2   100.0  0.0   0.0   0.0   4483..6099       538    538    AAT81469.1        F | fusion protein
+KM597072.1.7       87.7   96.5   100.0  0.0   0.0   0.0   6205..6378       57     57     P28087.1          SH | small hydrophobic protein
+KM597072.1.8       95.5   98.9   100.0  0.0   0.0   0.0   6551..8299       582    582    AAT81471.1        HN | hemagglutinin-neuraminidase
+KM597072.1.9       99.3   99.8   100.0  0.0   0.0   0.0   8375..15160      2261   2261   P30929.1          L | large protein
+
+
+genomic sequence KF738114.1, length=15384
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 17 permutations for gene NP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADI80709.1        519    1-401          1   146-1348       1   2  0  N   59.8   80.0   77.2   0        NP | nucleocapsid protein
+    BAE00051.1        543    1-402          1   146-1351       1   2  0  N   60.1   78.6   74.0   0        NP | nucleocapsid protein
+    NP_598401.1       542    1-401          1   146-1351       2   2  0  N   59.4   77.5   73.9   0        NP | nucleocapsid protein
+    AFB82772.1        551    1-405          1   146-1360       1   2  0  N   50.6   72.0   73.5   2.2-e154 NP | nucleocapsid protein
+    BAJ11741.1        551    1-405          1   146-1360       1   2  0  N   51.1   71.8   73.5   2.8-e155 NP | nucleocapsid protein
+    BAJ11748.1        551    1-405          1   146-1360       1   2  0  N   50.6   72.0   73.5   2.2-e154 NP | nucleocapsid protein
+    ACF59811.1        551    1-405          1   146-1360       1   2  0  N   50.8   72.3   73.5   5.5-e155 NP | nucleocapsid protein
+    YP_138504.1       543    1-406          1   146-1363       1   2  0  N   57.8   78.8   74.7   0        NP | nucleocapsid protein
+    ADI80723.1        513    1-406          1   146-1363       1   2  0  N   56.1   74.6   79.1   0        NP | nucleocapsid protein
+    YP_001331027.1    545    1-417          1   146-1396       1   2  0  N   67.8   81.0   76.5   0        NP | nucleocapsid protein
+    YP_138511.1       509    1-417          1   146-1396       1   2  0  N   64.0   79.8   81.9   0        NP | nucleocapsid protein
+    DAA06041.1        545    1-417          1   146-1396       1   2  0  N   67.8   81.0   76.5   0        NP | nucleocapsid protein
+    ADI80716.1        523    1-425          1   146-1420       1   2  0  N   57.8   76.4   81.2   0        NP | nucleocapsid protein
+    YP_001249270.1    537    1-425          1   146-1420       1   2  0  N   60.4   77.8   79.1   0        NP | nucleocapsid protein
+    ABQ23934.1        537    1-425          1   146-1420       1   2  0  N   60.4   77.8   79.1   0        NP | nucleocapsid protein
+    Q77IS8.1          549    1-549          1   146-1792       1   2  0  N   98.3   98.9   100.0  0        NP | nucleocapsid protein
+    P21277.1          553    1-553          1   146-1805       2   0  1  N   96.2   97.2   100.0  0        NP | nucleocapsid protein
+        found 1 gene
+
+    found 2 permutations for gene I
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    CBA10119.1        171    1-171          1   1979-2487      2   0  1  N   93.6   94.7   100.0  3.2-e120 I | I protein
+    AEY76114.1        171    1-171          1   1979-2487      2   0  1  N   98.2   98.8   100.0  9.3-e127 I | I protein
+        found 1 gene
+
+    found 6 permutations for gene V
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAK26765.1        224    1-224          1   1979-2650      1   2  0  N   97.7   97.7   100.0  0        V | V protein
+    YP_138513.1       222    123-221        1   2330-2638      2   2  0  N   62.5   76.2   36.0   1.6-e039 V | V protein
+    YP_138506.1       225    124-224        1   2336-2638      2   2  0  N   56.4   73.0   34.6   1.7-e032 V | V protein
+    BAE00052.1        225    124-225        1   2336-2641      2   2  0  N   56.6   77.1   36.8   2.1-e035 V | V protein
+    NP_598402.1       225    124-225        1   2336-2641      2   2  0  N   55.4   77.1   36.8   7.9-e035 V | V protein
+    ABL84841.1        191    20-160         1   2156-2644      2   2  0  N   57.3   70.6   39.2   9.7-e027 V | V protein
+        found 1 gene
+
+    found 9 permutations for gene P
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_054708.1       391    1-391          1   1979-3149      2   0  1  N   97.7   97.9   100.0  0        P | phosphoprotein
+    YP_138512.1       392    123-392        1   2330-3149      4   0  1  N   45.5   70.8   54.3   1.5-e059 P | phosphoprotein
+    NP_599019.1       395    124-395        1   2336-3149      3   0  1  N   44.8   65.8   61.5   2.8-e066 P | phosphoprotein
+    YP_138505.1       395    124-395        1   2336-3149      3   0  1  N   44.6   64.2   59.4   5.2-e061 P | phosphoprotein
+    YP_001249271.1    391    172-390        1   2496-3146      4   3  0  N   50.0   70.5   46.0   2.6-e045 P | phosphoprotein
+    DAA06045.1        404    185-403        1   2496-3146      3   3  0  N   47.9   66.6   49.0   1.6-e049 P | phosphoprotein
+    ABL84843.1        391    172-390        1   2496-3146      4   3  0  N   50.0   70.5   46.0   2.6-e045 P | phosphoprotein
+    YP_001331028.1    404    185-403        1   2496-3146      3   3  0  N   47.9   66.6   49.0   1.6-e049 P | phosphoprotein
+    ADI80710.1        409    204-409        1   2532-3149      1   3  0  N   40.7   60.1   50.3   2.7-e054 P | phosphoprotein
+        found 1 gene
+
+    found 16 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADI80726.1        377    1-372          1   3264-4367      2   3  0  N   41.4   64.5   96.5   9.1-e112 M | membrane protein
+    NP_054710.1       375    1-375          1   3264-4388      1   3  0  N   99.7   100.0  100.0  0        M | membrane protein
+    YP_001331032.1    369    6-369          1   3282-4367      2   3  0  N   46.4   68.7   98.6   1.0-e125 M | membrane protein
+    DAA06046.1        369    6-369          1   3282-4367      2   3  0  N   46.4   68.7   98.6   1.0-e125 M | membrane protein
+    ABQ23935.1        371    6-369          1   3282-4367      2   3  0  N   45.7   68.1   97.3   2.2-e120 M | membrane protein
+    YP_001249275.1    371    6-369          1   3282-4367      2   3  0  N   45.7   68.1   97.3   2.2-e120 M | membrane protein
+    BAJ11751.1        382    33-377         1   3354-4388      1   3  0  N   48.4   66.3   90.3   5.5-e127 M | membrane protein
+    BAJ11744.1        382    33-377         1   3354-4388      1   3  0  N   48.9   66.3   90.3   2.0-e127 M | membrane protein
+    AFB82775.1        382    33-377         1   3354-4388      1   3  0  N   48.4   66.0   90.3   3.1-e126 M | membrane protein
+    ACF59814.1        382    33-377         1   3354-4388      1   3  0  N   48.6   66.3   90.3   4.3-e126 M | membrane protein
+    ADI80719.1        376    37-373         1   3360-4370      1   3  0  N   43.3   64.6   89.6   5.8-e109 M | membrane protein
+    ADI80712.1        378    1-374          1   3255-4370      2   3  0  N   46.1   68.7   92.3   2.4-e127 M | membrane protein
+    NP_598403.1       377    32-373         1   3363-4388      2   3  0  N   43.8   65.5   87.7   9.5-e100 M | membrane protein
+    BAE00053.1        377    32-373         1   3363-4388      2   3  0  N   43.5   65.5   87.7   2.6-e099 M | membrane protein
+    YP_138507.1       382    32-373         1   3363-4388      1   3  0  N   42.1   66.0   89.5   3.4-e104 M | membrane protein
+    YP_138514.1       377    4-373          1   3285-4388      3   3  0  N   43.6   63.9   94.1   2.5-e100 M | membrane protein
+        found 1 gene
+
+    found 15 permutations for gene F
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT81469.1        538    1-538          1   4546-6159      1   1  0  N   96.4   98.3   100.0  0        F | fusion protein
+    ABQ23936.1        537    14-488         1   4588-6012      1   1  0  N   46.9   68.6   88.4   3.5-e163 F | fusion protein
+    YP_001249276.1    537    14-488         1   4588-6012      1   1  0  N   46.9   68.6   88.4   3.5-e163 F | fusion protein
+    ADI80727.1        537    16-473         1   4594-5967      1   1  0  N   39.5   61.1   85.2   4.1-e123 F | fusion protein
+    DAA06047.1        541    23-473         1   4603-5955      1   1  0  N   45.4   66.2   83.3   2.1-e151 F | fusion protein
+    YP_001331033.1    541    23-473         1   4603-5955      1   1  0  N   45.4   66.2   83.3   2.1-e151 F | fusion protein
+    BAJ11745.1        543    21-478         1   4603-5976      1   1  0  N   42.3   60.9   84.3   2.3-e129 F | fusion protein
+    AFB82776.1        543    21-478         1   4603-5976      1   1  0  N   43.2   62.2   84.3   3.9-e134 F | fusion protein
+    BAJ11752.1        543    21-478         1   4603-5976      1   1  0  N   43.2   62.2   84.3   2.0-e134 F | fusion protein
+    ACF59815.1        543    21-478         1   4603-5976      1   1  0  N   43.2   62.2   84.3   2.0-e134 F | fusion protein
+    ADI80720.1        539    23-502         1   4603-6042      2   1  0  N   39.3   64.1   84.7   9.4-e123 F | fusion protein
+    YP_138508.1       561    32-477         1   4618-5955      1   1  0  N   44.3   66.5   79.5   9.4-e146 F | fusion protein
+    BAE00054.1        551    29-475         1   4618-5958      1   1  0  N   43.1   67.1   81.1   5.0-e142 F | fusion protein
+    NP_598404.1       551    29-475         1   4618-5958      1   1  0  N   43.1   67.1   81.1   5.0-e142 F | fusion protein
+    YP_138515.1       529    25-499         1   4618-6042      1   1  0  N   46.7   67.3   89.7   2.8-e162 F | fusion protein
+        found 1 gene
+
+    found 9 permutations for gene SH
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAD13721.1        50     1-49           1   6268-6414      1   1  0  N   85.7   91.8   98.0   1.5-e025 SH | small hydrophobic protein
+    AAC56597.1        57     1-57           1   6268-6438      1   1  0  N   78.9   82.4   100.0  9.7-e027 SH | small hydrophobic protein
+    AAL68456.1        57     1-57           1   6268-6438      1   1  0  N   85.9   92.9   100.0  1.9-e033 SH | small hydrophobic protein
+    AAL68460.1        57     1-57           1   6268-6438      1   1  0  N   84.2   87.7   100.0  3.3-e031 SH | small hydrophobic protein
+    P28087.1          57     1-57           1   6268-6438      1   1  0  N   89.4   96.4   100.0  2.5-e034 SH | small hydrophobic protein
+    P69465.1          57     1-57           1   6268-6438      1   1  0  N   78.9   85.9   100.0  1.7-e027 SH | small hydrophobic protein
+    P69188.1          57     1-57           1   6268-6438      1   1  0  N   78.9   89.4   100.0  5.6-e029 SH | small hydrophobic protein
+    AAL68490.1        57     1-57           1   6268-6438      1   1  0  N   80.7   85.9   100.0  7.9-e029 SH | small hydrophobic protein
+    BAD13736.1        85     1-85           1   6268-6522      1   1  0  N   77.6   84.7   100.0  3.3-e045 SH | small hydrophobic protein
+        found 1 gene
+
+    found 13 permutations for gene HN
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT81471.1        582    1-582          1   6614-8359      1   2  0  N   95.7   98.4   100.0  0        HN | hemagglutinin-neuraminidase
+    YP_138509.1       568    9-568          1   6686-8359      3   2  0  N   45.9   67.7   67.7   3.7-e173 HN | hemagglutinin-neuraminidase
+    NP_598405.1       571    72-569         1   6863-8350      4   2  0  N   45.9   66.0   81.6   5.1-e142 HN | hemagglutinin-neuraminidase
+    BAE00055.1        571    72-569         1   6863-8350      4   2  0  N   45.9   66.0   81.6   5.1-e142 HN | hemagglutinin-neuraminidase
+    YP_138517.1       565    71-565         1   6875-8359      3   2  0  N   50.1   69.7   84.7   4.0-e179 HN | hemagglutinin-neuraminidase
+    BAJ11746.1        574    118-567        1   6980-8329      5   2  0  N   50.4   66.4   54.5   2.0-e110 HN | hemagglutinin-neuraminidase
+    AFB82777.1        574    121-571        1   6989-8341      5   2  0  N   47.9   65.7   67.5   8.2-e122 HN | hemagglutinin-neuraminidase
+    ACF59816.1        579    121-571        1   6989-8341      4   2  0  N   46.6   64.5   70.6   1.1-e128 HN | hemagglutinin-neuraminidase
+    BAJ11753.1        574    121-571        1   6989-8341      5   2  0  N   47.9   65.7   67.5   2.3-e121 HN | hemagglutinin-neuraminidase
+    YP_001249277.1    582    159-574        1   7097-8350      5   2  0  N   54.6   70.1   57.5   2.4-e147 HN | hemagglutinin-neuraminidase
+    ABQ23937.1        582    159-574        1   7097-8350      5   2  0  N   54.6   70.1   57.5   2.4-e147 HN | hemagglutinin-neuraminidase
+    DAA06048.1        576    158-572        1   7106-8356      3   2  0  N   54.3   68.7   61.6   5.1-e148 HN | hemagglutinin-neuraminidase
+    YP_001331034.1    576    158-572        1   7106-8356      3   2  0  N   54.3   68.7   61.6   5.1-e148 HN | hemagglutinin-neuraminidase
+        found 1 gene
+
+    found 16 permutations for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADI80729.1        2271   1-2002         1   8438-14419     12  2  0  N   59.4   77.3   79.4   0        L | large protein
+    ADI80715.1        2274   1-2006         1   8438-14419     10  2  0  N   61.3   77.2   76.0   0        L | large protein
+    DAA06049.1        2251   1-2045         1   8438-14590     8   2  0  N   61.4   77.2   85.8   0        L | large protein
+    YP_001331035.1    2251   1-2045         1   8438-14590     8   2  0  N   61.4   77.2   85.8   0        L | large protein
+    BAJ11754.1        2279   1-2279         1   8438-15220     13  0  2  N   58.4   75.8   89.7   0        L | large protein
+    AFB82778.1        2279   1-2279         1   8438-15220     13  0  2  N   58.6   76.0   89.7   0        L | large protein
+    ACF59817.1        2279   1-2279         1   8438-15220     11  2  0  N   59.7   76.9   86.6   0        L | large protein
+    BAJ11747.1        2279   1-2181         1   8438-14950     11  2  0  N   60.0   77.0   85.4   0        L | large protein
+    YP_001249278.1    2253   1-2221         1   8438-15118     6   2  0  N   64.3   79.3   88.1   0        L | large protein
+    ABQ23938.1        2253   1-2221         1   8438-15118     6   2  0  N   64.3   79.3   88.1   0        L | large protein
+    ADI80722.1        2267   1-2267         1   8438-15220     10  2  0  N   59.4   76.3   82.7   0        L | large protein
+    NP_598406.1       2262   1-2230         1   8438-15130     9   2  0  N   61.9   77.1   93.1   0        L | large protein
+    YP_138510.1       2269   1-2237         1   8438-15130     9   2  0  N   61.9   77.6   93.7   0        L | large protein
+    YP_138518.1       2255   1-2225         1   8438-15130     6   2  0  N   61.0   77.1   95.3   0        L | large protein
+    BAE00056.1        2263   1-2231         1   8438-15130     8   2  0  N   61.9   77.1   94.4   0        L | large protein
+    P30929.1          2261   1-2261         1   8438-15220     1   2  0  N   99.2   99.5   100.0  0        L | large protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KF738114.1              15384      9            0      15471           5148           98.2             99.5          100.0   mmp_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KF738114.1.1       98.4   99.3   100.0  0.0   0.0   0.0   146..1795        549    549    Q77IS8.1          NP | nucleocapsid protein
+KF738114.1.2       98.8   99.4   100.0  0.0   0.0   0.0   1979..2490       171    171    AEY76114.1        I | I protein
+                    transcription exception 2435..2441:AAGAGGGGGGG
+KF738114.1.3       97.8   98.9   100.0  0.0   0.0   0.0   1979..2653       224    224    BAK26765.1        V | V protein
+KF738114.1.4       97.7   99.0   100.0  0.0   0.0   0.0   1979..3152       391    391    NP_054708.1       P | phosphoprotein
+                    transcription exception 2435..2441:AAGAGGGGG
+KF738114.1.5       99.7   99.9   100.0  0.0   0.0   0.0   3264..4391       375    375    NP_054710.1       M | membrane protein
+KF738114.1.6       96.5   98.9   100.0  0.0   0.0   0.0   4546..6162       538    538    AAT81469.1        F | fusion protein
+KF738114.1.7       89.5   98.2   100.0  0.0   0.0   0.0   6268..6441       57     57     P28087.1          SH | small hydrophobic protein
+KF738114.1.8       95.7   99.5   100.0  0.0   0.0   0.0   6614..8362       582    582    AAT81471.1        HN | hemagglutinin-neuraminidase
+KF738114.1.9       99.2   99.7   100.0  0.0   0.0   0.0   8438..15223      2261   2261   P30929.1          L | large protein
+
+
+genomic sequence KF738113.1, length=15384
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 17 permutations for gene NP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADI80709.1        519    1-401          1   146-1348       1   2  0  N   59.8   80.0   77.2   0        NP | nucleocapsid protein
+    BAE00051.1        543    1-402          1   146-1351       1   2  0  N   60.1   78.6   74.0   0        NP | nucleocapsid protein
+    NP_598401.1       542    1-401          1   146-1351       2   2  0  N   59.4   77.5   73.9   0        NP | nucleocapsid protein
+    AFB82772.1        551    1-405          1   146-1360       1   2  0  N   50.6   72.0   73.5   2.2-e154 NP | nucleocapsid protein
+    BAJ11741.1        551    1-405          1   146-1360       1   2  0  N   51.1   71.8   73.5   2.8-e155 NP | nucleocapsid protein
+    BAJ11748.1        551    1-405          1   146-1360       1   2  0  N   50.6   72.0   73.5   2.2-e154 NP | nucleocapsid protein
+    ACF59811.1        551    1-405          1   146-1360       1   2  0  N   50.8   72.3   73.5   5.5-e155 NP | nucleocapsid protein
+    YP_138504.1       543    1-406          1   146-1363       1   2  0  N   57.8   78.8   74.7   0        NP | nucleocapsid protein
+    ADI80723.1        513    1-406          1   146-1363       1   2  0  N   56.1   74.6   79.1   0        NP | nucleocapsid protein
+    YP_001331027.1    545    1-417          1   146-1396       1   2  0  N   67.8   81.0   76.5   0        NP | nucleocapsid protein
+    YP_138511.1       509    1-417          1   146-1396       1   2  0  N   64.0   79.8   81.9   0        NP | nucleocapsid protein
+    DAA06041.1        545    1-417          1   146-1396       1   2  0  N   67.8   81.0   76.5   0        NP | nucleocapsid protein
+    ADI80716.1        523    1-425          1   146-1420       1   2  0  N   57.8   76.4   81.2   0        NP | nucleocapsid protein
+    YP_001249270.1    537    1-425          1   146-1420       1   2  0  N   60.4   77.8   79.1   0        NP | nucleocapsid protein
+    ABQ23934.1        537    1-425          1   146-1420       1   2  0  N   60.4   77.8   79.1   0        NP | nucleocapsid protein
+    Q77IS8.1          549    1-549          1   146-1792       1   2  0  N   97.9   98.5   100.0  0        NP | nucleocapsid protein
+    P21277.1          553    1-553          1   146-1805       2   0  1  N   96.2   97.2   100.0  0        NP | nucleocapsid protein
+        found 1 gene
+
+    found 2 permutations for gene I
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    CBA10119.1        171    1-171          1   1979-2487      2   0  1  N   92.4   94.2   100.0  1.9-e118 I | I protein
+    AEY76114.1        171    1-171          1   1979-2487      2   0  1  N   96.5   97.6   100.0  2.2-e124 I | I protein
+        found 1 gene
+
+    found 6 permutations for gene V
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAK26765.1        224    1-224          1   1979-2650      1   2  0  N   97.3   97.7   100.0  0        V | V protein
+    YP_138513.1       222    123-221        1   2330-2638      2   2  0  N   61.2   76.2   36.0   4.5-e039 V | V protein
+    YP_138506.1       225    124-224        1   2336-2638      2   2  0  N   55.1   73.0   34.6   1.2-e032 V | V protein
+    BAE00052.1        225    124-225        1   2336-2641      2   2  0  N   55.4   77.1   36.8   5.7-e035 V | V protein
+    NP_598402.1       225    124-225        1   2336-2641      2   2  0  N   54.2   77.1   36.8   2.2-e034 V | V protein
+    ABL84841.1        191    20-160         1   2156-2644      2   2  0  N   57.3   70.6   39.2   9.7-e027 V | V protein
+        found 1 gene
+
+    found 10 permutations for gene P
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_054708.1       391    1-391          1   1979-3149      2   0  1  N   96.4   97.4   100.0  0        P | phosphoprotein
+    YP_138512.1       392    123-392        1   2330-3149      4   0  1  N   44.6   70.8   54.3   2.2-e058 P | phosphoprotein
+    NP_599019.1       395    124-395        1   2336-3149      3   0  1  N   44.0   65.4   61.5   5.8-e065 P | phosphoprotein
+    YP_138505.1       395    124-395        1   2336-3149      3   0  1  N   44.2   64.3   58.9   2.8-e060 P | phosphoprotein
+    ADI80724.1        401    181-313        1   2487-2885      1   3  0  N   43.6   61.6   33.1   3.1-e028 P | phosphoprotein
+    YP_001249271.1    391    172-390        1   2496-3146      4   3  0  N   50.0   70.5   46.0   5.1-e045 P | phosphoprotein
+    DAA06045.1        404    185-403        1   2496-3146      3   3  0  N   47.9   66.6   49.0   3.1-e049 P | phosphoprotein
+    ABL84843.1        391    172-390        1   2496-3146      4   3  0  N   50.0   70.5   46.0   5.1-e045 P | phosphoprotein
+    YP_001331028.1    404    185-403        1   2496-3146      3   3  0  N   47.9   66.6   49.0   3.1-e049 P | phosphoprotein
+    ADI80710.1        409    204-409        1   2532-3149      1   3  0  N   40.7   60.1   50.3   1.1-e053 P | phosphoprotein
+        found 1 gene
+
+    found 16 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADI80726.1        377    1-372          1   3264-4367      2   3  0  N   41.4   64.5   96.5   9.1-e112 M | membrane protein
+    NP_054710.1       375    1-375          1   3264-4388      1   3  0  N   99.7   100.0  100.0  0        M | membrane protein
+    YP_001331032.1    369    6-369          1   3282-4367      2   3  0  N   46.4   68.7   98.6   1.0-e125 M | membrane protein
+    DAA06046.1        369    6-369          1   3282-4367      2   3  0  N   46.4   68.7   98.6   1.0-e125 M | membrane protein
+    ABQ23935.1        371    6-369          1   3282-4367      2   3  0  N   45.7   68.1   97.3   2.2-e120 M | membrane protein
+    YP_001249275.1    371    6-369          1   3282-4367      2   3  0  N   45.7   68.1   97.3   2.2-e120 M | membrane protein
+    BAJ11751.1        382    33-377         1   3354-4388      1   3  0  N   48.4   66.3   90.3   5.5-e127 M | membrane protein
+    BAJ11744.1        382    33-377         1   3354-4388      1   3  0  N   48.9   66.3   90.3   2.0-e127 M | membrane protein
+    AFB82775.1        382    33-377         1   3354-4388      1   3  0  N   48.4   66.0   90.3   3.1-e126 M | membrane protein
+    ACF59814.1        382    33-377         1   3354-4388      1   3  0  N   48.6   66.3   90.3   4.3-e126 M | membrane protein
+    ADI80719.1        376    37-373         1   3360-4370      1   3  0  N   43.3   64.6   89.6   5.8-e109 M | membrane protein
+    ADI80712.1        378    1-374          1   3255-4370      2   3  0  N   46.1   68.7   92.3   2.4-e127 M | membrane protein
+    NP_598403.1       377    32-373         1   3363-4388      2   3  0  N   43.8   65.5   87.7   9.5-e100 M | membrane protein
+    BAE00053.1        377    32-373         1   3363-4388      2   3  0  N   43.5   65.5   87.7   2.6-e099 M | membrane protein
+    YP_138507.1       382    32-373         1   3363-4388      1   3  0  N   42.1   66.0   89.5   3.4-e104 M | membrane protein
+    YP_138514.1       377    4-373          1   3285-4388      3   3  0  N   43.6   63.9   94.1   2.5-e100 M | membrane protein
+        found 1 gene
+
+    found 15 permutations for gene F
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT81469.1        538    1-538          1   4546-6159      1   1  0  N   97.5   98.6   100.0  0        F | fusion protein
+    ADI80720.1        539    6-227          1   4552-5217      1   1  0  N   44.5   67.1   41.1   3.4-e123 F | fusion protein
+    ADI80727.1        537    16-473         1   4594-5967      1   1  0  N   39.0   61.1   85.2   7.1-e121 F | fusion protein
+    DAA06047.1        541    23-473         1   4603-5955      1   1  0  N   45.4   66.0   83.3   8.1-e151 F | fusion protein
+    YP_001331033.1    541    23-473         1   4603-5955      1   1  0  N   45.4   66.0   83.3   8.1-e151 F | fusion protein
+    BAJ11745.1        543    21-478         1   4603-5976      1   1  0  N   41.7   60.9   84.3   1.4-e127 F | fusion protein
+    AFB82776.1        543    21-478         1   4603-5976      1   1  0  N   42.7   62.2   84.3   2.5-e134 F | fusion protein
+    BAJ11752.1        543    21-478         1   4603-5976      1   1  0  N   42.5   62.2   84.3   1.2-e132 F | fusion protein
+    ACF59815.1        543    21-478         1   4603-5976      1   1  0  N   42.7   62.2   84.3   4.9-e134 F | fusion protein
+    YP_138508.1       561    30-477         1   4612-5955      1   1  0  N   44.6   66.7   79.8   6.1-e147 F | fusion protein
+    BAE00054.1        551    29-475         1   4618-5958      1   1  0  N   43.6   67.1   81.1   4.5-e143 F | fusion protein
+    NP_598404.1       551    29-475         1   4618-5958      1   1  0  N   43.6   67.1   81.1   4.5-e143 F | fusion protein
+    ABQ23936.1        537    24-488         1   4618-6012      1   1  0  N   47.5   69.2   86.5   6.4-e164 F | fusion protein
+    YP_001249276.1    537    24-488         1   4618-6012      1   1  0  N   47.5   69.2   86.5   6.4-e164 F | fusion protein
+    YP_138515.1       529    25-503         1   4618-6054      1   1  0  N   46.9   67.4   90.5   1.3-e163 F | fusion protein
+        found 1 gene
+
+    found 9 permutations for gene SH
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAD13721.1        50     1-49           1   6268-6414      1   1  0  N   87.7   89.7   98.0   4.2-e025 SH | small hydrophobic protein
+    AAC56597.1        57     1-57           1   6268-6438      1   1  0  N   78.9   80.7   100.0  5.4-e026 SH | small hydrophobic protein
+    AAL68456.1        57     1-57           1   6268-6438      1   1  0  N   85.9   91.2   100.0  1.1-e032 SH | small hydrophobic protein
+    AAL68460.1        57     1-57           1   6268-6438      1   1  0  N   84.2   85.9   100.0  1.8-e030 SH | small hydrophobic protein
+    P28087.1          57     1-57           1   6268-6438      1   1  0  N   92.9   94.7   100.0  8.8-e035 SH | small hydrophobic protein
+    P69465.1          57     1-57           1   6268-6438      1   1  0  N   78.9   84.2   100.0  9.7-e027 SH | small hydrophobic protein
+    P69188.1          57     1-57           1   6268-6438      1   1  0  N   82.4   87.7   100.0  2.0-e029 SH | small hydrophobic protein
+    AAL68490.1        57     1-57           1   6268-6438      1   1  0  N   82.4   85.9   100.0  7.9-e029 SH | small hydrophobic protein
+    BAD13736.1        85     1-85           1   6268-6522      1   1  0  N   80.0   85.8   100.0  4.2-e046 SH | small hydrophobic protein
+        found 1 gene
+
+    found 13 permutations for gene HN
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT81471.1        582    1-582          1   6614-8359      1   2  0  N   96.7   98.6   100.0  0        HN | hemagglutinin-neuraminidase
+    YP_138509.1       568    9-568          1   6686-8359      3   2  0  N   45.7   67.7   67.7   2.4-e170 HN | hemagglutinin-neuraminidase
+    NP_598405.1       571    72-569         1   6863-8350      4   2  0  N   45.7   65.8   81.6   4.3-e140 HN | hemagglutinin-neuraminidase
+    BAE00055.1        571    72-569         1   6863-8350      4   2  0  N   45.7   65.8   81.6   4.3-e140 HN | hemagglutinin-neuraminidase
+    YP_138517.1       565    71-565         1   6875-8359      3   2  0  N   49.8   69.5   84.7   1.7-e177 HN | hemagglutinin-neuraminidase
+    BAJ11746.1        574    118-567        1   6980-8329      6   2  0  N   53.4   70.0   50.5   2.5-e106 HN | hemagglutinin-neuraminidase
+    AFB82777.1        574    121-571        1   6989-8341      6   2  0  N   50.0   68.0   63.7   9.8-e118 HN | hemagglutinin-neuraminidase
+    ACF59816.1        579    121-571        1   6989-8341      5   2  0  N   48.9   66.5   66.6   4.8-e125 HN | hemagglutinin-neuraminidase
+    BAJ11753.1        574    121-571        1   6989-8341      6   2  0  N   50.0   68.0   63.7   2.7-e117 HN | hemagglutinin-neuraminidase
+    YP_001249277.1    582    159-484        1   7097-8074      3   2  0  N   57.4   71.8   46.3   2.5-e149 HN | hemagglutinin-neuraminidase
+    ABQ23937.1        582    159-484        1   7097-8074      3   2  0  N   57.4   71.8   46.3   2.5-e149 HN | hemagglutinin-neuraminidase
+    DAA06048.1        576    158-572        1   7106-8356      3   2  0  N   54.2   68.3   61.4   5.5-e147 HN | hemagglutinin-neuraminidase
+    YP_001331034.1    576    158-572        1   7106-8356      3   2  0  N   54.2   68.3   61.4   5.5-e147 HN | hemagglutinin-neuraminidase
+        found 1 gene
+
+    found 16 permutations for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADI80729.1        2271   1-2002         1   8438-14419     12  2  0  N   59.5   77.3   79.4   0        L | large protein
+    ADI80715.1        2274   1-2006         1   8438-14419     10  2  0  N   61.3   77.2   76.2   0        L | large protein
+    DAA06049.1        2251   1-2045         1   8438-14590     8   2  0  N   61.4   77.3   85.8   0        L | large protein
+    YP_001331035.1    2251   1-2045         1   8438-14590     8   2  0  N   61.4   77.3   85.8   0        L | large protein
+    BAJ11754.1        2279   1-2279         1   8438-15220     13  0  2  N   58.4   75.9   89.7   0        L | large protein
+    AFB82778.1        2279   1-2279         1   8438-15220     13  0  2  N   58.6   76.1   89.7   0        L | large protein
+    ACF59817.1        2279   1-2279         1   8438-15220     11  2  0  N   59.7   77.0   86.6   0        L | large protein
+    BAJ11747.1        2279   1-2181         1   8438-14950     11  2  0  N   60.0   77.0   85.4   0        L | large protein
+    YP_001249278.1    2253   1-2221         1   8438-15118     6   2  0  N   64.3   79.3   88.1   0        L | large protein
+    ABQ23938.1        2253   1-2221         1   8438-15118     6   2  0  N   64.3   79.3   88.1   0        L | large protein
+    ADI80722.1        2267   1-2267         1   8438-15220     10  2  0  N   59.4   76.4   82.7   0        L | large protein
+    NP_598406.1       2262   1-2230         1   8438-15130     9   2  0  N   62.0   77.1   93.1   0        L | large protein
+    YP_138510.1       2269   1-2237         1   8438-15130     9   2  0  N   61.9   77.6   93.7   0        L | large protein
+    YP_138518.1       2255   1-2225         1   8438-15130     7   2  0  N   61.0   77.3   95.0   0        L | large protein
+    BAE00056.1        2263   1-2231         1   8438-15130     8   2  0  N   62.0   77.1   94.4   0        L | large protein
+    P30929.1          2261   1-2261         1   8438-15220     1   2  0  N   99.5   99.6   100.0  0        L | large protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KF738113.1              15384      8            1      14955           4977           98.5             99.5          100.0   mmp_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KF738113.1.1       98.0   99.1   100.0  0.0   0.0   0.0   146..1795        549    549    Q77IS8.1          NP | nucleocapsid protein
+KF738113.1.2       97.1   99.1   100.0  0.0   0.0   0.0   1979..2487       171    171    AEY76114.1        I | I protein
+                    transcription exception 2435..2441:AAGAGGGGGGG
+                    could not find valid stop codon
+KF738113.1.3       97.3   98.9   100.0  0.0   0.0   0.0   1979..2653       224    224    BAK26765.1        V | V protein
+KF738113.1.4       96.4   98.7   100.0  0.0   0.0   0.0   1979..3152       391    391    NP_054708.1       P | phosphoprotein
+                    transcription exception 2435..2441:AAGAGGGGG
+KF738113.1.5       99.7   99.9   100.0  0.0   0.0   0.0   3264..4391       375    375    NP_054710.1       M | membrane protein
+KF738113.1.6       97.6   99.2   100.0  0.0   0.0   0.0   4546..6162       538    538    AAT81469.1        F | fusion protein
+KF738113.1.7       93.0   98.2   100.0  0.0   0.0   0.0   6268..6441       57     57     P28087.1          SH | small hydrophobic protein
+KF738113.1.8       96.7   99.4   100.0  0.0   0.0   0.0   6614..8362       582    582    AAT81471.1        HN | hemagglutinin-neuraminidase
+KF738113.1.9       99.6   99.8   100.0  0.0   0.0   0.0   8438..15223      2261   2261   P30929.1          L | large protein
+
+
+genomic sequence KJ810514.1, length=15263
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 17 permutations for gene NP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADI80709.1        519    1-401          1   84-1285        2   0  1  N   59.7   79.7   77.0   0        NP | nucleocapsid protein
+    BAE00051.1        543    1-402          1   84-1288        2   0  1  N   60.7   78.8   73.1   0        NP | nucleocapsid protein
+    NP_598401.1       542    1-401          1   84-1288        3   0  1  N   59.9   77.7   73.0   0        NP | nucleocapsid protein
+    AFB82772.1        551    1-405          1   84-1297        2   0  1  N   50.4   72.6   72.9   2.7-e148 NP | nucleocapsid protein
+    BAJ11741.1        551    1-405          1   84-1297        2   0  1  N   50.9   72.3   72.9   3.5-e149 NP | nucleocapsid protein
+    BAJ11748.1        551    1-405          1   84-1297        2   0  1  N   50.4   72.6   72.9   2.7-e148 NP | nucleocapsid protein
+    ACF59811.1        551    1-405          1   84-1297        2   0  1  N   50.7   72.8   72.9   6.8-e149 NP | nucleocapsid protein
+    YP_138504.1       543    1-406          1   84-1300        2   0  1  N   58.1   79.0   73.8   0        NP | nucleocapsid protein
+    ADI80723.1        513    1-406          1   84-1300        2   0  1  N   55.9   74.8   78.3   7.5-e174 NP | nucleocapsid protein
+    YP_001331027.1    545    1-417          1   84-1333        2   0  1  N   67.5   81.0   76.3   0        NP | nucleocapsid protein
+    YP_138511.1       509    1-417          1   84-1333        2   0  1  N   63.9   79.8   81.7   0        NP | nucleocapsid protein
+    DAA06041.1        545    1-417          1   84-1333        2   0  1  N   67.5   81.0   76.3   0        NP | nucleocapsid protein
+    ADI80716.1        523    1-425          1   84-1357        2   0  1  N   57.7   76.7   80.4   0        NP | nucleocapsid protein
+    YP_001249270.1    537    1-425          1   84-1357        2   0  1  N   60.1   77.8   78.9   0        NP | nucleocapsid protein
+    ABQ23934.1        537    1-425          1   84-1357        2   0  1  N   60.1   77.8   78.9   0        NP | nucleocapsid protein
+    Q77IS8.1          549    1-549          1   84-1729        2   0  1  N   97.8   98.9   99.8   0        NP | nucleocapsid protein
+    P21277.1          553    1-553          1   84-1742        3   0  2  N   95.6   97.4   99.8   0        NP | nucleocapsid protein
+        found 1 gene
+
+    found 2 permutations for gene I
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    CBA10119.1        171    1-171          1   1916-2424      2   0  1  N   91.9   93.1   100.0  2.9-e117 I | I protein
+    AEY76114.1        171    1-171          1   1916-2424      2   0  1  N   96.5   97.1   100.0  8.6-e124 I | I protein
+        found 1 gene
+
+    found 6 permutations for gene V
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAK26765.1        224    1-224          1   1916-2587      1   2  0  N   97.3   97.3   100.0  0        V | V protein
+    YP_138513.1       222    123-221        1   2267-2575      2   2  0  N   62.5   76.2   36.0   1.6-e039 V | V protein
+    YP_138506.1       225    124-224        1   2273-2575      2   2  0  N   56.4   73.0   34.6   4.4-e033 V | V protein
+    BAE00052.1        225    124-225        1   2273-2578      2   2  0  N   56.6   77.1   36.8   2.0-e035 V | V protein
+    NP_598402.1       225    124-225        1   2273-2578      2   2  0  N   55.4   77.1   36.8   7.7-e035 V | V protein
+    ABL84841.1        191    20-160         1   2093-2581      2   2  0  N   57.3   70.6   39.2   9.6-e027 V | V protein
+        found 1 gene
+
+    found 9 permutations for gene P
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_054708.1       391    1-391          1   1916-3086      2   0  1  N   97.4   97.9   99.7   0        P | phosphoprotein
+    YP_138512.1       392    123-392        1   2267-3086      3   0  1  N   44.1   69.9   52.5   1.4-e059 P | phosphoprotein
+    NP_599019.1       395    124-395        1   2273-3086      3   0  1  N   44.8   65.8   61.5   2.7-e066 P | phosphoprotein
+    YP_138505.1       395    124-395        1   2273-3086      3   0  1  N   44.6   64.2   59.4   1.3-e061 P | phosphoprotein
+    YP_001249271.1    391    172-390        1   2433-3083      4   3  0  N   50.0   70.5   46.0   2.6-e045 P | phosphoprotein
+    DAA06045.1        404    185-403        1   2433-3083      3   3  0  N   47.9   66.6   49.0   2.2-e049 P | phosphoprotein
+    ABL84843.1        391    172-390        1   2433-3083      4   3  0  N   50.0   70.5   46.0   2.6-e045 P | phosphoprotein
+    YP_001331028.1    404    185-403        1   2433-3083      3   3  0  N   47.9   66.6   49.0   2.2-e049 P | phosphoprotein
+    ADI80710.1        409    204-409        1   2469-3086      1   3  0  N   40.7   60.1   50.3   3.8-e054 P | phosphoprotein
+        found 1 gene
+
+    found 16 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADI80726.1        377    1-372          1   3201-4304      2   3  0  N   41.4   64.5   96.5   9.0-e112 M | membrane protein
+    NP_054710.1       375    1-375          1   3201-4325      1   3  0  N   99.7   100.0  100.0  0        M | membrane protein
+    YP_001331032.1    369    6-369          1   3219-4304      2   3  0  N   46.4   68.7   98.6   1.0-e125 M | membrane protein
+    DAA06046.1        369    6-369          1   3219-4304      2   3  0  N   46.4   68.7   98.6   1.0-e125 M | membrane protein
+    ABQ23935.1        371    6-369          1   3219-4304      2   3  0  N   45.7   68.1   97.3   2.2-e120 M | membrane protein
+    YP_001249275.1    371    6-369          1   3219-4304      2   3  0  N   45.7   68.1   97.3   2.2-e120 M | membrane protein
+    BAJ11751.1        382    33-377         1   3291-4325      1   3  0  N   48.4   66.3   90.3   5.5-e127 M | membrane protein
+    BAJ11744.1        382    33-377         1   3291-4325      1   3  0  N   48.9   66.3   90.3   2.0-e127 M | membrane protein
+    AFB82775.1        382    33-377         1   3291-4325      1   3  0  N   48.4   66.0   90.3   3.0-e126 M | membrane protein
+    ACF59814.1        382    33-377         1   3291-4325      1   3  0  N   48.6   66.3   90.3   4.3-e126 M | membrane protein
+    ADI80719.1        376    37-373         1   3297-4307      1   3  0  N   43.3   64.6   89.6   5.8-e109 M | membrane protein
+    ADI80712.1        378    2-374          1   3195-4307      2   3  0  N   46.2   68.6   92.0   2.3-e127 M | membrane protein
+    NP_598403.1       377    32-373         1   3300-4325      2   3  0  N   43.8   65.5   87.7   9.4-e100 M | membrane protein
+    BAE00053.1        377    32-373         1   3300-4325      2   3  0  N   43.5   65.5   87.7   2.6-e099 M | membrane protein
+    YP_138507.1       382    32-373         1   3300-4325      1   3  0  N   42.1   66.0   89.5   3.4-e104 M | membrane protein
+    YP_138514.1       377    4-373          1   3222-4325      3   3  0  N   43.6   63.9   94.1   2.5-e100 M | membrane protein
+        found 1 gene
+
+    found 15 permutations for gene F
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT81469.1        538    1-538          1   4483-6096      1   1  0  N   96.0   98.6   100.0  0        F | fusion protein
+    ADI80727.1        537    16-473         1   4531-5904      1   1  0  N   39.3   61.1   85.2   1.1-e122 F | fusion protein
+    DAA06047.1        541    23-473         1   4540-5892      1   1  0  N   45.4   66.2   83.3   2.9-e151 F | fusion protein
+    YP_001331033.1    541    23-473         1   4540-5892      1   1  0  N   45.4   66.2   83.3   2.9-e151 F | fusion protein
+    BAJ11745.1        543    21-478         1   4540-5913      1   1  0  N   42.3   60.9   84.3   2.3-e129 F | fusion protein
+    AFB82776.1        543    21-478         1   4540-5913      1   1  0  N   43.2   62.2   84.3   1.6-e135 F | fusion protein
+    BAJ11752.1        543    21-478         1   4540-5913      1   1  0  N   43.2   62.2   84.3   2.0-e134 F | fusion protein
+    ACF59815.1        543    21-478         1   4540-5913      1   1  0  N   43.2   62.2   84.3   3.2-e135 F | fusion protein
+    ADI80720.1        539    23-502         1   4540-5979      2   1  0  N   39.6   64.1   84.7   6.6-e123 F | fusion protein
+    YP_138508.1       561    32-477         1   4555-5892      1   1  0  N   44.3   66.5   79.5   1.3-e145 F | fusion protein
+    BAE00054.1        551    29-475         1   4555-5895      1   1  0  N   43.1   67.1   81.1   7.0-e142 F | fusion protein
+    NP_598404.1       551    29-475         1   4555-5895      1   1  0  N   43.1   67.1   81.1   7.0-e142 F | fusion protein
+    ABQ23936.1        537    24-488         1   4555-5949      1   1  0  N   47.0   69.0   86.5   7.7-e162 F | fusion protein
+    YP_001249276.1    537    24-488         1   4555-5949      1   1  0  N   47.0   69.0   86.5   7.7-e162 F | fusion protein
+    YP_138515.1       529    25-503         1   4555-5991      1   1  0  N   46.9   67.4   90.5   1.8-e163 F | fusion protein
+        found 1 gene
+
+    found 9 permutations for gene SH
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAD13721.1        50     1-49           1   6205-6351      1   1  0  N   85.7   89.7   98.0   3.0-e025 SH | small hydrophobic protein
+    AAC56597.1        57     1-57           1   6205-6375      1   1  0  N   78.9   82.4   100.0  2.4-e027 SH | small hydrophobic protein
+    AAL68456.1        57     1-57           1   6205-6375      1   1  0  N   84.2   91.2   100.0  1.5-e032 SH | small hydrophobic protein
+    AAL68460.1        57     1-57           1   6205-6375      1   1  0  N   84.2   85.9   100.0  9.1-e031 SH | small hydrophobic protein
+    P28087.1          57     1-57           1   6205-6375      1   1  0  N   87.7   94.7   100.0  1.9-e033 SH | small hydrophobic protein
+    P69465.1          57     1-57           1   6205-6375      1   1  0  N   77.1   84.2   100.0  1.4-e026 SH | small hydrophobic protein
+    P69188.1          57     1-57           1   6205-6375      1   1  0  N   78.9   87.7   100.0  1.1-e028 SH | small hydrophobic protein
+    AAL68490.1        57     1-57           1   6205-6375      1   1  0  N   82.4   87.7   100.0  1.0-e029 SH | small hydrophobic protein
+    BAD13736.1        85     1-85           1   6205-6459      1   1  0  N   76.4   83.5   100.0  7.1-e044 SH | small hydrophobic protein
+        found 1 gene
+
+    found 13 permutations for gene HN
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT81471.1        582    1-582          1   6551-8296      1   2  0  N   95.5   98.1   100.0  0        HN | hemagglutinin-neuraminidase
+    YP_138509.1       568    9-568          1   6623-8296      3   2  0  N   45.4   67.5   67.7   1.2-e170 HN | hemagglutinin-neuraminidase
+    YP_138517.1       565    71-565         1   6812-8296      3   2  0  N   49.4   69.3   84.7   9.4-e177 HN | hemagglutinin-neuraminidase
+    BAJ11746.1        574    118-567        1   6917-8266      5   2  0  N   49.8   66.4   54.5   2.2-e108 HN | hemagglutinin-neuraminidase
+    AFB82777.1        574    14-571         1   6611-8278      5   2  0  N   50.0   70.0   38.3   9.3-e120 HN | hemagglutinin-neuraminidase
+    ACF59816.1        579    14-571         1   6611-8278      5   2  0  N   45.1   63.7   75.8   3.3-e127 HN | hemagglutinin-neuraminidase
+    BAJ11753.1        574    14-571         1   6611-8278      5   2  0  N   50.0   70.0   38.3   2.6-e119 HN | hemagglutinin-neuraminidase
+    DAA06048.1        576    119-572        1   6926-8293      4   2  0  N   53.4   68.7   65.6   1.1-e142 HN | hemagglutinin-neuraminidase
+    YP_001331034.1    576    119-572        1   6926-8293      4   2  0  N   53.4   68.7   65.6   1.1-e142 HN | hemagglutinin-neuraminidase
+    YP_001249277.1    582    159-484        1   7034-8011      3   2  0  N   57.0   71.4   46.3   3.5-e149 HN | hemagglutinin-neuraminidase
+    ABQ23937.1        582    159-484        1   7034-8011      3   2  0  N   57.0   71.4   46.3   3.5-e149 HN | hemagglutinin-neuraminidase
+    NP_598405.1       571    151-569        1   7037-8287      3   2  0  N   47.7   66.7   70.0   8.3-e140 HN | hemagglutinin-neuraminidase
+    BAE00055.1        571    151-569        1   7037-8287      3   2  0  N   47.7   66.7   70.0   8.3-e140 HN | hemagglutinin-neuraminidase
+        found 1 gene
+
+    found 16 permutations for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADI80729.1        2271   1-2002         1   8375-14356     12  2  0  N   59.5   77.3   79.4   0        L | large protein
+    ADI80715.1        2274   1-2006         1   8375-14356     10  2  0  N   61.5   77.3   76.0   0        L | large protein
+    DAA06049.1        2251   1-2045         1   8375-14527     8   2  0  N   61.3   77.2   85.8   0        L | large protein
+    YP_001331035.1    2251   1-2045         1   8375-14527     8   2  0  N   61.3   77.2   85.8   0        L | large protein
+    BAJ11754.1        2279   1-2279         1   8375-15157     13  0  2  N   58.3   75.9   89.7   0        L | large protein
+    AFB82778.1        2279   1-2279         1   8375-15157     13  0  2  N   58.5   76.1   89.7   0        L | large protein
+    ACF59817.1        2279   1-2279         1   8375-15157     11  2  0  N   59.6   77.0   86.6   0        L | large protein
+    BAJ11747.1        2279   1-2181         1   8375-14887     11  2  0  N   59.7   76.9   85.7   0        L | large protein
+    YP_001249278.1    2253   1-2221         1   8375-15055     6   2  0  N   64.3   79.4   88.1   0        L | large protein
+    ABQ23938.1        2253   1-2221         1   8375-15055     6   2  0  N   64.3   79.4   88.1   0        L | large protein
+    ADI80722.1        2267   1-2267         1   8375-15157     10  2  0  N   59.5   76.4   82.7   0        L | large protein
+    NP_598406.1       2262   1-2230         1   8375-15067     9   2  0  N   62.1   77.1   93.1   0        L | large protein
+    YP_138510.1       2269   1-2237         1   8375-15067     9   2  0  N   61.9   77.6   93.7   0        L | large protein
+    YP_138518.1       2255   1-2225         1   8375-15067     7   2  0  N   61.1   77.3   95.0   0        L | large protein
+    BAE00056.1        2263   1-2231         1   8375-15067     8   2  0  N   62.1   77.1   94.4   0        L | large protein
+    P30929.1          2261   1-2261         1   8375-15157     1   2  0  N   99.2   99.6   100.0  0        L | large protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KJ810514.1              15263      5            4      11454           3813           98.1             99.6          100.0   mmp_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KJ810514.1.1       97.6   99.1   100.0  0.0   0.0   0.0   84..422          549    549    Q77IS8.1          NP | nucleocapsid protein
+                                                          422..1732                                        
+                    frameshift in genome at or near position 422..422 (+3=>+2)
+KJ810514.1.2       97.1   98.1   100.0  0.0   0.0   0.0   1916..2374       170    171    AEY76114.1        I | I protein
+                                                          2374..2427                                       
+                    frameshift in genome at or near position 2374..2374 (+2=>+1)
+                    stop codon embedded in CDS at 2372..2374
+KJ810514.1.3       97.3   98.1   100.0  0.0   0.0   0.0   1916..2590       224    224    BAK26765.1        V | V protein
+                    stop codon embedded in CDS at 2372..2374
+KJ810514.1.4       97.2   98.7   100.0  0.0   0.0   0.0   1916..2371       391    391    NP_054708.1       P | phosphoprotein
+                                                          2370..3089                                       
+                    frameshift in genome at or near position 2371..2370 (+2=>+3)
+KJ810514.1.5       99.7   99.9   100.0  0.0   0.0   0.0   3201..4328       375    375    NP_054710.1       M | membrane protein
+KJ810514.1.6       96.1   99.2   100.0  0.0   0.0   0.0   4483..6099       538    538    AAT81469.1        F | fusion protein
+KJ810514.1.7       87.7   96.5   100.0  0.0   0.0   0.0   6205..6378       57     57     P28087.1          SH | small hydrophobic protein
+KJ810514.1.8       95.5   98.9   100.0  0.0   0.0   0.0   6551..8299       582    582    AAT81471.1        HN | hemagglutinin-neuraminidase
+KJ810514.1.9       99.3   99.8   100.0  0.0   0.0   0.0   8375..15160      2261   2261   P30929.1          L | large protein
+
+
+genomic sequence AY685920.1, length=15384
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 17 permutations for gene NP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADI80709.1        519    1-401          1   146-1348       1   2  0  N   59.8   80.0   77.2   0        NP | nucleocapsid protein
+    BAE00051.1        543    1-402          1   146-1351       1   2  0  N   60.1   78.6   74.0   0        NP | nucleocapsid protein
+    NP_598401.1       542    1-401          1   146-1351       2   2  0  N   59.4   77.5   73.9   0        NP | nucleocapsid protein
+    AFB82772.1        551    1-405          1   146-1360       1   2  0  N   50.6   72.0   73.5   3.1-e154 NP | nucleocapsid protein
+    BAJ11741.1        551    1-405          1   146-1360       1   2  0  N   51.1   71.8   73.5   3.9-e155 NP | nucleocapsid protein
+    BAJ11748.1        551    1-405          1   146-1360       1   2  0  N   50.6   72.0   73.5   3.1-e154 NP | nucleocapsid protein
+    ACF59811.1        551    1-405          1   146-1360       1   2  0  N   50.8   72.3   73.5   7.7-e155 NP | nucleocapsid protein
+    YP_138504.1       543    1-406          1   146-1363       1   2  0  N   57.8   78.8   74.7   0        NP | nucleocapsid protein
+    ADI80723.1        513    1-406          1   146-1363       1   2  0  N   56.1   74.6   79.1   0        NP | nucleocapsid protein
+    YP_001331027.1    545    1-417          1   146-1396       1   2  0  N   67.6   80.8   76.5   0        NP | nucleocapsid protein
+    YP_138511.1       509    1-417          1   146-1396       1   2  0  N   64.0   79.8   81.9   0        NP | nucleocapsid protein
+    DAA06041.1        545    1-417          1   146-1396       1   2  0  N   67.6   80.8   76.5   0        NP | nucleocapsid protein
+    ADI80716.1        523    1-425          1   146-1420       1   2  0  N   57.8   76.4   81.2   0        NP | nucleocapsid protein
+    YP_001249270.1    537    1-425          1   146-1420       1   2  0  N   60.2   77.6   79.1   0        NP | nucleocapsid protein
+    ABQ23934.1        537    1-425          1   146-1420       1   2  0  N   60.2   77.6   79.1   0        NP | nucleocapsid protein
+    Q77IS8.1          549    1-549          1   146-1792       1   2  0  N   98.3   99.0   100.0  0        NP | nucleocapsid protein
+    P21277.1          553    1-553          1   146-1805       2   0  1  N   96.2   97.1   100.0  0        NP | nucleocapsid protein
+        found 1 gene
+
+    found 2 permutations for gene I
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    CBA10119.1        171    1-171          1   1979-2487      2   0  1  N   93.0   95.3   100.0  3.2-e120 I | I protein
+    AEY76114.1        171    1-171          1   1979-2487      2   0  1  N   96.5   96.5   100.0  2.4-e123 I | I protein
+        found 1 gene
+
+    found 5 permutations for gene V
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAK26765.1        224    1-224          1   1979-2650      1   2  0  N   96.8   98.2   100.0  0        V | V protein
+    YP_138513.1       222    123-221        1   2330-2638      2   2  0  N   62.5   76.2   36.0   1.6-e039 V | V protein
+    YP_138506.1       225    124-224        1   2336-2638      2   2  0  N   56.4   73.0   34.6   1.7-e032 V | V protein
+    BAE00052.1        225    124-225        1   2336-2641      2   2  0  N   56.6   77.1   36.8   2.1-e035 V | V protein
+    NP_598402.1       225    124-225        1   2336-2641      2   2  0  N   55.4   77.1   36.8   7.9-e035 V | V protein
+        found 1 gene
+
+    found 8 permutations for gene P
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_054708.1       391    1-391          1   1979-3149      2   0  1  N   97.9   98.7   100.0  0        P | phosphoprotein
+    YP_138512.1       392    123-392        1   2330-3149      4   0  1  N   46.4   73.7   50.5   3.0-e058 P | phosphoprotein
+    NP_599019.1       395    124-395        1   2336-3149      3   0  1  N   45.6   66.6   61.5   2.5-e068 P | phosphoprotein
+    YP_138505.1       395    124-395        1   2336-3149      3   0  1  N   45.3   65.8   54.1   1.2-e057 P | phosphoprotein
+    YP_001249271.1    391    172-390        1   2496-3146      4   3  0  N   50.5   71.1   46.0   2.5-e046 P | phosphoprotein
+    ABL84843.1        391    172-390        1   2496-3146      4   3  0  N   50.5   71.1   46.0   2.5-e046 P | phosphoprotein
+    DAA06045.1        404    212-403        1   2577-3146      3   3  0  N   50.2   70.4   41.8   9.7-e047 P | phosphoprotein
+    YP_001331028.1    404    212-403        1   2577-3146      3   3  0  N   50.2   70.4   41.8   9.7-e047 P | phosphoprotein
+        found 1 gene
+
+    found 16 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADI80726.1        377    1-372          1   3264-4367      2   3  0  N   41.7   64.2   96.5   6.4-e112 M | membrane protein
+    NP_054710.1       375    1-375          1   3264-4388      1   3  0  N   98.9   99.7   100.0  0        M | membrane protein
+    YP_001331032.1    369    6-369          1   3282-4367      2   3  0  N   46.7   68.4   98.6   5.1-e126 M | membrane protein
+    DAA06046.1        369    6-369          1   3282-4367      2   3  0  N   46.7   68.4   98.6   5.1-e126 M | membrane protein
+    ABQ23935.1        371    6-369          1   3282-4367      2   3  0  N   45.9   68.1   97.3   5.7-e121 M | membrane protein
+    YP_001249275.1    371    6-369          1   3282-4367      2   3  0  N   45.9   68.1   97.3   5.7-e121 M | membrane protein
+    BAJ11751.1        382    33-377         1   3354-4388      1   3  0  N   48.4   66.0   90.3   1.5-e126 M | membrane protein
+    BAJ11744.1        382    33-377         1   3354-4388      1   3  0  N   48.9   66.0   90.3   2.8-e127 M | membrane protein
+    AFB82775.1        382    33-377         1   3354-4388      1   3  0  N   48.4   65.7   90.3   8.6-e126 M | membrane protein
+    ACF59814.1        382    33-377         1   3354-4388      1   3  0  N   48.6   66.0   90.3   1.2-e125 M | membrane protein
+    ADI80719.1        376    37-373         1   3360-4370      1   3  0  N   43.6   64.3   89.6   2.1-e109 M | membrane protein
+    ADI80712.1        378    1-374          1   3255-4370      2   3  0  N   46.4   68.4   92.3   6.0-e128 M | membrane protein
+    NP_598403.1       377    32-373         1   3363-4388      2   3  0  N   43.8   65.5   87.7   1.3-e099 M | membrane protein
+    BAE00053.1        377    32-373         1   3363-4388      2   3  0  N   43.5   65.5   87.7   3.7-e099 M | membrane protein
+    YP_138507.1       382    32-373         1   3363-4388      1   3  0  N   42.3   66.0   89.5   8.6-e105 M | membrane protein
+    YP_138514.1       377    4-373          1   3285-4388      3   3  0  N   44.2   63.9   94.1   4.6-e101 M | membrane protein
+        found 1 gene
+
+    found 15 permutations for gene F
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT81469.1        538    1-538          1   4546-6159      1   1  0  N   97.5   99.0   100.0  0        F | fusion protein
+    ADI80720.1        539    18-477         1   4588-5967      2   1  0  N   40.2   64.3   81.0   2.0-e121 F | fusion protein
+    ADI80727.1        537    16-473         1   4594-5967      1   1  0  N   39.3   61.3   85.2   4.5-e122 F | fusion protein
+    DAA06047.1        541    23-473         1   4603-5955      1   1  0  N   45.4   66.0   83.3   8.1-e151 F | fusion protein
+    YP_001331033.1    541    23-473         1   4603-5955      1   1  0  N   45.4   66.0   83.3   8.1-e151 F | fusion protein
+    BAJ11745.1        543    21-478         1   4603-5976      1   1  0  N   41.9   60.9   84.3   2.5-e128 F | fusion protein
+    AFB82776.1        543    21-478         1   4603-5976      1   1  0  N   43.0   62.2   84.3   1.2-e134 F | fusion protein
+    BAJ11752.1        543    21-478         1   4603-5976      1   1  0  N   42.7   62.2   84.3   2.2-e133 F | fusion protein
+    ACF59815.1        543    21-478         1   4603-5976      1   1  0  N   43.0   62.2   84.3   2.5-e134 F | fusion protein
+    YP_138508.1       561    32-477         1   4618-5955      1   1  0  N   44.8   66.5   79.5   2.2-e147 F | fusion protein
+    BAE00054.1        551    29-475         1   4618-5958      1   1  0  N   42.9   67.1   81.1   1.3-e142 F | fusion protein
+    NP_598404.1       551    29-475         1   4618-5958      1   1  0  N   42.9   67.1   81.1   1.3-e142 F | fusion protein
+    ABQ23936.1        537    24-487         1   4618-6009      1   1  0  N   46.9   68.9   86.4   5.5-e162 F | fusion protein
+    YP_001249276.1    537    24-487         1   4618-6009      1   1  0  N   46.9   68.9   86.4   5.5-e162 F | fusion protein
+    YP_138515.1       529    25-503         1   4618-6054      1   1  0  N   46.3   67.4   90.5   3.5-e163 F | fusion protein
+        found 1 gene
+
+    found 9 permutations for gene SH
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAD13721.1        50     1-50           1   6268-6417      1   1  0  N   88.0   92.0   100.0  1.4-e026 SH | small hydrophobic protein
+    AAC56597.1        57     1-57           1   6268-6438      1   1  0  N   82.4   84.2   100.0  8.8-e028 SH | small hydrophobic protein
+    AAL68456.1        57     1-57           1   6268-6438      1   1  0  N   89.4   94.7   100.0  1.7-e034 SH | small hydrophobic protein
+    AAL68460.1        57     1-57           1   6268-6438      1   1  0  N   87.7   89.4   100.0  3.0-e032 SH | small hydrophobic protein
+    P28087.1          57     1-57           1   6268-6438      1   1  0  N   96.4   98.2   100.0  5.1-e037 SH | small hydrophobic protein
+    P69465.1          57     1-57           1   6268-6438      1   1  0  N   82.4   87.7   100.0  1.6-e028 SH | small hydrophobic protein
+    P69188.1          57     1-57           1   6268-6438      1   1  0  N   82.4   91.2   100.0  5.1-e030 SH | small hydrophobic protein
+    AAL68490.1        57     1-57           1   6268-6438      1   1  0  N   87.7   87.7   100.0  1.7-e031 SH | small hydrophobic protein
+    BAD13736.1        85     1-85           1   6268-6522      1   1  0  N   82.3   87.0   100.0  2.2-e049 SH | small hydrophobic protein
+        found 1 gene
+
+    found 13 permutations for gene HN
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAT81471.1        582    1-582          1   6614-8359      1   2  0  N   97.0   98.4   100.0  0        HN | hemagglutinin-neuraminidase
+    YP_138509.1       568    9-568          1   6686-8359      3   2  0  N   45.4   67.7   67.7   1.3-e169 HN | hemagglutinin-neuraminidase
+    NP_598405.1       571    72-569         1   6863-8350      4   2  0  N   45.2   65.8   81.6   3.0-e140 HN | hemagglutinin-neuraminidase
+    BAE00055.1        571    72-569         1   6863-8350      4   2  0  N   45.2   65.8   81.6   3.0-e140 HN | hemagglutinin-neuraminidase
+    YP_138517.1       565    71-565         1   6875-8359      3   2  0  N   49.8   69.7   84.7   1.1-e178 HN | hemagglutinin-neuraminidase
+    BAJ11746.1        574    32-567         1   6716-8329      7   2  0  N   52.4   70.8   53.1   1.3-e106 HN | hemagglutinin-neuraminidase
+    AFB82777.1        574    19-571         1   6689-8341      7   2  0  N   49.3   67.7   68.1   2.4-e119 HN | hemagglutinin-neuraminidase
+    ACF59816.1        579    19-571         1   6689-8341      6   2  0  N   48.4   66.4   70.9   1.2-e126 HN | hemagglutinin-neuraminidase
+    BAJ11753.1        574    19-571         1   6689-8341      7   2  0  N   49.3   67.7   68.1   6.6-e119 HN | hemagglutinin-neuraminidase
+    YP_001249277.1    582    159-484        1   7097-8074      3   2  0  N   57.4   71.8   46.3   1.4-e148 HN | hemagglutinin-neuraminidase
+    ABQ23937.1        582    159-484        1   7097-8074      3   2  0  N   57.4   71.8   46.3   1.4-e148 HN | hemagglutinin-neuraminidase
+    DAA06048.1        576    158-572        1   7106-8356      3   2  0  N   53.5   68.4   61.6   7.2-e147 HN | hemagglutinin-neuraminidase
+    YP_001331034.1    576    158-572        1   7106-8356      3   2  0  N   53.5   68.4   61.6   7.2-e147 HN | hemagglutinin-neuraminidase
+        found 1 gene
+
+    found 16 permutations for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADI80729.1        2271   1-2002         1   8438-14419     11  2  0  N   58.7   76.7   80.5   0        L | large protein
+    ADI80715.1        2274   1-2006         1   8438-14419     10  2  0  N   61.3   77.2   76.2   0        L | large protein
+    DAA06049.1        2251   1-2045         1   8438-14590     8   2  0  N   61.2   77.2   85.8   0        L | large protein
+    YP_001331035.1    2251   1-2045         1   8438-14590     8   2  0  N   61.2   77.2   85.8   0        L | large protein
+    BAJ11754.1        2279   1-2279         1   8438-15220     11  2  0  N   58.9   76.1   87.8   0        L | large protein
+    AFB82778.1        2279   1-2279         1   8438-15220     11  2  0  N   59.1   76.3   87.8   0        L | large protein
+    ACF59817.1        2279   1-2279         1   8438-15220     11  2  0  N   59.7   76.9   86.6   0        L | large protein
+    BAJ11747.1        2279   1-2181         1   8438-14950     11  2  0  N   59.8   76.8   85.7   0        L | large protein
+    YP_001249278.1    2253   1-2221         1   8438-15118     6   2  0  N   64.2   79.3   88.1   0        L | large protein
+    ABQ23938.1        2253   1-2221         1   8438-15118     6   2  0  N   64.2   79.3   88.1   0        L | large protein
+    ADI80722.1        2267   1-2267         1   8438-15220     10  2  0  N   59.2   76.0   83.6   0        L | large protein
+    NP_598406.1       2262   1-2230         1   8438-15130     8   2  0  N   61.8   76.6   93.7   0        L | large protein
+    YP_138510.1       2269   1-2237         1   8438-15130     9   2  0  N   62.0   77.6   93.7   0        L | large protein
+    YP_138518.1       2255   1-2225         1   8438-15130     7   2  0  N   61.0   77.2   95.0   0        L | large protein
+    BAE00056.1        2263   1-2231         1   8438-15130     7   2  0  N   61.8   76.7   95.0   0        L | large protein
+    P30929.1          2261   1-2261         1   8438-15220     1   2  0  N   99.2   99.5   100.0  0        L | large protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+AY685920.1              15384      9            0      15471           5148           98.4             99.6          100.0   mmp_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+AY685920.1.1       98.4   99.4   100.0  0.0   0.0   0.0   146..1795        549    549    Q77IS8.1          NP | nucleocapsid protein
+AY685920.1.2       97.1   98.0   100.0  0.0   0.0   0.0   1979..2490       171    171    AEY76114.1        I | I protein
+                    transcription exception 2435..2441:AAGAGGGGGGG
+AY685920.1.3       96.9   99.6   100.0  0.0   0.0   0.0   1979..2653       224    224    BAK26765.1        V | V protein
+AY685920.1.4       98.0   99.6   100.0  0.0   0.0   0.0   1979..3152       391    391    NP_054708.1       P | phosphoprotein
+                    transcription exception 2435..2441:AAGAGGGGG
+AY685920.1.5       98.9   99.7   100.0  0.0   0.0   0.0   3264..4391       375    375    NP_054710.1       M | membrane protein
+AY685920.1.6       97.6   99.6   100.0  0.0   0.0   0.0   4546..6162       538    538    AAT81469.1        F | fusion protein
+AY685920.1.7       96.5   98.2   100.0  0.0   0.0   0.0   6268..6441       57     57     P28087.1          SH | small hydrophobic protein
+AY685920.1.8       97.1   99.5   100.0  0.0   0.0   0.0   6614..8362       582    582    AAT81471.1        HN | hemagglutinin-neuraminidase
+AY685920.1.9       99.3   99.7   100.0  0.0   0.0   0.0   8438..15223      2261   2261   P30929.1          L | large protein
+

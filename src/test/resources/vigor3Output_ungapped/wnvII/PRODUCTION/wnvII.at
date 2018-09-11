@@ -1,0 +1,15 @@
+AY688948.1	wnvI_db	97..3552,3552..3683	AF260968_GP2	GP2	truncated polyprotein	OK	
+AY688948.1	wnvI_db	97..>7314	AF260968_GP3	GP3	putative West Nile Alternative Reading Frame 4 protein, N-terminal	T3	447
+AY688948.1	wnvI_db	97..10401	AF260968_GP1	GP1	genome polyprotein	OK	
+NC_001563.2	wnvI_db	97..3540,3540..3671	AF260968_GP2	GP2	truncated polyprotein	OK	
+NC_001563.2	wnvI_db	97..>7302	AF260967_GP3	GP3	putative West Nile Alternative Reading Frame 4 protein, N-terminal	T3	447
+NC_001563.2	wnvI_db	97..10389	AF260968_GP1	GP1	genome polyprotein	OK	
+HM147823.1	wnvI_db	97..3552,3552..3683	AF260967_GP2	GP2	truncated polyprotein	OK	
+HM147823.1	wnvI_db	97..>7314	AF260968_GP3	GP3	putative West Nile Alternative Reading Frame 4 protein, N-terminal	T3	447
+HM147823.1	wnvI_db	97..10401	AF260968_GP1	GP1	genome polyprotein	OK	
+HM147824.1	wnvI_db	97..3552,3552..3683	AF260968_GP2	GP2	truncated polyprotein	OK	
+HM147824.1	wnvI_db	97..>7314	JX123030_GP3	GP3	putative West Nile Alternative Reading Frame 4 protein, N-terminal	T3	420
+HM147824.1	wnvI_db	97..10401	AF260968_GP1	GP1	genome polyprotein	OK	
+KP109691.1	wnvI_db	87..3542,3542..3673	AF260967_GP2	GP2	truncated polyprotein	OK	
+KP109691.1	wnvI_db	87..>7304	AF260967_GP3	GP3	putative West Nile Alternative Reading Frame 4 protein, N-terminal	T3	447
+KP109691.1	wnvI_db	87..10391	AF260968_GP1	GP1	genome polyprotein	OK	

@@ -1,0 +1,594 @@
+2018-09-06 18:47:14
+
+parameters
+	bl2seq_extend_hsp	25
+	bl2seq_extend_span	50
+	candidate_blastopts	-p blastx -M BLOSUM62 -e 1E-5 -v 0 -F \"\" -z 3000000 -b 1000
+	candidate_evalue	
+	candidate_overlap_threshold	0.8
+	candidate_refdb	
+	command_line	/opt/www/vigor/vigor3/prod3/VIGOR3.pl -D gcv_g2a -O /usr/local/scratch/CORE/snettem/gcv_g2a/PRODUCTION/gcv_g2a -i /opt/www/vigor/vigor3/regr_testing/cov_g2a.ungapped.fasta
+	default_gene_optional	0
+	default_gene_required	0
+	default_gene_variation	1
+	frameshift_sensitivity	1
+	gene_variations	
+	jcvi_rules	1
+	mature_pep_mincoverage	50
+	mature_pep_minidentity	25
+	mature_pep_minsimilarity	40
+	mature_pep_refdb	../data3/virus_mp
+	max_intron_size	7000
+	min_candidate_pctsimilarity	55
+	min_candidate_sbjcoverage	33
+	min_exon_size	3
+	min_intron_size	30
+	min_pseudogene_coverage	80
+	min_pseudogene_identity	60
+	min_pseudogene_similarity	65
+	noncanonical_splicing_genes	
+	optional_genes	
+	reference_db	/opt/www/vigor/vigor3/data3/cov_g2a_db
+	reference_dbsize	150713
+	required_genes	
+	ribosomal_slippage_genes	
+	rna_editing_genes	
+	selectivity	0.985
+	slippage_frameshift	-1
+	slippage_motif	[NT][NT][NT][NA][NA][NA][NC]
+	slippage_offset	0
+	spliced_genes	
+	splicesite_extend_range	0
+	tile_overlap	1000000
+	tile_size	10000000
+	use_locus_tags	1
+	variation	0.975
+	verbose	0
+	vigorspace	/opt/www/vigor/vigor3/prod3/vigorscratch/4560.26040865609
+
+
+genomic sequence gi|564131295|gb|KF668605.1|, length=15344
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAY68294.1        7095   4378-7092      1   10-8061        1   1  0  N   54.4   69.5   38.2   0        Pb1ab | replicase polyprotein
+    NP_937947.1       7095   4376-7092      1   4-8061         1   1  0  N   54.1   69.2   38.2   0        Pp1ab | replicase polyprotein 1ab
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAY68294.1        7095   4378-7092      1   10-8061        1   1  0  N   54.4   69.5   38.2   0        Pb1ab | replicase polyprotein
+    YP_209229.1       7180   4467-7177      1   4-8061         1   1  0  N   54.2   69.0   37.7   0        Pp1ab | replicase polyprotein 1ab
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAY68294.1        7095   4378-7092      1   10-8061        1   1  0  N   54.4   69.5   38.2   0        Pb1ab | replicase polyprotein
+    ABD75543.1        7241   4525-7183      1   10-7896        1   1  0  N   54.2   68.9   36.7   0        Pp1ab | replicase polyprotein 1ab
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAY68294.1        7095   4378-7092      1   10-8061        1   1  0  N   54.4   69.5   38.2   0        Pb1ab | replicase polyprotein
+    NP_150073.2       7094   4378-7091      1   10-8061        1   1  0  N   54.3   69.3   38.2   0        Pp1ab | replicase polyprotein 1ab
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFD97615.1        7179   4467-7176      1   13-8061        1   1  0  N   54.7   69.6   37.7   0        Pp1ab | replicase polyprotein 1ab
+    AAY68294.1        7095   4378-7092      1   10-8061        1   1  0  N   54.4   69.5   38.2   0        Pb1ab | replicase polyprotein
+
+    found 4 permutations for gene Pp1ab
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFD97615.1        7179   4467-7176      1   13-8061        1   1  0  N   54.7   69.6   37.7   0        Pp1ab | replicase polyprotein 1ab
+    NP_068668.2       7178   4467-7175      1   16-8061        1   1  0  N   54.7   69.9   37.7   0        Pp1ab | replicase polyprotein 1ab
+    YP_003029844.1    7172   4467-7169      1   34-8061        1   1  0  N   54.9   69.6   37.6   0        Pp1ab | replicase polyprotein 1ab
+    BAJ04692.1        7168   4467-7165      1   46-8061        1   1  0  N   55.0   69.9   37.6   0        Pp1ab | replicase polyprotein 1ab
+        found 1 gene
+
+    found 7 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABD75636.1        223    11-154         1   12215-12649    1   2  0  N   34.4   55.8   64.5   5.5-e025 M | membrane protein
+    YP_173241.1       223    11-154         1   12215-12649    1   2  0  N   35.1   56.5   64.5   8.8-e026 M | membrane protein
+    YP_209237.1       228    18-159         1   12221-12649    1   2  0  N   34.9   56.6   62.2   7.3-e024 M | membrane protein
+    NP_937953.1       230    17-158         1   12221-12649    1   2  0  N   34.9   56.6   61.7   5.6-e024 M | membrane protein
+    BAJ04700.1        228    18-159         1   12221-12649    1   2  0  N   35.6   56.6   62.2   2.1-e024 M | membrane protein
+    AAF69337.1        228    18-159         1   12221-12649    1   2  0  N   34.9   56.6   62.2   2.9-e024 M | membrane protein
+    YP_003029851.1    228    19-123         1   12224-12538    1   2  0  N   40.0   61.9   46.0   1.3-e023 M | membrane protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|564131295|gb|KF66    15344      2            0       8721           2905           54.0             78.5           39.6   cov_g2a_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_564131295.1     54.7   78.9   37.7   62.3  0.0   0.0   <34..8073        2679   7172   YP_003029844.1    Pp1ab | putative replicase polyprotein 1ab,
+                                                                                                           C-terminal
+gi_564131295.1.1   96.2   99.2   97.6   2.4   0.0   0.0   <34..2787        918    941    YP_001941185.1    putative nsp12, C-terminal
+gi_564131295.1.2   98.5   99.9   99.8   0.0   0.0   0.2   2788..4584       599    600    AY646283_nsp13    nsp13
+gi_564131295.1.3   55.9   79.7   100.0  0.0   0.0   0.0   4585..6150       522    521    NP_740618.1       nsp14
+gi_564131295.1.4   32.3   65.4   100.0  0.0   0.0   0.0   6151..7164       338    374    NP_740619.1       nsp15
+gi_564131295.1.5   54.3   80.5   99.3   0.7   0.0   0.0   7165..8070       302    298    AAP13566_mp14     nsp16
+gi_564131295.2     31.1   64.5   99.6   0.0   0.0   0.4   12182..12862     226    228    BAJ04700.1        M | membrane protein
+
+
+genomic sequence gi|30271926|ref|NC_004718.3|, length=29751
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAY68294.1        7095   1562-7093      1   4888-21479     2   0  1  N   49.3   65.4   77.9   0        Pb1ab | replicase polyprotein
+    YP_003029844.1    7172   1594-7170      1   4840-21479     2   0  1  N   49.1   65.1   77.4   0        Pp1ab | replicase polyprotein 1ab
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAY68294.1        7095   1562-7093      1   4888-21479     2   0  1  N   49.3   65.4   77.9   0        Pb1ab | replicase polyprotein
+    AFD97615.1        7179   1601-7177      1   4849-21479     2   0  1  N   49.2   65.1   77.4   0        Pp1ab | replicase polyprotein 1ab
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAY68294.1        7095   1562-7093      1   4888-21479     2   0  1  N   49.3   65.4   77.9   0        Pb1ab | replicase polyprotein
+    NP_068668.2       7178   1599-7176      1   4849-21479     2   0  1  N   49.1   65.1   77.4   0        Pp1ab | replicase polyprotein 1ab
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_937947.1       7095   1565-7093      1   4897-21479     2   0  1  N   49.3   65.5   77.9   0        Pp1ab | replicase polyprotein 1ab
+    AAY68294.1        7095   1562-7093      1   4888-21479     2   0  1  N   49.3   65.4   77.9   0        Pb1ab | replicase polyprotein
+
+    found 6 permutations for gene Pp1a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_003029845.1    4464   189-4462       1   622-13410      4   1  0  N   38.0   55.5   65.6   0        Pp1a | replicase polyprotein 1a
+    NP_045298.1       4470   189-4468       1   622-13410      3   1  0  N   38.0   55.4   65.2   0        Pp1a | replicase polyprotein 1a
+    ACN89736.1        4458   189-4456       1   622-13410      4   1  0  N   38.0   55.6   65.5   0        Pp1a | replicase polyprotein 1a
+    ACN89745.1        4459   177-4457       1   586-13410      5   1  0  N   38.0   55.3   66.1   0        Pp1a | replicase polyprotein 1a
+    AFD97614.1        4471   189-4469       1   622-13410      3   1  0  N   38.0   55.4   65.2   0        Pp1a | replicase polyprotein 1a
+    NP_150074.1       4383   871-4381       1   2776-13410     3   1  0  N   37.7   56.5   66.3   0        Pp1a | replicase polyprotein 1a
+        found 1 gene
+
+    found 5 permutations for gene Pp1ab
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_937947.1       7095   943-7093       1   2983-21479     3   0  1  N   49.2   65.5   78.4   0        Pp1ab | replicase polyprotein 1ab
+    NP_150073.2       7094   871-7092       1   2776-21479     4   0  1  N   49.1   65.7   79.2   0        Pp1ab | replicase polyprotein 1ab
+    ABD75543.1        7241   4503-7239      1   13365-21479    2   3  0  N   60.2   75.6   37.7   0        Pp1ab | replicase polyprotein 1ab
+    YP_209229.1       7180   4467-7178      1   13425-21479    1   3  0  N   60.7   75.1   37.7   0        Pp1ab | replicase polyprotein 1ab
+    BAJ04692.1        7168   4467-7166      1   13467-21479    1   3  0  N   61.4   75.5   37.6   0        Pp1ab | replicase polyprotein 1ab
+        found 1 gene
+
+    found 2 permutations for gene S
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_150077.1       1363   621-1358       1   23031-25235    1   3  0  N   37.8   55.0   54.1   9.5-e143 S | spike glycoprotein
+    AFG25750.1        1360   611-1340       1   23037-25199    1   3  0  N   37.8   55.0   53.6   8.4-e140 S | spike glycoprotein
+        found 1 gene
+
+    found 1 permutation for gene E
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABD75635.1        82     8-68           1   26138-26320    1   2  0  N   31.1   55.7   74.3   9.8-e006 E | envelope small membrane protein
+        found 1 gene
+
+    found 9 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_150082.1       230    12-226         1   26413-27054    1   1  0  N   41.8   60.9   93.4   1.1-e050 M | membrane protein
+    YP_173241.1       223    10-221         1   26419-27051    1   1  0  N   36.3   58.0   95.0   5.2-e043 M | membrane protein
+    AAY68301.1        230    14-226         1   26419-27054    1   1  0  N   42.7   61.9   92.6   6.6-e052 M | membrane protein
+    NP_937953.1       230    14-226         1   26419-27054    1   1  0  N   41.3   61.5   92.6   2.0-e050 M | membrane protein
+    YP_209237.1       228    15-228         1   26419-27057    1   1  0  N   39.2   59.3   93.8   2.6-e048 M | membrane protein
+    BAJ04700.1        228    15-228         1   26419-27057    1   1  0  N   39.7   60.2   93.8   5.6-e049 M | membrane protein
+    AAF69337.1        228    15-228         1   26419-27057    1   1  0  N   39.7   59.8   93.8   1.4-e048 M | membrane protein
+    YP_003029851.1    228    15-228         1   26419-27057    1   1  0  N   38.3   59.3   93.8   5.7-e047 M | membrane protein
+    ABD75636.1        223    18-221         1   26443-27051    1   1  0  N   38.2   60.7   91.4   3.2-e044 M | membrane protein
+        found 1 gene
+
+dropping pseudogene gi_30271926.3, fails match requirements: %id 26.3 < 60, %sim 56.1 < 65
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_30271926.3      26.3   56.1   100.0  0.0   0.0   0.0   21138..25259     1373   1360   AFG25750.1        S | spike glycoprotein
+                    stop codon embedded in CDS at 21483..21485
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|30271926|ref|NC_0    29751      4            0      22065           7351           49.0             75.0           62.0   cov_g2a_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_30271926.1      28.8   60.9   99.5   0.5   0.0   0.0   265..13413       4382   4383   NP_150074.1       Pp1a | replicase polyprotein 1a
+gi_30271926.1.1    23.9   57.9   100.0  0.0   0.0   0.0   2725..8505       1927   1899   EF424622_nsp3     nsp3
+gi_30271926.1.2    40.5   73.8   100.0  0.0   0.0   0.0   8506..9984       493    496    YP_459935.1       nsp4
+gi_30271926.1.3    50.3   78.8   100.0  0.0   0.0   0.0   9985..10902      306    303    YP_209248.1       nsp5
+gi_30271926.1.4    32.2   63.8   100.0  0.0   0.0   0.0   10903..11772     290    287    NP_740611.1       nsp6
+gi_30271926.1.5    46.1   73.9   96.7   0.0   0.0   3.3   11773..12021     83     92     NP_740612.1       nsp7
+gi_30271926.1.6    47.3   75.7   100.0  0.0   0.0   0.0   12022..12615     198    197    NP_742135.1       nsp8
+gi_30271926.1.7    47.8   75.4   100.0  0.0   0.0   0.0   12616..12954     113    110    NC_007732_nsp9    nsp9
+gi_30271926.1.8    48.7   74.8   100.0  0.0   0.0   0.0   12955..13410     152    137    YP_459939.1       nsp10
+gi_30271926.2      61.8   83.8   37.5   62.5  0.0   0.0   <13467..21485    2672   7168   BAJ04692.1        Pp1ab | putative replicase polyprotein 1ab,
+                                                                                                           C-terminal
+gi_30271926.2.1    100.0  100.0  96.6   3.4   0.0   0.0   <13467..16166    900    932    NP_828869.1       putative nsp12, C-terminal
+gi_30271926.2.2    100.0  100.0  100.0  0.0   0.0   0.0   16167..17969     601    601    NP_828870.1       nsp13
+gi_30271926.2.3    59.9   83.5   100.0  0.0   0.0   0.0   17970..19550     527    530    P0C6W5_MP13       nsp14
+gi_30271926.2.4    44.7   70.7   100.0  0.0   0.0   0.0   19551..20588     346    374    AY884001_nsp15    nsp15
+gi_30271926.2.5    100.0  100.0  100.0  0.0   0.0   0.0   20589..21482     298    298    AAP13566_mp14     nsp16
+gi_30271926.3      29.3   68.0   100.0  0.0   0.0   0.0   26117..26347     76     82     ABD75635.1        E | envelope small membrane protein
+gi_30271926.4      40.8   69.7   99.1   0.0   0.0   0.9   26398..27063     221    230    AAY68301.1        M | membrane protein
+
+
+genomic sequence gi|384038902|gb|JN634064.1|, length=28984
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAY68294.1        7095   4378-7094      1   12138-20162    1   3  0  N   54.4   69.8   38.2   0        Pb1ab | replicase polyprotein
+    NP_937947.1       7095   4375-7094      1   12129-20162    1   3  0  N   54.1   69.6   38.3   0        Pp1ab | replicase polyprotein 1ab
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAY68294.1        7095   4378-7094      1   12138-20162    1   3  0  N   54.4   69.8   38.2   0        Pb1ab | replicase polyprotein
+    YP_209229.1       7180   4467-7179      1   12132-20162    1   3  0  N   53.4   69.1   37.7   0        Pp1ab | replicase polyprotein 1ab
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABD75543.1        7241   4525-7183      1   12138-19991    1   3  0  N   54.4   69.9   36.7   0        Pp1ab | replicase polyprotein 1ab
+    AAY68294.1        7095   4378-7094      1   12138-20162    1   3  0  N   54.4   69.8   38.2   0        Pb1ab | replicase polyprotein
+
+    found 6 permutations for gene Pp1ab
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABD75543.1        7241   4525-7239      1   12138-20159    2   3  0  N   54.1   69.8   37.4   0        Pp1ab | replicase polyprotein 1ab
+    NP_150073.2       7094   4378-7093      1   12138-20162    1   3  0  N   54.2   69.5   38.2   0        Pp1ab | replicase polyprotein 1ab
+    AFD97615.1        7179   4467-7178      1   12141-20162    1   3  0  N   53.8   69.7   37.7   0        Pp1ab | replicase polyprotein 1ab
+    NP_068668.2       7178   4467-7177      1   12144-20162    1   3  0  N   54.0   69.8   37.7   0        Pp1ab | replicase polyprotein 1ab
+    YP_003029844.1    7172   4467-7171      1   12162-20162    1   3  0  N   53.8   69.8   37.7   0        Pp1ab | replicase polyprotein 1ab
+    BAJ04692.1        7168   4467-7167      1   12174-20162    1   3  0  N   54.0   69.8   37.6   0        Pp1ab | replicase polyprotein 1ab
+        found 1 gene
+
+    found 9 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABD75636.1        223    9-206          1   26065-26669    2   0  1  N   41.7   64.5   83.4   2.0-e041 M | membrane protein
+    YP_173241.1       223    9-206          1   26065-26669    2   0  1  N   40.2   62.9   83.4   3.3-e040 M | membrane protein
+    AAY68301.1        230    17-210         1   26077-26669    2   0  1  N   44.4   65.5   76.9   1.2-e040 M | membrane protein
+    YP_209237.1       228    18-211         1   26077-26669    2   0  1  N   41.0   63.7   79.8   1.8-e039 M | membrane protein
+    AAF69337.1        228    18-211         1   26077-26669    2   0  1  N   42.7   63.7   79.8   9.6-e040 M | membrane protein
+    NP_937953.1       230    17-210         1   26077-26669    2   0  1  N   41.6   64.3   79.1   5.7-e038 M | membrane protein
+    NP_150082.1       230    17-210         1   26077-26669    2   0  1  N   44.3   64.8   79.1   1.9-e041 M | membrane protein
+    BAJ04700.1        228    23-211         1   26092-26669    2   0  1  N   42.7   64.4   77.6   1.3-e039 M | membrane protein
+    YP_003029851.1    228    23-211         1   26092-26669    2   0  1  N   42.7   63.3   77.6   1.6-e038 M | membrane protein
+        found 1 gene
+
+dropping pseudogene gi_384038902.2, fails match requirements: %id 37.1 < 60
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_384038902.2     37.1   69.3   96.4   3.6   0.0   0.0   26065..26577     221    223    ABD75636.1        M | membrane protein
+                                                          26577..26729                                     
+                    frameshift in genome at or near position 26577..26577 (+1=>+3)
+                    could not find valid start codon
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|384038902|gb|JN63    28984      1            0       8031           2676           54.4             78.7           38.3   cov_g2a_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_384038902.1     54.4   78.7   38.3   61.7  0.0   0.0   <12138..20168    2676   7094   NP_150073.2       Pp1ab | putative replicase polyprotein 1ab,
+                                                                                                           C-terminal
+gi_384038902.1.1   59.9   82.7   99.1   0.9   0.0   0.0   <12138..14894    919    934    NC_009019_nsp12   putative nsp12, C-terminal
+gi_384038902.1.2   61.8   85.1   100.0  0.0   0.0   0.0   14895..16691     599    598    NC_009020_nsp13   nsp13
+gi_384038902.1.3   53.6   78.3   100.0  0.0   0.0   0.0   16692..18248     519    530    P0C6W5_MP13       nsp14
+gi_384038902.1.4   41.9   69.5   100.0  0.0   0.0   0.0   18249..19265     339    374    AY884001_nsp15    nsp15
+gi_384038902.1.5   54.7   81.3   99.7   0.3   0.0   0.0   19266..20165     300    298    AAP13566_mp14     nsp16
+
+
+genomic sequence gi|509265008|gb|KC189944.1|, length=27953
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAY68294.1        7095   4378-7094      1   12592-20604    1   1  0  N   54.8   70.3   38.2   0        Pb1ab | replicase polyprotein
+    YP_209229.1       7180   4467-7179      1   12586-20604    1   1  0  N   53.5   69.2   37.7   0        Pp1ab | replicase polyprotein 1ab
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAY68294.1        7095   4378-7094      1   12592-20604    1   1  0  N   54.8   70.3   38.2   0        Pb1ab | replicase polyprotein
+    NP_937947.1       7095   4376-7094      1   12586-20604    1   1  0  N   54.7   70.0   38.3   0        Pp1ab | replicase polyprotein 1ab
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAY68294.1        7095   4378-7094      1   12592-20604    1   1  0  N   54.8   70.3   38.2   0        Pb1ab | replicase polyprotein
+    ABD75543.1        7241   4525-7183      1   12592-20433    1   1  0  N   54.0   70.2   36.7   0        Pp1ab | replicase polyprotein 1ab
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAY68294.1        7095   4378-7094      1   12592-20604    1   1  0  N   54.8   70.3   38.2   0        Pb1ab | replicase polyprotein
+    NP_150073.2       7094   4378-7093      1   12592-20604    1   1  0  N   54.9   70.1   38.2   0        Pp1ab | replicase polyprotein 1ab
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAY68294.1        7095   4378-7094      1   12592-20604    1   1  0  N   54.8   70.3   38.2   0        Pb1ab | replicase polyprotein
+    AFD97615.1        7179   4467-7178      1   12595-20604    1   1  0  N   54.1   69.9   37.7   0        Pp1ab | replicase polyprotein 1ab
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAY68294.1        7095   4378-7094      1   12592-20604    1   1  0  N   54.8   70.3   38.2   0        Pb1ab | replicase polyprotein
+    NP_068668.2       7178   4467-7177      1   12598-20604    1   1  0  N   54.4   70.1   37.7   0        Pp1ab | replicase polyprotein 1ab
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAY68294.1        7095   4378-7094      1   12592-20604    1   1  0  N   54.8   70.3   38.2   0        Pb1ab | replicase polyprotein
+    YP_003029844.1    7172   4467-7171      1   12616-20604    1   1  0  N   54.1   70.1   37.7   0        Pp1ab | replicase polyprotein 1ab
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAY68294.1        7095   4378-7094      1   12592-20604    1   1  0  N   54.8   70.3   38.2   0        Pb1ab | replicase polyprotein
+    BAJ04692.1        7168   4467-7167      1   12628-20604    1   1  0  N   54.1   70.0   37.6   0        Pp1ab | replicase polyprotein 1ab
+
+    found 1 permutation for gene Pb1ab
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAY68294.1        7095   4378-7094      1   12592-20604    1   1  0  N   54.8   70.3   38.2   0        Pb1ab | replicase polyprotein
+        found 1 gene
+
+    found 9 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    NP_937953.1       230    1-210          1   25548-26219    1   3  0  N   37.9   61.6   91.3   1.4-e046 M | membrane protein
+    AAY68301.1        230    6-210          1   25563-26219    1   3  0  N   39.7   61.1   89.1   2.6-e048 M | membrane protein
+    NP_150082.1       230    6-210          1   25563-26219    1   3  0  N   40.6   62.1   89.1   5.6-e049 M | membrane protein
+    YP_209237.1       228    17-216         1   25626-26234    1   3  0  N   40.8   63.0   87.7   1.6-e047 M | membrane protein
+    BAJ04700.1        228    17-216         1   25626-26234    1   3  0  N   40.8   62.5   87.7   2.9-e047 M | membrane protein
+    YP_003029851.1    228    17-216         1   25626-26234    1   3  0  N   41.3   61.0   87.7   6.4-e046 M | membrane protein
+    ABD75636.1        223    12-214         1   25626-26243    1   3  0  N   39.8   63.5   91.0   8.5-e047 M | membrane protein
+    AAF69337.1        228    17-223         1   25626-26252    1   3  0  N   41.4   62.3   90.7   2.9-e047 M | membrane protein
+    YP_173241.1       223    12-218         1   25626-26252    1   3  0  N   40.0   63.3   92.8   6.3-e047 M | membrane protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|509265008|gb|KC18    27953      2            0       8703           2899           54.3             78.4           40.2   cov_g2a_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_509265008.1     54.8   78.7   38.3   61.7  0.0   0.0   <12592..20613    2673   7095   AAY68294.1        Pb1ab | putative replicase polyprotein, C-terminal
+gi_509265008.1.1   60.4   84.2   99.1   0.9   0.0   0.0   <12592..15348    919    934    NC_009019_nsp12   putative nsp12, C-terminal
+gi_509265008.1.2   62.6   84.0   100.0  0.0   0.0   0.0   15349..17145     599    598    NC_009020_nsp13   nsp13
+gi_509265008.1.3   51.8   78.9   99.6   0.4   0.0   0.0   17146..18687     514    530    P0C6W5_MP13       nsp14
+gi_509265008.1.4   42.3   68.0   99.7   0.0   0.0   0.3   18688..19704     339    375    NC_007732_nsp15   nsp15
+gi_509265008.1.5   54.6   81.3   100.0  0.0   0.0   0.0   19705..20610     302    298    AAP13566_mp14     nsp16
+gi_509265008.2     39.4   70.2   100.0  0.0   0.0   0.0   25602..26282     226    228    BAJ04700.1        M | membrane protein
+
+
+genomic sequence gi|343781332|gb|HM776941.1|, length=28580
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABD75543.1        7241   4175-7183      1   11285-20187    2   0  1  N   53.3   69.1   40.7   0        Pp1ab | replicase polyprotein 1ab
+    AAY68294.1        7095   4028-7093      1   11285-20355    2   0  1  N   53.0   68.8   43.2   0        Pb1ab | replicase polyprotein
+
+    found 8 permutations for gene Pp1ab
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABD75543.1        7241   227-7240       1   647-20358      17  0  4  N   51.2   68.5   50.5   0        Pp1ab | replicase polyprotein 1ab
+    BAJ04692.1        7168   1431-7166      1   4625-20355     13  0  6  N   51.0   68.0   52.9   0        Pp1ab | replicase polyprotein 1ab
+    YP_209229.1       7180   1431-7178      1   4625-20355     13  0  4  N   50.3   67.4   53.2   0        Pp1ab | replicase polyprotein 1ab
+    NP_937947.1       7095   1385-7093      1   4625-20355     13  0  4  N   51.8   68.6   50.2   0        Pp1ab | replicase polyprotein 1ab
+    NP_150073.2       7094   1385-7092      1   4625-20355     15  0  4  N   50.9   67.9   54.3   0        Pp1ab | replicase polyprotein 1ab
+    AFD97615.1        7179   1434-7177      1   4625-20355     12  0  4  N   50.7   67.8   52.9   0        Pp1ab | replicase polyprotein 1ab
+    NP_068668.2       7178   1432-7176      1   4625-20355     12  0  4  N   51.0   67.8   52.9   0        Pp1ab | replicase polyprotein 1ab
+    YP_003029844.1    7172   1430-7170      1   4625-20355     10  0  4  N   50.9   67.9   52.3   0        Pp1ab | replicase polyprotein 1ab
+        found 1 gene
+
+    found 9 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABD75636.1        223    9-206          1   26233-26838    1   1  0  N   42.3   60.5   88.7   2.3-e044 M | membrane protein
+    YP_173241.1       223    9-206          1   26233-26838    1   1  0  N   40.8   59.1   88.7   2.7-e043 M | membrane protein
+    AAY68301.1        230    17-210         1   26245-26838    1   1  0  N   42.9   61.1   84.3   9.4-e046 M | membrane protein
+    YP_209237.1       228    18-211         1   26245-26838    1   1  0  N   41.9   60.1   85.0   3.0-e045 M | membrane protein
+    AAF69337.1        228    18-211         1   26245-26838    1   1  0  N   42.9   60.1   85.0   1.6-e045 M | membrane protein
+    NP_937953.1       230    17-210         1   26245-26838    1   1  0  N   42.4   61.1   84.3   1.3-e043 M | membrane protein
+    NP_150082.1       230    17-210         1   26245-26838    1   1  0  N   44.9   62.1   84.3   6.8-e048 M | membrane protein
+    BAJ04700.1        228    23-211         1   26260-26838    1   1  0  N   43.5   60.6   82.8   2.3-e045 M | membrane protein
+    YP_003029851.1    228    23-211         1   26260-26838    1   1  0  N   43.5   59.5   82.8   2.6-e044 M | membrane protein
+        found 1 gene
+
+dropping pseudogene gi_343781332.1, fails match requirements: %id 35.4 < 60, %sim 63.1 < 65
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_343781332.1     35.4   63.1   100.0  0.0   0.0   0.0   314..5206        6684   7095   NP_937947.1       Pp1ab | replicase polyprotein 1ab
+                                                          5206..7521                                       
+                                                          7521..11282                                      
+                                                          11282..12334                                     
+                                                          12334..20364                                     
+                    frameshifts in genome at or near positions 5206..5206 (+2=>+1), 7521..7521 (+1=>+3) and 11282..11282 (+3=>+2)
+                    many stop codons embedded in CDS
+gi_343781332.1.1   15.3   45.6   99.6   0.0   0.0   0.4   2954..5206       1623   1899   NP_742169.1       nsp3
+                                                          5206..7521                                       
+                                                          7521..7820                                       
+gi_343781332.1.2   26.9   63.5   77.4   22.6  0.0   0.0   7821..8948       376    496    YP_209247.1       nsp4
+gi_343781332.1.3   46.0   75.7   99.7   0.3   0.0   0.0   8949..9851       301    303    NP_742132.1       nsp5
+gi_343781332.1.4   23.2   62.4   99.0   1.0   0.0   0.0   9852..10733      294    288    YP_209249.1       nsp6
+gi_343781332.1.5   42.7   71.9   100.0  0.0   0.0   0.0   10734..10982     83     89     NC_005147_nsp7    nsp7
+gi_343781332.1.6   39.8   72.5   100.0  0.0   0.0   0.0   10983..11282     195    197    DQ339101_nsp8     nsp8
+                                                          11282..11566                                     
+gi_343781332.1.7   33.9   71.9   100.0  0.0   0.0   0.0   11567..11899     111    110    AY884001_nsp9     nsp9
+gi_343781332.1.8   57.7   80.5   99.3   0.0   0.0   0.7   11900..12310     137    137    NP_740615.1       nsp10
+gi_343781332.1.9   60.0   82.8   100.0  0.0   0.0   0.0   12311..12334     927    934    NC_009019_nsp12   nsp12
+                                                          12334..15090                                     
+gi_343781332.1.10  61.9   85.4   100.0  0.0   0.0   0.0   15091..16887     599    598    NC_009020_nsp13   nsp13
+gi_343781332.1.11  53.6   78.4   100.0  0.0   0.0   0.0   16888..18444     519    530    P0C6W5_MP13       nsp14
+gi_343781332.1.12  42.3   68.1   100.0  0.0   0.0   0.0   18445..19461     339    375    NC_007732_nsp15   nsp15
+gi_343781332.1.13  57.3   80.4   99.7   0.3   0.0   0.0   19462..20361     300    299    AY884001_nsp16    nsp16
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|343781332|gb|HM77    28580      1            0        726            241           39.1             68.7           99.6   cov_g2a_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_343781332.1     39.3   68.7   99.6   -2.5  0.0   0.4   26173..26898     241    230    NP_150082.1       M | membrane protein
+
+
+genomic sequence gi|564131295|gb|KF668605.1|, length=16771
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAY68294.1        7095   3930-7092      1   10-9488        2   0  1  N   52.7   68.2   44.5   0        Pb1ab | replicase polyprotein
+    ABD75543.1        7241   4077-7183      1   10-9323        2   0  1  N   52.5   67.9   42.0   0        Pp1ab | replicase polyprotein 1ab
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAJ04692.1        7168   4007-7165      1   10-9488        2   0  1  N   53.4   68.9   43.6   0        Pp1ab | replicase polyprotein 1ab
+    AAY68294.1        7095   3930-7092      1   10-9488        2   0  1  N   52.7   68.2   44.5   0        Pb1ab | replicase polyprotein
+
+    found 9 permutations for gene Pp1a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAF69331.1        4416   3963-4416      1   10-1455        1   1  0  N   43.2   61.5   10.2   1.2-e107 Pp1a | replicase polyprotein 1a
+    NP_045298.1       4470   4017-4470      1   10-1455        1   1  0  N   43.0   61.1   10.1   2.4-e106 Pp1a | replicase polyprotein 1a
+    NP_150074.1       4383   3930-4383      1   10-1455        1   1  0  N   43.8   61.5   10.3   2.9-e109 Pp1a | replicase polyprotein 1a
+    YP_003029845.1    4464   4011-4464      1   10-1455        1   1  0  N   43.0   61.3   10.1   3.1-e106 Pp1a | replicase polyprotein 1a
+    ACN89736.1        4458   4005-4458      1   10-1455        1   1  0  N   43.0   61.3   10.1   1.8-e106 Pp1a | replicase polyprotein 1a
+    YP_209230.1       4474   4021-4474      1   10-1455        1   1  0  N   43.0   61.7   10.1   1.6-e107 Pp1a | replicase polyprotein 1a
+    ACN89745.1        4459   4006-4459      1   10-1455        1   1  0  N   43.2   61.3   10.1   6.2-e107 Pp1a | replicase polyprotein 1a
+    AFD97614.1        4471   4018-4471      1   10-1455        1   1  0  N   43.0   61.3   10.1   6.3-e107 Pp1a | replicase polyprotein 1a
+    BAJ04693.1        4460   4007-4460      1   10-1455        1   1  0  N   43.2   61.3   10.1   8.2-e107 Pp1a | replicase polyprotein 1a
+        found 1 gene
+
+    found 7 permutations for gene Pp1ab
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAJ04692.1        7168   4007-7165      1   10-9488        2   0  1  N   53.4   68.9   43.6   0        Pp1ab | replicase polyprotein 1ab
+    YP_209229.1       7180   4021-7177      1   10-9488        2   0  1  N   52.7   68.2   43.7   0        Pp1ab | replicase polyprotein 1ab
+    NP_937947.1       7095   3930-7092      1   10-9488        2   0  1  N   52.7   68.3   44.4   0        Pp1ab | replicase polyprotein 1ab
+    NP_150073.2       7094   3930-7091      1   10-9488        2   0  1  N   52.6   68.1   44.5   0        Pp1ab | replicase polyprotein 1ab
+    AFD97615.1        7179   4018-7176      1   10-9488        2   0  1  N   53.2   68.6   43.7   0        Pp1ab | replicase polyprotein 1ab
+    NP_068668.2       7178   4017-7175      1   10-9488        2   0  1  N   53.2   68.9   43.7   0        Pp1ab | replicase polyprotein 1ab
+    YP_003029844.1    7172   4011-7169      1   10-9488        2   0  1  N   53.4   68.6   43.7   0        Pp1ab | replicase polyprotein 1ab
+        found 1 gene
+
+    found 7 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABD75636.1        223    11-154         1   13642-14076    1   1  0  N   34.4   55.8   64.5   6.0-e025 M | membrane protein
+    YP_173241.1       223    11-154         1   13642-14076    1   1  0  N   35.1   56.5   64.5   9.6-e026 M | membrane protein
+    YP_209237.1       228    18-159         1   13648-14076    1   1  0  N   34.9   56.6   62.2   8.0-e024 M | membrane protein
+    BAJ04700.1        228    18-159         1   13648-14076    1   1  0  N   35.6   56.6   62.2   2.3-e024 M | membrane protein
+    AAF69337.1        228    18-159         1   13648-14076    1   1  0  N   34.9   56.6   62.2   3.2-e024 M | membrane protein
+    NP_937953.1       230    17-158         1   13648-14076    1   1  0  N   34.9   56.6   61.7   6.1-e024 M | membrane protein
+    YP_003029851.1    228    19-123         1   13651-13965    1   1  0  N   40.0   61.9   46.0   1.5-e023 M | membrane protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|564131295|gb|KF66    16771      3            0      11649           3880           49.1             75.7           32.6   cov_g2a_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_564131295.1     43.9   72.9   10.4   89.6  0.0   0.0   <1..1467         488    4383   NP_150074.1       Pp1a | putative replicase polyprotein 1a,
+                                                                                                           C-terminal
+gi_564131295.1.1   42.7   73.3   100.0  0.0   0.0   0.0   1..627           209    194    YP_209251.1       nsp8
+gi_564131295.2     52.8   77.8   44.1   55.9  0.0   0.0   <1..1437         3166   7172   YP_003029844.1    Pp1ab | putative replicase polyprotein 1ab,
+                                                          1437..9500                                       C-terminal
+gi_564131295.2.2   43.1   74.0   100.0  0.0   0.0   0.0   7..627           207    194    YP_209251.1       nsp8
+gi_564131295.2.3   38.7   75.0   100.0  0.0   0.0   0.0   628..960         111    110    DQ339101_nsp9     nsp9
+gi_564131295.2.4   47.9   71.0   100.0  0.0   0.0   0.0   961..1386        142    137    NC_007732_nsp10   nsp10
+gi_564131295.2.5   95.6   98.7   100.0  0.0   0.0   0.0   1387..1437       943    941    YP_001941185.1    nsp12
+                                                          1437..4214                                       
+gi_564131295.2.6   98.5   99.9   99.8   0.0   0.0   0.2   4215..6011       599    600    AY646283_nsp13    nsp13
+gi_564131295.2.7   55.9   79.7   100.0  0.0   0.0   0.0   6012..7577       522    521    NP_740618.1       nsp14
+gi_564131295.2.8   32.3   65.4   100.0  0.0   0.0   0.0   7578..8591       338    374    NP_740619.1       nsp15
+gi_564131295.2.9   54.3   80.5   99.3   0.7   0.0   0.0   8592..9497       302    298    AAP13566_mp14     nsp16
+gi_564131295.3     31.1   64.5   99.6   0.0   0.0   0.4   13609..14289     226    228    BAJ04700.1        M | membrane protein
+
+
+genomic sequence gi|597503885|gb|KJ556336.1|, length=29890
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAY68294.1        7095   1534-7093      1   4403-21277     3   0  2  N   49.4   65.5   78.3   0        Pb1ab | replicase polyprotein
+    ABD75543.1        7241   1419-7183      1   3419-21109     3   0  2  N   60.3   75.1   38.8   0        Pp1ab | replicase polyprotein 1ab
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAY68294.1        7095   1534-7093      1   4403-21277     3   0  2  N   49.4   65.5   78.3   0        Pb1ab | replicase polyprotein
+    NP_937947.1       7095   1273-7093      1   3419-21277     3   0  2  N   61.2   75.4   40.4   0        Pp1ab | replicase polyprotein 1ab
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAY68294.1        7095   1534-7093      1   4403-21277     3   0  2  N   49.4   65.5   78.3   0        Pb1ab | replicase polyprotein
+    AFD97615.1        7179   1322-7177      1   3419-21277     3   0  2  N   60.8   75.5   39.8   0        Pp1ab | replicase polyprotein 1ab
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAY68294.1        7095   1534-7093      1   4403-21277     3   0  2  N   49.4   65.5   78.3   0        Pb1ab | replicase polyprotein
+    YP_003029844.1    7172   1318-7170      1   3419-21277     3   0  2  N   60.7   75.5   39.7   0        Pp1ab | replicase polyprotein 1ab
+
+    Resolved Overlapping genes
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAJ04692.1        7168   1523-7166      1   4238-21277     3   0  2  N   48.9   65.4   78.5   0        Pp1ab | replicase polyprotein 1ab
+    AAY68294.1        7095   1534-7093      1   4403-21277     3   0  2  N   49.4   65.5   78.3   0        Pb1ab | replicase polyprotein
+
+    found 3 permutations for gene Pp1a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACN89745.1        4459   413-4457       1   1136-13231     3   2  0  N   37.9   56.0   69.7   0        Pp1a | replicase polyprotein 1a
+    ACN89736.1        4458   413-4456       1   1136-13231     3   2  0  N   37.6   55.7   68.3   0        Pp1a | replicase polyprotein 1a
+    BAJ04693.1        4460   413-4458       1   1136-13231     3   2  0  N   37.8   55.5   68.4   0        Pp1a | replicase polyprotein 1a
+        found 1 gene
+
+    found 4 permutations for gene Pp1ab
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAJ04692.1        7168   413-7166       1   1136-21277     6   0  2  N   48.9   65.4   80.3   0        Pp1ab | replicase polyprotein 1ab
+    YP_209229.1       7180   4467-7178      1   13213-21277    2   0  1  N   61.1   76.0   37.7   0        Pp1ab | replicase polyprotein 1ab
+    NP_150073.2       7094   4378-7092      1   13219-21277    2   0  1  N   61.9   76.3   38.2   0        Pp1ab | replicase polyprotein 1ab
+    NP_068668.2       7178   4467-7176      1   13225-21277    2   0  1  N   61.9   76.6   37.7   0        Pp1ab | replicase polyprotein 1ab
+        found 1 gene
+
+    found 12 permutations for gene S
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_173238.1       1356   339-1342       1   22419-25259    2   3  0  N   37.7   55.7   62.1   1.0-e147 S | spike glycoprotein
+    ABD75633.1        1351   339-1337       1   22419-25259    2   3  0  N   38.3   56.8   61.7   1.9-e149 S | spike glycoprotein
+    AEN19366.1        1361   624-1350       1   23034-25268    1   3  0  N   41.4   56.0   53.4   3.5-e161 S | spike glycoprotein
+    NP_150077.1       1363   628-1349       1   23037-25259    1   3  0  N   41.7   56.6   52.9   2.9-e157 S | spike glycoprotein
+    NP_937950.1       1361   626-1350       1   23037-25268    1   3  0  N   41.2   55.8   53.2   1.0-e158 S | spike glycoprotein
+    AAX85669.1        1363   628-1352       1   23037-25268    1   3  0  N   41.1   55.8   53.1   1.6-e160 S | spike glycoprotein
+    AAF19386.1        1361   618-1342       1   23040-25253    1   3  0  N   40.1   56.9   53.2   1.6-e153 S | spike glycoprotein
+    ACN89742.1        1363   619-1346       1   23040-25259    1   3  0  N   39.7   55.8   53.4   1.9-e152 S | spike glycoprotein
+    YP_003029848.1    1360   617-1343       1   23040-25259    1   3  0  N   40.0   56.4   53.4   1.1-e154 S | spike glycoprotein
+    AFG25750.1        1360   617-1343       1   23040-25259    1   3  0  N   40.2   56.9   53.4   9.9-e156 S | spike glycoprotein
+    AFD97607.1        1361   618-1344       1   23040-25259    1   3  0  N   39.8   56.0   53.4   5.5-e153 S | spike glycoprotein
+    AAY68297.1        1349   617-1335       1   23046-25259    1   3  0  N   41.6   56.3   53.2   2.6-e155 S | spike glycoprotein
+        found 1 gene
+
+    found 8 permutations for gene E
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAX85671.1        88     14-78          1   27407-27601    1   2  0  N   32.3   56.9   73.8   1.2-e008 E | envelope small membrane protein
+    NP_150081.1       84     14-78          1   27407-27601    1   2  0  N   32.3   58.4   77.3   4.2-e009 E | envelope small membrane protein
+    NP_937952.1       84     14-78          1   27407-27601    1   2  0  N   32.3   56.9   77.3   1.1-e008 E | envelope small membrane protein
+    AAY68300.1        84     14-78          1   27407-27601    1   2  0  N   30.7   58.4   77.3   1.5-e008 E | envelope protein
+    YP_003029850.1    88     12-87          1   27407-27628    1   2  0  N   28.9   55.2   86.3   2.7-e007 E | envelope small membrane protein
+    ACN89738.1        88     12-87          1   27407-27628    1   2  0  N   28.9   55.2   86.3   3.7-e007 E | envelope small membrane protein
+    ACN89766.1        88     12-87          1   27407-27628    1   2  0  N   28.9   55.2   86.3   3.7-e007 E | envelope small membrane protein
+    BAJ04699.1        88     12-87          1   27407-27628    1   2  0  N   30.2   55.2   86.3   2.0-e007 E | envelope small membrane protein
+        found 1 gene
+
+    found 9 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_173241.1       223    4-223          1   27640-28293    1   1  0  N   45.4   61.8   98.6   3.2-e055 M | membrane protein
+    YP_209237.1       228    13-214         1   27652-28254    1   1  0  N   45.5   60.8   88.5   4.6-e052 M | membrane protein
+    BAJ04700.1        228    13-214         1   27652-28254    1   1  0  N   46.5   61.8   88.5   5.3-e053 M | membrane protein
+    AAF69337.1        228    13-227         1   27652-28290    1   1  0  N   46.0   61.3   94.2   2.1-e053 M | membrane protein
+    YP_003029851.1    228    13-227         1   27652-28290    1   1  0  N   46.5   59.4   94.2   6.3-e052 M | membrane protein
+    AAY68301.1        230    14-227         1   27658-28290    1   1  0  N   44.8   61.2   93.0   5.0-e052 M | membrane protein
+    NP_937953.1       230    14-227         1   27658-28290    1   1  0  N   43.9   61.2   93.0   2.7-e050 M | membrane protein
+    NP_150082.1       230    14-227         1   27658-28290    1   1  0  N   44.8   61.6   93.0   4.1-e053 M | membrane protein
+    ABD75636.1        223    13-223         1   27667-28293    1   1  0  N   46.4   63.5   94.6   1.3-e053 M | membrane protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|597503885|gb|KJ55    29890      4            1      18211           6066           30.5             60.3           99.9   cov_g2a_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_597503885.1     29.9   59.6   100.0  0.0   0.0   0.0   <1..13240        4412   4460   BAJ04693.1        Pp1a | putative replicase polyprotein 1a,
+                                                                                                           C-terminal
+gi_597503885.1.1   23.2   54.8   100.0  0.0   0.0   0.0   2630..8311       1894   2008   YP_209246.1       nsp3
+gi_597503885.1.2   41.6   74.4   100.0  0.0   0.0   0.0   8312..9805       498    496    DQ339101_nsp4     nsp4
+gi_597503885.1.3   54.6   78.2   100.0  0.0   0.0   0.0   9806..10723      306    303    YP_209248.1       nsp5
+gi_597503885.1.4   34.5   63.5   100.0  0.0   0.0   0.0   10724..11599     292    287    NP_740611.1       nsp6
+gi_597503885.1.5   43.8   73.3   100.0  0.0   0.0   0.0   11600..11848     83     89     DQ339101_nsp7     nsp7
+gi_597503885.1.6   50.0   78.0   100.0  0.0   0.0   0.0   11849..12445     199    197    NP_742135.1       nsp8
+gi_597503885.1.7   51.4   76.6   100.0  0.0   0.0   0.0   12446..12775     110    110    NC_007732_nsp9    nsp9
+gi_597503885.1.8   55.1   84.2   100.0  0.0   0.0   0.0   12776..13189     138    137    NP_742137.1       nsp10
+gi_597503885.2     61.8   84.5   37.8   62.2  0.0   0.0   <13225..19701    2691   7178   NP_068668.2       Pp1ab | putative replicase polyprotein 1ab,
+                                                          19700..21298                                     C-terminal
+                    frameshift in genome at or near position 19701..19700 (+1=>+2)
+gi_597503885.2.1   92.1   98.5   98.9   1.1   0.0   0.0   <13225..15993    923    934    NC_009020_nsp12   putative nsp12, C-terminal
+gi_597503885.2.2   94.0   98.8   100.0  0.0   0.0   0.0   15994..17787     598    598    NC_009020_nsp13   nsp13
+gi_597503885.2.3   59.1   82.5   100.0  0.0   0.0   0.0   17788..19359     524    530    P0C6W5_MP13       nsp14
+gi_597503885.2.4   45.3   73.6   100.0  0.0   0.0   0.0   19360..19701     343    375    NC_007732_nsp15   nsp15
+                                                          19700..20386                                     
+gi_597503885.2.5   83.5   94.5   100.0  0.0   0.0   0.0   20387..21295     303    302    NC_009019_nsp16   nsp16
+gi_597503885.3     30.4   59.2   99.9   -0.1  0.0   0.1   21240..25301     1353   1360   YP_003029848.1    S | spike glycoprotein
+gi_597503885.4     27.9   71.2   95.5   0.0   0.0   4.5   27374..27622     82     88     YP_003029850.1    E | envelope small membrane protein
+gi_597503885.5     44.8   77.1   100.0  0.0   0.0   0.0   27637..28296     219    223    YP_173241.1       M | membrane protein
+

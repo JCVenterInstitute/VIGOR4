@@ -1,0 +1,7 @@
+Sequence	Length	Genes	Pseudogenes	CDS Bases	Peptide Bases	%Ref Identity	%Ref Similarity	%Ref Coverage	Ref DB
+6	7512	2	0	5907	1967	63.7	85.8	99.9	norv1_db
+7	7515	2	0	2430	808	51.8	77.1	99.8	norv1_db
+30	7511	3	0	7530	2507	60.5	83.8	99.9	norv1_db
+RV-12	7511	3	0	7530	2507	60.6	83.7	99.9	norv1_db
+26	7527	3	0	7518	2503	61.8	85.0	100.0	norv1_db
+25	7749	3	0	7683	2558	81.7	94.2	100.0	norv1_db

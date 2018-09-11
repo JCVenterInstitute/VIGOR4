@@ -1,0 +1,3 @@
+Sequence	Length	Genes	Pseudogenes	CDS Bases	Peptide Bases	%Ref Identity	%Ref Similarity	%Ref Coverage	Ref DB
+KX893855.1	10808	1	0	10272	3423	99.9	99.9	100.0	zikv_db
+KU955594.1	10795	1	0	10260	3419	99.6	99.8	100.0	zikv_db

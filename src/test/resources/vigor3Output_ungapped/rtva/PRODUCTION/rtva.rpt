@@ -1,0 +1,315 @@
+2018-09-11 14:58:24
+
+
+parameters
+	bl2seq_extend_hsp	25
+	bl2seq_extend_span	50
+	candidate_blastopts	-p blastx -M BLOSUM45 -e 1E-10 -g F -F \"\" -b 2000 -v 0
+	candidate_evalue	
+	candidate_overlap_threshold	0.8
+	candidate_refdb	
+	command_line	/opt/www/vigor/vigor3/prod3/VIGOR3.pl -i /opt/www/vigor/vigor3/regr_testing/rtva.ungapped.fasta -o /usr/local/scratch/CORE/snettem/rtva/PRODUCTION/rtva
+	default_gene_optional	0
+	default_gene_required	0
+	default_gene_variation	1
+	frameshift_sensitivity	1
+	gene_variations	
+	jcvi_rules	1
+	mature_pep_mincoverage	50
+	mature_pep_minidentity	25
+	mature_pep_minsimilarity	40
+	mature_pep_refdb	../data3/virus_mp
+	max_intron_size	7000
+	min_candidate_pctsimilarity	60
+	min_candidate_sbjcoverage	33
+	min_exon_size	3
+	min_intron_size	30
+	min_pseudogene_coverage	80
+	min_pseudogene_identity	70
+	min_pseudogene_similarity	80
+	noncanonical_splicing_genes	
+	optional_genes	
+	reference_db	/opt/www/vigor/vigor3/data3/virus_db
+	required_genes	
+	ribosomal_slippage_genes	
+	rna_editing_genes	
+	selectivity	0.985
+	slippage_frameshift	-1
+	slippage_motif	[NT][NT][NT]AAAC
+	slippage_offset	0
+	spliced_genes	
+	splicesite_extend_range	0
+	tile_overlap	1000000
+	tile_size	10000000
+	use_locus_tags	1
+	variation	0.975
+	verbose	0
+	vigorspace	/opt/www/vigor/vigor3/prod3/vigorscratch/432107.40767336
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_011507.2              3302      1            0       3267           1088          100.0            100.0          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_011507.2.1      100.0  100.0  100.0  0.0   0.0   0.0   19..3285         1088   1088   210136695         VP1 | RNA-dependent RNA Polymerase VP1
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_011506.2              2693      1            0       2649            882          100.0            100.0          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_011506.2.1      100.0  100.0  100.0  0.0   0.0   0.0   17..2665         882    882    210136693         VP2 | core capsid protein VP2
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_011508.2              2591      1            0       2508            835          100.0            100.0          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_011508.2.1      100.0  100.0  100.0  0.0   0.0   0.0   50..2557         835    835    210136697         VP3 | RNA capping protein VP3
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_011510.2              2362      1            0       2331            776          100.0            100.0          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_011510.2.1      100.0  100.0  100.0  0.0   0.0   0.0   10..2340         776    776    210136703         VP4 | outer capsid spike protein VP4
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_011500.2              1614      1            0       1491            496          100.0            100.0          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_011500.2.1      100.0  100.0  100.0  0.0   0.0   0.0   31..1521         496    496    210136680         NSP1 | non-structural protein 1
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_011509.2              1356      1            0       1194            397          100.0            100.0          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_011509.2.1      100.0  100.0  100.0  0.0   0.0   0.0   24..1217         397    397    210136699         VP6 | inner capsid protein VP6
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_011501.2              1105      1            0        939            312          100.0            100.0          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_011501.2.1      100.0  100.0  100.0  0.0   0.0   0.0   35..973          312    312    210136682         NSP3 | non-structural protein 3
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_011502.2              1059      1            0        954            317          100.0            100.0          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_011502.2.1      100.0  100.0  100.0  0.0   0.0   0.0   47..1000         317    317    210136684         NSP2 | non-structural protein 2
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_011503.2              1062      1            0        981            326          100.0            100.0          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_011503.2.1      100.0  100.0  100.0  0.0   0.0   0.0   49..1029         326    326    210136686         VP7 | capsid glycoprotein VP7
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_011504.2               751      1            0        528            175          100.0            100.0          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_011504.2.1      100.0  100.0  100.0  0.0   0.0   0.0   42..569          175    175    210136688         NSP4 | non-structural protein 4
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_011505.2               667      2            0        876            290          100.0            100.0          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_011505.2.1      100.0  100.0  100.0  0.0   0.0   0.0   22..618          198    198    210136690         NSP5 | non-structural protein 5
+NC_011505.2.2      100.0  100.0  100.0  0.0   0.0   0.0   80..358          92     92     210136691         NSP6 | non-structural protein 6
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+JN872875.1                664      2            0        861            285           98.6             99.3          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+JN872875.1.1       98.0   99.0   100.0  0.0   0.0   0.0   22..615          197    199    gi_373882056_NSP5 NSP5 | non-structural protein 5
+JN872875.1.2       100.0  100.0  100.0  0.0   0.0   0.0   80..346          88     88     gi_359367038_NSP6 NSP6 | non-structural protein 6
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+JN872874.1                751      1            0        528            175          100.0            100.0          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+JN872874.1.1       100.0  100.0  100.0  0.0   0.0   0.0   42..569          175    175    gi_359367036_NSP4 NSP4 | non-structural protein 4
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+JN872873.1               1069      1            0        933            310          100.0            100.0          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+JN872873.1.1       100.0  100.0  100.0  0.0   0.0   0.0   35..967          310    310    gi_359367034_NSP3 NSP3 | non-structural protein 3
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+JN872872.1               1058      1            0        969            322           96.2             98.4          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+JN872872.1.1       96.3   98.4   100.0  0.0   0.0   0.0   47..1015         322    317    gi_373882060_NSP2 NSP2 | non-structural protein 2
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+JN872871.1               1580      1            0       1476            491          100.0            100.0          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+JN872871.1.1       100.0  100.0  100.0  0.0   0.0   0.0   31..1506         491    491    gi_359367030_NSP1 NSP1 | non-structural protein 1
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+JN872870.1               1062      1            0        981            326          100.0            100.0          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+JN872870.1.1       100.0  100.0  100.0  0.0   0.0   0.0   49..1029         326    326    gi_359367028_VP7  VP7 | capsid glycoprotein VP7
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+JN872869.1               1362      1            0       1200            399           99.5             99.5          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+JN872869.1.1       99.5   99.5   100.0  0.0   0.0   0.0   24..1223         399    399    gi_336049117_VP6  VP6 | inner capsid protein VP6
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+JN872868.1               2362      1            0       2331            776          100.0            100.0          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+JN872868.1.1       100.0  100.0  100.0  0.0   0.0   0.0   10..2340         776    776    gi_359367024_VP4  VP4 | outer capsid spike protein VP4
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+JN872867.1               2591      1            0       2508            835           99.3             99.9          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+JN872867.1.1       99.3   99.9   100.0  0.0   0.0   0.0   50..2557         835    835    gi_336049010_VP3  VP3 | RNA capping protein VP3
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+JN872866.1               2687      1            0       2643            880          100.0            100.0          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+JN872866.1.1       100.0  100.0  100.0  0.0   0.0   0.0   17..2659         880    880    gi_359367020_VP2  VP2 | core capsid protein VP2
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+JN872865.1               3302      1            0       3267           1088           99.4             99.9          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+JN872865.1.1       99.4   99.9   100.0  0.0   0.0   0.0   19..3285         1088   1088   gi_336049006_VP1  VP1 | RNA-dependent RNA Polymerase VP1
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KT694939.1               3302      1            0       3267           1088           98.9             99.8          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KT694939.1.1       98.9   99.8   100.0  0.0   0.0   0.0   19..3285         1088   1088   gi_432140424_VP1  VP1 | RNA-dependent RNA Polymerase VP1
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KT694940.1               2717      1            0       2673            890           98.8             99.4          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KT694940.1.1       98.8   99.4   100.0  0.0   0.0   0.0   17..2689         890    894    gi_444439869_VP2  VP2 | core capsid protein VP2
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KT694941.1               2591      1            0       2508            835           99.0             99.6          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KT694941.1.1       99.0   99.6   100.0  0.0   0.0   0.0   50..2557         835    835    gi_329134538_VP3  VP3 | RNA capping protein VP3
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KT694942.1               2359      1            0       2328            775           99.0             99.9          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KT694942.1.1       99.0   99.9   100.0  0.0   0.0   0.0   10..2337         775    775    gi_269857246_VP4  VP4 | outer capsid spike protein VP4
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KT694943.1               1356      1            0       1194            397           98.7             99.2          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KT694943.1.1       98.7   99.2   100.0  0.0   0.0   0.0   24..1217         397    397    gi_309387884_VP6  VP6 | inner capsid protein VP6
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KT694944.1               1062      1            0        981            326           99.7            100.0          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KT694944.1.1       99.7   99.9   100.0  0.0   0.0   0.0   49..1029         326    326    gi_237846369_VP7  VP7 | capsid glycoprotein VP7
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KT694945.1               1566      1            0       1461            486           99.6            100.0          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KT694945.1.1       99.6   100.0  100.0  0.0   0.0   0.0   32..1492         486    486    gi_449536519_NSP1 NSP1 | non-structural protein 1
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KT694946.1               1059      1            0        954            317           98.7            100.0          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KT694946.1.1       98.7   99.9   100.0  0.0   0.0   0.0   47..1000         317    317    gi_332107428_NSP2 NSP2 | non-structural protein 2
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KT694947.1               1074      1            0        933            310           99.7            100.0          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KT694947.1.1       99.7   100.0  100.0  0.0   0.0   0.0   35..967          310    310    AFR77811.1        NSP3 | non-structural protein 3
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KT694948.1                750      1            0        528            175           99.4            100.0          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KT694948.1.1       99.4   100.0  100.0  0.0   0.0   0.0   42..569          175    175    gi_157279489_NSP4 NSP4 | non-structural protein 4
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KT694949.1                664      2            0        873            289           98.3             98.6          100.0   rtva_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KT694949.1.1       98.0   98.0   100.0  0.0   0.0   0.0   22..615          197    200    gi_8978243_NSP5   NSP5 | non-structural protein 5
+KT694949.1.2       98.9   100.0  100.0  0.0   0.0   0.0   80..358          92     92     gi_329135232_NSP6 NSP6 | non-structural protein 6
+

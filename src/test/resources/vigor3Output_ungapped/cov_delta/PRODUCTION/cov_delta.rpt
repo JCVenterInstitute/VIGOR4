@@ -1,0 +1,129 @@
+2018-09-11 14:09:25
+
+
+parameters
+	bl2seq_extend_hsp	25
+	bl2seq_extend_span	50
+	candidate_blastopts	-p blastx -M BLOSUM62 -e 1E-5 -v 0 -F \"\" -z 3000000 -b 1000
+	candidate_evalue	
+	candidate_overlap_threshold	0.8
+	candidate_refdb	
+	command_line	/opt/www/vigor/vigor3/prod3/VIGOR3.pl -i /opt/www/vigor/vigor3/regr_testing/cov_delta.ungapped.fasta -d cov_delta_db -o /usr/local/scratch/CORE/snettem/cov_delta/cov_delta
+	default_gene_optional	0
+	default_gene_required	0
+	default_gene_variation	1
+	frameshift_sensitivity	1
+	gene_variations	
+	jcvi_rules	1
+	mature_pep_mincoverage	50
+	mature_pep_minidentity	25
+	mature_pep_minsimilarity	40
+	mature_pep_refdb	../data3/virus_mp
+	max_intron_size	7000
+	min_candidate_pctsimilarity	55
+	min_candidate_sbjcoverage	33
+	min_exon_size	3
+	min_intron_size	30
+	min_pseudogene_coverage	80
+	min_pseudogene_identity	60
+	min_pseudogene_similarity	65
+	noncanonical_splicing_genes	
+	optional_genes	
+	reference_db	/opt/www/vigor/vigor3/data3/cov_delta_db
+	reference_dbsize	89007
+	required_genes	
+	ribosomal_slippage_genes	
+	rna_editing_genes	
+	selectivity	0.985
+	slippage_frameshift	-1
+	slippage_motif	[NT][NT][NT][NA][NA][NA][NC]
+	slippage_offset	0
+	spliced_genes	
+	splicesite_extend_range	0
+	tile_overlap	1000000
+	tile_size	10000000
+	use_locus_tags	1
+	variation	0.975
+	verbose	0
+	vigorspace	/opt/www/vigor/vigor3/prod3/vigorscratch/539910.389882611
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|564131295|gb|KF66    15344      1            0       8064           2687           49.7             75.7           42.2   cov_delta_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_564131295.1     49.7   75.7   42.2   57.8  0.0   0.0   <10..8073        2687   6267   YP_005352830.1    1ab | putative polyprotein 1ab, C-terminal
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|30271926|ref|NC_0    29751      1            0       8088           2695           46.1             72.3           42.2   cov_delta_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_30271926.1      46.1   72.3   42.2   57.8  0.0   0.0   <13398..21485    2695   6267   YP_005352830.1    1ab | putative polyprotein 1ab, C-terminal
+
+
+dropping pseudogene gi_384038902.2, fails match requirements: %id 45.0 < 60
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_384038902.2     45.0   72.9   95.0   4.8   0.0   0.2   20972..24517     1181   1206   YP_005352846.1    S | spike glycoprotein
+                    could not find valid start codon
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|384038902|gb|JN63    28984      1            0       8031           2676           44.7             72.4           42.5   cov_delta_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_384038902.1     44.7   72.4   42.5   57.5  0.0   0.0   <12138..20168    2676   6280   YP_005352862.1    1ab | putative polyprotein 1ab, C-terminal
+
+
+dropping pseudogene gi_509265008.2, fails match requirements: %id 45.9 < 60
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_509265008.2     45.9   73.1   96.5   3.3   0.0   0.2   21258..24758     1166   1217   YP_005352854.1    S | spike glycoprotein
+                    could not find valid start codon
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|509265008|gb|KC18    27953      1            0       8022           2673           44.6             71.6           42.5   cov_delta_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_509265008.1     44.6   71.6   42.5   57.5  0.0   0.0   <12592..20613    2673   6206   YP_005352870.1    1ab | putative polyprotein 1ab, C-terminal
+
+
+dropping pseudogene gi_343781332.3, fails match requirements: %id 25.7 < 60, %sim 63.1 < 65
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_343781332.3     25.7   63.1   96.8   2.8   0.0   0.5   26281..26898     205    217    YP_005352848.1    M | membrane protein
+                    could not find valid start codon
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|343781332|gb|HM77    28580      2            0      11856           3950           44.5             71.9           51.8   cov_delta_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_343781332.1     44.7   72.3   42.5   57.5  0.0   0.0   <12334..20364    2676   6280   YP_005352862.1    1ab | putative polyprotein 1ab, C-terminal
+gi_343781332.2     43.3   70.2   99.8   -0.5  0.0   0.2   20879..24703     1274   1217   YP_005352854.1    S | spike glycoprotein
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|564131295|gb|KF66    16771      2            0      10968           3654           42.6             71.0           35.6   cov_delta_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_564131295.1     34.0   65.5   12.1   87.9  0.0   0.0   <1..1467         488    3614   YP_005352837a     1a | putative polyprotein 1a, C-terminal
+gi_564131295.2     47.6   74.2   49.2   50.8  0.0   0.0   <1..1437         3166   6267   YP_005352830.1    1ab | putative polyprotein 1ab, C-terminal
+                                                          1437..9500                                       
+
+
+dropping pseudogene gi_597503885.1, fails match requirements: %id 45.6 < 60
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_597503885.1     45.6   72.7   42.2   57.8  0.0   0.0   <13219..19707    2693   6267   YP_005352830.1    1ab | putative polyprotein 1ab, C-terminal
+                                                          19706..21298                                     
+                    frameshift in genome at or near position 19707..19706 (+1=>+2)
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|597503885|gb|KJ55    29890      1            0        651            216           26.9             61.1           99.5   cov_delta_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_597503885.1     26.9   61.3   99.5   0.0   0.0   0.5   27646..28296     216    216    YP_005352865.1    M | membrane protein
+

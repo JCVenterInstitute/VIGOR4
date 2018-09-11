@@ -1,0 +1,320 @@
+>Features 6
+3	5102	gene
+			locus_tag	vigor_POL
+			gene	POL
+3	5102	CDS
+			codon_start	1
+			protein_id	6.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	nonstructural polyprotein
+			note	synonym: genome polyprotein
+5083	6706	gene
+			locus_tag	vigor_VP1
+			gene	VP1
+			pseudogene	unitary
+5083	6706	misc_feature
+			locus_tag	vigor_VP1
+			gene	VP1
+			product	capsid protein VP1
+			note	frameshift in genome
+6612	6611	misc_feature
+			locus_tag	vigor_VP1
+			note	approximate location of +1 => +2 frameshift in capsid protein VP1
+6706	7512	gene
+			locus_tag	vigor_VP2
+			gene	VP2
+6706	7512	CDS
+			codon_start	1
+			protein_id	6.3
+			locus_tag	vigor_VP2
+			gene	VP2
+			product	capsid protein VP2
+			note	synonym: minor capsid protein
+
+>Features 6.1
+1	330	mat_peptide
+			product	protein p48
+			locus_tag	vigor_POL
+			gene	POL
+331	696	mat_peptide
+			product	NTPase
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: p41
+697	875	mat_peptide
+			product	protein p22
+			locus_tag	vigor_POL
+			gene	POL
+876	1008	mat_peptide
+			product	viral genome-linked protein
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: VPg
+1009	1189	mat_peptide
+			product	3C-like protease
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: 3CLpro, calcivirin
+1190	1699	mat_peptide
+			product	RNA-directed RNA polymerase
+			locus_tag	vigor_POL
+			gene	POL
+>Features 7
+3	5106	gene
+			locus_tag	vigor_POL
+			gene	POL
+			pseudogene	unitary
+3	5106	misc_feature
+			locus_tag	vigor_POL
+			gene	POL
+			product	nonstructural polyprotein
+			note	frameshift in genome; synonym: genome polyprotein
+542	541	misc_feature
+			locus_tag	vigor_POL
+			note	approximate location of +3 => +1 frameshift in nonstructural polyprotein
+5087	6709	gene
+			locus_tag	vigor_VP1
+			gene	VP1
+5087	6709	CDS
+			codon_start	1
+			protein_id	7.2
+			locus_tag	vigor_VP1
+			gene	VP1
+			product	capsid protein VP1
+6709	7515	gene
+			locus_tag	vigor_VP2
+			gene	VP2
+6709	7515	CDS
+			codon_start	1
+			protein_id	7.3
+			locus_tag	vigor_VP2
+			gene	VP2
+			product	capsid protein VP2
+			note	synonym: minor capsid protein
+>Features 30
+3	5102	gene
+			locus_tag	vigor_POL
+			gene	POL
+3	5102	CDS
+			codon_start	1
+			protein_id	30.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	nonstructural polyprotein
+			note	synonym: genome polyprotein
+5083	6705	gene
+			locus_tag	vigor_VP1
+			gene	VP1
+5083	6705	CDS
+			codon_start	1
+			protein_id	30.2
+			locus_tag	vigor_VP1
+			gene	VP1
+			product	capsid protein VP1
+6705	7511	gene
+			locus_tag	vigor_VP2
+			gene	VP2
+6705	7511	CDS
+			codon_start	1
+			protein_id	30.3
+			locus_tag	vigor_VP2
+			gene	VP2
+			product	capsid protein VP2
+			note	synonym: minor capsid protein
+
+>Features 30.1
+1	330	mat_peptide
+			product	protein p48
+			locus_tag	vigor_POL
+			gene	POL
+331	696	mat_peptide
+			product	NTPase
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: p41
+697	875	mat_peptide
+			product	protein p22
+			locus_tag	vigor_POL
+			gene	POL
+876	1008	mat_peptide
+			product	viral genome-linked protein
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: VPg
+1009	1189	mat_peptide
+			product	3C-like protease
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: 3CLpro, calcivirin
+1190	1699	mat_peptide
+			product	RNA-directed RNA polymerase
+			locus_tag	vigor_POL
+			gene	POL
+>Features RV-12
+807	1	gene
+			locus_tag	vigor_VP2
+			gene	VP2
+807	1	CDS
+			codon_start	1
+			protein_id	RV-12.1
+			locus_tag	vigor_VP2
+			gene	VP2
+			product	capsid protein VP2
+			note	synonym: minor capsid protein
+2429	807	gene
+			locus_tag	vigor_VP1
+			gene	VP1
+2429	807	CDS
+			codon_start	1
+			protein_id	RV-12.2
+			locus_tag	vigor_VP1
+			gene	VP1
+			product	capsid protein VP1
+7509	2410	gene
+			locus_tag	vigor_POL
+			gene	POL
+7509	2410	CDS
+			codon_start	1
+			protein_id	RV-12.3
+			locus_tag	vigor_POL
+			gene	POL
+			product	nonstructural polyprotein
+			note	synonym: genome polyprotein
+
+>Features RV-12.3
+1	330	mat_peptide
+			product	protein p48
+			locus_tag	vigor_POL
+			gene	POL
+331	696	mat_peptide
+			product	NTPase
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: p41
+697	875	mat_peptide
+			product	protein p22
+			locus_tag	vigor_POL
+			gene	POL
+876	1008	mat_peptide
+			product	viral genome-linked protein
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: VPg
+1009	1189	mat_peptide
+			product	3C-like protease
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: 3CLpro, calcivirin
+1190	1699	mat_peptide
+			product	RNA-directed RNA polymerase
+			locus_tag	vigor_POL
+			gene	POL
+>Features 26
+5	5110	gene
+			locus_tag	vigor_POL
+			gene	POL
+5	5110	CDS
+			codon_start	1
+			protein_id	26.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	nonstructural polyprotein
+			note	synonym: genome polyprotein
+5091	6737	gene
+			locus_tag	vigor_VP1
+			gene	VP1
+5091	6737	CDS
+			codon_start	1
+			protein_id	26.2
+			locus_tag	vigor_VP1
+			gene	VP1
+			product	capsid protein VP1
+6737	7501	gene
+			locus_tag	vigor_VP2
+			gene	VP2
+6737	7501	CDS
+			codon_start	1
+			protein_id	26.3
+			locus_tag	vigor_VP2
+			gene	VP2
+			product	capsid protein VP2
+			note	synonym: minor capsid protein
+
+>Features 26.1
+1	332	mat_peptide
+			product	protein p48
+			locus_tag	vigor_POL
+			gene	POL
+333	698	mat_peptide
+			product	NTPase
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: p41
+699	877	mat_peptide
+			product	protein p22
+			locus_tag	vigor_POL
+			gene	POL
+878	1010	mat_peptide
+			product	viral genome-linked protein
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: VPg
+1011	1191	mat_peptide
+			product	3C-like protease
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: 3CLpro, calcivirin
+1192	1701	mat_peptide
+			product	RNA-directed RNA polymerase
+			locus_tag	vigor_POL
+			gene	POL
+>Features 25
+260	5407	gene
+			locus_tag	vigor_POL
+			gene	POL
+260	5407	CDS
+			codon_start	1
+			protein_id	25.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	nonstructural polyprotein
+			note	synonym: genome polyprotein
+5397	7022	gene
+			locus_tag	vigor_VP1
+			gene	VP1
+5397	7022	CDS
+			codon_start	1
+			protein_id	25.2
+			locus_tag	vigor_VP1
+			gene	VP1
+			product	capsid protein VP1
+
+>Features 25.1
+1	321	mat_peptide
+			product	protein p48
+			locus_tag	vigor_POL
+			gene	POL
+322	684	mat_peptide
+			product	NTPase
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: p41
+685	>830	mat_peptide
+			product	putative protein p22, N-terminal
+			locus_tag	vigor_POL
+			gene	POL
+885	1024	mat_peptide
+			product	viral genome-linked protein
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonym: VPg
+1025	1206	mat_peptide
+			product	3C-like protease
+			locus_tag	vigor_POL
+			gene	POL
+			note	synonyms: 3CLpro, calcivirin
+1207	1715	mat_peptide
+			product	RNA-directed RNA polymerase
+			locus_tag	vigor_POL
+			gene	POL

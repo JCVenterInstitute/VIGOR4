@@ -1,0 +1,504 @@
+2018-09-06 20:39:24
+
+parameters
+	bl2seq_extend_hsp	25
+	bl2seq_extend_span	50
+	candidate_blastopts	-p blastx -M BLOSUM80 -e 1E-5 -g F -v 0 -F \"\" -z 3000000 -b 1000
+	candidate_evalue	
+	candidate_overlap_threshold	0.8
+	candidate_refdb	
+	command_line	/opt/www/vigor/vigor3/prod3/VIGOR3.pl -D hpiv_3 -O /usr/local/scratch/CORE/snettem/hpiv_3/PRODUCTION/hpiv_3 -i /opt/www/vigor/vigor3/regr_testing/hpiv3.ungapped.fasta
+	default_gene_optional	0
+	default_gene_required	0
+	default_gene_variation	1
+	frameshift_sensitivity	1
+	gene_variations	
+	jcvi_rules	1
+	mature_pep_mincoverage	50
+	mature_pep_minidentity	25
+	mature_pep_minsimilarity	40
+	mature_pep_refdb	../data3/virus_mp
+	max_intron_size	7000
+	min_candidate_pctsimilarity	60
+	min_candidate_sbjcoverage	33
+	min_exon_size	3
+	min_intron_size	30
+	min_pseudogene_coverage	80
+	min_pseudogene_identity	70
+	min_pseudogene_similarity	80
+	noncanonical_splicing_genes	
+	optional_genes	
+	reference_db	/opt/www/vigor/vigor3/data3/hpiv3_db
+	reference_dbsize	68352
+	required_genes	
+	ribosomal_slippage_genes	
+	rna_editing_genes	
+	selectivity	0.985
+	slippage_frameshift	-1
+	slippage_motif	[NT][NT][NT]AAAC
+	slippage_offset	0
+	spliced_genes	
+	splicesite_extend_range	0
+	tile_overlap	1000000
+	tile_size	10000000
+	use_locus_tags	1
+	variation	0.975
+	verbose	0
+	vigorspace	/opt/www/vigor/vigor3/prod3/vigorscratch/493237.132280232
+
+
+genomic sequence gi|10937870|ref|NC_001796.2|, length=15462
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 11 permutations for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    CAA28282.1        515    1-515          1   111-1655       1   3  0  N   98.2   99.4   100.0  0        N | nucleoprotein
+    tr|B8XXB4|B8XXB4_ 515    1-515          1   111-1655       1   3  0  N   98.6   99.4   100.0  0        N | nucleoprotein
+    ABZ85668.1        515    1-515          1   111-1655       1   3  0  N   98.0   99.4   100.0  0        N | nucleoprotein
+    ACJ70086.1        515    1-515          1   111-1655       1   3  0  N   98.6   99.4   100.0  0        N | nucleoprotein
+    AAB48684.1        515    1-515          1   111-1655       1   3  0  N   97.8   99.4   100.0  0        N | nucleoprotein
+    tr|B0FRH6|B0FRH6_ 515    1-515          1   111-1655       1   3  0  N   98.0   99.2   100.0  0        N | nucleoprotein
+    tr|B1A5Q0|B1A5Q0_ 515    1-515          1   111-1655       1   3  0  N   98.0   99.4   100.0  0        N | nucleoprotein
+    AAA46863.1        515    1-515          1   111-1655       1   3  0  N   97.6   99.2   100.0  0        N | nucleoprotein
+    ABY47602.1        515    1-515          1   111-1655       1   3  0  N   98.0   99.2   100.0  0        N | nucleoprotein
+    ADR00399.1        515    1-515          1   111-1655       1   3  0  N   98.2   99.4   100.0  0        N | nucleoprotein
+    NP_067148.1       515    1-515          1   111-1655       1   3  0  N   100.0  100.0  100.0  0        N | nucleoprotein
+        found 1 gene
+
+    found 2 permutations for gene D
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADR00402.1        373    1-373          1   1784-2900      2   0  1  N   92.3   95.2   100.0  0        D | D protein
+    NP_599250.1       373    1-373          1   1784-2900      2   0  1  N   99.4   99.7   100.0  0        D | D protein
+        found 1 gene
+
+    found 15 permutations for gene P
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACJ70087.1        602    1-602          1   1784-3589      1   2  0  N   94.5   95.8   100.0  0        P | phosphoprotein
+    AAA46866.1        604    1-604          1   1784-3589      2   2  0  N   92.9   95.0   100.0  0        P | phosphoprotein
+    ADR00400.1        602    1-602          1   1784-3589      1   2  0  N   95.6   97.0   100.0  0        P | phosphoprotein
+    AAA66818.1        603    1-603          1   1784-3589      2   2  0  N   89.3   92.8   100.0  0        P | phosphoprotein
+    tr|B8XXB5|B8XXB5_ 602    1-602          1   1784-3589      1   2  0  N   94.5   95.8   100.0  0        P | phosphoprotein
+    BAA00031.1        603    1-603          1   1784-3589      2   2  0  N   89.2   92.8   100.0  0        P | phosphoprotein
+    AAB48685.1        603    1-603          1   1784-3592      1   2  0  N   96.6   97.8   100.0  0        P | phosphoprotein
+    tr|B3GQS8|B3GQS8_ 603    1-603          1   1784-3592      1   2  0  N   95.1   96.8   100.0  0        P | phosphoprotein
+    ABZ85669.1        603    1-603          1   1784-3592      1   2  0  N   96.0   97.3   100.0  0        P | phosphoprotein
+    tr|B1A5Q1|B1A5Q1_ 603    1-603          1   1784-3592      1   2  0  N   96.0   97.3   100.0  0        P | phosphoprotein
+    ABY47603.1        603    1-603          1   1784-3592      1   2  0  N   94.0   95.6   100.0  0        P | phosphoprotein
+    tr|A9Z0P3|A9Z0P3_ 603    1-603          1   1784-3592      1   2  0  N   94.0   95.6   100.0  0        P | phosphoprotein
+    NP_067149.1       603    1-603          1   1784-3592      1   2  0  N   100.0  100.0  100.0  0        P | phosphoprotein
+    tr|O89234|O89234_ 603    1-603          1   1784-3592      1   2  0  N   100.0  100.0  100.0  0        P | phosphoprotein
+    BAA00921.1        615    1-615          1   1784-3622      2   2  0  N   91.9   94.4   100.0  0        P | phosphoprotein
+        found 1 gene
+
+    found 7 permutations for gene C
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABZ85670.1        199    1-199          1   1794-2390      1   3  0  N   96.9   98.9   100.0  4.8-e153 C | C protein
+    ADR00401.1        199    1-199          1   1794-2390      1   3  0  N   97.4   98.9   100.0  1.2-e153 C | C protein
+    BAA00922.1        199    1-199          1   1794-2390      1   3  0  N   94.9   97.4   100.0  1.8-e149 C | C protein
+    tr|B1A5Q2|B1A5Q2_ 199    1-199          1   1794-2390      1   3  0  N   96.9   98.9   100.0  4.8-e153 C | C protein
+    AAB48686.1        199    1-199          1   1794-2390      1   3  0  N   96.9   98.4   100.0  1.3-e152 C | C protein
+    NP_599251.1       199    1-199          1   1794-2390      1   3  0  N   100.0  100.0  100.0  6.4-e157 C | C protein
+    BAA00032.1        199    1-199          1   1794-2390      1   3  0  N   95.4   97.9   100.0  3.2-e150 C | C protein
+        found 1 gene
+
+    found 11 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABZ85671.1        353    1-353          1   3753-4811      1   3  0  N   99.1   100.0  100.0  0        M | matrix protein
+    tr|B1A5Q3|B1A5Q3_ 353    1-353          1   3753-4811      1   3  0  N   99.1   100.0  100.0  0        M | matrix protein
+    BAA00078.1        353    1-353          1   3753-4811      1   3  0  N   96.6   98.5   100.0  0        M | matrix protein
+    NP_067150.1       353    1-353          1   3753-4811      1   3  0  N   100.0  100.0  100.0  0        M | matrix protein
+    AAB48687.1        353    1-353          1   3753-4811      1   3  0  N   98.5   99.4   100.0  0        M | matrix protein
+    ACJ70088.1        353    1-353          1   3753-4811      1   3  0  N   97.7   99.4   100.0  0        M | matrix protein
+    tr|A9Z0P4|A9Z0P4_ 353    1-353          1   3753-4811      1   3  0  N   98.0   99.4   100.0  0        M | matrix protein
+    tr|B8XXB6|B8XXB6_ 353    1-353          1   3753-4811      1   3  0  N   97.7   99.4   100.0  0        M | matrix protein
+    AAA46860.1        353    1-353          1   3753-4811      1   3  0  N   97.7   99.4   100.0  0        M | matrix protein
+    ABY47604.1        353    1-353          1   3753-4811      1   3  0  N   98.0   99.4   100.0  0        M | matrix protein
+    ADR00403.1        353    1-353          1   3753-4811      1   3  0  N   98.3   99.7   100.0  0        M | matrix protein
+        found 1 gene
+
+    found 14 permutations for gene F
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABY47605.1        539    1-539          1   5072-6688      1   2  0  N   96.4   98.8   100.0  0        F | fusion glycoprotein F0
+    tr|O89236|O89236_ 539    1-539          1   5072-6688      1   2  0  N   100.0  100.0  100.0  0        F | fusion glycoprotein F0
+    AAA46852.1        539    1-539          1   5072-6688      1   2  0  N   96.2   99.0   100.0  0        F | fusion glycoprotein F0
+    tr|A9Z0P5|A9Z0P5_ 539    1-539          1   5072-6688      1   2  0  N   96.4   98.8   100.0  0        F | fusion glycoprotein F0
+    NP_067151.1       539    1-539          1   5072-6688      1   2  0  N   100.0  100.0  100.0  0        F | fusion glycoprotein F0
+    tr|Q84193|Q84193_ 539    1-539          1   5072-6688      1   2  0  N   95.9   98.7   100.0  0        F | fusion glycoprotein F0
+    ABZ85672.1        539    1-539          1   5072-6688      1   2  0  N   97.0   99.4   100.0  0        F | fusion glycoprotein F0
+    tr|Q81079|Q81079_ 539    1-539          1   5072-6688      1   2  0  N   97.2   99.4   100.0  0        F | fusion glycoprotein F0
+    ADR00404.1        539    1-539          1   5072-6688      1   2  0  N   97.7   99.4   100.0  0        F | fusion glycoprotein F0
+    ACJ70089.1        539    1-539          1   5072-6688      1   2  0  N   96.4   98.8   100.0  0        F | fusion glycoprotein F0
+    tr|B1A5Q4|B1A5Q4_ 539    1-539          1   5072-6688      1   2  0  N   97.0   99.4   100.0  0        F | fusion glycoprotein F0
+    BAA00012.1        539    1-539          1   5072-6688      1   2  0  N   95.9   98.7   100.0  0        F | fusion glycoprotein F0
+    tr|B8XXB7|B8XXB7_ 539    1-539          1   5072-6688      1   2  0  N   96.4   98.8   100.0  0        F | fusion glycoprotein F0
+    AAB48688.1        539    1-539          1   5072-6688      1   2  0  N   97.2   99.4   100.0  0        F | fusion glycoprotein F0
+        found 1 gene
+
+    found 31 permutations for gene HN
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACF28542.1        572    1-570          1   6806-8515      1   2  0  N   92.9   95.6   99.6   0        HN | hemagglutinin neuraminidase
+    tr|B1A5Q5|B1A5Q5_ 572    1-572          1   6806-8521      1   2  0  N   95.6   97.5   100.0  0        HN | hemagglutinin neuraminidase
+    ADO60288.1        572    1-572          1   6806-8521      1   2  0  N   94.9   97.2   100.0  0        HN | hemagglutinin neuraminidase
+    ABY47606.1        572    1-572          1   6806-8521      1   2  0  N   94.2   96.6   100.0  0        HN | hemagglutinin neuraminidase
+    ACF28541.1        572    1-572          1   6806-8521      1   2  0  N   93.1   95.8   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46851.1        572    1-572          1   6806-8521      1   2  0  N   95.4   97.3   100.0  0        HN | hemagglutinin neuraminidase
+    ACF28539.1        572    1-572          1   6806-8521      1   2  0  N   95.8   97.7   100.0  0        HN | hemagglutinin neuraminidase
+    ACF28540.1        572    1-572          1   6806-8521      1   2  0  N   94.7   97.2   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46849.1        572    1-572          1   6806-8521      1   2  0  N   95.2   97.5   100.0  0        HN | hemagglutinin neuraminidase
+    AAP35240.1        572    1-572          1   6806-8521      1   2  0  N   95.4   97.0   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46848.1        572    1-572          1   6806-8521      1   2  0  N   96.3   97.9   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46847.1        572    1-572          1   6806-8521      1   2  0  N   94.2   97.2   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46855.1        572    1-572          1   6806-8521      1   2  0  N   95.6   97.7   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46846.1        572    1-572          1   6806-8521      1   2  0  N   94.7   97.5   100.0  0        HN | hemagglutinin neuraminidase
+    AAB48689.1        572    1-572          1   6806-8521      1   2  0  N   95.9   97.5   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46856.1        572    1-572          1   6806-8521      1   2  0  N   94.7   97.3   100.0  0        HN | hemagglutinin neuraminidase
+    AEQ39012.1        572    1-572          1   6806-8521      1   2  0  N   94.4   97.0   100.0  0        HN | hemagglutinin neuraminidase
+    ACJ70090.1        572    1-572          1   6806-8521      1   2  0  N   94.0   96.3   100.0  0        HN | hemagglutinin neuraminidase
+    ADR00405.1        572    1-572          1   6806-8521      1   2  0  N   95.4   97.5   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46853.1        572    1-572          1   6806-8521      1   2  0  N   94.4   97.3   100.0  0        HN | hemagglutinin neuraminidase
+    tr|Q81080|Q81080_ 572    1-572          1   6806-8521      1   2  0  N   95.9   97.5   100.0  0        HN | hemagglutinin neuraminidase
+    tr|Q5H7C5|Q5H7C5_ 572    1-572          1   6806-8521      1   2  0  N   94.2   96.8   100.0  0        HN | hemagglutinin neuraminidase
+    tr|B8XXB8|B8XXB8_ 572    1-572          1   6806-8521      1   2  0  N   94.0   96.3   100.0  0        HN | hemagglutinin neuraminidase
+    ADO60287.1        572    1-572          1   6806-8521      1   2  0  N   95.1   97.3   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46850.1        572    1-572          1   6806-8521      1   2  0  N   95.1   97.2   100.0  0        HN | hemagglutinin neuraminidase
+    ABZ85673.1        572    1-572          1   6806-8521      1   2  0  N   95.6   97.5   100.0  0        HN | hemagglutinin neuraminidase
+    AEQ39013.1        572    1-572          1   6806-8521      1   2  0  N   94.4   96.8   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46844.1        572    1-572          1   6806-8521      1   2  0  N   96.3   97.7   100.0  0        HN | hemagglutinin neuraminidase
+    AET35008.1        572    1-572          1   6806-8521      1   2  0  N   94.9   97.5   100.0  0        HN | hemagglutinin neuraminidase
+    tr|Q5H7C6|Q5H7C6_ 572    1-572          1   6806-8521      1   2  0  N   93.3   96.5   100.0  0        HN | hemagglutinin neuraminidase
+    NP_067152.1       574    1-574          1   6806-8527      1   2  0  N   100.0  100.0  100.0  0        HN | hemagglutinin neuraminidase
+        found 1 gene
+
+    found 10 permutations for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABZ85674.1        2233   1-2233         1   8646-15344     1   3  0  N   99.1   99.9   100.0  0        L | RNA-directed RNA polymerase L
+    NP_067153.2       2233   1-2233         1   8646-15344     1   3  0  N   100.0  100.0  100.0  0        L | RNA-directed RNA polymerase L
+    ACJ70091.1        2233   1-2233         1   8646-15344     1   3  0  N   96.9   98.3   100.0  0        L | RNA-directed RNA polymerase L
+    tr|B8XXB9|B8XXB9_ 2233   1-2233         1   8646-15344     1   3  0  N   96.9   98.3   100.0  0        L | RNA-directed RNA polymerase L
+    ADR00406.1        2233   1-2233         1   8646-15344     1   3  0  N   99.2   99.9   100.0  0        L | RNA-directed RNA polymerase L
+    AAA46854.1        2233   1-2233         1   8646-15344     1   3  0  N   98.4   99.4   100.0  0        L | RNA-directed RNA polymerase L
+    AAB48690.1        2233   1-2233         1   8646-15344     1   3  0  N   99.0   99.7   100.0  0        L | RNA-directed RNA polymerase L
+    tr|O89238|O89238_ 2233   1-2233         1   8646-15344     1   3  0  N   100.0  100.0  100.0  0        L | RNA-directed RNA polymerase L
+    ABY47607.1        2233   1-2233         1   8646-15344     1   3  0  N   97.2   98.4   100.0  0        L | RNA-directed RNA polymerase L
+    tr|A9Z0P7|A9Z0P7_ 2233   1-2233         1   8646-15344     1   3  0  N   97.2   98.4   100.0  0        L | RNA-directed RNA polymerase L
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|10937870|ref|NC_0    15462      8            0      16191           5389          100.0            100.0          100.0   hpiv3_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_10937870.1      100.0  100.0  100.0  0.0   0.0   0.0   111..1658        515    515    NP_067148.1       N | nucleoprotein
+gi_10937870.2      100.0  100.0  100.0  0.0   0.0   0.0   1784..2903       373    373    NP_599250.1       D | D protein
+                    transcription exception 2500..2506:AAAAGGGGG
+gi_10937870.3      100.0  100.0  100.0  0.0   0.0   0.0   1784..3595       603    603    NP_067149.1       P | phosphoprotein
+gi_10937870.4      100.0  100.0  100.0  0.0   0.0   0.0   1794..2393       199    199    NP_599251.1       C | C protein
+gi_10937870.5      100.0  100.0  100.0  0.0   0.0   0.0   3753..4814       353    353    NP_067150.1       M | matrix protein
+gi_10937870.6      100.0  100.0  100.0  0.0   0.0   0.0   5072..6691       539    539    tr|O89236|O89236_ F | fusion glycoprotein F0
+gi_10937870.7      100.0  100.0  100.0  0.0   0.0   0.0   6806..8530       574    574    NP_067152.1       HN | hemagglutinin neuraminidase
+gi_10937870.8      100.0  100.0  100.0  0.0   0.0   0.0   8646..15347      2233   2233   NP_067153.2       L | RNA-directed RNA polymerase L
+
+
+genomic sequence gi|312618595|gb|HM583801.1|, length=15462
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 11 permutations for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    CAA28282.1        515    1-515          1   111-1655       1   3  0  N   99.2   99.6   100.0  0        N | nucleoprotein
+    tr|B8XXB4|B8XXB4_ 515    1-515          1   111-1655       1   3  0  N   98.8   99.6   100.0  0        N | nucleoprotein
+    ABZ85668.1        515    1-515          1   111-1655       1   3  0  N   99.0   99.6   100.0  0        N | nucleoprotein
+    ACJ70086.1        515    1-515          1   111-1655       1   3  0  N   98.8   99.6   100.0  0        N | nucleoprotein
+    AAB48684.1        515    1-515          1   111-1655       1   3  0  N   98.8   99.6   100.0  0        N | nucleoprotein
+    tr|B0FRH6|B0FRH6_ 515    1-515          1   111-1655       1   3  0  N   99.0   99.4   100.0  0        N | nucleoprotein
+    tr|B1A5Q0|B1A5Q0_ 515    1-515          1   111-1655       1   3  0  N   99.0   99.6   100.0  0        N | nucleoprotein
+    AAA46863.1        515    1-515          1   111-1655       1   3  0  N   98.6   99.4   100.0  0        N | nucleoprotein
+    ADR00399.1        515    1-515          1   111-1655       1   3  0  N   100.0  100.0  100.0  0        N | nucleoprotein
+    ABY47602.1        515    1-515          1   111-1655       1   3  0  N   99.0   99.4   100.0  0        N | nucleoprotein
+    NP_067148.1       515    1-515          1   111-1655       1   3  0  N   98.2   99.4   100.0  0        N | nucleoprotein
+        found 1 gene
+
+    found 2 permutations for gene D
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADR00402.1        373    1-373          1   1784-2900      2   0  1  N   99.4   99.7   100.0  0        D | D protein
+    NP_599250.1       373    1-373          1   1784-2900      2   0  1  N   92.3   95.2   100.0  0        D | D protein
+        found 1 gene
+
+    found 15 permutations for gene P
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAA00921.1        615    1-603          1   1784-3586      2   2  0  N   94.8   96.6   98.0   0        P | phosphoprotein
+    AAB48685.1        603    1-602          1   1784-3589      1   2  0  N   97.3   97.8   99.8   0        P | phosphoprotein
+    tr|B3GQS8|B3GQS8_ 603    1-602          1   1784-3589      1   2  0  N   95.8   96.8   99.8   0        P | phosphoprotein
+    ABZ85669.1        603    1-602          1   1784-3589      1   2  0  N   96.3   97.0   99.8   0        P | phosphoprotein
+    tr|B1A5Q1|B1A5Q1_ 603    1-602          1   1784-3589      1   2  0  N   96.3   97.0   99.8   0        P | phosphoprotein
+    ACJ70087.1        602    1-602          1   1784-3589      1   2  0  N   96.1   97.1   100.0  0        P | phosphoprotein
+    AAA46866.1        604    1-604          1   1784-3589      2   2  0  N   95.2   96.7   100.0  0        P | phosphoprotein
+    ABY47603.1        603    1-602          1   1784-3589      1   2  0  N   96.0   97.0   99.8   0        P | phosphoprotein
+    ADR00400.1        602    1-602          1   1784-3589      1   2  0  N   100.0  100.0  100.0  0        P | phosphoprotein
+    tr|A9Z0P3|A9Z0P3_ 603    1-602          1   1784-3589      1   2  0  N   96.0   97.0   99.8   0        P | phosphoprotein
+    AAA66818.1        603    1-603          1   1784-3589      2   2  0  N   91.5   94.3   100.0  0        P | phosphoprotein
+    NP_067149.1       603    1-602          1   1784-3589      1   2  0  N   95.6   97.0   99.8   0        P | phosphoprotein
+    tr|B8XXB5|B8XXB5_ 602    1-602          1   1784-3589      1   2  0  N   96.1   97.1   100.0  0        P | phosphoprotein
+    tr|O89234|O89234_ 603    1-602          1   1784-3589      1   2  0  N   95.6   97.0   99.8   0        P | phosphoprotein
+    BAA00031.1        603    1-603          1   1784-3589      2   2  0  N   91.4   94.3   100.0  0        P | phosphoprotein
+        found 1 gene
+
+    found 7 permutations for gene C
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABZ85670.1        199    1-199          1   1794-2390      1   3  0  N   98.4   100.0  100.0  2.8-e155 C | C protein
+    ADR00401.1        199    1-199          1   1794-2390      1   3  0  N   100.0  100.0  100.0  6.4-e157 C | C protein
+    BAA00922.1        199    1-199          1   1794-2390      1   3  0  N   97.4   98.4   100.0  9.5-e153 C | C protein
+    tr|B1A5Q2|B1A5Q2_ 199    1-199          1   1794-2390      1   3  0  N   98.4   100.0  100.0  2.8-e155 C | C protein
+    AAB48686.1        199    1-199          1   1794-2390      1   3  0  N   97.9   99.4   100.0  2.2-e154 C | C protein
+    NP_599251.1       199    1-199          1   1794-2390      1   3  0  N   97.4   98.9   100.0  1.2-e153 C | C protein
+    BAA00032.1        199    1-199          1   1794-2390      1   3  0  N   97.9   98.9   100.0  1.7-e153 C | C protein
+        found 1 gene
+
+    found 11 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABZ85671.1        353    1-353          1   3753-4811      1   3  0  N   99.1   99.7   100.0  0        M | matrix protein
+    tr|B1A5Q3|B1A5Q3_ 353    1-353          1   3753-4811      1   3  0  N   99.1   99.7   100.0  0        M | matrix protein
+    BAA00078.1        353    1-353          1   3753-4811      1   3  0  N   97.7   98.8   100.0  0        M | matrix protein
+    NP_067150.1       353    1-353          1   3753-4811      1   3  0  N   98.3   99.7   100.0  0        M | matrix protein
+    AAB48687.1        353    1-353          1   3753-4811      1   3  0  N   99.1   99.7   100.0  0        M | matrix protein
+    ACJ70088.1        353    1-353          1   3753-4811      1   3  0  N   98.8   99.7   100.0  0        M | matrix protein
+    tr|A9Z0P4|A9Z0P4_ 353    1-353          1   3753-4811      1   3  0  N   99.1   99.7   100.0  0        M | matrix protein
+    tr|B8XXB6|B8XXB6_ 353    1-353          1   3753-4811      1   3  0  N   98.8   99.7   100.0  0        M | matrix protein
+    AAA46860.1        353    1-353          1   3753-4811      1   3  0  N   98.8   99.7   100.0  0        M | matrix protein
+    ABY47604.1        353    1-353          1   3753-4811      1   3  0  N   99.1   99.7   100.0  0        M | matrix protein
+    ADR00403.1        353    1-353          1   3753-4811      1   3  0  N   100.0  100.0  100.0  0        M | matrix protein
+        found 1 gene
+
+    found 14 permutations for gene F
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABY47605.1        539    1-539          1   5072-6688      1   2  0  N   97.5   99.0   100.0  0        F | fusion glycoprotein F0
+    tr|O89236|O89236_ 539    1-539          1   5072-6688      1   2  0  N   97.7   99.4   100.0  0        F | fusion glycoprotein F0
+    AAA46852.1        539    1-539          1   5072-6688      1   2  0  N   98.1   99.2   100.0  0        F | fusion glycoprotein F0
+    tr|A9Z0P5|A9Z0P5_ 539    1-539          1   5072-6688      1   2  0  N   97.5   99.0   100.0  0        F | fusion glycoprotein F0
+    NP_067151.1       539    1-539          1   5072-6688      1   2  0  N   97.7   99.4   100.0  0        F | fusion glycoprotein F0
+    tr|Q84193|Q84193_ 539    1-539          1   5072-6688      1   2  0  N   97.7   98.8   100.0  0        F | fusion glycoprotein F0
+    ABZ85672.1        539    1-539          1   5072-6688      1   2  0  N   98.8   99.6   100.0  0        F | fusion glycoprotein F0
+    tr|Q81079|Q81079_ 539    1-539          1   5072-6688      1   2  0  N   98.7   99.6   100.0  0        F | fusion glycoprotein F0
+    ADR00404.1        539    1-539          1   5072-6688      1   2  0  N   100.0  100.0  100.0  0        F | fusion glycoprotein F0
+    ACJ70089.1        539    1-539          1   5072-6688      1   2  0  N   97.5   99.0   100.0  0        F | fusion glycoprotein F0
+    tr|B1A5Q4|B1A5Q4_ 539    1-539          1   5072-6688      1   2  0  N   98.8   99.6   100.0  0        F | fusion glycoprotein F0
+    BAA00012.1        539    1-539          1   5072-6688      1   2  0  N   97.7   98.8   100.0  0        F | fusion glycoprotein F0
+    tr|B8XXB7|B8XXB7_ 539    1-539          1   5072-6688      1   2  0  N   97.5   99.0   100.0  0        F | fusion glycoprotein F0
+    AAB48688.1        539    1-539          1   5072-6688      1   2  0  N   98.7   99.6   100.0  0        F | fusion glycoprotein F0
+        found 1 gene
+
+    found 31 permutations for gene HN
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACF28542.1        572    1-570          1   6806-8515      1   2  0  N   95.7   97.0   99.6   0        HN | hemagglutinin neuraminidase
+    tr|B1A5Q5|B1A5Q5_ 572    1-572          1   6806-8521      1   2  0  N   97.2   98.0   100.0  0        HN | hemagglutinin neuraminidase
+    ADO60288.1        572    1-572          1   6806-8521      1   2  0  N   97.2   98.6   100.0  0        HN | hemagglutinin neuraminidase
+    ABY47606.1        572    1-572          1   6806-8521      1   2  0  N   97.0   98.0   100.0  0        HN | hemagglutinin neuraminidase
+    ACF28541.1        572    1-572          1   6806-8521      1   2  0  N   95.4   97.2   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46851.1        572    1-572          1   6806-8521      1   2  0  N   97.5   98.4   100.0  0        HN | hemagglutinin neuraminidase
+    ACF28539.1        572    1-572          1   6806-8521      1   2  0  N   98.6   99.1   100.0  0        HN | hemagglutinin neuraminidase
+    ACF28540.1        572    1-572          1   6806-8521      1   2  0  N   97.0   98.6   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46849.1        572    1-572          1   6806-8521      1   2  0  N   97.0   98.2   100.0  0        HN | hemagglutinin neuraminidase
+    AAP35240.1        572    1-572          1   6806-8521      1   2  0  N   97.5   98.2   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46848.1        572    1-572          1   6806-8521      1   2  0  N   98.4   98.9   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46847.1        572    1-572          1   6806-8521      1   2  0  N   97.5   98.6   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46855.1        572    1-572          1   6806-8521      1   2  0  N   97.7   98.7   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46846.1        572    1-572          1   6806-8521      1   2  0  N   98.0   98.9   100.0  0        HN | hemagglutinin neuraminidase
+    AAB48689.1        572    1-572          1   6806-8521      1   2  0  N   98.2   98.6   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46856.1        572    1-572          1   6806-8521      1   2  0  N   98.0   98.7   100.0  0        HN | hemagglutinin neuraminidase
+    AEQ39012.1        572    1-572          1   6806-8521      1   2  0  N   97.2   98.4   100.0  0        HN | hemagglutinin neuraminidase
+    ACJ70090.1        572    1-572          1   6806-8521      1   2  0  N   96.8   97.7   100.0  0        HN | hemagglutinin neuraminidase
+    ADR00405.1        572    1-572          1   6806-8521      1   2  0  N   100.0  100.0  100.0  0        HN | hemagglutinin neuraminidase
+    AAA46853.1        572    1-572          1   6806-8521      1   2  0  N   97.7   98.7   100.0  0        HN | hemagglutinin neuraminidase
+    tr|Q81080|Q81080_ 572    1-572          1   6806-8521      1   2  0  N   98.2   98.6   100.0  0        HN | hemagglutinin neuraminidase
+    tr|Q5H7C5|Q5H7C5_ 572    1-572          1   6806-8521      1   2  0  N   96.6   97.9   100.0  0        HN | hemagglutinin neuraminidase
+    ADO60287.1        572    1-572          1   6806-8521      1   2  0  N   97.3   98.7   100.0  0        HN | hemagglutinin neuraminidase
+    tr|B8XXB8|B8XXB8_ 572    1-572          1   6806-8521      1   2  0  N   96.8   97.7   100.0  0        HN | hemagglutinin neuraminidase
+    NP_067152.1       574    1-572          1   6806-8521      1   2  0  N   95.4   97.5   99.6   0        HN | hemagglutinin neuraminidase
+    AAA46850.1        572    1-572          1   6806-8521      1   2  0  N   97.2   98.2   100.0  0        HN | hemagglutinin neuraminidase
+    ABZ85673.1        572    1-572          1   6806-8521      1   2  0  N   97.2   98.0   100.0  0        HN | hemagglutinin neuraminidase
+    AEQ39013.1        572    1-572          1   6806-8521      1   2  0  N   97.2   98.2   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46844.1        572    1-572          1   6806-8521      1   2  0  N   97.5   98.4   100.0  0        HN | hemagglutinin neuraminidase
+    AET35008.1        572    1-572          1   6806-8521      1   2  0  N   98.2   98.9   100.0  0        HN | hemagglutinin neuraminidase
+    tr|Q5H7C6|Q5H7C6_ 572    1-572          1   6806-8521      1   2  0  N   96.1   97.9   100.0  0        HN | hemagglutinin neuraminidase
+        found 1 gene
+
+    found 10 permutations for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABZ85674.1        2233   1-2233         1   8646-15344     1   3  0  N   99.2   100.0  100.0  0        L | RNA-directed RNA polymerase L
+    NP_067153.2       2233   1-2233         1   8646-15344     1   3  0  N   99.2   99.9   100.0  0        L | RNA-directed RNA polymerase L
+    ACJ70091.1        2233   1-2233         1   8646-15344     1   3  0  N   97.4   98.4   100.0  0        L | RNA-directed RNA polymerase L
+    tr|B8XXB9|B8XXB9_ 2233   1-2233         1   8646-15344     1   3  0  N   97.4   98.4   100.0  0        L | RNA-directed RNA polymerase L
+    ADR00406.1        2233   1-2233         1   8646-15344     1   3  0  N   100.0  100.0  100.0  0        L | RNA-directed RNA polymerase L
+    AAA46854.1        2233   1-2233         1   8646-15344     1   3  0  N   98.9   99.5   100.0  0        L | RNA-directed RNA polymerase L
+    AAB48690.1        2233   1-2233         1   8646-15344     1   3  0  N   99.1   99.8   100.0  0        L | RNA-directed RNA polymerase L
+    tr|O89238|O89238_ 2233   1-2233         1   8646-15344     1   3  0  N   99.2   99.9   100.0  0        L | RNA-directed RNA polymerase L
+    ABY47607.1        2233   1-2233         1   8646-15344     1   3  0  N   97.6   98.5   100.0  0        L | RNA-directed RNA polymerase L
+    tr|A9Z0P7|A9Z0P7_ 2233   1-2233         1   8646-15344     1   3  0  N   97.6   98.5   100.0  0        L | RNA-directed RNA polymerase L
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|312618595|gb|HM58    15462      8            0      16182           5386          100.0            100.0          100.0   hpiv3_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_312618595.1     100.0  100.0  100.0  0.0   0.0   0.0   111..1658        515    515    ADR00399.1        N | nucleoprotein
+gi_312618595.2     100.0  100.0  100.0  0.0   0.0   0.0   1784..2903       373    373    ADR00402.1        D | D protein
+                    transcription exception 2500..2506:AAAAGGGGG
+gi_312618595.3     100.0  100.0  100.0  0.0   0.0   0.0   1784..3592       602    602    ADR00400.1        P | phosphoprotein
+gi_312618595.4     100.0  100.0  100.0  0.0   0.0   0.0   1794..2393       199    199    ADR00401.1        C | C protein
+gi_312618595.5     100.0  100.0  100.0  0.0   0.0   0.0   3753..4814       353    353    ADR00403.1        M | matrix protein
+gi_312618595.6     100.0  100.0  100.0  0.0   0.0   0.0   5072..6691       539    539    ADR00404.1        F | fusion glycoprotein F0
+gi_312618595.7     100.0  100.0  100.0  0.0   0.0   0.0   6806..8524       572    572    ADR00405.1        HN | hemagglutinin neuraminidase
+gi_312618595.8     100.0  100.0  100.0  0.0   0.0   0.0   8646..15347      2233   2233   ADR00406.1        L | RNA-directed RNA polymerase L
+
+
+genomic sequence gi|163866863|gb|EU326526.1|, length=15462
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 11 permutations for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    CAA28282.1        515    1-515          1   111-1655       1   3  0  N   99.0   99.4   100.0  0        N | nucleoprotein
+    tr|B8XXB4|B8XXB4_ 515    1-515          1   111-1655       1   3  0  N   99.0   99.4   100.0  0        N | nucleoprotein
+    ABZ85668.1        515    1-515          1   111-1655       1   3  0  N   99.0   99.4   100.0  0        N | nucleoprotein
+    ACJ70086.1        515    1-515          1   111-1655       1   3  0  N   99.0   99.4   100.0  0        N | nucleoprotein
+    AAB48684.1        515    1-515          1   111-1655       1   3  0  N   98.8   99.4   100.0  0        N | nucleoprotein
+    tr|B0FRH6|B0FRH6_ 515    1-515          1   111-1655       1   3  0  N   98.8   99.2   100.0  0        N | nucleoprotein
+    tr|B1A5Q0|B1A5Q0_ 515    1-515          1   111-1655       1   3  0  N   99.0   99.4   100.0  0        N | nucleoprotein
+    AAA46863.1        515    1-515          1   111-1655       1   3  0  N   98.4   99.2   100.0  0        N | nucleoprotein
+    ADR00399.1        515    1-515          1   111-1655       1   3  0  N   99.0   99.4   100.0  0        N | nucleoprotein
+    ABY47602.1        515    1-515          1   111-1655       1   3  0  N   100.0  100.0  100.0  0        N | nucleoprotein
+    NP_067148.1       515    1-515          1   111-1655       1   3  0  N   98.0   99.2   100.0  0        N | nucleoprotein
+        found 1 gene
+
+    found 2 permutations for gene D
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADR00402.1        373    1-373          1   1784-2900      2   0  1  N   91.5   94.4   100.0  0        D | D protein
+    NP_599250.1       373    1-373          1   1784-2900      2   0  1  N   88.5   93.1   100.0  0        D | D protein
+        found 1 gene
+
+    found 15 permutations for gene P
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACJ70087.1        602    1-602          1   1784-3589      1   2  0  N   98.8   99.1   100.0  0        P | phosphoprotein
+    AAA46866.1        604    1-604          1   1784-3589      2   2  0  N   94.7   95.8   100.0  0        P | phosphoprotein
+    ADR00400.1        602    1-602          1   1784-3589      1   2  0  N   96.0   97.0   100.0  0        P | phosphoprotein
+    AAA66818.1        603    1-603          1   1784-3589      2   2  0  N   90.9   93.4   100.0  0        P | phosphoprotein
+    tr|B8XXB5|B8XXB5_ 602    1-602          1   1784-3589      1   2  0  N   98.8   99.1   100.0  0        P | phosphoprotein
+    BAA00031.1        603    1-603          1   1784-3589      2   2  0  N   90.7   93.4   100.0  0        P | phosphoprotein
+    AAB48685.1        603    1-603          1   1784-3592      1   2  0  N   95.3   96.5   100.0  0        P | phosphoprotein
+    tr|B3GQS8|B3GQS8_ 603    1-603          1   1784-3592      1   2  0  N   93.8   95.5   100.0  0        P | phosphoprotein
+    ABZ85669.1        603    1-603          1   1784-3592      1   2  0  N   94.3   95.6   100.0  0        P | phosphoprotein
+    tr|B1A5Q1|B1A5Q1_ 603    1-603          1   1784-3592      1   2  0  N   94.3   95.6   100.0  0        P | phosphoprotein
+    ABY47603.1        603    1-603          1   1784-3592      1   2  0  N   100.0  100.0  100.0  0        P | phosphoprotein
+    tr|A9Z0P3|A9Z0P3_ 603    1-603          1   1784-3592      1   2  0  N   100.0  100.0  100.0  0        P | phosphoprotein
+    NP_067149.1       603    1-603          1   1784-3592      1   2  0  N   94.0   95.6   100.0  0        P | phosphoprotein
+    tr|O89234|O89234_ 603    1-603          1   1784-3592      1   2  0  N   94.0   95.6   100.0  0        P | phosphoprotein
+    BAA00921.1        615    1-615          1   1784-3622      2   2  0  N   93.5   95.3   100.0  0        P | phosphoprotein
+        found 1 gene
+
+    found 7 permutations for gene C
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABZ85670.1        199    1-199          1   1794-2390      1   3  0  N   98.4   99.4   100.0  7.8-e155 C | C protein
+    ADR00401.1        199    1-199          1   1794-2390      1   3  0  N   98.4   100.0  100.0  5.5-e155 C | C protein
+    BAA00922.1        199    1-199          1   1794-2390      1   3  0  N   96.9   98.4   100.0  7.4-e152 C | C protein
+    tr|B1A5Q2|B1A5Q2_ 199    1-199          1   1794-2390      1   3  0  N   98.4   99.4   100.0  7.8-e155 C | C protein
+    AAB48686.1        199    1-199          1   1794-2390      1   3  0  N   97.9   98.9   100.0  6.1-e154 C | C protein
+    NP_599251.1       199    1-199          1   1794-2390      1   3  0  N   95.9   98.9   100.0  1.0-e151 C | C protein
+    BAA00032.1        199    1-199          1   1794-2390      1   3  0  N   97.4   98.9   100.0  1.3-e152 C | C protein
+        found 1 gene
+
+    found 11 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABZ85671.1        353    1-353          1   3753-4811      1   3  0  N   98.8   99.4   100.0  0        M | matrix protein
+    tr|B1A5Q3|B1A5Q3_ 353    1-353          1   3753-4811      1   3  0  N   98.8   99.4   100.0  0        M | matrix protein
+    BAA00078.1        353    1-353          1   3753-4811      1   3  0  N   97.4   98.5   100.0  0        M | matrix protein
+    NP_067150.1       353    1-353          1   3753-4811      1   3  0  N   98.0   99.4   100.0  0        M | matrix protein
+    AAB48687.1        353    1-353          1   3753-4811      1   3  0  N   98.8   99.4   100.0  0        M | matrix protein
+    ACJ70088.1        353    1-353          1   3753-4811      1   3  0  N   98.5   99.4   100.0  0        M | matrix protein
+    tr|A9Z0P4|A9Z0P4_ 353    1-353          1   3753-4811      1   3  0  N   100.0  100.0  100.0  0        M | matrix protein
+    tr|B8XXB6|B8XXB6_ 353    1-353          1   3753-4811      1   3  0  N   98.5   99.4   100.0  0        M | matrix protein
+    AAA46860.1        353    1-353          1   3753-4811      1   3  0  N   98.5   99.4   100.0  0        M | matrix protein
+    ABY47604.1        353    1-353          1   3753-4811      1   3  0  N   100.0  100.0  100.0  0        M | matrix protein
+    ADR00403.1        353    1-353          1   3753-4811      1   3  0  N   99.1   99.7   100.0  0        M | matrix protein
+        found 1 gene
+
+    found 14 permutations for gene F
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABY47605.1        539    1-539          1   5072-6688      1   2  0  N   100.0  100.0  100.0  0        F | fusion glycoprotein F0
+    tr|O89236|O89236_ 539    1-539          1   5072-6688      1   2  0  N   96.4   98.8   100.0  0        F | fusion glycoprotein F0
+    AAA46852.1        539    1-539          1   5072-6688      1   2  0  N   96.8   98.7   100.0  0        F | fusion glycoprotein F0
+    tr|A9Z0P5|A9Z0P5_ 539    1-539          1   5072-6688      1   2  0  N   100.0  100.0  100.0  0        F | fusion glycoprotein F0
+    NP_067151.1       539    1-539          1   5072-6688      1   2  0  N   96.4   98.8   100.0  0        F | fusion glycoprotein F0
+    tr|Q84193|Q84193_ 539    1-539          1   5072-6688      1   2  0  N   96.4   98.3   100.0  0        F | fusion glycoprotein F0
+    ABZ85672.1        539    1-539          1   5072-6688      1   2  0  N   97.4   99.2   100.0  0        F | fusion glycoprotein F0
+    tr|Q81079|Q81079_ 539    1-539          1   5072-6688      1   2  0  N   97.4   99.0   100.0  0        F | fusion glycoprotein F0
+    ADR00404.1        539    1-539          1   5072-6688      1   2  0  N   97.5   99.0   100.0  0        F | fusion glycoprotein F0
+    ACJ70089.1        539    1-539          1   5072-6688      1   2  0  N   99.6   100.0  100.0  0        F | fusion glycoprotein F0
+    tr|B1A5Q4|B1A5Q4_ 539    1-539          1   5072-6688      1   2  0  N   97.4   99.2   100.0  0        F | fusion glycoprotein F0
+    BAA00012.1        539    1-539          1   5072-6688      1   2  0  N   96.4   98.3   100.0  0        F | fusion glycoprotein F0
+    tr|B8XXB7|B8XXB7_ 539    1-539          1   5072-6688      1   2  0  N   99.6   100.0  100.0  0        F | fusion glycoprotein F0
+    AAB48688.1        539    1-539          1   5072-6688      1   2  0  N   97.4   99.0   100.0  0        F | fusion glycoprotein F0
+        found 1 gene
+
+    found 31 permutations for gene HN
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACF28542.1        572    1-570          1   6806-8515      1   2  0  N   97.3   97.8   99.6   0        HN | hemagglutinin neuraminidase
+    tr|B1A5Q5|B1A5Q5_ 572    1-572          1   6806-8521      1   2  0  N   96.8   97.9   100.0  0        HN | hemagglutinin neuraminidase
+    ADO60288.1        572    1-572          1   6806-8521      1   2  0  N   98.7   99.1   100.0  0        HN | hemagglutinin neuraminidase
+    ABY47606.1        572    1-572          1   6806-8521      1   2  0  N   100.0  100.0  100.0  0        HN | hemagglutinin neuraminidase
+    ACF28541.1        572    1-572          1   6806-8521      1   2  0  N   97.0   97.7   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46851.1        572    1-572          1   6806-8521      1   2  0  N   96.8   97.9   100.0  0        HN | hemagglutinin neuraminidase
+    ACF28539.1        572    1-572          1   6806-8521      1   2  0  N   98.4   98.9   100.0  0        HN | hemagglutinin neuraminidase
+    ACF28540.1        572    1-572          1   6806-8521      1   2  0  N   98.4   99.1   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46849.1        572    1-572          1   6806-8521      1   2  0  N   96.6   98.0   100.0  0        HN | hemagglutinin neuraminidase
+    AAP35240.1        572    1-572          1   6806-8521      1   2  0  N   96.8   98.0   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46848.1        572    1-572          1   6806-8521      1   2  0  N   97.2   98.0   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46847.1        572    1-572          1   6806-8521      1   2  0  N   97.2   98.7   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46855.1        572    1-572          1   6806-8521      1   2  0  N   96.8   98.2   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46846.1        572    1-572          1   6806-8521      1   2  0  N   97.3   98.7   100.0  0        HN | hemagglutinin neuraminidase
+    AAB48689.1        572    1-572          1   6806-8521      1   2  0  N   97.2   98.0   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46856.1        572    1-572          1   6806-8521      1   2  0  N   97.3   98.6   100.0  0        HN | hemagglutinin neuraminidase
+    AEQ39012.1        572    1-572          1   6806-8521      1   2  0  N   99.1   99.3   100.0  0        HN | hemagglutinin neuraminidase
+    ACJ70090.1        572    1-572          1   6806-8521      1   2  0  N   99.3   99.4   100.0  0        HN | hemagglutinin neuraminidase
+    ADR00405.1        572    1-572          1   6806-8521      1   2  0  N   97.0   98.0   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46853.1        572    1-572          1   6806-8521      1   2  0  N   97.0   98.6   100.0  0        HN | hemagglutinin neuraminidase
+    tr|Q81080|Q81080_ 572    1-572          1   6806-8521      1   2  0  N   97.2   98.0   100.0  0        HN | hemagglutinin neuraminidase
+    tr|Q5H7C5|Q5H7C5_ 572    1-572          1   6806-8521      1   2  0  N   98.7   99.3   100.0  0        HN | hemagglutinin neuraminidase
+    ADO60287.1        572    1-572          1   6806-8521      1   2  0  N   98.6   98.9   100.0  0        HN | hemagglutinin neuraminidase
+    tr|B8XXB8|B8XXB8_ 572    1-572          1   6806-8521      1   2  0  N   99.3   99.4   100.0  0        HN | hemagglutinin neuraminidase
+    NP_067152.1       574    1-572          1   6806-8521      1   2  0  N   94.2   96.6   99.6   0        HN | hemagglutinin neuraminidase
+    AAA46850.1        572    1-572          1   6806-8521      1   2  0  N   97.0   98.0   100.0  0        HN | hemagglutinin neuraminidase
+    ABZ85673.1        572    1-572          1   6806-8521      1   2  0  N   96.8   97.9   100.0  0        HN | hemagglutinin neuraminidase
+    AEQ39013.1        572    1-572          1   6806-8521      1   2  0  N   98.9   99.3   100.0  0        HN | hemagglutinin neuraminidase
+    AAA46844.1        572    1-572          1   6806-8521      1   2  0  N   97.0   98.2   100.0  0        HN | hemagglutinin neuraminidase
+    AET35008.1        572    1-572          1   6806-8521      1   2  0  N   97.5   98.7   100.0  0        HN | hemagglutinin neuraminidase
+    tr|Q5H7C6|Q5H7C6_ 572    1-572          1   6806-8521      1   2  0  N   98.0   98.7   100.0  0        HN | hemagglutinin neuraminidase
+        found 1 gene
+
+    found 10 permutations for gene L
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABZ85674.1        2233   1-2233         1   8646-15344     1   3  0  N   97.3   98.5   100.0  0        L | RNA-directed RNA polymerase L
+    NP_067153.2       2233   1-2233         1   8646-15344     1   3  0  N   97.2   98.4   100.0  0        L | RNA-directed RNA polymerase L
+    ACJ70091.1        2233   1-2233         1   8646-15344     1   3  0  N   99.3   99.6   100.0  0        L | RNA-directed RNA polymerase L
+    tr|B8XXB9|B8XXB9_ 2233   1-2233         1   8646-15344     1   3  0  N   99.3   99.6   100.0  0        L | RNA-directed RNA polymerase L
+    ADR00406.1        2233   1-2233         1   8646-15344     1   3  0  N   97.6   98.5   100.0  0        L | RNA-directed RNA polymerase L
+    AAA46854.1        2233   1-2233         1   8646-15344     1   3  0  N   97.0   98.1   100.0  0        L | RNA-directed RNA polymerase L
+    AAB48690.1        2233   1-2233         1   8646-15344     1   3  0  N   97.1   98.3   100.0  0        L | RNA-directed RNA polymerase L
+    tr|O89238|O89238_ 2233   1-2233         1   8646-15344     1   3  0  N   97.2   98.4   100.0  0        L | RNA-directed RNA polymerase L
+    ABY47607.1        2233   1-2233         1   8646-15344     1   3  0  N   100.0  100.0  100.0  0        L | RNA-directed RNA polymerase L
+    tr|A9Z0P7|A9Z0P7_ 2233   1-2233         1   8646-15344     1   3  0  N   100.0  100.0  100.0  0        L | RNA-directed RNA polymerase L
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|163866863|gb|EU32    15462      8            0      16185           5387           99.4             99.7          100.0   hpiv3_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_163866863.1     100.0  100.0  100.0  0.0   0.0   0.0   111..1658        515    515    ABY47602.1        N | nucleoprotein
+gi_163866863.2     92.0   96.0   100.0  0.0   0.0   0.0   1784..2903       373    373    ADR00402.1        D | D protein
+                    transcription exception 2500..2506:AAAAGGGGG
+gi_163866863.3     100.0  100.0  100.0  0.0   0.0   0.0   1784..3595       603    603    ABY47603.1        P | phosphoprotein
+gi_163866863.4     98.5   99.9   100.0  0.0   0.0   0.0   1794..2393       199    199    ABZ85670.1        C | C protein
+gi_163866863.5     100.0  100.0  100.0  0.0   0.0   0.0   3753..4814       353    353    tr|A9Z0P4|A9Z0P4_ M | matrix protein
+gi_163866863.6     100.0  100.0  100.0  0.0   0.0   0.0   5072..6691       539    539    ABY47605.1        F | fusion glycoprotein F0
+gi_163866863.7     100.0  100.0  100.0  0.0   0.0   0.0   6806..8524       572    572    ABY47606.1        HN | hemagglutinin neuraminidase
+gi_163866863.8     100.0  100.0  100.0  0.0   0.0   0.0   8646..15347      2233   2233   ABY47607.1        L | RNA-directed RNA polymerase L
+

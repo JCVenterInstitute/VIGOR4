@@ -1,0 +1,193 @@
+2018-09-06 20:41:11
+
+
+parameters
+	bl2seq_extend_hsp	25
+	bl2seq_extend_span	50
+	candidate_blastopts	-p blastx -M BLOSUM80 -e 1E-5 -g F -v 0 -F \"\" -z 3000000 -b 1000
+	candidate_evalue	
+	candidate_overlap_threshold	0.8
+	candidate_refdb	
+	command_line	/opt/www/vigor/vigor3/prod3/VIGOR3.pl -D rabies -O /usr/local/scratch/CORE/snettem/rabies/PRODUCTION/rabies -i /opt/www/vigor/vigor3/regr_testing/rabies.ungapped.fasta
+	default_gene_optional	0
+	default_gene_required	0
+	default_gene_variation	1
+	frameshift_sensitivity	1
+	gene_variations	
+	jcvi_rules	1
+	mature_pep_mincoverage	50
+	mature_pep_minidentity	25
+	mature_pep_minsimilarity	40
+	mature_pep_refdb	../data3/virus_mp
+	max_intron_size	7000
+	min_candidate_pctsimilarity	60
+	min_candidate_sbjcoverage	33
+	min_exon_size	3
+	min_intron_size	30
+	min_pseudogene_coverage	80
+	min_pseudogene_identity	70
+	min_pseudogene_similarity	80
+	noncanonical_splicing_genes	
+	optional_genes	
+	reference_db	/opt/www/vigor/vigor3/data3/rabies_db
+	reference_dbsize	46618
+	required_genes	
+	ribosomal_slippage_genes	
+	rna_editing_genes	
+	selectivity	0.985
+	slippage_frameshift	-1
+	slippage_motif	[NT][NT][NT]AAAC
+	slippage_offset	0
+	spliced_genes	
+	splicesite_extend_range	0
+	tile_overlap	1000000
+	tile_size	10000000
+	use_locus_tags	1
+	variation	0.975
+	verbose	0
+	vigorspace	/opt/www/vigor/vigor3/prod3/vigorscratch/50468.9601521058
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+HQ450386.1              11924      5            0      10812           3599           97.4             99.5          100.0   rabies_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+HQ450386.1.1       98.2   99.8   100.0  0.0   0.0   0.0   71..1423         450    450    BAM36882.1        N | nucleocapsid
+HQ450386.1.2       94.9   98.9   99.7   0.0   0.0   0.3   1514..2404       296    297    AFN24401.1        P | phosphoprotein
+HQ450386.1.3       97.5   99.3   100.0  0.0   0.0   0.0   2496..3104       202    202    BAM36884.1        M | matrix protein
+HQ450386.1.4       97.3   99.5   100.0  0.0   0.0   0.0   3317..4891       524    524    BAL49593.1        G | glycoprotein
+HQ450386.1.5       97.5   99.6   100.0  0.0   0.0   0.0   5410..11793      2127   2128   BAL14833.1        L | RNA-dependent RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+AF499686.2              11928      5            0      10815           3600           97.1             99.4          100.0   rabies_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+AF499686.2.1       97.6   99.8   100.0  0.0   0.0   0.0   71..1423         450    450    BAM36882.1        N | nucleocapsid
+AF499686.2.2       100.0  100.0  100.0  0.0   0.0   0.0   1514..2407       297    297    ACF94319.1        P | phosphoprotein
+AF499686.2.3       100.0  100.0  100.0  0.0   0.0   0.0   2496..3104       202    202    ACF94320.1        M | matrix protein
+AF499686.2.4       99.2   99.6   100.0  0.0   0.0   0.0   3317..4891       524    524    ACF94321.1        G | glycoprotein
+AF499686.2.5       95.8   99.1   100.0  0.0   0.0   0.0   5414..11797      2127   2128   BAL14833.1        L | RNA-dependent RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+GU358653.1              11922      5            0      10818           3601           97.9             99.5          100.0   rabies_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+GU358653.1.1       97.8   99.8   100.0  0.0   0.0   0.0   71..1423         450    450    BAM36882.1        N | nucleocapsid
+GU358653.1.2       98.7   99.7   100.0  0.0   0.0   0.0   1515..2408       297    297    AFP36384.1        P | phosphoprotein
+GU358653.1.3       99.0   99.9   100.0  0.0   0.0   0.0   2495..3103       202    202    BAM36884.1        M | matrix protein
+GU358653.1.4       99.4   100.0  100.0  0.0   0.0   0.0   3315..4889       524    524    AFP36386.1        G | glycoprotein
+GU358653.1.5       97.4   99.3   100.0  0.0   0.0   0.0   5406..11792      2128   2128   BAL14833.1        L | RNA-dependent RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+GU345748.1              11924      5            0      10818           3601           97.8             99.6          100.0   rabies_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+GU345748.1.1       97.1   99.7   100.0  0.0   0.0   0.0   71..1423         450    450    BAM36882.1        N | nucleocapsid
+GU345748.1.2       98.7   99.5   100.0  0.0   0.0   0.0   1515..2408       297    297    AFJ97041.1        P | phosphoprotein
+GU345748.1.3       97.5   99.3   100.0  0.0   0.0   0.0   2496..3104       202    202    BAM36884.1        M | matrix protein
+GU345748.1.4       98.5   99.2   100.0  0.0   0.0   0.0   3316..4890       524    524    AFJ97043.1        G | glycoprotein
+GU345748.1.5       97.7   99.7   100.0  0.0   0.0   0.0   5407..11793      2128   2128   BAL14833.1        L | RNA-dependent RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+GU345746.1              11908      5            0      10818           3601           97.3             99.4          100.0   rabies_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+GU345746.1.1       98.4   99.7   100.0  0.0   0.0   0.0   71..1423         450    450    BAM36882.1        N | nucleocapsid
+GU345746.1.2       93.9   98.3   100.0  0.0   0.0   0.0   1497..2390       297    297    AFJ97041.1        P | phosphoprotein
+GU345746.1.3       98.0   99.1   100.0  0.0   0.0   0.0   2478..3086       202    202    BAM36884.1        M | matrix protein
+GU345746.1.4       96.0   98.8   100.0  0.0   0.0   0.0   3298..4872       524    524    AFP36386.1        G | glycoprotein
+GU345746.1.5       97.8   99.6   100.0  0.0   0.0   0.0   5392..11778      2128   2128   BAL14833.1        L | RNA-dependent RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+M31046.1                11928      5            0      10815           3600           97.2             99.4          100.0   rabies_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+M31046.1.1         97.6   99.8   100.0  0.0   0.0   0.0   71..1423         450    450    BAM36882.1        N | nucleocapsid
+M31046.1.2         100.0  100.0  100.0  0.0   0.0   0.0   1514..2407       297    297    ACF94319.1        P | phosphoprotein
+M31046.1.3         100.0  100.0  100.0  0.0   0.0   0.0   2496..3104       202    202    ACF94320.1        M | matrix protein
+M31046.1.4         100.0  100.0  100.0  0.0   0.0   0.0   3317..4891       524    524    ACF94321.1        G | glycoprotein
+M31046.1.5         95.8   99.1   100.0  0.0   0.0   0.0   5414..11797      2127   2128   BAL14833.1        L | RNA-dependent RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+EU311738.3              11925      5            0      10830           3605           99.2             99.7          100.0   rabies_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+EU311738.3.1       99.3   100.0  100.0  0.0   0.0   0.0   71..1423         450    450    ACA03774.1        N | nucleocapsid
+EU311738.3.2       100.0  100.0  100.0  0.0   0.0   0.0   1514..2419       301    301    ACA03775.1        P | phosphoprotein
+EU311738.3.3       94.6   99.3   100.0  0.0   0.0   0.0   2496..3104       202    202    AFN24302.1        M | matrix protein
+EU311738.3.4       99.8   99.8   100.0  0.0   0.0   0.0   3316..4890       524    524    ACA03777.1        G | glycoprotein
+EU311738.3.5       99.4   99.6   100.0  0.0   0.0   0.0   5407..11793      2128   2128   ACA03778.1        L | RNA-dependent RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KU523255.1              11922      5            0      10818           3601           97.4             99.5          100.0   rabies_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KU523255.1.1       96.9   99.4   100.0  0.0   0.0   0.0   71..1423         450    450    BAM36882.1        N | nucleocapsid
+KU523255.1.2       99.7   100.0  100.0  0.0   0.0   0.0   1514..2407       297    297    BAK53490.1        P | phosphoprotein
+KU523255.1.3       99.5   100.0  100.0  0.0   0.0   0.0   2496..3104       202    202    BAK53491.1        M | matrix protein
+KU523255.1.4       99.0   99.7   100.0  0.0   0.0   0.0   3316..4890       524    524    BAK53492.1        G | glycoprotein
+KU523255.1.5       96.6   99.4   100.0  0.0   0.0   0.0   5406..11792      2128   2128   BAM29361.1        L | RNA-dependent RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KR230090.1              11924      5            0      10818           3601           98.0             99.7          100.0   rabies_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KR230090.1.1       98.0   99.9   100.0  0.0   0.0   0.0   71..1423         450    450    BAM36882.1        N | nucleocapsid
+KR230090.1.2       99.0   99.6   100.0  0.0   0.0   0.0   1515..2408       297    297    AFJ97041.1        P | phosphoprotein
+KR230090.1.3       97.5   99.3   100.0  0.0   0.0   0.0   2496..3104       202    202    BAM36884.1        M | matrix protein
+KR230090.1.4       98.5   99.3   100.0  0.0   0.0   0.0   3316..4890       524    524    AFJ97043.1        G | glycoprotein
+KR230090.1.5       97.8   99.7   100.0  0.0   0.0   0.0   5407..11793      2128   2128   BAL14833.1        L | RNA-dependent RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+FJ712196.1              11923      5            0      10818           3601           96.6             98.8          100.0   rabies_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+FJ712196.1.1       97.3   99.4   100.0  0.0   0.0   0.0   71..1423         450    450    BAM36882.1        N | nucleocapsid
+FJ712196.1.2       99.7   99.9   100.0  0.0   0.0   0.0   1515..2408       297    297    AFN26986.1        P | phosphoprotein
+FJ712196.1.3       98.5   100.0  100.0  0.0   0.0   0.0   2495..3103       202    202    BAM36884.1        M | matrix protein
+FJ712196.1.4       98.3   99.3   100.0  0.0   0.0   0.0   3315..4889       524    524    AFP36386.1        G | glycoprotein
+FJ712196.1.5       95.5   98.2   100.0  0.0   0.0   0.0   5406..11792      2128   2128   BAL14833.1        L | RNA-dependent RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+JQ970486.1              11924      5            0      10818           3601           98.1             99.7          100.0   rabies_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+JQ970486.1.1       98.0   99.9   100.0  0.0   0.0   0.0   71..1423         450    450    BAM36882.1        N | nucleocapsid
+JQ970486.1.2       99.0   99.6   100.0  0.0   0.0   0.0   1515..2408       297    297    AFJ97041.1        P | phosphoprotein
+JQ970486.1.3       97.5   99.3   100.0  0.0   0.0   0.0   2496..3104       202    202    BAM36884.1        M | matrix protein
+JQ970486.1.4       99.0   99.6   100.0  0.0   0.0   0.0   3316..4890       524    524    AFJ97043.1        G | glycoprotein
+JQ970486.1.5       97.8   99.7   100.0  0.0   0.0   0.0   5407..11793      2128   2128   BAL14833.1        L | RNA-dependent RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KF977826.1              11923      5            0      10815           3600           96.6             99.4          100.0   rabies_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KF977826.1.1       97.8   99.9   100.0  0.0   0.0   0.0   71..1423         450    450    BAM36882.1        N | nucleocapsid
+KF977826.1.2       91.9   98.1   100.0  0.0   0.0   0.0   1514..2407       297    297    BAL45937.1        P | phosphoprotein
+KF977826.1.3       99.0   100.0  100.0  0.0   0.0   0.0   2496..3104       202    202    BAM36884.1        M | matrix protein
+KF977826.1.4       93.5   98.9   100.0  0.0   0.0   0.0   3316..4890       524    524    BAL49593.1        G | glycoprotein
+KF977826.1.5       97.5   99.6   100.0  0.0   0.0   0.0   5409..11792      2127   2128   BAL14833.1        L | RNA-dependent RNA polymerase
+

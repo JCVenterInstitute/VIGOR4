@@ -1,0 +1,179 @@
+37	hadvf_db	1617..2159	NP_040848.1	E1B	E1B small T antigen	OK	
+37	hadvf_db	1922..3406	NP_040850.1	E1B-2	E1B large T antigen	OK	
+37	hadvf_db	3489..3908	NP_040851.1	IX	hexon associated protein	OK	
+37	hadvf_db	5600..5588,5309..3976	NP_040852.1	IVa2	maturation protein	OK	
+37	hadvf_db	10658..11818	NP_040855.1	L1-2	L1 52 kDa protein	OK	
+37	hadvf_db	11844..13607	NP_040856.1	L1	IIIa capsid protein	OK	
+37	hadvf_db	13640..13632,8651..5079	NP_040853.1	E2B	DNA polymerase	OK	
+37	hadvf_db	13640..13632,10411..8450	NP_040854.1	pTP	DNA terminal protein	OK	
+37	hadvf_db	13688..15361	NP_040857.1	L2	penton base	OK	
+37	hadvf_db	15366..15944	NP_040858.1	L2-2	VII core protein	OK	
+37	hadvf_db	15987..17042	NP_040859.1	L2-3	V core protein	OK	
+37	hadvf_db	17071..17301	NP_040860.1	L2-4	X core protein	OK	
+37	hadvf_db	17384..18124	NP_040861.1	L3	VI capsid protein	OK	
+37	hadvf_db	18240..21080	NP_040862.1	L3-2	hexon	OK	
+37	hadvf_db	21120..21749	NP_040863.1	L3-3	protease	OK	
+37	hadvf_db	23191..21827	NP_040864.1	E2A	ssDNA-binding protein	OK	
+37	hadvf_db	<26221..26433	NP_040866.1	L4-3	putative splicing factor, C-terminal	T5	423
+37	hadvf_db	26483..27166	NP_040868.1	L4-4	VIII capsid protein	OK	
+37	hadvf_db	32921..32043	NP_040878.2	E4-2	E4 control protein 34 kDa	OK	
+37	hadvf_db	33575..33222	NP_040880.1	E4-4	E4 control protein orf3	OK	
+57	hadvf_db	1488..1958	NP_040848.1	E1B	E1B small T antigen	OK	
+57	hadvf_db	1793..3211	NP_040850.1	E1B-2	E1B large T antigen	OK	
+57	hadvf_db	3290..3724	NP_040851.1	IX	hexon associated protein	OK	
+57	hadvf_db	5384..5372,5093..3757	NP_040852.1	IVa2	maturation protein	OK	
+57	hadvf_db	10310..11413	NP_040855.1	L1-2	L1 52 kDa protein	OK	
+57	hadvf_db	11435..13171	NP_040856.1	L1	IIIa capsid protein	OK	
+57	hadvf_db	13201..13193,8411..4866	NP_040853.1	E2B	DNA polymerase	OK	
+57	hadvf_db	13201..13193,10117..8222	NP_040854.1	pTP	DNA terminal protein	OK	
+57	hadvf_db	13246..14763	NP_040857.1	L2	penton base	OK	
+57	hadvf_db	14777..15340	NP_040858.1	L2-2	VII core protein	OK	
+57	hadvf_db	15382..16416	NP_040859.1	L2-3	V core protein	OK	
+57	hadvf_db	16440..16658	NP_040860.1	L2-4	X core protein	OK	
+57	hadvf_db	16734..17516	NP_040861.1	L3	VI capsid protein	OK	
+57	hadvf_db	17616..20384	NP_040862.1	L3-2	hexon	OK	
+57	hadvf_db	20411..21022	NP_040863.1	L3-3	protease	OK	
+57	hadvf_db	22563..21106	NP_040864.1	E2A	ssDNA-binding protein	OK	
+57	hadvf_db	22592..24919	NP_040865.1	L4	hexon-assembly protein	OK	
+57	hadvf_db	24657..25187	NP_040867.1	L4-2	L4 encapsidation protein	OK	
+57	hadvf_db	24657..24976,25146..25434	NP_040866.1	L4-3	splicing factor	OK	
+57	hadvf_db	25493..26194	NP_040868.1	L4-4	VIII capsid protein	OK	
+57	hadvf_db	27256..28008	NP_040870.1	E3-4	E3 CR1-beta	OK	
+57	hadvf_db	28041..28316	NP_040871.1	E3-7	E3 RID-alpha	OK	
+57	hadvf_db	28635..29021	NP_040873.1	E3-9	E3 control protein 14.7 kDa	OK	
+57	hadvf_db	32011..31142	NP_040878.2	E4-2	E4 control protein 34 kDa	OK	
+57	hadvf_db	32662..32312	NP_040880.1	E4-4	E4 control protein orf3	OK	
+47	hadvf_db	1714..2241	NP_040848.1	E1B	E1B small T antigen	OK	
+47	hadvf_db	2019..3506	NP_040850.1	E1B-2	E1B large T antigen	OK	
+47	hadvf_db	3603..4025	NP_040851.1	IX	hexon associated protein	OK	
+47	hadvf_db	5711..5699,5420..4084	NP_040852.1	IVa2	maturation protein	OK	
+47	hadvf_db	11042..12289	NP_040855.1	L1-2	L1 52 kDa protein	OK	
+47	hadvf_db	12310..14067	NP_040856.1	L1	IIIa capsid protein	OK	
+47	hadvf_db	13463..13455,8777..5190	NP_040853.1	E2B	DNA polymerase	OK	
+47	hadvf_db	13463..13455,10582..8576	NP_040854.1	pTP	DNA terminal protein	OK	
+47	hadvf_db	14149..15864	NP_040857.1	L2	penton base	OK	
+47	hadvf_db	15871..16467	NP_040858.1	L2-2	VII core protein	OK	
+47	hadvf_db	16537..17643	NP_040859.1	L2-3	V core protein	OK	
+47	hadvf_db	17671..17913	NP_040860.1	L2-4	X core protein	OK	
+47	hadvf_db	17996..18748	NP_040861.1	L3	VI capsid protein	OK	
+47	hadvf_db	18833..21739	NP_040862.1	L3-2	hexon	OK	
+47	hadvf_db	21773..22387	NP_040863.1	L3-3	protease	OK	
+47	hadvf_db	24103..26520	NP_040865.1	L4	hexon-assembly protein	OK	
+47	hadvf_db	26234..26821	NP_040867.1	L4-2	L4 encapsidation protein	OK	
+47	hadvf_db	26234..26365,26910..27122	NP_040866.1	L4-3	splicing factor	IS	26366..26909
+47	hadvf_db	27210..27893	NP_040868.1	L4-4	VIII capsid protein	OK	
+47	hadvf_db	29776..30051	NP_040871.1	E3-7	E3 RID-alpha	OK	
+47	hadvf_db	30439..30825	NP_040873.1	E3-9	E3 control protein 14.7 kDa	OK	
+47	hadvf_db	31014..>30856	NP_040874.2	U	putative protein U, N-terminal	T3	6
+47	hadvf_db	34045..33188	NP_040878.2	E4-2	E4 control protein 34 kDa	OK	
+64	hadvf_db	538..1111,1195..1394	NP_040845.1	E1A	E1A 27 kDa protein	OK	
+64	hadvf_db	1546..2094	NP_040848.1	E1B	E1B small T antigen	OK	
+64	hadvf_db	1851..3338	NP_040850.1	E1B-2	E1B large T antigen	OK	
+64	hadvf_db	3423..3827	NP_040851.1	IX	hexon associated protein	OK	
+64	hadvf_db	5495..5483,5204..3871	NP_040852.1	IVa2	maturation protein	OK	
+64	hadvf_db	10607..11731	NP_040855.1	L1-2	L1 52 kDa protein	OK	
+64	hadvf_db	11769..13445	NP_040856.1	L1	IIIa capsid protein	C5	
+64	hadvf_db	13472..13464,8495..4974	NP_040853.1	E2B	DNA polymerase	OK	
+64	hadvf_db	13472..13464,10192..8294	NP_040854.1	pTP	DNA terminal protein	OK	
+64	hadvf_db	13499..15058	NP_040857.1	L2	penton base	OK	
+64	hadvf_db	15062..15652	NP_040858.1	L2-2	VII core protein	OK	
+64	hadvf_db	15685..16689	NP_040859.1	L2-3	V core protein	OK	
+64	hadvf_db	16719..16943	NP_040860.1	L2-4	X core protein	OK	
+64	hadvf_db	16999..17703	NP_040861.1	L3	VI capsid protein	OK	
+64	hadvf_db	17774..20593	NP_040862.1	L3-2	hexon	OK	
+64	hadvf_db	20596..21219	NP_040863.1	L3-3	protease	OK	
+64	hadvf_db	22713..21274	NP_040864.1	E2A	ssDNA-binding protein	OK	
+64	hadvf_db	22763..24961	NP_040865.1	L4	hexon-assembly protein	OK	
+64	hadvf_db	25483..26166	NP_040868.1	L4-4	VIII capsid protein	OK	
+64	hadvf_db	30348..30740	NP_040873.1	E3-9	E3 control protein 14.7 kDa	OK	
+64	hadvf_db	30991..>30881	NP_040874.2	U	putative protein U, N-terminal	T3	36
+64	hadvf_db	33258..32380	NP_040878.2	E4-2	E4 control protein 34 kDa	OK	
+64	hadvf_db	33906..33553	NP_040880.1	E4-4	E4 control protein orf3	OK	
+gi|51527264|ref|NC_003266.2|	hadvf_db	1600..2115	NP_040848.1	E1B	E1B small T antigen	OK	
+gi|51527264|ref|NC_003266.2|	hadvf_db	1905..3356	NP_040850.1	E1B-2	E1B large T antigen	OK	
+gi|51527264|ref|NC_003266.2|	hadvf_db	3441..3869	NP_040851.1	IX	hexon associated protein	OK	
+gi|51527264|ref|NC_003266.2|	hadvf_db	5554..5542,5263..3930	NP_040852.1	IVa2	maturation protein	OK	
+gi|51527264|ref|NC_003266.2|	hadvf_db	10765..11937	NP_040855.1	L1-2	L1 52 kDa protein	OK	
+gi|51527264|ref|NC_003266.2|	hadvf_db	11961..13736	NP_040856.1	L1	IIIa capsid protein	OK	
+gi|51527264|ref|NC_003266.2|	hadvf_db	13773..13765,8605..5033	NP_040853.1	E2B	DNA polymerase	OK	
+gi|51527264|ref|NC_003266.2|	hadvf_db	13773..13765,10323..8404	NP_040854.1	pTP	DNA terminal protein	OK	
+gi|51527264|ref|NC_003266.2|	hadvf_db	13815..15422	NP_040857.1	L2	penton base	OK	
+gi|51527264|ref|NC_003266.2|	hadvf_db	15426..16007	NP_040858.1	L2-2	VII core protein	OK	
+gi|51527264|ref|NC_003266.2|	hadvf_db	16055..17080	NP_040859.1	L2-3	V core protein	OK	
+gi|51527264|ref|NC_003266.2|	hadvf_db	17103..17336	NP_040860.1	L2-4	X core protein	OK	
+gi|51527264|ref|NC_003266.2|	hadvf_db	18248..21058	NP_040862.1	L3-2	hexon	OK	
+gi|51527264|ref|NC_003266.2|	hadvf_db	21082..21702	NP_040863.1	L3-3	protease	OK	
+gi|51527264|ref|NC_003266.2|	hadvf_db	23464..25716	NP_040865.1	L4	hexon-assembly protein	OK	
+gi|51527264|ref|NC_003266.2|	hadvf_db	25439..25978	NP_040867.1	L4-2	L4 encapsidation protein	OK	
+gi|51527264|ref|NC_003266.2|	hadvf_db	25439..25797,25979..26252	NP_040866.1	L4-3	splicing factor	OK	
+gi|51527264|ref|NC_003266.2|	hadvf_db	26321..27004	NP_040868.1	L4-4	VIII capsid protein	OK	
+gi|51527264|ref|NC_003266.2|	hadvf_db	30273..30548	NP_040871.1	E3-7	E3 RID-alpha	OK	
+gi|51527264|ref|NC_003266.2|	hadvf_db	31632..>31519	NP_040874.2	U	putative protein U, N-terminal	T3	36
+gi|51527264|ref|NC_003266.2|	hadvf_db	34148..33270	NP_040878.2	E4-2	E4 control protein 34 kDa	OK	
+gi|51527264|ref|NC_003266.2|	hadvf_db	34802..34449	NP_040880.1	E4-4	E4 control protein orf3	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	486..1011,1088..1311	NP_040845.1	E1A	E1A 27 kDa protein	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	1414..1917	NP_040848.1	E1B	E1B small T antigen	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	1719..3149	NP_040850.1	E1B-2	E1B large T antigen	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	3217..3615	NP_040851.1	IX	hexon associated protein	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	5268..5256,4977..3650	NP_040852.1	IVa2	maturation protein	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	10254..11396	NP_040855.1	L1-2	L1 52 kDa protein	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	11420..13150	NP_040856.1	L1	IIIa capsid protein	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	13188..13180,8307..4750	NP_040853.1	E2B	DNA polymerase	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	13188..13180,10037..8106	NP_040854.1	pTP	DNA terminal protein	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	13241..14755	NP_040857.1	L2	penton base	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	14757..15314	NP_040858.1	L2-2	VII core protein	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	15380..16456	NP_040859.1	L2-3	V core protein	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	16480..16692	NP_040860.1	L2-4	X core protein	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	16745..17548	NP_040861.1	L3	VI capsid protein	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	17643..20414	NP_040862.1	L3-2	hexon	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	20426..21043	NP_040863.1	L3-3	protease	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	22521..21100	NP_040864.1	E2A	ssDNA-binding protein	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	22545..24857	NP_040865.1	L4	hexon-assembly protein	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	24559..25119	NP_040867.1	L4-2	L4 encapsidation protein	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	24559..24901,25080..25372	NP_040866.1	L4-3	splicing factor	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	25416..26117	NP_040868.1	L4-4	VIII capsid protein	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	26233..26754	NP_040869.1	E3-2	E3 CR1-alpha	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	26757..27587	NP_040870.1	E3-4	E3 CR1-beta	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	27607..27879	NP_040871.1	E3-7	E3 RID-alpha	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	27876..28199	NP_040872.1	E3-8	E3 RID-beta	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	28192..28560	NP_040873.1	E3-9	E3 control protein 14.7 kDa	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	28743..>28588	NP_040874.2	U	putative protein U, N-terminal	T3	3
+gi|9626553|ref|NC_001454.1|	hadvf_db	28751..29914	NP_040875.1	L5	fiber	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	29954..31597	NP_040876.1	L5A	fiber 2	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	32745..32599,31857..31636	NP_040877.2	E4	E4 control protein orf6/7	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	32745..31876	NP_040878.2	E4-2	E4 control protein 34 kDa	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	33037..32672	NP_040879.1	E4-3	E4 control protein orf4	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	33390..33040	NP_040880.1	E4-4	E4 control protein orf3	OK	
+gi|9626553|ref|NC_001454.1|	hadvf_db	33779..33387	NP_040881.1	E4-5	E4 control protein orf2	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	474..960,1041..1252	NP_040845.1	E1A	E1A 27 kDa protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	1365..1871	NP_040848.1	E1B	E1B small T antigen	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	1670..3088	NP_040850.1	E1B-2	E1B large T antigen	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	3150..3560	NP_040851.1	IX	hexon associated protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	5220..5208,4929..3599	NP_040852.1	IVa2	maturation protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	10190..11317	NP_040855.1	L1-2	L1 52 kDa protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	11338..13047	NP_040856.1	L1	IIIa capsid protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	13078..13070,8247..4702	NP_040853.1	E2B	DNA polymerase	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	13078..13070,9977..8046	NP_040854.1	pTP	DNA terminal protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	13129..14640	NP_040857.1	L2	penton base	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	14643..15206	NP_040858.1	L2-2	VII core protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	15263..16300	NP_040859.1	L2-3	V core protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	16320..16532	NP_040860.1	L2-4	X core protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	16586..17425	NP_040861.1	L3	VI capsid protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	17513..20308	NP_040862.1	L3-2	hexon	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	20317..20934	NP_040863.1	L3-3	protease	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	22372..20984	NP_040864.1	E2A	ssDNA-binding protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	22456..24681	NP_040865.1	L4	hexon-assembly protein	C5	
+gi|61602086|ref|NC_006879.1|	hadvf_db	24386..24931	NP_040867.1	L4-2	L4 encapsidation protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	24386..24737,24928..25211	NP_040866.1	L4-3	splicing factor	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	25263..25964	NP_040868.1	L4-4	VIII capsid protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	26235..26753	NP_040869.1	E3-2	E3 CR1-alpha	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	27580..27852	NP_040871.1	E3-7	E3 RID-alpha	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	27849..28184	NP_040872.1	E3-8	E3 RID-beta	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	28177..28545	NP_040873.1	E3-9	E3 control protein 14.7 kDa	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	28720..>28598	NP_040874.2	U	putative protein U, N-terminal	T3	36
+gi|61602086|ref|NC_006879.1|	hadvf_db	29855..31537	NP_040876.1	L5A	fiber 2	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	32654..32508,31776..31564	NP_040877.2	E4	E4 control protein orf6/7	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	32654..31794	NP_040878.2	E4-2	E4 control protein 34 kDa	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	32949..32587	NP_040879.1	E4-3	E4 control protein orf4	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	33301..32951	NP_040880.1	E4-4	E4 control protein orf3	OK	
+gi|61602086|ref|NC_006879.1|	hadvf_db	33690..33298	NP_040881.1	E4-5	E4 control protein orf2	OK	

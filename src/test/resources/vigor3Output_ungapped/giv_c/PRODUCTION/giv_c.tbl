@@ -1,0 +1,434 @@
+>Features NC_006307.1
+1	2325	gene
+			locus_tag	vigor_PB2
+			gene	PB2
+1	2325	CDS
+			codon_start	1
+			protein_id	NC_006307.1.1
+			locus_tag	vigor_PB2
+			gene	PB2
+			product	polymerase PB2
+>Features NC_006308.1
+1	2265	gene
+			locus_tag	vigor_PB1
+			gene	PB1
+1	2265	CDS
+			codon_start	1
+			protein_id	NC_006308.1.1
+			locus_tag	vigor_PB1
+			gene	PB1
+			product	polymerase PB1
+>Features NC_006309.1
+1	2130	gene
+			locus_tag	vigor_PA
+			gene	PA
+1	2130	CDS
+			codon_start	1
+			protein_id	NC_006309.1.1
+			locus_tag	vigor_PA
+			gene	PA
+			product	polymerase PA
+>Features NC_006310.1
+1	1968	gene
+			locus_tag	vigor_HE
+			gene	HE
+1	1968	CDS
+			codon_start	1
+			protein_id	NC_006310.1.1
+			locus_tag	vigor_HE
+			gene	HE
+			product	hemagglutinin-esterase
+>Features NC_006311.1
+30	1727	gene
+			locus_tag	vigor_NP
+			gene	NP
+30	1727	CDS
+			codon_start	1
+			protein_id	NC_006311.1.1
+			locus_tag	vigor_NP
+			gene	NP
+			product	nucleoprotein
+>Features NC_006312.1
+1	957	gene
+			locus_tag	vigor_CM1
+			gene	CM1
+			pseudogene	unitary
+1	957	misc_feature
+			locus_tag	vigor_CM1
+			gene	CM1
+			product	CM1 protein
+			note	missing exon 2
+706	1125	gene
+			locus_tag	vigor_CM2protein
+			gene	CM2 protein
+706	1125	CDS
+			codon_start	1
+			protein_id	NC_006312.1.2
+			locus_tag	vigor_CM2protein
+			gene	CM2 protein
+			product	CM2 protein
+>Features NC_006306.2
+27	767	gene
+			locus_tag	vigor_NS1
+			gene	NS1
+27	767	CDS
+			codon_start	1
+			protein_id	NC_006306.2.1
+			locus_tag	vigor_NS1
+			gene	NS1
+			product	non-structural protein 1
+27	888	gene
+			locus_tag	vigor_NS2
+			gene	NS2
+27	213	CDS
+527	888
+			codon_start	1
+			protein_id	NC_006306.2.2
+			locus_tag	vigor_NS2
+			gene	NS2
+			product	non-structural protein 2
+>Features LC123362.1
+1	2325	gene
+			locus_tag	vigor_PB2
+			gene	PB2
+1	2325	CDS
+			codon_start	1
+			protein_id	LC123362.1.1
+			locus_tag	vigor_PB2
+			gene	PB2
+			product	polymerase PB2
+>Features LC123566.1
+1	2130	gene
+			locus_tag	vigor_PA
+			gene	PA
+1	2130	CDS
+			codon_start	1
+			protein_id	LC123566.1.1
+			locus_tag	vigor_PA
+			gene	PA
+			product	polymerase PA
+>Features LC123464.1
+1	2265	gene
+			locus_tag	vigor_PB1
+			gene	PB1
+1	2265	CDS
+			codon_start	1
+			protein_id	LC123464.1.1
+			locus_tag	vigor_PB1
+			gene	PB1
+			product	polymerase PB1
+>Features LC123792.1
+1	1698	gene
+			locus_tag	vigor_NP
+			gene	NP
+1	1698	CDS
+			codon_start	1
+			protein_id	LC123792.1.1
+			locus_tag	vigor_NP
+			gene	NP
+			product	nucleoprotein
+>Features LC123860.1
+1	957	gene
+			locus_tag	vigor_CM1
+			gene	CM1
+			pseudogene	unitary
+1	957	misc_feature
+			locus_tag	vigor_CM1
+			gene	CM1
+			product	CM1 protein
+			note	missing exon 2
+706	1125	gene
+			locus_tag	vigor_CM2protein
+			gene	CM2 protein
+706	1125	CDS
+			codon_start	1
+			protein_id	LC123860.1.2
+			locus_tag	vigor_CM2protein
+			gene	CM2 protein
+			product	CM2 protein
+>Features LC125024.1
+1	741	gene
+			locus_tag	vigor_NS1
+			gene	NS1
+1	741	CDS
+			codon_start	1
+			protein_id	LC125024.1.1
+			locus_tag	vigor_NS1
+			gene	NS1
+			product	non-structural protein 1
+1	862	gene
+			locus_tag	vigor_NS2
+			gene	NS2
+1	187	CDS
+501	862
+			codon_start	1
+			protein_id	LC125024.1.2
+			locus_tag	vigor_NS2
+			gene	NS2
+			product	non-structural protein 2
+>Features LC123382.1
+1	2325	gene
+			locus_tag	vigor_PB2
+			gene	PB2
+1	2325	CDS
+			codon_start	1
+			protein_id	LC123382.1.1
+			locus_tag	vigor_PB2
+			gene	PB2
+			product	polymerase PB2
+>Features LC123484.1
+1	2265	gene
+			locus_tag	vigor_PB1
+			gene	PB1
+1	2265	CDS
+			codon_start	1
+			protein_id	LC123484.1.1
+			locus_tag	vigor_PB1
+			gene	PB1
+			product	polymerase PB1
+>Features LC123586.1
+1	2130	gene
+			locus_tag	vigor_PA
+			gene	PA
+1	2130	CDS
+			codon_start	1
+			protein_id	LC123586.1.1
+			locus_tag	vigor_PA
+			gene	PA
+			product	polymerase PA
+>Features LC123812.1
+1	1698	gene
+			locus_tag	vigor_NP
+			gene	NP
+1	1698	CDS
+			codon_start	1
+			protein_id	LC123812.1.1
+			locus_tag	vigor_NP
+			gene	NP
+			product	nucleoprotein
+>Features LC123880.1
+1	957	gene
+			locus_tag	vigor_CM1
+			gene	CM1
+			pseudogene	unitary
+1	957	misc_feature
+			locus_tag	vigor_CM1
+			gene	CM1
+			product	CM1 protein
+			note	missing exon 2
+706	1125	gene
+			locus_tag	vigor_CM2protein
+			gene	CM2 protein
+706	1125	CDS
+			codon_start	1
+			protein_id	LC123880.1.2
+			locus_tag	vigor_CM2protein
+			gene	CM2 protein
+			product	CM2 protein
+>Features LC125044.1
+1	741	gene
+			locus_tag	vigor_NS1
+			gene	NS1
+1	741	CDS
+			codon_start	1
+			protein_id	LC125044.1.1
+			locus_tag	vigor_NS1
+			gene	NS1
+			product	non-structural protein 1
+1	862	gene
+			locus_tag	vigor_NS2
+			gene	NS2
+1	187	CDS
+501	862
+			codon_start	1
+			protein_id	LC125044.1.2
+			locus_tag	vigor_NS2
+			gene	NS2
+			product	non-structural protein 2
+>Features LC123299.1
+1	2325	gene
+			locus_tag	vigor_PB2
+			gene	PB2
+1	2325	CDS
+			codon_start	1
+			protein_id	LC123299.1.1
+			locus_tag	vigor_PB2
+			gene	PB2
+			product	polymerase PB2
+>Features LC123401.1
+1	2265	gene
+			locus_tag	vigor_PB1
+			gene	PB1
+1	2265	CDS
+			codon_start	1
+			protein_id	LC123401.1.1
+			locus_tag	vigor_PB1
+			gene	PB1
+			product	polymerase PB1
+>Features AB000720.1
+4	960	gene
+			locus_tag	vigor_CM1
+			gene	CM1
+			pseudogene	unitary
+4	960	misc_feature
+			locus_tag	vigor_CM1
+			gene	CM1
+			product	CM1 protein
+			note	missing exon 2
+709	1128	gene
+			locus_tag	vigor_CM2protein
+			gene	CM2 protein
+709	1128	CDS
+			codon_start	1
+			protein_id	AB000720.1.2
+			locus_tag	vigor_CM2protein
+			gene	CM2 protein
+			product	CM2 protein
+>Features LC123503.1
+1	2130	gene
+			locus_tag	vigor_PA
+			gene	PA
+1	2130	CDS
+			codon_start	1
+			protein_id	LC123503.1.1
+			locus_tag	vigor_PA
+			gene	PA
+			product	polymerase PA
+>Features LC123735.1
+1	1698	gene
+			locus_tag	vigor_NP
+			gene	NP
+1	1698	CDS
+			codon_start	1
+			protein_id	LC123735.1.1
+			locus_tag	vigor_NP
+			gene	NP
+			product	nucleoprotein
+>Features LC124982.1
+1	741	gene
+			locus_tag	vigor_NS1
+			gene	NS1
+1	741	CDS
+			codon_start	1
+			protein_id	LC124982.1.1
+			locus_tag	vigor_NS1
+			gene	NS1
+			product	non-structural protein 1
+1	862	gene
+			locus_tag	vigor_NS2
+			gene	NS2
+1	187	CDS
+501	862
+			codon_start	1
+			protein_id	LC124982.1.2
+			locus_tag	vigor_NS2
+			gene	NS2
+			product	non-structural protein 2
+>Features D30697.1
+<1	1950	gene
+			locus_tag	vigor_HE
+			gene	HE
+<1	1950	CDS
+			codon_start	1
+			protein_id	D30697.1.1
+			locus_tag	vigor_HE
+			gene	HE
+			product	putative hemagglutinin-esterase, C-terminal
+>Features AB000727.1
+5	961	gene
+			locus_tag	vigor_CM1
+			gene	CM1
+			pseudogene	unitary
+5	961	misc_feature
+			locus_tag	vigor_CM1
+			gene	CM1
+			product	CM1 protein
+			note	missing exon 2
+710	1129	gene
+			locus_tag	vigor_CM2protein
+			gene	CM2 protein
+710	1129	CDS
+			codon_start	1
+			protein_id	AB000727.1.2
+			locus_tag	vigor_CM2protein
+			gene	CM2 protein
+			product	CM2 protein
+>Features D63469.1
+<1	1959	gene
+			locus_tag	vigor_HE
+			gene	HE
+<1	1959	CDS
+			codon_start	1
+			protein_id	D63469.1.1
+			locus_tag	vigor_HE
+			gene	HE
+			product	putative hemagglutinin-esterase, C-terminal
+>Features D16259.1
+14	970	gene
+			locus_tag	vigor_CM1
+			gene	CM1
+			pseudogene	unitary
+14	970	misc_feature
+			locus_tag	vigor_CM1
+			gene	CM1
+			product	CM1 protein
+			note	missing exon 2
+719	1138	gene
+			locus_tag	vigor_CM2protein
+			gene	CM2 protein
+719	1138	CDS
+			codon_start	1
+			protein_id	D16259.1.2
+			locus_tag	vigor_CM2protein
+			gene	CM2 protein
+			product	CM2 protein
+>Features LC123392.1
+1	2265	gene
+			locus_tag	vigor_PB1
+			gene	PB1
+1	2265	CDS
+			codon_start	1
+			protein_id	LC123392.1.1
+			locus_tag	vigor_PB1
+			gene	PB1
+			product	polymerase PB1
+>Features LC123290.1
+1	2325	gene
+			locus_tag	vigor_PB2
+			gene	PB2
+1	2325	CDS
+			codon_start	1
+			protein_id	LC123290.1.1
+			locus_tag	vigor_PB2
+			gene	PB2
+			product	polymerase PB2
+>Features LC123728.1
+1	1698	gene
+			locus_tag	vigor_NP
+			gene	NP
+1	1698	CDS
+			codon_start	1
+			protein_id	LC123728.1.1
+			locus_tag	vigor_NP
+			gene	NP
+			product	nucleoprotein
+>Features LC123494.1
+1	2130	gene
+			locus_tag	vigor_PA
+			gene	PA
+1	2130	CDS
+			codon_start	1
+			protein_id	LC123494.1.1
+			locus_tag	vigor_PA
+			gene	PA
+			product	polymerase PA
+>Features CY239467.1
+5	1972	gene
+			locus_tag	vigor_HE
+			gene	HE
+5	1972	CDS
+			codon_start	1
+			protein_id	CY239467.1.1
+			locus_tag	vigor_HE
+			gene	HE
+			product	hemagglutinin-esterase

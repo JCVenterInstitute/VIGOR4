@@ -1,0 +1,134 @@
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+AY688948.1              11057      3            0      21111           7035           93.7             98.9           97.9   wnvI_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+AY688948.1.1       92.9   98.6   100.0  0.0   0.0   0.0   97..3552         1195   1195   AF260968_GP2      GP2 | truncated polyprotein
+                                                          3552..3683                                       
+AY688948.1.1.1     97.0   99.4   100.0  0.0   0.0   0.0   2470..3552       404    404    KF179640_GP2_792_ NS1' protein
+                                                          3552..3680                                       
+AY688948.1.2       93.7   99.0   94.2   0.0   0.0   5.8   97..>7314        2406   2553   AF260968_GP3      GP3 | putative West Nile Alternative Reading Frame
+                                                                                                           4 protein, N-terminal
+AY688948.1.2.1     88.7   96.8   47.1   0.0   0.0   52.9  6916..>7314      133    280    AF260968_GP3_2274 putative West Nile Alternative Reading Frame 4
+                                                                                                           protein (WARF4), N-terminal
+AY688948.1.3       94.1   99.0   100.0  0.0   0.0   0.0   97..10401        3434   3433   AF260968_GP1      GP1 | genome polyprotein
+AY688948.1.3.1     100.0  100.0  100.0  0.0   0.0   0.0   97..465          123    123    KF179640_GP1_1_12 anchored capsid protein C
+AY688948.1.3.2     99.4   99.9   100.0  0.0   0.0   0.0   466..966         167    167    KF179640_GP1_124_ small envelope protein M
+AY688948.1.3.3     99.4   99.8   100.0  0.0   0.0   0.0   967..2469        501    501    KF179640_GP1_291_ envelope protein E
+AY688948.1.3.4     98.0   99.4   100.0  0.0   0.0   0.0   2470..3525       352    352    NC_001563_GP1_788 non-structural protein NS1
+AY688948.1.3.5     98.3   100.0  100.0  0.0   0.0   0.0   3526..4218       231    231    KF179640_GP1_1144 non-structural protein NS2A
+AY688948.1.3.6     98.5   100.0  100.0  0.0   0.0   0.0   4219..4611       131    131    KF179640_GP1_1375 serine protease NS2B
+AY688948.1.3.7     99.5   99.9   100.0  0.0   0.0   0.0   4612..6468       619    619    NC_001563_GP1_150 serine protease NS3
+AY688948.1.3.8     99.2   100.0  100.0  0.0   0.0   0.0   6469..6846       126    126    KF179640_GP1_2125 non-structural protein NS4A
+AY688948.1.3.9     100.0  100.0  100.0  0.0   0.0   0.0   6847..6915       23     23     JX123030_GP1_2251 2K protein
+AY688948.1.3.10    97.3   99.2   100.0  0.0   0.0   0.0   6916..7683       256    256    KF179640_GP1_2274 non-structural protein NS4B
+AY688948.1.3.11    99.0   99.7   100.0  0.0   0.0   0.0   7684..10398      905    905    KF179640_GP1_2530 RNA-directed RNA polymerase NS5
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_001563.2             10962      3            0      21075           7023           93.6             98.6           97.9   wnvI_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_001563.2.1      92.7   98.1   100.0  0.0   0.0   0.0   97..3540         1191   1195   AF260968_GP2      GP2 | truncated polyprotein
+                                                          3540..3671                                       
+NC_001563.2.1.1    99.5   99.9   100.0  0.0   0.0   0.0   2458..3540       404    404    NC_001563_GP2_788 NS1' protein
+                                                          3540..3668                                       
+NC_001563.2.2      93.4   98.6   94.2   0.0   0.0   5.8   97..>7302        2402   2553   AF260967_GP3      GP3 | putative West Nile Alternative Reading Frame
+                                                                                                           4 protein, N-terminal
+NC_001563.2.2.1    88.0   96.4   47.1   0.0   0.0   52.9  6904..>7302      133    280    AF260967_GP3_2274 putative West Nile Alternative Reading Frame 4
+                                                                                                           protein (WARF4), N-terminal
+NC_001563.2.3      94.0   98.8   100.0  0.0   0.0   0.0   97..10389        3430   3433   AF260968_GP1      GP1 | genome polyprotein
+NC_001563.2.3.1    100.0  100.0  100.0  0.0   0.0   0.0   97..465          123    123    KF179640_GP1_1_12 anchored capsid protein C
+NC_001563.2.3.2    100.0  100.0  100.0  0.0   0.0   0.0   466..966         167    167    KF179640_GP1_124_ small envelope protein M
+NC_001563.2.3.3    100.0  100.0  100.0  0.0   0.0   0.0   967..2457        497    497    NC_001563_GP1_291 envelope protein E
+NC_001563.2.3.4    100.0  100.0  100.0  0.0   0.0   0.0   2458..3513       352    352    NC_001563_GP1_788 non-structural protein NS1
+NC_001563.2.3.5    100.0  100.0  100.0  0.0   0.0   0.0   3514..4206       231    231    NC_001563_GP1_114 non-structural protein NS2A
+NC_001563.2.3.6    100.0  100.0  100.0  0.0   0.0   0.0   4207..4599       131    131    NC_001563_GP1_137 serine protease NS2B
+NC_001563.2.3.7    100.0  100.0  100.0  0.0   0.0   0.0   4600..6456       619    619    NC_001563_GP1_150 serine protease NS3
+NC_001563.2.3.8    100.0  100.0  100.0  0.0   0.0   0.0   6457..6834       126    126    NC_001563_GP1_212 non-structural protein NS4A
+NC_001563.2.3.9    100.0  100.0  100.0  0.0   0.0   0.0   6835..6903       23     23     NC_001563_GP1_224 2K protein
+NC_001563.2.3.10   100.0  100.0  100.0  0.0   0.0   0.0   6904..7671       256    256    NC_001563_GP1_227 non-structural protein NS4B
+NC_001563.2.3.11   100.0  100.0  100.0  0.0   0.0   0.0   7672..10386      905    905    NC_001563_GP1_252 RNA-directed RNA polymerase NS5
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+HM147823.1              11051      3            0      21111           7035           93.8             99.0           97.9   wnvI_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+HM147823.1.1       92.8   98.6   100.0  0.0   0.0   0.0   97..3552         1195   1195   AF260967_GP2      GP2 | truncated polyprotein
+                                                          3552..3683                                       
+HM147823.1.1.1     96.5   98.9   100.0  0.0   0.0   0.0   2470..3552       404    404    KF179640_GP2_792_ NS1' protein
+                                                          3552..3680                                       
+HM147823.1.2       93.8   99.1   94.2   0.0   0.0   5.8   97..>7314        2406   2553   AF260968_GP3      GP3 | putative West Nile Alternative Reading Frame
+                                                                                                           4 protein, N-terminal
+HM147823.1.2.1     89.5   97.0   47.1   0.0   0.0   52.9  6916..>7314      133    280    AF260968_GP3_2274 putative West Nile Alternative Reading Frame 4
+                                                                                                           protein (WARF4), N-terminal
+HM147823.1.3       94.2   99.1   100.0  0.0   0.0   0.0   97..10401        3434   3433   AF260968_GP1      GP1 | genome polyprotein
+HM147823.1.3.1     100.0  100.0  100.0  0.0   0.0   0.0   97..465          123    123    KF179640_GP1_1_12 anchored capsid protein C
+HM147823.1.3.2     99.4   100.0  100.0  0.0   0.0   0.0   466..966         167    167    KF179640_GP1_124_ small envelope protein M
+HM147823.1.3.3     99.0   100.0  100.0  0.0   0.0   0.0   967..2469        501    501    KF179640_GP1_291_ envelope protein E
+HM147823.1.3.4     98.3   99.4   100.0  0.0   0.0   0.0   2470..3525       352    352    NC_001563_GP1_788 non-structural protein NS1
+HM147823.1.3.5     99.1   99.6   100.0  0.0   0.0   0.0   3526..4218       231    231    KF179640_GP1_1144 non-structural protein NS2A
+HM147823.1.3.6     99.2   100.0  100.0  0.0   0.0   0.0   4219..4611       131    131    KF179640_GP1_1375 serine protease NS2B
+HM147823.1.3.7     99.4   100.0  100.0  0.0   0.0   0.0   4612..6468       619    619    NC_001563_GP1_150 serine protease NS3
+HM147823.1.3.8     100.0  100.0  100.0  0.0   0.0   0.0   6469..6846       126    126    KF179640_GP1_2125 non-structural protein NS4A
+HM147823.1.3.9     100.0  100.0  100.0  0.0   0.0   0.0   6847..6915       23     23     JX123030_GP1_2251 2K protein
+HM147823.1.3.10    96.9   99.4   100.0  0.0   0.0   0.0   6916..7683       256    256    KF179640_GP1_2274 non-structural protein NS4B
+HM147823.1.3.11    99.1   99.8   100.0  0.0   0.0   0.0   7684..10398      905    905    KF179640_GP1_2530 RNA-directed RNA polymerase NS5
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+HM147824.1              11050      3            0      21111           7035           93.8             98.8           98.0   wnvI_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+HM147824.1.1       93.4   98.8   100.0  0.0   0.0   0.0   97..3552         1195   1195   AF260968_GP2      GP2 | truncated polyprotein
+                                                          3552..3683                                       
+HM147824.1.1.1     99.0   99.4   100.0  0.0   0.0   0.0   2470..3552       404    404    KF179640_GP2_792_ NS1' protein
+                                                          3552..3680                                       
+HM147824.1.2       93.0   98.6   94.5   0.0   0.0   5.5   97..>7314        2406   2544   JX123030_GP3      GP3 | putative West Nile Alternative Reading Frame
+                                                                                                           4 protein, N-terminal
+HM147824.1.2.1     85.7   95.1   48.7   0.0   0.0   51.3  6916..>7314      133    271    JX123030_GP3_2274 putative West Nile Alternative Reading Frame 4
+                                                                                                           protein (WARF4), N-terminal
+HM147824.1.3       94.5   99.0   100.0  0.0   0.0   0.0   97..10401        3434   3433   AF260968_GP1      GP1 | genome polyprotein
+HM147824.1.3.1     100.0  100.0  100.0  0.0   0.0   0.0   97..465          123    123    KF179640_GP1_1_12 anchored capsid protein C
+HM147824.1.3.2     100.0  100.0  100.0  0.0   0.0   0.0   466..966         167    167    KF179640_GP1_124_ small envelope protein M
+HM147824.1.3.3     99.6   100.0  100.0  0.0   0.0   0.0   967..2469        501    501    KF179640_GP1_291_ envelope protein E
+HM147824.1.3.4     99.7   99.7   100.0  0.0   0.0   0.0   2470..3525       352    352    NC_001563_GP1_788 non-structural protein NS1
+HM147824.1.3.5     100.0  100.0  100.0  0.0   0.0   0.0   3526..4218       231    231    KF179640_GP1_1144 non-structural protein NS2A
+HM147824.1.3.6     99.2   100.0  100.0  0.0   0.0   0.0   4219..4611       131    131    KF179640_GP1_1375 serine protease NS2B
+HM147824.1.3.7     99.7   100.0  100.0  0.0   0.0   0.0   4612..6468       619    619    NC_001563_GP1_150 serine protease NS3
+HM147824.1.3.8     100.0  100.0  100.0  0.0   0.0   0.0   6469..6846       126    126    KF179640_GP1_2125 non-structural protein NS4A
+HM147824.1.3.9     100.0  100.0  100.0  0.0   0.0   0.0   6847..6915       23     23     JX123030_GP1_2251 2K protein
+HM147824.1.3.10    99.2   99.9   100.0  0.0   0.0   0.0   6916..7683       256    256    KF179640_GP1_2274 non-structural protein NS4B
+HM147824.1.3.11    99.6   99.9   100.0  0.0   0.0   0.0   7684..10398      905    905    KF179640_GP1_2530 RNA-directed RNA polymerase NS5
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KP109691.1              10988      3            0      21111           7035           93.9             99.0           97.9   wnvI_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KP109691.1.1       93.2   98.7   100.0  0.0   0.0   0.0   87..3542         1195   1195   AF260967_GP2      GP2 | truncated polyprotein
+                                                          3542..3673                                       
+KP109691.1.1.1     99.3   99.7   100.0  0.0   0.0   0.0   2460..3542       404    404    KF179640_GP2_792_ NS1' protein
+                                                          3542..3670                                       
+KP109691.1.2       93.7   99.0   94.2   0.0   0.0   5.8   87..>7304        2406   2553   AF260967_GP3      GP3 | putative West Nile Alternative Reading Frame
+                                                                                                           4 protein, N-terminal
+KP109691.1.2.1     88.7   97.0   47.1   0.0   0.0   52.9  6906..>7304      133    280    AF260967_GP3_2274 putative West Nile Alternative Reading Frame 4
+                                                                                                           protein (WARF4), N-terminal
+KP109691.1.3       94.3   99.1   100.0  0.0   0.0   0.0   87..10391        3434   3433   AF260968_GP1      GP1 | genome polyprotein
+KP109691.1.3.1     100.0  100.0  100.0  0.0   0.0   0.0   87..455          123    123    KF179640_GP1_1_12 anchored capsid protein C
+KP109691.1.3.2     100.0  100.0  100.0  0.0   0.0   0.0   456..956         167    167    KF179640_GP1_124_ small envelope protein M
+KP109691.1.3.3     99.8   99.8   100.0  0.0   0.0   0.0   957..2459        501    501    KF179640_GP1_291_ envelope protein E
+KP109691.1.3.4     99.7   99.7   100.0  0.0   0.0   0.0   2460..3515       352    352    KF179640_GP1_792_ non-structural protein NS1
+KP109691.1.3.5     100.0  100.0  100.0  0.0   0.0   0.0   3516..4208       231    231    KF179640_GP1_1144 non-structural protein NS2A
+KP109691.1.3.6     100.0  100.0  100.0  0.0   0.0   0.0   4209..4601       131    131    KF179640_GP1_1375 serine protease NS2B
+KP109691.1.3.7     100.0  100.0  100.0  0.0   0.0   0.0   4602..6458       619    619    KF179640_GP1_1506 serine protease NS3
+KP109691.1.3.8     100.0  100.0  100.0  0.0   0.0   0.0   6459..6836       126    126    KF179640_GP1_2125 non-structural protein NS4A
+KP109691.1.3.9     100.0  100.0  100.0  0.0   0.0   0.0   6837..6905       23     23     JX123030_GP1_2251 2K protein
+KP109691.1.3.10    100.0  100.0  100.0  0.0   0.0   0.0   6906..7673       256    256    KF179640_GP1_2274 non-structural protein NS4B
+KP109691.1.3.11    99.7   100.0  100.0  0.0   0.0   0.0   7674..10388      905    905    KF179640_GP1_2530 RNA-directed RNA polymerase NS5
+

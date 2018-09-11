@@ -1,0 +1,104 @@
+AF378705.1	cdv_db	108..1679	NP_047201.1	N	nucleoprotein	OK	
+AF378705.1	cdv_db	1801..2687	AFC40220.1	V	protein V	OK	
+AF378705.1	cdv_db	1801..3324	NP_047202.1	P	phosphoprotein	OK	
+AF378705.1	cdv_db	1823..2347	NP_047203.1	C	protein C	OK	
+AF378705.1	cdv_db	3432..4439	NP_047204.1	M	matrix protein	OK	
+AF378705.1	cdv_db	4935..6923	AAK54668.1	F	fusion glycoprotein F0	OK	
+AF378705.1	cdv_db	7079..8893	AAK54669.1	H	hemagglutinin glycoprotein	OK	
+AF378705.1	cdv_db	9030..15584	NP_047207.1	L	RNA-directed RNA polymerase L	OK	
+KJ466106.1	cdv_db	108..1679	NP_047201.1	N	nucleoprotein	OK	
+KJ466106.1	cdv_db	1801..2699	BAM15589.1	V	protein V	OK	
+KJ466106.1	cdv_db	1801..3324	BAM15596.1	P	phosphoprotein	OK	
+KJ466106.1	cdv_db	1823..2347	BAM15598.1	C	protein C	OK	
+KJ466106.1	cdv_db	3432..4439	NP_047204.1	M	matrix protein	OK	
+KJ466106.1	cdv_db	4935..6923	AFG24209.1	F	fusion glycoprotein F0	OK	
+KJ466106.1	cdv_db	7079..8902	AFG24210.1	H	hemagglutinin glycoprotein	OK	
+KJ466106.1	cdv_db	9030..15584	NP_047207.1	L	RNA-directed RNA polymerase L	OK	
+KP765764.1	cdv_db	108..1679	NP_047201.1	N	nucleoprotein	OK	
+KP765764.1	cdv_db	1801..2699	BAM15589.1	V	protein V	OK	
+KP765764.1	cdv_db	1801..3324	BAM15596.1	P	phosphoprotein	OK	
+KP765764.1	cdv_db	1823..2347	BAM15598.1	C	protein C	OK	
+KP765764.1	cdv_db	3432..4439	NP_047204.1	M	matrix protein	OK	
+KP765764.1	cdv_db	4935..6923	AFG24209.1	F	fusion glycoprotein F0	OK	
+KP765764.1	cdv_db	7079..8902	AFG24210.1	H	hemagglutinin glycoprotein	OK	
+KP765764.1	cdv_db	9030..15584	NP_047207.1	L	RNA-directed RNA polymerase L	OK	
+AY466011.2	cdv_db	108..1679	NP_047201.1	N	nucleoprotein	OK	
+AY466011.2	cdv_db	1801..2699	AAS48408.1	V	protein V	OK	
+AY466011.2	cdv_db	1801..3324	BAM15596.1	P	phosphoprotein	OK	
+AY466011.2	cdv_db	1823..2347	AAS48409.1	C	protein C	OK	
+AY466011.2	cdv_db	3432..4439	NP_047204.1	M	matrix protein	OK	
+AY466011.2	cdv_db	4935..6923	AAS48411.1	F	fusion glycoprotein F0	OK	
+AY466011.2	cdv_db	7079..8902	AAR30103.1	H	hemagglutinin glycoprotein	OK	
+AY466011.2	cdv_db	9030..15584	NP_047207.1	L	RNA-directed RNA polymerase L	OK	
+AY443350.1	cdv_db	108..1679	NP_047201.1	N	nucleoprotein	OK	
+AY443350.1	cdv_db	1801..2699	AAR32269.1	V	protein V	OK	
+AY443350.1	cdv_db	1801..3324	BAM15596.1	P	phosphoprotein	OK	
+AY443350.1	cdv_db	1823..2347	AAR32270.1	C	protein C	OK	
+AY443350.1	cdv_db	3432..4439	NP_047204.1	M	matrix protein	OK	
+AY443350.1	cdv_db	4935..6923	AAR32272.1	F	fusion glycoprotein F0	OK	
+AY443350.1	cdv_db	7079..8902	AAR32273.1	H	hemagglutinin glycoprotein	OK	
+AY443350.1	cdv_db	9030..15584	NP_047207.1	L	RNA-directed RNA polymerase L	OK	
+MF041963.1	cdv_db	108..1679	NP_047201.1	N	nucleoprotein	OK	
+MF041963.1	cdv_db	1801..2699	BAM15589.1	V	protein V	OK	
+MF041963.1	cdv_db	1801..3324	BAM15596.1	P	phosphoprotein	OK	
+MF041963.1	cdv_db	1823..2347	BAM15598.1	C	protein C	OK	
+MF041963.1	cdv_db	3432..4439	NP_047204.1	M	matrix protein	OK	
+MF041963.1	cdv_db	4935..6923	AFG24209.1	F	fusion glycoprotein F0	OK	
+MF041963.1	cdv_db	7079..8902	AFG24210.1	H	hemagglutinin glycoprotein	OK	
+MF041963.1	cdv_db	9030..15584	NP_047207.1	L	RNA-directed RNA polymerase L	OK	
+KP765763.1	cdv_db	108..1679	NP_047201.1	N	nucleoprotein	OK	
+KP765763.1	cdv_db	1801..2699	BAM15589.1	V	protein V	ES	2517..2519
+KP765763.1	cdv_db	1801..3324	BAM15596.1	P	phosphoprotein	OK	
+KP765763.1	cdv_db	1823..2347	BAM15598.1	C	protein C	OK	
+KP765763.1	cdv_db	3432..4439	NP_047204.1	M	matrix protein	OK	
+KP765763.1	cdv_db	4935..6923	AFG24209.1	F	fusion glycoprotein F0	OK	
+KP765763.1	cdv_db	7079..8902	AFG24210.1	H	hemagglutinin glycoprotein	OK	
+KP765763.1	cdv_db	9030..15584	NP_047207.1	L	RNA-directed RNA polymerase L	OK	
+KJ994343.1	cdv_db	108..1679	NP_047201.1	N	nucleoprotein	OK	
+KJ994343.1	cdv_db	1801..2699	AAR32269.1	V	protein V	OK	
+KJ994343.1	cdv_db	1801..3324	BAM15596.1	P	phosphoprotein	OK	
+KJ994343.1	cdv_db	1823..2347	BAM15598.1	C	protein C	OK	
+KJ994343.1	cdv_db	3432..4439	NP_047204.1	M	matrix protein	OK	
+KJ994343.1	cdv_db	4935..6923	AFG24209.1	F	fusion glycoprotein F0	OK	
+KJ994343.1	cdv_db	7079..8902	AFG24210.1	H	hemagglutinin glycoprotein	OK	
+KJ994343.1	cdv_db	9030..15584	NP_047207.1	L	RNA-directed RNA polymerase L	OK	
+KJ848781.1	cdv_db	108..1679	NP_047201.1	N	nucleoprotein	OK	
+KJ848781.1	cdv_db	1801..2699	BAM15589.1	V	protein V	OK	
+KJ848781.1	cdv_db	1801..3324	BAM15596.1	P	phosphoprotein	OK	
+KJ848781.1	cdv_db	1823..2347	BAM15598.1	C	protein C	OK	
+KJ848781.1	cdv_db	3432..4439	NP_047204.1	M	matrix protein	OK	
+KJ848781.1	cdv_db	4935..6923	AFG24209.1	F	fusion glycoprotein F0	OK	
+KJ848781.1	cdv_db	7079..8902	AFG24210.1	H	hemagglutinin glycoprotein	OK	
+KJ848781.1	cdv_db	9030..15584	NP_047207.1	L	RNA-directed RNA polymerase L	OK	
+JN896331.1	cdv_db	108..1679	NP_047201.1	N	nucleoprotein	OK	
+JN896331.1	cdv_db	1801..2699	BAM15589.1	V	protein V	OK	
+JN896331.1	cdv_db	1801..3324	BAM15596.1	P	phosphoprotein	OK	
+JN896331.1	cdv_db	1823..2347	BAM15598.1	C	protein C	OK	
+JN896331.1	cdv_db	3432..4439	NP_047204.1	M	matrix protein	OK	
+JN896331.1	cdv_db	4935..6923	AFG24209.1	F	fusion glycoprotein F0	OK	
+JN896331.1	cdv_db	7079..8902	AFG24210.1	H	hemagglutinin glycoprotein	OK	
+JN896331.1	cdv_db	9030..15584	NP_047207.1	L	RNA-directed RNA polymerase L	OK	
+JX681125.1	cdv_db	108..1679	NP_047201.1	N	nucleoprotein	OK	
+JX681125.1	cdv_db	1801..2699	BAM15589.1	V	protein V	OK	
+JX681125.1	cdv_db	1801..3324	BAM15596.1	P	phosphoprotein	OK	
+JX681125.1	cdv_db	1823..2347	BAM15598.1	C	protein C	OK	
+JX681125.1	cdv_db	3432..4439	NP_047204.1	M	matrix protein	OK	
+JX681125.1	cdv_db	4935..6923	AFG24209.1	F	fusion glycoprotein F0	OK	
+JX681125.1	cdv_db	7079..8902	AFG24210.1	H	hemagglutinin glycoprotein	OK	
+JX681125.1	cdv_db	9030..15584	NP_047207.1	L	RNA-directed RNA polymerase L	OK	
+AY542312.2	cdv_db	108..1679	NP_047201.1	N	nucleoprotein	OK	
+AY542312.2	cdv_db	1801..2699	AAS48408.1	V	protein V	OK	
+AY542312.2	cdv_db	1801..3324	BAM15596.1	P	phosphoprotein	OK	
+AY542312.2	cdv_db	1823..2347	AAS48409.1	C	protein C	OK	
+AY542312.2	cdv_db	3432..4439	NP_047204.1	M	matrix protein	OK	
+AY542312.2	cdv_db	4935..6923	AAS48411.1	F	fusion glycoprotein F0	OK	
+AY542312.2	cdv_db	7079..8902	AAS48412.1	H	hemagglutinin glycoprotein	OK	
+AY542312.2	cdv_db	9030..15584	NP_047207.1	L	RNA-directed RNA polymerase L	OK	
+AY445077.2	cdv_db	108..1679	NP_047201.1	N	nucleoprotein	OK	
+AY445077.2	cdv_db	1801..2699	AAS48408.1	V	protein V	OK	
+AY445077.2	cdv_db	1801..3324	BAM15596.1	P	phosphoprotein	OK	
+AY445077.2	cdv_db	1823..2347	AAS48409.1	C	protein C	OK	
+AY445077.2	cdv_db	3432..4439	NP_047204.1	M	matrix protein	OK	
+AY445077.2	cdv_db	4935..6923	AAS48411.1	F	fusion glycoprotein F0	OK	
+AY445077.2	cdv_db	7079..8902	AAS48412.1	H	hemagglutinin glycoprotein	OK	
+AY445077.2	cdv_db	9030..15584	NP_047207.1	L	RNA-directed RNA polymerase L	OK	

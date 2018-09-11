@@ -1,0 +1,409 @@
+2018-09-11 15:21:08
+
+
+parameters
+	bl2seq_extend_hsp	25
+	bl2seq_extend_span	50
+	candidate_blastopts	-p blastx -M BLOSUM45 -e 1E-10 -g F -F \"\" -b 2000 -v 0
+	candidate_evalue	
+	candidate_overlap_threshold	0.8
+	candidate_refdb	
+	command_line	/opt/www/vigor/vigor3/prod3/VIGOR3.pl -i /opt/www/vigor/vigor3/regr_testing/rhino.ungapped.fasta -o /usr/local/scratch/CORE/snettem/rhino/PRODUCTIONrhino
+	default_gene_optional	0
+	default_gene_required	0
+	default_gene_variation	1
+	frameshift_sensitivity	1
+	gene_variations	
+	jcvi_rules	1
+	mature_pep_mincoverage	50
+	mature_pep_minidentity	25
+	mature_pep_minsimilarity	40
+	mature_pep_refdb	../data3/virus_mp
+	max_intron_size	7000
+	min_candidate_pctsimilarity	60
+	min_candidate_sbjcoverage	33
+	min_exon_size	3
+	min_intron_size	30
+	min_pseudogene_coverage	80
+	min_pseudogene_identity	70
+	min_pseudogene_similarity	80
+	noncanonical_splicing_genes	
+	optional_genes	
+	reference_db	/opt/www/vigor/vigor3/data3/virus_db
+	required_genes	
+	ribosomal_slippage_genes	
+	rna_editing_genes	
+	selectivity	0.985
+	slippage_frameshift	-1
+	slippage_motif	[NT][NT][NT]AAAC
+	slippage_offset	0
+	spliced_genes	
+	splicesite_extend_range	0
+	tile_overlap	1000000
+	tile_size	10000000
+	use_locus_tags	1
+	variation	0.975
+	verbose	0
+	vigorspace	/opt/www/vigor/vigor3/prod3/vigorscratch/531214.25637892
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_001490.1              7212      1            0       6540           2179          100.0            100.0          100.0   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_001490.1.1      100.0  100.0  100.0  0.0   0.0   0.0   629..7168        2179   2179   NP_041009.1       POL | genome polyprotein
+NC_001490.1.1.1    100.0  100.0  100.0  0.0   0.0   0.0   629..835         69     69     NP_740515.1       capsid protein VP4
+NC_001490.1.1.2    100.0  100.0  100.0  0.0   0.0   0.0   836..1621        262    262    NP_740516.1       capsid protein VP2
+NC_001490.1.1.3    100.0  100.0  100.0  0.0   0.0   0.0   1622..2329       236    236    NP_740517.1       capsid protein VP3
+NC_001490.1.1.4    99.3   99.3   100.0  0.0   0.0   0.0   2330..3202       291    289    NP_740518.1       capsid protein VP1
+NC_001490.1.1.5    100.0  100.0  100.0  0.0   0.0   0.0   3203..3634       144    144    NP_740519.1       protease 2A
+NC_001490.1.1.6    100.0  100.0  100.0  0.0   0.0   0.0   3635..3925       97     97     NP_740520.1       protein 2B
+NC_001490.1.1.7    100.0  100.0  100.0  0.0   0.0   0.0   3926..4915       330    330    NP_740521.1       protein 2C
+NC_001490.1.1.8    100.0  100.0  100.0  0.0   0.0   0.0   4916..5170       85     85     NP_740522.1       protein 3A
+NC_001490.1.1.9    100.0  100.0  100.0  0.0   0.0   0.0   5171..5239       23     23     NP_740523.1       viral protein genome-linked
+NC_001490.1.1.10   100.0  100.0  100.0  0.0   0.0   0.0   5240..5785       182    182    NP_740524.1       protease 3C
+NC_001490.1.1.11   100.0  100.0  100.0  0.0   0.0   0.0   5786..7165       460    460    NP_740525.1       RNA-directed RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_009996.1              7099      1            0       6435           2144          100.0            100.0          100.0   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_009996.1.1      100.0  100.0  100.0  0.0   0.0   0.0   616..7050        2144   2144   YP_001552411.1    POL | genome polyprotein
+NC_009996.1.1.1    100.0  100.0  100.0  0.0   0.0   0.0   616..816         67     67     YP_001552432.1    capsid protein VP4
+NC_009996.1.1.2    100.0  100.0  100.0  0.0   0.0   0.0   817..1599        261    261    YP_001552433.1    capsid protein VP2
+NC_009996.1.1.3    100.0  100.0  100.0  0.0   0.0   0.0   1600..2304       235    235    YP_001552434.1    capsid protein VP3
+NC_009996.1.1.4    100.0  100.0  100.0  0.0   0.0   0.0   2305..3126       274    274    YP_001552435.1    capsid protein VP1
+NC_009996.1.1.5    100.0  100.0  100.0  0.0   0.0   0.0   3127..3552       142    142    YP_001552436.1    protease 2A
+NC_009996.1.1.6    100.0  100.0  100.0  0.0   0.0   0.0   3553..3849       99     99     YP_001552437.1    protein 2B
+NC_009996.1.1.7    100.0  100.0  100.0  0.0   0.0   0.0   3850..4827       326    326    YP_001552438.1    protein 2C
+NC_009996.1.1.8    100.0  100.0  100.0  0.0   0.0   0.0   4828..5052       75     75     YP_001552439.1    protein 3A
+NC_009996.1.1.9    100.0  100.0  100.0  0.0   0.0   0.0   5053..5118       22     22     YP_001552440.1    viral protein genome-linked
+NC_009996.1.1.10   100.0  100.0  100.0  0.0   0.0   0.0   5119..5667       183    183    YP_001552441.1    protease 3C
+NC_009996.1.1.11   100.0  100.0  100.0  0.0   0.0   0.0   5668..7047       460    460    YP_001552442.1    RNA-directed RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+DQ473512.1               7099      1            0       6450           2149           99.7             99.9          100.0   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+DQ473512.1.1       99.7   99.9   100.0  0.0   0.0   0.0   609..7058        2149   2149   ACK37435.1        POL | genome polyprotein
+DQ473512.1.1.1     98.6   100.0  100.0  0.0   0.0   0.0   609..815         69     69     X02316_mp1        capsid protein VP4
+DQ473512.1.1.2     99.6   99.6   100.0  0.0   0.0   0.0   816..1598        261    261    FJ445179_mp2      capsid protein VP2
+DQ473512.1.1.3     100.0  100.0  100.0  0.0   0.0   0.0   1599..2306       236    236    FJ445179_mp3      capsid protein VP3
+DQ473512.1.1.4     99.6   100.0  100.0  0.0   0.0   0.0   2307..3155       283    283    FJ445179_mp4      capsid protein VP1
+DQ473512.1.1.5     99.3   100.0  100.0  0.0   0.0   0.0   3156..3581       142    142    X02316_mp5        protease 2A
+DQ473512.1.1.6     90.5   98.7   100.0  0.0   0.0   0.0   3582..3866       95     95     X02316_mp6        protein 2B
+DQ473512.1.1.7     94.7   99.5   100.0  0.0   0.0   0.0   3867..4832       322    322    X02316_mp7        protein 2C
+DQ473512.1.1.8     88.3   95.8   100.0  0.0   0.0   0.0   4833..5063       77     77     X02316_mp8        protein 3A
+DQ473512.1.1.9     100.0  100.0  100.0  0.0   0.0   0.0   5064..5126       21     21     JF781496_mp9      viral protein genome-linked
+DQ473512.1.1.10    91.3   99.0   100.0  0.0   0.0   0.0   5127..5675       183    183    X02316_mp10       protease 3C
+DQ473512.1.1.11    94.1   98.0   100.0  0.0   0.0   0.0   5676..7055       460    460    X02316_mp11       RNA-directed RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+DQ473511.1               7036      1            0       6468           2155          100.0            100.0          100.0   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+DQ473511.1.1       100.0  100.0  100.0  0.0   0.0   0.0   523..6990        2155   2155   ABF51205.1        POL | genome polyprotein
+DQ473511.1.1.1     97.1   99.6   100.0  0.0   0.0   0.0   523..729         69     69     X02316_mp1        capsid protein VP4
+DQ473511.1.1.2     86.3   96.3   100.0  0.0   0.0   0.0   730..1512        261    262    DQ473494_mp2      capsid protein VP2
+DQ473511.1.1.3     100.0  100.0  100.0  0.0   0.0   0.0   1513..2226       238    238    DQ473511_mp3      capsid protein VP3
+DQ473511.1.1.4     100.0  100.0  100.0  0.0   0.0   0.0   2227..3087       287    287    DQ473511_mp4      capsid protein VP1
+DQ473511.1.1.5     92.3   99.6   100.0  0.0   0.0   0.0   3088..3513       142    142    X02316_mp5        protease 2A
+DQ473511.1.1.6     89.5   99.5   100.0  0.0   0.0   0.0   3514..3798       95     95     X02316_mp6        protein 2B
+DQ473511.1.1.7     91.9   99.2   100.0  0.0   0.0   0.0   3799..4764       322    322    JN815250_mp7      protein 2C
+DQ473511.1.1.8     89.6   99.7   100.0  0.0   0.0   0.0   4765..4995       77     77     JN837692_mp8      protein 3A
+DQ473511.1.1.9     100.0  100.0  100.0  0.0   0.0   0.0   4996..5058       21     21     DQ473511_mp9      viral protein genome-linked
+DQ473511.1.1.10    82.5   97.7   100.0  0.0   0.0   0.0   5059..5607       183    183    HRVACG_mp10       protease 3C
+DQ473511.1.1.11    88.0   97.8   100.0  0.0   0.0   0.0   5608..6987       460    460    JN837692_mp11     RNA-directed RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+DQ473510.1               7137      1            0       6477           2158          100.0            100.0          100.0   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+DQ473510.1.1       100.0  100.0  100.0  0.0   0.0   0.0   618..7094        2158   2158   ABF51204.1        POL | genome polyprotein
+DQ473510.1.1.1     95.7   99.6   100.0  0.0   0.0   0.0   618..824         69     69     X02316_mp1        capsid protein VP4
+DQ473510.1.1.2     93.5   97.6   100.0  0.0   0.0   0.0   825..1610        262    262    FJ445131_mp2      capsid protein VP2
+DQ473510.1.1.3     91.6   97.9   100.0  0.0   0.0   0.0   1611..2324       238    238    FJ445131_mp3      capsid protein VP3
+DQ473510.1.1.4     100.0  100.0  100.0  0.0   0.0   0.0   2325..3191       289    289    DQ473510_mp4      capsid protein VP1
+DQ473510.1.1.5     89.4   98.9   100.0  0.0   0.0   0.0   3192..3617       142    142    X02316_mp5        protease 2A
+DQ473510.1.1.6     87.4   98.2   100.0  0.0   0.0   0.0   3618..3902       95     95     X02316_mp6        protein 2B
+DQ473510.1.1.7     88.5   97.8   100.0  0.0   0.0   0.0   3903..4868       322    322    JN798556_mp7      protein 2C
+DQ473510.1.1.8     100.0  100.0  100.0  0.0   0.0   0.0   4869..5099       77     77     DQ473510_mp8      protein 3A
+DQ473510.1.1.9     100.0  100.0  100.0  0.0   0.0   0.0   5100..5162       21     21     DQ473510_mp9      viral protein genome-linked
+DQ473510.1.1.10    90.7   98.5   100.0  0.0   0.0   0.0   5163..5711       183    183    FJ445185_mp10     protease 3C
+DQ473510.1.1.11    100.0  100.0  100.0  0.0   0.0   0.0   5712..7091       460    460    DQ473510_mp11     RNA-directed RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+DQ473508.1               7148      1            0       6486           2161          100.0            100.0          100.0   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+DQ473508.1.1       100.0  100.0  100.0  0.0   0.0   0.0   622..7107        2161   2161   ABF51202.1        POL | genome polyprotein
+DQ473508.1.1.1     89.9   98.2   100.0  0.0   0.0   0.0   622..828         69     69     X02316_mp1        capsid protein VP4
+DQ473508.1.1.2     95.1   98.7   100.0  0.0   0.0   0.0   829..1617        263    263    JQ747751_mp2      capsid protein VP2
+DQ473508.1.1.3     98.3   99.5   100.0  0.0   0.0   0.0   1618..2331       238    238    JQ747751_mp3      capsid protein VP3
+DQ473508.1.1.4     100.0  100.0  100.0  0.0   0.0   0.0   2332..3204       291    291    DQ473508_mp4      capsid protein VP1
+DQ473508.1.1.5     97.9   100.0  100.0  0.0   0.0   0.0   3205..3633       143    143    JQ747751_mp5      protease 2A
+DQ473508.1.1.6     96.8   99.7   100.0  0.0   0.0   0.0   3634..3918       95     95     JQ747751_mp6      protein 2B
+DQ473508.1.1.7     98.1   99.3   100.0  0.0   0.0   0.0   3919..4881       321    321    JQ747751_mp7      protein 2C
+DQ473508.1.1.8     98.7   100.0  100.0  0.0   0.0   0.0   4882..5115       78     78     JQ747751_mp8      protein 3A
+DQ473508.1.1.9     100.0  100.0  100.0  0.0   0.0   0.0   5116..5178       21     21     DQ473508_mp9      viral protein genome-linked
+DQ473508.1.1.10    95.6   99.7   100.0  0.0   0.0   0.0   5179..5727       183    183    JQ747751_mp10     protease 3C
+DQ473508.1.1.11    97.4   99.5   100.0  0.0   0.0   0.0   5728..7104       459    459    JQ747751_mp11     RNA-directed RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+DQ473507.1               7143      1            0       6489           2162          100.0            100.0          100.0   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+DQ473507.1.1       100.0  100.0  100.0  0.0   0.0   0.0   613..7101        2162   2162   ABF51201.1        POL | genome polyprotein
+DQ473507.1.1.1     89.9   98.2   100.0  0.0   0.0   0.0   613..819         69     69     X02316_mp1        capsid protein VP4
+DQ473507.1.1.2     92.4   96.9   100.0  0.0   0.0   0.0   820..1608        263    263    JQ747751_mp2      capsid protein VP2
+DQ473507.1.1.3     91.6   97.4   100.0  0.0   0.0   0.0   1609..2322       238    238    JQ747751_mp3      capsid protein VP3
+DQ473507.1.1.4     100.0  100.0  100.0  0.0   0.0   0.0   2323..3198       292    292    DQ473507_mp4      capsid protein VP1
+DQ473507.1.1.5     100.0  100.0  100.0  0.0   0.0   0.0   3199..3627       143    143    DQ473507_mp5      protease 2A
+DQ473507.1.1.6     100.0  100.0  100.0  0.0   0.0   0.0   3628..3912       95     95     DQ473507_mp6      protein 2B
+DQ473507.1.1.7     93.8   99.7   100.0  0.0   0.0   0.0   3913..4875       321    321    JQ747751_mp7      protein 2C
+DQ473507.1.1.8     94.9   100.0  100.0  0.0   0.0   0.0   4876..5109       78     78     JQ747751_mp8      protein 3A
+DQ473507.1.1.9     100.0  100.0  100.0  0.0   0.0   0.0   5110..5172       21     21     DQ473507_mp9      viral protein genome-linked
+DQ473507.1.1.10    91.8   98.4   100.0  0.0   0.0   0.0   5173..5721       183    183    JQ747751_mp10     protease 3C
+DQ473507.1.1.11    100.0  100.0  100.0  0.0   0.0   0.0   5722..7098       459    459    DQ473507_mp11     RNA-directed RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+DQ473506.1               7149      1            0       6495           2164          100.0            100.0          100.0   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+DQ473506.1.1       100.0  100.0  100.0  0.0   0.0   0.0   613..7107        2164   2164   ABF51200.1        POL | genome polyprotein
+DQ473506.1.1.1     89.9   98.2   100.0  0.0   0.0   0.0   613..819         69     69     X02316_mp1        capsid protein VP4
+DQ473506.1.1.2     100.0  100.0  100.0  0.0   0.0   0.0   820..1611        264    264    DQ473506_mp2      capsid protein VP2
+DQ473506.1.1.3     100.0  100.0  100.0  0.0   0.0   0.0   1612..2325       238    238    DQ473506_mp3      capsid protein VP3
+DQ473506.1.1.4     100.0  100.0  100.0  0.0   0.0   0.0   2326..3204       293    293    DQ473506_mp4      capsid protein VP1
+DQ473506.1.1.5     90.9   99.0   100.0  0.0   0.0   0.0   3205..3633       143    143    DQ473507_mp5      protease 2A
+DQ473506.1.1.6     93.7   99.5   100.0  0.0   0.0   0.0   3634..3918       95     95     DQ473507_mp6      protein 2B
+DQ473506.1.1.7     94.1   99.8   100.0  0.0   0.0   0.0   3919..4881       321    321    JQ747751_mp7      protein 2C
+DQ473506.1.1.8     96.2   100.0  100.0  0.0   0.0   0.0   4882..5115       78     78     JQ747751_mp8      protein 3A
+DQ473506.1.1.9     100.0  100.0  100.0  0.0   0.0   0.0   5116..5178       21     21     DQ473507_mp9      viral protein genome-linked
+DQ473506.1.1.10    92.9   97.4   100.0  0.0   0.0   0.0   5179..5727       183    183    JQ747751_mp10     protease 3C
+DQ473506.1.1.11    95.0   99.8   100.0  0.0   0.0   0.0   5728..7104       459    459    DQ473507_mp11     RNA-directed RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+DQ473505.1               7141      1            0       6486           2161           98.9             99.9          100.0   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+DQ473505.1.1       98.9   99.9   100.0  0.0   0.0   0.0   617..7102        2161   2161   AER92580.1        POL | genome polyprotein
+DQ473505.1.1.1     94.2   99.6   100.0  0.0   0.0   0.0   617..823         69     69     X02316_mp1        capsid protein VP4
+DQ473505.1.1.2     95.5   99.1   100.0  0.0   0.0   0.0   824..1624        267    267    NP_740392.1       capsid protein VP2
+DQ473505.1.1.3     96.6   98.9   100.0  0.0   0.0   0.0   1625..2338       238    238    NP_740393.1       capsid protein VP3
+DQ473505.1.1.4     100.0  100.0  99.7   0.0   0.0   0.3   2339..3205       289    290    DQ473505_mp4      capsid protein VP1
+DQ473505.1.1.5     99.3   100.0  100.0  0.0   0.0   0.0   3206..3631       142    142    JN837697_mp5      protease 2A
+DQ473505.1.1.6     98.9   100.0  100.0  0.0   0.0   0.0   3632..3916       95     95     NP_740396.1       protein 2B
+DQ473505.1.1.7     96.3   98.5   100.0  0.0   0.0   0.0   3917..4879       321    321    NP_740397.1       protein 2C
+DQ473505.1.1.8     98.7   99.7   100.0  0.0   0.0   0.0   4880..5107       76     76     NP_740398.1       protein 3A
+DQ473505.1.1.9     100.0  100.0  100.0  0.0   0.0   0.0   5108..5170       21     21     JF781497_mp9      viral protein genome-linked
+DQ473505.1.1.10    97.3   99.3   100.0  0.0   0.0   0.0   5171..5719       183    183    NP_740400.1       protease 3C
+DQ473505.1.1.11    95.7   99.8   100.0  0.0   0.0   0.0   5720..7099       460    460    NP_740401.1       RNA-directed RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+DQ473504.1               7143      1            0       6483           2160          100.0            100.0          100.0   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+DQ473504.1.1       100.0  100.0  100.0  0.0   0.0   0.0   622..7104        2160   2160   ABF51198.1        POL | genome polyprotein
+DQ473504.1.1.1     91.3   99.6   100.0  0.0   0.0   0.0   622..828         69     69     X02316_mp1        capsid protein VP4
+DQ473504.1.1.2     94.0   98.2   100.0  0.0   0.0   0.0   829..1623        265    265    FJ445176_mp2      capsid protein VP2
+DQ473504.1.1.3     100.0  100.0  100.0  0.0   0.0   0.0   1624..2337       238    238    DQ473504_mp3      capsid protein VP3
+DQ473504.1.1.4     90.4   97.9   100.0  0.0   0.0   0.0   2338..3207       290    291    FJ445176_mp4      capsid protein VP1
+DQ473504.1.1.5     92.3   100.0  100.0  0.0   0.0   0.0   3208..3633       142    142    NP_740395.1       protease 2A
+DQ473504.1.1.6     90.5   99.7   100.0  0.0   0.0   0.0   3634..3918       95     95     NP_740396.1       protein 2B
+DQ473504.1.1.7     94.4   99.0   100.0  0.0   0.0   0.0   3919..4881       321    321    NP_740397.1       protein 2C
+DQ473504.1.1.8     92.1   99.7   100.0  0.0   0.0   0.0   4882..5109       76     76     NP_740398.1       protein 3A
+DQ473504.1.1.9     100.0  100.0  100.0  0.0   0.0   0.0   5110..5172       21     21     DQ473503_mp9      viral protein genome-linked
+DQ473504.1.1.10    92.3   98.5   100.0  0.0   0.0   0.0   5173..5721       183    183    NP_740400.1       protease 3C
+DQ473504.1.1.11    92.6   98.5   100.0  0.0   0.0   0.0   5722..7101       460    460    NP_740401.1       RNA-directed RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+DQ473503.1               7146      1            0       6489           2162           99.7             99.8          100.0   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+DQ473503.1.1       99.7   99.8   100.0  0.0   0.0   0.0   619..7107        2162   2162   ACK37432.1        POL | genome polyprotein
+DQ473503.1.1.1     91.3   99.6   100.0  0.0   0.0   0.0   619..825         69     69     X02316_mp1        capsid protein VP4
+DQ473503.1.1.2     99.6   99.6   100.0  0.0   0.0   0.0   826..1620        265    265    FJ445176_mp2      capsid protein VP2
+DQ473503.1.1.3     99.6   99.6   100.0  0.0   0.0   0.0   1621..2337       239    239    FJ445176_mp3      capsid protein VP3
+DQ473503.1.1.4     99.0   99.8   100.0  0.0   0.0   0.0   2338..3210       291    291    FJ445176_mp4      capsid protein VP1
+DQ473503.1.1.5     92.3   99.8   100.0  0.0   0.0   0.0   3211..3636       142    142    NP_740395.1       protease 2A
+DQ473503.1.1.6     91.6   99.7   100.0  0.0   0.0   0.0   3637..3921       95     95     NP_740396.1       protein 2B
+DQ473503.1.1.7     93.1   98.3   100.0  0.0   0.0   0.0   3922..4884       321    321    NP_740397.1       protein 2C
+DQ473503.1.1.8     85.5   99.7   100.0  0.0   0.0   0.0   4885..5112       76     76     NP_740398.1       protein 3A
+DQ473503.1.1.9     100.0  100.0  100.0  0.0   0.0   0.0   5113..5175       21     21     DQ473503_mp9      viral protein genome-linked
+DQ473503.1.1.10    89.1   98.0   100.0  0.0   0.0   0.0   5176..5724       183    183    NP_740400.1       protease 3C
+DQ473503.1.1.11    92.2   98.5   100.0  0.0   0.0   0.0   5725..7104       460    460    NP_740401.1       RNA-directed RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+DQ473502.1               7129      1            0       6468           2155           99.8             99.9          100.0   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+DQ473502.1.1       99.8   99.9   100.0  0.0   0.0   0.0   620..7087        2155   2155   ACK37438.1        POL | genome polyprotein
+DQ473502.1.1.1     95.7   99.6   100.0  0.0   0.0   0.0   620..826         69     69     X02316_mp1        capsid protein VP4
+DQ473502.1.1.2     93.1   96.9   100.0  0.0   0.0   0.0   827..1612        262    262    JN815250_mp2      capsid protein VP2
+DQ473502.1.1.3     91.6   98.4   100.0  0.0   0.0   0.0   1613..2326       238    238    JN815250_mp3      capsid protein VP3
+DQ473502.1.1.4     99.7   100.0  100.0  0.0   0.0   0.0   2327..3184       286    286    FJ445182_mp4      capsid protein VP1
+DQ473502.1.1.5     90.8   99.5   100.0  0.0   0.0   0.0   3185..3610       142    142    X02316_mp5        protease 2A
+DQ473502.1.1.6     87.4   99.5   100.0  0.0   0.0   0.0   3611..3895       95     95     X02316_mp6        protein 2B
+DQ473502.1.1.7     97.8   99.5   100.0  0.0   0.0   0.0   3896..4861       322    322    JN815250_mp7      protein 2C
+DQ473502.1.1.8     89.6   98.4   100.0  0.0   0.0   0.0   4862..5092       77     77     JN837692_mp8      protein 3A
+DQ473502.1.1.9     100.0  100.0  100.0  0.0   0.0   0.0   5093..5155       21     21     JN815250_mp9      viral protein genome-linked
+DQ473502.1.1.10    86.3   98.0   100.0  0.0   0.0   0.0   5156..5704       183    183    HRVACG_mp10       protease 3C
+DQ473502.1.1.11    99.8   99.8   100.0  0.0   0.0   0.0   5705..7084       460    460    FJ445182_mp11     RNA-directed RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+DQ473501.1               7119      1            0       6462           2153           98.0             99.7          100.0   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+DQ473501.1.1       98.0   99.7   100.0  0.0   0.0   0.0   612..7073        2153   2153   AEP69143.1        POL | genome polyprotein
+DQ473501.1.1.1     94.2   100.0  100.0  0.0   0.0   0.0   612..818         69     69     X02316_mp1        capsid protein VP4
+DQ473501.1.1.2     86.3   95.4   100.0  0.0   0.0   0.0   819..1595        259    263    FJ445117_mp2      capsid protein VP2
+DQ473501.1.1.3     96.2   99.5   100.0  0.0   0.0   0.0   1596..2309       238    238    JN562720_mp3      capsid protein VP3
+DQ473501.1.1.4     97.6   99.6   100.0  0.0   0.0   0.0   2310..3170       287    287    JN562720_mp4      capsid protein VP1
+DQ473501.1.1.5     93.0   99.1   100.0  0.0   0.0   0.0   3171..3596       142    142    X02316_mp5        protease 2A
+DQ473501.1.1.6     88.4   98.4   100.0  0.0   0.0   0.0   3597..3881       95     95     X02316_mp6        protein 2B
+DQ473501.1.1.7     90.4   98.9   100.0  0.0   0.0   0.0   3882..4847       322    322    JN815250_mp7      protein 2C
+DQ473501.1.1.8     89.6   98.4   100.0  0.0   0.0   0.0   4848..5078       77     77     JN837692_mp8      protein 3A
+DQ473501.1.1.9     100.0  100.0  100.0  0.0   0.0   0.0   5079..5141       21     21     FJ445134_mp9      viral protein genome-linked
+DQ473501.1.1.10    84.7   97.5   100.0  0.0   0.0   0.0   5142..5690       183    183    HRVACG_mp10       protease 3C
+DQ473501.1.1.11    89.8   97.6   100.0  0.0   0.0   0.0   5691..7070       460    460    JN837692_mp11     RNA-directed RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+DQ473500.1               7135      1            0       6477           2158          100.0            100.0          100.0   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+DQ473500.1.1       100.0  100.0  100.0  0.0   0.0   0.0   612..7088        2158   2158   ABF51194.1        POL | genome polyprotein
+DQ473500.1.1.1     97.1   99.6   100.0  0.0   0.0   0.0   612..818         69     69     X02316_mp1        capsid protein VP4
+DQ473500.1.1.2     88.3   96.3   100.0  0.0   0.0   0.0   819..1613        265    266    FJ445163_mp2      capsid protein VP2
+DQ473500.1.1.3     88.7   97.2   100.0  0.0   0.0   0.0   1614..2327       238    238    FJ445173_mp3      capsid protein VP3
+DQ473500.1.1.4     92.0   97.6   100.0  0.0   0.0   0.0   2328..3185       286    286    FJ445146_mp4      capsid protein VP1
+DQ473500.1.1.5     93.0   98.8   100.0  0.0   0.0   0.0   3186..3611       142    142    X02316_mp5        protease 2A
+DQ473500.1.1.6     93.7   98.4   100.0  0.0   0.0   0.0   3612..3896       95     95     X02316_mp6        protein 2B
+DQ473500.1.1.7     91.3   98.5   100.0  0.0   0.0   0.0   3897..4862       322    322    JN815250_mp7      protein 2C
+DQ473500.1.1.8     94.8   98.7   100.0  0.0   0.0   0.0   4863..5093       77     77     JN837692_mp8      protein 3A
+DQ473500.1.1.9     100.0  100.0  100.0  0.0   0.0   0.0   5094..5156       21     21     JF781496_mp9      viral protein genome-linked
+DQ473500.1.1.10    84.7   97.4   100.0  0.0   0.0   0.0   5157..5705       183    183    HRVACG_mp10       protease 3C
+DQ473500.1.1.11    100.0  100.0  100.0  0.0   0.0   0.0   5706..7085       460    460    DQ473500_mp11     RNA-directed RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+DQ473499.1               7123      1            0       6465           2154           97.6             99.4          100.0   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+DQ473499.1.1       97.6   99.4   100.0  0.0   0.0   0.0   613..7077        2154   2154   ACK37381.1        POL | genome polyprotein
+DQ473499.1.1.1     97.1   99.6   100.0  0.0   0.0   0.0   613..819         69     69     X02316_mp1        capsid protein VP4
+DQ473499.1.1.2     96.2   98.9   100.0  0.0   0.0   0.0   820..1617        266    266    FJ445125_mp2      capsid protein VP2
+DQ473499.1.1.3     88.7   97.6   100.0  0.0   0.0   0.0   1618..2331       238    238    FJ445145_mp3      capsid protein VP3
+DQ473499.1.1.4     95.4   98.8   100.0  0.0   0.0   0.0   2332..3174       281    281    FJ445125_mp4      capsid protein VP1
+DQ473499.1.1.5     88.0   98.6   100.0  0.0   0.0   0.0   3175..3600       142    142    X02316_mp5        protease 2A
+DQ473499.1.1.6     91.6   99.5   100.0  0.0   0.0   0.0   3601..3885       95     95     X02316_mp6        protein 2B
+DQ473499.1.1.7     89.4   98.1   100.0  0.0   0.0   0.0   3886..4851       322    322    JN815250_mp7      protein 2C
+DQ473499.1.1.8     93.5   99.7   100.0  0.0   0.0   0.0   4852..5082       77     77     JN837692_mp8      protein 3A
+DQ473499.1.1.9     100.0  100.0  100.0  0.0   0.0   0.0   5083..5145       21     21     JF781496_mp9      viral protein genome-linked
+DQ473499.1.1.10    83.6   97.4   100.0  0.0   0.0   0.0   5146..5694       183    183    HRVACG_mp10       protease 3C
+DQ473499.1.1.11    88.5   96.9   100.0  0.0   0.0   0.0   5695..7074       460    460    JN837692_mp11     RNA-directed RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+DQ473498.1               7137      1            0       6483           2160          100.0            100.0          100.0   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+DQ473498.1.1       100.0  100.0  100.0  0.0   0.0   0.0   609..7091        2160   2160   ACK37434.1        POL | genome polyprotein
+DQ473498.1.1.1     95.7   99.6   100.0  0.0   0.0   0.0   609..815         69     69     X02316_mp1        capsid protein VP4
+DQ473498.1.1.2     98.9   99.5   100.0  0.0   0.0   0.0   816..1610        265    265    JN541269_mp2      capsid protein VP2
+DQ473498.1.1.3     89.9   96.4   100.0  0.0   0.0   0.0   1611..2324       238    238    JN837692_mp3      capsid protein VP3
+DQ473498.1.1.4     100.0  100.0  100.0  0.0   0.0   0.0   2325..3188       288    288    FJ445178_mp4      capsid protein VP1
+DQ473498.1.1.5     90.1   99.6   100.0  0.0   0.0   0.0   3189..3614       142    142    X02316_mp5        protease 2A
+DQ473498.1.1.6     90.5   99.2   100.0  0.0   0.0   0.0   3615..3899       95     95     X02316_mp6        protein 2B
+DQ473498.1.1.7     89.1   98.6   100.0  0.0   0.0   0.0   3900..4865       322    322    JN815250_mp7      protein 2C
+DQ473498.1.1.8     93.5   99.4   100.0  0.0   0.0   0.0   4866..5096       77     77     JN837692_mp8      protein 3A
+DQ473498.1.1.9     100.0  100.0  100.0  0.0   0.0   0.0   5097..5159       21     21     JF781496_mp9      viral protein genome-linked
+DQ473498.1.1.10    83.6   97.7   100.0  0.0   0.0   0.0   5160..5708       183    183    X02316_mp10       protease 3C
+DQ473498.1.1.11    89.6   97.5   100.0  0.0   0.0   0.0   5709..7088       460    460    JN837692_mp11     RNA-directed RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+DQ473497.1               7025      1            0       6450           2149          100.0            100.0          100.0   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+DQ473497.1.1       100.0  100.0  100.0  0.0   0.0   0.0   535..6984        2149   2149   ABF51191.1        POL | genome polyprotein
+DQ473497.1.1.1     98.6   100.0  100.0  0.0   0.0   0.0   535..741         69     69     X02316_mp1        capsid protein VP4
+DQ473497.1.1.2     93.9   97.9   100.0  0.0   0.0   0.0   742..1524        261    261    FJ445179_mp2      capsid protein VP2
+DQ473497.1.1.3     91.9   98.4   100.0  0.0   0.0   0.0   1525..2232       236    236    FJ445179_mp3      capsid protein VP3
+DQ473497.1.1.4     91.9   98.1   100.0  0.0   0.0   0.0   2233..3081       283    283    FJ445179_mp4      capsid protein VP1
+DQ473497.1.1.5     97.9   100.0  100.0  0.0   0.0   0.0   3082..3507       142    142    X02316_mp5        protease 2A
+DQ473497.1.1.6     94.7   99.7   100.0  0.0   0.0   0.0   3508..3792       95     95     X02316_mp6        protein 2B
+DQ473497.1.1.7     95.0   99.2   100.0  0.0   0.0   0.0   3793..4758       322    322    X02316_mp7        protein 2C
+DQ473497.1.1.8     94.8   97.1   100.0  0.0   0.0   0.0   4759..4989       77     77     X02316_mp8        protein 3A
+DQ473497.1.1.9     100.0  100.0  100.0  0.0   0.0   0.0   4990..5052       21     21     DQ473497_mp9      viral protein genome-linked
+DQ473497.1.1.10    91.8   98.4   100.0  0.0   0.0   0.0   5053..5601       183    183    X02316_mp10       protease 3C
+DQ473497.1.1.11    93.3   98.3   100.0  0.0   0.0   0.0   5602..6981       460    460    X02316_mp11       RNA-directed RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+DQ473496.1               7106      1            0       6453           2150           97.1             99.5          100.0   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+DQ473496.1.1       97.1   99.5   100.0  0.0   0.0   0.0   613..7065        2150   2150   AER92586.1        POL | genome polyprotein
+DQ473496.1.1.1     100.0  100.0  100.0  0.0   0.0   0.0   613..819         69     69     X02316_mp1        capsid protein VP4
+DQ473496.1.1.2     92.7   98.4   100.0  0.0   0.0   0.0   820..1602        261    261    X02316_mp2        capsid protein VP2
+DQ473496.1.1.3     93.2   97.7   100.0  0.0   0.0   0.0   1603..2313       237    237    X02316_mp3        capsid protein VP3
+DQ473496.1.1.4     91.9   98.8   100.0  0.0   0.0   0.0   2314..3162       283    283    X02316_mp4        capsid protein VP1
+DQ473496.1.1.5     99.3   100.0  100.0  0.0   0.0   0.0   3163..3588       142    142    X02316_mp5        protease 2A
+DQ473496.1.1.6     97.9   100.0  100.0  0.0   0.0   0.0   3589..3873       95     95     X02316_mp6        protein 2B
+DQ473496.1.1.7     94.7   99.4   100.0  0.0   0.0   0.0   3874..4839       322    322    X02316_mp7        protein 2C
+DQ473496.1.1.8     94.8   97.1   100.0  0.0   0.0   0.0   4840..5070       77     77     X02316_mp8        protein 3A
+DQ473496.1.1.9     100.0  100.0  100.0  0.0   0.0   0.0   5071..5133       21     21     FJ445134_mp9      viral protein genome-linked
+DQ473496.1.1.10    96.2   99.5   100.0  0.0   0.0   0.0   5134..5682       183    183    X02316_mp10       protease 3C
+DQ473496.1.1.11    93.9   98.5   100.0  0.0   0.0   0.0   5683..7062       460    460    X02316_mp11       RNA-directed RNA polymerase
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+DQ473495.1               7136      1            0       6480           2159           99.8            100.0          100.0   hrv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+DQ473495.1.1       99.8   100.0  100.0  0.0   0.0   0.0   611..7090        2159   2159   ACK37436.1        POL | genome polyprotein
+DQ473495.1.1.1     97.1   99.6   100.0  0.0   0.0   0.0   611..817         69     69     X02316_mp1        capsid protein VP4
+DQ473495.1.1.2     100.0  100.0  100.0  0.0   0.0   0.0   818..1603        262    262    FJ445180_mp2      capsid protein VP2
+DQ473495.1.1.3     100.0  100.0  100.0  0.0   0.0   0.0   1604..2317       238    238    FJ445180_mp3      capsid protein VP3
+DQ473495.1.1.4     99.7   99.9   100.0  0.0   0.0   0.0   2318..3187       290    290    FJ445180_mp4      capsid protein VP1
+DQ473495.1.1.5     91.5   98.8   100.0  0.0   0.0   0.0   3188..3613       142    142    X02316_mp5        protease 2A
+DQ473495.1.1.6     91.6   99.7   100.0  0.0   0.0   0.0   3614..3898       95     95     X02316_mp6        protein 2B
+DQ473495.1.1.7     91.3   98.8   100.0  0.0   0.0   0.0   3899..4864       322    322    JN798556_mp7      protein 2C
+DQ473495.1.1.8     92.2   98.7   100.0  0.0   0.0   0.0   4865..5095       77     77     JN798556_mp8      protein 3A
+DQ473495.1.1.9     100.0  100.0  100.0  0.0   0.0   0.0   5096..5158       21     21     FJ445180_mp9      viral protein genome-linked
+DQ473495.1.1.10    84.7   97.4   100.0  0.0   0.0   0.0   5159..5707       183    183    X02316_mp10       protease 3C
+DQ473495.1.1.11    90.4   98.4   100.0  0.0   0.0   0.0   5708..7087       460    460    JN837692_mp11     RNA-directed RNA polymerase
+

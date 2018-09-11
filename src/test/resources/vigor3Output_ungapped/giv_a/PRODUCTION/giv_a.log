@@ -1,0 +1,723 @@
+2018-09-06 18:54:50
+
+parameters
+	bl2seq_extend_hsp	25
+	bl2seq_extend_span	50
+	candidate_blastopts	-p blastx -M BLOSUM80 -e 1E-5 -g F -v 0 -F \"\" -z 3000000 -b 1000
+	candidate_evalue	
+	candidate_overlap_threshold	0.8
+	candidate_refdb	
+	command_line	/opt/www/vigor/vigor3/prod3/VIGOR3.pl -D giv_a -O /usr/local/scratch/CORE/snettem/giv_a/PRODUCTION/giv_a -i /opt/www/vigor/vigor3/regr_testing/flua.ungapped.fasta
+	default_gene_optional	0
+	default_gene_required	0
+	default_gene_variation	1
+	frameshift_sensitivity	1
+	gene_variations	
+	jcvi_rules	1
+	mature_pep_mincoverage	50
+	mature_pep_minidentity	25
+	mature_pep_minsimilarity	40
+	mature_pep_refdb	../data3/virus_mp
+	max_intron_size	7000
+	min_candidate_pctsimilarity	60
+	min_candidate_sbjcoverage	33
+	min_exon_size	3
+	min_intron_size	30
+	min_pseudogene_coverage	80
+	min_pseudogene_identity	70
+	min_pseudogene_similarity	80
+	noncanonical_splicing_genes	
+	optional_genes	
+	reference_db	/opt/www/vigor/vigor3/data3/flua_db
+	reference_dbsize	27797
+	required_genes	
+	ribosomal_slippage_genes	
+	rna_editing_genes	
+	selectivity	0.985
+	slippage_frameshift	+1
+	slippage_motif	[NC]{2}[NT]{3}[NCT]
+	slippage_offset	1
+	spliced_genes	
+	splicesite_extend_range	0
+	tile_overlap	1000000
+	tile_size	10000000
+	use_locus_tags	1
+	variation	0.985
+	verbose	0
+	vigorspace	/opt/www/vigor/vigor3/prod3/vigorscratch/974081.781999306
+
+
+genomic sequence NC_026438.1, length=2280
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 1 permutation for gene PB2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    Seg1prot          759    1-759          1   1-2277         1   1  0  N   97.1   98.5   100.0  0        PB2 | polymerase PB2
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_026438.1              2280      1            0       2280            759           97.1             99.5          100.0   flua_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_026438.1.1      97.1   99.5   100.0  0.0   0.0   0.0   1..2280          759    759    Seg1prot          PB2 | polymerase PB2
+
+
+genomic sequence NC_026435.1, length=2274
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 3 permutations for gene PB1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_308665.1       757    1-757          1   1-2271         1   1  0  N   95.3   98.2   100.0  0        PB1 | polymerase
+    seg2prot1B        757    1-757          1   1-2271         1   1  0  N   97.0   99.4   100.0  0        PB1 | polymerase PB1
+    seg2prot1A        758    1-757          1   1-2271         1   1  0  N   97.0   99.4   99.8   0        PB1 | polymerase PB1
+        found 1 gene
+
+    found 14 permutations for gene PB1-F2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg2prot2J        56     1-56           1   95-262         1   2  0  N   80.3   87.5   100.0  3.2-e029 PB1-F2 | PB1-F2 protein
+    seg2prot2E        59     1-56           1   95-262         1   2  0  N   80.3   87.5   94.9   3.2-e029 PB1-F2 | PB1-F2 protein
+    seg2prot2D        57     1-56           1   95-262         1   2  0  N   80.3   87.5   98.2   3.2-e029 PB1-F2 | PB1-F2 protein
+    seg2prot2G        63     1-63           1   95-283         1   2  0  N   77.7   84.1   100.0  2.6-e031 PB1-F2 | PB1-F2 protein
+    seg2prot2L        76     1-76           1   95-322         1   2  0  N   77.6   82.8   100.0  6.6-e039 PB1-F2 | PB1-F2 protein
+    seg2prot2I        78     1-78           1   95-328         1   2  0  N   78.2   83.3   100.0  3.0-e040 PB1-F2 | PB1-F2 protein
+    seg2prot2C        79     1-79           1   95-331         1   2  0  N   78.4   83.5   100.0  3.9-e041 PB1-F2 | PB1-F2 protein
+    seg2prot2K        81     1-81           1   95-337         1   2  0  N   77.7   83.9   100.0  4.5-e043 PB1-F2 | PB1-F2 protein
+    AKN08864.1        90     1-86           1   95-352         1   2  0  N   66.2   80.2   95.5   2.4-e039 PB1-F2 | PB1-F2 protein
+    seg2prot2A        90     1-87           1   95-355         1   2  0  N   79.3   83.9   96.6   2.1-e047 PB1-F2 | PB1-F2 protein
+    seg2prot2B        87     1-87           1   95-355         1   2  0  N   79.3   83.9   100.0  2.1-e047 PB1-F2 | PB1-F2 protein
+    seg2prot2M        90     1-90           1   95-364         1   2  0  N   82.2   85.5   100.0  1.0-e051 PB1-F2 | PB1-F2 protein
+    seg2prot2F        101    1-101          1   95-397         1   2  0  N   79.2   83.1   100.0  3.0-e054 PB1-F2 | PB1-F2 protein
+    seg2prot2H_putati 52     1-49           1   209-355        1   2  0  N   81.6   83.6   94.2   2.0-e023 PB1-F2 | PB1-F2 protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_026435.1              2274      1            1       2274            757           97.1             99.7          100.0   flua_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_026435.1.1      97.1   99.7   100.0  0.0   0.0   0.0   1..2274          757    757    seg2prot1B        PB1 | polymerase PB1
+NC_026435.1.2      79.2   84.2   100.0  0.0   0.0   0.0   95..400          101    101    seg2prot2F        PB1-F2 | PB1-F2 protein
+                    stop codons embedded in CDS at 128..130, 266..268, 356..358 and 365..367
+
+
+genomic sequence NC_026437.1, length=2151
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 3 permutations for gene PA-X
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg3prot2B        232    1-232          1   1-697          2   0  1  N   92.7   94.4   100.0  9.9-e168 PA-X | PA-X protein
+    seg3prot2C        252    1-252          1   1-757          2   0  1  N   90.5   92.5   100.0  2.2-e177 PA-X | PA-X protein
+    seg3prot2A        252    1-252          1   1-757          2   0  1  N   90.9   92.8   100.0  4.3-e177 PA-X | PA-X protein
+        found 1 gene
+
+    found 1 permutation for gene PA
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg3prot          716    1-715          1   1-2145         1   1  0  N   95.6   98.1   99.8   0        PA | polymerase PA
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_026437.1              2151      2            0       2850            948           94.8             98.0           97.9   flua_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_026437.1.1      92.7   96.2   92.1   0.0   0.0   7.9   1..573           232    252    seg3prot2A        PA-X | PA-X protein
+                                                          575..700                                         
+NC_026437.1.2      95.5   98.7   100.0  0.0   0.0   0.0   1..2151          716    716    seg3prot          PA | polymerase PA
+
+
+genomic sequence NC_026433.1, length=1701
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 24 permutations for gene HA
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg4protA         566    1-566          1   1-1698         1   1  0  N   91.8   95.9   100.0  0        HA | hemagglutinin
+    seg4protD         562    3-562          1   13-1698        2   1  0  N   64.4   78.7   98.0   0        HA | hemagglutinin
+    seg4protJ         560    6-560          1   13-1698        3   1  0  N   52.7   67.9   95.7   0        HA | hemagglutinin
+    seg4prot5A        567    4-567          1   13-1698        3   1  0  N   64.5   79.9   99.1   0        HA | hemagglutinin
+    seg4prot5Ab       566    4-566          1   13-1698        3   1  0  N   64.9   80.3   98.4   0        HA | hemagglutinin
+    seg4protP         568    4-568          1   13-1698        3   1  0  N   64.5   79.9   98.9   0        HA | hemagglutinin
+    seg4protK         565    11-565         1   34-1698        4   1  0  N   55.9   74.4   95.3   0        HA | hemagglutinin
+    seg4protM         566    17-566         1   43-1698        5   1  0  N   52.2   71.4   92.9   0        HA | hemagglutinin
+    seg4protF         566    16-566         1   49-1698        4   1  0  N   59.4   76.8   95.0   0        HA | hemagglutinin
+    seg4protH         566    18-566         1   49-1698        3   1  0  N   51.8   71.8   93.6   0        HA | hemagglutinin
+    seg4protI         565    17-565         1   52-1698        5   1  0  N   53.3   72.4   87.9   0        HA | hemagglutinin
+    seg4prot3A        566    28-525         1   55-1572        2   1  0  N   54.1   73.1   51.2   1.6-e152 HA | hemagglutinin
+    seg4protB         566    28-525         1   55-1572        3   1  0  N   51.9   73.3   53.7   1.1-e148 HA | hemagglutinin
+    seg4protE         568    29-525         1   58-1566        5   1  0  N   48.5   67.6   74.6   6.2-e146 HA | hemagglutinin
+    seg4prot7E        563    62-522         1   184-1572       6   1  0  N   48.8   68.1   68.0   1.1-e133 HA | hemagglutinin
+    seg4prot7C        570    69-527         1   205-1566       6   1  0  N   50.9   70.1   64.7   5.4-e134 HA | hemagglutinin
+    seg4prot7D        564    69-523         1   205-1572       5   0  2  N   49.2   68.5   62.5   8.6-e128 HA | hemagglutinin
+    seg4protO         560    69-519         1   205-1572       5   1  0  N   49.4   68.7   64.6   1.0-e129 HA | hemagglutinin
+    seg4prot7F        562    69-521         1   205-1572       5   1  0  N   49.5   68.2   64.9   9.9-e131 HA | hemagglutinin
+    seg4protN         561    68-561         1   205-1698       6   1  0  N   51.4   69.1   71.6   5.9-e147 HA | hemagglutinin
+    seg4prot7A        552    105-511        1   319-1572       6   1  0  N   50.1   70.3   61.7   4.4-e122 HA | hemagglutinin
+    seg4protL         564    158-564        1   478-1698       2   1  0  N   50.7   70.1   70.5   0        HA | hemagglutinin
+    seg4protG         564    76-564         1   214-1698       4   1  0  N   50.2   68.2   74.8   1.6-e148 HA | hemagglutinin
+    seg4protC         565    79-524         1   214-1572       2   1  0  N   53.6   74.1   45.8   6.4-e147 HA | hemagglutinin
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_026433.1              1701      1            0       1701            566           92.2             98.2           99.6   flua_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_026433.1.1      92.2   98.3   99.6   0.0   0.4   0.0   1..1701          566    566    seg4protA         HA | hemagglutinin
+NC_026433.1.1.1    76.5   94.1   100.0  0.0   0.0   0.0   1..51            17     17     seg4matureA1      signal peptide
+NC_026433.1.1.2    90.2   98.0   99.4   0.0   0.6   0.0   52..1032         327    327    seg4matureA2      HA1
+NC_026433.1.1.3    96.4   99.0   100.0  0.0   0.0   0.0   1033..1698       222    222    seg4matureA3      HA2
+
+
+genomic sequence NC_026436.1, length=1497
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 1 permutation for gene NP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg5prot          498    1-497          1   1-1491         1   1  0  N   94.1   98.5   99.7   0        NP | nucleocapsid protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_026436.1              1497      1            0       1497            498           94.0             99.0          100.0   flua_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_026436.1.1      94.0   99.0   100.0  0.0   0.0   0.0   1..1497          498    498    seg5prot          NP | nucleocapsid protein
+
+
+genomic sequence NC_026434.1, length=1410
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 10 permutations for gene NA
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg6prot1F        470    1-445          1   1-1329         5   1  0  N   51.9   68.3   75.3   4.3-e127 NA | neuraminidase
+    seg6prot1B        469    1-466          1   1-1395         8   1  0  N   53.8   71.3   73.9   1.5-e115 NA | neuraminidase
+    seg6prot1C        468    1-466          1   1-1395         8   1  0  N   53.8   71.3   74.1   1.5-e115 NA | neuraminidase
+    seg6prot1E        469    1-466          1   1-1395         8   1  0  N   52.9   70.7   80.1   5.6-e124 NA | neuraminidase
+    seg6prot1BDR1_R29 469    1-466          1   1-1395         8   1  0  N   53.5   71.3   73.9   5.8-e115 NA | neuraminidase
+    seg6prot1G        470    1-468          1   1-1395         6   1  0  N   51.6   67.2   78.7   1.0-e123 NA | neuraminidase
+    seg6prot1ADR2_N29 470    1-470          1   1-1407         2   1  0  N   81.9   90.2   100.0  0        NA | neuraminidase
+    seg6prot1ADR1_H27 470    1-470          1   1-1407         2   1  0  N   81.9   90.2   100.0  0        NA | neuraminidase
+    seg6prot1D        472    1-471          1   1-1407         4   1  0  N   59.3   75.5   83.8   5.5-e179 NA | neuraminidase
+    seg6prot1A        470    1-470          1   1-1407         2   1  0  N   82.1   90.2   100.0  0        NA | neuraminidase
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_026434.1              1410      1            0       1410            469           81.9             94.5          100.0   flua_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_026434.1.1      81.9   94.5   100.0  0.0   0.0   0.0   1..1410          469    470    seg6prot1A        NA | neuraminidase
+
+
+genomic sequence NC_026431.1, length=982
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 1 permutation for gene M1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg7prot1         252    1-252          1   1-756          1   1  0  N   96.4   98.0   100.0  0        M1 | matrix protein 1
+        found 1 gene
+
+    found 6 permutations for gene M2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg7prot2ADR3_V27 97     1-96           1   1-976          2   0  1  N   91.7   94.8   97.9   1.0-e062 M2 | matrix protein 2
+    seg7prot2B        96     1-96           1   1-976          2   0  1  N   91.6   95.8   98.9   1.6-e061 M2 | matrix protein 2
+    seg7prot2ADR1_V27 97     1-97           1   1-979          2   0  1  N   90.7   94.8   98.9   8.0-e062 M2 | matrix protein 2
+    seg7prot2A        97     1-97           1   1-979          2   0  1  N   91.7   95.8   98.9   2.0-e062 M2 | matrix protein 2
+    seg7prot2ADR2_S31 97     1-97           1   1-979          2   0  1  N   92.7   95.8   98.9   2.6-e063 M2 | matrix protein 2
+    seg7part2A        88     1-88           1   716-979        1   2  0  N   90.9   95.4   100.0  1.7-e061 M2 | matrix protein 2
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_026431.1               982      2            0       1053            349           95.4             98.9          100.0   flua_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_026431.1.1      96.4   99.6   100.0  0.0   0.0   0.0   1..759           252    252    seg7prot1         M1 | matrix protein 1
+NC_026431.1.2      92.8   97.4   100.0  0.0   0.0   0.0   1..26            97     97     seg7prot2ADR2_S31 M2 | matrix protein 2
+                                                          715..982                                         
+
+
+genomic sequence NC_026432.1, length=863
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 11 permutations for gene NS1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg8prot1H        197    1-197          1   1-606          2   1  0  N   79.8   88.7   100.0  2.7-e076 NS1 | nonstructural protein 1
+    seg8prot1C        217    1-217          1   1-651          1   1  0  N   78.3   90.3   100.0  3.3-e137 NS1 | nonstructural protein 1
+    seg8prot1E        220    1-219          1   1-657          1   1  0  N   78.5   90.4   99.5   7.5-e139 NS1 | nonstructural protein 1
+    seg8prot1G        219    1-219          1   1-657          1   1  0  N   89.9   96.8   100.0  6.5-e158 NS1 | nonstructural protein 1
+    seg8prot1F        224    1-224          1   1-672          1   1  0  N   78.1   90.1   100.0  1.7-e140 NS1 | nonstructural protein 1
+    seg8prot1Ib       238    1-224          1   1-672          1   1  0  N   78.1   90.1   94.1   1.7-e140 NS1 | nonstructural protein 1
+    seg8prot1K        227    1-224          1   1-672          1   1  0  N   78.1   90.1   98.6   1.7-e140 NS1 | nonstructural protein 1
+    seg8prot1A        237    1-224          1   1-672          1   1  0  N   78.1   90.1   94.5   1.7-e140 NS1 | nonstructural protein 1
+    seg8prot1B        230    1-224          1   1-672          1   1  0  N   78.1   90.1   97.3   1.7-e140 NS1 | nonstructural protein 1
+    seg8prot1D        223    1-221          1   1-678          2   1  0  N   78.4   87.3   99.1   1.5-e089 NS1 | non-structual protein 1
+    seg8prot1I        230    1-230          1   1-690          1   1  0  N   81.7   91.3   100.0  4.6-e151 NS1 | nonstructural protein 1
+        found 1 gene
+
+    found 2 permutations for gene NEP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg8prot2A        121    1-121          1   1-835          2   0  1  N   88.6   94.3   100.0  1.2-e077 NEP | nuclear export protein
+    seg8part2A        111    1-111          1   503-835        1   2  0  N   88.2   93.6   100.0  3.3-e074 NEP | nuclear export protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_026432.1               863      2            0       1026            340           89.4             97.6          100.0   flua_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_026432.1.1      90.0   97.5   100.0  0.0   0.0   0.0   1..660           219    219    seg8prot1G        NS1 | nonstructural protein 1
+NC_026432.1.2      88.4   97.9   100.0  0.0   0.0   0.0   1..30            121    121    seg8prot2A        NEP | nuclear export protein
+                                                          503..838                                         
+
+
+genomic sequence NC_007373.1, length=2341
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 1 permutation for gene PB2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    Seg1prot          759    1-759          1   28-2304        1   1  0  N   94.4   97.6   100.0  0        PB2 | polymerase PB2
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_007373.1              2341      1            0       2280            759           94.5             98.9          100.0   flua_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_007373.1.1      94.5   98.9   100.0  0.0   0.0   0.0   28..2307         759    759    Seg1prot          PB2 | polymerase PB2
+
+
+genomic sequence NC_007372.1, length=2341
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 3 permutations for gene PB1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_308665.1       757    1-757          1   25-2295        1   1  0  N   96.1   98.4   100.0  0        PB1 | polymerase
+    seg2prot1A        758    1-757          1   25-2295        1   1  0  N   97.8   99.6   99.8   0        PB1 | polymerase PB1
+    seg2prot1B        757    1-757          1   25-2295        1   1  0  N   97.8   99.6   100.0  0        PB1 | polymerase PB1
+        found 1 gene
+
+    found 14 permutations for gene PB1-F2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg2prot2J        56     1-56           1   119-286        1   2  0  N   96.4   98.2   100.0  4.8-e039 PB1-F2 | PB1-F2 protein
+    seg2prot2D        57     1-57           1   119-289        1   2  0  N   96.4   98.2   100.0  8.7-e040 PB1-F2 | PB1-F2 protein
+    seg2prot2E        59     1-59           1   119-295        1   2  0  N   96.6   98.3   100.0  2.6-e042 PB1-F2 | PB1-F2 protein
+    seg2prot2G        63     1-63           1   119-307        1   2  0  N   96.8   98.4   100.0  1.7-e046 PB1-F2 | PB1-F2 protein
+    seg2prot2L        76     1-76           1   119-346        1   2  0  N   96.0   97.3   100.0  7.1-e056 PB1-F2 | PB1-F2 protein
+    seg2prot2I        78     1-78           1   119-352        1   2  0  N   96.1   97.4   100.0  3.3-e057 PB1-F2 | PB1-F2 protein
+    seg2prot2C        79     1-79           1   119-355        1   2  0  N   96.2   97.4   100.0  4.2-e058 PB1-F2 | PB1-F2 protein
+    seg2prot2K        81     1-81           1   119-361        1   2  0  N   95.0   97.5   100.0  4.8-e060 PB1-F2 | PB1-F2 protein
+    seg2prot2B        87     1-87           1   119-379        1   2  0  N   96.5   97.7   100.0  1.5-e065 PB1-F2 | PB1-F2 protein
+    AKN08864.1        90     1-90           1   119-388        1   2  0  N   70.0   80.0   100.0  4.8-e046 PB1-F2 | PB1-F2 protein
+    seg2prot2A        90     1-90           1   119-388        1   2  0  N   96.6   97.7   100.0  7.9-e069 PB1-F2 | PB1-F2 protein
+    seg2prot2M        90     1-90           1   119-388        1   2  0  N   80.0   88.8   100.0  4.0-e055 PB1-F2 | PB1-F2 protein
+    seg2prot2F        101    1-101          1   119-421        1   2  0  N   94.0   95.0   100.0  3.4-e074 PB1-F2 | PB1-F2 protein
+    seg2prot2H_putati 52     1-52           1   233-388        1   2  0  N   98.0   98.0   100.0  5.9-e037 PB1-F2 | PB1-F2 protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_007372.1              2341      2            0       2547            847           97.8             99.6          100.0   flua_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_007372.1.1      97.9   99.7   100.0  0.0   0.0   0.0   25..2298         757    757    seg2prot1B        PB1 | polymerase PB1
+NC_007372.1.2      96.7   98.6   100.0  0.0   0.0   0.0   119..391         90     90     seg2prot2A        PB1-F2 | PB1-F2 protein
+
+
+genomic sequence NC_007371.1, length=2233
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 3 permutations for gene PA-X
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg3prot2B        232    1-232          1   25-721         2   0  1  N   93.1   95.7   100.0  2.2-e170 PA-X | PA-X protein
+    seg3prot2C        252    1-252          1   25-781         2   0  1  N   92.5   94.8   100.0  0        PA-X | PA-X protein
+    seg3prot2A        252    1-252          1   25-781         2   0  1  N   92.8   95.2   100.0  0        PA-X | PA-X protein
+        found 1 gene
+
+    found 1 permutation for gene PA
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg3prot          716    1-715          1   25-2169        1   1  0  N   94.5   98.1   99.8   0        PA | polymerase PA
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_007371.1              2233      2            0       2910            968           94.0             98.9          100.0   flua_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_007371.1.1      92.9   98.2   100.0  0.0   0.0   0.0   25..597          252    252    seg3prot2A        PA-X | PA-X protein
+                                                          599..784                                         
+NC_007371.1.2      94.4   99.2   100.0  0.0   0.0   0.0   25..2175         716    716    seg3prot          PA | polymerase PA
+
+
+genomic sequence NC_007366.1, length=1762
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 24 permutations for gene HA
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg4prot3A        566    1-566          1   30-1727        1   3  0  N   84.4   91.5   100.0  0        HA | hemagglutinin
+    seg4protB         566    1-566          1   30-1727        1   3  0  N   91.6   94.6   100.0  0        HA | hemagglutinin
+    seg4protG         564    6-564          1   57-1727        3   3  0  N   64.4   78.7   97.8   0        HA | hemagglutinin
+    seg4protC         565    19-565         1   87-1727        1   3  0  N   82.6   90.8   96.8   0        HA | hemagglutinin
+    seg4prot5A        567    19-525         1   114-1604       4   3  0  N   48.4   72.9   55.2   2.1-e138 HA | hemagglutinin
+    seg4protP         568    19-526         1   114-1604       4   3  0  N   48.4   72.9   55.2   2.2-e138 HA | hemagglutinin
+    seg4prot5Ab       566    19-524         1   114-1604       4   3  0  N   48.0   72.9   55.1   1.2-e137 HA | hemagglutinin
+    seg4protF         566    19-566         1   114-1727       4   3  0  N   50.0   73.5   55.4   2.6-e129 HA | hemagglutinin
+    seg4protE         568    29-568         1   114-1727       3   3  0  N   66.9   82.1   93.8   0        HA | hemagglutinin
+    seg4protJ         560    71-518         1   261-1604       4   3  0  N   47.5   68.6   51.7   3.9-e131 HA | hemagglutinin
+    seg4protL         564    70-564         1   261-1727       4   3  0  N   49.3   70.1   54.6   1.7-e128 HA | hemagglutinin
+    seg4protD         562    69-520         1   264-1604       3   3  0  N   49.6   72.3   50.1   8.3-e129 HA | hemagglutinin
+    seg4protA         566    72-524         1   267-1604       3   3  0  N   51.6   72.2   49.6   3.9-e145 HA | hemagglutinin
+    seg4protN         561    138-561        1   465-1727       3   3  0  N   60.7   76.1   53.1   0        HA | hemagglutinin
+    seg4prot7E        563    148-563        1   498-1727       3   3  0  N   61.2   77.5   51.3   0        HA | hemagglutinin
+    seg4protO         560    148-560        1   498-1727       3   3  0  N   61.4   77.5   50.8   0        HA | hemagglutinin
+    seg4prot7F        562    148-562        1   498-1727       3   3  0  N   61.1   78.0   51.7   0        HA | hemagglutinin
+    seg4prot7C        570    148-570        1   498-1727       3   3  0  N   62.2   77.5   50.7   0        HA | hemagglutinin
+    seg4prot7D        564    148-564        1   498-1727       3   3  0  N   61.7   77.8   50.5   0        HA | hemagglutinin
+    seg4prot7A        552    149-552        1   501-1727       5   3  0  N   59.5   75.6   61.7   5.6-e177 HA | hemagglutinin
+    seg4protI         565    66-522         1   252-1601       5   3  0  N   51.3   68.5   64.7   1.1-e125 HA | hemagglutinin
+    seg4protM         566    22-566         1   114-1727       4   3  0  N   47.9   68.7   60.4   1.3-e115 HA | hemagglutinin
+    seg4protH         566    21-566         1   114-1727       3   3  0  N   47.1   69.1   55.4   4.0-e121 HA | hemagglutinin
+    seg4protK         565    19-565         1   114-1727       4   3  0  N   49.0   69.6   58.4   1.9-e138 HA | hemagglutinin
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_007366.1              1762      1            0       1701            566           91.7             97.3          100.0   flua_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_007366.1.1      91.7   97.4   100.0  0.0   0.0   0.0   30..1730         566    566    seg4protB         HA | hemagglutinin
+NC_007366.1.1.1    87.5   100.0  100.0  0.0   0.0   0.0   30..77           16     16     seg4matureB1      signal peptide
+NC_007366.1.1.2    87.8   96.0   100.0  0.0   0.0   0.0   78..1064         329    329    seg4matureB2      HA1
+NC_007366.1.1.3    97.7   99.3   100.0  0.0   0.0   0.0   1065..1727       221    221    seg4matureB3      HA2
+
+
+genomic sequence NC_007369.1, length=1566
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 1 permutation for gene NP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg5prot          498    1-498          1   46-1539        1   1  0  N   91.9   97.1   100.0  0        NP | nucleocapsid protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_007369.1              1566      1            0       1497            498           92.0             98.4          100.0   flua_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_007369.1.1      92.0   98.3   100.0  0.0   0.0   0.0   46..1542         498    498    seg5prot          NP | nucleocapsid protein
+
+
+genomic sequence NC_007368.1, length=1467
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 10 permutations for gene NA
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg6prot1D        472    1-463          1   20-1405        7   2  0  N   49.3   66.9   79.4   1.0-e109 NA | neuraminidase
+    seg6prot1ADR2_N29 470    1-464          1   20-1411        7   2  0  N   51.3   68.0   77.8   8.2-e114 NA | neuraminidase
+    seg6prot1ADR1_H27 470    1-464          1   20-1411        7   2  0  N   51.3   68.0   77.8   8.2-e114 NA | neuraminidase
+    seg6prot1F        470    1-466          1   20-1411        6   2  0  N   54.6   70.4   80.6   3.4-e135 NA | neuraminidase
+    seg6prot1A        470    1-464          1   20-1411        7   2  0  N   51.6   68.0   77.8   1.1-e114 NA | neuraminidase
+    seg6prot1C        468    1-468          1   20-1423        1   2  0  N   83.7   89.7   100.0  0        NA | neuraminidase
+    seg6prot1E        469    1-468          1   20-1423        9   2  0  N   60.3   72.5   77.6   7.8-e137 NA | neuraminidase
+    seg6prot1B        469    1-469          1   20-1426        1   2  0  N   83.7   89.7   100.0  0        NA | neuraminidase
+    seg6prot1BDR1_R29 469    1-469          1   20-1426        1   2  0  N   83.5   89.7   100.0  0        NA | neuraminidase
+    seg6prot1G        470    63-466         1   200-1411       6   2  0  N   53.5   70.2   72.3   1.4-e122 NA | neuraminidase
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_007368.1              1467      1            0       1410            469           83.8             94.0          100.0   flua_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_007368.1.1      83.8   94.0   100.0  0.0   0.0   0.0   20..1429         469    469    seg6prot1B        NA | neuraminidase
+
+
+genomic sequence NC_007367.1, length=1027
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 1 permutation for gene M1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg7prot1         252    1-252          1   26-781         1   2  0  N   95.2   97.6   100.0  0        M1 | matrix protein 1
+        found 1 gene
+
+    found 6 permutations for gene M2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg7prot2ADR3_V27 97     1-96           1   26-1001        2   0  1  N   83.5   92.7   97.9   1.3-e056 M2 | matrix protein 2
+    seg7prot2B        96     1-96           1   26-1001        2   0  1  N   85.4   93.7   98.9   4.7-e057 M2 | matrix protein 2
+    seg7prot2ADR1_V27 97     1-97           1   26-1004        2   0  1  N   84.5   92.7   98.9   2.4-e057 M2 | matrix protein 2
+    seg7prot2A        97     1-97           1   26-1004        2   0  1  N   85.5   93.8   98.9   6.2-e058 M2 | matrix protein 2
+    seg7prot2ADR2_S31 97     1-97           1   26-1004        2   0  1  N   84.5   93.8   98.9   3.4-e057 M2 | matrix protein 2
+    seg7part2A        88     1-88           1   741-1004       1   3  0  N   84.0   93.1   100.0  5.4-e057 M2 | matrix protein 2
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_007367.1              1027      2            0       1053            349           92.6             98.6          100.0   flua_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_007367.1.1      95.2   100.0  100.0  0.0   0.0   0.0   26..784          252    252    seg7prot1         M1 | matrix protein 1
+NC_007367.1.2      85.6   94.8   100.0  0.0   0.0   0.0   26..51           97     97     seg7prot2A        M2 | matrix protein 2
+                                                          740..1007                                        
+
+
+genomic sequence NC_007370.1, length=890
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 11 permutations for gene NS1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg8prot1H        197    1-197          1   27-632         2   3  0  N   85.7   93.4   100.0  2.5-e128 NS1 | nonstructural protein 1
+    seg8prot1C        217    1-217          1   27-677         1   3  0  N   99.0   99.0   100.0  1.9-e171 NS1 | nonstructural protein 1
+    seg8prot1G        219    1-219          1   27-683         1   3  0  N   79.4   89.9   100.0  1.4-e139 NS1 | nonstructural protein 1
+    seg8prot1E        220    1-220          1   27-686         1   3  0  N   99.0   99.0   100.0  5.5-e174 NS1 | nonstructural protein 1
+    seg8prot1F        224    1-224          1   27-698         1   3  0  N   99.1   99.1   100.0  2.9-e177 NS1 | nonstructural protein 1
+    seg8prot1K        227    1-227          1   27-707         1   3  0  N   99.1   99.1   100.0  1.2-e179 NS1 | nonstructural protein 1
+    seg8prot1D        223    1-223          1   27-710         2   3  0  N   84.3   91.4   100.0  4.5-e144 NS1 | non-structual protein 1
+    seg8prot1I        230    1-230          1   27-716         1   3  0  N   82.1   91.7   100.0  2.2-e152 NS1 | nonstructural protein 1
+    seg8prot1B        230    1-230          1   27-716         1   3  0  N   99.1   99.1   100.0  0        NS1 | nonstructural protein 1
+    seg8prot1Ib       238    1-237          1   27-737         1   3  0  N   98.7   98.7   99.5   0        NS1 | nonstructural protein 1
+    seg8prot1A        237    1-237          1   27-737         1   3  0  N   98.7   98.7   100.0  0        NS1 | nonstructural protein 1
+        found 1 gene
+
+    found 2 permutations for gene NEP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg8prot2A        121    1-121          1   27-861         2   0  1  N   98.3   99.1   100.0  4.4-e086 NEP | nuclear export protein
+    seg8part2A        111    1-111          1   529-861        1   1  0  N   98.1   99.0   100.0  3.1-e082 NEP | nuclear export protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_007370.1               890      2            0       1059            351           98.9             99.7          100.0   flua_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_007370.1.1      99.1   99.5   100.0  0.0   0.0   0.0   27..719          230    230    seg8prot1B        NS1 | nonstructural protein 1
+NC_007370.1.2      98.3   99.8   100.0  0.0   0.0   0.0   27..56           121    121    seg8prot2A        NEP | nuclear export protein
+                                                          529..864                                         
+
+
+genomic sequence NC_026422.1, length=2280
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 1 permutation for gene PB2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    Seg1prot          759    1-759          1   1-2277         1   1  0  N   98.1   99.2   100.0  0        PB2 | polymerase PB2
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_026422.1              2280      1            0       2280            759           98.2             99.7          100.0   flua_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_026422.1.1      98.2   99.7   100.0  0.0   0.0   0.0   1..2280          759    759    Seg1prot          PB2 | polymerase PB2
+
+
+genomic sequence NC_026423.1, length=2297
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 3 permutations for gene PB1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    YP_308665.1       757    1-757          1   1-2271         1   1  0  N   96.4   98.5   100.0  0        PB1 | polymerase
+    seg2prot1A        758    1-757          1   1-2271         1   1  0  N   98.1   99.7   99.8   0        PB1 | polymerase PB1
+    seg2prot1B        757    1-757          1   1-2271         1   1  0  N   98.1   99.7   100.0  0        PB1 | polymerase PB1
+        found 1 gene
+
+    found 14 permutations for gene PB1-F2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg2prot2D        57     1-56           1   95-262         1   2  0  N   69.6   80.3   98.2   3.4-e025 PB1-F2 | PB1-F2 protein
+    seg2prot2J        56     1-56           1   95-262         1   2  0  N   69.6   80.3   100.0  3.4-e025 PB1-F2 | PB1-F2 protein
+    seg2prot2E        59     1-59           1   95-271         1   2  0  N   67.7   79.6   100.0  7.8-e027 PB1-F2 | PB1-F2 protein
+    seg2prot2G        63     1-63           1   95-283         1   2  0  N   66.6   77.7   100.0  2.5-e028 PB1-F2 | PB1-F2 protein
+    seg2prot2L        76     1-74           1   95-316         1   2  0  N   68.9   79.7   97.3   5.0-e035 PB1-F2 | PB1-F2 protein
+    seg2prot2I        78     1-78           1   95-328         1   2  0  N   66.6   76.9   100.0  2.5-e035 PB1-F2 | PB1-F2 protein
+    seg2prot2C        79     1-79           1   95-331         1   2  0  N   65.8   77.2   100.0  1.8-e035 PB1-F2 | PB1-F2 protein
+    seg2prot2K        81     1-81           1   95-337         1   2  0  N   65.4   77.7   100.0  2.1-e037 PB1-F2 | PB1-F2 protein
+    seg2prot2B        87     1-86           1   95-352         1   2  0  N   66.2   77.9   98.8   6.1-e040 PB1-F2 | PB1-F2 protein
+    AKN08864.1        90     1-90           1   95-364         1   2  0  N   77.7   86.6   100.0  2.6-e052 PB1-F2 | PB1-F2 protein
+    seg2prot2A        90     1-90           1   95-364         1   2  0  N   65.5   76.6   100.0  7.0-e042 PB1-F2 | PB1-F2 protein
+    seg2prot2M        90     1-90           1   95-364         1   2  0  N   64.4   78.8   100.0  2.0-e041 PB1-F2 | PB1-F2 protein
+    seg2prot2F        101    1-100          1   95-394         1   2  0  N   64.0   74.0   99.0   4.1-e044 PB1-F2 | PB1-F2 protein
+    seg2prot2H_putati 52     1-52           1   209-364        1   2  0  N   61.5   73.0   100.0  2.4-e018 PB1-F2 | PB1-F2 protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_026423.1              2297      2            0       2547            847           96.0             98.7          100.0   flua_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_026423.1.1      98.2   99.9   100.0  0.0   0.0   0.0   1..2274          757    757    seg2prot1B        PB1 | polymerase PB1
+NC_026423.1.2      77.8   88.6   100.0  0.0   0.0   0.0   95..367          90     90     AKN08864.1        PB1-F2 | PB1-F2 protein
+
+
+genomic sequence NC_026424.1, length=2176
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 3 permutations for gene PA-X
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg3prot2B        232    1-232          1   1-697          2   0  1  N   92.7   95.2   100.0  2.6-e168 PA-X | PA-X protein
+    seg3prot2C        252    1-252          1   1-757          2   0  1  N   91.3   94.0   100.0  0        PA-X | PA-X protein
+    seg3prot2A        252    1-252          1   1-757          2   0  1  N   91.6   94.4   100.0  0        PA-X | PA-X protein
+        found 1 gene
+
+    found 1 permutation for gene PA
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg3prot          716    1-715          1   1-2145         1   1  0  N   95.8   98.6   99.8   0        PA | polymerase PA
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_026424.1              2176      2            0       2910            968           94.6             98.1          100.0   flua_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_026424.1.1      91.7   96.2   100.0  0.0   0.0   0.0   1..573           252    252    seg3prot2A        PA-X | PA-X protein
+                                                          575..760                                         
+NC_026424.1.2      95.7   98.9   100.0  0.0   0.0   0.0   1..2151          716    716    seg3prot          PA | polymerase PA
+
+
+genomic sequence NC_026425.1, length=1708
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 24 permutations for gene HA
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg4protJ         560    1-518          1   1-1557         3   1  0  N   54.0   71.9   43.9   2.3-e127 HA | hemagglutinin
+    seg4prot7E        563    1-563          1   1-1680         2   1  0  N   89.2   94.1   100.0  0        HA | hemagglutinin
+    seg4protO         560    1-560          1   1-1680         1   1  0  N   96.4   98.0   100.0  0        HA | hemagglutinin
+    seg4prot7F        562    1-562          1   1-1680         2   1  0  N   96.7   98.2   99.8   0        HA | hemagglutinin
+    seg4prot7C        570    1-570          1   1-1680         2   1  0  N   84.9   92.6   98.0   0        HA | hemagglutinin
+    seg4prot7D        564    1-564          1   1-1680         2   1  0  N   96.0   97.8   99.2   0        HA | hemagglutinin
+    seg4prot7A        552    1-552          1   1-1680         2   1  0  N   83.5   92.2   100.0  0        HA | hemagglutinin
+    seg4protD         562    3-520          1   16-1557        5   1  0  N   49.3   69.9   58.0   2.5-e126 HA | hemagglutinin
+    seg4protM         566    17-523         1   46-1557        5   1  0  N   50.6   69.8   54.4   3.9-e115 HA | hemagglutinin
+    seg4protF         566    16-524         1   52-1557        4   1  0  N   52.4   73.2   50.8   7.5-e131 HA | hemagglutinin
+    seg4prot5A        567    16-525         1   52-1557        8   1  0  N   49.2   69.6   77.2   1.4-e136 HA | hemagglutinin
+    seg4protP         568    16-526         1   52-1557        8   1  0  N   49.3   69.8   76.5   2.0-e136 HA | hemagglutinin
+    seg4protH         566    18-523         1   52-1557        5   1  0  N   52.1   72.5   52.8   9.1-e124 HA | hemagglutinin
+    seg4prot5Ab       566    16-524         1   52-1557        8   1  0  N   49.3   69.8   76.8   2.0-e136 HA | hemagglutinin
+    seg4protN         561    18-561         1   55-1680        2   1  0  N   65.8   78.4   94.4   0        HA | hemagglutinin
+    seg4protL         564    69-564         1   205-1680       6   1  0  N   51.9   71.1   55.3   1.6-e128 HA | hemagglutinin
+    seg4protI         565    105-521        1   310-1551       4   1  0  N   54.1   72.1   45.1   4.8-e120 HA | hemagglutinin
+    seg4protK         565    16-565         1   52-1680        7   1  0  N   47.5   70.0   67.9   5.1-e126 HA | hemagglutinin
+    seg4protA         566    107-524        1   313-1557       4   1  0  N   51.9   70.3   60.2   1.3-e132 HA | hemagglutinin
+    seg4protC         565    156-565        1   442-1680       3   1  0  N   58.9   78.5   50.4   0        HA | hemagglutinin
+    seg4protB         566    157-566        1   442-1680       3   1  0  N   60.8   78.6   50.5   0        HA | hemagglutinin
+    seg4protG         564    291-564        1   856-1680       2   1  0  N   65.6   80.8   48.0   0        HA | hemagglutinin
+    seg4prot3A        566    293-566        1   856-1680       2   1  0  N   61.9   78.5   47.8   0        HA | hemagglutinin
+    seg4protE         568    295-568        1   856-1680       2   1  0  N   63.9   81.9   47.8   0        HA | hemagglutinin
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_026425.1              1708      1            0       1683            560           96.4             98.8          100.0   flua_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_026425.1.1      96.4   98.8   100.0  0.0   0.0   0.0   1..1683          560    562    seg4prot7F        HA | hemagglutinin
+NC_026425.1.1.1    94.4   100.0  100.0  0.0   0.0   0.0   1..54            18     18     seg4matureO1      signal peptide
+NC_026425.1.1.2    96.0   98.6   99.4   0.0   0.0   0.6   55..1017         321    323    seg4mature7F2     HA1
+NC_026425.1.1.3    98.2   99.8   100.0  0.0   0.0   0.0   1018..1680       221    221    seg4mature7F3     HA2
+
+
+genomic sequence NC_026426.1, length=1506
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 1 permutation for gene NP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg5prot          498    1-498          1   1-1494         1   1  0  N   97.7   99.3   100.0  0        NP | nucleocapsid protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_026426.1              1506      1            0       1497            498           97.8             99.6          100.0   flua_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_026426.1.1      97.8   99.6   100.0  0.0   0.0   0.0   1..1497          498    498    seg5prot          NP | nucleocapsid protein
+
+
+genomic sequence NC_026429.1, length=1398
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 10 permutations for gene NA
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg6prot1ADR2_N29 470    1-466          1   1-1389         5   1  0  N   50.6   65.6   79.3   2.2-e125 NA | neuraminidase
+    seg6prot1ADR1_H27 470    1-466          1   1-1389         5   1  0  N   50.6   65.6   79.3   2.2-e125 NA | neuraminidase
+    seg6prot1A        470    1-466          1   1-1389         5   1  0  N   50.9   65.6   79.3   2.9-e126 NA | neuraminidase
+    seg6prot1F        470    1-469          1   1-1392         3   1  0  N   64.4   77.3   99.7   0        NA | neuraminidase
+    seg6prot1G        470    1-470          1   1-1395         2   1  0  N   93.8   96.5   99.5   0        NA | neuraminidase
+    seg6prot1B        469    83-466         1   235-1389       4   1  0  N   53.9   70.2   65.2   1.2-e130 NA | neuraminidase
+    seg6prot1C        468    83-466         1   235-1389       4   1  0  N   53.9   70.2   65.3   1.2-e130 NA | neuraminidase
+    seg6prot1BDR1_R29 469    83-466         1   235-1389       4   1  0  N   53.5   70.2   65.2   4.8-e130 NA | neuraminidase
+    seg6prot1D        472    1-463          1   1-1377         6   1  0  N   46.7   64.8   77.1   1.1-e105 NA | neuraminidase
+    seg6prot1E        469    91-464         1   259-1383       7   1  0  N   54.2   71.7   72.7   4.4-e128 NA | neuraminidase
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_026429.1              1398      1            0       1398            465           93.0             97.9          100.0   flua_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_026429.1.1      93.0   97.8   100.0  0.0   0.0   0.0   1..1398          465    470    seg6prot1G        NA | neuraminidase
+
+
+genomic sequence NC_026427.1, length=985
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 1 permutation for gene M1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg7prot1         252    1-252          1   1-756          1   1  0  N   93.2   97.2   100.0  0        M1 | matrix protein 1
+        found 1 gene
+
+    found 11 permutations for gene M2
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg7prot2ADR3_V27 97     1-96           1   -24-976        2   2  0  Y   81.5   89.9   98.9   1.9-e060 M2 | matrix protein 2
+    seg7prot2ADR3_V27 97     1-96           1   1-976          2   0  1  N   83.4   91.2   98.9   1.9-e060 M2 | matrix protein 2
+    seg7prot2B        96     1-96           1   -24-976        2   2  0  Y   82.2   90.6   100.0  5.4-e060 M2 | matrix protein 2
+    seg7prot2B        96     1-96           1   1-976          2   0  1  N   84.3   92.1   100.0  5.4-e060 M2 | matrix protein 2
+    seg7prot2ADR1_V27 97     1-97           1   -24-979        2   2  0  Y   80.6   89.9   100.0  1.5-e059 M2 | matrix protein 2
+    seg7prot2ADR1_V27 97     1-97           1   1-979          2   0  1  N   82.5   91.2   100.0  1.5-e059 M2 | matrix protein 2
+    seg7prot2A        97     1-97           1   -24-979        2   2  0  Y   81.5   90.7   100.0  3.8-e060 M2 | matrix protein 2
+    seg7prot2A        97     1-97           1   1-979          2   0  1  N   83.4   92.2   100.0  3.8-e060 M2 | matrix protein 2
+    seg7prot2ADR2_S31 97     1-97           1   -24-979        2   2  0  Y   82.3   90.7   100.0  4.9-e061 M2 | matrix protein 2
+    seg7prot2ADR2_S31 97     1-97           1   1-979          2   0  1  N   84.4   92.2   100.0  4.9-e061 M2 | matrix protein 2
+    seg7part2A        88     1-88           1   716-979        1   2  0  N   87.5   94.3   100.0  5.4-e060 M2 | matrix protein 2
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_026427.1               985      2            0       1053            349           92.3             99.1          100.0   flua_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_026427.1.1      93.3   99.4   100.0  0.0   0.0   0.0   1..759           252    252    seg7prot1         M1 | matrix protein 1
+NC_026427.1.2      89.7   99.0   100.0  0.0   0.0   0.0   1..26            97     97     seg7prot2ADR2_S31 M2 | matrix protein 2
+                                                          715..982                                         
+
+
+genomic sequence NC_026428.1, length=841
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 11 permutations for gene NS1
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg8prot1H        197    1-197          1   1-606          2   1  0  N   88.3   93.4   100.0  1.2-e132 NS1 | nonstructural protein 1
+    seg8prot1G        219    1-214          1   1-642          1   1  0  N   79.4   89.2   97.7   1.4-e135 NS1 | nonstructural protein 1
+    seg8prot1C        217    1-217          1   1-651          1   1  0  N   76.0   88.4   100.0  2.4-e133 NS1 | nonstructural protein 1
+    seg8prot1E        220    1-220          1   1-660          1   1  0  N   75.9   88.1   100.0  4.3-e134 NS1 | nonstructural protein 1
+    seg8prot1F        224    1-224          1   1-672          1   1  0  N   75.4   87.9   100.0  7.0-e136 NS1 | nonstructural protein 1
+    seg8prot1D        223    1-222          1   1-681          2   1  0  N   85.2   91.9   99.5   7.1-e146 NS1 | non-structual protein 1
+    seg8prot1K        227    1-227          1   1-681          1   1  0  N   74.8   87.6   100.0  6.3-e137 NS1 | nonstructural protein 1
+    seg8prot1I        230    1-230          1   1-690          1   1  0  N   84.3   90.4   100.0  9.3-e154 NS1 | nonstructural protein 1
+    seg8prot1B        230    1-230          1   1-690          1   1  0  N   74.3   87.3   100.0  1.6-e137 NS1 | nonstructural protein 1
+    seg8prot1Ib       238    1-237          1   1-711          1   1  0  N   74.2   87.3   99.5   5.5-e142 NS1 | nonstructural protein 1
+    seg8prot1A        237    1-237          1   1-711          1   1  0  N   74.2   87.3   100.0  5.5-e142 NS1 | nonstructural protein 1
+        found 1 gene
+
+    found 2 permutations for gene NEP
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    seg8prot2A        121    1-121          1   1-835          2   0  1  N   91.0   93.4   100.0  5.6-e078 NEP | nuclear export protein
+    seg8part2A        111    1-111          1   503-835        1   2  0  N   90.0   92.7   100.0  4.5-e074 NEP | nuclear export protein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_026428.1               841      2            0       1020            338           87.7             97.2           96.3   flua_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_026428.1.1      86.2   97.7   94.3   0.0   0.0   5.7   1..654           217    230    seg8prot1I        NS1 | nonstructural protein 1
+NC_026428.1.2      90.9   95.9   100.0  0.0   0.0   0.0   1..30            121    121    seg8prot2A        NEP | nuclear export protein
+                                                          503..838                                         
+

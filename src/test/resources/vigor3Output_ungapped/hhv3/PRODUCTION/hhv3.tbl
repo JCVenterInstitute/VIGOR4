@@ -1,0 +1,4607 @@
+>Features NC_001348.1
+1747	1208	gene
+			locus_tag	vigor_ORF3
+			gene	ORF3
+1747	1208	CDS
+			codon_start	1
+			protein_id	NC_001348.1.1
+			locus_tag	vigor_ORF3
+			gene	ORF3
+			product	nuclear protein UL55
+3441	2083	gene
+			locus_tag	vigor_ORF4
+			gene	ORF4
+3441	2083	CDS
+			codon_start	1
+			protein_id	NC_001348.1.2
+			locus_tag	vigor_ORF4
+			gene	ORF4
+			product	multifunctional expression regulator
+4574	3552	gene
+			locus_tag	vigor_ORF5
+			gene	ORF5
+4574	3552	CDS
+			codon_start	1
+			protein_id	NC_001348.1.3
+			locus_tag	vigor_ORF5
+			gene	ORF5
+			product	envelope glycoprotein K
+7877	4626	gene
+			locus_tag	vigor_ORF6
+			gene	ORF6
+7877	4626	CDS
+			codon_start	1
+			protein_id	NC_001348.1.4
+			locus_tag	vigor_ORF6
+			gene	ORF6
+			product	helicase-primase primase subunit
+7907	8686	gene
+			locus_tag	vigor_ORF7
+			gene	ORF7
+7907	8686	CDS
+			codon_start	1
+			protein_id	NC_001348.1.5
+			locus_tag	vigor_ORF7
+			gene	ORF7
+			product	tegument protein UL51
+9942	10205	gene
+			locus_tag	vigor_ORF9A
+			gene	ORF9A
+9942	10205	CDS
+			codon_start	1
+			protein_id	NC_001348.1.6
+			locus_tag	vigor_ORF9A
+			gene	ORF9A
+			product	envelope glycoprotein N
+9967	8777	gene
+			locus_tag	vigor_ORF8
+			gene	ORF8
+9967	8777	CDS
+			codon_start	1
+			protein_id	NC_001348.1.7
+			locus_tag	vigor_ORF8
+			gene	ORF8
+			product	deoxyuridine triphosphatase
+10309	11217	gene
+			locus_tag	vigor_ORF9
+			gene	ORF9
+10309	11217	CDS
+			codon_start	1
+			protein_id	NC_001348.1.8
+			locus_tag	vigor_ORF9
+			gene	ORF9
+			product	tegument protein VP22
+11460	12692	gene
+			locus_tag	vigor_ORF10
+			gene	ORF10
+11460	12692	CDS
+			codon_start	1
+			protein_id	NC_001348.1.9
+			locus_tag	vigor_ORF10
+			gene	ORF10
+			product	transactivating tegument protein VP16
+12890	15349	gene
+			locus_tag	vigor_ORF11
+			gene	ORF11
+12890	15349	CDS
+			codon_start	1
+			protein_id	NC_001348.1.10
+			locus_tag	vigor_ORF11
+			gene	ORF11
+			product	tegument protein VP13/14
+15514	17499	gene
+			locus_tag	vigor_ORF12
+			gene	ORF12
+15514	17499	CDS
+			codon_start	1
+			protein_id	NC_001348.1.11
+			locus_tag	vigor_ORF12
+			gene	ORF12
+			product	tegument protein VP11/12
+17741	18646	gene
+			locus_tag	vigor_ORF13
+			gene	ORF13
+17741	18646	CDS
+			codon_start	1
+			protein_id	NC_001348.1.12
+			locus_tag	vigor_ORF13
+			gene	ORF13
+			product	thymidylate synthase
+20371	18731	gene
+			locus_tag	vigor_ORF14
+			gene	ORF14
+20371	18731	CDS
+			codon_start	1
+			protein_id	NC_001348.1.13
+			locus_tag	vigor_ORF14
+			gene	ORF14
+			product	envelope glycoprotein C
+21736	20516	gene
+			locus_tag	vigor_ORF15
+			gene	ORF15
+21736	20516	CDS
+			codon_start	1
+			protein_id	NC_001348.1.14
+			locus_tag	vigor_ORF15
+			gene	ORF15
+			product	envelope protein UL43
+23052	21826	gene
+			locus_tag	vigor_ORF16
+			gene	ORF16
+23052	21826	CDS
+			codon_start	1
+			protein_id	NC_001348.1.15
+			locus_tag	vigor_ORF16
+			gene	ORF16
+			product	DNA polymerase processivity subunit
+23407	24774	gene
+			locus_tag	vigor_ORF17
+			gene	ORF17
+23407	24774	CDS
+			codon_start	1
+			protein_id	NC_001348.1.16
+			locus_tag	vigor_ORF17
+			gene	ORF17
+			product	tegument host shutoff protein
+25751	24831	gene
+			locus_tag	vigor_ORF18
+			gene	ORF18
+25751	24831	CDS
+			codon_start	1
+			protein_id	NC_001348.1.17
+			locus_tag	vigor_ORF18
+			gene	ORF18
+			product	ribonucleotide reductase subunit 2
+28103	25776	gene
+			locus_tag	vigor_ORF19
+			gene	ORF19
+28103	25776	CDS
+			codon_start	1
+			protein_id	NC_001348.1.18
+			locus_tag	vigor_ORF19
+			gene	ORF19
+			product	ribonucleotide reductase subunit 1
+29733	28282	gene
+			locus_tag	vigor_ORF20
+			gene	ORF20
+29733	28282	CDS
+			codon_start	1
+			protein_id	NC_001348.1.19
+			locus_tag	vigor_ORF20
+			gene	ORF20
+			product	capsid triplex subunit 1
+30017	33133	gene
+			locus_tag	vigor_ORF21
+			gene	ORF21
+30017	33133	CDS
+			codon_start	1
+			protein_id	NC_001348.1.20
+			locus_tag	vigor_ORF21
+			gene	ORF21
+			product	tegument protein UL37
+33341	41587	gene
+			locus_tag	vigor_ORF22
+			gene	ORF22
+33341	41587	CDS
+			codon_start	1
+			protein_id	NC_001348.1.21
+			locus_tag	vigor_ORF22
+			gene	ORF22
+			product	large tegument protein
+42348	41641	gene
+			locus_tag	vigor_ORF23
+			gene	ORF23
+42348	41641	CDS
+			codon_start	1
+			protein_id	NC_001348.1.22
+			locus_tag	vigor_ORF23
+			gene	ORF23
+			product	small capsid protein
+43231	42422	gene
+			locus_tag	vigor_ORF24
+			gene	ORF24
+43231	42422	CDS
+			codon_start	1
+			protein_id	NC_001348.1.23
+			locus_tag	vigor_ORF24
+			gene	ORF24
+			product	nuclear egress membrane protein
+43716	45473	gene
+			locus_tag	vigor_ORF26
+			gene	ORF26
+43716	45473	CDS
+			codon_start	1
+			protein_id	NC_001348.1.24
+			locus_tag	vigor_ORF26
+			gene	ORF26
+			product	DNA packaging protein UL32
+43828	43358	gene
+			locus_tag	vigor_ORF25
+			gene	ORF25
+43828	43358	CDS
+			codon_start	1
+			protein_id	NC_001348.1.25
+			locus_tag	vigor_ORF25
+			gene	ORF25
+			product	DNA packaging protein UL33
+45400	46338	gene
+			locus_tag	vigor_ORF27
+			gene	ORF27
+45400	46338	CDS
+			codon_start	1
+			protein_id	NC_001348.1.26
+			locus_tag	vigor_ORF27
+			gene	ORF27
+			product	nuclear egress lamina protein
+49846	46262	gene
+			locus_tag	vigor_ORF28
+			gene	ORF28
+49846	46262	CDS
+			codon_start	1
+			protein_id	NC_001348.1.27
+			locus_tag	vigor_ORF28
+			gene	ORF28
+			product	DNA polymerase catalytic subunit
+50067	53666	gene
+			locus_tag	vigor_ORF29
+			gene	ORF29
+50067	53666	CDS
+			codon_start	1
+			protein_id	NC_001348.1.28
+			locus_tag	vigor_ORF29
+			gene	ORF29
+			product	single-stranded DNA-binding protein
+53845	56157	gene
+			locus_tag	vigor_ORF30
+			gene	ORF30
+53845	56157	CDS
+			codon_start	1
+			protein_id	NC_001348.1.29
+			locus_tag	vigor_ORF30
+			gene	ORF30
+			product	DNA packaging terminase subunit 2
+56013	58808	gene
+			locus_tag	vigor_ORF31
+			gene	ORF31
+56013	58808	CDS
+			codon_start	1
+			protein_id	NC_001348.1.30
+			locus_tag	vigor_ORF31
+			gene	ORF31
+			product	envelope glycoprotein B
+58960	59391	gene
+			locus_tag	vigor_ORF32
+			gene	ORF32
+58960	59391	CDS
+			codon_start	1
+			protein_id	NC_001348.1.31
+			locus_tag	vigor_ORF32
+			gene	ORF32
+			product	protein V32
+60419	59511	gene
+			locus_tag	vigor_ORF335
+			gene	ORF33.5
+60419	59511	CDS
+			codon_start	1
+			protein_id	NC_001348.1.32
+			locus_tag	vigor_ORF335
+			gene	ORF33.5
+			product	capsid scaffold protein
+61328	59511	gene
+			locus_tag	vigor_ORF33
+			gene	ORF33
+61328	59511	CDS
+			codon_start	1
+			protein_id	NC_001348.1.33
+			locus_tag	vigor_ORF33
+			gene	ORF33
+			product	capsid maturation protease
+63100	61361	gene
+			locus_tag	vigor_ORF34
+			gene	ORF34
+63100	61361	CDS
+			codon_start	1
+			protein_id	NC_001348.1.34
+			locus_tag	vigor_ORF34
+			gene	ORF34
+			product	DNA packaging tegument protein UL25
+63943	63167	gene
+			locus_tag	vigor_ORF35
+			gene	ORF35
+63943	63167	CDS
+			codon_start	1
+			protein_id	NC_001348.1.35
+			locus_tag	vigor_ORF35
+			gene	ORF35
+			product	nuclear protein UL24
+63997	65022	gene
+			locus_tag	vigor_ORF36
+			gene	ORF36
+63997	65022	CDS
+			codon_start	1
+			protein_id	NC_001348.1.36
+			locus_tag	vigor_ORF36
+			gene	ORF36
+			product	thymidine kinase
+65264	67789	gene
+			locus_tag	vigor_ORF37
+			gene	ORF37
+65264	67789	CDS
+			codon_start	1
+			protein_id	NC_001348.1.37
+			locus_tag	vigor_ORF37
+			gene	ORF37
+			product	envelope glycoprotein H
+69483	67858	gene
+			locus_tag	vigor_ORF38
+			gene	ORF38
+69483	67858	CDS
+			codon_start	1
+			protein_id	NC_001348.1.38
+			locus_tag	vigor_ORF38
+			gene	ORF38
+			product	tegument protein UL21
+69877	70545	gene
+			locus_tag	vigor_ORF39
+			gene	ORF39
+69877	70545	CDS
+			codon_start	1
+			protein_id	NC_001348.1.39
+			locus_tag	vigor_ORF39
+			gene	ORF39
+			product	envelope protein UL20
+70730	74920	gene
+			locus_tag	vigor_ORF40
+			gene	ORF40
+70730	74920	CDS
+			codon_start	1
+			protein_id	NC_001348.1.40
+			locus_tag	vigor_ORF40
+			gene	ORF40
+			product	major capsid protein
+75037	75987	gene
+			locus_tag	vigor_ORF41
+			gene	ORF41
+75037	75987	CDS
+			codon_start	1
+			protein_id	NC_001348.1.41
+			locus_tag	vigor_ORF41
+			gene	ORF41
+			product	capsid triplex subunit 2
+77362	79392	gene
+			locus_tag	vigor_ORF43
+			gene	ORF43
+77362	79392	CDS
+			codon_start	1
+			protein_id	NC_001348.1.42
+			locus_tag	vigor_ORF43
+			gene	ORF43
+			product	DNA packaging tegument protein UL17
+79552	80643	gene
+			locus_tag	vigor_ORF44
+			gene	ORF44
+79552	80643	CDS
+			codon_start	1
+			protein_id	NC_001348.1.43
+			locus_tag	vigor_ORF44
+			gene	ORF44
+			product	tegument protein UL16
+81785	76041	gene
+			locus_tag	vigor_ORF42
+			gene	ORF42
+81785	80730	CDS
+77228	76041
+			codon_start	1
+			protein_id	NC_001348.1.44
+			locus_tag	vigor_ORF42
+			gene	ORF42
+			product	DNA packaging terminase subunit 1
+81911	82510	gene
+			locus_tag	vigor_ORF46
+			gene	ORF46
+81911	82510	CDS
+			codon_start	1
+			protein_id	NC_001348.1.45
+			locus_tag	vigor_ORF46
+			gene	ORF46
+			product	tegument protein UL14
+82360	83892	gene
+			locus_tag	vigor_ORF47
+			gene	ORF47
+82360	83892	CDS
+			codon_start	1
+			protein_id	NC_001348.1.46
+			locus_tag	vigor_ORF47
+			gene	ORF47
+			product	tegument serine/threonine protein kinase
+83859	85514	gene
+			locus_tag	vigor_ORF48
+			gene	ORF48
+83859	85514	CDS
+			codon_start	1
+			protein_id	NC_001348.1.47
+			locus_tag	vigor_ORF48
+			gene	ORF48
+			product	deoxyribonuclease
+85418	85663	gene
+			locus_tag	vigor_ORF49
+			gene	ORF49
+85418	85663	CDS
+			codon_start	1
+			protein_id	NC_001348.1.48
+			locus_tag	vigor_ORF49
+			gene	ORF49
+			product	myristylated tegument protein
+87063	89570	gene
+			locus_tag	vigor_ORF51
+			gene	ORF51
+87063	89570	CDS
+			codon_start	1
+			protein_id	NC_001348.1.49
+			locus_tag	vigor_ORF51
+			gene	ORF51
+			product	DNA replication origin-binding helicase
+87064	85757	gene
+			locus_tag	vigor_ORF50
+			gene	ORF50
+87064	85757	CDS
+			codon_start	1
+			protein_id	NC_001348.1.50
+			locus_tag	vigor_ORF50
+			gene	ORF50
+			product	envelope glycoprotein M
+89674	91989	gene
+			locus_tag	vigor_ORF52
+			gene	ORF52
+89674	91989	CDS
+			codon_start	1
+			protein_id	NC_001348.1.51
+			locus_tag	vigor_ORF52
+			gene	ORF52
+			product	helicase-primase subunit
+93031	92036	gene
+			locus_tag	vigor_ORF53
+			gene	ORF53
+93031	92036	CDS
+			codon_start	1
+			protein_id	NC_001348.1.52
+			locus_tag	vigor_ORF53
+			gene	ORF53
+			product	tegument protein UL7
+95165	92856	gene
+			locus_tag	vigor_ORF54
+			gene	ORF54
+95165	92856	CDS
+			codon_start	1
+			protein_id	NC_001348.1.53
+			locus_tag	vigor_ORF54
+			gene	ORF54
+			product	capsid portal protein
+95177	97822	gene
+			locus_tag	vigor_ORF55
+			gene	ORF55
+95177	97822	CDS
+			codon_start	1
+			protein_id	NC_001348.1.54
+			locus_tag	vigor_ORF55
+			gene	ORF55
+			product	helicase-primase helicase subunit
+97893	98483	gene
+			locus_tag	vigor_ORF56
+			gene	ORF56
+97893	98483	CDS
+			codon_start	1
+			protein_id	NC_001348.1.55
+			locus_tag	vigor_ORF56
+			gene	ORF56
+			product	nuclear protein UL4
+98807	98592	gene
+			locus_tag	vigor_ORF57
+			gene	ORF57
+98807	98592	CDS
+			codon_start	1
+			protein_id	NC_001348.1.56
+			locus_tag	vigor_ORF57
+			gene	ORF57
+			product	protein V57
+99453	98788	gene
+			locus_tag	vigor_ORF58
+			gene	ORF58
+99453	98788	CDS
+			codon_start	1
+			protein_id	NC_001348.1.57
+			locus_tag	vigor_ORF58
+			gene	ORF58
+			product	nuclear protein UL3
+100400	99483	gene
+			locus_tag	vigor_ORF59
+			gene	ORF59
+100400	99483	CDS
+			codon_start	1
+			protein_id	NC_001348.1.58
+			locus_tag	vigor_ORF59
+			gene	ORF59
+			product	uracil-DNA glycosylase
+100833	100351	gene
+			locus_tag	vigor_ORF60
+			gene	ORF60
+100833	100351	CDS
+			codon_start	1
+			protein_id	NC_001348.1.59
+			locus_tag	vigor_ORF60
+			gene	ORF60
+			product	envelope glycoprotein L
+103669	102266	gene
+			locus_tag	vigor_ORF61
+			gene	ORF61
+103669	102266	CDS
+			codon_start	1
+			protein_id	NC_001348.1.60
+			locus_tag	vigor_ORF61
+			gene	ORF61
+			product	ubiquitin E3 ligase ICP0
+108320	104388	gene
+			locus_tag	vigor_ORF62
+			gene	ORF62
+108320	104388	CDS
+			codon_start	1
+			protein_id	NC_001348.1.61
+			locus_tag	vigor_ORF62
+			gene	ORF62
+			product	transcriptional regulator ICP4
+109767	110603	gene
+			locus_tag	vigor_ORF63
+			gene	ORF63
+109767	110603	CDS
+			codon_start	1
+			protein_id	NC_001348.1.62
+			locus_tag	vigor_ORF63
+			gene	ORF63
+			product	regulatory protein ICP22
+110751	111293	gene
+			locus_tag	vigor_ORF64
+			gene	ORF64
+110751	111293	CDS
+			codon_start	1
+			protein_id	NC_001348.1.63
+			locus_tag	vigor_ORF64
+			gene	ORF64
+			product	virion protein US10
+111825	111517	gene
+			locus_tag	vigor_ORF65
+			gene	ORF65
+111825	111517	CDS
+			codon_start	1
+			protein_id	NC_001348.1.64
+			locus_tag	vigor_ORF65
+			gene	ORF65
+			product	membrane protein US9
+112222	113403	gene
+			locus_tag	vigor_ORF66
+			gene	ORF66
+112222	113403	CDS
+			codon_start	1
+			protein_id	NC_001348.1.65
+			locus_tag	vigor_ORF66
+			gene	ORF66
+			product	serine/threonine protein kinase US3
+113681	114745	gene
+			locus_tag	vigor_ORF67
+			gene	ORF67
+113681	114745	CDS
+			codon_start	1
+			protein_id	NC_001348.1.66
+			locus_tag	vigor_ORF67
+			gene	ORF67
+			product	envelope glycoprotein I
+114993	116864	gene
+			locus_tag	vigor_ORF68
+			gene	ORF68
+114993	116864	CDS
+			codon_start	1
+			protein_id	NC_001348.1.67
+			locus_tag	vigor_ORF68
+			gene	ORF68
+			product	envelope glycoprotein E
+117516	116974	gene
+			locus_tag	vigor_ORF64A
+			gene	ORF64A
+117516	116974	CDS
+			codon_start	1
+			protein_id	NC_001348.1.68
+			locus_tag	vigor_ORF64A
+			gene	ORF64A
+			product	virion protein US10
+			note	duplication of ORF64 virion protein US10
+118500	117664	gene
+			locus_tag	vigor_ORF63A
+			gene	ORF63A
+118500	117664	CDS
+			codon_start	1
+			protein_id	NC_001348.1.69
+			locus_tag	vigor_ORF63A
+			gene	ORF63A
+			product	regulatory protein ICP22
+			note	duplication of ORF63 regulatory protein ICP22
+119947	123879	gene
+			locus_tag	vigor_ORF62A
+			gene	ORF62A
+119947	123879	CDS
+			codon_start	1
+			protein_id	NC_001348.1.70
+			locus_tag	vigor_ORF62A
+			gene	ORF62A
+			product	transcriptional regulator ICP4
+			note	duplication of ORF62 transcriptional regulator ICP4
+>Features DQ674250.1
+172	561	gene
+			locus_tag	vigor_ORF0
+			gene	ORF0
+172	561	CDS
+			codon_start	1
+			protein_id	DQ674250.1.1
+			locus_tag	vigor_ORF0
+			gene	ORF0
+			product	membrane protein UL56
+914	588	gene
+			locus_tag	vigor_ORF1
+			gene	ORF1
+914	588	CDS
+			codon_start	1
+			protein_id	DQ674250.1.2
+			locus_tag	vigor_ORF1
+			gene	ORF1
+			product	membrane protein V1
+1184	1849	gene
+			locus_tag	vigor_ORF2
+			gene	ORF2
+1184	1849	CDS
+			codon_start	1
+			protein_id	DQ674250.1.3
+			locus_tag	vigor_ORF2
+			gene	ORF2
+			product	myristylated tegument protein CIRC
+2446	1907	gene
+			locus_tag	vigor_ORF3
+			gene	ORF3
+2446	1907	CDS
+			codon_start	1
+			protein_id	DQ674250.1.4
+			locus_tag	vigor_ORF3
+			gene	ORF3
+			product	nuclear protein UL55
+4140	2782	gene
+			locus_tag	vigor_ORF4
+			gene	ORF4
+4140	2782	CDS
+			codon_start	1
+			protein_id	DQ674250.1.5
+			locus_tag	vigor_ORF4
+			gene	ORF4
+			product	multifunctional expression regulator
+5273	4251	gene
+			locus_tag	vigor_ORF5
+			gene	ORF5
+5273	4251	CDS
+			codon_start	1
+			protein_id	DQ674250.1.6
+			locus_tag	vigor_ORF5
+			gene	ORF5
+			product	envelope glycoprotein K
+8576	5325	gene
+			locus_tag	vigor_ORF6
+			gene	ORF6
+8576	5325	CDS
+			codon_start	1
+			protein_id	DQ674250.1.7
+			locus_tag	vigor_ORF6
+			gene	ORF6
+			product	helicase-primase primase subunit
+8606	9385	gene
+			locus_tag	vigor_ORF7
+			gene	ORF7
+8606	9385	CDS
+			codon_start	1
+			protein_id	DQ674250.1.8
+			locus_tag	vigor_ORF7
+			gene	ORF7
+			product	tegument protein UL51
+10641	10904	gene
+			locus_tag	vigor_ORF9A
+			gene	ORF9A
+10641	10904	CDS
+			codon_start	1
+			protein_id	DQ674250.1.9
+			locus_tag	vigor_ORF9A
+			gene	ORF9A
+			product	envelope glycoprotein N
+10666	9476	gene
+			locus_tag	vigor_ORF8
+			gene	ORF8
+10666	9476	CDS
+			codon_start	1
+			protein_id	DQ674250.1.10
+			locus_tag	vigor_ORF8
+			gene	ORF8
+			product	deoxyuridine triphosphatase
+11008	11916	gene
+			locus_tag	vigor_ORF9
+			gene	ORF9
+11008	11916	CDS
+			codon_start	1
+			protein_id	DQ674250.1.11
+			locus_tag	vigor_ORF9
+			gene	ORF9
+			product	tegument protein VP22
+12159	13391	gene
+			locus_tag	vigor_ORF10
+			gene	ORF10
+12159	13391	CDS
+			codon_start	1
+			protein_id	DQ674250.1.12
+			locus_tag	vigor_ORF10
+			gene	ORF10
+			product	transactivating tegument protein VP16
+13589	16003	gene
+			locus_tag	vigor_ORF11
+			gene	ORF11
+13589	16003	CDS
+			codon_start	1
+			protein_id	DQ674250.1.13
+			locus_tag	vigor_ORF11
+			gene	ORF11
+			product	tegument protein VP13/14
+16168	18153	gene
+			locus_tag	vigor_ORF12
+			gene	ORF12
+16168	18153	CDS
+			codon_start	1
+			protein_id	DQ674250.1.14
+			locus_tag	vigor_ORF12
+			gene	ORF12
+			product	tegument protein VP11/12
+18395	19300	gene
+			locus_tag	vigor_ORF13
+			gene	ORF13
+18395	19300	CDS
+			codon_start	1
+			protein_id	DQ674250.1.15
+			locus_tag	vigor_ORF13
+			gene	ORF13
+			product	thymidylate synthase
+21067	19385	gene
+			locus_tag	vigor_ORF14
+			gene	ORF14
+21067	19385	CDS
+			codon_start	1
+			protein_id	DQ674250.1.16
+			locus_tag	vigor_ORF14
+			gene	ORF14
+			product	envelope glycoprotein C
+22432	21212	gene
+			locus_tag	vigor_ORF15
+			gene	ORF15
+22432	21212	CDS
+			codon_start	1
+			protein_id	DQ674250.1.17
+			locus_tag	vigor_ORF15
+			gene	ORF15
+			product	envelope protein UL43
+23748	22522	gene
+			locus_tag	vigor_ORF16
+			gene	ORF16
+23748	22522	CDS
+			codon_start	1
+			protein_id	DQ674250.1.18
+			locus_tag	vigor_ORF16
+			gene	ORF16
+			product	DNA polymerase processivity subunit
+24103	25470	gene
+			locus_tag	vigor_ORF17
+			gene	ORF17
+24103	25470	CDS
+			codon_start	1
+			protein_id	DQ674250.1.19
+			locus_tag	vigor_ORF17
+			gene	ORF17
+			product	tegument host shutoff protein
+26447	25527	gene
+			locus_tag	vigor_ORF18
+			gene	ORF18
+26447	25527	CDS
+			codon_start	1
+			protein_id	DQ674250.1.20
+			locus_tag	vigor_ORF18
+			gene	ORF18
+			product	ribonucleotide reductase subunit 2
+28799	26472	gene
+			locus_tag	vigor_ORF19
+			gene	ORF19
+28799	26472	CDS
+			codon_start	1
+			protein_id	DQ674250.1.21
+			locus_tag	vigor_ORF19
+			gene	ORF19
+			product	ribonucleotide reductase subunit 1
+30429	28978	gene
+			locus_tag	vigor_ORF20
+			gene	ORF20
+30429	28978	CDS
+			codon_start	1
+			protein_id	DQ674250.1.22
+			locus_tag	vigor_ORF20
+			gene	ORF20
+			product	capsid triplex subunit 1
+30713	33829	gene
+			locus_tag	vigor_ORF21
+			gene	ORF21
+30713	33829	CDS
+			codon_start	1
+			protein_id	DQ674250.1.23
+			locus_tag	vigor_ORF21
+			gene	ORF21
+			product	tegument protein UL37
+34037	42307	gene
+			locus_tag	vigor_ORF22
+			gene	ORF22
+34037	42307	CDS
+			codon_start	1
+			protein_id	DQ674250.1.24
+			locus_tag	vigor_ORF22
+			gene	ORF22
+			product	large tegument protein
+43069	42362	gene
+			locus_tag	vigor_ORF23
+			gene	ORF23
+43069	42362	CDS
+			codon_start	1
+			protein_id	DQ674250.1.25
+			locus_tag	vigor_ORF23
+			gene	ORF23
+			product	small capsid protein
+43952	43143	gene
+			locus_tag	vigor_ORF24
+			gene	ORF24
+43952	43143	CDS
+			codon_start	1
+			protein_id	DQ674250.1.26
+			locus_tag	vigor_ORF24
+			gene	ORF24
+			product	nuclear egress membrane protein
+44437	46194	gene
+			locus_tag	vigor_ORF26
+			gene	ORF26
+44437	46194	CDS
+			codon_start	1
+			protein_id	DQ674250.1.27
+			locus_tag	vigor_ORF26
+			gene	ORF26
+			product	DNA packaging protein UL32
+44549	44079	gene
+			locus_tag	vigor_ORF25
+			gene	ORF25
+44549	44079	CDS
+			codon_start	1
+			protein_id	DQ674250.1.28
+			locus_tag	vigor_ORF25
+			gene	ORF25
+			product	DNA packaging protein UL33
+46121	47059	gene
+			locus_tag	vigor_ORF27
+			gene	ORF27
+46121	47059	CDS
+			codon_start	1
+			protein_id	DQ674250.1.29
+			locus_tag	vigor_ORF27
+			gene	ORF27
+			product	nuclear egress lamina protein
+50567	46983	gene
+			locus_tag	vigor_ORF28
+			gene	ORF28
+50567	46983	CDS
+			codon_start	1
+			protein_id	DQ674250.1.30
+			locus_tag	vigor_ORF28
+			gene	ORF28
+			product	DNA polymerase catalytic subunit
+50788	54402	gene
+			locus_tag	vigor_ORF29
+			gene	ORF29
+50788	54402	CDS
+			codon_start	1
+			protein_id	DQ674250.1.31
+			locus_tag	vigor_ORF29
+			gene	ORF29
+			product	single-stranded DNA-binding protein
+54581	56893	gene
+			locus_tag	vigor_ORF30
+			gene	ORF30
+54581	56893	CDS
+			codon_start	1
+			protein_id	DQ674250.1.32
+			locus_tag	vigor_ORF30
+			gene	ORF30
+			product	DNA packaging terminase subunit 2
+56749	59544	gene
+			locus_tag	vigor_ORF31
+			gene	ORF31
+56749	59544	CDS
+			codon_start	1
+			protein_id	DQ674250.1.33
+			locus_tag	vigor_ORF31
+			gene	ORF31
+			product	envelope glycoprotein B
+59696	60127	gene
+			locus_tag	vigor_ORF32
+			gene	ORF32
+59696	60127	CDS
+			codon_start	1
+			protein_id	DQ674250.1.34
+			locus_tag	vigor_ORF32
+			gene	ORF32
+			product	protein V32
+61156	60248	gene
+			locus_tag	vigor_ORF335
+			gene	ORF33.5
+61156	60248	CDS
+			codon_start	1
+			protein_id	DQ674250.1.35
+			locus_tag	vigor_ORF335
+			gene	ORF33.5
+			product	capsid scaffold protein
+62065	60248	gene
+			locus_tag	vigor_ORF33
+			gene	ORF33
+62065	60248	CDS
+			codon_start	1
+			protein_id	DQ674250.1.36
+			locus_tag	vigor_ORF33
+			gene	ORF33
+			product	capsid maturation protease
+63837	62098	gene
+			locus_tag	vigor_ORF34
+			gene	ORF34
+63837	62098	CDS
+			codon_start	1
+			protein_id	DQ674250.1.37
+			locus_tag	vigor_ORF34
+			gene	ORF34
+			product	DNA packaging tegument protein UL25
+64680	63904	gene
+			locus_tag	vigor_ORF35
+			gene	ORF35
+64680	63904	CDS
+			codon_start	1
+			protein_id	DQ674250.1.38
+			locus_tag	vigor_ORF35
+			gene	ORF35
+			product	nuclear protein UL24
+64734	65759	gene
+			locus_tag	vigor_ORF36
+			gene	ORF36
+64734	65759	CDS
+			codon_start	1
+			protein_id	DQ674250.1.39
+			locus_tag	vigor_ORF36
+			gene	ORF36
+			product	thymidine kinase
+66001	68526	gene
+			locus_tag	vigor_ORF37
+			gene	ORF37
+66001	68526	CDS
+			codon_start	1
+			protein_id	DQ674250.1.40
+			locus_tag	vigor_ORF37
+			gene	ORF37
+			product	envelope glycoprotein H
+70220	68595	gene
+			locus_tag	vigor_ORF38
+			gene	ORF38
+70220	68595	CDS
+			codon_start	1
+			protein_id	DQ674250.1.41
+			locus_tag	vigor_ORF38
+			gene	ORF38
+			product	tegument protein UL21
+70614	71282	gene
+			locus_tag	vigor_ORF39
+			gene	ORF39
+70614	71282	CDS
+			codon_start	1
+			protein_id	DQ674250.1.42
+			locus_tag	vigor_ORF39
+			gene	ORF39
+			product	envelope protein UL20
+71467	75657	gene
+			locus_tag	vigor_ORF40
+			gene	ORF40
+71467	75657	CDS
+			codon_start	1
+			protein_id	DQ674250.1.43
+			locus_tag	vigor_ORF40
+			gene	ORF40
+			product	major capsid protein
+75774	76724	gene
+			locus_tag	vigor_ORF41
+			gene	ORF41
+75774	76724	CDS
+			codon_start	1
+			protein_id	DQ674250.1.44
+			locus_tag	vigor_ORF41
+			gene	ORF41
+			product	capsid triplex subunit 2
+78099	80129	gene
+			locus_tag	vigor_ORF43
+			gene	ORF43
+78099	80129	CDS
+			codon_start	1
+			protein_id	DQ674250.1.45
+			locus_tag	vigor_ORF43
+			gene	ORF43
+			product	DNA packaging tegument protein UL17
+80289	81380	gene
+			locus_tag	vigor_ORF44
+			gene	ORF44
+80289	81380	CDS
+			codon_start	1
+			protein_id	DQ674250.1.46
+			locus_tag	vigor_ORF44
+			gene	ORF44
+			product	tegument protein UL16
+82522	76778	gene
+			locus_tag	vigor_ORF42
+			gene	ORF42
+82522	81467	CDS
+77965	76778
+			codon_start	1
+			protein_id	DQ674250.1.47
+			locus_tag	vigor_ORF42
+			gene	ORF42
+			product	DNA packaging terminase subunit 1
+82648	83247	gene
+			locus_tag	vigor_ORF46
+			gene	ORF46
+82648	83247	CDS
+			codon_start	1
+			protein_id	DQ674250.1.48
+			locus_tag	vigor_ORF46
+			gene	ORF46
+			product	tegument protein UL14
+83097	84629	gene
+			locus_tag	vigor_ORF47
+			gene	ORF47
+83097	84629	CDS
+			codon_start	1
+			protein_id	DQ674250.1.49
+			locus_tag	vigor_ORF47
+			gene	ORF47
+			product	tegument serine/threonine protein kinase
+84596	86251	gene
+			locus_tag	vigor_ORF48
+			gene	ORF48
+84596	86251	CDS
+			codon_start	1
+			protein_id	DQ674250.1.50
+			locus_tag	vigor_ORF48
+			gene	ORF48
+			product	deoxyribonuclease
+86155	86400	gene
+			locus_tag	vigor_ORF49
+			gene	ORF49
+86155	86400	CDS
+			codon_start	1
+			protein_id	DQ674250.1.51
+			locus_tag	vigor_ORF49
+			gene	ORF49
+			product	myristylated tegument protein
+87810	90317	gene
+			locus_tag	vigor_ORF51
+			gene	ORF51
+87810	90317	CDS
+			codon_start	1
+			protein_id	DQ674250.1.52
+			locus_tag	vigor_ORF51
+			gene	ORF51
+			product	DNA replication origin-binding helicase
+87811	86504	gene
+			locus_tag	vigor_ORF50
+			gene	ORF50
+87811	86504	CDS
+			codon_start	1
+			protein_id	DQ674250.1.53
+			locus_tag	vigor_ORF50
+			gene	ORF50
+			product	envelope glycoprotein M
+90422	92737	gene
+			locus_tag	vigor_ORF52
+			gene	ORF52
+90422	92737	CDS
+			codon_start	1
+			protein_id	DQ674250.1.54
+			locus_tag	vigor_ORF52
+			gene	ORF52
+			product	helicase-primase subunit
+93779	92784	gene
+			locus_tag	vigor_ORF53
+			gene	ORF53
+93779	92784	CDS
+			codon_start	1
+			protein_id	DQ674250.1.55
+			locus_tag	vigor_ORF53
+			gene	ORF53
+			product	tegument protein UL7
+95913	93604	gene
+			locus_tag	vigor_ORF54
+			gene	ORF54
+95913	93604	CDS
+			codon_start	1
+			protein_id	DQ674250.1.56
+			locus_tag	vigor_ORF54
+			gene	ORF54
+			product	capsid portal protein
+95925	98570	gene
+			locus_tag	vigor_ORF55
+			gene	ORF55
+95925	98570	CDS
+			codon_start	1
+			protein_id	DQ674250.1.57
+			locus_tag	vigor_ORF55
+			gene	ORF55
+			product	helicase-primase helicase subunit
+98641	99231	gene
+			locus_tag	vigor_ORF56
+			gene	ORF56
+98641	99231	CDS
+			codon_start	1
+			protein_id	DQ674250.1.58
+			locus_tag	vigor_ORF56
+			gene	ORF56
+			product	nuclear protein UL4
+99555	99340	gene
+			locus_tag	vigor_ORF57
+			gene	ORF57
+99555	99340	CDS
+			codon_start	1
+			protein_id	DQ674250.1.59
+			locus_tag	vigor_ORF57
+			gene	ORF57
+			product	protein V57
+100201	99536	gene
+			locus_tag	vigor_ORF58
+			gene	ORF58
+100201	99536	CDS
+			codon_start	1
+			protein_id	DQ674250.1.60
+			locus_tag	vigor_ORF58
+			gene	ORF58
+			product	nuclear protein UL3
+101148	100231	gene
+			locus_tag	vigor_ORF59
+			gene	ORF59
+101148	100231	CDS
+			codon_start	1
+			protein_id	DQ674250.1.61
+			locus_tag	vigor_ORF59
+			gene	ORF59
+			product	uracil-DNA glycosylase
+101578	101099	gene
+			locus_tag	vigor_ORF60
+			gene	ORF60
+101578	101099	CDS
+			codon_start	1
+			protein_id	DQ674250.1.62
+			locus_tag	vigor_ORF60
+			gene	ORF60
+			product	envelope glycoprotein L
+104414	103011	gene
+			locus_tag	vigor_ORF61
+			gene	ORF61
+104414	103011	CDS
+			codon_start	1
+			protein_id	DQ674250.1.63
+			locus_tag	vigor_ORF61
+			gene	ORF61
+			product	ubiquitin E3 ligase ICP0
+109061	105129	gene
+			locus_tag	vigor_ORF62
+			gene	ORF62
+109061	105129	CDS
+			codon_start	1
+			protein_id	DQ674250.1.64
+			locus_tag	vigor_ORF62
+			gene	ORF62
+			product	transcriptional regulator ICP4
+110509	111345	gene
+			locus_tag	vigor_ORF63
+			gene	ORF63
+110509	111345	CDS
+			codon_start	1
+			protein_id	DQ674250.1.65
+			locus_tag	vigor_ORF63
+			gene	ORF63
+			product	regulatory protein ICP22
+111493	112035	gene
+			locus_tag	vigor_ORF64
+			gene	ORF64
+111493	112035	CDS
+			codon_start	1
+			protein_id	DQ674250.1.66
+			locus_tag	vigor_ORF64
+			gene	ORF64
+			product	virion protein US10
+112568	112260	gene
+			locus_tag	vigor_ORF65
+			gene	ORF65
+112568	112260	CDS
+			codon_start	1
+			protein_id	DQ674250.1.67
+			locus_tag	vigor_ORF65
+			gene	ORF65
+			product	membrane protein US9
+112965	114146	gene
+			locus_tag	vigor_ORF66
+			gene	ORF66
+112965	114146	CDS
+			codon_start	1
+			protein_id	DQ674250.1.68
+			locus_tag	vigor_ORF66
+			gene	ORF66
+			product	serine/threonine protein kinase US3
+114424	115488	gene
+			locus_tag	vigor_ORF67
+			gene	ORF67
+114424	115488	CDS
+			codon_start	1
+			protein_id	DQ674250.1.69
+			locus_tag	vigor_ORF67
+			gene	ORF67
+			product	envelope glycoprotein I
+115736	117607	gene
+			locus_tag	vigor_ORF68
+			gene	ORF68
+115736	117607	CDS
+			codon_start	1
+			protein_id	DQ674250.1.70
+			locus_tag	vigor_ORF68
+			gene	ORF68
+			product	envelope glycoprotein E
+118260	117718	gene
+			locus_tag	vigor_ORF64A
+			gene	ORF64A
+118260	117718	CDS
+			codon_start	1
+			protein_id	DQ674250.1.71
+			locus_tag	vigor_ORF64A
+			gene	ORF64A
+			product	virion protein US10
+			note	duplication of ORF64 virion protein US10
+119244	118408	gene
+			locus_tag	vigor_ORF63A
+			gene	ORF63A
+119244	118408	CDS
+			codon_start	1
+			protein_id	DQ674250.1.72
+			locus_tag	vigor_ORF63A
+			gene	ORF63A
+			product	regulatory protein ICP22
+			note	duplication of ORF63 regulatory protein ICP22
+120692	124624	gene
+			locus_tag	vigor_ORF62A
+			gene	ORF62A
+120692	124624	CDS
+			codon_start	1
+			protein_id	DQ674250.1.73
+			locus_tag	vigor_ORF62A
+			gene	ORF62A
+			product	transcriptional regulator ICP4
+			note	duplication of ORF62 transcriptional regulator ICP4
+>Features KY037798.1
+172	561	gene
+			locus_tag	vigor_ORF0
+			gene	ORF0
+172	561	CDS
+			codon_start	1
+			protein_id	KY037798.1.1
+			locus_tag	vigor_ORF0
+			gene	ORF0
+			product	membrane protein UL56
+914	588	gene
+			locus_tag	vigor_ORF1
+			gene	ORF1
+914	588	CDS
+			codon_start	1
+			protein_id	KY037798.1.2
+			locus_tag	vigor_ORF1
+			gene	ORF1
+			product	membrane protein V1
+1184	1849	gene
+			locus_tag	vigor_ORF2
+			gene	ORF2
+1184	1849	CDS
+			codon_start	1
+			protein_id	KY037798.1.3
+			locus_tag	vigor_ORF2
+			gene	ORF2
+			product	myristylated tegument protein CIRC
+2446	1907	gene
+			locus_tag	vigor_ORF3
+			gene	ORF3
+2446	1907	CDS
+			codon_start	1
+			protein_id	KY037798.1.4
+			locus_tag	vigor_ORF3
+			gene	ORF3
+			product	nuclear protein UL55
+4140	2782	gene
+			locus_tag	vigor_ORF4
+			gene	ORF4
+4140	2782	CDS
+			codon_start	1
+			protein_id	KY037798.1.5
+			locus_tag	vigor_ORF4
+			gene	ORF4
+			product	multifunctional expression regulator
+5273	4251	gene
+			locus_tag	vigor_ORF5
+			gene	ORF5
+5273	4251	CDS
+			codon_start	1
+			protein_id	KY037798.1.6
+			locus_tag	vigor_ORF5
+			gene	ORF5
+			product	envelope glycoprotein K
+8576	5325	gene
+			locus_tag	vigor_ORF6
+			gene	ORF6
+8576	5325	CDS
+			codon_start	1
+			protein_id	KY037798.1.7
+			locus_tag	vigor_ORF6
+			gene	ORF6
+			product	helicase-primase primase subunit
+8606	9385	gene
+			locus_tag	vigor_ORF7
+			gene	ORF7
+8606	9385	CDS
+			codon_start	1
+			protein_id	KY037798.1.8
+			locus_tag	vigor_ORF7
+			gene	ORF7
+			product	tegument protein UL51
+10641	10904	gene
+			locus_tag	vigor_ORF9A
+			gene	ORF9A
+10641	10904	CDS
+			codon_start	1
+			protein_id	KY037798.1.9
+			locus_tag	vigor_ORF9A
+			gene	ORF9A
+			product	envelope glycoprotein N
+10666	9476	gene
+			locus_tag	vigor_ORF8
+			gene	ORF8
+10666	9476	CDS
+			codon_start	1
+			protein_id	KY037798.1.10
+			locus_tag	vigor_ORF8
+			gene	ORF8
+			product	deoxyuridine triphosphatase
+11008	11916	gene
+			locus_tag	vigor_ORF9
+			gene	ORF9
+11008	11916	CDS
+			codon_start	1
+			protein_id	KY037798.1.11
+			locus_tag	vigor_ORF9
+			gene	ORF9
+			product	tegument protein VP22
+12159	13391	gene
+			locus_tag	vigor_ORF10
+			gene	ORF10
+12159	13391	CDS
+			codon_start	1
+			protein_id	KY037798.1.12
+			locus_tag	vigor_ORF10
+			gene	ORF10
+			product	transactivating tegument protein VP16
+13589	15970	gene
+			locus_tag	vigor_ORF11
+			gene	ORF11
+13589	15970	CDS
+			codon_start	1
+			protein_id	KY037798.1.13
+			locus_tag	vigor_ORF11
+			gene	ORF11
+			product	tegument protein VP13/14
+16135	18120	gene
+			locus_tag	vigor_ORF12
+			gene	ORF12
+16135	18120	CDS
+			codon_start	1
+			protein_id	KY037798.1.14
+			locus_tag	vigor_ORF12
+			gene	ORF12
+			product	tegument protein VP11/12
+18362	19267	gene
+			locus_tag	vigor_ORF13
+			gene	ORF13
+18362	19267	CDS
+			codon_start	1
+			protein_id	KY037798.1.15
+			locus_tag	vigor_ORF13
+			gene	ORF13
+			product	thymidylate synthase
+21034	19352	gene
+			locus_tag	vigor_ORF14
+			gene	ORF14
+21034	19352	CDS
+			codon_start	1
+			protein_id	KY037798.1.16
+			locus_tag	vigor_ORF14
+			gene	ORF14
+			product	envelope glycoprotein C
+22399	21179	gene
+			locus_tag	vigor_ORF15
+			gene	ORF15
+22399	21179	CDS
+			codon_start	1
+			protein_id	KY037798.1.17
+			locus_tag	vigor_ORF15
+			gene	ORF15
+			product	envelope protein UL43
+23715	22489	gene
+			locus_tag	vigor_ORF16
+			gene	ORF16
+23715	22489	CDS
+			codon_start	1
+			protein_id	KY037798.1.18
+			locus_tag	vigor_ORF16
+			gene	ORF16
+			product	DNA polymerase processivity subunit
+24070	25437	gene
+			locus_tag	vigor_ORF17
+			gene	ORF17
+24070	25437	CDS
+			codon_start	1
+			protein_id	KY037798.1.19
+			locus_tag	vigor_ORF17
+			gene	ORF17
+			product	tegument host shutoff protein
+26414	25494	gene
+			locus_tag	vigor_ORF18
+			gene	ORF18
+26414	25494	CDS
+			codon_start	1
+			protein_id	KY037798.1.20
+			locus_tag	vigor_ORF18
+			gene	ORF18
+			product	ribonucleotide reductase subunit 2
+28766	26439	gene
+			locus_tag	vigor_ORF19
+			gene	ORF19
+28766	26439	CDS
+			codon_start	1
+			protein_id	KY037798.1.21
+			locus_tag	vigor_ORF19
+			gene	ORF19
+			product	ribonucleotide reductase subunit 1
+30396	28945	gene
+			locus_tag	vigor_ORF20
+			gene	ORF20
+30396	28945	CDS
+			codon_start	1
+			protein_id	KY037798.1.22
+			locus_tag	vigor_ORF20
+			gene	ORF20
+			product	capsid triplex subunit 1
+30680	33796	gene
+			locus_tag	vigor_ORF21
+			gene	ORF21
+30680	33796	CDS
+			codon_start	1
+			protein_id	KY037798.1.23
+			locus_tag	vigor_ORF21
+			gene	ORF21
+			product	tegument protein UL37
+34004	42295	gene
+			locus_tag	vigor_ORF22
+			gene	ORF22
+34004	42295	CDS
+			codon_start	1
+			protein_id	KY037798.1.24
+			locus_tag	vigor_ORF22
+			gene	ORF22
+			product	large tegument protein
+43058	42351	gene
+			locus_tag	vigor_ORF23
+			gene	ORF23
+43058	42351	CDS
+			codon_start	1
+			protein_id	KY037798.1.25
+			locus_tag	vigor_ORF23
+			gene	ORF23
+			product	small capsid protein
+43941	43132	gene
+			locus_tag	vigor_ORF24
+			gene	ORF24
+43941	43132	CDS
+			codon_start	1
+			protein_id	KY037798.1.26
+			locus_tag	vigor_ORF24
+			gene	ORF24
+			product	nuclear egress membrane protein
+44426	46183	gene
+			locus_tag	vigor_ORF26
+			gene	ORF26
+44426	46183	CDS
+			codon_start	1
+			protein_id	KY037798.1.27
+			locus_tag	vigor_ORF26
+			gene	ORF26
+			product	DNA packaging protein UL32
+44538	44068	gene
+			locus_tag	vigor_ORF25
+			gene	ORF25
+44538	44068	CDS
+			codon_start	1
+			protein_id	KY037798.1.28
+			locus_tag	vigor_ORF25
+			gene	ORF25
+			product	DNA packaging protein UL33
+46110	47048	gene
+			locus_tag	vigor_ORF27
+			gene	ORF27
+46110	47048	CDS
+			codon_start	1
+			protein_id	KY037798.1.29
+			locus_tag	vigor_ORF27
+			gene	ORF27
+			product	nuclear egress lamina protein
+50556	46972	gene
+			locus_tag	vigor_ORF28
+			gene	ORF28
+50556	46972	CDS
+			codon_start	1
+			protein_id	KY037798.1.30
+			locus_tag	vigor_ORF28
+			gene	ORF28
+			product	DNA polymerase catalytic subunit
+50777	54391	gene
+			locus_tag	vigor_ORF29
+			gene	ORF29
+50777	54391	CDS
+			codon_start	1
+			protein_id	KY037798.1.31
+			locus_tag	vigor_ORF29
+			gene	ORF29
+			product	single-stranded DNA-binding protein
+54571	56883	gene
+			locus_tag	vigor_ORF30
+			gene	ORF30
+54571	56883	CDS
+			codon_start	1
+			protein_id	KY037798.1.32
+			locus_tag	vigor_ORF30
+			gene	ORF30
+			product	DNA packaging terminase subunit 2
+56739	59534	gene
+			locus_tag	vigor_ORF31
+			gene	ORF31
+56739	59534	CDS
+			codon_start	1
+			protein_id	KY037798.1.33
+			locus_tag	vigor_ORF31
+			gene	ORF31
+			product	envelope glycoprotein B
+59686	60117	gene
+			locus_tag	vigor_ORF32
+			gene	ORF32
+59686	60117	CDS
+			codon_start	1
+			protein_id	KY037798.1.34
+			locus_tag	vigor_ORF32
+			gene	ORF32
+			product	protein V32
+61146	60238	gene
+			locus_tag	vigor_ORF335
+			gene	ORF33.5
+61146	60238	CDS
+			codon_start	1
+			protein_id	KY037798.1.35
+			locus_tag	vigor_ORF335
+			gene	ORF33.5
+			product	capsid scaffold protein
+62055	60238	gene
+			locus_tag	vigor_ORF33
+			gene	ORF33
+62055	60238	CDS
+			codon_start	1
+			protein_id	KY037798.1.36
+			locus_tag	vigor_ORF33
+			gene	ORF33
+			product	capsid maturation protease
+63827	62088	gene
+			locus_tag	vigor_ORF34
+			gene	ORF34
+63827	62088	CDS
+			codon_start	1
+			protein_id	KY037798.1.37
+			locus_tag	vigor_ORF34
+			gene	ORF34
+			product	DNA packaging tegument protein UL25
+64670	63894	gene
+			locus_tag	vigor_ORF35
+			gene	ORF35
+64670	63894	CDS
+			codon_start	1
+			protein_id	KY037798.1.38
+			locus_tag	vigor_ORF35
+			gene	ORF35
+			product	nuclear protein UL24
+64724	65749	gene
+			locus_tag	vigor_ORF36
+			gene	ORF36
+64724	65749	CDS
+			codon_start	1
+			protein_id	KY037798.1.39
+			locus_tag	vigor_ORF36
+			gene	ORF36
+			product	thymidine kinase
+65991	68516	gene
+			locus_tag	vigor_ORF37
+			gene	ORF37
+65991	68516	CDS
+			codon_start	1
+			protein_id	KY037798.1.40
+			locus_tag	vigor_ORF37
+			gene	ORF37
+			product	envelope glycoprotein H
+70210	68585	gene
+			locus_tag	vigor_ORF38
+			gene	ORF38
+70210	68585	CDS
+			codon_start	1
+			protein_id	KY037798.1.41
+			locus_tag	vigor_ORF38
+			gene	ORF38
+			product	tegument protein UL21
+70604	71272	gene
+			locus_tag	vigor_ORF39
+			gene	ORF39
+70604	71272	CDS
+			codon_start	1
+			protein_id	KY037798.1.42
+			locus_tag	vigor_ORF39
+			gene	ORF39
+			product	envelope protein UL20
+71457	75647	gene
+			locus_tag	vigor_ORF40
+			gene	ORF40
+71457	75647	CDS
+			codon_start	1
+			protein_id	KY037798.1.43
+			locus_tag	vigor_ORF40
+			gene	ORF40
+			product	major capsid protein
+75764	76714	gene
+			locus_tag	vigor_ORF41
+			gene	ORF41
+75764	76714	CDS
+			codon_start	1
+			protein_id	KY037798.1.44
+			locus_tag	vigor_ORF41
+			gene	ORF41
+			product	capsid triplex subunit 2
+78088	80118	gene
+			locus_tag	vigor_ORF43
+			gene	ORF43
+78088	80118	CDS
+			codon_start	1
+			protein_id	KY037798.1.45
+			locus_tag	vigor_ORF43
+			gene	ORF43
+			product	DNA packaging tegument protein UL17
+80278	81369	gene
+			locus_tag	vigor_ORF44
+			gene	ORF44
+80278	81369	CDS
+			codon_start	1
+			protein_id	KY037798.1.46
+			locus_tag	vigor_ORF44
+			gene	ORF44
+			product	tegument protein UL16
+82511	76768	gene
+			locus_tag	vigor_ORF42
+			gene	ORF42
+82511	81456	CDS
+77955	76768
+			codon_start	1
+			protein_id	KY037798.1.47
+			locus_tag	vigor_ORF42
+			gene	ORF42
+			product	DNA packaging terminase subunit 1
+82637	83236	gene
+			locus_tag	vigor_ORF46
+			gene	ORF46
+82637	83236	CDS
+			codon_start	1
+			protein_id	KY037798.1.48
+			locus_tag	vigor_ORF46
+			gene	ORF46
+			product	tegument protein UL14
+83086	84618	gene
+			locus_tag	vigor_ORF47
+			gene	ORF47
+83086	84618	CDS
+			codon_start	1
+			protein_id	KY037798.1.49
+			locus_tag	vigor_ORF47
+			gene	ORF47
+			product	tegument serine/threonine protein kinase
+84585	86240	gene
+			locus_tag	vigor_ORF48
+			gene	ORF48
+84585	86240	CDS
+			codon_start	1
+			protein_id	KY037798.1.50
+			locus_tag	vigor_ORF48
+			gene	ORF48
+			product	deoxyribonuclease
+86144	86389	gene
+			locus_tag	vigor_ORF49
+			gene	ORF49
+86144	86389	CDS
+			codon_start	1
+			protein_id	KY037798.1.51
+			locus_tag	vigor_ORF49
+			gene	ORF49
+			product	myristylated tegument protein
+87799	90306	gene
+			locus_tag	vigor_ORF51
+			gene	ORF51
+87799	90306	CDS
+			codon_start	1
+			protein_id	KY037798.1.52
+			locus_tag	vigor_ORF51
+			gene	ORF51
+			product	DNA replication origin-binding helicase
+87800	86493	gene
+			locus_tag	vigor_ORF50
+			gene	ORF50
+87800	86493	CDS
+			codon_start	1
+			protein_id	KY037798.1.53
+			locus_tag	vigor_ORF50
+			gene	ORF50
+			product	envelope glycoprotein M
+90411	92726	gene
+			locus_tag	vigor_ORF52
+			gene	ORF52
+90411	92726	CDS
+			codon_start	1
+			protein_id	KY037798.1.54
+			locus_tag	vigor_ORF52
+			gene	ORF52
+			product	helicase-primase subunit
+93769	92774	gene
+			locus_tag	vigor_ORF53
+			gene	ORF53
+93769	92774	CDS
+			codon_start	1
+			protein_id	KY037798.1.55
+			locus_tag	vigor_ORF53
+			gene	ORF53
+			product	tegument protein UL7
+95903	93594	gene
+			locus_tag	vigor_ORF54
+			gene	ORF54
+95903	93594	CDS
+			codon_start	1
+			protein_id	KY037798.1.56
+			locus_tag	vigor_ORF54
+			gene	ORF54
+			product	capsid portal protein
+95915	98560	gene
+			locus_tag	vigor_ORF55
+			gene	ORF55
+95915	98560	CDS
+			codon_start	1
+			protein_id	KY037798.1.57
+			locus_tag	vigor_ORF55
+			gene	ORF55
+			product	helicase-primase helicase subunit
+98631	99221	gene
+			locus_tag	vigor_ORF56
+			gene	ORF56
+98631	99221	CDS
+			codon_start	1
+			protein_id	KY037798.1.58
+			locus_tag	vigor_ORF56
+			gene	ORF56
+			product	nuclear protein UL4
+99545	99330	gene
+			locus_tag	vigor_ORF57
+			gene	ORF57
+99545	99330	CDS
+			codon_start	1
+			protein_id	KY037798.1.59
+			locus_tag	vigor_ORF57
+			gene	ORF57
+			product	protein V57
+100191	99526	gene
+			locus_tag	vigor_ORF58
+			gene	ORF58
+100191	99526	CDS
+			codon_start	1
+			protein_id	KY037798.1.60
+			locus_tag	vigor_ORF58
+			gene	ORF58
+			product	nuclear protein UL3
+101138	100221	gene
+			locus_tag	vigor_ORF59
+			gene	ORF59
+101138	100221	CDS
+			codon_start	1
+			protein_id	KY037798.1.61
+			locus_tag	vigor_ORF59
+			gene	ORF59
+			product	uracil-DNA glycosylase
+101571	101089	gene
+			locus_tag	vigor_ORF60
+			gene	ORF60
+101571	101089	CDS
+			codon_start	1
+			protein_id	KY037798.1.62
+			locus_tag	vigor_ORF60
+			gene	ORF60
+			product	envelope glycoprotein L
+104407	103004	gene
+			locus_tag	vigor_ORF61
+			gene	ORF61
+104407	103004	CDS
+			codon_start	1
+			protein_id	KY037798.1.63
+			locus_tag	vigor_ORF61
+			gene	ORF61
+			product	ubiquitin E3 ligase ICP0
+109056	105124	gene
+			locus_tag	vigor_ORF62
+			gene	ORF62
+109056	105124	CDS
+			codon_start	1
+			protein_id	KY037798.1.64
+			locus_tag	vigor_ORF62
+			gene	ORF62
+			product	transcriptional regulator ICP4
+110703	111539	gene
+			locus_tag	vigor_ORF63
+			gene	ORF63
+110703	111539	CDS
+			codon_start	1
+			protein_id	KY037798.1.65
+			locus_tag	vigor_ORF63
+			gene	ORF63
+			product	regulatory protein ICP22
+111687	112229	gene
+			locus_tag	vigor_ORF64
+			gene	ORF64
+111687	112229	CDS
+			codon_start	1
+			protein_id	KY037798.1.66
+			locus_tag	vigor_ORF64
+			gene	ORF64
+			product	virion protein US10
+112765	112457	gene
+			locus_tag	vigor_ORF65
+			gene	ORF65
+112765	112457	CDS
+			codon_start	1
+			protein_id	KY037798.1.67
+			locus_tag	vigor_ORF65
+			gene	ORF65
+			product	membrane protein US9
+113162	114343	gene
+			locus_tag	vigor_ORF66
+			gene	ORF66
+113162	114343	CDS
+			codon_start	1
+			protein_id	KY037798.1.68
+			locus_tag	vigor_ORF66
+			gene	ORF66
+			product	serine/threonine protein kinase US3
+114621	115685	gene
+			locus_tag	vigor_ORF67
+			gene	ORF67
+114621	115685	CDS
+			codon_start	1
+			protein_id	KY037798.1.69
+			locus_tag	vigor_ORF67
+			gene	ORF67
+			product	envelope glycoprotein I
+115933	117804	gene
+			locus_tag	vigor_ORF68
+			gene	ORF68
+115933	117804	CDS
+			codon_start	1
+			protein_id	KY037798.1.70
+			locus_tag	vigor_ORF68
+			gene	ORF68
+			product	envelope glycoprotein E
+118460	117918	gene
+			locus_tag	vigor_ORF64A
+			gene	ORF64A
+118460	117918	CDS
+			codon_start	1
+			protein_id	KY037798.1.71
+			locus_tag	vigor_ORF64A
+			gene	ORF64A
+			product	virion protein US10
+			note	duplication of ORF64 virion protein US10
+119444	118608	gene
+			locus_tag	vigor_ORF63A
+			gene	ORF63A
+119444	118608	CDS
+			codon_start	1
+			protein_id	KY037798.1.72
+			locus_tag	vigor_ORF63A
+			gene	ORF63A
+			product	regulatory protein ICP22
+			note	duplication of ORF63 regulatory protein ICP22
+121091	125023	gene
+			locus_tag	vigor_ORF62A
+			gene	ORF62A
+121091	125023	CDS
+			codon_start	1
+			protein_id	KY037798.1.73
+			locus_tag	vigor_ORF62A
+			gene	ORF62A
+			product	transcriptional regulator ICP4
+			note	duplication of ORF62 transcriptional regulator ICP4
+>Features KY037797.1
+174	563	gene
+			locus_tag	vigor_ORF0
+			gene	ORF0
+174	563	CDS
+			codon_start	1
+			protein_id	KY037797.1.1
+			locus_tag	vigor_ORF0
+			gene	ORF0
+			product	membrane protein UL56
+916	590	gene
+			locus_tag	vigor_ORF1
+			gene	ORF1
+916	590	CDS
+			codon_start	1
+			protein_id	KY037797.1.2
+			locus_tag	vigor_ORF1
+			gene	ORF1
+			product	membrane protein V1
+1186	1851	gene
+			locus_tag	vigor_ORF2
+			gene	ORF2
+1186	1851	CDS
+			codon_start	1
+			protein_id	KY037797.1.3
+			locus_tag	vigor_ORF2
+			gene	ORF2
+			product	myristylated tegument protein CIRC
+2448	1909	gene
+			locus_tag	vigor_ORF3
+			gene	ORF3
+2448	1909	CDS
+			codon_start	1
+			protein_id	KY037797.1.4
+			locus_tag	vigor_ORF3
+			gene	ORF3
+			product	nuclear protein UL55
+4142	2784	gene
+			locus_tag	vigor_ORF4
+			gene	ORF4
+4142	2784	CDS
+			codon_start	1
+			protein_id	KY037797.1.5
+			locus_tag	vigor_ORF4
+			gene	ORF4
+			product	multifunctional expression regulator
+5275	4253	gene
+			locus_tag	vigor_ORF5
+			gene	ORF5
+5275	4253	CDS
+			codon_start	1
+			protein_id	KY037797.1.6
+			locus_tag	vigor_ORF5
+			gene	ORF5
+			product	envelope glycoprotein K
+8578	5327	gene
+			locus_tag	vigor_ORF6
+			gene	ORF6
+8578	5327	CDS
+			codon_start	1
+			protein_id	KY037797.1.7
+			locus_tag	vigor_ORF6
+			gene	ORF6
+			product	helicase-primase primase subunit
+8608	9387	gene
+			locus_tag	vigor_ORF7
+			gene	ORF7
+8608	9387	CDS
+			codon_start	1
+			protein_id	KY037797.1.8
+			locus_tag	vigor_ORF7
+			gene	ORF7
+			product	tegument protein UL51
+10643	10906	gene
+			locus_tag	vigor_ORF9A
+			gene	ORF9A
+10643	10906	CDS
+			codon_start	1
+			protein_id	KY037797.1.9
+			locus_tag	vigor_ORF9A
+			gene	ORF9A
+			product	envelope glycoprotein N
+10668	9478	gene
+			locus_tag	vigor_ORF8
+			gene	ORF8
+10668	9478	CDS
+			codon_start	1
+			protein_id	KY037797.1.10
+			locus_tag	vigor_ORF8
+			gene	ORF8
+			product	deoxyuridine triphosphatase
+11010	11918	gene
+			locus_tag	vigor_ORF9
+			gene	ORF9
+11010	11918	CDS
+			codon_start	1
+			protein_id	KY037797.1.11
+			locus_tag	vigor_ORF9
+			gene	ORF9
+			product	tegument protein VP22
+12161	13393	gene
+			locus_tag	vigor_ORF10
+			gene	ORF10
+12161	13393	CDS
+			codon_start	1
+			protein_id	KY037797.1.12
+			locus_tag	vigor_ORF10
+			gene	ORF10
+			product	transactivating tegument protein VP16
+13591	15981	gene
+			locus_tag	vigor_ORF11
+			gene	ORF11
+13591	15981	CDS
+			codon_start	1
+			protein_id	KY037797.1.13
+			locus_tag	vigor_ORF11
+			gene	ORF11
+			product	tegument protein VP13/14
+16146	18131	gene
+			locus_tag	vigor_ORF12
+			gene	ORF12
+16146	18131	CDS
+			codon_start	1
+			protein_id	KY037797.1.14
+			locus_tag	vigor_ORF12
+			gene	ORF12
+			product	tegument protein VP11/12
+18373	19278	gene
+			locus_tag	vigor_ORF13
+			gene	ORF13
+18373	19278	CDS
+			codon_start	1
+			protein_id	KY037797.1.15
+			locus_tag	vigor_ORF13
+			gene	ORF13
+			product	thymidylate synthase
+21129	19363	gene
+			locus_tag	vigor_ORF14
+			gene	ORF14
+21129	19363	CDS
+			codon_start	1
+			protein_id	KY037797.1.16
+			locus_tag	vigor_ORF14
+			gene	ORF14
+			product	envelope glycoprotein C
+22494	21274	gene
+			locus_tag	vigor_ORF15
+			gene	ORF15
+22494	21274	CDS
+			codon_start	1
+			protein_id	KY037797.1.17
+			locus_tag	vigor_ORF15
+			gene	ORF15
+			product	envelope protein UL43
+23810	22584	gene
+			locus_tag	vigor_ORF16
+			gene	ORF16
+23810	22584	CDS
+			codon_start	1
+			protein_id	KY037797.1.18
+			locus_tag	vigor_ORF16
+			gene	ORF16
+			product	DNA polymerase processivity subunit
+24165	25532	gene
+			locus_tag	vigor_ORF17
+			gene	ORF17
+24165	25532	CDS
+			codon_start	1
+			protein_id	KY037797.1.19
+			locus_tag	vigor_ORF17
+			gene	ORF17
+			product	tegument host shutoff protein
+26509	25589	gene
+			locus_tag	vigor_ORF18
+			gene	ORF18
+26509	25589	CDS
+			codon_start	1
+			protein_id	KY037797.1.20
+			locus_tag	vigor_ORF18
+			gene	ORF18
+			product	ribonucleotide reductase subunit 2
+28861	26534	gene
+			locus_tag	vigor_ORF19
+			gene	ORF19
+28861	26534	CDS
+			codon_start	1
+			protein_id	KY037797.1.21
+			locus_tag	vigor_ORF19
+			gene	ORF19
+			product	ribonucleotide reductase subunit 1
+30491	29040	gene
+			locus_tag	vigor_ORF20
+			gene	ORF20
+30491	29040	CDS
+			codon_start	1
+			protein_id	KY037797.1.22
+			locus_tag	vigor_ORF20
+			gene	ORF20
+			product	capsid triplex subunit 1
+30775	33891	gene
+			locus_tag	vigor_ORF21
+			gene	ORF21
+30775	33891	CDS
+			codon_start	1
+			protein_id	KY037797.1.23
+			locus_tag	vigor_ORF21
+			gene	ORF21
+			product	tegument protein UL37
+34099	42372	gene
+			locus_tag	vigor_ORF22
+			gene	ORF22
+34099	42372	CDS
+			codon_start	1
+			protein_id	KY037797.1.24
+			locus_tag	vigor_ORF22
+			gene	ORF22
+			product	large tegument protein
+43133	42426	gene
+			locus_tag	vigor_ORF23
+			gene	ORF23
+43133	42426	CDS
+			codon_start	1
+			protein_id	KY037797.1.25
+			locus_tag	vigor_ORF23
+			gene	ORF23
+			product	small capsid protein
+44016	43207	gene
+			locus_tag	vigor_ORF24
+			gene	ORF24
+44016	43207	CDS
+			codon_start	1
+			protein_id	KY037797.1.26
+			locus_tag	vigor_ORF24
+			gene	ORF24
+			product	nuclear egress membrane protein
+44501	46258	gene
+			locus_tag	vigor_ORF26
+			gene	ORF26
+44501	46258	CDS
+			codon_start	1
+			protein_id	KY037797.1.27
+			locus_tag	vigor_ORF26
+			gene	ORF26
+			product	DNA packaging protein UL32
+44613	44143	gene
+			locus_tag	vigor_ORF25
+			gene	ORF25
+44613	44143	CDS
+			codon_start	1
+			protein_id	KY037797.1.28
+			locus_tag	vigor_ORF25
+			gene	ORF25
+			product	DNA packaging protein UL33
+46185	47123	gene
+			locus_tag	vigor_ORF27
+			gene	ORF27
+46185	47123	CDS
+			codon_start	1
+			protein_id	KY037797.1.29
+			locus_tag	vigor_ORF27
+			gene	ORF27
+			product	nuclear egress lamina protein
+50631	47047	gene
+			locus_tag	vigor_ORF28
+			gene	ORF28
+50631	47047	CDS
+			codon_start	1
+			protein_id	KY037797.1.30
+			locus_tag	vigor_ORF28
+			gene	ORF28
+			product	DNA polymerase catalytic subunit
+50852	54451	gene
+			locus_tag	vigor_ORF29
+			gene	ORF29
+50852	54451	CDS
+			codon_start	1
+			protein_id	KY037797.1.31
+			locus_tag	vigor_ORF29
+			gene	ORF29
+			product	single-stranded DNA-binding protein
+54630	56942	gene
+			locus_tag	vigor_ORF30
+			gene	ORF30
+54630	56942	CDS
+			codon_start	1
+			protein_id	KY037797.1.32
+			locus_tag	vigor_ORF30
+			gene	ORF30
+			product	DNA packaging terminase subunit 2
+56798	59593	gene
+			locus_tag	vigor_ORF31
+			gene	ORF31
+56798	59593	CDS
+			codon_start	1
+			protein_id	KY037797.1.33
+			locus_tag	vigor_ORF31
+			gene	ORF31
+			product	envelope glycoprotein B
+59745	60176	gene
+			locus_tag	vigor_ORF32
+			gene	ORF32
+59745	60176	CDS
+			codon_start	1
+			protein_id	KY037797.1.34
+			locus_tag	vigor_ORF32
+			gene	ORF32
+			product	protein V32
+61206	60298	gene
+			locus_tag	vigor_ORF335
+			gene	ORF33.5
+61206	60298	CDS
+			codon_start	1
+			protein_id	KY037797.1.35
+			locus_tag	vigor_ORF335
+			gene	ORF33.5
+			product	capsid scaffold protein
+62115	60298	gene
+			locus_tag	vigor_ORF33
+			gene	ORF33
+62115	60298	CDS
+			codon_start	1
+			protein_id	KY037797.1.36
+			locus_tag	vigor_ORF33
+			gene	ORF33
+			product	capsid maturation protease
+63887	62148	gene
+			locus_tag	vigor_ORF34
+			gene	ORF34
+63887	62148	CDS
+			codon_start	1
+			protein_id	KY037797.1.37
+			locus_tag	vigor_ORF34
+			gene	ORF34
+			product	DNA packaging tegument protein UL25
+64730	63954	gene
+			locus_tag	vigor_ORF35
+			gene	ORF35
+64730	63954	CDS
+			codon_start	1
+			protein_id	KY037797.1.38
+			locus_tag	vigor_ORF35
+			gene	ORF35
+			product	nuclear protein UL24
+64784	65809	gene
+			locus_tag	vigor_ORF36
+			gene	ORF36
+64784	65809	CDS
+			codon_start	1
+			protein_id	KY037797.1.39
+			locus_tag	vigor_ORF36
+			gene	ORF36
+			product	thymidine kinase
+66051	68576	gene
+			locus_tag	vigor_ORF37
+			gene	ORF37
+66051	68576	CDS
+			codon_start	1
+			protein_id	KY037797.1.40
+			locus_tag	vigor_ORF37
+			gene	ORF37
+			product	envelope glycoprotein H
+70270	68645	gene
+			locus_tag	vigor_ORF38
+			gene	ORF38
+70270	68645	CDS
+			codon_start	1
+			protein_id	KY037797.1.41
+			locus_tag	vigor_ORF38
+			gene	ORF38
+			product	tegument protein UL21
+70664	71332	gene
+			locus_tag	vigor_ORF39
+			gene	ORF39
+70664	71332	CDS
+			codon_start	1
+			protein_id	KY037797.1.42
+			locus_tag	vigor_ORF39
+			gene	ORF39
+			product	envelope protein UL20
+71517	75707	gene
+			locus_tag	vigor_ORF40
+			gene	ORF40
+71517	75707	CDS
+			codon_start	1
+			protein_id	KY037797.1.43
+			locus_tag	vigor_ORF40
+			gene	ORF40
+			product	major capsid protein
+75824	76774	gene
+			locus_tag	vigor_ORF41
+			gene	ORF41
+75824	76774	CDS
+			codon_start	1
+			protein_id	KY037797.1.44
+			locus_tag	vigor_ORF41
+			gene	ORF41
+			product	capsid triplex subunit 2
+78148	80178	gene
+			locus_tag	vigor_ORF43
+			gene	ORF43
+78148	80178	CDS
+			codon_start	1
+			protein_id	KY037797.1.45
+			locus_tag	vigor_ORF43
+			gene	ORF43
+			product	DNA packaging tegument protein UL17
+80338	81429	gene
+			locus_tag	vigor_ORF44
+			gene	ORF44
+80338	81429	CDS
+			codon_start	1
+			protein_id	KY037797.1.46
+			locus_tag	vigor_ORF44
+			gene	ORF44
+			product	tegument protein UL16
+82571	76828	gene
+			locus_tag	vigor_ORF42
+			gene	ORF42
+82571	81516	CDS
+78015	76828
+			codon_start	1
+			protein_id	KY037797.1.47
+			locus_tag	vigor_ORF42
+			gene	ORF42
+			product	DNA packaging terminase subunit 1
+82697	83296	gene
+			locus_tag	vigor_ORF46
+			gene	ORF46
+82697	83296	CDS
+			codon_start	1
+			protein_id	KY037797.1.48
+			locus_tag	vigor_ORF46
+			gene	ORF46
+			product	tegument protein UL14
+83146	84678	gene
+			locus_tag	vigor_ORF47
+			gene	ORF47
+83146	84678	CDS
+			codon_start	1
+			protein_id	KY037797.1.49
+			locus_tag	vigor_ORF47
+			gene	ORF47
+			product	tegument serine/threonine protein kinase
+84645	86300	gene
+			locus_tag	vigor_ORF48
+			gene	ORF48
+84645	86300	CDS
+			codon_start	1
+			protein_id	KY037797.1.50
+			locus_tag	vigor_ORF48
+			gene	ORF48
+			product	deoxyribonuclease
+86204	86449	gene
+			locus_tag	vigor_ORF49
+			gene	ORF49
+86204	86449	CDS
+			codon_start	1
+			protein_id	KY037797.1.51
+			locus_tag	vigor_ORF49
+			gene	ORF49
+			product	myristylated tegument protein
+87859	90366	gene
+			locus_tag	vigor_ORF51
+			gene	ORF51
+87859	90366	CDS
+			codon_start	1
+			protein_id	KY037797.1.52
+			locus_tag	vigor_ORF51
+			gene	ORF51
+			product	DNA replication origin-binding helicase
+87860	86553	gene
+			locus_tag	vigor_ORF50
+			gene	ORF50
+87860	86553	CDS
+			codon_start	1
+			protein_id	KY037797.1.53
+			locus_tag	vigor_ORF50
+			gene	ORF50
+			product	envelope glycoprotein M
+90472	92787	gene
+			locus_tag	vigor_ORF52
+			gene	ORF52
+90472	92787	CDS
+			codon_start	1
+			protein_id	KY037797.1.54
+			locus_tag	vigor_ORF52
+			gene	ORF52
+			product	helicase-primase subunit
+93829	92834	gene
+			locus_tag	vigor_ORF53
+			gene	ORF53
+93829	92834	CDS
+			codon_start	1
+			protein_id	KY037797.1.55
+			locus_tag	vigor_ORF53
+			gene	ORF53
+			product	tegument protein UL7
+95963	93654	gene
+			locus_tag	vigor_ORF54
+			gene	ORF54
+95963	93654	CDS
+			codon_start	1
+			protein_id	KY037797.1.56
+			locus_tag	vigor_ORF54
+			gene	ORF54
+			product	capsid portal protein
+95975	98620	gene
+			locus_tag	vigor_ORF55
+			gene	ORF55
+95975	98620	CDS
+			codon_start	1
+			protein_id	KY037797.1.57
+			locus_tag	vigor_ORF55
+			gene	ORF55
+			product	helicase-primase helicase subunit
+98691	99281	gene
+			locus_tag	vigor_ORF56
+			gene	ORF56
+98691	99281	CDS
+			codon_start	1
+			protein_id	KY037797.1.58
+			locus_tag	vigor_ORF56
+			gene	ORF56
+			product	nuclear protein UL4
+99605	99390	gene
+			locus_tag	vigor_ORF57
+			gene	ORF57
+99605	99390	CDS
+			codon_start	1
+			protein_id	KY037797.1.59
+			locus_tag	vigor_ORF57
+			gene	ORF57
+			product	protein V57
+100251	99586	gene
+			locus_tag	vigor_ORF58
+			gene	ORF58
+100251	99586	CDS
+			codon_start	1
+			protein_id	KY037797.1.60
+			locus_tag	vigor_ORF58
+			gene	ORF58
+			product	nuclear protein UL3
+101198	100281	gene
+			locus_tag	vigor_ORF59
+			gene	ORF59
+101198	100281	CDS
+			codon_start	1
+			protein_id	KY037797.1.61
+			locus_tag	vigor_ORF59
+			gene	ORF59
+			product	uracil-DNA glycosylase
+101628	101149	gene
+			locus_tag	vigor_ORF60
+			gene	ORF60
+101628	101149	CDS
+			codon_start	1
+			protein_id	KY037797.1.62
+			locus_tag	vigor_ORF60
+			gene	ORF60
+			product	envelope glycoprotein L
+104464	103061	gene
+			locus_tag	vigor_ORF61
+			gene	ORF61
+104464	103061	CDS
+			codon_start	1
+			protein_id	KY037797.1.63
+			locus_tag	vigor_ORF61
+			gene	ORF61
+			product	ubiquitin E3 ligase ICP0
+109110	105178	gene
+			locus_tag	vigor_ORF62
+			gene	ORF62
+109110	105178	CDS
+			codon_start	1
+			protein_id	KY037797.1.64
+			locus_tag	vigor_ORF62
+			gene	ORF62
+			product	transcriptional regulator ICP4
+110641	111477	gene
+			locus_tag	vigor_ORF63
+			gene	ORF63
+110641	111477	CDS
+			codon_start	1
+			protein_id	KY037797.1.65
+			locus_tag	vigor_ORF63
+			gene	ORF63
+			product	regulatory protein ICP22
+111625	112167	gene
+			locus_tag	vigor_ORF64
+			gene	ORF64
+111625	112167	CDS
+			codon_start	1
+			protein_id	KY037797.1.66
+			locus_tag	vigor_ORF64
+			gene	ORF64
+			product	virion protein US10
+112701	112393	gene
+			locus_tag	vigor_ORF65
+			gene	ORF65
+112701	112393	CDS
+			codon_start	1
+			protein_id	KY037797.1.67
+			locus_tag	vigor_ORF65
+			gene	ORF65
+			product	membrane protein US9
+113098	114279	gene
+			locus_tag	vigor_ORF66
+			gene	ORF66
+113098	114279	CDS
+			codon_start	1
+			protein_id	KY037797.1.68
+			locus_tag	vigor_ORF66
+			gene	ORF66
+			product	serine/threonine protein kinase US3
+114557	115621	gene
+			locus_tag	vigor_ORF67
+			gene	ORF67
+114557	115621	CDS
+			codon_start	1
+			protein_id	KY037797.1.69
+			locus_tag	vigor_ORF67
+			gene	ORF67
+			product	envelope glycoprotein I
+115869	117740	gene
+			locus_tag	vigor_ORF68
+			gene	ORF68
+115869	117740	CDS
+			codon_start	1
+			protein_id	KY037797.1.70
+			locus_tag	vigor_ORF68
+			gene	ORF68
+			product	envelope glycoprotein E
+118394	117852	gene
+			locus_tag	vigor_ORF64A
+			gene	ORF64A
+118394	117852	CDS
+			codon_start	1
+			protein_id	KY037797.1.71
+			locus_tag	vigor_ORF64A
+			gene	ORF64A
+			product	virion protein US10
+			note	duplication of ORF64 virion protein US10
+119378	118542	gene
+			locus_tag	vigor_ORF63A
+			gene	ORF63A
+119378	118542	CDS
+			codon_start	1
+			protein_id	KY037797.1.72
+			locus_tag	vigor_ORF63A
+			gene	ORF63A
+			product	regulatory protein ICP22
+			note	duplication of ORF63 regulatory protein ICP22
+120722	124654	gene
+			locus_tag	vigor_ORF62A
+			gene	ORF62A
+120722	124654	CDS
+			codon_start	1
+			protein_id	KY037797.1.73
+			locus_tag	vigor_ORF62A
+			gene	ORF62A
+			product	transcriptional regulator ICP4
+			note	duplication of ORF62 transcriptional regulator ICP4
+>Features KY037796.1
+174	563	gene
+			locus_tag	vigor_ORF0
+			gene	ORF0
+174	563	CDS
+			codon_start	1
+			protein_id	KY037796.1.1
+			locus_tag	vigor_ORF0
+			gene	ORF0
+			product	membrane protein UL56
+916	590	gene
+			locus_tag	vigor_ORF1
+			gene	ORF1
+916	590	CDS
+			codon_start	1
+			protein_id	KY037796.1.2
+			locus_tag	vigor_ORF1
+			gene	ORF1
+			product	membrane protein V1
+1186	1851	gene
+			locus_tag	vigor_ORF2
+			gene	ORF2
+1186	1851	CDS
+			codon_start	1
+			protein_id	KY037796.1.3
+			locus_tag	vigor_ORF2
+			gene	ORF2
+			product	myristylated tegument protein CIRC
+2448	1909	gene
+			locus_tag	vigor_ORF3
+			gene	ORF3
+2448	1909	CDS
+			codon_start	1
+			protein_id	KY037796.1.4
+			locus_tag	vigor_ORF3
+			gene	ORF3
+			product	nuclear protein UL55
+4142	2784	gene
+			locus_tag	vigor_ORF4
+			gene	ORF4
+4142	2784	CDS
+			codon_start	1
+			protein_id	KY037796.1.5
+			locus_tag	vigor_ORF4
+			gene	ORF4
+			product	multifunctional expression regulator
+5275	4253	gene
+			locus_tag	vigor_ORF5
+			gene	ORF5
+5275	4253	CDS
+			codon_start	1
+			protein_id	KY037796.1.6
+			locus_tag	vigor_ORF5
+			gene	ORF5
+			product	envelope glycoprotein K
+8578	5327	gene
+			locus_tag	vigor_ORF6
+			gene	ORF6
+8578	5327	CDS
+			codon_start	1
+			protein_id	KY037796.1.7
+			locus_tag	vigor_ORF6
+			gene	ORF6
+			product	helicase-primase primase subunit
+8608	9387	gene
+			locus_tag	vigor_ORF7
+			gene	ORF7
+8608	9387	CDS
+			codon_start	1
+			protein_id	KY037796.1.8
+			locus_tag	vigor_ORF7
+			gene	ORF7
+			product	tegument protein UL51
+10643	10906	gene
+			locus_tag	vigor_ORF9A
+			gene	ORF9A
+10643	10906	CDS
+			codon_start	1
+			protein_id	KY037796.1.9
+			locus_tag	vigor_ORF9A
+			gene	ORF9A
+			product	envelope glycoprotein N
+10668	9478	gene
+			locus_tag	vigor_ORF8
+			gene	ORF8
+10668	9478	CDS
+			codon_start	1
+			protein_id	KY037796.1.10
+			locus_tag	vigor_ORF8
+			gene	ORF8
+			product	deoxyuridine triphosphatase
+11010	11918	gene
+			locus_tag	vigor_ORF9
+			gene	ORF9
+11010	11918	CDS
+			codon_start	1
+			protein_id	KY037796.1.11
+			locus_tag	vigor_ORF9
+			gene	ORF9
+			product	tegument protein VP22
+12161	13393	gene
+			locus_tag	vigor_ORF10
+			gene	ORF10
+12161	13393	CDS
+			codon_start	1
+			protein_id	KY037796.1.12
+			locus_tag	vigor_ORF10
+			gene	ORF10
+			product	transactivating tegument protein VP16
+13591	16020	gene
+			locus_tag	vigor_ORF11
+			gene	ORF11
+13591	16020	CDS
+			codon_start	1
+			protein_id	KY037796.1.13
+			locus_tag	vigor_ORF11
+			gene	ORF11
+			product	tegument protein VP13/14
+16185	18170	gene
+			locus_tag	vigor_ORF12
+			gene	ORF12
+16185	18170	CDS
+			codon_start	1
+			protein_id	KY037796.1.14
+			locus_tag	vigor_ORF12
+			gene	ORF12
+			product	tegument protein VP11/12
+18412	19317	gene
+			locus_tag	vigor_ORF13
+			gene	ORF13
+18412	19317	CDS
+			codon_start	1
+			protein_id	KY037796.1.15
+			locus_tag	vigor_ORF13
+			gene	ORF13
+			product	thymidylate synthase
+21126	19402	gene
+			locus_tag	vigor_ORF14
+			gene	ORF14
+21126	19402	CDS
+			codon_start	1
+			protein_id	KY037796.1.16
+			locus_tag	vigor_ORF14
+			gene	ORF14
+			product	envelope glycoprotein C
+22491	21271	gene
+			locus_tag	vigor_ORF15
+			gene	ORF15
+22491	21271	CDS
+			codon_start	1
+			protein_id	KY037796.1.17
+			locus_tag	vigor_ORF15
+			gene	ORF15
+			product	envelope protein UL43
+23807	22581	gene
+			locus_tag	vigor_ORF16
+			gene	ORF16
+23807	22581	CDS
+			codon_start	1
+			protein_id	KY037796.1.18
+			locus_tag	vigor_ORF16
+			gene	ORF16
+			product	DNA polymerase processivity subunit
+24162	25529	gene
+			locus_tag	vigor_ORF17
+			gene	ORF17
+24162	25529	CDS
+			codon_start	1
+			protein_id	KY037796.1.19
+			locus_tag	vigor_ORF17
+			gene	ORF17
+			product	tegument host shutoff protein
+26506	25586	gene
+			locus_tag	vigor_ORF18
+			gene	ORF18
+26506	25586	CDS
+			codon_start	1
+			protein_id	KY037796.1.20
+			locus_tag	vigor_ORF18
+			gene	ORF18
+			product	ribonucleotide reductase subunit 2
+28858	26531	gene
+			locus_tag	vigor_ORF19
+			gene	ORF19
+28858	26531	CDS
+			codon_start	1
+			protein_id	KY037796.1.21
+			locus_tag	vigor_ORF19
+			gene	ORF19
+			product	ribonucleotide reductase subunit 1
+30488	29037	gene
+			locus_tag	vigor_ORF20
+			gene	ORF20
+30488	29037	CDS
+			codon_start	1
+			protein_id	KY037796.1.22
+			locus_tag	vigor_ORF20
+			gene	ORF20
+			product	capsid triplex subunit 1
+30772	33888	gene
+			locus_tag	vigor_ORF21
+			gene	ORF21
+30772	33888	CDS
+			codon_start	1
+			protein_id	KY037796.1.23
+			locus_tag	vigor_ORF21
+			gene	ORF21
+			product	tegument protein UL37
+34096	42360	gene
+			locus_tag	vigor_ORF22
+			gene	ORF22
+34096	42360	CDS
+			codon_start	1
+			protein_id	KY037796.1.24
+			locus_tag	vigor_ORF22
+			gene	ORF22
+			product	large tegument protein
+43122	42415	gene
+			locus_tag	vigor_ORF23
+			gene	ORF23
+43122	42415	CDS
+			codon_start	1
+			protein_id	KY037796.1.25
+			locus_tag	vigor_ORF23
+			gene	ORF23
+			product	small capsid protein
+44005	43196	gene
+			locus_tag	vigor_ORF24
+			gene	ORF24
+44005	43196	CDS
+			codon_start	1
+			protein_id	KY037796.1.26
+			locus_tag	vigor_ORF24
+			gene	ORF24
+			product	nuclear egress membrane protein
+44490	46247	gene
+			locus_tag	vigor_ORF26
+			gene	ORF26
+44490	46247	CDS
+			codon_start	1
+			protein_id	KY037796.1.27
+			locus_tag	vigor_ORF26
+			gene	ORF26
+			product	DNA packaging protein UL32
+44602	44132	gene
+			locus_tag	vigor_ORF25
+			gene	ORF25
+44602	44132	CDS
+			codon_start	1
+			protein_id	KY037796.1.28
+			locus_tag	vigor_ORF25
+			gene	ORF25
+			product	DNA packaging protein UL33
+46174	47112	gene
+			locus_tag	vigor_ORF27
+			gene	ORF27
+46174	47112	CDS
+			codon_start	1
+			protein_id	KY037796.1.29
+			locus_tag	vigor_ORF27
+			gene	ORF27
+			product	nuclear egress lamina protein
+50620	47036	gene
+			locus_tag	vigor_ORF28
+			gene	ORF28
+50620	47036	CDS
+			codon_start	1
+			protein_id	KY037796.1.30
+			locus_tag	vigor_ORF28
+			gene	ORF28
+			product	DNA polymerase catalytic subunit
+50841	54440	gene
+			locus_tag	vigor_ORF29
+			gene	ORF29
+50841	54440	CDS
+			codon_start	1
+			protein_id	KY037796.1.31
+			locus_tag	vigor_ORF29
+			gene	ORF29
+			product	single-stranded DNA-binding protein
+54619	56931	gene
+			locus_tag	vigor_ORF30
+			gene	ORF30
+54619	56931	CDS
+			codon_start	1
+			protein_id	KY037796.1.32
+			locus_tag	vigor_ORF30
+			gene	ORF30
+			product	DNA packaging terminase subunit 2
+56787	59582	gene
+			locus_tag	vigor_ORF31
+			gene	ORF31
+56787	59582	CDS
+			codon_start	1
+			protein_id	KY037796.1.33
+			locus_tag	vigor_ORF31
+			gene	ORF31
+			product	envelope glycoprotein B
+59735	60166	gene
+			locus_tag	vigor_ORF32
+			gene	ORF32
+59735	60166	CDS
+			codon_start	1
+			protein_id	KY037796.1.34
+			locus_tag	vigor_ORF32
+			gene	ORF32
+			product	protein V32
+61195	60287	gene
+			locus_tag	vigor_ORF335
+			gene	ORF33.5
+61195	60287	CDS
+			codon_start	1
+			protein_id	KY037796.1.35
+			locus_tag	vigor_ORF335
+			gene	ORF33.5
+			product	capsid scaffold protein
+62104	60287	gene
+			locus_tag	vigor_ORF33
+			gene	ORF33
+62104	60287	CDS
+			codon_start	1
+			protein_id	KY037796.1.36
+			locus_tag	vigor_ORF33
+			gene	ORF33
+			product	capsid maturation protease
+63876	62137	gene
+			locus_tag	vigor_ORF34
+			gene	ORF34
+63876	62137	CDS
+			codon_start	1
+			protein_id	KY037796.1.37
+			locus_tag	vigor_ORF34
+			gene	ORF34
+			product	DNA packaging tegument protein UL25
+64719	63943	gene
+			locus_tag	vigor_ORF35
+			gene	ORF35
+64719	63943	CDS
+			codon_start	1
+			protein_id	KY037796.1.38
+			locus_tag	vigor_ORF35
+			gene	ORF35
+			product	nuclear protein UL24
+64773	65798	gene
+			locus_tag	vigor_ORF36
+			gene	ORF36
+64773	65798	CDS
+			codon_start	1
+			protein_id	KY037796.1.39
+			locus_tag	vigor_ORF36
+			gene	ORF36
+			product	thymidine kinase
+66040	68565	gene
+			locus_tag	vigor_ORF37
+			gene	ORF37
+66040	68565	CDS
+			codon_start	1
+			protein_id	KY037796.1.40
+			locus_tag	vigor_ORF37
+			gene	ORF37
+			product	envelope glycoprotein H
+70259	68634	gene
+			locus_tag	vigor_ORF38
+			gene	ORF38
+70259	68634	CDS
+			codon_start	1
+			protein_id	KY037796.1.41
+			locus_tag	vigor_ORF38
+			gene	ORF38
+			product	tegument protein UL21
+70653	71321	gene
+			locus_tag	vigor_ORF39
+			gene	ORF39
+70653	71321	CDS
+			codon_start	1
+			protein_id	KY037796.1.42
+			locus_tag	vigor_ORF39
+			gene	ORF39
+			product	envelope protein UL20
+71506	75696	gene
+			locus_tag	vigor_ORF40
+			gene	ORF40
+71506	75696	CDS
+			codon_start	1
+			protein_id	KY037796.1.43
+			locus_tag	vigor_ORF40
+			gene	ORF40
+			product	major capsid protein
+75813	76763	gene
+			locus_tag	vigor_ORF41
+			gene	ORF41
+75813	76763	CDS
+			codon_start	1
+			protein_id	KY037796.1.44
+			locus_tag	vigor_ORF41
+			gene	ORF41
+			product	capsid triplex subunit 2
+78136	80166	gene
+			locus_tag	vigor_ORF43
+			gene	ORF43
+78136	80166	CDS
+			codon_start	1
+			protein_id	KY037796.1.45
+			locus_tag	vigor_ORF43
+			gene	ORF43
+			product	DNA packaging tegument protein UL17
+80326	81417	gene
+			locus_tag	vigor_ORF44
+			gene	ORF44
+80326	81417	CDS
+			codon_start	1
+			protein_id	KY037796.1.46
+			locus_tag	vigor_ORF44
+			gene	ORF44
+			product	tegument protein UL16
+82559	76817	gene
+			locus_tag	vigor_ORF42
+			gene	ORF42
+82559	81504	CDS
+78004	76817
+			codon_start	1
+			protein_id	KY037796.1.47
+			locus_tag	vigor_ORF42
+			gene	ORF42
+			product	DNA packaging terminase subunit 1
+82685	83284	gene
+			locus_tag	vigor_ORF46
+			gene	ORF46
+82685	83284	CDS
+			codon_start	1
+			protein_id	KY037796.1.48
+			locus_tag	vigor_ORF46
+			gene	ORF46
+			product	tegument protein UL14
+83134	84666	gene
+			locus_tag	vigor_ORF47
+			gene	ORF47
+83134	84666	CDS
+			codon_start	1
+			protein_id	KY037796.1.49
+			locus_tag	vigor_ORF47
+			gene	ORF47
+			product	tegument serine/threonine protein kinase
+84633	86288	gene
+			locus_tag	vigor_ORF48
+			gene	ORF48
+84633	86288	CDS
+			codon_start	1
+			protein_id	KY037796.1.50
+			locus_tag	vigor_ORF48
+			gene	ORF48
+			product	deoxyribonuclease
+86192	86437	gene
+			locus_tag	vigor_ORF49
+			gene	ORF49
+86192	86437	CDS
+			codon_start	1
+			protein_id	KY037796.1.51
+			locus_tag	vigor_ORF49
+			gene	ORF49
+			product	myristylated tegument protein
+87837	90344	gene
+			locus_tag	vigor_ORF51
+			gene	ORF51
+87837	90344	CDS
+			codon_start	1
+			protein_id	KY037796.1.52
+			locus_tag	vigor_ORF51
+			gene	ORF51
+			product	DNA replication origin-binding helicase
+87838	86531	gene
+			locus_tag	vigor_ORF50
+			gene	ORF50
+87838	86531	CDS
+			codon_start	1
+			protein_id	KY037796.1.53
+			locus_tag	vigor_ORF50
+			gene	ORF50
+			product	envelope glycoprotein M
+90449	92764	gene
+			locus_tag	vigor_ORF52
+			gene	ORF52
+90449	92764	CDS
+			codon_start	1
+			protein_id	KY037796.1.54
+			locus_tag	vigor_ORF52
+			gene	ORF52
+			product	helicase-primase subunit
+93806	92811	gene
+			locus_tag	vigor_ORF53
+			gene	ORF53
+93806	92811	CDS
+			codon_start	1
+			protein_id	KY037796.1.55
+			locus_tag	vigor_ORF53
+			gene	ORF53
+			product	tegument protein UL7
+95940	93631	gene
+			locus_tag	vigor_ORF54
+			gene	ORF54
+95940	93631	CDS
+			codon_start	1
+			protein_id	KY037796.1.56
+			locus_tag	vigor_ORF54
+			gene	ORF54
+			product	capsid portal protein
+95952	98597	gene
+			locus_tag	vigor_ORF55
+			gene	ORF55
+95952	98597	CDS
+			codon_start	1
+			protein_id	KY037796.1.57
+			locus_tag	vigor_ORF55
+			gene	ORF55
+			product	helicase-primase helicase subunit
+98668	99255	gene
+			locus_tag	vigor_ORF56
+			gene	ORF56
+98668	99255	CDS
+			codon_start	1
+			protein_id	KY037796.1.58
+			locus_tag	vigor_ORF56
+			gene	ORF56
+			product	nuclear protein UL4
+99579	99364	gene
+			locus_tag	vigor_ORF57
+			gene	ORF57
+99579	99364	CDS
+			codon_start	1
+			protein_id	KY037796.1.59
+			locus_tag	vigor_ORF57
+			gene	ORF57
+			product	protein V57
+100225	99560	gene
+			locus_tag	vigor_ORF58
+			gene	ORF58
+100225	99560	CDS
+			codon_start	1
+			protein_id	KY037796.1.60
+			locus_tag	vigor_ORF58
+			gene	ORF58
+			product	nuclear protein UL3
+101172	100255	gene
+			locus_tag	vigor_ORF59
+			gene	ORF59
+101172	100255	CDS
+			codon_start	1
+			protein_id	KY037796.1.61
+			locus_tag	vigor_ORF59
+			gene	ORF59
+			product	uracil-DNA glycosylase
+101605	101123	gene
+			locus_tag	vigor_ORF60
+			gene	ORF60
+101605	101123	CDS
+			codon_start	1
+			protein_id	KY037796.1.62
+			locus_tag	vigor_ORF60
+			gene	ORF60
+			product	envelope glycoprotein L
+104553	103150	gene
+			locus_tag	vigor_ORF61
+			gene	ORF61
+104553	103150	CDS
+			codon_start	1
+			protein_id	KY037796.1.63
+			locus_tag	vigor_ORF61
+			gene	ORF61
+			product	ubiquitin E3 ligase ICP0
+109205	105273	gene
+			locus_tag	vigor_ORF62
+			gene	ORF62
+109205	105273	CDS
+			codon_start	1
+			protein_id	KY037796.1.64
+			locus_tag	vigor_ORF62
+			gene	ORF62
+			product	transcriptional regulator ICP4
+110783	111619	gene
+			locus_tag	vigor_ORF63
+			gene	ORF63
+110783	111619	CDS
+			codon_start	1
+			protein_id	KY037796.1.65
+			locus_tag	vigor_ORF63
+			gene	ORF63
+			product	regulatory protein ICP22
+111767	112309	gene
+			locus_tag	vigor_ORF64
+			gene	ORF64
+111767	112309	CDS
+			codon_start	1
+			protein_id	KY037796.1.66
+			locus_tag	vigor_ORF64
+			gene	ORF64
+			product	virion protein US10
+112842	112534	gene
+			locus_tag	vigor_ORF65
+			gene	ORF65
+112842	112534	CDS
+			codon_start	1
+			protein_id	KY037796.1.67
+			locus_tag	vigor_ORF65
+			gene	ORF65
+			product	membrane protein US9
+113239	114420	gene
+			locus_tag	vigor_ORF66
+			gene	ORF66
+113239	114420	CDS
+			codon_start	1
+			protein_id	KY037796.1.68
+			locus_tag	vigor_ORF66
+			gene	ORF66
+			product	serine/threonine protein kinase US3
+114698	115762	gene
+			locus_tag	vigor_ORF67
+			gene	ORF67
+114698	115762	CDS
+			codon_start	1
+			protein_id	KY037796.1.69
+			locus_tag	vigor_ORF67
+			gene	ORF67
+			product	envelope glycoprotein I
+116010	117881	gene
+			locus_tag	vigor_ORF68
+			gene	ORF68
+116010	117881	CDS
+			codon_start	1
+			protein_id	KY037796.1.70
+			locus_tag	vigor_ORF68
+			gene	ORF68
+			product	envelope glycoprotein E
+118534	117992	gene
+			locus_tag	vigor_ORF64A
+			gene	ORF64A
+118534	117992	CDS
+			codon_start	1
+			protein_id	KY037796.1.71
+			locus_tag	vigor_ORF64A
+			gene	ORF64A
+			product	virion protein US10
+			note	duplication of ORF64 virion protein US10
+119518	118682	gene
+			locus_tag	vigor_ORF63A
+			gene	ORF63A
+119518	118682	CDS
+			codon_start	1
+			protein_id	KY037796.1.72
+			locus_tag	vigor_ORF63A
+			gene	ORF63A
+			product	regulatory protein ICP22
+			note	duplication of ORF63 regulatory protein ICP22
+121096	125028	gene
+			locus_tag	vigor_ORF62A
+			gene	ORF62A
+121096	125028	CDS
+			codon_start	1
+			protein_id	KY037796.1.73
+			locus_tag	vigor_ORF62A
+			gene	ORF62A
+			product	transcriptional regulator ICP4
+			note	duplication of ORF62 transcriptional regulator ICP4
+>Features DQ457052.1
+185	574	gene
+			locus_tag	vigor_ORF0
+			gene	ORF0
+185	574	CDS
+			codon_start	1
+			protein_id	DQ457052.1.1
+			locus_tag	vigor_ORF0
+			gene	ORF0
+			product	membrane protein UL56
+927	601	gene
+			locus_tag	vigor_ORF1
+			gene	ORF1
+927	601	CDS
+			codon_start	1
+			protein_id	DQ457052.1.2
+			locus_tag	vigor_ORF1
+			gene	ORF1
+			product	membrane protein V1
+1197	1862	gene
+			locus_tag	vigor_ORF2
+			gene	ORF2
+1197	1862	CDS
+			codon_start	1
+			protein_id	DQ457052.1.3
+			locus_tag	vigor_ORF2
+			gene	ORF2
+			product	myristylated tegument protein CIRC
+2460	1921	gene
+			locus_tag	vigor_ORF3
+			gene	ORF3
+2460	1921	CDS
+			codon_start	1
+			protein_id	DQ457052.1.4
+			locus_tag	vigor_ORF3
+			gene	ORF3
+			product	nuclear protein UL55
+4154	2796	gene
+			locus_tag	vigor_ORF4
+			gene	ORF4
+4154	2796	CDS
+			codon_start	1
+			protein_id	DQ457052.1.5
+			locus_tag	vigor_ORF4
+			gene	ORF4
+			product	multifunctional expression regulator
+5287	4265	gene
+			locus_tag	vigor_ORF5
+			gene	ORF5
+5287	4265	CDS
+			codon_start	1
+			protein_id	DQ457052.1.6
+			locus_tag	vigor_ORF5
+			gene	ORF5
+			product	envelope glycoprotein K
+8590	5339	gene
+			locus_tag	vigor_ORF6
+			gene	ORF6
+8590	5339	CDS
+			codon_start	1
+			protein_id	DQ457052.1.7
+			locus_tag	vigor_ORF6
+			gene	ORF6
+			product	helicase-primase primase subunit
+8620	9399	gene
+			locus_tag	vigor_ORF7
+			gene	ORF7
+8620	9399	CDS
+			codon_start	1
+			protein_id	DQ457052.1.8
+			locus_tag	vigor_ORF7
+			gene	ORF7
+			product	tegument protein UL51
+10655	10918	gene
+			locus_tag	vigor_ORF9A
+			gene	ORF9A
+10655	10918	CDS
+			codon_start	1
+			protein_id	DQ457052.1.9
+			locus_tag	vigor_ORF9A
+			gene	ORF9A
+			product	envelope glycoprotein N
+10680	9490	gene
+			locus_tag	vigor_ORF8
+			gene	ORF8
+10680	9490	CDS
+			codon_start	1
+			protein_id	DQ457052.1.10
+			locus_tag	vigor_ORF8
+			gene	ORF8
+			product	deoxyuridine triphosphatase
+11022	11930	gene
+			locus_tag	vigor_ORF9
+			gene	ORF9
+11022	11930	CDS
+			codon_start	1
+			protein_id	DQ457052.1.11
+			locus_tag	vigor_ORF9
+			gene	ORF9
+			product	tegument protein VP22
+12173	13405	gene
+			locus_tag	vigor_ORF10
+			gene	ORF10
+12173	13405	CDS
+			codon_start	1
+			protein_id	DQ457052.1.12
+			locus_tag	vigor_ORF10
+			gene	ORF10
+			product	transactivating tegument protein VP16
+13603	16020	gene
+			locus_tag	vigor_ORF11
+			gene	ORF11
+13603	16020	CDS
+			codon_start	1
+			protein_id	DQ457052.1.13
+			locus_tag	vigor_ORF11
+			gene	ORF11
+			product	tegument protein VP13/14
+16185	18170	gene
+			locus_tag	vigor_ORF12
+			gene	ORF12
+16185	18170	CDS
+			codon_start	1
+			protein_id	DQ457052.1.14
+			locus_tag	vigor_ORF12
+			gene	ORF12
+			product	tegument protein VP11/12
+18412	19317	gene
+			locus_tag	vigor_ORF13
+			gene	ORF13
+18412	19317	CDS
+			codon_start	1
+			protein_id	DQ457052.1.15
+			locus_tag	vigor_ORF13
+			gene	ORF13
+			product	thymidylate synthase
+21042	19402	gene
+			locus_tag	vigor_ORF14
+			gene	ORF14
+21042	19402	CDS
+			codon_start	1
+			protein_id	DQ457052.1.16
+			locus_tag	vigor_ORF14
+			gene	ORF14
+			product	envelope glycoprotein C
+22407	21187	gene
+			locus_tag	vigor_ORF15
+			gene	ORF15
+22407	21187	CDS
+			codon_start	1
+			protein_id	DQ457052.1.17
+			locus_tag	vigor_ORF15
+			gene	ORF15
+			product	envelope protein UL43
+23723	22497	gene
+			locus_tag	vigor_ORF16
+			gene	ORF16
+23723	22497	CDS
+			codon_start	1
+			protein_id	DQ457052.1.18
+			locus_tag	vigor_ORF16
+			gene	ORF16
+			product	DNA polymerase processivity subunit
+24078	25445	gene
+			locus_tag	vigor_ORF17
+			gene	ORF17
+24078	25445	CDS
+			codon_start	1
+			protein_id	DQ457052.1.19
+			locus_tag	vigor_ORF17
+			gene	ORF17
+			product	tegument host shutoff protein
+26422	25502	gene
+			locus_tag	vigor_ORF18
+			gene	ORF18
+26422	25502	CDS
+			codon_start	1
+			protein_id	DQ457052.1.20
+			locus_tag	vigor_ORF18
+			gene	ORF18
+			product	ribonucleotide reductase subunit 2
+28774	26447	gene
+			locus_tag	vigor_ORF19
+			gene	ORF19
+28774	26447	CDS
+			codon_start	1
+			protein_id	DQ457052.1.21
+			locus_tag	vigor_ORF19
+			gene	ORF19
+			product	ribonucleotide reductase subunit 1
+30404	28953	gene
+			locus_tag	vigor_ORF20
+			gene	ORF20
+30404	28953	CDS
+			codon_start	1
+			protein_id	DQ457052.1.22
+			locus_tag	vigor_ORF20
+			gene	ORF20
+			product	capsid triplex subunit 1
+30688	33804	gene
+			locus_tag	vigor_ORF21
+			gene	ORF21
+30688	33804	CDS
+			codon_start	1
+			protein_id	DQ457052.1.23
+			locus_tag	vigor_ORF21
+			gene	ORF21
+			product	tegument protein UL37
+34012	42267	gene
+			locus_tag	vigor_ORF22
+			gene	ORF22
+34012	42267	CDS
+			codon_start	1
+			protein_id	DQ457052.1.24
+			locus_tag	vigor_ORF22
+			gene	ORF22
+			product	large tegument protein
+43028	42321	gene
+			locus_tag	vigor_ORF23
+			gene	ORF23
+43028	42321	CDS
+			codon_start	1
+			protein_id	DQ457052.1.25
+			locus_tag	vigor_ORF23
+			gene	ORF23
+			product	small capsid protein
+43911	43102	gene
+			locus_tag	vigor_ORF24
+			gene	ORF24
+43911	43102	CDS
+			codon_start	1
+			protein_id	DQ457052.1.26
+			locus_tag	vigor_ORF24
+			gene	ORF24
+			product	nuclear egress membrane protein
+44396	46153	gene
+			locus_tag	vigor_ORF26
+			gene	ORF26
+44396	46153	CDS
+			codon_start	1
+			protein_id	DQ457052.1.27
+			locus_tag	vigor_ORF26
+			gene	ORF26
+			product	DNA packaging protein UL32
+44508	44038	gene
+			locus_tag	vigor_ORF25
+			gene	ORF25
+44508	44038	CDS
+			codon_start	1
+			protein_id	DQ457052.1.28
+			locus_tag	vigor_ORF25
+			gene	ORF25
+			product	DNA packaging protein UL33
+46080	47018	gene
+			locus_tag	vigor_ORF27
+			gene	ORF27
+46080	47018	CDS
+			codon_start	1
+			protein_id	DQ457052.1.29
+			locus_tag	vigor_ORF27
+			gene	ORF27
+			product	nuclear egress lamina protein
+50526	46942	gene
+			locus_tag	vigor_ORF28
+			gene	ORF28
+50526	46942	CDS
+			codon_start	1
+			protein_id	DQ457052.1.30
+			locus_tag	vigor_ORF28
+			gene	ORF28
+			product	DNA polymerase catalytic subunit
+50747	54346	gene
+			locus_tag	vigor_ORF29
+			gene	ORF29
+50747	54346	CDS
+			codon_start	1
+			protein_id	DQ457052.1.31
+			locus_tag	vigor_ORF29
+			gene	ORF29
+			product	single-stranded DNA-binding protein
+54525	56837	gene
+			locus_tag	vigor_ORF30
+			gene	ORF30
+54525	56837	CDS
+			codon_start	1
+			protein_id	DQ457052.1.32
+			locus_tag	vigor_ORF30
+			gene	ORF30
+			product	DNA packaging terminase subunit 2
+56693	59488	gene
+			locus_tag	vigor_ORF31
+			gene	ORF31
+56693	59488	CDS
+			codon_start	1
+			protein_id	DQ457052.1.33
+			locus_tag	vigor_ORF31
+			gene	ORF31
+			product	envelope glycoprotein B
+59640	60071	gene
+			locus_tag	vigor_ORF32
+			gene	ORF32
+59640	60071	CDS
+			codon_start	1
+			protein_id	DQ457052.1.34
+			locus_tag	vigor_ORF32
+			gene	ORF32
+			product	protein V32
+61100	60192	gene
+			locus_tag	vigor_ORF335
+			gene	ORF33.5
+61100	60192	CDS
+			codon_start	1
+			protein_id	DQ457052.1.35
+			locus_tag	vigor_ORF335
+			gene	ORF33.5
+			product	capsid scaffold protein
+62009	60192	gene
+			locus_tag	vigor_ORF33
+			gene	ORF33
+62009	60192	CDS
+			codon_start	1
+			protein_id	DQ457052.1.36
+			locus_tag	vigor_ORF33
+			gene	ORF33
+			product	capsid maturation protease
+63781	62042	gene
+			locus_tag	vigor_ORF34
+			gene	ORF34
+63781	62042	CDS
+			codon_start	1
+			protein_id	DQ457052.1.37
+			locus_tag	vigor_ORF34
+			gene	ORF34
+			product	DNA packaging tegument protein UL25
+64624	63848	gene
+			locus_tag	vigor_ORF35
+			gene	ORF35
+64624	63848	CDS
+			codon_start	1
+			protein_id	DQ457052.1.38
+			locus_tag	vigor_ORF35
+			gene	ORF35
+			product	nuclear protein UL24
+64678	65703	gene
+			locus_tag	vigor_ORF36
+			gene	ORF36
+64678	65703	CDS
+			codon_start	1
+			protein_id	DQ457052.1.39
+			locus_tag	vigor_ORF36
+			gene	ORF36
+			product	thymidine kinase
+65945	68470	gene
+			locus_tag	vigor_ORF37
+			gene	ORF37
+65945	68470	CDS
+			codon_start	1
+			protein_id	DQ457052.1.40
+			locus_tag	vigor_ORF37
+			gene	ORF37
+			product	envelope glycoprotein H
+70164	68539	gene
+			locus_tag	vigor_ORF38
+			gene	ORF38
+70164	68539	CDS
+			codon_start	1
+			protein_id	DQ457052.1.41
+			locus_tag	vigor_ORF38
+			gene	ORF38
+			product	tegument protein UL21
+70558	71226	gene
+			locus_tag	vigor_ORF39
+			gene	ORF39
+70558	71226	CDS
+			codon_start	1
+			protein_id	DQ457052.1.42
+			locus_tag	vigor_ORF39
+			gene	ORF39
+			product	envelope protein UL20
+71411	75601	gene
+			locus_tag	vigor_ORF40
+			gene	ORF40
+71411	75601	CDS
+			codon_start	1
+			protein_id	DQ457052.1.43
+			locus_tag	vigor_ORF40
+			gene	ORF40
+			product	major capsid protein
+75718	76668	gene
+			locus_tag	vigor_ORF41
+			gene	ORF41
+75718	76668	CDS
+			codon_start	1
+			protein_id	DQ457052.1.44
+			locus_tag	vigor_ORF41
+			gene	ORF41
+			product	capsid triplex subunit 2
+78044	80074	gene
+			locus_tag	vigor_ORF43
+			gene	ORF43
+78044	80074	CDS
+			codon_start	1
+			protein_id	DQ457052.1.45
+			locus_tag	vigor_ORF43
+			gene	ORF43
+			product	DNA packaging tegument protein UL17
+80234	81325	gene
+			locus_tag	vigor_ORF44
+			gene	ORF44
+80234	81325	CDS
+			codon_start	1
+			protein_id	DQ457052.1.46
+			locus_tag	vigor_ORF44
+			gene	ORF44
+			product	tegument protein UL16
+82467	76722	gene
+			locus_tag	vigor_ORF42
+			gene	ORF42
+82467	81412	CDS
+77909	76722
+			codon_start	1
+			protein_id	DQ457052.1.47
+			locus_tag	vigor_ORF42
+			gene	ORF42
+			product	DNA packaging terminase subunit 1
+82593	83192	gene
+			locus_tag	vigor_ORF46
+			gene	ORF46
+82593	83192	CDS
+			codon_start	1
+			protein_id	DQ457052.1.48
+			locus_tag	vigor_ORF46
+			gene	ORF46
+			product	tegument protein UL14
+83042	84574	gene
+			locus_tag	vigor_ORF47
+			gene	ORF47
+83042	84574	CDS
+			codon_start	1
+			protein_id	DQ457052.1.49
+			locus_tag	vigor_ORF47
+			gene	ORF47
+			product	tegument serine/threonine protein kinase
+84541	86196	gene
+			locus_tag	vigor_ORF48
+			gene	ORF48
+84541	86196	CDS
+			codon_start	1
+			protein_id	DQ457052.1.50
+			locus_tag	vigor_ORF48
+			gene	ORF48
+			product	deoxyribonuclease
+86100	86345	gene
+			locus_tag	vigor_ORF49
+			gene	ORF49
+86100	86345	CDS
+			codon_start	1
+			protein_id	DQ457052.1.51
+			locus_tag	vigor_ORF49
+			gene	ORF49
+			product	myristylated tegument protein
+87755	90262	gene
+			locus_tag	vigor_ORF51
+			gene	ORF51
+87755	90262	CDS
+			codon_start	1
+			protein_id	DQ457052.1.52
+			locus_tag	vigor_ORF51
+			gene	ORF51
+			product	DNA replication origin-binding helicase
+87756	86449	gene
+			locus_tag	vigor_ORF50
+			gene	ORF50
+87756	86449	CDS
+			codon_start	1
+			protein_id	DQ457052.1.53
+			locus_tag	vigor_ORF50
+			gene	ORF50
+			product	envelope glycoprotein M
+90367	92682	gene
+			locus_tag	vigor_ORF52
+			gene	ORF52
+90367	92682	CDS
+			codon_start	1
+			protein_id	DQ457052.1.54
+			locus_tag	vigor_ORF52
+			gene	ORF52
+			product	helicase-primase subunit
+93724	92729	gene
+			locus_tag	vigor_ORF53
+			gene	ORF53
+93724	92729	CDS
+			codon_start	1
+			protein_id	DQ457052.1.55
+			locus_tag	vigor_ORF53
+			gene	ORF53
+			product	tegument protein UL7
+95858	93549	gene
+			locus_tag	vigor_ORF54
+			gene	ORF54
+95858	93549	CDS
+			codon_start	1
+			protein_id	DQ457052.1.56
+			locus_tag	vigor_ORF54
+			gene	ORF54
+			product	capsid portal protein
+95870	98515	gene
+			locus_tag	vigor_ORF55
+			gene	ORF55
+95870	98515	CDS
+			codon_start	1
+			protein_id	DQ457052.1.57
+			locus_tag	vigor_ORF55
+			gene	ORF55
+			product	helicase-primase helicase subunit
+98586	99176	gene
+			locus_tag	vigor_ORF56
+			gene	ORF56
+98586	99176	CDS
+			codon_start	1
+			protein_id	DQ457052.1.58
+			locus_tag	vigor_ORF56
+			gene	ORF56
+			product	nuclear protein UL4
+99500	99285	gene
+			locus_tag	vigor_ORF57
+			gene	ORF57
+99500	99285	CDS
+			codon_start	1
+			protein_id	DQ457052.1.59
+			locus_tag	vigor_ORF57
+			gene	ORF57
+			product	protein V57
+100146	99481	gene
+			locus_tag	vigor_ORF58
+			gene	ORF58
+100146	99481	CDS
+			codon_start	1
+			protein_id	DQ457052.1.60
+			locus_tag	vigor_ORF58
+			gene	ORF58
+			product	nuclear protein UL3
+101093	100176	gene
+			locus_tag	vigor_ORF59
+			gene	ORF59
+101093	100176	CDS
+			codon_start	1
+			protein_id	DQ457052.1.61
+			locus_tag	vigor_ORF59
+			gene	ORF59
+			product	uracil-DNA glycosylase
+101523	101044	gene
+			locus_tag	vigor_ORF60
+			gene	ORF60
+101523	101044	CDS
+			codon_start	1
+			protein_id	DQ457052.1.62
+			locus_tag	vigor_ORF60
+			gene	ORF60
+			product	envelope glycoprotein L
+104359	102956	gene
+			locus_tag	vigor_ORF61
+			gene	ORF61
+104359	102956	CDS
+			codon_start	1
+			protein_id	DQ457052.1.63
+			locus_tag	vigor_ORF61
+			gene	ORF61
+			product	ubiquitin E3 ligase ICP0
+109017	105085	gene
+			locus_tag	vigor_ORF62
+			gene	ORF62
+109017	105085	CDS
+			codon_start	1
+			protein_id	DQ457052.1.64
+			locus_tag	vigor_ORF62
+			gene	ORF62
+			product	transcriptional regulator ICP4
+110465	111301	gene
+			locus_tag	vigor_ORF63
+			gene	ORF63
+110465	111301	CDS
+			codon_start	1
+			protein_id	DQ457052.1.65
+			locus_tag	vigor_ORF63
+			gene	ORF63
+			product	regulatory protein ICP22
+111449	111991	gene
+			locus_tag	vigor_ORF64
+			gene	ORF64
+111449	111991	CDS
+			codon_start	1
+			protein_id	DQ457052.1.66
+			locus_tag	vigor_ORF64
+			gene	ORF64
+			product	virion protein US10
+112526	112218	gene
+			locus_tag	vigor_ORF65
+			gene	ORF65
+112526	112218	CDS
+			codon_start	1
+			protein_id	DQ457052.1.67
+			locus_tag	vigor_ORF65
+			gene	ORF65
+			product	membrane protein US9
+112923	114104	gene
+			locus_tag	vigor_ORF66
+			gene	ORF66
+112923	114104	CDS
+			codon_start	1
+			protein_id	DQ457052.1.68
+			locus_tag	vigor_ORF66
+			gene	ORF66
+			product	serine/threonine protein kinase US3
+114382	115446	gene
+			locus_tag	vigor_ORF67
+			gene	ORF67
+114382	115446	CDS
+			codon_start	1
+			protein_id	DQ457052.1.69
+			locus_tag	vigor_ORF67
+			gene	ORF67
+			product	envelope glycoprotein I
+115694	117565	gene
+			locus_tag	vigor_ORF68
+			gene	ORF68
+115694	117565	CDS
+			codon_start	1
+			protein_id	DQ457052.1.70
+			locus_tag	vigor_ORF68
+			gene	ORF68
+			product	envelope glycoprotein E
+118220	117678	gene
+			locus_tag	vigor_ORF64A
+			gene	ORF64A
+118220	117678	CDS
+			codon_start	1
+			protein_id	DQ457052.1.71
+			locus_tag	vigor_ORF64A
+			gene	ORF64A
+			product	virion protein US10
+			note	duplication of ORF64 virion protein US10
+119204	118368	gene
+			locus_tag	vigor_ORF63A
+			gene	ORF63A
+119204	118368	CDS
+			codon_start	1
+			protein_id	DQ457052.1.72
+			locus_tag	vigor_ORF63A
+			gene	ORF63A
+			product	regulatory protein ICP22
+			note	duplication of ORF63 regulatory protein ICP22
+120652	124584	gene
+			locus_tag	vigor_ORF62A
+			gene	ORF62A
+120652	124584	CDS
+			codon_start	1
+			protein_id	DQ457052.1.73
+			locus_tag	vigor_ORF62A
+			gene	ORF62A
+			product	transcriptional regulator ICP4
+			note	duplication of ORF62 transcriptional regulator ICP4
+>Features DQ008355.1
+172	558	gene
+			locus_tag	vigor_ORF0
+			gene	ORF0
+			pseudogene	unitary
+172	558	misc_feature
+			locus_tag	vigor_ORF0
+			gene	ORF0
+			product	membrane protein UL56
+			note	could not find valid stop codon
+914	588	gene
+			locus_tag	vigor_ORF1
+			gene	ORF1
+914	588	CDS
+			codon_start	1
+			protein_id	DQ008355.1.2
+			locus_tag	vigor_ORF1
+			gene	ORF1
+			product	membrane protein V1
+1184	1849	gene
+			locus_tag	vigor_ORF2
+			gene	ORF2
+1184	1849	CDS
+			codon_start	1
+			protein_id	DQ008355.1.3
+			locus_tag	vigor_ORF2
+			gene	ORF2
+			product	myristylated tegument protein CIRC
+2446	1907	gene
+			locus_tag	vigor_ORF3
+			gene	ORF3
+2446	1907	CDS
+			codon_start	1
+			protein_id	DQ008355.1.4
+			locus_tag	vigor_ORF3
+			gene	ORF3
+			product	nuclear protein UL55
+4140	2782	gene
+			locus_tag	vigor_ORF4
+			gene	ORF4
+4140	2782	CDS
+			codon_start	1
+			protein_id	DQ008355.1.5
+			locus_tag	vigor_ORF4
+			gene	ORF4
+			product	multifunctional expression regulator
+5273	4251	gene
+			locus_tag	vigor_ORF5
+			gene	ORF5
+5273	4251	CDS
+			codon_start	1
+			protein_id	DQ008355.1.6
+			locus_tag	vigor_ORF5
+			gene	ORF5
+			product	envelope glycoprotein K
+8576	5325	gene
+			locus_tag	vigor_ORF6
+			gene	ORF6
+8576	5325	CDS
+			codon_start	1
+			protein_id	DQ008355.1.7
+			locus_tag	vigor_ORF6
+			gene	ORF6
+			product	helicase-primase primase subunit
+8606	9385	gene
+			locus_tag	vigor_ORF7
+			gene	ORF7
+8606	9385	CDS
+			codon_start	1
+			protein_id	DQ008355.1.8
+			locus_tag	vigor_ORF7
+			gene	ORF7
+			product	tegument protein UL51
+10641	10904	gene
+			locus_tag	vigor_ORF9A
+			gene	ORF9A
+10641	10904	CDS
+			codon_start	1
+			protein_id	DQ008355.1.9
+			locus_tag	vigor_ORF9A
+			gene	ORF9A
+			product	envelope glycoprotein N
+10666	9476	gene
+			locus_tag	vigor_ORF8
+			gene	ORF8
+10666	9476	CDS
+			codon_start	1
+			protein_id	DQ008355.1.10
+			locus_tag	vigor_ORF8
+			gene	ORF8
+			product	deoxyuridine triphosphatase
+11008	11916	gene
+			locus_tag	vigor_ORF9
+			gene	ORF9
+11008	11916	CDS
+			codon_start	1
+			protein_id	DQ008355.1.11
+			locus_tag	vigor_ORF9
+			gene	ORF9
+			product	tegument protein VP22
+12159	13391	gene
+			locus_tag	vigor_ORF10
+			gene	ORF10
+12159	13391	CDS
+			codon_start	1
+			protein_id	DQ008355.1.12
+			locus_tag	vigor_ORF10
+			gene	ORF10
+			product	transactivating tegument protein VP16
+13589	16003	gene
+			locus_tag	vigor_ORF11
+			gene	ORF11
+13589	16003	CDS
+			codon_start	1
+			protein_id	DQ008355.1.13
+			locus_tag	vigor_ORF11
+			gene	ORF11
+			product	tegument protein VP13/14
+16168	18153	gene
+			locus_tag	vigor_ORF12
+			gene	ORF12
+16168	18153	CDS
+			codon_start	1
+			protein_id	DQ008355.1.14
+			locus_tag	vigor_ORF12
+			gene	ORF12
+			product	tegument protein VP11/12
+18395	19300	gene
+			locus_tag	vigor_ORF13
+			gene	ORF13
+18395	19300	CDS
+			codon_start	1
+			protein_id	DQ008355.1.15
+			locus_tag	vigor_ORF13
+			gene	ORF13
+			product	thymidylate synthase
+21067	19385	gene
+			locus_tag	vigor_ORF14
+			gene	ORF14
+21067	19385	CDS
+			codon_start	1
+			protein_id	DQ008355.1.16
+			locus_tag	vigor_ORF14
+			gene	ORF14
+			product	envelope glycoprotein C
+22432	21212	gene
+			locus_tag	vigor_ORF15
+			gene	ORF15
+22432	21212	CDS
+			codon_start	1
+			protein_id	DQ008355.1.17
+			locus_tag	vigor_ORF15
+			gene	ORF15
+			product	envelope protein UL43
+23748	22522	gene
+			locus_tag	vigor_ORF16
+			gene	ORF16
+23748	22522	CDS
+			codon_start	1
+			protein_id	DQ008355.1.18
+			locus_tag	vigor_ORF16
+			gene	ORF16
+			product	DNA polymerase processivity subunit
+24103	25467	gene
+			locus_tag	vigor_ORF17
+			gene	ORF17
+24103	25467	CDS
+			codon_start	1
+			protein_id	DQ008355.1.19
+			locus_tag	vigor_ORF17
+			gene	ORF17
+			product	tegument host shutoff protein
+26444	25524	gene
+			locus_tag	vigor_ORF18
+			gene	ORF18
+26444	25524	CDS
+			codon_start	1
+			protein_id	DQ008355.1.20
+			locus_tag	vigor_ORF18
+			gene	ORF18
+			product	ribonucleotide reductase subunit 2
+28796	26469	gene
+			locus_tag	vigor_ORF19
+			gene	ORF19
+28796	26469	CDS
+			codon_start	1
+			protein_id	DQ008355.1.21
+			locus_tag	vigor_ORF19
+			gene	ORF19
+			product	ribonucleotide reductase subunit 1
+30426	28975	gene
+			locus_tag	vigor_ORF20
+			gene	ORF20
+30426	28975	CDS
+			codon_start	1
+			protein_id	DQ008355.1.22
+			locus_tag	vigor_ORF20
+			gene	ORF20
+			product	capsid triplex subunit 1
+30710	33826	gene
+			locus_tag	vigor_ORF21
+			gene	ORF21
+30710	33826	CDS
+			codon_start	1
+			protein_id	DQ008355.1.23
+			locus_tag	vigor_ORF21
+			gene	ORF21
+			product	tegument protein UL37
+34034	42325	gene
+			locus_tag	vigor_ORF22
+			gene	ORF22
+34034	42325	CDS
+			codon_start	1
+			protein_id	DQ008355.1.24
+			locus_tag	vigor_ORF22
+			gene	ORF22
+			product	large tegument protein
+43088	42381	gene
+			locus_tag	vigor_ORF23
+			gene	ORF23
+43088	42381	CDS
+			codon_start	1
+			protein_id	DQ008355.1.25
+			locus_tag	vigor_ORF23
+			gene	ORF23
+			product	small capsid protein
+43971	43162	gene
+			locus_tag	vigor_ORF24
+			gene	ORF24
+43971	43162	CDS
+			codon_start	1
+			protein_id	DQ008355.1.26
+			locus_tag	vigor_ORF24
+			gene	ORF24
+			product	nuclear egress membrane protein
+44456	46213	gene
+			locus_tag	vigor_ORF26
+			gene	ORF26
+44456	46213	CDS
+			codon_start	1
+			protein_id	DQ008355.1.27
+			locus_tag	vigor_ORF26
+			gene	ORF26
+			product	DNA packaging protein UL32
+44568	44098	gene
+			locus_tag	vigor_ORF25
+			gene	ORF25
+44568	44098	CDS
+			codon_start	1
+			protein_id	DQ008355.1.28
+			locus_tag	vigor_ORF25
+			gene	ORF25
+			product	DNA packaging protein UL33
+46140	47078	gene
+			locus_tag	vigor_ORF27
+			gene	ORF27
+46140	47078	CDS
+			codon_start	1
+			protein_id	DQ008355.1.29
+			locus_tag	vigor_ORF27
+			gene	ORF27
+			product	nuclear egress lamina protein
+50586	47002	gene
+			locus_tag	vigor_ORF28
+			gene	ORF28
+50586	47002	CDS
+			codon_start	1
+			protein_id	DQ008355.1.30
+			locus_tag	vigor_ORF28
+			gene	ORF28
+			product	DNA polymerase catalytic subunit
+50807	54406	gene
+			locus_tag	vigor_ORF29
+			gene	ORF29
+50807	54406	CDS
+			codon_start	1
+			protein_id	DQ008355.1.31
+			locus_tag	vigor_ORF29
+			gene	ORF29
+			product	single-stranded DNA-binding protein
+54585	56897	gene
+			locus_tag	vigor_ORF30
+			gene	ORF30
+54585	56897	CDS
+			codon_start	1
+			protein_id	DQ008355.1.32
+			locus_tag	vigor_ORF30
+			gene	ORF30
+			product	DNA packaging terminase subunit 2
+56753	59548	gene
+			locus_tag	vigor_ORF31
+			gene	ORF31
+56753	59548	CDS
+			codon_start	1
+			protein_id	DQ008355.1.33
+			locus_tag	vigor_ORF31
+			gene	ORF31
+			product	envelope glycoprotein B
+59701	60132	gene
+			locus_tag	vigor_ORF32
+			gene	ORF32
+59701	60132	CDS
+			codon_start	1
+			protein_id	DQ008355.1.34
+			locus_tag	vigor_ORF32
+			gene	ORF32
+			product	protein V32
+61162	60254	gene
+			locus_tag	vigor_ORF335
+			gene	ORF33.5
+61162	60254	CDS
+			codon_start	1
+			protein_id	DQ008355.1.35
+			locus_tag	vigor_ORF335
+			gene	ORF33.5
+			product	capsid scaffold protein
+62071	60254	gene
+			locus_tag	vigor_ORF33
+			gene	ORF33
+62071	60254	CDS
+			codon_start	1
+			protein_id	DQ008355.1.36
+			locus_tag	vigor_ORF33
+			gene	ORF33
+			product	capsid maturation protease
+63843	62104	gene
+			locus_tag	vigor_ORF34
+			gene	ORF34
+63843	62104	CDS
+			codon_start	1
+			protein_id	DQ008355.1.37
+			locus_tag	vigor_ORF34
+			gene	ORF34
+			product	DNA packaging tegument protein UL25
+64686	63910	gene
+			locus_tag	vigor_ORF35
+			gene	ORF35
+64686	63910	CDS
+			codon_start	1
+			protein_id	DQ008355.1.38
+			locus_tag	vigor_ORF35
+			gene	ORF35
+			product	nuclear protein UL24
+64740	65765	gene
+			locus_tag	vigor_ORF36
+			gene	ORF36
+64740	65765	CDS
+			codon_start	1
+			protein_id	DQ008355.1.39
+			locus_tag	vigor_ORF36
+			gene	ORF36
+			product	thymidine kinase
+66007	68532	gene
+			locus_tag	vigor_ORF37
+			gene	ORF37
+66007	68532	CDS
+			codon_start	1
+			protein_id	DQ008355.1.40
+			locus_tag	vigor_ORF37
+			gene	ORF37
+			product	envelope glycoprotein H
+70226	68601	gene
+			locus_tag	vigor_ORF38
+			gene	ORF38
+70226	68601	CDS
+			codon_start	1
+			protein_id	DQ008355.1.41
+			locus_tag	vigor_ORF38
+			gene	ORF38
+			product	tegument protein UL21
+70620	71288	gene
+			locus_tag	vigor_ORF39
+			gene	ORF39
+70620	71288	CDS
+			codon_start	1
+			protein_id	DQ008355.1.42
+			locus_tag	vigor_ORF39
+			gene	ORF39
+			product	envelope protein UL20
+71473	75663	gene
+			locus_tag	vigor_ORF40
+			gene	ORF40
+71473	75663	CDS
+			codon_start	1
+			protein_id	DQ008355.1.43
+			locus_tag	vigor_ORF40
+			gene	ORF40
+			product	major capsid protein
+75780	76730	gene
+			locus_tag	vigor_ORF41
+			gene	ORF41
+75780	76730	CDS
+			codon_start	1
+			protein_id	DQ008355.1.44
+			locus_tag	vigor_ORF41
+			gene	ORF41
+			product	capsid triplex subunit 2
+78102	80132	gene
+			locus_tag	vigor_ORF43
+			gene	ORF43
+78102	80132	CDS
+			codon_start	1
+			protein_id	DQ008355.1.45
+			locus_tag	vigor_ORF43
+			gene	ORF43
+			product	DNA packaging tegument protein UL17
+80292	81383	gene
+			locus_tag	vigor_ORF44
+			gene	ORF44
+80292	81383	CDS
+			codon_start	1
+			protein_id	DQ008355.1.46
+			locus_tag	vigor_ORF44
+			gene	ORF44
+			product	tegument protein UL16
+82525	76784	gene
+			locus_tag	vigor_ORF42
+			gene	ORF42
+82525	81470	CDS
+77971	76784
+			codon_start	1
+			protein_id	DQ008355.1.47
+			locus_tag	vigor_ORF42
+			gene	ORF42
+			product	DNA packaging terminase subunit 1
+82651	83250	gene
+			locus_tag	vigor_ORF46
+			gene	ORF46
+82651	83250	CDS
+			codon_start	1
+			protein_id	DQ008355.1.48
+			locus_tag	vigor_ORF46
+			gene	ORF46
+			product	tegument protein UL14
+83100	84632	gene
+			locus_tag	vigor_ORF47
+			gene	ORF47
+83100	84632	CDS
+			codon_start	1
+			protein_id	DQ008355.1.49
+			locus_tag	vigor_ORF47
+			gene	ORF47
+			product	tegument serine/threonine protein kinase
+84599	86254	gene
+			locus_tag	vigor_ORF48
+			gene	ORF48
+84599	86254	CDS
+			codon_start	1
+			protein_id	DQ008355.1.50
+			locus_tag	vigor_ORF48
+			gene	ORF48
+			product	deoxyribonuclease
+86158	86403	gene
+			locus_tag	vigor_ORF49
+			gene	ORF49
+86158	86403	CDS
+			codon_start	1
+			protein_id	DQ008355.1.51
+			locus_tag	vigor_ORF49
+			gene	ORF49
+			product	myristylated tegument protein
+87803	90310	gene
+			locus_tag	vigor_ORF51
+			gene	ORF51
+87803	90310	CDS
+			codon_start	1
+			protein_id	DQ008355.1.52
+			locus_tag	vigor_ORF51
+			gene	ORF51
+			product	DNA replication origin-binding helicase
+87804	86497	gene
+			locus_tag	vigor_ORF50
+			gene	ORF50
+87804	86497	CDS
+			codon_start	1
+			protein_id	DQ008355.1.53
+			locus_tag	vigor_ORF50
+			gene	ORF50
+			product	envelope glycoprotein M
+90415	92730	gene
+			locus_tag	vigor_ORF52
+			gene	ORF52
+90415	92730	CDS
+			codon_start	1
+			protein_id	DQ008355.1.54
+			locus_tag	vigor_ORF52
+			gene	ORF52
+			product	helicase-primase subunit
+93772	92777	gene
+			locus_tag	vigor_ORF53
+			gene	ORF53
+93772	92777	CDS
+			codon_start	1
+			protein_id	DQ008355.1.55
+			locus_tag	vigor_ORF53
+			gene	ORF53
+			product	tegument protein UL7
+95906	93597	gene
+			locus_tag	vigor_ORF54
+			gene	ORF54
+95906	93597	CDS
+			codon_start	1
+			protein_id	DQ008355.1.56
+			locus_tag	vigor_ORF54
+			gene	ORF54
+			product	capsid portal protein
+95918	98563	gene
+			locus_tag	vigor_ORF55
+			gene	ORF55
+95918	98563	CDS
+			codon_start	1
+			protein_id	DQ008355.1.57
+			locus_tag	vigor_ORF55
+			gene	ORF55
+			product	helicase-primase helicase subunit
+98634	99221	gene
+			locus_tag	vigor_ORF56
+			gene	ORF56
+98634	99221	CDS
+			codon_start	1
+			protein_id	DQ008355.1.58
+			locus_tag	vigor_ORF56
+			gene	ORF56
+			product	nuclear protein UL4
+99545	99330	gene
+			locus_tag	vigor_ORF57
+			gene	ORF57
+99545	99330	CDS
+			codon_start	1
+			protein_id	DQ008355.1.59
+			locus_tag	vigor_ORF57
+			gene	ORF57
+			product	protein V57
+100191	99526	gene
+			locus_tag	vigor_ORF58
+			gene	ORF58
+100191	99526	CDS
+			codon_start	1
+			protein_id	DQ008355.1.60
+			locus_tag	vigor_ORF58
+			gene	ORF58
+			product	nuclear protein UL3
+101138	100221	gene
+			locus_tag	vigor_ORF59
+			gene	ORF59
+101138	100221	CDS
+			codon_start	1
+			protein_id	DQ008355.1.61
+			locus_tag	vigor_ORF59
+			gene	ORF59
+			product	uracil-DNA glycosylase
+101571	101089	gene
+			locus_tag	vigor_ORF60
+			gene	ORF60
+101571	101089	CDS
+			codon_start	1
+			protein_id	DQ008355.1.62
+			locus_tag	vigor_ORF60
+			gene	ORF60
+			product	envelope glycoprotein L
+104407	103004	gene
+			locus_tag	vigor_ORF61
+			gene	ORF61
+104407	103004	CDS
+			codon_start	1
+			protein_id	DQ008355.1.63
+			locus_tag	vigor_ORF61
+			gene	ORF61
+			product	ubiquitin E3 ligase ICP0
+109058	105126	gene
+			locus_tag	vigor_ORF62
+			gene	ORF62
+109058	105126	CDS
+			codon_start	1
+			protein_id	DQ008355.1.64
+			locus_tag	vigor_ORF62
+			gene	ORF62
+			product	transcriptional regulator ICP4
+110506	111342	gene
+			locus_tag	vigor_ORF63
+			gene	ORF63
+110506	111342	CDS
+			codon_start	1
+			protein_id	DQ008355.1.65
+			locus_tag	vigor_ORF63
+			gene	ORF63
+			product	regulatory protein ICP22
+111490	112032	gene
+			locus_tag	vigor_ORF64
+			gene	ORF64
+111490	112032	CDS
+			codon_start	1
+			protein_id	DQ008355.1.66
+			locus_tag	vigor_ORF64
+			gene	ORF64
+			product	virion protein US10
+112566	112258	gene
+			locus_tag	vigor_ORF65
+			gene	ORF65
+112566	112258	CDS
+			codon_start	1
+			protein_id	DQ008355.1.67
+			locus_tag	vigor_ORF65
+			gene	ORF65
+			product	membrane protein US9
+112963	114144	gene
+			locus_tag	vigor_ORF66
+			gene	ORF66
+112963	114144	CDS
+			codon_start	1
+			protein_id	DQ008355.1.68
+			locus_tag	vigor_ORF66
+			gene	ORF66
+			product	serine/threonine protein kinase US3
+114422	115486	gene
+			locus_tag	vigor_ORF67
+			gene	ORF67
+114422	115486	CDS
+			codon_start	1
+			protein_id	DQ008355.1.69
+			locus_tag	vigor_ORF67
+			gene	ORF67
+			product	envelope glycoprotein I
+115734	117605	gene
+			locus_tag	vigor_ORF68
+			gene	ORF68
+115734	117605	CDS
+			codon_start	1
+			protein_id	DQ008355.1.70
+			locus_tag	vigor_ORF68
+			gene	ORF68
+			product	envelope glycoprotein E
+118260	117718	gene
+			locus_tag	vigor_ORF64A
+			gene	ORF64A
+118260	117718	CDS
+			codon_start	1
+			protein_id	DQ008355.1.71
+			locus_tag	vigor_ORF64A
+			gene	ORF64A
+			product	virion protein US10
+			note	duplication of ORF64 virion protein US10
+119244	118408	gene
+			locus_tag	vigor_ORF63A
+			gene	ORF63A
+119244	118408	CDS
+			codon_start	1
+			protein_id	DQ008355.1.72
+			locus_tag	vigor_ORF63A
+			gene	ORF63A
+			product	regulatory protein ICP22
+			note	duplication of ORF63 regulatory protein ICP22
+120692	124624	gene
+			locus_tag	vigor_ORF62A
+			gene	ORF62A
+120692	124624	CDS
+			codon_start	1
+			protein_id	DQ008355.1.73
+			locus_tag	vigor_ORF62A
+			gene	ORF62A
+			product	transcriptional regulator ICP4
+			note	duplication of ORF62 transcriptional regulator ICP4

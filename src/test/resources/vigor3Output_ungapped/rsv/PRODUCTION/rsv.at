@@ -1,0 +1,55 @@
+149	rsv_db	93..512	CBW45425.1	NS1	non-structural protein 1	OK	
+149	rsv_db	622..996	CBW45446.1	NS2	non-structural protein 2	OK	
+149	rsv_db	1134..2309	AEQ63526.1	N	nucleoprotein	OK	
+149	rsv_db	2341..3066	AEQ63549.1	P	phosphoprotein	OK	
+149	rsv_db	3249..4019	MATRX_HRSVA	M	matrix protein	OK	
+149	rsv_db	4290..4484	SH_HRSVA	SH	small hydrophobic protein	OK	
+149	rsv_db	4675..5571	AEQ63519.1	G	attachment glycoprotein	OK	
+149	rsv_db	5648..7372	AEQ63520.1	F	fusion glycoprotein	OK	
+149	rsv_db	7591..8175	AEQ63532.1	M2-1	transcription elongation factor M2-1	OK	
+149	rsv_db	8150..8416	AEQ63555.1	M2-2	transcription-replication factor M2-2	OK	
+149	rsv_db	8483..14980	AEQ63523.1	L	RNA-directed RNA polymerase L	OK	
+30	rsv_db	108..527	CBW45487.1	NS1	non-structural protein 1	OK	
+30	rsv_db	635..1009	CBW45480.1	NS2	non-structural protein 2	OK	
+30	rsv_db	1148..2323	AFI25246.1	N	nucleoprotein	OK	
+30	rsv_db	2356..3081	AFI25258.1	P	phosphoprotein	OK	
+30	rsv_db	3271..4041	AAR14263.1	M	matrix protein	OK	
+30	rsv_db	4310..4507	AFI25260.1	SH	small hydrophobic protein	OK	
+30	rsv_db	4697..5629	AEI99602.1	G	attachment glycoprotein	OK	
+30	rsv_db	5727..7451	AFD34262.1	F	fusion glycoprotein	OK	
+30	rsv_db	7678..8265	AFI25263.1	M2-1	transcription elongation factor M2-1	OK	
+30	rsv_db	8231..8503	AFI25264.1	M2-2	transcription-replication factor M2-2	OK	
+30	rsv_db	8569..15069	AFI25265.1	L	RNA-directed RNA polymerase L	OK	
+123	rsv_db	77..496	CBW45487.1	NS1	non-structural protein 1	OK	
+123	rsv_db	604..978	NP_056857.1	NS2	non-structural protein 2	OK	
+123	rsv_db	1117..2292	AFI25246.1	N	nucleoprotein	OK	
+123	rsv_db	2325..3050	AFI25258.1	P	phosphoprotein	OK	
+123	rsv_db	3240..4010	AFI25259.1	M	matrix protein	OK	
+123	rsv_db	4279..4476	AFI25260.1	SH	small hydrophobic protein	OK	
+123	rsv_db	4666..5598	ABB16944.1	G	attachment glycoprotein	OK	
+123	rsv_db	5696..7420	AFD34266.1	F	fusion glycoprotein	OK	
+123	rsv_db	7647..8234	AFI25263.1	M2-1	transcription elongation factor M2-1	OK	
+123	rsv_db	8200..8472	AFI25264.1	M2-2	transcription-replication factor M2-2	OK	
+123	rsv_db	8538..15038	AFI25265.1	L	RNA-directed RNA polymerase L	OK	
+154	rsv_db	93..512	CBW45425.1	NS1	non-structural protein 1	OK	
+154	rsv_db	622..996	CBW45446.1	NS2	non-structural protein 2	OK	
+154	rsv_db	1134..2309	AEQ63526.1	N	nucleoprotein	OK	
+154	rsv_db	2341..3066	AEQ63549.1	P	phosphoprotein	OK	
+154	rsv_db	3249..4019	MATRX_HRSVA	M	matrix protein	OK	
+154	rsv_db	4290..4484	SH_HRSVA	SH	small hydrophobic protein	OK	
+154	rsv_db	4675..5571	AEQ63519.1	G	attachment glycoprotein	OK	
+154	rsv_db	5648..7372	AEQ63520.1	F	fusion glycoprotein	OK	
+154	rsv_db	7591..8175	AEQ63532.1	M2-1	transcription elongation factor M2-1	OK	
+154	rsv_db	8150..8416	AEQ63555.1	M2-2	transcription-replication factor M2-2	OK	
+154	rsv_db	8483..14980	AEQ63523.1	L	RNA-directed RNA polymerase L	OK	
+150	rsv_db	93..512	CBW45425.1	NS1	non-structural protein 1	OK	
+150	rsv_db	622..996	CBW45426.1	NS2	non-structural protein 2	OK	
+150	rsv_db	1134..2309	AEQ63471.1	N	nucleoprotein	OK	
+150	rsv_db	2341..3066	AEQ63571.1	P	phosphoprotein	OK	
+150	rsv_db	3250..4020	MATRX_HRSVA	M	matrix protein	OK	
+150	rsv_db	4291..4485	SH_HRSVA	SH	small hydrophobic protein	OK	
+150	rsv_db	4676..5572	AAM68156.1	G	attachment glycoprotein	OK	
+150	rsv_db	5649..7373	ABI35685.1	F	fusion glycoprotein	OK	
+150	rsv_db	7592..8176	AEQ63445.1	M2-1	transcription elongation factor M2-1	OK	
+150	rsv_db	8151..8417	AEQ63446.1	M2-2	transcription-replication factor M2-2	OK	
+150	rsv_db	8484..14981	AEO45832.1	L	RNA-directed RNA polymerase L	OK	

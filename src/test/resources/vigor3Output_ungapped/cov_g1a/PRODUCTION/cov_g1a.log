@@ -1,0 +1,1290 @@
+2018-09-07 15:20:11
+
+parameters
+	bl2seq_extend_hsp	25
+	bl2seq_extend_span	50
+	candidate_blastopts	-p blastx -M BLOSUM62 -e 1E-5 -v 0 -F \"\" -z 3000000 -b 1000
+	candidate_evalue	
+	candidate_overlap_threshold	0.8
+	candidate_refdb	
+	command_line	/opt/www/vigor/vigor3/prod3/VIGOR3.pl -D cov_g1a -O /usr/local/scratch/CORE/snettem/cov_g1a/PRODUCTION/cov_g1a -i /opt/www/vigor/vigor3/regr_testing/cov_g1a.ungapped.fasta
+	default_gene_optional	0
+	default_gene_required	0
+	default_gene_variation	1
+	frameshift_sensitivity	1
+	gene_variations	
+	jcvi_rules	1
+	mature_pep_mincoverage	50
+	mature_pep_minidentity	25
+	mature_pep_minsimilarity	40
+	mature_pep_refdb	../data3/virus_mp
+	max_intron_size	7000
+	min_candidate_pctsimilarity	55
+	min_candidate_sbjcoverage	33
+	min_exon_size	3
+	min_intron_size	30
+	min_pseudogene_coverage	80
+	min_pseudogene_identity	60
+	min_pseudogene_similarity	65
+	noncanonical_splicing_genes	
+	optional_genes	
+	reference_db	/opt/www/vigor/vigor3/data3/cov_g1a_db
+	reference_dbsize	336565
+	required_genes	
+	ribosomal_slippage_genes	
+	rna_editing_genes	
+	selectivity	0.985
+	slippage_frameshift	-1
+	slippage_motif	[NT][NT][NT][NA][NA][NA][NC]
+	slippage_offset	0
+	spliced_genes	
+	splicesite_extend_range	0
+	tile_overlap	1000000
+	tile_size	10000000
+	use_locus_tags	1
+	variation	0.975
+	verbose	0
+	vigorspace	/opt/www/vigor/vigor3/prod3/vigorscratch/818097.385418699
+
+
+genomic sequence gi|564131295|gb|KF668605.1|, length=15344
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 20 permutations for gene Pp1ab
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACT10958.1        6696   4018-6695      1   1-8067         1   1  0  N   53.5   69.4   39.9   0        Pp1ab | ORF1ab polyprotein
+    ADO39838.1        6691   4013-6690      1   1-8067         1   1  0  N   53.5   69.3   40.0   0        Pp1ab | ORF1ab polyprotein
+    ACT10969.1        6694   4016-6693      1   1-8067         1   1  0  N   53.3   69.4   40.0   0        Pp1ab | ORF1ab polyprotein
+    ACT10905.1        6698   4020-6697      1   1-8067         1   1  0  N   53.4   69.3   39.9   0        Pp1ab | ORF1ab polyprotein
+    ADO39827.1        6695   4017-6694      1   1-8067         1   1  0  N   53.3   69.3   40.0   0        Pp1ab | ORF1ab polyprotein
+    ADL71475.1        6692   4014-6691      1   1-8067         1   1  0  N   53.2   69.2   40.0   0        Pp1ab | ORF1ab polyprotein
+    AEK25520.1        6692   4014-6691      1   1-8067         1   1  0  N   53.4   69.4   40.0   0        Pp1ab | ORF1ab polyprotein
+    ACT10926.1        6692   4014-6691      1   1-8067         1   1  0  N   53.2   69.3   40.0   0        Pp1ab | ORF1ab polyprotein
+    AEK25510.1        6698   4020-6697      1   1-8067         1   1  0  N   53.3   69.4   39.9   0        Pp1ab | ORF1ab polyprotein
+    ACT10936.1        6702   4024-6701      1   1-8067         1   1  0  N   53.3   69.3   39.9   0        Pp1ab | ORF1ab polyprotein
+    ADL71454.1        6694   4016-6693      1   1-8067         1   1  0  N   53.3   69.5   40.0   0        Pp1ab | ORF1ab polyprotein
+    ADB28906.1        6683   4006-6682      1   4-8067         5   1  0  N   53.5   69.4   39.8   0        Pp1ab | ORF1ab polyprotein
+    AFG19738.1        6685   4009-6682      1   7-8061         1   1  0  N   53.5   69.5   40.0   0        Pp1ab | ORF1ab polyprotein
+    AAY32594.1        6632   3956-6629      1   7-8061         1   1  0  N   53.3   69.4   40.3   0        Pp1ab | ORF1ab polyprotein
+    AFG19735.1        6684   4008-6681      1   7-8061         1   1  0  N   53.5   69.4   40.0   0        Pp1ab | ORF1ab polyprotein
+    ABI14446.1        6693   4017-6692      1   7-8067         1   1  0  N   53.2   69.3   39.9   0        Pp1ab | ORF1ab polyprotein
+    ABX60144.1        6698   4022-6697      1   7-8067         1   1  0  N   53.3   69.3   39.9   0        Pp1ab | ORF1ab polyprotein
+    ADO39849.1        6696   4023-6695      1   16-8067        1   1  0  N   53.3   69.3   39.9   0        Pp1ab | ORF1ab polyprotein
+    ACT10886.1        6696   4023-6695      1   16-8067        1   1  0  N   53.3   69.3   39.9   0        Pp1ab | ORF1ab polyprotein
+    YP_004070193.1    6709   4076-6706      1   139-8061       1   1  0  N   53.2   69.4   39.2   0        Pp1ab | ORF1ab polyprotein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|564131295|gb|KF66    15344      1            0       8067           2688           53.3             79.3           40.0   cov_g1a_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_564131295.1     53.3   79.3   40.0   60.0  0.0   0.0   <7..8073         2688   6685   AFG19738.1        Pp1ab | putative ORF1ab polyprotein, C-terminal
+gi_564131295.1.1   58.1   81.9   99.0   1.0   0.0   0.0   <7..2787         927    929    gb_AAY32594.1_12  putative RNA-directed RNA polymerase nsp12,
+                                                                                                           C-terminal
+gi_564131295.1.2   61.5   84.1   98.8   0.0   0.0   1.2   2788..4578       597    601    P0C6W5_MP12       Helicase nsp13
+gi_564131295.1.3   50.8   78.4   100.0  0.0   0.0   0.0   4579..6150       524    518    ABE97129_14       Exoribonuclease nsp14
+gi_564131295.1.4   38.1   70.3   100.0  0.0   0.0   0.0   6151..7164       338    339    sp_Q98VG9_15      Uridylate-specific endoribonuclease nsp15
+gi_564131295.1.5   55.1   80.9   99.7   0.3   0.0   0.0   7165..8070       302    300    ABE97129_16       2'-O-methyl transferase nsp16
+
+
+genomic sequence gi|30271926|ref|NC_004718.3|, length=29751
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 20 permutations for gene Pp1ab
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACT10886.1        6696   113-6694       1   817-21479      11  0  3  N   53.6   69.6   53.1   0        Pp1ab | ORF1ab polyprotein
+    ACT10969.1        6694   113-6692       1   817-21479      11  0  3  N   53.5   69.7   53.1   0        Pp1ab | ORF1ab polyprotein
+    ADO39827.1        6695   113-6693       1   817-21479      11  0  3  N   53.5   69.7   53.1   0        Pp1ab | ORF1ab polyprotein
+    ACT10958.1        6696   4018-6694      1   13389-21479    1   3  0  N   55.4   70.8   39.9   0        Pp1ab | ORF1ab polyprotein
+    ADO39838.1        6691   4013-6689      1   13389-21479    1   3  0  N   55.5   70.7   40.0   0        Pp1ab | ORF1ab polyprotein
+    ACT10905.1        6698   4020-6696      1   13389-21479    1   3  0  N   55.5   70.8   39.9   0        Pp1ab | ORF1ab polyprotein
+    AEK25510.1        6698   4020-6696      1   13389-21479    1   3  0  N   55.4   70.7   39.9   0        Pp1ab | ORF1ab polyprotein
+    ACT10936.1        6702   4024-6700      1   13389-21479    1   3  0  N   55.4   70.8   39.9   0        Pp1ab | ORF1ab polyprotein
+    ADL71454.1        6694   4016-6692      1   13389-21479    1   3  0  N   55.6   70.9   39.9   0        Pp1ab | ORF1ab polyprotein
+    ADL71475.1        6692   4014-6690      1   13389-21479    1   3  0  N   55.6   70.6   40.0   0        Pp1ab | ORF1ab polyprotein
+    AEK25520.1        6692   4014-6690      1   13389-21479    1   3  0  N   55.7   70.8   40.0   0        Pp1ab | ORF1ab polyprotein
+    ACT10926.1        6692   4014-6690      1   13389-21479    1   3  0  N   55.5   70.5   40.0   0        Pp1ab | ORF1ab polyprotein
+    ADB28906.1        6683   4006-6681      1   13392-21479    4   3  0  N   55.6   71.3   39.9   0        Pp1ab | ORF1ab polyprotein
+    AAY32594.1        6632   3956-6630      1   13395-21479    1   3  0  N   55.6   71.0   40.3   0        Pp1ab | ORF1ab polyprotein
+    ABX60144.1        6698   4022-6696      1   13395-21479    1   3  0  N   55.5   70.7   39.9   0        Pp1ab | ORF1ab polyprotein
+    AFG19738.1        6685   4009-6683      1   13395-21479    1   3  0  N   55.9   71.3   40.0   0        Pp1ab | ORF1ab polyprotein
+    ABI14446.1        6693   4017-6691      1   13395-21479    1   3  0  N   55.5   70.4   39.9   0        Pp1ab | ORF1ab polyprotein
+    AFG19735.1        6684   4008-6682      1   13395-21479    1   3  0  N   55.8   71.1   40.0   0        Pp1ab | ORF1ab polyprotein
+    ADO39849.1        6696   4023-6694      1   13404-21479    1   3  0  N   55.4   70.8   39.9   0        Pp1ab | ORF1ab polyprotein
+    YP_004070193.1    6709   4076-6707      1   13527-21479    1   3  0  N   55.5   70.9   39.2   0        Pp1ab | ORF1ab polyprotein
+        found 1 gene
+
+    found 1 permutation for gene E
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABK79900.1        82     11-67          1   26138-26308    1   2  0  N   26.3   57.8   69.5   9.8-e006 E | envelope protein
+        found 1 gene
+
+    found 6 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAC01156.1        262    51-243         1   26443-27006    1   1  0  N   34.1   55.4   73.6   1.4-e027 M | membrane protein
+    ACR10373.1        263    52-263         1   26443-27057    1   1  0  N   33.0   55.1   80.6   6.6-e029 M | membrane protein
+    ACT10975.1        264    53-264         1   26443-27057    1   1  0  N   33.0   55.1   80.3   6.8-e029 M | membrane protein
+    ACT10910.1        262    51-262         1   26443-27057    1   1  0  N   32.5   55.1   80.9   4.7-e029 M | membrane protein
+    ABI14450.1        263    52-263         1   26443-27057    1   1  0  N   32.5   55.6   80.6   3.6-e029 M | membrane protein
+    ACS44222.1        261    50-261         1   26443-27057    1   1  0  N   33.0   55.1   81.2   5.4-e030 M | membrane protein
+        found 1 gene
+
+dropping pseudogene gi_30271926.3, fails match requirements: %id 32.9 < 60
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_30271926.3      32.9   65.4   80.6   19.4  0.0   0.0   26443..27063     206    263    ACR10373.1        M | membrane protein
+                    could not find valid start codon
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|30271926|ref|NC_0    29751      2            0       8322           2772           55.3             80.2           40.7   cov_g1a_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_30271926.1      55.7   80.4   40.0   60.0  0.0   0.0   <13395..21485    2696   6685   AFG19738.1        Pp1ab | putative ORF1ab polyprotein, C-terminal
+gi_30271926.1.1    58.7   83.7   99.2   0.8   0.0   0.0   <13395..16166    924    927    sp_P0C6X1_12      putative RNA-directed RNA polymerase nsp12,
+                                                                                                           C-terminal
+gi_30271926.1.2    100.0  100.0  100.0  0.0   0.0   0.0   16167..17969     601    601    NP_828870.1       Helicase nsp13
+gi_30271926.1.3    53.3   78.1   100.0  0.0   0.0   0.0   17970..19550     527    519    sp_Q98VG9_14      Exoribonuclease nsp14
+gi_30271926.1.4    44.9   70.2   100.0  0.0   0.0   0.0   19551..20591     347    344    ABE97129_15       Uridylate-specific endoribonuclease nsp15
+gi_30271926.1.5    57.5   82.9   99.7   0.0   0.0   0.3   20592..21482     297    300    sp_P0C6X5_16      2'-O-methyl transferase nsp16
+gi_30271926.2      24.7   64.8   98.8   1.2   0.0   0.0   26117..26347     76     82     ABK79900.1        E | envelope protein
+
+
+genomic sequence gi|384038902|gb|JN634064.1|, length=28984
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 24 permutations for gene Pp1a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFG19737.1        4018   1-4018         1   313-12165      1   1  0  N   81.6   90.0   100.0  0        Pp1a | ORF1a polyprotein
+    ABI14447.1        4026   1-4026         1   313-12165      3   0  2  N   90.3   95.8   98.2   0        Pp1a | ORF1a polyprotein
+    ACT10968.1        4027   1-4027         1   313-12165      1   1  0  N   91.1   95.0   100.0  0        Pp1a | ORF1a polyprotein
+    ACT10957.1        4029   1-4029         1   313-12165      3   0  2  N   92.6   96.4   98.0   0        Pp1a | ORF1a polyprotein
+    ACT10935.1        4035   1-4035         1   313-12165      2   1  0  N   92.6   96.2   98.5   0        Pp1a | ORF1a polyprotein
+    ACS44216.1        4034   1-4034         1   313-12165      3   0  2  N   93.6   96.9   98.0   0        Pp1a | ORF1a polyprotein
+    AEK25509.1        4031   1-4031         1   313-12165      2   1  0  N   92.7   96.2   99.0   0        Pp1a | ORF1a polyprotein
+    ADL71495.1        4028   1-4028         1   313-12165      2   1  0  N   92.9   96.5   98.7   0        Pp1a | ORF1a polyprotein
+    AAY32595.1        3965   1-3965         1   313-12165      1   1  0  N   92.6   96.0   100.0  0        Pp1a | ORF1a polyprotein
+    ACT10914.1        4027   1-4027         1   313-12165      1   1  0  N   90.0   93.9   100.0  0        Pp1a | ORF1a polyprotein
+    ADL71474.1        4025   1-4025         1   313-12165      3   0  2  N   92.9   96.7   98.2   0        Pp1a | ORF1a polyprotein
+    ACT10885.1        4029   1-4029         1   313-12165      2   1  0  N   91.9   95.8   99.0   0        Pp1a | ORF1a polyprotein
+    ADO39848.1        4029   1-4029         1   313-12165      2   1  0  N   92.3   96.2   98.7   0        Pp1a | ORF1a polyprotein
+    ADO39826.1        4028   1-4028         1   313-12165      2   1  0  N   92.2   96.0   98.7   0        Pp1a | ORF1a polyprotein
+    ADB28905.1        4016   1-4016         1   313-12165      1   1  0  N   81.8   90.3   100.0  0        Pp1a | ORF1a polyprotein
+    AEK25519.1        4025   1-4025         1   313-12165      3   0  2  N   93.2   96.9   98.2   0        Pp1a | ORF1a polyprotein
+    ADO39837.1        4024   1-4024         1   313-12165      2   1  0  N   92.1   95.9   98.9   0        Pp1a | ORF1a polyprotein
+    ABX60143.1        4031   1-4031         1   313-12165      1   1  0  N   90.2   93.8   100.0  0        Pp1a | ORF1a polyprotein
+    ACT10925.1        4025   1-4025         1   313-12165      2   1  0  N   92.4   96.1   98.9   0        Pp1a | ORF1a polyprotein
+    ADL71484.1        4029   1-4029         1   313-12165      1   1  0  N   90.1   94.0   100.0  0        Pp1a | ORF1a polyprotein
+    ACT10904.1        4031   1-4031         1   313-12165      2   1  0  N   91.4   95.1   100.0  0        Pp1a | ORF1a polyprotein
+    ACT10894.1        4030   1-4030         1   313-12165      1   1  0  N   90.2   93.8   100.0  0        Pp1a | ORF1a polyprotein
+    AFG19736.1        4017   1-4017         1   313-12165      1   1  0  N   82.1   90.3   100.0  0        Pp1a | ORF1a polyprotein
+    ADL71453.1        4027   1-4027         1   313-12165      1   1  0  N   90.3   93.9   100.0  0        Pp1a | ORF1a polyprotein
+        found 1 gene
+
+    found 20 permutations for gene Pp1ab
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADB28906.1        6683   1-6683         1   313-20165      3   0  1  N   89.1   94.2   100.0  0        Pp1ab | ORF1ab polyprotein
+    ADO39838.1        6691   1-6691         1   313-20165      3   0  1  N   93.3   96.8   99.3   0        Pp1ab | ORF1ab polyprotein
+    AAY32594.1        6632   1-6632         1   313-20165      2   0  1  N   95.1   97.4   100.0  0        Pp1ab | ORF1ab polyprotein
+    ADO39849.1        6696   1-6696         1   313-20165      3   0  1  N   93.6   97.0   99.1   0        Pp1ab | ORF1ab polyprotein
+    ADO39827.1        6695   1-6695         1   313-20165      3   0  1  N   93.4   96.9   99.2   0        Pp1ab | ORF1ab polyprotein
+    AEK25510.1        6698   1-6698         1   313-20165      3   0  1  N   93.7   97.1   99.4   0        Pp1ab | ORF1ab polyprotein
+    ABX60144.1        6698   1-6698         1   313-20165      2   0  1  N   92.3   95.7   100.0  0        Pp1ab | ORF1ab polyprotein
+    ACT10936.1        6702   1-6702         1   313-20165      3   0  1  N   93.8   97.1   99.1   0        Pp1ab | ORF1ab polyprotein
+    ADL71454.1        6694   1-6694         1   313-20165      2   0  1  N   92.3   95.7   100.0  0        Pp1ab | ORF1ab polyprotein
+    ACT10886.1        6696   1-6696         1   313-20165      3   0  1  N   93.1   96.8   99.3   0        Pp1ab | ORF1ab polyprotein
+    ACT10969.1        6694   1-6694         1   313-20165      2   0  1  N   92.8   96.3   100.0  0        Pp1ab | ORF1ab polyprotein
+    ACT10905.1        6698   1-6698         1   313-20165      3   0  1  N   92.9   96.3   100.0  0        Pp1ab | ORF1ab polyprotein
+    AFG19738.1        6685   1-6685         1   313-20165      2   0  1  N   88.6   93.9   100.0  0        Pp1ab | ORF1ab polyprotein
+    ABI14446.1        6693   1-6693         1   313-20165      4   0  3  N   92.2   96.8   98.9   0        Pp1ab | ORF1ab polyprotein
+    ACT10926.1        6692   1-6692         1   313-20165      3   0  1  N   93.4   96.9   99.3   0        Pp1ab | ORF1ab polyprotein
+    YP_004070193.1    6709   1-6709         1   313-20165      4   0  1  N   95.2   97.5   99.1   0        Pp1ab | ORF1ab polyprotein
+    ADL71475.1        6692   1-6692         1   313-20165      4   0  3  N   93.9   97.4   98.9   0        Pp1ab | ORF1ab polyprotein
+    ACT10958.1        6696   1-6696         1   313-20165      4   0  3  N   93.6   97.0   98.8   0        Pp1ab | ORF1ab polyprotein
+    AEK25520.1        6692   1-6692         1   313-20165      4   0  3  N   94.2   97.5   98.9   0        Pp1ab | ORF1ab polyprotein
+    AFG19735.1        6684   1-6684         1   313-20165      2   0  1  N   88.8   94.0   100.0  0        Pp1ab | ORF1ab polyprotein
+        found 1 gene
+
+    found 43 permutations for gene S
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFG19726.1        1453   1-1453         1   20165-24514    1   2  0  N   92.6   96.2   100.0  0        S | spike protein
+    ADC35472.1        1466   1-1466         1   20165-24514    1   2  0  N   44.4   60.3   100.0  0        S | spike protein
+    ADO39828.1        1470   1-1470         1   20165-24514    1   2  0  N   44.4   59.7   100.0  0        S | spike protein
+    AEE69322.1        1454   1-1454         1   20165-24514    1   2  0  N   94.4   96.7   100.0  0        S | spike protein
+    AAQ17220.1        1453   1-1453         1   20165-24514    1   2  0  N   90.0   94.3   100.0  0        S | spike protein
+    AFG19742.1        1454   1-1454         1   20165-24514    1   2  0  N   95.3   97.1   100.0  0        S | spike protein
+    BAA33439.1        1453   1-1453         1   20165-24514    1   2  0  N   94.2   96.8   100.0  0        S | spike protein
+    YP_004070194.1    1452   1-1452         1   20165-24514    1   2  0  N   93.6   96.3   100.0  0        S | spike protein
+    ACS44218.1        1453   1-1453         1   20168-24514    1   2  0  N   93.2   96.1   100.0  0        S | spike protein
+    ADU17734.1        1457   20-1457        1   20237-24514    1   2  0  N   81.2   85.5   98.6   0        S | spike protein
+    ADB28907.1        1457   24-1457        1   20252-24514    1   2  0  N   82.4   86.6   98.4   0        S | spike protein
+    ADL71486.1        1468   55-1468        1   20327-24514    1   2  0  N   45.7   60.6   96.3   0        S | spike protein
+    ACT10916.1        1472   55-1472        1   20327-24514    1   2  0  N   44.5   59.6   96.3   0        S | spike protein
+    ADO39817.1        1467   55-1467        1   20327-24514    1   2  0  N   45.7   60.9   96.3   0        S | spike protein
+    ADL71476.1        1469   55-1469        1   20327-24514    1   2  0  N   45.2   60.2   96.3   0        S | spike protein
+    ACT10970.1        1468   55-1468        1   20327-24514    1   2  0  N   45.6   61.3   96.3   0        S | spike protein
+    ACT10896.1        1468   55-1468        1   20327-24514    1   2  0  N   46.0   60.8   96.3   0        S | spike protein
+    ABI14448.1        1467   54-1467        1   20327-24514    1   2  0  N   45.2   60.5   96.3   0        S | spike protein
+    ACT10887.1        1465   55-1465        1   20327-24514    1   2  0  N   44.9   60.3   96.3   0        S | spike protein
+    ACT10937.1        1468   55-1468        1   20327-24514    1   2  0  N   45.7   61.0   96.3   0        S | spike protein
+    AEK25511.1        1469   55-1469        1   20327-24514    1   2  0  N   45.6   61.1   96.3   0        S | spike protein
+    ACT10948.1        1467   55-1467        1   20327-24514    1   2  0  N   45.7   60.8   96.3   0        S | spike protein
+    ABX60145.1        1464   55-1464        1   20327-24514    1   2  0  N   45.2   60.5   96.3   0        S | spike protein
+    ACR10422.1        1470   55-1470        1   20327-24514    1   2  0  N   45.0   60.6   96.3   0        S | spike protein
+    ADO39850.1        1465   55-1465        1   20327-24514    1   2  0  N   45.6   60.9   96.3   0        S | spike protein
+    BAC05492.1        1457   55-1457        1   20327-24514    1   2  0  N   45.8   60.8   96.2   0        S | spike protein
+    ADL71497.1        1467   55-1467        1   20327-24514    1   2  0  N   45.7   61.5   96.3   0        S | spike protein
+    BAA06805.1        1464   55-1464        1   20327-24514    1   2  0  N   45.9   60.8   96.3   0        S | spike protein
+    AEK25521.1        1466   54-1466        1   20327-24514    1   2  0  N   45.2   60.5   96.3   0        S | spike protein
+    ACT10906.1        1466   54-1466        1   20327-24514    1   2  0  N   45.5   60.8   96.3   0        S | spike protein
+    AAP72149.1        1480   57-1480        1   20327-24514    1   2  0  N   46.0   61.3   96.2   0        S | spike protein
+    ADL71446.1        1470   55-1470        1   20327-24514    1   2  0  N   44.4   59.2   96.3   0        S | spike protein
+    ADO39839.1        1467   55-1467        1   20327-24514    1   2  0  N   45.6   60.8   96.3   0        S | spike protein
+    ACT10959.1        1425   55-1425        1   20327-24514    1   2  0  N   45.1   60.1   96.2   0        S | spike protein
+    ACT10876.1        1466   55-1466        1   20327-24514    1   2  0  N   45.6   60.9   96.3   0        S | spike protein
+    ADL71455.1        1467   55-1467        1   20327-24514    1   2  0  N   45.8   61.2   96.3   0        S | spike protein
+    AAZ86077.1        1467   55-1467        1   20327-24514    1   2  0  N   46.3   61.3   96.3   0        S | spike protein
+    ACT10865.1        1468   55-1468        1   20327-24514    1   2  0  N   46.1   61.1   96.3   0        S | spike protein
+    AAP72150.1        1481   105-1481       1   20408-24514    1   2  0  N   46.9   61.7   92.9   0        S | spike protein
+    AEQ61968.1        1473   99-1473        1   20408-24514    1   2  0  N   69.5   79.8   93.3   0        S | spike protein
+    ACT10927.2        1232   2-1232         1   20789-24514    1   2  0  N   48.0   63.5   99.9   0        S | spike protein
+    ADL71466.1        1200   14-1200        1   20945-24514    1   2  0  N   48.6   65.1   98.9   0        S | spike protein
+    BAJ08255.1        1222   33-1222        1   20945-24514    1   2  0  N   48.4   64.2   97.3   0        S | spike protein
+        found 1 gene
+
+    found 24 permutations for gene NS3a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACR10334.1        70     1-69           1   24602-24808    1   2  0  N   71.0   73.9   98.5   1.1-e020 NS3a | non-structural protein 3a
+    ADL71456.1        70     1-70           1   24602-24811    1   2  0  N   68.5   74.2   100.0  2.1-e020 NS3a | non-structural protein 3a
+    ADL71477.1        70     1-70           1   24602-24811    1   2  0  N   68.5   72.8   100.0  1.5-e020 NS3a | non-structural protein 3a
+    ADO39851.1        70     1-70           1   24602-24811    1   2  0  N   72.8   74.2   100.0  5.0-e022 NS3a | non-structural protein 3a
+    AAZ86078.1        70     1-70           1   24602-24811    1   2  0  N   70.0   74.2   100.0  2.3-e021 NS3a | non-structural protein 3a
+    ACR10351.1        70     1-70           1   24602-24811    1   2  0  N   68.5   74.2   100.0  2.1-e020 NS3a | non-structural protein 3a
+    ACT10917.1        70     1-70           1   24602-24811    1   2  0  N   68.5   74.2   100.0  1.1-e020 NS3a | non-structural protein 3a
+    ACR10369.1        70     1-70           1   24602-24811    1   2  0  N   70.0   74.2   100.0  6.0-e021 NS3a | non-structural protein 3a
+    ADO39829.1        70     1-70           1   24602-24811    1   2  0  N   71.4   75.7   100.0  1.3-e021 NS3a | non-structural protein 3a
+    ACR46140.1        70     1-70           1   24602-24811    1   2  0  N   70.0   72.8   100.0  2.1-e020 NS3a | non-structural protein 3a
+    AEK25522.1        70     1-70           1   24602-24811    1   2  0  N   71.4   74.2   100.0  1.3-e021 NS3a | non-structural protein 3a
+    AEK25512.1        70     1-70           1   24602-24811    1   2  0  N   71.4   74.2   100.0  1.7-e021 NS3a | non-structural protein 3a
+    ADO39840.1        70     1-70           1   24602-24811    1   2  0  N   71.4   75.7   100.0  1.7-e021 NS3a | non-structural protein 3a
+    ADL71447.1        70     1-70           1   24602-24811    1   2  0  N   71.4   75.7   100.0  3.6-e022 NS3a | non-structural protein 3a
+    ACT10938.1        70     1-70           1   24602-24811    1   2  0  N   70.0   74.2   100.0  3.2-e021 NS3a | non-structural protein 3a
+    ADL71498.1        70     1-70           1   24602-24814    1   2  0  N   69.0   76.0   100.0  1.1-e020 NS3a | non-structural protein 3a
+    ACT10971.1        70     1-70           1   24602-24814    1   2  0  N   69.0   74.6   100.0  5.3-e020 NS3a | non-structural protein 3a
+    ADB10850.1        71     1-71           1   24602-24814    1   2  0  N   97.1   97.1   100.0  5.1-e037 NS3a | non-structural protein 3a
+    BAJ08256.1        70     1-70           1   24602-24814    1   2  0  N   69.0   77.4   100.0  4.4-e021 NS3a | non-structural protein 3a
+    YP_004070195.1    71     1-71           1   24602-24814    1   2  0  N   95.7   95.7   100.0  2.4-e036 NS3a | non-structural protein 3a
+    AFH55112.1        71     1-71           1   24602-24814    1   2  0  N   92.9   95.7   100.0  3.3-e036 NS3a | non-structural protein 3a
+    AAQ17221.1        71     1-71           1   24602-24814    1   2  0  N   92.9   95.7   100.0  2.9-e035 NS3a | non-structural protein 3a
+    ACT10877.1        70     1-70           1   24602-24814    1   2  0  N   70.4   77.4   100.0  1.7-e021 NS3a | non-structural protein 3a
+    ACT10960.1        70     1-70           1   24602-24814    1   2  0  N   71.8   77.4   100.0  6.7-e022 NS3a | non-structural protein 3a
+        found 1 gene
+
+    found 28 permutations for gene NS3b
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACS44220.1        71     1-49           1   24762-24908    1   3  0  N   95.9   95.9   69.0   2.3-e023 NS3b | non-structural protein 3b
+    ADB28909.1        71     1-49           1   24762-24908    1   3  0  N   91.8   95.9   69.0   1.3-e021 NS3b | non-structural protein 3b
+    AFG19733.1        71     1-50           1   24762-24911    1   3  0  N   92.0   96.0   70.4   3.7-e022 NS3b | non-structural protein 3b
+    AEE69324.1        71     1-50           1   24762-24911    1   3  0  N   88.0   94.0   70.4   1.6-e020 NS3b | non-structural protein 3b
+    YP_004070196.1    71     1-50           1   24762-24911    1   3  0  N   96.0   100.0  70.4   3.9-e025 NS3b | non-structural protein 3b
+    AFH55113.1        71     1-50           1   24762-24911    1   3  0  N   88.0   92.0   70.4   1.1-e020 NS3b | non-structural protein 3b
+    AAR88614.1        71     1-50           1   24762-24911    1   3  0  N   84.0   92.0   70.4   7.5-e020 NS3b | non-structural protein 3b
+    AFG19740.1        71     1-50           1   24762-24911    1   3  0  N   98.0   100.0  70.4   1.1-e025 NS3b | non-structural protein 3b
+    ACR10352.1        79     5-44           1   24777-24905    1   3  0  N   58.1   72.0   50.6   9.8-e007 NS3b | non-structural protein 3b
+    ACR46141.1        73     5-47           1   24777-24905    1   3  0  N   65.1   76.7   58.9   1.8-e010 NS3b | non-structural protein 3b
+    BAJ08257.1        73     7-47           1   24783-24905    1   3  0  N   65.8   78.0   56.1   1.8-e010 NS3b | non-structural protein 3b
+    ACR10370.1        73     7-47           1   24783-24905    1   3  0  N   63.4   78.0   56.1   3.3-e010 NS3b | non-structural protein 3b
+    ACT10939.1        73     7-47           1   24783-24905    1   3  0  N   63.4   75.6   56.1   8.5-e010 NS3b | non-structural protein 3b
+    ADL71499.1        73     7-47           1   24783-24905    1   3  0  N   65.8   78.0   56.1   1.8-e010 NS3b | non-structural protein 3b
+    ACT10961.1        72     7-47           1   24783-24905    1   3  0  N   65.8   78.0   56.9   2.4-e010 NS3b | non-structural protein 3b
+    ACT10918.1        73     7-47           1   24783-24905    1   3  0  N   63.4   78.0   56.1   6.2-e010 NS3b | non-structural protein 3b
+    ACT10929.1        73     7-47           1   24783-24905    1   3  0  N   65.8   78.0   56.1   2.4-e010 NS3b | non-structural protein 3b
+    ADO39852.1        73     7-47           1   24783-24905    1   3  0  N   63.4   78.0   56.1   4.6-e010 NS3b | non-structural protein 3b
+    ACT10867.1        73     7-47           1   24783-24905    1   3  0  N   63.4   78.0   56.1   2.4-e010 NS3b | non-structural protein 3b
+    ACR10335.1        66     7-47           1   24783-24905    1   3  0  N   58.5   75.6   62.1   2.5-e009 NS3b | non-structural protein 3b
+    AAZ86079.1        73     7-47           1   24783-24905    1   3  0  N   65.8   78.0   56.1   2.4-e010 NS3b | non-structural protein 3b
+    ADO39830.1        73     7-47           1   24783-24905    1   3  0  N   63.4   78.0   56.1   4.6-e010 NS3b | non-structural protein 3b
+    ACT10878.1        73     7-47           1   24783-24905    1   3  0  N   60.9   78.0   56.1   1.2-e009 NS3b | non-structural protein 3b
+    ACT10908.1        73     7-47           1   24783-24905    1   3  0  N   65.8   78.0   56.1   2.4-e010 NS3b | non-structural protein 3b
+    ADL71457.1        73     7-47           1   24783-24905    1   3  0  N   63.4   78.0   56.1   6.2-e010 NS3b | non-structural protein 3b
+    AEK25523.1        73     7-47           1   24783-24905    1   3  0  N   65.8   78.0   56.1   2.4-e010 NS3b | non-structural protein 3b
+    AEK25513.1        73     7-47           1   24783-24905    1   3  0  N   65.8   78.0   56.1   2.4-e010 NS3b | non-structural protein 3b
+    ADL71478.1        73     7-48           1   24783-24908    1   3  0  N   66.6   78.5   57.5   7.0-e011 NS3b | non-structural protein 3b
+        found 1 gene
+
+    found 18 permutations for gene NS3c
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACR10353.1        209    16-209         1   25002-25601    1   3  0  N   82.0   88.0   92.8   5.6-e101 NS3c | non-structural protein 3c
+    ACT10973.1        239    16-232         1   25002-25664    1   3  0  N   79.8   86.9   90.7   9.2-e109 NS3c | non-structural protein 3c
+    AAZ86080.1        237    16-230         1   25002-25664    1   3  0  N   81.9   88.2   90.7   1.7-e111 NS3c | non-structural protein 3c
+    ACY69079.1        237    16-231         1   25002-25667    1   3  0  N   81.0   88.7   91.1   4.3-e111 NS3c | non-structural protein 3c
+    ADO39842.1        237    16-231         1   25002-25667    1   3  0  N   82.8   89.6   91.1   4.2-e114 NS3c | non-structural protein 3c
+    ACT10888.1        236    16-230         1   25002-25667    1   3  0  N   79.7   88.2   91.1   4.5-e107 NS3c | non-structural protein 3c
+    ACT10919.1        237    16-231         1   25002-25667    1   3  0  N   79.7   86.9   91.1   1.6-e108 NS3c | non-structural protein 3c
+    AEK25524.1        237    16-231         1   25002-25667    1   3  0  N   80.1   88.7   91.1   7.1-e112 NS3c | non-structural protein 3c
+    AAQ17222.1        250    19-246         1   25014-25695    2   0  1  N   92.8   96.4   90.0   2.2-e129 NS3c | non-structural protein 3c
+    AAR88615.1        251    20-247         1   25014-25695    2   0  1  N   88.5   93.8   90.4   1.2-e122 NS3c | non-structural protein 3c
+    AEE69325.1        244    20-237         1   25014-25667    1   3  0  N   95.8   98.1   89.3   8.4-e133 NS3c | non-structural protein 3c
+    AFH55114.1        251    20-247         1   25014-25695    2   0  1  N   89.8   94.7   90.4   1.5-e125 NS3c | non-structural protein 3c
+    ADB28910.1        244    20-237         1   25014-25667    1   3  0  N   94.0   96.3   89.3   5.9-e130 NS3c | non-structural protein 3c
+    BAJ08258.1        237    14-231         1   25014-25667    1   3  0  N   79.8   87.6   91.9   9.9-e108 NS3c | non-structural protein 3c
+    AEQ61970.1        244    20-237         1   25014-25667    1   3  0  N   95.4   98.1   89.3   2.6-e132 NS3c | non-structural protein 3c
+    ACY69068.1        237    20-231         1   25014-25667    1   3  0  N   81.6   88.9   89.4   1.2-e110 NS3c | non-structural protein 3c
+    AFG19741.1        251    20-247         1   25014-25695    2   0  1  N   95.5   97.7   90.4   6.9-e132 NS3c | non-structural protein 3c
+    AFG19732.1        244    21-237         1   25017-25667    1   3  0  N   94.9   97.6   88.9   3.4-e131 NS3c | non-structural protein 3c
+        found 1 gene
+
+    found 21 permutations for gene E
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAS68509.1        82     14-82          1   25719-25925    1   3  0  N   95.6   100.0  84.1   2.1-e037 E | envelope protein
+    AEK25525.1        82     1-82           1   25676-25925    2   0  1  N   81.5   93.4   92.6   8.9-e034 E | envelope protein
+    YP_004070197.1    82     1-82           1   25676-25925    2   0  1  N   81.5   93.4   92.6   5.8-e033 E | envelope protein
+    ABI14449.1        82     1-82           1   25676-25925    2   0  1  N   81.5   89.4   92.6   7.0-e032 E | envelope protein
+    BAJ08259.1        82     1-82           1   25676-25925    2   0  1  N   78.9   89.4   92.6   4.5-e031 E | envelope protein
+    AFG19731.1        82     14-82          1   25719-25925    1   3  0  N   100.0  100.0  84.1   6.7-e039 E | envelope protein
+    AFH55124.1        82     14-82          1   25719-25925    1   3  0  N   81.1   94.2   84.1   1.2-e033 E | envelope protein
+    ACR10354.1        82     1-82           1   25676-25925    2   0  1  N   78.9   93.4   92.6   1.1-e032 E | envelope protein
+    ACT10963.1        82     1-82           1   25676-25925    2   0  1  N   81.5   93.4   92.6   1.2-e033 E | envelope protein
+    ABK79900.1        82     14-82          1   25719-25925    1   3  0  N   98.5   98.5   84.1   5.9-e038 E | envelope protein
+    ACR10425.1        82     1-82           1   25676-25925    2   0  1  N   78.9   90.7   92.6   2.8-e032 E | envelope protein
+    ADL71479.1        82     1-82           1   25676-25925    2   0  1  N   78.9   92.1   92.6   2.0-e032 E | envelope protein
+    AFH55115.1        82     14-82          1   25719-25925    1   3  0  N   81.1   94.2   84.1   1.2-e033 E | envelope protein
+    ACR10372.1        82     14-82          1   25719-25925    1   3  0  N   78.2   91.3   84.1   2.0-e032 E | envelope protein
+    AAR88616.1        82     14-82          1   25719-25925    1   3  0  N   85.5   94.2   84.1   6.6-e034 E | envelope protein
+    AAQ17223.1        82     14-82          1   25719-25925    1   3  0  N   86.9   94.2   84.1   4.8-e034 E | envelope protein
+    AFG19743.1        82     14-82          1   25719-25925    1   3  0  N   98.5   98.5   84.1   4.3-e038 E | envelope protein
+    ACT10909.1        82     1-82           1   25676-25925    2   0  1  N   78.9   94.7   92.6   2.3-e033 E | envelope protein
+    ADL71448.1        82     14-82          1   25719-25925    1   3  0  N   79.7   94.2   84.1   3.1-e033 E | envelope protein
+    ACT10920.1        82     14-82          1   25719-25925    1   3  0  N   81.1   94.2   84.1   1.2-e033 E | envelope protein
+    ACT10941.1        82     1-82           1   25676-25925    2   0  1  N   82.8   93.4   92.6   3.1-e033 E | envelope protein
+        found 1 gene
+
+    found 38 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACS44222.1        261    1-261          1   25939-26726    2   0  1  N   91.6   95.8   100.0  4.7-e134 M | membrane protein
+    ACJ63236.1        260    1-260          1   25939-26726    2   0  1  N   89.2   96.5   99.2   3.4-e132 M | membrane protein
+    AEE69327.1        262    1-262          1   25939-26726    2   0  1  N   87.0   95.0   99.2   3.4-e129 M | membrane protein
+    ADB28912.1        267    1-267          1   25939-26726    2   0  1  N   86.1   94.3   99.2   1.1-e127 M | membrane protein
+    ADU17730.1        260    1-260          1   25939-26726    2   0  1  N   88.1   95.7   99.2   6.3-e131 M | membrane protein
+    AEQ61972.1        261    1-261          1   25939-26726    2   0  1  N   88.5   96.1   99.2   1.5-e132 M | membrane protein
+    ADL71480.1        262    1-262          1   25939-26726    2   0  1  N   90.1   94.3   100.0  1.8-e133 M | membrane protein
+    AAR11075.1        263    3-263          1   25942-26726    2   0  1  N   86.5   95.0   98.4   1.1-e127 M | membrane protein
+    AAQ17224.1        262    3-262          1   25942-26726    2   0  1  N   83.8   91.9   98.4   1.2-e123 M | membrane protein
+    ACR10337.1        264    4-264          1   25945-26726    2   0  1  N   89.7   93.9   98.8   6.9-e130 M | membrane protein
+    ACT10964.1        262    4-262          1   25945-26726    2   0  1  N   89.6   93.4   98.8   2.8-e131 M | membrane protein
+    ACT10975.1        264    4-264          1   25945-26726    2   0  1  N   87.8   92.7   98.8   4.4-e129 M | membrane protein
+    ADO39854.1        263    4-263          1   25945-26726    2   0  1  N   90.4   94.2   98.8   1.5-e132 M | membrane protein
+    ADO39822.1        263    4-263          1   25945-26726    2   0  1  N   90.0   94.2   98.8   2.0-e132 M | membrane protein
+    AEK25526.1        263    4-263          1   25945-26726    2   0  1  N   89.6   94.2   98.8   9.7-e132 M | membrane protein
+    ACT10931.1        263    4-263          1   25945-26726    2   0  1  N   89.3   94.6   98.8   3.4-e132 M | membrane protein
+    ACT10921.1        263    4-263          1   25945-26726    2   0  1  N   90.0   93.8   98.8   2.2-e131 M | membrane protein
+    ACT10942.1        263    4-263          1   25945-26726    2   0  1  N   89.3   93.5   98.8   6.9-e130 M | membrane protein
+    ACR46125.1        264    4-264          1   25945-26726    2   0  1  N   87.8   93.9   98.8   1.2-e129 M | membrane protein
+    BAC01158.1        263    4-263          1   25945-26726    2   0  1  N   90.0   95.4   98.8   2.0-e132 M | membrane protein
+    BAC01156.1        262    4-262          1   25945-26726    2   0  1  N   89.2   93.4   98.8   1.3-e131 M | membrane protein
+    ADL71449.1        263    4-263          1   25945-26726    2   0  1  N   87.4   92.7   98.8   1.7-e128 M | membrane protein
+    ADO39844.1        264    4-264          1   25945-26726    2   0  1  N   88.5   93.5   98.8   5.3-e130 M | membrane protein
+    YP_004070198.1    262    4-262          1   25945-26726    2   0  1  N   92.3   96.1   98.8   5.1-e136 M | membrane protein
+    ADO39833.1        263    4-263          1   25945-26726    2   0  1  N   88.1   93.1   98.8   1.2-e129 M | membrane protein
+    ABI14450.1        263    4-263          1   25945-26726    2   0  1  N   89.6   93.8   98.8   1.1-e130 M | membrane protein
+    ACR46132.1        264    4-264          1   25945-26726    2   0  1  N   87.0   93.5   98.8   3.7-e128 M | membrane protein
+    ACT10881.1        263    4-263          1   25945-26726    2   0  1  N   90.4   94.6   98.8   6.8-e133 M | membrane protein
+    ADL71460.1        263    4-263          1   25945-26726    2   0  1  N   89.3   93.5   98.8   4.8-e131 M | membrane protein
+    ACR10355.1        264    4-264          1   25945-26726    2   0  1  N   87.4   92.7   98.8   2.4-e127 M | membrane protein
+    AAZ86082.1        262    4-262          1   25945-26726    2   0  1  N   91.5   94.2   98.8   1.1-e133 M | membrane protein
+    ACT10910.1        262    4-262          1   25945-26726    2   0  1  N   91.1   95.0   98.8   4.7-e134 M | membrane protein
+    ACT10900.1        264    4-264          1   25945-26726    2   0  1  N   89.7   95.8   98.8   7.5-e132 M | membrane protein
+    ACT10890.1        262    4-262          1   25945-26726    2   0  1  N   88.5   93.8   98.8   1.5-e129 M | membrane protein
+    ADL71502.1        264    4-264          1   25945-26726    2   0  1  N   88.5   93.9   98.8   2.4-e130 M | membrane protein
+    AEK25515.1        263    4-263          1   25945-26726    2   0  1  N   90.0   94.2   98.8   1.3-e131 M | membrane protein
+    BAJ08260.1        261    5-261          1   25948-26726    2   0  1  N   88.4   92.3   98.4   1.4-e127 M | membrane protein
+    ACR10373.1        263    5-263          1   25948-26726    2   0  1  N   90.0   94.2   98.4   2.8-e131 M | membrane protein
+        found 1 gene
+
+    found 40 permutations for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAC01157.1        377    1-377          1   26742-27869    1   3  0  N   91.7   94.6   100.0  0        N | nucleocapsid protein
+    ADC34648.1        375    1-375          1   26742-27869    1   3  0  N   91.5   94.4   100.0  0        N | nucleocapsid protein
+    ADO39823.1        377    1-377          1   26742-27869    1   3  0  N   90.7   95.2   100.0  0        N | nucleocapsid protein
+    ADO39834.1        377    1-377          1   26742-27869    1   3  0  N   91.5   94.4   100.0  0        N | nucleocapsid protein
+    ACR10374.1        376    1-376          1   26742-27869    1   3  0  N   90.7   94.1   100.0  0        N | nucleocapsid protein
+    AAZ86083.1        376    1-376          1   26742-27869    1   3  0  N   89.6   93.8   100.0  0        N | nucleocapsid protein
+    ACT10943.1        377    1-377          1   26742-27869    1   3  0  N   92.8   95.2   100.0  0        N | nucleocapsid protein
+    BAC65328.1        382    1-382          1   26742-27869    1   3  0  N   77.4   87.4   100.0  0        N | nucleocapsid protein
+    ACS44223.1        372    1-372          1   26742-27869    1   3  0  N   89.6   93.8   100.0  0        N | nucleocapsid protein
+    ACT10882.1        373    1-373          1   26742-27869    1   3  0  N   90.9   93.8   100.0  0        N | nucleocapsid protein
+    ADC34646.1        376    1-376          1   26742-27869    1   3  0  N   90.7   93.8   100.0  0        N | nucleocapsid protein
+    ADL71481.1        379    1-379          1   26742-27869    1   3  0  N   90.2   94.7   100.0  0        N | nucleocapsid protein
+    ACT10911.1        375    1-375          1   26742-27869    1   3  0  N   90.9   95.2   100.0  0        N | nucleocapsid protein
+    ADC34668.1        376    1-376          1   26742-27869    1   3  0  N   89.6   93.6   100.0  0        N | nucleocapsid protein
+    BAJ08261.1        376    1-376          1   26742-27869    1   3  0  N   90.4   94.1   100.0  0        N | nucleocapsid protein
+    BAC01159.1        377    1-377          1   26742-27869    1   3  0  N   93.1   95.4   100.0  0        N | nucleocapsid protein
+    ACT10976.1        377    1-377          1   26742-27869    1   3  0  N   91.7   95.2   100.0  0        N | nucleocapsid protein
+    ACR10356.1        372    1-372          1   26742-27869    1   3  0  N   87.7   91.7   100.0  0        N | nucleocapsid protein
+    ADL71461.1        377    1-377          1   26742-27869    1   3  0  N   90.9   95.2   100.0  0        N | nucleocapsid protein
+    ADL71450.1        377    1-377          1   26742-27869    1   3  0  N   90.9   94.4   100.0  0        N | nucleocapsid protein
+    ADL71503.1        377    1-377          1   26742-27869    1   3  0  N   93.6   96.2   100.0  0        N | nucleocapsid protein
+    ACR10338.1        377    1-377          1   26742-27869    1   3  0  N   91.7   96.0   100.0  0        N | nucleocapsid protein
+    YP_004070199.1    377    1-377          1   26742-27869    1   3  0  N   92.5   94.9   100.0  0        N | nucleocapsid protein
+    ADO39845.1        376    1-376          1   26742-27869    1   3  0  N   90.4   94.4   100.0  0        N | nucleocapsid protein
+    ACT10891.1        374    1-374          1   26742-27869    1   3  0  N   89.3   92.5   100.0  0        N | nucleocapsid protein
+    AEK25516.1        377    1-377          1   26742-27869    1   3  0  N   91.7   95.2   100.0  0        N | nucleocapsid protein
+    ACT10932.1        375    1-375          1   26742-27869    1   3  0  N   90.7   93.8   100.0  0        N | nucleocapsid protein
+    ACR46133.1        375    1-375          1   26742-27869    1   3  0  N   90.4   94.6   100.0  0        N | nucleocapsid protein
+    ACT10965.1        377    1-377          1   26742-27869    1   3  0  N   90.4   94.1   100.0  0        N | nucleocapsid protein
+    ADB28913.1        382    1-382          1   26742-27869    1   3  0  N   77.7   87.9   100.0  0        N | nucleocapsid protein
+    AEK25527.1        377    1-377          1   26742-27869    1   3  0  N   90.9   95.4   100.0  0        N | nucleocapsid protein
+    ABI14451.1        376    1-376          1   26742-27869    1   3  0  N   90.9   94.6   100.0  0        N | nucleocapsid protein
+    ACT10901.1        377    1-377          1   26742-27869    1   3  0  N   90.7   94.6   100.0  0        N | nucleocapsid protein
+    AFG19745.1        382    1-382          1   26742-27869    1   3  0  N   77.2   87.9   100.0  0        N | nucleocapsid protein
+    AAQ17225.1        382    1-382          1   26742-27869    1   3  0  N   75.3   87.1   100.0  0        N | nucleocapsid protein
+    ADC34664.1        376    1-376          1   26742-27869    1   3  0  N   92.0   94.4   100.0  0        N | nucleocapsid protein
+    ADO39855.1        377    1-377          1   26742-27869    1   3  0  N   91.5   95.2   100.0  0        N | nucleocapsid protein
+    ADL71492.1        377    1-377          1   26742-27869    1   3  0  N   91.7   94.6   100.0  0        N | nucleocapsid protein
+    ACT10922.1        377    1-377          1   26742-27869    1   3  0  N   91.5   95.7   100.0  0        N | nucleocapsid protein
+    BAC01120.1        377    1-377          1   26742-27869    1   3  0  N   90.7   95.2   100.0  0        N | nucleocapsid protein
+        found 1 gene
+
+    found 9 permutations for gene NS7a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACR10375.1        101    1-100          1   27877-28176    1   1  0  N   92.0   95.0   99.0   7.7-e052 NS7a | non-structural protein 7a
+    AFG19746.1        101    1-100          1   27877-28176    1   1  0  N   79.0   86.0   99.0   1.1-e042 NS7a | non-structural protein 7a
+    AAQ17226.1        101    1-101          1   27877-28179    1   1  0  N   78.2   86.1   100.0  3.7-e042 NS7a | non-structural protein 7a
+    ACR46146.1        101    1-101          1   27877-28179    1   1  0  N   95.0   97.0   100.0  5.3-e054 NS7a | non-structural protein 7a
+    ACR46153.1        101    1-101          1   27877-28179    1   1  0  N   95.0   97.0   100.0  1.6-e054 NS7a | non-structural protein 7a
+    YP_004070200.1    101    1-101          1   27877-28179    1   1  0  N   97.0   98.0   100.0  6.2-e055 NS7a | non-structural protein 7a
+    ADO39835.1        101    1-101          1   27877-28179    1   1  0  N   94.0   96.0   100.0  1.3-e053 NS7a | non-structural protein 7a
+    ADL71451.1        96     1-96           1   27877-28179    1   1  0  N   89.1   90.0   100.0  6.0-e047 NS7a | non-structural protein 7a
+    ACT10892.1        101    1-101          1   27877-28179    1   1  0  N   93.0   96.0   100.0  6.3-e053 NS7a | non-structural protein 7a
+        found 1 gene
+
+    found 40 permutations for gene NS7b
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACT10913.1        204    1-173          1   28187-28606    1   2  0  N   65.3   69.9   84.8   6.3-e069 NS7b | non-structural protein 7b
+    ACT10903.1        206    1-182          1   28187-28642    1   2  0  N   63.2   70.2   88.3   1.2-e070 NS7b | non-structural protein 7b
+    ACS44225.1        206    1-182          1   28187-28642    1   2  0  N   62.7   69.7   88.3   4.4-e068 NS7b | non-structural protein 7b
+    ACR46154.1        206    1-182          1   28187-28642    1   2  0  N   65.4   71.3   88.3   6.2-e073 NS7b | non-structural protein 7b
+    ACT10893.1        206    1-182          1   28187-28642    1   2  0  N   63.7   70.2   88.3   4.0-e072 NS7b | non-structural protein 7b
+    ADO39825.1        206    1-182          1   28187-28642    1   2  0  N   64.8   70.2   88.3   1.6-e072 NS7b | non-structural protein 7b
+    ACT10884.1        206    1-182          1   28187-28642    1   2  0  N   63.2   70.8   88.3   1.5-e071 NS7b | non-structural protein 7b
+    YP_004070201.1    206    1-182          1   28187-28642    1   2  0  N   65.9   71.8   88.3   2.1-e074 NS7b | non-structural protein 7b
+    ACT10978.1        206    1-182          1   28187-28642    1   2  0  N   65.4   71.3   88.3   3.0-e072 NS7b | non-structural protein 7b
+    ADO39847.1        206    1-182          1   28187-28642    1   2  0  N   65.9   71.8   88.3   1.2-e072 NS7b | non-structural protein 7b
+    BAJ08263.1        206    1-182          1   28187-28642    1   2  0  N   63.7   70.8   88.3   5.8-e070 NS7b | non-structural protein 7b
+    AAZ86085.1        206    1-182          1   28187-28642    1   2  0  N   62.1   68.6   88.3   1.3-e068 NS7b | non-structural protein 7b
+    ACR10358.1        206    1-182          1   28187-28642    1   2  0  N   62.1   69.7   88.3   5.0-e069 NS7b | non-structural protein 7b
+    ADL71483.1        206    1-182          1   28187-28642    1   2  0  N   63.7   71.8   88.3   2.2-e072 NS7b | non-structural protein 7b
+    ACR10376.1        206    1-182          1   28187-28642    1   2  0  N   64.3   71.3   88.3   7.5-e072 NS7b | non-structural protein 7b
+    ABG25963.1        206    1-182          1   28187-28642    1   2  0  N   63.7   70.2   88.3   1.5-e071 NS7b | non-structural protein 7b
+    ACR46147.1        206    1-182          1   28187-28642    1   2  0  N   65.9   71.8   88.3   2.1-e074 NS7b | non-structural protein 7b
+    ABG25957.1        205    1-181          1   28187-28642    1   2  0  N   63.7   70.2   88.2   5.8-e068 NS7b | non-structural protein 7b
+    ACT10945.1        206    1-182          1   28187-28642    1   2  0  N   65.4   72.4   88.3   5.2-e074 NS7b | non-structural protein 7b
+    AEK25518.1        206    1-182          1   28187-28642    1   2  0  N   64.8   70.2   88.3   1.0-e071 NS7b | non-structural protein 7b
+    ADO39857.1        206    1-182          1   28187-28642    1   2  0  N   62.7   68.6   88.3   2.0-e069 NS7b | non-structural protein 7b
+    ACT10967.1        206    1-182          1   28187-28642    1   2  0  N   63.7   71.3   88.3   3.8-e071 NS7b | non-structural protein 7b
+    ADL71452.1        205    1-181          1   28187-28642    1   2  0  N   61.0   68.1   88.2   8.4-e066 NS7b | non-structural protein 7b
+    ADL71505.1        206    1-182          1   28187-28642    1   2  0  N   67.5   72.4   88.3   8.1-e075 NS7b | non-structural protein 7b
+    ABG25961.1        206    1-182          1   28187-28642    1   2  0  N   64.3   72.4   88.3   6.2-e073 NS7b | non-structural protein 7b
+    ABG25959.1        206    1-182          1   28187-28642    1   2  0  N   63.7   69.7   88.3   2.9-e069 NS7b | non-structural protein 7b
+    ADL71463.1        206    1-182          1   28187-28642    1   2  0  N   62.7   70.8   88.3   6.6-e071 NS7b | non-structural protein 7b
+    ACR46142.1        206    1-182          1   28187-28642    1   2  0  N   62.7   69.7   88.3   9.2-e069 NS7b | non-structural protein 7b
+    AEK25529.1        206    1-182          1   28187-28642    1   2  0  N   65.4   71.8   88.3   1.2-e072 NS7b | non-structural protein 7b
+    ABG25955.1        206    1-182          1   28187-28642    1   2  0  N   64.8   71.8   88.3   2.4-e073 NS7b | non-structural protein 7b
+    ACT10934.1        206    1-182          1   28187-28642    1   2  0  N   63.7   68.6   88.3   2.0-e069 NS7b | non-structural protein 7b
+    ADO39836.1        205    1-181          1   28187-28642    1   2  0  N   62.7   70.2   88.2   9.3-e069 NS7b | non-structural protein 7b
+    AEQ61975.1        213    4-189          1   28193-28633    1   2  0  N   41.9   59.6   87.3   9.6-e041 NS7b | non-structural protein 7b
+    AFG19727.1        213    4-189          1   28193-28633    1   2  0  N   42.4   60.2   87.3   7.1-e041 NS7b | non-structural protein 7b
+    AEE69330.1        213    4-189          1   28193-28633    1   2  0  N   42.4   60.2   87.3   1.5-e041 NS7b | non-structural protein 7b
+    ADB10857.1        213    4-189          1   28193-28633    1   2  0  N   42.4   59.6   87.3   1.5-e041 NS7b | non-structural protein 7b
+    ADB28915.1        213    4-189          1   28193-28633    1   2  0  N   41.9   59.1   87.3   7.1-e041 NS7b | non-structural protein 7b
+    AAQ17227.1        213    4-189          1   28193-28633    1   2  0  N   44.6   61.2   87.3   6.7-e045 NS7b | non-structural protein 7b
+    AFG19747.1        213    4-189          1   28193-28633    1   2  0  N   43.5   60.7   87.3   6.9-e043 NS7b | non-structural protein 7b
+    ACJ63239.1        162    4-138          1   28193-28633    1   2  0  N   40.1   59.2   83.3   3.4-e029 NS7b | non-structural protein 7b
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|384038902|gb|JN63    28984      6            5      37719          12567           94.3             98.2          100.0   cov_g1a_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_384038902.1     92.6   97.8   100.0  0.0   0.0   0.0   313..12168       3951   3965   AAY32595.1        Pp1a | ORF1a polyprotein
+gi_384038902.1.11  84.2   98.7   100.0  0.0   0.0   0.0   12109..12165     19     19     sp_Q98VG9_11      nsp11
+gi_384038902.2     95.1   98.5   100.0  0.0   0.0   0.0   313..12138       6618   6632   AAY32594.1        Pp1ab | ORF1ab polyprotein
+                                                          12138..20168                                     
+gi_384038902.2.1   96.4   99.3   100.0  0.0   0.0   0.0   313..642         110    110    sp_Q98VG9_1       nsp1
+gi_384038902.2.2   95.7   99.1   100.0  0.0   0.0   0.0   643..2949        769    769    sp_Q98VG9_2       nsp2
+gi_384038902.2.3   84.2   91.6   100.0  0.0   0.0   0.0   2950..7278       1443   1534   sp_Q98VG9_3       nsp3
+gi_384038902.2.4   93.9   98.8   100.0  0.0   0.0   0.0   7279..8748       490    490    sp_Q98VG9_4       nsp4
+gi_384038902.2.5   98.0   99.6   100.0  0.0   0.0   0.0   8749..9654       302    302    sp_Q98VG9_5       3C-like proteinase nsp5
+gi_384038902.2.6   95.2   98.4   100.0  0.0   0.0   0.0   9655..10536      294    294    sp_Q98VG9_6       nsp6
+gi_384038902.2.7   98.8   99.7   100.0  0.0   0.0   0.0   10537..10785     83     83     sp_Q98VG9_7       nsp7
+gi_384038902.2.8   99.0   100.0  100.0  0.0   0.0   0.0   10786..11370     195    195    sp_Q98VG9_8       nsp8
+gi_384038902.2.9   98.2   99.1   100.0  0.0   0.0   0.0   11371..11703     111    111    sp_Q98VG9_9       nsp9
+gi_384038902.2.10  97.8   99.8   100.0  0.0   0.0   0.0   11704..12108     135    135    gb_ABI14447.1_10  nsp10
+gi_384038902.2.11  97.5   99.4   100.0  0.0   0.0   0.0   12109..12138     929    929    gb_AAY32594.1_12  RNA-directed RNA polymerase nsp12
+                                                          12138..14894                                     
+gi_384038902.2.12  99.7   100.0  100.0  0.0   0.0   0.0   14895..16691     599    599    sp_Q98VG9_13      Helicase nsp13
+gi_384038902.2.13  99.8   100.0  100.0  0.0   0.0   0.0   16692..18248     519    519    sp_Q98VG9_14      Exoribonuclease nsp14
+gi_384038902.2.14  98.2   99.6   100.0  0.0   0.0   0.0   18249..19265     339    339    sp_Q98VG9_15      Uridylate-specific endoribonuclease nsp15
+gi_384038902.2.15  99.3   99.9   100.0  0.0   0.0   0.0   19266..20165     300    300    sp_Q98VG9_16      2'-O-methyl transferase nsp16
+gi_384038902.3     95.4   98.1   100.0  0.0   0.0   0.0   20165..24517     1450   1454   AFG19742.1        S | spike protein
+gi_384038902.4     97.2   98.6   100.0  0.0   0.0   0.0   24602..24817     71     71     ADB10850.1        NS3a | non-structural protein 3a
+gi_384038902.5     68.0   75.0   97.2   0.0   2.8   0.0   24762..24995     77     71     AFG19740.1        NS3b | non-structural protein 3b
+                    stop codons embedded in CDS at 24927..24929 and 24930..24932
+gi_384038902.6     98.1   99.5   86.9   7.8   0.0   5.3   25014..25652     212    244    AEE69325.1        NS3c | non-structural protein 3c
+                    could not find valid start codon
+gi_384038902.7     100.0  100.0  84.1   15.9  0.0   0.0   25719..25928     69     82     AFG19731.1        E | envelope protein
+                    could not find valid start codon
+gi_384038902.8     92.0   96.8   100.0  0.0   0.0   0.0   25939..26565     263    262    YP_004070198.1    M | membrane protein
+                                                          26565..26729                                     
+                    frameshift in genome at or near position 26565..26565 (+1=>+3)
+gi_384038902.9     93.6   97.6   100.0  0.0   0.0   0.0   26742..27872     376    377    ADL71503.1        N | nucleocapsid protein
+gi_384038902.10    97.0   98.0   100.0  0.0   0.0   0.0   27877..28182     101    101    YP_004070200.1    NS7a | non-structural protein 7a
+gi_384038902.11    62.6   71.7   99.5   0.0   0.0   0.5   28187..28690     167    206    ADL71505.1        NS7b | non-structural protein 7b
+                    stop codons embedded in CDS at 28610..28612 and 28658..28660
+
+
+genomic sequence gi|509265008|gb|KC189944.1|, length=27953
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 24 permutations for gene Pp1a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABI14447.1        4026   705-4026       1   2426-12619     4   2  0  N   45.9   63.1   70.0   0        Pp1a | ORF1a polyprotein
+    ADL71474.1        4025   387-4025       1   1478-12619     5   2  0  N   45.8   62.9   71.4   0        Pp1a | ORF1a polyprotein
+    ACT10885.1        4029   705-4029       1   2426-12619     4   2  0  N   46.3   63.0   69.9   0        Pp1a | ORF1a polyprotein
+    ADO39848.1        4029   387-4029       1   1478-12619     5   2  0  N   45.8   62.8   70.7   0        Pp1a | ORF1a polyprotein
+    ADL71484.1        4029   387-4029       1   1478-12619     4   2  0  N   45.6   62.6   70.2   0        Pp1a | ORF1a polyprotein
+    ACT10904.1        4031   387-4031       1   1478-12619     4   2  0  N   45.7   63.3   70.2   0        Pp1a | ORF1a polyprotein
+    ACT10894.1        4030   387-4030       1   1478-12619     6   2  0  N   45.5   62.9   71.8   0        Pp1a | ORF1a polyprotein
+    ACS44216.1        4034   387-4034       1   1478-12619     5   2  0  N   45.7   62.9   71.0   0        Pp1a | ORF1a polyprotein
+    AAY32595.1        3965   539-3965       1   1931-12619     5   2  0  N   45.5   62.6   72.1   0        Pp1a | ORF1a polyprotein
+    ACT10925.1        4025   387-4025       1   1478-12619     5   2  0  N   45.6   62.5   71.2   0        Pp1a | ORF1a polyprotein
+    ACT10957.1        4029   387-4029       1   1478-12619     4   2  0  N   46.1   63.0   69.8   0        Pp1a | ORF1a polyprotein
+    ABX60143.1        4031   705-4031       1   2426-12619     4   2  0  N   46.1   62.9   69.5   0        Pp1a | ORF1a polyprotein
+    AEK25509.1        4031   539-4031       1   1931-12619     5   2  0  N   46.1   63.1   70.6   0        Pp1a | ORF1a polyprotein
+    AFG19737.1        4018   705-4018       1   2426-12619     4   2  0  N   45.5   62.3   70.0   0        Pp1a | ORF1a polyprotein
+    ADB28905.1        4016   705-4016       1   2426-12619     5   2  0  N   45.7   62.5   70.0   0        Pp1a | ORF1a polyprotein
+    AFG19736.1        4017   705-4017       1   2426-12619     4   2  0  N   45.3   62.3   69.4   0        Pp1a | ORF1a polyprotein
+    ACT10935.1        4035   387-4035       1   1478-12619     4   2  0  N   46.1   63.3   69.3   0        Pp1a | ORF1a polyprotein
+    ACT10968.1        4027   705-4027       1   2426-12619     4   2  0  N   46.4   63.2   69.1   0        Pp1a | ORF1a polyprotein
+    ADL71495.1        4028   387-4028       1   1478-12619     5   2  0  N   46.0   63.0   70.5   0        Pp1a | ORF1a polyprotein
+    ADO39826.1        4028   387-4028       1   1478-12619     4   2  0  N   46.0   63.1   69.4   0        Pp1a | ORF1a polyprotein
+    AEK25519.1        4025   387-4025       1   1478-12619     5   2  0  N   46.6   63.4   70.0   0        Pp1a | ORF1a polyprotein
+    ADO39837.1        4024   386-4024       1   1475-12619     6   2  0  N   45.8   63.2   71.1   0        Pp1a | ORF1a polyprotein
+    ADL71453.1        4027   705-4027       1   2426-12619     4   2  0  N   46.5   63.3   69.1   0        Pp1a | ORF1a polyprotein
+    ACT10914.1        4027   387-4027       1   1478-12619     7   2  0  N   46.1   63.1   71.1   0        Pp1a | ORF1a polyprotein
+        found 1 gene
+
+    found 20 permutations for gene Pp1ab
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ABI14446.1        6693   705-6691       1   2426-20601     5   0  1  N   59.2   73.8   81.9   0        Pp1ab | ORF1ab polyprotein
+    ADO39849.1        6696   387-6694       1   1478-20601     6   0  1  N   59.3   73.8   82.1   0        Pp1ab | ORF1ab polyprotein
+    ACT10886.1        6696   705-6694       1   2426-20601     5   0  1  N   59.4   73.8   81.6   0        Pp1ab | ORF1ab polyprotein
+    ACT10905.1        6698   387-6696       1   1478-20601     5   0  1  N   59.3   74.1   81.9   0        Pp1ab | ORF1ab polyprotein
+    ADL71475.1        6692   387-6690       1   1478-20601     6   0  1  N   59.3   73.9   82.6   0        Pp1ab | ORF1ab polyprotein
+    ACT10926.1        6692   387-6690       1   1478-20601     6   0  1  N   58.9   73.4   82.6   0        Pp1ab | ORF1ab polyprotein
+    AAY32594.1        6632   539-6631       1   1931-20604     6   0  1  N   58.7   73.4   83.3   0        Pp1ab | ORF1ab polyprotein
+    YP_004070193.1    6709   387-6708       1   1478-20604     8   0  1  N   58.7   73.6   82.8   0        Pp1ab | ORF1ab polyprotein
+    ABX60144.1        6698   705-6696       1   2426-20601     5   0  1  N   59.5   74.0   81.6   0        Pp1ab | ORF1ab polyprotein
+    ACT10958.1        6696   387-6694       1   1478-20601     5   0  1  N   59.3   73.8   81.7   0        Pp1ab | ORF1ab polyprotein
+    AEK25510.1        6698   539-6696       1   1931-20601     6   0  1  N   59.3   73.8   82.2   0        Pp1ab | ORF1ab polyprotein
+    ADB28906.1        6683   705-6681       1   2426-20601     7   0  1  N   59.7   74.4   81.9   0        Pp1ab | ORF1ab polyprotein
+    AFG19738.1        6685   705-6684       1   2426-20604     5   0  1  N   59.0   73.7   81.9   0        Pp1ab | ORF1ab polyprotein
+    AFG19735.1        6684   705-6683       1   2426-20604     5   0  1  N   59.0   73.7   81.5   0        Pp1ab | ORF1ab polyprotein
+    ACT10936.1        6702   387-6700       1   1478-20601     5   0  1  N   59.4   74.0   81.4   0        Pp1ab | ORF1ab polyprotein
+    ADO39838.1        6691   386-6689       1   1475-20601     7   0  1  N   59.2   73.9   82.5   0        Pp1ab | ORF1ab polyprotein
+    ADO39827.1        6695   387-6693       1   1478-20601     5   0  1  N   59.3   73.9   81.5   0        Pp1ab | ORF1ab polyprotein
+    ADL71454.1        6694   705-6692       1   2426-20601     5   0  1  N   59.8   74.3   81.3   0        Pp1ab | ORF1ab polyprotein
+    ACT10969.1        6694   705-6692       1   2426-20601     5   0  1  N   59.6   74.0   81.3   0        Pp1ab | ORF1ab polyprotein
+    AEK25520.1        6692   387-6690       1   1478-20601     6   0  1  N   59.7   74.1   81.8   0        Pp1ab | ORF1ab polyprotein
+        found 1 gene
+
+    found 43 permutations for gene S
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAQ17220.1        1453   4-1452         1   20610-24752    1   3  0  N   43.5   60.0   99.7   0        S | spike protein
+    ADO39828.1        1470   21-1469        1   20658-24752    1   3  0  N   41.6   57.9   98.5   0        S | spike protein
+    ACT10937.1        1468   21-1467        1   20658-24752    1   3  0  N   41.7   58.6   98.5   0        S | spike protein
+    AEK25511.1        1469   21-1468        1   20658-24752    1   3  0  N   41.3   57.8   98.5   0        S | spike protein
+    ABX60145.1        1464   21-1463        1   20658-24752    1   3  0  N   41.2   58.0   98.5   0        S | spike protein
+    ADO39850.1        1465   21-1464        1   20658-24752    1   3  0  N   41.2   58.2   98.5   0        S | spike protein
+    ADL71446.1        1470   21-1469        1   20658-24752    1   3  0  N   41.2   57.3   98.5   0        S | spike protein
+    AEE69322.1        1454   29-1453        1   20673-24752    1   3  0  N   44.1   61.2   98.0   0        S | spike protein
+    ACS44218.1        1453   28-1452        1   20673-24752    1   3  0  N   44.0   60.5   98.0   0        S | spike protein
+    BAA33439.1        1453   29-1452        1   20673-24752    1   3  0  N   44.0   60.7   98.0   0        S | spike protein
+    YP_004070194.1    1452   29-1451        1   20673-24752    1   3  0  N   43.9   60.3   98.0   0        S | spike protein
+    ADL71486.1        1468   37-1467        1   20697-24752    1   3  0  N   41.8   58.3   97.4   0        S | spike protein
+    ACT10916.1        1472   37-1471        1   20697-24752    1   3  0  N   40.8   57.1   97.4   0        S | spike protein
+    ADO39817.1        1467   37-1466        1   20697-24752    1   3  0  N   41.4   58.5   97.4   0        S | spike protein
+    ADC35472.1        1466   37-1465        1   20697-24752    1   3  0  N   42.1   58.4   97.4   0        S | spike protein
+    ADL71476.1        1469   37-1468        1   20697-24752    1   3  0  N   41.7   58.0   97.4   0        S | spike protein
+    ACT10970.1        1468   37-1467        1   20697-24752    1   3  0  N   41.4   58.6   97.4   0        S | spike protein
+    ACT10896.1        1468   37-1467        1   20697-24752    1   3  0  N   41.5   58.0   97.4   0        S | spike protein
+    ABI14448.1        1467   36-1466        1   20697-24752    1   3  0  N   41.3   57.6   97.5   0        S | spike protein
+    ACT10887.1        1465   37-1464        1   20697-24752    1   3  0  N   41.5   57.7   97.4   0        S | spike protein
+    ACT10948.1        1467   37-1466        1   20697-24752    1   3  0  N   41.4   58.4   97.4   0        S | spike protein
+    ACR10422.1        1470   37-1469        1   20697-24752    1   3  0  N   41.6   58.4   97.4   0        S | spike protein
+    BAC05492.1        1457   37-1456        1   20697-24752    1   3  0  N   42.2   58.6   97.4   0        S | spike protein
+    ADL71497.1        1467   37-1466        1   20697-24752    1   3  0  N   41.5   58.7   97.4   0        S | spike protein
+    BAA06805.1        1464   37-1463        1   20697-24752    1   3  0  N   41.3   58.3   97.4   0        S | spike protein
+    AEK25521.1        1466   36-1465        1   20697-24752    1   3  0  N   41.1   57.5   97.5   0        S | spike protein
+    ACT10906.1        1466   36-1465        1   20697-24752    1   3  0  N   41.4   58.2   97.5   0        S | spike protein
+    ADO39839.1        1467   37-1466        1   20697-24752    1   3  0  N   41.6   57.7   97.4   0        S | spike protein
+    ACT10959.1        1425   37-1424        1   20697-24752    1   3  0  N   41.1   57.9   97.4   0        S | spike protein
+    ACT10876.1        1466   37-1465        1   20697-24752    1   3  0  N   42.1   58.1   97.4   0        S | spike protein
+    ADL71455.1        1467   37-1466        1   20697-24752    1   3  0  N   41.7   58.2   97.4   0        S | spike protein
+    AAZ86077.1        1467   37-1466        1   20697-24752    1   3  0  N   41.9   58.5   97.4   0        S | spike protein
+    ACT10865.1        1468   38-1467        1   20700-24752    1   3  0  N   42.0   58.6   97.4   0        S | spike protein
+    AAP72149.1        1480   44-1479        1   20712-24752    1   3  0  N   41.5   58.0   97.0   0        S | spike protein
+    AEQ61968.1        1473   44-1472        1   20712-24752    1   3  0  N   44.3   60.2   97.0   0        S | spike protein
+    AAP72150.1        1481   100-1480       1   20799-24752    1   3  0  N   42.0   59.6   93.2   0        S | spike protein
+    AFG19742.1        1454   157-1453       1   21012-24752    1   3  0  N   46.2   63.1   89.2   0        S | spike protein
+    AFG19726.1        1453   174-1452       1   21069-24752    1   3  0  N   47.1   63.9   88.0   0        S | spike protein
+    ADB28907.1        1457   181-1456       1   21078-24752    1   3  0  N   46.3   63.0   87.5   0        S | spike protein
+    ADU17734.1        1457   181-1456       1   21078-24752    1   3  0  N   46.4   63.1   87.5   0        S | spike protein
+    ACT10927.2        1232   39-1231        1   21297-24752    1   3  0  N   44.7   61.9   96.8   0        S | spike protein
+    ADL71466.1        1200   14-1199        1   21309-24752    1   3  0  N   45.4   62.0   98.8   0        S | spike protein
+    BAJ08255.1        1222   33-1221        1   21309-24752    1   3  0  N   44.6   62.1   97.2   0        S | spike protein
+        found 1 gene
+
+    found 18 permutations for gene NS3c
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEQ61970.1        244    107-229        1   25009-25362    1   1  0  N   39.8   58.5   50.4   6.6-e016 NS3c | non-structural protein 3c
+    ACR10353.1        209    106-209        1   25021-25320    1   1  0  N   35.5   57.6   49.7   2.7-e010 NS3c | non-structural protein 3c
+    AFG19741.1        251    112-229        1   25021-25362    1   1  0  N   39.8   61.0   47.0   9.1-e017 NS3c | non-structural protein 3c
+    ACT10973.1        239    114-225        1   25042-25362    1   1  0  N   39.2   59.8   46.8   1.2-e014 NS3c | non-structural protein 3c
+    AAR88615.1        251    118-229        1   25042-25362    1   1  0  N   41.9   60.7   44.6   3.0-e016 NS3c | non-structural protein 3c
+    ACY69079.1        237    112-223        1   25042-25362    1   1  0  N   37.5   58.9   47.2   9.7-e014 NS3c | non-structural protein 3c
+    ADO39842.1        237    112-223        1   25042-25362    1   1  0  N   38.3   59.8   47.2   1.6-e014 NS3c | non-structural protein 3c
+    AEE69325.1        244    118-229        1   25042-25362    1   1  0  N   41.9   60.7   45.9   1.2-e015 NS3c | non-structural protein 3c
+    AFH55114.1        251    118-229        1   25042-25362    1   1  0  N   43.3   61.9   44.6   4.1-e016 NS3c | non-structural protein 3c
+    AAQ17222.1        250    117-228        1   25042-25362    1   1  0  N   41.9   60.7   44.8   4.0-e016 NS3c | non-structural protein 3c
+    ACT10919.1        237    112-223        1   25042-25362    1   1  0  N   39.2   57.1   47.2   1.3-e013 NS3c | non-structural protein 3c
+    AAZ86080.1        237    112-223        1   25042-25362    1   1  0  N   39.2   59.8   47.2   1.2-e014 NS3c | non-structural protein 3c
+    AEK25524.1        237    112-223        1   25042-25362    1   1  0  N   38.3   59.8   47.2   2.1-e014 NS3c | non-structural protein 3c
+    ADB28910.1        244    118-229        1   25042-25362    1   1  0  N   41.9   60.7   45.9   1.2-e015 NS3c | non-structural protein 3c
+    BAJ08258.1        237    112-223        1   25042-25362    1   1  0  N   39.2   58.9   47.2   3.9-e014 NS3c | non-structural protein 3c
+    ACY69068.1        237    112-223        1   25042-25362    1   1  0  N   40.7   60.1   47.2   2.1-e014 NS3c | non-structural protein 3c
+    AFG19732.1        244    118-229        1   25042-25362    1   1  0  N   41.9   60.7   45.9   1.2-e015 NS3c | non-structural protein 3c
+    ACT10888.1        236    122-222        1   25069-25362    1   1  0  N   42.1   61.7   42.7   4.3-e013 NS3c | non-structural protein 3c
+        found 1 gene
+
+    found 21 permutations for gene E
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAS68509.1        82     7-71           1   25367-25561    1   2  0  N   29.2   58.4   79.2   3.7-e009 E | envelope protein
+    AFG19731.1        82     7-71           1   25367-25561    1   2  0  N   29.2   58.4   79.2   5.0-e009 E | envelope protein
+    ABK79900.1        82     7-71           1   25367-25561    1   2  0  N   27.6   55.3   79.2   6.2-e008 E | envelope protein
+    AFH55115.1        82     7-71           1   25367-25561    1   2  0  N   30.7   58.4   79.2   2.4-e008 E | envelope protein
+    AFG19743.1        82     7-71           1   25367-25561    1   2  0  N   29.2   58.4   79.2   6.9-e009 E | envelope protein
+    AAR88616.1        82     7-72           1   25367-25564    1   2  0  N   33.3   59.0   80.4   2.0-e009 E | envelope protein
+    AAQ17223.1        82     7-72           1   25367-25564    1   2  0  N   33.3   62.1   80.4   6.3-e011 E | envelope protein
+    YP_004070197.1    82     9-70           1   25373-25558    1   2  0  N   29.0   58.0   75.6   1.6-e007 E | envelope protein
+    AEK25525.1        82     9-71           1   25373-25561    1   2  0  N   30.1   58.7   76.8   3.3-e008 E | envelope protein
+    ABI14449.1        82     9-71           1   25373-25561    1   2  0  N   30.1   57.1   76.8   6.2-e008 E | envelope protein
+    BAJ08259.1        82     9-71           1   25373-25561    1   2  0  N   26.9   55.5   76.8   3.6-e006 E | envelope protein
+    AFH55124.1        82     9-71           1   25373-25561    1   2  0  N   30.1   58.7   76.8   4.5-e008 E | envelope protein
+    ACR10354.1        82     9-71           1   25373-25561    1   2  0  N   30.1   58.7   76.8   4.5-e008 E | envelope protein
+    ACT10963.1        82     9-71           1   25373-25561    1   2  0  N   30.1   57.1   76.8   6.2-e008 E | envelope protein
+    ACR10425.1        82     9-71           1   25373-25561    1   2  0  N   30.1   58.7   76.8   1.3-e008 E | envelope protein
+    ADL71479.1        82     9-71           1   25373-25561    1   2  0  N   30.1   60.3   76.8   1.8-e008 E | envelope protein
+    ACR10372.1        82     9-71           1   25373-25561    1   2  0  N   28.5   58.7   76.8   6.2-e008 E | envelope protein
+    ACT10909.1        82     9-71           1   25373-25561    1   2  0  N   28.5   58.7   76.8   1.6-e007 E | envelope protein
+    ADL71448.1        82     9-71           1   25373-25561    1   2  0  N   28.5   58.7   76.8   1.2-e007 E | envelope protein
+    ACT10920.1        82     9-71           1   25373-25561    1   2  0  N   28.5   57.1   76.8   2.9-e007 E | envelope protein
+    ACT10941.1        82     9-71           1   25373-25561    1   2  0  N   28.5   57.1   76.8   4.0-e007 E | envelope protein
+        found 1 gene
+
+    found 38 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAJ08260.1        261    4-261          1   25476-26279    1   3  0  N   44.9   66.9   98.8   3.8-e074 M | membrane protein
+    ACR10337.1        264    48-264         1   25629-26279    1   3  0  N   51.3   74.7   82.1   8.2-e074 M | membrane protein
+    ACS44222.1        261    45-261         1   25629-26279    1   3  0  N   52.2   75.6   83.1   3.1-e075 M | membrane protein
+    ACT10964.1        262    46-262         1   25629-26279    1   3  0  N   51.8   74.7   82.8   9.9-e074 M | membrane protein
+    ACT10975.1        264    48-264         1   25629-26279    1   3  0  N   52.2   74.7   82.1   5.7-e074 M | membrane protein
+    ADO39854.1        263    47-263         1   25629-26279    1   3  0  N   51.8   74.7   82.5   5.5-e074 M | membrane protein
+    ADO39822.1        263    47-263         1   25629-26279    1   3  0  N   51.8   74.7   82.5   5.5-e074 M | membrane protein
+    AEK25526.1        263    47-263         1   25629-26279    1   3  0  N   50.9   74.7   82.5   1.1-e073 M | membrane protein
+    ACJ63236.1        260    44-260         1   25629-26279    1   3  0  N   54.1   75.6   83.4   8.0-e077 M | membrane protein
+    AEE69327.1        262    46-262         1   25629-26279    1   3  0  N   53.6   75.6   82.8   1.1-e076 M | membrane protein
+    ACT10931.1        263    47-263         1   25629-26279    1   3  0  N   50.9   75.2   82.5   7.5-e074 M | membrane protein
+    ACT10921.1        263    47-263         1   25629-26279    1   3  0  N   51.3   74.7   82.5   7.5-e074 M | membrane protein
+    ADB28912.1        267    51-267         1   25629-26279    1   3  0  N   54.1   75.6   81.2   1.0-e076 M | membrane protein
+    ACT10942.1        263    47-263         1   25629-26279    1   3  0  N   51.3   74.7   82.5   7.5-e074 M | membrane protein
+    ACR46125.1        264    48-264         1   25629-26279    1   3  0  N   51.3   74.7   82.1   8.2-e074 M | membrane protein
+    ADU17730.1        260    44-260         1   25629-26279    1   3  0  N   53.2   75.2   83.4   2.0-e076 M | membrane protein
+    BAC01158.1        263    47-263         1   25629-26279    1   3  0  N   51.8   74.7   82.5   5.5-e074 M | membrane protein
+    BAC01156.1        262    46-262         1   25629-26279    1   3  0  N   52.2   75.6   82.8   3.3-e075 M | membrane protein
+    ADL71449.1        263    47-263         1   25629-26279    1   3  0  N   51.3   74.3   82.5   2.7-e073 M | membrane protein
+    AAR11075.1        263    47-263         1   25629-26279    1   3  0  N   53.6   75.2   82.5   5.7-e076 M | membrane protein
+    ADO39844.1        264    48-264         1   25629-26279    1   3  0  N   51.3   74.3   82.1   3.7-e073 M | membrane protein
+    YP_004070198.1    262    46-262         1   25629-26279    1   3  0  N   50.9   74.7   82.8   9.9-e074 M | membrane protein
+    ADO39833.1        263    47-263         1   25629-26279    1   3  0  N   51.8   74.3   82.5   1.1-e073 M | membrane protein
+    ABI14450.1        263    47-263         1   25629-26279    1   3  0  N   50.4   74.7   82.5   6.7-e073 M | membrane protein
+    ACR46132.1        264    48-264         1   25629-26279    1   3  0  N   50.4   74.7   82.1   6.7-e073 M | membrane protein
+    ACT10881.1        263    47-263         1   25629-26279    1   3  0  N   51.3   74.7   82.5   7.5-e074 M | membrane protein
+    ADL71460.1        263    47-263         1   25629-26279    1   3  0  N   51.3   74.7   82.5   1.1-e073 M | membrane protein
+    ACR10355.1        264    48-264         1   25629-26279    1   3  0  N   50.9   74.7   82.1   2.1-e073 M | membrane protein
+    AAZ86082.1        262    46-262         1   25629-26279    1   3  0  N   51.8   74.7   82.8   5.7-e074 M | membrane protein
+    ACT10910.1        262    46-262         1   25629-26279    1   3  0  N   51.8   75.2   82.8   1.2-e074 M | membrane protein
+    AAQ17224.1        262    46-262         1   25629-26279    1   3  0  N   53.6   76.1   82.8   7.9-e077 M | membrane protein
+    ACT10900.1        264    48-264         1   25629-26279    1   3  0  N   51.8   74.7   82.1   5.7-e074 M | membrane protein
+    ACR10373.1        263    47-263         1   25629-26279    1   3  0  N   51.3   75.2   82.5   7.5-e074 M | membrane protein
+    ACT10890.1        262    46-262         1   25629-26279    1   3  0  N   50.9   74.7   82.8   2.5-e073 M | membrane protein
+    ADL71502.1        264    48-264         1   25629-26279    1   3  0  N   52.2   74.7   82.1   4.2-e074 M | membrane protein
+    AEK25515.1        263    47-263         1   25629-26279    1   3  0  N   51.3   74.7   82.5   7.5-e074 M | membrane protein
+    AEQ61972.1        261    45-261         1   25629-26279    1   3  0  N   54.5   75.6   83.1   6.0-e077 M | membrane protein
+    ADL71480.1        262    46-262         1   25629-26279    1   3  0  N   51.3   74.7   82.8   7.2-e074 M | membrane protein
+        found 1 gene
+
+dropping pseudogene gi_509265008.4, fails match requirements: %id 41.7 < 60, %cov 49.8 < 80
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_509265008.4     41.7   67.1   49.8   46.8  0.0   3.4   25042..25383     113    237    ACY69068.1        NS3c | non-structural protein 3c
+                    could not find valid start codon
+
+dropping pseudogene gi_509265008.6, fails match requirements: %id 54.6 < 60
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_509265008.6     54.6   86.0   83.1   16.9  0.0   0.0   25629..26282     217    261    AEQ61972.1        M | membrane protein
+                    could not find valid start codon
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|509265008|gb|KC18    27953      4            0      36405          12131           47.2             72.9          100.0   cov_g1a_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_509265008.1     39.4   67.0   100.0  0.0   0.0   0.0   293..12622       4109   4025   AEK25519.1        Pp1a | ORF1a polyprotein
+gi_509265008.1.10  66.7   81.9   94.7   5.3   0.0   0.0   12569..12619     17     19     sp_Q98VG9_11      nsp11
+gi_509265008.2     52.5   76.3   100.0  0.0   0.0   0.0   293..12592       6773   6692   AEK25520.1        Pp1ab | ORF1ab polyprotein
+                                                          12592..20613                                     
+gi_509265008.2.1   25.9   59.6   99.7   0.0   0.0   0.3   626..2971        782    769    gb_ABI14447.1_2   nsp2
+gi_509265008.2.2   30.8   56.9   99.2   0.0   0.0   0.8   2972..7792       1607   1534   sp_Q98VG9_3       nsp3
+gi_509265008.2.3   47.7   78.2   100.0  0.0   0.0   0.0   7793..9259       489    490    gb_ABI14447.1_4   nsp4
+gi_509265008.2.4   68.9   90.4   100.0  0.0   0.0   0.0   9260..10165      302    302    sp_P0C6X1_5       3C-like proteinase nsp5
+gi_509265008.2.5   37.8   67.0   100.0  0.0   0.0   0.0   10166..11005     280    294    gb_ABI14447.1_6   nsp6
+gi_509265008.2.6   80.7   95.8   100.0  0.0   0.0   0.0   11006..11254     83     83     ABE97129_7        nsp7
+gi_509265008.2.7   70.3   90.8   100.0  0.0   0.0   0.0   11255..11839     195    195    sp_P0C6X1_8       nsp8
+gi_509265008.2.8   72.5   96.8   100.0  0.0   0.0   0.0   11840..12163     108    109    sp_P0C6X5_9       nsp9
+gi_509265008.2.9   73.3   92.2   100.0  0.0   0.0   0.0   12164..12568     135    135    sp_P0C6X5_10      nsp10
+gi_509265008.2.10  79.2   93.7   100.0  0.0   0.0   0.0   12569..12592     927    927    sp_P0C6X5_12      RNA-directed RNA polymerase nsp12
+                                                          12592..15348                                     
+gi_509265008.2.11  83.8   95.8   100.0  0.0   0.0   0.0   15349..17139     597    597    sp_P0C6X5_13      Helicase nsp13
+gi_509265008.2.12  76.8   92.1   100.0  0.0   0.0   0.0   17140..18690     517    518    sp_P0C6X1_14      Exoribonuclease nsp14
+gi_509265008.2.13  71.2   90.2   100.0  0.0   0.0   0.0   18691..19707     339    344    sp_P0C6X5_15      Uridylate-specific endoribonuclease nsp15
+gi_509265008.2.14  78.1   94.8   100.0  0.0   0.0   0.0   19708..20610     301    300    sp_P0C6X1_16      2'-O-methyl transferase nsp16
+gi_509265008.3     44.9   73.6   100.0  0.0   0.0   0.0   21237..24758     1173   1200   ADL71466.1        S | spike protein
+gi_509265008.4     28.6   77.3   93.9   6.1   0.0   0.0   25364..25594     76     82     AAQ17223.1        E | envelope protein
+
+
+genomic sequence gi|343781332|gb|HM776941.1|, length=28580
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 24 permutations for gene Pp1a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFG19737.1        4018   1-4018         1   314-12361      4   0  3  N   94.4   96.8   100.0  0        Pp1a | ORF1a polyprotein
+    ABI14447.1        4026   1-4026         1   314-12361      4   0  3  N   81.4   90.3   100.0  0        Pp1a | ORF1a polyprotein
+    ACT10968.1        4027   1-4027         1   314-12361      4   0  3  N   82.3   91.0   100.0  0        Pp1a | ORF1a polyprotein
+    ACT10957.1        4029   1-4029         1   314-12361      4   0  3  N   82.3   90.8   100.0  0        Pp1a | ORF1a polyprotein
+    ACT10935.1        4035   1-4035         1   314-12361      4   0  3  N   82.5   90.7   100.0  0        Pp1a | ORF1a polyprotein
+    ACS44216.1        4034   1-4034         1   314-12361      4   0  3  N   82.2   90.8   100.0  0        Pp1a | ORF1a polyprotein
+    AEK25509.1        4031   1-4031         1   314-12361      4   0  3  N   82.3   90.7   100.0  0        Pp1a | ORF1a polyprotein
+    ADL71495.1        4028   1-4028         1   314-12361      4   0  3  N   82.6   91.0   100.0  0        Pp1a | ORF1a polyprotein
+    AAY32595.1        3965   1-3965         1   314-12361      4   0  3  N   80.6   89.4   100.0  0        Pp1a | ORF1a polyprotein
+    ACT10914.1        4027   1-4027         1   314-12361      4   0  3  N   82.2   90.8   100.0  0        Pp1a | ORF1a polyprotein
+    ADL71474.1        4025   1-4025         1   314-12361      4   0  3  N   82.0   90.9   100.0  0        Pp1a | ORF1a polyprotein
+    ACT10885.1        4029   1-4029         1   314-12361      4   0  3  N   82.5   90.9   100.0  0        Pp1a | ORF1a polyprotein
+    ADO39848.1        4029   1-4029         1   314-12361      4   0  3  N   82.1   90.9   100.0  0        Pp1a | ORF1a polyprotein
+    ADO39826.1        4028   1-4028         1   314-12361      4   0  3  N   82.6   90.8   100.0  0        Pp1a | ORF1a polyprotein
+    ADB28905.1        4016   1-4016         1   314-12361      4   0  3  N   94.0   96.9   100.0  0        Pp1a | ORF1a polyprotein
+    AEK25519.1        4025   1-4025         1   314-12361      4   0  3  N   82.0   90.7   100.0  0        Pp1a | ORF1a polyprotein
+    ADO39837.1        4024   1-4024         1   314-12361      4   0  3  N   82.3   90.7   100.0  0        Pp1a | ORF1a polyprotein
+    ABX60143.1        4031   1-4031         1   314-12361      4   0  3  N   82.1   90.9   100.0  0        Pp1a | ORF1a polyprotein
+    ACT10925.1        4025   1-4025         1   314-12361      4   0  3  N   82.1   90.6   100.0  0        Pp1a | ORF1a polyprotein
+    ADL71484.1        4029   1-4029         1   314-12361      4   0  3  N   82.3   91.1   100.0  0        Pp1a | ORF1a polyprotein
+    ACT10904.1        4031   1-4031         1   314-12361      4   0  3  N   82.1   90.4   100.0  0        Pp1a | ORF1a polyprotein
+    ACT10894.1        4030   1-4030         1   314-12361      4   0  3  N   82.6   90.9   100.0  0        Pp1a | ORF1a polyprotein
+    AFG19736.1        4017   1-4017         1   314-12361      4   0  3  N   94.4   96.8   100.0  0        Pp1a | ORF1a polyprotein
+    ADL71453.1        4027   1-4027         1   314-12361      4   0  3  N   82.6   91.1   100.0  0        Pp1a | ORF1a polyprotein
+        found 1 gene
+
+    found 20 permutations for gene Pp1ab
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADB28906.1        6683   1-6683         1   314-20361      6   0  4  N   96.0   98.0   100.0  0        Pp1ab | ORF1ab polyprotein
+    ADO39838.1        6691   1-6691         1   314-20361      5   0  4  N   87.3   93.6   100.0  0        Pp1ab | ORF1ab polyprotein
+    AAY32594.1        6632   1-6632         1   314-20361      5   0  4  N   87.7   93.3   100.0  0        Pp1ab | ORF1ab polyprotein
+    ADO39849.1        6696   1-6696         1   314-20361      5   0  4  N   87.2   93.8   99.9   0        Pp1ab | ORF1ab polyprotein
+    ADO39827.1        6695   1-6695         1   314-20361      5   0  4  N   87.5   93.8   100.0  0        Pp1ab | ORF1ab polyprotein
+    AEK25510.1        6698   1-6698         1   314-20361      5   0  4  N   87.4   93.7   100.0  0        Pp1ab | ORF1ab polyprotein
+    ABX60144.1        6698   1-6698         1   314-20361      5   0  4  N   87.4   93.9   100.0  0        Pp1ab | ORF1ab polyprotein
+    ACT10936.1        6702   1-6702         1   314-20361      5   0  4  N   87.5   93.7   100.0  0        Pp1ab | ORF1ab polyprotein
+    ADL71454.1        6694   1-6694         1   314-20361      5   0  4  N   87.5   93.9   100.0  0        Pp1ab | ORF1ab polyprotein
+    ACT10886.1        6696   1-6696         1   314-20361      5   0  4  N   87.3   93.8   99.9   0        Pp1ab | ORF1ab polyprotein
+    ACT10969.1        6694   1-6694         1   314-20361      5   0  4  N   87.4   93.9   100.0  0        Pp1ab | ORF1ab polyprotein
+    ACT10905.1        6698   1-6698         1   314-20361      5   0  4  N   87.2   93.5   100.0  0        Pp1ab | ORF1ab polyprotein
+    AFG19738.1        6685   1-6685         1   314-20361      5   0  4  N   96.1   97.9   100.0  0        Pp1ab | ORF1ab polyprotein
+    ABI14446.1        6693   1-6693         1   314-20361      5   0  4  N   86.7   93.4   100.0  0        Pp1ab | ORF1ab polyprotein
+    ACT10926.1        6692   1-6692         1   314-20361      5   0  4  N   87.1   93.6   100.0  0        Pp1ab | ORF1ab polyprotein
+    YP_004070193.1    6709   1-6709         1   314-20361      6   0  4  N   88.4   93.9   99.9   0        Pp1ab | ORF1ab polyprotein
+    ADL71475.1        6692   1-6692         1   314-20361      5   0  4  N   87.3   93.9   100.0  0        Pp1ab | ORF1ab polyprotein
+    ACT10958.1        6696   1-6696         1   314-20361      5   0  4  N   87.2   93.6   100.0  0        Pp1ab | ORF1ab polyprotein
+    AEK25520.1        6692   1-6692         1   314-20361      5   0  4  N   87.3   93.7   100.0  0        Pp1ab | ORF1ab polyprotein
+    AFG19735.1        6684   1-6684         1   314-20361      5   0  4  N   96.1   97.9   100.0  0        Pp1ab | ORF1ab polyprotein
+        found 1 gene
+
+    found 43 permutations for gene S
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFG19726.1        1453   11-1453        1   20381-24700    1   2  0  N   81.4   86.9   99.3   0        S | spike protein
+    AAQ17220.1        1453   14-1453        1   20390-24700    1   2  0  N   79.9   85.6   99.1   0        S | spike protein
+    ADB28907.1        1457   12-1457        1   20396-24700    1   2  0  N   91.7   95.2   99.2   0        S | spike protein
+    ADU17734.1        1457   12-1457        1   20396-24700    1   2  0  N   91.6   95.1   99.2   0        S | spike protein
+    AEE69322.1        1454   22-1454        1   20411-24700    1   2  0  N   81.7   86.3   98.5   0        S | spike protein
+    ACS44218.1        1453   21-1453        1   20411-24700    1   2  0  N   81.1   86.1   98.6   0        S | spike protein
+    BAA33439.1        1453   22-1453        1   20411-24700    1   2  0  N   81.3   86.1   98.5   0        S | spike protein
+    YP_004070194.1    1452   22-1452        1   20411-24700    1   2  0  N   81.7   86.6   98.5   0        S | spike protein
+    AEQ61968.1        1473   26-1473        1   20426-24700    1   2  0  N   66.7   76.8   98.3   0        S | spike protein
+    AAP72149.1        1480   29-1480        1   20435-24700    1   2  0  N   45.4   61.3   98.1   0        S | spike protein
+    AFG19742.1        1454   35-1454        1   20447-24700    1   2  0  N   82.5   87.2   97.6   0        S | spike protein
+    ACT10916.1        1472   38-1472        1   20450-24700    1   2  0  N   43.8   59.9   97.4   0        S | spike protein
+    ADO39817.1        1467   38-1467        1   20450-24700    1   2  0  N   44.3   60.6   97.4   0        S | spike protein
+    ADL71476.1        1469   38-1469        1   20450-24700    1   2  0  N   44.2   60.5   97.4   0        S | spike protein
+    ACT10970.1        1468   38-1468        1   20450-24700    1   2  0  N   44.2   61.6   97.4   0        S | spike protein
+    ACT10896.1        1468   38-1468        1   20450-24700    1   2  0  N   44.3   61.0   97.4   0        S | spike protein
+    ADO39828.1        1470   38-1470        1   20450-24700    1   2  0  N   44.4   60.7   97.4   0        S | spike protein
+    ABI14448.1        1467   37-1467        1   20450-24700    1   2  0  N   44.0   61.1   97.5   0        S | spike protein
+    ACT10887.1        1465   38-1465        1   20450-24700    1   2  0  N   44.1   60.7   97.4   0        S | spike protein
+    ACT10937.1        1468   38-1468        1   20450-24700    1   2  0  N   44.4   61.2   97.4   0        S | spike protein
+    AEK25511.1        1469   38-1469        1   20450-24700    1   2  0  N   44.4   60.8   97.4   0        S | spike protein
+    ACT10948.1        1467   38-1467        1   20450-24700    1   2  0  N   44.4   61.0   97.4   0        S | spike protein
+    ABX60145.1        1464   38-1464        1   20450-24700    1   2  0  N   43.7   60.3   97.4   0        S | spike protein
+    ACR10422.1        1470   38-1470        1   20450-24700    1   2  0  N   44.2   60.7   97.4   0        S | spike protein
+    BAC05492.1        1457   38-1457        1   20450-24700    1   2  0  N   44.5   60.6   97.4   0        S | spike protein
+    ACT10906.1        1466   37-1466        1   20450-24700    1   2  0  N   44.1   60.3   97.5   0        S | spike protein
+    ADL71446.1        1470   38-1470        1   20450-24700    1   2  0  N   43.9   59.7   97.4   0        S | spike protein
+    ADO39839.1        1467   38-1467        1   20450-24700    1   2  0  N   43.9   60.8   97.4   0        S | spike protein
+    ACT10959.1        1425   38-1425        1   20450-24700    1   2  0  N   44.0   60.1   97.4   0        S | spike protein
+    ACT10876.1        1466   38-1466        1   20450-24700    1   2  0  N   44.6   60.7   97.4   0        S | spike protein
+    ADL71455.1        1467   38-1467        1   20450-24700    1   2  0  N   44.6   60.9   97.4   0        S | spike protein
+    AAZ86077.1        1467   38-1467        1   20450-24700    1   2  0  N   44.9   60.5   97.4   0        S | spike protein
+    ACT10865.1        1468   38-1468        1   20450-24700    1   2  0  N   44.5   62.0   97.4   0        S | spike protein
+    BAA06805.1        1464   33-1464        1   20468-24700    1   2  0  N   44.8   60.5   97.8   0        S | spike protein
+    ADL71486.1        1468   48-1468        1   20498-24700    1   2  0  N   44.7   61.0   96.7   0        S | spike protein
+    ADC35472.1        1466   48-1466        1   20498-24700    1   2  0  N   44.1   61.0   96.7   0        S | spike protein
+    ADO39850.1        1465   48-1465        1   20498-24700    1   2  0  N   44.4   60.5   96.7   0        S | spike protein
+    ADL71497.1        1467   48-1467        1   20498-24700    1   2  0  N   44.4   61.6   96.7   0        S | spike protein
+    AEK25521.1        1466   47-1466        1   20498-24700    1   2  0  N   44.8   60.8   96.8   0        S | spike protein
+    AAP72150.1        1481   103-1481       1   20597-24700    1   2  0  N   47.0   62.5   93.1   0        S | spike protein
+    ACT10927.2        1232   36-1232        1   21113-24700    1   2  0  N   49.0   65.0   97.1   0        S | spike protein
+    ADL71466.1        1200   23-1200        1   21164-24700    1   2  0  N   48.8   65.7   98.1   0        S | spike protein
+    BAJ08255.1        1222   42-1222        1   21164-24700    1   2  0  N   48.8   65.1   96.6   0        S | spike protein
+        found 1 gene
+
+    found 24 permutations for gene NS3a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACT10971.1        70     1-63           1   24822-25009    2   0  1  N   70.9   74.1   88.5   9.7-e012 NS3a | non-structural protein 3a
+    ADL71456.1        70     1-66           1   24822-25018    2   0  1  N   67.6   73.8   92.8   2.0-e012 NS3a | non-structural protein 3a
+    ADL71477.1        70     1-66           1   24822-25018    2   0  1  N   68.7   73.4   91.4   1.5-e012 NS3a | non-structural protein 3a
+    ADL71498.1        70     1-66           1   24822-25018    2   0  1  N   69.2   73.8   92.8   3.8-e012 NS3a | non-structural protein 3a
+    AAZ86078.1        70     1-66           1   24822-25018    2   0  1  N   69.2   73.8   92.8   8.0-e013 NS3a | non-structural protein 3a
+    ACR10351.1        70     1-66           1   24822-25018    2   0  1  N   67.6   73.8   92.8   5.2-e012 NS3a | non-structural protein 3a
+    ACT10917.1        70     1-66           1   24822-25018    2   0  1  N   67.6   73.8   92.8   2.8-e012 NS3a | non-structural protein 3a
+    ACR10334.1        70     1-66           1   24822-25018    2   0  1  N   70.7   73.8   92.8   1.1-e012 NS3a | non-structural protein 3a
+    ACR10369.1        70     1-66           1   24822-25018    2   0  1  N   69.2   73.8   92.8   4.3-e013 NS3a | non-structural protein 3a
+    ADO39829.1        70     1-66           1   24822-25018    2   0  1  N   70.7   75.3   92.8   3.1-e013 NS3a | non-structural protein 3a
+    ACR46140.1        70     1-66           1   24822-25018    2   0  1  N   69.2   72.3   92.8   7.1-e012 NS3a | non-structural protein 3a
+    AEK25522.1        70     1-66           1   24822-25018    2   0  1  N   70.7   73.8   92.8   4.3-e013 NS3a | non-structural protein 3a
+    AEK25512.1        70     1-66           1   24822-25018    2   0  1  N   70.7   73.8   92.8   4.3-e013 NS3a | non-structural protein 3a
+    ADL71447.1        70     1-66           1   24822-25018    2   0  1  N   70.7   75.3   92.8   8.0-e013 NS3a | non-structural protein 3a
+    ACT10938.1        70     1-66           1   24822-25018    2   0  1  N   69.2   73.8   92.8   8.0-e013 NS3a | non-structural protein 3a
+    ADO39851.1        70     1-70           1   24822-25030    2   0  1  N   69.5   71.0   98.5   1.7-e013 NS3a | non-structural protein 3a
+    ADO39840.1        70     1-70           1   24822-25030    2   0  1  N   68.1   72.4   98.5   5.8-e013 NS3a | non-structural protein 3a
+    ADB10850.1        71     1-71           1   24822-25033    2   0  1  N   91.4   91.4   98.5   5.3-e025 NS3a | non-structural protein 3a
+    BAJ08256.1        70     1-70           1   24822-25033    2   0  1  N   65.7   74.2   98.5   1.5-e012 NS3a | non-structural protein 3a
+    YP_004070195.1    71     1-71           1   24822-25033    2   0  1  N   90.0   90.0   98.5   6.0-e026 NS3a | non-structural protein 3a
+    AFH55112.1        71     1-71           1   24822-25033    2   0  1  N   87.1   90.0   98.5   3.4-e024 NS3a | non-structural protein 3a
+    AAQ17221.1        71     1-71           1   24822-25033    2   0  1  N   90.0   92.8   98.5   6.0-e026 NS3a | non-structural protein 3a
+    ACT10877.1        70     1-70           1   24822-25033    2   0  1  N   67.1   74.2   98.5   5.8-e013 NS3a | non-structural protein 3a
+    ACT10960.1        70     1-70           1   24822-25033    2   0  1  N   68.5   74.2   98.5   2.3-e013 NS3a | non-structural protein 3a
+        found 1 gene
+
+    found 8 permutations for gene NS3b
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFG19733.1        71     1-71           1   24981-25130    1   3  0  N   61.9   64.7   100.0  1.0-e014 NS3b | non-structural protein 3b
+    AEE69324.1        71     1-71           1   24981-25130    1   3  0  N   56.3   60.5   100.0  1.4-e011 NS3b | non-structural protein 3b
+    YP_004070196.1    71     1-71           1   24981-25130    1   3  0  N   61.9   66.1   100.0  1.6-e015 NS3b | non-structural protein 3b
+    AFH55113.1        71     1-71           1   24981-25130    1   3  0  N   52.1   59.1   100.0  4.3-e010 NS3b | non-structural protein 3b
+    ACS44220.1        71     1-71           1   24981-25130    1   3  0  N   63.3   64.7   100.0  4.6-e016 NS3b | non-structural protein 3b
+    AAR88614.1        71     1-71           1   24981-25130    1   3  0  N   50.7   59.1   100.0  1.1-e009 NS3b | non-structural protein 3b
+    ADB28909.1        71     1-71           1   24981-25130    1   3  0  N   60.5   64.7   100.0  3.6-e014 NS3b | non-structural protein 3b
+    AFG19740.1        71     1-71           1   24981-25130    1   3  0  N   63.3   64.7   100.0  3.3-e016 NS3b | non-structural protein 3b
+        found 1 gene
+
+    found 18 permutations for gene NS3c
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACR10353.1        209    1-209          1   25130-25774    1   2  0  N   79.5   88.3   100.0  1.9-e108 NS3c | non-structural protein 3c
+    AEE69325.1        244    1-243          1   25130-25858    1   2  0  N   95.0   97.1   99.5   7.4-e149 NS3c | non-structural protein 3c
+    ACT10919.1        237    1-236          1   25130-25858    1   2  0  N   79.4   87.2   99.5   2.2-e120 NS3c | non-structural protein 3c
+    ADB28910.1        244    1-243          1   25130-25858    1   2  0  N   95.8   97.9   99.5   3.8-e151 NS3c | non-structural protein 3c
+    AEQ61970.1        244    1-243          1   25130-25858    1   2  0  N   95.8   97.5   99.5   4.9-e150 NS3c | non-structural protein 3c
+    AFG19732.1        244    1-243          1   25130-25858    1   2  0  N   95.4   97.9   99.5   1.3-e150 NS3c | non-structural protein 3c
+    ACT10973.1        239    1-239          1   25130-25861    1   2  0  N   79.6   86.5   100.0  5.8-e121 NS3c | non-structural protein 3c
+    ACY69079.1        237    1-237          1   25130-25861    1   2  0  N   80.7   89.3   100.0  8.0-e124 NS3c | non-structural protein 3c
+    ADO39842.1        237    1-237          1   25130-25861    1   2  0  N   82.3   89.7   100.0  3.4-e126 NS3c | non-structural protein 3c
+    ACT10888.1        236    1-236          1   25130-25861    1   2  0  N   79.5   88.5   100.0  1.9-e119 NS3c | non-structural protein 3c
+    AAZ86080.1        237    1-237          1   25130-25861    1   2  0  N   80.7   88.1   100.0  1.0-e122 NS3c | non-structural protein 3c
+    AEK25524.1        237    1-237          1   25130-25861    1   2  0  N   81.1   89.3   100.0  4.1-e125 NS3c | non-structural protein 3c
+    BAJ08258.1        237    1-237          1   25130-25861    1   2  0  N   79.0   87.2   100.0  5.4-e120 NS3c | non-structural protein 3c
+    ACY69068.1        237    1-237          1   25130-25861    1   2  0  N   80.7   88.1   100.0  3.7-e123 NS3c | non-structural protein 3c
+    AAR88615.1        251    1-251          1   25130-25882    1   2  0  N   87.6   93.2   100.0  6.7-e143 NS3c | non-structural protein 3c
+    AFH55114.1        251    1-251          1   25130-25882    1   2  0  N   88.8   94.0   100.0  1.0-e145 NS3c | non-structural protein 3c
+    AAQ17222.1        250    1-250          1   25130-25882    1   2  0  N   92.0   96.4   100.0  6.1-e150 NS3c | non-structural protein 3c
+    AFG19741.1        251    1-251          1   25130-25882    1   2  0  N   94.0   95.6   100.0  5.8-e152 NS3c | non-structural protein 3c
+        found 1 gene
+
+    found 21 permutations for gene E
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAS68509.1        82     1-81           1   25851-26093    1   3  0  N   92.5   97.5   98.7   9.0-e044 E | envelope protein
+    AEK25525.1        82     1-81           1   25851-26093    1   3  0  N   75.3   90.1   98.7   5.8-e038 E | envelope protein
+    YP_004070197.1    82     1-81           1   25851-26093    1   3  0  N   75.3   90.1   98.7   5.8-e038 E | envelope protein
+    ABI14449.1        82     1-81           1   25851-26093    1   3  0  N   75.3   86.4   98.7   3.3-e036 E | envelope protein
+    BAJ08259.1        82     1-81           1   25851-26093    1   3  0  N   72.8   86.4   98.7   2.9-e035 E | envelope protein
+    AFG19731.1        82     1-81           1   25851-26093    1   3  0  N   95.0   97.5   98.7   1.4-e044 E | envelope protein
+    AFH55124.1        82     1-81           1   25851-26093    1   3  0  N   75.3   90.1   98.7   1.5-e037 E | envelope protein
+    ACR10354.1        82     1-81           1   25851-26093    1   3  0  N   72.8   90.1   98.7   6.9-e037 E | envelope protein
+    ACT10963.1        82     1-81           1   25851-26093    1   3  0  N   75.3   90.1   98.7   7.8-e038 E | envelope protein
+    ABK79900.1        82     1-81           1   25851-26093    1   3  0  N   93.8   95.0   98.7   1.7-e043 E | envelope protein
+    ACR10425.1        82     1-81           1   25851-26093    1   3  0  N   75.3   87.6   98.7   1.5-e037 E | envelope protein
+    ADL71479.1        82     1-81           1   25851-26093    1   3  0  N   72.8   88.8   98.7   1.3-e036 E | envelope protein
+    AFH55115.1        82     1-81           1   25851-26093    1   3  0  N   79.0   92.5   98.7   2.6-e039 E | envelope protein
+    ACR10372.1        82     1-81           1   25851-26093    1   3  0  N   71.6   86.4   98.7   8.3-e036 E | envelope protein
+    AAR88616.1        82     1-81           1   25851-26093    1   3  0  N   82.7   92.5   98.7   1.4-e039 E | envelope protein
+    AAQ17223.1        82     1-81           1   25851-26093    1   3  0  N   85.1   92.5   98.7   2.1-e040 E | envelope protein
+    AFG19743.1        82     1-81           1   25851-26093    1   3  0  N   96.2   97.5   98.7   1.0-e044 E | envelope protein
+    ACT10909.1        82     1-81           1   25851-26093    1   3  0  N   72.8   91.3   98.7   1.5-e037 E | envelope protein
+    ADL71448.1        82     1-81           1   25851-26093    1   3  0  N   72.8   88.8   98.7   2.4-e036 E | envelope protein
+    ACT10920.1        82     1-81           1   25851-26093    1   3  0  N   74.0   88.8   98.7   9.4-e037 E | envelope protein
+    ACT10941.1        82     1-81           1   25851-26093    1   3  0  N   76.5   90.1   98.7   2.0-e037 E | envelope protein
+        found 1 gene
+
+    found 38 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ACS44222.1        261    1-261          1   26110-26895    1   1  0  N   89.3   95.8   100.0  6.4-e159 M | membrane protein
+    ACJ63236.1        260    1-260          1   26110-26895    1   1  0  N   92.3   96.9   100.0  2.2-e162 M | membrane protein
+    AEE69327.1        262    1-262          1   26110-26895    1   1  0  N   94.6   98.4   100.0  2.1-e170 M | membrane protein
+    ADB28912.1        267    1-267          1   26110-26895    1   1  0  N   89.8   95.5   100.0  4.6-e161 M | membrane protein
+    ADU17730.1        260    1-260          1   26110-26895    1   1  0  N   91.2   96.1   100.0  6.0-e161 M | membrane protein
+    AEQ61972.1        261    1-261          1   26110-26895    1   1  0  N   93.5   97.3   100.0  1.9-e165 M | membrane protein
+    ADL71480.1        262    1-262          1   26110-26895    1   1  0  N   83.5   92.3   100.0  4.7-e152 M | membrane protein
+    AAR11075.1        263    3-263          1   26113-26895    1   1  0  N   93.4   97.7   99.2   6.3-e167 M | membrane protein
+    AAQ17224.1        262    3-262          1   26113-26895    1   1  0  N   87.7   92.3   99.2   3.3-e154 M | membrane protein
+    ACR10337.1        264    4-264          1   26116-26895    1   1  0  N   84.2   92.7   98.8   1.1-e151 M | membrane protein
+    ACT10964.1        262    4-262          1   26116-26895    1   1  0  N   83.0   91.5   98.8   3.4-e149 M | membrane protein
+    ACT10975.1        264    4-264          1   26116-26895    1   1  0  N   82.3   89.6   98.8   2.4-e147 M | membrane protein
+    ADO39854.1        263    4-263          1   26116-26895    1   1  0  N   83.0   91.5   98.8   9.4-e150 M | membrane protein
+    ADO39822.1        263    4-263          1   26116-26895    1   1  0  N   83.8   91.9   98.8   1.4-e151 M | membrane protein
+    AEK25526.1        263    4-263          1   26116-26895    1   1  0  N   83.0   91.9   98.8   1.6-e149 M | membrane protein
+    ACT10931.1        263    4-263          1   26116-26895    1   1  0  N   82.3   91.9   98.8   9.4-e150 M | membrane protein
+    ACT10921.1        263    4-263          1   26116-26895    1   1  0  N   83.8   92.3   98.8   8.4-e151 M | membrane protein
+    ACT10942.1        263    4-263          1   26116-26895    1   1  0  N   82.6   91.5   98.8   9.7-e149 M | membrane protein
+    ACR46125.1        264    4-264          1   26116-26895    1   1  0  N   81.9   91.9   98.8   8.5-e149 M | membrane protein
+    BAC01158.1        263    4-263          1   26116-26895    1   1  0  N   85.0   93.0   98.8   1.4-e152 M | membrane protein
+    BAC01156.1        262    4-262          1   26116-26895    1   1  0  N   82.3   90.7   98.8   1.4-e146 M | membrane protein
+    ADL71449.1        263    4-263          1   26116-26895    1   1  0  N   81.9   90.7   98.8   9.5-e149 M | membrane protein
+    ADO39844.1        264    4-264          1   26116-26895    1   1  0  N   82.7   91.9   98.8   1.2-e149 M | membrane protein
+    YP_004070198.1    262    4-262          1   26116-26895    1   1  0  N   84.6   93.0   98.8   1.1-e150 M | membrane protein
+    ADO39833.1        263    4-263          1   26116-26895    1   1  0  N   83.4   92.3   98.8   1.6-e151 M | membrane protein
+    ABI14450.1        263    4-263          1   26116-26895    1   1  0  N   82.3   92.3   98.8   1.9-e147 M | membrane protein
+    ACR46132.1        264    4-264          1   26116-26895    1   1  0  N   81.2   91.5   98.8   4.8-e147 M | membrane protein
+    ACT10881.1        263    4-263          1   26116-26895    1   1  0  N   83.0   91.9   98.8   7.1-e150 M | membrane protein
+    ADL71460.1        263    4-263          1   26116-26895    1   1  0  N   83.4   92.3   98.8   1.5-e150 M | membrane protein
+    ACR10355.1        264    4-264          1   26116-26895    1   1  0  N   82.3   91.5   98.8   3.0-e148 M | membrane protein
+    AAZ86082.1        262    4-262          1   26116-26895    1   1  0  N   84.6   92.3   98.8   2.1-e149 M | membrane protein
+    ACT10910.1        262    4-262          1   26116-26895    1   1  0  N   83.8   93.0   98.8   6.5-e150 M | membrane protein
+    ACT10900.1        264    4-264          1   26116-26895    1   1  0  N   83.5   93.4   98.8   3.9-e151 M | membrane protein
+    ACT10890.1        262    4-262          1   26116-26895    1   1  0  N   81.5   90.7   98.8   1.2-e144 M | membrane protein
+    ADL71502.1        264    4-264          1   26116-26895    1   1  0  N   83.1   91.9   98.8   7.5-e149 M | membrane protein
+    AEK25515.1        263    4-263          1   26116-26895    1   1  0  N   83.8   91.9   98.8   1.9-e150 M | membrane protein
+    BAJ08260.1        261    5-261          1   26119-26895    1   1  0  N   82.2   90.7   98.4   1.1-e145 M | membrane protein
+    ACR10373.1        263    5-263          1   26119-26895    1   1  0  N   83.4   92.3   98.4   3.9-e148 M | membrane protein
+        found 1 gene
+
+    found 40 permutations for gene N
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAC01157.1        377    1-377          1   26911-28056    1   1  0  N   76.4   88.7   100.0  0        N | nucleocapsid protein
+    ADC34648.1        375    1-375          1   26911-28056    1   1  0  N   75.9   88.7   100.0  0        N | nucleocapsid protein
+    ADO39823.1        377    1-377          1   26911-28056    1   1  0  N   74.3   88.4   100.0  0        N | nucleocapsid protein
+    ADO39834.1        377    1-377          1   26911-28056    1   1  0  N   74.3   89.0   100.0  0        N | nucleocapsid protein
+    ACR10374.1        376    1-376          1   26911-28056    1   1  0  N   74.8   89.0   100.0  0        N | nucleocapsid protein
+    AAZ86083.1        376    1-376          1   26911-28056    1   1  0  N   75.1   87.4   100.0  0        N | nucleocapsid protein
+    ACT10943.1        377    1-377          1   26911-28056    1   1  0  N   76.4   89.0   100.0  0        N | nucleocapsid protein
+    BAC65328.1        382    1-382          1   26911-28056    1   1  0  N   95.0   98.4   100.0  0        N | nucleocapsid protein
+    ACS44223.1        372    1-372          1   26911-28056    1   1  0  N   74.3   87.1   100.0  0        N | nucleocapsid protein
+    ACT10882.1        373    1-373          1   26911-28056    1   1  0  N   75.3   88.4   100.0  0        N | nucleocapsid protein
+    ADC34646.1        376    1-376          1   26911-28056    1   1  0  N   75.1   88.7   100.0  0        N | nucleocapsid protein
+    ADL71481.1        379    1-379          1   26911-28056    1   1  0  N   74.0   89.5   100.0  0        N | nucleocapsid protein
+    ADC34668.1        376    1-376          1   26911-28056    1   1  0  N   74.6   87.6   100.0  0        N | nucleocapsid protein
+    ACT10911.1        375    1-375          1   26911-28056    1   1  0  N   75.1   89.2   100.0  0        N | nucleocapsid protein
+    BAJ08261.1        376    1-376          1   26911-28056    1   1  0  N   73.8   88.4   100.0  0        N | nucleocapsid protein
+    BAC01159.1        377    1-377          1   26911-28056    1   1  0  N   75.6   87.9   100.0  0        N | nucleocapsid protein
+    ACR10356.1        372    1-372          1   26911-28056    1   1  0  N   74.0   85.6   100.0  0        N | nucleocapsid protein
+    ACT10976.1        377    1-377          1   26911-28056    1   1  0  N   74.8   89.0   100.0  0        N | nucleocapsid protein
+    ADL71461.1        377    1-377          1   26911-28056    1   1  0  N   75.3   88.7   100.0  0        N | nucleocapsid protein
+    ADL71450.1        377    1-377          1   26911-28056    1   1  0  N   73.5   88.4   100.0  0        N | nucleocapsid protein
+    ADL71503.1        377    1-377          1   26911-28056    1   1  0  N   76.4   90.0   100.0  0        N | nucleocapsid protein
+    ACR10338.1        377    1-377          1   26911-28056    1   1  0  N   74.6   88.7   100.0  0        N | nucleocapsid protein
+    YP_004070199.1    377    1-377          1   26911-28056    1   1  0  N   76.1   89.2   100.0  0        N | nucleocapsid protein
+    ACT10891.1        374    1-374          1   26911-28056    1   1  0  N   74.8   87.9   100.0  0        N | nucleocapsid protein
+    ADO39845.1        376    1-376          1   26911-28056    1   1  0  N   74.0   89.2   100.0  0        N | nucleocapsid protein
+    AEK25516.1        377    1-377          1   26911-28056    1   1  0  N   75.3   89.0   100.0  0        N | nucleocapsid protein
+    ACT10932.1        375    1-375          1   26911-28056    1   1  0  N   74.6   87.9   100.0  0        N | nucleocapsid protein
+    ACR46133.1        375    1-375          1   26911-28056    1   1  0  N   75.1   88.4   100.0  0        N | nucleocapsid protein
+    ACT10965.1        377    1-377          1   26911-28056    1   1  0  N   75.1   88.4   100.0  0        N | nucleocapsid protein
+    ADB28913.1        382    1-382          1   26911-28056    1   1  0  N   93.4   97.9   100.0  0        N | nucleocapsid protein
+    AEK25527.1        377    1-377          1   26911-28056    1   1  0  N   74.8   88.2   100.0  0        N | nucleocapsid protein
+    ABI14451.1        376    1-376          1   26911-28056    1   1  0  N   75.6   88.4   100.0  0        N | nucleocapsid protein
+    ACT10901.1        377    1-377          1   26911-28056    1   1  0  N   74.6   89.2   100.0  0        N | nucleocapsid protein
+    AFG19745.1        382    1-382          1   26911-28056    1   1  0  N   95.5   98.4   100.0  0        N | nucleocapsid protein
+    AAQ17225.1        382    1-382          1   26911-28056    1   1  0  N   91.3   96.3   100.0  0        N | nucleocapsid protein
+    ADC34664.1        376    1-376          1   26911-28056    1   1  0  N   74.6   88.7   100.0  0        N | nucleocapsid protein
+    ADO39855.1        377    1-377          1   26911-28056    1   1  0  N   75.1   89.2   100.0  0        N | nucleocapsid protein
+    ADL71492.1        377    1-377          1   26911-28056    1   1  0  N   75.1   88.4   100.0  0        N | nucleocapsid protein
+    ACT10922.1        377    1-377          1   26911-28056    1   1  0  N   76.1   89.2   100.0  0        N | nucleocapsid protein
+    BAC01120.1        377    1-377          1   26911-28056    1   1  0  N   75.1   89.0   100.0  0        N | nucleocapsid protein
+        found 1 gene
+
+    found 9 permutations for gene NS7a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AAQ17226.1        101    1-100          1   28065-28295    1   3  0  N   74.0   76.0   99.0   2.1-e035 NS7a | non-structural protein 7a
+    ACR46146.1        101    1-100          1   28065-28295    1   3  0  N   59.0   65.0   99.0   2.4-e024 NS7a | non-structural protein 7a
+    ACR46153.1        101    1-100          1   28065-28295    1   3  0  N   60.0   67.0   99.0   2.8-e025 NS7a | non-structural protein 7a
+    YP_004070200.1    101    1-100          1   28065-28295    1   3  0  N   59.0   66.0   99.0   1.8-e024 NS7a | non-structural protein 7a
+    ADO39835.1        101    1-100          1   28065-28295    1   3  0  N   61.0   66.0   99.0   2.8-e025 NS7a | non-structural protein 7a
+    ADL71451.1        96     1-95           1   28065-28295    1   3  0  N   63.1   68.4   98.9   3.2-e025 NS7a | non-structural protein 7a
+    ACT10892.1        101    1-100          1   28065-28295    1   3  0  N   59.0   66.0   99.0   4.5-e024 NS7a | non-structural protein 7a
+    ACR10375.1        101    1-101          1   28065-28298    1   3  0  N   61.3   67.3   100.0  3.1-e026 NS7a | non-structural protein 7a
+    AFG19746.1        101    1-101          1   28065-28298    1   3  0  N   74.2   76.2   100.0  1.1-e035 NS7a | non-structural protein 7a
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|343781332|gb|HM77    28580      6            4       6873           2285           69.2             85.8          100.0   cov_g1a_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_343781332.1     94.7   98.3   100.0  0.0   0.0   0.0   314..4990        4017   4017   AFG19736.1        Pp1a | ORF1a polyprotein
+                                                          4990..7818                                       
+                                                          7818..11279                                      
+                                                          11279..12364                                     
+                    frameshifts in genome at or near positions 4990..4990 (+2=>+1), 7818..7818 (+1=>+3) and 11279..11279 (+3=>+2)
+gi_343781332.1.1   92.7   98.6   100.0  0.0   0.0   0.0   314..643         110    110    sp_Q98VG9_1       nsp1
+gi_343781332.1.2   79.1   95.0   100.0  0.0   0.0   0.0   644..2950        769    769    sp_Q98VG9_2       nsp2
+gi_343781332.1.3   76.9   90.6   100.0  0.0   0.0   0.0   2951..4990       1509   1534   sp_Q98VG9_3       nsp3
+                                                          4990..7476                                       
+gi_343781332.1.4   87.1   97.0   100.0  0.0   0.0   0.0   7477..7818       490    490    gb_ABI14447.1_4   nsp4
+                                                          7818..8945                                       
+gi_343781332.1.5   93.7   98.8   100.0  0.0   0.0   0.0   8946..9851       302    302    gb_ABI14447.1_5   3C-like proteinase nsp5
+gi_343781332.1.6   76.9   95.7   100.0  0.0   0.0   0.0   9852..10733      294    294    gb_ABI14447.1_6   nsp6
+gi_343781332.1.7   96.4   98.8   100.0  0.0   0.0   0.0   10734..10982     83     83     sp_Q98VG9_7       nsp7
+gi_343781332.1.8   92.3   98.3   100.0  0.0   0.0   0.0   10983..11279     195    195    sp_Q98VG9_8       nsp8
+                                                          11279..11566                                     
+gi_343781332.1.9   91.0   99.5   100.0  0.0   0.0   0.0   11567..11899     111    111    gb_ABI14447.1_9   nsp9
+gi_343781332.1.10  95.6   99.6   100.0  0.0   0.0   0.0   11900..12304     135    135    gb_ABI14447.1_10  nsp10
+gi_343781332.1.11  84.2   93.4   100.0  0.0   0.0   0.0   12305..12361     19     19     sp_Q98VG9_11      nsp11
+gi_343781332.2     96.3   98.9   100.0  0.0   0.0   0.0   314..4990        6684   6685   AFG19738.1        Pp1ab | ORF1ab polyprotein
+                                                          4990..7818                                       
+                                                          7818..11279                                      
+                                                          11279..12334                                     
+                                                          12334..20364                                     
+                    frameshifts in genome at or near positions 4990..4990 (+2=>+1), 7818..7818 (+1=>+3) and 11279..11279 (+3=>+2)
+gi_343781332.2.1   92.7   98.6   100.0  0.0   0.0   0.0   314..643         110    110    sp_Q98VG9_1       nsp1
+gi_343781332.2.2   79.1   95.0   100.0  0.0   0.0   0.0   644..2950        769    769    sp_Q98VG9_2       nsp2
+gi_343781332.2.3   76.9   90.6   100.0  0.0   0.0   0.0   2951..4990       1509   1534   sp_Q98VG9_3       nsp3
+                                                          4990..7476                                       
+gi_343781332.2.4   87.1   97.0   100.0  0.0   0.0   0.0   7477..7818       490    490    gb_ABI14447.1_4   nsp4
+                                                          7818..8945                                       
+gi_343781332.2.5   93.7   98.8   100.0  0.0   0.0   0.0   8946..9851       302    302    gb_ABI14447.1_5   3C-like proteinase nsp5
+gi_343781332.2.6   76.9   95.7   100.0  0.0   0.0   0.0   9852..10733      294    294    gb_ABI14447.1_6   nsp6
+gi_343781332.2.7   96.4   98.8   100.0  0.0   0.0   0.0   10734..10982     83     83     sp_Q98VG9_7       nsp7
+gi_343781332.2.8   92.3   98.3   100.0  0.0   0.0   0.0   10983..11279     195    195    sp_Q98VG9_8       nsp8
+                                                          11279..11566                                     
+gi_343781332.2.9   91.0   99.5   100.0  0.0   0.0   0.0   11567..11899     111    111    gb_ABI14447.1_9   nsp9
+gi_343781332.2.10  95.6   99.6   100.0  0.0   0.0   0.0   11900..12304     135    135    gb_ABI14447.1_10  nsp10
+gi_343781332.2.11  97.5   99.4   100.0  0.0   0.0   0.0   12305..12334     929    929    gb_AAY32594.1_12  RNA-directed RNA polymerase nsp12
+                                                          12334..15090                                     
+gi_343781332.2.12  98.8   99.8   100.0  0.0   0.0   0.0   15091..16887     599    599    sp_Q98VG9_13      Helicase nsp13
+gi_343781332.2.13  99.2   100.0  100.0  0.0   0.0   0.0   16888..18444     519    519    sp_Q98VG9_14      Exoribonuclease nsp14
+gi_343781332.2.14  98.2   99.6   100.0  0.0   0.0   0.0   18445..19461     339    339    sp_Q98VG9_15      Uridylate-specific endoribonuclease nsp15
+gi_343781332.2.15  97.7   99.8   100.0  0.0   0.0   0.0   19462..20361     300    300    sp_Q98VG9_16      2'-O-methyl transferase nsp16
+gi_343781332.3     48.3   76.2   100.0  0.0   0.0   0.0   20990..24703     1237   1232   ACT10927.2        S | spike protein
+gi_343781332.4     91.5   93.0   100.0  0.0   0.0   0.0   24822..24866     71     71     ADB10850.1        NS3a | non-structural protein 3a
+                                                          24866..25036                                     
+                    frameshift in genome at or near position 24866..24866 (+3=>+2)
+gi_343781332.5     63.4   68.3   100.0  0.0   0.0   0.0   24981..25133     50     71     AFG19740.1        NS3b | non-structural protein 3b
+                    stop codon embedded in CDS at 25026..25028
+gi_343781332.6     95.5   98.8   100.0  0.0   0.0   0.0   25130..25864     244    244    ADB28910.1        NS3c | non-structural protein 3c
+gi_343781332.7     95.1   97.0   100.0  0.0   0.0   0.0   25851..26099     82     82     AFG19743.1        E | envelope protein
+gi_343781332.8     94.7   99.4   100.0  0.0   0.0   0.0   26110..26898     262    262    AEE69327.1        M | membrane protein
+gi_343781332.9     95.5   99.0   100.0  0.0   0.0   0.0   26911..28059     382    382    AFG19745.1        N | nucleocapsid protein
+gi_343781332.10    74.3   77.2   100.0  0.0   0.0   0.0   28065..28301     78     101    AFG19746.1        NS7a | non-structural protein 7a
+
+
+genomic sequence gi|564131295|gb|KF668605.1|, length=16771
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 24 permutations for gene Pp1a
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AFG19737.1        4018   3560-4017      1   1-1461         1   1  0  N   40.7   57.6   11.3   8.9-e096 Pp1a | ORF1a polyprotein
+    ABI14447.1        4026   3568-4025      1   1-1461         1   1  0  N   40.9   58.4   11.3   1.4-e096 Pp1a | ORF1a polyprotein
+    ACT10968.1        4027   3569-4026      1   1-1461         1   1  0  N   40.9   58.4   11.3   2.7-e097 Pp1a | ORF1a polyprotein
+    ACT10957.1        4029   3571-4028      1   1-1461         1   1  0  N   40.9   58.2   11.3   7.9-e097 Pp1a | ORF1a polyprotein
+    ACT10935.1        4035   3577-4034      1   1-1461         1   1  0  N   40.7   58.4   11.3   6.1-e097 Pp1a | ORF1a polyprotein
+    ACS44216.1        4034   3576-4033      1   1-1461         1   1  0  N   40.9   59.0   11.3   5.4-e098 Pp1a | ORF1a polyprotein
+    AEK25509.1        4031   3573-4030      1   1-1461         1   1  0  N   40.7   58.0   11.3   2.3-e096 Pp1a | ORF1a polyprotein
+    ADL71495.1        4028   3570-4027      1   1-1461         1   1  0  N   41.0   59.1   11.3   3.6-e097 Pp1a | ORF1a polyprotein
+    AAY32595.1        3965   3507-3964      1   1-1461         1   1  0  N   40.7   58.4   11.5   4.6-e097 Pp1a | ORF1a polyprotein
+    ACT10914.1        4027   3569-4026      1   1-1461         1   1  0  N   40.6   58.5   11.3   7.9-e097 Pp1a | ORF1a polyprotein
+    ADL71474.1        4025   3567-4024      1   1-1461         1   1  0  N   40.9   58.4   11.3   1.6-e097 Pp1a | ORF1a polyprotein
+    ACT10885.1        4029   3571-4028      1   1-1461         1   1  0  N   41.1   58.6   11.3   7.1-e098 Pp1a | ORF1a polyprotein
+    ADO39848.1        4029   3571-4028      1   1-1461         1   1  0  N   40.9   58.6   11.3   5.4-e098 Pp1a | ORF1a polyprotein
+    ADO39826.1        4028   3570-4027      1   1-1461         1   1  0  N   41.0   58.7   11.3   9.3-e098 Pp1a | ORF1a polyprotein
+    ADB28905.1        4016   3558-4015      1   1-1461         1   1  0  N   39.9   57.8   11.4   5.8-e095 Pp1a | ORF1a polyprotein
+    AEK25519.1        4025   3567-4024      1   1-1461         1   1  0  N   41.1   58.6   11.3   1.2-e097 Pp1a | ORF1a polyprotein
+    ADO39837.1        4024   3566-4023      1   1-1461         1   1  0  N   40.7   58.4   11.3   3.6-e097 Pp1a | ORF1a polyprotein
+    ABX60143.1        4031   3573-4030      1   1-1461         1   1  0  N   40.7   58.0   11.3   6.8-e096 Pp1a | ORF1a polyprotein
+    ACT10925.1        4025   3567-4024      1   1-1461         1   1  0  N   40.7   58.6   11.3   6.1-e097 Pp1a | ORF1a polyprotein
+    ADL71484.1        4029   3571-4028      1   1-1461         1   1  0  N   40.9   58.6   11.3   5.4-e098 Pp1a | ORF1a polyprotein
+    ACT10904.1        4031   3573-4030      1   1-1461         1   1  0  N   40.9   58.4   11.3   1.9-e098 Pp1a | ORF1a polyprotein
+    ACT10894.1        4030   3572-4029      1   1-1461         1   1  0  N   40.7   58.4   11.3   6.1-e097 Pp1a | ORF1a polyprotein
+    AFG19736.1        4017   3559-4016      1   1-1461         1   1  0  N   40.7   58.2   11.4   5.2-e096 Pp1a | ORF1a polyprotein
+    ADL71453.1        4027   3569-4026      1   1-1461         1   1  0  N   41.0   58.9   11.3   7.1-e098 Pp1a | ORF1a polyprotein
+        found 1 gene
+
+    found 20 permutations for gene Pp1ab
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    ADB28906.1        6683   3558-6682      1   1-9494         6   0  1  N   51.8   68.0   46.3   0        Pp1ab | ORF1ab polyprotein
+    AAY32594.1        6632   3507-6629      1   1-9488         2   0  1  N   51.6   68.0   46.8   0        Pp1ab | ORF1ab polyprotein
+    AFG19738.1        6685   3560-6682      1   1-9488         2   0  1  N   51.6   67.7   46.7   0        Pp1ab | ORF1ab polyprotein
+    YP_004070193.1    6709   3584-6706      1   1-9488         3   0  1  N   51.3   67.7   46.4   0        Pp1ab | ORF1ab polyprotein
+    AFG19735.1        6684   3559-6681      1   1-9488         2   0  1  N   51.5   67.7   46.7   0        Pp1ab | ORF1ab polyprotein
+    ADO39838.1        6691   3566-6690      1   1-9494         2   0  1  N   51.8   67.9   46.5   0        Pp1ab | ORF1ab polyprotein
+    ADO39849.1        6696   3571-6695      1   1-9494         2   0  1  N   51.7   67.9   46.4   0        Pp1ab | ORF1ab polyprotein
+    ADO39827.1        6695   3570-6694      1   1-9494         2   0  1  N   51.7   68.0   46.5   0        Pp1ab | ORF1ab polyprotein
+    AEK25510.1        6698   3573-6697      1   1-9494         2   0  1  N   51.6   67.9   46.4   0        Pp1ab | ORF1ab polyprotein
+    ABX60144.1        6698   3573-6697      1   1-9494         2   0  1  N   51.6   67.8   46.4   0        Pp1ab | ORF1ab polyprotein
+    ACT10936.1        6702   3577-6701      1   1-9494         2   0  1  N   51.7   67.9   46.4   0        Pp1ab | ORF1ab polyprotein
+    ADL71454.1        6694   3569-6693      1   1-9494         2   0  1  N   51.7   68.1   46.5   0        Pp1ab | ORF1ab polyprotein
+    ACT10886.1        6696   3571-6695      1   1-9494         2   0  1  N   51.7   67.9   46.4   0        Pp1ab | ORF1ab polyprotein
+    ACT10969.1        6694   3569-6693      1   1-9494         2   0  1  N   51.7   67.9   46.5   0        Pp1ab | ORF1ab polyprotein
+    ACT10905.1        6698   3573-6697      1   1-9494         2   0  1  N   51.8   67.9   46.4   0        Pp1ab | ORF1ab polyprotein
+    ABI14446.1        6693   3568-6692      1   1-9494         2   0  1  N   51.5   67.9   46.4   0        Pp1ab | ORF1ab polyprotein
+    ACT10926.1        6692   3567-6691      1   1-9494         2   0  1  N   51.6   67.9   46.5   0        Pp1ab | ORF1ab polyprotein
+    ADL71475.1        6692   3567-6691      1   1-9494         2   0  1  N   51.6   67.8   46.5   0        Pp1ab | ORF1ab polyprotein
+    ACT10958.1        6696   3571-6695      1   1-9494         2   0  1  N   51.8   67.9   46.5   0        Pp1ab | ORF1ab polyprotein
+    AEK25520.1        6692   3567-6691      1   1-9494         2   0  1  N   51.7   68.0   46.5   0        Pp1ab | ORF1ab polyprotein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|564131295|gb|KF66    16771      2            0      10968           3654           47.6             74.9           33.5   cov_g1a_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_564131295.1     41.5   69.9   11.4   88.6  0.0   0.0   <1..1467         488    4028   ADO39826.1        Pp1a | putative ORF1a polyprotein, C-terminal
+gi_564131295.2     51.3   77.9   46.8   53.2  0.0   0.0   <1..1437         3166   6685   AFG19738.1        Pp1ab | putative ORF1ab polyprotein, C-terminal
+                                                          1437..9500                                       
+gi_564131295.2.1   39.5   72.4   99.5   0.5   0.0   0.0   <1..609          203    195    sp_Q98VG9_8       putative nsp8, C-terminal
+gi_564131295.2.2   32.2   59.7   100.0  0.0   0.0   0.0   610..960         117    111    gb_ABI14447.1_9   nsp9
+gi_564131295.2.3   50.0   72.0   100.0  0.0   0.0   0.0   961..1380        140    135    sp_P0C6X5_10      nsp10
+gi_564131295.2.4   57.5   81.3   100.0  0.0   0.0   0.0   1381..1437       945    929    gb_AAY32594.1_12  RNA-directed RNA polymerase nsp12
+                                                          1437..4214                                       
+gi_564131295.2.5   61.5   84.1   98.8   0.0   0.0   1.2   4215..6005       597    601    P0C6W5_MP12       Helicase nsp13
+gi_564131295.2.6   50.8   78.4   100.0  0.0   0.0   0.0   6006..7577       524    518    sp_P0C6X5_14      Exoribonuclease nsp14
+gi_564131295.2.7   38.1   70.3   100.0  0.0   0.0   0.0   7578..8591       338    339    sp_Q98VG9_15      Uridylate-specific endoribonuclease nsp15
+gi_564131295.2.8   55.1   80.9   99.7   0.3   0.0   0.0   8592..9497       302    300    sp_P0C6X5_16      2'-O-methyl transferase nsp16
+
+
+genomic sequence gi|597503885|gb|KJ556336.1|, length=29890
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 20 permutations for gene Pp1ab
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AEK25510.1        6698   108-6697       1   638-21280      14  0  2  N   54.3   70.6   52.5   0        Pp1ab | ORF1ab polyprotein
+    ADO39838.1        6691   4012-6690      1   13207-21280    2   0  1  N   57.1   72.1   39.9   0        Pp1ab | ORF1ab polyprotein
+    ADO39827.1        6695   4016-6694      1   13207-21280    2   0  1  N   57.1   72.1   39.9   0        Pp1ab | ORF1ab polyprotein
+    ACT10936.1        6702   4023-6701      1   13207-21280    2   0  1  N   57.0   72.2   39.8   0        Pp1ab | ORF1ab polyprotein
+    ADL71454.1        6694   4015-6693      1   13207-21280    2   0  1  N   57.0   72.2   39.9   0        Pp1ab | ORF1ab polyprotein
+    ACT10969.1        6694   4015-6693      1   13207-21280    2   0  1  N   57.0   72.1   39.9   0        Pp1ab | ORF1ab polyprotein
+    ACT10905.1        6698   4019-6697      1   13207-21280    2   0  1  N   57.1   72.2   39.9   0        Pp1ab | ORF1ab polyprotein
+    ACT10926.1        6692   4013-6691      1   13207-21280    2   0  1  N   56.9   72.1   39.9   0        Pp1ab | ORF1ab polyprotein
+    ADL71475.1        6692   4013-6691      1   13207-21280    2   0  1  N   57.0   72.1   39.9   0        Pp1ab | ORF1ab polyprotein
+    ACT10958.1        6696   4017-6695      1   13207-21280    2   0  1  N   57.1   72.2   39.9   0        Pp1ab | ORF1ab polyprotein
+    AEK25520.1        6692   4013-6691      1   13207-21280    2   0  1  N   57.1   72.3   39.9   0        Pp1ab | ORF1ab polyprotein
+    ADB28906.1        6683   4006-6682      1   13213-21280    5   0  1  N   56.7   72.3   39.9   0        Pp1ab | ORF1ab polyprotein
+    AAY32594.1        6632   3956-6630      1   13216-21277    2   0  1  N   56.9   72.3   40.2   0        Pp1ab | ORF1ab polyprotein
+    AFG19738.1        6685   4009-6683      1   13216-21277    2   0  1  N   57.0   72.3   39.9   0        Pp1ab | ORF1ab polyprotein
+    AFG19735.1        6684   4008-6682      1   13216-21277    2   0  1  N   57.0   72.2   39.9   0        Pp1ab | ORF1ab polyprotein
+    ABX60144.1        6698   4022-6697      1   13216-21280    2   0  1  N   57.1   72.2   39.8   0        Pp1ab | ORF1ab polyprotein
+    ABI14446.1        6693   4017-6692      1   13216-21280    2   0  1  N   57.0   72.1   39.9   0        Pp1ab | ORF1ab polyprotein
+    ADO39849.1        6696   4023-6695      1   13225-21280    2   0  1  N   57.0   72.1   39.8   0        Pp1ab | ORF1ab polyprotein
+    ACT10886.1        6696   4023-6695      1   13225-21280    2   0  1  N   57.0   72.1   39.8   0        Pp1ab | ORF1ab polyprotein
+    YP_004070193.1    6709   4076-6707      1   13348-21277    2   0  1  N   56.8   72.2   39.1   0        Pp1ab | ORF1ab polyprotein
+        found 1 gene
+
+    found 36 permutations for gene M
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    BAC01158.1        263    35-253         1   27622-28272    1   1  0  N   38.2   55.4   83.2   8.0-e038 M | membrane protein
+    ACR10337.1        264    39-254         1   27640-28272    1   1  0  N   37.9   55.5   81.8   1.1-e037 M | membrane protein
+    AEK25526.1        263    38-253         1   27640-28272    1   1  0  N   37.5   55.5   82.1   1.5-e037 M | membrane protein
+    ACR46125.1        264    39-254         1   27640-28272    1   1  0  N   37.5   55.5   81.8   6.1-e038 M | membrane protein
+    ABI14450.1        263    38-253         1   27640-28272    1   1  0  N   37.9   55.5   82.1   1.5-e037 M | membrane protein
+    ADL71502.1        264    39-254         1   27640-28272    1   1  0  N   37.9   55.5   81.8   8.3-e038 M | membrane protein
+    BAJ08260.1        261    38-251         1   27646-28272    1   1  0  N   37.3   56.5   81.9   7.6-e038 M | membrane protein
+    ACT10910.1        262    39-252         1   27646-28272    1   1  0  N   37.8   56.0   81.6   1.1-e037 M | membrane protein
+    BAC01156.1        262    40-243         1   27649-28245    1   1  0  N   38.7   55.8   77.8   4.9-e037 M | membrane protein
+    ACT10964.1        262    40-252         1   27649-28272    1   1  0  N   37.5   56.3   81.2   7.8-e038 M | membrane protein
+    ACT10975.1        264    42-254         1   27649-28272    1   1  0  N   38.4   55.3   80.6   6.1-e038 M | membrane protein
+    ADO39854.1        263    41-253         1   27649-28272    1   1  0  N   37.5   55.8   80.9   2.0-e037 M | membrane protein
+    ADO39822.1        263    41-253         1   27649-28272    1   1  0  N   37.5   55.8   80.9   2.0-e037 M | membrane protein
+    ACT10921.1        263    41-253         1   27649-28272    1   1  0  N   38.0   55.8   80.9   1.5-e037 M | membrane protein
+    ACT10942.1        263    41-253         1   27649-28272    1   1  0  N   38.0   55.8   80.9   1.5-e037 M | membrane protein
+    ADL71449.1        263    41-253         1   27649-28272    1   1  0  N   37.5   55.8   80.9   2.0-e037 M | membrane protein
+    ADO39844.1        264    42-254         1   27649-28272    1   1  0  N   37.5   55.3   80.6   7.1-e037 M | membrane protein
+    YP_004070198.1    262    40-252         1   27649-28272    1   1  0  N   37.5   55.8   81.2   2.0-e037 M | membrane protein
+    ADO39833.1        263    41-253         1   27649-28272    1   1  0  N   38.0   55.8   80.9   8.0-e038 M | membrane protein
+    ACR46132.1        264    42-254         1   27649-28272    1   1  0  N   38.0   55.8   80.6   4.5-e038 M | membrane protein
+    ACT10881.1        263    41-253         1   27649-28272    1   1  0  N   38.0   55.8   80.9   1.5-e037 M | membrane protein
+    ADL71460.1        263    41-253         1   27649-28272    1   1  0  N   38.0   55.8   80.9   2.0-e037 M | membrane protein
+    ACR10355.1        264    42-254         1   27649-28272    1   1  0  N   37.5   55.8   80.6   2.1-e037 M | membrane protein
+    AAZ86082.1        262    40-252         1   27649-28272    1   1  0  N   38.0   55.8   81.2   1.4-e037 M | membrane protein
+    ACT10900.1        264    42-254         1   27649-28272    1   1  0  N   38.4   55.8   80.6   3.3-e038 M | membrane protein
+    ACR10373.1        263    41-253         1   27649-28272    1   1  0  N   38.0   55.8   80.9   1.1-e037 M | membrane protein
+    ACT10890.1        262    40-252         1   27649-28272    1   1  0  N   37.5   55.8   81.2   4.9-e037 M | membrane protein
+    AEK25515.1        263    41-253         1   27649-28272    1   1  0  N   38.0   55.8   80.9   1.5-e037 M | membrane protein
+    ADU17730.1        260    49-241         1   27682-28245    1   1  0  N   41.4   59.5   74.2   2.9-e038 M | membrane protein
+    AAQ17224.1        262    51-243         1   27682-28245    1   1  0  N   41.4   60.1   73.6   2.3-e038 M | membrane protein
+    ACS44222.1        261    50-251         1   27682-28272    1   1  0  N   39.6   57.9   77.3   5.6-e038 M | membrane protein
+    ACJ63236.1        260    49-250         1   27682-28272    1   1  0  N   40.0   58.9   77.6   2.2-e038 M | membrane protein
+    AEE69327.1        262    51-252         1   27682-28272    1   1  0  N   40.0   58.9   77.0   1.7-e038 M | membrane protein
+    ADB28912.1        267    56-257         1   27682-28272    1   1  0  N   40.0   58.9   75.6   1.4-e038 M | membrane protein
+    AAR11075.1        263    52-253         1   27682-28272    1   1  0  N   38.6   58.4   76.8   1.3-e036 M | membrane protein
+    AEQ61972.1        261    50-251         1   27682-28272    1   1  0  N   40.0   58.9   77.3   1.6-e038 M | membrane protein
+        found 1 gene
+
+dropping pseudogene gi_597503885.1, fails match requirements: %id 56.9 < 60
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_597503885.1     56.9   80.7   40.0   60.0  0.0   0.0   <13207..19701    2697   6698   ACT10905.1        Pp1ab | putative ORF1ab polyprotein, C-terminal
+                                                          19700..21298                                     
+                    frameshift in genome at or near position 19701..19700 (+1=>+2)
+gi_597503885.1.1   60.6   82.6   99.4   0.6   0.0   0.0   <13207..15993    929    929    gb_AAY32594.1_12  putative RNA-directed RNA polymerase nsp12,
+                                                                                                           C-terminal
+gi_597503885.1.2   94.0   98.8   100.0  0.0   0.0   0.0   15994..17787     598    598    NC_009020_nsp13   Helicase nsp13
+gi_597503885.1.3   54.2   77.4   99.6   0.2   0.0   0.2   17788..19365     526    519    sp_Q98VG9_14      Exoribonuclease nsp14
+gi_597503885.1.4   49.4   73.6   99.4   0.6   0.0   0.0   19366..19701     342    344    sp_P0C6X5_15      Uridylate-specific endoribonuclease nsp15
+                                                          19700..20389                                     
+gi_597503885.1.5   55.9   81.9   100.0  0.0   0.0   0.0   20390..21295     302    300    sp_P0C6X5_16      2'-O-methyl transferase nsp16
+
+dropping pseudogene gi_597503885.2, fails match requirements: %id 39.3 < 60
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_597503885.2     39.3   67.2   80.5   19.1  0.0   0.4   27682..28296     204    262    AEE69327.1        M | membrane protein
+                    could not find valid start codon
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|597503885|gb|KJ55    29890      0            0          0              0              -                -              -   cov_g1a_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+

@@ -1,0 +1,564 @@
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_001348.1            124070     70            0     111888          37226           99.7             99.8          100.0   hhv3_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_001348.1.1      100.0  100.0  100.0  0.0   0.0   0.0   1747..1208       179    179    NP_040126.1       ORF3 | nuclear protein UL55
+NC_001348.1.2      100.0  100.0  100.0  0.0   0.0   0.0   3441..2083       452    452    NP_040127.1       ORF4 | multifunctional expression regulator
+NC_001348.1.3      100.0  100.0  100.0  0.0   0.0   0.0   4574..3552       340    340    NP_040128.1       ORF5 | envelope glycoprotein K
+NC_001348.1.4      99.8   99.9   100.0  0.0   0.0   0.0   7877..4626       1083   1083   NP_040129.1       ORF6 | helicase-primase primase subunit
+NC_001348.1.5      100.0  100.0  100.0  0.0   0.0   0.0   7907..8686       259    259    NP_040130.1       ORF7 | tegument protein UL51
+NC_001348.1.6      100.0  100.0  100.0  0.0   0.0   0.0   9942..10205      87     87     YP_068406.1       ORF9A | envelope glycoprotein N
+NC_001348.1.7      99.7   99.9   100.0  0.0   0.0   0.0   9967..8777       396    396    NP_040131.1       ORF8 | deoxyuridine triphosphatase
+NC_001348.1.8      99.7   100.0  100.0  0.0   0.0   0.0   10309..11217     302    302    NP_040132.1       ORF9 | tegument protein VP22
+NC_001348.1.9      99.5   99.5   100.0  0.0   0.0   0.0   11460..12692     410    410    NP_040133.1       ORF10 | transactivating tegument protein VP16
+NC_001348.1.10     98.1   98.2   100.0  0.0   0.0   0.0   12890..15349     819    819    NP_040134.1       ORF11 | tegument protein VP13/14
+NC_001348.1.11     100.0  100.0  100.0  0.0   0.0   0.0   15514..17499     661    661    NP_040135.1       ORF12 | tegument protein VP11/12
+NC_001348.1.12     100.0  100.0  100.0  0.0   0.0   0.0   17741..18646     301    301    NP_040136.1       ORF13 | thymidylate synthase
+NC_001348.1.13     97.0   97.5   100.0  0.0   0.0   0.0   20371..18731     546    560    NP_040137.1       ORF14 | envelope glycoprotein C
+NC_001348.1.14     100.0  100.0  100.0  0.0   0.0   0.0   21736..20516     406    406    NP_040138.1       ORF15 | envelope protein UL43
+NC_001348.1.15     100.0  100.0  100.0  0.0   0.0   0.0   23052..21826     408    408    NP_040139.1       ORF16 | DNA polymerase processivity subunit
+NC_001348.1.16     100.0  100.0  100.0  0.0   0.0   0.0   23407..24774     455    455    NP_040140.1       ORF17 | tegument host shutoff protein
+NC_001348.1.17     100.0  100.0  100.0  0.0   0.0   0.0   25751..24831     306    306    NP_040141.1       ORF18 | ribonucleotide reductase subunit 2
+NC_001348.1.18     100.0  100.0  100.0  0.0   0.0   0.0   28103..25776     775    775    NP_040142.1       ORF19 | ribonucleotide reductase subunit 1
+NC_001348.1.19     100.0  100.0  100.0  0.0   0.0   0.0   29733..28282     483    483    NP_040143.1       ORF20 | capsid triplex subunit 1
+NC_001348.1.20     99.8   100.0  100.0  0.0   0.0   0.0   30017..33133     1038   1038   NP_040144.1       ORF21 | tegument protein UL37
+NC_001348.1.21     99.3   99.4   100.0  0.0   0.0   0.0   33341..41587     2748   2763   NP_040145.1       ORF22 | large tegument protein
+NC_001348.1.22     100.0  100.0  100.0  0.0   0.0   0.0   42348..41641     235    235    NP_040146.1       ORF23 | small capsid protein
+NC_001348.1.23     100.0  100.0  100.0  0.0   0.0   0.0   43231..42422     269    269    NP_040147.1       ORF24 | nuclear egress membrane protein
+NC_001348.1.24     100.0  100.0  100.0  0.0   0.0   0.0   43716..45473     585    585    NP_040149.1       ORF26 | DNA packaging protein UL32
+NC_001348.1.25     100.0  100.0  100.0  0.0   0.0   0.0   43828..43358     156    156    NP_040148.1       ORF25 | DNA packaging protein UL33
+NC_001348.1.26     100.0  100.0  100.0  0.0   0.0   0.0   45400..46338     312    312    NP_040150.2       ORF27 | nuclear egress lamina protein
+NC_001348.1.27     99.9   100.0  100.0  0.0   0.0   0.0   49846..46262     1194   1194   NP_040151.1       ORF28 | DNA polymerase catalytic subunit
+NC_001348.1.28     99.4   99.6   100.0  0.0   0.0   0.0   50067..53666     1199   1204   NP_040152.1       ORF29 | single-stranded DNA-binding protein
+NC_001348.1.29     100.0  100.0  100.0  0.0   0.0   0.0   53845..56157     770    770    NP_040153.1       ORF30 | DNA packaging terminase subunit 2
+NC_001348.1.30     100.0  100.0  100.0  0.0   0.0   0.0   56013..58808     931    931    NP_040154.2       ORF31 | envelope glycoprotein B
+NC_001348.1.31     100.0  100.0  100.0  0.0   0.0   0.0   58960..59391     143    143    NP_040155.1       ORF32 | protein V32
+NC_001348.1.32     99.3   99.6   100.0  0.0   0.0   0.0   60419..59511     302    302    YP_068407.1       ORF33.5 | capsid scaffold protein
+NC_001348.1.33     99.7   99.8   100.0  0.0   0.0   0.0   61328..59511     605    605    NP_040156.1       ORF33 | capsid maturation protease
+NC_001348.1.34     100.0  100.0  100.0  0.0   0.0   0.0   63100..61361     579    579    NP_040157.1       ORF34 | DNA packaging tegument protein UL25
+NC_001348.1.35     99.2   100.0  100.0  0.0   0.0   0.0   63943..63167     258    258    NP_040158.1       ORF35 | nuclear protein UL24
+NC_001348.1.36     99.7   99.7   100.0  0.0   0.0   0.0   63997..65022     341    341    NP_040159.1       ORF36 | thymidine kinase
+NC_001348.1.37     99.6   99.9   100.0  0.0   0.0   0.0   65264..67789     841    841    NP_040160.1       ORF37 | envelope glycoprotein H
+NC_001348.1.38     99.8   100.0  100.0  0.0   0.0   0.0   69483..67858     541    541    NP_040161.1       ORF38 | tegument protein UL21
+NC_001348.1.39     100.0  100.0  100.0  0.0   0.0   0.0   69877..70545     222    222    NP_040162.2       ORF39 | envelope protein UL20
+NC_001348.1.40     99.9   100.0  100.0  0.0   0.0   0.0   70730..74920     1396   1396   NP_040163.1       ORF40 | major capsid protein
+NC_001348.1.41     100.0  100.0  100.0  0.0   0.0   0.0   75037..75987     316    316    NP_040164.1       ORF41 | capsid triplex subunit 2
+NC_001348.1.42     100.0  100.0  100.0  0.0   0.0   0.0   77362..79392     676    676    NP_040166.1       ORF43 | DNA packaging tegument protein UL17
+NC_001348.1.43     99.4   100.0  100.0  0.0   0.0   0.0   79552..80643     363    363    NP_040167.1       ORF44 | tegument protein UL16
+NC_001348.1.44     100.0  100.0  100.0  0.0   0.0   0.0   81785..80730     747    747    NP_040165.1       ORF42 | DNA packaging terminase subunit 1
+                                                          77228..76041                                     
+NC_001348.1.45     100.0  100.0  100.0  0.0   0.0   0.0   81911..82510     199    199    NP_040168.1       ORF46 | tegument protein UL14
+NC_001348.1.46     99.8   100.0  100.0  0.0   0.0   0.0   82360..83892     510    510    NP_040169.1       ORF47 | tegument serine/threonine protein kinase
+NC_001348.1.47     99.6   100.0  100.0  0.0   0.0   0.0   83859..85514     551    551    NP_040170.1       ORF48 | deoxyribonuclease
+NC_001348.1.48     100.0  100.0  100.0  0.0   0.0   0.0   85418..85663     81     81     NP_040171.1       ORF49 | myristylated tegument protein
+NC_001348.1.49     99.9   100.0  100.0  0.0   0.0   0.0   87063..89570     835    835    NP_040173.1       ORF51 | DNA replication origin-binding helicase
+NC_001348.1.50     99.8   100.0  100.0  0.0   0.0   0.0   87064..85757     435    435    NP_040172.1       ORF50 | envelope glycoprotein M
+NC_001348.1.51     99.7   100.0  100.0  0.0   0.0   0.0   89674..91989     771    771    NP_040174.1       ORF52 | helicase-primase subunit
+NC_001348.1.52     100.0  100.0  100.0  0.0   0.0   0.0   93031..92036     331    331    NP_040175.1       ORF53 | tegument protein UL7
+NC_001348.1.53     100.0  100.0  100.0  0.0   0.0   0.0   95165..92856     769    769    NP_040176.1       ORF54 | capsid portal protein
+NC_001348.1.54     100.0  100.0  100.0  0.0   0.0   0.0   95177..97822     881    881    NP_040177.1       ORF55 | helicase-primase helicase subunit
+NC_001348.1.55     100.0  100.0  100.0  0.0   0.0   0.0   97893..98483     196    196    NP_040178.2       ORF56 | nuclear protein UL4
+NC_001348.1.56     100.0  100.0  100.0  0.0   0.0   0.0   98807..98592     71     71     NP_040179.1       ORF57 | protein V57
+NC_001348.1.57     99.5   100.0  100.0  0.0   0.0   0.0   99453..98788     221    221    NP_040180.1       ORF58 | nuclear protein UL3
+NC_001348.1.58     100.0  100.0  100.0  0.0   0.0   0.0   100400..99483    305    305    NP_040181.1       ORF59 | uracil-DNA glycosylase
+NC_001348.1.59     99.4   99.4   100.0  0.0   0.0   0.0   100833..100351   160    159    NP_040182.1       ORF60 | envelope glycoprotein L
+NC_001348.1.60     100.0  100.0  100.0  0.0   0.0   0.0   103669..102266   467    467    NP_040183.1       ORF61 | ubiquitin E3 ligase ICP0
+NC_001348.1.61     99.9   100.0  100.0  0.0   0.0   0.0   108320..104388   1310   1310   NP_040184.1       ORF62 | transcriptional regulator ICP4
+NC_001348.1.62     100.0  100.0  100.0  0.0   0.0   0.0   109767..110603   278    278    NP_040185.1       ORF63 | regulatory protein ICP22
+NC_001348.1.63     100.0  100.0  100.0  0.0   0.0   0.0   110751..111293   180    180    NP_040186.1       ORF64 | virion protein US10
+NC_001348.1.64     100.0  100.0  100.0  0.0   0.0   0.0   111825..111517   102    102    NP_040187.1       ORF65 | membrane protein US9
+NC_001348.1.65     100.0  100.0  100.0  0.0   0.0   0.0   112222..113403   393    393    NP_040188.1       ORF66 | serine/threonine protein kinase US3
+NC_001348.1.66     100.0  100.0  100.0  0.0   0.0   0.0   113681..114745   354    354    NP_040189.1       ORF67 | envelope glycoprotein I
+NC_001348.1.67     99.8   99.8   100.0  0.0   0.0   0.0   114993..116864   623    623    NP_040190.1       ORF68 | envelope glycoprotein E
+NC_001348.1.68     100.0  100.0  100.0  0.0   0.0   0.0   117516..116974   180    180    NP_040186.1       ORF64A | virion protein US10
+NC_001348.1.69     100.0  100.0  100.0  0.0   0.0   0.0   118500..117664   278    278    NP_040185.1       ORF63A | regulatory protein ICP22
+NC_001348.1.70     99.9   100.0  100.0  0.0   0.0   0.0   119947..123879   1310   1310   NP_040184.1       ORF62A | transcriptional regulator ICP4
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+DQ674250.1             124811     73            0     113304          37695           99.9             99.9          100.0   hhv3_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+DQ674250.1.1       100.0  100.0  100.0  0.0   0.0   0.0   172..561         129    129    YP_053044.1       ORF0 | membrane protein UL56
+DQ674250.1.2       100.0  100.0  100.0  0.0   0.0   0.0   914..588         108    108    NP_040124.1       ORF1 | membrane protein V1
+DQ674250.1.3       100.0  100.0  100.0  0.0   0.0   0.0   1184..1849       221    221    NP_040125.2       ORF2 | myristylated tegument protein CIRC
+DQ674250.1.4       100.0  100.0  100.0  0.0   0.0   0.0   2446..1907       179    179    NP_040126.1       ORF3 | nuclear protein UL55
+DQ674250.1.5       100.0  100.0  100.0  0.0   0.0   0.0   4140..2782       452    452    NP_040127.1       ORF4 | multifunctional expression regulator
+DQ674250.1.6       100.0  100.0  100.0  0.0   0.0   0.0   5273..4251       340    340    NP_040128.1       ORF5 | envelope glycoprotein K
+DQ674250.1.7       100.0  100.0  100.0  0.0   0.0   0.0   8576..5325       1083   1083   NP_040129.1       ORF6 | helicase-primase primase subunit
+DQ674250.1.8       100.0  100.0  100.0  0.0   0.0   0.0   8606..9385       259    259    NP_040130.1       ORF7 | tegument protein UL51
+DQ674250.1.9       100.0  100.0  100.0  0.0   0.0   0.0   10641..10904     87     87     YP_068406.1       ORF9A | envelope glycoprotein N
+DQ674250.1.10      100.0  100.0  100.0  0.0   0.0   0.0   10666..9476      396    396    NP_040131.1       ORF8 | deoxyuridine triphosphatase
+DQ674250.1.11      100.0  100.0  100.0  0.0   0.0   0.0   11008..11916     302    302    NP_040132.1       ORF9 | tegument protein VP22
+DQ674250.1.12      100.0  100.0  100.0  0.0   0.0   0.0   12159..13391     410    410    NP_040133.1       ORF10 | transactivating tegument protein VP16
+DQ674250.1.13      97.9   98.0   100.0  0.0   0.0   0.0   13589..16003     804    819    NP_040134.1       ORF11 | tegument protein VP13/14
+DQ674250.1.14      100.0  100.0  100.0  0.0   0.0   0.0   16168..18153     661    661    NP_040135.1       ORF12 | tegument protein VP11/12
+DQ674250.1.15      100.0  100.0  100.0  0.0   0.0   0.0   18395..19300     301    301    NP_040136.1       ORF13 | thymidylate synthase
+DQ674250.1.16      99.3   100.0  100.0  0.0   0.0   0.0   21067..19385     560    560    NP_040137.1       ORF14 | envelope glycoprotein C
+DQ674250.1.17      100.0  100.0  100.0  0.0   0.0   0.0   22432..21212     406    406    NP_040138.1       ORF15 | envelope protein UL43
+DQ674250.1.18      100.0  100.0  100.0  0.0   0.0   0.0   23748..22522     408    408    NP_040139.1       ORF16 | DNA polymerase processivity subunit
+DQ674250.1.19      100.0  100.0  100.0  0.0   0.0   0.0   24103..25470     455    455    NP_040140.1       ORF17 | tegument host shutoff protein
+DQ674250.1.20      100.0  100.0  100.0  0.0   0.0   0.0   26447..25527     306    306    NP_040141.1       ORF18 | ribonucleotide reductase subunit 2
+DQ674250.1.21      100.0  100.0  100.0  0.0   0.0   0.0   28799..26472     775    775    NP_040142.1       ORF19 | ribonucleotide reductase subunit 1
+DQ674250.1.22      100.0  100.0  100.0  0.0   0.0   0.0   30429..28978     483    483    NP_040143.1       ORF20 | capsid triplex subunit 1
+DQ674250.1.23      100.0  100.0  100.0  0.0   0.0   0.0   30713..33829     1038   1038   NP_040144.1       ORF21 | tegument protein UL37
+DQ674250.1.24      99.7   99.7   100.0  0.0   0.0   0.0   34037..42307     2756   2763   NP_040145.1       ORF22 | large tegument protein
+DQ674250.1.25      99.6   99.9   100.0  0.0   0.0   0.0   43069..42362     235    235    NP_040146.1       ORF23 | small capsid protein
+DQ674250.1.26      100.0  100.0  100.0  0.0   0.0   0.0   43952..43143     269    269    NP_040147.1       ORF24 | nuclear egress membrane protein
+DQ674250.1.27      100.0  100.0  100.0  0.0   0.0   0.0   44437..46194     585    585    NP_040149.1       ORF26 | DNA packaging protein UL32
+DQ674250.1.28      100.0  100.0  100.0  0.0   0.0   0.0   44549..44079     156    156    NP_040148.1       ORF25 | DNA packaging protein UL33
+DQ674250.1.29      100.0  100.0  100.0  0.0   0.0   0.0   46121..47059     312    312    NP_040150.2       ORF27 | nuclear egress lamina protein
+DQ674250.1.30      100.0  100.0  100.0  0.0   0.0   0.0   50567..46983     1194   1194   NP_040151.1       ORF28 | DNA polymerase catalytic subunit
+DQ674250.1.31      100.0  100.0  100.0  0.0   0.0   0.0   50788..54402     1204   1204   NP_040152.1       ORF29 | single-stranded DNA-binding protein
+DQ674250.1.32      100.0  100.0  100.0  0.0   0.0   0.0   54581..56893     770    770    NP_040153.1       ORF30 | DNA packaging terminase subunit 2
+DQ674250.1.33      100.0  100.0  100.0  0.0   0.0   0.0   56749..59544     931    931    NP_040154.2       ORF31 | envelope glycoprotein B
+DQ674250.1.34      100.0  100.0  100.0  0.0   0.0   0.0   59696..60127     143    143    NP_040155.1       ORF32 | protein V32
+DQ674250.1.35      100.0  100.0  100.0  0.0   0.0   0.0   61156..60248     302    302    YP_068407.1       ORF33.5 | capsid scaffold protein
+DQ674250.1.36      100.0  100.0  100.0  0.0   0.0   0.0   62065..60248     605    605    NP_040156.1       ORF33 | capsid maturation protease
+DQ674250.1.37      100.0  100.0  100.0  0.0   0.0   0.0   63837..62098     579    579    NP_040157.1       ORF34 | DNA packaging tegument protein UL25
+DQ674250.1.38      100.0  100.0  100.0  0.0   0.0   0.0   64680..63904     258    258    NP_040158.1       ORF35 | nuclear protein UL24
+DQ674250.1.39      99.7   99.7   100.0  0.0   0.0   0.0   64734..65759     341    341    NP_040159.1       ORF36 | thymidine kinase
+DQ674250.1.40      99.9   99.9   100.0  0.0   0.0   0.0   66001..68526     841    841    NP_040160.1       ORF37 | envelope glycoprotein H
+DQ674250.1.41      100.0  100.0  100.0  0.0   0.0   0.0   70220..68595     541    541    NP_040161.1       ORF38 | tegument protein UL21
+DQ674250.1.42      100.0  100.0  100.0  0.0   0.0   0.0   70614..71282     222    222    NP_040162.2       ORF39 | envelope protein UL20
+DQ674250.1.43      100.0  100.0  100.0  0.0   0.0   0.0   71467..75657     1396   1396   NP_040163.1       ORF40 | major capsid protein
+DQ674250.1.44      100.0  100.0  100.0  0.0   0.0   0.0   75774..76724     316    316    NP_040164.1       ORF41 | capsid triplex subunit 2
+DQ674250.1.45      100.0  100.0  100.0  0.0   0.0   0.0   78099..80129     676    676    NP_040166.1       ORF43 | DNA packaging tegument protein UL17
+DQ674250.1.46      100.0  100.0  100.0  0.0   0.0   0.0   80289..81380     363    363    NP_040167.1       ORF44 | tegument protein UL16
+DQ674250.1.47      100.0  100.0  100.0  0.0   0.0   0.0   82522..81467     747    747    NP_040165.1       ORF42 | DNA packaging terminase subunit 1
+                                                          77965..76778                                     
+DQ674250.1.48      100.0  100.0  100.0  0.0   0.0   0.0   82648..83247     199    199    NP_040168.1       ORF46 | tegument protein UL14
+DQ674250.1.49      100.0  100.0  100.0  0.0   0.0   0.0   83097..84629     510    510    NP_040169.1       ORF47 | tegument serine/threonine protein kinase
+DQ674250.1.50      100.0  100.0  100.0  0.0   0.0   0.0   84596..86251     551    551    NP_040170.1       ORF48 | deoxyribonuclease
+DQ674250.1.51      100.0  100.0  100.0  0.0   0.0   0.0   86155..86400     81     81     NP_040171.1       ORF49 | myristylated tegument protein
+DQ674250.1.52      99.8   100.0  100.0  0.0   0.0   0.0   87810..90317     835    835    NP_040173.1       ORF51 | DNA replication origin-binding helicase
+DQ674250.1.53      100.0  100.0  100.0  0.0   0.0   0.0   87811..86504     435    435    NP_040172.1       ORF50 | envelope glycoprotein M
+DQ674250.1.54      100.0  100.0  100.0  0.0   0.0   0.0   90422..92737     771    771    NP_040174.1       ORF52 | helicase-primase subunit
+DQ674250.1.55      100.0  100.0  100.0  0.0   0.0   0.0   93779..92784     331    331    NP_040175.1       ORF53 | tegument protein UL7
+DQ674250.1.56      100.0  100.0  100.0  0.0   0.0   0.0   95913..93604     769    769    NP_040176.1       ORF54 | capsid portal protein
+DQ674250.1.57      100.0  100.0  100.0  0.0   0.0   0.0   95925..98570     881    881    NP_040177.1       ORF55 | helicase-primase helicase subunit
+DQ674250.1.58      100.0  100.0  100.0  0.0   0.0   0.0   98641..99231     196    196    NP_040178.2       ORF56 | nuclear protein UL4
+DQ674250.1.59      100.0  100.0  100.0  0.0   0.0   0.0   99555..99340     71     71     NP_040179.1       ORF57 | protein V57
+DQ674250.1.60      100.0  100.0  100.0  0.0   0.0   0.0   100201..99536    221    221    NP_040180.1       ORF58 | nuclear protein UL3
+DQ674250.1.61      100.0  100.0  100.0  0.0   0.0   0.0   101148..100231   305    305    NP_040181.1       ORF59 | uracil-DNA glycosylase
+DQ674250.1.62      100.0  100.0  100.0  0.0   0.0   0.0   101578..101099   159    159    NP_040182.1       ORF60 | envelope glycoprotein L
+DQ674250.1.63      100.0  100.0  100.0  0.0   0.0   0.0   104414..103011   467    467    NP_040183.1       ORF61 | ubiquitin E3 ligase ICP0
+DQ674250.1.64      99.9   99.9   100.0  0.0   0.0   0.0   109061..105129   1310   1310   NP_040184.1       ORF62 | transcriptional regulator ICP4
+DQ674250.1.65      100.0  100.0  100.0  0.0   0.0   0.0   110509..111345   278    278    NP_040185.1       ORF63 | regulatory protein ICP22
+DQ674250.1.66      100.0  100.0  100.0  0.0   0.0   0.0   111493..112035   180    180    NP_040186.1       ORF64 | virion protein US10
+DQ674250.1.67      100.0  100.0  100.0  0.0   0.0   0.0   112568..112260   102    102    NP_040187.1       ORF65 | membrane protein US9
+DQ674250.1.68      100.0  100.0  100.0  0.0   0.0   0.0   112965..114146   393    393    NP_040188.1       ORF66 | serine/threonine protein kinase US3
+DQ674250.1.69      100.0  100.0  100.0  0.0   0.0   0.0   114424..115488   354    354    NP_040189.1       ORF67 | envelope glycoprotein I
+DQ674250.1.70      100.0  100.0  100.0  0.0   0.0   0.0   115736..117607   623    623    NP_040190.1       ORF68 | envelope glycoprotein E
+DQ674250.1.71      100.0  100.0  100.0  0.0   0.0   0.0   118260..117718   180    180    NP_040186.1       ORF64A | virion protein US10
+DQ674250.1.72      100.0  100.0  100.0  0.0   0.0   0.0   119244..118408   278    278    NP_040185.1       ORF63A | regulatory protein ICP22
+DQ674250.1.73      99.9   99.9   100.0  0.0   0.0   0.0   120692..124624   1310   1310   NP_040184.1       ORF62A | transcriptional regulator ICP4
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KY037798.1             125213     73            0     113295          37692           99.8             99.9          100.0   hhv3_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KY037798.1.1       99.2   100.0  100.0  0.0   0.0   0.0   172..561         129    129    YP_053044.1       ORF0 | membrane protein UL56
+KY037798.1.2       98.1   100.0  100.0  0.0   0.0   0.0   914..588         108    108    NP_040124.1       ORF1 | membrane protein V1
+KY037798.1.3       100.0  100.0  100.0  0.0   0.0   0.0   1184..1849       221    221    NP_040125.2       ORF2 | myristylated tegument protein CIRC
+KY037798.1.4       100.0  100.0  100.0  0.0   0.0   0.0   2446..1907       179    179    NP_040126.1       ORF3 | nuclear protein UL55
+KY037798.1.5       100.0  100.0  100.0  0.0   0.0   0.0   4140..2782       452    452    NP_040127.1       ORF4 | multifunctional expression regulator
+KY037798.1.6       100.0  100.0  100.0  0.0   0.0   0.0   5273..4251       340    340    NP_040128.1       ORF5 | envelope glycoprotein K
+KY037798.1.7       100.0  100.0  100.0  0.0   0.0   0.0   8576..5325       1083   1083   NP_040129.1       ORF6 | helicase-primase primase subunit
+KY037798.1.8       100.0  100.0  100.0  0.0   0.0   0.0   8606..9385       259    259    NP_040130.1       ORF7 | tegument protein UL51
+KY037798.1.9       100.0  100.0  100.0  0.0   0.0   0.0   10641..10904     87     87     YP_068406.1       ORF9A | envelope glycoprotein N
+KY037798.1.10      99.7   100.0  100.0  0.0   0.0   0.0   10666..9476      396    396    NP_040131.1       ORF8 | deoxyuridine triphosphatase
+KY037798.1.11      99.7   100.0  100.0  0.0   0.0   0.0   11008..11916     302    302    NP_040132.1       ORF9 | tegument protein VP22
+KY037798.1.12      99.5   99.5   100.0  0.0   0.0   0.0   12159..13391     410    410    NP_040133.1       ORF10 | transactivating tegument protein VP16
+KY037798.1.13      96.5   96.7   100.0  0.0   0.0   0.0   13589..15970     793    819    NP_040134.1       ORF11 | tegument protein VP13/14
+KY037798.1.14      99.8   99.8   100.0  0.0   0.0   0.0   16135..18120     661    661    NP_040135.1       ORF12 | tegument protein VP11/12
+KY037798.1.15      100.0  100.0  100.0  0.0   0.0   0.0   18362..19267     301    301    NP_040136.1       ORF13 | thymidylate synthase
+KY037798.1.16      99.3   100.0  100.0  0.0   0.0   0.0   21034..19352     560    560    NP_040137.1       ORF14 | envelope glycoprotein C
+KY037798.1.17      100.0  100.0  100.0  0.0   0.0   0.0   22399..21179     406    406    NP_040138.1       ORF15 | envelope protein UL43
+KY037798.1.18      100.0  100.0  100.0  0.0   0.0   0.0   23715..22489     408    408    NP_040139.1       ORF16 | DNA polymerase processivity subunit
+KY037798.1.19      100.0  100.0  100.0  0.0   0.0   0.0   24070..25437     455    455    NP_040140.1       ORF17 | tegument host shutoff protein
+KY037798.1.20      100.0  100.0  100.0  0.0   0.0   0.0   26414..25494     306    306    NP_040141.1       ORF18 | ribonucleotide reductase subunit 2
+KY037798.1.21      100.0  100.0  100.0  0.0   0.0   0.0   28766..26439     775    775    NP_040142.1       ORF19 | ribonucleotide reductase subunit 1
+KY037798.1.22      100.0  100.0  100.0  0.0   0.0   0.0   30396..28945     483    483    NP_040143.1       ORF20 | capsid triplex subunit 1
+KY037798.1.23      99.9   99.9   100.0  0.0   0.0   0.0   30680..33796     1038   1038   NP_040144.1       ORF21 | tegument protein UL37
+KY037798.1.24      99.7   100.0  100.0  0.0   0.0   0.0   34004..42295     2763   2763   NP_040145.1       ORF22 | large tegument protein
+KY037798.1.25      100.0  100.0  100.0  0.0   0.0   0.0   43058..42351     235    235    NP_040146.1       ORF23 | small capsid protein
+KY037798.1.26      99.6   100.0  100.0  0.0   0.0   0.0   43941..43132     269    269    NP_040147.1       ORF24 | nuclear egress membrane protein
+KY037798.1.27      99.8   100.0  100.0  0.0   0.0   0.0   44426..46183     585    585    NP_040149.1       ORF26 | DNA packaging protein UL32
+KY037798.1.28      100.0  100.0  100.0  0.0   0.0   0.0   44538..44068     156    156    NP_040148.1       ORF25 | DNA packaging protein UL33
+KY037798.1.29      100.0  100.0  100.0  0.0   0.0   0.0   46110..47048     312    312    NP_040150.2       ORF27 | nuclear egress lamina protein
+KY037798.1.30      99.9   100.0  100.0  0.0   0.0   0.0   50556..46972     1194   1194   NP_040151.1       ORF28 | DNA polymerase catalytic subunit
+KY037798.1.31      100.0  100.0  100.0  0.0   0.0   0.0   50777..54391     1204   1204   NP_040152.1       ORF29 | single-stranded DNA-binding protein
+KY037798.1.32      100.0  100.0  100.0  0.0   0.0   0.0   54571..56883     770    770    NP_040153.1       ORF30 | DNA packaging terminase subunit 2
+KY037798.1.33      100.0  100.0  100.0  0.0   0.0   0.0   56739..59534     931    931    NP_040154.2       ORF31 | envelope glycoprotein B
+KY037798.1.34      100.0  100.0  100.0  0.0   0.0   0.0   59686..60117     143    143    NP_040155.1       ORF32 | protein V32
+KY037798.1.35      100.0  100.0  100.0  0.0   0.0   0.0   61146..60238     302    302    YP_068407.1       ORF33.5 | capsid scaffold protein
+KY037798.1.36      100.0  100.0  100.0  0.0   0.0   0.0   62055..60238     605    605    NP_040156.1       ORF33 | capsid maturation protease
+KY037798.1.37      100.0  100.0  100.0  0.0   0.0   0.0   63827..62088     579    579    NP_040157.1       ORF34 | DNA packaging tegument protein UL25
+KY037798.1.38      99.6   100.0  100.0  0.0   0.0   0.0   64670..63894     258    258    NP_040158.1       ORF35 | nuclear protein UL24
+KY037798.1.39      99.7   99.7   100.0  0.0   0.0   0.0   64724..65749     341    341    NP_040159.1       ORF36 | thymidine kinase
+KY037798.1.40      99.5   99.9   100.0  0.0   0.0   0.0   65991..68516     841    841    NP_040160.1       ORF37 | envelope glycoprotein H
+KY037798.1.41      99.6   100.0  100.0  0.0   0.0   0.0   70210..68585     541    541    NP_040161.1       ORF38 | tegument protein UL21
+KY037798.1.42      100.0  100.0  100.0  0.0   0.0   0.0   70604..71272     222    222    NP_040162.2       ORF39 | envelope protein UL20
+KY037798.1.43      100.0  100.0  100.0  0.0   0.0   0.0   71457..75647     1396   1396   NP_040163.1       ORF40 | major capsid protein
+KY037798.1.44      100.0  100.0  100.0  0.0   0.0   0.0   75764..76714     316    316    NP_040164.1       ORF41 | capsid triplex subunit 2
+KY037798.1.45      99.9   100.0  100.0  0.0   0.0   0.0   78088..80118     676    676    NP_040166.1       ORF43 | DNA packaging tegument protein UL17
+KY037798.1.46      99.7   100.0  100.0  0.0   0.0   0.0   80278..81369     363    363    NP_040167.1       ORF44 | tegument protein UL16
+KY037798.1.47      99.9   99.9   100.0  0.0   0.0   0.0   82511..81456     747    747    NP_040165.1       ORF42 | DNA packaging terminase subunit 1
+                                                          77955..76768                                     
+KY037798.1.48      99.5   100.0  100.0  0.0   0.0   0.0   82637..83236     199    199    NP_040168.1       ORF46 | tegument protein UL14
+KY037798.1.49      99.8   100.0  100.0  0.0   0.0   0.0   83086..84618     510    510    NP_040169.1       ORF47 | tegument serine/threonine protein kinase
+KY037798.1.50      100.0  100.0  100.0  0.0   0.0   0.0   84585..86240     551    551    NP_040170.1       ORF48 | deoxyribonuclease
+KY037798.1.51      100.0  100.0  100.0  0.0   0.0   0.0   86144..86389     81     81     NP_040171.1       ORF49 | myristylated tegument protein
+KY037798.1.52      99.9   100.0  100.0  0.0   0.0   0.0   87799..90306     835    835    NP_040173.1       ORF51 | DNA replication origin-binding helicase
+KY037798.1.53      100.0  100.0  100.0  0.0   0.0   0.0   87800..86493     435    435    NP_040172.1       ORF50 | envelope glycoprotein M
+KY037798.1.54      99.7   100.0  100.0  0.0   0.0   0.0   90411..92726     771    771    NP_040174.1       ORF52 | helicase-primase subunit
+KY037798.1.55      100.0  100.0  100.0  0.0   0.0   0.0   93769..92774     331    331    NP_040175.1       ORF53 | tegument protein UL7
+KY037798.1.56      100.0  100.0  100.0  0.0   0.0   0.0   95903..93594     769    769    NP_040176.1       ORF54 | capsid portal protein
+KY037798.1.57      99.9   100.0  100.0  0.0   0.0   0.0   95915..98560     881    881    NP_040177.1       ORF55 | helicase-primase helicase subunit
+KY037798.1.58      100.0  100.0  100.0  0.0   0.0   0.0   98631..99221     196    196    NP_040178.2       ORF56 | nuclear protein UL4
+KY037798.1.59      100.0  100.0  100.0  0.0   0.0   0.0   99545..99330     71     71     NP_040179.1       ORF57 | protein V57
+KY037798.1.60      99.5   100.0  100.0  0.0   0.0   0.0   100191..99526    221    221    NP_040180.1       ORF58 | nuclear protein UL3
+KY037798.1.61      100.0  100.0  100.0  0.0   0.0   0.0   101138..100221   305    305    NP_040181.1       ORF59 | uracil-DNA glycosylase
+KY037798.1.62      99.4   99.4   100.0  0.0   0.0   0.0   101571..101089   160    159    NP_040182.1       ORF60 | envelope glycoprotein L
+KY037798.1.63      100.0  100.0  100.0  0.0   0.0   0.0   104407..103004   467    467    NP_040183.1       ORF61 | ubiquitin E3 ligase ICP0
+KY037798.1.64      99.9   100.0  100.0  0.0   0.0   0.0   109056..105124   1310   1310   NP_040184.1       ORF62 | transcriptional regulator ICP4
+KY037798.1.65      100.0  100.0  100.0  0.0   0.0   0.0   110703..111539   278    278    NP_040185.1       ORF63 | regulatory protein ICP22
+KY037798.1.66      100.0  100.0  100.0  0.0   0.0   0.0   111687..112229   180    180    NP_040186.1       ORF64 | virion protein US10
+KY037798.1.67      100.0  100.0  100.0  0.0   0.0   0.0   112765..112457   102    102    NP_040187.1       ORF65 | membrane protein US9
+KY037798.1.68      100.0  100.0  100.0  0.0   0.0   0.0   113162..114343   393    393    NP_040188.1       ORF66 | serine/threonine protein kinase US3
+KY037798.1.69      100.0  100.0  100.0  0.0   0.0   0.0   114621..115685   354    354    NP_040189.1       ORF67 | envelope glycoprotein I
+KY037798.1.70      99.7   99.8   100.0  0.0   0.0   0.0   115933..117804   623    623    NP_040190.1       ORF68 | envelope glycoprotein E
+KY037798.1.71      100.0  100.0  100.0  0.0   0.0   0.0   118460..117918   180    180    NP_040186.1       ORF64A | virion protein US10
+KY037798.1.72      100.0  100.0  100.0  0.0   0.0   0.0   119444..118608   278    278    NP_040185.1       ORF63A | regulatory protein ICP22
+KY037798.1.73      99.9   100.0  100.0  0.0   0.0   0.0   121091..125023   1310   1310   NP_040184.1       ORF62A | transcriptional regulator ICP4
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KY037797.1             124840     73            0     113352          37711           99.7             99.8          100.0   hhv3_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KY037797.1.1       100.0  100.0  100.0  0.0   0.0   0.0   174..563         129    129    YP_053044.1       ORF0 | membrane protein UL56
+KY037797.1.2       98.1   100.0  100.0  0.0   0.0   0.0   916..590         108    108    NP_040124.1       ORF1 | membrane protein V1
+KY037797.1.3       100.0  100.0  100.0  0.0   0.0   0.0   1186..1851       221    221    NP_040125.2       ORF2 | myristylated tegument protein CIRC
+KY037797.1.4       100.0  100.0  100.0  0.0   0.0   0.0   2448..1909       179    179    NP_040126.1       ORF3 | nuclear protein UL55
+KY037797.1.5       99.8   99.9   100.0  0.0   0.0   0.0   4142..2784       452    452    NP_040127.1       ORF4 | multifunctional expression regulator
+KY037797.1.6       100.0  100.0  100.0  0.0   0.0   0.0   5275..4253       340    340    NP_040128.1       ORF5 | envelope glycoprotein K
+KY037797.1.7       99.8   99.9   100.0  0.0   0.0   0.0   8578..5327       1083   1083   NP_040129.1       ORF6 | helicase-primase primase subunit
+KY037797.1.8       100.0  100.0  100.0  0.0   0.0   0.0   8608..9387       259    259    NP_040130.1       ORF7 | tegument protein UL51
+KY037797.1.9       100.0  100.0  100.0  0.0   0.0   0.0   10643..10906     87     87     YP_068406.1       ORF9A | envelope glycoprotein N
+KY037797.1.10      100.0  100.0  100.0  0.0   0.0   0.0   10668..9478      396    396    NP_040131.1       ORF8 | deoxyuridine triphosphatase
+KY037797.1.11      99.3   100.0  100.0  0.0   0.0   0.0   11010..11918     302    302    NP_040132.1       ORF9 | tegument protein VP22
+KY037797.1.12      99.5   99.5   100.0  0.0   0.0   0.0   12161..13393     410    410    NP_040133.1       ORF10 | transactivating tegument protein VP16
+KY037797.1.13      96.9   97.2   100.0  0.0   0.0   0.0   13591..15981     796    819    NP_040134.1       ORF11 | tegument protein VP13/14
+KY037797.1.14      99.8   99.8   100.0  0.0   0.0   0.0   16146..18131     661    661    NP_040135.1       ORF12 | tegument protein VP11/12
+KY037797.1.15      100.0  100.0  100.0  0.0   0.0   0.0   18373..19278     301    301    NP_040136.1       ORF13 | thymidylate synthase
+KY037797.1.16      94.4   95.2   100.0  0.0   0.0   0.0   21129..19363     588    560    NP_040137.1       ORF14 | envelope glycoprotein C
+KY037797.1.17      99.8   99.9   100.0  0.0   0.0   0.0   22494..21274     406    406    NP_040138.1       ORF15 | envelope protein UL43
+KY037797.1.18      100.0  100.0  100.0  0.0   0.0   0.0   23810..22584     408    408    NP_040139.1       ORF16 | DNA polymerase processivity subunit
+KY037797.1.19      99.3   99.8   100.0  0.0   0.0   0.0   24165..25532     455    455    NP_040140.1       ORF17 | tegument host shutoff protein
+KY037797.1.20      100.0  100.0  100.0  0.0   0.0   0.0   26509..25589     306    306    NP_040141.1       ORF18 | ribonucleotide reductase subunit 2
+KY037797.1.21      99.9   100.0  100.0  0.0   0.0   0.0   28861..26534     775    775    NP_040142.1       ORF19 | ribonucleotide reductase subunit 1
+KY037797.1.22      99.6   99.8   100.0  0.0   0.0   0.0   30491..29040     483    483    NP_040143.1       ORF20 | capsid triplex subunit 1
+KY037797.1.23      100.0  100.0  100.0  0.0   0.0   0.0   30775..33891     1038   1038   NP_040144.1       ORF21 | tegument protein UL37
+KY037797.1.24      99.5   99.8   100.0  0.0   0.0   0.0   34099..42372     2757   2763   NP_040145.1       ORF22 | large tegument protein
+KY037797.1.25      100.0  100.0  100.0  0.0   0.0   0.0   43133..42426     235    235    NP_040146.1       ORF23 | small capsid protein
+KY037797.1.26      99.6   100.0  100.0  0.0   0.0   0.0   44016..43207     269    269    NP_040147.1       ORF24 | nuclear egress membrane protein
+KY037797.1.27      100.0  100.0  100.0  0.0   0.0   0.0   44501..46258     585    585    NP_040149.1       ORF26 | DNA packaging protein UL32
+KY037797.1.28      100.0  100.0  100.0  0.0   0.0   0.0   44613..44143     156    156    NP_040148.1       ORF25 | DNA packaging protein UL33
+KY037797.1.29      100.0  100.0  100.0  0.0   0.0   0.0   46185..47123     312    312    NP_040150.2       ORF27 | nuclear egress lamina protein
+KY037797.1.30      99.9   100.0  100.0  0.0   0.0   0.0   50631..47047     1194   1194   NP_040151.1       ORF28 | DNA polymerase catalytic subunit
+KY037797.1.31      99.6   99.6   100.0  0.0   0.0   0.0   50852..54451     1199   1204   NP_040152.1       ORF29 | single-stranded DNA-binding protein
+KY037797.1.32      100.0  100.0  100.0  0.0   0.0   0.0   54630..56942     770    770    NP_040153.1       ORF30 | DNA packaging terminase subunit 2
+KY037797.1.33      100.0  100.0  100.0  0.0   0.0   0.0   56798..59593     931    931    NP_040154.2       ORF31 | envelope glycoprotein B
+KY037797.1.34      100.0  100.0  100.0  0.0   0.0   0.0   59745..60176     143    143    NP_040155.1       ORF32 | protein V32
+KY037797.1.35      99.3   99.6   100.0  0.0   0.0   0.0   61206..60298     302    302    YP_068407.1       ORF33.5 | capsid scaffold protein
+KY037797.1.36      99.7   99.8   100.0  0.0   0.0   0.0   62115..60298     605    605    NP_040156.1       ORF33 | capsid maturation protease
+KY037797.1.37      99.8   100.0  100.0  0.0   0.0   0.0   63887..62148     579    579    NP_040157.1       ORF34 | DNA packaging tegument protein UL25
+KY037797.1.38      98.8   100.0  100.0  0.0   0.0   0.0   64730..63954     258    258    NP_040158.1       ORF35 | nuclear protein UL24
+KY037797.1.39      99.7   99.7   100.0  0.0   0.0   0.0   64784..65809     341    341    NP_040159.1       ORF36 | thymidine kinase
+KY037797.1.40      99.8   99.9   100.0  0.0   0.0   0.0   66051..68576     841    841    NP_040160.1       ORF37 | envelope glycoprotein H
+KY037797.1.41      99.8   100.0  100.0  0.0   0.0   0.0   70270..68645     541    541    NP_040161.1       ORF38 | tegument protein UL21
+KY037797.1.42      100.0  100.0  100.0  0.0   0.0   0.0   70664..71332     222    222    NP_040162.2       ORF39 | envelope protein UL20
+KY037797.1.43      99.9   100.0  100.0  0.0   0.0   0.0   71517..75707     1396   1396   NP_040163.1       ORF40 | major capsid protein
+KY037797.1.44      99.7   100.0  100.0  0.0   0.0   0.0   75824..76774     316    316    NP_040164.1       ORF41 | capsid triplex subunit 2
+KY037797.1.45      100.0  100.0  100.0  0.0   0.0   0.0   78148..80178     676    676    NP_040166.1       ORF43 | DNA packaging tegument protein UL17
+KY037797.1.46      99.7   100.0  100.0  0.0   0.0   0.0   80338..81429     363    363    NP_040167.1       ORF44 | tegument protein UL16
+KY037797.1.47      99.9   100.0  100.0  0.0   0.0   0.0   82571..81516     747    747    NP_040165.1       ORF42 | DNA packaging terminase subunit 1
+                                                          78015..76828                                     
+KY037797.1.48      100.0  100.0  100.0  0.0   0.0   0.0   82697..83296     199    199    NP_040168.1       ORF46 | tegument protein UL14
+KY037797.1.49      100.0  100.0  100.0  0.0   0.0   0.0   83146..84678     510    510    NP_040169.1       ORF47 | tegument serine/threonine protein kinase
+KY037797.1.50      99.8   100.0  100.0  0.0   0.0   0.0   84645..86300     551    551    NP_040170.1       ORF48 | deoxyribonuclease
+KY037797.1.51      100.0  100.0  100.0  0.0   0.0   0.0   86204..86449     81     81     NP_040171.1       ORF49 | myristylated tegument protein
+KY037797.1.52      99.9   100.0  100.0  0.0   0.0   0.0   87859..90366     835    835    NP_040173.1       ORF51 | DNA replication origin-binding helicase
+KY037797.1.53      100.0  100.0  100.0  0.0   0.0   0.0   87860..86553     435    435    NP_040172.1       ORF50 | envelope glycoprotein M
+KY037797.1.54      99.6   100.0  100.0  0.0   0.0   0.0   90472..92787     771    771    NP_040174.1       ORF52 | helicase-primase subunit
+KY037797.1.55      100.0  100.0  100.0  0.0   0.0   0.0   93829..92834     331    331    NP_040175.1       ORF53 | tegument protein UL7
+KY037797.1.56      99.9   100.0  100.0  0.0   0.0   0.0   95963..93654     769    769    NP_040176.1       ORF54 | capsid portal protein
+KY037797.1.57      99.9   100.0  100.0  0.0   0.0   0.0   95975..98620     881    881    NP_040177.1       ORF55 | helicase-primase helicase subunit
+KY037797.1.58      100.0  100.0  100.0  0.0   0.0   0.0   98691..99281     196    196    NP_040178.2       ORF56 | nuclear protein UL4
+KY037797.1.59      100.0  100.0  100.0  0.0   0.0   0.0   99605..99390     71     71     NP_040179.1       ORF57 | protein V57
+KY037797.1.60      99.5   100.0  100.0  0.0   0.0   0.0   100251..99586    221    221    NP_040180.1       ORF58 | nuclear protein UL3
+KY037797.1.61      100.0  100.0  100.0  0.0   0.0   0.0   101198..100281   305    305    NP_040181.1       ORF59 | uracil-DNA glycosylase
+KY037797.1.62      100.0  100.0  100.0  0.0   0.0   0.0   101628..101149   159    159    NP_040182.1       ORF60 | envelope glycoprotein L
+KY037797.1.63      100.0  100.0  100.0  0.0   0.0   0.0   104464..103061   467    467    NP_040183.1       ORF61 | ubiquitin E3 ligase ICP0
+KY037797.1.64      99.8   100.0  100.0  0.0   0.0   0.0   109110..105178   1310   1310   NP_040184.1       ORF62 | transcriptional regulator ICP4
+KY037797.1.65      100.0  100.0  100.0  0.0   0.0   0.0   110641..111477   278    278    NP_040185.1       ORF63 | regulatory protein ICP22
+KY037797.1.66      99.4   99.9   100.0  0.0   0.0   0.0   111625..112167   180    180    NP_040186.1       ORF64 | virion protein US10
+KY037797.1.67      100.0  100.0  100.0  0.0   0.0   0.0   112701..112393   102    102    NP_040187.1       ORF65 | membrane protein US9
+KY037797.1.68      100.0  100.0  100.0  0.0   0.0   0.0   113098..114279   393    393    NP_040188.1       ORF66 | serine/threonine protein kinase US3
+KY037797.1.69      100.0  100.0  100.0  0.0   0.0   0.0   114557..115621   354    354    NP_040189.1       ORF67 | envelope glycoprotein I
+KY037797.1.70      99.8   99.8   100.0  0.0   0.0   0.0   115869..117740   623    623    NP_040190.1       ORF68 | envelope glycoprotein E
+KY037797.1.71      99.4   99.9   100.0  0.0   0.0   0.0   118394..117852   180    180    NP_040186.1       ORF64A | virion protein US10
+KY037797.1.72      99.6   100.0  100.0  0.0   0.0   0.0   119378..118542   278    278    NP_040185.1       ORF63A | regulatory protein ICP22
+KY037797.1.73      99.8   100.0  100.0  0.0   0.0   0.0   120722..124654   1310   1310   NP_040184.1       ORF62A | transcriptional regulator ICP4
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KY037796.1             125220     73            0     113340          37707           99.7             99.8          100.0   hhv3_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KY037796.1.1       99.2   99.8   100.0  0.0   0.0   0.0   174..563         129    129    YP_053044.1       ORF0 | membrane protein UL56
+KY037796.1.2       98.1   100.0  100.0  0.0   0.0   0.0   916..590         108    108    NP_040124.1       ORF1 | membrane protein V1
+KY037796.1.3       100.0  100.0  100.0  0.0   0.0   0.0   1186..1851       221    221    NP_040125.2       ORF2 | myristylated tegument protein CIRC
+KY037796.1.4       100.0  100.0  100.0  0.0   0.0   0.0   2448..1909       179    179    NP_040126.1       ORF3 | nuclear protein UL55
+KY037796.1.5       100.0  100.0  100.0  0.0   0.0   0.0   4142..2784       452    452    NP_040127.1       ORF4 | multifunctional expression regulator
+KY037796.1.6       100.0  100.0  100.0  0.0   0.0   0.0   5275..4253       340    340    NP_040128.1       ORF5 | envelope glycoprotein K
+KY037796.1.7       99.8   99.9   100.0  0.0   0.0   0.0   8578..5327       1083   1083   NP_040129.1       ORF6 | helicase-primase primase subunit
+KY037796.1.8       100.0  100.0  100.0  0.0   0.0   0.0   8608..9387       259    259    NP_040130.1       ORF7 | tegument protein UL51
+KY037796.1.9       100.0  100.0  100.0  0.0   0.0   0.0   10643..10906     87     87     YP_068406.1       ORF9A | envelope glycoprotein N
+KY037796.1.10      99.7   99.9   100.0  0.0   0.0   0.0   10668..9478      396    396    NP_040131.1       ORF8 | deoxyuridine triphosphatase
+KY037796.1.11      99.7   100.0  100.0  0.0   0.0   0.0   11010..11918     302    302    NP_040132.1       ORF9 | tegument protein VP22
+KY037796.1.12      99.5   99.5   100.0  0.0   0.0   0.0   12161..13393     410    410    NP_040133.1       ORF10 | transactivating tegument protein VP16
+KY037796.1.13      97.7   98.4   100.0  0.0   0.0   0.0   13591..16020     809    819    NP_040134.1       ORF11 | tegument protein VP13/14
+KY037796.1.14      100.0  100.0  100.0  0.0   0.0   0.0   16185..18170     661    661    NP_040135.1       ORF12 | tegument protein VP11/12
+KY037796.1.15      100.0  100.0  100.0  0.0   0.0   0.0   18412..19317     301    301    NP_040136.1       ORF13 | thymidylate synthase
+KY037796.1.16      96.9   97.6   100.0  0.0   0.0   0.0   21126..19402     574    560    NP_040137.1       ORF14 | envelope glycoprotein C
+KY037796.1.17      100.0  100.0  100.0  0.0   0.0   0.0   22491..21271     406    406    NP_040138.1       ORF15 | envelope protein UL43
+KY037796.1.18      99.8   99.8   100.0  0.0   0.0   0.0   23807..22581     408    408    NP_040139.1       ORF16 | DNA polymerase processivity subunit
+KY037796.1.19      99.1   99.8   100.0  0.0   0.0   0.0   24162..25529     455    455    NP_040140.1       ORF17 | tegument host shutoff protein
+KY037796.1.20      100.0  100.0  100.0  0.0   0.0   0.0   26506..25586     306    306    NP_040141.1       ORF18 | ribonucleotide reductase subunit 2
+KY037796.1.21      100.0  100.0  100.0  0.0   0.0   0.0   28858..26531     775    775    NP_040142.1       ORF19 | ribonucleotide reductase subunit 1
+KY037796.1.22      100.0  100.0  100.0  0.0   0.0   0.0   30488..29037     483    483    NP_040143.1       ORF20 | capsid triplex subunit 1
+KY037796.1.23      99.9   100.0  100.0  0.0   0.0   0.0   30772..33888     1038   1038   NP_040144.1       ORF21 | tegument protein UL37
+KY037796.1.24      99.4   99.6   100.0  0.0   0.0   0.0   34096..42360     2754   2763   NP_040145.1       ORF22 | large tegument protein
+KY037796.1.25      100.0  100.0  100.0  0.0   0.0   0.0   43122..42415     235    235    NP_040146.1       ORF23 | small capsid protein
+KY037796.1.26      99.6   100.0  100.0  0.0   0.0   0.0   44005..43196     269    269    NP_040147.1       ORF24 | nuclear egress membrane protein
+KY037796.1.27      100.0  100.0  100.0  0.0   0.0   0.0   44490..46247     585    585    NP_040149.1       ORF26 | DNA packaging protein UL32
+KY037796.1.28      100.0  100.0  100.0  0.0   0.0   0.0   44602..44132     156    156    NP_040148.1       ORF25 | DNA packaging protein UL33
+KY037796.1.29      100.0  100.0  100.0  0.0   0.0   0.0   46174..47112     312    312    NP_040150.2       ORF27 | nuclear egress lamina protein
+KY037796.1.30      99.7   99.8   100.0  0.0   0.0   0.0   50620..47036     1194   1194   NP_040151.1       ORF28 | DNA polymerase catalytic subunit
+KY037796.1.31      99.5   99.6   100.0  0.0   0.0   0.0   50841..54440     1199   1204   NP_040152.1       ORF29 | single-stranded DNA-binding protein
+KY037796.1.32      100.0  100.0  100.0  0.0   0.0   0.0   54619..56931     770    770    NP_040153.1       ORF30 | DNA packaging terminase subunit 2
+KY037796.1.33      99.9   100.0  100.0  0.0   0.0   0.0   56787..59582     931    931    NP_040154.2       ORF31 | envelope glycoprotein B
+KY037796.1.34      100.0  100.0  100.0  0.0   0.0   0.0   59735..60166     143    143    NP_040155.1       ORF32 | protein V32
+KY037796.1.35      99.0   99.3   100.0  0.0   0.0   0.0   61195..60287     302    302    YP_068407.1       ORF33.5 | capsid scaffold protein
+KY037796.1.36      99.5   99.6   100.0  0.0   0.0   0.0   62104..60287     605    605    NP_040156.1       ORF33 | capsid maturation protease
+KY037796.1.37      100.0  100.0  100.0  0.0   0.0   0.0   63876..62137     579    579    NP_040157.1       ORF34 | DNA packaging tegument protein UL25
+KY037796.1.38      99.6   100.0  100.0  0.0   0.0   0.0   64719..63943     258    258    NP_040158.1       ORF35 | nuclear protein UL24
+KY037796.1.39      99.7   99.7   100.0  0.0   0.0   0.0   64773..65798     341    341    NP_040159.1       ORF36 | thymidine kinase
+KY037796.1.40      99.8   99.9   100.0  0.0   0.0   0.0   66040..68565     841    841    NP_040160.1       ORF37 | envelope glycoprotein H
+KY037796.1.41      99.6   99.9   100.0  0.0   0.0   0.0   70259..68634     541    541    NP_040161.1       ORF38 | tegument protein UL21
+KY037796.1.42      100.0  100.0  100.0  0.0   0.0   0.0   70653..71321     222    222    NP_040162.2       ORF39 | envelope protein UL20
+KY037796.1.43      100.0  100.0  100.0  0.0   0.0   0.0   71506..75696     1396   1396   NP_040163.1       ORF40 | major capsid protein
+KY037796.1.44      100.0  100.0  100.0  0.0   0.0   0.0   75813..76763     316    316    NP_040164.1       ORF41 | capsid triplex subunit 2
+KY037796.1.45      99.9   99.9   100.0  0.0   0.0   0.0   78136..80166     676    676    NP_040166.1       ORF43 | DNA packaging tegument protein UL17
+KY037796.1.46      99.7   100.0  100.0  0.0   0.0   0.0   80326..81417     363    363    NP_040167.1       ORF44 | tegument protein UL16
+KY037796.1.47      100.0  100.0  100.0  0.0   0.0   0.0   82559..81504     747    747    NP_040165.1       ORF42 | DNA packaging terminase subunit 1
+                                                          78004..76817                                     
+KY037796.1.48      100.0  100.0  100.0  0.0   0.0   0.0   82685..83284     199    199    NP_040168.1       ORF46 | tegument protein UL14
+KY037796.1.49      100.0  100.0  100.0  0.0   0.0   0.0   83134..84666     510    510    NP_040169.1       ORF47 | tegument serine/threonine protein kinase
+KY037796.1.50      99.6   100.0  100.0  0.0   0.0   0.0   84633..86288     551    551    NP_040170.1       ORF48 | deoxyribonuclease
+KY037796.1.51      100.0  100.0  100.0  0.0   0.0   0.0   86192..86437     81     81     NP_040171.1       ORF49 | myristylated tegument protein
+KY037796.1.52      99.9   100.0  100.0  0.0   0.0   0.0   87837..90344     835    835    NP_040173.1       ORF51 | DNA replication origin-binding helicase
+KY037796.1.53      100.0  100.0  100.0  0.0   0.0   0.0   87838..86531     435    435    NP_040172.1       ORF50 | envelope glycoprotein M
+KY037796.1.54      99.6   100.0  100.0  0.0   0.0   0.0   90449..92764     771    771    NP_040174.1       ORF52 | helicase-primase subunit
+KY037796.1.55      100.0  100.0  100.0  0.0   0.0   0.0   93806..92811     331    331    NP_040175.1       ORF53 | tegument protein UL7
+KY037796.1.56      99.7   100.0  100.0  0.0   0.0   0.0   95940..93631     769    769    NP_040176.1       ORF54 | capsid portal protein
+KY037796.1.57      100.0  100.0  100.0  0.0   0.0   0.0   95952..98597     881    881    NP_040177.1       ORF55 | helicase-primase helicase subunit
+KY037796.1.58      99.5   99.5   100.0  0.0   0.0   0.0   98668..99255     195    196    NP_040178.2       ORF56 | nuclear protein UL4
+KY037796.1.59      98.6   98.6   100.0  0.0   0.0   0.0   99579..99364     71     71     NP_040179.1       ORF57 | protein V57
+KY037796.1.60      98.6   99.9   100.0  0.0   0.0   0.0   100225..99560    221    221    NP_040180.1       ORF58 | nuclear protein UL3
+KY037796.1.61      100.0  100.0  100.0  0.0   0.0   0.0   101172..100255   305    305    NP_040181.1       ORF59 | uracil-DNA glycosylase
+KY037796.1.62      98.8   99.4   100.0  0.0   0.0   0.0   101605..101123   160    159    NP_040182.1       ORF60 | envelope glycoprotein L
+KY037796.1.63      100.0  100.0  100.0  0.0   0.0   0.0   104553..103150   467    467    NP_040183.1       ORF61 | ubiquitin E3 ligase ICP0
+KY037796.1.64      99.9   100.0  100.0  0.0   0.0   0.0   109205..105273   1310   1310   NP_040184.1       ORF62 | transcriptional regulator ICP4
+KY037796.1.65      100.0  100.0  100.0  0.0   0.0   0.0   110783..111619   278    278    NP_040185.1       ORF63 | regulatory protein ICP22
+KY037796.1.66      100.0  100.0  100.0  0.0   0.0   0.0   111767..112309   180    180    NP_040186.1       ORF64 | virion protein US10
+KY037796.1.67      100.0  100.0  100.0  0.0   0.0   0.0   112842..112534   102    102    NP_040187.1       ORF65 | membrane protein US9
+KY037796.1.68      100.0  100.0  100.0  0.0   0.0   0.0   113239..114420   393    393    NP_040188.1       ORF66 | serine/threonine protein kinase US3
+KY037796.1.69      100.0  100.0  100.0  0.0   0.0   0.0   114698..115762   354    354    NP_040189.1       ORF67 | envelope glycoprotein I
+KY037796.1.70      99.8   99.8   100.0  0.0   0.0   0.0   116010..117881   623    623    NP_040190.1       ORF68 | envelope glycoprotein E
+KY037796.1.71      100.0  100.0  100.0  0.0   0.0   0.0   118534..117992   180    180    NP_040186.1       ORF64A | virion protein US10
+KY037796.1.72      100.0  100.0  100.0  0.0   0.0   0.0   119518..118682   278    278    NP_040185.1       ORF63A | regulatory protein ICP22
+KY037796.1.73      99.9   100.0  100.0  0.0   0.0   0.0   121096..125028   1310   1310   NP_040184.1       ORF62A | transcriptional regulator ICP4
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+DQ457052.1             124771     73            0     113235          37672           99.7             99.8          100.0   hhv3_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+DQ457052.1.1       100.0  100.0  100.0  0.0   0.0   0.0   185..574         129    129    YP_053044.1       ORF0 | membrane protein UL56
+DQ457052.1.2       98.1   100.0  100.0  0.0   0.0   0.0   927..601         108    108    NP_040124.1       ORF1 | membrane protein V1
+DQ457052.1.3       100.0  100.0  100.0  0.0   0.0   0.0   1197..1862       221    221    NP_040125.2       ORF2 | myristylated tegument protein CIRC
+DQ457052.1.4       100.0  100.0  100.0  0.0   0.0   0.0   2460..1921       179    179    NP_040126.1       ORF3 | nuclear protein UL55
+DQ457052.1.5       100.0  100.0  100.0  0.0   0.0   0.0   4154..2796       452    452    NP_040127.1       ORF4 | multifunctional expression regulator
+DQ457052.1.6       100.0  100.0  100.0  0.0   0.0   0.0   5287..4265       340    340    NP_040128.1       ORF5 | envelope glycoprotein K
+DQ457052.1.7       99.7   99.9   100.0  0.0   0.0   0.0   8590..5339       1083   1083   NP_040129.1       ORF6 | helicase-primase primase subunit
+DQ457052.1.8       100.0  100.0  100.0  0.0   0.0   0.0   8620..9399       259    259    NP_040130.1       ORF7 | tegument protein UL51
+DQ457052.1.9       100.0  100.0  100.0  0.0   0.0   0.0   10655..10918     87     87     YP_068406.1       ORF9A | envelope glycoprotein N
+DQ457052.1.10      100.0  100.0  100.0  0.0   0.0   0.0   10680..9490      396    396    NP_040131.1       ORF8 | deoxyuridine triphosphatase
+DQ457052.1.11      99.7   100.0  100.0  0.0   0.0   0.0   11022..11930     302    302    NP_040132.1       ORF9 | tegument protein VP22
+DQ457052.1.12      99.5   99.5   100.0  0.0   0.0   0.0   12173..13405     410    410    NP_040133.1       ORF10 | transactivating tegument protein VP16
+DQ457052.1.13      97.7   98.1   100.0  0.0   0.0   0.0   13603..16020     805    819    NP_040134.1       ORF11 | tegument protein VP13/14
+DQ457052.1.14      99.8   99.8   100.0  0.0   0.0   0.0   16185..18170     661    661    NP_040135.1       ORF12 | tegument protein VP11/12
+DQ457052.1.15      100.0  100.0  100.0  0.0   0.0   0.0   18412..19317     301    301    NP_040136.1       ORF13 | thymidylate synthase
+DQ457052.1.16      96.6   97.5   100.0  0.0   0.0   0.0   21042..19402     546    560    NP_040137.1       ORF14 | envelope glycoprotein C
+DQ457052.1.17      100.0  100.0  100.0  0.0   0.0   0.0   22407..21187     406    406    NP_040138.1       ORF15 | envelope protein UL43
+DQ457052.1.18      100.0  100.0  100.0  0.0   0.0   0.0   23723..22497     408    408    NP_040139.1       ORF16 | DNA polymerase processivity subunit
+DQ457052.1.19      98.9   99.8   100.0  0.0   0.0   0.0   24078..25445     455    455    NP_040140.1       ORF17 | tegument host shutoff protein
+DQ457052.1.20      100.0  100.0  100.0  0.0   0.0   0.0   26422..25502     306    306    NP_040141.1       ORF18 | ribonucleotide reductase subunit 2
+DQ457052.1.21      100.0  100.0  100.0  0.0   0.0   0.0   28774..26447     775    775    NP_040142.1       ORF19 | ribonucleotide reductase subunit 1
+DQ457052.1.22      99.8   100.0  100.0  0.0   0.0   0.0   30404..28953     483    483    NP_040143.1       ORF20 | capsid triplex subunit 1
+DQ457052.1.23      100.0  100.0  100.0  0.0   0.0   0.0   30688..33804     1038   1038   NP_040144.1       ORF21 | tegument protein UL37
+DQ457052.1.24      99.3   99.5   100.0  0.0   0.0   0.0   34012..42267     2751   2763   NP_040145.1       ORF22 | large tegument protein
+DQ457052.1.25      100.0  100.0  100.0  0.0   0.0   0.0   43028..42321     235    235    NP_040146.1       ORF23 | small capsid protein
+DQ457052.1.26      99.6   100.0  100.0  0.0   0.0   0.0   43911..43102     269    269    NP_040147.1       ORF24 | nuclear egress membrane protein
+DQ457052.1.27      100.0  100.0  100.0  0.0   0.0   0.0   44396..46153     585    585    NP_040149.1       ORF26 | DNA packaging protein UL32
+DQ457052.1.28      99.4   100.0  100.0  0.0   0.0   0.0   44508..44038     156    156    NP_040148.1       ORF25 | DNA packaging protein UL33
+DQ457052.1.29      100.0  100.0  100.0  0.0   0.0   0.0   46080..47018     312    312    NP_040150.2       ORF27 | nuclear egress lamina protein
+DQ457052.1.30      99.9   100.0  100.0  0.0   0.0   0.0   50526..46942     1194   1194   NP_040151.1       ORF28 | DNA polymerase catalytic subunit
+DQ457052.1.31      99.6   99.6   100.0  0.0   0.0   0.0   50747..54346     1199   1204   NP_040152.1       ORF29 | single-stranded DNA-binding protein
+DQ457052.1.32      99.9   99.9   100.0  0.0   0.0   0.0   54525..56837     770    770    NP_040153.1       ORF30 | DNA packaging terminase subunit 2
+DQ457052.1.33      100.0  100.0  100.0  0.0   0.0   0.0   56693..59488     931    931    NP_040154.2       ORF31 | envelope glycoprotein B
+DQ457052.1.34      100.0  100.0  100.0  0.0   0.0   0.0   59640..60071     143    143    NP_040155.1       ORF32 | protein V32
+DQ457052.1.35      99.3   99.6   100.0  0.0   0.0   0.0   61100..60192     302    302    YP_068407.1       ORF33.5 | capsid scaffold protein
+DQ457052.1.36      99.7   99.8   100.0  0.0   0.0   0.0   62009..60192     605    605    NP_040156.1       ORF33 | capsid maturation protease
+DQ457052.1.37      99.8   100.0  100.0  0.0   0.0   0.0   63781..62042     579    579    NP_040157.1       ORF34 | DNA packaging tegument protein UL25
+DQ457052.1.38      98.8   100.0  100.0  0.0   0.0   0.0   64624..63848     258    258    NP_040158.1       ORF35 | nuclear protein UL24
+DQ457052.1.39      99.7   99.7   100.0  0.0   0.0   0.0   64678..65703     341    341    NP_040159.1       ORF36 | thymidine kinase
+DQ457052.1.40      99.8   99.9   100.0  0.0   0.0   0.0   65945..68470     841    841    NP_040160.1       ORF37 | envelope glycoprotein H
+DQ457052.1.41      99.8   100.0  100.0  0.0   0.0   0.0   70164..68539     541    541    NP_040161.1       ORF38 | tegument protein UL21
+DQ457052.1.42      100.0  100.0  100.0  0.0   0.0   0.0   70558..71226     222    222    NP_040162.2       ORF39 | envelope protein UL20
+DQ457052.1.43      99.9   100.0  100.0  0.0   0.0   0.0   71411..75601     1396   1396   NP_040163.1       ORF40 | major capsid protein
+DQ457052.1.44      100.0  100.0  100.0  0.0   0.0   0.0   75718..76668     316    316    NP_040164.1       ORF41 | capsid triplex subunit 2
+DQ457052.1.45      99.9   100.0  100.0  0.0   0.0   0.0   78044..80074     676    676    NP_040166.1       ORF43 | DNA packaging tegument protein UL17
+DQ457052.1.46      99.7   100.0  100.0  0.0   0.0   0.0   80234..81325     363    363    NP_040167.1       ORF44 | tegument protein UL16
+DQ457052.1.47      100.0  100.0  100.0  0.0   0.0   0.0   82467..81412     747    747    NP_040165.1       ORF42 | DNA packaging terminase subunit 1
+                                                          77909..76722                                     
+DQ457052.1.48      100.0  100.0  100.0  0.0   0.0   0.0   82593..83192     199    199    NP_040168.1       ORF46 | tegument protein UL14
+DQ457052.1.49      100.0  100.0  100.0  0.0   0.0   0.0   83042..84574     510    510    NP_040169.1       ORF47 | tegument serine/threonine protein kinase
+DQ457052.1.50      99.8   100.0  100.0  0.0   0.0   0.0   84541..86196     551    551    NP_040170.1       ORF48 | deoxyribonuclease
+DQ457052.1.51      100.0  100.0  100.0  0.0   0.0   0.0   86100..86345     81     81     NP_040171.1       ORF49 | myristylated tegument protein
+DQ457052.1.52      99.9   100.0  100.0  0.0   0.0   0.0   87755..90262     835    835    NP_040173.1       ORF51 | DNA replication origin-binding helicase
+DQ457052.1.53      100.0  100.0  100.0  0.0   0.0   0.0   87756..86449     435    435    NP_040172.1       ORF50 | envelope glycoprotein M
+DQ457052.1.54      99.6   100.0  100.0  0.0   0.0   0.0   90367..92682     771    771    NP_040174.1       ORF52 | helicase-primase subunit
+DQ457052.1.55      100.0  100.0  100.0  0.0   0.0   0.0   93724..92729     331    331    NP_040175.1       ORF53 | tegument protein UL7
+DQ457052.1.56      99.7   99.9   100.0  0.0   0.0   0.0   95858..93549     769    769    NP_040176.1       ORF54 | capsid portal protein
+DQ457052.1.57      99.9   100.0  100.0  0.0   0.0   0.0   95870..98515     881    881    NP_040177.1       ORF55 | helicase-primase helicase subunit
+DQ457052.1.58      100.0  100.0  100.0  0.0   0.0   0.0   98586..99176     196    196    NP_040178.2       ORF56 | nuclear protein UL4
+DQ457052.1.59      100.0  100.0  100.0  0.0   0.0   0.0   99500..99285     71     71     NP_040179.1       ORF57 | protein V57
+DQ457052.1.60      99.5   100.0  100.0  0.0   0.0   0.0   100146..99481    221    221    NP_040180.1       ORF58 | nuclear protein UL3
+DQ457052.1.61      99.7   100.0  100.0  0.0   0.0   0.0   101093..100176   305    305    NP_040181.1       ORF59 | uracil-DNA glycosylase
+DQ457052.1.62      100.0  100.0  100.0  0.0   0.0   0.0   101523..101044   159    159    NP_040182.1       ORF60 | envelope glycoprotein L
+DQ457052.1.63      100.0  100.0  100.0  0.0   0.0   0.0   104359..102956   467    467    NP_040183.1       ORF61 | ubiquitin E3 ligase ICP0
+DQ457052.1.64      99.9   100.0  100.0  0.0   0.0   0.0   109017..105085   1310   1310   NP_040184.1       ORF62 | transcriptional regulator ICP4
+DQ457052.1.65      100.0  100.0  100.0  0.0   0.0   0.0   110465..111301   278    278    NP_040185.1       ORF63 | regulatory protein ICP22
+DQ457052.1.66      100.0  100.0  100.0  0.0   0.0   0.0   111449..111991   180    180    NP_040186.1       ORF64 | virion protein US10
+DQ457052.1.67      100.0  100.0  100.0  0.0   0.0   0.0   112526..112218   102    102    NP_040187.1       ORF65 | membrane protein US9
+DQ457052.1.68      99.5   99.7   100.0  0.0   0.0   0.0   112923..114104   393    393    NP_040188.1       ORF66 | serine/threonine protein kinase US3
+DQ457052.1.69      100.0  100.0  100.0  0.0   0.0   0.0   114382..115446   354    354    NP_040189.1       ORF67 | envelope glycoprotein I
+DQ457052.1.70      99.8   99.8   100.0  0.0   0.0   0.0   115694..117565   623    623    NP_040190.1       ORF68 | envelope glycoprotein E
+DQ457052.1.71      100.0  100.0  100.0  0.0   0.0   0.0   118220..117678   180    180    NP_040186.1       ORF64A | virion protein US10
+DQ457052.1.72      100.0  100.0  100.0  0.0   0.0   0.0   119204..118368   278    278    NP_040185.1       ORF63A | regulatory protein ICP22
+DQ457052.1.73      99.9   100.0  100.0  0.0   0.0   0.0   120652..124584   1310   1310   NP_040184.1       ORF62A | transcriptional regulator ICP4
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+DQ008355.1             124815     72            1     112917          37567           99.7             99.8          100.0   hhv3_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+DQ008355.1.1       99.2   99.8   100.0  0.0   0.0   0.0   172..558         129    129    YP_053044.1       ORF0 | membrane protein UL56
+                    could not find valid stop codon
+DQ008355.1.2       98.1   100.0  100.0  0.0   0.0   0.0   914..588         108    108    NP_040124.1       ORF1 | membrane protein V1
+DQ008355.1.3       100.0  100.0  100.0  0.0   0.0   0.0   1184..1849       221    221    NP_040125.2       ORF2 | myristylated tegument protein CIRC
+DQ008355.1.4       100.0  100.0  100.0  0.0   0.0   0.0   2446..1907       179    179    NP_040126.1       ORF3 | nuclear protein UL55
+DQ008355.1.5       100.0  100.0  100.0  0.0   0.0   0.0   4140..2782       452    452    NP_040127.1       ORF4 | multifunctional expression regulator
+DQ008355.1.6       100.0  100.0  100.0  0.0   0.0   0.0   5273..4251       340    340    NP_040128.1       ORF5 | envelope glycoprotein K
+DQ008355.1.7       99.7   99.8   100.0  0.0   0.0   0.0   8576..5325       1083   1083   NP_040129.1       ORF6 | helicase-primase primase subunit
+DQ008355.1.8       100.0  100.0  100.0  0.0   0.0   0.0   8606..9385       259    259    NP_040130.1       ORF7 | tegument protein UL51
+DQ008355.1.9       100.0  100.0  100.0  0.0   0.0   0.0   10641..10904     87     87     YP_068406.1       ORF9A | envelope glycoprotein N
+DQ008355.1.10      99.7   99.9   100.0  0.0   0.0   0.0   10666..9476      396    396    NP_040131.1       ORF8 | deoxyuridine triphosphatase
+DQ008355.1.11      99.7   100.0  100.0  0.0   0.0   0.0   11008..11916     302    302    NP_040132.1       ORF9 | tegument protein VP22
+DQ008355.1.12      99.5   99.5   100.0  0.0   0.0   0.0   12159..13391     410    410    NP_040133.1       ORF10 | transactivating tegument protein VP16
+DQ008355.1.13      97.6   97.9   100.0  0.0   0.0   0.0   13589..16003     804    819    NP_040134.1       ORF11 | tegument protein VP13/14
+DQ008355.1.14      100.0  100.0  100.0  0.0   0.0   0.0   16168..18153     661    661    NP_040135.1       ORF12 | tegument protein VP11/12
+DQ008355.1.15      100.0  100.0  100.0  0.0   0.0   0.0   18395..19300     301    301    NP_040136.1       ORF13 | thymidylate synthase
+DQ008355.1.16      98.6   99.5   100.0  0.0   0.0   0.0   21067..19385     560    560    NP_040137.1       ORF14 | envelope glycoprotein C
+DQ008355.1.17      100.0  100.0  100.0  0.0   0.0   0.0   22432..21212     406    406    NP_040138.1       ORF15 | envelope protein UL43
+DQ008355.1.18      99.8   99.8   100.0  0.0   0.0   0.0   23748..22522     408    408    NP_040139.1       ORF16 | DNA polymerase processivity subunit
+DQ008355.1.19      99.1   99.6   100.0  0.0   0.0   0.0   24103..25467     454    455    NP_040140.1       ORF17 | tegument host shutoff protein
+DQ008355.1.20      100.0  100.0  100.0  0.0   0.0   0.0   26444..25524     306    306    NP_040141.1       ORF18 | ribonucleotide reductase subunit 2
+DQ008355.1.21      100.0  100.0  100.0  0.0   0.0   0.0   28796..26469     775    775    NP_040142.1       ORF19 | ribonucleotide reductase subunit 1
+DQ008355.1.22      100.0  100.0  100.0  0.0   0.0   0.0   30426..28975     483    483    NP_040143.1       ORF20 | capsid triplex subunit 1
+DQ008355.1.23      99.9   100.0  100.0  0.0   0.0   0.0   30710..33826     1038   1038   NP_040144.1       ORF21 | tegument protein UL37
+DQ008355.1.24      99.7   100.0  100.0  0.0   0.0   0.0   34034..42325     2763   2763   NP_040145.1       ORF22 | large tegument protein
+DQ008355.1.25      100.0  100.0  100.0  0.0   0.0   0.0   43088..42381     235    235    NP_040146.1       ORF23 | small capsid protein
+DQ008355.1.26      99.6   100.0  100.0  0.0   0.0   0.0   43971..43162     269    269    NP_040147.1       ORF24 | nuclear egress membrane protein
+DQ008355.1.27      100.0  100.0  100.0  0.0   0.0   0.0   44456..46213     585    585    NP_040149.1       ORF26 | DNA packaging protein UL32
+DQ008355.1.28      100.0  100.0  100.0  0.0   0.0   0.0   44568..44098     156    156    NP_040148.1       ORF25 | DNA packaging protein UL33
+DQ008355.1.29      100.0  100.0  100.0  0.0   0.0   0.0   46140..47078     312    312    NP_040150.2       ORF27 | nuclear egress lamina protein
+DQ008355.1.30      99.7   99.8   100.0  0.0   0.0   0.0   50586..47002     1194   1194   NP_040151.1       ORF28 | DNA polymerase catalytic subunit
+DQ008355.1.31      99.4   99.6   100.0  0.0   0.0   0.0   50807..54406     1199   1204   NP_040152.1       ORF29 | single-stranded DNA-binding protein
+DQ008355.1.32      100.0  100.0  100.0  0.0   0.0   0.0   54585..56897     770    770    NP_040153.1       ORF30 | DNA packaging terminase subunit 2
+DQ008355.1.33      99.8   100.0  100.0  0.0   0.0   0.0   56753..59548     931    931    NP_040154.2       ORF31 | envelope glycoprotein B
+DQ008355.1.34      100.0  100.0  100.0  0.0   0.0   0.0   59701..60132     143    143    NP_040155.1       ORF32 | protein V32
+DQ008355.1.35      99.0   99.3   100.0  0.0   0.0   0.0   61162..60254     302    302    YP_068407.1       ORF33.5 | capsid scaffold protein
+DQ008355.1.36      99.5   99.6   100.0  0.0   0.0   0.0   62071..60254     605    605    NP_040156.1       ORF33 | capsid maturation protease
+DQ008355.1.37      100.0  100.0  100.0  0.0   0.0   0.0   63843..62104     579    579    NP_040157.1       ORF34 | DNA packaging tegument protein UL25
+DQ008355.1.38      99.6   100.0  100.0  0.0   0.0   0.0   64686..63910     258    258    NP_040158.1       ORF35 | nuclear protein UL24
+DQ008355.1.39      99.7   99.7   100.0  0.0   0.0   0.0   64740..65765     341    341    NP_040159.1       ORF36 | thymidine kinase
+DQ008355.1.40      99.8   99.9   100.0  0.0   0.0   0.0   66007..68532     841    841    NP_040160.1       ORF37 | envelope glycoprotein H
+DQ008355.1.41      99.8   100.0  100.0  0.0   0.0   0.0   70226..68601     541    541    NP_040161.1       ORF38 | tegument protein UL21
+DQ008355.1.42      99.5   99.5   100.0  0.0   0.0   0.0   70620..71288     222    222    NP_040162.2       ORF39 | envelope protein UL20
+DQ008355.1.43      100.0  100.0  100.0  0.0   0.0   0.0   71473..75663     1396   1396   NP_040163.1       ORF40 | major capsid protein
+DQ008355.1.44      100.0  100.0  100.0  0.0   0.0   0.0   75780..76730     316    316    NP_040164.1       ORF41 | capsid triplex subunit 2
+DQ008355.1.45      100.0  100.0  100.0  0.0   0.0   0.0   78102..80132     676    676    NP_040166.1       ORF43 | DNA packaging tegument protein UL17
+DQ008355.1.46      99.7   100.0  100.0  0.0   0.0   0.0   80292..81383     363    363    NP_040167.1       ORF44 | tegument protein UL16
+DQ008355.1.47      100.0  100.0  100.0  0.0   0.0   0.0   82525..81470     747    747    NP_040165.1       ORF42 | DNA packaging terminase subunit 1
+                                                          77971..76784                                     
+DQ008355.1.48      100.0  100.0  100.0  0.0   0.0   0.0   82651..83250     199    199    NP_040168.1       ORF46 | tegument protein UL14
+DQ008355.1.49      100.0  100.0  100.0  0.0   0.0   0.0   83100..84632     510    510    NP_040169.1       ORF47 | tegument serine/threonine protein kinase
+DQ008355.1.50      99.5   99.8   100.0  0.0   0.0   0.0   84599..86254     551    551    NP_040170.1       ORF48 | deoxyribonuclease
+DQ008355.1.51      100.0  100.0  100.0  0.0   0.0   0.0   86158..86403     81     81     NP_040171.1       ORF49 | myristylated tegument protein
+DQ008355.1.52      99.9   100.0  100.0  0.0   0.0   0.0   87803..90310     835    835    NP_040173.1       ORF51 | DNA replication origin-binding helicase
+DQ008355.1.53      100.0  100.0  100.0  0.0   0.0   0.0   87804..86497     435    435    NP_040172.1       ORF50 | envelope glycoprotein M
+DQ008355.1.54      99.6   100.0  100.0  0.0   0.0   0.0   90415..92730     771    771    NP_040174.1       ORF52 | helicase-primase subunit
+DQ008355.1.55      100.0  100.0  100.0  0.0   0.0   0.0   93772..92777     331    331    NP_040175.1       ORF53 | tegument protein UL7
+DQ008355.1.56      99.9   100.0  100.0  0.0   0.0   0.0   95906..93597     769    769    NP_040176.1       ORF54 | capsid portal protein
+DQ008355.1.57      99.8   99.8   100.0  0.0   0.0   0.0   95918..98563     881    881    NP_040177.1       ORF55 | helicase-primase helicase subunit
+DQ008355.1.58      99.5   99.5   100.0  0.0   0.0   0.0   98634..99221     195    196    NP_040178.2       ORF56 | nuclear protein UL4
+DQ008355.1.59      98.6   98.6   100.0  0.0   0.0   0.0   99545..99330     71     71     NP_040179.1       ORF57 | protein V57
+DQ008355.1.60      98.6   99.9   100.0  0.0   0.0   0.0   100191..99526    221    221    NP_040180.1       ORF58 | nuclear protein UL3
+DQ008355.1.61      99.7   99.7   100.0  0.0   0.0   0.0   101138..100221   305    305    NP_040181.1       ORF59 | uracil-DNA glycosylase
+DQ008355.1.62      98.8   99.4   100.0  0.0   0.0   0.0   101571..101089   160    159    NP_040182.1       ORF60 | envelope glycoprotein L
+DQ008355.1.63      100.0  100.0  100.0  0.0   0.0   0.0   104407..103004   467    467    NP_040183.1       ORF61 | ubiquitin E3 ligase ICP0
+DQ008355.1.64      99.3   99.7   100.0  0.0   0.0   0.0   109058..105126   1310   1310   NP_040184.1       ORF62 | transcriptional regulator ICP4
+DQ008355.1.65      100.0  100.0  100.0  0.0   0.0   0.0   110506..111342   278    278    NP_040185.1       ORF63 | regulatory protein ICP22
+DQ008355.1.66      98.9   99.4   100.0  0.0   0.0   0.0   111490..112032   180    180    NP_040186.1       ORF64 | virion protein US10
+DQ008355.1.67      100.0  100.0  100.0  0.0   0.0   0.0   112566..112258   102    102    NP_040187.1       ORF65 | membrane protein US9
+DQ008355.1.68      100.0  100.0  100.0  0.0   0.0   0.0   112963..114144   393    393    NP_040188.1       ORF66 | serine/threonine protein kinase US3
+DQ008355.1.69      100.0  100.0  100.0  0.0   0.0   0.0   114422..115486   354    354    NP_040189.1       ORF67 | envelope glycoprotein I
+DQ008355.1.70      99.8   99.8   100.0  0.0   0.0   0.0   115734..117605   623    623    NP_040190.1       ORF68 | envelope glycoprotein E
+DQ008355.1.71      98.9   99.4   100.0  0.0   0.0   0.0   118260..117718   180    180    NP_040186.1       ORF64A | virion protein US10
+DQ008355.1.72      100.0  100.0  100.0  0.0   0.0   0.0   119244..118408   278    278    NP_040185.1       ORF63A | regulatory protein ICP22
+DQ008355.1.73      99.3   99.6   100.0  0.0   0.0   0.0   120692..124624   1310   1310   NP_040184.1       ORF62A | transcriptional regulator ICP4
+

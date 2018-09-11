@@ -1,0 +1,204 @@
+37	hadvc_db	1617..2159	AAW65495.1	E1B	E1B small T antigen	OK	
+37	hadvc_db	1922..3406	AAW65496.1	E1B-2	E1B large T antigen	OK	
+37	hadvc_db	3489..3908	ACN88092.1	IX	hexon associated protein	OK	
+37	hadvc_db	5600..5588,5309..3976	ACN88093.1	IVa2	maturation protein	OK	
+37	hadvc_db	6172..6492	AAW65501.1	HYP-2	hypothetical protein	OK	
+37	hadvc_db	7857..8267	ACN88098.1	L1-3	L1 13.6 kDa protein	OK	
+37	hadvc_db	10787..11818	ACN88104.1	L1-2	L1 52 kDa protein	C5	
+37	hadvc_db	11844..13607	ACN88105.1	L1	IIIa capsid protein	OK	
+37	hadvc_db	13640..13632,8651..5079	AAW65499.1	E2B	DNA polymerase	OK	
+37	hadvc_db	13640..13632,10411..8450	ACN88100.1	pTP	DNA terminal protein	OK	
+37	hadvc_db	13688..15361	AAW65509.1	L2	penton base	OK	
+37	hadvc_db	15366..15944	AAW65510.1	L2-2	VII core protein	OK	
+37	hadvc_db	17071..17301	AAW65512.1	L2-4	X core protein	OK	
+37	hadvc_db	17384..18124	AAW65513.1	L3	VI capsid protein	OK	
+37	hadvc_db	18240..21080	AAW65514.1	L3-2	hexon	OK	
+37	hadvc_db	21120..21749	ACN88112.1	L3-3	protease	OK	
+37	hadvc_db	23383..21827	ACN88113.1	E2A	ssDNA-binding protein	OK	
+37	hadvc_db	23414..25852	ACN88114.1	L4	hexon-assembly protein	OK	
+37	hadvc_db	25584..26159	AAW65518.1	L4-2	L4 encapsidation protein	OK	
+37	hadvc_db	25584..25902,26084..26433	AAW65519.1	L4-3	splicing factor	OK	
+37	hadvc_db	26483..27166	AAW65520.1	L4-4	VIII capsid protein	OK	
+37	hadvc_db	27166..27483	AAW65521.1	E3	E3 12.5 kDa immune modulating protein	OK	
+37	hadvc_db	29495..29770	ACN88122.1	E3-7	E3 RID-alpha	OK	
+37	hadvc_db	30172..30579	AAW65528.1	E3-9	E3 control protein 14.7 kDa	OK	
+37	hadvc_db	30767..>30645	ACN88125.1	U	putative protein U, N-terminal	T3	39
+37	hadvc_db	32942..32043	AAW65531.1	E4-2	E4 control protein 34 kDa	OK	
+37	hadvc_db	33213..32845	ACN88130.1	E4-3	E4 control protein orf4	OK	
+57	hadvc_db	479..1033,1139..1351	ACN88085.1	E1A	E1A 32 kDa protein	OK	
+57	hadvc_db	3290..3724	ACN88092.1	IX	hexon associated protein	OK	
+57	hadvc_db	5384..5372,5093..3757	ACN88093.1	IVa2	maturation protein	OK	
+57	hadvc_db	5968..6276	AAW65501.1	HYP-2	hypothetical protein	C5	
+57	hadvc_db	<7847..4866	AAW65499.1	E2B	putative DNA polymerase, C-terminal	T5	612
+57	hadvc_db	<10117..8222	ACN88100.1	pTP	putative DNA terminal protein, C-terminal	T5	9
+57	hadvc_db	10310..11413	ACN88104.1	L1-2	L1 52 kDa protein	OK	
+57	hadvc_db	11435..13171	ACN88105.1	L1	IIIa capsid protein	OK	
+57	hadvc_db	13246..14763	AAW65509.1	L2	penton base	OK	
+57	hadvc_db	14777..15340	AAW65510.1	L2-2	VII core protein	OK	
+57	hadvc_db	15382..16416	AAW65511.1	L2-3	V core protein	OK	
+57	hadvc_db	16440..16658	AAW65512.1	L2-4	X core protein	OK	
+57	hadvc_db	16734..17516	AAW65513.1	L3	VI capsid protein	OK	
+57	hadvc_db	17616..20384	AAW65514.1	L3-2	hexon	OK	
+57	hadvc_db	20411..21022	ACN88112.1	L3-3	protease	OK	
+57	hadvc_db	22563..21106	ACN88113.1	E2A	ssDNA-binding protein	OK	
+57	hadvc_db	22592..24919	ACN88114.1	L4	hexon-assembly protein	OK	
+57	hadvc_db	24657..25187	ACN88115.1	L4-2	L4 encapsidation protein	OK	
+57	hadvc_db	24657..24932,25225..25434	AAW65519.1	L4-3	splicing factor	IS	24933..25224
+57	hadvc_db	25493..26194	ACN88117.1	L4-4	VIII capsid protein	OK	
+57	hadvc_db	26194..26511	AAW65521.1	E3	E3 12.5 kDa immune modulating protein	OK	
+57	hadvc_db	28041..28316	AAW65526.1	E3-7	E3 RID-alpha	OK	
+57	hadvc_db	28635..29021	AAW65528.1	E3-9	E3 control protein 14.7 kDa	OK	
+57	hadvc_db	32306..31944	AAW65532.1	E4-3	E4 control protein orf4	OK	
+57	hadvc_db	33054..32659	ACN88133.1	E4-5	E4 control protein orf2	OK	
+57	hadvc_db	33469..33086	ACN88138.1	E4-6	E4 control protein orf1	OK	
+47	hadvc_db	560..637,1229..1318	ACN88084.1	E1A-3	E1A 6 kDa protein	OK	
+47	hadvc_db	560..974,1229..1545	ACN88086.1	E1A-2	E1A 26 kDa protein	OK	
+47	hadvc_db	560..1112,1229..1545	ACN88085.1	E1A	E1A 32 kDa protein	OK	
+47	hadvc_db	1714..2241	ACN88087.1	E1B	E1B small T antigen	OK	
+47	hadvc_db	2019..3506	ACN88090.1	E1B-2	E1B large T antigen	OK	
+47	hadvc_db	3603..4025	ACN88092.1	IX	hexon associated protein	OK	
+47	hadvc_db	5677..5330	AAW65500.1	HYP-1	hypothetical protein	OK	
+47	hadvc_db	5711..5699,5420..4084	ACN88093.1	IVa2	maturation protein	OK	
+47	hadvc_db	6283..6603	AAW65501.1	HYP-2	hypothetical protein	OK	
+47	hadvc_db	6783..6445	AAW65502.1	HYP-3	hypothetical protein	OK	
+47	hadvc_db	7971..8420	ACN88098.1	L1-3	L1 13.6 kDa protein	OK	
+47	hadvc_db	9297..9803	ACN88101.1	HYP-4	hypothetical protein	OK	
+47	hadvc_db	10424..10810,10810..10836	ACN88102.1	HYP-5	hypothetical protein	FS	10810..10810,+2=>+1
+47	hadvc_db	10424..10810,10810..10836	ACN88102.1	HYP-5	hypothetical protein	ES	10559..10561
+47	hadvc_db	11042..12289	ACN88104.1	L1-2	L1 52 kDa protein	OK	
+47	hadvc_db	11111..10812,10812..10747	AAW65506.1	HYP-6	hypothetical protein	FS	10812..10812,-2=>-1
+47	hadvc_db	12310..14067	AAW65508.1	L1	IIIa capsid protein	OK	
+47	hadvc_db	14112..14104,8777..5190	ACN88094.1	E2B	DNA polymerase	OK	
+47	hadvc_db	14112..14104,10582..8576	ACN88100.1	pTP	DNA terminal protein	OK	
+47	hadvc_db	14149..15864	ACN88106.1	L2	penton base	OK	
+47	hadvc_db	15871..16467	AAW65510.1	L2-2	VII core protein	OK	
+47	hadvc_db	16537..17643	ACN88108.1	L2-3	V core protein	OK	
+47	hadvc_db	17671..17913	AAW65512.1	L2-4	X core protein	OK	
+47	hadvc_db	17996..18748	AAW65513.1	L3	VI capsid protein	OK	
+47	hadvc_db	18833..21739	ADV03661.1	L3-2	hexon	OK	
+47	hadvc_db	21773..22387	ACN88112.1	L3-3	protease	OK	
+47	hadvc_db	24074..22485	ACN88113.1	E2A	ssDNA-binding protein	OK	
+47	hadvc_db	24103..26520	ACN88114.1	L4	hexon-assembly protein	OK	
+47	hadvc_db	26234..26821	ACN88115.1	L4-2	L4 encapsidation protein	OK	
+47	hadvc_db	26234..26546,26749..27122	ACN88116.1	L4-3	splicing factor	OK	
+47	hadvc_db	27210..27893	ACN88117.1	L4-4	VIII capsid protein	OK	
+47	hadvc_db	27894..28217	AAW65521.1	E3	E3 12.5 kDa immune modulating protein	OK	
+47	hadvc_db	28625..28810	ACN88119.1	E3-2	E3 CR1-alpha	OK	
+47	hadvc_db	28807..29286	ACN88120.1	E3-3	E3 immune modulating protein	OK	
+47	hadvc_db	29463..29768	ACN88121.1	E3-4	E3 CR1-beta	OK	
+47	hadvc_db	29776..30051	ACN88122.1	E3-7	E3 RID-alpha	OK	
+47	hadvc_db	30054..30446	ACN88123.1	E3-8	E3 RID-beta	OK	
+47	hadvc_db	30439..30825	ACN88124.1	E3-9	E3 control protein 14.7 kDa	OK	
+47	hadvc_db	31014..>30850	ACN88125.1	U	putative protein U, N-terminal	T3	3
+47	hadvc_db	31025..32773	AAW65529.1	L5	fiber	OK	
+47	hadvc_db	34072..33899,33187..32909	ACN88127.1	E4	E4 control protein orf6/7	OK	
+47	hadvc_db	34072..33188	AAW65531.1	E4-2	E4 control protein 34 kDa	OK	
+47	hadvc_db	34337..33993	ACN88130.1	E4-3	E4 control protein orf4	OK	
+47	hadvc_db	34699..34599,34077..33993	AAW65533.1	E4-3a	E4 control protein orf3/4	OK	
+47	hadvc_db	34699..34349	ACN88131.1	E4-4	E4 control protein orf3	OK	
+47	hadvc_db	35088..34696	ACN88133.1	E4-5	E4 control protein orf2	OK	
+47	hadvc_db	35525..35139	ACN88138.1	E4-6	E4 control protein orf1	OK	
+64	hadvc_db	1546..2094	ACN88087.1	E1B	E1B small T antigen	OK	
+64	hadvc_db	1851..3338	AAW65496.1	E1B-2	E1B large T antigen	OK	
+64	hadvc_db	3423..3827	AAW65497.1	IX	hexon associated protein	OK	
+64	hadvc_db	5495..5483,5204..3871	ACN88093.1	IVa2	maturation protein	OK	
+64	hadvc_db	6067..6387	AAW65501.1	HYP-2	hypothetical protein	ES	6082..6084
+64	hadvc_db	7755..8222	ACN88098.1	L1-3	L1 13.6 kDa protein	OK	
+64	hadvc_db	10607..11731	ACN88104.1	L1-2	L1 52 kDa protein	OK	
+64	hadvc_db	11754..13445	ACN88105.1	L1	IIIa capsid protein	OK	
+64	hadvc_db	13472..13464,8495..4974	AAW65499.1	E2B	DNA polymerase	OK	
+64	hadvc_db	13472..13464,10192..8294	ACN88100.1	pTP	DNA terminal protein	OK	
+64	hadvc_db	13499..15058	AAW65509.1	L2	penton base	OK	
+64	hadvc_db	15062..15652	AAW65510.1	L2-2	VII core protein	OK	
+64	hadvc_db	15685..16689	ACN88108.1	L2-3	V core protein	OK	
+64	hadvc_db	16719..16943	AAW65512.1	L2-4	X core protein	OK	
+64	hadvc_db	16999..17703	AAW65513.1	L3	VI capsid protein	OK	
+64	hadvc_db	17774..20593	AAW65514.1	L3-2	hexon	OK	
+64	hadvc_db	20596..21219	ACN88112.1	L3-3	protease	OK	
+64	hadvc_db	22746..21274	AAW65516.1	E2A	ssDNA-binding protein	OK	
+64	hadvc_db	24744..25157	AAW65518.1	L4-2	L4 encapsidation protein	OK	
+64	hadvc_db	25483..26166	AAW65520.1	L4-4	VIII capsid protein	OK	
+64	hadvc_db	26167..26487	AAW65521.1	E3	E3 12.5 kDa immune modulating protein	OK	
+64	hadvc_db	30348..30740	AAW65528.1	E3-9	E3 control protein 14.7 kDa	OK	
+64	hadvc_db	30991..>30845	ACN88125.1	U	putative protein U, N-terminal	T3	3
+64	hadvc_db	33550..33188	AAW65532.1	E4-3	E4 control protein orf4	OK	
+64	hadvc_db	33906..33553	AAW65534.1	E4-4	E4 control protein orf3	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	1600..2115	ACN88087.1	E1B	E1B small T antigen	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	1905..3356	ACN88090.1	E1B-2	E1B large T antigen	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	3441..3869	ACN88092.1	IX	hexon associated protein	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	5554..5542,5263..3930	ACN88093.1	IVa2	maturation protein	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	6126..6446	AAW65501.1	HYP-2	hypothetical protein	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	10765..11937	AAW65507.1	L1-2	L1 52 kDa protein	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	11961..13736	ACN88105.1	L1	IIIa capsid protein	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	13773..13765,8605..5033	ACN88094.1	E2B	DNA polymerase	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	13773..13765,10323..8404	ACN88100.1	pTP	DNA terminal protein	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	13815..15422	AAW65509.1	L2	penton base	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	15426..16007	AAW65510.1	L2-2	VII core protein	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	16055..17080	ACN88108.1	L2-3	V core protein	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	17103..17336	AAW65512.1	L2-4	X core protein	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	17413..18141	AAW65513.1	L3	VI capsid protein	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	18248..21058	AAW65514.1	L3-2	hexon	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	21082..21702	ACN88112.1	L3-3	protease	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	23312..21774	AAW65516.1	E2A	ssDNA-binding protein	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	23341..25716	ACN88114.1	L4	hexon-assembly protein	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	25439..25621,25989..26252	ACN88116.1	L4-3	splicing factor	IS	25622..25988
+gi|51527264|ref|NC_003266.2|	hadvc_db	26321..27004	AAW65520.1	L4-4	VIII capsid protein	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	27005..27325	AAW65521.1	E3	E3 12.5 kDa immune modulating protein	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	30273..30548	ACN88122.1	E3-7	E3 RID-alpha	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	30987..31388	AAW65528.1	E3-9	E3 control protein 14.7 kDa	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	31632..>31519	ACN88125.1	U	putative protein U, N-terminal	T3	39
+gi|51527264|ref|NC_003266.2|	hadvc_db	31649..32926	ACN88126.1	L5	fiber	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	34169..33987,33288..33022	AAW65530.1	E4	E4 control protein orf6/7	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	34169..33270	AAW65531.1	E4-2	E4 control protein 34 kDa	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	34440..34072	AAW65532.1	E4-3	E4 control protein orf4	OK	
+gi|51527264|ref|NC_003266.2|	hadvc_db	34802..34449	AAW65534.1	E4-4	E4 control protein orf3	OK	
+gi|9626553|ref|NC_001454.1|	hadvc_db	1414..1917	ACN88087.1	E1B	E1B small T antigen	OK	
+gi|9626553|ref|NC_001454.1|	hadvc_db	5268..5256,4977..3650	ACN88093.1	IVa2	maturation protein	OK	
+gi|9626553|ref|NC_001454.1|	hadvc_db	5840..6160	AAW65501.1	HYP-2	hypothetical protein	ES	5900..5902
+gi|9626553|ref|NC_001454.1|	hadvc_db	7528..8019	ACN88098.1	L1-3	L1 13.6 kDa protein	OK	
+gi|9626553|ref|NC_001454.1|	hadvc_db	<10037..8106	ACN88100.1	pTP	putative DNA terminal protein, C-terminal	T5	9
+gi|9626553|ref|NC_001454.1|	hadvc_db	10254..11396	AAW65507.1	L1-2	L1 52 kDa protein	OK	
+gi|9626553|ref|NC_001454.1|	hadvc_db	11420..13150	ACN88105.1	L1	IIIa capsid protein	OK	
+gi|9626553|ref|NC_001454.1|	hadvc_db	13188..13180,8307..4750	ACN88094.1	E2B	DNA polymerase	OK	
+gi|9626553|ref|NC_001454.1|	hadvc_db	13271..14755	AAW65509.1	L2	penton base	OK	
+gi|9626553|ref|NC_001454.1|	hadvc_db	14757..15314	AAW65510.1	L2-2	VII core protein	OK	
+gi|9626553|ref|NC_001454.1|	hadvc_db	15380..16456	AAW65511.1	L2-3	V core protein	OK	
+gi|9626553|ref|NC_001454.1|	hadvc_db	16480..16692	AAW65512.1	L2-4	X core protein	OK	
+gi|9626553|ref|NC_001454.1|	hadvc_db	16745..17548	AAW65513.1	L3	VI capsid protein	OK	
+gi|9626553|ref|NC_001454.1|	hadvc_db	17643..20414	ADV03661.1	L3-2	hexon	OK	
+gi|9626553|ref|NC_001454.1|	hadvc_db	20426..21043	ACN88112.1	L3-3	protease	OK	
+gi|9626553|ref|NC_001454.1|	hadvc_db	22545..24857	ACN88114.1	L4	hexon-assembly protein	OK	
+gi|9626553|ref|NC_001454.1|	hadvc_db	24559..25119	ACN88115.1	L4-2	L4 encapsidation protein	OK	
+gi|9626553|ref|NC_001454.1|	hadvc_db	24559..24723,25160..25372	AAW65519.1	L4-3	splicing factor	IS	24724..25159
+gi|9626553|ref|NC_001454.1|	hadvc_db	25416..26117	ACN88117.1	L4-4	VIII capsid protein	OK	
+gi|9626553|ref|NC_001454.1|	hadvc_db	27607..27879	AAW65526.1	E3-7	E3 RID-alpha	OK	
+gi|9626553|ref|NC_001454.1|	hadvc_db	28192..28560	ACN88124.1	E3-9	E3 control protein 14.7 kDa	OK	
+gi|9626553|ref|NC_001454.1|	hadvc_db	28743..>28591	ACN88125.1	U	putative protein U, N-terminal	T3	9
+gi|9626553|ref|NC_001454.1|	hadvc_db	32745..31876	AAW65531.1	E4-2	E4 control protein 34 kDa	OK	
+gi|61602086|ref|NC_006879.1|	hadvc_db	474..938,1133..1252	ACN88085.1	E1A	E1A 32 kDa protein	IS	939..1132
+gi|61602086|ref|NC_006879.1|	hadvc_db	1365..1871	ACN88087.1	E1B	E1B small T antigen	OK	
+gi|61602086|ref|NC_006879.1|	hadvc_db	1670..3088	ACN88090.1	E1B-2	E1B large T antigen	OK	
+gi|61602086|ref|NC_006879.1|	hadvc_db	3150..3560	AAW65497.1	IX	hexon associated protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvc_db	5220..5208,4929..3599	ACN88093.1	IVa2	maturation protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvc_db	5789..6109	AAW65501.1	HYP-2	hypothetical protein	ES	5804..5806
+gi|61602086|ref|NC_006879.1|	hadvc_db	8767..9267	ACN88101.1	HYP-4	hypothetical protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvc_db	<9977..8046	ACN88100.1	pTP	putative DNA terminal protein, C-terminal	T5	9
+gi|61602086|ref|NC_006879.1|	hadvc_db	10190..11317	AAW65507.1	L1-2	L1 52 kDa protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvc_db	11338..13047	ACN88105.1	L1	IIIa capsid protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvc_db	13078..13066,8276..4702	ACN88094.1	E2B	DNA polymerase	ES	8271..8269
+gi|61602086|ref|NC_006879.1|	hadvc_db	13129..14640	AAW65509.1	L2	penton base	OK	
+gi|61602086|ref|NC_006879.1|	hadvc_db	14643..15206	AAW65510.1	L2-2	VII core protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvc_db	15263..16300	ACN88108.1	L2-3	V core protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvc_db	16320..16532	AAW65512.1	L2-4	X core protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvc_db	16586..17425	AAW65513.1	L3	VI capsid protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvc_db	17513..20308	AAW65514.1	L3-2	hexon	OK	
+gi|61602086|ref|NC_006879.1|	hadvc_db	20317..20934	ACN88112.1	L3-3	protease	OK	
+gi|61602086|ref|NC_006879.1|	hadvc_db	22393..24681	ACN88114.1	L4	hexon-assembly protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvc_db	24386..24931	ACN88115.1	L4-2	L4 encapsidation protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvc_db	24386..24562,24972..25211	ACN88116.1	L4-3	splicing factor	IS	24563..24971
+gi|61602086|ref|NC_006879.1|	hadvc_db	25263..25964	ACN88117.1	L4-4	VIII capsid protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvc_db	25964..26281	AAW65521.1	E3	E3 12.5 kDa immune modulating protein	OK	
+gi|61602086|ref|NC_006879.1|	hadvc_db	27580..27852	ACN88122.1	E3-7	E3 RID-alpha	OK	
+gi|61602086|ref|NC_006879.1|	hadvc_db	28720..>28568	ACN88125.1	U	putative protein U, N-terminal	T3	9
+gi|61602086|ref|NC_006879.1|	hadvc_db	33301..32951	AAW65534.1	E4-4	E4 control protein orf3	OK	
+gi|61602086|ref|NC_006879.1|	hadvc_db	34095..33715	ACN88138.1	E4-6	E4 control protein orf1	OK	

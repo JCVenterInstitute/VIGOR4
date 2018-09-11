@@ -1,0 +1,501 @@
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_001798.2            154675     77            0     124944          41571           99.8             99.9          100.0   hhv2_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_001798.2.1      100.0  100.0  100.0  0.0   0.0   0.0   440..934         261    261    CAB06706.1        RL1 | neurovirulence protein ICP34.5
+                                                          1089..1379                                       
+NC_001798.2.2      100.0  100.0  100.0  0.0   0.0   0.0   2303..2377       833    833    AEV91397.2        RL2 | ubiquitin E3 ligase ICP0
+                                                          2788..3463                                       
+                                                          3645..5395                                       
+NC_001798.2.3      100.0  100.0  100.0  0.0   0.0   0.0   9463..10137      224    224    CAB06761.1        UL1 | envelope glycoprotein L
+NC_001798.2.4      99.7   100.0  100.0  0.0   0.0   0.0   10010..11014     334    334    NP_044471.2       UL2 | uracil-DNA glycosylase
+NC_001798.2.5      100.0  100.0  100.0  0.0   0.0   0.0   11069..11770     233    233    CAB06763.1        UL3 | nuclear protein UL3
+NC_001798.2.6      100.0  100.0  100.0  0.0   0.0   0.0   12575..11970     201    201    CAB06764.1        UL4 | nuclear protein UL4
+NC_001798.2.7      99.7   99.9   100.0  0.0   0.0   0.0   15286..17322     678    678    CAB06766.1        UL6 | capsid portal protein
+NC_001798.2.8      100.0  100.0  100.0  0.0   0.0   0.0   15287..12642     881    881    CAB06765.1        UL5 | helicase-primase helicase subunit
+NC_001798.2.9      100.0  100.0  100.0  0.0   0.0   0.0   17297..18187     296    296    CAB06767.1        UL7 | tegument protein UL7
+NC_001798.2.10     99.2   99.7   100.0  0.0   0.0   0.0   20703..18445     752    752    CAB06768.1        UL8 | helicase-primase subunit
+NC_001798.2.11     100.0  100.0  100.0  0.0   0.0   0.0   23247..24650     467    467    CAB06770.1        UL10 | envelope glycoprotein M
+NC_001798.2.12     99.8   99.8   100.0  0.0   0.0   0.0   23356..20753     867    867    CAB06769.2        UL9 | DNA replication origin-binding helicase
+NC_001798.2.13     100.0  100.0  100.0  0.0   0.0   0.0   25138..24848     96     96     CAB06771.1        UL11 | myristylated tegument protein
+NC_001798.2.14     99.8   99.8   100.0  0.0   0.0   0.0   26916..25054     620    620    CAB06772.1        UL12 | deoxyribonuclease
+NC_001798.2.15     99.8   99.8   100.0  0.0   0.0   0.0   28513..26957     518    518    CAB06773.1        UL13 | tegument serine/threonine protein kinase
+NC_001798.2.16     100.0  100.0  100.0  0.0   0.0   0.0   28926..28267     219    219    CAB06774.1        UL14 | tegument protein UL14
+NC_001798.2.17     100.0  100.0  100.0  0.0   0.0   0.0   29007..30035     734    734    CAB06775.1        UL15 | DNA packaging terminase subunit 1
+                                                          33635..34810                                     
+NC_001798.2.18     98.7   99.8   100.0  0.0   0.0   0.0   31299..30181     372    372    CAB06776.1        UL16 | tegument protein UL16
+                    translation exception 31299..31297:M
+NC_001798.2.19     99.7   99.9   100.0  0.0   0.0   0.0   33509..31401     702    702    CAB06741.1        UL17 | DNA packaging tegument protein UL17
+NC_001798.2.20     100.0  100.0  100.0  0.0   0.0   0.0   36109..35153     318    318    CAB06742.1        UL18 | capsid triplex subunit 2
+NC_001798.2.21     99.3   99.8   100.0  0.0   0.0   0.0   40610..36486     1374   1374   CAB06743.1        UL19 | major capsid protein
+NC_001798.2.22     100.0  100.0  100.0  0.0   0.0   0.0   41590..40922     222    222    CAB06744.1        UL20 | envelope protein UL20
+NC_001798.2.23     100.0  100.0  100.0  0.0   0.0   0.0   42239..43837     532    532    CAB06745.1        UL21 | tegument protein UL21
+NC_001798.2.24     99.9   100.0  100.0  0.0   0.0   0.0   46570..44054     838    838    CAB06746.1        UL22 | envelope glycoprotein H
+NC_001798.2.25     100.0  100.0  100.0  0.0   0.0   0.0   47941..48786     281    281    CAB06748.1        UL24 | nuclear protein UL24
+NC_001798.2.26     100.0  100.0  100.0  0.0   0.0   0.0   48039..46909     376    376    CAB06747.1        UL23 | thymidine kinase
+NC_001798.2.27     99.8   99.8   100.0  0.0   0.0   0.0   49074..50831     585    585    CAB06749.1        UL25 | DNA packaging tegument protein UL25
+NC_001798.2.28     100.0  100.0  100.0  0.0   0.0   0.0   51065..52978     637    637    CAB06750.1        UL26 | capsid maturation protease
+NC_001798.2.29     100.0  100.0  100.0  0.0   0.0   0.0   51989..52978     329    329    CAB06751.1        UL26.5 | capsid scaffold protein
+NC_001798.2.30     99.9   100.0  100.0  0.0   0.0   0.0   56152..53438     904    904    CAB06752.1        UL27 | envelope glycoprotein B
+NC_001798.2.31     100.0  100.0  100.0  0.0   0.0   0.0   58517..56160     785    785    CAB06753.1        UL28 | DNA packaging terminase subunit 2
+NC_001798.2.32     99.9   99.9   100.0  0.0   0.0   0.0   62482..58892     1196   1196   CAB06754.1        UL29 | single-stranded DNA-binding protein
+NC_001798.2.33     100.0  100.0  100.0  0.0   0.0   0.0   63300..67022     1240   1240   CAB06755.1        UL30 | DNA polymerase catalytic subunit
+NC_001798.2.34     100.0  100.0  100.0  0.0   0.0   0.0   67884..66967     305    305    CAB06756.1        UL31 | nuclear egress lamina protein
+NC_001798.2.35     100.0  100.0  100.0  0.0   0.0   0.0   69672..70064     130    130    CAB06758.1        UL33 | DNA packaging protein UL33
+NC_001798.2.36     99.8   100.0  100.0  0.0   0.0   0.0   69673..67877     598    598    CAB06757.1        UL32 | DNA packaging protein UL32
+NC_001798.2.37     100.0  100.0  100.0  0.0   0.0   0.0   70154..70984     276    276    CAB06720.1        UL34 | nuclear egress membrane protein
+NC_001798.2.38     100.0  100.0  100.0  0.0   0.0   0.0   71096..71434     112    112    CAB06721.1        UL35 | small capsid protein
+NC_001798.2.39     99.9   100.0  100.0  0.0   0.0   0.0   80969..71601     3122   3122   CAB06722.1        UL36 | large tegument protein
+NC_001798.2.40     99.7   99.9   100.0  0.0   0.0   0.0   84614..81270     1114   1114   CAB06723.1        UL37 | tegument protein UL37
+NC_001798.2.41     98.7   99.2   100.0  0.0   0.0   0.0   85097..86497     466    466    CAB06724.1        UL38 | capsid triplex subunit 1
+NC_001798.2.42     100.0  100.0  100.0  0.0   0.0   0.0   87060..90488     1142   1142   CAB06725.1        UL39 | ribonucleotide reductase subunit 1
+NC_001798.2.43     100.0  100.0  100.0  0.0   0.0   0.0   90541..91554     337    337    CAB06726.1        UL40 | ribonucleotide reductase subunit 2
+NC_001798.2.44     100.0  100.0  100.0  0.0   0.0   0.0   93311..91833     492    492    CAB06727.1        UL41 | tegument host shutoff protein
+NC_001798.2.45     100.0  100.0  100.0  0.0   0.0   0.0   93805..95217     470    470    CAB06728.1        UL42 | DNA polymerase processivity subunit
+NC_001798.2.46     100.0  100.0  100.0  0.0   0.0   0.0   95469..96713     414    414    CAB06729.1        UL43 | envelope protein UL43
+NC_001798.2.47     100.0  100.0  100.0  0.0   0.0   0.0   97015..98457     480    480    CAB06730.1        UL44 | envelope glycoprotein C
+NC_001798.2.48     99.4   99.4   100.0  0.0   0.0   0.0   98687..99205     172    172    CAB06731.1        UL45 | membrane protein UL45
+NC_001798.2.49     99.4   99.4   100.0  0.0   0.0   0.0   101634..99466    722    722    CAB06732.1        UL46 | tegument protein VP11/12
+NC_001798.2.50     99.9   100.0  100.0  0.0   0.0   0.0   103809..101719   696    696    CAB06733.1        UL47 | tegument protein VP13/14
+NC_001798.2.51     100.0  100.0  100.0  0.0   0.0   0.0   105802..104330   490    490    CAB06734.1        UL48 | transactivating tegument protein VP16
+NC_001798.2.52     100.0  100.0  100.0  0.0   0.0   0.0   107185..106283   300    300    CAB06735.1        UL49 | tegument protein VP22
+NC_001798.2.53     100.0  100.0  100.0  0.0   0.0   0.0   107787..107524   87     87     CAB06736.1        UL49A | envelope glycoprotein N
+NC_001798.2.54     100.0  100.0  100.0  0.0   0.0   0.0   107795..108904   369    369    CAB06737.1        UL50 | deoxyuridine triphosphatase
+NC_001798.2.55     100.0  100.0  100.0  0.0   0.0   0.0   109842..109108   244    244    CAB06738.1        UL51 | tegument protein UL51
+NC_001798.2.56     99.9   100.0  100.0  0.0   0.0   0.0   109910..113110   1066   1066   CAB06739.1        UL52 | helicase-primase primase subunit
+NC_001798.2.57     99.7   100.0  100.0  0.0   0.0   0.0   113062..114078   338    338    CAB06740.1        UL53 | envelope glycoprotein K
+NC_001798.2.58     99.8   100.0  100.0  0.0   0.0   0.0   114624..116162   512    512    CAB06702.1        UL54 | multifunctional expression regulator
+NC_001798.2.59     100.0  100.0  100.0  0.0   0.0   0.0   116377..116937   186    186    CAB06703.1        UL55 | nuclear protein UL55
+NC_001798.2.60     100.0  100.0  100.0  0.0   0.0   0.0   117817..117110   235    235    CAB06704.1        UL56 | membrane protein UL56
+NC_001798.2.61     100.0  100.0  100.0  0.0   0.0   0.0   125018..124944   833    833    AEV91397.2        RL2-ii | ubiquitin E3 ligase ICP0
+                                                          124533..123858                                   
+                                                          123676..121926                                   
+NC_001798.2.62     100.0  100.0  100.0  0.0   0.0   0.0   126881..126387   261    261    CAB06706.1        RL1-ii | neurovirulence protein ICP34.5
+                                                          126232..125942                                   
+NC_001798.2.63     99.9   100.0  100.0  0.0   0.0   0.0   132102..128146   1318   1318   CAB06701.1        RS1 | transcriptional regulator ICP4
+NC_001798.2.64     98.3   98.7   100.0  0.0   0.0   0.0   133741..134985   414    413    CAB06708.1        US1 | regulatory protein ICP22
+NC_001798.2.65     100.0  100.0  100.0  0.0   0.0   0.0   136043..135168   291    291    CAB06709.1        US2 | virion protein US2
+NC_001798.2.66     99.6   100.0  100.0  0.0   0.0   0.0   136329..137774   481    481    CAB06710.1        US3 | serine/threonine protein kinase US3
+NC_001798.2.67     100.0  100.0  100.0  0.0   0.0   0.0   137882..139981   699    699    CAB06711.1        US4 | envelope glycoprotein G
+NC_001798.2.68     100.0  100.0  100.0  0.0   0.0   0.0   140291..140569   92     92     CAB06712.1        US5 | envelope glycoprotein J
+NC_001798.2.69     100.0  100.0  100.0  0.0   0.0   0.0   141016..142197   393    393    CAB06713.1        US6 | envelope glycoprotein D
+NC_001798.2.70     100.0  100.0  100.0  0.0   0.0   0.0   142399..143517   372    372    CAB06714.1        US7 | envelope glycoprotein I
+NC_001798.2.71     99.1   99.2   100.0  0.0   0.0   0.0   143840..145477   545    548    AHG54732.1        US8 | envelope glycoprotein E
+NC_001798.2.72     100.0  100.0  100.0  0.0   0.0   0.0   145326..145766   146    146    CAB06716.1        US8A | membrane protein US8A
+NC_001798.2.73     100.0  100.0  100.0  0.0   0.0   0.0   145866..146135   89     89     CAB06717.1        US9 | membrane protein US9
+NC_001798.2.74     100.0  100.0  100.0  0.0   0.0   0.0   147531..146623   302    302    CAB06718.1        US10 | virion protein US10
+NC_001798.2.75     100.0  100.0  100.0  0.0   0.0   0.0   147697..147242   151    151    CAB06719.1        US11 | tegument protein US11
+NC_001798.2.76     100.0  100.0  100.0  0.0   0.0   0.0   148033..147773   86     86     CAB06700.1        US12 | TAP transporter inhibitor ICP47
+NC_001798.2.77     99.9   100.0  100.0  0.0   0.0   0.0   149640..153596   1318   1318   CAB06701.1        RS1-ii | transcriptional regulator ICP4
+
+
+dropping pseudogene MF564037.1.3, fails match requirements: %id 16.1 < 70, %sim 29.9 < 80
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+MF564037.1.3       16.1   29.9   87.9   10.0  0.1   2.0   <1..293          1472   3122   CAB06722.1        UL36 | putative large tegument protein, C-terminal
+                                                          292..3792                                        
+                                                          3792..4049                                       
+                                                          4048..4416                                       
+                    frameshifts in genome at or near positions 293..292 (+3=>+1), 3792..3792 (+1=>+3) and 4049..4048 (+3=>+1)
+                    many stop codons embedded in CDS
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+MF564037.1             152593     74            3     119094          39624           99.5             99.8          100.0   hhv2_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+MF564037.1.1       96.6   96.6   100.0  0.0   0.0   0.0   1..468           252    261    CAB06706.1        RL1-ii | neurovirulence protein ICP34.5
+                                                          566..856                                         
+                    invalid splicing for intron  at 469..565
+MF564037.1.2       99.3   99.6   100.0  0.0   0.0   0.0   1780..1854       832    833    AEV91397.2        RL2 | ubiquitin E3 ligase ICP0
+                                                          2265..2939                                       
+                                                          3036..4784                                       
+                    invalid splicing for intron  at 2940..3035
+MF564037.1.3       99.6   100.0  100.0  0.0   0.0   0.0   8697..9371       224    224    CAB06761.1        UL1 | envelope glycoprotein L
+MF564037.1.4       99.4   99.7   100.0  0.0   0.0   0.0   9244..10248      334    334    NP_044471.2       UL2 | uracil-DNA glycosylase
+MF564037.1.5       99.6   100.0  100.0  0.0   0.0   0.0   10303..11004     233    233    CAB06763.1        UL3 | nuclear protein UL3
+MF564037.1.6       99.0   99.4   100.0  0.0   0.0   0.0   11808..11203     201    201    CAB06764.1        UL4 | nuclear protein UL4
+MF564037.1.7       99.4   99.7   100.0  0.0   0.0   0.0   14519..16555     678    678    CAB06766.1        UL6 | capsid portal protein
+MF564037.1.8       99.9   100.0  100.0  0.0   0.0   0.0   14520..11875     881    881    CAB06765.1        UL5 | helicase-primase helicase subunit
+MF564037.1.9       99.7   100.0  100.0  0.0   0.0   0.0   16530..17420     296    296    CAB06767.1        UL7 | tegument protein UL7
+MF564037.1.10      98.0   99.0   100.0  0.0   0.0   0.0   19930..17678     750    752    CAB06768.1        UL8 | helicase-primase subunit
+MF564037.1.11      99.8   100.0  100.0  0.0   0.0   0.0   22474..23877     467    467    CAB06770.1        UL10 | envelope glycoprotein M
+MF564037.1.12      99.7   99.7   100.0  0.0   0.0   0.0   22583..19980     867    867    CAB06769.2        UL9 | DNA replication origin-binding helicase
+MF564037.1.13      100.0  100.0  100.0  0.0   0.0   0.0   24369..24079     96     96     AHG54674.1        UL11 | myristylated tegument protein
+MF564037.1.14      99.4   99.6   100.0  0.0   0.0   0.0   26147..24285     620    620    CAB06772.1        UL12 | deoxyribonuclease
+MF564037.1.15      99.4   99.4   100.0  0.0   0.0   0.0   27744..26188     518    518    CAB06773.1        UL13 | tegument serine/threonine protein kinase
+MF564037.1.16      99.5   99.5   100.0  0.0   0.0   0.0   28157..27498     219    219    CAB06774.1        UL14 | tegument protein UL14
+MF564037.1.17      100.0  100.0  100.0  0.0   0.0   0.0   28238..29266     734    734    CAB06775.1        UL15 | DNA packaging terminase subunit 1
+                                                          32860..34035                                     
+MF564037.1.18      98.7   99.6   100.0  0.0   0.0   0.0   30529..29411     372    372    CAB06776.1        UL16 | tegument protein UL16
+                    translation exception 30529..30527:M
+MF564037.1.19      99.4   99.6   100.0  0.0   0.0   0.0   32734..30629     701    702    CAB06741.1        UL17 | DNA packaging tegument protein UL17
+MF564037.1.20      100.0  100.0  100.0  0.0   0.0   0.0   35337..34381     318    318    CAB06742.1        UL18 | capsid triplex subunit 2
+MF564037.1.21      99.3   99.8   100.0  0.0   0.0   0.0   39840..35716     1374   1374   CAB06743.1        UL19 | major capsid protein
+MF564037.1.22      100.0  100.0  100.0  0.0   0.0   0.0   40821..40153     222    222    CAB06744.1        UL20 | envelope protein UL20
+MF564037.1.23      99.8   100.0  100.0  0.0   0.0   0.0   41471..43069     532    532    CAB06745.1        UL21 | tegument protein UL21
+MF564037.1.24      99.5   99.9   100.0  0.0   0.0   0.0   45804..43288     838    838    CAB06746.1        UL22 | envelope glycoprotein H
+MF564037.1.25      99.6   99.9   100.0  0.0   0.0   0.0   47175..48020     281    281    CAB06748.1        UL24 | nuclear protein UL24
+MF564037.1.26      99.5   99.7   100.0  0.0   0.0   0.0   47273..46143     376    376    CAB06747.1        UL23 | thymidine kinase
+MF564037.1.27      99.7   99.8   100.0  0.0   0.0   0.0   48299..50056     585    585    CAB06749.1        UL25 | DNA packaging tegument protein UL25
+MF564037.1.28      99.4   99.8   100.0  0.0   0.0   0.0   50289..52205     638    637    CAB06750.1        UL26 | capsid maturation protease
+MF564037.1.29      99.4   100.0  100.0  0.0   0.0   0.0   51216..52205     329    329    CAB06751.1        UL26.5 | capsid scaffold protein
+MF564037.1.30      99.4   99.7   100.0  0.0   0.0   0.0   55363..52658     901    904    CAB06752.1        UL27 | envelope glycoprotein B
+MF564037.1.31      99.9   100.0  100.0  0.0   0.0   0.0   57728..55371     785    785    CAB06753.1        UL28 | DNA packaging terminase subunit 2
+MF564037.1.32      99.7   99.9   100.0  0.0   0.0   0.0   61686..58099     1195   1196   CAB06754.1        UL29 | single-stranded DNA-binding protein
+MF564037.1.33      99.5   99.8   100.0  0.0   0.0   0.0   62503..66225     1240   1240   CAB06755.1        UL30 | DNA polymerase catalytic subunit
+MF564037.1.34      100.0  100.0  100.0  0.0   0.0   0.0   67087..66170     305    305    CAB06756.1        UL31 | nuclear egress lamina protein
+MF564037.1.35      100.0  100.0  100.0  0.0   0.0   0.0   68875..69267     130    130    CAB06758.1        UL33 | DNA packaging protein UL33
+MF564037.1.36      99.8   100.0  100.0  0.0   0.0   0.0   68876..67080     598    598    CAB06757.1        UL32 | DNA packaging protein UL32
+MF564037.1.37      99.6   99.9   100.0  0.0   0.0   0.0   69357..70187     276    276    CAB06720.1        UL34 | nuclear egress membrane protein
+MF564037.1.38      99.1   99.1   100.0  0.0   0.0   0.0   70299..70637     112    112    CAB06721.1        UL35 | small capsid protein
+MF564037.1.39      99.7   99.9   100.0  0.0   0.0   0.0   80172..70804     3122   3122   CAB06722.1        UL36 | large tegument protein
+MF564037.1.40      99.6   99.7   100.0  0.0   0.0   0.0   83818..80474     1114   1114   CAB06723.1        UL37 | tegument protein UL37
+MF564037.1.41      98.5   99.0   100.0  0.0   0.0   0.0   84307..85707     466    466    CAB06724.1        UL38 | capsid triplex subunit 1
+MF564037.1.42      99.0   99.7   100.0  0.0   0.0   0.0   86270..89704     1144   1142   CAB06725.1        UL39 | ribonucleotide reductase subunit 1
+MF564037.1.43      100.0  100.0  100.0  0.0   0.0   0.0   89757..90770     337    337    CAB06726.1        UL40 | ribonucleotide reductase subunit 2
+MF564037.1.44      100.0  100.0  100.0  0.0   0.0   0.0   92527..91049     492    492    CAB06727.1        UL41 | tegument host shutoff protein
+MF564037.1.45      99.6   99.9   100.0  0.0   0.0   0.0   93022..94434     470    470    CAB06728.1        UL42 | DNA polymerase processivity subunit
+MF564037.1.46      99.5   100.0  100.0  0.0   0.0   0.0   94683..95927     414    414    CAB06729.1        UL43 | envelope protein UL43
+MF564037.1.47      98.5   99.2   100.0  0.0   0.0   0.0   96229..97668     479    480    CAB06730.1        UL44 | envelope glycoprotein C
+MF564037.1.48      99.4   99.4   100.0  0.0   0.0   0.0   97898..98416     172    172    CAB06731.1        UL45 | membrane protein UL45
+MF564037.1.49      98.6   98.9   100.0  0.0   0.0   0.0   100835..98676    719    722    CAB06732.1        UL46 | tegument protein VP11/12
+MF564037.1.50      99.4   99.9   100.0  0.0   0.0   0.0   103010..100920   696    696    CAB06733.1        UL47 | tegument protein VP13/14
+MF564037.1.51      100.0  100.0  100.0  0.0   0.0   0.0   105002..103530   490    490    CAB06734.1        UL48 | transactivating tegument protein VP16
+MF564037.1.52      98.3   98.6   100.0  0.0   0.0   0.0   106372..105482   296    300    CAB06735.1        UL49 | tegument protein VP22
+MF564037.1.53      100.0  100.0  100.0  0.0   0.0   0.0   106974..106711   87     87     CAB06736.1        UL49A | envelope glycoprotein N
+MF564037.1.54      99.5   99.9   100.0  0.0   0.0   0.0   106982..108091   369    369    CAB06737.1        UL50 | deoxyuridine triphosphatase
+MF564037.1.55      100.0  100.0  100.0  0.0   0.0   0.0   109032..108298   244    244    CAB06738.1        UL51 | tegument protein UL51
+MF564037.1.56      99.4   99.9   100.0  0.0   0.0   0.0   109100..112300   1066   1066   CAB06739.1        UL52 | helicase-primase primase subunit
+MF564037.1.57      99.4   100.0  100.0  0.0   0.0   0.0   112252..113268   338    338    CAB06740.1        UL53 | envelope glycoprotein K
+MF564037.1.58      99.6   100.0  100.0  0.0   0.0   0.0   113814..115352   512    512    CAB06702.1        UL54 | multifunctional expression regulator
+MF564037.1.59      100.0  100.0  100.0  0.0   0.0   0.0   115567..116127   186    186    CAB06703.1        UL55 | nuclear protein UL55
+MF564037.1.60      99.6   100.0  100.0  0.0   0.0   0.0   117007..116300   235    235    CAB06704.1        UL56 | membrane protein UL56
+MF564037.1.61      97.4   98.7   100.0  0.0   0.0   0.0   124100..124026   835    826    CAB06705.1        RL2-ii | ubiquitin E3 ligase ICP0
+                                                          123618..122938                                   
+                                                          122833..121082                                   
+                    invalid splicing for intron  at 122937..122834
+MF564037.1.62      98.1   98.1   100.0  0.0   0.0   0.0   125936..125457   256    261    CAB06706.1        RL1 | neurovirulence protein ICP34.5
+                                                          125314..125024                                   
+                    non-canonical splicing for intron at 125456..125315
+MF564037.1.63      99.5   99.7   100.0  0.0   0.0   0.0   131143..127193   1316   1318   CAB06701.1        RS1 | transcriptional regulator ICP4
+MF564037.1.64      97.1   98.3   100.0  0.0   0.0   0.0   132775..134016   413    413    CAB06708.1        US1 | regulatory protein ICP22
+MF564037.1.65      99.3   99.6   100.0  0.0   0.0   0.0   135073..134198   291    291    CAB06709.1        US2 | virion protein US2
+MF564037.1.66      99.6   100.0  100.0  0.0   0.0   0.0   135358..136803   481    481    CAB06710.1        US3 | serine/threonine protein kinase US3
+MF564037.1.67      99.1   99.5   100.0  0.0   0.0   0.0   136911..139007   698    699    CAB06711.1        US4 | envelope glycoprotein G
+MF564037.1.68      98.9   99.7   100.0  0.0   0.0   0.0   139316..139594   92     92     CAB06712.1        US5 | envelope glycoprotein J
+MF564037.1.69      99.7   99.9   100.0  0.0   0.0   0.0   140032..141213   393    393    CAB06713.1        US6 | envelope glycoprotein D
+MF564037.1.70      99.5   99.5   100.0  0.0   0.0   0.0   141415..142533   372    372    CAB06714.1        US7 | envelope glycoprotein I
+MF564037.1.71      99.8   99.8   100.0  0.0   0.0   0.0   142851..144497   548    548    AHG54732.1        US8 | envelope glycoprotein E
+MF564037.1.72      100.0  100.0  100.0  0.0   0.0   0.0   144346..144786   146    146    CAB06716.1        US8A | membrane protein US8A
+MF564037.1.73      98.9   99.7   100.0  0.0   0.0   0.0   144886..145155   89     89     CAB06717.1        US9 | membrane protein US9
+MF564037.1.74      99.7   100.0  100.0  0.0   0.0   0.0   146549..145641   302    302    CAB06718.1        US10 | virion protein US10
+MF564037.1.75      100.0  100.0  100.0  0.0   0.0   0.0   146715..146260   151    151    CAB06719.1        US11 | tegument protein US11
+MF564037.1.76      100.0  100.0  100.0  0.0   0.0   0.0   147051..146791   86     86     CAB06700.1        US12 | TAP transporter inhibitor ICP47
+MF564037.1.77      99.5   99.7   100.0  0.0   0.0   0.0   148643..152593   1316   1318   CAB06701.1        RS1-ii | transcriptional regulator ICP4
+
+
+dropping pseudogene MF564035.1.3, fails match requirements: %id 15.5 < 70, %sim 29.0 < 80
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+MF564035.1.3       15.5   29.0   95.1   2.9   0.1   1.9   <1..473          1486   3122   CAB06722.1        UL36 | putative large tegument protein, C-terminal
+                                                          473..517                                         
+                                                          516..4082                                        
+                                                          4081..4458                                       
+                    frameshifts in genome at or near positions 473..473 (+3=>+2), 517..516 (+2=>+3) and 4082..4081 (+3=>+1)
+                    many stop codons embedded in CDS
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+MF564035.1             152609     75            2     119874          39883           99.5             99.8          100.0   hhv2_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+MF564035.1.1       96.2   96.2   100.0  0.0   0.0   0.0   1..468           252    261    CAB06706.1        RL1 | neurovirulence protein ICP34.5
+                                                          608..898                                         
+MF564035.1.2       99.4   99.6   100.0  0.0   0.0   0.0   1822..1896       832    833    AEV91397.2        RL2 | ubiquitin E3 ligase ICP0
+                                                          2307..2981                                       
+                                                          3078..4826                                       
+                    invalid splicing for intron  at 2982..3077
+MF564035.1.3       100.0  100.0  100.0  0.0   0.0   0.0   8749..9423       224    224    CAB06761.1        UL1 | envelope glycoprotein L
+MF564035.1.4       99.4   99.7   100.0  0.0   0.0   0.0   9296..10300      334    334    NP_044471.2       UL2 | uracil-DNA glycosylase
+MF564035.1.5       100.0  100.0  100.0  0.0   0.0   0.0   10355..11056     233    233    CAB06763.1        UL3 | nuclear protein UL3
+MF564035.1.6       100.0  100.0  100.0  0.0   0.0   0.0   11860..11255     201    201    CAB06764.1        UL4 | nuclear protein UL4
+MF564035.1.7       99.3   99.6   100.0  0.0   0.0   0.0   14571..16607     678    678    CAB06766.1        UL6 | capsid portal protein
+MF564035.1.8       100.0  100.0  100.0  0.0   0.0   0.0   14572..11927     881    881    CAB06765.1        UL5 | helicase-primase helicase subunit
+MF564035.1.9       99.7   100.0  100.0  0.0   0.0   0.0   16582..17472     296    296    CAB06767.1        UL7 | tegument protein UL7
+MF564035.1.10      98.8   99.5   100.0  0.0   0.0   0.0   19987..17729     752    752    CAB06768.1        UL8 | helicase-primase subunit
+MF564035.1.11      99.8   100.0  100.0  0.0   0.0   0.0   22531..23934     467    467    CAB06770.1        UL10 | envelope glycoprotein M
+MF564035.1.12      99.8   99.8   100.0  0.0   0.0   0.0   22640..20037     867    867    CAB06769.2        UL9 | DNA replication origin-binding helicase
+MF564035.1.13      100.0  100.0  100.0  0.0   0.0   0.0   24421..24131     96     96     AHG54674.1        UL11 | myristylated tegument protein
+MF564035.1.14      99.5   99.6   100.0  0.0   0.0   0.0   26199..24337     620    620    CAB06772.1        UL12 | deoxyribonuclease
+MF564035.1.15      99.4   99.4   100.0  0.0   0.0   0.0   27796..26240     518    518    CAB06773.1        UL13 | tegument serine/threonine protein kinase
+MF564035.1.16      100.0  100.0  100.0  0.0   0.0   0.0   28209..27550     219    219    CAB06774.1        UL14 | tegument protein UL14
+MF564035.1.17      100.0  100.0  100.0  0.0   0.0   0.0   28290..29318     734    734    CAB06775.1        UL15 | DNA packaging terminase subunit 1
+                                                          32913..34088                                     
+MF564035.1.18      98.7   99.6   100.0  0.0   0.0   0.0   30581..29463     372    372    CAB06776.1        UL16 | tegument protein UL16
+                    translation exception 30581..30579:M
+MF564035.1.19      99.4   99.6   100.0  0.0   0.0   0.0   32787..30682     701    702    CAB06741.1        UL17 | DNA packaging tegument protein UL17
+MF564035.1.20      100.0  100.0  100.0  0.0   0.0   0.0   35387..34431     318    318    CAB06742.1        UL18 | capsid triplex subunit 2
+MF564035.1.21      99.2   99.8   100.0  0.0   0.0   0.0   39887..35763     1374   1374   CAB06743.1        UL19 | major capsid protein
+MF564035.1.22      99.1   99.5   100.0  0.0   0.0   0.0   40868..40200     222    222    CAB06744.1        UL20 | envelope protein UL20
+MF564035.1.23      100.0  100.0  100.0  0.0   0.0   0.0   41517..43115     532    532    CAB06745.1        UL21 | tegument protein UL21
+MF564035.1.24      99.9   100.0  100.0  0.0   0.0   0.0   45851..43335     838    838    CAB06746.1        UL22 | envelope glycoprotein H
+MF564035.1.25      99.6   99.9   100.0  0.0   0.0   0.0   47222..48067     281    281    CAB06748.1        UL24 | nuclear protein UL24
+MF564035.1.26      99.7   99.7   100.0  0.0   0.0   0.0   47320..46190     376    376    CAB06747.1        UL23 | thymidine kinase
+MF564035.1.27      99.7   99.8   100.0  0.0   0.0   0.0   48347..50104     585    585    CAB06749.1        UL25 | DNA packaging tegument protein UL25
+MF564035.1.28      99.7   100.0  100.0  0.0   0.0   0.0   50334..52247     637    637    CAB06750.1        UL26 | capsid maturation protease
+MF564035.1.29      99.4   100.0  100.0  0.0   0.0   0.0   51258..52247     329    329    CAB06751.1        UL26.5 | capsid scaffold protein
+MF564035.1.30      99.2   99.6   100.0  0.0   0.0   0.0   55397..52692     901    904    CAB06752.1        UL27 | envelope glycoprotein B
+MF564035.1.31      99.7   100.0  100.0  0.0   0.0   0.0   57762..55405     785    785    CAB06753.1        UL28 | DNA packaging terminase subunit 2
+MF564035.1.32      99.9   100.0  100.0  0.0   0.0   0.0   61730..58140     1196   1196   CAB06754.1        UL29 | single-stranded DNA-binding protein
+MF564035.1.33      99.6   99.8   100.0  0.0   0.0   0.0   62547..66269     1240   1240   CAB06755.1        UL30 | DNA polymerase catalytic subunit
+MF564035.1.34      100.0  100.0  100.0  0.0   0.0   0.0   67131..66214     305    305    CAB06756.1        UL31 | nuclear egress lamina protein
+MF564035.1.35      100.0  100.0  100.0  0.0   0.0   0.0   68913..69305     130    130    CAB06758.1        UL33 | DNA packaging protein UL33
+MF564035.1.36      99.3   99.6   100.0  0.0   0.0   0.0   68914..67124     596    598    CAB06757.1        UL32 | DNA packaging protein UL32
+MF564035.1.37      98.9   99.3   100.0  0.0   0.0   0.0   69395..70219     274    276    CAB06720.1        UL34 | nuclear egress membrane protein
+MF564035.1.38      100.0  100.0  100.0  0.0   0.0   0.0   70331..70669     112    112    CAB06721.1        UL35 | small capsid protein
+MF564035.1.39      99.6   99.9   100.0  0.0   0.0   0.0   80203..70835     3122   3122   CAB06722.1        UL36 | large tegument protein
+MF564035.1.40      99.6   99.8   100.0  0.0   0.0   0.0   83850..80506     1114   1114   CAB06723.1        UL37 | tegument protein UL37
+MF564035.1.41      98.5   99.0   100.0  0.0   0.0   0.0   84330..85730     466    466    CAB06724.1        UL38 | capsid triplex subunit 1
+MF564035.1.42      99.0   99.7   100.0  0.0   0.0   0.0   86293..89727     1144   1142   CAB06725.1        UL39 | ribonucleotide reductase subunit 1
+MF564035.1.43      100.0  100.0  100.0  0.0   0.0   0.0   89780..90793     337    337    CAB06726.1        UL40 | ribonucleotide reductase subunit 2
+MF564035.1.44      100.0  100.0  100.0  0.0   0.0   0.0   92550..91072     492    492    CAB06727.1        UL41 | tegument host shutoff protein
+MF564035.1.45      99.4   99.9   100.0  0.0   0.0   0.0   93043..94455     470    470    CAB06728.1        UL42 | DNA polymerase processivity subunit
+MF564035.1.46      99.3   99.9   100.0  0.0   0.0   0.0   94705..95949     414    414    CAB06729.1        UL43 | envelope protein UL43
+MF564035.1.47      100.0  100.0  100.0  0.0   0.0   0.0   96251..97693     480    480    CAB06730.1        UL44 | envelope glycoprotein C
+MF564035.1.48      99.4   99.4   100.0  0.0   0.0   0.0   97923..98441     172    172    CAB06731.1        UL45 | membrane protein UL45
+MF564035.1.49      98.2   98.5   100.0  0.0   0.0   0.0   100854..98698    718    722    CAB06732.1        UL46 | tegument protein VP11/12
+MF564035.1.50      99.6   99.9   100.0  0.0   0.0   0.0   103029..100939   696    696    CAB06733.1        UL47 | tegument protein VP13/14
+MF564035.1.51      100.0  100.0  100.0  0.0   0.0   0.0   105020..103548   490    490    CAB06734.1        UL48 | transactivating tegument protein VP16
+MF564035.1.52      100.0  100.0  100.0  0.0   0.0   0.0   106403..105501   300    300    CAB06735.1        UL49 | tegument protein VP22
+MF564035.1.53      98.9   99.7   100.0  0.0   0.0   0.0   107006..106743   87     87     CAB06736.1        UL49A | envelope glycoprotein N
+MF564035.1.54      99.7   99.9   100.0  0.0   0.0   0.0   107014..108123   369    369    CAB06737.1        UL50 | deoxyuridine triphosphatase
+MF564035.1.55      99.6   99.6   100.0  0.0   0.0   0.0   109064..108330   244    244    CAB06738.1        UL51 | tegument protein UL51
+MF564035.1.56      99.5   99.9   100.0  0.0   0.0   0.0   109132..112332   1066   1066   CAB06739.1        UL52 | helicase-primase primase subunit
+MF564035.1.57      99.7   100.0  100.0  0.0   0.0   0.0   112284..113300   338    338    CAB06740.1        UL53 | envelope glycoprotein K
+MF564035.1.58      99.6   99.8   100.0  0.0   0.0   0.0   113846..115384   512    512    CAB06702.1        UL54 | multifunctional expression regulator
+MF564035.1.59      100.0  100.0  100.0  0.0   0.0   0.0   115599..116159   186    186    CAB06703.1        UL55 | nuclear protein UL55
+MF564035.1.60      99.6   99.6   100.0  0.0   0.0   0.0   117039..116332   235    235    CAB06704.1        UL56 | membrane protein UL56
+MF564035.1.61      97.8   99.5   100.0  0.0   0.0   0.0   124098..124024   823    826    CAB06705.1        RL2-ii | ubiquitin E3 ligase ICP0
+                                                          123616..122936                                   
+                                                          122820..121105                                   
+                    invalid splicing for intron  at 122935..122821
+MF564035.1.62      97.7   97.7   100.0  0.0   0.0   0.0   125934..125455   256    261    CAB06706.1        RL1-ii | neurovirulence protein ICP34.5
+                                                          125312..125022                                   
+                    non-canonical splicing for intron at 125454..125313
+MF564035.1.63      99.5   99.8   100.0  0.0   0.0   0.0   131153..127197   1318   1318   CAB06701.1        RS1 | transcriptional regulator ICP4
+MF564035.1.64      97.8   98.6   100.0  0.0   0.0   0.0   132769..134013   414    413    CAB06708.1        US1 | regulatory protein ICP22
+MF564035.1.65      99.3   99.6   100.0  0.0   0.0   0.0   135070..134195   291    291    CAB06709.1        US2 | virion protein US2
+MF564035.1.66      99.6   100.0  100.0  0.0   0.0   0.0   135356..136801   481    481    CAB06710.1        US3 | serine/threonine protein kinase US3
+MF564035.1.67      99.6   99.9   100.0  0.0   0.0   0.0   136909..139005   698    699    CAB06711.1        US4 | envelope glycoprotein G
+MF564035.1.68      100.0  100.0  100.0  0.0   0.0   0.0   139315..139593   92     92     CAB06712.1        US5 | envelope glycoprotein J
+MF564035.1.69      100.0  100.0  100.0  0.0   0.0   0.0   140042..141223   393    393    CAB06713.1        US6 | envelope glycoprotein D
+MF564035.1.70      98.9   99.3   100.0  0.0   0.0   0.0   141425..142543   372    372    CAB06714.1        US7 | envelope glycoprotein I
+MF564035.1.71      99.6   99.8   100.0  0.0   0.0   0.0   142864..144510   548    548    AHG54732.1        US8 | envelope glycoprotein E
+MF564035.1.72      100.0  100.0  100.0  0.0   0.0   0.0   144359..144799   146    146    CAB06716.1        US8A | membrane protein US8A
+MF564035.1.73      100.0  100.0  100.0  0.0   0.0   0.0   144899..145168   89     89     CAB06717.1        US9 | membrane protein US9
+MF564035.1.74      99.3   100.0  100.0  0.0   0.0   0.0   146558..145650   302    302    CAB06718.1        US10 | virion protein US10
+MF564035.1.75      100.0  100.0  100.0  0.0   0.0   0.0   146724..146269   151    151    CAB06719.1        US11 | tegument protein US11
+MF564035.1.76      100.0  100.0  100.0  0.0   0.0   0.0   147061..146801   86     86     CAB06700.1        US12 | TAP transporter inhibitor ICP47
+MF564035.1.77      99.5   99.8   100.0  0.0   0.0   0.0   148653..152609   1318   1318   CAB06701.1        RS1-ii | transcriptional regulator ICP4
+
+
+dropping pseudogene MF564034.1.3, fails match requirements: %id 15.5 < 70, %sim 29.0 < 80
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+MF564034.1.3       15.5   29.0   95.1   2.9   0.1   1.9   <1..473          1486   3122   CAB06722.1        UL36 | putative large tegument protein, C-terminal
+                                                          473..517                                         
+                                                          516..4082                                        
+                                                          4081..4458                                       
+                    frameshifts in genome at or near positions 473..473 (+3=>+2), 517..516 (+2=>+3) and 4082..4081 (+3=>+1)
+                    many stop codons embedded in CDS
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+MF564034.1             152633     75            2     119889          39888           99.5             99.8          100.0   hhv2_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+MF564034.1.1       96.2   96.2   100.0  0.0   0.0   0.0   1..468           252    261    CAB06706.1        RL1 | neurovirulence protein ICP34.5
+                                                          608..898                                         
+MF564034.1.2       99.4   99.6   100.0  0.0   0.0   0.0   1822..1896       832    833    AEV91397.2        RL2 | ubiquitin E3 ligase ICP0
+                                                          2307..2981                                       
+                                                          3078..4826                                       
+                    invalid splicing for intron  at 2982..3077
+MF564034.1.3       100.0  100.0  100.0  0.0   0.0   0.0   8749..9423       224    224    CAB06761.1        UL1 | envelope glycoprotein L
+MF564034.1.4       99.4   99.7   100.0  0.0   0.0   0.0   9296..10300      334    334    NP_044471.2       UL2 | uracil-DNA glycosylase
+MF564034.1.5       100.0  100.0  100.0  0.0   0.0   0.0   10355..11056     233    233    CAB06763.1        UL3 | nuclear protein UL3
+MF564034.1.6       100.0  100.0  100.0  0.0   0.0   0.0   11860..11255     201    201    CAB06764.1        UL4 | nuclear protein UL4
+MF564034.1.7       99.3   99.6   100.0  0.0   0.0   0.0   14571..16607     678    678    CAB06766.1        UL6 | capsid portal protein
+MF564034.1.8       100.0  100.0  100.0  0.0   0.0   0.0   14572..11927     881    881    CAB06765.1        UL5 | helicase-primase helicase subunit
+MF564034.1.9       99.7   100.0  100.0  0.0   0.0   0.0   16582..17472     296    296    CAB06767.1        UL7 | tegument protein UL7
+MF564034.1.10      98.8   99.5   100.0  0.0   0.0   0.0   19987..17729     752    752    CAB06768.1        UL8 | helicase-primase subunit
+MF564034.1.11      99.8   100.0  100.0  0.0   0.0   0.0   22531..23934     467    467    CAB06770.1        UL10 | envelope glycoprotein M
+MF564034.1.12      99.8   99.8   100.0  0.0   0.0   0.0   22640..20037     867    867    CAB06769.2        UL9 | DNA replication origin-binding helicase
+MF564034.1.13      100.0  100.0  100.0  0.0   0.0   0.0   24421..24131     96     96     AHG54674.1        UL11 | myristylated tegument protein
+MF564034.1.14      99.5   99.6   100.0  0.0   0.0   0.0   26199..24337     620    620    CAB06772.1        UL12 | deoxyribonuclease
+MF564034.1.15      99.4   99.4   100.0  0.0   0.0   0.0   27796..26240     518    518    CAB06773.1        UL13 | tegument serine/threonine protein kinase
+MF564034.1.16      99.5   99.5   100.0  0.0   0.0   0.0   28209..27550     219    219    CAB06774.1        UL14 | tegument protein UL14
+MF564034.1.17      100.0  100.0  100.0  0.0   0.0   0.0   28290..29318     734    734    CAB06775.1        UL15 | DNA packaging terminase subunit 1
+                                                          32913..34088                                     
+MF564034.1.18      98.7   99.6   100.0  0.0   0.0   0.0   30581..29463     372    372    CAB06776.1        UL16 | tegument protein UL16
+                    translation exception 30581..30579:M
+MF564034.1.19      99.4   99.6   100.0  0.0   0.0   0.0   32787..30682     701    702    CAB06741.1        UL17 | DNA packaging tegument protein UL17
+MF564034.1.20      100.0  100.0  100.0  0.0   0.0   0.0   35387..34431     318    318    CAB06742.1        UL18 | capsid triplex subunit 2
+MF564034.1.21      99.2   99.8   100.0  0.0   0.0   0.0   39887..35763     1374   1374   CAB06743.1        UL19 | major capsid protein
+MF564034.1.22      99.1   99.5   100.0  0.0   0.0   0.0   40868..40200     222    222    CAB06744.1        UL20 | envelope protein UL20
+MF564034.1.23      100.0  100.0  100.0  0.0   0.0   0.0   41517..43115     532    532    CAB06745.1        UL21 | tegument protein UL21
+MF564034.1.24      99.9   100.0  100.0  0.0   0.0   0.0   45851..43335     838    838    CAB06746.1        UL22 | envelope glycoprotein H
+MF564034.1.25      99.6   99.9   100.0  0.0   0.0   0.0   47222..48067     281    281    CAB06748.1        UL24 | nuclear protein UL24
+MF564034.1.26      99.7   99.7   100.0  0.0   0.0   0.0   47320..46190     376    376    CAB06747.1        UL23 | thymidine kinase
+MF564034.1.27      99.7   99.8   100.0  0.0   0.0   0.0   48347..50104     585    585    CAB06749.1        UL25 | DNA packaging tegument protein UL25
+MF564034.1.28      99.7   100.0  100.0  0.0   0.0   0.0   50334..52247     637    637    CAB06750.1        UL26 | capsid maturation protease
+MF564034.1.29      99.4   100.0  100.0  0.0   0.0   0.0   51258..52247     329    329    CAB06751.1        UL26.5 | capsid scaffold protein
+MF564034.1.30      99.3   99.7   100.0  0.0   0.0   0.0   55397..52692     901    904    CAB06752.1        UL27 | envelope glycoprotein B
+MF564034.1.31      99.7   100.0  100.0  0.0   0.0   0.0   57762..55405     785    785    CAB06753.1        UL28 | DNA packaging terminase subunit 2
+MF564034.1.32      99.9   100.0  100.0  0.0   0.0   0.0   61730..58140     1196   1196   CAB06754.1        UL29 | single-stranded DNA-binding protein
+MF564034.1.33      99.7   99.9   100.0  0.0   0.0   0.0   62547..66269     1240   1240   CAB06755.1        UL30 | DNA polymerase catalytic subunit
+MF564034.1.34      100.0  100.0  100.0  0.0   0.0   0.0   67131..66214     305    305    CAB06756.1        UL31 | nuclear egress lamina protein
+MF564034.1.35      100.0  100.0  100.0  0.0   0.0   0.0   68913..69305     130    130    CAB06758.1        UL33 | DNA packaging protein UL33
+MF564034.1.36      99.3   99.6   100.0  0.0   0.0   0.0   68914..67124     596    598    CAB06757.1        UL32 | DNA packaging protein UL32
+MF564034.1.37      98.9   99.3   100.0  0.0   0.0   0.0   69395..70219     274    276    CAB06720.1        UL34 | nuclear egress membrane protein
+MF564034.1.38      100.0  100.0  100.0  0.0   0.0   0.0   70331..70669     112    112    CAB06721.1        UL35 | small capsid protein
+MF564034.1.39      99.7   99.9   100.0  0.0   0.0   0.0   80203..70835     3122   3122   CAB06722.1        UL36 | large tegument protein
+MF564034.1.40      99.6   99.7   100.0  0.0   0.0   0.0   83850..80506     1114   1114   CAB06723.1        UL37 | tegument protein UL37
+MF564034.1.41      98.5   99.0   100.0  0.0   0.0   0.0   84330..85730     466    466    CAB06724.1        UL38 | capsid triplex subunit 1
+MF564034.1.42      99.0   99.7   100.0  0.0   0.0   0.0   86293..89727     1144   1142   CAB06725.1        UL39 | ribonucleotide reductase subunit 1
+MF564034.1.43      100.0  100.0  100.0  0.0   0.0   0.0   89780..90793     337    337    CAB06726.1        UL40 | ribonucleotide reductase subunit 2
+MF564034.1.44      100.0  100.0  100.0  0.0   0.0   0.0   92550..91072     492    492    CAB06727.1        UL41 | tegument host shutoff protein
+MF564034.1.45      99.4   99.9   100.0  0.0   0.0   0.0   93043..94455     470    470    CAB06728.1        UL42 | DNA polymerase processivity subunit
+MF564034.1.46      99.3   99.9   100.0  0.0   0.0   0.0   94705..95949     414    414    CAB06729.1        UL43 | envelope protein UL43
+MF564034.1.47      100.0  100.0  100.0  0.0   0.0   0.0   96251..97693     480    480    CAB06730.1        UL44 | envelope glycoprotein C
+MF564034.1.48      99.4   99.4   100.0  0.0   0.0   0.0   97923..98441     172    172    CAB06731.1        UL45 | membrane protein UL45
+MF564034.1.49      98.2   98.5   100.0  0.0   0.0   0.0   100854..98698    718    722    CAB06732.1        UL46 | tegument protein VP11/12
+MF564034.1.50      99.6   99.9   100.0  0.0   0.0   0.0   103029..100939   696    696    CAB06733.1        UL47 | tegument protein VP13/14
+MF564034.1.51      100.0  100.0  100.0  0.0   0.0   0.0   105020..103548   490    490    CAB06734.1        UL48 | transactivating tegument protein VP16
+MF564034.1.52      100.0  100.0  100.0  0.0   0.0   0.0   106403..105501   300    300    CAB06735.1        UL49 | tegument protein VP22
+MF564034.1.53      98.9   99.7   100.0  0.0   0.0   0.0   107006..106743   87     87     CAB06736.1        UL49A | envelope glycoprotein N
+MF564034.1.54      99.7   99.9   100.0  0.0   0.0   0.0   107014..108123   369    369    CAB06737.1        UL50 | deoxyuridine triphosphatase
+MF564034.1.55      99.6   99.6   100.0  0.0   0.0   0.0   109064..108330   244    244    CAB06738.1        UL51 | tegument protein UL51
+MF564034.1.56      99.5   99.9   100.0  0.0   0.0   0.0   109132..112332   1066   1066   CAB06739.1        UL52 | helicase-primase primase subunit
+MF564034.1.57      99.7   100.0  100.0  0.0   0.0   0.0   112284..113300   338    338    CAB06740.1        UL53 | envelope glycoprotein K
+MF564034.1.58      99.6   99.8   100.0  0.0   0.0   0.0   113846..115384   512    512    CAB06702.1        UL54 | multifunctional expression regulator
+MF564034.1.59      100.0  100.0  100.0  0.0   0.0   0.0   115599..116159   186    186    CAB06703.1        UL55 | nuclear protein UL55
+MF564034.1.60      99.6   99.6   100.0  0.0   0.0   0.0   117039..116332   235    235    CAB06704.1        UL56 | membrane protein UL56
+MF564034.1.61      99.4   99.6   100.0  0.0   0.0   0.0   124110..124036   832    833    AEV91397.2        RL2-ii | ubiquitin E3 ligase ICP0
+                                                          123625..122951                                   
+                                                          122854..121106                                   
+                    invalid splicing for intron  at 122950..122855
+MF564034.1.62      99.2   99.2   100.0  0.0   0.0   0.0   125958..125464   261    261    CAB06706.1        RL1-ii | neurovirulence protein ICP34.5
+                                                          125324..125034                                   
+MF564034.1.63      99.5   99.8   100.0  0.0   0.0   0.0   131177..127221   1318   1318   CAB06701.1        RS1 | transcriptional regulator ICP4
+MF564034.1.64      97.8   98.6   100.0  0.0   0.0   0.0   132793..134037   414    413    CAB06708.1        US1 | regulatory protein ICP22
+MF564034.1.65      99.3   99.6   100.0  0.0   0.0   0.0   135094..134219   291    291    CAB06709.1        US2 | virion protein US2
+MF564034.1.66      99.6   100.0  100.0  0.0   0.0   0.0   135380..136825   481    481    CAB06710.1        US3 | serine/threonine protein kinase US3
+MF564034.1.67      99.6   99.9   100.0  0.0   0.0   0.0   136933..139029   698    699    CAB06711.1        US4 | envelope glycoprotein G
+MF564034.1.68      100.0  100.0  100.0  0.0   0.0   0.0   139339..139617   92     92     CAB06712.1        US5 | envelope glycoprotein J
+MF564034.1.69      100.0  100.0  100.0  0.0   0.0   0.0   140066..141247   393    393    CAB06713.1        US6 | envelope glycoprotein D
+MF564034.1.70      98.9   99.3   100.0  0.0   0.0   0.0   141449..142567   372    372    CAB06714.1        US7 | envelope glycoprotein I
+MF564034.1.71      99.6   99.8   100.0  0.0   0.0   0.0   142888..144534   548    548    AHG54732.1        US8 | envelope glycoprotein E
+MF564034.1.72      100.0  100.0  100.0  0.0   0.0   0.0   144383..144823   146    146    CAB06716.1        US8A | membrane protein US8A
+MF564034.1.73      100.0  100.0  100.0  0.0   0.0   0.0   144923..145192   89     89     CAB06717.1        US9 | membrane protein US9
+MF564034.1.74      99.3   100.0  100.0  0.0   0.0   0.0   146582..145674   302    302    CAB06718.1        US10 | virion protein US10
+MF564034.1.75      100.0  100.0  100.0  0.0   0.0   0.0   146748..146293   151    151    CAB06719.1        US11 | tegument protein US11
+MF564034.1.76      100.0  100.0  100.0  0.0   0.0   0.0   147085..146825   86     86     CAB06700.1        US12 | TAP transporter inhibitor ICP47
+MF564034.1.77      99.5   99.8   100.0  0.0   0.0   0.0   148677..152633   1318   1318   CAB06701.1        RS1-ii | transcriptional regulator ICP4
+
+
+dropping pseudogene KF781518.1.78, fails match requirements: %id 22.9 < 70, %sim 33.8 < 80
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KF781518.1.78      22.9   33.8   12.2   79.7  0.0   8.1   <154126..153701  206    3122   CAB06722.1        UL36 | putative large tegument protein, C-terminal
+                                                          153702..153508                                   
+                    frameshift in genome at or near position 153701..153702 (-1=>-2)
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KF781518.1             154126     77            0     125637          41802           99.6             99.8          100.0   hhv2_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KF781518.1.1       100.0  100.0  100.0  0.0   0.0   0.0   440..907         253    253    AHG54723.1        RL1 | neurovirulence protein ICP34.5
+                                                          1070..1363                                       
+KF781518.1.2       100.0  100.0  100.0  0.0   0.0   0.0   2287..2361       806    806    AHG54722.1        RL2 | ubiquitin E3 ligase ICP0
+                                                          2777..3452                                       
+                                                          3632..5301                                       
+KF781518.1.3       100.0  100.0  100.0  0.0   0.0   0.0   9403..10077      224    224    CAB06761.1        UL1 | envelope glycoprotein L
+KF781518.1.4       99.4   99.7   100.0  0.0   0.0   0.0   9950..10954      334    334    NP_044471.2       UL2 | uracil-DNA glycosylase
+KF781518.1.5       100.0  100.0  100.0  0.0   0.0   0.0   11009..11710     233    233    CAB06763.1        UL3 | nuclear protein UL3
+KF781518.1.6       100.0  100.0  100.0  0.0   0.0   0.0   12515..11910     201    201    CAB06764.1        UL4 | nuclear protein UL4
+KF781518.1.7       99.4   99.8   100.0  0.0   0.0   0.0   15226..17262     678    678    CAB06766.1        UL6 | capsid portal protein
+KF781518.1.8       100.0  100.0  100.0  0.0   0.0   0.0   15227..12582     881    881    CAB06765.1        UL5 | helicase-primase helicase subunit
+KF781518.1.9       99.7   100.0  100.0  0.0   0.0   0.0   17237..18127     296    296    CAB06767.1        UL7 | tegument protein UL7
+KF781518.1.10      98.7   99.4   100.0  0.0   0.0   0.0   20642..18384     752    752    CAB06768.1        UL8 | helicase-primase subunit
+KF781518.1.11      99.8   100.0  100.0  0.0   0.0   0.0   23186..24589     467    467    CAB06770.1        UL10 | envelope glycoprotein M
+KF781518.1.12      99.8   99.8   100.0  0.0   0.0   0.0   23295..20692     867    867    CAB06769.2        UL9 | DNA replication origin-binding helicase
+KF781518.1.13      100.0  100.0  100.0  0.0   0.0   0.0   25075..24785     96     96     AHG54674.1        UL11 | myristylated tegument protein
+KF781518.1.14      99.7   99.8   100.0  0.0   0.0   0.0   26853..24991     620    620    CAB06772.1        UL12 | deoxyribonuclease
+KF781518.1.15      99.6   99.6   100.0  0.0   0.0   0.0   28450..26894     518    518    CAB06773.1        UL13 | tegument serine/threonine protein kinase
+KF781518.1.16      100.0  100.0  100.0  0.0   0.0   0.0   28863..28204     219    219    CAB06774.1        UL14 | tegument protein UL14
+KF781518.1.17      100.0  100.0  100.0  0.0   0.0   0.0   28944..29972     734    734    CAB06775.1        UL15 | DNA packaging terminase subunit 1
+                                                          33569..34744                                     
+KF781518.1.18      98.7   99.8   100.0  0.0   0.0   0.0   31233..30115     372    372    CAB06776.1        UL16 | tegument protein UL16
+                    translation exception 31233..31231:M
+KF781518.1.19      99.7   99.9   100.0  0.0   0.0   0.0   33443..31335     702    702    CAB06741.1        UL17 | DNA packaging tegument protein UL17
+KF781518.1.20      100.0  100.0  100.0  0.0   0.0   0.0   36040..35084     318    318    CAB06742.1        UL18 | capsid triplex subunit 2
+KF781518.1.21      99.2   99.8   100.0  0.0   0.0   0.0   40541..36417     1374   1374   CAB06743.1        UL19 | major capsid protein
+KF781518.1.22      100.0  100.0  100.0  0.0   0.0   0.0   41523..40855     222    222    CAB06744.1        UL20 | envelope protein UL20
+KF781518.1.23      100.0  100.0  100.0  0.0   0.0   0.0   42173..43771     532    532    CAB06745.1        UL21 | tegument protein UL21
+KF781518.1.24      99.8   99.9   100.0  0.0   0.0   0.0   46506..43990     838    838    CAB06746.1        UL22 | envelope glycoprotein H
+KF781518.1.25      100.0  100.0  100.0  0.0   0.0   0.0   47875..48720     281    281    CAB06748.1        UL24 | nuclear protein UL24
+KF781518.1.26      99.7   99.7   100.0  0.0   0.0   0.0   47973..46843     376    376    CAB06747.1        UL23 | thymidine kinase
+KF781518.1.27      99.7   99.8   100.0  0.0   0.0   0.0   49001..50758     585    585    CAB06749.1        UL25 | DNA packaging tegument protein UL25
+KF781518.1.28      99.5   99.8   100.0  0.0   0.0   0.0   50989..52905     638    637    CAB06750.1        UL26 | capsid maturation protease
+KF781518.1.29      99.4   100.0  100.0  0.0   0.0   0.0   51916..52905     329    329    CAB06751.1        UL26.5 | capsid scaffold protein
+KF781518.1.30      99.2   99.7   100.0  0.0   0.0   0.0   56057..53352     901    904    CAB06752.1        UL27 | envelope glycoprotein B
+KF781518.1.31      99.9   100.0  100.0  0.0   0.0   0.0   58422..56065     785    785    CAB06753.1        UL28 | DNA packaging terminase subunit 2
+KF781518.1.32      99.7   99.9   100.0  0.0   0.0   0.0   62385..58795     1196   1196   CAB06754.1        UL29 | single-stranded DNA-binding protein
+KF781518.1.33      99.7   99.9   100.0  0.0   0.0   0.0   63203..66925     1240   1240   CAB06755.1        UL30 | DNA polymerase catalytic subunit
+KF781518.1.34      100.0  100.0  100.0  0.0   0.0   0.0   67787..66870     305    305    CAB06756.1        UL31 | nuclear egress lamina protein
+KF781518.1.35      100.0  100.0  100.0  0.0   0.0   0.0   69569..69961     130    130    CAB06758.1        UL33 | DNA packaging protein UL33
+KF781518.1.36      99.3   99.6   100.0  0.0   0.0   0.0   69570..67780     596    598    CAB06757.1        UL32 | DNA packaging protein UL32
+KF781518.1.37      99.3   99.9   100.0  0.0   0.0   0.0   70051..70881     276    276    CAB06720.1        UL34 | nuclear egress membrane protein
+KF781518.1.38      100.0  100.0  100.0  0.0   0.0   0.0   70993..71331     112    112    CAB06721.1        UL35 | small capsid protein
+KF781518.1.39      99.8   99.9   100.0  0.0   0.0   0.0   80866..71498     3122   3122   CAB06722.1        UL36 | large tegument protein
+KF781518.1.40      99.6   99.7   100.0  0.0   0.0   0.0   84515..81171     1114   1114   CAB06723.1        UL37 | tegument protein UL37
+KF781518.1.41      98.3   98.9   100.0  0.0   0.0   0.0   84999..86399     466    466    CAB06724.1        UL38 | capsid triplex subunit 1
+KF781518.1.42      98.9   99.4   100.0  0.0   0.0   0.0   86968..90393     1141   1142   CAB06725.1        UL39 | ribonucleotide reductase subunit 1
+KF781518.1.43      100.0  100.0  100.0  0.0   0.0   0.0   90446..91459     337    337    CAB06726.1        UL40 | ribonucleotide reductase subunit 2
+KF781518.1.44      99.8   99.8   100.0  0.0   0.0   0.0   93219..91741     492    492    CAB06727.1        UL41 | tegument host shutoff protein
+KF781518.1.45      100.0  100.0  100.0  0.0   0.0   0.0   93714..95126     470    470    CAB06728.1        UL42 | DNA polymerase processivity subunit
+KF781518.1.46      99.8   100.0  100.0  0.0   0.0   0.0   95377..96621     414    414    CAB06729.1        UL43 | envelope protein UL43
+KF781518.1.47      99.8   99.8   100.0  0.0   0.0   0.0   96923..98365     480    480    CAB06730.1        UL44 | envelope glycoprotein C
+KF781518.1.48      99.4   99.4   100.0  0.0   0.0   0.0   98595..99113     172    172    CAB06731.1        UL45 | membrane protein UL45
+KF781518.1.49      99.4   99.4   100.0  0.0   0.0   0.0   101545..99377    722    722    CAB06732.1        UL46 | tegument protein VP11/12
+KF781518.1.50      99.9   100.0  100.0  0.0   0.0   0.0   103720..101630   696    696    CAB06733.1        UL47 | tegument protein VP13/14
+KF781518.1.51      100.0  100.0  100.0  0.0   0.0   0.0   105712..104240   490    490    CAB06734.1        UL48 | transactivating tegument protein VP16
+KF781518.1.52      100.0  100.0  100.0  0.0   0.0   0.0   107104..106196   302    302    AHG54713.1        UL49 | tegument protein VP22
+KF781518.1.53      98.9   99.7   100.0  0.0   0.0   0.0   107706..107443   87     87     CAB06736.1        UL49A | envelope glycoprotein N
+KF781518.1.54      100.0  100.0  100.0  0.0   0.0   0.0   107714..108823   369    369    CAB06737.1        UL50 | deoxyuridine triphosphatase
+KF781518.1.55      100.0  100.0  100.0  0.0   0.0   0.0   109762..109028   244    244    CAB06738.1        UL51 | tegument protein UL51
+KF781518.1.56      99.6   100.0  100.0  0.0   0.0   0.0   109830..113030   1066   1066   CAB06739.1        UL52 | helicase-primase primase subunit
+KF781518.1.57      98.8   99.9   100.0  0.0   0.0   0.0   112982..113998   338    338    CAB06740.1        UL53 | envelope glycoprotein K
+KF781518.1.58      99.8   100.0  100.0  0.0   0.0   0.0   114544..116082   512    512    CAB06702.1        UL54 | multifunctional expression regulator
+KF781518.1.59      100.0  100.0  100.0  0.0   0.0   0.0   116297..116857   186    186    CAB06703.1        UL55 | nuclear protein UL55
+KF781518.1.60      99.1   99.8   100.0  0.0   0.0   0.0   117737..117030   235    235    CAB06704.1        UL56 | membrane protein UL56
+KF781518.1.61      100.0  100.0  100.0  0.0   0.0   0.0   124930..124856   806    806    AHG54722.1        RL2-ii | ubiquitin E3 ligase ICP0
+                                                          124440..123765                                   
+                                                          123585..121916                                   
+KF781518.1.62      100.0  100.0  100.0  0.0   0.0   0.0   126777..126310   253    253    AHG54723.1        RL1-ii | neurovirulence protein ICP34.5
+                                                          126147..125854                                   
+KF781518.1.63      100.0  100.0  100.0  0.0   0.0   0.0   132012..127603   1469   1469   AHG54738.1        RS1 | transcriptional regulator ICP4
+KF781518.1.64      97.8   98.6   100.0  0.0   0.0   0.0   133419..134663   414    413    CAB06708.1        US1 | regulatory protein ICP22
+KF781518.1.65      99.3   99.7   100.0  0.0   0.0   0.0   135720..134845   291    291    CAB06709.1        US2 | virion protein US2
+KF781518.1.66      99.4   100.0  100.0  0.0   0.0   0.0   136006..137451   481    481    CAB06710.1        US3 | serine/threonine protein kinase US3
+KF781518.1.67      99.1   99.6   100.0  0.0   0.0   0.0   137558..139654   698    699    CAB06711.1        US4 | envelope glycoprotein G
+KF781518.1.68      100.0  100.0  100.0  0.0   0.0   0.0   139963..140241   92     92     CAB06712.1        US5 | envelope glycoprotein J
+KF781518.1.69      100.0  100.0  100.0  0.0   0.0   0.0   140686..141867   393    393    CAB06713.1        US6 | envelope glycoprotein D
+KF781518.1.70      99.2   99.4   100.0  0.0   0.0   0.0   142069..143187   372    372    CAB06714.1        US7 | envelope glycoprotein I
+KF781518.1.71      100.0  100.0  100.0  0.0   0.0   0.0   143506..145152   548    548    AHG54732.1        US8 | envelope glycoprotein E
+KF781518.1.72      100.0  100.0  100.0  0.0   0.0   0.0   145001..145441   146    146    CAB06716.1        US8A | membrane protein US8A
+KF781518.1.73      100.0  100.0  100.0  0.0   0.0   0.0   145541..145810   89     89     CAB06717.1        US9 | membrane protein US9
+KF781518.1.74      99.3   100.0  100.0  0.0   0.0   0.0   147198..146290   302    302    CAB06718.1        US10 | virion protein US10
+KF781518.1.75      100.0  100.0  100.0  0.0   0.0   0.0   147364..146909   151    151    CAB06719.1        US11 | tegument protein US11
+KF781518.1.76      100.0  100.0  100.0  0.0   0.0   0.0   147702..147442   86     86     CAB06700.1        US12 | TAP transporter inhibitor ICP47
+KF781518.1.77      100.0  100.0  100.0  0.0   0.0   0.0   149077..153486   1469   1469   AHG54738.1        RS1-ii | transcriptional regulator ICP4
+

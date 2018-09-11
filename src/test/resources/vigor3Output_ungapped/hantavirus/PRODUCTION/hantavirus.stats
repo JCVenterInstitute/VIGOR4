@@ -1,0 +1,12 @@
+Sequence	Length	Genes	Pseudogenes	CDS Bases	Peptide Bases	%Ref Identity	%Ref Similarity	%Ref Coverage	Ref DB
+NC_006435.1	6533	1	0	6456	2151	100.0	100.0	100.0	hantavirus_db
+NC_006437.1	3616	1	0	3408	1135	100.0	100.0	100.0	hantavirus_db
+NC_006433.1	1701	1	0	1290	429	100.0	100.0	100.0	hantavirus_db
+AF288297.1	6530	1	0	6456	2151	99.1	99.6	100.0	hantavirus_db
+AF288299.1	1764	1	0	1290	429	99.3	99.8	100.0	hantavirus_db
+AF288298.1	3653	1	0	3402	1133	98.1	99.6	100.0	hantavirus_db
+KU934010.1	1908	1	0	1287	428	69.2	90.7	99.3	hantavirus_db
+KU934009.1	3594	1	0	3411	1136	59.4	85.8	100.0	hantavirus_db
+KU934008.1	6532	1	0	6456	2151	77.8	94.0	100.0	hantavirus_db
+AF288293.1	3616	1	0	3408	1135	99.0	99.5	100.0	hantavirus_db
+AF288294.1	1692	1	0	1290	429	98.8	99.8	100.0	hantavirus_db

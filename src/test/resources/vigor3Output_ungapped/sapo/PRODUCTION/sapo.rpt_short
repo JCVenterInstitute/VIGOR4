@@ -1,0 +1,180 @@
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_027026.1              7521      3            0       7881           2624           87.1             96.0          100.0   sapo_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_027026.1.1      89.0   97.1   100.0  0.0   0.0   0.0   15..6920         2301   2301   AAV69575.2        ORF1 | ORF1
+NC_027026.1.1.1    35.8   60.8   95.6   0.0   0.0   4.4   15..194          60     68     sp_Q672I1_1_68    Protein p11
+NC_027026.1.1.2    34.7   67.7   100.0  0.0   0.0   0.0   195..980         262    256    sp_Q672I1_69_324  Protein p28
+NC_027026.1.1.3    56.0   80.6   100.0  0.0   0.0   0.0   981..2003        341    341    sp_Q6XDK8_326_666 NTPase
+NC_027026.1.1.4    39.4   71.3   100.0  0.0   0.0   0.0   2004..2840       279    274    sp_Q69014_594_867 Protein p32
+NC_027026.1.1.5    56.1   78.9   100.0  0.0   0.0   0.0   2841..3209       123    115    sp_Q6XDK8_941_105 Viral genome_linked protein
+NC_027026.1.1.6    65.3   85.4   100.0  0.0   0.0   0.0   3210..5210       667    668    sp_Q672I1_1054_17 Protease-polymerase p70
+NC_027026.1.1.7    52.1   77.9   100.0  0.0   0.0   0.0   5211..6917       569    559    sp_Q672I1_1722_22 Capsid protein
+NC_027026.1.2      71.2   80.8   100.0  0.0   0.0   0.0   5215..5685       156    155    ABC68389.1        ORF3 | ORF3
+NC_027026.1.3      75.4   95.1   100.0  0.0   0.0   0.0   6917..7420       167    166    ABC96749.1        ORF2 | ORF2
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KF204570.1               7371      2            0       7281           2425           94.7             99.1          100.0   sapo_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KF204570.1.1       95.0   99.1   100.0  0.0   0.0   0.0   10..6774         2254   2254   ACP43737.1        ORF1 | polyprotein
+KF204570.1.1.1     87.5   96.9   100.0  0.0   0.0   0.0   10..177          56     56     sp_Q9QEJ5_1_56    Protein p11
+KF204570.1.1.2     94.5   99.4   100.0  0.0   0.0   0.0   178..939         254    254    sp_Q9QEJ5_57_310  Protein p28
+KF204570.1.1.3     97.6   99.6   100.0  0.0   0.0   0.0   940..1959        340    340    sp_Q9QEJ5_311_650 NTPase
+KF204570.1.1.4     95.8   99.6   100.0  0.0   0.0   0.0   1960..2811       284    284    sp_Q9QEJ5_651_934 Protein p32
+KF204570.1.1.5     97.4   99.8   100.0  0.0   0.0   0.0   2812..3153       114    114    sp_Q9QEJ5_935_104 Viral genome_linked protein
+KF204570.1.1.6     94.4   99.1   100.0  0.0   0.0   0.0   3154..5145       664    664    sp_Q9QEJ5_1049_17 Protease-polymerase p70
+KF204570.1.1.7     88.6   97.4   100.0  0.0   0.0   0.0   5146..6771       542    542    sp_Q9QEJ5_1713_22 Capsid protein
+KF204570.1.2       90.6   99.1   100.0  0.0   0.0   0.0   6771..7286       171    171    ACP43738.1        ORF2 | small basic protein
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KT327081.1               7441      3            0       7827           2606           98.9             99.8          100.0   sapo_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KT327081.1.1       98.9   99.9   100.0  0.0   0.0   0.0   10..6852         2280   2280   AAV69573.2        ORF1 | polyprotein
+KT327081.1.1.1     95.6   98.2   100.0  0.0   0.0   0.0   10..213          68     68     sp_Q672I1_1_68    Protein p11
+KT327081.1.1.2     98.4   99.6   100.0  0.0   0.0   0.0   214..981         256    256    sp_Q672I1_69_324  Protein p28
+KT327081.1.1.3     100.0  100.0  100.0  0.0   0.0   0.0   982..2004        341    341    sp_Q672I1_325_665 NTPase
+KT327081.1.1.4     98.2   100.0  100.0  0.0   0.0   0.0   2005..2826       274    274    sp_Q69014_594_867 Protein p32
+KT327081.1.1.5     99.1   100.0  100.0  0.0   0.0   0.0   2827..3168       114    114    sp_Q69014_868_981 Viral genome_linked protein
+KT327081.1.1.6     98.8   99.9   100.0  0.0   0.0   0.0   3169..5172       668    668    sp_Q672I1_1054_17 Protease-polymerase p70
+KT327081.1.1.7     99.6   100.0  100.0  0.0   0.0   0.0   5173..6849       559    559    sp_Q672I1_1722_22 Capsid protein
+KT327081.1.2       98.8   99.2   100.0  0.0   0.0   0.0   5177..5662       161    161    YP_077279.1       ORF3 | hypothetical protein
+KT327081.1.3       98.8   98.8   100.0  0.0   0.0   0.0   6849..7346       165    165    AFF27932.1        ORF2 | ORF2
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+FJ387164.1               7558      2            0       7281           2425          100.0            100.0          100.0   sapo_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+FJ387164.1.1       100.0  100.0  100.0  0.0   0.0   0.0   10..6774         2254   2254   ACP43737.1        ORF1 | polyprotein
+FJ387164.1.1.1     89.3   97.3   100.0  0.0   0.0   0.0   10..177          56     56     sp_Q9QEJ5_1_56    Protein p11
+FJ387164.1.1.2     98.4   99.7   100.0  0.0   0.0   0.0   178..939         254    254    sp_Q9QEJ5_57_310  Protein p28
+FJ387164.1.1.3     97.6   100.0  100.0  0.0   0.0   0.0   940..1959        340    340    sp_Q9QEJ5_311_650 NTPase
+FJ387164.1.1.4     96.1   99.6   100.0  0.0   0.0   0.0   1960..2811       284    284    sp_Q9QEJ5_651_934 Protein p32
+FJ387164.1.1.5     97.4   99.8   100.0  0.0   0.0   0.0   2812..3153       114    114    sp_Q9QEJ5_935_104 Viral genome_linked protein
+FJ387164.1.1.6     95.8   99.5   100.0  0.0   0.0   0.0   3154..5145       664    664    sp_Q9QEJ5_1049_17 Protease-polymerase p70
+FJ387164.1.1.7     87.5   96.3   100.0  0.0   0.0   0.0   5146..6771       542    542    sp_Q9QEJ5_1713_22 Capsid protein
+FJ387164.1.2       100.0  100.0  100.0  0.0   0.0   0.0   6771..7286       171    171    ACP43738.1        ORF2 | small basic protein
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+JX678943.1               7342      2            0       7281           2425          100.0            100.0          100.0   sapo_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+JX678943.1.1       100.0  100.0  100.0  0.0   0.0   0.0   10..6774         2254   2254   AFX61394.1        ORF1 | polyprotein
+JX678943.1.1.1     91.1   97.3   100.0  0.0   0.0   0.0   10..177          56     56     sp_Q9QEJ5_1_56    Protein p11
+JX678943.1.1.2     98.4   99.7   100.0  0.0   0.0   0.0   178..939         254    254    sp_Q9QEJ5_57_310  Protein p28
+JX678943.1.1.3     97.6   100.0  100.0  0.0   0.0   0.0   940..1959        340    340    sp_Q9QEJ5_311_650 NTPase
+JX678943.1.1.4     96.1   99.6   100.0  0.0   0.0   0.0   1960..2811       284    284    sp_Q9QEJ5_651_934 Protein p32
+JX678943.1.1.5     97.4   99.8   100.0  0.0   0.0   0.0   2812..3153       114    114    sp_Q9QEJ5_935_104 Viral genome_linked protein
+JX678943.1.1.6     95.8   99.5   100.0  0.0   0.0   0.0   3154..5145       664    664    sp_Q9QEJ5_1049_17 Protease-polymerase p70
+JX678943.1.1.7     87.5   96.3   100.0  0.0   0.0   0.0   5146..6771       542    542    sp_Q9QEJ5_1713_22 Capsid protein
+JX678943.1.2       99.4   99.4   100.0  0.0   0.0   0.0   6771..7286       171    171    ACP43738.1        ORF2 | small basic protein
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+AY694184.2               7429      3            0       7827           2606          100.0            100.0          100.0   sapo_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+AY694184.2.1       100.0  100.0  100.0  0.0   0.0   0.0   13..6855         2280   2280   YP_077278.1       ORF1 | polyprotein
+AY694184.2.1.1     100.0  100.0  100.0  0.0   0.0   0.0   13..216          68     68     sp_Q672I1_1_68    Protein p11
+AY694184.2.1.2     100.0  100.0  100.0  0.0   0.0   0.0   217..984         256    256    sp_Q672I1_69_324  Protein p28
+AY694184.2.1.3     100.0  100.0  100.0  0.0   0.0   0.0   985..2007        341    341    sp_Q672I1_325_665 NTPase
+AY694184.2.1.4     100.0  100.0  100.0  0.0   0.0   0.0   2008..2829       274    274    sp_Q672I1_666_939 Protein p32
+AY694184.2.1.5     100.0  100.0  100.0  0.0   0.0   0.0   2830..3171       114    114    sp_Q672I1_940_105 Protease-polymerase p70
+AY694184.2.1.6     100.0  100.0  100.0  0.0   0.0   0.0   3172..5175       668    668    sp_Q672I1_1054_17 Protease-polymerase p70
+AY694184.2.1.7     100.0  100.0  100.0  0.0   0.0   0.0   5176..6852       559    559    sp_Q672I1_1722_22 Capsid protein
+AY694184.2.2       100.0  100.0  100.0  0.0   0.0   0.0   5180..5665       161    161    YP_077279.1       ORF3 | hypothetical protein
+AY694184.2.3       100.0  100.0  100.0  0.0   0.0   0.0   6852..7349       165    165    YP_077280.1       ORF2 | hypothetical protein
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+AY646856.2               7500      3            0       7875           2622          100.0            100.0          100.0   sapo_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+AY646856.2.1       100.0  100.0  100.0  0.0   0.0   0.0   15..6920         2301   2301   AAV69575.2        ORF1 | ORF1
+AY646856.2.1.1     31.4   59.6   100.0  0.0   0.0   0.0   15..203          63     69     sp_Q6XDK8_1_69    Protein p11
+AY646856.2.1.2     34.5   70.0   100.0  0.0   0.0   0.0   204..986         261    256    sp_Q672I1_69_324  Protein p28
+AY646856.2.1.3     56.3   80.9   100.0  0.0   0.0   0.0   987..2009        341    341    sp_Q6XDK8_326_666 NTPase
+AY646856.2.1.4     40.9   71.4   100.0  0.0   0.0   0.0   2010..2846       279    274    sp_Q69014_594_867 Protein p32
+AY646856.2.1.5     54.5   78.9   100.0  0.0   0.0   0.0   2847..3215       123    115    sp_Q6XDK8_941_105 Viral genome_linked protein
+AY646856.2.1.6     65.0   84.9   100.0  0.0   0.0   0.0   3216..5216       667    668    sp_Q672I1_1054_17 Protease-polymerase p70
+AY646856.2.1.7     51.1   77.3   100.0  0.0   0.0   0.0   5217..6917       567    559    sp_Q672I1_1722_22 Capsid protein
+AY646856.2.2       100.0  100.0  100.0  0.0   0.0   0.0   5221..5688       155    155    ABC68389.1        ORF3 | ORF3
+AY646856.2.3       100.0  100.0  100.0  0.0   0.0   0.0   6917..7417       166    166    ABC68390.1        ORF2 | ORF2
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+AY603425.1               7476      2            0       7347           2447          100.0            100.0          100.0   sapo_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+AY603425.1.1       100.0  100.0  100.0  0.0   0.0   0.0   13..6858         2281   2281   YP_164336.1       ORF1 | ORF1 protein
+AY603425.1.1.1     95.7   97.1   100.0  0.0   0.0   0.0   13..219          69     69     sp_Q6XDK8_1_69    Protein p11
+AY603425.1.1.2     97.3   99.8   100.0  0.0   0.0   0.0   220..987         256    256    sp_Q6XDK8_70_325  Protein p28
+AY603425.1.1.3     97.9   99.6   100.0  0.0   0.0   0.0   988..2010        341    341    sp_Q6XDK8_326_666 NTPase
+AY603425.1.1.4     98.2   99.5   100.0  0.0   0.0   0.0   2011..2832       274    274    sp_Q6XDK8_667_940 Protein p32
+AY603425.1.1.5     98.3   100.0  100.0  0.0   0.0   0.0   2833..3177       115    115    sp_Q6XDK8_941_105 Viral genome_linked protein
+AY603425.1.1.6     98.7   99.9   100.0  0.0   0.0   0.0   3178..5178       667    667    sp_Q6XDK8_1056_17 Protease-polymerase p70
+AY603425.1.1.7     100.0  100.0  99.6   0.4   0.0   0.0   5179..6855       559    561    AAT99464.1        Capsid protein
+AY603425.1.2       100.0  100.0  100.0  0.0   0.0   0.0   6858..7358       166    166    YP_164338.1       ORF2 | ORF2 protein
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+AY237422.3               7429      3            0       7827           2606          100.0            100.0          100.0   sapo_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+AY237422.3.1       100.0  100.0  100.0  0.0   0.0   0.0   13..6855         2280   2280   AAQ17061.3        ORF1 | polyprotein
+AY237422.3.1.1     94.1   97.8   100.0  0.0   0.0   0.0   13..216          68     68     sp_Q672I1_1_68    Protein p11
+AY237422.3.1.2     97.7   99.8   100.0  0.0   0.0   0.0   217..984         256    256    sp_Q672I1_69_324  Protein p28
+AY237422.3.1.3     99.4   99.9   100.0  0.0   0.0   0.0   985..2007        341    341    sp_Q672I1_325_665 NTPase
+AY237422.3.1.4     98.9   100.0  100.0  0.0   0.0   0.0   2008..2829       274    274    sp_Q69014_594_867 Protein p32
+AY237422.3.1.5     100.0  100.0  100.0  0.0   0.0   0.0   2830..3171       114    114    sp_Q69014_868_981 Viral genome_linked protein
+AY237422.3.1.6     99.0   99.9   100.0  0.0   0.0   0.0   3172..5175       668    668    sp_Q69014_982_164 Protease-polymerase p70
+AY237422.3.1.7     99.5   100.0  100.0  0.0   0.0   0.0   5176..6852       559    559    sp_Q69014_1650_22 Capsid protein
+AY237422.3.2       100.0  100.0  100.0  0.0   0.0   0.0   5180..5665       161    161    AAX86791.1        ORF3 | unknown
+AY237422.3.3       100.0  100.0  100.0  0.0   0.0   0.0   6852..7349       165    165    AAX86792.1        ORF2 | unknown
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_017936.1              7696      2            0       7470           2488          100.0            100.0          100.0   sapo_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_017936.1.1      100.0  100.0  100.0  0.0   0.0   0.0   10..6864         2284   2284   YP_006347580.1    ORF1 | polyprotein
+NC_017936.1.1.1    26.8   64.3   63.8   36.2  0.0   0.0   <499..990        164    254    sp_Q9QEJ5_57_310  putative Protein p28, C-terminal
+NC_017936.1.1.2    44.0   72.7   100.0  0.0   0.0   0.0   991..2016        342    340    sp_Q9QEJ5_311_650 NTPase
+NC_017936.1.1.3    27.8   60.7   100.0  0.0   0.0   0.0   2017..2877       287    274    sp_Q69014_594_867 Protein p32
+NC_017936.1.1.4    47.8   80.8   99.1   0.0   0.0   0.9   2878..3204       109    114    sp_Q9QEJ5_935_104 Viral genome_linked protein
+NC_017936.1.1.5    48.5   74.0   100.0  0.0   0.0   0.0   3205..5229       675    667    sp_Q6XDK8_1056_17 Protease-polymerase p70
+NC_017936.1.1.6    40.8   70.1   98.4   1.4   0.0   0.2   5230..6861       544    561    AAT99464.1        Capsid protein
+NC_017936.1.2      100.0  100.0  100.0  0.0   0.0   0.0   6857..7471       204    204    YP_006347581.1    ORF2 | VP2
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+AY646854.2               7429      3            0       7827           2606          100.0            100.0          100.0   sapo_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+AY646854.2.1       100.0  100.0  100.0  0.0   0.0   0.0   13..6855         2280   2280   AAV69573.2        ORF1 | polyprotein
+AY646854.2.1.1     92.6   97.8   100.0  0.0   0.0   0.0   13..216          68     68     sp_Q672I1_1_68    Protein p11
+AY646854.2.1.2     99.2   100.0  100.0  0.0   0.0   0.0   217..984         256    256    sp_Q672I1_69_324  Protein p28
+AY646854.2.1.3     99.7   100.0  100.0  0.0   0.0   0.0   985..2007        341    341    sp_Q672I1_325_665 NTPase
+AY646854.2.1.4     98.2   99.9   100.0  0.0   0.0   0.0   2008..2829       274    274    sp_Q69014_594_867 Protein p32
+AY646854.2.1.5     99.1   100.0  100.0  0.0   0.0   0.0   2830..3171       114    114    sp_Q69014_868_981 Viral genome_linked protein
+AY646854.2.1.6     99.4   100.0  100.0  0.0   0.0   0.0   3172..5175       668    668    sp_Q672I1_1054_17 Protease-polymerase p70
+AY646854.2.1.7     99.8   100.0  100.0  0.0   0.0   0.0   5176..6852       559    559    sp_Q672I1_1722_22 Capsid protein
+AY646854.2.2       99.4   99.8   100.0  0.0   0.0   0.0   5180..5665       161    161    YP_077279.1       ORF3 | hypothetical protein
+AY646854.2.3       100.0  100.0  100.0  0.0   0.0   0.0   6852..7349       165    165    AFF27932.1        ORF2 | ORF2
+

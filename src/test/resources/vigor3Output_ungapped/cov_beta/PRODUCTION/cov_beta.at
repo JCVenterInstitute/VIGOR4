@@ -1,0 +1,34 @@
+gi|564131295|gb|KF668605.1|	cov_beta_db	<10..8073	ADM33581.1	1ab	putative polyprotein 1ab, C-terminal	T5	12648
+gi|564131295|gb|KF668605.1|	cov_beta_db	12182..12862	YP_209237.1	M	membrane glycoprotein	OK	
+gi|30271926|ref|NC_004718.3|	cov_beta_db	265..13413	NP_828850.1	1a	polyprotein 1a	OK	
+gi|30271926|ref|NC_004718.3|	cov_beta_db	265..13398,13398..21485	NP_828849.2	1ab	polyprotein 1ab	OK	
+gi|30271926|ref|NC_004718.3|	cov_beta_db	21492..25259	NP_828851.1	S	spike glycoprotein	OK	
+gi|30271926|ref|NC_004718.3|	cov_beta_db	25268..26092	NP_828852.2	SARS3a	hypothetical protein sars3a	OK	
+gi|30271926|ref|NC_004718.3|	cov_beta_db	25689..26153	NP_828853.1	SARS3b	hypothetical protein sars3b	OK	
+gi|30271926|ref|NC_004718.3|	cov_beta_db	26117..26347	NP_828854.1	E	protein E	OK	
+gi|30271926|ref|NC_004718.3|	cov_beta_db	26398..27063	NP_828855.1	M	membrane glycoprotein	OK	
+gi|30271926|ref|NC_004718.3|	cov_beta_db	27074..27265	NP_828856.1	SARS6	hypothetical protein sars6	OK	
+gi|30271926|ref|NC_004718.3|	cov_beta_db	27273..27641	NP_828857.1	SARS7a	hypothetical protein sars7a	OK	
+gi|30271926|ref|NC_004718.3|	cov_beta_db	27638..27772	NP_849175.1	SARS7b	hypothetical protein sars7b	OK	
+gi|30271926|ref|NC_004718.3|	cov_beta_db	27779..27898	NP_849176.1	SARS8a	hypothetical protein sars8a	OK	
+gi|30271926|ref|NC_004718.3|	cov_beta_db	27864..28118	NP_849177.1	SARS8b	hypothetical protein sars8b	OK	
+gi|30271926|ref|NC_004718.3|	cov_beta_db	28120..29388	NP_828858.1	N	nucleocapsid phosphoprotein	OK	
+gi|30271926|ref|NC_004718.3|	cov_beta_db	28130..28426	NP_828859.1	N2	N2 protein	OK	
+gi|30271926|ref|NC_004718.3|	cov_beta_db	28583..28795	AFM43878.1	N3	N3 protein	OK	
+gi|384038902|gb|JN634064.1|	cov_beta_db	<12138..20168	ADM33581.1	1ab	putative polyprotein 1ab, C-terminal	T5	12648
+gi|509265008|gb|KC189944.1|	cov_beta_db	<12592..20613	NP_828849.2	1ab	putative polyprotein 1ab, C-terminal	T5	13134
+gi|509265008|gb|KC189944.1|	cov_beta_db	25602..26282	YP_209237.1	M	membrane glycoprotein	OK	
+gi|343781332|gb|HM776941.1|	cov_beta_db	25851..26099	NP_828854.1	E	protein E	OK	
+gi|343781332|gb|HM776941.1|	cov_beta_db	26173..26898	YP_459956.1	M	membrane glycoprotein	OK	
+gi|564131295|gb|KF668605.1|	cov_beta_db	<1..1467	NP_150074.1	1a	putative polyprotein 1a, C-terminal	T5	11778
+gi|564131295|gb|KF668605.1|	cov_beta_db	<1..1437,1437..9500	ADM33581.1	1ab	putative polyprotein 1ab, C-terminal	T5	11274
+gi|564131295|gb|KF668605.1|	cov_beta_db	13609..14289	YP_209237.1	M	membrane glycoprotein	OK	
+gi|597503885|gb|KJ556336.1|	cov_beta_db	368..13240	ABD75330.1	1a	polyprotein 1a	OK	
+gi|597503885|gb|KJ556336.1|	cov_beta_db	<13213..19701,19700..21298	YP_209229.1	1ab	putative polyprotein 1ab, C-terminal	T5	13398
+gi|597503885|gb|KJ556336.1|	cov_beta_db	<13213..19701,19700..21298	YP_209229.1	1ab	putative polyprotein 1ab, C-terminal	FS	19701..19700,+1=>+2
+gi|597503885|gb|KJ556336.1|	cov_beta_db	21240..25301	YP_729203.1	S	spike glycoprotein	OK	
+gi|597503885|gb|KJ556336.1|	cov_beta_db	25316..25627	ABN10867.1	3a	non-structural protein 3a	OK	
+gi|597503885|gb|KJ556336.1|	cov_beta_db	26624..27298	YP_001039966.1	3	non-structural protein 3	OK	
+gi|597503885|gb|KJ556336.1|	cov_beta_db	27374..27622	YP_729207.1	E	envelope protein	OK	
+gi|597503885|gb|KJ556336.1|	cov_beta_db	27637..28296	YP_729208.1	M	membrane glycoprotein	OK	
+gi|597503885|gb|KJ556336.1|	cov_beta_db	28350..29591	YP_729209.1	N	nucleocapsid phosphoprotein	OK	

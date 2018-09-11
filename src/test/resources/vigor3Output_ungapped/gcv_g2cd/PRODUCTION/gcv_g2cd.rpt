@@ -1,0 +1,264 @@
+2018-09-06 18:56:23
+
+
+parameters
+	bl2seq_extend_hsp	25
+	bl2seq_extend_span	50
+	candidate_blastopts	-p blastx -M BLOSUM62 -e 1E-5 -v 0 -F \"\" -z 3000000 -b 1000
+	candidate_evalue	
+	candidate_overlap_threshold	0.8
+	candidate_refdb	
+	command_line	/opt/www/vigor/vigor3/prod3/VIGOR3.pl -D gcv_g2cd -O /usr/local/scratch/CORE/snettem/gcv_g2cd/PRODUCTION/gcv_g2cd -i /opt/www/vigor/vigor3/regr_testing/cov_g2cd.ungapped.fasta
+	default_gene_optional	0
+	default_gene_required	0
+	default_gene_variation	1
+	frameshift_sensitivity	1
+	gene_variations	
+	jcvi_rules	1
+	mature_pep_mincoverage	50
+	mature_pep_minidentity	25
+	mature_pep_minsimilarity	40
+	mature_pep_refdb	../data3/virus_mp
+	max_intron_size	7000
+	min_candidate_pctsimilarity	55
+	min_candidate_sbjcoverage	33
+	min_exon_size	3
+	min_intron_size	30
+	min_pseudogene_coverage	80
+	min_pseudogene_identity	60
+	min_pseudogene_similarity	65
+	noncanonical_splicing_genes	
+	optional_genes	
+	reference_db	/opt/www/vigor/vigor3/data3/cov_g2cd_db
+	reference_dbsize	58494
+	required_genes	
+	ribosomal_slippage_genes	
+	rna_editing_genes	
+	selectivity	0.985
+	slippage_frameshift	-1
+	slippage_motif	[NT][NT][NT][NA][NA][NA][NC]
+	slippage_offset	0
+	spliced_genes	
+	splicesite_extend_range	0
+	tile_overlap	1000000
+	tile_size	10000000
+	use_locus_tags	1
+	variation	0.975
+	verbose	0
+	vigorspace	/opt/www/vigor/vigor3/prod3/vigorscratch/464917.101738141
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|564131295|gb|KF66    15344      2            0       8745           2913           55.2             79.6           40.7   cov_g2cd_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_564131295.1     56.1   80.1   38.8   61.2  0.0   0.0   <10..8073        2687   6930   NC_009021_1ab     Pp1ab | putative polyprotein 1ab, C-terminal
+gi_564131295.1.1   96.1   99.1   98.4   1.6   0.0   0.0   <10..2787        926    941    YP_001941185.1    putative nsp12, C-terminal
+gi_564131295.1.2   98.5   99.9   99.8   0.0   0.0   0.2   2788..4584       599    600    AY646283_nsp13    nsp13
+gi_564131295.1.3   56.3   79.5   100.0  0.0   0.0   0.0   4585..6150       522    521    AY884001_nsp14    nsp14
+gi_564131295.1.4   39.6   70.4   100.0  0.0   0.0   0.0   6151..7164       338    337    P0C6W5_MP14       nsp15
+gi_564131295.1.5   54.3   80.5   99.3   0.7   0.0   0.0   7165..8070       302    298    AAP13566_mp14     nsp16
+gi_564131295.2     27.9   64.2   99.5   -1.3  0.0   0.5   12182..12862     226    219    NC_009019_M       M | membrane glycoprotein
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|30271926|ref|NC_0    29751      5            0      23406           7797           53.7             78.1           63.1   cov_g2cd_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_30271926.1      34.4   64.9   100.0  0.0   0.0   0.0   265..13413       4382   4248   NC_009021_1a      Pp1a | polyprotein 1a
+gi_30271926.1.1    28.7   54.1   73.1   0.0   0.0   26.9  265..>621        119    175    P0C6W5_MP1        putative nsp1, N-terminal
+gi_30271926.1.2    28.3   59.7   100.0  0.0   0.0   0.0   2719..8490       1924   1979   NC_009020_nsp3    nsp3
+gi_30271926.1.3    37.6   74.6   99.8   0.2   0.0   0.0   8491..9984       498    508    gi_511261278_nsp4 nsp4
+gi_30271926.1.4    52.0   81.0   100.0  0.0   0.0   0.0   9985..10902      306    306    P0C6W5_MP5        nsp5
+gi_30271926.1.5    36.6   68.8   100.0  0.0   0.0   0.0   10903..11772     290    290    P0C6W5_MP6        nsp6
+gi_30271926.1.6    100.0  100.0  100.0  0.0   0.0   0.0   11773..12021     83     83     NP_828865.1       nsp7
+gi_30271926.1.7    52.5   81.6   100.0  0.0   0.0   0.0   12022..12615     198    199    gi_511261314_NSP8 nsp8
+gi_30271926.1.8    57.5   81.2   100.0  0.0   0.0   0.0   12616..12954     113    112    NC_009021_nsp9    nsp9
+gi_30271926.1.9    91.4   91.4   100.0  0.0   0.0   0.0   12955..13410     152    139    AAP13566_mp9      nsp10
+gi_30271926.2      66.0   86.5   37.6   62.3  0.0   0.1   <13395..21485    2696   7182   NC_009020_1ab     Pp1ab | putative polyprotein 1ab, C-terminal
+gi_30271926.2.1    99.9   100.0  99.1   0.9   0.0   0.0   <13395..16166    924    932    NP_828869.1       putative nsp12, C-terminal
+gi_30271926.2.2    99.8   100.0  100.0  0.0   0.0   0.0   16167..17969     601    601    AAP13566_mp11     nsp13
+gi_30271926.2.3    100.0  100.0  100.0  0.0   0.0   0.0   17970..19550     527    527    NP_828871.1       nsp14
+gi_30271926.2.4    50.6   74.9   100.0  0.0   0.0   0.0   19551..20588     346    351    NC_009020_nsp15   nsp15
+gi_30271926.2.5    100.0  100.0  100.0  0.0   0.0   0.0   20589..21482     298    298    AAP13566_mp14     nsp16
+gi_30271926.3      39.0   66.8   100.0  0.0   0.0   0.0   26117..26347     76     82     NC_009019_E       E | envelope protein
+gi_30271926.4      43.3   77.2   100.0  0.0   0.0   0.0   26398..27063     221    222    NC_009021_M       M | membrane glycoprotein
+gi_30271926.5      46.5   71.0   100.0  0.0   0.0   0.0   28120..29388     422    413    AGN72646.1        N | nucleocapsid phosphoprotein
+
+
+dropping pseudogene gi_384038902.2, fails match requirements: %id 35.4 < 60, %sim 63.4 < 65
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_384038902.2     35.4   63.4   92.2   6.8   0.0   0.9   26092..26697     201    219    NC_009019_M       M | membrane glycoprotein
+                    stop codons embedded in CDS at 26596..26598, 26611..26613 and 26647..26649
+                    could not find valid start codon
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|384038902|gb|JN63    28984      1            0       8031           2676           56.8             81.1           37.8   cov_g2cd_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_384038902.1     56.8   81.1   37.8   62.2  0.0   0.0   <12138..20168    2676   7119   NC_009019_1ab     Pp1ab | putative polyprotein 1ab, C-terminal
+gi_384038902.1.1   59.9   82.7   99.1   0.9   0.0   0.0   <12138..14894    919    934    NC_009019_nsp12   putative nsp12, C-terminal
+gi_384038902.1.2   99.7   100.0  100.0  0.0   0.0   0.0   14895..16691     599    599    sp_Q98VG9_13      nsp13
+gi_384038902.1.3   53.6   78.3   100.0  0.0   0.0   0.0   16692..18248     519    530    P0C6W5_MP13       nsp14
+gi_384038902.1.4   46.3   73.9   100.0  0.0   0.0   0.0   18249..19265     339    351    NC_009020_nsp15   nsp15
+gi_384038902.1.5   54.0   82.3   98.3   0.3   0.0   1.3   19266..20165     300    303    gi_511261278_nsp1 nsp16
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|509265008|gb|KC18    27953      2            0      20100           6698           36.9             65.5           99.8   cov_g2cd_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_509265008.1     36.9   65.4   99.8   0.2   0.0   0.0   1196..12592      6472   6930   NC_009021_1ab     Pp1ab | polyprotein 1ab
+                                                          12592..20613                                     
+gi_509265008.1.1   19.3   46.1   81.5   18.5  0.0   0.0   <4217..7822      1202   1979   NC_009020_nsp3    putative nsp3, C-terminal
+gi_509265008.1.2   26.5   61.1   99.4   0.4   0.0   0.2   7823..9259       479    508    NC_009020_nsp4    nsp4
+gi_509265008.1.3   46.1   75.3   100.0  0.0   0.0   0.0   9260..10165      302    306    NC_009019_nsp5    nsp5
+gi_509265008.1.4   25.7   60.3   100.0  0.0   0.0   0.0   10166..11005     280    292    NC_009019_nsp6    nsp6
+gi_509265008.1.5   43.4   78.0   100.0  0.0   0.0   0.0   11006..11254     83     83     NC_009019_nsp7    nsp7
+gi_509265008.1.6   39.0   76.6   100.0  0.0   0.0   0.0   11255..11839     195    199    gi_511261314_NSP8 nsp8
+gi_509265008.1.7   45.5   72.3   100.0  0.0   0.0   0.0   11840..12163     108    110    gi_511261278_NSP9 nsp9
+gi_509265008.1.8   54.7   77.9   100.0  0.0   0.0   0.0   12164..12568     135    139    AAP13566_mp9      nsp10
+gi_509265008.1.9   60.3   84.1   100.0  0.0   0.0   0.0   12569..12592     927    934    NC_009019_nsp12   nsp12
+                                                          12592..15348                                     
+gi_509265008.1.10  83.8   95.8   100.0  0.0   0.0   0.0   15349..17139     597    597    sp_P0C6X5_13      nsp13
+gi_509265008.1.11  51.9   79.2   100.0  0.0   0.0   0.0   17140..18690     517    530    P0C6W5_MP13       nsp14
+gi_509265008.1.12  48.9   73.7   100.0  0.0   0.0   0.0   18691..19707     339    351    NC_009020_nsp15   nsp15
+gi_509265008.1.13  55.3   81.4   100.0  0.0   0.0   0.0   19708..20610     301    298    AAP13566_mp14     nsp16
+gi_509265008.2     37.4   67.8   100.0  0.0   0.0   0.0   25602..26282     226    219    NC_009019_M       M | membrane glycoprotein
+
+
+dropping pseudogene gi_343781332.1, fails match requirements: %id 23.0 < 60, %sim 53.3 < 65
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_343781332.1     23.0   53.3   100.0  0.0   0.0   0.0   635..5167        3910   4434   NC_009019_1a      Pp1a | polyprotein 1a
+                                                          5167..7815                                       
+                                                          7815..11288                                      
+                                                          11288..12364                                     
+                    frameshifts in genome at or near positions 5167..5167 (+2=>+1), 7815..7815 (+1=>+3) and 11288..11288 (+3=>+2)
+                    could not find valid start codon
+gi_343781332.1.1   16.5   45.7   100.0  0.0   0.0   0.0   635..2950        772    652    NC_009019_nsp2    nsp2
+gi_343781332.1.2   17.1   46.1   99.9   0.1   0.0   0.0   2951..5167       1507   1886   gi_511261314_nsp3 nsp3
+                                                          5167..7470                                       
+gi_343781332.1.3   26.9   62.4   99.8   0.0   0.0   0.2   7471..7815       492    507    NC_009019_nsp4    nsp4
+                                                          7815..8945                                       
+gi_343781332.1.4   48.4   74.6   100.0  0.0   0.0   0.0   8946..9851       302    306    NC_009019_nsp5    nsp5
+gi_343781332.1.5   25.2   60.5   100.0  0.0   0.0   0.0   9852..10733      294    290    P0C6W5_MP6        nsp6
+gi_343781332.1.6   49.4   78.0   100.0  0.0   0.0   0.0   10734..10982     83     83     NC_009019_nsp7    nsp7
+gi_343781332.1.7   43.5   75.4   100.0  0.0   0.0   0.0   10983..11288     195    199    NC_009020_nsp8    nsp8
+                                                          11288..11566                                     
+gi_343781332.1.8   43.8   73.9   100.0  0.0   0.0   0.0   11567..11899     111    110    NC_009020_nsp9    nsp9
+gi_343781332.1.9   46.1   69.8   100.0  0.0   0.0   0.0   11900..12361     154    139    NC_009019_nsp10   nsp10
+
+dropping pseudogene gi_343781332.2, fails match requirements: %id 38.6 < 60
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_343781332.2     38.6   65.2   86.1   13.9  0.0   0.0   4358..5191       5336   6930   NC_009021_1ab     Pp1ab | polyprotein 1ab
+                                                          5191..8388                                       
+                                                          8388..11282                                      
+                                                          11282..12334                                     
+                                                          12334..20364                                     
+                    frameshifts in genome at or near positions 5191..5191 (+2=>+1), 8388..8388 (+1=>+3) and 11282..11282 (+3=>+2)
+                    stop codons embedded in CDS at 7996..7998, 8110..8112, 8245..8247, 8296..8298 and 8341..8343
+                    could not find valid start codon
+gi_343781332.2.1   16.2   38.4   89.7   10.2  0.0   0.1   4358..5191       1033   1837   P0C6W5_MP3        nsp3
+                                                          5191..7455                                       
+gi_343781332.2.2   21.6   53.7   99.8   0.0   0.0   0.2   7456..8388       497    507    NC_009019_nsp4    nsp4
+                                                          8388..8945                                       
+gi_343781332.2.3   48.4   74.6   100.0  0.0   0.0   0.0   8946..9851       302    306    NC_009019_nsp5    nsp5
+gi_343781332.2.4   25.2   60.5   100.0  0.0   0.0   0.0   9852..10733      294    290    P0C6W5_MP6        nsp6
+gi_343781332.2.5   49.4   78.0   100.0  0.0   0.0   0.0   10734..10982     83     83     NC_009019_nsp7    nsp7
+gi_343781332.2.6   43.0   75.3   100.0  0.0   0.0   0.0   10983..11282     195    199    NC_009020_nsp8    nsp8
+                                                          11282..11566                                     
+gi_343781332.2.7   43.8   73.9   100.0  0.0   0.0   0.0   11567..11899     111    110    NC_009020_nsp9    nsp9
+gi_343781332.2.8   50.4   76.2   100.0  0.0   0.0   0.0   11900..12322     141    139    NC_009019_nsp10   nsp10
+gi_343781332.2.9   60.2   82.9   99.6   0.4   0.0   0.0   12323..12334     923    934    NC_009019_nsp12   nsp12
+                                                          12334..15090                                     
+gi_343781332.2.10  98.8   99.8   100.0  0.0   0.0   0.0   15091..16887     599    599    sp_Q98VG9_13      nsp13
+gi_343781332.2.11  53.6   78.4   100.0  0.0   0.0   0.0   16888..18444     519    530    P0C6W5_MP13       nsp14
+gi_343781332.2.12  46.4   73.8   99.7   0.0   0.0   0.3   18445..19458     338    351    NC_009020_nsp15   nsp15
+gi_343781332.2.13  54.2   82.1   98.7   0.0   0.0   1.3   19459..20361     301    303    gi_511261278_nsp1 nsp16
+
+dropping pseudogene gi_343781332.3, fails match requirements: %id 39.6 < 60
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_343781332.3     39.6   66.6   93.2   6.8   0.0   0.0   26260..26898     212    219    NC_009019_M       M | membrane glycoprotein
+                    could not find valid start codon
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|343781332|gb|HM77    28580      0            0          0              0              -                -              -   cov_g2cd_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|564131295|gb|KF66    16771      3            0      11649           3880           49.4             75.8           32.9   cov_g2cd_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_564131295.1     43.6   71.6   10.3   89.7  0.0   0.0   <1..1467         488    4481   NC_009020_1a      Pp1a | putative polyprotein 1a, C-terminal
+gi_564131295.2     53.9   78.8   45.4   54.6  0.0   0.0   <1..1437         3166   6930   NC_009021_1ab     Pp1ab | putative polyprotein 1ab, C-terminal
+                                                          1437..9500                                       
+gi_564131295.2.1   38.3   70.3   99.5   0.5   0.0   0.0   <1..627          209    199    NC_009019_nsp8    putative nsp8, C-terminal
+gi_564131295.2.2   42.0   71.2   100.0  0.0   0.0   0.0   628..960         111    110    NC_009019_nsp9    nsp9
+gi_564131295.2.3   55.2   77.8   100.0  0.0   0.0   0.0   961..1392        144    140    gi_511261302_nsp1 nsp10
+gi_564131295.2.4   95.8   98.9   100.0  0.0   0.0   0.0   1393..1437       941    941    YP_001941185.1    nsp12
+                                                          1437..4214                                       
+gi_564131295.2.5   98.5   99.9   99.8   0.0   0.0   0.2   4215..6011       599    600    AY646283_nsp13    nsp13
+gi_564131295.2.6   56.3   79.5   100.0  0.0   0.0   0.0   6012..7577       522    521    AY884001_nsp14    nsp14
+gi_564131295.2.7   39.6   70.4   100.0  0.0   0.0   0.0   7578..8591       338    337    P0C6W5_MP14       nsp15
+gi_564131295.2.8   54.3   80.5   99.3   0.7   0.0   0.0   8592..9497       302    298    AAP13566_mp14     nsp16
+gi_564131295.3     27.9   64.2   99.5   -1.3  0.0   0.5   13609..14289     226    219    NC_009019_M       M | membrane glycoprotein
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|597503885|gb|KJ55    29890     10            1      21786           7252           99.9             99.9          100.0   cov_g2cd_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_597503885.1     99.9   99.9   100.0  0.0   0.0   0.0   65..13240        4391   4391   AGG22541.1        Pp1a | polyprotein 1a
+gi_597503885.1.1   100.0  100.0  100.0  0.0   0.0   0.0   65..643          193    193    gi_511262662_nsp1 nsp1
+gi_597503885.1.2   99.8   99.8   100.0  0.0   0.0   0.0   644..2623        660    660    gi_511261290_nsp2 nsp2
+gi_597503885.1.3   99.6   99.9   100.0  0.0   0.0   0.0   2624..8281       1886   1886   gi_511261314_nsp3 nsp3
+gi_597503885.1.4   99.6   99.9   100.0  0.0   0.0   0.0   8282..9805       508    508    gi_511261278_nsp4 nsp4
+gi_597503885.1.5   100.0  100.0  100.0  0.0   0.0   0.0   9806..10723      306    306    gi_511262662_nsp5 nsp5
+gi_597503885.1.6   100.0  100.0  100.0  0.0   0.0   0.0   10724..11599     292    292    gi_511261314_nsp6 nsp6
+gi_597503885.1.7   100.0  100.0  100.0  0.0   0.0   0.0   11600..11848     83     83     gi_496838675_nsp7 nsp7
+gi_597503885.1.8   100.0  100.0  100.0  0.0   0.0   0.0   11849..12445     199    199    gi_511261314_NSP8 nsp8
+gi_597503885.1.9   100.0  100.0  100.0  0.0   0.0   0.0   12446..12775     110    110    gi_511261278_NSP9 nsp9
+gi_597503885.1.10  100.0  100.0  100.0  0.0   0.0   0.0   12776..13195     140    140    gi_511261302_nsp1 nsp10
+gi_597503885.1.11  100.0  100.0  100.0  0.0   0.0   0.0   13196..13237     14     14     NC_009020_nsp11   nsp11
+gi_597503885.2     99.6   99.9   100.0  0.0   0.0   0.0   65..13219        7078   7078   AGH58716.1        Pp1ab | polyprotein 1ab
+                                                          13219..13485                                     
+                                                          13486..19701                                     
+                                                          19700..21298                                     
+                    frameshifts in genome at or near positions 13219..13219 (+2=>+1), 13485..13486 (+1=>+3) and 19701..19700 (+3=>+2)
+gi_597503885.2.1   100.0  100.0  100.0  0.0   0.0   0.0   65..643          193    193    gi_511262662_nsp1 nsp1
+gi_597503885.2.2   99.8   99.8   100.0  0.0   0.0   0.0   644..2623        660    660    gi_511261290_nsp2 nsp2
+gi_597503885.2.3   99.6   99.9   100.0  0.0   0.0   0.0   2624..8281       1886   1886   gi_511261314_nsp3 nsp3
+gi_597503885.2.4   99.6   99.9   100.0  0.0   0.0   0.0   8282..9805       508    508    gi_511261278_nsp4 nsp4
+gi_597503885.2.5   100.0  100.0  100.0  0.0   0.0   0.0   9806..10723      306    306    gi_511262662_nsp5 nsp5
+gi_597503885.2.6   100.0  100.0  100.0  0.0   0.0   0.0   10724..11599     292    292    gi_511261314_nsp6 nsp6
+gi_597503885.2.7   100.0  100.0  100.0  0.0   0.0   0.0   11600..11848     83     83     gi_496838675_nsp7 nsp7
+gi_597503885.2.8   100.0  100.0  100.0  0.0   0.0   0.0   11849..12445     199    199    gi_511261314_NSP8 nsp8
+gi_597503885.2.9   100.0  100.0  100.0  0.0   0.0   0.0   12446..12775     110    110    gi_511261278_NSP9 nsp9
+gi_597503885.2.10  100.0  100.0  100.0  0.0   0.0   0.0   12776..13195     140    140    gi_511261302_nsp1 nsp10
+gi_597503885.2.11  100.0  100.0  100.0  0.0   0.0   0.0   13196..13219     933    933    gi_511261290_nsp1 nsp12
+                                                          13219..13485                                     
+                                                          13486..15993                                     
+gi_597503885.2.12  100.0  100.0  100.0  0.0   0.0   0.0   15994..17787     598    598    gi_511261278_nsp1 nsp13
+gi_597503885.2.13  100.0  100.0  100.0  0.0   0.0   0.0   17788..19359     524    524    gi_496838675_nsp1 nsp14
+gi_597503885.2.14  100.0  100.0  100.0  0.0   0.0   0.0   19360..19701     343    343    gi_511261314_nsp1 nsp15
+                                                          19700..20386                                     
+gi_597503885.2.15  100.0  100.0  100.0  0.0   0.0   0.0   20387..21295     303    303    gi_511261278_nsp1 nsp16
+gi_597503885.3     99.9   100.0  100.0  0.0   0.0   0.0   21240..25301     1353   1353   AFS88936.1        S | spike glycoprotein
+gi_597503885.4     98.1   99.8   100.0  0.0   0.0   0.0   25316..25627     103    103    AFY13308.1        NS3a | non-structural protein 3a
+gi_597503885.5     100.0  100.0  100.0  0.0   0.0   0.0   25636..25965     109    109    AFS88938.1        NS3b | non-structural protein 3b
+gi_597503885.6     99.6   99.6   100.0  0.0   0.0   0.0   25877..26617     246    246    AGN70954.1        NS3c | non-structural protein 3c
+gi_597503885.7     100.0  100.0  100.0  0.0   0.0   0.0   26624..27298     224    224    AGN70955.1        NS3d | non-structural protein 3d
+gi_597503885.8     100.0  100.0  100.0  0.0   0.0   0.0   27374..27622     82     82     AGN70934.1        E | envelope protein
+gi_597503885.9     99.5   100.0  100.0  0.0   0.0   0.0   27637..28296     219    219    AGN72645.1        M | membrane glycoprotein
+gi_597503885.10    100.0  100.0  100.0  0.0   0.0   0.0   28350..29591     413    413    AGN72646.1        N | nucleocapsid phosphoprotein
+gi_597503885.11    99.1   99.1   100.0  0.0   0.0   0.0   28546..28884     112    112    AGN70981.1        N2 | N2 protein
+

@@ -1,4 +1,14 @@
 referenceOutputTBL,inputFasta,referenceDatabase,referenceType
-flanOutput/flua/flua.tbl,flanOutput/flua/flua.fasta,flua_db,Flan
-vigor3Output/flua/flua.tbl,vigor3Output/flua/flua.fasta,flua_db,Vigor3
-vigor4ReferenceOutput/flua/flua.tbl,vigor4ReferenceOutput/flua/flua.fasta,flua_db,Vigor4
+vigor3Output_ungapped/rsv/PRODUCTION/rsv.tbl,vigor3Output_ungapped/rsv/PRODUCTION/rsv.ungapped.fasta,rsv_db,vigor3
+vigor3Output_ungapped/rtva/PRODUCTION/rtva.tbl,vigor3Output_ungapped/rtva/PRODUCTION/rtva.ungapped.fasta,rtva_db,vigor3
+vigor3Output_ungapped/rtvb/PRODUCTION/rtvb.tbl,vigor3Output_ungapped/rtvb/PRODUCTION/rtvb.ungapped.fasta,rtvb_db,vigor3
+vigor3Output_ungapped/rtvc/PRODUCTION/rtvc.tbl,vigor3Output_ungapped/rtvc/PRODUCTION/rtvc.ungapped.fasta,rtvc_db,vigor3
+vigor3Output_ungapped/rtvf/PRODUCTION/rtvf.tbl,vigor3Output_ungapped/rtvf/PRODUCTION/rtvf.ungapped.fasta,rtvf_db,vigor3
+vigor3Output_ungapped/rtv_g/PRODUCTION/rtv_g.tbl,vigor3Output_ungapped/rtv_g/PRODUCTION/rtvg.ungapped.fasta,rtvg_db,vigor3
+vigor3Output_ungapped/sapo/PRODUCTION/sapo.tbl,vigor3Output_ungapped/sapo/PRODUCTION/sapo.ungapped.fasta,sapo_db,vigor3
+vigor3Output_ungapped/wnvI/PRODUCTION/wnvI.tbl,vigor3Output_ungapped/wnvI/PRODUCTION/wnvI.ungapped.fasta,wnvI_db,vigor3
+vigor3Output_ungapped/wnvII/PRODUCTION/wnvII.tbl,vigor3Output_ungapped/wnvII/PRODUCTION/wnvII.ungapped.fasta,wnvII_db,vigor3
+vigor3Output_ungapped/zikv/PRODUCTION/zikv.tbl,vigor3Output_ungapped/zikv/PRODUCTION/zikv.ungapped.fasta,zikv_db,vigor3
+vigor3Output_ungapped/giv_a/PRODUCTION/giv_a.tbl,vigor3Output_ungapped/giv_a/PRODUCTION/flua.ungapped.fasta,flua_db,vigor3
+vigor3Output_ungapped/giv_b/PRODUCTION/giv_b.tbl,vigor3Output_ungapped/giv_b/PRODUCTION/flub.ungapped.fasta,flub_db,vigor3
+vigor3Output_ungapped/giv_c/PRODUCTION/giv_c.tbl,vigor3Output_ungapped/giv_c/PRODUCTION/fluc.ungapped.fasta,fluc_db,vigor3

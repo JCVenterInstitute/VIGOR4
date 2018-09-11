@@ -1,0 +1,24 @@
+EU037962.1	chikv_db	77..7501	399240871_NSP	NSP	non-structural polyprotein precursor P1234	OK	
+EU037962.1	chikv_db	7567..9969,9969..10040	gi|392976865	truncated gp3	truncated polyprotein	OK	
+EU037962.1	chikv_db	7567..11313	ADG95902.1	SP	structural polyprotein	OK	
+KX702402.1	chikv_db	77..7489	gi|22789217	NSP	non-structural polyprotein precursor P1234	OK	
+KX702402.1	chikv_db	7555..9957,9957..10028	gi|392976865	truncated gp3	truncated polyprotein	OK	
+KX702402.1	chikv_db	7555..11301	ADG95902.1	SP	structural polyprotein	OK	
+KX702401.1	chikv_db	77..7489	gi|22789217	NSP	non-structural polyprotein precursor P1234	OK	
+KX702401.1	chikv_db	7555..9957,9957..10028	gi|392976865	truncated gp3	truncated polyprotein	OK	
+KX702401.1	chikv_db	7555..11301	ADG95902.1	SP	structural polyprotein	OK	
+JF274082.1	chikv_db	64..7488	399240871_NSP	NSP	non-structural polyprotein precursor P1234	OK	
+JF274082.1	chikv_db	7554..9956,9956..10027	gi|392976865	truncated gp3	truncated polyprotein	OK	
+JF274082.1	chikv_db	7554..11300	ADG95902.1	SP	structural polyprotein	OK	
+KY751908.1	chikv_db	61..7485	399240871_NSP	NSP	non-structural polyprotein precursor P1234	OK	
+KY751908.1	chikv_db	7551..9953,9953..10024	gi|392976865	truncated gp3	truncated polyprotein	OK	
+KY751908.1	chikv_db	7551..11297	ADG95902.1	SP	structural polyprotein	OK	
+KY057363.1	chikv_db	77..7501	399240871_NSP	NSP	non-structural polyprotein precursor P1234	OK	
+KY057363.1	chikv_db	7567..9969,9969..10040	gi|392976865	truncated gp3	truncated polyprotein	OK	
+KY057363.1	chikv_db	7567..11313	ADG95902.1	SP	structural polyprotein	OK	
+KX496989.1	chikv_db	77..7489	gi|22789217	NSP	non-structural polyprotein precursor P1234	OK	
+KX496989.1	chikv_db	7555..9957,9957..10028	gi|392976865	truncated gp3	truncated polyprotein	OK	
+KX496989.1	chikv_db	7555..11301	ADG95902.1	SP	structural polyprotein	OK	
+KX168429.1	chikv_db	77..7708	gi|22789217	NSP	non-structural polyprotein precursor P1234	OK	
+KX168429.1	chikv_db	7774..10176,10176..10247	gi|392976865	truncated gp3	truncated polyprotein	OK	
+KX168429.1	chikv_db	7774..11520	ADG95902.1	SP	structural polyprotein	OK	

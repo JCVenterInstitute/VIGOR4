@@ -1,0 +1,17 @@
+6	norv_misc_db	3..5102	BAC98439.1	POL	nonstructural polyprotein	OK	
+6	norv_misc_db	6706..7512	BAC98441.1	VP2	capsid protein VP2	OK	
+7	norv_misc_db	3..542,541..5106	BAC98439.1	POL	nonstructural polyprotein	FS	542..541,+3=>+1
+7	norv_misc_db	5087..6709	BAC98440.1	VP1	capsid protein VP1	OK	
+7	norv_misc_db	6709..7515	BAC98441.1	VP2	capsid protein VP2	OK	
+30	norv_misc_db	3..5102	BAC98439.1	POL	nonstructural polyprotein	OK	
+30	norv_misc_db	5083..6705	BAC98440.1	VP1	capsid protein VP1	OK	
+30	norv_misc_db	6705..7511	BAC98441.1	VP2	capsid protein VP2	OK	
+RV-12	norv_misc_db	807..1	BAC98441.1	VP2	capsid protein VP2	OK	
+RV-12	norv_misc_db	2429..807	BAC98440.1	VP1	capsid protein VP1	OK	
+RV-12	norv_misc_db	7509..2410	BAC98439.1	POL	nonstructural polyprotein	OK	
+26	norv_misc_db	5..5110	BAC98439.1	POL	nonstructural polyprotein	OK	
+26	norv_misc_db	5091..6737	BAC98440.1	VP1	capsid protein VP1	OK	
+26	norv_misc_db	6737..7501	BAC98441.1	VP2	capsid protein VP2	OK	
+25	norv_misc_db	11..5407	NP_056820.1	POL	nonstructural polyprotein	OK	
+25	norv_misc_db	5391..7022	NP_056821.2	VP1	capsid protein VP1	OK	
+25	norv_misc_db	7022..7669	NP_056822.1	VP2	capsid protein VP2	OK	

@@ -1,0 +1,90 @@
+>Features gi|564131295|gb|KF668605.1|
+<10	8073	gene
+			locus_tag	vigor_1ab
+			gene	1ab
+<10	8073	CDS
+			codon_start	1
+			protein_id	gi_564131295.1
+			locus_tag	vigor_1ab
+			gene	1ab
+			product	putative polyprotein 1ab, C-terminal
+>Features gi|30271926|ref|NC_004718.3|
+<13398	21485	gene
+			locus_tag	vigor_1ab
+			gene	1ab
+<13398	21485	CDS
+			codon_start	1
+			protein_id	gi_30271926.1
+			locus_tag	vigor_1ab
+			gene	1ab
+			product	putative polyprotein 1ab, C-terminal
+>Features gi|384038902|gb|JN634064.1|
+<12138	20168	gene
+			locus_tag	vigor_1ab
+			gene	1ab
+<12138	20168	CDS
+			codon_start	1
+			protein_id	gi_384038902.1
+			locus_tag	vigor_1ab
+			gene	1ab
+			product	putative polyprotein 1ab, C-terminal
+>Features gi|509265008|gb|KC189944.1|
+<12592	20613	gene
+			locus_tag	vigor_1ab
+			gene	1ab
+<12592	20613	CDS
+			codon_start	1
+			protein_id	gi_509265008.1
+			locus_tag	vigor_1ab
+			gene	1ab
+			product	putative polyprotein 1ab, C-terminal
+>Features gi|343781332|gb|HM776941.1|
+<12334	20364	gene
+			locus_tag	vigor_1ab
+			gene	1ab
+<12334	20364	CDS
+			codon_start	1
+			protein_id	gi_343781332.1
+			locus_tag	vigor_1ab
+			gene	1ab
+			product	putative polyprotein 1ab, C-terminal
+20879	24703	gene
+			locus_tag	vigor_S
+			gene	S
+20879	24703	CDS
+			codon_start	1
+			protein_id	gi_343781332.2
+			locus_tag	vigor_S
+			gene	S
+			product	spike glycoprotein
+>Features gi|564131295|gb|KF668605.1|
+<1	1467	gene
+			locus_tag	vigor_1a
+			gene	1a
+<1	1467	CDS
+			codon_start	1
+			protein_id	gi_564131295.1
+			locus_tag	vigor_1a
+			gene	1a
+			product	putative polyprotein 1a, C-terminal
+<1	9500	gene
+			locus_tag	vigor_1ab
+			gene	1ab
+<1	1437	CDS
+1437	9500
+			codon_start	1
+			protein_id	gi_564131295.2
+			locus_tag	vigor_1ab
+			gene	1ab
+			product	putative polyprotein 1ab, C-terminal
+			ribosomal_slippage
+>Features gi|597503885|gb|KJ556336.1|
+27646	28296	gene
+			locus_tag	vigor_M
+			gene	M
+27646	28296	CDS
+			codon_start	1
+			protein_id	gi_597503885.1
+			locus_tag	vigor_M
+			gene	M
+			product	membrane protein

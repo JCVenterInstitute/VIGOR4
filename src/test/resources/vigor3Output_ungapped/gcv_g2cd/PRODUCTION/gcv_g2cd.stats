@@ -1,0 +1,8 @@
+Sequence	Length	Genes	Pseudogenes	CDS Bases	Peptide Bases	%Ref Identity	%Ref Similarity	%Ref Coverage	Ref DB
+gi|564131295|gb|KF668605.1|	15344	2	0	8745	2913	55.2	79.6	40.7	cov_g2cd_db
+gi|30271926|ref|NC_004718.3|	29751	5	0	23406	7797	53.7	78.1	63.1	cov_g2cd_db
+gi|384038902|gb|JN634064.1|	28984	1	0	8031	2676	56.8	81.1	37.8	cov_g2cd_db
+gi|509265008|gb|KC189944.1|	27953	2	0	20100	6698	36.9	65.5	99.8	cov_g2cd_db
+gi|343781332|gb|HM776941.1|	28580	0	0	0	0	-	-	-	cov_g2cd_db
+gi|564131295|gb|KF668605.1|	16771	3	0	11649	3880	49.4	75.8	32.9	cov_g2cd_db
+gi|597503885|gb|KJ556336.1|	29890	10	1	21786	7252	99.9	99.9	100.0	cov_g2cd_db

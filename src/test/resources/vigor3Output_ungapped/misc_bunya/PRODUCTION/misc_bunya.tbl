@@ -1,0 +1,1795 @@
+>Features JX177645.1
+68	1387	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+68	1387	CDS
+			codon_start	1
+			protein_id	JX177645.1.1
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+3538	2711	gene
+			locus_tag	vigor_N
+			gene	N
+3538	2711	CDS
+			codon_start	1
+			protein_id	JX177645.1.2
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+>Features JX177646.1
+56	994	gene
+			locus_tag	vigor_NSm
+			gene	NSm
+56	994	CDS
+			codon_start	1
+			protein_id	JX177646.1.1
+			locus_tag	vigor_NSm
+			gene	NSm
+			product	non-structural movement protein
+4862	1497	gene
+			locus_tag	vigor_M
+			gene	M
+4862	1497	CDS
+			codon_start	1
+			protein_id	JX177646.1.2
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+>Features JX177647.1
+33	8297	gene
+			locus_tag	vigor_L
+			gene	L
+33	8297	CDS
+			codon_start	1
+			protein_id	JX177647.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features NC_015374.1
+25	6291	gene
+			locus_tag	vigor_L
+			gene	L
+25	6291	CDS
+			codon_start	1
+			protein_id	NC_015374.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features NC_015373.1
+63	4025	gene
+			locus_tag	vigor_M
+			gene	M
+63	4025	CDS
+			codon_start	1
+			protein_id	NC_015373.1.1
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features NC_015373.1.1
+1	279	mat_peptide
+			product	hypothetical non-structural protein NSm
+			locus_tag	vigor_M
+			gene	M
+280	815	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+816	1320	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features NC_015375.1
+48	782	gene
+			locus_tag	vigor_N
+			gene	N
+48	782	CDS
+			codon_start	1
+			protein_id	NC_015375.1.1
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+1814	972	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+1814	972	CDS
+			codon_start	1
+			protein_id	NC_015375.1.2
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+>Features JF960237.1
+34	8670	gene
+			locus_tag	vigor_L
+			gene	L
+34	8670	CDS
+			codon_start	1
+			protein_id	JF960237.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features JF960236.1
+101	1009	gene
+			locus_tag	vigor_NSm
+			gene	NSm
+101	1009	CDS
+			codon_start	1
+			protein_id	JF960236.1.1
+			locus_tag	vigor_NSm
+			gene	NSm
+			product	non-structural movement protein
+4689	1282	gene
+			locus_tag	vigor_M
+			gene	M
+4689	1282	CDS
+			codon_start	1
+			protein_id	JF960236.1.2
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features JF960236.1.2
+1	35	sig_peptide
+			locus_tag	vigor_M
+			gene	M
+36	484	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+485	1135	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features JF960235.1
+89	1492	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+89	1492	CDS
+			codon_start	1
+			protein_id	JF960235.1.1
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+2819	2043	gene
+			locus_tag	vigor_N
+			gene	N
+2819	2043	CDS
+			codon_start	1
+			protein_id	JF960235.1.2
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+>Features HM581937.1
+34	8673	gene
+			locus_tag	vigor_L
+			gene	L
+34	8673	CDS
+			codon_start	1
+			protein_id	HM581937.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features HM581939.1
+89	1492	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+89	1492	CDS
+			codon_start	1
+			protein_id	HM581939.1.1
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+2862	2086	gene
+			locus_tag	vigor_N
+			gene	N
+2862	2086	CDS
+			codon_start	1
+			protein_id	HM581939.1.2
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+>Features HM581938.1
+101	1009	gene
+			locus_tag	vigor_NSm
+			gene	NSm
+101	1009	CDS
+			codon_start	1
+			protein_id	HM581938.1.1
+			locus_tag	vigor_NSm
+			gene	NSm
+			product	non-structural movement protein
+4684	1277	gene
+			locus_tag	vigor_M
+			gene	M
+4684	1277	CDS
+			codon_start	1
+			protein_id	HM581938.1.2
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features HM581938.1.2
+1	35	sig_peptide
+			locus_tag	vigor_M
+			gene	M
+36	484	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+485	1135	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features HM581942.1
+89	1492	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+89	1492	CDS
+			codon_start	1
+			protein_id	HM581942.1.1
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+2862	2086	gene
+			locus_tag	vigor_N
+			gene	N
+2862	2086	CDS
+			codon_start	1
+			protein_id	HM581942.1.2
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+>Features HM581941.1
+101	1009	gene
+			locus_tag	vigor_NSm
+			gene	NSm
+101	1009	CDS
+			codon_start	1
+			protein_id	HM581941.1.1
+			locus_tag	vigor_NSm
+			gene	NSm
+			product	non-structural movement protein
+4684	1277	gene
+			locus_tag	vigor_M
+			gene	M
+4684	1277	CDS
+			codon_start	1
+			protein_id	HM581941.1.2
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features HM581941.1.2
+1	35	sig_peptide
+			locus_tag	vigor_M
+			gene	M
+36	484	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+485	1135	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features HM581940.1
+34	8673	gene
+			locus_tag	vigor_L
+			gene	L
+34	8673	CDS
+			codon_start	1
+			protein_id	HM581940.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features HM581936.1
+89	1492	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+89	1492	CDS
+			codon_start	1
+			protein_id	HM581936.1.1
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+2817	2041	gene
+			locus_tag	vigor_N
+			gene	N
+2817	2041	CDS
+			codon_start	1
+			protein_id	HM581936.1.2
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+>Features HM581935.1
+101	1009	gene
+			locus_tag	vigor_NSm
+			gene	NSm
+101	1009	CDS
+			codon_start	1
+			protein_id	HM581935.1.1
+			locus_tag	vigor_NSm
+			gene	NSm
+			product	non-structural movement protein
+4699	1292	gene
+			locus_tag	vigor_M
+			gene	M
+4699	1292	CDS
+			codon_start	1
+			protein_id	HM581935.1.2
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features HM581935.1.2
+1	35	sig_peptide
+			locus_tag	vigor_M
+			gene	M
+36	484	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+485	1135	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features HM581934.1
+34	8673	gene
+			locus_tag	vigor_L
+			gene	L
+34	8673	CDS
+			codon_start	1
+			protein_id	HM581934.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features KM657116.1
+89	1492	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+89	1492	CDS
+			codon_start	1
+			protein_id	KM657116.1.1
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+2820	2044	gene
+			locus_tag	vigor_N
+			gene	N
+2820	2044	CDS
+			codon_start	1
+			protein_id	KM657116.1.2
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+>Features KM657119.1
+101	1009	gene
+			locus_tag	vigor_NSm
+			gene	NSm
+101	1009	CDS
+			codon_start	1
+			protein_id	KM657119.1.1
+			locus_tag	vigor_NSm
+			gene	NSm
+			product	non-structural movement protein
+4688	1281	gene
+			locus_tag	vigor_M
+			gene	M
+4688	1281	CDS
+			codon_start	1
+			protein_id	KM657119.1.2
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features KM657119.1.2
+1	35	sig_peptide
+			locus_tag	vigor_M
+			gene	M
+36	484	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+485	1135	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features KM657122.1
+34	8673	gene
+			locus_tag	vigor_L
+			gene	L
+34	8673	CDS
+			codon_start	1
+			protein_id	KM657122.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features KC589005.1
+17	6274	gene
+			locus_tag	vigor_L
+			gene	L
+17	6274	CDS
+			codon_start	1
+			protein_id	KC589005.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features NC_021244.1
+38	781	gene
+			locus_tag	vigor_N
+			gene	N
+38	781	CDS
+			codon_start	1
+			protein_id	NC_021244.1.1
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+1858	908	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+1858	908	CDS
+			codon_start	1
+			protein_id	NC_021244.1.2
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+>Features NC_021243.1
+454	3240	gene
+			locus_tag	vigor_M
+			gene	M
+454	3240	CDS
+			codon_start	1
+			protein_id	NC_021243.1.1
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features NC_021243.1.1
+1	423	mat_peptide
+			product	hypothetical glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+424	928	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features KC589006.1
+454	3240	gene
+			locus_tag	vigor_M
+			gene	M
+454	3240	CDS
+			codon_start	1
+			protein_id	KC589006.1.1
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features KC589006.1.1
+1	423	mat_peptide
+			product	hypothetical glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+424	928	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features NC_021242.1
+17	6274	gene
+			locus_tag	vigor_L
+			gene	L
+17	6274	CDS
+			codon_start	1
+			protein_id	NC_021242.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features KC589007.1
+38	781	gene
+			locus_tag	vigor_N
+			gene	N
+38	781	CDS
+			codon_start	1
+			protein_id	KC589007.1.1
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+1858	908	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+1858	908	CDS
+			codon_start	1
+			protein_id	KC589007.1.2
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+>Features JN572089.1
+58	1506	gene
+			locus_tag	vigor_N
+			gene	N
+58	1506	CDS
+			codon_start	1
+			protein_id	JN572089.1.1
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+>Features JN572085.1
+94	5148	gene
+			locus_tag	vigor_M
+			gene	M
+94	5148	CDS
+			codon_start	1
+			protein_id	JN572085.1.1
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features JN572085.1.1
+1	18	sig_peptide
+			locus_tag	vigor_M
+			gene	M
+19	515	mat_peptide
+			product	mucin-like variable region
+			locus_tag	vigor_M
+			gene	M
+516	1037	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+1038	1684	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+>Features JN572091.1
+78	11915	gene
+			locus_tag	vigor_L
+			gene	L
+78	11915	CDS
+			codon_start	1
+			protein_id	JN572091.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features JN572088.1
+56	1504	gene
+			locus_tag	vigor_N
+			gene	N
+56	1504	CDS
+			codon_start	1
+			protein_id	JN572088.1.1
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+>Features JN572083.1
+42	5096	gene
+			locus_tag	vigor_M
+			gene	M
+42	5096	CDS
+			codon_start	1
+			protein_id	JN572083.1.1
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features JN572083.1.1
+1	18	sig_peptide
+			locus_tag	vigor_M
+			gene	M
+19	515	mat_peptide
+			product	mucin-like variable region
+			locus_tag	vigor_M
+			gene	M
+516	1037	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+1038	1684	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+>Features JN572090.1
+78	11915	gene
+			locus_tag	vigor_L
+			gene	L
+78	11915	CDS
+			codon_start	1
+			protein_id	JN572090.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features JN572086.1
+93	5147	gene
+			locus_tag	vigor_M
+			gene	M
+93	5147	CDS
+			codon_start	1
+			protein_id	JN572086.1.1
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features JN572086.1.1
+1	18	sig_peptide
+			locus_tag	vigor_M
+			gene	M
+19	515	mat_peptide
+			product	mucin-like variable region
+			locus_tag	vigor_M
+			gene	M
+516	1037	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+1038	1684	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+>Features KC344855.1
+79	11916	gene
+			locus_tag	vigor_L
+			gene	L
+79	11916	CDS
+			codon_start	1
+			protein_id	KC344855.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features JX908640.1
+56	1504	gene
+			locus_tag	vigor_N
+			gene	N
+56	1504	CDS
+			codon_start	1
+			protein_id	JX908640.1.1
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+>Features KC344856.1
+93	5147	gene
+			locus_tag	vigor_M
+			gene	M
+93	5147	CDS
+			codon_start	1
+			protein_id	KC344856.1.1
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features KC344856.1.1
+19	515	mat_peptide
+			product	mucin-like variable region
+			locus_tag	vigor_M
+			gene	M
+516	1037	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+1038	1684	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+>Features NC_018138.1
+19	3240	gene
+			locus_tag	vigor_M
+			gene	M
+19	3240	CDS
+			codon_start	1
+			protein_id	NC_018138.1.1
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features NC_018138.1.1
+1	19	sig_peptide
+			locus_tag	vigor_M
+			gene	M
+20	535	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+563	1073	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features NC_018137.1
+43	780	gene
+			locus_tag	vigor_N
+			gene	N
+43	780	CDS
+			codon_start	1
+			protein_id	NC_018137.1.1
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+1716	835	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+1716	835	CDS
+			codon_start	1
+			protein_id	NC_018137.1.2
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+>Features NC_018136.1
+17	6271	gene
+			locus_tag	vigor_L
+			gene	L
+17	6271	CDS
+			codon_start	1
+			protein_id	NC_018136.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features JQ684873.1
+29	910	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+29	910	CDS
+			codon_start	1
+			protein_id	JQ684873.1.1
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+1702	965	gene
+			locus_tag	vigor_N
+			gene	N
+1702	965	CDS
+			codon_start	1
+			protein_id	JQ684873.1.2
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+>Features JQ684872.1
+19	3240	gene
+			locus_tag	vigor_M
+			gene	M
+19	3240	CDS
+			codon_start	1
+			protein_id	JQ684872.1.1
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features JQ684872.1.1
+1	19	sig_peptide
+			locus_tag	vigor_M
+			gene	M
+20	535	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+563	1073	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features JQ684871.1
+17	6271	gene
+			locus_tag	vigor_L
+			gene	L
+17	6271	CDS
+			codon_start	1
+			protein_id	JQ684871.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features KF887434.1
+29	910	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+29	910	CDS
+			codon_start	1
+			protein_id	KF887434.1.1
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+1702	965	gene
+			locus_tag	vigor_N
+			gene	N
+1702	965	CDS
+			codon_start	1
+			protein_id	KF887434.1.2
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+>Features KF887439.1
+19	3240	gene
+			locus_tag	vigor_M
+			gene	M
+19	3240	CDS
+			codon_start	1
+			protein_id	KF887439.1.1
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features KF887439.1.1
+1	19	sig_peptide
+			locus_tag	vigor_M
+			gene	M
+20	535	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+563	1073	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features KF887444.1
+17	6271	gene
+			locus_tag	vigor_L
+			gene	L
+17	6271	CDS
+			codon_start	1
+			protein_id	KF887444.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features NC_014395.1
+35	832	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+35	832	CDS
+			codon_start	1
+			protein_id	NC_014395.1.1
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+1652	915	gene
+			locus_tag	vigor_N
+			gene	N
+1652	915	CDS
+			codon_start	1
+			protein_id	NC_014395.1.2
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+>Features NC_014397.1
+19	6297	gene
+			locus_tag	vigor_L
+			gene	L
+19	6297	CDS
+			codon_start	1
+			protein_id	NC_014397.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features NC_014396.1
+21	3614	gene
+			locus_tag	vigor_M
+			gene	M
+21	3614	CDS
+			codon_start	1
+			protein_id	NC_014396.1.1
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features NC_014396.1.1
+1	16	sig_peptide
+			locus_tag	vigor_M
+			gene	M
+17	153	mat_peptide
+			product	non-structural protein NSm
+			locus_tag	vigor_M
+			gene	M
+154	690	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+691	1197	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features KX632068.1
+38	775	gene
+			locus_tag	vigor_N
+			gene	N
+38	775	CDS
+			codon_start	1
+			protein_id	KX632068.1.1
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+1656	859	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+1656	859	CDS
+			codon_start	1
+			protein_id	KX632068.1.2
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+>Features KX632067.1
+21	3614	gene
+			locus_tag	vigor_M
+			gene	M
+21	3614	CDS
+			codon_start	1
+			protein_id	KX632067.1.1
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features KX632067.1.1
+1	16	sig_peptide
+			locus_tag	vigor_M
+			gene	M
+17	153	mat_peptide
+			product	non-structural protein NSm
+			locus_tag	vigor_M
+			gene	M
+154	690	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+691	1197	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features KX632066.1
+17	6295	gene
+			locus_tag	vigor_L
+			gene	L
+17	6295	CDS
+			codon_start	1
+			protein_id	KX632066.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features KX096941.1
+19	6297	gene
+			locus_tag	vigor_L
+			gene	L
+19	6297	CDS
+			codon_start	1
+			protein_id	KX096941.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features KX096942.1
+21	3614	gene
+			locus_tag	vigor_M
+			gene	M
+21	3614	CDS
+			codon_start	1
+			protein_id	KX096942.1.1
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features KX096942.1.1
+1	16	sig_peptide
+			locus_tag	vigor_M
+			gene	M
+17	153	mat_peptide
+			product	non-structural protein NSm
+			locus_tag	vigor_M
+			gene	M
+154	690	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+691	1197	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features KX096943.1
+35	832	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+35	832	CDS
+			codon_start	1
+			protein_id	KX096943.1.1
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+1652	915	gene
+			locus_tag	vigor_N
+			gene	N
+1652	915	CDS
+			codon_start	1
+			protein_id	KX096943.1.2
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+>Features KX078567.1
+67	1386	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+67	1386	CDS
+			codon_start	1
+			protein_id	KX078567.1.1
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+3562	2735	gene
+			locus_tag	vigor_N
+			gene	N
+3562	2735	CDS
+			codon_start	1
+			protein_id	KX078567.1.2
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+>Features KX078566.1
+58	984	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+58	984	CDS
+			codon_start	1
+			protein_id	KX078566.1.1
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+4812	1447	gene
+			locus_tag	vigor_M
+			gene	M
+4812	1447	CDS
+			codon_start	1
+			protein_id	KX078566.1.2
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features KX078566.1.2
+1	24	sig_peptide
+			locus_tag	vigor_M
+			gene	M
+25	456	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+457	1121	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features KX078565.1
+8881	248	gene
+			locus_tag	vigor_L
+			gene	L
+8881	248	CDS
+			codon_start	1
+			protein_id	KX078565.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features KM589495.1
+67	1386	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+67	1386	CDS
+			codon_start	1
+			protein_id	KM589495.1.1
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+3877	3050	gene
+			locus_tag	vigor_N
+			gene	N
+3877	3050	CDS
+			codon_start	1
+			protein_id	KM589495.1.2
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+>Features KM589494.1
+58	984	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+58	984	CDS
+			codon_start	1
+			protein_id	KM589494.1.1
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+4799	1434	gene
+			locus_tag	vigor_M
+			gene	M
+4799	1434	CDS
+			codon_start	1
+			protein_id	KM589494.1.2
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features KM589494.1.2
+1	24	sig_peptide
+			locus_tag	vigor_M
+			gene	M
+25	456	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+457	1121	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features KM589493.1
+8881	248	gene
+			locus_tag	vigor_L
+			gene	L
+8881	248	CDS
+			codon_start	1
+			protein_id	KM589493.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features NC_015413.1
+42	782	gene
+			locus_tag	vigor_N
+			gene	N
+42	782	CDS
+			codon_start	1
+			protein_id	NC_015413.1.1
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+1741	938	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+1741	938	CDS
+			codon_start	1
+			protein_id	NC_015413.1.2
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+>Features NC_015412.1
+22	6294	gene
+			locus_tag	vigor_L
+			gene	L
+22	6294	CDS
+			codon_start	1
+			protein_id	NC_015412.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features NC_015411.1
+21	4046	gene
+			locus_tag	vigor_M
+			gene	M
+21	4046	CDS
+			codon_start	1
+			protein_id	NC_015411.1.1
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features NC_015411.1.1
+1	20	sig_peptide
+			locus_tag	vigor_M
+			gene	M
+294	834	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+835	1341	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features NC_022039.1
+>Features NC_022038.1
+>Features NC_022037.1
+31	549	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+31	549	CDS
+			codon_start	1
+			protein_id	NC_022037.1.1
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+>Features KC854418.1
+>Features KC854417.1
+>Features KC854416.1
+31	549	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+31	549	CDS
+			codon_start	1
+			protein_id	KC854416.1.1
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+>Features HM566172.1
+19	6306	gene
+			locus_tag	vigor_L
+			gene	L
+19	6306	CDS
+			codon_start	1
+			protein_id	HM566172.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features HM566171.1
+18	3989	gene
+			locus_tag	vigor_M
+			gene	M
+18	3989	CDS
+			codon_start	1
+			protein_id	HM566171.1.1
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features HM566171.1.1
+1	19	sig_peptide
+			locus_tag	vigor_M
+			gene	M
+20	271	mat_peptide
+			product	hypothetical mature peptide
+			locus_tag	vigor_M
+			gene	M
+272	820	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+821	1323	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features HM566170.1
+56	985	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+56	985	CDS
+			codon_start	1
+			protein_id	HM566170.1.1
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+1808	1047	gene
+			locus_tag	vigor_N
+			gene	N
+1808	1047	CDS
+			codon_start	1
+			protein_id	HM566170.1.2
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+>Features HM566169.1
+18	3890	gene
+			locus_tag	vigor_M
+			gene	M
+18	3890	CDS
+			codon_start	1
+			protein_id	HM566169.1.1
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features HM566169.1.1
+1	243	mat_peptide
+			product	hypothetical non-structural protein NSm
+			locus_tag	vigor_M
+			gene	M
+244	785	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+786	1290	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features HM566168.1
+42	776	gene
+			locus_tag	vigor_N
+			gene	N
+42	776	CDS
+			codon_start	1
+			protein_id	HM566168.1.1
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+>Features HM566167.1
+21	6284	gene
+			locus_tag	vigor_L
+			gene	L
+21	6284	CDS
+			codon_start	1
+			protein_id	HM566167.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features NC_023635.1
+18	6299	gene
+			locus_tag	vigor_L
+			gene	L
+18	6299	CDS
+			codon_start	1
+			protein_id	NC_023635.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features NC_023633.1
+22	3654	gene
+			locus_tag	vigor_M
+			gene	M
+22	3654	CDS
+			codon_start	1
+			protein_id	NC_023633.1.1
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features NC_023633.1.1
+1	157	mat_peptide
+			product	hypothetical mature peptide
+			locus_tag	vigor_M
+			gene	M
+158	707	mat_peptide
+			product	hypothetical glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+708	1210	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features HM566145.1
+46	849	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+46	849	CDS
+			codon_start	1
+			protein_id	HM566145.1.1
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+1770	1036	gene
+			locus_tag	vigor_N
+			gene	N
+1770	1036	CDS
+			codon_start	1
+			protein_id	HM566145.1.2
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+>Features KJ782451.1
+1	6282	gene
+			locus_tag	vigor_L
+			gene	L
+1	6282	CDS
+			codon_start	1
+			protein_id	KJ782451.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features KJ782449.1
+45	848	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+45	848	CDS
+			codon_start	1
+			protein_id	KJ782449.1.1
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+1773	1039	gene
+			locus_tag	vigor_N
+			gene	N
+1773	1039	CDS
+			codon_start	1
+			protein_id	KJ782449.1.2
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+>Features KJ782450.1
+1	>3560	gene
+			locus_tag	vigor_M
+			gene	M
+1	>3560	CDS
+			codon_start	1
+			protein_id	KJ782450.1.1
+			locus_tag	vigor_M
+			gene	M
+			product	putative M polyprotein, N-terminal
+
+>Features KJ782450.1.1
+1	157	mat_peptide
+			product	hypothetical mature peptide
+			locus_tag	vigor_M
+			gene	M
+158	707	mat_peptide
+			product	hypothetical glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+708	>1186	mat_peptide
+			product	putative glycoprotein G2, N-terminal
+			locus_tag	vigor_M
+			gene	M
+>Features NC_015452.1
+36	866	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+36	866	CDS
+			codon_start	1
+			protein_id	NC_015452.1.1
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+1778	1041	gene
+			locus_tag	vigor_N
+			gene	N
+1778	1041	CDS
+			codon_start	1
+			protein_id	NC_015452.1.2
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+>Features NC_015451.1
+20	6277	gene
+			locus_tag	vigor_L
+			gene	L
+20	6277	CDS
+			codon_start	1
+			protein_id	NC_015451.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features NC_015450.1
+24	3986	gene
+			locus_tag	vigor_M
+			gene	M
+24	3986	CDS
+			codon_start	1
+			protein_id	NC_015450.1.1
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features NC_015450.1.1
+1	15	sig_peptide
+			locus_tag	vigor_M
+			gene	M
+16	259	mat_peptide
+			product	hypothetical non-structural protein NSm
+			locus_tag	vigor_M
+			gene	M
+285	816	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+817	1320	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features HM566137.1
+24	3986	gene
+			locus_tag	vigor_M
+			gene	M
+24	3986	CDS
+			codon_start	1
+			protein_id	HM566137.1.1
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features HM566137.1.1
+1	15	sig_peptide
+			locus_tag	vigor_M
+			gene	M
+16	259	mat_peptide
+			product	hypothetical non-structural protein NSm
+			locus_tag	vigor_M
+			gene	M
+285	816	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+817	1320	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features HM566138.1
+20	6277	gene
+			locus_tag	vigor_L
+			gene	L
+20	6277	CDS
+			codon_start	1
+			protein_id	HM566138.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features HM566139.1
+36	866	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+36	866	CDS
+			codon_start	1
+			protein_id	HM566139.1.1
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+1778	1041	gene
+			locus_tag	vigor_N
+			gene	N
+1778	1041	CDS
+			codon_start	1
+			protein_id	HM566139.1.2
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+>Features HQ661807.1
+36	866	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+36	866	CDS
+			codon_start	1
+			protein_id	HQ661807.1.1
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+1783	1046	gene
+			locus_tag	vigor_N
+			gene	N
+1783	1046	CDS
+			codon_start	1
+			protein_id	HQ661807.1.2
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+>Features HQ661806.1
+23	3952	gene
+			locus_tag	vigor_M
+			gene	M
+23	3952	CDS
+			codon_start	1
+			protein_id	HQ661806.1.1
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features HQ661806.1.1
+16	259	mat_peptide
+			product	hypothetical non-structural protein NSm
+			locus_tag	vigor_M
+			gene	M
+284	805	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+806	1309	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features HQ661805.1
+20	6277	gene
+			locus_tag	vigor_L
+			gene	L
+20	6277	CDS
+			codon_start	1
+			protein_id	HQ661805.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features HM566157.1
+24	3986	gene
+			locus_tag	vigor_M
+			gene	M
+24	3986	CDS
+			codon_start	1
+			protein_id	HM566157.1.1
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features HM566157.1.1
+16	259	mat_peptide
+			product	hypothetical non-structural protein NSm
+			locus_tag	vigor_M
+			gene	M
+294	816	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+817	1320	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features HM566156.1
+37	867	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+37	867	CDS
+			codon_start	1
+			protein_id	HM566156.1.1
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+1782	1045	gene
+			locus_tag	vigor_N
+			gene	N
+1782	1045	CDS
+			codon_start	1
+			protein_id	HM566156.1.2
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+>Features HM566155.1
+20	6277	gene
+			locus_tag	vigor_L
+			gene	L
+20	6277	CDS
+			codon_start	1
+			protein_id	HM566155.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features HM566141.1
+23	3952	gene
+			locus_tag	vigor_M
+			gene	M
+23	3952	CDS
+			codon_start	1
+			protein_id	HM566141.1.1
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features HM566141.1.1
+16	259	mat_peptide
+			product	hypothetical non-structural protein NSm
+			locus_tag	vigor_M
+			gene	M
+284	805	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+806	1309	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features HM566140.1
+20	6277	gene
+			locus_tag	vigor_L
+			gene	L
+20	6277	CDS
+			codon_start	1
+			protein_id	HM566140.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features HM566163.1
+23	3952	gene
+			locus_tag	vigor_M
+			gene	M
+23	3952	CDS
+			codon_start	1
+			protein_id	HM566163.1.1
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features HM566163.1.1
+16	259	mat_peptide
+			product	hypothetical non-structural protein NSm
+			locus_tag	vigor_M
+			gene	M
+275	805	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+806	1309	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features NC_015469.1
+8842	218	gene
+			locus_tag	vigor_L
+			gene	L
+8842	218	CDS
+			codon_start	1
+			protein_id	NC_015469.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features NC_015468.1
+100	1011	gene
+			locus_tag	vigor_NSm
+			gene	NSm
+100	1011	CDS
+			codon_start	1
+			protein_id	NC_015468.1.1
+			locus_tag	vigor_NSm
+			gene	NSm
+			product	non-structural movement protein
+4764	1360	gene
+			locus_tag	vigor_M
+			gene	M
+4764	1360	CDS
+			codon_start	1
+			protein_id	NC_015468.1.2
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features NC_015468.1.2
+1	35	sig_peptide
+			locus_tag	vigor_M
+			gene	M
+36	483	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+484	1134	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features NC_015467.1
+88	1491	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+88	1491	CDS
+			codon_start	1
+			protein_id	NC_015467.1.1
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+2916	2140	gene
+			locus_tag	vigor_N
+			gene	N
+2916	2140	CDS
+			codon_start	1
+			protein_id	NC_015467.1.2
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein
+>Features KX711615.1
+8886	274	gene
+			locus_tag	vigor_L
+			gene	L
+8886	274	CDS
+			codon_start	1
+			protein_id	KX711615.1.1
+			locus_tag	vigor_L
+			gene	L
+			product	RNA-dependent RNA polymerase L
+>Features KX711614.1
+59	985	gene
+			locus_tag	vigor_NSm
+			gene	NSm
+59	985	CDS
+			codon_start	1
+			protein_id	KX711614.1.1
+			locus_tag	vigor_NSm
+			gene	NSm
+			product	non-structural movement protein
+4867	1484	gene
+			locus_tag	vigor_M
+			gene	M
+4867	1484	CDS
+			codon_start	1
+			protein_id	KX711614.1.2
+			locus_tag	vigor_M
+			gene	M
+			product	M polyprotein
+
+>Features KX711614.1.2
+1	24	sig_peptide
+			locus_tag	vigor_M
+			gene	M
+25	462	mat_peptide
+			product	glycoprotein G1
+			locus_tag	vigor_M
+			gene	M
+463	1127	mat_peptide
+			product	glycoprotein G2
+			locus_tag	vigor_M
+			gene	M
+>Features KX711613.1
+69	1478	gene
+			locus_tag	vigor_NSs
+			gene	NSs
+69	1478	CDS
+			codon_start	1
+			protein_id	KX711613.1.1
+			locus_tag	vigor_NSs
+			gene	NSs
+			product	non-structural silencing protein
+3150	2311	gene
+			locus_tag	vigor_N
+			gene	N
+3150	2311	CDS
+			codon_start	1
+			protein_id	KX711613.1.2
+			locus_tag	vigor_N
+			gene	N
+			product	nucleocapsid protein

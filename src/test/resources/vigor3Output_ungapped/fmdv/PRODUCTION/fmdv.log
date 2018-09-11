@@ -1,0 +1,120 @@
+2018-09-07 00:01:31
+
+parameters
+	bl2seq_extend_hsp	25
+	bl2seq_extend_span	50
+	candidate_blastopts	-p blastx -M BLOSUM62 -e 1E-5 -F F -z 3000000 -v 0 -b 10
+	candidate_evalue	
+	candidate_overlap_threshold	0.8
+	candidate_refdb	
+	command_line	/opt/www/vigor/vigor3/prod3/VIGOR3.pl -D fmdv -O /usr/local/scratch/CORE/snettem/fmdv/PRODUCTION/fmdv -i /opt/www/vigor/vigor3/regr_testing/fmdv.ungapped.fasta
+	default_gene_optional	0
+	default_gene_required	0
+	default_gene_variation	1
+	frameshift_sensitivity	1
+	gene_variations	
+	jcvi_rules	1
+	mature_pep_mincoverage	50
+	mature_pep_minidentity	25
+	mature_pep_minsimilarity	40
+	mature_pep_refdb	../data3/virus_mp
+	max_intron_size	7000
+	min_candidate_pctsimilarity	60
+	min_candidate_sbjcoverage	33
+	min_exon_size	3
+	min_intron_size	30
+	min_pseudogene_coverage	80
+	min_pseudogene_identity	70
+	min_pseudogene_similarity	80
+	noncanonical_splicing_genes	
+	optional_genes	
+	reference_db	/opt/www/vigor/vigor3/data3/fmdv_db
+	reference_dbsize	7004
+	required_genes	
+	ribosomal_slippage_genes	
+	rna_editing_genes	
+	selectivity	0.985
+	slippage_frameshift	-1
+	slippage_motif	[NT][NT][NT]AAAC
+	slippage_offset	0
+	spliced_genes	
+	splicesite_extend_range	0
+	tile_overlap	1000000
+	tile_size	10000000
+	use_locus_tags	1
+	variation	0.975
+	verbose	0
+	vigorspace	/opt/www/vigor/vigor3/prod3/vigorscratch/409106.368738325
+
+
+genomic sequence KY446903.1, length=8154
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 3 permutations for gene POL
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AY593829.1        2332   1-2332         1   1051-8046      1   1  0  N   94.6   97.2   100.0  0        POL | polyprotein
+    AY593839          2339   1-2339         1   1051-8046      1   1  0  N   79.2   87.2   100.0  0        POL | polyprotein
+    AY593752.1        2333   1-2333         1   1051-8046      1   1  0  N   91.6   95.1   100.0  0        POL | polyprotein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KY446903.1               8154      1            0       6999           2332           94.7             98.4          100.0   fmdv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KY446903.1.1       94.7   98.4   100.0  0.0   0.0   0.0   1051..8049       2332   2332   AY593829.1        POL | polyprotein
+
+
+genomic sequence KY446902.1, length=8186
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 3 permutations for gene POL
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AY593829.1        2332   1-2332         1   1083-8081      1   3  0  N   91.0   94.6   100.0  0        POL | polyprotein
+    AY593839          2339   1-2339         1   1083-8081      1   3  0  N   79.1   87.3   100.0  0        POL | polyprotein
+    AY593752.1        2333   1-2333         1   1083-8081      1   3  0  N   94.7   97.1   100.0  0        POL | polyprotein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KY446902.1               8186      1            0       7002           2333           94.7             98.6          100.0   fmdv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KY446902.1.1       94.7   98.6   100.0  0.0   0.0   0.0   1083..8084       2333   2333   AY593752.1        POL | polyprotein
+
+
+genomic sequence HQ268509.2, length=8204
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 3 permutations for gene POL
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AY593829.1        2332   1-2332         1   1094-8089      1   2  0  N   89.5   93.7   100.0  0        POL | polyprotein
+    AY593839          2339   1-2339         1   1094-8089      1   2  0  N   78.4   86.9   100.0  0        POL | polyprotein
+    AY593752.1        2333   1-2333         1   1094-8089      1   2  0  N   93.7   96.5   100.0  0        POL | polyprotein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+HQ268509.2               8204      1            0       6999           2332           93.7             98.3          100.0   fmdv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+HQ268509.2.1       93.7   98.3   100.0  0.0   0.0   0.0   1094..8092       2332   2333   AY593752.1        POL | polyprotein
+
+
+genomic sequence HQ268524.1, length=8197
+Use of uninitialized value $candidate_selection in numeric eq (==) at /opt/www/vigor/vigor3/prod3/VIGOR3.pm line 1456.
+
+    found 3 permutations for gene POL
+    subject_id        sbjlen subject_range  ori query_range    hsp qf fs gap %id    %sim   %cov   evalue   subject definition
+    AY593829.1        2332   1-2332         1   1091-8086      1   2  0  N   94.9   97.4   100.0  0        POL | polyprotein
+    AY593839          2339   1-2339         1   1091-8086      1   2  0  N   79.1   87.2   100.0  0        POL | polyprotein
+    AY593752.1        2333   1-2333         1   1091-8086      1   2  0  N   91.8   95.1   100.0  0        POL | polyprotein
+        found 1 gene
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+HQ268524.1               8197      1            0       6999           2332           94.9             98.9          100.0   fmdv_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+HQ268524.1.1       94.9   98.9   100.0  0.0   0.0   0.0   1091..8089       2332   2332   AY593829.1        POL | polyprotein
+

@@ -1,0 +1,40 @@
+>Features KY446903.1
+1051	8049	gene
+			locus_tag	vigor_POL
+			gene	POL
+1051	8049	CDS
+			codon_start	1
+			protein_id	KY446903.1.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	polyprotein
+>Features KY446902.1
+1083	8084	gene
+			locus_tag	vigor_POL
+			gene	POL
+1083	8084	CDS
+			codon_start	1
+			protein_id	KY446902.1.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	polyprotein
+>Features HQ268509.2
+1094	8092	gene
+			locus_tag	vigor_POL
+			gene	POL
+1094	8092	CDS
+			codon_start	1
+			protein_id	HQ268509.2.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	polyprotein
+>Features HQ268524.1
+1091	8089	gene
+			locus_tag	vigor_POL
+			gene	POL
+1091	8089	CDS
+			codon_start	1
+			protein_id	HQ268524.1.1
+			locus_tag	vigor_POL
+			gene	POL
+			product	polyprotein

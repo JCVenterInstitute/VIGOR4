@@ -1,0 +1,36 @@
+gi|564131295|gb|KF668605.1|	cov_g1a_db	<7..8073	AFG19738.1	Pp1ab	putative ORF1ab polyprotein, C-terminal	T5	12024
+gi|30271926|ref|NC_004718.3|	cov_g1a_db	<13395..21485	AFG19738.1	Pp1ab	putative ORF1ab polyprotein, C-terminal	T5	12024
+gi|30271926|ref|NC_004718.3|	cov_g1a_db	26117..26347	ABK79900.1	E	envelope protein	OK	
+gi|384038902|gb|JN634064.1|	cov_g1a_db	313..12168	AAY32595.1	Pp1a	ORF1a polyprotein	OK	
+gi|384038902|gb|JN634064.1|	cov_g1a_db	313..12138,12138..20168	AAY32594.1	Pp1ab	ORF1ab polyprotein	OK	
+gi|384038902|gb|JN634064.1|	cov_g1a_db	20165..24517	AFG19742.1	S	spike protein	OK	
+gi|384038902|gb|JN634064.1|	cov_g1a_db	24602..24817	ADB10850.1	NS3a	non-structural protein 3a	OK	
+gi|384038902|gb|JN634064.1|	cov_g1a_db	24762..24995	AFG19740.1	NS3b	non-structural protein 3b	ES	24927..24929
+gi|384038902|gb|JN634064.1|	cov_g1a_db	24762..24995	AFG19740.1	NS3b	non-structural protein 3b	ES	24930..24932
+gi|384038902|gb|JN634064.1|	cov_g1a_db	25014..25652	AEE69325.1	NS3c	non-structural protein 3c	C5	
+gi|384038902|gb|JN634064.1|	cov_g1a_db	25719..25928	AFG19731.1	E	envelope protein	C5	
+gi|384038902|gb|JN634064.1|	cov_g1a_db	25939..26565,26565..26729	YP_004070198.1	M	membrane protein	FS	26565..26565,+1=>+3
+gi|384038902|gb|JN634064.1|	cov_g1a_db	26742..27872	ADL71503.1	N	nucleocapsid protein	OK	
+gi|384038902|gb|JN634064.1|	cov_g1a_db	27877..28182	YP_004070200.1	NS7a	non-structural protein 7a	OK	
+gi|384038902|gb|JN634064.1|	cov_g1a_db	28187..28690	ADL71505.1	NS7b	non-structural protein 7b	ES	28610..28612
+gi|384038902|gb|JN634064.1|	cov_g1a_db	28187..28690	ADL71505.1	NS7b	non-structural protein 7b	ES	28658..28660
+gi|509265008|gb|KC189944.1|	cov_g1a_db	293..12622	AEK25519.1	Pp1a	ORF1a polyprotein	OK	
+gi|509265008|gb|KC189944.1|	cov_g1a_db	293..12592,12592..20613	AEK25520.1	Pp1ab	ORF1ab polyprotein	OK	
+gi|509265008|gb|KC189944.1|	cov_g1a_db	21237..24758	ADL71466.1	S	spike protein	OK	
+gi|509265008|gb|KC189944.1|	cov_g1a_db	25364..25594	AAQ17223.1	E	envelope protein	OK	
+gi|343781332|gb|HM776941.1|	cov_g1a_db	314..4990,4990..7818,7818..11279,11279..12364	AFG19736.1	Pp1a	ORF1a polyprotein	FS	4990..4990,+2=>+1
+gi|343781332|gb|HM776941.1|	cov_g1a_db	314..4990,4990..7818,7818..11279,11279..12364	AFG19736.1	Pp1a	ORF1a polyprotein	FS	7818..7818,+1=>+3
+gi|343781332|gb|HM776941.1|	cov_g1a_db	314..4990,4990..7818,7818..11279,11279..12364	AFG19736.1	Pp1a	ORF1a polyprotein	FS	11279..11279,+3=>+2
+gi|343781332|gb|HM776941.1|	cov_g1a_db	314..4990,4990..7818,7818..11279,11279..12334,12334..20364	AFG19738.1	Pp1ab	ORF1ab polyprotein	FS	4990..4990,+2=>+1
+gi|343781332|gb|HM776941.1|	cov_g1a_db	314..4990,4990..7818,7818..11279,11279..12334,12334..20364	AFG19738.1	Pp1ab	ORF1ab polyprotein	FS	7818..7818,+1=>+3
+gi|343781332|gb|HM776941.1|	cov_g1a_db	314..4990,4990..7818,7818..11279,11279..12334,12334..20364	AFG19738.1	Pp1ab	ORF1ab polyprotein	FS	11279..11279,+3=>+2
+gi|343781332|gb|HM776941.1|	cov_g1a_db	20990..24703	ACT10927.2	S	spike protein	OK	
+gi|343781332|gb|HM776941.1|	cov_g1a_db	24822..24866,24866..25036	ADB10850.1	NS3a	non-structural protein 3a	FS	24866..24866,+3=>+2
+gi|343781332|gb|HM776941.1|	cov_g1a_db	24981..25133	AFG19740.1	NS3b	non-structural protein 3b	ES	25026..25028
+gi|343781332|gb|HM776941.1|	cov_g1a_db	25130..25864	ADB28910.1	NS3c	non-structural protein 3c	OK	
+gi|343781332|gb|HM776941.1|	cov_g1a_db	25851..26099	AFG19743.1	E	envelope protein	OK	
+gi|343781332|gb|HM776941.1|	cov_g1a_db	26110..26898	AEE69327.1	M	membrane protein	OK	
+gi|343781332|gb|HM776941.1|	cov_g1a_db	26911..28059	AFG19745.1	N	nucleocapsid protein	OK	
+gi|343781332|gb|HM776941.1|	cov_g1a_db	28065..28301	AFG19746.1	NS7a	non-structural protein 7a	OK	
+gi|564131295|gb|KF668605.1|	cov_g1a_db	<1..1467	ADO39826.1	Pp1a	putative ORF1a polyprotein, C-terminal	T5	10707
+gi|564131295|gb|KF668605.1|	cov_g1a_db	<1..1437,1437..9500	AFG19738.1	Pp1ab	putative ORF1ab polyprotein, C-terminal	T5	10677

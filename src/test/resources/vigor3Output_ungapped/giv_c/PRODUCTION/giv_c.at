@@ -1,0 +1,44 @@
+NC_006307.1	fluc_db	1..2325	Seg1prot1A	PB2	polymerase PB2	OK	
+NC_006308.1	fluc_db	1..2265	Seg2prot1A	PB1	polymerase PB1	OK	
+NC_006309.1	fluc_db	1..2130	Seg3prot1A	PA	polymerase PA	OK	
+NC_006310.1	fluc_db	1..1968	Seg4prot1A	HE	hemagglutinin-esterase	OK	
+NC_006311.1	fluc_db	30..1727	Seg5prot1A	NP	nucleoprotein	OK	
+NC_006312.1	fluc_db	1..723,957..957	Seg6prot1A	CM1	CM1 protein	OK	
+NC_006312.1	fluc_db	706..1125	Seg6prot2A	CM2 protein	CM2 protein	OK	
+NC_006306.2	fluc_db	27..767	Seg7prot1A	NS1	non-structural protein 1	OK	
+NC_006306.2	fluc_db	27..213,527..888	Seg7prot2A	NS2	non-structural protein 2	OK	
+LC123362.1	fluc_db	1..2325	Seg1prot1A	PB2	polymerase PB2	OK	
+LC123566.1	fluc_db	1..2130	Seg3prot1A	PA	polymerase PA	OK	
+LC123464.1	fluc_db	1..2265	Seg2prot1A	PB1	polymerase PB1	OK	
+LC123792.1	fluc_db	1..1698	Seg5prot1A	NP	nucleoprotein	OK	
+LC123860.1	fluc_db	1..723,957..957	Seg6prot1A	CM1	CM1 protein	OK	
+LC123860.1	fluc_db	706..1125	Seg6prot2A	CM2 protein	CM2 protein	OK	
+LC125024.1	fluc_db	1..741	Seg7prot1A	NS1	non-structural protein 1	OK	
+LC125024.1	fluc_db	1..187,501..862	Seg7prot2A	NS2	non-structural protein 2	OK	
+LC123382.1	fluc_db	1..2325	Seg1prot1A	PB2	polymerase PB2	OK	
+LC123484.1	fluc_db	1..2265	Seg2prot1A	PB1	polymerase PB1	OK	
+LC123586.1	fluc_db	1..2130	Seg3prot1A	PA	polymerase PA	OK	
+LC123812.1	fluc_db	1..1698	Seg5prot1A	NP	nucleoprotein	OK	
+LC123880.1	fluc_db	1..723,957..957	Seg6prot1A	CM1	CM1 protein	OK	
+LC123880.1	fluc_db	706..1125	Seg6prot2A	CM2 protein	CM2 protein	OK	
+LC125044.1	fluc_db	1..741	Seg7prot1A	NS1	non-structural protein 1	OK	
+LC125044.1	fluc_db	1..187,501..862	Seg7prot2A	NS2	non-structural protein 2	OK	
+LC123299.1	fluc_db	1..2325	Seg1prot1A	PB2	polymerase PB2	OK	
+LC123401.1	fluc_db	1..2265	Seg2prot1A	PB1	polymerase PB1	OK	
+AB000720.1	fluc_db	4..726,960..960	Seg6prot1A	CM1	CM1 protein	OK	
+AB000720.1	fluc_db	709..1128	Seg6prot2A	CM2 protein	CM2 protein	OK	
+LC123503.1	fluc_db	1..2130	Seg3prot1A	PA	polymerase PA	OK	
+LC123735.1	fluc_db	1..1698	Seg5prot1A	NP	nucleoprotein	OK	
+LC124982.1	fluc_db	1..741	Seg7prot1A	NS1	non-structural protein 1	OK	
+LC124982.1	fluc_db	1..187,501..862	Seg7prot2A	NS2	non-structural protein 2	OK	
+D30697.1	fluc_db	<1..1950	Seg4prot1A	HE	putative hemagglutinin-esterase, C-terminal	T5	18
+AB000727.1	fluc_db	5..727,961..961	Seg6prot1A	CM1	CM1 protein	OK	
+AB000727.1	fluc_db	710..1129	Seg6prot2A	CM2 protein	CM2 protein	OK	
+D63469.1	fluc_db	<1..1959	Seg4prot1A	HE	putative hemagglutinin-esterase, C-terminal	T5	9
+D16259.1	fluc_db	14..736,970..970	Seg6prot1A	CM1	CM1 protein	OK	
+D16259.1	fluc_db	719..1138	Seg6prot2A	CM2 protein	CM2 protein	OK	
+LC123392.1	fluc_db	1..2265	Seg2prot1A	PB1	polymerase PB1	OK	
+LC123290.1	fluc_db	1..2325	Seg1prot1A	PB2	polymerase PB2	OK	
+LC123728.1	fluc_db	1..1698	Seg5prot1A	NP	nucleoprotein	OK	
+LC123494.1	fluc_db	1..2130	Seg3prot1A	PA	polymerase PA	OK	
+CY239467.1	fluc_db	5..1972	Seg4prot1A	HE	hemagglutinin-esterase	OK	

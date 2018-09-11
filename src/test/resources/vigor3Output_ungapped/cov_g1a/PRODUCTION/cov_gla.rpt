@@ -1,0 +1,269 @@
+2018-09-10 10:39:06
+
+
+parameters
+	bl2seq_extend_hsp	25
+	bl2seq_extend_span	50
+	candidate_blastopts	-p blastx -M BLOSUM62 -e 1E-5 -v 0 -F \"\" -z 3000000 -b 1000
+	candidate_evalue	
+	candidate_overlap_threshold	0.8
+	candidate_refdb	
+	command_line	/opt/www/vigor/vigor3/prod3/VIGOR3.pl -i /opt/www/vigor/vigor3/regr_testing/cov_g1a.ungapped.fasta -d cov_g1a_db -o /usr/local/scratch/CORE/snettem/cov_g1a/cov_gla
+	default_gene_optional	0
+	default_gene_required	0
+	default_gene_variation	1
+	frameshift_sensitivity	1
+	gene_variations	
+	jcvi_rules	1
+	mature_pep_mincoverage	50
+	mature_pep_minidentity	25
+	mature_pep_minsimilarity	40
+	mature_pep_refdb	../data3/virus_mp
+	max_intron_size	7000
+	min_candidate_pctsimilarity	55
+	min_candidate_sbjcoverage	33
+	min_exon_size	3
+	min_intron_size	30
+	min_pseudogene_coverage	80
+	min_pseudogene_identity	60
+	min_pseudogene_similarity	65
+	noncanonical_splicing_genes	
+	optional_genes	
+	reference_db	/opt/www/vigor/vigor3/data3/cov_g1a_db
+	reference_dbsize	336565
+	required_genes	
+	ribosomal_slippage_genes	
+	rna_editing_genes	
+	selectivity	0.985
+	slippage_frameshift	-1
+	slippage_motif	[NT][NT][NT][NA][NA][NA][NC]
+	slippage_offset	0
+	spliced_genes	
+	splicesite_extend_range	0
+	tile_overlap	1000000
+	tile_size	10000000
+	use_locus_tags	1
+	variation	0.975
+	verbose	0
+	vigorspace	/opt/www/vigor/vigor3/prod3/vigorscratch/416368.033810617
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|564131295|gb|KF66    15344      1            0       8067           2688           53.3             79.3           40.0   cov_g1a_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_564131295.1     53.3   79.3   40.0   60.0  0.0   0.0   <7..8073         2688   6685   AFG19738.1        Pp1ab | putative ORF1ab polyprotein, C-terminal
+gi_564131295.1.1   58.1   81.9   99.0   1.0   0.0   0.0   <7..2787         927    929    gb_AAY32594.1_12  putative RNA-directed RNA polymerase nsp12,
+                                                                                                           C-terminal
+gi_564131295.1.2   61.5   84.1   98.8   0.0   0.0   1.2   2788..4578       597    601    P0C6W5_MP12       Helicase nsp13
+gi_564131295.1.3   50.8   78.4   100.0  0.0   0.0   0.0   4579..6150       524    518    ABE97129_14       Exoribonuclease nsp14
+gi_564131295.1.4   38.1   70.3   100.0  0.0   0.0   0.0   6151..7164       338    339    sp_Q98VG9_15      Uridylate-specific endoribonuclease nsp15
+gi_564131295.1.5   55.1   80.9   99.7   0.3   0.0   0.0   7165..8070       302    300    ABE97129_16       2'-O-methyl transferase nsp16
+
+
+dropping pseudogene gi_30271926.3, fails match requirements: %id 32.9 < 60
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_30271926.3      32.9   65.4   80.6   19.4  0.0   0.0   26443..27063     206    263    ACR10373.1        M | membrane protein
+                    could not find valid start codon
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|30271926|ref|NC_0    29751      2            0       8322           2772           55.3             80.2           40.7   cov_g1a_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_30271926.1      55.7   80.4   40.0   60.0  0.0   0.0   <13395..21485    2696   6685   AFG19738.1        Pp1ab | putative ORF1ab polyprotein, C-terminal
+gi_30271926.1.1    58.7   83.7   99.2   0.8   0.0   0.0   <13395..16166    924    927    sp_P0C6X1_12      putative RNA-directed RNA polymerase nsp12,
+                                                                                                           C-terminal
+gi_30271926.1.2    100.0  100.0  100.0  0.0   0.0   0.0   16167..17969     601    601    NP_828870.1       Helicase nsp13
+gi_30271926.1.3    53.3   78.1   100.0  0.0   0.0   0.0   17970..19550     527    519    sp_Q98VG9_14      Exoribonuclease nsp14
+gi_30271926.1.4    44.9   70.2   100.0  0.0   0.0   0.0   19551..20591     347    344    ABE97129_15       Uridylate-specific endoribonuclease nsp15
+gi_30271926.1.5    57.5   82.9   99.7   0.0   0.0   0.3   20592..21482     297    300    sp_P0C6X5_16      2'-O-methyl transferase nsp16
+gi_30271926.2      24.7   64.8   98.8   1.2   0.0   0.0   26117..26347     76     82     ABK79900.1        E | envelope protein
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|384038902|gb|JN63    28984      6            5      37719          12567           94.3             98.2          100.0   cov_g1a_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_384038902.1     92.6   97.8   100.0  0.0   0.0   0.0   313..12168       3951   3965   AAY32595.1        Pp1a | ORF1a polyprotein
+gi_384038902.1.11  84.2   98.7   100.0  0.0   0.0   0.0   12109..12165     19     19     sp_Q98VG9_11      nsp11
+gi_384038902.2     95.1   98.5   100.0  0.0   0.0   0.0   313..12138       6618   6632   AAY32594.1        Pp1ab | ORF1ab polyprotein
+                                                          12138..20168                                     
+gi_384038902.2.1   96.4   99.3   100.0  0.0   0.0   0.0   313..642         110    110    sp_Q98VG9_1       nsp1
+gi_384038902.2.2   95.7   99.1   100.0  0.0   0.0   0.0   643..2949        769    769    sp_Q98VG9_2       nsp2
+gi_384038902.2.3   84.2   91.6   100.0  0.0   0.0   0.0   2950..7278       1443   1534   sp_Q98VG9_3       nsp3
+gi_384038902.2.4   93.9   98.8   100.0  0.0   0.0   0.0   7279..8748       490    490    sp_Q98VG9_4       nsp4
+gi_384038902.2.5   98.0   99.6   100.0  0.0   0.0   0.0   8749..9654       302    302    sp_Q98VG9_5       3C-like proteinase nsp5
+gi_384038902.2.6   95.2   98.4   100.0  0.0   0.0   0.0   9655..10536      294    294    sp_Q98VG9_6       nsp6
+gi_384038902.2.7   98.8   99.7   100.0  0.0   0.0   0.0   10537..10785     83     83     sp_Q98VG9_7       nsp7
+gi_384038902.2.8   99.0   100.0  100.0  0.0   0.0   0.0   10786..11370     195    195    sp_Q98VG9_8       nsp8
+gi_384038902.2.9   98.2   99.1   100.0  0.0   0.0   0.0   11371..11703     111    111    sp_Q98VG9_9       nsp9
+gi_384038902.2.10  97.8   99.8   100.0  0.0   0.0   0.0   11704..12108     135    135    gb_ABI14447.1_10  nsp10
+gi_384038902.2.11  97.5   99.4   100.0  0.0   0.0   0.0   12109..12138     929    929    gb_AAY32594.1_12  RNA-directed RNA polymerase nsp12
+                                                          12138..14894                                     
+gi_384038902.2.12  99.7   100.0  100.0  0.0   0.0   0.0   14895..16691     599    599    sp_Q98VG9_13      Helicase nsp13
+gi_384038902.2.13  99.8   100.0  100.0  0.0   0.0   0.0   16692..18248     519    519    sp_Q98VG9_14      Exoribonuclease nsp14
+gi_384038902.2.14  98.2   99.6   100.0  0.0   0.0   0.0   18249..19265     339    339    sp_Q98VG9_15      Uridylate-specific endoribonuclease nsp15
+gi_384038902.2.15  99.3   99.9   100.0  0.0   0.0   0.0   19266..20165     300    300    sp_Q98VG9_16      2'-O-methyl transferase nsp16
+gi_384038902.3     95.4   98.1   100.0  0.0   0.0   0.0   20165..24517     1450   1454   AFG19742.1        S | spike protein
+gi_384038902.4     97.2   98.6   100.0  0.0   0.0   0.0   24602..24817     71     71     ADB10850.1        NS3a | non-structural protein 3a
+gi_384038902.5     68.0   75.0   97.2   0.0   2.8   0.0   24762..24995     77     71     AFG19740.1        NS3b | non-structural protein 3b
+                    stop codons embedded in CDS at 24927..24929 and 24930..24932
+gi_384038902.6     98.1   99.5   86.9   7.8   0.0   5.3   25014..25652     212    244    AEE69325.1        NS3c | non-structural protein 3c
+                    could not find valid start codon
+gi_384038902.7     100.0  100.0  84.1   15.9  0.0   0.0   25719..25928     69     82     AFG19731.1        E | envelope protein
+                    could not find valid start codon
+gi_384038902.8     92.0   96.8   100.0  0.0   0.0   0.0   25939..26565     263    262    YP_004070198.1    M | membrane protein
+                                                          26565..26729                                     
+                    frameshift in genome at or near position 26565..26565 (+1=>+3)
+gi_384038902.9     93.6   97.6   100.0  0.0   0.0   0.0   26742..27872     376    377    ADL71503.1        N | nucleocapsid protein
+gi_384038902.10    97.0   98.0   100.0  0.0   0.0   0.0   27877..28182     101    101    YP_004070200.1    NS7a | non-structural protein 7a
+gi_384038902.11    62.6   71.7   99.5   0.0   0.0   0.5   28187..28690     167    206    ADL71505.1        NS7b | non-structural protein 7b
+                    stop codons embedded in CDS at 28610..28612 and 28658..28660
+
+
+dropping pseudogene gi_509265008.4, fails match requirements: %id 41.7 < 60, %cov 49.8 < 80
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_509265008.4     41.7   67.1   49.8   46.8  0.0   3.4   25042..25383     113    237    ACY69068.1        NS3c | non-structural protein 3c
+                    could not find valid start codon
+
+dropping pseudogene gi_509265008.6, fails match requirements: %id 54.6 < 60
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_509265008.6     54.6   86.0   83.1   16.9  0.0   0.0   25629..26282     217    261    AEQ61972.1        M | membrane protein
+                    could not find valid start codon
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|509265008|gb|KC18    27953      4            0      36405          12131           47.2             72.9          100.0   cov_g1a_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_509265008.1     39.4   67.0   100.0  0.0   0.0   0.0   293..12622       4109   4025   AEK25519.1        Pp1a | ORF1a polyprotein
+gi_509265008.1.10  66.7   81.9   94.7   5.3   0.0   0.0   12569..12619     17     19     sp_Q98VG9_11      nsp11
+gi_509265008.2     52.5   76.3   100.0  0.0   0.0   0.0   293..12592       6773   6692   AEK25520.1        Pp1ab | ORF1ab polyprotein
+                                                          12592..20613                                     
+gi_509265008.2.1   25.9   59.6   99.7   0.0   0.0   0.3   626..2971        782    769    gb_ABI14447.1_2   nsp2
+gi_509265008.2.2   30.8   56.9   99.2   0.0   0.0   0.8   2972..7792       1607   1534   sp_Q98VG9_3       nsp3
+gi_509265008.2.3   47.7   78.2   100.0  0.0   0.0   0.0   7793..9259       489    490    gb_ABI14447.1_4   nsp4
+gi_509265008.2.4   68.9   90.4   100.0  0.0   0.0   0.0   9260..10165      302    302    sp_P0C6X1_5       3C-like proteinase nsp5
+gi_509265008.2.5   37.8   67.0   100.0  0.0   0.0   0.0   10166..11005     280    294    gb_ABI14447.1_6   nsp6
+gi_509265008.2.6   80.7   95.8   100.0  0.0   0.0   0.0   11006..11254     83     83     ABE97129_7        nsp7
+gi_509265008.2.7   70.3   90.8   100.0  0.0   0.0   0.0   11255..11839     195    195    sp_P0C6X1_8       nsp8
+gi_509265008.2.8   72.5   96.8   100.0  0.0   0.0   0.0   11840..12163     108    109    sp_P0C6X5_9       nsp9
+gi_509265008.2.9   73.3   92.2   100.0  0.0   0.0   0.0   12164..12568     135    135    sp_P0C6X5_10      nsp10
+gi_509265008.2.10  79.2   93.7   100.0  0.0   0.0   0.0   12569..12592     927    927    sp_P0C6X5_12      RNA-directed RNA polymerase nsp12
+                                                          12592..15348                                     
+gi_509265008.2.11  83.8   95.8   100.0  0.0   0.0   0.0   15349..17139     597    597    sp_P0C6X5_13      Helicase nsp13
+gi_509265008.2.12  76.8   92.1   100.0  0.0   0.0   0.0   17140..18690     517    518    sp_P0C6X1_14      Exoribonuclease nsp14
+gi_509265008.2.13  71.2   90.2   100.0  0.0   0.0   0.0   18691..19707     339    344    sp_P0C6X5_15      Uridylate-specific endoribonuclease nsp15
+gi_509265008.2.14  78.1   94.8   100.0  0.0   0.0   0.0   19708..20610     301    300    sp_P0C6X1_16      2'-O-methyl transferase nsp16
+gi_509265008.3     44.9   73.6   100.0  0.0   0.0   0.0   21237..24758     1173   1200   ADL71466.1        S | spike protein
+gi_509265008.4     28.6   77.3   93.9   6.1   0.0   0.0   25364..25594     76     82     AAQ17223.1        E | envelope protein
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|343781332|gb|HM77    28580      6            4       6873           2285           69.2             85.8          100.0   cov_g1a_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_343781332.1     94.7   98.3   100.0  0.0   0.0   0.0   314..4990        4017   4017   AFG19736.1        Pp1a | ORF1a polyprotein
+                                                          4990..7818                                       
+                                                          7818..11279                                      
+                                                          11279..12364                                     
+                    frameshifts in genome at or near positions 4990..4990 (+2=>+1), 7818..7818 (+1=>+3) and 11279..11279 (+3=>+2)
+gi_343781332.1.1   92.7   98.6   100.0  0.0   0.0   0.0   314..643         110    110    sp_Q98VG9_1       nsp1
+gi_343781332.1.2   79.1   95.0   100.0  0.0   0.0   0.0   644..2950        769    769    sp_Q98VG9_2       nsp2
+gi_343781332.1.3   76.9   90.6   100.0  0.0   0.0   0.0   2951..4990       1509   1534   sp_Q98VG9_3       nsp3
+                                                          4990..7476                                       
+gi_343781332.1.4   87.1   97.0   100.0  0.0   0.0   0.0   7477..7818       490    490    gb_ABI14447.1_4   nsp4
+                                                          7818..8945                                       
+gi_343781332.1.5   93.7   98.8   100.0  0.0   0.0   0.0   8946..9851       302    302    gb_ABI14447.1_5   3C-like proteinase nsp5
+gi_343781332.1.6   76.9   95.7   100.0  0.0   0.0   0.0   9852..10733      294    294    gb_ABI14447.1_6   nsp6
+gi_343781332.1.7   96.4   98.8   100.0  0.0   0.0   0.0   10734..10982     83     83     sp_Q98VG9_7       nsp7
+gi_343781332.1.8   92.3   98.3   100.0  0.0   0.0   0.0   10983..11279     195    195    sp_Q98VG9_8       nsp8
+                                                          11279..11566                                     
+gi_343781332.1.9   91.0   99.5   100.0  0.0   0.0   0.0   11567..11899     111    111    gb_ABI14447.1_9   nsp9
+gi_343781332.1.10  95.6   99.6   100.0  0.0   0.0   0.0   11900..12304     135    135    gb_ABI14447.1_10  nsp10
+gi_343781332.1.11  84.2   93.4   100.0  0.0   0.0   0.0   12305..12361     19     19     sp_Q98VG9_11      nsp11
+gi_343781332.2     96.3   98.9   100.0  0.0   0.0   0.0   314..4990        6684   6685   AFG19738.1        Pp1ab | ORF1ab polyprotein
+                                                          4990..7818                                       
+                                                          7818..11279                                      
+                                                          11279..12334                                     
+                                                          12334..20364                                     
+                    frameshifts in genome at or near positions 4990..4990 (+2=>+1), 7818..7818 (+1=>+3) and 11279..11279 (+3=>+2)
+gi_343781332.2.1   92.7   98.6   100.0  0.0   0.0   0.0   314..643         110    110    sp_Q98VG9_1       nsp1
+gi_343781332.2.2   79.1   95.0   100.0  0.0   0.0   0.0   644..2950        769    769    sp_Q98VG9_2       nsp2
+gi_343781332.2.3   76.9   90.6   100.0  0.0   0.0   0.0   2951..4990       1509   1534   sp_Q98VG9_3       nsp3
+                                                          4990..7476                                       
+gi_343781332.2.4   87.1   97.0   100.0  0.0   0.0   0.0   7477..7818       490    490    gb_ABI14447.1_4   nsp4
+                                                          7818..8945                                       
+gi_343781332.2.5   93.7   98.8   100.0  0.0   0.0   0.0   8946..9851       302    302    gb_ABI14447.1_5   3C-like proteinase nsp5
+gi_343781332.2.6   76.9   95.7   100.0  0.0   0.0   0.0   9852..10733      294    294    gb_ABI14447.1_6   nsp6
+gi_343781332.2.7   96.4   98.8   100.0  0.0   0.0   0.0   10734..10982     83     83     sp_Q98VG9_7       nsp7
+gi_343781332.2.8   92.3   98.3   100.0  0.0   0.0   0.0   10983..11279     195    195    sp_Q98VG9_8       nsp8
+                                                          11279..11566                                     
+gi_343781332.2.9   91.0   99.5   100.0  0.0   0.0   0.0   11567..11899     111    111    gb_ABI14447.1_9   nsp9
+gi_343781332.2.10  95.6   99.6   100.0  0.0   0.0   0.0   11900..12304     135    135    gb_ABI14447.1_10  nsp10
+gi_343781332.2.11  97.5   99.4   100.0  0.0   0.0   0.0   12305..12334     929    929    gb_AAY32594.1_12  RNA-directed RNA polymerase nsp12
+                                                          12334..15090                                     
+gi_343781332.2.12  98.8   99.8   100.0  0.0   0.0   0.0   15091..16887     599    599    sp_Q98VG9_13      Helicase nsp13
+gi_343781332.2.13  99.2   100.0  100.0  0.0   0.0   0.0   16888..18444     519    519    sp_Q98VG9_14      Exoribonuclease nsp14
+gi_343781332.2.14  98.2   99.6   100.0  0.0   0.0   0.0   18445..19461     339    339    sp_Q98VG9_15      Uridylate-specific endoribonuclease nsp15
+gi_343781332.2.15  97.7   99.8   100.0  0.0   0.0   0.0   19462..20361     300    300    sp_Q98VG9_16      2'-O-methyl transferase nsp16
+gi_343781332.3     48.3   76.2   100.0  0.0   0.0   0.0   20990..24703     1237   1232   ACT10927.2        S | spike protein
+gi_343781332.4     91.5   93.0   100.0  0.0   0.0   0.0   24822..24866     71     71     ADB10850.1        NS3a | non-structural protein 3a
+                                                          24866..25036                                     
+                    frameshift in genome at or near position 24866..24866 (+3=>+2)
+gi_343781332.5     63.4   68.3   100.0  0.0   0.0   0.0   24981..25133     50     71     AFG19740.1        NS3b | non-structural protein 3b
+                    stop codon embedded in CDS at 25026..25028
+gi_343781332.6     95.5   98.8   100.0  0.0   0.0   0.0   25130..25864     244    244    ADB28910.1        NS3c | non-structural protein 3c
+gi_343781332.7     95.1   97.0   100.0  0.0   0.0   0.0   25851..26099     82     82     AFG19743.1        E | envelope protein
+gi_343781332.8     94.7   99.4   100.0  0.0   0.0   0.0   26110..26898     262    262    AEE69327.1        M | membrane protein
+gi_343781332.9     95.5   99.0   100.0  0.0   0.0   0.0   26911..28059     382    382    AFG19745.1        N | nucleocapsid protein
+gi_343781332.10    74.3   77.2   100.0  0.0   0.0   0.0   28065..28301     78     101    AFG19746.1        NS7a | non-structural protein 7a
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|564131295|gb|KF66    16771      2            0      10968           3654           47.6             74.9           33.5   cov_g1a_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_564131295.1     41.5   69.9   11.4   88.6  0.0   0.0   <1..1467         488    4028   ADO39826.1        Pp1a | putative ORF1a polyprotein, C-terminal
+gi_564131295.2     51.3   77.9   46.8   53.2  0.0   0.0   <1..1437         3166   6685   AFG19738.1        Pp1ab | putative ORF1ab polyprotein, C-terminal
+                                                          1437..9500                                       
+gi_564131295.2.1   39.5   72.4   99.5   0.5   0.0   0.0   <1..609          203    195    sp_Q98VG9_8       putative nsp8, C-terminal
+gi_564131295.2.2   32.2   59.7   100.0  0.0   0.0   0.0   610..960         117    111    gb_ABI14447.1_9   nsp9
+gi_564131295.2.3   50.0   72.0   100.0  0.0   0.0   0.0   961..1380        140    135    sp_P0C6X5_10      nsp10
+gi_564131295.2.4   57.5   81.3   100.0  0.0   0.0   0.0   1381..1437       945    929    gb_AAY32594.1_12  RNA-directed RNA polymerase nsp12
+                                                          1437..4214                                       
+gi_564131295.2.5   61.5   84.1   98.8   0.0   0.0   1.2   4215..6005       597    601    P0C6W5_MP12       Helicase nsp13
+gi_564131295.2.6   50.8   78.4   100.0  0.0   0.0   0.0   6006..7577       524    518    sp_P0C6X5_14      Exoribonuclease nsp14
+gi_564131295.2.7   38.1   70.3   100.0  0.0   0.0   0.0   7578..8591       338    339    sp_Q98VG9_15      Uridylate-specific endoribonuclease nsp15
+gi_564131295.2.8   55.1   80.9   99.7   0.3   0.0   0.0   8592..9497       302    300    sp_P0C6X5_16      2'-O-methyl transferase nsp16
+
+
+dropping pseudogene gi_597503885.1, fails match requirements: %id 56.9 < 60
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_597503885.1     56.9   80.7   40.0   60.0  0.0   0.0   <13207..19701    2697   6698   ACT10905.1        Pp1ab | putative ORF1ab polyprotein, C-terminal
+                                                          19700..21298                                     
+                    frameshift in genome at or near position 19701..19700 (+1=>+2)
+gi_597503885.1.1   60.6   82.6   99.4   0.6   0.0   0.0   <13207..15993    929    929    gb_AAY32594.1_12  putative RNA-directed RNA polymerase nsp12,
+                                                                                                           C-terminal
+gi_597503885.1.2   94.0   98.8   100.0  0.0   0.0   0.0   15994..17787     598    598    NC_009020_nsp13   Helicase nsp13
+gi_597503885.1.3   54.2   77.4   99.6   0.2   0.0   0.2   17788..19365     526    519    sp_Q98VG9_14      Exoribonuclease nsp14
+gi_597503885.1.4   49.4   73.6   99.4   0.6   0.0   0.0   19366..19701     342    344    sp_P0C6X5_15      Uridylate-specific endoribonuclease nsp15
+                                                          19700..20389                                     
+gi_597503885.1.5   55.9   81.9   100.0  0.0   0.0   0.0   20390..21295     302    300    sp_P0C6X5_16      2'-O-methyl transferase nsp16
+
+dropping pseudogene gi_597503885.2, fails match requirements: %id 39.3 < 60
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_597503885.2     39.3   67.2   80.5   19.1  0.0   0.4   27682..28296     204    262    AEE69327.1        M | membrane protein
+                    could not find valid start codon
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|597503885|gb|KJ55    29890      0            0          0              0              -                -              -   cov_g1a_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+

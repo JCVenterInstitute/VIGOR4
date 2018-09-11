@@ -1,0 +1,47 @@
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|10937870|ref|NC_0    15462      8            0      16191           5389          100.0            100.0          100.0   hpiv3_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_10937870.1      100.0  100.0  100.0  0.0   0.0   0.0   111..1658        515    515    NP_067148.1       N | nucleoprotein
+gi_10937870.2      100.0  100.0  100.0  0.0   0.0   0.0   1784..2903       373    373    NP_599250.1       D | D protein
+                    transcription exception 2500..2506:AAAAGGGGG
+gi_10937870.3      100.0  100.0  100.0  0.0   0.0   0.0   1784..3595       603    603    NP_067149.1       P | phosphoprotein
+gi_10937870.4      100.0  100.0  100.0  0.0   0.0   0.0   1794..2393       199    199    NP_599251.1       C | C protein
+gi_10937870.5      100.0  100.0  100.0  0.0   0.0   0.0   3753..4814       353    353    NP_067150.1       M | matrix protein
+gi_10937870.6      100.0  100.0  100.0  0.0   0.0   0.0   5072..6691       539    539    tr|O89236|O89236_ F | fusion glycoprotein F0
+gi_10937870.7      100.0  100.0  100.0  0.0   0.0   0.0   6806..8530       574    574    NP_067152.1       HN | hemagglutinin neuraminidase
+gi_10937870.8      100.0  100.0  100.0  0.0   0.0   0.0   8646..15347      2233   2233   NP_067153.2       L | RNA-directed RNA polymerase L
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|312618595|gb|HM58    15462      8            0      16182           5386          100.0            100.0          100.0   hpiv3_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_312618595.1     100.0  100.0  100.0  0.0   0.0   0.0   111..1658        515    515    ADR00399.1        N | nucleoprotein
+gi_312618595.2     100.0  100.0  100.0  0.0   0.0   0.0   1784..2903       373    373    ADR00402.1        D | D protein
+                    transcription exception 2500..2506:AAAAGGGGG
+gi_312618595.3     100.0  100.0  100.0  0.0   0.0   0.0   1784..3592       602    602    ADR00400.1        P | phosphoprotein
+gi_312618595.4     100.0  100.0  100.0  0.0   0.0   0.0   1794..2393       199    199    ADR00401.1        C | C protein
+gi_312618595.5     100.0  100.0  100.0  0.0   0.0   0.0   3753..4814       353    353    ADR00403.1        M | matrix protein
+gi_312618595.6     100.0  100.0  100.0  0.0   0.0   0.0   5072..6691       539    539    ADR00404.1        F | fusion glycoprotein F0
+gi_312618595.7     100.0  100.0  100.0  0.0   0.0   0.0   6806..8524       572    572    ADR00405.1        HN | hemagglutinin neuraminidase
+gi_312618595.8     100.0  100.0  100.0  0.0   0.0   0.0   8646..15347      2233   2233   ADR00406.1        L | RNA-directed RNA polymerase L
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+gi|163866863|gb|EU32    15462      8            0      16185           5387           99.4             99.7          100.0   hpiv3_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+gi_163866863.1     100.0  100.0  100.0  0.0   0.0   0.0   111..1658        515    515    ABY47602.1        N | nucleoprotein
+gi_163866863.2     92.0   96.0   100.0  0.0   0.0   0.0   1784..2903       373    373    ADR00402.1        D | D protein
+                    transcription exception 2500..2506:AAAAGGGGG
+gi_163866863.3     100.0  100.0  100.0  0.0   0.0   0.0   1784..3595       603    603    ABY47603.1        P | phosphoprotein
+gi_163866863.4     98.5   99.9   100.0  0.0   0.0   0.0   1794..2393       199    199    ABZ85670.1        C | C protein
+gi_163866863.5     100.0  100.0  100.0  0.0   0.0   0.0   3753..4814       353    353    tr|A9Z0P4|A9Z0P4_ M | matrix protein
+gi_163866863.6     100.0  100.0  100.0  0.0   0.0   0.0   5072..6691       539    539    ABY47605.1        F | fusion glycoprotein F0
+gi_163866863.7     100.0  100.0  100.0  0.0   0.0   0.0   6806..8524       572    572    ABY47606.1        HN | hemagglutinin neuraminidase
+gi_163866863.8     100.0  100.0  100.0  0.0   0.0   0.0   8646..15347      2233   2233   ABY47607.1        L | RNA-directed RNA polymerase L
+

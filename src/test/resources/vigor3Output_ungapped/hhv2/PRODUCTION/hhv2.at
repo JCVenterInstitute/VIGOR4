@@ -1,0 +1,385 @@
+NC_001798.2	hhv2_db	440..934,1089..1379	CAB06706.1	RL1	neurovirulence protein ICP34.5	OK	
+NC_001798.2	hhv2_db	2303..2377,2788..3463,3645..5395	AEV91397.2	RL2	ubiquitin E3 ligase ICP0	OK	
+NC_001798.2	hhv2_db	9463..10137	CAB06761.1	UL1	envelope glycoprotein L	OK	
+NC_001798.2	hhv2_db	10010..11014	NP_044471.2	UL2	uracil-DNA glycosylase	OK	
+NC_001798.2	hhv2_db	11069..11770	CAB06763.1	UL3	nuclear protein UL3	OK	
+NC_001798.2	hhv2_db	12575..11970	CAB06764.1	UL4	nuclear protein UL4	OK	
+NC_001798.2	hhv2_db	15286..17322	CAB06766.1	UL6	capsid portal protein	OK	
+NC_001798.2	hhv2_db	15287..12642	CAB06765.1	UL5	helicase-primase helicase subunit	OK	
+NC_001798.2	hhv2_db	17297..18187	CAB06767.1	UL7	tegument protein UL7	OK	
+NC_001798.2	hhv2_db	20703..18445	CAB06768.1	UL8	helicase-primase subunit	OK	
+NC_001798.2	hhv2_db	23247..24650	CAB06770.1	UL10	envelope glycoprotein M	OK	
+NC_001798.2	hhv2_db	23356..20753	CAB06769.2	UL9	DNA replication origin-binding helicase	OK	
+NC_001798.2	hhv2_db	25138..24848	CAB06771.1	UL11	myristylated tegument protein	OK	
+NC_001798.2	hhv2_db	26916..25054	CAB06772.1	UL12	deoxyribonuclease	OK	
+NC_001798.2	hhv2_db	28513..26957	CAB06773.1	UL13	tegument serine/threonine protein kinase	OK	
+NC_001798.2	hhv2_db	28926..28267	CAB06774.1	UL14	tegument protein UL14	OK	
+NC_001798.2	hhv2_db	29007..30035,33635..34810	CAB06775.1	UL15	DNA packaging terminase subunit 1	OK	
+NC_001798.2	hhv2_db	31299..30181	CAB06776.1	UL16	tegument protein UL16	OK	
+NC_001798.2	hhv2_db	33509..31401	CAB06741.1	UL17	DNA packaging tegument protein UL17	OK	
+NC_001798.2	hhv2_db	36109..35153	CAB06742.1	UL18	capsid triplex subunit 2	OK	
+NC_001798.2	hhv2_db	40610..36486	CAB06743.1	UL19	major capsid protein	OK	
+NC_001798.2	hhv2_db	41590..40922	CAB06744.1	UL20	envelope protein UL20	OK	
+NC_001798.2	hhv2_db	42239..43837	CAB06745.1	UL21	tegument protein UL21	OK	
+NC_001798.2	hhv2_db	46570..44054	CAB06746.1	UL22	envelope glycoprotein H	OK	
+NC_001798.2	hhv2_db	47941..48786	CAB06748.1	UL24	nuclear protein UL24	OK	
+NC_001798.2	hhv2_db	48039..46909	CAB06747.1	UL23	thymidine kinase	OK	
+NC_001798.2	hhv2_db	49074..50831	CAB06749.1	UL25	DNA packaging tegument protein UL25	OK	
+NC_001798.2	hhv2_db	51065..52978	CAB06750.1	UL26	capsid maturation protease	OK	
+NC_001798.2	hhv2_db	51989..52978	CAB06751.1	UL26.5	capsid scaffold protein	OK	
+NC_001798.2	hhv2_db	56152..53438	CAB06752.1	UL27	envelope glycoprotein B	OK	
+NC_001798.2	hhv2_db	58517..56160	CAB06753.1	UL28	DNA packaging terminase subunit 2	OK	
+NC_001798.2	hhv2_db	62482..58892	CAB06754.1	UL29	single-stranded DNA-binding protein	OK	
+NC_001798.2	hhv2_db	63300..67022	CAB06755.1	UL30	DNA polymerase catalytic subunit	OK	
+NC_001798.2	hhv2_db	67884..66967	CAB06756.1	UL31	nuclear egress lamina protein	OK	
+NC_001798.2	hhv2_db	69672..70064	CAB06758.1	UL33	DNA packaging protein UL33	OK	
+NC_001798.2	hhv2_db	69673..67877	CAB06757.1	UL32	DNA packaging protein UL32	OK	
+NC_001798.2	hhv2_db	70154..70984	CAB06720.1	UL34	nuclear egress membrane protein	OK	
+NC_001798.2	hhv2_db	71096..71434	CAB06721.1	UL35	small capsid protein	OK	
+NC_001798.2	hhv2_db	80969..71601	CAB06722.1	UL36	large tegument protein	OK	
+NC_001798.2	hhv2_db	84614..81270	CAB06723.1	UL37	tegument protein UL37	OK	
+NC_001798.2	hhv2_db	85097..86497	CAB06724.1	UL38	capsid triplex subunit 1	OK	
+NC_001798.2	hhv2_db	87060..90488	CAB06725.1	UL39	ribonucleotide reductase subunit 1	OK	
+NC_001798.2	hhv2_db	90541..91554	CAB06726.1	UL40	ribonucleotide reductase subunit 2	OK	
+NC_001798.2	hhv2_db	93311..91833	CAB06727.1	UL41	tegument host shutoff protein	OK	
+NC_001798.2	hhv2_db	93805..95217	CAB06728.1	UL42	DNA polymerase processivity subunit	OK	
+NC_001798.2	hhv2_db	95469..96713	CAB06729.1	UL43	envelope protein UL43	OK	
+NC_001798.2	hhv2_db	97015..98457	CAB06730.1	UL44	envelope glycoprotein C	OK	
+NC_001798.2	hhv2_db	98687..99205	CAB06731.1	UL45	membrane protein UL45	OK	
+NC_001798.2	hhv2_db	101634..99466	CAB06732.1	UL46	tegument protein VP11/12	OK	
+NC_001798.2	hhv2_db	103809..101719	CAB06733.1	UL47	tegument protein VP13/14	OK	
+NC_001798.2	hhv2_db	105802..104330	CAB06734.1	UL48	transactivating tegument protein VP16	OK	
+NC_001798.2	hhv2_db	107185..106283	CAB06735.1	UL49	tegument protein VP22	OK	
+NC_001798.2	hhv2_db	107787..107524	CAB06736.1	UL49A	envelope glycoprotein N	OK	
+NC_001798.2	hhv2_db	107795..108904	CAB06737.1	UL50	deoxyuridine triphosphatase	OK	
+NC_001798.2	hhv2_db	109842..109108	CAB06738.1	UL51	tegument protein UL51	OK	
+NC_001798.2	hhv2_db	109910..113110	CAB06739.1	UL52	helicase-primase primase subunit	OK	
+NC_001798.2	hhv2_db	113062..114078	CAB06740.1	UL53	envelope glycoprotein K	OK	
+NC_001798.2	hhv2_db	114624..116162	CAB06702.1	UL54	multifunctional expression regulator	OK	
+NC_001798.2	hhv2_db	116377..116937	CAB06703.1	UL55	nuclear protein UL55	OK	
+NC_001798.2	hhv2_db	117817..117110	CAB06704.1	UL56	membrane protein UL56	OK	
+NC_001798.2	hhv2_db	125018..124944,124533..123858,123676..121926	AEV91397.2	RL2-ii	ubiquitin E3 ligase ICP0	OK	
+NC_001798.2	hhv2_db	126881..126387,126232..125942	CAB06706.1	RL1-ii	neurovirulence protein ICP34.5	OK	
+NC_001798.2	hhv2_db	132102..128146	CAB06701.1	RS1	transcriptional regulator ICP4	OK	
+NC_001798.2	hhv2_db	133741..134985	CAB06708.1	US1	regulatory protein ICP22	OK	
+NC_001798.2	hhv2_db	136043..135168	CAB06709.1	US2	virion protein US2	OK	
+NC_001798.2	hhv2_db	136329..137774	CAB06710.1	US3	serine/threonine protein kinase US3	OK	
+NC_001798.2	hhv2_db	137882..139981	CAB06711.1	US4	envelope glycoprotein G	OK	
+NC_001798.2	hhv2_db	140291..140569	CAB06712.1	US5	envelope glycoprotein J	OK	
+NC_001798.2	hhv2_db	141016..142197	CAB06713.1	US6	envelope glycoprotein D	OK	
+NC_001798.2	hhv2_db	142399..143517	CAB06714.1	US7	envelope glycoprotein I	OK	
+NC_001798.2	hhv2_db	143840..145477	AHG54732.1	US8	envelope glycoprotein E	OK	
+NC_001798.2	hhv2_db	145326..145766	CAB06716.1	US8A	membrane protein US8A	OK	
+NC_001798.2	hhv2_db	145866..146135	CAB06717.1	US9	membrane protein US9	OK	
+NC_001798.2	hhv2_db	147531..146623	CAB06718.1	US10	virion protein US10	OK	
+NC_001798.2	hhv2_db	147697..147242	CAB06719.1	US11	tegument protein US11	OK	
+NC_001798.2	hhv2_db	148033..147773	CAB06700.1	US12	TAP transporter inhibitor ICP47	OK	
+NC_001798.2	hhv2_db	149640..153596	CAB06701.1	RS1-ii	transcriptional regulator ICP4	OK	
+MF564037.1	hhv2_db	1..468,566..856	CAB06706.1	RL1-ii	neurovirulence protein ICP34.5	IS	469..565
+MF564037.1	hhv2_db	1780..1854,2265..2939,3036..4784	AEV91397.2	RL2	ubiquitin E3 ligase ICP0	IS	2940..3035
+MF564037.1	hhv2_db	8697..9371	CAB06761.1	UL1	envelope glycoprotein L	OK	
+MF564037.1	hhv2_db	9244..10248	NP_044471.2	UL2	uracil-DNA glycosylase	OK	
+MF564037.1	hhv2_db	10303..11004	CAB06763.1	UL3	nuclear protein UL3	OK	
+MF564037.1	hhv2_db	11808..11203	CAB06764.1	UL4	nuclear protein UL4	OK	
+MF564037.1	hhv2_db	14519..16555	CAB06766.1	UL6	capsid portal protein	OK	
+MF564037.1	hhv2_db	14520..11875	CAB06765.1	UL5	helicase-primase helicase subunit	OK	
+MF564037.1	hhv2_db	16530..17420	CAB06767.1	UL7	tegument protein UL7	OK	
+MF564037.1	hhv2_db	19930..17678	CAB06768.1	UL8	helicase-primase subunit	OK	
+MF564037.1	hhv2_db	22474..23877	CAB06770.1	UL10	envelope glycoprotein M	OK	
+MF564037.1	hhv2_db	22583..19980	CAB06769.2	UL9	DNA replication origin-binding helicase	OK	
+MF564037.1	hhv2_db	24369..24079	AHG54674.1	UL11	myristylated tegument protein	OK	
+MF564037.1	hhv2_db	26147..24285	CAB06772.1	UL12	deoxyribonuclease	OK	
+MF564037.1	hhv2_db	27744..26188	CAB06773.1	UL13	tegument serine/threonine protein kinase	OK	
+MF564037.1	hhv2_db	28157..27498	CAB06774.1	UL14	tegument protein UL14	OK	
+MF564037.1	hhv2_db	28238..29266,32860..34035	CAB06775.1	UL15	DNA packaging terminase subunit 1	OK	
+MF564037.1	hhv2_db	30529..29411	CAB06776.1	UL16	tegument protein UL16	OK	
+MF564037.1	hhv2_db	32734..30629	CAB06741.1	UL17	DNA packaging tegument protein UL17	OK	
+MF564037.1	hhv2_db	35337..34381	CAB06742.1	UL18	capsid triplex subunit 2	OK	
+MF564037.1	hhv2_db	39840..35716	CAB06743.1	UL19	major capsid protein	OK	
+MF564037.1	hhv2_db	40821..40153	CAB06744.1	UL20	envelope protein UL20	OK	
+MF564037.1	hhv2_db	41471..43069	CAB06745.1	UL21	tegument protein UL21	OK	
+MF564037.1	hhv2_db	45804..43288	CAB06746.1	UL22	envelope glycoprotein H	OK	
+MF564037.1	hhv2_db	47175..48020	CAB06748.1	UL24	nuclear protein UL24	OK	
+MF564037.1	hhv2_db	47273..46143	CAB06747.1	UL23	thymidine kinase	OK	
+MF564037.1	hhv2_db	48299..50056	CAB06749.1	UL25	DNA packaging tegument protein UL25	OK	
+MF564037.1	hhv2_db	50289..52205	CAB06750.1	UL26	capsid maturation protease	OK	
+MF564037.1	hhv2_db	51216..52205	CAB06751.1	UL26.5	capsid scaffold protein	OK	
+MF564037.1	hhv2_db	55363..52658	CAB06752.1	UL27	envelope glycoprotein B	OK	
+MF564037.1	hhv2_db	57728..55371	CAB06753.1	UL28	DNA packaging terminase subunit 2	OK	
+MF564037.1	hhv2_db	61686..58099	CAB06754.1	UL29	single-stranded DNA-binding protein	OK	
+MF564037.1	hhv2_db	62503..66225	CAB06755.1	UL30	DNA polymerase catalytic subunit	OK	
+MF564037.1	hhv2_db	67087..66170	CAB06756.1	UL31	nuclear egress lamina protein	OK	
+MF564037.1	hhv2_db	68875..69267	CAB06758.1	UL33	DNA packaging protein UL33	OK	
+MF564037.1	hhv2_db	68876..67080	CAB06757.1	UL32	DNA packaging protein UL32	OK	
+MF564037.1	hhv2_db	69357..70187	CAB06720.1	UL34	nuclear egress membrane protein	OK	
+MF564037.1	hhv2_db	70299..70637	CAB06721.1	UL35	small capsid protein	OK	
+MF564037.1	hhv2_db	80172..70804	CAB06722.1	UL36	large tegument protein	OK	
+MF564037.1	hhv2_db	83818..80474	CAB06723.1	UL37	tegument protein UL37	OK	
+MF564037.1	hhv2_db	84307..85707	CAB06724.1	UL38	capsid triplex subunit 1	OK	
+MF564037.1	hhv2_db	86270..89704	CAB06725.1	UL39	ribonucleotide reductase subunit 1	OK	
+MF564037.1	hhv2_db	89757..90770	CAB06726.1	UL40	ribonucleotide reductase subunit 2	OK	
+MF564037.1	hhv2_db	92527..91049	CAB06727.1	UL41	tegument host shutoff protein	OK	
+MF564037.1	hhv2_db	93022..94434	CAB06728.1	UL42	DNA polymerase processivity subunit	OK	
+MF564037.1	hhv2_db	94683..95927	CAB06729.1	UL43	envelope protein UL43	OK	
+MF564037.1	hhv2_db	96229..97668	CAB06730.1	UL44	envelope glycoprotein C	OK	
+MF564037.1	hhv2_db	97898..98416	CAB06731.1	UL45	membrane protein UL45	OK	
+MF564037.1	hhv2_db	100835..98676	CAB06732.1	UL46	tegument protein VP11/12	OK	
+MF564037.1	hhv2_db	103010..100920	CAB06733.1	UL47	tegument protein VP13/14	OK	
+MF564037.1	hhv2_db	105002..103530	CAB06734.1	UL48	transactivating tegument protein VP16	OK	
+MF564037.1	hhv2_db	106372..105482	CAB06735.1	UL49	tegument protein VP22	OK	
+MF564037.1	hhv2_db	106974..106711	CAB06736.1	UL49A	envelope glycoprotein N	OK	
+MF564037.1	hhv2_db	106982..108091	CAB06737.1	UL50	deoxyuridine triphosphatase	OK	
+MF564037.1	hhv2_db	109032..108298	CAB06738.1	UL51	tegument protein UL51	OK	
+MF564037.1	hhv2_db	109100..112300	CAB06739.1	UL52	helicase-primase primase subunit	OK	
+MF564037.1	hhv2_db	112252..113268	CAB06740.1	UL53	envelope glycoprotein K	OK	
+MF564037.1	hhv2_db	113814..115352	CAB06702.1	UL54	multifunctional expression regulator	OK	
+MF564037.1	hhv2_db	115567..116127	CAB06703.1	UL55	nuclear protein UL55	OK	
+MF564037.1	hhv2_db	117007..116300	CAB06704.1	UL56	membrane protein UL56	OK	
+MF564037.1	hhv2_db	124100..124026,123618..122938,122833..121082	CAB06705.1	RL2-ii	ubiquitin E3 ligase ICP0	IS	122937..122834
+MF564037.1	hhv2_db	125936..125457,125314..125024	CAB06706.1	RL1	neurovirulence protein ICP34.5	OK	
+MF564037.1	hhv2_db	131143..127193	CAB06701.1	RS1	transcriptional regulator ICP4	OK	
+MF564037.1	hhv2_db	132775..134016	CAB06708.1	US1	regulatory protein ICP22	OK	
+MF564037.1	hhv2_db	135073..134198	CAB06709.1	US2	virion protein US2	OK	
+MF564037.1	hhv2_db	135358..136803	CAB06710.1	US3	serine/threonine protein kinase US3	OK	
+MF564037.1	hhv2_db	136911..139007	CAB06711.1	US4	envelope glycoprotein G	OK	
+MF564037.1	hhv2_db	139316..139594	CAB06712.1	US5	envelope glycoprotein J	OK	
+MF564037.1	hhv2_db	140032..141213	CAB06713.1	US6	envelope glycoprotein D	OK	
+MF564037.1	hhv2_db	141415..142533	CAB06714.1	US7	envelope glycoprotein I	OK	
+MF564037.1	hhv2_db	142851..144497	AHG54732.1	US8	envelope glycoprotein E	OK	
+MF564037.1	hhv2_db	144346..144786	CAB06716.1	US8A	membrane protein US8A	OK	
+MF564037.1	hhv2_db	144886..145155	CAB06717.1	US9	membrane protein US9	OK	
+MF564037.1	hhv2_db	146549..145641	CAB06718.1	US10	virion protein US10	OK	
+MF564037.1	hhv2_db	146715..146260	CAB06719.1	US11	tegument protein US11	OK	
+MF564037.1	hhv2_db	147051..146791	CAB06700.1	US12	TAP transporter inhibitor ICP47	OK	
+MF564037.1	hhv2_db	148643..152593	CAB06701.1	RS1-ii	transcriptional regulator ICP4	OK	
+MF564035.1	hhv2_db	1..468,608..898	CAB06706.1	RL1	neurovirulence protein ICP34.5	OK	
+MF564035.1	hhv2_db	1822..1896,2307..2981,3078..4826	AEV91397.2	RL2	ubiquitin E3 ligase ICP0	IS	2982..3077
+MF564035.1	hhv2_db	8749..9423	CAB06761.1	UL1	envelope glycoprotein L	OK	
+MF564035.1	hhv2_db	9296..10300	NP_044471.2	UL2	uracil-DNA glycosylase	OK	
+MF564035.1	hhv2_db	10355..11056	CAB06763.1	UL3	nuclear protein UL3	OK	
+MF564035.1	hhv2_db	11860..11255	CAB06764.1	UL4	nuclear protein UL4	OK	
+MF564035.1	hhv2_db	14571..16607	CAB06766.1	UL6	capsid portal protein	OK	
+MF564035.1	hhv2_db	14572..11927	CAB06765.1	UL5	helicase-primase helicase subunit	OK	
+MF564035.1	hhv2_db	16582..17472	CAB06767.1	UL7	tegument protein UL7	OK	
+MF564035.1	hhv2_db	19987..17729	CAB06768.1	UL8	helicase-primase subunit	OK	
+MF564035.1	hhv2_db	22531..23934	CAB06770.1	UL10	envelope glycoprotein M	OK	
+MF564035.1	hhv2_db	22640..20037	CAB06769.2	UL9	DNA replication origin-binding helicase	OK	
+MF564035.1	hhv2_db	24421..24131	AHG54674.1	UL11	myristylated tegument protein	OK	
+MF564035.1	hhv2_db	26199..24337	CAB06772.1	UL12	deoxyribonuclease	OK	
+MF564035.1	hhv2_db	27796..26240	CAB06773.1	UL13	tegument serine/threonine protein kinase	OK	
+MF564035.1	hhv2_db	28209..27550	CAB06774.1	UL14	tegument protein UL14	OK	
+MF564035.1	hhv2_db	28290..29318,32913..34088	CAB06775.1	UL15	DNA packaging terminase subunit 1	OK	
+MF564035.1	hhv2_db	30581..29463	CAB06776.1	UL16	tegument protein UL16	OK	
+MF564035.1	hhv2_db	32787..30682	CAB06741.1	UL17	DNA packaging tegument protein UL17	OK	
+MF564035.1	hhv2_db	35387..34431	CAB06742.1	UL18	capsid triplex subunit 2	OK	
+MF564035.1	hhv2_db	39887..35763	CAB06743.1	UL19	major capsid protein	OK	
+MF564035.1	hhv2_db	40868..40200	CAB06744.1	UL20	envelope protein UL20	OK	
+MF564035.1	hhv2_db	41517..43115	CAB06745.1	UL21	tegument protein UL21	OK	
+MF564035.1	hhv2_db	45851..43335	CAB06746.1	UL22	envelope glycoprotein H	OK	
+MF564035.1	hhv2_db	47222..48067	CAB06748.1	UL24	nuclear protein UL24	OK	
+MF564035.1	hhv2_db	47320..46190	CAB06747.1	UL23	thymidine kinase	OK	
+MF564035.1	hhv2_db	48347..50104	CAB06749.1	UL25	DNA packaging tegument protein UL25	OK	
+MF564035.1	hhv2_db	50334..52247	CAB06750.1	UL26	capsid maturation protease	OK	
+MF564035.1	hhv2_db	51258..52247	CAB06751.1	UL26.5	capsid scaffold protein	OK	
+MF564035.1	hhv2_db	55397..52692	CAB06752.1	UL27	envelope glycoprotein B	OK	
+MF564035.1	hhv2_db	57762..55405	CAB06753.1	UL28	DNA packaging terminase subunit 2	OK	
+MF564035.1	hhv2_db	61730..58140	CAB06754.1	UL29	single-stranded DNA-binding protein	OK	
+MF564035.1	hhv2_db	62547..66269	CAB06755.1	UL30	DNA polymerase catalytic subunit	OK	
+MF564035.1	hhv2_db	67131..66214	CAB06756.1	UL31	nuclear egress lamina protein	OK	
+MF564035.1	hhv2_db	68913..69305	CAB06758.1	UL33	DNA packaging protein UL33	OK	
+MF564035.1	hhv2_db	68914..67124	CAB06757.1	UL32	DNA packaging protein UL32	OK	
+MF564035.1	hhv2_db	69395..70219	CAB06720.1	UL34	nuclear egress membrane protein	OK	
+MF564035.1	hhv2_db	70331..70669	CAB06721.1	UL35	small capsid protein	OK	
+MF564035.1	hhv2_db	80203..70835	CAB06722.1	UL36	large tegument protein	OK	
+MF564035.1	hhv2_db	83850..80506	CAB06723.1	UL37	tegument protein UL37	OK	
+MF564035.1	hhv2_db	84330..85730	CAB06724.1	UL38	capsid triplex subunit 1	OK	
+MF564035.1	hhv2_db	86293..89727	CAB06725.1	UL39	ribonucleotide reductase subunit 1	OK	
+MF564035.1	hhv2_db	89780..90793	CAB06726.1	UL40	ribonucleotide reductase subunit 2	OK	
+MF564035.1	hhv2_db	92550..91072	CAB06727.1	UL41	tegument host shutoff protein	OK	
+MF564035.1	hhv2_db	93043..94455	CAB06728.1	UL42	DNA polymerase processivity subunit	OK	
+MF564035.1	hhv2_db	94705..95949	CAB06729.1	UL43	envelope protein UL43	OK	
+MF564035.1	hhv2_db	96251..97693	CAB06730.1	UL44	envelope glycoprotein C	OK	
+MF564035.1	hhv2_db	97923..98441	CAB06731.1	UL45	membrane protein UL45	OK	
+MF564035.1	hhv2_db	100854..98698	CAB06732.1	UL46	tegument protein VP11/12	OK	
+MF564035.1	hhv2_db	103029..100939	CAB06733.1	UL47	tegument protein VP13/14	OK	
+MF564035.1	hhv2_db	105020..103548	CAB06734.1	UL48	transactivating tegument protein VP16	OK	
+MF564035.1	hhv2_db	106403..105501	CAB06735.1	UL49	tegument protein VP22	OK	
+MF564035.1	hhv2_db	107006..106743	CAB06736.1	UL49A	envelope glycoprotein N	OK	
+MF564035.1	hhv2_db	107014..108123	CAB06737.1	UL50	deoxyuridine triphosphatase	OK	
+MF564035.1	hhv2_db	109064..108330	CAB06738.1	UL51	tegument protein UL51	OK	
+MF564035.1	hhv2_db	109132..112332	CAB06739.1	UL52	helicase-primase primase subunit	OK	
+MF564035.1	hhv2_db	112284..113300	CAB06740.1	UL53	envelope glycoprotein K	OK	
+MF564035.1	hhv2_db	113846..115384	CAB06702.1	UL54	multifunctional expression regulator	OK	
+MF564035.1	hhv2_db	115599..116159	CAB06703.1	UL55	nuclear protein UL55	OK	
+MF564035.1	hhv2_db	117039..116332	CAB06704.1	UL56	membrane protein UL56	OK	
+MF564035.1	hhv2_db	124098..124024,123616..122936,122820..121105	CAB06705.1	RL2-ii	ubiquitin E3 ligase ICP0	IS	122935..122821
+MF564035.1	hhv2_db	125934..125455,125312..125022	CAB06706.1	RL1-ii	neurovirulence protein ICP34.5	OK	
+MF564035.1	hhv2_db	131153..127197	CAB06701.1	RS1	transcriptional regulator ICP4	OK	
+MF564035.1	hhv2_db	132769..134013	CAB06708.1	US1	regulatory protein ICP22	OK	
+MF564035.1	hhv2_db	135070..134195	CAB06709.1	US2	virion protein US2	OK	
+MF564035.1	hhv2_db	135356..136801	CAB06710.1	US3	serine/threonine protein kinase US3	OK	
+MF564035.1	hhv2_db	136909..139005	CAB06711.1	US4	envelope glycoprotein G	OK	
+MF564035.1	hhv2_db	139315..139593	CAB06712.1	US5	envelope glycoprotein J	OK	
+MF564035.1	hhv2_db	140042..141223	CAB06713.1	US6	envelope glycoprotein D	OK	
+MF564035.1	hhv2_db	141425..142543	CAB06714.1	US7	envelope glycoprotein I	OK	
+MF564035.1	hhv2_db	142864..144510	AHG54732.1	US8	envelope glycoprotein E	OK	
+MF564035.1	hhv2_db	144359..144799	CAB06716.1	US8A	membrane protein US8A	OK	
+MF564035.1	hhv2_db	144899..145168	CAB06717.1	US9	membrane protein US9	OK	
+MF564035.1	hhv2_db	146558..145650	CAB06718.1	US10	virion protein US10	OK	
+MF564035.1	hhv2_db	146724..146269	CAB06719.1	US11	tegument protein US11	OK	
+MF564035.1	hhv2_db	147061..146801	CAB06700.1	US12	TAP transporter inhibitor ICP47	OK	
+MF564035.1	hhv2_db	148653..152609	CAB06701.1	RS1-ii	transcriptional regulator ICP4	OK	
+MF564034.1	hhv2_db	1..468,608..898	CAB06706.1	RL1	neurovirulence protein ICP34.5	OK	
+MF564034.1	hhv2_db	1822..1896,2307..2981,3078..4826	AEV91397.2	RL2	ubiquitin E3 ligase ICP0	IS	2982..3077
+MF564034.1	hhv2_db	8749..9423	CAB06761.1	UL1	envelope glycoprotein L	OK	
+MF564034.1	hhv2_db	9296..10300	NP_044471.2	UL2	uracil-DNA glycosylase	OK	
+MF564034.1	hhv2_db	10355..11056	CAB06763.1	UL3	nuclear protein UL3	OK	
+MF564034.1	hhv2_db	11860..11255	CAB06764.1	UL4	nuclear protein UL4	OK	
+MF564034.1	hhv2_db	14571..16607	CAB06766.1	UL6	capsid portal protein	OK	
+MF564034.1	hhv2_db	14572..11927	CAB06765.1	UL5	helicase-primase helicase subunit	OK	
+MF564034.1	hhv2_db	16582..17472	CAB06767.1	UL7	tegument protein UL7	OK	
+MF564034.1	hhv2_db	19987..17729	CAB06768.1	UL8	helicase-primase subunit	OK	
+MF564034.1	hhv2_db	22531..23934	CAB06770.1	UL10	envelope glycoprotein M	OK	
+MF564034.1	hhv2_db	22640..20037	CAB06769.2	UL9	DNA replication origin-binding helicase	OK	
+MF564034.1	hhv2_db	24421..24131	AHG54674.1	UL11	myristylated tegument protein	OK	
+MF564034.1	hhv2_db	26199..24337	CAB06772.1	UL12	deoxyribonuclease	OK	
+MF564034.1	hhv2_db	27796..26240	CAB06773.1	UL13	tegument serine/threonine protein kinase	OK	
+MF564034.1	hhv2_db	28209..27550	CAB06774.1	UL14	tegument protein UL14	OK	
+MF564034.1	hhv2_db	28290..29318,32913..34088	CAB06775.1	UL15	DNA packaging terminase subunit 1	OK	
+MF564034.1	hhv2_db	30581..29463	CAB06776.1	UL16	tegument protein UL16	OK	
+MF564034.1	hhv2_db	32787..30682	CAB06741.1	UL17	DNA packaging tegument protein UL17	OK	
+MF564034.1	hhv2_db	35387..34431	CAB06742.1	UL18	capsid triplex subunit 2	OK	
+MF564034.1	hhv2_db	39887..35763	CAB06743.1	UL19	major capsid protein	OK	
+MF564034.1	hhv2_db	40868..40200	CAB06744.1	UL20	envelope protein UL20	OK	
+MF564034.1	hhv2_db	41517..43115	CAB06745.1	UL21	tegument protein UL21	OK	
+MF564034.1	hhv2_db	45851..43335	CAB06746.1	UL22	envelope glycoprotein H	OK	
+MF564034.1	hhv2_db	47222..48067	CAB06748.1	UL24	nuclear protein UL24	OK	
+MF564034.1	hhv2_db	47320..46190	CAB06747.1	UL23	thymidine kinase	OK	
+MF564034.1	hhv2_db	48347..50104	CAB06749.1	UL25	DNA packaging tegument protein UL25	OK	
+MF564034.1	hhv2_db	50334..52247	CAB06750.1	UL26	capsid maturation protease	OK	
+MF564034.1	hhv2_db	51258..52247	CAB06751.1	UL26.5	capsid scaffold protein	OK	
+MF564034.1	hhv2_db	55397..52692	CAB06752.1	UL27	envelope glycoprotein B	OK	
+MF564034.1	hhv2_db	57762..55405	CAB06753.1	UL28	DNA packaging terminase subunit 2	OK	
+MF564034.1	hhv2_db	61730..58140	CAB06754.1	UL29	single-stranded DNA-binding protein	OK	
+MF564034.1	hhv2_db	62547..66269	CAB06755.1	UL30	DNA polymerase catalytic subunit	OK	
+MF564034.1	hhv2_db	67131..66214	CAB06756.1	UL31	nuclear egress lamina protein	OK	
+MF564034.1	hhv2_db	68913..69305	CAB06758.1	UL33	DNA packaging protein UL33	OK	
+MF564034.1	hhv2_db	68914..67124	CAB06757.1	UL32	DNA packaging protein UL32	OK	
+MF564034.1	hhv2_db	69395..70219	CAB06720.1	UL34	nuclear egress membrane protein	OK	
+MF564034.1	hhv2_db	70331..70669	CAB06721.1	UL35	small capsid protein	OK	
+MF564034.1	hhv2_db	80203..70835	CAB06722.1	UL36	large tegument protein	OK	
+MF564034.1	hhv2_db	83850..80506	CAB06723.1	UL37	tegument protein UL37	OK	
+MF564034.1	hhv2_db	84330..85730	CAB06724.1	UL38	capsid triplex subunit 1	OK	
+MF564034.1	hhv2_db	86293..89727	CAB06725.1	UL39	ribonucleotide reductase subunit 1	OK	
+MF564034.1	hhv2_db	89780..90793	CAB06726.1	UL40	ribonucleotide reductase subunit 2	OK	
+MF564034.1	hhv2_db	92550..91072	CAB06727.1	UL41	tegument host shutoff protein	OK	
+MF564034.1	hhv2_db	93043..94455	CAB06728.1	UL42	DNA polymerase processivity subunit	OK	
+MF564034.1	hhv2_db	94705..95949	CAB06729.1	UL43	envelope protein UL43	OK	
+MF564034.1	hhv2_db	96251..97693	CAB06730.1	UL44	envelope glycoprotein C	OK	
+MF564034.1	hhv2_db	97923..98441	CAB06731.1	UL45	membrane protein UL45	OK	
+MF564034.1	hhv2_db	100854..98698	CAB06732.1	UL46	tegument protein VP11/12	OK	
+MF564034.1	hhv2_db	103029..100939	CAB06733.1	UL47	tegument protein VP13/14	OK	
+MF564034.1	hhv2_db	105020..103548	CAB06734.1	UL48	transactivating tegument protein VP16	OK	
+MF564034.1	hhv2_db	106403..105501	CAB06735.1	UL49	tegument protein VP22	OK	
+MF564034.1	hhv2_db	107006..106743	CAB06736.1	UL49A	envelope glycoprotein N	OK	
+MF564034.1	hhv2_db	107014..108123	CAB06737.1	UL50	deoxyuridine triphosphatase	OK	
+MF564034.1	hhv2_db	109064..108330	CAB06738.1	UL51	tegument protein UL51	OK	
+MF564034.1	hhv2_db	109132..112332	CAB06739.1	UL52	helicase-primase primase subunit	OK	
+MF564034.1	hhv2_db	112284..113300	CAB06740.1	UL53	envelope glycoprotein K	OK	
+MF564034.1	hhv2_db	113846..115384	CAB06702.1	UL54	multifunctional expression regulator	OK	
+MF564034.1	hhv2_db	115599..116159	CAB06703.1	UL55	nuclear protein UL55	OK	
+MF564034.1	hhv2_db	117039..116332	CAB06704.1	UL56	membrane protein UL56	OK	
+MF564034.1	hhv2_db	124110..124036,123625..122951,122854..121106	AEV91397.2	RL2-ii	ubiquitin E3 ligase ICP0	IS	122950..122855
+MF564034.1	hhv2_db	125958..125464,125324..125034	CAB06706.1	RL1-ii	neurovirulence protein ICP34.5	OK	
+MF564034.1	hhv2_db	131177..127221	CAB06701.1	RS1	transcriptional regulator ICP4	OK	
+MF564034.1	hhv2_db	132793..134037	CAB06708.1	US1	regulatory protein ICP22	OK	
+MF564034.1	hhv2_db	135094..134219	CAB06709.1	US2	virion protein US2	OK	
+MF564034.1	hhv2_db	135380..136825	CAB06710.1	US3	serine/threonine protein kinase US3	OK	
+MF564034.1	hhv2_db	136933..139029	CAB06711.1	US4	envelope glycoprotein G	OK	
+MF564034.1	hhv2_db	139339..139617	CAB06712.1	US5	envelope glycoprotein J	OK	
+MF564034.1	hhv2_db	140066..141247	CAB06713.1	US6	envelope glycoprotein D	OK	
+MF564034.1	hhv2_db	141449..142567	CAB06714.1	US7	envelope glycoprotein I	OK	
+MF564034.1	hhv2_db	142888..144534	AHG54732.1	US8	envelope glycoprotein E	OK	
+MF564034.1	hhv2_db	144383..144823	CAB06716.1	US8A	membrane protein US8A	OK	
+MF564034.1	hhv2_db	144923..145192	CAB06717.1	US9	membrane protein US9	OK	
+MF564034.1	hhv2_db	146582..145674	CAB06718.1	US10	virion protein US10	OK	
+MF564034.1	hhv2_db	146748..146293	CAB06719.1	US11	tegument protein US11	OK	
+MF564034.1	hhv2_db	147085..146825	CAB06700.1	US12	TAP transporter inhibitor ICP47	OK	
+MF564034.1	hhv2_db	148677..152633	CAB06701.1	RS1-ii	transcriptional regulator ICP4	OK	
+KF781518.1	hhv2_db	440..907,1070..1363	AHG54723.1	RL1	neurovirulence protein ICP34.5	OK	
+KF781518.1	hhv2_db	2287..2361,2777..3452,3632..5301	AHG54722.1	RL2	ubiquitin E3 ligase ICP0	OK	
+KF781518.1	hhv2_db	9403..10077	CAB06761.1	UL1	envelope glycoprotein L	OK	
+KF781518.1	hhv2_db	9950..10954	NP_044471.2	UL2	uracil-DNA glycosylase	OK	
+KF781518.1	hhv2_db	11009..11710	CAB06763.1	UL3	nuclear protein UL3	OK	
+KF781518.1	hhv2_db	12515..11910	CAB06764.1	UL4	nuclear protein UL4	OK	
+KF781518.1	hhv2_db	15226..17262	CAB06766.1	UL6	capsid portal protein	OK	
+KF781518.1	hhv2_db	15227..12582	CAB06765.1	UL5	helicase-primase helicase subunit	OK	
+KF781518.1	hhv2_db	17237..18127	CAB06767.1	UL7	tegument protein UL7	OK	
+KF781518.1	hhv2_db	20642..18384	CAB06768.1	UL8	helicase-primase subunit	OK	
+KF781518.1	hhv2_db	23186..24589	CAB06770.1	UL10	envelope glycoprotein M	OK	
+KF781518.1	hhv2_db	23295..20692	CAB06769.2	UL9	DNA replication origin-binding helicase	OK	
+KF781518.1	hhv2_db	25075..24785	AHG54674.1	UL11	myristylated tegument protein	OK	
+KF781518.1	hhv2_db	26853..24991	CAB06772.1	UL12	deoxyribonuclease	OK	
+KF781518.1	hhv2_db	28450..26894	CAB06773.1	UL13	tegument serine/threonine protein kinase	OK	
+KF781518.1	hhv2_db	28863..28204	CAB06774.1	UL14	tegument protein UL14	OK	
+KF781518.1	hhv2_db	28944..29972,33569..34744	CAB06775.1	UL15	DNA packaging terminase subunit 1	OK	
+KF781518.1	hhv2_db	31233..30115	CAB06776.1	UL16	tegument protein UL16	OK	
+KF781518.1	hhv2_db	33443..31335	CAB06741.1	UL17	DNA packaging tegument protein UL17	OK	
+KF781518.1	hhv2_db	36040..35084	CAB06742.1	UL18	capsid triplex subunit 2	OK	
+KF781518.1	hhv2_db	40541..36417	CAB06743.1	UL19	major capsid protein	OK	
+KF781518.1	hhv2_db	41523..40855	CAB06744.1	UL20	envelope protein UL20	OK	
+KF781518.1	hhv2_db	42173..43771	CAB06745.1	UL21	tegument protein UL21	OK	
+KF781518.1	hhv2_db	46506..43990	CAB06746.1	UL22	envelope glycoprotein H	OK	
+KF781518.1	hhv2_db	47875..48720	CAB06748.1	UL24	nuclear protein UL24	OK	
+KF781518.1	hhv2_db	47973..46843	CAB06747.1	UL23	thymidine kinase	OK	
+KF781518.1	hhv2_db	49001..50758	CAB06749.1	UL25	DNA packaging tegument protein UL25	OK	
+KF781518.1	hhv2_db	50989..52905	CAB06750.1	UL26	capsid maturation protease	OK	
+KF781518.1	hhv2_db	51916..52905	CAB06751.1	UL26.5	capsid scaffold protein	OK	
+KF781518.1	hhv2_db	56057..53352	CAB06752.1	UL27	envelope glycoprotein B	OK	
+KF781518.1	hhv2_db	58422..56065	CAB06753.1	UL28	DNA packaging terminase subunit 2	OK	
+KF781518.1	hhv2_db	62385..58795	CAB06754.1	UL29	single-stranded DNA-binding protein	OK	
+KF781518.1	hhv2_db	63203..66925	CAB06755.1	UL30	DNA polymerase catalytic subunit	OK	
+KF781518.1	hhv2_db	67787..66870	CAB06756.1	UL31	nuclear egress lamina protein	OK	
+KF781518.1	hhv2_db	69569..69961	CAB06758.1	UL33	DNA packaging protein UL33	OK	
+KF781518.1	hhv2_db	69570..67780	CAB06757.1	UL32	DNA packaging protein UL32	OK	
+KF781518.1	hhv2_db	70051..70881	CAB06720.1	UL34	nuclear egress membrane protein	OK	
+KF781518.1	hhv2_db	70993..71331	CAB06721.1	UL35	small capsid protein	OK	
+KF781518.1	hhv2_db	80866..71498	CAB06722.1	UL36	large tegument protein	OK	
+KF781518.1	hhv2_db	84515..81171	CAB06723.1	UL37	tegument protein UL37	OK	
+KF781518.1	hhv2_db	84999..86399	CAB06724.1	UL38	capsid triplex subunit 1	OK	
+KF781518.1	hhv2_db	86968..90393	CAB06725.1	UL39	ribonucleotide reductase subunit 1	OK	
+KF781518.1	hhv2_db	90446..91459	CAB06726.1	UL40	ribonucleotide reductase subunit 2	OK	
+KF781518.1	hhv2_db	93219..91741	CAB06727.1	UL41	tegument host shutoff protein	OK	
+KF781518.1	hhv2_db	93714..95126	CAB06728.1	UL42	DNA polymerase processivity subunit	OK	
+KF781518.1	hhv2_db	95377..96621	CAB06729.1	UL43	envelope protein UL43	OK	
+KF781518.1	hhv2_db	96923..98365	CAB06730.1	UL44	envelope glycoprotein C	OK	
+KF781518.1	hhv2_db	98595..99113	CAB06731.1	UL45	membrane protein UL45	OK	
+KF781518.1	hhv2_db	101545..99377	CAB06732.1	UL46	tegument protein VP11/12	OK	
+KF781518.1	hhv2_db	103720..101630	CAB06733.1	UL47	tegument protein VP13/14	OK	
+KF781518.1	hhv2_db	105712..104240	CAB06734.1	UL48	transactivating tegument protein VP16	OK	
+KF781518.1	hhv2_db	107104..106196	AHG54713.1	UL49	tegument protein VP22	OK	
+KF781518.1	hhv2_db	107706..107443	CAB06736.1	UL49A	envelope glycoprotein N	OK	
+KF781518.1	hhv2_db	107714..108823	CAB06737.1	UL50	deoxyuridine triphosphatase	OK	
+KF781518.1	hhv2_db	109762..109028	CAB06738.1	UL51	tegument protein UL51	OK	
+KF781518.1	hhv2_db	109830..113030	CAB06739.1	UL52	helicase-primase primase subunit	OK	
+KF781518.1	hhv2_db	112982..113998	CAB06740.1	UL53	envelope glycoprotein K	OK	
+KF781518.1	hhv2_db	114544..116082	CAB06702.1	UL54	multifunctional expression regulator	OK	
+KF781518.1	hhv2_db	116297..116857	CAB06703.1	UL55	nuclear protein UL55	OK	
+KF781518.1	hhv2_db	117737..117030	CAB06704.1	UL56	membrane protein UL56	OK	
+KF781518.1	hhv2_db	124930..124856,124440..123765,123585..121916	AHG54722.1	RL2-ii	ubiquitin E3 ligase ICP0	OK	
+KF781518.1	hhv2_db	126777..126310,126147..125854	AHG54723.1	RL1-ii	neurovirulence protein ICP34.5	OK	
+KF781518.1	hhv2_db	132012..127603	AHG54738.1	RS1	transcriptional regulator ICP4	OK	
+KF781518.1	hhv2_db	133419..134663	CAB06708.1	US1	regulatory protein ICP22	OK	
+KF781518.1	hhv2_db	135720..134845	CAB06709.1	US2	virion protein US2	OK	
+KF781518.1	hhv2_db	136006..137451	CAB06710.1	US3	serine/threonine protein kinase US3	OK	
+KF781518.1	hhv2_db	137558..139654	CAB06711.1	US4	envelope glycoprotein G	OK	
+KF781518.1	hhv2_db	139963..140241	CAB06712.1	US5	envelope glycoprotein J	OK	
+KF781518.1	hhv2_db	140686..141867	CAB06713.1	US6	envelope glycoprotein D	OK	
+KF781518.1	hhv2_db	142069..143187	CAB06714.1	US7	envelope glycoprotein I	OK	
+KF781518.1	hhv2_db	143506..145152	AHG54732.1	US8	envelope glycoprotein E	OK	
+KF781518.1	hhv2_db	145001..145441	CAB06716.1	US8A	membrane protein US8A	OK	
+KF781518.1	hhv2_db	145541..145810	CAB06717.1	US9	membrane protein US9	OK	
+KF781518.1	hhv2_db	147198..146290	CAB06718.1	US10	virion protein US10	OK	
+KF781518.1	hhv2_db	147364..146909	CAB06719.1	US11	tegument protein US11	OK	
+KF781518.1	hhv2_db	147702..147442	CAB06700.1	US12	TAP transporter inhibitor ICP47	OK	
+KF781518.1	hhv2_db	149077..153486	AHG54738.1	RS1-ii	transcriptional regulator ICP4	OK	
