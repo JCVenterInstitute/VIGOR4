@@ -12,3 +12,4 @@ vigor3Output_ungapped/zikv/PRODUCTION/zikv.tbl,vigor3Output_ungapped/zikv/PRODUC
 vigor3Output_ungapped/giv_a/PRODUCTION/giv_a.tbl,vigor3Output_ungapped/giv_a/PRODUCTION/flua.ungapped.fasta,flua_db,vigor3
 vigor3Output_ungapped/giv_b/PRODUCTION/giv_b.tbl,vigor3Output_ungapped/giv_b/PRODUCTION/flub.ungapped.fasta,flub_db,vigor3
 vigor3Output_ungapped/giv_c/PRODUCTION/giv_c.tbl,vigor3Output_ungapped/giv_c/PRODUCTION/fluc.ungapped.fasta,fluc_db,vigor3
+vigor3Output_ungapped/veev/PRODUCTION/veev.tbl,vigor3Output_ungapped/veev/PRODUCTION/veev.ungapped.fasta,veev_db,vigor3
