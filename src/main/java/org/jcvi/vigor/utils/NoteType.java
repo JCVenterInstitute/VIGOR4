@@ -4,7 +4,7 @@ public enum NoteType {
     RNA_Editing("non-templated G's inserted during transcription"),
     Sequence_Gap("coding region disrupted by sequencing gap"),
     Gene(""),
-    StopCodonReadThrough(""),
+    StopCodonReadThrough("Translation Exception"),
     StopCodonInterruption("CDS interrupted by stop codon"),
     StopCodonsInterruption("CDS interrupted by many stop codons");
     private final String text;
