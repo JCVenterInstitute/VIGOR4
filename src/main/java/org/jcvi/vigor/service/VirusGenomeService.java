@@ -3,6 +3,7 @@ package org.jcvi.vigor.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
@@ -10,7 +11,6 @@ import org.jcvi.jillion.core.residue.aa.IupacTranslationTables;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.vigor.utils.VigorFunctionalUtils;
 import org.springframework.stereotype.Service;
-import org.jcvi.vigor.utils.VigorUtils;
 
 @Service
 public class VirusGenomeService {
@@ -23,23 +23,28 @@ public class VirusGenomeService {
     public static List<Range> findSequenceGapRanges ( Integer minGapLength, NucleotideSequence sequence ) {
 
         List<Range> rangesOfNs = sequence.getRangesOfNs();
-
+        rangesOfNs=rangesOfNs.stream().filter(x->x.getLength()>=minGapLength).collect(Collectors.toList());
         List<Range> filteredRangesOfNs = new ArrayList<Range>();
         if (!rangesOfNs.isEmpty()) {
-            Range previousRange = Range.of(0, 0);
+            Range previousRange = Range.of(0,0);
             for (int i = 0; i < rangesOfNs.size(); i++) {
-                if (rangesOfNs.get(i).getLength() >= minGapLength) {
-                    Range currentRange = rangesOfNs.get(i);
-                    if (previousRange.getBegin() != 0 && previousRange.getEnd() != 0) {
-                        if (previousRange.getEnd() <= currentRange.getBegin() + 6) {
-                            previousRange = Range.of(previousRange.getBegin(), currentRange.getEnd());
+                if(i==0){
+                    filteredRangesOfNs.add(rangesOfNs.get(0));
+                    previousRange=rangesOfNs.get(0);
+                }
+                Range currentRange = rangesOfNs.get(i);
+                    if (i!=0) {
+                        if (Range.of(previousRange.getEnd(),currentRange.getBegin()).getLength()<=6) {
+                             filteredRangesOfNs.set(i-1, Range.of(previousRange.getBegin(), currentRange.getEnd()));
+                        }else{
+                            filteredRangesOfNs.add(currentRange);
                         }
                     }
-                }
-                filteredRangesOfNs.add(previousRange);
+                    previousRange=filteredRangesOfNs.get(filteredRangesOfNs.size()-1);
+
             }
         }
-        return rangesOfNs;
+        return filteredRangesOfNs;
     }
 
     public static Map<Frame, List<Long>> findInternalStops ( NucleotideSequence NTSequence ) {
