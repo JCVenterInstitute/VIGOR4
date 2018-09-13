@@ -9,9 +9,11 @@ import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Map;
+import java.util.Properties;
 import java.util.stream.Collectors;
 
 @Service
@@ -183,8 +185,11 @@ public class VigorInputValidationService {
 
 		parser.addArgument("--list-config-parameters")
 			  .action(new ListConfigurations())
-			  .dest(CommandLineParameters.listConfigParameters)
 			  .help("list available configuration parameters and exit");
+
+		parser.addArgument("--version")
+			  .action(new PrintVersion())
+			  .help("print version information");
 
 		parser.addArgument("--config-file")
 			  .action(Arguments.store())
@@ -219,7 +224,41 @@ public class VigorInputValidationService {
 		return parser;
 	}
 
-	private static class ListConfigurations implements ArgumentAction {
+	private static abstract class CustomNoArgumentAction implements ArgumentAction {
+
+		@Override
+		public void onAttach(Argument argument) {
+		}
+
+		@Override
+		public boolean consumeArgument() {
+			return false;
+		}
+
+	}
+
+	private static class PrintVersion extends CustomNoArgumentAction {
+
+		@Override
+		public void run(ArgumentParser argumentParser, Argument argument, Map<String, Object> map, String s, Object o) throws ArgumentParserException {
+			try {
+				Properties gitProperties = new Properties();
+				gitProperties.load(this.getClass().getResourceAsStream("/git.properties"));
+				System.out.println(String.format("%s-%s (branch %s) (built on host %s at %s)",
+												 gitProperties.getProperty("git.build.version"),
+												 gitProperties.getProperty("git.commit.id.abbrev"),
+												 gitProperties.getProperty("git.branch"),
+												 gitProperties.getProperty("git.build.host"),
+												 gitProperties.getProperty("git.build.time")
+								   )
+				);
+				System.exit(0);
+			} catch (IOException e ) {
+				throw new ArgumentParserException(argumentParser);
+			}
+		}
+	}
+	private static class ListConfigurations extends CustomNoArgumentAction{
 
 		@Override
 		public void run(ArgumentParser argumentParser, Argument argument, Map<String, Object> map, String s, Object o) throws ArgumentParserException {
@@ -238,16 +277,6 @@ public class VigorInputValidationService {
 				System.out.println();
 			}
 			System.exit(0);
-		}
-
-		@Override
-		public void onAttach(Argument argument) {
-
-		}
-
-		@Override
-		public boolean consumeArgument() {
-			return false;
 		}
 	}
 }
