@@ -42,7 +42,8 @@ public class GenerateVigor4GeneModels {
             String outputDir = config.get(ConfigurationParameters.OutputDirectory);
             String outputPrefix = config.get(ConfigurationParameters.OutputPrefix);
             Pair<String, Boolean> outputFile = getVigor4OutputFiles(outputDir, outputPrefix);
-            if (!( outputFile.getValue() )) {
+            boolean overwrite = "true".equals(config.get(ConfigurationParameters.OverwriteOutputFiles));
+            if (!( outputFile.getValue() ) ||overwrite) {
                 vigor.generateAnnotations(inputFASTA, vigorForm);
             }
             return modelsFromResults(outputFile.getKey());

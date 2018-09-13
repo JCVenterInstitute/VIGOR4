@@ -107,7 +107,7 @@ public class ValidateVigor4ModelsTest {
 
         VigorConfiguration config = getConfiguration();
         Map<String, List<String>> errors = compareWithReferenceModels(getVigor4Models(config, inputFasta), getReferenceModels());
-        String errorReport = String.format("differencesReport_%sRef.txt", referenceType);
+        String errorReport = String.format(config.get(ConfigurationParameters.OutputPrefix)+"_differencesReport_%sRef.txt", referenceType);
         boolean hasErrors = errors.entrySet()
                 .stream()
                 .filter(e -> !( e.getValue() == null || e.getValue().isEmpty() ))
@@ -209,15 +209,15 @@ public class ValidateVigor4ModelsTest {
             List<String> actualGeneSymbs = vigor4Models.stream().map(Model::getGeneSymbol).collect(Collectors.toCollection(ArrayList::new));
             List<String> refGeneSymbs = refModels.stream().map(Model::getGeneSymbol).collect(Collectors.toCollection(ArrayList::new));
             Set<String> vigor4Difference = actualGeneSymbs.stream().filter(t->!refGeneSymbs.contains(t)).collect(Collectors.toSet());
+            boolean reportAllModels=false;
             if(vigor4Difference.size()>0) {
                 errors.add(String.format("Vigor4 reported additional/different geneModels for VirusGenome Sequence %s ", genome));
                 vigor4Difference.stream().forEach(g->{
                     Model diffModel = vigor4Models.stream().filter(m -> g.equals(m.getGeneSymbol())).findFirst().get();
                     errors.add("\n"+diffModel+"\n");
                 });
-                errors.add(String.format("\nReferenceModels:\n %s \n\nVigor4Models:\n %s", refModels.stream().map(Object::toString)
-                        .collect(Collectors.joining("\n")),vigor4Models.stream().map(Object::toString)
-                        .collect(Collectors.joining("\n"))));
+                reportAllModels=true;
+
             }
             for (Model refModel : refModels) {
                 boolean errorFound = false;
@@ -233,6 +233,7 @@ public class ValidateVigor4ModelsTest {
                 }
                 if (vigor4Model==null) {
                     errors.add(String.format(referenceType + " reference models & Vigor4 models do not match for VirusGenome Sequence %s. Expected gene symbol %s", refGenomeID, refGeneID));
+                    reportAllModels=true;
                 } else {
                     List<String> outErrors = compareModels(refModel, vigor4Model);
                     if (outErrors.size() > 0) {
@@ -243,6 +244,11 @@ public class ValidateVigor4ModelsTest {
                 if (errorFound) {
                     errors.add(String.format("\nReferenceModel :%s \n\nVigor4Model :%s", refModel.toString(), vigor4Model.toString()));
                 }
+            }
+            if(reportAllModels){
+                errors.add(String.format("\nReferenceModels:\n %s \n\nVigor4Models:\n %s", refModels.stream().map(Object::toString)
+                        .collect(Collectors.joining("\n")),vigor4Models.stream().map(Object::toString)
+                        .collect(Collectors.joining("\n"))));
             }
             LOGGER.debug("{} errors for genome {}", errors.size(), genome);
         }
