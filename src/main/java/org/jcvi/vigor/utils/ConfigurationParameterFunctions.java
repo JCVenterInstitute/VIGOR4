@@ -4,10 +4,7 @@ import org.jcvi.jillion.core.residue.aa.AminoAcid;
 import org.jcvi.vigor.component.SpliceForm;
 import org.jcvi.vigor.component.StopTranslationException;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -50,7 +47,12 @@ public class ConfigurationParameterFunctions {
                                                      });
 
     public static ValueFunction toPercent = toBoundedDouble(0,100);
-
+    public static ValueFunction toTinyExonMap = of(Map.class, (s) ->
+        Arrays.stream(s.split(","))
+              .map(i -> i.split(":", 2))
+              .collect(Collectors.toMap(t -> t[0].trim(),
+                                        t -> t.length > 1 ? Integer.parseInt(t[1].trim()): 0))
+    );
     private static final Set<String> booleanYes = new HashSet<>();
     private static final Set<String> booleanNo = new HashSet<>();
 
