@@ -2,29 +2,20 @@
 97	3683	gene
 			locus_tag	vigor_GP2
 			gene	GP2
-97	3552	CDS
-3552	3683
+97	3573	CDS
+3573	3683
 			codon_start	1
 			protein_id	AY688948.1.1
 			locus_tag	vigor_GP2
 			gene	GP2
 			product	truncated polyprotein
 			ribosomal_slippage
-97	>7314	gene
-			locus_tag	vigor_GP3
-			gene	GP3
-97	>7314	CDS
-			codon_start	1
-			protein_id	AY688948.1.2
-			locus_tag	vigor_GP3
-			gene	GP3
-			product	putative West Nile Alternative Reading Frame 4 protein, N-terminal
 97	10401	gene
 			locus_tag	vigor_GP1
 			gene	GP1
 97	10401	CDS
 			codon_start	1
-			protein_id	AY688948.1.3
+			protein_id	AY688948.1.2
 			locus_tag	vigor_GP1
 			gene	GP1
 			product	genome polyprotein
@@ -37,12 +28,6 @@
 			note	transframe fusion protein expressed via programmed ribosomal frameshifting; when frameshifting occurs, cleavage between NS1 and NS2A fails to occur
 
 >Features AY688948.1.2
-2274	>2406	mat_peptide
-			product	putative West Nile Alternative Reading Frame 4 protein (WARF4), N-terminal
-			locus_tag	vigor_GP3
-			gene	GP3
-
->Features AY688948.1.3
 1	123	mat_peptide
 			product	anchored capsid protein C
 			locus_tag	vigor_GP1
@@ -92,29 +77,20 @@
 97	3671	gene
 			locus_tag	vigor_GP2
 			gene	GP2
-97	3540	CDS
-3540	3671
+97	3561	CDS
+3561	3671
 			codon_start	1
 			protein_id	NC_001563.2.1
 			locus_tag	vigor_GP2
 			gene	GP2
 			product	truncated polyprotein
 			ribosomal_slippage
-97	>7302	gene
-			locus_tag	vigor_GP3
-			gene	GP3
-97	>7302	CDS
-			codon_start	1
-			protein_id	NC_001563.2.2
-			locus_tag	vigor_GP3
-			gene	GP3
-			product	putative West Nile Alternative Reading Frame 4 protein, N-terminal
 97	10389	gene
 			locus_tag	vigor_GP1
 			gene	GP1
 97	10389	CDS
 			codon_start	1
-			protein_id	NC_001563.2.3
+			protein_id	NC_001563.2.2
 			locus_tag	vigor_GP1
 			gene	GP1
 			product	genome polyprotein
@@ -127,12 +103,6 @@
 			note	transframe fusion protein expressed via programmed ribosomal frameshifting; when frameshifting occurs, cleavage between NS1 and NS2A fails to occur
 
 >Features NC_001563.2.2
-2270	>2402	mat_peptide
-			product	putative West Nile Alternative Reading Frame 4 protein (WARF4), N-terminal
-			locus_tag	vigor_GP3
-			gene	GP3
-
->Features NC_001563.2.3
 1	123	mat_peptide
 			product	anchored capsid protein C
 			locus_tag	vigor_GP1
@@ -182,29 +152,20 @@
 97	3683	gene
 			locus_tag	vigor_GP2
 			gene	GP2
-97	3552	CDS
-3552	3683
+97	3573	CDS
+3573	3683
 			codon_start	1
 			protein_id	HM147823.1.1
 			locus_tag	vigor_GP2
 			gene	GP2
 			product	truncated polyprotein
 			ribosomal_slippage
-97	>7314	gene
-			locus_tag	vigor_GP3
-			gene	GP3
-97	>7314	CDS
-			codon_start	1
-			protein_id	HM147823.1.2
-			locus_tag	vigor_GP3
-			gene	GP3
-			product	putative West Nile Alternative Reading Frame 4 protein, N-terminal
 97	10401	gene
 			locus_tag	vigor_GP1
 			gene	GP1
 97	10401	CDS
 			codon_start	1
-			protein_id	HM147823.1.3
+			protein_id	HM147823.1.2
 			locus_tag	vigor_GP1
 			gene	GP1
 			product	genome polyprotein
@@ -217,12 +178,6 @@
 			note	transframe fusion protein expressed via programmed ribosomal frameshifting; when frameshifting occurs, cleavage between NS1 and NS2A fails to occur
 
 >Features HM147823.1.2
-2274	>2406	mat_peptide
-			product	putative West Nile Alternative Reading Frame 4 protein (WARF4), N-terminal
-			locus_tag	vigor_GP3
-			gene	GP3
-
->Features HM147823.1.3
 1	123	mat_peptide
 			product	anchored capsid protein C
 			locus_tag	vigor_GP1
@@ -272,29 +227,20 @@
 97	3683	gene
 			locus_tag	vigor_GP2
 			gene	GP2
-97	3552	CDS
-3552	3683
+97	3573	CDS
+3573	3683
 			codon_start	1
 			protein_id	HM147824.1.1
 			locus_tag	vigor_GP2
 			gene	GP2
 			product	truncated polyprotein
 			ribosomal_slippage
-97	>7314	gene
-			locus_tag	vigor_GP3
-			gene	GP3
-97	>7314	CDS
-			codon_start	1
-			protein_id	HM147824.1.2
-			locus_tag	vigor_GP3
-			gene	GP3
-			product	putative West Nile Alternative Reading Frame 4 protein, N-terminal
 97	10401	gene
 			locus_tag	vigor_GP1
 			gene	GP1
 97	10401	CDS
 			codon_start	1
-			protein_id	HM147824.1.3
+			protein_id	HM147824.1.2
 			locus_tag	vigor_GP1
 			gene	GP1
 			product	genome polyprotein
@@ -307,12 +253,6 @@
 			note	transframe fusion protein expressed via programmed ribosomal frameshifting; when frameshifting occurs, cleavage between NS1 and NS2A fails to occur
 
 >Features HM147824.1.2
-2274	>2406	mat_peptide
-			product	putative West Nile Alternative Reading Frame 4 protein (WARF4), N-terminal
-			locus_tag	vigor_GP3
-			gene	GP3
-
->Features HM147824.1.3
 1	123	mat_peptide
 			product	anchored capsid protein C
 			locus_tag	vigor_GP1
@@ -362,29 +302,20 @@
 87	3673	gene
 			locus_tag	vigor_GP2
 			gene	GP2
-87	3542	CDS
-3542	3673
+87	3563	CDS
+3563	3673
 			codon_start	1
 			protein_id	KP109691.1.1
 			locus_tag	vigor_GP2
 			gene	GP2
 			product	truncated polyprotein
 			ribosomal_slippage
-87	>7304	gene
-			locus_tag	vigor_GP3
-			gene	GP3
-87	>7304	CDS
-			codon_start	1
-			protein_id	KP109691.1.2
-			locus_tag	vigor_GP3
-			gene	GP3
-			product	putative West Nile Alternative Reading Frame 4 protein, N-terminal
 87	10391	gene
 			locus_tag	vigor_GP1
 			gene	GP1
 87	10391	CDS
 			codon_start	1
-			protein_id	KP109691.1.3
+			protein_id	KP109691.1.2
 			locus_tag	vigor_GP1
 			gene	GP1
 			product	genome polyprotein
@@ -397,12 +328,6 @@
 			note	transframe fusion protein expressed via programmed ribosomal frameshifting; when frameshifting occurs, cleavage between NS1 and NS2A fails to occur
 
 >Features KP109691.1.2
-2274	>2406	mat_peptide
-			product	putative West Nile Alternative Reading Frame 4 protein (WARF4), N-terminal
-			locus_tag	vigor_GP3
-			gene	GP3
-
->Features KP109691.1.3
 1	123	mat_peptide
 			product	anchored capsid protein C
 			locus_tag	vigor_GP1

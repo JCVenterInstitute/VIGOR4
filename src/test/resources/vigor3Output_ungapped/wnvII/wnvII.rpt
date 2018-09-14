@@ -1,0 +1,164 @@
+2018-09-14 12:36:45
+
+
+parameters
+	bl2seq_extend_hsp	25
+	bl2seq_extend_span	50
+	candidate_blastopts	-p blastx -M BLOSUM80 -e 1E-5 -g F -v 0 -F \"\" -z 3000000 -b 1000
+	candidate_evalue	
+	candidate_overlap_threshold	0.8
+	candidate_refdb	
+	command_line	/opt/www/vigor/vigor3/prod3/VIGOR3.pl -i wnvII.ungapped.fasta -o ./wnvII/wnvII -d /opt/www/vigor/vigor3/data3/wnvII_db
+	default_gene_optional	0
+	default_gene_required	0
+	default_gene_variation	1
+	frameshift_sensitivity	1
+	gene_variations	
+	jcvi_rules	1
+	mature_pep_mincoverage	50
+	mature_pep_minidentity	25
+	mature_pep_minsimilarity	40
+	mature_pep_refdb	../data3/virus_mp
+	max_intron_size	7000
+	min_candidate_pctsimilarity	70
+	min_candidate_sbjcoverage	33
+	min_exon_size	3
+	min_intron_size	30
+	min_pseudogene_coverage	80
+	min_pseudogene_identity	75
+	min_pseudogene_similarity	80
+	noncanonical_splicing_genes	
+	optional_genes	
+	reference_db	/opt/www/vigor/vigor3/data3/wnvII_db
+	reference_dbsize	9250
+	required_genes	
+	ribosomal_slippage_genes	
+	rna_editing_genes	
+	selectivity	0.985
+	slippage_frameshift	-1
+	slippage_motif	[NT][NT][NT]AAAC
+	slippage_offset	0
+	spliced_genes	
+	splicesite_extend_range	0
+	tile_overlap	1000000
+	tile_size	10000000
+	use_locus_tags	1
+	variation	0.975
+	verbose	0
+	vigorspace	/opt/www/vigor/vigor3/prod3/vigorscratch/131730.662732483
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+AY688948.1              11057      2            0      13893           4629           98.8             99.6          100.0   wnvII_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+AY688948.1.1       98.6   99.4   100.0  0.0   0.0   0.0   97..3573         1195   1195   KF179640_GP2      GP2 | truncated polyprotein
+                                                          3573..3683                                       
+AY688948.1.1.1     97.0   98.5   100.0  0.0   0.0   0.0   2470..3573       404    404    NC_001563_GP2_788 NS1' protein
+                                                          3573..3680                                       
+AY688948.1.2       98.9   99.7   100.0  0.0   0.0   0.0   97..10401        3434   3434   KF179640_GP1      GP1 | genome polyprotein
+AY688948.1.2.1     100.0  100.0  100.0  0.0   0.0   0.0   97..465          123    123    KF179640_GP1_1_12 anchored capsid protein C
+AY688948.1.2.2     99.4   99.9   100.0  0.0   0.0   0.0   466..966         167    167    KF179640_GP1_124_ small envelope protein M
+AY688948.1.2.3     99.4   99.8   100.0  0.0   0.0   0.0   967..2469        501    501    KF179640_GP1_291_ envelope protein E
+AY688948.1.2.4     98.0   99.4   100.0  0.0   0.0   0.0   2470..3525       352    352    NC_001563_GP1_788 non-structural protein NS1
+AY688948.1.2.5     98.3   100.0  100.0  0.0   0.0   0.0   3526..4218       231    231    KF179640_GP1_1144 non-structural protein NS2A
+AY688948.1.2.6     98.5   100.0  100.0  0.0   0.0   0.0   4219..4611       131    131    KF179640_GP1_1375 serine protease NS2B
+AY688948.1.2.7     99.5   99.9   100.0  0.0   0.0   0.0   4612..6468       619    619    NC_001563_GP1_150 serine protease NS3
+AY688948.1.2.8     99.2   100.0  100.0  0.0   0.0   0.0   6469..6846       126    126    KF179640_GP1_2125 non-structural protein NS4A
+AY688948.1.2.9     100.0  100.0  100.0  0.0   0.0   0.0   6847..6915       23     23     JX123030_GP1_2251 2K protein
+AY688948.1.2.10    97.3   99.2   100.0  0.0   0.0   0.0   6916..7683       256    256    KF179640_GP1_2274 non-structural protein NS4B
+AY688948.1.2.11    99.0   99.7   100.0  0.0   0.0   0.0   7684..10398      905    905    KF179640_GP1_2530 RNA-directed RNA polymerase NS5
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+NC_001563.2             10962      2            0      13869           4621           99.9             99.9          100.0   wnvII_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+NC_001563.2.1      99.7   99.7   100.0  0.0   0.0   0.0   97..3561         1191   1191   NC_001563_GP2     GP2 | truncated polyprotein
+                                                          3561..3671                                       
+NC_001563.2.1.1    99.0   99.0   100.0  0.0   0.0   0.0   2458..3561       404    404    NC_001563_GP2_788 NS1' protein
+                                                          3561..3668                                       
+NC_001563.2.2      100.0  100.0  100.0  0.0   0.0   0.0   97..10389        3430   3430   NC_001563_GP1     GP1 | genome polyprotein
+NC_001563.2.2.1    100.0  100.0  100.0  0.0   0.0   0.0   97..465          123    123    KF179640_GP1_1_12 anchored capsid protein C
+NC_001563.2.2.2    100.0  100.0  100.0  0.0   0.0   0.0   466..966         167    167    KF179640_GP1_124_ small envelope protein M
+NC_001563.2.2.3    100.0  100.0  100.0  0.0   0.0   0.0   967..2457        497    497    NC_001563_GP1_291 envelope protein E
+NC_001563.2.2.4    100.0  100.0  100.0  0.0   0.0   0.0   2458..3513       352    352    NC_001563_GP1_788 non-structural protein NS1
+NC_001563.2.2.5    100.0  100.0  100.0  0.0   0.0   0.0   3514..4206       231    231    NC_001563_GP1_114 non-structural protein NS2A
+NC_001563.2.2.6    100.0  100.0  100.0  0.0   0.0   0.0   4207..4599       131    131    NC_001563_GP1_137 serine protease NS2B
+NC_001563.2.2.7    100.0  100.0  100.0  0.0   0.0   0.0   4600..6456       619    619    NC_001563_GP1_150 serine protease NS3
+NC_001563.2.2.8    100.0  100.0  100.0  0.0   0.0   0.0   6457..6834       126    126    NC_001563_GP1_212 non-structural protein NS4A
+NC_001563.2.2.9    100.0  100.0  100.0  0.0   0.0   0.0   6835..6903       23     23     NC_001563_GP1_224 2K protein
+NC_001563.2.2.10   100.0  100.0  100.0  0.0   0.0   0.0   6904..7671       256    256    NC_001563_GP1_227 non-structural protein NS4B
+NC_001563.2.2.11   100.0  100.0  100.0  0.0   0.0   0.0   7672..10386      905    905    NC_001563_GP1_252 RNA-directed RNA polymerase NS5
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+HM147823.1              11051      2            0      13893           4629           98.7             99.7          100.0   wnvII_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+HM147823.1.1       98.2   99.4   100.0  0.0   0.0   0.0   97..3573         1195   1195   KF179640_GP2      GP2 | truncated polyprotein
+                                                          3573..3683                                       
+HM147823.1.1.1     96.5   98.2   100.0  0.0   0.0   0.0   2470..3573       404    404    NC_001563_GP2_788 NS1' protein
+                                                          3573..3680                                       
+HM147823.1.2       98.9   99.8   100.0  0.0   0.0   0.0   97..10401        3434   3434   KF179640_GP1      GP1 | genome polyprotein
+HM147823.1.2.1     100.0  100.0  100.0  0.0   0.0   0.0   97..465          123    123    KF179640_GP1_1_12 anchored capsid protein C
+HM147823.1.2.2     99.4   100.0  100.0  0.0   0.0   0.0   466..966         167    167    KF179640_GP1_124_ small envelope protein M
+HM147823.1.2.3     99.0   100.0  100.0  0.0   0.0   0.0   967..2469        501    501    KF179640_GP1_291_ envelope protein E
+HM147823.1.2.4     98.3   99.4   100.0  0.0   0.0   0.0   2470..3525       352    352    NC_001563_GP1_788 non-structural protein NS1
+HM147823.1.2.5     99.1   99.6   100.0  0.0   0.0   0.0   3526..4218       231    231    KF179640_GP1_1144 non-structural protein NS2A
+HM147823.1.2.6     99.2   100.0  100.0  0.0   0.0   0.0   4219..4611       131    131    KF179640_GP1_1375 serine protease NS2B
+HM147823.1.2.7     99.4   100.0  100.0  0.0   0.0   0.0   4612..6468       619    619    NC_001563_GP1_150 serine protease NS3
+HM147823.1.2.8     100.0  100.0  100.0  0.0   0.0   0.0   6469..6846       126    126    KF179640_GP1_2125 non-structural protein NS4A
+HM147823.1.2.9     100.0  100.0  100.0  0.0   0.0   0.0   6847..6915       23     23     JX123030_GP1_2251 2K protein
+HM147823.1.2.10    96.9   99.4   100.0  0.0   0.0   0.0   6916..7683       256    256    KF179640_GP1_2274 non-structural protein NS4B
+HM147823.1.2.11    99.1   99.8   100.0  0.0   0.0   0.0   7684..10398      905    905    KF179640_GP1_2530 RNA-directed RNA polymerase NS5
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+HM147824.1              11050      2            0      13893           4629           99.5             99.8          100.0   wnvII_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+HM147824.1.1       99.3   99.6   100.0  0.0   0.0   0.0   97..3573         1195   1195   KF179640_GP2      GP2 | truncated polyprotein
+                                                          3573..3683                                       
+HM147824.1.1.1     98.8   98.8   100.0  0.0   0.0   0.0   2470..3573       404    404    NC_001563_GP2_788 NS1' protein
+                                                          3573..3680                                       
+HM147824.1.2       99.6   99.9   100.0  0.0   0.0   0.0   97..10401        3434   3434   KF179640_GP1      GP1 | genome polyprotein
+HM147824.1.2.1     100.0  100.0  100.0  0.0   0.0   0.0   97..465          123    123    KF179640_GP1_1_12 anchored capsid protein C
+HM147824.1.2.2     100.0  100.0  100.0  0.0   0.0   0.0   466..966         167    167    KF179640_GP1_124_ small envelope protein M
+HM147824.1.2.3     99.6   100.0  100.0  0.0   0.0   0.0   967..2469        501    501    KF179640_GP1_291_ envelope protein E
+HM147824.1.2.4     99.7   99.7   100.0  0.0   0.0   0.0   2470..3525       352    352    NC_001563_GP1_788 non-structural protein NS1
+HM147824.1.2.5     100.0  100.0  100.0  0.0   0.0   0.0   3526..4218       231    231    KF179640_GP1_1144 non-structural protein NS2A
+HM147824.1.2.6     99.2   100.0  100.0  0.0   0.0   0.0   4219..4611       131    131    KF179640_GP1_1375 serine protease NS2B
+HM147824.1.2.7     99.7   100.0  100.0  0.0   0.0   0.0   4612..6468       619    619    NC_001563_GP1_150 serine protease NS3
+HM147824.1.2.8     100.0  100.0  100.0  0.0   0.0   0.0   6469..6846       126    126    KF179640_GP1_2125 non-structural protein NS4A
+HM147824.1.2.9     100.0  100.0  100.0  0.0   0.0   0.0   6847..6915       23     23     JX123030_GP1_2251 2K protein
+HM147824.1.2.10    99.2   99.9   100.0  0.0   0.0   0.0   6916..7683       256    256    KF179640_GP1_2274 non-structural protein NS4B
+HM147824.1.2.11    99.6   99.9   100.0  0.0   0.0   0.0   7684..10398      905    905    KF179640_GP1_2530 RNA-directed RNA polymerase NS5
+
+
+Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB
+KP109691.1              10988      2            0      13893           4629           99.8             99.8          100.0   wnvII_db
+gaps: 
+
+gene_id            %id    %sim   %cov   %t5   %gap  %t3   start..stop      pep sz ref sz ref id            definition
+KP109691.1.1       99.5   99.5   100.0  0.0   0.0   0.0   87..3563         1195   1195   KF179640_GP2      GP2 | truncated polyprotein
+                                                          3563..3673                                       
+KP109691.1.1.1     98.8   98.8   100.0  0.0   0.0   0.0   2460..3563       404    404    KF179640_GP2_792_ NS1' protein
+                                                          3563..3670                                       
+KP109691.1.2       99.9   99.9   100.0  0.0   0.0   0.0   87..10391        3434   3434   KF179640_GP1      GP1 | genome polyprotein
+KP109691.1.2.1     100.0  100.0  100.0  0.0   0.0   0.0   87..455          123    123    KF179640_GP1_1_12 anchored capsid protein C
+KP109691.1.2.2     100.0  100.0  100.0  0.0   0.0   0.0   456..956         167    167    KF179640_GP1_124_ small envelope protein M
+KP109691.1.2.3     99.8   99.8   100.0  0.0   0.0   0.0   957..2459        501    501    KF179640_GP1_291_ envelope protein E
+KP109691.1.2.4     99.7   99.7   100.0  0.0   0.0   0.0   2460..3515       352    352    KF179640_GP1_792_ non-structural protein NS1
+KP109691.1.2.5     100.0  100.0  100.0  0.0   0.0   0.0   3516..4208       231    231    KF179640_GP1_1144 non-structural protein NS2A
+KP109691.1.2.6     100.0  100.0  100.0  0.0   0.0   0.0   4209..4601       131    131    KF179640_GP1_1375 serine protease NS2B
+KP109691.1.2.7     100.0  100.0  100.0  0.0   0.0   0.0   4602..6458       619    619    KF179640_GP1_1506 serine protease NS3
+KP109691.1.2.8     100.0  100.0  100.0  0.0   0.0   0.0   6459..6836       126    126    KF179640_GP1_2125 non-structural protein NS4A
+KP109691.1.2.9     100.0  100.0  100.0  0.0   0.0   0.0   6837..6905       23     23     JX123030_GP1_2251 2K protein
+KP109691.1.2.10    100.0  100.0  100.0  0.0   0.0   0.0   6906..7673       256    256    KF179640_GP1_2274 non-structural protein NS4B
+KP109691.1.2.11    99.7   100.0  100.0  0.0   0.0   0.0   7674..10388      905    905    KF179640_GP1_2530 RNA-directed RNA polymerase NS5
+

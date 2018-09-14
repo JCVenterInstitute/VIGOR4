@@ -1,4 +1,4 @@
-2018-09-11 13:54:21
+2018-09-14 12:34:59
 
 
 parameters
@@ -8,7 +8,7 @@ parameters
 	candidate_evalue	
 	candidate_overlap_threshold	0.8
 	candidate_refdb	
-	command_line	/opt/www/vigor/vigor3/prod3/VIGOR3.pl -i /opt/www/vigor/vigor3/regr_testing/wnvI.ungapped.fasta -d wnvI_db -o /usr/local/scratch/CORE/snettem/wnvI/wnvI
+	command_line	/opt/www/vigor/vigor3/prod3/VIGOR3.pl -i wnvI.ungapped.fasta -o ./wnvI/wnvI -d /opt/www/vigor/vigor3/data3/wnvI_db
 	default_gene_optional	0
 	default_gene_required	0
 	default_gene_variation	1
@@ -45,7 +45,7 @@ parameters
 	use_locus_tags	1
 	variation	0.975
 	verbose	0
-	vigorspace	/opt/www/vigor/vigor3/prod3/vigorscratch/237967.938258411
+	vigorspace	/opt/www/vigor/vigor3/prod3/vigorscratch/718021.071356819
 
 
 Sequence               Length  Genes  Pseudogenes  CDS Bases  Peptide Bases  %Ref Identity  %Ref Similarity  %Ref Coverage   Ref DB

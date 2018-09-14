@@ -1,0 +1,6 @@
+Sequence	Length	Genes	Pseudogenes	CDS Bases	Peptide Bases	%Ref Identity	%Ref Similarity	%Ref Coverage	Ref DB
+AY688948.1	11057	2	0	13893	4629	98.8	99.6	100.0	wnvII_db
+NC_001563.2	10962	2	0	13869	4621	99.9	99.9	100.0	wnvII_db
+HM147823.1	11051	2	0	13893	4629	98.7	99.7	100.0	wnvII_db
+HM147824.1	11050	2	0	13893	4629	99.5	99.8	100.0	wnvII_db
+KP109691.1	10988	2	0	13893	4629	99.8	99.8	100.0	wnvII_db
