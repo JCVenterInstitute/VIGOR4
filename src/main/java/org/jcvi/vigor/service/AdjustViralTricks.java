@@ -17,7 +17,6 @@ import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.component.RNA_Editing;
 import org.jcvi.vigor.component.Ribosomal_Slippage;
 import org.jcvi.vigor.component.StopTranslationException;
-import org.jcvi.vigor.forms.VigorForm;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -26,7 +25,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
     private static final Logger LOGGER = LogManager.getLogger(AdjustViralTricks.class);
     private static double DEFAULT_LEAKYSTOP_NOTFOUND_SCORE = .80d;
     @Override
-    public List<Model> determine ( Model model, VigorForm form ) throws ServiceException {
+    public List<Model> determine ( Model model) throws ServiceException {
 
         List<Model> outputModels = new ArrayList<>();
         List<Model> rnaEditedModels = new ArrayList<>();

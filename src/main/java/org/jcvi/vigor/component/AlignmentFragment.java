@@ -15,15 +15,13 @@ import java.util.Comparator;
 @Data
 public class AlignmentFragment implements Comparable<AlignmentFragment>, Cloneable {
 
-    private double score;
     private Direction direction;
     private Range proteinSeqRange;
     private Range nucleotideSeqRange;
     private Frame frame;
 
-    public AlignmentFragment ( Range proteinSeqRange, Range nucleotideRange, double score, Direction direction, Frame frame ) {
+    public AlignmentFragment ( Range proteinSeqRange, Range nucleotideRange, Direction direction, Frame frame ) {
 
-        this.score = score;
         this.proteinSeqRange = proteinSeqRange;
         this.nucleotideSeqRange = nucleotideRange;
         this.direction = direction;

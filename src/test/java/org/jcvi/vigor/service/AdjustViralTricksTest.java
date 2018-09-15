@@ -24,7 +24,6 @@ import org.jcvi.jillion.core.Range;
 import org.jcvi.vigor.Application;
 import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.Model;
-import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.utils.VigorTestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -59,7 +58,7 @@ public class AdjustViralTricksTest {
         File alignmentOutput = new File(resources.getAbsolutePath() + File.separator + "vigorUnitTestInput/Flua_RiboSlippage_Test.txt");
         alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile, referenceDB, alignmentOutput, config);
         for (int i = 0; i < alignments.size(); i++) {
-            alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm(config)));
+            alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), config));
         }
         alignments = modelGenerationService.mergeIdenticalProteinAlignments(alignments);
         alignments.stream().forEach(x -> {
@@ -86,7 +85,7 @@ public class AdjustViralTricksTest {
         File alignmentOutout = new File(resources.getAbsolutePath() + File.separator + "vigorUnitTestInput/Veev_StopTranslationEx_Test.txt");
         alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile, referenceDB, alignmentOutout, config);
         for (int i = 0; i < alignments.size(); i++) {
-            alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm(config)));
+            alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), config));
         }
         alignments = modelGenerationService.mergeIdenticalProteinAlignments(alignments);
         alignments.stream().forEach(x -> {
@@ -116,7 +115,7 @@ public class AdjustViralTricksTest {
         File alignmentOutput = new File(resources.getAbsolutePath() + File.separator + "vigorUnitTestInput/mmp_rna_editing_Test.txt");
         alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile, referenceDB.toString(), alignmentOutput, config);
         for (int i = 0; i < alignments.size(); i++) {
-            alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm(config)));
+            alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), config));
         }
         alignments = modelGenerationService.mergeIdenticalProteinAlignments(alignments);
         alignments.stream().forEach(x -> {

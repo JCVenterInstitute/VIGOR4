@@ -150,6 +150,7 @@ public class ValidateVigor4ModelsTest {
     private VigorConfiguration getConfiguration () throws IOException, VigorException {
 
         VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
+
         String outputPrefix = new File(referenceDatabaseName).getName().replace("_db", "");
         config.putString(ConfigurationParameters.OutputPrefix, outputPrefix);
         String outDir = config.get(ConfigurationParameters.OutputDirectory);
@@ -182,6 +183,18 @@ public class ValidateVigor4ModelsTest {
             config.putString(ConfigurationParameters.TemporaryDirectory, tempDir.toString());
         }
         checkConfig(config);
+
+        String referenceDatabasePath = config.get(ConfigurationParameters.ReferenceDatabasePath);
+        File virusSpecificConfig = new File(referenceDatabasePath, referenceDatabaseName + ".ini").getAbsoluteFile();
+        if (virusSpecificConfig.exists()) {
+            VigorConfiguration virusConfig = LoadDefaultParameters.loadVigorConfiguration(virusSpecificConfig.toString(),
+                                                                                          virusSpecificConfig,
+                                                                                          ConfigurationParameters.Flags.GENE_SET,
+                                                                                          ConfigurationParameters.Flags.VIRUS_SET);
+            virusConfig.setDefaults(config);
+            config = virusConfig;
+            checkConfig(config);
+        }
         return config;
     }
 

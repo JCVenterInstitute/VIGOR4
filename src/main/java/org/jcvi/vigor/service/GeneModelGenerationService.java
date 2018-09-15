@@ -15,7 +15,6 @@ import org.jcvi.vigor.utils.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.jcvi.vigor.component.Model;
-import org.jcvi.vigor.forms.VigorForm;
 
 import static java.util.stream.Collectors.groupingBy;
 
@@ -45,16 +44,16 @@ public class GeneModelGenerationService {
                                                                                     .getStructuralSpecifications()
                                                                                     .getMinFunctionalLength();
 
-    public List<Model> generateGeneModel ( List<Model> models, VigorForm form ) throws ServiceException {
+    public List<Model> generateGeneModel ( List<Model> models, VigorConfiguration configuration ) throws ServiceException {
 
         List<Model> pseudoGenes = new ArrayList<>();
-        boolean isDebug = form.getConfiguration().getOrDefault(ConfigurationParameters.Verbose, false);
-        int max_gene_overlap = form.getConfiguration().getOrDefault(ConfigurationParameters.MaxGeneOverlap, 0);
+        boolean isDebug = configuration.getOrDefault(ConfigurationParameters.Verbose, false);
+        int max_gene_overlap = configuration.getOrDefault(ConfigurationParameters.MaxGeneOverlap, 0);
 
-        List<Model> processedModels = determineGeneFeatures(models, form, isDebug);
+        List<Model> processedModels = determineGeneFeatures(models, configuration, isDebug);
         // TODO process pseudogenes/partial genes, Not included in initial release
-        processedModels.stream().forEach(model -> checkCoverage.evaluate(model, form));
-        processedModels.stream().forEach(model -> evaluateScores.evaluate(model, form));
+        processedModels.stream().forEach(model -> checkCoverage.evaluate(model, configuration));
+        processedModels.stream().forEach(model -> evaluateScores.evaluate(model, configuration));
         processedModels.stream().forEach(model -> {
             if (model.isPseudogene()) {
                 pseudoGenes.add(model);
@@ -65,8 +64,8 @@ public class GeneModelGenerationService {
         if (processedPseudoGenes.size() > 0 && isDebug) {
             FormatVigorOutput.printAllGeneModelsWithScores(processedPseudoGenes, "Pseudogenes");
         }
-        processedModels = filterModelsWithStructuralSpecifications(processedModels, form.getConfiguration());
-        processedPseudoGenes = filterModelsWithStructuralSpecifications(processedPseudoGenes, form.getConfiguration());
+        processedModels = filterModelsWithStructuralSpecifications(processedModels, configuration);
+        processedPseudoGenes = filterModelsWithStructuralSpecifications(processedPseudoGenes, configuration);
         if (processedModels.size() <= 0) {
             LOGGER.error("No gene models found. Currently Vigor4 does not support annotating Pseudogenes ");
             return Collections.EMPTY_LIST;
@@ -341,11 +340,11 @@ public class GeneModelGenerationService {
 
     /**
      * @param models
-     * @param form
+     * @param configuration
      * @return
      * @throws ServiceException
      */
-    private List<Model> determineGeneFeatures ( List<Model> models, VigorForm form, boolean isDebug ) throws ServiceException {
+    private List<Model> determineGeneFeatures ( List<Model> models, VigorConfiguration configuration, boolean isDebug ) throws ServiceException {
 
         List<Model> modelsWithMissingExonsDetermined = new ArrayList<Model>();
         List<Model> modelsAfterDeterminingStart = new ArrayList<Model>();
@@ -359,7 +358,7 @@ public class GeneModelGenerationService {
         /* Determine Start */
         for (Model model : models) {
             if (!model.isPartial5p()) {
-                List<Model> outputModels = determineStart.determine(model, form);
+                List<Model> outputModels = determineStart.determine(model);
                 outputModels.stream().forEach(model1 -> {
                     modelsAfterDeterminingStart.add(model1);
                 });
@@ -372,7 +371,7 @@ public class GeneModelGenerationService {
 
         /*Adjust RNAEditing, Ribosomal Slippage and find StopCodonReadThrough*/
         for (Model model : modelsAfterDeterminingStart) {
-            List<Model> outputModels = adjustViralTricks.determine(model, form);
+            List<Model> outputModels = adjustViralTricks.determine(model);
             modelsAfterDeterminingViralTricks.addAll(outputModels);
         }
         if (isDebug) {
@@ -381,13 +380,13 @@ public class GeneModelGenerationService {
 
         /*Adjust unedited Exon boundaries*/
         for (Model model : modelsAfterDeterminingViralTricks) {
-            List<Model> outputModels = adjustUneditedExonBounds.determine(model, form);
+            List<Model> outputModels = adjustUneditedExonBounds.determine(model);
             for (Model adjustedModel : outputModels) {
                 int exonsCount = adjustedModel.getExons().size();
-                Model missingExonsDeterminedModel = determineMissingExons.determine(adjustedModel, form).get(0);
+                Model missingExonsDeterminedModel = determineMissingExons.determine(adjustedModel).get(0);
                 int afterExonsCount = missingExonsDeterminedModel.getExons().size();
                 if (afterExonsCount > exonsCount) {
-                    List<Model> revisitedModels = adjustUneditedExonBounds.determine(missingExonsDeterminedModel, form);
+                    List<Model> revisitedModels = adjustUneditedExonBounds.determine(missingExonsDeterminedModel);
                     modelsWithMissingExonsDetermined.addAll(revisitedModels);
                 } else {
                     modelsWithMissingExonsDetermined.add(adjustedModel);
@@ -402,7 +401,7 @@ public class GeneModelGenerationService {
         /* Determine Stop */
         for (Model model : modelsWithMissingExonsDetermined) {
             if (!model.isPartial3p()) {
-                List<Model> outputModels = determineStop.determine(model, form);
+                List<Model> outputModels = determineStop.determine(model);
                 outputModels.stream().forEach(m -> {
                     modelsAfterDeterminingStop.add(m);
                 });
