@@ -67,6 +67,7 @@ public class VirusGenomeService {
         virusGenome.setSequenceGaps(findSequenceGapRanges(min_gap_length,virusGenome.getSequence()));
         return virusGenome;
     }
+
 }
 
 
