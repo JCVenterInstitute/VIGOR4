@@ -71,6 +71,8 @@ public enum ConfigurationParameters {
 
     ReferenceDatabasePath("reference_database_path", "Directory containing reference database files",
                           Flags.VERSION_4, Flags.REQUIRED, Flags.COMMANDLINE_SET, Flags.PROGRAM_CONFIG_SET),
+    ReferenceDatabaseFile("reference_database_file", "full path the reference database file",
+                          Flags.REQUIRED, Flags.VERSION_4, Flags.COMMANDLINE_SET),
 
     ScoreFactorAlignment("alignment_score_factor", "weight of alignment score in evaluating alignment", toDouble, Flags.VERSION_4),
     ScoreFactorStart("start_score_factor", "" ,  toDouble, Flags.VERSION_4),

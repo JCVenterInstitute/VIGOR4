@@ -34,7 +34,6 @@ import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.utils.VigorTestUtils;
-import org.jcvi.vigor.forms.VigorForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -68,7 +67,7 @@ public class DetermineMissingExonsTest {
         List<Alignment> alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile, referenceDB, alignmentOutput, config);
         List<Model> models = new ArrayList<>();
         for (int i = 0; i < alignments.size(); i++) {
-            alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm(config)));
+            alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), config));
         }
         models.addAll(modelGenerationService.alignmentToModels(alignments.get(0), config));
         assertTrue(String.format("Expected at least 1 model, got %s", models.size()), 1 >= models.size());

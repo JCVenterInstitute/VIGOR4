@@ -15,7 +15,6 @@ import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.component.VirusGenome;
 import org.jcvi.vigor.component.SpliceSite;
-import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.VigorConfiguration;
@@ -29,7 +28,7 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
     private static final int DEFAULT_STOP_CODON_SEARCH_WINDOW = 50;
     private static final int DEFAULT_MIN_INTRON_SIZE = 20;
     @Override
-    public List<Model> determine ( Model model, VigorForm form ) throws ServiceException {
+    public List<Model> determine ( Model model ) throws ServiceException {
 
         VigorConfiguration configuration = model.getAlignment().getViralProtein().getConfiguration();
         int defaultSearchWindow = configuration.getOrDefault(ConfigurationParameters.StopCodonSearchWindow,

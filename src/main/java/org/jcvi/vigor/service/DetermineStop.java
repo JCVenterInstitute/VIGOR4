@@ -15,7 +15,6 @@ import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
-import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.VigorConfiguration;
@@ -27,7 +26,7 @@ public class DetermineStop implements DetermineGeneFeatures {
 
     private static Logger LOGGER = LogManager.getLogger(DetermineStop.class);
     @Override
-    public List<Model> determine ( Model model, VigorForm form ) throws ServiceException {
+    public List<Model> determine ( Model model ) throws ServiceException {
 
         VigorConfiguration config = model.getAlignment().getViralProtein().getConfiguration();
         Integer stopCodonWindow = config.getOrDefault(ConfigurationParameters.StopCodonSearchWindow, 50);

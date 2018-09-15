@@ -15,7 +15,6 @@ import org.jcvi.vigor.service.exception.ServiceException;
 import org.springframework.stereotype.Service;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
-import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.utils.*;
 
 @Service
@@ -25,7 +24,7 @@ public class DetermineStart implements DetermineGeneFeatures {
             .getLogger(DetermineStart.class);
 
     @Override
-    public List<Model> determine ( Model model, VigorForm form ) throws ServiceException {
+    public List<Model> determine (Model model) throws ServiceException {
 
         VigorConfiguration config = model.getAlignment().getViralProtein().getConfiguration();
         List<Triplet> startCodons = loadStartCodons(model.getAlignment()

@@ -18,11 +18,9 @@ import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.vigor.Application;
 import org.jcvi.vigor.testing.category.Fast;
-import org.jcvi.vigor.testing.category.Isolated;
 import org.jcvi.vigor.component.Alignment;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.exception.VigorException;
-import org.jcvi.vigor.forms.VigorForm;
 import org.jcvi.vigor.testing.category.ReferenceDatabase;
 import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.VigorConfiguration;
@@ -65,7 +63,7 @@ public class AdjustUneditedExonBoundariesTest {
         List<Alignment> alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile,
                 referenceDB, alignmentOutput, config);
         for (int i = 0; i < alignments.size(); i++) {
-            alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), new VigorForm(config)));
+            alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), config));
         }
         logger.info("found {} alignments", alignments.size());
         List<Model> models = alignments.stream()
