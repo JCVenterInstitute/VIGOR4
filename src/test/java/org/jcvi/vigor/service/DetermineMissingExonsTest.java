@@ -8,6 +8,7 @@ import java.io.File;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.jcvi.jillion.align.AminoAcidSubstitutionMatrix;
 import org.jcvi.jillion.align.BlosumMatrices;
@@ -109,9 +110,10 @@ public class DetermineMissingExonsTest {
                 "MEDFVRQCFNPMIVELAEKTMKEYGEDLKIETNKFAAICTHLEVCFMYSDFHFINEQGESIIVELGDPNALLKHRFEIIEGRDRTMAWTVVNSICNTTGAEKPKFLPDLYDYKENRFIEIGVTRREVHIYYLEKANKI"
                         + "KSEKTHIHIFSFTGEEMATKADYTLDEESRARIKTRLFTIRQEMASRGLWDSFVSPREEKRQLKKGLKSQEQCASLPTKVSRRTSPALKILEPM")
                 .build();
-        Exon exon = determineMissingExons.performJillionPairWiseAlignment(NTRange, AARange, NTSequence,
-                AASequence, Direction.FORWARD);
-        assertEquals(exon.getAlignmentFragment().getProteinSeqRange(), AARange);
+        Optional<Exon> exon = determineMissingExons.performJillionPairWiseAlignment(NTRange, AARange, NTSequence,
+                                                                                    AASequence, Direction.FORWARD);
+        assertTrue(exon.isPresent());
+        assertEquals(exon.get().getAlignmentFragment().getProteinSeqRange(), AARange);
     }
 
     @Test
