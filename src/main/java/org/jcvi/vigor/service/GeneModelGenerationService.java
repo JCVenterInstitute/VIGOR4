@@ -297,32 +297,32 @@ public class GeneModelGenerationService {
         // add shared_cds model to gene models
         for (String sharedCDS : sharedCDSList) {
             Optional<Model> model = candidateGenes.stream()
-                                                  .filter(m -> m.getGeneSymbol().equals(sharedCDS))
-                                                  .findAny();
+                    .filter(m -> m.getGeneSymbol().equals(sharedCDS))
+                    .findAny();
             LOGGER.debug("for proteinID {} gene {} checking {} candidate models for shared CDs model {}: found {}",
-                         protein.getProteinID(),
-                         protein.getGeneSymbol(),
-                         candidateGenes.size(),
-                         sharedCDS,
-                         model.isPresent());
-
-            if (model.isPresent()) {
-                geneModels.add(model.get());
-            } else {
-
-                model = pseudogenes.stream()
-                        .filter(m -> m.getGeneSymbol().equals((sharedCDS)))
-                        .findAny();
-                LOGGER.debug("for proteinID {} gene {} checking {} pseudogenes for shared CDs model {}: found {}",
-                             protein.getProteinID(),
-                             protein.getGeneSymbol(),
-                             pseudogenes.size(),
-                             sharedCDS,
-                             model.isPresent());
+                    protein.getProteinID(),
+                    protein.getGeneSymbol(),
+                    candidateGenes.size(),
+                    sharedCDS,
+                    model.isPresent());
+            if (!geneModels.stream().filter(m -> m.getGeneSymbol().equals(sharedCDS)).findAny().isPresent()){
                 if (model.isPresent()) {
                     geneModels.add(model.get());
+                } else {
+                    model = pseudogenes.stream()
+                            .filter(m -> m.getGeneSymbol().equals(( sharedCDS )))
+                            .findAny();
+                    LOGGER.debug("for proteinID {} gene {} checking {} pseudogenes for shared CDs model {}: found {}",
+                            protein.getProteinID(),
+                            protein.getGeneSymbol(),
+                            pseudogenes.size(),
+                            sharedCDS,
+                            model.isPresent());
+                    if (model.isPresent()) {
+                        geneModels.add(model.get());
+                    }
                 }
-            }
+        }
         }
         geneModels.sort(Comparator.comparing(g -> g.getRange(), Range.Comparators.ARRIVAL));
 
