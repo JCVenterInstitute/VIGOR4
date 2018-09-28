@@ -14,8 +14,10 @@ import java.nio.file.Paths;
 import java.util.List;
 
 import org.jcvi.jillion.core.Direction;
+import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaDataStore;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaFileDataStoreBuilder;
+import org.jcvi.jillion.fasta.nt.NucleotideFastaRecord;
 import org.jcvi.jillion.testutils.assembly.cas.FastaRecordWriter;
 import org.jcvi.vigor.Application;
 import org.jcvi.vigor.component.AlignmentFragment;
@@ -78,9 +80,18 @@ public class AlignmentGenerationServiceTest {
                                                               Integer.MAX_VALUE)) {
             input.records().throwingForEach(r -> output.write(r.getId(),
                                                               r.getSequence().toBuilder().reverseComplement().build()));
-       }
-        List<Alignment> alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile, referenceDB, alignmentOutput, config);
-        List<Alignment> alignmentsReverse = VigorTestUtils.getAlignments(reversedFile.toFile(), referenceDB, reverseAlignmentOutput, config);
+        }
+        NucleotideFastaDataStore reversedDatastore = new NucleotideFastaFileDataStoreBuilder(reversedFile.toFile()).build();
+
+        List<Alignment> alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile,
+                                                                  referenceDB,
+                                                                  alignmentOutput,
+                                                                  config);
+        List<Alignment> alignmentsReverse = VigorTestUtils.getAlignments(reversedFile.toFile(),
+                                                                         referenceDB,
+                                                                         reverseAlignmentOutput,
+                                                                         config);
+
         assertEquals("expected 11 alignments", 11, alignments.size());
         assertEquals("complemented sequences should find the same number of alignments as the original",
                      alignments.size(),
@@ -91,6 +102,13 @@ public class AlignmentGenerationServiceTest {
                                     .flatMap(a -> a.getAlignmentFragments().stream())
                                     .allMatch(af -> af.getDirection() == Direction.REVERSE)
         );
+
+        for (Alignment alignment: alignmentsReverse) {
+            String id = alignment.getVirusGenome().getId();
+            NucleotideSequence virusSequence = alignment.getVirusGenome().getSequence();
+            NucleotideFastaRecord record = reversedDatastore.get(id);
+            assertEquals("Alignment should use forward strand sequence", virusSequence, record.getSequence().toBuilder().reverseComplement().build());
+        }
 
     }
 }
