@@ -9,6 +9,7 @@ import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.jillion.core.residue.aa.IupacTranslationTables;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
+import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaRecord;
 import org.jcvi.vigor.component.VirusGenome;
 import org.jcvi.vigor.utils.ConfigurationParameters;
@@ -62,6 +63,15 @@ public class VirusGenomeService {
         VirusGenome virusGenome = new VirusGenome(record.getSequence(), record.getComment(), record.getId(),
                 config.getOrDefault(ConfigurationParameters.CompleteGene, false),
                 config.getOrDefault(ConfigurationParameters.CircularGene, false));
+        Integer min_gap_length = config.get(ConfigurationParameters.SequenceGapMinimumLength);
+        virusGenome.setInternalStops(findInternalStops(virusGenome.getSequence()));
+        virusGenome.setSequenceGaps(findSequenceGapRanges(min_gap_length,virusGenome.getSequence()));
+        return virusGenome;
+    }
+    public static VirusGenome reverseComplementVirusGenome(VirusGenome inputGenome,VigorConfiguration config){
+        NucleotideSequence reverseCompGenome = new NucleotideSequenceBuilder(inputGenome.getSequence().toString()).reverseComplement().build();
+        VirusGenome virusGenome = new VirusGenome(reverseCompGenome, inputGenome.getDefline(), inputGenome.getId(),
+                inputGenome.getIsComplete(), inputGenome.getIsCircular());
         Integer min_gap_length = config.get(ConfigurationParameters.SequenceGapMinimumLength);
         virusGenome.setInternalStops(findInternalStops(virusGenome.getSequence()));
         virusGenome.setSequenceGaps(findSequenceGapRanges(min_gap_length,virusGenome.getSequence()));

@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.jcvi.jillion.core.Direction;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.jillion.core.residue.aa.IupacTranslationTables;
@@ -187,4 +188,9 @@ public class VigorFunctionalUtils {
         Map<Frame, List<Long>> outStopsMap = VigorFunctionalUtils.frameToSequenceFrame(stopsTemp);
         return outStopsMap;
     }
+
+    public static long getDirectionBasedCoordinate(long coordinate,long seqLength,Direction direction){
+        return ((direction==Direction.REVERSE) ? seqLength+1-coordinate : coordinate);
+    }
+
 }

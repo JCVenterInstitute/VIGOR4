@@ -1,6 +1,5 @@
 package org.jcvi.vigor.service;
 
-import org.jcvi.jillion.core.DirectedRange;
 import org.jcvi.jillion.core.Direction;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.vigor.component.*;
@@ -77,7 +76,7 @@ public class ExonerateService implements AlignmentService {
      * @return
      * @throws ServiceException
      */
-    public List<Alignment> parseExonerateOutput ( File exonerateOutput, VirusGenome virusGenome, String referenceDB ) throws ServiceException {
+    public List<Alignment> parseExonerateOutput ( File exonerateOutput, VirusGenome virusGenome, String referenceDB) throws ServiceException {
 
         List<Alignment> alignments = new ArrayList<Alignment>();
         List<VulgarProtein2Genome2> Jalignments;
@@ -94,7 +93,6 @@ public class ExonerateService implements AlignmentService {
             throw new ServiceException(String.format("Error parsing exonerate output %s", exonerateOutput.getName()));
         }
         long sequenceLength = virusGenome.getSequence().getLength();
-
         try (ProteinFastaDataStore datastore = new ProteinFastaFileDataStoreBuilder(new File(referenceDB))
                 .hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED).build();
         ) {

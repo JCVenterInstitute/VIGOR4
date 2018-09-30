@@ -188,10 +188,7 @@ public class Vigor {
     private List<Alignment> handleReverseAlignments(VigorConfiguration vigorParameters, List<Alignment> alignments) {
         for (Alignment alignment: alignments) {
             if (alignment.getDirection() == Direction.REVERSE) {
-                VirusGenome complement = new VirusGenome(alignment.getVirusGenome());
-                complement.setSequence(complement.getSequence().toBuilder().reverseComplement().build());
-                complement.setInternalStops(VirusGenomeService.findInternalStops(complement.getSequence()));
-                complement.setSequenceGaps(VirusGenomeService.findSequenceGapRanges(vigorParameters, complement.getSequence()));
+                VirusGenome complement = VirusGenomeService.reverseComplementVirusGenome(alignment.getVirusGenome(),vigorParameters);
                 alignment.setVirusGenome(complement);
             }
         }

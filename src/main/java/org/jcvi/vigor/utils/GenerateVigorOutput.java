@@ -80,6 +80,7 @@ public class GenerateVigorOutput {
         String locusPrefix = config.get(ConfigurationParameters.Locustag);
         boolean writeLocus = !( locusPrefix == null || locusPrefix.isEmpty() );
         String genomeID = geneModels.get(0).getAlignment().getVirusGenome().getId();
+        long seqlength = geneModels.get(0).getAlignment().getVirusGenome().getSequence().getLength();
         bw.write(">Features " + genomeID + "\n");
         String proteinID = "";
         for (int i = 0; i < geneModels.size(); i++) {
@@ -91,9 +92,9 @@ public class GenerateVigorOutput {
             StringBuilder notes = new StringBuilder("");
             List<Exon> exons = model.getExons();
             Exon firstExon = exons.get(0);
-            String start = Long.toString(firstExon.getRange().getBegin(oneBased));
+            String start = Long.toString(VigorFunctionalUtils.getDirectionBasedCoordinate(firstExon.getRange().getBegin(oneBased),seqlength,model.getDirection()));
             int codon_start = firstExon.getFrame().getFrame();
-            String end = Long.toString(exons.get(exons.size() - 1).getRange().getEnd(oneBased));
+            String end = Long.toString(VigorFunctionalUtils.getDirectionBasedCoordinate(exons.get(exons.size() - 1).getRange().getEnd(oneBased),seqlength,model.getDirection()));
             if (model.isPartial5p()) start = "<" + start;
             if (model.isPartial3p()) end = ">" + end;
             if (!model.getAlignment().getViralProtein().getProteinID().equals(proteinID)) {
@@ -114,8 +115,8 @@ public class GenerateVigorOutput {
             }
             for (int j = 0; j < exons.size(); j++) {
                 Exon exon = exons.get(j);
-                String Cstart = Long.toString(exon.getRange().getBegin(oneBased));
-                String Cend = Long.toString(exon.getRange().getEnd(oneBased));
+                String Cstart = Long.toString(VigorFunctionalUtils.getDirectionBasedCoordinate(exon.getRange().getBegin(oneBased),seqlength,model.getDirection()));
+                String Cend = Long.toString(VigorFunctionalUtils.getDirectionBasedCoordinate(exon.getRange().getEnd(oneBased),seqlength,model.getDirection()));
                 if (j == 0 && model.isPartial5p()) Cstart = "<" + Cstart;
                 if (j == exons.size() - 1 && model.isPartial3p()) Cend = ">" + Cend;
                 if (j == 0 )  {
@@ -130,7 +131,9 @@ public class GenerateVigorOutput {
             }
             bw.write("\t\t\tcodon_start\t" + codon_start + "\n");
             if (model.getReplaceStopCodonRange() != null) {
-                bw.write("\t\t\ttransl_except\t" + String.format("(pos:%s..%s,aa:R)", model.getReplaceStopCodonRange().getBegin(oneBased), model.getReplaceStopCodonRange().getEnd(oneBased)) + "\n");
+                long replaceStopBegin= VigorFunctionalUtils.getDirectionBasedCoordinate(model.getReplaceStopCodonRange().getBegin(oneBased),seqlength,model.getDirection());
+                long replaceStopEnd=VigorFunctionalUtils.getDirectionBasedCoordinate(model.getReplaceStopCodonRange().getEnd(oneBased),seqlength,model.getDirection());
+                bw.write("\t\t\ttransl_except\t" + String.format("(pos:%s..%s,aa:R)",replaceStopBegin ,replaceStopEnd) + "\n");
             }
             bw.write("\t\t\tprotein_id\t" + model.getGeneID() + "\n");
             if (writeLocus) {
@@ -150,8 +153,10 @@ public class GenerateVigorOutput {
             }
             if (model.getInsertRNAEditingRange() != null) {
                 bw.write("\t\t\tnote\t" + notes + "\n");
+                long insertBegin= VigorFunctionalUtils.getDirectionBasedCoordinate(model.getInsertRNAEditingRange().getBegin(oneBased),seqlength,model.getDirection());
+                long insertEnd=VigorFunctionalUtils.getDirectionBasedCoordinate(model.getInsertRNAEditingRange().getEnd(oneBased),seqlength,model.getDirection());
                 // TODO coordinate system?
-                bw.write(model.getInsertRNAEditingRange().getBegin(oneBased) + "\t" + model.getInsertRNAEditingRange().getEnd(oneBased) + "\t" + "misc_feature\n");
+                bw.write(insertBegin + "\t" + insertEnd + "\t" + "misc_feature\n");
                 NucleotideSequence subSeq = model.getAlignment().getVirusGenome().getSequence().toBuilder(model.getInsertRNAEditingRange()).build();
                 bw.write("\t\t\tnote\tlocation of RNA editing (" + subSeq + "," + rna_editing.getInsertionString() + ") in " + model.getAlignment().getViralProtein().getProduct() + "\n");
             }
@@ -163,16 +168,19 @@ public class GenerateVigorOutput {
         for (Model model : geneModels) {
             if (model.getMaturePeptides() != null && !model.getMaturePeptides().isEmpty()) {
                 bw.write(">Features " + model.getGeneID());
+                long proteinLength=model.getAlignment().getViralProtein().getSequence().getLength();
                 bw.newLine();
                 String product;
                 for (MaturePeptideMatch match : model.getMaturePeptides()) {
+                    long start = VigorFunctionalUtils.getDirectionBasedCoordinate(1,proteinLength,model.getDirection());
+                    long end = VigorFunctionalUtils.getDirectionBasedCoordinate(proteinLength,proteinLength,model.getDirection());
                     bw.write(formatMaturePeptideRange(model,
                             match,
                             Arrays.asList(match.getProteinRange()),
                             Range.CoordinateSystem.RESIDUE_BASED,
                             "\t",
-                            1,
-                            match.getProtein().getLength()));
+                            start,
+                            end,false));
                     bw.write("\t");
                     product = match.getReference().getProduct();
                     if (product.contains("signal")) {
@@ -204,11 +212,12 @@ public class GenerateVigorOutput {
 
     private String getGeneCoordinatesString ( Model model, List<Model> geneModels ) {
 
-        long start = model.getRange().getBegin(Range.CoordinateSystem.RESIDUE_BASED);
+        long seqLength = model.getAlignment().getVirusGenome().getSequence().getLength();
+        long start = VigorFunctionalUtils.getDirectionBasedCoordinate(model.getRange().getBegin(Range.CoordinateSystem.RESIDUE_BASED),seqLength,model.getDirection());
         Model endGeneModel = geneModels.stream()
                 .filter(m -> model.getProteinID().equals(m.getProteinID()))
                 .findFirst().orElse(model);
-        long end = endGeneModel.getRange().getEnd(Range.CoordinateSystem.RESIDUE_BASED);
+        long end = VigorFunctionalUtils.getDirectionBasedCoordinate(endGeneModel.getRange().getEnd(Range.CoordinateSystem.RESIDUE_BASED),seqLength,model.getDirection());
         return String.join("\t",
                 ( model.isPartial5p() ? "<" : "" ) + start,
                 ( endGeneModel.isPartial3p() ? ">" : "" ) + end);
@@ -216,6 +225,7 @@ public class GenerateVigorOutput {
 
     private void writeDefline ( BufferedWriter bw, Model model ) throws IOException {
 
+        long seqLength = model.getAlignment().getVirusGenome().getSequence().getLength();
         ViralProtein refProtein = model.getAlignment().getViralProtein();
         StringBuilder defline = new StringBuilder();
         defline.append(">" + model.getGeneID());
@@ -224,8 +234,8 @@ public class GenerateVigorOutput {
         defline.append(" location=");
         for (int i = 0; i < model.getExons().size(); i++) {
             Exon exon = model.getExons().get(i);
-            String start = Long.toString(exon.getRange().getBegin(oneBased));
-            String end = Long.toString(exon.getRange().getEnd(oneBased));
+            String start = Long.toString(VigorFunctionalUtils.getDirectionBasedCoordinate(exon.getRange().getBegin(oneBased),seqLength,model.getDirection()));
+            String end = Long.toString(VigorFunctionalUtils.getDirectionBasedCoordinate(exon.getRange().getEnd(oneBased),seqLength,model.getDirection()));
             if (model.isPartial5p() && i == 0) {
                 start = "<" + start;
             }
@@ -267,6 +277,7 @@ public class GenerateVigorOutput {
     public void generatePEPReport ( VigorConfiguration config, BufferedWriter bw, List<Model> geneModels ) throws IOException {
 
         StringBuilder defline;
+        long seqLength = geneModels.get(0).getAlignment().getVirusGenome().getSequence().getLength();
         for (Model model : geneModels) {
             writeDefline(bw, model);
             writeSequence(bw, model.getTranslatedSeq());
@@ -281,15 +292,16 @@ public class GenerateVigorOutput {
                 List<Range> cdsRanges = VigorFunctionalUtils.proteinRangeToCDSRanges(model, match.getProteinRange());
                 // TODO handle truncation etc
                 Exon initialExon = model.getExons().get(0);
-                long endCoordinate = model.getRange().getEnd(Range.CoordinateSystem.RESIDUE_BASED);
+                long startCoordinate= VigorFunctionalUtils.getDirectionBasedCoordinate(initialExon.getRange().getBegin(Range.CoordinateSystem.RESIDUE_BASED),seqLength,model.getDirection());
+                long endCoordinate = VigorFunctionalUtils.getDirectionBasedCoordinate(model.getRange().getEnd(Range.CoordinateSystem.RESIDUE_BASED),seqLength,model.getDirection());
                 defline.append(String.format(" location=%s", formatMaturePeptideRange(model,
                         match,
                         cdsRanges,
                         Range.CoordinateSystem.RESIDUE_BASED,
                         "..",
                         // start_codon adjustment
-                        initialExon.getRange().getBegin(Range.CoordinateSystem.RESIDUE_BASED) + initialExon.getFrame().getFrame() - 1,
-                        endCoordinate)));
+                         startCoordinate+ initialExon.getFrame().getFrame() - 1,
+                        endCoordinate,true)));
                 defline.append(String.format(" gene=\"%s\"", model.getGeneSymbol()));
                 defline.append(String.format(" product=\"%s\"", VigorUtils.putativeName(match.getReference().getProduct(), match.isFuzzyEnd(), match.isFuzzyBegin())));
                 String refDB = model.getAlignment().getAlignmentEvidence().getMatpep_db();
@@ -310,8 +322,9 @@ public class GenerateVigorOutput {
                                                     Range.CoordinateSystem coordinateSystem,
                                                     String rangeDelimiter,
                                                     long startCoordinate,
-                                                    long endCoordinate ) {
-
+                                                    long endCoordinate, boolean CDSRanges) {
+        long seqLength = CDSRanges ? model.getAlignment().getVirusGenome().getSequence().getLength()
+                : model.getAlignment().getViralProtein().getSequence().getLength();
         List<String> rangeStrings = new ArrayList<>(ranges.size());
         Exon initialExon = model.getExons().get(0);
         Exon lastExon = model.getExons().get(model.getExons().size() - 1);
@@ -325,12 +338,12 @@ public class GenerateVigorOutput {
                     lastExon.getFrame().getFrame(),
                     model.isPartial5p(),
                     model.isPartial3p());
-            long start = range.getBegin(coordinateSystem);
+            long start = VigorFunctionalUtils.getDirectionBasedCoordinate(range.getBegin(coordinateSystem),seqLength,model.getDirection());
             String startStr = String.valueOf(start);
             if (match.isFuzzyBegin() || model.isPartial5p() && start == startCoordinate) {
                 startStr = "<" + startStr;
             }
-            long end = range.getEnd(coordinateSystem);
+            long end = VigorFunctionalUtils.getDirectionBasedCoordinate(range.getEnd(coordinateSystem),seqLength,model.getDirection());
             String endStr = String.valueOf(end);
             if (match.isFuzzyEnd() || ( model.isPartial3p() && end == endCoordinate )) {
                 endStr = ">" + endStr;
