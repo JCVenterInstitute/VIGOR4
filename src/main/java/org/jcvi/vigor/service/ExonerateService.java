@@ -1,10 +1,10 @@
 package org.jcvi.vigor.service;
 
+import org.jcvi.jillion.core.Direction;
 import org.jcvi.vigor.component.*;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.service.exception.ServiceException;
-import org.jcvi.vigor.utils.ConfigurationParameters;
-import org.jcvi.vigor.utils.GenerateExonerateOutput;
+import org.jcvi.vigor.utils.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.align.exonerate.Exonerate2;
@@ -13,8 +13,6 @@ import org.jcvi.jillion.core.datastore.DataStoreProviderHint;
 import org.jcvi.jillion.fasta.aa.ProteinFastaDataStore;
 import org.jcvi.jillion.fasta.aa.ProteinFastaFileDataStoreBuilder;
 import org.jcvi.jillion.fasta.aa.ProteinFastaRecord;
-import org.jcvi.vigor.utils.VigorConfiguration;
-import org.jcvi.vigor.utils.VigorUtils;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -56,7 +54,7 @@ public class ExonerateService implements AlignmentService {
             Path exoneratePath = Paths.get(exoneratePathString);
             String outputFilePath = GenerateExonerateOutput.queryExonerate(virusGenome, referenceDB, workspace, null, exoneratePath.toString());
             File outputFile = new File(outputFilePath);
-            return parseExonerateOutput(outputFile, virusGenome, referenceDB);
+            return parseExonerateOutput(outputFile, virusGenome, referenceDB,config);
         } catch (VigorException e) {
             throw new ServiceException(String.format("error getting alignment got %s: %s", e.getClass().getSimpleName(), e.getMessage()), e);
         }
@@ -74,11 +72,12 @@ public class ExonerateService implements AlignmentService {
      * @return
      * @throws ServiceException
      */
-    public List<Alignment> parseExonerateOutput ( File exonerateOutput, VirusGenome virusGenome, String referenceDB ) throws ServiceException {
+    public List<Alignment> parseExonerateOutput ( File exonerateOutput, VirusGenome virusGenome, String referenceDB, VigorConfiguration config ) throws ServiceException {
 
         List<Alignment> alignments = new ArrayList<Alignment>();
         List<VulgarProtein2Genome2> Jalignments;
-
+        long seqLength = virusGenome.getSequence().getLength();
+        VirusGenome reverseCompGenome = VirusGenomeService.reverseComplementVirusGenome(virusGenome,config);
         AlignmentEvidence evidence = new AlignmentEvidence();
         evidence.setReference_db(referenceDB);
         // TODO results directory
@@ -101,10 +100,19 @@ public class ExonerateService implements AlignmentService {
                 alignment.setAlignmentTool(alignmentTool);
                 List<AlignmentFragment> alignmentFragments = new ArrayList<>();
                 for (VulgarProtein2Genome2.AlignmentFragment fragment : Jalignment.getAlignmentFragments()) {
-                    alignmentFragments.add(new AlignmentFragment(fragment.getProteinSeqRange(),
-                                                                 fragment.getNucleotideSeqRange(),
-                                                                 fragment.getDirection(),
-                                                                 fragment.getFrame()));
+                    if(fragment.getDirection().equals(Direction.FORWARD)) {
+                        alignmentFragments.add(new AlignmentFragment(fragment.getProteinSeqRange(),
+                                fragment.getNucleotideSeqRange(),
+                                fragment.getDirection(),
+                                fragment.getFrame()));
+                    }else {
+
+                            alignmentFragments.add(new AlignmentFragment(fragment.getProteinSeqRange(),
+                                    VigorFunctionalUtils.convertToOppositeStrandRange(fragment.getNucleotideSeqRange(),seqLength),
+                                    fragment.getDirection(),
+                                    fragment.getFrame()));
+
+                    }
                 }
                 ProteinFastaRecord fasta = datastore.get(Jalignment.getQueryId());
                 ViralProtein viralProtein = new ViralProtein();
@@ -113,7 +121,9 @@ public class ExonerateService implements AlignmentService {
                 viralProtein.setSequence(fasta.getSequence());
                 alignment.setAlignmentFragments(alignmentFragments);
                 alignment.setViralProtein(viralProtein);
-                alignment.setVirusGenome(virusGenome);
+                if(Jalignment.getTargetStrand().get().equals(Direction.REVERSE)){
+                    alignment.setVirusGenome(reverseCompGenome);
+                }else alignment.setVirusGenome(virusGenome);
                 alignment.setAlignmentEvidence(evidence.copy());
                 alignments.add(alignment);
             }

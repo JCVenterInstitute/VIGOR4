@@ -187,4 +187,9 @@ public class VigorFunctionalUtils {
         Map<Frame, List<Long>> outStopsMap = VigorFunctionalUtils.frameToSequenceFrame(stopsTemp);
         return outStopsMap;
     }
+
+    public static Range convertToOppositeStrandRange(Range iRange,long seqLength){
+        return Range.of(seqLength-1-iRange.getEnd(),seqLength-1-iRange.getBegin());
+    }
+
 }
