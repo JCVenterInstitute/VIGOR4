@@ -1,5 +1,8 @@
 package org.jcvi.vigor.service;
 
+import org.jcvi.jillion.core.DirectedRange;
+import org.jcvi.jillion.core.Direction;
+import org.jcvi.jillion.core.Range;
 import org.jcvi.vigor.component.*;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.service.exception.ServiceException;
@@ -90,6 +93,8 @@ public class ExonerateService implements AlignmentService {
         } catch (IOException e) {
             throw new ServiceException(String.format("Error parsing exonerate output %s", exonerateOutput.getName()));
         }
+        long sequenceLength = virusGenome.getSequence().getLength();
+
         try (ProteinFastaDataStore datastore = new ProteinFastaFileDataStoreBuilder(new File(referenceDB))
                 .hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED).build();
         ) {
@@ -100,9 +105,17 @@ public class ExonerateService implements AlignmentService {
                 alignment.setAlignmentScore(alignmentScores);
                 alignment.setAlignmentTool(alignmentTool);
                 List<AlignmentFragment> alignmentFragments = new ArrayList<>();
+                Range nucleotideSequenceRange;
                 for (VulgarProtein2Genome2.AlignmentFragment fragment : Jalignment.getAlignmentFragments()) {
-                    alignmentFragments.add(new AlignmentFragment(fragment.getProteinSeqRange(),
-                                                                 fragment.getNucleotideSeqRange(),
+                    nucleotideSequenceRange = fragment.getNucleotideSeqRange().getRange();
+                    if (fragment.getDirection() == Direction.REVERSE) {
+                        nucleotideSequenceRange = nucleotideSequenceRange.toBuilder()
+                                                                         .setBegin(sequenceLength - nucleotideSequenceRange.getEnd(Range.CoordinateSystem.SPACE_BASED))
+                                                                         .setEnd(sequenceLength - nucleotideSequenceRange.getBegin(Range.CoordinateSystem.SPACE_BASED) - 1)
+                                                                         .build();
+                    }
+                    alignmentFragments.add(new AlignmentFragment(fragment.getProteinSeqRange().getRange(),
+                                                                 nucleotideSequenceRange,
                                                                  fragment.getDirection(),
                                                                  fragment.getFrame()));
                 }

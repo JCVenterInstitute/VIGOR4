@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.LoggerContext;
+import org.jcvi.jillion.core.Direction;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.datastore.DataStoreException;
 import org.jcvi.jillion.core.datastore.DataStoreProviderHint;
@@ -157,6 +158,7 @@ public class Vigor {
         LOGGER.info("Getting alignments for {}", record.getId());
         VirusGenome virusGenome = VirusGenomeService.fastaRecordToVirusGenome(record, vigorParameters);
         List<Alignment> alignments = generateAlignments(virusGenome, referenceDB, vigorParameters);
+        alignments = handleReverseAlignments(vigorParameters, alignments);
         LOGGER.info("{} alignment(s) found for sequence {}", alignments.size(), record.getId());
         List<Model> candidateModels = generateModels(alignments, vigorParameters);
         LOGGER.info("{} candidate model(s) found for sequence {}", candidateModels.size(), record.getId());
@@ -175,6 +177,25 @@ public class Vigor {
                          .sorted(Comparator.comparing(g -> g.getRange(), Range.Comparators.ARRIVAL))
                          .collect(Collectors.toList());
 
+    }
+
+    /**
+     * Handle alignments on the opposite strand by reverse complementing the sequence and recalculating stops and gaps
+     * @param vigorParameters
+     * @param alignments
+     * @return
+     */
+    private List<Alignment> handleReverseAlignments(VigorConfiguration vigorParameters, List<Alignment> alignments) {
+        for (Alignment alignment: alignments) {
+            if (alignment.getDirection() == Direction.REVERSE) {
+                VirusGenome complement = new VirusGenome(alignment.getVirusGenome());
+                complement.setSequence(complement.getSequence().toBuilder().reverseComplement().build());
+                complement.setInternalStops(VirusGenomeService.findInternalStops(complement.getSequence()));
+                complement.setSequenceGaps(VirusGenomeService.findSequenceGapRanges(vigorParameters, complement.getSequence()));
+                alignment.setVirusGenome(complement);
+            }
+        }
+        return alignments;
     }
 
     private void setVerboseLogging ( int verbosity ) {

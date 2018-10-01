@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+import org.jcvi.jillion.core.Direction;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import lombok.Data;
@@ -21,4 +22,10 @@ public class Alignment implements Serializable {
     private transient VirusGenome virusGenome;
     private transient ViralProtein viralProtein;
     private transient AlignmentEvidence alignmentEvidence;
+
+    // TODO fix this
+    public Direction getDirection() {
+        return alignmentFragments.stream()
+                                 .anyMatch(af -> af.getDirection() == Direction.REVERSE) ? Direction.REVERSE : Direction.FORWARD;
+    }
 }
