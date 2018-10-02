@@ -7,8 +7,9 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import lombok.Data;
 
-import java.util.List;
-import java.util.Map;
+import javax.swing.*;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Component
 @Scope("prototype")
@@ -21,8 +22,8 @@ public class VirusGenome {
     private String id;
     private Boolean isComplete = false;
     private Boolean isCircular = false;
-    private List<Range> sequenceGaps;
-    private Map<Frame, List<Long>> internalStops;
+    private List<Range> sequenceGaps = Collections.EMPTY_LIST;
+    private Map<Frame, List<Long>> internalStops = Collections.EMPTY_MAP;
 
     public VirusGenome ( NucleotideSequence sequence, String defline, String id, boolean isComplete, boolean isCircular ) {
 
@@ -35,5 +36,14 @@ public class VirusGenome {
 
     public VirusGenome () {
 
+    }
+
+    public VirusGenome(VirusGenome copyFrom) {
+        this(copyFrom.getSequence(), copyFrom.getDefline(), copyFrom.getId(), copyFrom.getIsComplete(), copyFrom.getIsCircular());
+        setSequenceGaps(new ArrayList<>(copyFrom.getSequenceGaps()));
+        setInternalStops(copyFrom.getInternalStops()
+                                 .entrySet()
+                                 .stream()
+                                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue)));
     }
 }
