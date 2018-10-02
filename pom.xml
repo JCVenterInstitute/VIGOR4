@@ -21,7 +21,7 @@
     <commons-configuration-version>2.2</commons-configuration-version>
     <commons-beanutils-version>1.9.3</commons-beanutils-version>
     <log4j-version>2.10.0</log4j-version>
-    <jillion-version>5.3-20181002</jillion-version>
+    <jillion-version>5.3-20181002-110820</jillion-version>
     <argparse4j-version>0.8.1</argparse4j-version>
     <jacoco-version>0.8.0</jacoco-version>
     <guava-version>24.1-jre</guava-version>
