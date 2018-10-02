@@ -68,6 +68,11 @@ public class VirusGenomeService {
         return virusGenome;
     }
 
+    public static List<Range> findSequenceGapRanges ( VigorConfiguration config, NucleotideSequence sequence ) {
+        Integer min_gap_length = config.get(ConfigurationParameters.SequenceGapMinimumLength);
+        return findSequenceGapRanges(min_gap_length, sequence);
+    }
+
 }
 
 
