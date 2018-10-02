@@ -1,6 +1,7 @@
 package org.jcvi.vigor.component;
 
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -15,8 +16,8 @@ import lombok.Data;
 public class Alignment implements Serializable {
 
     private transient AlignmentTool alignmentTool;
-    private List<AlignmentFragment> alignmentFragments;
-    private Map<String, Double> alignmentScore;
+    private List<AlignmentFragment> alignmentFragments = Collections.EMPTY_LIST;
+    private Map<String, Double> alignmentScore = Collections.EMPTY_MAP;
     private transient VirusGenome virusGenome;
     private transient ViralProtein viralProtein;
     private transient AlignmentEvidence alignmentEvidence;
