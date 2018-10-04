@@ -6,14 +6,14 @@ import net.sourceforge.argparse4j.inf.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.vigor.utils.ConfigurationParameters;
+import org.jcvi.vigor.utils.NullUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.Map;
-import java.util.Properties;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -242,15 +242,33 @@ public class VigorInputValidationService {
 		@Override
 		public void run(ArgumentParser argumentParser, Argument argument, Map<String, Object> map, String s, Object o) throws ArgumentParserException {
 			try {
-				Properties gitProperties = new Properties();
-				gitProperties.load(this.getClass().getResourceAsStream("/git.properties"));
-				System.out.println(String.format("%s-%s (branch %s) (built on host %s at %s)",
-												 gitProperties.getProperty("git.build.version"),
-												 gitProperties.getProperty("git.commit.id.abbrev"),
-												 gitProperties.getProperty("git.branch"),
-												 gitProperties.getProperty("git.build.host"),
-												 gitProperties.getProperty("git.build.time")
-								   )
+				Properties buildProperties = new Properties();
+				buildProperties.load(this.getClass().getResourceAsStream("/build.properties"));
+				String branch = NullUtil.emptyOrElse(buildProperties.getProperty("git.branch"), "master");
+				String host = NullUtil.nullOrElse(buildProperties.getProperty("git.build.host"),"").trim();
+				String buildTimeString = NullUtil.nullOrElse(buildProperties.getProperty("git.build.time"),"").trim();
+
+				host = host.contains("localhost") ? "" : host;
+				if (! buildTimeString.isEmpty()) {
+					LocalDateTime buildDateTime = LocalDateTime.of(Integer.parseInt(buildTimeString.substring(0,4)),
+																   Integer.parseInt(buildTimeString.substring(4,6)),
+																   Integer.parseInt(buildTimeString.substring(6,8)),
+																   Integer.parseInt(buildTimeString.substring(9,11)),
+																   Integer.parseInt(buildTimeString.substring(11,13)),
+																   Integer.parseInt(buildTimeString.substring(13,15))
+					);
+					buildTimeString = buildDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss", Locale.getDefault()));
+				}
+				String buildInfo = "";
+				if (! (host.isEmpty() && buildTimeString.isEmpty()) ) {
+					buildInfo = String.format(" ( built %s%s )",
+											  ! host.isEmpty() ? String.format(" on host %s", host) : "",
+											  ! buildTimeString.isEmpty() ? String.format("at %s", buildTimeString): "");
+				}
+				System.out.println(String.format("%s%s%s",
+												 buildProperties.getProperty("vigor.version"),
+												 "master".equals(branch) ? "" : String.format(" (branch %s)", branch),
+												 buildInfo)
 				);
 				System.exit(0);
 			} catch (IOException e ) {
