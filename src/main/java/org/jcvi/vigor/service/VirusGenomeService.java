@@ -9,7 +9,6 @@ import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.jillion.core.residue.aa.IupacTranslationTables;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
-import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaRecord;
 import org.jcvi.vigor.component.VirusGenome;
 import org.jcvi.vigor.utils.ConfigurationParameters;
@@ -68,8 +67,9 @@ public class VirusGenomeService {
         virusGenome.setSequenceGaps(findSequenceGapRanges(min_gap_length,virusGenome.getSequence()));
         return virusGenome;
     }
+
     public static VirusGenome reverseComplementVirusGenome(VirusGenome inputGenome,VigorConfiguration config){
-        NucleotideSequence reverseCompGenome = new NucleotideSequenceBuilder(inputGenome.getSequence().toString()).reverseComplement().build();
+        NucleotideSequence reverseCompGenome = inputGenome.getSequence().toBuilder().reverseComplement().build();
         VirusGenome virusGenome = new VirusGenome(reverseCompGenome, inputGenome.getDefline(), inputGenome.getId(),
                 inputGenome.getIsComplete(), inputGenome.getIsCircular());
         Integer min_gap_length = config.get(ConfigurationParameters.SequenceGapMinimumLength);
