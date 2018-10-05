@@ -14,6 +14,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 import org.jcvi.jillion.core.Direction;
+import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaDataStore;
 import org.jcvi.jillion.fasta.nt.NucleotideFastaFileDataStoreBuilder;
@@ -103,11 +104,29 @@ public class AlignmentGenerationServiceTest {
                                     .allMatch(af -> af.getDirection() == Direction.REVERSE)
         );
 
-        for (Alignment alignment: alignmentsReverse) {
-            String id = alignment.getVirusGenome().getId();
-            NucleotideSequence virusSequence = alignment.getVirusGenome().getSequence();
+
+
+        for (int i = 0; i < alignmentsReverse.size(); i++) {
+            Alignment reverseAlignment = alignmentsReverse.get(i);
+            Alignment forwardAlignment = alignments.get(i);
+            String id = reverseAlignment.getVirusGenome().getId();
+            NucleotideSequence virusSequence = reverseAlignment.getVirusGenome().getSequence();
             NucleotideFastaRecord record = reversedDatastore.get(id);
-            assertEquals("Alignment should use forward strand sequence", virusSequence, record.getSequence().toBuilder().reverseComplement().build());
+            assertEquals("Alignment returns passed in sequence", virusSequence, record.getSequence());
+            assertEquals("Alignment should be on the reverse strand", Direction.REVERSE, reverseAlignment.getDirection());
+            List<AlignmentFragment> reverseFragments = reverseAlignment.getAlignmentFragments();
+            List<AlignmentFragment> forwardFragments = forwardAlignment.getAlignmentFragments();
+            assertEquals("Reverse alignment should have same number of fragments as forward",
+                         forwardFragments.size(),
+                         reverseFragments.size());
+            for (int j=0; j < forwardFragments.size(); j++) {
+                AlignmentFragment forwardFragment = forwardFragments.get(j);
+                AlignmentFragment reverseFragment = reverseFragments.get(j);
+                Range forwardRange = forwardFragment.getNucleotideSeqRange();
+                Range reverseRange = reverseFragment.getNucleotideSeqRange();
+                assertTrue("Alignment fragments should be in strand coordinates, but direction reversed", forwardRange.equals(reverseRange) && reverseFragment.getDirection() == Direction.REVERSE);
+            }
+
         }
 
     }
