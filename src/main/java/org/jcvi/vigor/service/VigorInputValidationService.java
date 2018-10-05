@@ -1,5 +1,6 @@
 package org.jcvi.vigor.service;
 
+import com.google.common.base.Joiner;
 import net.sourceforge.argparse4j.ArgumentParsers;
 import net.sourceforge.argparse4j.impl.Arguments;
 import net.sourceforge.argparse4j.inf.*;
@@ -14,6 +15,7 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
@@ -281,14 +283,40 @@ public class VigorInputValidationService {
 		@Override
 		public void run(ArgumentParser argumentParser, Argument argument, Map<String, Object> map, String s, Object o) throws ArgumentParserException {
 			System.out.println("Configuration Parameters\n");
+			Function<ConfigurationParameters.Flags, String> flagToString = (flag) -> {
+				switch (flag) {
+					case VIRUS_SET:
+						return "virus";
+					case GENE_SET:
+						return "gene";
+					case PROGRAM_CONFIG_SET:
+						return "config";
+					case COMMANDLINE_SET:
+						return "commandline";
+					default:
+						return null;
+				}
+			};
+			EnumSet<ConfigurationParameters.Flags> settableFlags = EnumSet.of(ConfigurationParameters.Flags.GENE_SET,
+																			  ConfigurationParameters.Flags.VIRUS_SET,
+																			  ConfigurationParameters.Flags.PROGRAM_CONFIG_SET,
+																			  ConfigurationParameters.Flags.COMMANDLINE_SET);
 			for (ConfigurationParameters param: Arrays.stream(ConfigurationParameters.values())
 													  .sorted(Comparator.comparing(p-> p.configKey, String.CASE_INSENSITIVE_ORDER))
+													  .filter(p -> ! p.hasOneOrMoreFlags(ConfigurationParameters.Flags.IGNORE,
+																						 ConfigurationParameters.Flags.METADATA))
 													  .filter(p -> p.hasFlag(ConfigurationParameters.Flags.VERSION_4))
 													  .collect(Collectors.toList())) {
 				System.out.println(param.configKey);
 				System.out.println();
 				System.out.println(String.format("\t%-30s VIGOR_%s","Environment variable:",param.configKey.toUpperCase()));
 				System.out.println(String.format("\t%-30s vigor.%s","System.property:", param.configKey));
+				System.out.println(String.format("\t%-30s %s", "Settable levels", Joiner.on(",")
+																				  .skipNulls()
+																				  .join(param.hasFlags(settableFlags).stream()
+																							 .map(flagToString)
+																							 .sorted()
+																							 .collect(Collectors.toList()))));
 				if (! (param.description == null || param.description.isEmpty()) ) {
 					System.out.println(String.format("\t%-30s %s", "Description:", param.description));
 				}
