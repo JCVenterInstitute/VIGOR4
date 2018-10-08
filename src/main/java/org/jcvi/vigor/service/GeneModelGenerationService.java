@@ -267,6 +267,7 @@ public class GeneModelGenerationService {
                      String.join(",",sharedCDSList));
 
         LOGGER.debug("checking {} models for non overlapping models", candidateGenes.size());
+
         for (int j = candidateGenes.size() - 1; j >= 0; j--) {
             Model candidateGene = candidateGenes.get(j);
             List<Exon> candidateExons = candidateGene.getExons();
@@ -274,16 +275,26 @@ public class GeneModelGenerationService {
 
             CHECKOVERLAP:
             for (Model model : geneModels) {
-                List<Exon> exons = model.getExons();
-                for (Exon candidateExon : candidateExons) {
-                    for (Exon exon : exons) {
-                        Range intersection = candidateExon.getRange().intersection(exon.getRange());
-                        if (intersection.getLength() > max_gene_overlap) {
-                            overlap = true;
-                            break CHECKOVERLAP;
-                        }
+                boolean isSharedCDS = false;
+                List<String> tempSharedCDS = VigorUtils.nullElse(model.getAlignment().getViralProtein().getGeneAttributes().getStructuralSpecifications().getShared_cds(), Collections.EMPTY_LIST);
+                for(String sharedCDS:tempSharedCDS){
+                    if(sharedCDS.equals(candidateGene.getGeneSymbol())) {
+                        isSharedCDS = true;
+                        overlap = true;
                     }
                 }
+                List<Exon> exons = model.getExons();
+                if (!isSharedCDS){
+                    for (Exon candidateExon : candidateExons) {
+                        for (Exon exon : exons) {
+                            Range intersection = candidateExon.getRange().intersection(exon.getRange());
+                            if (intersection.getLength() > max_gene_overlap) {
+                                overlap = true;
+                                break CHECKOVERLAP;
+                            }
+                        }
+                    }
+            }
             }
             if (!overlap) {
                 LOGGER.debug("for protein {}, gene {} adding non-overlapping candidate {}",
@@ -294,8 +305,10 @@ public class GeneModelGenerationService {
                 candidateGenes.remove(j);
             }
         }
+
         // add shared_cds model to gene models
         for (String sharedCDS : sharedCDSList) {
+            Model sharedCDSModel = null;
             Optional<Model> model = candidateGenes.stream()
                     .filter(m -> m.getGeneSymbol().equals(sharedCDS))
                     .findAny();
@@ -307,7 +320,8 @@ public class GeneModelGenerationService {
                     model.isPresent());
             if (!geneModels.stream().filter(m -> m.getGeneSymbol().equals(sharedCDS)).findAny().isPresent()){
                 if (model.isPresent()) {
-                    geneModels.add(model.get());
+                    sharedCDSModel = model.get();
+                    geneModels.add(sharedCDSModel);
                 } else {
                     model = pseudogenes.stream()
                             .filter(m -> m.getGeneSymbol().equals(( sharedCDS )))
@@ -319,10 +333,12 @@ public class GeneModelGenerationService {
                             sharedCDS,
                             model.isPresent());
                     if (model.isPresent()) {
-                        geneModels.add(model.get());
+                        sharedCDSModel = model.get();
+                        geneModels.add(sharedCDSModel);
                     }
                 }
-        }
+            }
+
         }
         geneModels.sort(Comparator.comparing(g -> g.getRange(), Range.Comparators.ARRIVAL));
 
