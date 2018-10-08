@@ -1,19 +1,21 @@
 package org.jcvi.vigor.service;
 
+import com.google.common.base.Joiner;
 import net.sourceforge.argparse4j.ArgumentParsers;
 import net.sourceforge.argparse4j.impl.Arguments;
 import net.sourceforge.argparse4j.inf.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.vigor.utils.ConfigurationParameters;
+import org.jcvi.vigor.utils.NullUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.Map;
-import java.util.Properties;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
@@ -242,15 +244,33 @@ public class VigorInputValidationService {
 		@Override
 		public void run(ArgumentParser argumentParser, Argument argument, Map<String, Object> map, String s, Object o) throws ArgumentParserException {
 			try {
-				Properties gitProperties = new Properties();
-				gitProperties.load(this.getClass().getResourceAsStream("/git.properties"));
-				System.out.println(String.format("%s-%s (branch %s) (built on host %s at %s)",
-												 gitProperties.getProperty("git.build.version"),
-												 gitProperties.getProperty("git.commit.id.abbrev"),
-												 gitProperties.getProperty("git.branch"),
-												 gitProperties.getProperty("git.build.host"),
-												 gitProperties.getProperty("git.build.time")
-								   )
+				Properties buildProperties = new Properties();
+				buildProperties.load(this.getClass().getResourceAsStream("/build.properties"));
+				String branch = NullUtil.emptyOrElse(buildProperties.getProperty("git.branch"), "master");
+				String host = NullUtil.nullOrElse(buildProperties.getProperty("git.build.host"),"").trim();
+				String buildTimeString = NullUtil.nullOrElse(buildProperties.getProperty("git.build.time"),"").trim();
+
+				host = host.contains("localhost") ? "" : host;
+				if (! buildTimeString.isEmpty()) {
+					LocalDateTime buildDateTime = LocalDateTime.of(Integer.parseInt(buildTimeString.substring(0,4)),
+																   Integer.parseInt(buildTimeString.substring(4,6)),
+																   Integer.parseInt(buildTimeString.substring(6,8)),
+																   Integer.parseInt(buildTimeString.substring(9,11)),
+																   Integer.parseInt(buildTimeString.substring(11,13)),
+																   Integer.parseInt(buildTimeString.substring(13,15))
+					);
+					buildTimeString = buildDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss", Locale.getDefault()));
+				}
+				String buildInfo = "";
+				if (! (host.isEmpty() && buildTimeString.isEmpty()) ) {
+					buildInfo = String.format(" ( built %s%s )",
+											  ! host.isEmpty() ? String.format(" on host %s", host) : "",
+											  ! buildTimeString.isEmpty() ? String.format("at %s", buildTimeString): "");
+				}
+				System.out.println(String.format("%s%s%s",
+												 buildProperties.getProperty("vigor.version"),
+												 "master".equals(branch) ? "" : String.format(" (branch %s)", branch),
+												 buildInfo)
 				);
 				System.exit(0);
 			} catch (IOException e ) {
@@ -263,14 +283,40 @@ public class VigorInputValidationService {
 		@Override
 		public void run(ArgumentParser argumentParser, Argument argument, Map<String, Object> map, String s, Object o) throws ArgumentParserException {
 			System.out.println("Configuration Parameters\n");
+			Function<ConfigurationParameters.Flags, String> flagToString = (flag) -> {
+				switch (flag) {
+					case VIRUS_SET:
+						return "virus";
+					case GENE_SET:
+						return "gene";
+					case PROGRAM_CONFIG_SET:
+						return "config";
+					case COMMANDLINE_SET:
+						return "commandline";
+					default:
+						return null;
+				}
+			};
+			EnumSet<ConfigurationParameters.Flags> settableFlags = EnumSet.of(ConfigurationParameters.Flags.GENE_SET,
+																			  ConfigurationParameters.Flags.VIRUS_SET,
+																			  ConfigurationParameters.Flags.PROGRAM_CONFIG_SET,
+																			  ConfigurationParameters.Flags.COMMANDLINE_SET);
 			for (ConfigurationParameters param: Arrays.stream(ConfigurationParameters.values())
 													  .sorted(Comparator.comparing(p-> p.configKey, String.CASE_INSENSITIVE_ORDER))
+													  .filter(p -> ! p.hasOneOrMoreFlags(ConfigurationParameters.Flags.IGNORE,
+																						 ConfigurationParameters.Flags.METADATA))
 													  .filter(p -> p.hasFlag(ConfigurationParameters.Flags.VERSION_4))
 													  .collect(Collectors.toList())) {
 				System.out.println(param.configKey);
 				System.out.println();
 				System.out.println(String.format("\t%-30s VIGOR_%s","Environment variable:",param.configKey.toUpperCase()));
 				System.out.println(String.format("\t%-30s vigor.%s","System.property:", param.configKey));
+				System.out.println(String.format("\t%-30s %s", "Settable levels", Joiner.on(",")
+																				  .skipNulls()
+																				  .join(param.hasFlags(settableFlags).stream()
+																							 .map(flagToString)
+																							 .sorted()
+																							 .collect(Collectors.toList()))));
 				if (! (param.description == null || param.description.isEmpty()) ) {
 					System.out.println(String.format("\t%-30s %s", "Description:", param.description));
 				}
