@@ -44,7 +44,7 @@ public class VigorTestUtils {
             AlignmentEvidence alignmentEvidence = new AlignmentEvidence();
             config.put(ConfigurationParameters.ReferenceDatabaseFile, refDB);
             List<Alignment> alignments = exonerateService.parseExonerateOutput(alignmentOutput,
-                     virusGenome, refDB,config);
+                     virusGenome, refDB);
             for (int i = 0; i < alignments.size(); i++) {
                 alignments.set(i, viralProteinService
                         .setViralProteinAttributes(alignments.get(i), config));
