@@ -92,17 +92,9 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
                         if (!foundSplicePair ) {
 
                             //determine Donor search window
-                            long donorStart = currentExon.getEnd() - defaultSearchWindow;
-                            if (donorStart < 0) {
-                                donorStart = 0;
-                            }
-                            long donorEnd = currentExon.getEnd() + defaultSearchWindow;
-                            if (donorEnd > model.getAlignment().getVirusGenome().getSequence().getLength()) {
-                                donorEnd = model.getAlignment().getVirusGenome().getSequence().getLength();
-                            }
-                            if (donorStart < currentExon.getBegin()) {
-                                donorStart = currentExon.getBegin();
-                            }
+                            long donorStart = Math.max(currentExon.getEnd() - defaultSearchWindow, currentExon.getBegin());
+                            long donorEnd = Math.min(currentExon.getEnd() + defaultSearchWindow,
+                                                     model.getAlignment().getVirusGenome().getSequence().getLength());
                             Range donorSearchWindow = Range.of(donorStart, donorEnd);
                             Map<Frame, List<Long>> donorInternalStopsMap = VigorFunctionalUtils.findStopsInSequenceFrame(virusGenome, donorSearchWindow);
                             if (donorInternalStopsMap.get(upExon.getSequenceFrame()) != null) {
@@ -118,18 +110,10 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
                             NucleotideSequence donorSearchSeq = model.getAlignment().getVirusGenome().getSequence().toBuilder(donorSearchWindow)
                                     .build();
                             //determine acceptor search window
-                            long acceptorStart = nextExon.getBegin() - defaultSearchWindow;
-                            if (acceptorStart < 0) {
-                                acceptorStart = 0;
-                            }
-                            long acceptorEnd = nextExon.getBegin() + defaultSearchWindow;
-                            if (acceptorEnd > model.getAlignment().getVirusGenome().getSequence().getLength()) {
-                                acceptorEnd = model.getAlignment().getVirusGenome().getSequence().getLength();
-                            }
-                            if (acceptorEnd > nextExon.getEnd()) {
-                                acceptorEnd = nextExon.getEnd();
-                            }
+                            long acceptorStart = Math.max(nextExon.getBegin() - defaultSearchWindow,0);
+                            long acceptorEnd = Math.min(nextExon.getBegin() + defaultSearchWindow, nextExon.getEnd());
                             Range acceptorSearchWindow = Range.of(acceptorStart, acceptorEnd);
+
                             Map<Frame, List<Long>> acceptorInternalStopsMap = VigorFunctionalUtils.findStopsInSequenceFrame(virusGenome, acceptorSearchWindow);
                             if (acceptorInternalStopsMap.get(downExon.getSequenceFrame()) != null) {
                                 List<Long> acceptorInternalStops = acceptorInternalStopsMap.get(downExon.getSequenceFrame());
@@ -180,13 +164,7 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
                                                 //Score each pair based on the location where donor and acceptor are found.
                                                 // Donor close to the end of the first exon and acceptor close to the start of the second exon will score high
                                                 //If spliceScore already exists it is the model cloned from the previous splice pair, so sum up to scores.
-                                                if (scores.containsKey("spliceScore")) {
-                                                    double existingScore = scores.get("spliceScore");
-                                                    double spliceScoreSum = existingScore + spliceScore;
-                                                    scores.replace("spliceScore", spliceScoreSum);
-                                                } else {
-                                                    scores.put("spliceScore", spliceScore);
-                                                }
+                                                scores.put("spliceScore",scores.getOrDefault("spliceScore", 0d) + spliceScore);
                                                 newModel.setScores(scores);
                                                 //In the end (closure of main for loop) we have a all the splice sites adjusted in a model
                                                 models.add(newModel);
@@ -208,7 +186,9 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
     }
 
     //Leftover number of nucleotides at the end of the upstream exon + leftover number of nucleotides at start of the downstream exon = 3 or 0 then splice pair is compatible
-    public boolean checkSplicePairCompatibility ( Range upExonRange, Range downExonRange, Range foundUpExonRange, Range foundDownExonRange, Frame upExonFrame, Frame downExonFrame ) {
+    public boolean checkSplicePairCompatibility ( Range upExonRange, Range downExonRange,
+                                                  Range foundUpExonRange, Range foundDownExonRange,
+                                                  Frame upExonFrame, Frame downExonFrame ) {
 
         int upNucleotides = (int) ( upExonRange.getLength() - ( upExonFrame.getFrame() - 1 ) ) % 3;
         int downNucleotides = downExonFrame.getFrame() - 1;

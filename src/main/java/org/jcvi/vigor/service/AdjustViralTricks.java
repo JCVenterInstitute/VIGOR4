@@ -69,19 +69,16 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                 offset = offset + 1;
             }
             //Once the matches are found, get the coordinates relative to complete sequence
-            List<Range> matches = cds.findMatches(riboSlippage.getSlippage_motif()).map(x -> x = Range.of(x.getBegin() + CDSStart, x.getEnd() + CDSStart))
+            List<Range> matches = cds.findMatches(riboSlippage.getSlippage_motif()).map(x -> x.toBuilder().shift(CDSStart).build())
                     .sequential()
                     .collect(Collectors.toList());
-            //If no match found and model is not partial then model is marked as pseudogene
-            if (matches != null && matches.size() == 0) {
-                if (!( model.isPartial3p() || model.isPartial5p() )) {
-                    model.setPseudogene(true);
-                }
+            //If no match found and model is not partial then model is marked is pseudogene
+            if (matches.isEmpty() && !( model.isPartial3p() || model.isPartial5p() )) {
+                model.setPseudogene(true);
             }
             for (Range match : matches) {
                 if (!VigorFunctionalUtils.intheSequenceGap(sequenceGaps, match)) {
-                    Model newModel;
-                    newModel = model.clone();
+                    Model newModel = model.clone();
                     Range slippagePoint = Range.of(match.getEnd() + offset);
                     newModel.setRibosomalSlippageRange(slippagePoint);
                     for (int i = 0; i < newModel.getExons().size(); i++) {
@@ -153,7 +150,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                     .build();
             List<Range> matches = cds.findMatches(rna_editing.getRegExp())
                     .distinct()
-                    .map(x -> x = Range.of(x.getBegin() + CDSStart, x.getEnd() + CDSStart))
+                    .map(x -> x = x.toBuilder().shift(CDSStart).build())
                     .sequential()
                     .collect(Collectors.toList());
             List<Range> sequenceGaps = model.getAlignment().getVirusGenome().getSequenceGaps();
@@ -244,11 +241,10 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                         LOGGER.trace("Sequence {}", () -> model.getAlignment().getVirusGenome().getSequence().toBuilder().trim(Range.of(start, start + 2)).build());
                         Map<String, Double> scores = newModel.getScores();
                         scores.put("leakyStopScore", 100.00);
-                        newModel.setReplaceStopCodonRange(Range.of(start, start + 2));
                         newModel.setScores(scores);
-                        List<NoteType> notes = newModel.getNotes();
-                        notes.add(NoteType.StopCodonReadThrough);
-                        newModel.setNotes(notes);
+
+                        newModel.setReplaceStopCodonRange(Range.of(start, start + 2));
+                        newModel.getNotes().add(NoteType.StopCodonReadThrough);
                         newModels.add(newModel);
                     }
                 }
