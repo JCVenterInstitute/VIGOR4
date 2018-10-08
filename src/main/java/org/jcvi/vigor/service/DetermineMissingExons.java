@@ -69,10 +69,11 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
      * @param modelDirection
      * @return
      */
-    public Exon performJillionPairWiseAlignment ( Range NTRange, Range AARange,
-                                                  NucleotideSequence NTSequence, ProteinSequence AASequence, Direction modelDirection ) {
+    public Optional<Exon> performJillionPairWiseAlignment (Range NTRange, Range AARange,
+                                                           NucleotideSequence NTSequence, ProteinSequence AASequence, Direction modelDirection ) {
 
         Exon exon = null;
+
         NucleotideSequence NTSubSequence = NTSequence.toBuilder(NTRange)
                                                      .build();
         ProteinPairwiseSequenceAlignment actual = null;
@@ -123,9 +124,10 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
             alignmentFragment.setProteinSeqRange(modelExonAARange);
             exon.setAlignmentFragment(alignmentFragment);
             exon.setFrame(Frame.ONE);
+
         }
 
-        return exon;
+        return Optional.ofNullable(exon);
     }
 
     /**
@@ -214,10 +216,10 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
                 }
                 if (!sequenceGap) {
                     if (missingAARange.getLength() >= min_missing_AA_size && missingNTRange.getLength() > min_missing_AA_size * 3) {
-                        Exon determinedExon = performJillionPairWiseAlignment(missingNTRange,
+                        Optional<Exon> determinedExon = performJillionPairWiseAlignment(missingNTRange,
                                 missingAARange, NTSeq, AASeq, model.getDirection());
-                        if (determinedExon.getRange().getLength() >= minExonSize) {
-                            missingExons.add(determinedExon);
+                        if (determinedExon.isPresent() && determinedExon.get().getRange().getLength() >= minExonSize) {
+                            missingExons.add(determinedExon.get());
                             if (prevExon != null) {
                                 prevExon.set_3p_adjusted(false);
                             }

@@ -1,6 +1,7 @@
 package org.jcvi.vigor.service;
 
 import org.jcvi.jillion.core.Direction;
+import org.jcvi.jillion.core.Range;
 import org.jcvi.vigor.component.*;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.service.exception.ServiceException;
@@ -54,7 +55,7 @@ public class ExonerateService implements AlignmentService {
             Path exoneratePath = Paths.get(exoneratePathString);
             String outputFilePath = GenerateExonerateOutput.queryExonerate(virusGenome, referenceDB, workspace, null, exoneratePath.toString());
             File outputFile = new File(outputFilePath);
-            return parseExonerateOutput(outputFile, virusGenome, referenceDB,config);
+            return parseExonerateOutput(outputFile, virusGenome, referenceDB);
         } catch (VigorException e) {
             throw new ServiceException(String.format("error getting alignment got %s: %s", e.getClass().getSimpleName(), e.getMessage()), e);
         }
@@ -72,12 +73,11 @@ public class ExonerateService implements AlignmentService {
      * @return
      * @throws ServiceException
      */
-    public List<Alignment> parseExonerateOutput ( File exonerateOutput, VirusGenome virusGenome, String referenceDB, VigorConfiguration config ) throws ServiceException {
+    public List<Alignment> parseExonerateOutput ( File exonerateOutput, VirusGenome virusGenome, String referenceDB) throws ServiceException {
 
         List<Alignment> alignments = new ArrayList<Alignment>();
         List<VulgarProtein2Genome2> Jalignments;
-        long seqLength = virusGenome.getSequence().getLength();
-        VirusGenome reverseCompGenome = VirusGenomeService.reverseComplementVirusGenome(virusGenome,config);
+
         AlignmentEvidence evidence = new AlignmentEvidence();
         evidence.setReference_db(referenceDB);
         // TODO results directory
@@ -89,6 +89,7 @@ public class ExonerateService implements AlignmentService {
         } catch (IOException e) {
             throw new ServiceException(String.format("Error parsing exonerate output %s", exonerateOutput.getName()));
         }
+        long sequenceLength = virusGenome.getSequence().getLength();
         try (ProteinFastaDataStore datastore = new ProteinFastaFileDataStoreBuilder(new File(referenceDB))
                 .hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED).build();
         ) {
@@ -99,20 +100,19 @@ public class ExonerateService implements AlignmentService {
                 alignment.setAlignmentScore(alignmentScores);
                 alignment.setAlignmentTool(alignmentTool);
                 List<AlignmentFragment> alignmentFragments = new ArrayList<>();
+                Range nucleotideSequenceRange;
                 for (VulgarProtein2Genome2.AlignmentFragment fragment : Jalignment.getAlignmentFragments()) {
-                    if(fragment.getDirection().equals(Direction.FORWARD)) {
-                        alignmentFragments.add(new AlignmentFragment(fragment.getProteinSeqRange(),
-                                fragment.getNucleotideSeqRange(),
-                                fragment.getDirection(),
-                                fragment.getFrame()));
-                    }else {
-
-                            alignmentFragments.add(new AlignmentFragment(fragment.getProteinSeqRange(),
-                                    VigorFunctionalUtils.convertToOppositeStrandRange(fragment.getNucleotideSeqRange(),seqLength),
-                                    fragment.getDirection(),
-                                    fragment.getFrame()));
-
+                    nucleotideSequenceRange = fragment.getNucleotideSeqRange().getRange();
+                    if (fragment.getDirection() == Direction.REVERSE) {
+                        nucleotideSequenceRange = nucleotideSequenceRange.toBuilder()
+                                .setBegin(sequenceLength - nucleotideSequenceRange.getEnd(Range.CoordinateSystem.SPACE_BASED))
+                                .setEnd(sequenceLength - nucleotideSequenceRange.getBegin(Range.CoordinateSystem.SPACE_BASED) - 1)
+                                .build();
                     }
+                    alignmentFragments.add(new AlignmentFragment(fragment.getProteinSeqRange().getRange(),
+                            nucleotideSequenceRange,
+                            fragment.getDirection(),
+                            fragment.getFrame()));
                 }
                 ProteinFastaRecord fasta = datastore.get(Jalignment.getQueryId());
                 ViralProtein viralProtein = new ViralProtein();
@@ -121,9 +121,7 @@ public class ExonerateService implements AlignmentService {
                 viralProtein.setSequence(fasta.getSequence());
                 alignment.setAlignmentFragments(alignmentFragments);
                 alignment.setViralProtein(viralProtein);
-                if(Jalignment.getTargetStrand().get().equals(Direction.REVERSE)){
-                    alignment.setVirusGenome(reverseCompGenome);
-                }else alignment.setVirusGenome(virusGenome);
+                alignment.setVirusGenome(virusGenome);
                 alignment.setAlignmentEvidence(evidence.copy());
                 alignments.add(alignment);
             }
