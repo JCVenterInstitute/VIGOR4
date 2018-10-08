@@ -16,11 +16,11 @@ import lombok.Data;
 @Data
 public class Model implements Cloneable {
 
-    private List<Exon> exons = Collections.EMPTY_LIST;
+    private List<Exon> exons = new ArrayList<>();
     private Alignment alignment;
-    private Map<String, Double> scores = Collections.EMPTY_MAP;
+    private Map<String, Double> scores = new HashMap<>();
     private String geneSymbol;
-    private List<String> status = Collections.EMPTY_LIST;
+    private List<String> status = new ArrayList<>();
     private Direction direction;
     private boolean partial5p = false;
     private boolean partial3p = false;
@@ -30,8 +30,8 @@ public class Model implements Cloneable {
     private Range insertRNAEditingRange;
     private ProteinSequence translatedSeq;
     private String geneID;
-    private List<NoteType> notes = Collections.EMPTY_LIST;
-    private List<MaturePeptideMatch> maturePeptides = Collections.EMPTY_LIST;
+    private List<NoteType> notes = new ArrayList<>();
+    private List<MaturePeptideMatch> maturePeptides = new ArrayList<>();
 
     public Model clone () throws CloneNotSupportedException {
 
