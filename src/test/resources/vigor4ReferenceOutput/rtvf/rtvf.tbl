@@ -1,0 +1,80 @@
+>Features NC_021625.1
+19	3279	gene
+			gene	VP1
+19	3279	CDS
+			codon_start	1
+			protein_id	NC_021625.1.1
+			gene	VP1
+			product	RNA dependent RNA polymerase VP1
+>Features NC_021626.1
+17	2731	gene
+			gene	VP2
+17	2731	CDS
+			codon_start	1
+			protein_id	NC_021626.1.1
+			gene	VP2
+			product	core capsid protein VP2
+>Features NC_021631.1
+12	2228	gene
+			gene	VP4
+12	2228	CDS
+			codon_start	1
+			protein_id	NC_021631.1.1
+			gene	VP4
+			product	outer capsid spike protein VP4
+>Features NC_021630.1
+40	2124	gene
+			gene	VP3
+40	2124	CDS
+			codon_start	1
+			protein_id	NC_021630.1.1
+			gene	VP3
+			product	RNA capping protein VP3
+>Features NC_021632.1
+27	1670	gene
+			gene	NSP1
+27	1670	CDS
+			codon_start	1
+			protein_id	NC_021632.1.1
+			gene	NSP1
+			product	non-structural protein 1
+>Features NC_021635.1
+26	1216	gene
+			gene	VP6
+26	1216	CDS
+			codon_start	1
+			protein_id	NC_021635.1.1
+			gene	VP6
+			product	inner capsid Protein VP6
+>Features NC_021633.1
+73	1185	gene
+			gene	NSP3
+73	1185	CDS
+			codon_start	1
+			protein_id	NC_021633.1.1
+			gene	NSP3
+			product	non-structural protein 3
+>Features NC_021628.1
+56	1012	gene
+			gene	NSP2
+56	1012	CDS
+			codon_start	1
+			protein_id	NC_021628.1.1
+			gene	NSP2
+			product	non-structural protein 2
+>Features NC_021627.1
+70	957	gene
+			gene	VP7
+70	957	CDS
+			codon_start	1
+			protein_id	NC_021627.1.1
+			gene	VP7
+			product	capsid glycoprotein VP7
+>Features NC_021629.1
+18	674	gene
+			gene	NSP5
+18	674	CDS
+			codon_start	1
+			protein_id	NC_021629.1.1
+			gene	NSP5
+			product	non-structural protein 5

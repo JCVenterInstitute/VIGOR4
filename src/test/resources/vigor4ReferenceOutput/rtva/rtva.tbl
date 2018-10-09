@@ -1,0 +1,285 @@
+>Features NC_011507.2
+19	3285	gene
+			gene	VP1
+19	3285	CDS
+			codon_start	1
+			protein_id	NC_011507.2.1
+			gene	VP1
+			product	RNA-dependent RNA Polymerase VP1
+>Features NC_011506.2
+17	2665	gene
+			gene	VP2
+17	2665	CDS
+			codon_start	1
+			protein_id	NC_011506.2.1
+			gene	VP2
+			product	core capsid protein VP2
+>Features NC_011508.2
+50	2557	gene
+			gene	VP3
+50	2557	CDS
+			codon_start	1
+			protein_id	NC_011508.2.1
+			gene	VP3
+			product	RNA capping protein VP3
+>Features NC_011510.2
+10	2340	gene
+			gene	VP4
+10	2340	CDS
+			codon_start	1
+			protein_id	NC_011510.2.1
+			gene	VP4
+			product	outer capsid spike protein VP4
+>Features NC_011500.2
+31	1521	gene
+			gene	NSP1
+31	1521	CDS
+			codon_start	1
+			protein_id	NC_011500.2.1
+			gene	NSP1
+			product	non-structural protein 1
+>Features NC_011509.2
+24	1217	gene
+			gene	VP6
+24	1217	CDS
+			codon_start	1
+			protein_id	NC_011509.2.1
+			gene	VP6
+			product	inner capsid protein VP6
+>Features NC_011501.2
+35	973	gene
+			gene	NSP3
+35	973	CDS
+			codon_start	1
+			protein_id	NC_011501.2.1
+			gene	NSP3
+			product	non-structural protein 3
+>Features NC_011502.2
+47	1000	gene
+			gene	NSP2
+47	1000	CDS
+			codon_start	1
+			protein_id	NC_011502.2.1
+			gene	NSP2
+			product	non-structural protein 2
+>Features NC_011503.2
+49	1029	gene
+			gene	VP7
+49	1029	CDS
+			codon_start	1
+			protein_id	NC_011503.2.1
+			gene	VP7
+			product	capsid glycoprotein VP7
+>Features NC_011504.2
+42	569	gene
+			gene	NSP4
+42	569	CDS
+			codon_start	1
+			protein_id	NC_011504.2.1
+			gene	NSP4
+			product	non-structural protein 4
+>Features NC_011505.2
+22	618	gene
+			gene	NSP5
+22	618	CDS
+			codon_start	1
+			protein_id	NC_011505.2.1
+			gene	NSP5
+			product	non-structural protein 5
+80	358	gene
+			gene	NSP6
+80	358	CDS
+			codon_start	1
+			protein_id	NC_011505.2.2
+			gene	NSP6
+			product	non-structural protein 6
+>Features JN872875.1
+22	615	gene
+			gene	NSP5
+22	615	CDS
+			codon_start	1
+			protein_id	JN872875.1.1
+			gene	NSP5
+			product	non-structural protein 5
+80	346	gene
+			gene	NSP6
+80	346	CDS
+			codon_start	1
+			protein_id	JN872875.1.2
+			gene	NSP6
+			product	non-structural protein 6
+>Features JN872874.1
+42	569	gene
+			gene	NSP4
+42	569	CDS
+			codon_start	1
+			protein_id	JN872874.1.1
+			gene	NSP4
+			product	non-structural protein 4
+>Features JN872873.1
+35	967	gene
+			gene	NSP3
+35	967	CDS
+			codon_start	1
+			protein_id	JN872873.1.1
+			gene	NSP3
+			product	non-structural protein 3
+>Features JN872872.1
+47	1015	gene
+			gene	NSP2
+47	1015	CDS
+			codon_start	1
+			protein_id	JN872872.1.1
+			gene	NSP2
+			product	non-structural protein 2
+>Features JN872871.1
+31	1506	gene
+			gene	NSP1
+31	1506	CDS
+			codon_start	1
+			protein_id	JN872871.1.1
+			gene	NSP1
+			product	non-structural protein 1
+>Features JN872870.1
+49	1029	gene
+			gene	VP7
+49	1029	CDS
+			codon_start	1
+			protein_id	JN872870.1.1
+			gene	VP7
+			product	capsid glycoprotein VP7
+>Features JN872869.1
+24	1223	gene
+			gene	VP6
+24	1223	CDS
+			codon_start	1
+			protein_id	JN872869.1.1
+			gene	VP6
+			product	inner capsid protein VP6
+>Features JN872868.1
+10	2340	gene
+			gene	VP4
+10	2340	CDS
+			codon_start	1
+			protein_id	JN872868.1.1
+			gene	VP4
+			product	outer capsid spike protein VP4
+>Features JN872867.1
+50	2557	gene
+			gene	VP3
+50	2557	CDS
+			codon_start	1
+			protein_id	JN872867.1.1
+			gene	VP3
+			product	RNA capping protein VP3
+>Features JN872866.1
+17	2659	gene
+			gene	VP2
+17	2659	CDS
+			codon_start	1
+			protein_id	JN872866.1.1
+			gene	VP2
+			product	core capsid protein VP2
+>Features JN872865.1
+19	3285	gene
+			gene	VP1
+19	3285	CDS
+			codon_start	1
+			protein_id	JN872865.1.1
+			gene	VP1
+			product	RNA-dependent RNA Polymerase VP1
+>Features KT694939.1
+19	3285	gene
+			gene	VP1
+19	3285	CDS
+			codon_start	1
+			protein_id	KT694939.1.1
+			gene	VP1
+			product	RNA-dependent RNA Polymerase VP1
+>Features KT694940.1
+17	2689	gene
+			gene	VP2
+17	2689	CDS
+			codon_start	1
+			protein_id	KT694940.1.1
+			gene	VP2
+			product	core capsid protein VP2
+>Features KT694941.1
+50	2557	gene
+			gene	VP3
+50	2557	CDS
+			codon_start	1
+			protein_id	KT694941.1.1
+			gene	VP3
+			product	RNA capping protein VP3
+>Features KT694942.1
+10	2337	gene
+			gene	VP4
+10	2337	CDS
+			codon_start	1
+			protein_id	KT694942.1.1
+			gene	VP4
+			product	outer capsid spike protein VP4
+>Features KT694943.1
+24	1217	gene
+			gene	VP6
+24	1217	CDS
+			codon_start	1
+			protein_id	KT694943.1.1
+			gene	VP6
+			product	inner capsid protein VP6
+>Features KT694944.1
+49	1029	gene
+			gene	VP7
+49	1029	CDS
+			codon_start	1
+			protein_id	KT694944.1.1
+			gene	VP7
+			product	capsid glycoprotein VP7
+>Features KT694945.1
+32	1492	gene
+			gene	NSP1
+32	1492	CDS
+			codon_start	1
+			protein_id	KT694945.1.1
+			gene	NSP1
+			product	non-structural protein 1
+>Features KT694946.1
+47	1000	gene
+			gene	NSP2
+47	1000	CDS
+			codon_start	1
+			protein_id	KT694946.1.1
+			gene	NSP2
+			product	non-structural protein 2
+>Features KT694947.1
+35	967	gene
+			gene	NSP3
+35	967	CDS
+			codon_start	1
+			protein_id	KT694947.1.1
+			gene	NSP3
+			product	non-structural protein 3
+>Features KT694948.1
+42	569	gene
+			gene	NSP4
+42	569	CDS
+			codon_start	1
+			protein_id	KT694948.1.1
+			gene	NSP4
+			product	non-structural protein 4
+>Features KT694949.1
+22	615	gene
+			gene	NSP5
+22	615	CDS
+			codon_start	1
+			protein_id	KT694949.1.1
+			gene	NSP5
+			product	non-structural protein 5
+80	358	gene
+			gene	NSP6
+80	358	CDS
+			codon_start	1
+			protein_id	KT694949.1.2
+			gene	NSP6
+			product	non-structural protein 6

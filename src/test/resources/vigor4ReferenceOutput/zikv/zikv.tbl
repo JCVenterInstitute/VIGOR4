@@ -1,0 +1,84 @@
+>Features KX893855.1
+108	10379	gene
+			gene	GP1
+108	10379	CDS
+			codon_start	1
+			protein_id	KX893855.1.1
+			gene	GP1
+			product	genome polyprotein
+>Features KX893855.1.1
+123	215	mat_peptide
+			product	protein pr
+			gene	GP1
+216	290	mat_peptide
+			product	small envelope protein M
+			gene	GP1
+291	794	mat_peptide
+			product	envelope protein E
+			gene	GP1
+795	1146	mat_peptide
+			product	nonstructural protein NS1
+			gene	GP1
+1147	1372	mat_peptide
+			product	nonstructural protein NS2A
+			gene	GP1
+1373	1502	mat_peptide
+			product	nonstructural protein NS2B
+			gene	GP1
+1503	2119	mat_peptide
+			product	nonstructural protein NS3
+			gene	GP1
+2120	2246	mat_peptide
+			product	nonstructural protein NS4A
+			gene	GP1
+2247	2269	mat_peptide
+			product	protein 2K
+			gene	GP1
+2270	2520	mat_peptide
+			product	nonstructural protein NS4B
+			gene	GP1
+2521	3423	mat_peptide
+			product	RNA-dependent RNA polymerase NS5
+			gene	GP1
+>Features KU955594.1
+107	10366	gene
+			gene	GP1
+107	10366	CDS
+			codon_start	1
+			protein_id	KU955594.1.1
+			gene	GP1
+			product	genome polyprotein
+>Features KU955594.1.1
+123	215	mat_peptide
+			product	protein pr
+			gene	GP1
+216	290	mat_peptide
+			product	small envelope protein M
+			gene	GP1
+291	790	mat_peptide
+			product	envelope protein E
+			gene	GP1
+791	1142	mat_peptide
+			product	nonstructural protein NS1
+			gene	GP1
+1143	1368	mat_peptide
+			product	nonstructural protein NS2A
+			gene	GP1
+1369	1498	mat_peptide
+			product	nonstructural protein NS2B
+			gene	GP1
+1499	2115	mat_peptide
+			product	nonstructural protein NS3
+			gene	GP1
+2116	2242	mat_peptide
+			product	nonstructural protein NS4A
+			gene	GP1
+2243	2265	mat_peptide
+			product	protein 2K
+			gene	GP1
+2266	2516	mat_peptide
+			product	nonstructural protein NS4B
+			gene	GP1
+2517	3419	mat_peptide
+			product	RNA-dependent RNA polymerase NS5
+			gene	GP1

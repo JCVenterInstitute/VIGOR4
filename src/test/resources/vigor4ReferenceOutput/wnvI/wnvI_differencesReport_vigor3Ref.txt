@@ -1,0 +1,164 @@
+
+**********************************************************************
+For Genome: MF797870.1
+
+
+Exon range differs for models with gene symbol GP3 of VirusGenome Sequence MF797870.1. Expected [ 77 .. 7303 ]/0B , found [ 77 .. 7290 ]/0B 
+
+Exon range differs for models with gene symbol GP3 of VirusGenome Sequence MF797870.1. Expected [ 7303 .. 7737 ]/0B , found [ 7290 .. 7718 ]/0B 
+
+ReferenceModel :
+ Gene Symbol : GP3
+ isPseudogene : false
+ isPartial3p : false
+ isPartial5p : false
+ Exons :  [ 77 .. 7303 ]/0B frame:ONE
+  [ 7303 .. 7737 ]/0B 
+
+Vigor4Model :
+ Gene Symbol : GP3
+ isPseudogene : false
+ isPartial3p : false
+ isPartial5p : false
+ Exons :  [ 77 .. 7290 ]/0B frame:ONE
+  [ 7290 .. 7718 ]/0B
+
+*********************************************************************
+
+
+**********************************************************************
+For Genome: KX394404.1
+
+
+Pseudogene feature mismatch found for gene GP3 of VirusGenome Sequence KX394404.1
+
+Exon range differs for models with gene symbol GP3 of VirusGenome Sequence KX394404.1. Expected [ 75 .. 7301 ]/0B , found [ 75 .. 7288 ]/0B 
+
+Exon range differs for models with gene symbol GP3 of VirusGenome Sequence KX394404.1. Expected [ 7301 .. 7708 ]/0B , found [ 7288 .. 7716 ]/0B 
+
+ReferenceModel :
+ Gene Symbol : GP3
+ isPseudogene : false
+ isPartial3p : false
+ isPartial5p : false
+ Exons :  [ 75 .. 7301 ]/0B frame:ONE
+  [ 7301 .. 7708 ]/0B 
+
+Vigor4Model :
+ Gene Symbol : GP3
+ isPseudogene : true
+ isPartial3p : false
+ isPartial5p : false
+ Exons :  [ 75 .. 7288 ]/0B frame:ONE
+  [ 7288 .. 7716 ]/0B
+
+*********************************************************************
+
+
+**********************************************************************
+For Genome: HM488120.1
+
+
+Exon range differs for models with gene symbol GP3 of VirusGenome Sequence HM488120.1. Expected [ 97 .. 7323 ]/0B , found [ 97 .. 7310 ]/0B 
+
+Exon range differs for models with gene symbol GP3 of VirusGenome Sequence HM488120.1. Expected [ 7323 .. 7757 ]/0B , found [ 7310 .. 7738 ]/0B 
+
+ReferenceModel :
+ Gene Symbol : GP3
+ isPseudogene : false
+ isPartial3p : false
+ isPartial5p : false
+ Exons :  [ 97 .. 7323 ]/0B frame:ONE
+  [ 7323 .. 7757 ]/0B 
+
+Vigor4Model :
+ Gene Symbol : GP3
+ isPseudogene : false
+ isPartial3p : false
+ isPartial5p : false
+ Exons :  [ 97 .. 7310 ]/0B frame:ONE
+  [ 7310 .. 7738 ]/0B
+
+*********************************************************************
+
+
+**********************************************************************
+For Genome: DQ211652.1
+
+
+Exon range differs for models with gene symbol GP3 of VirusGenome Sequence DQ211652.1. Expected [ 97 .. 7323 ]/0B , found [ 97 .. 7310 ]/0B 
+
+Exon range differs for models with gene symbol GP3 of VirusGenome Sequence DQ211652.1. Expected [ 7323 .. 7757 ]/0B , found [ 7310 .. 7738 ]/0B 
+
+ReferenceModel :
+ Gene Symbol : GP3
+ isPseudogene : false
+ isPartial3p : false
+ isPartial5p : false
+ Exons :  [ 97 .. 7323 ]/0B frame:ONE
+  [ 7323 .. 7757 ]/0B 
+
+Vigor4Model :
+ Gene Symbol : GP3
+ isPseudogene : false
+ isPartial3p : false
+ isPartial5p : false
+ Exons :  [ 97 .. 7310 ]/0B frame:ONE
+  [ 7310 .. 7738 ]/0B
+
+*********************************************************************
+
+
+**********************************************************************
+For Genome: JX556213.1
+
+
+Exon range differs for models with gene symbol GP3 of VirusGenome Sequence JX556213.1. Expected [ 5 .. 7231 ]/0B , found [ 5 .. 7218 ]/0B 
+
+Exon range differs for models with gene symbol GP3 of VirusGenome Sequence JX556213.1. Expected [ 7231 .. 7665 ]/0B , found [ 7218 .. 7646 ]/0B 
+
+ReferenceModel :
+ Gene Symbol : GP3
+ isPseudogene : false
+ isPartial3p : false
+ isPartial5p : false
+ Exons :  [ 5 .. 7231 ]/0B frame:ONE
+  [ 7231 .. 7665 ]/0B 
+
+Vigor4Model :
+ Gene Symbol : GP3
+ isPseudogene : false
+ isPartial3p : false
+ isPartial5p : false
+ Exons :  [ 5 .. 7218 ]/0B frame:ONE
+  [ 7218 .. 7646 ]/0B
+
+*********************************************************************
+
+
+**********************************************************************
+For Genome: HM488149.1
+
+
+Exon range differs for models with gene symbol GP3 of VirusGenome Sequence HM488149.1. Expected [ 97 .. 7323 ]/0B , found [ 97 .. 7310 ]/0B 
+
+Exon range differs for models with gene symbol GP3 of VirusGenome Sequence HM488149.1. Expected [ 7323 .. 7757 ]/0B , found [ 7310 .. 7738 ]/0B 
+
+ReferenceModel :
+ Gene Symbol : GP3
+ isPseudogene : false
+ isPartial3p : false
+ isPartial5p : false
+ Exons :  [ 97 .. 7323 ]/0B frame:ONE
+  [ 7323 .. 7757 ]/0B 
+
+Vigor4Model :
+ Gene Symbol : GP3
+ isPseudogene : false
+ isPartial3p : false
+ isPartial5p : false
+ Exons :  [ 97 .. 7310 ]/0B frame:ONE
+  [ 7310 .. 7738 ]/0B
+
+*********************************************************************
+

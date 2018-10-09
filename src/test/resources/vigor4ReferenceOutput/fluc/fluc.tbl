@@ -1,0 +1,304 @@
+>Features NC_006307.1
+1	2325	gene
+			gene	PB2
+1	2325	CDS
+			codon_start	1
+			protein_id	NC_006307.1.1
+			gene	PB2
+			product	polymerase PB2
+>Features NC_006308.1
+1	2265	gene
+			gene	PB1
+1	2265	CDS
+			codon_start	1
+			protein_id	NC_006308.1.1
+			gene	PB1
+			product	polymerase PB1
+>Features NC_006309.1
+1	2130	gene
+			gene	PA
+1	2130	CDS
+			codon_start	1
+			protein_id	NC_006309.1.1
+			gene	PA
+			product	polymerase PA
+>Features NC_006310.1
+1	1968	gene
+			gene	HE
+1	1968	CDS
+			codon_start	1
+			protein_id	NC_006310.1.1
+			gene	HE
+			product	hemagglutinin-esterase
+>Features NC_006311.1
+30	1727	gene
+			gene	NP
+30	1727	CDS
+			codon_start	1
+			protein_id	NC_006311.1.1
+			gene	NP
+			product	nucleoprotein
+>Features NC_006312.1
+706	1125	gene
+			gene	CM2 protein
+706	1125	CDS
+			codon_start	1
+			protein_id	NC_006312.1.1
+			gene	CM2 protein
+			product	CM2 protein
+>Features NC_006306.2
+27	767	gene
+			gene	NS1
+27	767	CDS
+			codon_start	1
+			protein_id	NC_006306.2.1
+			gene	NS1
+			product	non-structural protein 1
+27	888	gene
+			gene	NS2
+27	213	CDS
+527	888
+			codon_start	1
+			protein_id	NC_006306.2.2
+			gene	NS2
+			product	non-structural protein 2
+>Features LC123362.1
+1	2325	gene
+			gene	PB2
+1	2325	CDS
+			codon_start	1
+			protein_id	LC123362.1.1
+			gene	PB2
+			product	polymerase PB2
+>Features LC123566.1
+1	2130	gene
+			gene	PA
+1	2130	CDS
+			codon_start	1
+			protein_id	LC123566.1.1
+			gene	PA
+			product	polymerase PA
+>Features LC123464.1
+1	2265	gene
+			gene	PB1
+1	2265	CDS
+			codon_start	1
+			protein_id	LC123464.1.1
+			gene	PB1
+			product	polymerase PB1
+>Features LC123792.1
+1	1698	gene
+			gene	NP
+1	1698	CDS
+			codon_start	1
+			protein_id	LC123792.1.1
+			gene	NP
+			product	nucleoprotein
+>Features LC123860.1
+706	1125	gene
+			gene	CM2 protein
+706	1125	CDS
+			codon_start	1
+			protein_id	LC123860.1.1
+			gene	CM2 protein
+			product	CM2 protein
+>Features LC125024.1
+1	741	gene
+			gene	NS1
+1	741	CDS
+			codon_start	1
+			protein_id	LC125024.1.1
+			gene	NS1
+			product	non-structural protein 1
+1	862	gene
+			gene	NS2
+1	187	CDS
+501	862
+			codon_start	1
+			protein_id	LC125024.1.2
+			gene	NS2
+			product	non-structural protein 2
+>Features LC123382.1
+1	2325	gene
+			gene	PB2
+1	2325	CDS
+			codon_start	1
+			protein_id	LC123382.1.1
+			gene	PB2
+			product	polymerase PB2
+>Features LC123484.1
+1	2265	gene
+			gene	PB1
+1	2265	CDS
+			codon_start	1
+			protein_id	LC123484.1.1
+			gene	PB1
+			product	polymerase PB1
+>Features LC123586.1
+1	2130	gene
+			gene	PA
+1	2130	CDS
+			codon_start	1
+			protein_id	LC123586.1.1
+			gene	PA
+			product	polymerase PA
+>Features LC123812.1
+1	1698	gene
+			gene	NP
+1	1698	CDS
+			codon_start	1
+			protein_id	LC123812.1.1
+			gene	NP
+			product	nucleoprotein
+>Features LC123880.1
+706	1125	gene
+			gene	CM2 protein
+706	1125	CDS
+			codon_start	1
+			protein_id	LC123880.1.1
+			gene	CM2 protein
+			product	CM2 protein
+>Features LC125044.1
+1	741	gene
+			gene	NS1
+1	741	CDS
+			codon_start	1
+			protein_id	LC125044.1.1
+			gene	NS1
+			product	non-structural protein 1
+1	862	gene
+			gene	NS2
+1	187	CDS
+501	862
+			codon_start	1
+			protein_id	LC125044.1.2
+			gene	NS2
+			product	non-structural protein 2
+>Features LC123299.1
+1	2325	gene
+			gene	PB2
+1	2325	CDS
+			codon_start	1
+			protein_id	LC123299.1.1
+			gene	PB2
+			product	polymerase PB2
+>Features LC123401.1
+1	2265	gene
+			gene	PB1
+1	2265	CDS
+			codon_start	1
+			protein_id	LC123401.1.1
+			gene	PB1
+			product	polymerase PB1
+>Features AB000720.1
+709	1128	gene
+			gene	CM2 protein
+709	1128	CDS
+			codon_start	1
+			protein_id	AB000720.1.1
+			gene	CM2 protein
+			product	CM2 protein
+>Features LC123503.1
+1	2130	gene
+			gene	PA
+1	2130	CDS
+			codon_start	1
+			protein_id	LC123503.1.1
+			gene	PA
+			product	polymerase PA
+>Features LC123735.1
+1	1698	gene
+			gene	NP
+1	1698	CDS
+			codon_start	1
+			protein_id	LC123735.1.1
+			gene	NP
+			product	nucleoprotein
+>Features LC124982.1
+1	741	gene
+			gene	NS1
+1	741	CDS
+			codon_start	1
+			protein_id	LC124982.1.1
+			gene	NS1
+			product	non-structural protein 1
+1	862	gene
+			gene	NS2
+1	187	CDS
+501	862
+			codon_start	1
+			protein_id	LC124982.1.2
+			gene	NS2
+			product	non-structural protein 2
+>Features D30697.1
+4	1950	gene
+			gene	HE
+4	1950	CDS
+			codon_start	1
+			protein_id	D30697.1.1
+			gene	HE
+			product	hemagglutinin-esterase
+>Features AB000727.1
+710	1129	gene
+			gene	CM2 protein
+710	1129	CDS
+			codon_start	1
+			protein_id	AB000727.1.1
+			gene	CM2 protein
+			product	CM2 protein
+>Features D63469.1
+<1	1959	gene
+			gene	HE
+<1	1959	CDS
+			codon_start	1
+			protein_id	D63469.1.1
+			gene	HE
+			product	putative hemagglutinin-esterase, C-terminal
+>Features D16259.1
+719	1138	gene
+			gene	CM2 protein
+719	1138	CDS
+			codon_start	1
+			protein_id	D16259.1.1
+			gene	CM2 protein
+			product	CM2 protein
+>Features LC123392.1
+1	2265	gene
+			gene	PB1
+1	2265	CDS
+			codon_start	1
+			protein_id	LC123392.1.1
+			gene	PB1
+			product	polymerase PB1
+>Features LC123290.1
+1	2325	gene
+			gene	PB2
+1	2325	CDS
+			codon_start	1
+			protein_id	LC123290.1.1
+			gene	PB2
+			product	polymerase PB2
+>Features LC123728.1
+1	1698	gene
+			gene	NP
+1	1698	CDS
+			codon_start	1
+			protein_id	LC123728.1.1
+			gene	NP
+			product	nucleoprotein
+>Features LC123494.1
+1	2130	gene
+			gene	PA
+1	2130	CDS
+			codon_start	1
+			protein_id	LC123494.1.1
+			gene	PA
+			product	polymerase PA
+>Features CY239467.1
+5	1972	gene
+			gene	HE
+5	1972	CDS
+			codon_start	1
+			protein_id	CY239467.1.1
+			gene	HE
+			product	hemagglutinin-esterase

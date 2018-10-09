@@ -1,0 +1,81 @@
+
+**********************************************************************
+For Genome: NC_026437.1
+
+
+Exon range differs for models with gene symbol PA-X of VirusGenome Sequence NC_026437.1. Expected [ 1 .. 573 ]/0B , found [ 1 .. 570 ]/0B 
+
+Exon range differs for models with gene symbol PA-X of VirusGenome Sequence NC_026437.1. Expected [ 575 .. 700 ]/0B , found [ 572 .. 700 ]/0B 
+
+ReferenceModel :
+ Gene Symbol : PA-X
+ isPseudogene : false
+ isPartial3p : false
+ isPartial5p : false
+ Exons :  [ 1 .. 573 ]/0B frame:ONE
+  [ 575 .. 700 ]/0B 
+
+Vigor4Model :
+ Gene Symbol : PA-X
+ isPseudogene : false
+ isPartial3p : false
+ isPartial5p : false
+ Exons :  [ 1 .. 570 ]/0B frame:ONE
+  [ 572 .. 700 ]/0B
+
+*********************************************************************
+
+
+**********************************************************************
+For Genome: NC_007371.1
+
+
+Exon range differs for models with gene symbol PA-X of VirusGenome Sequence NC_007371.1. Expected [ 25 .. 597 ]/0B , found [ 25 .. 594 ]/0B 
+
+Exon range differs for models with gene symbol PA-X of VirusGenome Sequence NC_007371.1. Expected [ 599 .. 784 ]/0B , found [ 596 .. 784 ]/0B 
+
+ReferenceModel :
+ Gene Symbol : PA-X
+ isPseudogene : false
+ isPartial3p : false
+ isPartial5p : false
+ Exons :  [ 25 .. 597 ]/0B frame:ONE
+  [ 599 .. 784 ]/0B 
+
+Vigor4Model :
+ Gene Symbol : PA-X
+ isPseudogene : false
+ isPartial3p : false
+ isPartial5p : false
+ Exons :  [ 25 .. 594 ]/0B frame:ONE
+  [ 596 .. 784 ]/0B
+
+*********************************************************************
+
+
+**********************************************************************
+For Genome: NC_026424.1
+
+
+Exon range differs for models with gene symbol PA-X of VirusGenome Sequence NC_026424.1. Expected [ 1 .. 573 ]/0B , found [ 1 .. 570 ]/0B 
+
+Exon range differs for models with gene symbol PA-X of VirusGenome Sequence NC_026424.1. Expected [ 575 .. 760 ]/0B , found [ 572 .. 760 ]/0B 
+
+ReferenceModel :
+ Gene Symbol : PA-X
+ isPseudogene : false
+ isPartial3p : false
+ isPartial5p : false
+ Exons :  [ 1 .. 573 ]/0B frame:ONE
+  [ 575 .. 760 ]/0B 
+
+Vigor4Model :
+ Gene Symbol : PA-X
+ isPseudogene : false
+ isPartial3p : false
+ isPartial5p : false
+ Exons :  [ 1 .. 570 ]/0B frame:ONE
+  [ 572 .. 760 ]/0B
+
+*********************************************************************
+
