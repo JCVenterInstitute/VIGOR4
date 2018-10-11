@@ -84,7 +84,10 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
                         }
                         boolean isBoundaryAdjusted = false;
                         boolean isPesudogene = false;
+
+                        //TODO-COMMENT If we always find compatible splice sites above do we never add the models?
                         if (!foundSplicePair && !isBoundaryAdjusted && !isPesudogene) {
+
                             //determine Donor search window
                             long donorStart = currentExon.getEnd() - defaultSearchWindow;
                             if (donorStart < 0) {
@@ -155,6 +158,7 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
                                         Range foundDownExonRange = Range.of(acceptorRange.getEnd() + 1, nextExon.getEnd());
                                         boolean isCompatible = checkSplicePairCompatibility(currentExon, nextExon, foundUpExonRange, foundDownExonRange, upExon.getFrame(), downExon.getFrame());
                                         if (isCompatible) {
+                                            // TODO-COMMENT why throw away tempModels if we've already added models?
                                             if (isNewSpliceSite && models.size() > 0) {
                                                 tempModels.clear();
                                                 tempModels.addAll(models);
