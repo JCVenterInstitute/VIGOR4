@@ -105,8 +105,7 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
             }
         }
 
-        // TODO-COMMENT is null the right answer here if the alignment is in the wrong direction
-        // TODO-COMMENT or should we use the best alignment in the model direction
+       // A model should have all the alignment fragments in the same direction. Hence the bestAlignment has to be in the same direction as model.
         if (bestAlignment != null && bestAlignment.getQueryRange().getDirection().equals(modelDirection)) {
             Range modelExonAARange = Range.of(bestAlignment.getSubjectRange()
                                                            .getRange().getBegin()

@@ -78,12 +78,13 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
                                 boolean isCompatible = checkSplicePairCompatibility(currentExon, nextExon, currentExon, nextExon, upExon.getFrame(), downExon.getFrame());
                                 if (isCompatible) {
                                     foundSplicePair = true;
+                                    //This has to be added to tempModels, as next exons may enter below loop to find splicesites.
                                     tempModels.add(model);
                                 }
                             }
                         }
 
-                        //TODO-COMMENT If we always find compatible splice sites above do we never add the models?
+                        //If we find compatible splice sites above (in the expected location as above), we dont look for any other compatible splice pairs as below
                         if (!foundSplicePair ) {
                             //determine Donor search window
                             long donorStart = currentExon.getEnd() - defaultSearchWindow;
@@ -149,18 +150,20 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
                                 boolean isNewSpliceSite = true;
                                 tempModels.add(model);
                                 //Upstream exon should be trimmed/extended till the donor splice site and downstream exon should be trimmed/extended till the acceptor splice site.
+                                // If there are multiple splice pairs , For each Splice pair determine compatible donor and acceptor pairs as below
                                 for (Range donorRange : donorRanges) {
                                     for (Range acceptorRange : acceptorRanges) {
                                         Range foundUpExonRange = Range.of(currentExon.getBegin(), donorRange.getBegin() - 1);
                                         Range foundDownExonRange = Range.of(acceptorRange.getEnd() + 1, nextExon.getEnd());
                                         boolean isCompatible = checkSplicePairCompatibility(currentExon, nextExon, foundUpExonRange, foundDownExonRange, upExon.getFrame(), downExon.getFrame());
                                         if (isCompatible) {
-                                            // TODO-COMMENT why throw away tempModels if we've already added models?
+                                            //Here in the end we have cloned models where each Model has spliceScore from different spliceSites & for all splice pairs exon coordinates are adjusted in a model.
                                             if (isNewSpliceSite && models.size() > 0) {
                                                 tempModels.clear();
                                                 tempModels.addAll(models);
                                                 models.clear();
                                             }
+                                            //for each compatible donor and acceptor pair clone a new model
                                             for (Model newModelprev : tempModels) {
                                                 Model newModel = newModelprev.clone();
                                                 newModel.getExons().get(i).setRange(foundUpExonRange);
@@ -171,6 +174,7 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
                                                 Map<String, Double> scores = newModel.getScores();
                                                 //Score each pair based on the location where donor and acceptor are found.
                                                 // Donor close to the end of the first exon and acceptor close to the start of the second exon will score high
+                                                //If spliceScore already exists it is the model cloned from the previous splice pair, so sum up to scores.
                                                 if (scores.containsKey("spliceScore")) {
                                                     double existingScore = scores.get("spliceScore");
                                                     double spliceScoreSum = existingScore + spliceScore;
@@ -179,6 +183,7 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
                                                     scores.put("spliceScore", spliceScore);
                                                 }
                                                 newModel.setScores(scores);
+                                                //In the end (closure of main for loop) we have a all the splice sites adjusted in a model
                                                 models.add(newModel);
                                             }
                                             isNewSpliceSite = false;
