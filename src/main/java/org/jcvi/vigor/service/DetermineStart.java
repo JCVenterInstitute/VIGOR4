@@ -94,6 +94,7 @@ public class DetermineStart implements DetermineGeneFeatures {
         if (( expectedStart < 0 && expectedStart > -windowSize ) || expectedStart >= 0) {
             expectedStart = expectedStart >= 0 ? expectedStart : 0;
             start = expectedStart - windowSize;
+            //if search window defined above lies outside the sequence, then set isSequenceMissing to true.
             if (start < 0) {
                 isSequenceMissing = true;
                 start = 0;
@@ -133,6 +134,7 @@ public class DetermineStart implements DetermineGeneFeatures {
             final long tempStart = startSearchRange.getBegin();
             NucleotideSequence NTSequence = model.getAlignment().getVirusGenome()
                     .getSequence().toBuilder(startSearchRange).build();
+            // List all starts in frame and assign a score for each match (match closer to expected start scores high)
             for (Triplet triplet : startCodons) {
                 Stream<Range> stream = NTSequence.findMatches(triplet.toString());
                 List<Range> rangesInFrame = new ArrayList<Range>();

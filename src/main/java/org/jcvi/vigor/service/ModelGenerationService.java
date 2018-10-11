@@ -31,10 +31,17 @@ public class ModelGenerationService {
         return determineCandidateModels(alignments, configuration);
     }
 
+    /**
+     *
+     * @param alignments
+     * @return
+     */
     public List<Alignment> mergeIdenticalProteinAlignments ( List<Alignment> alignments ) {
 
         List<Alignment> allOutAlignments = new ArrayList<Alignment>();
         Map<String, List<Alignment>> protein2AlignmentsMap = new HashMap<String, List<Alignment>>();
+
+        // sort alignments by protein ID in a map
         for (Alignment alignment : alignments) {
             alignment.getAlignmentFragments().sort(AlignmentFragment.Comparators.Ascending);
             String proteinID = alignment.getViralProtein().getProteinID();
@@ -48,6 +55,8 @@ public class ModelGenerationService {
                 protein2AlignmentsMap.put(proteinID, new ArrayList<>(Arrays.asList(alignment)));
             }
         }
+
+        //Merge alignments(alignment fragments) belonging to a protein and add up the scores of the alignments
         for (String proteinID : protein2AlignmentsMap.keySet()) {
             List<Alignment> alignmentsTemp = protein2AlignmentsMap.get(proteinID);
             Alignment mergedAlignment = alignmentsTemp.get(0);
@@ -123,7 +132,7 @@ public class ModelGenerationService {
         int minIntronLength = maxAlignMergeAAGap * 3;
         int relaxMergeAAGap = configuration.getOrDefault(ConfigurationParameters.RelaxAlignMergeAAGap, DEFAULT_RELAX_MERGE_AA_GAP);
         int relaxIntronLength = relaxMergeAAGap * 3;
-
+        //Group alignment fragments based on direction
         Map<Direction, List<AlignmentFragment>> alignmentFragsGroupedList = alignment.getAlignmentFragments().stream()
                 .collect(Collectors.groupingBy(w -> w.getDirection()));
         Set<Direction> keyset = alignmentFragsGroupedList.keySet();
@@ -170,7 +179,7 @@ public class ModelGenerationService {
     }
 
     /**
-     * @return merge two fragments if the intron length is <minIntronLength and if there are no stops in between and if intron length is divisible by 3.
+     * @return merge two fragments if the intron length is <minIntronLength, if there are no stops in between and if intron length is divisible by 3.
      * Also merge fragments if the missing protein alignment length between two fragments is less than the max align merge aa gap;
      * @param:alignment
      */
@@ -320,11 +329,10 @@ public class ModelGenerationService {
     }
 
     /**
+     * @param: initModels
+     * @param: validSequenceGaps
      * @return Models are split at sequence gaps and new list of models are
      * returned
-     * @param:initModels
-     * @param:form
-     * @param:genome
      */
     public List<Model> splitModelAtSequenceGaps ( Model initModel, List<Range> validSequenceGaps ) throws CloneNotSupportedException {
 
@@ -431,14 +439,14 @@ public class ModelGenerationService {
     }
 
     /**
-     * @param alignmentFragments : alignment fragments that are grouped based on direction is
-     *                           input to the function
-     * @return List<List   <   AlignmentFragment>>: compatible(check for overlap) list
-     * of alignment fragments and their permutations and combinations is
+     * @param alignmentFragments : alignment fragments that are grouped based on direction
+     * @return List<List<AlignmentFragment>>: compatible(check for overlap) list
+     * of alignment fragments and their permutations and combinations are
      * grouped
      */
     public List<List<AlignmentFragment>> generateCompatibleFragsChains ( List<AlignmentFragment> alignmentFragments, VigorConfiguration configuration) {
 
+        //If alignmnet fragments overlap, Overlap length should not exceed Offset
         int NTOverlapOffset = configuration.getOrDefault(ConfigurationParameters.NTOverlap_offset, DEFAULT_NTOVERLAP_OFFSET);
         int AAOverlapOffset = configuration.getOrDefault(ConfigurationParameters.AAOverlap_offset, DEFAULT_AAOVERLAP_OFFSET);
         List<AlignmentFragment> compatibleFragsList = new ArrayList<AlignmentFragment>();

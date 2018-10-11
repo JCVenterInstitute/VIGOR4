@@ -70,6 +70,7 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
                     if (upExon.is_3p_adjusted() != true && downExon.is_5p_adjusted() != true) {
                         //Check if donor and acceptor are found at start and end of intron respectively
                         boolean foundSplicePair = false;
+                        // expected donor is two nucleotides ofter end of  upstream exon. expected acceptor is two nucleotides before start of the next exon
                         String expectedDonor = model.getAlignment().getVirusGenome().getSequence().toBuilder(Range.of(currentExon.getEnd() + 1, currentExon.getEnd() + 2)).build().toString();
                         String expectedAcceptor = model.getAlignment().getVirusGenome().getSequence().toBuilder(Range.of(nextExon.getBegin() - 2, nextExon.getBegin() - 1)).build().toString();
                         for (SpliceSite var : splicePairs) {
@@ -147,6 +148,7 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
                                 acceptorRanges = acceptorRanges.stream().map(range -> Range.of(range.getBegin() + acceptorStartTemp1, range.getEnd() + acceptorStartTemp1)).collect(Collectors.toList());
                                 boolean isNewSpliceSite = true;
                                 tempModels.add(model);
+                                //Upstream exon should be trimmed/extended till the donor splice site and downstream exon should be trimmed/extended till the acceptor splice site.
                                 for (Range donorRange : donorRanges) {
                                     for (Range acceptorRange : acceptorRanges) {
                                         Range foundUpExonRange = Range.of(currentExon.getBegin(), donorRange.getBegin() - 1);
@@ -166,6 +168,8 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
                                                 double acceptorScore = VigorFunctionalUtils.generateProximityScore(nextExon.getBegin(), acceptorRange.getBegin());
                                                 double spliceScore = donorScore + acceptorScore;
                                                 Map<String, Double> scores = newModel.getScores();
+                                                //Score each pair based on the location where donor and acceptor are found.
+                                                // Donor close to the end of the first exon and acceptor close to the start of the second exon will score high
                                                 if (scores.containsKey("spliceScore")) {
                                                     double existingScore = scores.get("spliceScore");
                                                     double spliceScoreSum = existingScore + spliceScore;
@@ -192,6 +196,7 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
         return models;
     }
 
+    //Leftover number of nucleotides at the end of the upstream exon + leftover number of nucleotides at start of the downstream exon = 3 or 0 then splice pair is compatible
     public boolean checkSplicePairCompatibility ( Range upExonRange, Range downExonRange, Range foundUpExonRange, Range foundDownExonRange, Frame upExonFrame, Frame downExonFrame ) {
 
         int upNucleotides = (int) ( upExonRange.getLength() - ( upExonFrame.getFrame() - 1 ) ) % 3;

@@ -64,13 +64,15 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
             NucleotideSequence cds = model.getAlignment().getVirusGenome().getSequence().toBuilder(Range.of(CDSStart, CDSEnd))
                     .build();
             int offset = riboSlippage.getSlippage_offset();
+            //+1 is added if offset is negetive, this is to start count from the point where match is found.
             if (offset < 0) {
                 offset = offset + 1;
             }
+            //Once the matches are found , get the coordinates relative to complete sequence
             List<Range> matches = cds.findMatches(riboSlippage.getSlippage_motif()).map(x -> x = Range.of(x.getBegin() + CDSStart, x.getEnd() + CDSStart))
                     .sequential()
                     .collect(Collectors.toList());
-            //If no match found and model is not partial then model is marked is pseudogene
+            //If no match found and model is not partial then model is marked as pseudogene
             if (matches != null && matches.size() == 0) {
                 if (!( model.isPartial3p() || model.isPartial5p() )) {
                     model.setPseudogene(true);
@@ -86,6 +88,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                         Range exonRange = newModel.getExons().get(i).getRange();
                         if (exonRange.intersects(slippagePoint)) {
                             PointOfOccurrence pointOfOccurance = determineLocation(exonRange, slippagePoint, true);
+                            //if match found in the middle of an exon , adjust 3' end of upstream part exon and  5' end of downstream part of exon (results in two exons)
                             if (pointOfOccurance == PointOfOccurrence.MIDDLE) {
                                 Exon exon = newModel.getExons().get(i).clone();
                                 exon.set_5p_adjusted(true);
@@ -94,6 +97,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                                 newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(), slippagePoint.getBegin() - 1));
                                 newModel.getExons().get(i).set_3p_adjusted(true);
                                 newModel.getExons().add(exon);
+                            //if match found at the start of the exon, adjust 5' end of the exon
                             } else if (pointOfOccurance == PointOfOccurrence.START) {
                                 newModel.getExons().get(i).setRange(Range.of(slippagePoint.getBegin() + riboSlippage.getSlippage_frameshift(), exonRange.getEnd()));
                                 newModel.getExons().get(i).set_5p_adjusted(true);
@@ -102,6 +106,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                                     newModel.getExons().get(i - 1).setRange(Range.of(prevExonRange.getBegin(), slippagePoint.getBegin() - 1));
                                     newModel.getExons().get(i - 1).set_3p_adjusted(true);
                                 }
+                            //if mtach found at the end of the exon, adjust 3' end of the exon
                             } else if (pointOfOccurance == PointOfOccurrence.END) {
                                 newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(), slippagePoint.getBegin() - 1));
                                 newModel.getExons().get(i).set_3p_adjusted(true);
@@ -111,6 +116,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                                     newModel.getExons().get(i + 1).set_5p_adjusted(true);
                                 }
                             }
+                        //Below scenario is when slippage point lies in the intron, extend upstream and downstream exons till the slippage point
                         } else if (i != newModel.getExons().size() - 1) {
                             Range nextExonRange = newModel.getExons().get(i + 1).getRange();
                             if (slippagePoint.intersects(Range.of(exonRange.getEnd() + 1, nextExonRange.getBegin() - 1))) {
@@ -152,7 +158,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                     .collect(Collectors.toList());
             List<Range> sequenceGaps = model.getAlignment().getVirusGenome().getSequenceGaps();
             int offset = rna_editing.getOffset();
-            // +1 since it has to include the offset coordinate as well if going in negative direction
+            //+1 is added if offset is negetive, this is to start count from the point where match is found.
             if (rna_editing.getOffset() < 0) {
                 offset = offset + 1;
             }
@@ -165,12 +171,14 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                         Range exonRange = newModel.getExons().get(i).getRange();
                         if (exonRange.intersects(pointOfInsertion)) {
                             PointOfOccurrence pointOfOccurance = determineLocation(exonRange, pointOfInsertion);
+                            // If the position where insertionString has to be inserted lies at the start, adjust previous exon and current exon ranges till the point of insertion
                             if (pointOfOccurance == PointOfOccurrence.START) {
                                 newModel.getExons().get(i).setRange(Range.of(pointOfInsertion.getBegin(), exonRange.getEnd()));
                                 if (i != 0) {
                                     Range prevExonRange = newModel.getExons().get(i - 1).getRange();
                                     newModel.getExons().get(i - 1).setRange(Range.of(prevExonRange.getBegin(), pointOfInsertion.getBegin() - 1));
                                 }
+                            // If the position where insertionString has to be inserted lies in the end of the exon , adjust current exon and next exon ranges till the point of insertion
                             } else if (pointOfOccurance == PointOfOccurrence.END) {
                                 newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(), pointOfInsertion.getBegin() - 1));
                                 if (i != newModel.getExons().size() - 1) {
@@ -219,6 +227,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
             NucleotideSequence cds = VigorFunctionalUtils.getCDS(model);
             List<Range> matches = cds.findMatches(stopTransExce.getMotif()).distinct().collect(Collectors.toList());
             int offset = stopTransExce.getOffset();
+            //+1 is added if offset is negetive, this is to start count from the point where match is found.
             if (offset < 0) {
                 offset = offset + 1;
             }
@@ -227,6 +236,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                     long leakyStopStart = VigorFunctionalUtils.getNTRange(model.getExons(), match.getBegin());
                     Range leakyStopRange = Range.of(leakyStopStart, leakyStopStart + match.getLength() - 1);
                     long start = leakyStopRange.getEnd() + offset;
+                    //match in frame has to considered. For every match found, clone a model and save replacement stop codon range
                     if (VigorFunctionalUtils.isInFrameWithExon(model.getExons(), start) && !VigorFunctionalUtils.intheSequenceGap(sequenceGaps, leakyStopRange)) {
                         Model newModel;
                         newModel = model.clone();

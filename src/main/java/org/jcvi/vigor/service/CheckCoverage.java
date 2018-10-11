@@ -52,6 +52,7 @@ public class CheckCoverage implements EvaluateModel {
         if (model.getReplaceStopCodonRange() != null) {
             replacementOffset = model.getReplaceStopCodonRange().getBegin();
         }
+        //replace stopcodon with an amino acid as per viral protein specifications
         if (replacementOffset != 0) {
             replacementOffset = getTranslatedProteinCooridnate(model.getExons(), replacementOffset, model.getInsertRNAEditingRange());
         }

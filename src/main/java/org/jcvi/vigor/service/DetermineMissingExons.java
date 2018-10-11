@@ -214,12 +214,14 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
                         }
                     }
                 }
+                //do not check for missing exons in the sequence gap
                 if (!sequenceGap) {
                     if (missingAARange.getLength() >= min_missing_AA_size && missingNTRange.getLength() > min_missing_AA_size * 3) {
                         Optional<Exon> determinedExon = performJillionPairWiseAlignment(missingNTRange,
                                 missingAARange, NTSeq, AASeq, model.getDirection());
                         if (determinedExon.isPresent() && determinedExon.get().getRange().getLength() >= minExonSize) {
                             missingExons.add(determinedExon.get());
+                            // Unset 3' /5' adjusted flags if there is any missing protein alignment up/down stream of the exon
                             if (prevExon != null) {
                                 prevExon.set_3p_adjusted(false);
                             }
