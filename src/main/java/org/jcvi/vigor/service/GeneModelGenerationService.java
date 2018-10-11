@@ -277,6 +277,7 @@ public class GeneModelGenerationService {
             for (Model model : geneModels) {
                 boolean isSharedCDS = false;
                 List<String> tempSharedCDS = VigorUtils.nullElse(model.getAlignment().getViralProtein().getGeneAttributes().getStructuralSpecifications().getShared_cds(), Collections.EMPTY_LIST);
+               // below step is to not to add shared_CDS genes at this stage
                 for(String sharedCDS:tempSharedCDS){
                     if(sharedCDS.equals(candidateGene.getGeneSymbol())) {
                         isSharedCDS = true;
@@ -284,7 +285,7 @@ public class GeneModelGenerationService {
                     }
                 }
                 List<Exon> exons = model.getExons();
-                if (!isSharedCDS){
+                if (!isSharedCDS && candidateGene.getDirection().equals(model.getDirection())){
                     for (Exon candidateExon : candidateExons) {
                         for (Exon exon : exons) {
                             Range intersection = candidateExon.getRange().intersection(exon.getRange());
