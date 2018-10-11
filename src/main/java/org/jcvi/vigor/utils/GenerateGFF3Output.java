@@ -24,11 +24,15 @@ public class GenerateGFF3Output {
         for (Model geneModel : geneModels) {
             List<NoteType> notes = geneModel.getNotes();
             int i = 1;
-            String geneomeSeqID = geneModel.getAlignment().getVirusGenome().getId();
+            VirusGenome virusGenome = geneModel.getAlignment().getVirusGenome();
+            long seqlength = virusGenome.getSequence().getLength();
+            String geneomeSeqID = virusGenome.getId();
             List<Exon> exons = geneModel.getExons();
             String geneName = geneModel.getAlignment().getViralProtein().getGeneSymbol();
-            String CDSStart = Long.toString(exons.get(0).getRange().getBegin(oneBased));
-            String CDSEnd = Long.toString(exons.get(exons.size() - 1).getRange().getEnd(oneBased));
+            String CDSStart =Long.toString(VigorFunctionalUtils.getDirectionBasedCoordinate
+                    (exons.get(0).getRange().getBegin(oneBased),seqlength,geneModel.getDirection()));
+            String CDSEnd = Long.toString(VigorFunctionalUtils.getDirectionBasedCoordinate
+                    (exons.get(exons.size() - 1).getRange().getEnd(oneBased),seqlength,geneModel.getDirection()));
             String mRnaID = geneModel.getGeneID() + "." + i;
             bw.write(geneomeSeqID + "\t" + "vigor" + "\t");
             //gene
@@ -76,7 +80,9 @@ public class GenerateGFF3Output {
                 Exon exon = exons.get(j);
                 bw.write(geneomeSeqID + "\t" + "vigor" + "\t");
                 bw.write("exon" + "\t");
-                bw.write(Long.toString(exon.getRange().getBegin(oneBased)) + "\t" + Long.toString(exon.getRange().getEnd(oneBased)) + "\t");
+                String exonBegin =Long.toString(VigorFunctionalUtils.getDirectionBasedCoordinate(exon.getRange().getBegin(oneBased),seqlength,geneModel.getDirection()));
+                String exonEnd =Long.toString(VigorFunctionalUtils.getDirectionBasedCoordinate(exon.getRange().getEnd(oneBased),seqlength,geneModel.getDirection()));
+                bw.write(exonBegin + "\t" + exonEnd + "\t");
                 bw.write("." + "\t");
                 if (geneModel.getDirection().equals(Direction.FORWARD)) {
                     bw.write("+" + "\t");
@@ -106,7 +112,9 @@ public class GenerateGFF3Output {
             if (geneModel.getInsertRNAEditingRange() != null) {
                 bw.write(geneomeSeqID + "\t" + "vigor" + "\t");
                 bw.write("insertion" + "\t");
-                bw.write(Long.toString(geneModel.getInsertRNAEditingRange().getBegin(oneBased)) + "\t" + Long.toString(geneModel.getInsertRNAEditingRange().getEnd(oneBased)) + "\t");
+                String insertBegin= Long.toString(VigorFunctionalUtils.getDirectionBasedCoordinate(geneModel.getInsertRNAEditingRange().getBegin(oneBased),seqlength,geneModel.getDirection()));
+                String insertEnd=Long.toString(VigorFunctionalUtils.getDirectionBasedCoordinate(geneModel.getInsertRNAEditingRange().getEnd(oneBased),seqlength,geneModel.getDirection()));
+                bw.write(insertBegin + "\t" + insertEnd + "\t");
                 bw.write("." + "\t");
                 if (geneModel.getDirection().equals(Direction.FORWARD)) {
                     bw.write("+" + "\t");
@@ -120,7 +128,9 @@ public class GenerateGFF3Output {
             if (geneModel.getReplaceStopCodonRange() != null) {
                 bw.write(geneomeSeqID + "\t" + "vigor" + "\t");
                 bw.write("stop_codon_read_through" + "\t");
-                bw.write(Long.toString(geneModel.getReplaceStopCodonRange().getBegin(oneBased)) + "\t" + Long.toString(geneModel.getReplaceStopCodonRange().getEnd(oneBased)) + "\t");
+                long replaceStopBegin= VigorFunctionalUtils.getDirectionBasedCoordinate(geneModel.getReplaceStopCodonRange().getBegin(oneBased),seqlength,geneModel.getDirection());
+                long replaceStopEnd=VigorFunctionalUtils.getDirectionBasedCoordinate(geneModel.getReplaceStopCodonRange().getEnd(oneBased),seqlength,geneModel.getDirection());
+                bw.write(Long.toString(replaceStopBegin) + "\t" + Long.toString(replaceStopEnd) + "\t");
                 bw.write("." + "\t");
                 if (geneModel.getDirection().equals(Direction.FORWARD)) {
                     bw.write("+" + "\t");
@@ -134,10 +144,12 @@ public class GenerateGFF3Output {
             //minus_1_translationally_frameshifted
             if (geneModel.getAlignment().getViralProtein().getGeneAttributes().getRibosomal_slippage().isHas_ribosomal_slippage() && geneModel.getRibosomalSlippageRange() != null) {
                 int frameshift = geneModel.getAlignment().getViralProtein().getGeneAttributes().getRibosomal_slippage().getSlippage_frameshift();
+                long slippageBegin = VigorFunctionalUtils.getDirectionBasedCoordinate(geneModel.getRibosomalSlippageRange().getBegin(oneBased),seqlength,geneModel.getDirection());
+                long slippageEnd = VigorFunctionalUtils.getDirectionBasedCoordinate(geneModel.getRibosomalSlippageRange().getEnd(oneBased),seqlength,geneModel.getDirection());
                 if (frameshift == -1) {
                     bw.write(geneomeSeqID + "\t" + "vigor" + "\t");
                     bw.write("mRNA_with_minus_1_frameshift" + "\t");
-                    bw.write(geneModel.getRibosomalSlippageRange().getBegin(oneBased) + "\t" + geneModel.getRibosomalSlippageRange().getEnd(oneBased) + "\t");
+                    bw.write(Long.toString(slippageBegin)+ "\t" + Long.toString(slippageEnd) + "\t");
                     bw.write("." + "\t");
                     if (geneModel.getDirection().equals(Direction.FORWARD)) {
                         bw.write("+" + "\t");
@@ -151,7 +163,7 @@ public class GenerateGFF3Output {
                 if (frameshift == 1) {
                     bw.write(geneomeSeqID + "\t" + "vigor" + "\t");
                     bw.write("mRNA_with_plus_1_frameshift" + "\t");
-                    bw.write(geneModel.getRibosomalSlippageRange().getBegin(oneBased) + "\t" + geneModel.getRibosomalSlippageRange().getEnd(oneBased) + "\t");
+                    bw.write(Long.toString(slippageBegin)+ "\t" + Long.toString(slippageEnd) + "\t");
                     bw.write("." + "\t");
                     if (geneModel.getDirection().equals(Direction.FORWARD)) {
                         bw.write("+" + "\t");
