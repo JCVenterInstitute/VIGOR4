@@ -56,7 +56,7 @@ public class CheckCoverageTest {
         exons.add(exon2);
         exons.add(exon3);
         // NTOffset after considering the insertion string length;
-        long PCoordinate = checkCoverage.getTranslatedProteinCooridnate(exons, 11, Range.of(11, 12));
+        long PCoordinate = checkCoverage.getTranslatedProteinCoordinate(exons, 11, Range.of(11, 12));
         assertEquals(4, PCoordinate);
     }
 

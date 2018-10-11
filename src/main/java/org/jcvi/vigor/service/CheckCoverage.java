@@ -54,7 +54,7 @@ public class CheckCoverage implements EvaluateModel {
         }
         //replace stopcodon with an amino acid as per viral protein specifications
         if (replacementOffset != 0) {
-            replacementOffset = getTranslatedProteinCooridnate(model.getExons(), replacementOffset, model.getInsertRNAEditingRange());
+            replacementOffset = getTranslatedProteinCoordinate(model.getExons(), replacementOffset, model.getInsertRNAEditingRange());
         }
         Frame fFrame = model.getExons().get(0).getFrame();
         AminoAcid replacementAA = model.getAlignment().getViralProtein().getGeneAttributes().getStopTranslationException().getReplacementAA();
@@ -127,7 +127,7 @@ public class CheckCoverage implements EvaluateModel {
      * @param insertionRange
      * @return
      */
-    public long getTranslatedProteinCooridnate ( List<Exon> exons, long NTOffset, Range insertionRange ) {
+    public long getTranslatedProteinCoordinate(List<Exon> exons, long NTOffset, Range insertionRange ) {
 
         long translatedProteinLength = 0;
         long proteinCoordinate = 0;
