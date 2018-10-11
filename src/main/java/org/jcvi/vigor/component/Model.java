@@ -43,6 +43,11 @@ public class Model implements Cloneable {
         return model;
     }
 
+    /**
+     * Get the nucleotide range from the beginning of the first exon to the end of the last exon
+     *
+     * @return
+     */
     public Range getRange () {
 
         List<Exon> exons = getExons();
