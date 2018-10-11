@@ -81,9 +81,8 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
                                 }
                             }
                         }
-                        boolean isBoundaryAdjusted = false;
-                        boolean isPesudogene = false;
-                        if (!foundSplicePair && !isBoundaryAdjusted && !isPesudogene) {
+
+                        if (!foundSplicePair ) {
                             //determine Donor search window
                             long donorStart = currentExon.getEnd() - defaultSearchWindow;
                             if (donorStart < 0) {
