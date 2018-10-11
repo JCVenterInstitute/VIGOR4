@@ -1,9 +1,6 @@
 package org.jcvi.vigor.service;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
@@ -36,7 +33,17 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
         int minIntronLength = configuration.getOrDefault(ConfigurationParameters.IntronMinimumSize,
                                                          DEFAULT_MIN_INTRON_SIZE);
 
-        LOGGER.trace("adjusting unedited exon boundaries using", () -> {return "TODO print values and sources"; });
+        LOGGER.trace("adjusting unedited exon boundaries using {}",
+                     () -> {
+                         VigorConfiguration.ValueWithSource unset = VigorConfiguration.ValueWithSource.of("unset","unset");
+                         VigorConfiguration.ValueWithSource searchWindow = configuration.getWithSource(ConfigurationParameters.StopCodonSearchWindow).orElse(unset);
+                         VigorConfiguration.ValueWithSource minIntronSize = configuration.getWithSource(ConfigurationParameters.IntronMinimumSize).orElse(unset);
+
+                         StringBuilder logValue = new StringBuilder();
+                         logValue.append("searchWindow: ").append(searchWindow.value).append("(").append(searchWindow.source).append(")");
+                         logValue.append("minIntronSize: ").append(minIntronSize.value).append("(").append(minIntronSize.source).append(")");
+                         return logValue.toString();
+                     });
 
         try {
             return adjustSpliceSites(model, defaultSearchWindow, minIntronLength);
