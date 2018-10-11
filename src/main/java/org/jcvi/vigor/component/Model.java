@@ -36,7 +36,7 @@ public class Model implements Cloneable {
     public Model clone () throws CloneNotSupportedException {
 
         Model model = (Model) super.clone();
-        model.setExons(this.getExons().stream().map(x -> x.clone()).collect(Collectors.toList()));
+        model.setExons(this.getExons().stream().map(Exon::clone).collect(Collectors.toList()));
         model.setScores(new HashMap<>(this.scores));
         model.setStatus(new ArrayList<>(this.status));
         model.setNotes(new ArrayList<>(this.notes));
