@@ -21,12 +21,16 @@ import org.jcvi.vigor.utils.VigorConfiguration;
 import org.jcvi.vigor.utils.VigorFunctionalUtils;
 import org.springframework.stereotype.Service;
 
+/**
+ *
+ */
 @Service
 public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
 
     private static Logger LOGGER = LogManager.getLogger(AdjustUneditedExonBoundaries.class);
     private static final int DEFAULT_STOP_CODON_SEARCH_WINDOW = 50;
     private static final int DEFAULT_MIN_INTRON_SIZE = 20;
+
     @Override
     public List<Model> determine ( Model model ) throws ServiceException {
 
@@ -70,7 +74,7 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
                     if (upExon.is_3p_adjusted() != true && downExon.is_5p_adjusted() != true) {
                         //Check if donor and acceptor are found at start and end of intron respectively
                         boolean foundSplicePair = false;
-                        // expected donor is two nucleotides ofter end of  upstream exon. expected acceptor is two nucleotides before start of the next exon
+                        // expected donor is two nucleotides after end of upstream exon. expected acceptor is two nucleotides before start of the next exon
                         String expectedDonor = model.getAlignment().getVirusGenome().getSequence().toBuilder(Range.of(currentExon.getEnd() + 1, currentExon.getEnd() + 2)).build().toString();
                         String expectedAcceptor = model.getAlignment().getVirusGenome().getSequence().toBuilder(Range.of(nextExon.getBegin() - 2, nextExon.getBegin() - 1)).build().toString();
                         for (SpliceSite var : splicePairs) {
