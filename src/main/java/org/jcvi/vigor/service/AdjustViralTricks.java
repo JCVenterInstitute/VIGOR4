@@ -64,11 +64,11 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
             NucleotideSequence cds = model.getAlignment().getVirusGenome().getSequence().toBuilder(Range.of(CDSStart, CDSEnd))
                     .build();
             int offset = riboSlippage.getSlippage_offset();
-            //+1 is added if offset is negetive, this is to start count from the point where match is found.
+            //+1 is added if offset is negative, this is to start count from the point where match is found.
             if (offset < 0) {
                 offset = offset + 1;
             }
-            //Once the matches are found , get the coordinates relative to complete sequence
+            //Once the matches are found, get the coordinates relative to complete sequence
             List<Range> matches = cds.findMatches(riboSlippage.getSlippage_motif()).map(x -> x = Range.of(x.getBegin() + CDSStart, x.getEnd() + CDSStart))
                     .sequential()
                     .collect(Collectors.toList());
@@ -97,7 +97,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                                 newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(), slippagePoint.getBegin() - 1));
                                 newModel.getExons().get(i).set_3p_adjusted(true);
                                 newModel.getExons().add(exon);
-                            //if match found at the start of the exon, adjust 5' end of the exon
+                            //if match found at the start of the exon, adjust 5' end of the exon and 3' end of previous exon, if any.
                             } else if (pointOfOccurance == PointOfOccurrence.START) {
                                 newModel.getExons().get(i).setRange(Range.of(slippagePoint.getBegin() + riboSlippage.getSlippage_frameshift(), exonRange.getEnd()));
                                 newModel.getExons().get(i).set_5p_adjusted(true);
@@ -106,7 +106,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                                     newModel.getExons().get(i - 1).setRange(Range.of(prevExonRange.getBegin(), slippagePoint.getBegin() - 1));
                                     newModel.getExons().get(i - 1).set_3p_adjusted(true);
                                 }
-                            //if mtach found at the end of the exon, adjust 3' end of the exon
+                            //if match is found at the end of the exon, adjust 3' end of the exon and the 5' end of next exon, if any
                             } else if (pointOfOccurance == PointOfOccurrence.END) {
                                 newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(), slippagePoint.getBegin() - 1));
                                 newModel.getExons().get(i).set_3p_adjusted(true);
@@ -158,7 +158,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                     .collect(Collectors.toList());
             List<Range> sequenceGaps = model.getAlignment().getVirusGenome().getSequenceGaps();
             int offset = rna_editing.getOffset();
-            //+1 is added if offset is negetive, this is to start count from the point where match is found.
+            //+1 is added if offset is negative, this is to start count from the point where match is found.
             if (rna_editing.getOffset() < 0) {
                 offset = offset + 1;
             }
@@ -227,7 +227,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
             NucleotideSequence cds = VigorFunctionalUtils.getCDS(model);
             List<Range> matches = cds.findMatches(stopTransExce.getMotif()).distinct().collect(Collectors.toList());
             int offset = stopTransExce.getOffset();
-            //+1 is added if offset is negetive, this is to start count from the point where match is found.
+            //+1 is added if offset is negative, this is to start count from the point where match is found.
             if (offset < 0) {
                 offset = offset + 1;
             }
