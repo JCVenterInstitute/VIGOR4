@@ -82,12 +82,9 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
                                 }
                             }
                         }
-                        boolean isBoundaryAdjusted = false;
-                        boolean isPesudogene = false;
 
                         //TODO-COMMENT If we always find compatible splice sites above do we never add the models?
-                        if (!foundSplicePair && !isBoundaryAdjusted && !isPesudogene) {
-
+                        if (!foundSplicePair ) {
                             //determine Donor search window
                             long donorStart = currentExon.getEnd() - defaultSearchWindow;
                             if (donorStart < 0) {
