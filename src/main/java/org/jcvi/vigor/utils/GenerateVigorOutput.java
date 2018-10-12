@@ -140,7 +140,10 @@ public class GenerateVigorOutput {
                 bw.write("\t\t\tlocus_tag\t" + VigorUtils.nameToLocus(model.getGeneSymbol(), locusPrefix, model.isPseudogene()) + "\n");
             }
             bw.write("\t\t\tgene\t" + model.getGeneSymbol() + "\n");
-            bw.write("\t\t\tproduct\t" + VigorUtils.putativeName(model.getAlignment().getViralProtein().getProduct(), model.isPartial3p(), model.isPartial5p()) + "\n");
+            String product = model.getAlignment().getViralProtein().getProduct();
+            if (! NullUtil.isNullOrEmpty(product)) {
+                bw.write("\t\t\tproduct\t" + VigorUtils.putativeName(product, model.isPartial3p(), model.isPartial5p()) + "\n");
+            }
             if (riboSlippage.isHas_ribosomal_slippage()) {
                 bw.write("\t\t\tribosomal_slippage\n");
             }
@@ -183,15 +186,17 @@ public class GenerateVigorOutput {
                             end,false));
                     bw.write("\t");
                     product = match.getReference().getProduct();
-                    if (product.contains("signal")) {
-                        // TODO pre-classify type
-                        bw.write("sig_peptide");
-                    } else {
-                        bw.write("mat_peptide");
-                        bw.newLine();
-                        bw.write("\t\t\tproduct\t");
-                        // TODO check that there aren't other factors here.
-                        bw.write(VigorUtils.putativeName(product, match.isFuzzyEnd(), match.isFuzzyBegin()));
+                    if (! NullUtil.isNullOrEmpty(product)) {
+                        if (product.contains("signal")) {
+                            // TODO pre-classify type
+                            bw.write("sig_peptide");
+                        } else {
+                            bw.write("mat_peptide");
+                            bw.newLine();
+                            bw.write("\t\t\tproduct\t");
+                            // TODO check that there aren't other factors here.
+                            bw.write(VigorUtils.putativeName(product, match.isFuzzyEnd(), match.isFuzzyBegin()));
+                        }
                     }
                     bw.newLine();
                     String geneSymbol = model.getGeneSymbol();
@@ -247,7 +252,10 @@ public class GenerateVigorOutput {
         }
         defline.append(" codon_start=" + codon_start);
         defline.append(String.format(" gene=\"%s\"", refProtein.getGeneSymbol()));
-        defline.append(String.format(" product=\"%s\"", VigorUtils.putativeName(refProtein.getProduct(), model.isPartial3p(), model.isPartial5p())));
+        String product = refProtein.getProduct();
+        if (! NullUtil.isNullOrEmpty(product)) {
+            defline.append(String.format(" product=\"%s\"", VigorUtils.putativeName(product, model.isPartial3p(), model.isPartial5p())));
+        }
         String reference_db = model.getAlignment().getAlignmentEvidence().getReference_db();
         if (!( reference_db == null || reference_db.isEmpty() )) {
             defline.append(String.format(" ref_db=\"%s\"", Paths.get(reference_db).getFileName().toString()));
@@ -303,7 +311,10 @@ public class GenerateVigorOutput {
                          startCoordinate+ initialExon.getFrame().getFrame() - 1,
                         endCoordinate,true)));
                 defline.append(String.format(" gene=\"%s\"", model.getGeneSymbol()));
-                defline.append(String.format(" product=\"%s\"", VigorUtils.putativeName(match.getReference().getProduct(), match.isFuzzyEnd(), match.isFuzzyBegin())));
+                String product = match.getReference().getProduct();
+                if (! NullUtil.isNullOrEmpty(product)) {
+                    defline.append(String.format(" product=\"%s\"", VigorUtils.putativeName(product, match.isFuzzyEnd(), match.isFuzzyBegin())));
+                }
                 String refDB = model.getAlignment().getAlignmentEvidence().getMatpep_db();
                 if (!( refDB == null || refDB.isEmpty() )) {
                     defline.append(String.format(" ref_db=\"%s\"", Paths.get(refDB).getFileName().toString()));
