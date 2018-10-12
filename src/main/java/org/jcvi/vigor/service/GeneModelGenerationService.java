@@ -175,7 +175,7 @@ public class GeneModelGenerationService {
 
     /**
      * @param models
-     * @return
+     * @return models of different genes where models belonging to a gene should not overlap(choose the best one if there is overlap)
      */
     private List<Model> filterUnOverlappedCandidateModels ( List<Model> models ) {
 
@@ -218,7 +218,7 @@ public class GeneModelGenerationService {
 
     /**
      * @param models
-     * @return
+     * @return models satisfying min gene size, coverage and functional length
      */
     private List<Model> filterModelsWithStructuralSpecifications(List<Model> models, VigorConfiguration config) {
 
@@ -249,7 +249,7 @@ public class GeneModelGenerationService {
         candidateGenes = sortModels(candidateGenes, "modelScore");
         Model geneModel = candidateGenes.remove(0);
         geneModels.add(geneModel);
-
+        //generate geneID
         String genomeID = geneModel.getAlignment().getVirusGenome().getId();
         String[] genomeIDParts = genomeID.split(Pattern.quote("|"));
         String proteinIDOfGenome;
@@ -272,7 +272,7 @@ public class GeneModelGenerationService {
             Model candidateGene = candidateGenes.get(j);
             List<Exon> candidateExons = candidateGene.getExons();
             boolean overlap = false;
-
+            // Best model is picked as a gene model. Now compare other candidate models with genemodel. Check for overlap and do not add shared_CDS models at this step.
             CHECKOVERLAP:
             for (Model model : geneModels) {
                 boolean isSharedCDS = false;

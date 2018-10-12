@@ -51,6 +51,11 @@ public class VirusGenomeService {
         return filteredRangesOfNs;
     }
 
+    /**
+     *
+     * @param NTSequence
+     * @return
+     */
     public static Map<Frame, List<Long>> findInternalStops ( NucleotideSequence NTSequence ) {
 
         Map<Frame, List<Long>> stops = IupacTranslationTables.STANDARD.findStops(NTSequence);
@@ -58,6 +63,12 @@ public class VirusGenomeService {
         return stops;
     }
 
+    /**
+     *
+     * @param record
+     * @param config
+     * @return
+     */
     public static VirusGenome fastaRecordToVirusGenome( NucleotideFastaRecord record, VigorConfiguration config) {
         VirusGenome virusGenome = new VirusGenome(record.getSequence(), record.getComment(), record.getId(),
                 config.getOrDefault(ConfigurationParameters.CompleteGene, false),
@@ -68,6 +79,12 @@ public class VirusGenomeService {
         return virusGenome;
     }
 
+    /**
+     *
+     * @param inputGenome
+     * @param config
+     * @return reverse complement input sequence and create virusGenome object
+     */
     public static VirusGenome reverseComplementVirusGenome(VirusGenome inputGenome,VigorConfiguration config){
         NucleotideSequence reverseCompGenome = inputGenome.getSequence().toBuilder().reverseComplement().build();
         VirusGenome virusGenome = new VirusGenome(reverseCompGenome, inputGenome.getDefline(), inputGenome.getId(),

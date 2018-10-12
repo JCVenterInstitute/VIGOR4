@@ -59,6 +59,7 @@ public class DetermineStop implements DetermineGeneFeatures {
         Exon lastExon = exons.get(exons.size() - 1);
         Range lastExonAARange = lastExon.getAlignmentFragment().getProteinSeqRange();
         long expectedStart;
+        // Define search window and search for stops in the search window
         if (lastExonAARange.getEnd() < proteinSeqLength - 1) {
             long difference = proteinSeqLength - 1 - lastExonAARange.getEnd();
             expectedStart = lastExon.getRange().getEnd() + difference * 3;
@@ -68,6 +69,7 @@ public class DetermineStop implements DetermineGeneFeatures {
         Frame lastExonFrame = VigorFunctionalUtils.getSequenceFrame(lastExon.getRange().getBegin() + ( lastExon.getFrame().getFrame() - 1 ));
         start = expectedStart - stopCodonWindow;
         end = expectedStart + stopCodonWindow;
+        //if search window defined above lies outside the sequence, then set isSequenceMissing to true.
         if (end > seq.getLength() - 1 || start > seq.getLength() - 1) {
             isSequenceMissing = true;
             end = seq.getLength() - 1;
@@ -93,6 +95,7 @@ public class DetermineStop implements DetermineGeneFeatures {
                 }
             }
         }
+        // List all stops in frame and assign a score for each match (match closer to expected start scores high)
         if (stopsInFrame != null && stopsInFrame.size() > 0) {
             for (Long stop : stopsInFrame) {
                 rangeScoreMap.put(Range.of(stop, stop + 2), VigorFunctionalUtils.generateProximityScore(lastExon.getRange().getEnd(), stop));
@@ -118,10 +121,12 @@ public class DetermineStop implements DetermineGeneFeatures {
                 }
             }
         }
+        //only if stop codon is not found and search window lies outside the sequence (ie: isSequenceMissing=true)
         if (rangeScoreMap.isEmpty() && isSequenceMissing) {
             Model newModel = model.clone();
             newModel.setPartial3p(true);
             newModel.setPseudogene(false);
+            //extend the last exon till the end of sequence
             Exon lExon = newModel.getExons().get(newModel.getExons().size() - 1);
             Range lExonRange = lExon.getRange();
             lExon.setRange(Range.of(lExonRange.getBegin(), ( seq.getLength() - 1 )));

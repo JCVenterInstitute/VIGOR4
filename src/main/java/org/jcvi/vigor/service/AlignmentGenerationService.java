@@ -31,8 +31,6 @@ public class AlignmentGenerationService {
     private ExonerateService exonerateService;
 
     public List<Alignment> generateAlignment ( VirusGenome virusGenome, String referenceDB, VigorConfiguration config ) throws VigorException {
-
-
         boolean isDebug = config.getOrDefault(ConfigurationParameters.Verbose, false);
         String alignmentModule = config.get(ConfigurationParameters.AlignmentModule);
         AlignmentTool alignmentTool = AlignmentToolFactory.getAlignmentTool(alignmentModule);
