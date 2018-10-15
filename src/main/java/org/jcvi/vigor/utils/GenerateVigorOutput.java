@@ -2,7 +2,6 @@ package org.jcvi.vigor.utils;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.jcvi.jillion.core.Direction;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.Sequence;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
@@ -94,15 +93,8 @@ public class GenerateVigorOutput {
             List<Exon> exons = model.getExons();
             Collections.sort(exons, Comparator.comparing(e -> VigorFunctionalUtils.getDirectionBasedRange(e.getRange(), seqlength, model.getDirection()), Range.Comparators.ARRIVAL));
             Exon firstExon = exons.get(0);
-            String start = Long.toString(VigorFunctionalUtils.getDirectionBasedCoordinate(firstExon.getRange().getBegin(oneBased),seqlength,model.getDirection()));
             int codon_start = firstExon.getFrame().getFrame();
-            String end = Long.toString(VigorFunctionalUtils.getDirectionBasedCoordinate(exons.get(exons.size() - 1).getRange().getEnd(oneBased),seqlength,model.getDirection()));
-            if (model.isPartial5p()) start = "<" + start;
-            if (model.isPartial3p()) end = ">" + end;
             if (!model.getAlignment().getViralProtein().getProteinID().equals(proteinID)) {
-                /* bw.write(start);
-                bw.write("\t");
-                bw.write(end);*/
                 bw.write(getGeneCoordinatesString(model, geneModels));
                 bw.write("\tgene\n");
                 if (writeLocus) {
@@ -220,11 +212,15 @@ public class GenerateVigorOutput {
     private String getGeneCoordinatesString ( Model model, List<Model> geneModels ) {
 
         long seqLength = model.getAlignment().getVirusGenome().getSequence().getLength();
-        long start = VigorFunctionalUtils.getDirectionBasedCoordinate(model.getRange().getBegin(Range.CoordinateSystem.RESIDUE_BASED),seqLength,model.getDirection());
+        long start = VigorFunctionalUtils.getDirectionBasedCoordinate(model.getRange().getBegin(Range.CoordinateSystem.RESIDUE_BASED),
+                                                                      seqLength,
+                                                                      model.getDirection());
         Model endGeneModel = geneModels.stream()
                 .filter(m -> model.getProteinID().equals(m.getProteinID()))
                 .findFirst().orElse(model);
-        long end = VigorFunctionalUtils.getDirectionBasedCoordinate(endGeneModel.getRange().getEnd(Range.CoordinateSystem.RESIDUE_BASED),seqLength,model.getDirection());
+        long end = VigorFunctionalUtils.getDirectionBasedCoordinate(endGeneModel.getRange().getEnd(Range.CoordinateSystem.RESIDUE_BASED),
+                                                                    seqLength,
+                                                                    model.getDirection());
         return String.join("\t",
                 ( model.isPartial5p() ? "<" : "" ) + start,
                 ( endGeneModel.isPartial3p() ? ">" : "" ) + end);
