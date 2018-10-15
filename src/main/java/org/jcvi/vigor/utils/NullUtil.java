@@ -9,7 +9,7 @@ public class NullUtil {
     }
 
     public static  boolean isNullOrEmpty(String str) {
-        return str == null || str.isEmpty();
+        return str == null || str.trim().isEmpty();
     }
 
     public static String emptyOrElse(String str, String defaultVal) {
