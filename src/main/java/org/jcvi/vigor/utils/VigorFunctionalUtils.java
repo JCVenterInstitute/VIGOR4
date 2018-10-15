@@ -194,4 +194,10 @@ public class VigorFunctionalUtils {
         return ((direction==Direction.REVERSE) ? seqLength+1-coordinate : coordinate);
     }
 
+    public static Range getDirectionBasedRange(Range range, long seqLength, Direction direction) {
+        long begin = getDirectionBasedCoordinate(range.getBegin(), seqLength, direction);
+        long end = getDirectionBasedCoordinate(range.getEnd(), seqLength, direction);
+        return Range.of(Math.min(begin, end), Math.max(begin, end));
+    }
+
 }
