@@ -2,6 +2,7 @@ package org.jcvi.vigor.utils;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.jcvi.jillion.core.Direction;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.Sequence;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
@@ -91,6 +92,7 @@ public class GenerateVigorOutput {
             List<SpliceSite> spliceSites = model.getAlignment().getViralProtein().getGeneAttributes().getSpliceSites();
             StringBuilder notes = new StringBuilder("");
             List<Exon> exons = model.getExons();
+            Collections.sort(exons, Comparator.comparing(e -> VigorFunctionalUtils.getDirectionBasedRange(e.getRange(), seqlength, model.getDirection()), Range.Comparators.ARRIVAL));
             Exon firstExon = exons.get(0);
             String start = Long.toString(VigorFunctionalUtils.getDirectionBasedCoordinate(firstExon.getRange().getBegin(oneBased),seqlength,model.getDirection()));
             int codon_start = firstExon.getFrame().getFrame();

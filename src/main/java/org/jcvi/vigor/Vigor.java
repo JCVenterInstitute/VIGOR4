@@ -174,7 +174,10 @@ public class Vigor {
 
         // sort by begin,end
         return geneModels.stream()
-                         .sorted(Comparator.comparing(g -> g.getRange(), Range.Comparators.ARRIVAL))
+                         .sorted(Comparator.comparing(m -> VigorFunctionalUtils.getDirectionBasedRange(m.getRange(),
+                                                                                                       m.getAlignment().getVirusGenome().getSequence().getLength(),
+                                                                                                       m.getDirection()),
+                                                      Range.Comparators.ARRIVAL))
                          .collect(Collectors.toList());
 
     }
