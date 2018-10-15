@@ -35,4 +35,8 @@ public class IDGenerator implements Iterable<String>, Iterator<String> {
 
         return new IDGenerator(seed);
     }
+
+    public String getCurrent() {
+        return seed + "." + counter.get();
+    }
 }
