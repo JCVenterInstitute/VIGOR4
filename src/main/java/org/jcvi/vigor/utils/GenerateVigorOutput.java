@@ -78,7 +78,7 @@ public class GenerateVigorOutput {
             return;
         }
         String locusPrefix = config.get(ConfigurationParameters.Locustag);
-        boolean writeLocus = !( locusPrefix == null || locusPrefix.isEmpty() );
+        boolean writeLocus = ! NullUtil.isNullOrEmpty(locusPrefix);
         String genomeID = geneModels.get(0).getAlignment().getVirusGenome().getId();
         long seqlength = geneModels.get(0).getAlignment().getVirusGenome().getSequence().getLength();
         bw.write(">Features " + genomeID + "\n");
@@ -194,7 +194,7 @@ public class GenerateVigorOutput {
                     }
                     bw.newLine();
                     String geneSymbol = model.getGeneSymbol();
-                    if (!( geneSymbol == null || geneSymbol.isEmpty() )) {
+                    if (! NullUtil.isNullOrEmpty(geneSymbol)) {
                         if (writeLocus) {
                             bw.write("\t\t\tlocus_tag\t");
                             bw.write(VigorUtils.nameToLocus(geneSymbol, locusPrefix, model.isPseudogene()));
@@ -255,7 +255,7 @@ public class GenerateVigorOutput {
             defline.append(String.format(" product=\"%s\"", VigorUtils.putativeName(product, model.isPartial3p(), model.isPartial5p())));
         }
         String reference_db = model.getAlignment().getAlignmentEvidence().getReference_db();
-        if (!( reference_db == null || reference_db.isEmpty() )) {
+        if (! NullUtil.isNullOrEmpty(reference_db) ) {
             defline.append(String.format(" ref_db=\"%s\"", Paths.get(reference_db).getFileName().toString()));
         }
         defline.append(String.format(" ref_id=\"%s\"", refProtein.getProteinID()));
@@ -314,7 +314,7 @@ public class GenerateVigorOutput {
                     defline.append(String.format(" product=\"%s\"", VigorUtils.putativeName(product, match.isFuzzyEnd(), match.isFuzzyBegin())));
                 }
                 String refDB = model.getAlignment().getAlignmentEvidence().getMatpep_db();
-                if (!( refDB == null || refDB.isEmpty() )) {
+                if (! NullUtil.isNullOrEmpty(refDB)) {
                     defline.append(String.format(" ref_db=\"%s\"", Paths.get(refDB).getFileName().toString()));
                 }
                 defline.append(String.format(" ref_id=\"%s\"", match.getReference().getProteinID()));
