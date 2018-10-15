@@ -137,6 +137,8 @@ public class GenerateVigorOutput {
             String product = model.getAlignment().getViralProtein().getProduct();
             if (! NullUtil.isNullOrEmpty(product)) {
                 bw.write("\t\t\tproduct\t" + VigorUtils.putativeName(product, model.isPartial3p(), model.isPartial5p()) + "\n");
+            } else {
+                LOGGER.warn("Missing product for {}", genomeID);
             }
             if (riboSlippage.isHas_ribosomal_slippage()) {
                 bw.write("\t\t\tribosomal_slippage\n");
@@ -191,6 +193,8 @@ public class GenerateVigorOutput {
                             // TODO check that there aren't other factors here.
                             bw.write(VigorUtils.putativeName(product, match.isFuzzyEnd(), match.isFuzzyBegin()));
                         }
+                    } else {
+                        LOGGER.warn("Missing product for mature peptide {}", match.getReference().getProteinID());
                     }
                     bw.newLine();
                     String geneSymbol = model.getGeneSymbol();
@@ -253,6 +257,8 @@ public class GenerateVigorOutput {
         String product = refProtein.getProduct();
         if (! NullUtil.isNullOrEmpty(product)) {
             defline.append(String.format(" product=\"%s\"", VigorUtils.putativeName(product, model.isPartial3p(), model.isPartial5p())));
+        } else {
+            LOGGER.warn("Missing product for protein {}", refProtein.getProteinID());
         }
         String reference_db = model.getAlignment().getAlignmentEvidence().getReference_db();
         if (! NullUtil.isNullOrEmpty(reference_db) ) {
@@ -312,6 +318,8 @@ public class GenerateVigorOutput {
                 String product = match.getReference().getProduct();
                 if (! NullUtil.isNullOrEmpty(product)) {
                     defline.append(String.format(" product=\"%s\"", VigorUtils.putativeName(product, match.isFuzzyEnd(), match.isFuzzyBegin())));
+                } else {
+                    LOGGER.warn("Missing product for {}", idGenerator.getCurrent());
                 }
                 String refDB = model.getAlignment().getAlignmentEvidence().getMatpep_db();
                 if (! NullUtil.isNullOrEmpty(refDB)) {
