@@ -69,7 +69,7 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
 
         List<SpliceSite> splicePairs = model.getAlignment().getViralProtein().getGeneAttributes().getSpliceSites();
         // -2 to skip the last exon
-        for (int i = 0; i < model.getExons().size() - 2; i++) {
+        for (int i = 0; i < model.getExons().size() - 1; i++) {
             Exon upExon = model.getExons().get(i);
             Exon downExon = model.getExons().get(i + 1);
             Range currentExon = upExon.getRange();
