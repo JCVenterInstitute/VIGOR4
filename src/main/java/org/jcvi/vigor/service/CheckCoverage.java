@@ -32,10 +32,7 @@ public class CheckCoverage implements EvaluateModel {
         List<Range> internalStops = getInternalStops(model);
         if (internalStops.size() > 0) {
             model.setPseudogene(true);
-            List<NoteType> notes = model.getNotes();
-            if (internalStops.size() > 1) notes.add(NoteType.StopCodonsInterruption);
-            else notes.add(NoteType.StopCodonInterruption);
-            model.setNotes(notes);
+            model.getNotes().add(internalStops.size() > 1 ? NoteType.StopCodonsInterruption : NoteType.StopCodonInterruption);
         }
         model = determineHomology(model, cds);
         return model;
