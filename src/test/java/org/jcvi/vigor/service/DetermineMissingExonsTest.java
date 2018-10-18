@@ -80,7 +80,7 @@ public class DetermineMissingExonsTest {
         int minExonSize = 30;
         int minMissingAASize = 10;
         List<Exon> missingExons = determineMissingExons.findMissingExons(model, maxIntronSize, minExonSize, minMissingAASize);
-        assertEquals(2, missingExons.size());
+        assertEquals(1, missingExons.size());
     }
 
     @Test
