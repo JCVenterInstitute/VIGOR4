@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.Sequence;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
+import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
 import org.jcvi.vigor.component.*;
 import org.springframework.stereotype.Service;
 
@@ -282,7 +283,18 @@ public class GenerateVigorOutput {
 
         for (Model model : geneModels) {
             writeDefline(bw, model);
-            writeSequence(bw, model.getTranslatedSeq());
+            NucleotideSequenceBuilder builder = new NucleotideSequenceBuilder();
+            NucleotideSequence virusGenome = model.getAlignment().getVirusGenome().getSequence();
+            long seqLength = virusGenome.getLength();
+            List<Range> translatedRanges = model.getExons()
+                                                .stream()
+                                                .map(e -> VigorFunctionalUtils.getDirectionBasedRange(e.getRange(), seqLength, model.getDirection()))
+                                                .collect(Collectors.toList());
+            Collections.sort(translatedRanges, Range.Comparators.ARRIVAL);
+            for (Range exonRange: translatedRanges) {
+                builder.append(virusGenome.toBuilder(exonRange).build());
+            }
+            writeSequence(bw, builder.build());
         }
     }
 
