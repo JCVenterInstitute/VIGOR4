@@ -59,9 +59,8 @@ public class DetermineMissingExonsTest {
     public void findMissingExonsWithSpliceFormPresent () throws VigorException {
 
         VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
-        File resources = new File("src/test/resources");
-        File virusGenomeSeqFile = new File(resources.getAbsolutePath() + File.separator + "vigorUnitTestInput/sequence_flua.fasta");
-        File alignmentOutput = new File(resources.getAbsolutePath() + File.separator + "vigorUnitTestInput/sequence_flua_alignmentTest.txt");
+        File virusGenomeSeqFile = new File(getClass().getResource("/vigorUnitTestInput/sequence_flua.fasta").getFile());
+        File alignmentOutput = new File(getClass().getResource("/vigorUnitTestInput/sequence_flua_alignmentTest.txt").getFile());
         String refDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
         assertThat("Reference database path must be set", refDBPath, is(notNullValue()));
         String referenceDB = Paths.get(refDBPath, "flua_db").toString();

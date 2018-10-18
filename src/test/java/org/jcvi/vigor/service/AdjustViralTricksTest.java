@@ -53,9 +53,8 @@ public class AdjustViralTricksTest {
         String referenceDB = Paths.get(referenceDBPath, "flua_db").toString();
         List<Alignment> alignments;
         List<Model> models = new ArrayList<Model>();
-        File resources = new File("src/test/resources");
-        File virusGenomeSeqFile = new File(resources.getAbsolutePath() + File.separator + "vigorUnitTestInput/Flua_RiboSlippage_Test.fasta");
-        File alignmentOutput = new File(resources.getAbsolutePath() + File.separator + "vigorUnitTestInput/Flua_RiboSlippage_Test.txt");
+        File virusGenomeSeqFile = new File(getClass().getResource("/vigorUnitTestInput/Flua_RiboSlippage_Test.fasta").getFile());
+        File alignmentOutput = new File(getClass().getResource("/vigorUnitTestInput/Flua_RiboSlippage_Test.txt").getFile());
         alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile, referenceDB, alignmentOutput, config);
         for (int i = 0; i < alignments.size(); i++) {
             alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), config));
@@ -80,9 +79,8 @@ public class AdjustViralTricksTest {
         String referenceDB = Paths.get(referenceDBPath, "veev_db").toString();
         List<Alignment> alignments;
         List<Model> models = new ArrayList<Model>();
-        File resources = new File("src/test/resources");
-        File virusGenomeSeqFile = new File(resources.getAbsolutePath() + File.separator + "vigorUnitTestInput/Veev_StopTranslationEx_Test.fasta");
-        File alignmentOutout = new File(resources.getAbsolutePath() + File.separator + "vigorUnitTestInput/Veev_StopTranslationEx_Test.txt");
+        File virusGenomeSeqFile = new File(getClass().getResource("/vigorUnitTestInput/Veev_StopTranslationEx_Test.fasta").getFile());
+        File alignmentOutout = new File(getClass().getResource("/vigorUnitTestInput/Veev_StopTranslationEx_Test.txt").getFile());
         alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile, referenceDB, alignmentOutout, config);
         for (int i = 0; i < alignments.size(); i++) {
             alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), config));
@@ -110,9 +108,8 @@ public class AdjustViralTricksTest {
         assumeTrue("This test requires the mmp_db", referenceDB.toFile().exists());
         List<Alignment> alignments;
         List<Model> models = new ArrayList<Model>();
-        File resources = new File("src/test/resources");
-        File virusGenomeSeqFile = new File(resources.getAbsolutePath() + File.separator + "vigorUnitTestInput/mmp_rna_editing_Test.fasta");
-        File alignmentOutput = new File(resources.getAbsolutePath() + File.separator + "vigorUnitTestInput/mmp_rna_editing_Test.txt");
+        File virusGenomeSeqFile = new File(getClass().getResource( "/vigorUnitTestInput/mmp_rna_editing_Test.fasta").getFile());
+        File alignmentOutput = new File(getClass().getResource("/vigorUnitTestInput/mmp_rna_editing_Test.txt").getFile());
         alignments = VigorTestUtils.getAlignments(virusGenomeSeqFile, referenceDB.toString(), alignmentOutput, config);
         for (int i = 0; i < alignments.size(); i++) {
             alignments.set(i, viralProteinService.setViralProteinAttributes(alignments.get(i), config));
