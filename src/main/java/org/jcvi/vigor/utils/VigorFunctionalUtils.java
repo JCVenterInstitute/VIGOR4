@@ -197,7 +197,7 @@ public class VigorFunctionalUtils {
     public static Range getDirectionBasedRange(Range range, long seqLength, Direction direction) {
         long begin = getDirectionBasedCoordinate(range.getBegin(Range.CoordinateSystem.RESIDUE_BASED), seqLength, direction);
         long end = getDirectionBasedCoordinate(range.getEnd(Range.CoordinateSystem.RESIDUE_BASED), seqLength, direction);
-        return Range.of(Math.min(begin, end), Math.max(begin, end));
+        return Range.of(Range.CoordinateSystem.RESIDUE_BASED, Math.min(begin, end), Math.max(begin, end));
     }
 
 }
