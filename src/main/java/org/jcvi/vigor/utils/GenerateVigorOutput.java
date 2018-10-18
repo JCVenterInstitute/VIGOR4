@@ -112,8 +112,12 @@ public class GenerateVigorOutput {
                 Exon exon = exons.get(j);
                 String Cstart = Long.toString(VigorFunctionalUtils.getDirectionBasedCoordinate(exon.getRange().getBegin(oneBased),seqlength,model.getDirection()));
                 String Cend = Long.toString(VigorFunctionalUtils.getDirectionBasedCoordinate(exon.getRange().getEnd(oneBased),seqlength,model.getDirection()));
-                if (j == 0 && model.isPartial5p()) Cstart = "<" + Cstart;
-                if (j == exons.size() - 1 && model.isPartial3p()) Cend = ">" + Cend;
+                if (j == 0 && model.isPartial5p()) {
+                    Cstart = "<" + Cstart;
+                }
+                if (j == exons.size() - 1 && model.isPartial3p()) {
+                    Cend = ">" + Cend;
+                }
                 if (j == 0 )  {
                     bw.write(String.join("\t",
                                          Cstart,
