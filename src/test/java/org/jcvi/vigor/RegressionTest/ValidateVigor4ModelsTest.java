@@ -74,12 +74,22 @@ public class ValidateVigor4ModelsTest {
     public static Collection<Object[]> getTestData () throws IOException {
 
         List<Object[]> testData = new ArrayList<>();
-        URL config = ValidateVigor4ModelsTest.class.getClassLoader().getResource("config/RegressionTestConfig.csv");
-        final CSVReader reader = new CSVReaderBuilder(new FileReader(config.getFile())).withSkipLines(1).build();
+        boolean hasHeader = true;
+        Reader dataReader;
+        String configData = System.getProperty("vigor.regression_test.config_csv");
+        if (! NullUtil.isNullOrEmpty(configData)) {
+            dataReader = new StringReader(configData);
+            hasHeader = false;
+        } else {
+            String configFile = System.getProperty("vigor.regression_test.config_file",
+                                                   ValidateVigor4ModelsTest.class.getClassLoader().getResource("config/RegressionTestConfig.csv").getFile());
+            dataReader = new FileReader(new File(configFile));
+        }
+
+        final CSVReader reader = new CSVReaderBuilder(dataReader).withSkipLines(hasHeader ? 1 : 0).build();
         String[] nextLine;
         while((nextLine= reader.readNext()) !=null){
-             Object[] data = new Object[]{nextLine[0],nextLine[1],nextLine[2],nextLine[3]};
-             testData.add(data);
+             testData.add(Arrays.copyOfRange(nextLine,0,4));
          }
 
        return testData;
