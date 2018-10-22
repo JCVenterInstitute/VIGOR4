@@ -86,7 +86,7 @@ public class GenerateVigorOutput {
         String proteinID = "";
         for (int i = 0; i < geneModels.size(); i++) {
             Model model = geneModels.get(i);
-            List<NoteType> modelNotes = model.getNotes();
+            List<String> modelNotes = model.getNotes();
             Ribosomal_Slippage riboSlippage = model.getAlignment().getViralProtein().getGeneAttributes().getRibosomal_slippage();
             RNA_Editing rna_editing = model.getAlignment().getViralProtein().getGeneAttributes().getRna_editing();
             List<SpliceSite> spliceSites = model.getAlignment().getViralProtein().getGeneAttributes().getSpliceSites();
@@ -165,7 +165,7 @@ public class GenerateVigorOutput {
                 bw.write("\t\t\tnote\tlocation of RNA editing (" + subSeq + "," + rna_editing.getInsertionString() + ") in " + model.getAlignment().getViralProtein().getProduct() + "\n");
             }
             if (modelNotes.size() > 0) {
-                String notesText = modelNotes.stream().map(Object:: toString).collect(Collectors.joining(","));
+                String notesText = String.join(",",modelNotes);
                 bw.write("\t\t\tnote\t" + notesText + "\n");
             }
         }

@@ -22,7 +22,7 @@ public class GenerateGFF3Output {
     public void printGFF3Features ( BufferedWriter bw, List<Model> geneModels ) throws IOException {
 
         for (Model geneModel : geneModels) {
-            List<NoteType> notes = geneModel.getNotes();
+            List<String> notes = geneModel.getNotes();
             int i = 1;
             VirusGenome virusGenome = geneModel.getAlignment().getVirusGenome();
             long seqlength = virusGenome.getSequence().getLength();
@@ -51,7 +51,9 @@ public class GenerateGFF3Output {
             if (geneModel.isPartial3p() || geneModel.isPartial5p()) {
                 bw.write("Partial" + ",");
             }
-            if (notes.contains(NoteType.Gene)) bw.write(String.format("Note=%s;", NoteType.Gene));
+            if (notes.contains(NoteType.Gene.toString())) {
+                bw.write(String.format("Note=%s;", NoteType.Gene));
+            }
             bw.write("\n");
             //mRNA
             bw.write(geneomeSeqID + "\t" + "vigor" + "\t");
@@ -112,7 +114,9 @@ public class GenerateGFF3Output {
                 } else bw.write("-" + "\t");
                 bw.write("." + "\t");
                 bw.write(String.format("ID=%s;Parent=%s;", idGenerator.next(), mRnaID));
-                if (notes.contains(NoteType.RNA_Editing)) bw.write(String.format("Note=%s;", NoteType.RNA_Editing));
+                if (notes.contains(NoteType.RNA_Editing.toString())) {
+                    bw.write(String.format("Note=%s;", NoteType.RNA_Editing));
+                }
                 bw.write("\n");
             }
             //Stop_codon_read_through
@@ -128,7 +132,7 @@ public class GenerateGFF3Output {
                 } else bw.write("-" + "\t");
                 bw.write("." + "\t");
                 bw.write(String.format("ID=%s;Parent=%s;", idGenerator.next(), mRnaID));
-                if (notes.contains(NoteType.StopCodonReadThrough))
+                if (notes.contains(NoteType.StopCodonReadThrough.toString()))
                     bw.write(String.format("Note=%s;", ( NoteType.StopCodonReadThrough )));
                 bw.write("\n");
             }

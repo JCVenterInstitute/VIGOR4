@@ -30,7 +30,7 @@ public class Model implements Cloneable {
     private Range insertRNAEditingRange;
     private ProteinSequence translatedSeq;
     private String geneID;
-    private List<NoteType> notes = new ArrayList<>();
+    private List<String> notes = new ArrayList<>();
     private List<MaturePeptideMatch> maturePeptides = new ArrayList<>();
 
     public Model clone () throws CloneNotSupportedException {
@@ -70,4 +70,11 @@ public class Model implements Cloneable {
                 +"\n Exons : "+exons.stream().map(Object::toString).collect(Collectors.joining("\n "));
     }
 
+    public void addNote(NoteType note) {
+        getNotes().add(note.toString());
+    }
+
+    public void addNote(String note) {
+        getNotes().add(note);
+    }
 }

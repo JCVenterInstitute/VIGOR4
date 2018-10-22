@@ -155,6 +155,11 @@ public class ModelGenerationService {
                         model.setDirection(direction);
                         model.getScores().putAll(alignment.getAlignmentScore());
                         model.getStatus().add("Initial Model");
+                        List<String> notes = alignment.getViralProtein()
+                                                      .getConfiguration()
+                                                      .getOrDefault(ConfigurationParameters.Note, Collections.EMPTY_LIST);
+
+                        model.getNotes().addAll(notes.stream().filter(s  -> ! s.isEmpty()).collect(Collectors.toList()));
                         models.add(model);
                     }
                 }
@@ -382,9 +387,8 @@ public class ModelGenerationService {
                                 tempSecond.addAll(secondGroup);
                                 firstModel.setExons(tempFirst);
                                 firstModel.setPartial3p(true);
-                                List<NoteType> fnotes = firstModel.getNotes();
-                                fnotes.add(NoteType.Sequence_Gap);
-                                firstModel.setNotes(fnotes);
+                                firstModel.addNote(NoteType.Sequence_Gap);
+
                                 firstModel.getStatus().add("Model split at sequence gaps");
                                 if (!startExist) {
                                     firstModel.setPartial5p(true);
@@ -393,9 +397,7 @@ public class ModelGenerationService {
                                 tempSecond.removeAll(tempFirst);
                                 secondModel.setExons(tempSecond);
                                 secondModel.setPartial5p(true);
-                                List<NoteType> snotes = secondModel.getNotes();
-                                snotes.add(NoteType.Sequence_Gap);
-                                secondModel.setNotes(snotes);
+                                secondModel.addNote(NoteType.Sequence_Gap);
                                 secondModel.getStatus().add("Model split at sequence gaps");
                                 newModels.add(firstModel);
                                 startExist = false;

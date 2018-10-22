@@ -89,7 +89,7 @@ public enum ConfigurationParameters {
 
     NTOverlap_offset("NTOverlap_offset", "", toInteger, Flags.VERSION_4),
     NonCanonicalSplicing("nancanonical_splicing", "Alternate splice sites", Flags.VERSION_4, Flags.VIRUS_SET, Flags.GENE_SET),
-    Note("note","Notes associated with a gene or virus", Flags.VIRUS_SET, Flags.GENE_SET),
+    Note("note","Notes associated with a gene or virus", toListOfStrings, Flags.VIRUS_SET, Flags.GENE_SET),
     OutputDirectory("output_directory", "Write output to this directory", Flags.VERSION_3, Flags.VERSION_4,
                     Flags.COMMANDLINE_SET, Flags.REQUIRED),
     OutputPrefix("output_prefix", "Use this prefix output files", Flags.VERSION_3, Flags.VERSION_4, Flags.COMMANDLINE_SET, Flags.REQUIRED),

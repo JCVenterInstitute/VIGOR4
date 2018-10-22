@@ -197,9 +197,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                             }
                         }
                     }
-                    List<NoteType> notes = newModel.getNotes();
-                    notes.add(NoteType.RNA_Editing);
-                    newModel.setNotes(notes);
+                    newModel.addNote(NoteType.RNA_Editing);
                     models.add(newModel);
                 }
             }
@@ -244,7 +242,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                         newModel.setScores(scores);
 
                         newModel.setReplaceStopCodonRange(Range.of(start, start + 2));
-                        newModel.getNotes().add(NoteType.StopCodonReadThrough);
+                        newModel.addNote(NoteType.StopCodonReadThrough);
                         newModels.add(newModel);
                     }
                 }
