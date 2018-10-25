@@ -15,6 +15,7 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.vigor.utils.VigorConfiguration;
+import org.jcvi.vigor.utils.VigorUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,6 +40,7 @@ public class AlignmentGenerationService {
         Path workspace;
         try {
             workspace = Files.createTempDirectory(Paths.get(tempDir), "vigor4");
+            Runtime.getRuntime().addShutdownHook(new Thread(() -> VigorUtils.deleteDirectory(workspace)));
         } catch (IOException e) {
             throw new VigorException(String.format("Unable to create temporary directory under %s", tempDir));
         }
