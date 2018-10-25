@@ -300,7 +300,12 @@ public class Vigor {
                                                              StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)) {
             writer.write(String.format("; Effective configuration %s\n\n", dateString));
             VigorConfiguration.ValueWithSource val;
-            for (ConfigurationParameters param: configuration.keySet()) {
+            List<ConfigurationParameters> parameters = configuration.keySet()
+                                                                    .stream()
+                                                                    .sorted(Comparator.comparing(p -> p.configKey,
+                                                                                                 String.CASE_INSENSITIVE_ORDER))
+                                                                    .collect(Collectors.toList());
+            for (ConfigurationParameters param: parameters) {
                 val = configuration.getWithSource(param).get();
                 writer.write("; source: ");
                 writer.write(val.source);
