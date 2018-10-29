@@ -373,6 +373,18 @@ public class VigorInitializationService {
 																									  ConfigurationParameters.Flags.VIRUS_SET,
 																									  ConfigurationParameters.Flags.GENE_SET
 																									  );
+			LOGGER.info("loaded virus specific config from {}", configPath);
+			if (virusSpecificParameters.hasSection(VigorConfiguration.METADATA_SECTION)) {
+				String version = virusSpecificParameters.getOrDefault(VigorConfiguration.METADATA_SECTION, ConfigurationParameters.Version, "");
+				String virusName = virusSpecificParameters.getOrDefault(VigorConfiguration.METADATA_SECTION, ConfigurationParameters.VirusName, "");
+				if (! (version.isEmpty()  && virusName.isEmpty()) ) {
+					LOGGER.info("Virus config for virus \"{}\" version \"{}\"",
+								NullUtil.emptyOrElse(virusName, "not set"),
+								NullUtil.emptyOrElse(version, "not set")
+								);
+				}
+
+			}
 			virusSpecificParameters.setDefaults(vigorConfiguration);
 			return virusSpecificParameters;
 		}

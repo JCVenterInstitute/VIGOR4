@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 public class VigorConfiguration {
 
     public static final String DEFAULT_SECTION = "__DEFAULT__" ;
+    public static final String METADATA_SECTION = "Metadata";
 
     public static class ValueWithSource {
 

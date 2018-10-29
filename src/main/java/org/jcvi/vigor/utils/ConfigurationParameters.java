@@ -31,6 +31,8 @@ public enum ConfigurationParameters {
     CircularGene("circular_genome", "When this parameter is set to TRUE, VIGOR consider the genome as circular, enabling annotating genes spanning both ends of the sequence (which would be continuous when circularized).", toBoolean, Flags.UNIMPLEMENTED, Flags.VERSION_3, Flags.VERSION_4),
     CompleteGene("complete_genome", "When this parameter is set to TRUE, VIGOR assumes that the sequence represents the whole genome and all the genes must be present (unless a gene has the is_optional attribute)", toBoolean, Flags.UNIMPLEMENTED, Flags.VERSION_3, Flags.VERSION_4),
 
+    Description("description", "Description of virus database", Flags.METADATA_SET),
+
     DBCluster("cluster", "", Flags.GENE_SET, Flags.IGNORE),
 
     DBDB("db", "gene database file backreference used for autoselecting reference database", Flags.GENE_SET, Flags.VERSION_3_5, Flags.METADATA),
@@ -83,11 +85,11 @@ public enum ConfigurationParameters {
 
     NTOverlapMaximum("max_nt_overlap", "Maximum number of nucleotides that may overlap for alignment fragments to be considered compatible when generating a gene model", toInteger, Flags.VERSION_4),
     NonCanonicalSplicing("noncanonical_splicing", "List of alternative splicing donor and acceptor sequence pairs. Format: noncanonical_splicing=donor+acceptor,donor+acceptor,... (e.g. noncanonical_splicing=AA+GT)", Flags.VERSION_4, Flags.VIRUS_SET, Flags.GENE_SET),
-    Note("note","Information associated to a gene or protein variant (to be reported in the .tbl and GFF 3 outputs).", toListOfStrings, Flags.VIRUS_SET, Flags.GENE_SET),
+    Note("note","Information associated to a gene or protein variant (to be reported in the .tbl and GFF 3 outputs).", toListOfStrings, Flags.VIRUS_SET, Flags.GENE_SET, Flags.METADATA_SET),
     OutputDirectory("output_directory", "Write output to this directory", Flags.VERSION_3, Flags.VERSION_4,
                     Flags.COMMANDLINE_SET, Flags.REQUIRED),
-    OutputPrefix("output_prefix", "Use this prefix output files", Flags.VERSION_3, Flags.VERSION_4, Flags.COMMANDLINE_SET, Flags.REQUIRED),
 
+    OutputPrefix("output_prefix", "Use this prefix output files", Flags.VERSION_3, Flags.VERSION_4, Flags.COMMANDLINE_SET, Flags.REQUIRED),
     OverwriteOutputFiles("overwrite_output_files", "Overwrite output files if they exist",
                          toBoolean,
                          Flags.VERSION_4,
@@ -104,6 +106,7 @@ public enum ConfigurationParameters {
                Flags.VERSION_4, Flags.GENE_SET),
     ReferenceDatabaseFile("reference_database_file", "full path the reference database file",
                           Flags.REQUIRED, Flags.VERSION_4, Flags.COMMANDLINE_SET),
+
     ReferenceDatabasePath("reference_database_path", "Directory containing reference database files",
                           Flags.VERSION_4, Flags.REQUIRED, Flags.COMMANDLINE_SET, Flags.PROGRAM_CONFIG_SET),
 
@@ -142,8 +145,11 @@ public enum ConfigurationParameters {
     Variation("variation", "Variation. TODO", Flags.VERSION_3_5),
     Verbose("verbose", "Make console and .rpt file output more detailed", toBoolean,
             Flags.VERSION_3, Flags.VERSION_4, Flags.COMMANDLINE_SET, Flags.PROGRAM_CONFIG_SET),
+    Version("version", "Database version", Flags.METADATA_SET, Flags.VERSION_4),
+    VirusName("virus_name", "Common name of the virus", Flags.METADATA_SET, Flags.VERSION_4),
     VirusSpecificConfiguration("virusSpecific_config", "Path to virus specific configuration file."
             , Flags.VERSION_4, Flags.COMMANDLINE_SET, Flags.PROGRAM_CONFIG_SET),
+
     VirusSpecificConfigurationPath("virusSpecific_config_path", "Directory containing virus specific configurations.",
                                    Flags.VERSION_4,
                                    Flags.COMMANDLINE_SET,
@@ -172,6 +178,8 @@ public enum ConfigurationParameters {
         PLATFORM_DEPENDENT,
         // not config, just informational
         METADATA,
+        // settable in metadata section
+        METADATA_SET,
         // don't complain if present, but don't set
         IGNORE,
         REQUIRED,
