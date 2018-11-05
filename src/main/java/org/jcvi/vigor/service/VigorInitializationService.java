@@ -212,7 +212,7 @@ public class VigorInitializationService {
 		List<VigorConfiguration> configurations = new ArrayList<>();
 
 		String outputPath = inputs.getString(CommandLineParameters.outputPrefix);
-		File outputFile= new File(outputPath);
+		File outputFile= new File(outputPath).getAbsoluteFile();
 		if (! (outputFile.getParentFile().exists() || outputFile.getParentFile().mkdirs()) ) {
 			throw new VigorException(String.format("unable to create directory %s", outputFile.getParent()));
 		}

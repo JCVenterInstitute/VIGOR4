@@ -67,7 +67,7 @@ public class VigorInputValidationService {
 				   .action(Arguments.store())
 				   .dest(CommandLineParameters.outputPrefix)
 				   .metavar("<output prefix>")
-				   .help("prefix for outputfile files, e.g. if the ouput prefix is /mydir/anno VIGOR will create output files /mydir/anno.tbl, /mydir/anno.stats, etc., (-O is a synonym for this option)");
+				   .help("prefix for outputfile files, e.g. if the ouput prefix is /mydir/anno VIGOR will create output files /mydir/anno.tbl, /mydir/anno.stats, etc., (-O is a synonym for this option). An output prefix without a directory element will create the output files in the current working directory.");
 
 		outputGroup.addArgument("-O")
 				   .action(Arguments.store())
