@@ -309,6 +309,9 @@ public class VigorInputValidationService {
 													  .collect(Collectors.toList())) {
 				System.out.println(param.configKey);
 				System.out.println();
+				if (! param.configKey.equals(param.deflineConfigKey)) {
+					System.out.println(String.format("\t%-30s %s","Database attribute:", param.deflineConfigKey));
+				}
 				System.out.println(String.format("\t%-30s VIGOR_%s","Environment variable:",param.configKey.toUpperCase()));
 				System.out.println(String.format("\t%-30s vigor.%s","System.property:", param.configKey));
 				System.out.println(String.format("\t%-30s %s", "Settable levels", Joiner.on(",")
