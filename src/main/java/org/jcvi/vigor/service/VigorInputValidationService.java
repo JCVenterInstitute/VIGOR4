@@ -187,6 +187,10 @@ public class VigorInputValidationService {
 
 		parser.addArgument("--list-config-parameters")
 			  .action(new ListConfigurations())
+			  .choices("all","current")
+			  .setDefault("current")
+			  .setConst("current")
+			  .nargs("?")
 			  .help("list available configuration parameters and exit");
 
 		parser.addArgument("--version")
@@ -278,11 +282,18 @@ public class VigorInputValidationService {
 			}
 		}
 	}
-	private static class ListConfigurations extends CustomNoArgumentAction{
+	private static class ListConfigurations implements ArgumentAction {
+		@Override
+		public void onAttach(Argument argument) {
+		}
+
+		@Override
+		public boolean consumeArgument() {
+			return true;
+		}
 
 		@Override
 		public void run(ArgumentParser argumentParser, Argument argument, Map<String, Object> map, String s, Object o) throws ArgumentParserException {
-			System.out.println("Configuration Parameters\n");
 			Function<ConfigurationParameters.Flags, String> flagToString = (flag) -> {
 				switch (flag) {
 					case VIRUS_SET:
@@ -297,33 +308,56 @@ public class VigorInputValidationService {
 						return null;
 				}
 			};
+
+
+			String selectionString = String.valueOf(o);
 			EnumSet<ConfigurationParameters.Flags> settableFlags = EnumSet.of(ConfigurationParameters.Flags.GENE_SET,
 																			  ConfigurationParameters.Flags.VIRUS_SET,
 																			  ConfigurationParameters.Flags.PROGRAM_CONFIG_SET,
 																			  ConfigurationParameters.Flags.COMMANDLINE_SET);
-			for (ConfigurationParameters param: Arrays.stream(ConfigurationParameters.values())
-													  .sorted(Comparator.comparing(p-> p.configKey, String.CASE_INSENSITIVE_ORDER))
-													  .filter(p -> ! p.hasOneOrMoreFlags(ConfigurationParameters.Flags.IGNORE,
-																						 ConfigurationParameters.Flags.METADATA))
-													  .filter(p -> p.hasFlag(ConfigurationParameters.Flags.VERSION_4))
-													  .collect(Collectors.toList())) {
-				System.out.println(param.configKey);
-				System.out.println();
-				if (! param.configKey.equals(param.deflineConfigKey)) {
-					System.out.println(String.format("\t%-30s %s","Database attribute:", param.deflineConfigKey));
+			Map<Boolean,List<ConfigurationParameters>> partitionedParameters =
+					Arrays.stream(ConfigurationParameters.values())
+						  .sorted(Comparator.comparing(p-> p.configKey, String.CASE_INSENSITIVE_ORDER))
+						  .collect(Collectors.partitioningBy( p ->	p.hasFlag(ConfigurationParameters.Flags.VERSION_4) &&
+								  ! p.hasOneOrMoreFlags(ConfigurationParameters.Flags.IGNORE,
+														ConfigurationParameters.Flags.METADATA)));
+			boolean[] parametersToList = selectionString.equals("all") ? new boolean[] {true, false} : new boolean[] {true};
+
+			for (boolean currentParameters: parametersToList) {
+
+				if (currentParameters) {
+					System.out.println("\nCONFIGURATION PARAMETERS\n");
+				} else {
+					System.out.println("\n\nDEPRECATED/IGNORED PARAMETERS\n");
 				}
-				System.out.println(String.format("\t%-30s VIGOR_%s","Environment variable:",param.configKey.toUpperCase()));
-				System.out.println(String.format("\t%-30s vigor.%s","System.property:", param.configKey));
-				System.out.println(String.format("\t%-30s %s", "Settable levels", Joiner.on(",")
-																				  .skipNulls()
-																				  .join(param.hasFlags(settableFlags).stream()
-																							 .map(flagToString)
-																							 .sorted()
-																							 .collect(Collectors.toList()))));
-				if (! (param.description == null || param.description.isEmpty()) ) {
-					System.out.println(String.format("\t%-30s %s", "Description:", param.description));
+
+				for (ConfigurationParameters param : partitionedParameters.get(currentParameters)) {
+					boolean printedSomething = false;
+					System.out.println(param.configKey);
+					System.out.println();
+					if (!param.configKey.equals(param.deflineConfigKey)) {
+						printedSomething = true;
+						System.out.println(String.format("\t%-30s %s", "Database attribute:", param.deflineConfigKey));
+					}
+					if (currentParameters) {
+						printedSomething = true;
+						System.out.println(String.format("\t%-30s VIGOR_%s", "Environment variable:", param.configKey.toUpperCase()));
+						System.out.println(String.format("\t%-30s vigor.%s", "System.property:", param.configKey));
+						System.out.println(String.format("\t%-30s %s", "Settable levels", Joiner.on(",")
+																								.skipNulls()
+																								.join(param.hasFlags(settableFlags).stream()
+																										   .map(flagToString)
+																										   .sorted()
+																										   .collect(Collectors.toList()))));
+					}
+					if (!(param.description == null || param.description.isEmpty())) {
+						printedSomething = true;
+						System.out.println(String.format("\t%-30s %s", "Description:", param.description));
+					}
+					if (printedSomething) {
+						System.out.println();
+					}
 				}
-				System.out.println();
 			}
 			System.exit(0);
 		}
