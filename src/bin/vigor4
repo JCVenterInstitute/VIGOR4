@@ -8,6 +8,17 @@ while [ -h "$SOURCE" ]; do
 done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
+function check_version() {
+    java_cmd=$1
+    version=$($java_cmd -version 2>&1| grep 'java version')
+    version=${version#java version*\"}
+    version=${version%\"}
+    IFS="." read  major minor patch <<< "$version"
+    if [[  ( "$major" -eq 1 && "$minor" -lt 8 ) || ( "$major" -gt 1 && "$major" -lt 8 ) ]]; then
+        echo "Incompatible java version $version for java $java_cmd. Version must be 8 or higher."
+        exit 1;
+    fi
+}
 
 ROOTDIR=$(dirname "${DIR}")
 LIBDIR="${ROOTDIR}/lib"
@@ -15,5 +26,13 @@ if [ -z ${VIGOR_CONFIG_FILE} ]; then
     export VIGOR_CONFIG_FILE="${ROOTDIR}/config/vigor.ini"
 fi
 
+java_command=$(command -v java)
 
-exec java ${JAVA_OPTS} -jar ${LIBDIR}/vigor*.jar $@
+# JAVA_HOME will override path
+if [ -n "$JAVA_HOME" ]; then
+    java_command="$JAVA_HOME/bin/java"
+fi
+
+check_version $java_command
+
+exec $java_command ${JAVA_OPTS} -jar $(find "${LIBDIR}" -name '*.jar') $@
