@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+
 SOURCE="${BASH_SOURCE[0]}"
 # it's a symlink
 while [ -h "$SOURCE" ]; do 
@@ -22,7 +24,7 @@ function check_version() {
 
 ROOTDIR=$(dirname "${DIR}")
 LIBDIR="${ROOTDIR}/lib"
-if [ -z ${VIGOR_CONFIG_FILE} ]; then
+if [ -z ${VIGOR_CONFIG_FILE:-} ]; then
     export VIGOR_CONFIG_FILE="${ROOTDIR}/config/vigor.ini"
 fi
 
@@ -35,4 +37,4 @@ fi
 
 check_version $java_command
 
-exec $java_command ${JAVA_OPTS} -jar $(find "${LIBDIR}" -name '*.jar') $@
+exec $java_command ${JAVA_OPTS:-} -jar $(find "${LIBDIR}" -name '*.jar') $@
