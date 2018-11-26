@@ -37,4 +37,4 @@ fi
 
 check_version $java_command
 
-exec $java_command ${JAVA_OPTS:-} -jar $(find "${LIBDIR}" -name '*.jar') $@
+exec $java_command ${JAVA_OPTS:-} -jar $(find "${LIBDIR}" -name '*.jar') "$@"
