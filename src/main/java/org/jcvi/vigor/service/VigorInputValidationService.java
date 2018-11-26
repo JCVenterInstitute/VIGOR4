@@ -44,36 +44,24 @@ public class VigorInputValidationService {
 						"  outputprefix.aln   - alignment of predicted protein to reference, and reference protein to genome"
 						));
 
-		MutuallyExclusiveGroup inputGroup = parser.addMutuallyExclusiveGroup().required(true);
-		MutuallyExclusiveGroup outputGroup = parser.addMutuallyExclusiveGroup().required(true);
 		MutuallyExclusiveGroup referenceGroup = parser.addMutuallyExclusiveGroup("reference database");
 		MutuallyExclusiveGroup locusGroup = parser.addMutuallyExclusiveGroup("locus tag usage");
 
 		ArgumentGroup unImplementedGroup = parser.addArgumentGroup("unimplemented");
 
-		inputGroup.addArgument("-i","--input-fasta")
-				  .action(Arguments.store())
-				  .dest(CommandLineParameters.inputFile)
-				  .metavar("<input fasta>")
-				  .help("path to fasta file of genomic sequences to be annotated, (-I is a synonym for this option)");
+		parser.addArgument("-i","--input-fasta")
+			  .action(Arguments.store())
+			  .dest(CommandLineParameters.inputFile)
+			  .metavar("<input fasta>")
+			  .required(true)
+			  .help("path to fasta file of genomic sequences to be annotated.");
 
-		inputGroup.addArgument("-I")
-				  .action(Arguments.store())
-				  .dest(CommandLineParameters.inputFile)
-				  .metavar("<input fasta>")
-				  .help("synonym for -i/--input-fasta)");
-
-		outputGroup.addArgument("-o","--output-prefix")
-				   .action(Arguments.store())
-				   .dest(CommandLineParameters.outputPrefix)
-				   .metavar("<output prefix>")
-				   .help("prefix for outputfile files, e.g. if the ouput prefix is /mydir/anno VIGOR will create output files /mydir/anno.tbl, /mydir/anno.stats, etc., (-O is a synonym for this option). An output prefix without a directory element will create the output files in the current working directory.");
-
-		outputGroup.addArgument("-O")
-				   .action(Arguments.store())
-				   .dest(CommandLineParameters.outputPrefix)
-				   .metavar("<output prefix>")
-				   .help("synonym for -o/--output-prefix");
+		parser.addArgument("-o","--output-prefix")
+			  .action(Arguments.store())
+			  .dest(CommandLineParameters.outputPrefix)
+			  .metavar("<output prefix>")
+			  .required(true)
+			  .help("prefix for outputfile files, e.g. if the ouput prefix is /mydir/anno VIGOR will create output files /mydir/anno.tbl, /mydir/anno.stats, etc. An output prefix without a directory element will create the output files in the current working directory.");
 
 		unImplementedGroup.addArgument("-a", "--autoselect-reference")
 					  .dest(CommandLineParameters.referenceDB)
