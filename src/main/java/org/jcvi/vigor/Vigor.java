@@ -126,7 +126,7 @@ public class Vigor {
         ) {
             // TODO move all this file handling to method
             // TODO checkout output earlier.
-            writeEffectiveConfig(outputDir, vigorParameters);
+            writeEffectiveConfig(outputDir, outputPrefix, vigorParameters);
             outfiles.get(GenerateVigorOutput.Outfile.GFF3).write("##gff-version 3\n");
             Iterator<NucleotideFastaRecord> recordIterator = dataStore.records().iterator();
             while (recordIterator.hasNext()) {
@@ -292,10 +292,11 @@ public class Vigor {
         return outfiles;
     }
 
-    private void writeEffectiveConfig(String outputDir, VigorConfiguration configuration) throws IOException {
+    private void writeEffectiveConfig(String outputDir, String outputPrefix, VigorConfiguration configuration) throws IOException {
 
         String dateString = new SimpleDateFormat("yyyyMMdd-HHmmss").format(new Date());
-        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(outputDir, String.format("vigor-%s.ini", dateString)),
+        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(outputDir,
+                                                                       String.format("%s-%s.ini", outputPrefix, dateString)),
                                                              Charset.forName("UTF-8"),
                                                              StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)) {
             writer.write(String.format("; Effective configuration %s\n\n", dateString));
