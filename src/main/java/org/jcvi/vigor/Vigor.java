@@ -311,7 +311,7 @@ public class Vigor {
                 writer.write("; source: ");
                 writer.write(val.source);
                 writer.newLine();
-                writer.write(String.format("%s = \"%s\"", param.configKey, val.value));
+                writer.write(String.format("%s = \"%s\"", param.configKey, param.valueToString(val.value)));
                 writer.newLine();
                 writer.newLine();
             }

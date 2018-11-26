@@ -13,10 +13,16 @@ public class ConfigurationParameterFunctions {
     public static class ValueFunction {
         final Class<?> valueClass;
         final Function<String, ?> valueFunction;
+        final Function<Object, String> stringFunction;
 
-        public ValueFunction(Class<?> valueClass, Function<String,?> valueFunction ) {
+        public ValueFunction(Class<?> valueClass, Function<String,?> valueFunction, Function<Object, String> stringFunction) {
             this.valueClass = valueClass;
             this.valueFunction = valueFunction;
+            this.stringFunction = stringFunction;
+        }
+
+        public ValueFunction(Class<?> valueClass, Function<String,?> valueFunction ) {
+            this(valueClass, valueFunction, String::valueOf);
         }
 
 
@@ -24,6 +30,10 @@ public class ConfigurationParameterFunctions {
 
     public static ValueFunction of(Class<?> valueClass, Function<String,?> valueFunction) {
         return new ValueFunction(valueClass, valueFunction);
+    }
+
+    public static ValueFunction of(Class<?> valueClass, Function<String,?> valueFunction, Function<Object, String> stringFunction) {
+        return new ValueFunction(valueClass, valueFunction, stringFunction);
     }
 
     public static class InvalidValue extends RuntimeException {
@@ -34,7 +44,8 @@ public class ConfigurationParameterFunctions {
 
     public static ValueFunction toListOfStrings = of(List.class, s -> Arrays.stream(s.split(","))
                                                                             .map(i -> i.trim())
-                                                                            .collect(Collectors.toList()));
+                                                                            .collect(Collectors.toList()),
+                                                     v -> String.join(",", (List) v));
     public static ValueFunction toSpliceForms = of (List.class, SpliceForm::parseFromString);
     public static ValueFunction toStopException = of(StopTranslationException.class,
                                                      s -> {

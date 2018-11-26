@@ -61,9 +61,9 @@ public enum ConfigurationParameters {
                   Flags.COMMANDLINE_SET,
                   Flags.PROGRAM_CONFIG_SET),
     FrameShiftSensitivity("frameshift_sensitivity", "How to handle frameshifts", Flags.VERSION_3, Flags.VERSION_4, Flags.UNIMPLEMENTED), // TODO
-    GeneMinimumCoverage("min_gene_coverage", "Minimum coverage of genes", Flags.VERSION_3, Flags.VERSION_4), // TODO elaborate
+    GeneMinimumCoverage("min_gene_coverage", "Minimum coverage of genes",  toPercent, Flags.VERSION_3, Flags.VERSION_4), // TODO elaborate
 
-    GeneMinimumSize("min_gene_size", "Minimum sequence length to be considered as a gene", Flags.VERSION_3, Flags.VERSION_4),
+    GeneMinimumSize("min_gene_size", "Minimum sequence length to be considered as a gene", toInteger, Flags.VERSION_3, Flags.VERSION_4),
     GeneOptional("is_optional", "Gene is optional for valid model", ConfigurationParameterFunctions.isPresentOrBoolean, Flags.GENE_SET),
     GeneRequired("is_required", "Gene is required for valid model", ConfigurationParameterFunctions.isPresentOrBoolean, Flags.GENE_SET),
 
@@ -263,10 +263,29 @@ public enum ConfigurationParameters {
         return "vigor." + configKey;
     }
 
+    public String valueToString(Object o) {
+        try {
+            return valueFunction.stringFunction.apply(o);
+        } catch (InvalidValue | ClassCastException e) {
+            throw new InvalidValue(String.format("bad value for %s: \"%s\":  %s",
+                                                 this.configKey,
+                                                 o,
+                                                 e.getMessage()));
+        } catch (RuntimeException e) {
+            throw new ConfigurationParameterFunctions.InvalidValue(String.format("bad value for %s: \"%s\": got %s %s",
+                                                                                 this.configKey,
+                                                                                 o,
+                                                                                 e.getClass().getSimpleName(),
+                                                                                 e.getMessage())
+            );
+        }
+
+    }
+
     public Object stringToValue(String stringValue) {
         try {
             return this.valueFunction.valueClass.cast(valueFunction.valueFunction.apply(stringValue));
-        } catch (InvalidValue e) {
+        } catch (InvalidValue | ClassCastException e) {
             throw new InvalidValue(String.format("bad value for %s: \"%s\":  %s",
                                                  this.configKey,
                                                  stringValue,
