@@ -84,7 +84,7 @@ public enum ConfigurationParameters {
 
     MaxAlignMergeAAGap("max_align_merge_aa_gap", "", toInteger, Flags.VERSION_4),
     MaxGeneOverlap("max_gene_overlap", " In reporting gene models, maximum overlap of genes allowed.", toInteger, Flags.VERSION_4),
-    MinFunctionalLength("min_functional_length", "min_functional_len", "Minimum functional length", toInteger, Flags.VERSION_4, Flags.GENE_SET),
+    MinFunctionalLength("min_functional_len" , "Minimum functional length", toInteger, Flags.VERSION_4, Flags.GENE_SET),
     MinimumMissingAASize("min_missing_AA_size", "TODO", toInteger), // TODO
 
     NTOverlap_offset("NTOverlap_offset", "", toInteger, Flags.VERSION_4),
