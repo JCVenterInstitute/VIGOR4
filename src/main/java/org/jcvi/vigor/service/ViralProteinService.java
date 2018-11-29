@@ -21,6 +21,8 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static org.jcvi.vigor.utils.NullUtil.isNullOrEmpty;
+
 /**
  * Created by snettem on 5/16/2017.
  */
@@ -120,6 +122,8 @@ public class ViralProteinService {
         /* Set gene symbol */
         if (attributes.containsKey("gene")) {
             viralProtein.setGeneSymbol(attributes.get("gene"));
+        } else {
+            LOGGER.warn("missing gene attribute for database entry ID {}, defline {}", viralProtein.getProteinID(), viralProtein.getDefline());
         }
         /* Set gene symbol */
         if (attributes.containsKey("gene_synonym")) {
@@ -198,8 +202,13 @@ public class ViralProteinService {
                 attributes.put(key, value);
             }
         }
+
+        if (isNullOrEmpty(attributes.getOrDefault("gene",""))) {
+            errors.add("missing gene attribute");
+        }
+
         if (! warnings.isEmpty()) {
-            LOGGER.warn(warnings.stream()
+             LOGGER.warn(warnings.stream()
                                 .collect(Collectors.joining("\n",
                                                             String.format("Problem parsing defline attributes for %s:\n", id),
                                                             "\nattributes line: " + defline)));
