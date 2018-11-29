@@ -12,6 +12,7 @@ import org.apache.logging.log4j.core.config.Configuration;
 import org.apache.logging.log4j.core.filter.LevelRangeFilter;
 import org.apache.logging.log4j.core.layout.PatternLayout;
 import org.jcvi.vigor.exception.VigorException;
+import org.jcvi.vigor.service.exception.UserFacingException;
 import org.jcvi.vigor.utils.*;
 import org.springframework.stereotype.Service;
 
@@ -124,11 +125,11 @@ public class VigorInitializationService {
 		LOGGER.debug("reference database is {}", reference_db);
 
 		if ("any".equals(reference_db)) {
-			throw new VigorException("Auto-selecting reference database is not implemented");
+			throw new UserFacingException("Auto-selecting reference database is not implemented");
 		} else if (inputs.get(CommandLineParameters.genbankDB) != null) {
-			throw new VigorException("Using genbank files as the reference database is not implemented");
+			throw new UserFacingException("Using genbank files as the reference database is not implemented");
 		} else if (reference_db == null || reference_db.isEmpty()) {
-			throw new VigorException("no reference database provided");
+			throw new UserFacingException("no reference database provided");
 		}else{
 			File file = new File(reference_db);
 			if(file.exists() && file.isFile() ){
@@ -142,18 +143,22 @@ public class VigorInitializationService {
 		}
 
 		if (reference_db_dir == null) {
-			throw new VigorException("Reference database path is required");
+			throw new UserFacingException("Reference database path is required");
 		}
 
 		LOGGER.debug("Reference_db is {}", reference_db);
 		if ( reference_db == null || reference_db.isEmpty()) {
-			throw new VigorException("reference database is required");
+			throw new UserFacingException("reference database is required");
 		}
 
-		VigorUtils.checkFilePath("Reference database file", reference_db,
-								 VigorUtils.FileCheck.EXISTS,
-								 VigorUtils.FileCheck.FILE,
-								 VigorUtils.FileCheck.READ );
+		try {
+			VigorUtils.checkFilePath("Reference database file", reference_db,
+									 VigorUtils.FileCheck.EXISTS,
+									 VigorUtils.FileCheck.FILE,
+									 VigorUtils.FileCheck.READ);
+		} catch (VigorException e) {
+			throw new UserFacingException(e.getMessage(), e);
+		}
 
 		configurations.get(configurations.size() -1).put(ConfigurationParameters.ReferenceDatabaseFile, reference_db);
 

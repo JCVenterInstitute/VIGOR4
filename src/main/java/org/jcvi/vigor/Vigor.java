@@ -18,6 +18,7 @@ import org.jcvi.vigor.component.VirusGenome;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.service.*;
 import org.jcvi.vigor.service.exception.ServiceException;
+import org.jcvi.vigor.service.exception.UserFacingException;
 import org.jcvi.vigor.utils.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -68,6 +69,9 @@ public class Vigor {
             checkConfig(vigorConfiguration);
             String referenceDB = vigorConfiguration.get(ConfigurationParameters.ReferenceDatabaseFile);
             generateAnnotations(inputFileName, referenceDB, vigorConfiguration);
+        } catch (UserFacingException e) {
+            System.err.println(e.getMessage());
+            System.exit(1);
         } catch (Exception e) {
             LOGGER.error("Exception encountered: exiting 1",e);
             System.exit(1);
