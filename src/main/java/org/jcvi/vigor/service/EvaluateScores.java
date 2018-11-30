@@ -23,34 +23,19 @@ public class EvaluateScores implements EvaluateModel {
         double stopScoreFactor = configuration.getOrDefault(ConfigurationParameters.ScoreFactorStop, 1d);
         double leakyStopScoreFactor = configuration.getOrDefault(ConfigurationParameters.ScoreFactorLeakyStop, 1d);
 
-        double alignmentScore = 0;
-        double startCodonScore = 0;
-        double splicingScore = 0;
-        double leakyStopScore = 0;
-        double stopScore = 0;
+        double alignmentScore = scores.getOrDefault(Scores.ALIGNMENT_SCORE,0d) * alignmentScoreFactor;
+        double startCodonScore = scores.getOrDefault(Scores.START_CODON_SCORE,0d) * startScoreFactor;;
+        double splicingScore = scores.getOrDefault(Scores.SPLICE_SCORE,0d) * splicingScoreFactor;
+        double leakyStopScore = scores.getOrDefault(Scores.LEAKY_STOP_SCORE,0d) * leakyStopScoreFactor;
+        double stopScore = scores.getOrDefault(Scores.STOP_CODON_SCORE,0d) * stopScoreFactor;;
         double totalScore;
-        if (scores.get("alignmentScore") != null) {
-            alignmentScore = scores.get("alignmentScore") * alignmentScoreFactor;
-        }
-        if (scores.get("startCodonScore") != null) {
-            startCodonScore = scores.get("startCodonScore") * startScoreFactor;
-        }
-        if (scores.get("leakyStopScore") != null) {
-            leakyStopScore = scores.get("leakyStopScore") * leakyStopScoreFactor;
-        }
-        if (scores.get("spliceScore") != null) {
-            splicingScore = scores.get("spliceScore") * splicingScoreFactor;
-        }
-        if (scores.get("stopCodonScore") != null) {
-            stopScore = scores.get("stopCodonScore") * stopScoreFactor;
-        }
-        scores.put("alignmentScore", alignmentScore);
-        scores.put("startCodonScore", startCodonScore);
-        scores.put("leakyStopScore", leakyStopScore);
-        scores.put("spliceScore", splicingScore);
-        scores.put("stopCodonScore", stopScore);
+        scores.put(Scores.ALIGNMENT_SCORE, alignmentScore);
+        scores.put(Scores.START_CODON_SCORE, startCodonScore);
+        scores.put(Scores.LEAKY_STOP_SCORE, leakyStopScore);
+        scores.put(Scores.SPLICE_SCORE, splicingScore);
+        scores.put(Scores.STOP_CODON_SCORE, stopScore);
         totalScore = alignmentScore + startCodonScore + leakyStopScore + splicingScore + stopScore;
-        scores.put("totalScore", totalScore);
+        scores.put(Scores.TOTAL_SCORE, totalScore);
         return model;
     }
 }

@@ -144,7 +144,7 @@ public class GeneModelGenerationService {
 
         double totalScore = 0;
         for (Model model : models) {
-            double score = model.getScores().get("modelScore");
+            double score = model.getScores().get(Scores.MODEL_SCORE);
             totalScore = totalScore + score;
         }
         return totalScore;
@@ -160,7 +160,7 @@ public class GeneModelGenerationService {
         List<Model> filteredModels = new ArrayList<Model>();
         for (String geneID : groupedModels.keySet()) {
             List<Model> similarModels = groupedModels.get(geneID);
-            similarModels = sortModels(similarModels, "totalScore");
+            similarModels = sortModels(similarModels, Scores.TOTAL_SCORE);
             List<Model> unOverlappedModels = new ArrayList<>();
             unOverlappedModels.add(similarModels.remove(0));
             for (Model checkModel : similarModels) {
@@ -228,7 +228,7 @@ public class GeneModelGenerationService {
         return models.stream()
                      .filter(
                              m -> m.getTranslatedSeq().getLength() >= Math.max(getMinFunctionalLength.apply(m), min_gene_size) &&
-                                     m.getScores().get("%coverage") >= min_coverage
+                                     m.getScores().get(Scores.COVERAGE_SCORE) >= min_coverage
                      )
                      .collect(Collectors.toList());
     }
@@ -246,7 +246,7 @@ public class GeneModelGenerationService {
         if (isDebug) {
             FormatVigorOutput.printAllGeneModelsWithScores(candidateGenes, "All Gene Models");
         }
-        candidateGenes = sortModels(candidateGenes, "modelScore");
+        candidateGenes = sortModels(candidateGenes, Scores.MODEL_SCORE);
         Model geneModel = candidateGenes.remove(0);
         geneModels.add(geneModel);
         //generate geneID

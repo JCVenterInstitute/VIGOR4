@@ -108,17 +108,15 @@ public class DetermineStop implements DetermineGeneFeatures {
                             Collectors.toMap(Map.Entry:: getKey,
                                     Map.Entry:: getValue, ( e1, e2 ) -> e2,
                                     LinkedHashMap::new));
-            if (!( rangeScoreMap.isEmpty() && rangeScoreMap.size() > 0 )) {
-                Set<Range> keys = rangeScoreMap.keySet();
-                for (Range range : keys) {
-                    Model newModel = model.clone();
-                    List<Exon> newExons = newModel.getExons();
-                    Exon lExon = newExons.get(newExons.size() - 1);
-                    lExon.setRange(Range.of(lExon.getRange().getBegin(), range.getBegin() + 2));
-                    newModel.getScores().put("stopCodonScore",
-                            rangeScoreMap.get(range));
-                    newModels.add(newModel);
-                }
+
+            for (Range range : rangeScoreMap.keySet()) {
+                Model newModel = model.clone();
+                List<Exon> newExons = newModel.getExons();
+                Exon lExon = newExons.get(newExons.size() - 1);
+                lExon.setRange(Range.of(lExon.getRange().getBegin(), range.getBegin() + 2));
+                newModel.getScores().put(Scores.STOP_CODON_SCORE,
+                                         rangeScoreMap.get(range));
+                newModels.add(newModel);
             }
         }
         //only if stop codon is not found and search window lies outside the sequence (ie: isSequenceMissing=true)

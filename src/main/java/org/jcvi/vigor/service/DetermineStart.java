@@ -169,16 +169,13 @@ public class DetermineStart implements DetermineGeneFeatures {
                             Collectors.toMap(Map.Entry:: getKey,
                                     Map.Entry:: getValue, ( e1, e2 ) -> e2,
                                     LinkedHashMap::new));
-            if (!( rangeScoreMap.isEmpty() )) {
-                Set<Range> keys = rangeScoreMap.keySet();
-                for (Range range : keys) {
-                    Model newModel = model.clone();
-                    Exon fExon = newModel.getExons().get(0);
-                    fExon.setRange(Range.of(range.getBegin(), fExon.getRange().getEnd()));
-                    newModel.getScores().put("startCodonScore",
-                            rangeScoreMap.get(range));
-                    newModels.add(newModel);
-                }
+            for (Range range : rangeScoreMap.keySet()) {
+                Model newModel = model.clone();
+                Exon fExon = newModel.getExons().get(0);
+                fExon.setRange(Range.of(range.getBegin(), fExon.getRange().getEnd()));
+                newModel.getScores().put(Scores.START_CODON_SCORE,
+                                         rangeScoreMap.get(range));
+                newModels.add(newModel);
             }
         } else isSequenceMissing = true;
         //set 5' partial and extend start of the first exon to the beginning of the sequence

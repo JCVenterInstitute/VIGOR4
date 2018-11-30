@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
+import org.jcvi.vigor.service.Scores;
 
 /**
  * Created by snettem on 5/24/2017.
@@ -73,9 +74,9 @@ public class FormatVigorOutput {
             Map<String, Double> scores = model.getScores();
             long cdsBases = 0;
             content.append(String.format("%-32s", viralProtein.getProteinID()));
-            content.append(String.format("%-10s", String.format("%.02f", scores.get("%identity"))));
-            content.append(String.format("%-10s", String.format("%.02f", scores.get("%similarity"))));
-            content.append(String.format("%-10s", String.format("%.02f", scores.get("%coverage"))));
+            content.append(String.format("%-10s", String.format("%.02f", scores.get(Scores.IDENTITY_SCORE))));
+            content.append(String.format("%-10s", String.format("%.02f", scores.get(Scores.SIMILARITY_SCORE))));
+            content.append(String.format("%-10s", String.format("%.02f", scores.get(Scores.COVERAGE_SCORE))));
             content.append(String.format("%-10s", "0.0"));
             content.append(String.format("%-10s", "0.0"));
             content.append(String.format("%-10s", "0.0"));
@@ -158,9 +159,9 @@ public class FormatVigorOutput {
             Map<String, Double> scores = model.getScores();
             long cdsBases = 0;
             content.append(String.format("%-20s", model.getGeneID()));
-            content.append(String.format("%-10s", String.format("%.02f", scores.get("%identity"))));
-            content.append(String.format("%-10s", String.format("%.02f", scores.get("%similarity"))));
-            content.append(String.format("%-10s", String.format("%.02f", scores.get("%coverage"))));
+            content.append(String.format("%-10s", String.format("%.02f", scores.get(Scores.IDENTITY_SCORE))));
+            content.append(String.format("%-10s", String.format("%.02f", scores.get(Scores.SIMILARITY_SCORE))));
+            content.append(String.format("%-10s", String.format("%.02f", scores.get(Scores.COVERAGE_SCORE))));
             content.append(String.format("%-10s", "0.0"));
             content.append(String.format("%-10s", "0.0"));
             content.append(String.format("%-10s", "0.0"));
@@ -185,9 +186,9 @@ public class FormatVigorOutput {
             content.append(System.lineSeparator());
             totalCDSBases = totalCDSBases + cdsBases;
             totalPepBases = cdsBases + totalPepBases;
-            identityAvg = identityAvg + scores.get("%identity");
-            similarityAvg = similarityAvg + scores.get("%similarity");
-            coverageAvg = coverageAvg + scores.get("%coverage");
+            identityAvg = identityAvg + scores.get(Scores.IDENTITY_SCORE);
+            similarityAvg = similarityAvg + scores.get(Scores.SIMILARITY_SCORE);
+            coverageAvg = coverageAvg + scores.get(Scores.COVERAGE_SCORE);
 
             IDGenerator idGenerator = IDGenerator.of(model.getGeneID());
             for (MaturePeptideMatch match : model.getMaturePeptides()) {

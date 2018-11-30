@@ -62,9 +62,9 @@ public class ModelGenerationService {
             for (Alignment alignment : alignmentsTemp) {
                 mergedAlignment.getAlignmentFragments().addAll(alignment.getAlignmentFragments());
                 Map<String, Double> scores = mergedAlignment.getAlignmentScore();
-                double score = scores.get("alignmentScore");
-                score = score + alignment.getAlignmentScore().get("alignmentScore");
-                scores.put("alignmentScore", score);
+                double score = scores.get(Scores.ALIGNMENT_SCORE);
+                score = score + alignment.getAlignmentScore().get(Scores.ALIGNMENT_SCORE);
+                scores.put(Scores.ALIGNMENT_SCORE, score);
                 mergedAlignment.setAlignmentScore(scores);
             }
             allOutAlignments.add(mergedAlignment);

@@ -78,11 +78,11 @@ public class CheckCoverage implements EvaluateModel {
         double maxAlignmentLength = Long.max(actual.getQueryRange().getLength(), actual.getSubjectRange().getLength());
         double percentCoverage = ( maxAlignmentLength / maxSeqLength ) * 100;
         if (percentCoverage > 100) percentCoverage = 100;
-        scores.put("%identity", percentIdentity);
-        scores.put("%similarity", percentSimilarity);
-        scores.put("%coverage", percentCoverage);
+        scores.put(Scores.IDENTITY_SCORE, percentIdentity);
+        scores.put(Scores.SIMILARITY_SCORE, percentSimilarity);
+        scores.put(Scores.COVERAGE_SCORE, percentCoverage);
         double modelScore = percentIdentity + percentSimilarity + percentCoverage;
-        scores.put("modelScore", modelScore);
+        scores.put(Scores.MODEL_SCORE, modelScore);
         model.setScores(scores);
         return model;
     }

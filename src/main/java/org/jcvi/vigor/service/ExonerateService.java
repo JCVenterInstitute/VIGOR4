@@ -96,7 +96,7 @@ public class ExonerateService implements AlignmentService {
             for (VulgarProtein2Genome2 Jalignment : Jalignments) {
                 Alignment alignment = new Alignment();
                 Map<String, Double> alignmentScores = new HashMap<String, Double>();
-                alignmentScores.put("alignmentScore", (double) Jalignment.getScore());
+                alignmentScores.put(Scores.ALIGNMENT_SCORE, (double) Jalignment.getScore());
                 alignment.setAlignmentScore(alignmentScores);
                 alignment.setAlignmentTool(alignmentTool);
                 List<AlignmentFragment> alignmentFragments = new ArrayList<>();

@@ -178,7 +178,7 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
                                     double spliceScore = VigorFunctionalUtils.generateProximityScore(currentExon.getEnd(), donorRange.getBegin()) +
                                             VigorFunctionalUtils.generateProximityScore(nextExon.getBegin(), acceptorRange.getBegin());
                                     Map<String, Double> scores = newModel.getScores();
-                                    scores.put("spliceScore",scores.getOrDefault("spliceScore", 0d) + spliceScore);
+                                    scores.put(Scores.SPLICE_SCORE,scores.getOrDefault(Scores.SPLICE_SCORE, 0d) + spliceScore);
                                     newModel.setScores(scores);
                                     //In the end (closure of main for loop) we have a all the splice sites adjusted in a model
                                     models.add(newModel);

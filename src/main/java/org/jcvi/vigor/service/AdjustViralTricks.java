@@ -238,7 +238,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                         LOGGER.trace("Stop codon read through " + start);
                         LOGGER.trace("Sequence {}", () -> model.getAlignment().getVirusGenome().getSequence().toBuilder().trim(Range.of(start, start + 2)).build());
                         Map<String, Double> scores = newModel.getScores();
-                        scores.put("leakyStopScore", 100.00);
+                        scores.put(Scores.LEAKY_STOP_SCORE, 100.00);
                         newModel.setScores(scores);
 
                         newModel.setReplaceStopCodonRange(Range.of(start, start + 2));
@@ -249,7 +249,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
             }
             if (newModels.isEmpty()) {
                 Map<String, Double> scores = model.getScores();
-                scores.put("leakyStopScore", (double) leakyStopNotFoundScore);
+                scores.put(Scores.LEAKY_STOP_SCORE, leakyStopNotFoundScore);
                 model.setScores(scores);
             }
         }
