@@ -164,8 +164,8 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
             } else if (i == exons.size()) {
                 missingAARange = Range.of(aaRange.getEnd() + 1, proteinLength - 1);
                 missingNTRange = Range.of(ntRange.getEnd() + 1, NTSeqLength - 1);
-            } else if (preAARange.getEnd() - aaRange.getBegin() > min_missing_AA_size &&
-                    preNTRange.getEnd() - ntRange.getBegin() > min_missing_AA_size * 3) {
+            } else if (Math.abs(preAARange.getEnd() - aaRange.getBegin()) > min_missing_AA_size &&
+                    Math.abs(preNTRange.getEnd() - ntRange.getBegin()) > min_missing_AA_size * 3) {
                 missingAARange = Range.of(preAARange.getEnd() + 1, aaRange.getBegin() - 1);
                 missingNTRange = Range.of(preNTRange.getEnd() + 1, ntRange.getBegin() - 1);
             }
