@@ -56,8 +56,8 @@ public class ConfigurationUtils {
                 if (configEntries.get(section).containsKey(key)) {
                     String value = configEntries.get(section).remove(key);
                     if ( parameter.hasOneOrMoreFlags(ConfigurationParameters.Flags.IGNORE)) {
-                        LOGGER.warn("Ignoring parameter \"{}\" with value \"{}\" in config source {}{}",
-                                    key, value, sourceName, sectionString);
+                        LOGGER.debug("Ignoring parameter \"{}\" with value \"{}\" in config source {}{}",
+                                     key, value, sourceName, sectionString);
                     }
                     if (! parameter.hasOneOrMoreFlags(ConfigurationParameters.Flags.VERSION_4)) {
                         LOGGER.warn("Ignoring deprecated parameter \"{}\" with value \"{}\" in config source {}{}",

@@ -34,19 +34,19 @@ public enum ConfigurationParameters {
 
     DBCluser("cluster", "", Flags.GENE_SET, Flags.IGNORE),
 
-    DBDB("db", "gene database file?", Flags.GENE_SET, Flags.VERSION_3_5, Flags.METADATA, Flags.IGNORE),
+    DBDB("db", "gene database file backreference used for autoselecting reference database", Flags.GENE_SET, Flags.VERSION_3_5, Flags.METADATA),
 
     DBGene("gene", "gene name", Flags.GENE_SET, Flags.METADATA),
     DBGeneSynonym("gene_synonym", "gene_synonym", "", Flags.GENE_SET, Flags.METADATA),
 
-    DBGeneVariation("gene_variation", "?", Flags.GENE_SET, Flags.VERSION_3_5, Flags.IGNORE),
+    DBGeneVariation("gene_variation", "?", Flags.GENE_SET, Flags.VERSION_3_5),
     DBLength("length", "length", Flags.VERSION_3_5, Flags.GENE_SET, Flags.METADATA, Flags.IGNORE),
 
-    DBOrganism("organism", "", Flags.GENE_SET, Flags.IGNORE),
+    DBOrganism("organism", "organism", Flags.GENE_SET, Flags.IGNORE),
     DBProduct("product", "product", Flags.GENE_SET, Flags.METADATA)// Common DB defline attributes that can be ignored
     ,
 
-    DBStopCodonReadThru("stopcodon_readthru", "", Flags.GENE_SET, Flags.VERSION_3_5, Flags.IGNORE),
+    DBStopCodonReadThru("stopcodon_readthru", "", Flags.GENE_SET, Flags.VERSION_3_5),
     ExcludesGene("excludes_gene", "Excludes gene. TODO",
                  ConfigurationParameterFunctions.toListOfStrings,
                  Flags.VERSION_4, Flags.GENE_SET),
