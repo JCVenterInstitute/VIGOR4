@@ -68,6 +68,8 @@ public class Vigor {
             VigorConfiguration vigorConfiguration = getVigorConfiguration(parsedArgs);
             checkConfig(vigorConfiguration);
             String referenceDB = vigorConfiguration.get(ConfigurationParameters.ReferenceDatabaseFile);
+            LOGGER.info("Command line arguments: {}", String.join(" ", args));
+            LOGGER.info("Current working directory: {}", Paths.get("").toAbsolutePath().normalize().toString());
             generateAnnotations(inputFileName, referenceDB, vigorConfiguration);
         } catch (UserFacingException e) {
             System.err.println(e.getMessage());
