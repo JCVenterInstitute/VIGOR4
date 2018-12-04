@@ -5,7 +5,7 @@ VIGOR4 determines the protein coding sequences by sequence similarity searching 
 This project is funded by the National Institute Of Allergy And Infectious Diseases of the National Institutes of Health under Award Number U19AI110819 and Contract Number HHSN272201400028C and is a collaboration between Northrop Grumman Health IT, J. Craig Venter Institute, and Vecna Technologies.
 
 ### VIGOR4 currently annotates the following viruses:
-* Influenza (A & B for human, avian, and swine)
+* Influenza (A & B for human, avian, and swine, and C for human)
 * West Nile Virus
 * Zika Virus
 * Chikungunya Virus
@@ -13,6 +13,7 @@ This project is funded by the National Institute Of Allergy And Infectious Disea
 * Respiratory Syncytial Virus
 * Rotavirus
 * Enterovirus
+* Lassa Mammarenavirus
 
 ## Installing VIGOR4
 #### Build Dependencies
@@ -35,13 +36,11 @@ Refer to [INSTALL.md](https://github.com/JCVenterInstitute/VIGOR4/blob/master/IN
   -i <input fasta>, --input-fasta <input fasta>
                          path to fasta  file  of  genomic  sequences  to be
                          annotated, (-I is a synonym for this option)
-  -I <input fasta>       synonym for -i/--input-fasta)
   -o <output prefix>, --output-prefix <output prefix>
                          prefix for outputfile  files,  e.g.  if  the ouput
                          prefix is  /mydir/anno  VIGOR  will  create output
                          files /mydir/anno.tbl, /mydir/anno.stats, etc., (-
                          O is a synonym for this option)
-  -O <output prefix>     synonym for -o/--output-prefix
   -c MIN_COVERAGE, --min-coverage MIN_COVERAGE
                          minimum  coverage  of  reference  product  (0-100)
                          required to report a gene,  by default coverage is
@@ -73,8 +72,7 @@ reference database:
   -d <ref db>, --reference-database <ref db>
                          specify the reference database to  be used, (-D is
                          a synonym for this option)
-  -D <ref db>            synonym for -d/--reference-database
-
+  
 locus tag usage:
   -l, --no-locus-tags    do  NOT  use   locus_tags   in   TBL  file  output
                          (incompatible with -L)
@@ -144,6 +142,7 @@ locus tag usage:
  | flua |  Influenza A |
  | flub |  Influenza B|
  |fluc  |   Influenza C |
+ | lassa  |     Lassa Mammarenavirus   |                                
  |rsv |        Respiratory syntactical virus (RSV)   |
  | rtva   |     Rotavirus A   |                                
   |rtvb    |    Rotavirus B     |                              
