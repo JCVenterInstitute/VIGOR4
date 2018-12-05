@@ -28,9 +28,13 @@
     <git-commit-id-plugin-version>2.2.5</git-commit-id-plugin-version>
     <vigor-major-version>4</vigor-major-version>
     <vigor-minor-version>0</vigor-minor-version>
-    <vigor-patch-version>${git.commit.time}-${git.commit.id.abbrev}</vigor-patch-version>
+    <vigor-patch-version>20181204</vigor-patch-version>
     <vigor-version-number>${vigor-major-version}.${vigor-minor-version}.${vigor-patch-version}</vigor-version-number>
     <vigor-version>vigor-${vigor-version-number}</vigor-version>
+    <build.host></build.host>
+    <build.time>${maven.build.timestamp}</build.time>
+    <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
+    <build.branch></build.branch>
   </properties>
 
   <modelVersion>4.0.0</modelVersion>
@@ -247,26 +251,6 @@
         <artifactId>maven-assembly-plugin</artifactId>
       </plugin>
 
-        <plugin>
-          <groupId>pl.project13.maven</groupId>
-          <artifactId>git-commit-id-plugin</artifactId>
-          <version>${git-commit-id-plugin-version}</version>
-          <executions>
-            <execution>
-              <id>get-git-info</id>
-              <goals>
-                <goal>revision</goal>
-              </goals>
-              <phase>initialize</phase>
-            </execution>
-          </executions>
-          <configuration>
-            <generateGitPropertiesFile>false</generateGitPropertiesFile>
-            <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
-            <dateFormat>yyyyMMdd-HHmmss</dateFormat>
-            <format>properties</format>
-          </configuration>
-        </plugin>
 
         <plugin>
         <groupId>org.jacoco</groupId>
@@ -332,6 +316,45 @@
   </build>
 
   <profiles>
+
+    <profile>
+      <id>dev</id>
+      <activation>
+        <file>
+          <exists>.git</exists>
+        </file>
+      </activation>
+      <properties>
+        <vigor-patch-version>${git.commit.time}-${git.commit.id.abbrev}</vigor-patch-version>
+        <build.time>${git.commit.time}</build.time>
+        <build.host>${git.build.host}</build.host>
+        <build.branch>${git.branch}</build.branch>
+      </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>pl.project13.maven</groupId>
+            <artifactId>git-commit-id-plugin</artifactId>
+            <version>${git-commit-id-plugin-version}</version>
+            <executions>
+              <execution>
+                <id>get-git-info</id>
+                <goals>
+                  <goal>revision</goal>
+                </goals>
+                <phase>initialize</phase>
+              </execution>
+            </executions>
+            <configuration>
+              <generateGitPropertiesFile>false</generateGitPropertiesFile>
+              <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+              <dateFormat>yyyyMMdd-HHmmss</dateFormat>
+              <format>properties</format>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
 
     <profile>
       <id>regression-tests</id>

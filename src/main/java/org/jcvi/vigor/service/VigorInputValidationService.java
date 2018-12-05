@@ -238,9 +238,9 @@ public class VigorInputValidationService {
 			try {
 				Properties buildProperties = new Properties();
 				buildProperties.load(this.getClass().getResourceAsStream("/build.properties"));
-				String branch = NullUtil.emptyOrElse(buildProperties.getProperty("git.branch"), "master");
-				String host = NullUtil.nullOrElse(buildProperties.getProperty("git.build.host"),"").trim();
-				String buildTimeString = NullUtil.nullOrElse(buildProperties.getProperty("git.build.time"),"").trim();
+				String branch = NullUtil.emptyOrElse(buildProperties.getProperty("branch"), "master");
+				String host = NullUtil.nullOrElse(buildProperties.getProperty("build.host"),"").trim();
+				String buildTimeString = NullUtil.nullOrElse(buildProperties.getProperty("build.time"),"").trim();
 
 				host = host.contains("localhost") ? "" : host;
 				if (! buildTimeString.isEmpty()) {
