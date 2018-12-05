@@ -127,6 +127,13 @@
       <version>${log4j-version}</version>
     </dependency>
 
+    <!-- for spring logging -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-jcl</artifactId>
+      <version>2.11.1</version>
+    </dependency>
+    
     <dependency>
       <groupId>org.jcvi</groupId>
       <artifactId>jillion</artifactId>
