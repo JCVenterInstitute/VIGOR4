@@ -40,11 +40,11 @@
 			product	nucleoprotein
 >Features NC_006312.1
 706	1125	gene
-			gene	CM2 protein
+			gene	CM2
 706	1125	CDS
 			codon_start	1
 			protein_id	NC_006312.1.1
-			gene	CM2 protein
+			gene	CM2
 			product	CM2 protein
 >Features NC_006306.2
 27	767	gene
@@ -53,7 +53,7 @@
 			codon_start	1
 			protein_id	NC_006306.2.1
 			gene	NS1
-			product	non-structural protein 1
+			product	nonstructural protein 1
 27	888	gene
 			gene	NS2
 27	213	CDS
@@ -61,7 +61,7 @@
 			codon_start	1
 			protein_id	NC_006306.2.2
 			gene	NS2
-			product	non-structural protein 2
+			product	nonstructural protein 2
 >Features LC123362.1
 1	2325	gene
 			gene	PB2
@@ -96,11 +96,11 @@
 			product	nucleoprotein
 >Features LC123860.1
 706	1125	gene
-			gene	CM2 protein
+			gene	CM2
 706	1125	CDS
 			codon_start	1
 			protein_id	LC123860.1.1
-			gene	CM2 protein
+			gene	CM2
 			product	CM2 protein
 >Features LC125024.1
 1	741	gene
@@ -109,7 +109,7 @@
 			codon_start	1
 			protein_id	LC125024.1.1
 			gene	NS1
-			product	non-structural protein 1
+			product	nonstructural protein 1
 1	862	gene
 			gene	NS2
 1	187	CDS
@@ -117,7 +117,7 @@
 			codon_start	1
 			protein_id	LC125024.1.2
 			gene	NS2
-			product	non-structural protein 2
+			product	nonstructural protein 2
 >Features LC123382.1
 1	2325	gene
 			gene	PB2
@@ -152,11 +152,11 @@
 			product	nucleoprotein
 >Features LC123880.1
 706	1125	gene
-			gene	CM2 protein
+			gene	CM2
 706	1125	CDS
 			codon_start	1
 			protein_id	LC123880.1.1
-			gene	CM2 protein
+			gene	CM2
 			product	CM2 protein
 >Features LC125044.1
 1	741	gene
@@ -165,7 +165,7 @@
 			codon_start	1
 			protein_id	LC125044.1.1
 			gene	NS1
-			product	non-structural protein 1
+			product	nonstructural protein 1
 1	862	gene
 			gene	NS2
 1	187	CDS
@@ -173,7 +173,7 @@
 			codon_start	1
 			protein_id	LC125044.1.2
 			gene	NS2
-			product	non-structural protein 2
+			product	nonstructural protein 2
 >Features LC123299.1
 1	2325	gene
 			gene	PB2
@@ -192,11 +192,11 @@
 			product	polymerase PB1
 >Features AB000720.1
 709	1128	gene
-			gene	CM2 protein
+			gene	CM2
 709	1128	CDS
 			codon_start	1
 			protein_id	AB000720.1.1
-			gene	CM2 protein
+			gene	CM2
 			product	CM2 protein
 >Features LC123503.1
 1	2130	gene
@@ -221,7 +221,7 @@
 			codon_start	1
 			protein_id	LC124982.1.1
 			gene	NS1
-			product	non-structural protein 1
+			product	nonstructural protein 1
 1	862	gene
 			gene	NS2
 1	187	CDS
@@ -229,7 +229,7 @@
 			codon_start	1
 			protein_id	LC124982.1.2
 			gene	NS2
-			product	non-structural protein 2
+			product	nonstructural protein 2
 >Features D30697.1
 4	1950	gene
 			gene	HE
@@ -240,11 +240,11 @@
 			product	hemagglutinin-esterase
 >Features AB000727.1
 710	1129	gene
-			gene	CM2 protein
+			gene	CM2
 710	1129	CDS
 			codon_start	1
 			protein_id	AB000727.1.1
-			gene	CM2 protein
+			gene	CM2
 			product	CM2 protein
 >Features D63469.1
 <1	1959	gene
@@ -256,11 +256,11 @@
 			product	putative hemagglutinin-esterase, C-terminal
 >Features D16259.1
 719	1138	gene
-			gene	CM2 protein
+			gene	CM2
 719	1138	CDS
 			codon_start	1
 			protein_id	D16259.1.1
-			gene	CM2 protein
+			gene	CM2
 			product	CM2 protein
 >Features LC123392.1
 1	2265	gene

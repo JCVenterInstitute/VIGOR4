@@ -1,9 +1,9 @@
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor43835516424781630680/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor42919622845573946295/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg1prot1A gene="PB2" product="polymerase PB2" db="fluc_db" length=774 splice_form="e2322"
+         Query: Seg1prot1A gene="PB2" splice_form="e2322"
         Target: NC_006307.1 Influenza C virus (C/Ann Arbor/1/50) segment 1, complete sequence
          Model: protein2genome:local
      Raw score: 3985
@@ -203,12 +203,12 @@ C4 Alignment:
 cigar: Seg1prot1A 0 774 . NC_006307.1 0 2322 + 3985  M 2322
 vulgar: Seg1prot1A 0 774 . NC_006307.1 0 2322 + 3985 M 774 2322
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor48550634722570609534/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor46946388360445076614/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg2prot1A gene="PB1" product="polymerase PB1" db="fluc_db" length=754 splice_form="e2262"
+         Query: Seg2prot1A gene="PB1" splice_form="e2262"
         Target: NC_006308.1 Influenza C virus (C/Ann Arbor/1/50) segment 2, complete sequence
          Model: protein2genome:local
      Raw score: 3900
@@ -403,12 +403,12 @@ C4 Alignment:
 cigar: Seg2prot1A 0 754 . NC_006308.1 0 2262 + 3900  M 2262
 vulgar: Seg2prot1A 0 754 . NC_006308.1 0 2262 + 3900 M 754 2262
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor41337089210923135101/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor46744722944499809400/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg3prot1A gene="PA" product="polymerase PA" db="fluc_db" length=709 splice_form="e2127"
+         Query: Seg3prot1A gene="PA" splice_form="e2127"
         Target: NC_006309.1 Influenza C virus (C/Ann Arbor/1/50) segment 3, complete sequence
          Model: protein2genome:local
      Raw score: 3740
@@ -593,12 +593,12 @@ C4 Alignment:
 cigar: Seg3prot1A 0 709 . NC_006309.1 0 2127 + 3740  M 2127
 vulgar: Seg3prot1A 0 709 . NC_006309.1 0 2127 + 3740 M 709 2127
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor48672230804585864410/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor4243449177923393956/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg4prot1A gene="HE" product="hemagglutinin-esterase" db="fluc_db" length=655 splice_form="e1965"
+         Query: Seg4prot1A gene="HE" splice_form="e1965"
         Target: NC_006310.1 Influenza C virus (C/Ann Arbor/1/50) segment 4, complete sequence
          Model: protein2genome:local
      Raw score: 3436
@@ -768,12 +768,12 @@ C4 Alignment:
 cigar: Seg4prot1A 0 655 . NC_006310.1 0 1965 + 3436  M 1965
 vulgar: Seg4prot1A 0 655 . NC_006310.1 0 1965 + 3436 M 655 1965
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor4216791015140829610/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor45607139659817662560/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg5prot1A gene="NP" product="nucleoprotein" db="fluc_db" length=565 splice_form="e1695"
+         Query: Seg5prot1A gene="NP" splice_form="e1695"
         Target: NC_006311.1 Influenza C virus (C/Ann Arbor/1/50) segment 5, complete sequence
          Model: protein2genome:local
      Raw score: 2873
@@ -923,12 +923,12 @@ C4 Alignment:
 cigar: Seg5prot1A 0 565 . NC_006311.1 29 1724 + 2873  M 1695
 vulgar: Seg5prot1A 0 565 . NC_006311.1 29 1724 + 2873 M 565 1695
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor46577789002516207584/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor46952690205248846343/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg6prot1A gene="CM1"  product="CM1 protein" spliced=Y tiny_exon3="ATGGGAG:6" splice_form="e725i228e1" intron_size=153-303 db="fluc_db" length=242
+         Query: Seg6prot1A gene="CM1" splice_form="e725i228e1"
         Target: NC_006312.1 Influenza C virus (C/Ann Arbor/1/50) segment 6, complete sequence
          Model: protein2genome:local
      Raw score: 1232
@@ -1000,7 +1000,7 @@ vulgar: Seg6prot1A 0 242 . NC_006312.1 0 726 + 1232 M 242 726
 
 C4 Alignment:
 ------------
-         Query: Seg6prot2A gene="CM2 protein" product="CM2 protein" db="fluc_db" length=139 splice_form="e417"
+         Query: Seg6prot2A gene="CM2" splice_form="e417"
         Target: NC_006312.1 Influenza C virus (C/Ann Arbor/1/50) segment 6, complete sequence
          Model: protein2genome:local
      Raw score: 729
@@ -1045,12 +1045,12 @@ C4 Alignment:
 cigar: Seg6prot2A 0 139 . NC_006312.1 705 1122 + 729  M 417
 vulgar: Seg6prot2A 0 139 . NC_006312.1 705 1122 + 729 M 139 417
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor43017537163039976505/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor42732931584878589729/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg7prot2A gene="NS2" intron_size=300-400 product="non-structural protein 2" spliced=Y splice_form="e187i313e359" shared_cds="NS1" db="fluc_db" length=182
+         Query: Seg7prot2A gene="NS2" splice_form="e187i313e359"
         Target: NC_006306.2 Influenza C virus (C/Ann Arbor/1/50) segment 7, complete sequence
          Model: protein2genome:local
      Raw score: 885
@@ -1112,7 +1112,7 @@ vulgar: Seg7prot2A 0 182 . NC_006306.2 26 885 + 885 M 62 186 S 0 1 5 0 2 I 0 309
 
 C4 Alignment:
 ------------
-         Query: Seg7prot1A gene="NS1" product="non-structural protein 1" shared_cds="NS2" db="fluc_db" length=246 splice_form="e738"
+         Query: Seg7prot1A gene="NS1" splice_form="e738"
         Target: NC_006306.2 Influenza C virus (C/Ann Arbor/1/50) segment 7, complete sequence
          Model: protein2genome:local
      Raw score: 1292
@@ -1182,12 +1182,12 @@ C4 Alignment:
 cigar: Seg7prot1A 0 246 . NC_006306.2 26 764 + 1292  M 738
 vulgar: Seg7prot1A 0 246 . NC_006306.2 26 764 + 1292 M 246 738
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor42469219778508886317/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor47983762951953477255/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg1prot1A gene="PB2" product="polymerase PB2" db="fluc_db" length=774 splice_form="e2322"
+         Query: Seg1prot1A gene="PB2" splice_form="e2322"
         Target: LC123362.1 Influenza C virus (C/Miyagi/3/2010) PB2 gene for polymerase 2, complete cds
          Model: protein2genome:local
      Raw score: 3966
@@ -1387,12 +1387,12 @@ C4 Alignment:
 cigar: Seg1prot1A 0 774 . LC123362.1 0 2322 + 3966  M 2322
 vulgar: Seg1prot1A 0 774 . LC123362.1 0 2322 + 3966 M 774 2322
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor45528306651400137843/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor44521616333500463994/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg3prot1A gene="PA" product="polymerase PA" db="fluc_db" length=709 splice_form="e2127"
+         Query: Seg3prot1A gene="PA" splice_form="e2127"
         Target: LC123566.1 Influenza C virus (C/Miyagi/3/2010) P3 gene for polymerase 3, complete cds
          Model: protein2genome:local
      Raw score: 3720
@@ -1577,12 +1577,12 @@ C4 Alignment:
 cigar: Seg3prot1A 0 709 . LC123566.1 0 2127 + 3720  M 2127
 vulgar: Seg3prot1A 0 709 . LC123566.1 0 2127 + 3720 M 709 2127
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor42720312966010713194/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor4407317908833851522/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg2prot1A gene="PB1" product="polymerase PB1" db="fluc_db" length=754 splice_form="e2262"
+         Query: Seg2prot1A gene="PB1" splice_form="e2262"
         Target: LC123464.1 Influenza C virus (C/Miyagi/3/2010) PB1 gene for polymerase 1, complete cds
          Model: protein2genome:local
      Raw score: 3881
@@ -1777,12 +1777,12 @@ C4 Alignment:
 cigar: Seg2prot1A 0 754 . LC123464.1 0 2262 + 3881  M 2262
 vulgar: Seg2prot1A 0 754 . LC123464.1 0 2262 + 3881 M 754 2262
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor46360191188651841714/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor47923563021618010030/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg5prot1A gene="NP" product="nucleoprotein" db="fluc_db" length=565 splice_form="e1695"
+         Query: Seg5prot1A gene="NP" splice_form="e1695"
         Target: LC123792.1 Influenza C virus (C/Miyagi/3/2010) NP gene for nucleoprotein, complete cds
          Model: protein2genome:local
      Raw score: 2854
@@ -1932,12 +1932,12 @@ C4 Alignment:
 cigar: Seg5prot1A 0 565 . LC123792.1 0 1695 + 2854  M 1695
 vulgar: Seg5prot1A 0 565 . LC123792.1 0 1695 + 2854 M 565 1695
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor4805046162544375304/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor41676946094642166041/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg6prot1A gene="CM1"  product="CM1 protein" spliced=Y tiny_exon3="ATGGGAG:6" splice_form="e725i228e1" intron_size=153-303 db="fluc_db" length=242
+         Query: Seg6prot1A gene="CM1" splice_form="e725i228e1"
         Target: LC123860.1 Influenza C virus (C/Miyagi/3/2010) M1, CM2 genes for matrix protein, CM2 protein, complete cds
          Model: protein2genome:local
      Raw score: 1227
@@ -2009,7 +2009,7 @@ vulgar: Seg6prot1A 0 242 . LC123860.1 0 726 + 1227 M 242 726
 
 C4 Alignment:
 ------------
-         Query: Seg6prot2A gene="CM2 protein" product="CM2 protein" db="fluc_db" length=139 splice_form="e417"
+         Query: Seg6prot2A gene="CM2" splice_form="e417"
         Target: LC123860.1 Influenza C virus (C/Miyagi/3/2010) M1, CM2 genes for matrix protein, CM2 protein, complete cds
          Model: protein2genome:local
      Raw score: 714
@@ -2054,12 +2054,12 @@ C4 Alignment:
 cigar: Seg6prot2A 0 139 . LC123860.1 705 1122 + 714  M 417
 vulgar: Seg6prot2A 0 139 . LC123860.1 705 1122 + 714 M 139 417
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor43719220895946485308/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor44143827932955098746/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg7prot1A gene="NS1" product="non-structural protein 1" shared_cds="NS2" db="fluc_db" length=246 splice_form="e738"
+         Query: Seg7prot1A gene="NS1" splice_form="e738"
         Target: LC125024.1 Influenza C virus (C/Miyagi/3/2010) NS1, NS2 genes for nonstructural protein 1, nonstructural protein 2, complete cds
          Model: protein2genome:local
      Raw score: 1292
@@ -2131,7 +2131,7 @@ vulgar: Seg7prot1A 0 246 . LC125024.1 0 738 + 1292 M 246 738
 
 C4 Alignment:
 ------------
-         Query: Seg7prot2A gene="NS2" intron_size=300-400 product="non-structural protein 2" spliced=Y splice_form="e187i313e359" shared_cds="NS1" db="fluc_db" length=182
+         Query: Seg7prot2A gene="NS2" splice_form="e187i313e359"
         Target: LC125024.1 Influenza C virus (C/Miyagi/3/2010) NS1, NS2 genes for nonstructural protein 1, nonstructural protein 2, complete cds
          Model: protein2genome:local
      Raw score: 888
@@ -2191,12 +2191,12 @@ C4 Alignment:
 cigar: Seg7prot2A 0 182 . LC125024.1 0 859 + 888  M 186 D 314 M 359
 vulgar: Seg7prot2A 0 182 . LC125024.1 0 859 + 888 M 62 186 S 0 1 5 0 2 I 0 309 3 0 2 S 1 2 M 119 357
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor42745628651135151962/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor42774001369674573404/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg1prot1A gene="PB2" product="polymerase PB2" db="fluc_db" length=774 splice_form="e2322"
+         Query: Seg1prot1A gene="PB2" splice_form="e2322"
         Target: LC123382.1 Influenza C virus (C/Miyagi/6/2014) PB2 gene for polymerase 2, complete cds
          Model: protein2genome:local
      Raw score: 3968
@@ -2396,12 +2396,12 @@ C4 Alignment:
 cigar: Seg1prot1A 0 774 . LC123382.1 0 2322 + 3968  M 2322
 vulgar: Seg1prot1A 0 774 . LC123382.1 0 2322 + 3968 M 774 2322
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor47308752904605359153/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor42058585151436593517/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg2prot1A gene="PB1" product="polymerase PB1" db="fluc_db" length=754 splice_form="e2262"
+         Query: Seg2prot1A gene="PB1" splice_form="e2262"
         Target: LC123484.1 Influenza C virus (C/Miyagi/6/2014) PB1 gene for polymerase 1, complete cds
          Model: protein2genome:local
      Raw score: 3877
@@ -2596,12 +2596,12 @@ C4 Alignment:
 cigar: Seg2prot1A 0 754 . LC123484.1 0 2262 + 3877  M 2262
 vulgar: Seg2prot1A 0 754 . LC123484.1 0 2262 + 3877 M 754 2262
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor45261073344171693736/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor47030681284438255216/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg3prot1A gene="PA" product="polymerase PA" db="fluc_db" length=709 splice_form="e2127"
+         Query: Seg3prot1A gene="PA" splice_form="e2127"
         Target: LC123586.1 Influenza C virus (C/Miyagi/6/2014) P3 gene for polymerase 3, complete cds
          Model: protein2genome:local
      Raw score: 3719
@@ -2786,12 +2786,12 @@ C4 Alignment:
 cigar: Seg3prot1A 0 709 . LC123586.1 0 2127 + 3719  M 2127
 vulgar: Seg3prot1A 0 709 . LC123586.1 0 2127 + 3719 M 709 2127
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor45077792995162029444/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor46920978676778247519/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg5prot1A gene="NP" product="nucleoprotein" db="fluc_db" length=565 splice_form="e1695"
+         Query: Seg5prot1A gene="NP" splice_form="e1695"
         Target: LC123812.1 Influenza C virus (C/Miyagi/6/2014) NP gene for nucleoprotein, complete cds
          Model: protein2genome:local
      Raw score: 2856
@@ -2941,12 +2941,12 @@ C4 Alignment:
 cigar: Seg5prot1A 0 565 . LC123812.1 0 1695 + 2856  M 1695
 vulgar: Seg5prot1A 0 565 . LC123812.1 0 1695 + 2856 M 565 1695
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor47325969471770656192/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor48000632631854515896/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg6prot1A gene="CM1"  product="CM1 protein" spliced=Y tiny_exon3="ATGGGAG:6" splice_form="e725i228e1" intron_size=153-303 db="fluc_db" length=242
+         Query: Seg6prot1A gene="CM1" splice_form="e725i228e1"
         Target: LC123880.1 Influenza C virus (C/Miyagi/6/2014) M1, CM2 genes for matrix protein, CM2 protein, complete cds
          Model: protein2genome:local
      Raw score: 1224
@@ -3018,7 +3018,7 @@ vulgar: Seg6prot1A 0 242 . LC123880.1 0 726 + 1224 M 242 726
 
 C4 Alignment:
 ------------
-         Query: Seg6prot2A gene="CM2 protein" product="CM2 protein" db="fluc_db" length=139 splice_form="e417"
+         Query: Seg6prot2A gene="CM2" splice_form="e417"
         Target: LC123880.1 Influenza C virus (C/Miyagi/6/2014) M1, CM2 genes for matrix protein, CM2 protein, complete cds
          Model: protein2genome:local
      Raw score: 715
@@ -3063,12 +3063,12 @@ C4 Alignment:
 cigar: Seg6prot2A 0 139 . LC123880.1 705 1122 + 715  M 417
 vulgar: Seg6prot2A 0 139 . LC123880.1 705 1122 + 715 M 139 417
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor48917984099474839975/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor47872232419375860519/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg7prot1A gene="NS1" product="non-structural protein 1" shared_cds="NS2" db="fluc_db" length=246 splice_form="e738"
+         Query: Seg7prot1A gene="NS1" splice_form="e738"
         Target: LC125044.1 Influenza C virus (C/Miyagi/6/2014) NS1, NS2 genes for nonstructural protein 1, nonstructural protein 2, complete cds
          Model: protein2genome:local
      Raw score: 1296
@@ -3140,7 +3140,7 @@ vulgar: Seg7prot1A 0 246 . LC125044.1 0 738 + 1296 M 246 738
 
 C4 Alignment:
 ------------
-         Query: Seg7prot2A gene="NS2" intron_size=300-400 product="non-structural protein 2" spliced=Y splice_form="e187i313e359" shared_cds="NS1" db="fluc_db" length=182
+         Query: Seg7prot2A gene="NS2" splice_form="e187i313e359"
         Target: LC125044.1 Influenza C virus (C/Miyagi/6/2014) NS1, NS2 genes for nonstructural protein 1, nonstructural protein 2, complete cds
          Model: protein2genome:local
      Raw score: 888
@@ -3200,12 +3200,12 @@ C4 Alignment:
 cigar: Seg7prot2A 0 182 . LC125044.1 0 859 + 888  M 186 D 314 M 359
 vulgar: Seg7prot2A 0 182 . LC125044.1 0 859 + 888 M 62 186 S 0 1 5 0 2 I 0 309 3 0 2 S 1 2 M 119 357
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor44456266855661670295/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor48175722957034509151/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg1prot1A gene="PB2" product="polymerase PB2" db="fluc_db" length=774 splice_form="e2322"
+         Query: Seg1prot1A gene="PB2" splice_form="e2322"
         Target: LC123299.1 Influenza C virus (C/Mississippi/80) PB2 gene for polymerase 2, complete cds
          Model: protein2genome:local
      Raw score: 3971
@@ -3405,12 +3405,12 @@ C4 Alignment:
 cigar: Seg1prot1A 0 774 . LC123299.1 0 2322 + 3971  M 2322
 vulgar: Seg1prot1A 0 774 . LC123299.1 0 2322 + 3971 M 774 2322
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor42450266312522239392/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor45431072687390343512/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg2prot1A gene="PB1" product="polymerase PB1" db="fluc_db" length=754 splice_form="e2262"
+         Query: Seg2prot1A gene="PB1" splice_form="e2262"
         Target: LC123401.1 Influenza C virus (C/Mississippi/80) PB1 gene for polymerase 1, complete cds
          Model: protein2genome:local
      Raw score: 3891
@@ -3605,12 +3605,12 @@ C4 Alignment:
 cigar: Seg2prot1A 0 754 . LC123401.1 0 2262 + 3891  M 2262
 vulgar: Seg2prot1A 0 754 . LC123401.1 0 2262 + 3891 M 754 2262
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor44067929383509571417/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor47757397295525396040/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg6prot1A gene="CM1"  product="CM1 protein" spliced=Y tiny_exon3="ATGGGAG:6" splice_form="e725i228e1" intron_size=153-303 db="fluc_db" length=242
+         Query: Seg6prot1A gene="CM1" splice_form="e725i228e1"
         Target: AB000720.1 Influenza C virus (C/Mississippi/80) M gene for M1 protein and CM2 protein, complete cds
          Model: protein2genome:local
      Raw score: 1228
@@ -3682,7 +3682,7 @@ vulgar: Seg6prot1A 0 242 . AB000720.1 3 729 + 1228 M 242 726
 
 C4 Alignment:
 ------------
-         Query: Seg6prot2A gene="CM2 protein" product="CM2 protein" db="fluc_db" length=139 splice_form="e417"
+         Query: Seg6prot2A gene="CM2" splice_form="e417"
         Target: AB000720.1 Influenza C virus (C/Mississippi/80) M gene for M1 protein and CM2 protein, complete cds
          Model: protein2genome:local
      Raw score: 718
@@ -3727,12 +3727,12 @@ C4 Alignment:
 cigar: Seg6prot2A 0 139 . AB000720.1 708 1125 + 718  M 417
 vulgar: Seg6prot2A 0 139 . AB000720.1 708 1125 + 718 M 139 417
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor47787798456175246457/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor48719228448849568287/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg3prot1A gene="PA" product="polymerase PA" db="fluc_db" length=709 splice_form="e2127"
+         Query: Seg3prot1A gene="PA" splice_form="e2127"
         Target: LC123503.1 Influenza C virus (C/Mississippi/80) P3 gene for polymerase 3, complete cds
          Model: protein2genome:local
      Raw score: 3723
@@ -3917,12 +3917,12 @@ C4 Alignment:
 cigar: Seg3prot1A 0 709 . LC123503.1 0 2127 + 3723  M 2127
 vulgar: Seg3prot1A 0 709 . LC123503.1 0 2127 + 3723 M 709 2127
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor42512446353803586470/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor48215565183211650121/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg5prot1A gene="NP" product="nucleoprotein" db="fluc_db" length=565 splice_form="e1695"
+         Query: Seg5prot1A gene="NP" splice_form="e1695"
         Target: LC123735.1 Influenza C virus (C/Mississippi/80) NP gene for nucleoprotein, complete cds
          Model: protein2genome:local
      Raw score: 2858
@@ -4072,12 +4072,12 @@ C4 Alignment:
 cigar: Seg5prot1A 0 565 . LC123735.1 0 1695 + 2858  M 1695
 vulgar: Seg5prot1A 0 565 . LC123735.1 0 1695 + 2858 M 565 1695
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor42410721722421098816/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor43983841090477948363/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg7prot1A gene="NS1" product="non-structural protein 1" shared_cds="NS2" db="fluc_db" length=246 splice_form="e738"
+         Query: Seg7prot1A gene="NS1" splice_form="e738"
         Target: LC124982.1 Influenza C virus (C/Mississippi/80) NS1, NS2 genes for nonstructural protein 1, nonstructural protein 2, complete cds
          Model: protein2genome:local
      Raw score: 1301
@@ -4149,7 +4149,7 @@ vulgar: Seg7prot1A 0 246 . LC124982.1 0 738 + 1301 M 246 738
 
 C4 Alignment:
 ------------
-         Query: Seg7prot2A gene="NS2" intron_size=300-400 product="non-structural protein 2" spliced=Y splice_form="e187i313e359" shared_cds="NS1" db="fluc_db" length=182
+         Query: Seg7prot2A gene="NS2" splice_form="e187i313e359"
         Target: LC124982.1 Influenza C virus (C/Mississippi/80) NS1, NS2 genes for nonstructural protein 1, nonstructural protein 2, complete cds
          Model: protein2genome:local
      Raw score: 878
@@ -4209,12 +4209,12 @@ C4 Alignment:
 cigar: Seg7prot2A 0 182 . LC124982.1 0 859 + 878  M 186 D 314 M 359
 vulgar: Seg7prot2A 0 182 . LC124982.1 0 859 + 878 M 62 186 S 0 1 5 0 2 I 0 309 3 0 2 S 1 2 M 119 357
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor45119625276908978762/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor42321229134773453482/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg4prot1A gene="HE" product="hemagglutinin-esterase" db="fluc_db" length=655 splice_form="e1965"
+         Query: Seg4prot1A gene="HE" splice_form="e1965"
         Target: D30697.1 Influenza C virus (C/Nara/2/85) HE gene, complete cds
          Model: protein2genome:local
      Raw score: 3335
@@ -4384,12 +4384,12 @@ C4 Alignment:
 cigar: Seg4prot1A 6 655 . D30697.1 0 1947 + 3335  M 1947
 vulgar: Seg4prot1A 6 655 . D30697.1 0 1947 + 3335 M 649 1947
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor47452629157456635478/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor4313093949548269784/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg6prot1A gene="CM1"  product="CM1 protein" spliced=Y tiny_exon3="ATGGGAG:6" splice_form="e725i228e1" intron_size=153-303 db="fluc_db" length=242
+         Query: Seg6prot1A gene="CM1" splice_form="e725i228e1"
         Target: AB000727.1 Influenza C virus (C/Nara/2/85) M gene for M1 protein and CM2 protein, complete cds
          Model: protein2genome:local
      Raw score: 1232
@@ -4461,7 +4461,7 @@ vulgar: Seg6prot1A 0 242 . AB000727.1 4 730 + 1232 M 242 726
 
 C4 Alignment:
 ------------
-         Query: Seg6prot2A gene="CM2 protein" product="CM2 protein" db="fluc_db" length=139 splice_form="e417"
+         Query: Seg6prot2A gene="CM2" splice_form="e417"
         Target: AB000727.1 Influenza C virus (C/Nara/2/85) M gene for M1 protein and CM2 protein, complete cds
          Model: protein2genome:local
      Raw score: 713
@@ -4506,12 +4506,12 @@ C4 Alignment:
 cigar: Seg6prot2A 0 139 . AB000727.1 709 1126 + 713  M 417
 vulgar: Seg6prot2A 0 139 . AB000727.1 709 1126 + 713 M 139 417
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor41095654386337795188/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor42068687365041463060/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg4prot1A gene="HE" product="hemagglutinin-esterase" db="fluc_db" length=655 splice_form="e1965"
+         Query: Seg4prot1A gene="HE" splice_form="e1965"
         Target: D63469.1 Influenza C virus (C/Aomori/74) HE gene for hemagglutinin-esterase, complete cds
          Model: protein2genome:local
      Raw score: 3307
@@ -4681,12 +4681,12 @@ C4 Alignment:
 cigar: Seg4prot1A 3 655 . D63469.1 0 1956 + 3307  M 1956
 vulgar: Seg4prot1A 3 655 . D63469.1 0 1956 + 3307 M 652 1956
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor46489439688638789682/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor42222999915912423539/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg6prot1A gene="CM1"  product="CM1 protein" spliced=Y tiny_exon3="ATGGGAG:6" splice_form="e725i228e1" intron_size=153-303 db="fluc_db" length=242
+         Query: Seg6prot1A gene="CM1" splice_form="e725i228e1"
         Target: D16259.1 Influenza C virus (C/Aomori/74) RNA for matrix protein (M1), complete cds
          Model: protein2genome:local
      Raw score: 1232
@@ -4758,7 +4758,7 @@ vulgar: Seg6prot1A 0 242 . D16259.1 13 739 + 1232 M 242 726
 
 C4 Alignment:
 ------------
-         Query: Seg6prot2A gene="CM2 protein" product="CM2 protein" db="fluc_db" length=139 splice_form="e417"
+         Query: Seg6prot2A gene="CM2" splice_form="e417"
         Target: D16259.1 Influenza C virus (C/Aomori/74) RNA for matrix protein (M1), complete cds
          Model: protein2genome:local
      Raw score: 714
@@ -4803,12 +4803,12 @@ C4 Alignment:
 cigar: Seg6prot2A 0 139 . D16259.1 718 1135 + 714  M 417
 vulgar: Seg6prot2A 0 139 . D16259.1 718 1135 + 714 M 139 417
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor46005847560122902088/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor48547367572216606744/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg2prot1A gene="PB1" product="polymerase PB1" db="fluc_db" length=754 splice_form="e2262"
+         Query: Seg2prot1A gene="PB1" splice_form="e2262"
         Target: LC123392.1 Influenza C virus (C/Aomori/74) PB1 gene for polymerase 1, complete cds
          Model: protein2genome:local
      Raw score: 3897
@@ -5003,12 +5003,12 @@ C4 Alignment:
 cigar: Seg2prot1A 0 754 . LC123392.1 0 2262 + 3897  M 2262
 vulgar: Seg2prot1A 0 754 . LC123392.1 0 2262 + 3897 M 754 2262
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor49128234404764429019/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor45530021340587958612/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg1prot1A gene="PB2" product="polymerase PB2" db="fluc_db" length=774 splice_form="e2322"
+         Query: Seg1prot1A gene="PB2" splice_form="e2322"
         Target: LC123290.1 Influenza C virus (C/Aomori/74) PB2 gene for polymerase 2, complete cds
          Model: protein2genome:local
      Raw score: 3969
@@ -5208,12 +5208,12 @@ C4 Alignment:
 cigar: Seg1prot1A 0 774 . LC123290.1 0 2322 + 3969  M 2322
 vulgar: Seg1prot1A 0 774 . LC123290.1 0 2322 + 3969 M 774 2322
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor46535054149604664637/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor48517048055954797998/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg5prot1A gene="NP" product="nucleoprotein" db="fluc_db" length=565 splice_form="e1695"
+         Query: Seg5prot1A gene="NP" splice_form="e1695"
         Target: LC123728.1 Influenza C virus (C/Aomori/74) NP gene for nucleoprotein, complete cds
          Model: protein2genome:local
      Raw score: 2858
@@ -5363,12 +5363,12 @@ C4 Alignment:
 cigar: Seg5prot1A 0 565 . LC123728.1 0 1695 + 2858  M 1695
 vulgar: Seg5prot1A 0 565 . LC123728.1 0 1695 + 2858 M 565 1695
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor49024276064879598408/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor47246341735689869124/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg3prot1A gene="PA" product="polymerase PA" db="fluc_db" length=709 splice_form="e2127"
+         Query: Seg3prot1A gene="PA" splice_form="e2127"
         Target: LC123494.1 Influenza C virus (C/Aomori/74) P3 gene for polymerase 3, complete cds
          Model: protein2genome:local
      Raw score: 3734
@@ -5553,12 +5553,12 @@ C4 Alignment:
 cigar: Seg3prot1A 0 709 . LC123494.1 0 2127 + 3734  M 2127
 vulgar: Seg3prot1A 0 709 . LC123494.1 0 2127 + 3734 M 709 2127
 -- completed exonerate analysis
-Command line: [/usr/bin/exonerate --model protein2genome -q /home/snettem/git/VIGOR_DB/Reference_DBs/fluc_db -t /home/snettem/output/vigor47493060542680718345/sequence_temp.fasta --showcigar true]
-Hostname: [snettem-VirtualBox]
+Command line: [/home/jchriste/bin/exonerate --model protein2genome -q /home/jchriste/git/vigor-db/Reference_DBs/fluc_db -t /home/jchriste/tmp/vigor-temp/vigor44415053914843522121/sequence_temp.fasta --showcigar true]
+Hostname: [localhost.localdomain]
 
 C4 Alignment:
 ------------
-         Query: Seg4prot1A gene="HE" product="hemagglutinin-esterase" db="fluc_db" length=655 splice_form="e1965"
+         Query: Seg4prot1A gene="HE" splice_form="e1965"
         Target: CY239467.1 Influenza C virus (C/Minnesota/04/2014) hemagglutinin-esterase (HE) gene, complete cds
          Model: protein2genome:local
      Raw score: 3305

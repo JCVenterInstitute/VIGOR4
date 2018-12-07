@@ -38,6 +38,7 @@
 			protein_id	NC_011500.2.1
 			gene	NSP1
 			product	non-structural protein 1
+			note	synonym: interferon antagonist protein
 >Features NC_011509.2
 24	1217	gene
 			gene	VP6
@@ -54,6 +55,7 @@
 			protein_id	NC_011501.2.1
 			gene	NSP3
 			product	non-structural protein 3
+			note	synonym: translation effector protein
 >Features NC_011502.2
 47	1000	gene
 			gene	NSP2
@@ -62,6 +64,7 @@
 			protein_id	NC_011502.2.1
 			gene	NSP2
 			product	non-structural protein 2
+			note	synonym: viroplasm RNA binding protein
 >Features NC_011503.2
 49	1029	gene
 			gene	VP7
@@ -78,6 +81,7 @@
 			protein_id	NC_011504.2.1
 			gene	NSP4
 			product	non-structural protein 4
+			note	synonym: assembly protein
 >Features NC_011505.2
 22	618	gene
 			gene	NSP5
@@ -86,6 +90,7 @@
 			protein_id	NC_011505.2.1
 			gene	NSP5
 			product	non-structural protein 5
+			note	synonym: NS26
 80	358	gene
 			gene	NSP6
 80	358	CDS
@@ -101,6 +106,7 @@
 			protein_id	JN872875.1.1
 			gene	NSP5
 			product	non-structural protein 5
+			note	synonym: NS26
 80	346	gene
 			gene	NSP6
 80	346	CDS
@@ -116,6 +122,7 @@
 			protein_id	JN872874.1.1
 			gene	NSP4
 			product	non-structural protein 4
+			note	synonym: assembly protein
 >Features JN872873.1
 35	967	gene
 			gene	NSP3
@@ -124,6 +131,7 @@
 			protein_id	JN872873.1.1
 			gene	NSP3
 			product	non-structural protein 3
+			note	synonym: translation effector protein
 >Features JN872872.1
 47	1015	gene
 			gene	NSP2
@@ -132,6 +140,7 @@
 			protein_id	JN872872.1.1
 			gene	NSP2
 			product	non-structural protein 2
+			note	synonym: viroplasm RNA binding protein
 >Features JN872871.1
 31	1506	gene
 			gene	NSP1
@@ -140,6 +149,7 @@
 			protein_id	JN872871.1.1
 			gene	NSP1
 			product	non-structural protein 1
+			note	synonym: interferon antagonist protein
 >Features JN872870.1
 49	1029	gene
 			gene	VP7
@@ -175,7 +185,8 @@
 >Features JN872866.1
 17	2659	gene
 			gene	VP2
-17	2659	CDS
+17	247	CDS
+248	2659
 			codon_start	1
 			protein_id	JN872866.1.1
 			gene	VP2
@@ -244,6 +255,7 @@
 			protein_id	KT694945.1.1
 			gene	NSP1
 			product	non-structural protein 1
+			note	synonym: interferon antagonist protein
 >Features KT694946.1
 47	1000	gene
 			gene	NSP2
@@ -252,6 +264,7 @@
 			protein_id	KT694946.1.1
 			gene	NSP2
 			product	non-structural protein 2
+			note	synonym: viroplasm RNA binding protein
 >Features KT694947.1
 35	967	gene
 			gene	NSP3
@@ -260,6 +273,7 @@
 			protein_id	KT694947.1.1
 			gene	NSP3
 			product	non-structural protein 3
+			note	synonym: translation effector protein
 >Features KT694948.1
 42	569	gene
 			gene	NSP4
@@ -268,6 +282,7 @@
 			protein_id	KT694948.1.1
 			gene	NSP4
 			product	non-structural protein 4
+			note	synonym: assembly protein
 >Features KT694949.1
 22	615	gene
 			gene	NSP5
@@ -276,6 +291,7 @@
 			protein_id	KT694949.1.1
 			gene	NSP5
 			product	non-structural protein 5
+			note	synonym: NS26
 80	358	gene
 			gene	NSP6
 80	358	CDS
