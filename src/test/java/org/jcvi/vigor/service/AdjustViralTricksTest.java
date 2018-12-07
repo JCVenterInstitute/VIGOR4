@@ -72,10 +72,11 @@ public class AdjustViralTricksTest {
     @Test
     public void checkForLeakyStopTest () throws VigorException, CloneNotSupportedException {
 
-        VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
-        String referenceDBPath = config.get(ConfigurationParameters.ReferenceDatabasePath);
+        VigorConfiguration defaultConfig = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
+        String referenceDBPath = defaultConfig.get(ConfigurationParameters.ReferenceDatabasePath);
         VigorTestUtils.assumeReferenceDB(referenceDBPath);
         assertThat("reference database path must be set", referenceDBPath, is(notNullValue()));
+        VigorConfiguration config = initializationService.loadVirusSpecificParameters(defaultConfig, "veev_db", referenceDBPath, null );
         String referenceDB = Paths.get(referenceDBPath, "veev_db").toString();
         List<Alignment> alignments;
         List<Model> models = new ArrayList<Model>();
@@ -91,7 +92,8 @@ public class AdjustViralTricksTest {
         });
         Model testModel = models.get(0);
         double leakStopNotFoundScore = 1;
-        Model outputModel = adjustViralTricks.checkForLeakyStop(testModel, leakStopNotFoundScore).get(0);
+        List<Model> checkedModels = adjustViralTricks.checkForLeakyStop(testModel, leakStopNotFoundScore);
+        Model outputModel = checkedModels.get(0);
         Range actual = outputModel.getReplaceStopCodonRange();
         assertEquals("TGA", outputModel.getAlignment().getVirusGenome().getSequence().toBuilder().trim(Range.of(5627, 5629)).build().toString());
         assertEquals(Range.of(5627, 5629), actual);
