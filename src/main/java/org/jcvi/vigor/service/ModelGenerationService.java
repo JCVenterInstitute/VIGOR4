@@ -137,7 +137,6 @@ public class ModelGenerationService {
                     if (i == 0)
                         compatibleFragsList = mergeAlignmentFragments(compatibleFragsList, alignment.getVirusGenome(), minIntronLength, maxAlignMergeAAGap, alignment.getViralProtein());
                     if (i == 1) {
-                        compatibleFragsList = compatibleFragsList.stream().map(x -> x.clone()).collect(Collectors.toList());
                         compatibleFragsList = mergeAlignmentFragments(compatibleFragsList, alignment.getVirusGenome(), relaxIntronLength, relaxMergeAAGap, alignment.getViralProtein());
                     }
                     if (size != compatibleFragsList.size()) {
@@ -241,9 +240,8 @@ public class ModelGenerationService {
                         }
                         Range adjustedNTrange = Range.of(currentFragment.getBegin(), nextFragment.getEnd());
                         Range adjustedAArange = Range.of(upFragment.getProteinSeqRange().getBegin(), downFragment.getProteinSeqRange().getEnd());
-                        upFragment.setNucleotideSeqRange(adjustedNTrange);
-                        upFragment.setProteinSeqRange(adjustedAArange);
-                        outFragments.add(upFragment);
+                        AlignmentFragment adjustedFragment = new AlignmentFragment(adjustedAArange, adjustedNTrange, upFragment.getDirection(), upFragment.getFrame());
+                        outFragments.add(adjustedFragment);
                         isPreMerge = true;
                     } else {
                         if (!isPreMerge) {

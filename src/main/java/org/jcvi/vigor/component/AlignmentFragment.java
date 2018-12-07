@@ -15,10 +15,10 @@ import java.util.Comparator;
 @Data
 public class AlignmentFragment implements Comparable<AlignmentFragment>, Cloneable {
 
-    private Direction direction;
-    private Range proteinSeqRange;
-    private Range nucleotideSeqRange;
-    private Frame frame;
+    private final Direction direction;
+    private final Range proteinSeqRange;
+    private final Range nucleotideSeqRange;
+    private final Frame frame;
 
     public AlignmentFragment ( Range proteinSeqRange, Range nucleotideRange, Direction direction, Frame frame ) {
 
@@ -27,31 +27,11 @@ public class AlignmentFragment implements Comparable<AlignmentFragment>, Cloneab
         this.direction = direction;
         this.frame = frame;
     }
-
-    public AlignmentFragment () {
-
-    }
-
-    public AlignmentFragment clone () {
-
-        AlignmentFragment frag = null;
-        try {
-            frag = (AlignmentFragment) ( super.clone() );
-        } catch (CloneNotSupportedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        return frag;
-    }
-
+    
     public int compareTo ( AlignmentFragment compareFragment ) {
 
-        Range compareRange = compareFragment.getNucleotideSeqRange();
-        if (compareRange.endsBefore(this.nucleotideSeqRange)) {
-            return 1;
-        } else if (this.nucleotideSeqRange.endsBefore(compareRange)) {
-            return -1;
-        } else return 0;
+        return Range.Comparators.ARRIVAL.compare(getNucleotideSeqRange(),
+                                                 compareFragment.getNucleotideSeqRange());
     }
 
     public enum Comparators implements Comparator<AlignmentFragment> {

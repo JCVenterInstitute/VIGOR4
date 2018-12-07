@@ -66,8 +66,7 @@ public class ModelGenerationServiceTest {
         Exon lastExon = new Exon();
         lastExon.setRange(Range.of(3011, 4500));
         lastExon.setFrame(Frame.ONE);
-        AlignmentFragment fragment = new AlignmentFragment();
-        fragment.setProteinSeqRange(Range.of(6, 1550));
+        AlignmentFragment fragment = new AlignmentFragment(Range.of(6, 1550), Range.of(18, 4650), Direction.FORWARD, Frame.ONE);
         lastExon.setAlignmentFragment(fragment);
         exons.add(lastExon);
         model.setExons(exons);

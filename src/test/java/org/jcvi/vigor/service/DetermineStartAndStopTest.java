@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.jcvi.jillion.core.Direction;
 import org.jcvi.vigor.testing.category.Fast;
 import org.jcvi.vigor.testing.category.Isolated;
 import org.junit.Before;
@@ -78,10 +79,8 @@ public class DetermineStartAndStopTest {
         Exon exon1 = new Exon();
         exon1.setFrame(Frame.TWO);
         exon1.setRange(Range.of(756, 977));
-        AlignmentFragment frag = new AlignmentFragment();
-        AlignmentFragment frag1 = new AlignmentFragment();
-        frag.setProteinSeqRange(Range.of(0, 166));
-        frag1.setProteinSeqRange(Range.of(167, 389));
+        AlignmentFragment frag = new AlignmentFragment(Range.of(0, 166), Range.of(0, 498), Direction.FORWARD, Frame.ONE);
+        AlignmentFragment frag1 = new AlignmentFragment(Range.of(167, 389), Range.of(501, 1167), Direction.FORWARD, Frame.ONE);
         exon.setAlignmentFragment(frag);
         exon1.setAlignmentFragment(frag1);
         exons.add(exon);

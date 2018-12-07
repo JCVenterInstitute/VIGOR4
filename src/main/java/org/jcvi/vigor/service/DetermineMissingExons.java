@@ -114,11 +114,10 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
                     (range.getBegin() * 3) + NTRange.getBegin(),
                     (((range.getEnd() + 1) * 3) - 1) + NTRange.getBegin());
             exon.setRange(modelExonNTRange);
-            AlignmentFragment alignmentFragment = new AlignmentFragment();
-            alignmentFragment.setDirection(bestAlignment.getQueryRange()
-                                                        .getDirection());
-            alignmentFragment.setNucleotideSeqRange(modelExonNTRange);
-            alignmentFragment.setProteinSeqRange(modelExonAARange);
+            AlignmentFragment alignmentFragment = new AlignmentFragment(modelExonAARange, modelExonNTRange,
+                                                                        bestAlignment.getQueryRange()
+                                                                                     .getDirection(),
+                                                                        Frame.ONE);
             exon.setAlignmentFragment(alignmentFragment);
             exon.setFrame(Frame.ONE);
 
