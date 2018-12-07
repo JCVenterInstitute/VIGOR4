@@ -50,9 +50,9 @@ public enum ConfigurationParameters {
     ExcludesGene("excludes_gene", "Excludes gene. TODO",
                  ConfigurationParameterFunctions.toListOfStrings,
                  Flags.VERSION_4, Flags.GENE_SET),
-    ExonMaximumSize("max_exon_size", "Maximum sequence length of an exon", toInteger),
+    ExonMaximumSize("max_exon_size", "Maximum sequence length of an exon", toPositiveInteger),
 
-    ExonMinimumSize("min_exon_size", "Minimum sequence length of an exon", toInteger),
+    ExonMinimumSize("min_exon_size", "Minimum sequence length of an exon", toPositiveInteger),
 
     ExoneratePath("exonerate_path", "Path to exonerate tool",
                   Flags.VERSION_4,
@@ -63,12 +63,12 @@ public enum ConfigurationParameters {
     FrameShiftSensitivity("frameshift_sensitivity", "How to handle frameshifts", Flags.VERSION_3, Flags.VERSION_4, Flags.UNIMPLEMENTED), // TODO
     GeneMinimumCoverage("min_gene_coverage", "Minimum coverage of genes",  toPercent, Flags.VERSION_3, Flags.VERSION_4), // TODO elaborate
 
-    GeneMinimumSize("min_gene_size", "Minimum sequence length to be considered as a gene", toInteger, Flags.VERSION_3, Flags.VERSION_4),
+    GeneMinimumSize("min_gene_size", "Minimum sequence length to be considered as a gene", toPositiveInteger, Flags.VERSION_3, Flags.VERSION_4),
     GeneOptional("is_optional", "Gene is optional for valid model", ConfigurationParameterFunctions.isPresentOrBoolean, Flags.GENE_SET),
     GeneRequired("is_required", "Gene is required for valid model", ConfigurationParameterFunctions.isPresentOrBoolean, Flags.GENE_SET),
 
-    IntronMaximumSize("max_intron_size", "Maximum sequence length of an intron", toInteger, Flags.VERSION_3, Flags.VERSION_4),
-    IntronMinimumSize("min_intron_size", "Minimum sequence length of an intron", toInteger, Flags.VERSION_3, Flags.VERSION_4),
+    IntronMaximumSize("max_intron_size", "Maximum sequence length of an intron", toPositiveInteger, Flags.VERSION_3, Flags.VERSION_4),
+    IntronMinimumSize("min_intron_size", "Minimum sequence length of an intron", toPositiveInteger, Flags.VERSION_3, Flags.VERSION_4),
 
     JCVIRules("jcvi_rules", "", toBoolean),
     Locustag("locus_tag", "Locus tag prefix to use in output", Flags.VERSION_3, Flags.VERSION_4),
@@ -82,10 +82,10 @@ public enum ConfigurationParameters {
                                    toPercent,
                                    Flags.VERSION_3, Flags.VERSION_4),
 
-    MaxAlignMergeAAGap("max_align_merge_aa_gap", "", toInteger, Flags.VERSION_4),
-    MaxGeneOverlap("max_gene_overlap", " In reporting gene models, maximum overlap of genes allowed.", toInteger, Flags.VERSION_4),
-    MinFunctionalLength("min_functional_len" , "Minimum functional length", toInteger, Flags.VERSION_4, Flags.GENE_SET),
-    MinimumMissingAASize("min_missing_AA_size", "TODO", toInteger), // TODO
+    MaxAlignMergeAAGap("max_align_merge_aa_gap", "", toPositiveInteger, Flags.VERSION_4),
+    MaxGeneOverlap("max_gene_overlap", " In reporting gene models, maximum overlap of genes allowed.", toPositiveInteger, Flags.VERSION_4),
+    MinFunctionalLength("min_functional_len" , "Minimum functional length", toPositiveInteger, Flags.VERSION_4, Flags.GENE_SET),
+    MinimumMissingAASize("min_missing_AA_size", "TODO", toPositiveInteger), // TODO
 
     NTOverlap_offset("NTOverlap_offset", "", toInteger, Flags.VERSION_4),
     NonCanonicalSplicing("nancanonical_splicing", "Alternate splice sites", Flags.VERSION_4, Flags.VIRUS_SET, Flags.GENE_SET),
@@ -113,7 +113,7 @@ public enum ConfigurationParameters {
     ReferenceDatabasePath("reference_database_path", "Directory containing reference database files",
                           Flags.VERSION_4, Flags.REQUIRED, Flags.COMMANDLINE_SET, Flags.PROGRAM_CONFIG_SET),
 
-    RelaxAlignMergeAAGap("relax_align_merge_aa_gap", "", toInteger, Flags.VERSION_4),
+    RelaxAlignMergeAAGap("relax_align_merge_aa_gap", "", toPositiveInteger, Flags.VERSION_4),
     RibosomalSlippage("ribosomal_slippage", "V4_Ribosomal_Slippage", "Ribosomal slippage. Format is offset/frameshift/regex",
                       ConfigurationParameterFunctions.of(Ribosomal_Slippage.class, Ribosomal_Slippage::parseFromString),
                       Flags.VERSION_4, Flags.GENE_SET),
@@ -123,7 +123,7 @@ public enum ConfigurationParameters {
     ScoreFactorSplicing("splicing_score_factor", "", toDouble, Flags.VERSION_4),
     ScoreFactorStart("start_score_factor", "", toDouble, Flags.VERSION_4),
     ScoreFactorStop("stop_score_factor", "", toDouble, Flags.VERSION_4),
-    SequenceGapMinimumLength("min_seq_gap_length", "Minimum length of a sequence gap to ....", toInteger, Flags.VERSION_4), // TODO
+    SequenceGapMinimumLength("min_seq_gap_length", "Minimum length of a sequence gap to ....", toPositiveInteger, Flags.VERSION_4), // TODO
 
     SharedCDS("shared_cds", "Shared CDS. Format is CDS[,CDS]",
               ConfigurationParameterFunctions.toListOfStrings,
@@ -140,7 +140,7 @@ public enum ConfigurationParameters {
                          toStopException,
                          Flags.VERSION_4, Flags.GENE_SET),
     StopCodonSearchWindow("stop_codon_search_window", "Number of nucleotides before and after a candidate site to check for a stop codon",
-                          toInteger, Flags.VERSION_4),
+                          toPositiveInteger, Flags.VERSION_4),
     TemporaryDirectory("temporary_directory", "Directory under which Vigor creates temporary files and directories",
                        Flags.VERSION_4, Flags.COMMANDLINE_SET, Flags.PROGRAM_CONFIG_SET, Flags.REQUIRED),
     TinyExon3("tiny_exon3", "Tiny exon 3. Format is regex:[offset]", toTinyExonMap, Flags.VERSION_4, Flags.GENE_SET),

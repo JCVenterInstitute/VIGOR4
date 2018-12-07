@@ -112,9 +112,8 @@ public class ConfigurationParameterFunctions {
                   });
     }
 
-    public static ValueFunction toPositiveInteger() {
-        return toBoundedInteger(0, Integer.MAX_VALUE);
-    }
+    public static ValueFunction toPositiveInteger = toBoundedInteger(0, Integer.MAX_VALUE);
+
 
     public static ValueFunction toLong = of(Long.class, s -> Long.parseLong(s));
     public static ValueFunction toBoundedLong(long min, long max) {
