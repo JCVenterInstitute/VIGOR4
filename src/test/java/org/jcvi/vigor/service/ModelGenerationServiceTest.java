@@ -14,6 +14,7 @@ import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.testing.category.Fast;
 import org.jcvi.vigor.testing.category.Isolated;
 import org.jcvi.vigor.component.*;
+import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.VigorConfiguration;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
@@ -109,6 +110,9 @@ public class ModelGenerationServiceTest {
     public void generateCompatibleFragsChainsTest () throws VigorException {
 
         VigorConfiguration config = initializationService.mergeConfigurations(initializationService.getDefaultConfigurations());
+        config.put(ConfigurationParameters.AAOverlapMaximum, 10);
+        config.put(ConfigurationParameters.NTOverlapMaximum, 30);
+
         List<AlignmentFragment> alignmentFrags = new ArrayList<AlignmentFragment>();
         alignmentFrags.add(new AlignmentFragment(Range.of(0, 100), Range.of(10, 300), Direction.FORWARD, Frame.ONE));
         alignmentFrags.add(new AlignmentFragment(Range.of(60, 120), Range.of(180, 360), Direction.FORWARD, Frame.ONE));
@@ -117,6 +121,16 @@ public class ModelGenerationServiceTest {
         alignmentFrags.add(new AlignmentFragment(Range.of(130, 170), Range.of(330, 500), Direction.FORWARD, Frame.ONE));
         alignmentFrags.add(new AlignmentFragment(Range.of(171, 180), Range.of(650, 670), Direction.FORWARD, Frame.ONE));
         List<List<AlignmentFragment>> outList = modelGenerationService.generateCompatibleFragsChains(alignmentFrags, config);
-        assertEquals(outList.size(), 6);
+        // old code expected 0-100; 0-100, 121-150; 0-100, 130-170; 1-100, 121-150, 171-180; 1-100, 130-170, 171-180; 1-100, 130-170?
+        // new code expects
+        // 0-100,121-150,171-180;
+        // 0-100,130-170,171-180;
+        // 60-120,121-150,171-180;
+        // 65-110,121-150,171-180
+        // 65-110,130-170,171-180
+
+        assertEquals(5, outList.size());
+        // TODO check for uniqueness
+
     }
 }

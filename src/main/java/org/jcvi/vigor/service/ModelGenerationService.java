@@ -1,5 +1,7 @@
 package org.jcvi.vigor.service;
 
+import com.google.common.base.Predicates;
+import com.google.common.collect.Lists;
 import org.jcvi.vigor.component.*;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.*;
@@ -11,9 +13,8 @@ import org.jcvi.jillion.core.residue.Frame;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.function.BiFunction;
 import java.util.stream.Collectors;
-
-import static com.google.common.collect.Lists.newArrayList;
 
 /**
  * Created by snettem on 5/16/2017.
@@ -413,54 +414,64 @@ public class ModelGenerationService {
         return newModels;
     }
 
+
     /**
-     * @param alignmentFragments : alignment fragments that are grouped based on direction
+     * @param fragments : alignment fragments that are grouped based on direction
      * @return List<List<AlignmentFragment>>: compatible(check for overlap) list
      * of alignment fragments and their permutations and combinations are
      * grouped
      */
-    public List<List<AlignmentFragment>> generateCompatibleFragsChains ( List<AlignmentFragment> alignmentFragments, VigorConfiguration configuration) {
+    public List<List<AlignmentFragment>> generateCompatibleFragsChains(List<AlignmentFragment> fragments, VigorConfiguration configuration) {
+        int ntOverlap = configuration.getOrDefault(ConfigurationParameters.NTOverlapMaximum, DEFAULT_NTOVERLAP_OFFSET);
+        int aaOverlap = configuration.getOrDefault(ConfigurationParameters.AAOverlapMaximum, DEFAULT_AAOVERLAP_OFFSET);
 
-        //If alignment fragments overlap, Overlap length should not exceed Offset
-        int NTOverlapOffset = configuration.getOrDefault(ConfigurationParameters.NTOverlapMaximum, DEFAULT_NTOVERLAP_OFFSET);
-        int AAOverlapOffset = configuration.getOrDefault(ConfigurationParameters.AAOverlapMaximum, DEFAULT_AAOVERLAP_OFFSET);
-        List<AlignmentFragment> compatibleFragsList = new ArrayList<AlignmentFragment>();
-        List<AlignmentFragment> clonedCompatibleFragsList;
-        List<List<AlignmentFragment>> listOfCompatibleFrags = new ArrayList<List<AlignmentFragment>>();
-        compatibleFragsList.add(alignmentFragments.get(0).clone());
-        listOfCompatibleFrags.add(compatibleFragsList);
-        List<List<AlignmentFragment>> tempList;
-        if (alignmentFragments.size() > 1) {
-            for (int j = 1; j < alignmentFragments.size(); j++) {
-                boolean temp = true;
-                tempList = new ArrayList<>();
-                for (int k = 0; k < listOfCompatibleFrags.size(); k++) {
-                    List<AlignmentFragment> currentList = listOfCompatibleFrags.get(k);
-                    AlignmentFragment currentFrag = currentList.get(currentList.size() - 1);
-                    long NTEnd = currentFrag.getNucleotideSeqRange().getEnd();
-                    long AAEnd = currentFrag.getProteinSeqRange().getEnd();
-                    long nextNTStart = alignmentFragments.get(j).getNucleotideSeqRange().getBegin();
-                    long nextAAStart = alignmentFragments.get(j).getProteinSeqRange().getBegin();
-                    if (nextNTStart >= NTEnd - NTOverlapOffset && nextAAStart >= AAEnd - AAOverlapOffset) {
-                        currentList.add(alignmentFragments.get(j).clone());
-                    } else if (temp) {
-                        clonedCompatibleFragsList = new ArrayList<>();
-                        for (int i = 0; i < currentList.size() - 1; i++) {
-                            clonedCompatibleFragsList.add(currentList.get(i).clone());
-                        }
-                        clonedCompatibleFragsList.add(alignmentFragments.get(j).clone());
-                        tempList.add(clonedCompatibleFragsList);
-                        if (clonedCompatibleFragsList.size() == 1) {
-                            temp = false;
-                        }
-                    }
-                }
-                if (tempList.size() > 0) {
-                    listOfCompatibleFrags.addAll(tempList);
-                }
+        BiFunction<AlignmentFragment,AlignmentFragment, Boolean> areCompatible = (a, b) ->
+                (! a.equals(b)) &&
+                (a.getNucleotideSeqRange().getEnd() - ntOverlap) < b.getNucleotideSeqRange().getBegin() &&
+                        (a.getProteinSeqRange().getEnd() - aaOverlap) < b.getProteinSeqRange().getBegin();
+
+        List<List<AlignmentFragment>> compatibleFragmentList = new ArrayList<>();
+        for (AlignmentFragment fragment: fragments) {
+            // starting fragments have no compatible fragments downstream
+            if (! fragments.stream()
+                           .filter(Predicates.not(fragment::equals))
+                           .anyMatch(f -> areCompatible.apply(f,fragment))) {
+                compatibleFragmentList.addAll(generateCompatibleFragsList(fragment, fragments, areCompatible));
             }
         }
-        return listOfCompatibleFrags;
+        return compatibleFragmentList;
+    }
+
+    public List<List<AlignmentFragment>> generateCompatibleFragsList(AlignmentFragment currentFragment,
+                                                                     List<AlignmentFragment> fragments,
+                                                                     BiFunction<AlignmentFragment,AlignmentFragment, Boolean> areCompatible) {
+
+
+        List<List<AlignmentFragment>> compatibleFragments = new ArrayList<>();
+
+        for (int i=0;i<fragments.size(); i++) {
+            AlignmentFragment nextFragment = fragments.get(i);
+            if (areCompatible.apply(currentFragment, nextFragment)) {
+                // only add consider this fragment by itself if it's not included in some other chain
+                if (fragments.stream()
+                             .filter(f -> ! (f.equals(currentFragment)|| f.equals(nextFragment)) )
+                             .anyMatch(f -> areCompatible.apply(currentFragment, f) && areCompatible.apply(f,nextFragment))) {
+                    continue;
+                }
+                compatibleFragments.addAll(generateCompatibleFragsList(nextFragment,
+                                                                       fragments.subList(i+1, fragments.size()),
+                                                                       areCompatible));
+            }
+        }
+
+        if (compatibleFragments.isEmpty()) {
+            compatibleFragments.add(new ArrayList<>());
+        }
+
+        for (List<AlignmentFragment> compatibleList: compatibleFragments) {
+            compatibleList.add(0,currentFragment);
+        }
+        return compatibleFragments;
     }
 
     /**
