@@ -1,6 +1,5 @@
 package org.jcvi.vigor.RegressionTest;
 
-import javafx.util.Pair;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.vigor.Application;
@@ -14,7 +13,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -28,6 +26,16 @@ public class GenerateVigor4GeneModels {
 
     private final static Logger LOGGER = LogManager.getLogger(ValidateVigor4ModelsTest.class);
 
+    private class Tuple<K,V> {
+        public final K first;
+        public final V second;
+
+        Tuple(K first, V second) {
+            this.first = first;
+            this.second = second;
+        }
+
+    }
     @Autowired
     Vigor vigor;
 
@@ -38,12 +46,12 @@ public class GenerateVigor4GeneModels {
             config.put(ConfigurationParameters.ReferenceDatabaseFile, refDB);
             String outputDir = config.get(ConfigurationParameters.OutputDirectory);
             String outputPrefix = config.get(ConfigurationParameters.OutputPrefix);
-            Pair<String, Boolean> outputFile = getVigor4OutputFiles(outputDir, outputPrefix);
+            Tuple<String, Boolean> outputFile = getVigor4OutputFiles(outputDir, outputPrefix);
             boolean overwrite = config.getOrDefault(ConfigurationParameters.OverwriteOutputFiles, false);
-            if (!( outputFile.getValue() ) || overwrite) {
+            if (! outputFile.second  || overwrite) {
                 vigor.generateAnnotations(inputFASTA, refDB, config);
             }
-            return modelsFromResults(outputFile.getKey());
+            return modelsFromResults(outputFile.first);
         } catch (IOException e) {
             throw new VigorException("Error generating vigor4 models", e);
         }
@@ -59,10 +67,10 @@ public class GenerateVigor4GeneModels {
         return new GenerateReferenceModels().generateModels(tblFile, inputFasta);
     }
 
-    private Pair<String, Boolean> getVigor4OutputFiles ( String outputDirectory, String outputPrefix ) {
+    private Tuple<String, Boolean> getVigor4OutputFiles ( String outputDirectory, String outputPrefix ) {
 
         String tblFilePath = Paths.get(outputDirectory, outputPrefix + ".tbl").toString();
         Path tblPath = Paths.get(tblFilePath);
-        return new Pair<>(tblFilePath, Files.exists(tblPath));
+        return new Tuple<>(tblFilePath, Files.exists(tblPath));
     }
 }
