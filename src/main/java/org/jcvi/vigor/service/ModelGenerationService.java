@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.*;
 import java.util.function.BiFunction;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -208,18 +209,16 @@ public class ModelGenerationService {
                     }
                 }
 
-                if ((intronRange.getLength() <= minIntronLength && missingAAalignRange.getLength() <= maxAlignMergeAAGap && !VigorFunctionalUtils.intheSequenceGap(sequenceGaps, intronRange))) {
+                if ((intronRange.getLength() <= minIntronLength &&
+                        missingAAalignRange.getLength() <= maxAlignMergeAAGap &&
+                        !VigorFunctionalUtils.intheSequenceGap(sequenceGaps, intronRange))) {
                     Map<Frame, List<Long>> intronStops = VigorFunctionalUtils.findStopsInSequenceFrame(virusGenome, intronRange);
-                    List<Long> upStops = new ArrayList<Long>();
-                    List<Long> downStops = new ArrayList<Long>();
                     Frame upSeqFrame = VigorFunctionalUtils.getSequenceFrame(upFragment.getNucleotideSeqRange().getBegin() + upFragment.getFrame().getFrame() - 1);
-                    if (intronStops.get(upSeqFrame) != null) {
-                        upStops = intronStops.get(upSeqFrame);
-                    }
+                    List<Long> upStops = intronStops.getOrDefault(upSeqFrame,Collections.EMPTY_LIST);
+
                     Frame downSeqFrame = VigorFunctionalUtils.getSequenceFrame(upFragment.getNucleotideSeqRange().getBegin() + upFragment.getFrame().getFrame() - 1);
-                    if (intronStops.get(downSeqFrame) != null) {
-                        downStops = intronStops.get(downSeqFrame);
-                    }
+                    List<Long> downStops = intronStops.getOrDefault(downSeqFrame, Collections.EMPTY_LIST);
+
                     if (stopTransExce.isHasStopTranslationException()) {
                         List<Range> matches = virusGenome.getSequence().findMatches(stopTransExce.getMotif()).distinct().collect(Collectors.toList());
                         int offset = stopTransExce.getOffset();
@@ -235,10 +234,10 @@ public class ModelGenerationService {
 
                     if (upStops.isEmpty() && downStops.isEmpty() && (intronRange.getLength() % 3 == 0)) {
                         if (isPreMerge) {
-                            upFragment = outFragments.get(outFragments.size() - 1);
-                            outFragments.remove(upFragment);
+                            upFragment = outFragments.remove(outFragments.size() - 1);
                             currentFragment = upFragment.getNucleotideSeqRange();
                         }
+                        LOGGER.trace("merging range {} and {} for reference protein match {}", currentFragment, nextFragment, viralProtein.getProteinID());
                         Range adjustedNTrange = Range.of(currentFragment.getBegin(), nextFragment.getEnd());
                         Range adjustedAArange = Range.of(upFragment.getProteinSeqRange().getBegin(), downFragment.getProteinSeqRange().getEnd());
                         AlignmentFragment adjustedFragment = new AlignmentFragment(adjustedAArange, adjustedNTrange, upFragment.getDirection(), upFragment.getFrame());
@@ -262,6 +261,13 @@ public class ModelGenerationService {
         if (outFragments.isEmpty()) {
             outFragments.addAll(fragments);
         }
+        Function<Range,String> rangeToString = range -> String.format("%s-%s",range.getBegin(), range.getEnd());
+        Function<AlignmentFragment, String> fragmentToString = (fragment) -> String.format("%s/%s",
+                                                                                           rangeToString.apply(fragment.getProteinSeqRange()),
+                                                                                           rangeToString.apply(fragment.getNucleotideSeqRange()));
+        LOGGER.debug("For reference {} fragments {} merged to {}", viralProtein.getProteinID(),
+                     fragments.stream().map(fragmentToString).collect(Collectors.joining(",")),
+                     outFragments.stream().map(fragmentToString).collect(Collectors.joining(",")));
         return outFragments;
     }
 
