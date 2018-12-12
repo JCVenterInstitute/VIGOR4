@@ -76,9 +76,8 @@ public class DetermineMissingExonsTest {
                 2 <= model.getExons().size());
         model.getExons().remove(1);
         int maxIntronSize = 2500;
-        int minExonSize = 30;
         int minMissingAASize = 10;
-        List<Exon> missingExons = determineMissingExons.findMissingExons(model, maxIntronSize, minExonSize, minMissingAASize);
+        List<Exon> missingExons = determineMissingExons.findMissingExons(model, maxIntronSize, minMissingAASize);
         assertEquals(1, missingExons.size());
     }
 

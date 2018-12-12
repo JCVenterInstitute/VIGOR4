@@ -424,8 +424,8 @@ public class ModelGenerationService {
     public List<List<AlignmentFragment>> generateCompatibleFragsChains ( List<AlignmentFragment> alignmentFragments, VigorConfiguration configuration) {
 
         //If alignment fragments overlap, Overlap length should not exceed Offset
-        int NTOverlapOffset = configuration.getOrDefault(ConfigurationParameters.NTOverlap_offset, DEFAULT_NTOVERLAP_OFFSET);
-        int AAOverlapOffset = configuration.getOrDefault(ConfigurationParameters.AAOverlap_offset, DEFAULT_AAOVERLAP_OFFSET);
+        int NTOverlapOffset = configuration.getOrDefault(ConfigurationParameters.NTOverlapMaximum, DEFAULT_NTOVERLAP_OFFSET);
+        int AAOverlapOffset = configuration.getOrDefault(ConfigurationParameters.AAOverlapMaximum, DEFAULT_AAOVERLAP_OFFSET);
         List<AlignmentFragment> compatibleFragsList = new ArrayList<AlignmentFragment>();
         List<AlignmentFragment> clonedCompatibleFragsList;
         List<List<AlignmentFragment>> listOfCompatibleFrags = new ArrayList<List<AlignmentFragment>>();

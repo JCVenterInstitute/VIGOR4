@@ -47,7 +47,7 @@ public class VigorInputValidationService {
 		MutuallyExclusiveGroup referenceGroup = parser.addMutuallyExclusiveGroup("reference database");
 		MutuallyExclusiveGroup locusGroup = parser.addMutuallyExclusiveGroup("locus tag usage");
 
-		ArgumentGroup unImplementedGroup = parser.addArgumentGroup("unimplemented");
+		ArgumentGroup unImplementedGroup = parser.addArgumentGroup("Unimplemented/Ignored for backward compatibilty");
 
 		parser.addArgument("-i","--input-fasta")
 			  .action(Arguments.store())
@@ -67,37 +67,18 @@ public class VigorInputValidationService {
 					  .dest(CommandLineParameters.referenceDB)
 					  .action(Arguments.storeConst())
 					  .setConst("any")
-					  .help("auto-select the reference database, equivalent to '-d any ', default behavior unless overridden by -d or -G, (-A is a synonym for this option). This feature is not yet implemented");
-		unImplementedGroup.addArgument("-A")
-					  .dest(CommandLineParameters.referenceDB)
-					  .action(Arguments.storeConst())
-					  .setConst("any")
-					  .help("synonym for -a/--autoselect-reference");
-
+					  .help("auto-select the reference database, equivalent to '-d any ', default behavior unless overridden by -d or -G. This feature is not yet implemented");
 		referenceGroup.addArgument("-d", "--reference-database")
 					  .dest(CommandLineParameters.referenceDB)
 					  .action(Arguments.store())
 					  .metavar("<ref db>")
-					  .help("specify the reference database to be used, (-D is a synonym for this option)");
-		referenceGroup.addArgument("-D")
-					  .dest(CommandLineParameters.referenceDB)
-					  .action(Arguments.store())
-					  .metavar("<ref db>")
-					  .help("synonym for -d/--reference-database");
+					  .help("specify the reference database to be used");
 		unImplementedGroup.addArgument("-G", "--genbank-reference")
 					  .metavar("<genback file>")
 					  .dest(CommandLineParameters.genbankDB)
 					  .action(Arguments.store())
 					  .help("use a genbank file as the reference database, caution: VIGOR genbank parsing is fairly rudimentary and many genbank files are unparseable.  Partial genes will be ignored. Note: genbank files do not record enough information to handle RNA editing. This feature is not yet implemented.");
 
-		// TODO what are acceptable values for this
-		unImplementedGroup.addArgument("-e", "--evalue")
-			  .action(Arguments.store())
-			  .type(Integer.class)
-			  .dest(CommandLineParameters.eValue)
-			  .help("override the default evalue used to identify potential genes, the default is usually 1E-5, but varies by reference database");
-
-		// TODO add validation
 		parser.addArgument("-c", "--min-coverage")
 			  .dest(CommandLineParameters.minCoverage)
 			  .action(Arguments.store())
@@ -105,10 +86,10 @@ public class VigorInputValidationService {
 
 		unImplementedGroup.addArgument("-C", "--complete")
 				   .help("complete (linear) genome (do not treat edges as gaps). This feature is currently unimplemented")
-				   .dest(CommandLineParameters.completeGene)
+				   .dest(CommandLineParameters.completeGenome)
 				   .action(Arguments.storeTrue());
 		unImplementedGroup.addArgument("-0", "--circular")
-				   .dest(CommandLineParameters.circularGene)
+				   .dest(CommandLineParameters.circularGenome)
 				   .help("complete circular genome (allows gene to span origin). This feature is currently unimplemented")
 				   .action(Arguments.storeTrue());
 		unImplementedGroup.addArgument("-f", "--frameshift-sensitivity")
@@ -117,13 +98,6 @@ public class VigorInputValidationService {
 			  .choices("0","1","2")
 			  .setDefault("1")
 			  .help("frameshift sensitivity, 0=ignore frameshifts, 1=normal (default), 2=sensitive. ");
-
-		unImplementedGroup.addArgument("-K", "--skip-candidate-selection")
-			  .choices("0", "1")
-			  .setDefault("1")
-			  .dest(CommandLineParameters.skipSelection)
-			  .metavar("<value>")
-			  .help("value=0 skip candidate selection (default=1)");
 
 		// use storeConst rather than storeTrue to avoid automatically setting a default value
 		locusGroup.addArgument("-l", "--no-locus-tags")
@@ -156,12 +130,6 @@ public class VigorInputValidationService {
 			  .action(Arguments.storeTrue())
 			  .dest(CommandLineParameters.ignoreReferenceRequirements)
 			  .help("ignore reference match requirements (coverage/identity/similarity), sometimes useful when running VIGOR to evaluate raw contigs and rough draft sequences");
-		parser.addArgument("-s","--min-gene-size")
-			  .action(Arguments.store())
-			  .dest(CommandLineParameters.minGeneSize)
-			  .type(Integer.class)
-			  .metavar("<gene size>")
-			  .help("minimum size (aa) of product required to report a gene, by default size is ignored");
 		parser.addArgument("-v","--verbose")
 			  .action(Arguments.count())
 			  .dest(CommandLineParameters.verbose)

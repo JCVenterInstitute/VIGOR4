@@ -31,7 +31,6 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
 
         List<Model> outModels = new ArrayList<Model>();
         VigorConfiguration config = model.getAlignment().getViralProtein().getConfiguration();
-        int minExonSize = config.getOrDefault(ConfigurationParameters.ExonMinimumSize, 30);
         int maxIntronSize = config.getOrDefault(ConfigurationParameters.IntronMaximumSize, 2500);
         int min_missing_AA_size = config.getOrDefault(ConfigurationParameters.MinimumMissingAASize, 10);
         String proteinID = model.getProteinID();
@@ -39,12 +38,8 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
                      {
                          VigorConfiguration.ValueWithSource serviceDefault = VigorConfiguration.ValueWithSource.of("",
                                                                                                                    "service default");
-                         return String.format("Determining missing exons for %s using %s=%s (%s) %s=%s (%s) %s=%s (%s)",
+                         return String.format("Determining missing exons for %s using %s=%s (%s) %s=%s (%s)",
                                        proteinID,
-                                       ConfigurationParameters.ExonMinimumSize.configKey,
-                                       minExonSize,
-                                       config.getWithSource(ConfigurationParameters.ExonMinimumSize)
-                                             .orElse(serviceDefault).source,
                                        ConfigurationParameters.IntronMaximumSize.configKey,
                                        maxIntronSize,
                                        config.getWithSource(ConfigurationParameters.IntronMaximumSize)
@@ -56,7 +51,7 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
 
                      });
         model.getExons().sort(Exon.Comparators.Ascending);
-        model.getExons().addAll(findMissingExons(model, maxIntronSize, minExonSize, min_missing_AA_size));
+        model.getExons().addAll(findMissingExons(model, maxIntronSize, min_missing_AA_size));
         model.getExons().sort(Exon.Comparators.Ascending);
         outModels.add(model);
         return outModels;
@@ -136,7 +131,7 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
      * @param model
      * @return
      */
-    public List<Exon> findMissingExons ( Model model, int maxIntronSize, int minExonSize, int min_missing_AA_size ) {
+    public List<Exon> findMissingExons ( Model model, int maxIntronSize, int min_missing_AA_size ) {
 
         List<Exon> exons = model.getExons();
         List<Exon> missingExons = new ArrayList<>();
@@ -206,7 +201,7 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
                 if (!sequenceGap && missingNTRange.getLength() > min_missing_AA_size * 3) {
                     Optional<Exon> determinedExon = performJillionPairWiseAlignment(missingNTRange,
                                                                                     missingAARange, NTSeq, AASeq, model.getDirection());
-                    if (determinedExon.isPresent() && determinedExon.get().getRange().getLength() >= minExonSize) {
+                    if (determinedExon.isPresent()) {
                         missingExons.add(determinedExon.get());
 
                         // Unset 3' /5' adjusted flags if there is any missing protein alignment up/down stream of the exon

@@ -39,7 +39,7 @@ public class VigorConfigurationTest {
                    equalTo(ConfigurationParameters.OutputPrefix.stringToValue(defaultOutputPrefix)));
 
         assertThat("When no key exists in either configuration null is returned",
-                overrides.get(ConfigurationParameters.ExonMinimumSize), equalTo(null));
+                overrides.get(ConfigurationParameters.IntronMaximumSize), equalTo(null));
 
         String newDefaultOutputPrefix = "new/default/value";
         defaults.putString(ConfigurationParameters.OutputPrefix, newDefaultOutputPrefix);
@@ -62,7 +62,7 @@ public class VigorConfigurationTest {
                         hasItem(ConfigurationParameters.MinimumMissingAASize)
                         ));
 
-        Optional<VigorConfiguration.ValueWithSource> valWithSource = overrides.getWithSource(ConfigurationParameters.ExonMinimumSize);
+        Optional<VigorConfiguration.ValueWithSource> valWithSource = overrides.getWithSource(ConfigurationParameters.IntronMaximumSize);
         assertThat("Keys not set in either override or default are not present", valWithSource.isPresent(), equalTo(false));
         valWithSource = overrides.getWithSource(ConfigurationParameters.OutputPrefix);
         assertThat("Set keys should be reported as present", valWithSource.isPresent(), equalTo(true));

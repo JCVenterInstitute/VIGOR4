@@ -11,7 +11,7 @@ import static org.jcvi.vigor.utils.ConfigurationParameterFunctions.*;
 
 
 public enum ConfigurationParameters {
-    AAOverlap_offset("AAOverlap_offset", "", toInteger, Flags.VERSION_4),
+    AAOverlapMaximum("max_aa_overlap", "Maximum number of proteins that may overlap for alignment fragments to be considered compatible when generating a gene model", toInteger, Flags.VERSION_4),
     AlignmentModule("alignment_module", "Alignment Module", isMemberOfSet("exonerate"),
                     Flags.COMMANDLINE_SET,
                     Flags.PROGRAM_CONFIG_SET,
@@ -20,39 +20,34 @@ public enum ConfigurationParameters {
     AlternateStartCodons("alternate_startcodon", "Alternate start codons for gene. Format is CODON[,CODON,..]",
                          ConfigurationParameterFunctions.toListOfStrings,
                          Flags.VERSION_4, Flags.GENE_SET),
-    CandidateBlastOpts("candidate_blastopts", "Blast options when generating candidate models", Flags.VERSION_3_5)// Version 3.5 parameters
-    ,
+    CandidateBlastOpts("candidate_blastopts", "Blast options when generating candidate models", Flags.VERSION_3_5),
 
     CandidateEvalue("candidate_evalue", "Evalue for identifying potential genes", Flags.VERSION_3),
-    CandidateMinimumSimilarity("min_candidate_pctsimilarity", "", toPercent),
+    CandidateMinimumSimilarity("min_candidate_pctsimilarity", "Minimum percent similarity between the candidate model and the reference protein (for definition of similarity see mature_pep_minsimilarity)", toPercent, Flags.VERSION_3),
 
-    CandidateMinimumSubjectCoverage("min_candidate_sbjcoverage", "", toPercent),
-    CandidateSelection("candidate_selection", "TODO"), // TODO
+    CandidateMinimumSubjectCoverage("min_candidate_sbjcoverage", "Minimum percentage of coverage in the alignment between candidate model and reference protein, based on the longest of the two.", toPercent, Flags.VERSION_3),
+    CandidateSelection("candidate_selection", "", Flags.VERSION_3),
 
-    CircularGene("circular_gene", "Gene is circular", toBoolean, Flags.UNIMPLEMENTED, Flags.VERSION_3, Flags.VERSION_4),
-    CompleteGene("complete_gene", "Gene is complete", toBoolean, Flags.UNIMPLEMENTED, Flags.VERSION_3, Flags.VERSION_4),
+    CircularGene("circular_genome", "When this parameter is set to TRUE, VIGOR consider the genome as circular, enabling annotating genes spanning both ends of the sequence (which would be continuous when circularized).", toBoolean, Flags.UNIMPLEMENTED, Flags.VERSION_3, Flags.VERSION_4),
+    CompleteGene("complete_genome", "When this parameter is set to TRUE, VIGOR assumes that the sequence represents the whole genome and all the genes must be present (unless a gene has the is_optional attribute)", toBoolean, Flags.UNIMPLEMENTED, Flags.VERSION_3, Flags.VERSION_4),
 
-    DBCluser("cluster", "", Flags.GENE_SET, Flags.IGNORE),
+    DBCluster("cluster", "", Flags.GENE_SET, Flags.IGNORE),
 
     DBDB("db", "gene database file backreference used for autoselecting reference database", Flags.GENE_SET, Flags.VERSION_3_5, Flags.METADATA),
 
-    DBGene("gene", "gene name", Flags.GENE_SET, Flags.METADATA),
+    DBGene("gene", "Mandatory identifier for each sequence in the reference database. The value corresponds to the value found in the [gene:Gene_ID] section of the config file (e.g. gene=\"NS1\")", Flags.GENE_SET, Flags.METADATA),
     DBGeneSynonym("gene_synonym", "gene_synonym", "", Flags.GENE_SET, Flags.METADATA),
 
     DBGeneVariation("gene_variation", "?", Flags.GENE_SET, Flags.VERSION_3_5),
     DBLength("length", "length", Flags.VERSION_3_5, Flags.GENE_SET, Flags.METADATA, Flags.IGNORE),
 
     DBOrganism("organism", "organism", Flags.GENE_SET, Flags.IGNORE),
-    DBProduct("product", "product", Flags.GENE_SET, Flags.METADATA)// Common DB defline attributes that can be ignored
-    ,
+    DBProduct("product", "product", Flags.GENE_SET, Flags.METADATA),
 
     DBStopCodonReadThru("stopcodon_readthru", "", Flags.GENE_SET, Flags.VERSION_3_5),
-    ExcludesGene("excludes_gene", "Excludes gene. TODO",
+    ExcludesGene("excludes_gene", "Gene/sequence-level attribute describing the incompatibility of presence of two or more alternate genes (generally used only in large DNA viruses).",
                  ConfigurationParameterFunctions.toListOfStrings,
                  Flags.VERSION_4, Flags.GENE_SET),
-    ExonMaximumSize("max_exon_size", "Maximum sequence length of an exon", toPositiveInteger),
-
-    ExonMinimumSize("min_exon_size", "Minimum sequence length of an exon", toPositiveInteger),
 
     ExoneratePath("exonerate_path", "Path to exonerate tool",
                   Flags.VERSION_4,
@@ -60,36 +55,35 @@ public enum ConfigurationParameters {
                   Flags.PLATFORM_DEPENDENT,
                   Flags.COMMANDLINE_SET,
                   Flags.PROGRAM_CONFIG_SET),
-    FrameShiftSensitivity("frameshift_sensitivity", "How to handle frameshifts", Flags.VERSION_3, Flags.VERSION_4, Flags.UNIMPLEMENTED), // TODO
+    FrameShiftSensitivity("frameshift_sensitivity", "Dictates the sensitivity VIGOR should use in handling frame-shifts. Accepted values: 0, 1, 2, with 2 being the strictest, forcing VIGOR to create pseudogenes and raising error messages whenever a perfect model for a given gene cannot be created (this is used most for validating assemblies).", Flags.VERSION_3, Flags.VERSION_4, Flags.UNIMPLEMENTED),
     GeneMinimumCoverage("min_gene_coverage", "Minimum coverage of genes",  toPercent, Flags.VERSION_3, Flags.VERSION_4), // TODO elaborate
 
-    GeneMinimumSize("min_gene_size", "Minimum sequence length to be considered as a gene", toPositiveInteger, Flags.VERSION_3, Flags.VERSION_4),
-    GeneOptional("is_optional", "Gene is optional for valid model", ConfigurationParameterFunctions.isPresentOrBoolean, Flags.GENE_SET),
-    GeneRequired("is_required", "Gene is required for valid model", ConfigurationParameterFunctions.isPresentOrBoolean, Flags.GENE_SET),
+    GeneOptional("is_optional", "This parameter works in combination with complete_genome and frameshift_sensitivity: if it is set to TRUE, the absence of that particular gene for which is set suppresses the stricter behavior set by the use of the other parameters.", ConfigurationParameterFunctions.isPresentOrBoolean, Flags.GENE_SET),
+    GeneRequired("is_required", "By setting this parameter to TRUE, VIGOR will produce an error message in the case it cannot create a valid gene model for that given gene.", ConfigurationParameterFunctions.isPresentOrBoolean, Flags.GENE_SET),
 
     IntronMaximumSize("max_intron_size", "Maximum sequence length of an intron", toPositiveInteger, Flags.VERSION_3, Flags.VERSION_4),
     IntronMinimumSize("min_intron_size", "Minimum sequence length of an intron", toPositiveInteger, Flags.VERSION_3, Flags.VERSION_4),
 
     JCVIRules("jcvi_rules", "", toBoolean),
-    Locustag("locus_tag", "Locus tag prefix to use in output", Flags.VERSION_3, Flags.VERSION_4),
-    MaturePeptideDB("matpepdb", "Mature peptide database to use for gene", Flags.VERSION_4, Flags.GENE_SET),
-    MaturePeptideMinimumCoverage("mature_pep_mincoverage", "", ConfigurationParameterFunctions.toPercent,
+    Locustag("locus_tag", "Prefix to be used for the locus_tag attribute in the feature table (.tbl) and in the GFF 3 outputs", Flags.VERSION_3, Flags.VERSION_4, Flags.COMMANDLINE_SET),
+    MaturePeptideDB("matpepdb", "Location and name of the mature peptides reference database (e.g. matpepdb=<vigordata>/flua_ha_mp)", Flags.VERSION_4, Flags.GENE_SET),
+    MaturePeptideMinimumCoverage("mature_pep_mincoverage", "Minimum percent coverage of the sequence of the reference mature peptide to consider the prediction valid.", ConfigurationParameterFunctions.toPercent,
                                  Flags.VERSION_3, Flags.VERSION_4),
-    MaturePeptideMinimumIdentity("mature_pep_minidentity", "",
+    MaturePeptideMinimumIdentity("mature_pep_minidentity", "Minimum percent identity between the sequence of the reference mature peptide and the sequence of the candidate mature peptide.",
                                  toPercent,
                                  Flags.VERSION_3, Flags.VERSION_4),
-    MaturePeptideMinimumSimilarity("mature_pep_minsimilarity", "",
+    MaturePeptideMinimumSimilarity("mature_pep_minsimilarity", "Minimum percent similarity between the sequence of the reference mature peptide and the sequence of the candidate mature peptide. Note: similarity is calculated using compatibility values found in Blosum40 distance matrix",
                                    toPercent,
                                    Flags.VERSION_3, Flags.VERSION_4),
 
-    MaxAlignMergeAAGap("max_align_merge_aa_gap", "", toPositiveInteger, Flags.VERSION_4),
+    MaxAlignMergeAAGap("max_align_merge_aa_gap", "Maximum number of proteins in a gap between two alignments to consider them for merging.", toPositiveInteger, Flags.VERSION_4),
     MaxGeneOverlap("max_gene_overlap", " In reporting gene models, maximum overlap of genes allowed.", toPositiveInteger, Flags.VERSION_4),
-    MinFunctionalLength("min_functional_len" , "Minimum functional length", toPositiveInteger, Flags.VERSION_4, Flags.GENE_SET),
-    MinimumMissingAASize("min_missing_AA_size", "TODO", toPositiveInteger), // TODO
+    MinFunctionalLength("min_functional_len" , "Minimum functional length for a protein (expressed in aa) to be functional: if a premature stop codon makes it shorter than that, it should be annotated as pseudogene.", toPositiveInteger, Flags.VERSION_4, Flags.GENE_SET),
+    MinimumMissingAASize("min_missing_AA_size", "Minimum number of proteins missing in a given alignment to search for missing exons.", toPositiveInteger),
 
-    NTOverlap_offset("NTOverlap_offset", "", toInteger, Flags.VERSION_4),
-    NonCanonicalSplicing("nancanonical_splicing", "Alternate splice sites", Flags.VERSION_4, Flags.VIRUS_SET, Flags.GENE_SET),
-    Note("note","Notes associated with a gene or virus", toListOfStrings, Flags.VIRUS_SET, Flags.GENE_SET),
+    NTOverlapMaximum("max_nt_overlap", "Maximum number of nucleotides that may overlap for alignment fragments to be considered compatible when generating a gene model", toInteger, Flags.VERSION_4),
+    NonCanonicalSplicing("noncanonical_splicing", "List of alternative splicing donor and acceptor sequence pairs. Format: noncanonical_splicing=donor+acceptor,donor+acceptor,... (e.g. noncanonical_splicing=AA+GT)", Flags.VERSION_4, Flags.VIRUS_SET, Flags.GENE_SET),
+    Note("note","Information associated to a gene or protein variant (to be reported in the .tbl and GFF 3 outputs).", toListOfStrings, Flags.VIRUS_SET, Flags.GENE_SET),
     OutputDirectory("output_directory", "Write output to this directory", Flags.VERSION_3, Flags.VERSION_4,
                     Flags.COMMANDLINE_SET, Flags.REQUIRED),
     OutputPrefix("output_prefix", "Use this prefix output files", Flags.VERSION_3, Flags.VERSION_4, Flags.COMMANDLINE_SET, Flags.REQUIRED),
@@ -99,13 +93,13 @@ public enum ConfigurationParameters {
                          Flags.VERSION_4,
                          Flags.COMMANDLINE_SET,
                          Flags.PROGRAM_CONFIG_SET),
-    PseudoGeneMinimumCoverage("min_pseudogene_coverage", "", toPercent),
+    PseudoGeneMinimumCoverage("min_pseudogene_coverage", "Minimum percentage of coverage in the alignment between candidate pseudogene and reference protein, based on the longest of the two.", toPercent, Flags.UNIMPLEMENTED),
 
-    PseudoGeneMinimumIdentity("min_pseudogene_identity", "", toPercent),
+    PseudoGeneMinimumIdentity("min_pseudogene_identity", "Minimum percentage of identity in the alignment between candidate pseudogene and reference protein, based on the longest of the two.", toPercent, Flags.UNIMPLEMENTED),
 
-    PseudoGeneMinimumSimilarity("min_pseudogene_similarity", "", toPercent),
+    PseudoGeneMinimumSimilarity("min_pseudogene_similarity", "Minimum percentage of similarity in the alignment between candidate pseudogene and reference protein, based on the longest of the two.", toPercent, Flags.UNIMPLEMENTED),
 
-    RNAEditing("rna_editing", "V4_rna_editing", "RNA editing. Format is offset/regex/insertion string/note",
+    RNAEditing("rna_editing", "RNA editing. Format is rna_editing=offset/regex/insertion string/note (e.g. rna_editing=0/GGGG/[ARWMDHVN][ARWMDHVN][ARWMDHVN][ARWMDHVN][GRSKBDVN][GRSKBDVN][GRSKBDVN]/four non-templated G's inserted during transcription)",
                ConfigurationParameterFunctions.of(RNA_Editing.class, RNA_Editing::parseFromString),
                Flags.VERSION_4, Flags.GENE_SET),
     ReferenceDatabaseFile("reference_database_file", "full path the reference database file",
@@ -114,29 +108,29 @@ public enum ConfigurationParameters {
                           Flags.VERSION_4, Flags.REQUIRED, Flags.COMMANDLINE_SET, Flags.PROGRAM_CONFIG_SET),
 
     RelaxAlignMergeAAGap("relax_align_merge_aa_gap", "", toPositiveInteger, Flags.VERSION_4),
-    RibosomalSlippage("ribosomal_slippage", "V4_Ribosomal_Slippage", "Ribosomal slippage. Format is offset/frameshift/regex",
+    RibosomalSlippage("ribosomal_slippage",  "Ribosomal slippage. Format is ribosomal_slippage=offset/frameshift/regex (e.g. ribosomal_slippage=-7/+1/[BDHKNTWY][BCHMNSVY][BCHMNSVY][BDHKNTWY][BDHKNTWY][BDHKNTWY][BCHMNSVY][BDGKNRSV][BCDHKMNSTVWY][BCHMNSVY])",
                       ConfigurationParameterFunctions.of(Ribosomal_Slippage.class, Ribosomal_Slippage::parseFromString),
                       Flags.VERSION_4, Flags.GENE_SET),
-    ScoreFactorAlignment("alignment_score_factor", "weight of alignment score in evaluating alignment", toDouble, Flags.VERSION_4),
-    ScoreFactorLeakyStop("leakystop_score_factor", "", toDouble, Flags.VERSION_4),
-    ScoreFactorLeakyStopNotFound("leakystop_notFound_score", "", toDouble, Flags.VERSION_4),
-    ScoreFactorSplicing("splicing_score_factor", "", toDouble, Flags.VERSION_4),
-    ScoreFactorStart("start_score_factor", "", toDouble, Flags.VERSION_4),
-    ScoreFactorStop("stop_score_factor", "", toDouble, Flags.VERSION_4),
-    SequenceGapMinimumLength("min_seq_gap_length", "Minimum length of a sequence gap to ....", toPositiveInteger, Flags.VERSION_4), // TODO
+    ScoreFactorAlignment("alignment_score_factor", "Weight of alignment score in evaluating alignment", toDouble, Flags.VERSION_4),
+    ScoreFactorLeakyStop("leakystop_score_factor", "Weight for scoring leaky stops for gene model selection.", toDouble, Flags.VERSION_4),
+    ScoreFactorLeakyStopNotFound("leakystop_notFound_score", "Weight to be assigned to the gene model candidates scoring when an expected leaky stop codon is not found (note: in some viruses the leaky stop codon is not always present).", toDouble, Flags.VERSION_4),
+    ScoreFactorSplicing("splicing_score_factor", "Weight to apply on splice sites (e.g. canonical v.s. non-canonical, how far from expected location, etc.) in the scoring of gene models.", toDouble, Flags.VERSION_4),
+    ScoreFactorStart("start_score_factor", "Weight to apply on start codons (e.g. canonical v.s. non-canonical, how far from expected location, etc.) in the scoring of gene models.", toDouble, Flags.VERSION_4),
+    ScoreFactorStop("stop_score_factor", "Weight to apply on stop codons (e.g. how far from expected location, etc.) in the scoring of gene models.", toDouble, Flags.VERSION_4),
+    SequenceGapMinimumLength("min_seq_gap_length", "Minimum number of undefined nucleotides (i.e. Ns) to consider it a sequencing gap.", toPositiveInteger, Flags.VERSION_4),
 
-    SharedCDS("shared_cds", "Shared CDS. Format is CDS[,CDS]",
+    SharedCDS("shared_cds", "List of other genes (gene symbols) sharing the same region of the viral genome. Format: shared_cds=Gene1_ID,Gene_2ID (e.g. shared_cds=NSP1-2; shared_cds=NSP1-1,NSP1-3)",
               ConfigurationParameterFunctions.toListOfStrings,
               Flags.VERSION_4, Flags.GENE_SET),
     SlippageFrameShift("slippage_frameshift", "Frame shift for ribosomal slippage", Flags.VERSION_3_5),
     SlippageMotif("slippage_motif", "Motif for ribosomal slippage", Flags.VERSION_3_5),
     SlippageOffset("slippage_offset", "Offset from motif for ribosomal slippage", Flags.VERSION_3_5),
-    SpliceForm("splice_form", "Splice form. Format is ([ie]\\\\d+)+", toSpliceForms, Flags.GENE_SET, Flags.VIRUS_SET),
+    SpliceForm("splice_form", "Describes the expected gene structure with actual lengths of exons and introns of the reference protein aligned back to its originating genome (or the closest possible genome, if the original one is not available). Format: e\\d+(i-?\\d+e\\d+)* The string always starts and ends with exons. (e.g. splice_form=\"e26i686e268\"; splice_form=\"e1656\") Note: given that this parameter is specific for each single isoform, it is allowed only on the sequence header.", toSpliceForms, Flags.GENE_SET, Flags.VIRUS_SET),
 
     StartCodonSearchWindow("start_codon_search_window", "Number of nucleotides before and after a candidate site to check for a start codon",
                            toInteger, Flags.VERSION_4),
-    StartCodons("StartCodons", "Comma separated list of expected start codons", toListOfStrings),
-    StopCodonReadthrough("stop_codon_readthrough", "V4_stop_codon_readthrough", "format is amino acid/offset/regex",
+    StartCodons("start_codons", "Comma separated list of expected start codons", toListOfStrings),
+    StopCodonReadthrough("stop_codon_readthrough",  "Format is amino acid/offset/regex (e.g.stop_codon_readthrough=-11/R/[NATC][NATC][NT][NG][NA][NC][NTG][NAG][NATG][NATCG][NTC][NAG][NAG])",
                          toStopException,
                          Flags.VERSION_4, Flags.GENE_SET),
     StopCodonSearchWindow("stop_codon_search_window", "Number of nucleotides before and after a candidate site to check for a stop codon",

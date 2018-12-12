@@ -46,11 +46,11 @@ public class VigorInitializationService {
 
             boolean isComplete = false;
             boolean isCircular = false;
-            Boolean complete_gene = inputs.getBoolean(CommandLineParameters.completeGene);
+            Boolean complete_gene = inputs.getBoolean(CommandLineParameters.completeGenome);
             if (complete_gene != null && complete_gene) {
                 isComplete = true;
             }
-            Boolean circular_gene = inputs.getBoolean(CommandLineParameters.circularGene);
+            Boolean circular_gene = inputs.getBoolean(CommandLineParameters.circularGenome);
             if (circular_gene != null && circular_gene) {
                 isComplete = true;
                 isCircular = true;
@@ -263,11 +263,6 @@ public class VigorInitializationService {
 										inputs.getBoolean(CommandLineParameters.overwriteOutputFiles) ? "true" : "false");
 		}
 
-		Integer min_gene_size = inputs.getInt(CommandLineParameters.minGeneSize);
-		if (min_gene_size != null) {
-			commandLineConfig.putString(ConfigurationParameters.GeneMinimumSize, min_gene_size.toString());
-		}
-
 		String min_gene_coverage = inputs.getString(CommandLineParameters.minCoverage);
 		if (min_gene_coverage != null ) {
 			commandLineConfig.putString(ConfigurationParameters.GeneMinimumCoverage, min_gene_coverage);
@@ -275,10 +270,6 @@ public class VigorInitializationService {
 		String frameshift_sensitivity = inputs.getString(CommandLineParameters.frameshiftSensitivity);
 		if (frameshift_sensitivity != null ) {
 			commandLineConfig.putString(ConfigurationParameters.FrameShiftSensitivity, frameshift_sensitivity);
-		}
-		String candidate_selection = inputs.getString(CommandLineParameters.skipSelection);
-		if (candidate_selection != null ) {
-			commandLineConfig.putString(ConfigurationParameters.CandidateSelection, candidate_selection);
 		}
 
 		String locus_tag = inputs.getString(CommandLineParameters.locusTag);
@@ -289,11 +280,6 @@ public class VigorInitializationService {
 		Boolean ignore_reference_requirements = inputs.getBoolean(CommandLineParameters.ignoreReferenceRequirements);
 		if (ignore_reference_requirements != null && ignore_reference_requirements) {
 			LOGGER.debug("Ignoring legacy parameter ignore reference requirement");
-		}
-
-		String evalue = inputs.getString(CommandLineParameters.eValue);
-		if (evalue != null) {
-			LOGGER.debug("Ignoring legacy parameter evalue");
 		}
 
 		Boolean jcvi_rules = inputs.getBoolean(CommandLineParameters.jcviRules);

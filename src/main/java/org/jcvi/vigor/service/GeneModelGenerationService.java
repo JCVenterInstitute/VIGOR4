@@ -222,12 +222,11 @@ public class GeneModelGenerationService {
      */
     private List<Model> filterModelsWithStructuralSpecifications(List<Model> models, VigorConfiguration config) {
 
-        int min_gene_size = config.getOrDefault(ConfigurationParameters.GeneMinimumSize, 0);
         int min_coverage = config.getOrDefault(ConfigurationParameters.GeneMinimumCoverage, 0);
 
         return models.stream()
                      .filter(
-                             m -> m.getTranslatedSeq().getLength() >= Math.max(getMinFunctionalLength.apply(m), min_gene_size) &&
+                             m -> m.getTranslatedSeq().getLength() >= getMinFunctionalLength.apply(m) &&
                                      m.getScores().get(Scores.COVERAGE_SCORE) >= min_coverage
                      )
                      .collect(Collectors.toList());
