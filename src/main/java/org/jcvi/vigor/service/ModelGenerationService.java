@@ -1,7 +1,6 @@
 package org.jcvi.vigor.service;
 
 import com.google.common.base.Predicates;
-import com.google.common.collect.Lists;
 import org.jcvi.vigor.component.*;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.*;
@@ -26,8 +25,15 @@ public class ModelGenerationService {
     private static final Logger LOGGER = LogManager.getLogger(ModelGenerationService.class);
     private static final int DEFAULT_MAX_ALIGN_MERGE_AA_GAP = 10;
     private static final int DEFAULT_RELAX_MERGE_AA_GAP = 300;
-    private static final int DEFAULT_NTOVERLAP_OFFSET = 30;
-    private static final int DEFAULT_AAOVERLAP_OFFSET = 10;
+    private static final int DEFAULT_NTOVERLAP_MAX = 30;
+    private static final int DEFAULT_AAOVERLAP_MAX = 10;
+    private static Function<Range,String> rangeToString = range -> String.format("%s-%s",range.getBegin(), range.getEnd());
+    private static Function<AlignmentFragment, String> fragmentToString = (fragment) -> String.format("%s/%s",
+                                                                                       rangeToString.apply(fragment.getProteinSeqRange()),
+                                                                                       rangeToString.apply(fragment.getNucleotideSeqRange()));
+    private static Function<List<AlignmentFragment>, String> fragmentsToString = (listOfFragments) -> listOfFragments.stream()
+                                                                                                                     .map(fragmentToString)
+                                                                                                                     .collect(Collectors.joining(","));
 
     public List<Model> generateModels ( List<Alignment> alignments, VigorConfiguration configuration ) throws ServiceException {
 
@@ -130,18 +136,29 @@ public class ModelGenerationService {
         Map<Direction, List<AlignmentFragment>> alignmentFragsGroupedList = alignment.getAlignmentFragments().stream()
                 .collect(Collectors.groupingBy(w -> w.getDirection()));
 
+        List<AlignmentFragment> mergedFragments;
         List<Model> models = new ArrayList<Model>();
         for (Direction direction: alignmentFragsGroupedList.keySet()) {
             List<AlignmentFragment> fragments = alignmentFragsGroupedList.get(direction);
             for (List<AlignmentFragment> compatibleFragsList: generateCompatibleFragsChains(fragments, configuration)) {
                 int size = 0;
                 for (int i = 0; i < 2; i++) {
-                    if (i == 0)
-                        compatibleFragsList = mergeAlignmentFragments(compatibleFragsList, alignment.getVirusGenome(), minIntronLength, maxAlignMergeAAGap, alignment.getViralProtein());
-                    if (i == 1) {
-                        compatibleFragsList = mergeAlignmentFragments(compatibleFragsList, alignment.getVirusGenome(), relaxIntronLength, relaxMergeAAGap, alignment.getViralProtein());
+                    if (i == 0) {
+                        mergedFragments = mergeAlignmentFragments(compatibleFragsList, alignment.getVirusGenome(), minIntronLength, maxAlignMergeAAGap, alignment.getViralProtein());
+                        LOGGER.trace("Using minIntronLength {} maxAAGap {} Fragments: {} merged to {}", minIntronLength, maxAlignMergeAAGap,
+                                     fragmentsToString.apply(compatibleFragsList),
+                                     fragmentsToString.apply(mergedFragments));
+                        compatibleFragsList = mergedFragments;
+                    } else if (i == 1) {
+                        mergedFragments = mergeAlignmentFragments(compatibleFragsList, alignment.getVirusGenome(), relaxIntronLength, relaxMergeAAGap, alignment.getViralProtein());
+                        LOGGER.trace("Using minIntronLength {} maxAAGap {} Fragments: {} merged to {}", minIntronLength, maxAlignMergeAAGap,
+                                     fragmentsToString.apply(compatibleFragsList),
+                                     fragmentsToString.apply(mergedFragments));
+                        compatibleFragsList = mergedFragments;
                     }
                     if (size != compatibleFragsList.size()) {
+                        LOGGER.debug("adding new model for {} from fragments {}", alignment.getViralProtein().getProteinID(),
+                                     fragmentsToString.apply(compatibleFragsList));
                         size = compatibleFragsList.size();
                         Model model = new Model();
                         alignment.setAlignmentFragments(compatibleFragsList);
@@ -261,10 +278,6 @@ public class ModelGenerationService {
         if (outFragments.isEmpty()) {
             outFragments.addAll(fragments);
         }
-        Function<Range,String> rangeToString = range -> String.format("%s-%s",range.getBegin(), range.getEnd());
-        Function<AlignmentFragment, String> fragmentToString = (fragment) -> String.format("%s/%s",
-                                                                                           rangeToString.apply(fragment.getProteinSeqRange()),
-                                                                                           rangeToString.apply(fragment.getNucleotideSeqRange()));
         LOGGER.debug("For reference {} fragments {} merged to {}", viralProtein.getProteinID(),
                      fragments.stream().map(fragmentToString).collect(Collectors.joining(",")),
                      outFragments.stream().map(fragmentToString).collect(Collectors.joining(",")));
@@ -428,8 +441,8 @@ public class ModelGenerationService {
      * grouped
      */
     public List<List<AlignmentFragment>> generateCompatibleFragsChains(List<AlignmentFragment> fragments, VigorConfiguration configuration) {
-        int ntOverlap = configuration.getOrDefault(ConfigurationParameters.NTOverlapMaximum, DEFAULT_NTOVERLAP_OFFSET);
-        int aaOverlap = configuration.getOrDefault(ConfigurationParameters.AAOverlapMaximum, DEFAULT_AAOVERLAP_OFFSET);
+        int ntOverlap = configuration.getOrDefault(ConfigurationParameters.NTOverlapMaximum, DEFAULT_NTOVERLAP_MAX);
+        int aaOverlap = configuration.getOrDefault(ConfigurationParameters.AAOverlapMaximum, DEFAULT_AAOVERLAP_MAX);
 
         BiFunction<AlignmentFragment,AlignmentFragment, Boolean> areCompatible = (a, b) ->
                 (! a.equals(b)) &&
