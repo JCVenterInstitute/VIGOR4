@@ -127,7 +127,7 @@ public class ModelGenerationService {
         // TODO rely on viral protein having configuration
         VigorConfiguration configuration = alignment.getViralProtein().getConfiguration();
         configuration = configuration != null ? configuration : defaultConfiguration;
-
+        String proteinID = alignment.getViralProtein().getProteinID();
         int maxAlignMergeAAGap = configuration.getOrDefault(ConfigurationParameters.MaxAlignMergeAAGap, DEFAULT_MAX_ALIGN_MERGE_AA_GAP);
         int minIntronLength = maxAlignMergeAAGap * 3;
         int relaxMergeAAGap = configuration.getOrDefault(ConfigurationParameters.RelaxAlignMergeAAGap, DEFAULT_RELAX_MERGE_AA_GAP);
@@ -145,19 +145,25 @@ public class ModelGenerationService {
                 for (int i = 0; i < 2; i++) {
                     if (i == 0) {
                         mergedFragments = mergeAlignmentFragments(compatibleFragsList, alignment.getVirusGenome(), minIntronLength, maxAlignMergeAAGap, alignment.getViralProtein());
-                        LOGGER.trace("Using minIntronLength {} maxAAGap {} Fragments: {} merged to {}", minIntronLength, maxAlignMergeAAGap,
-                                     fragmentsToString.apply(compatibleFragsList),
-                                     fragmentsToString.apply(mergedFragments));
+                        if (mergedFragments.size() != compatibleFragsList.size()) {
+                            LOGGER.trace("For reference {} used minIntronLength {} maxAAGap {} Fragments: {} merged to {}",
+                                         proteinID, minIntronLength, maxAlignMergeAAGap,
+                                         fragmentsToString.apply(compatibleFragsList),
+                                         fragmentsToString.apply(mergedFragments));
+                        }
                         compatibleFragsList = mergedFragments;
                     } else if (i == 1) {
                         mergedFragments = mergeAlignmentFragments(compatibleFragsList, alignment.getVirusGenome(), relaxIntronLength, relaxMergeAAGap, alignment.getViralProtein());
-                        LOGGER.trace("Using minIntronLength {} maxAAGap {} Fragments: {} merged to {}", minIntronLength, maxAlignMergeAAGap,
-                                     fragmentsToString.apply(compatibleFragsList),
-                                     fragmentsToString.apply(mergedFragments));
+                        if (mergedFragments.size() != compatibleFragsList.size()) {
+                            LOGGER.trace("For reference {} used minIntronLength {} maxAAGap {} Fragments: {} merged to {}",
+                                         proteinID, relaxIntronLength, relaxMergeAAGap,
+                                         fragmentsToString.apply(compatibleFragsList),
+                                         fragmentsToString.apply(mergedFragments));
+                        }
                         compatibleFragsList = mergedFragments;
                     }
                     if (size != compatibleFragsList.size()) {
-                        LOGGER.debug("adding new model for {} from fragments {}", alignment.getViralProtein().getProteinID(),
+                        LOGGER.debug("adding new model for {} from fragments {}", proteinID,
                                      fragmentsToString.apply(compatibleFragsList));
                         size = compatibleFragsList.size();
                         Model model = new Model();
@@ -229,6 +235,7 @@ public class ModelGenerationService {
                 if ((intronRange.getLength() <= minIntronLength &&
                         missingAAalignRange.getLength() <= maxAlignMergeAAGap &&
                         !VigorFunctionalUtils.intheSequenceGap(sequenceGaps, intronRange))) {
+                    // TODO this should consider the stop_codon_window when checking for stops
                     Map<Frame, List<Long>> intronStops = VigorFunctionalUtils.findStopsInSequenceFrame(virusGenome, intronRange);
                     Frame upSeqFrame = VigorFunctionalUtils.getSequenceFrame(upFragment.getNucleotideSeqRange().getBegin() + upFragment.getFrame().getFrame() - 1);
                     List<Long> upStops = intronStops.getOrDefault(upSeqFrame,Collections.EMPTY_LIST);
@@ -249,6 +256,7 @@ public class ModelGenerationService {
                         }
                     }
 
+                    // no stops found and next fragment is in frame
                     if (upStops.isEmpty() && downStops.isEmpty() && (intronRange.getLength() % 3 == 0)) {
                         if (isPreMerge) {
                             upFragment = outFragments.remove(outFragments.size() - 1);
@@ -278,9 +286,11 @@ public class ModelGenerationService {
         if (outFragments.isEmpty()) {
             outFragments.addAll(fragments);
         }
-        LOGGER.debug("For reference {} fragments {} merged to {}", viralProtein.getProteinID(),
-                     fragments.stream().map(fragmentToString).collect(Collectors.joining(",")),
-                     outFragments.stream().map(fragmentToString).collect(Collectors.joining(",")));
+        if (fragments.size() != outFragments.size()) {
+            LOGGER.debug("For reference {} fragments {} merged to {}", viralProtein.getProteinID(),
+                         fragmentsToString.apply(fragments),
+                         fragmentsToString.apply(outFragments));
+        }
         return outFragments;
     }
 
