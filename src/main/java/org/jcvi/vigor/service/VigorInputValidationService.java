@@ -179,7 +179,7 @@ public class VigorInputValidationService {
 			  .setDefault("current")
 			  .setConst("current")
 			  .nargs("?")
-			  .help("list available configuration parameters and exit");
+			  .help("list available configuration parameters and exit. By default only lists description, use the verbose option before this option to list more information");
 
 		parser.addArgument("--version")
 			  .action(new PrintVersion())
@@ -297,7 +297,6 @@ public class VigorInputValidationService {
 				}
 			};
 
-
 			String selectionString = String.valueOf(o);
 			EnumSet<ConfigurationParameters.Flags> settableFlags = EnumSet.of(ConfigurationParameters.Flags.GENE_SET,
 																			  ConfigurationParameters.Flags.VIRUS_SET,
@@ -310,7 +309,7 @@ public class VigorInputValidationService {
 								  ! p.hasOneOrMoreFlags(ConfigurationParameters.Flags.IGNORE,
 														ConfigurationParameters.Flags.METADATA)));
 			boolean[] parametersToList = selectionString.equals("all") ? new boolean[] {true, false} : new boolean[] {true};
-
+			boolean verbose = (int) map.getOrDefault(CommandLineParameters.verbose,0) > 0;
 			for (boolean currentParameters: parametersToList) {
 
 				if (currentParameters) {
@@ -323,11 +322,11 @@ public class VigorInputValidationService {
 					boolean printedSomething = false;
 					System.out.println(param.configKey);
 					System.out.println();
-					if (!param.configKey.equals(param.deflineConfigKey)) {
+					if (!param.configKey.equals(param.deflineConfigKey) && verbose) {
 						printedSomething = true;
 						System.out.println(String.format("\t%-30s %s", "Database attribute:", param.deflineConfigKey));
 					}
-					if (currentParameters) {
+					if (currentParameters && verbose) {
 						printedSomething = true;
 						System.out.println(String.format("\t%-30s VIGOR_%s", "Environment variable:", param.configKey.toUpperCase()));
 						System.out.println(String.format("\t%-30s vigor.%s", "System.property:", param.configKey));
@@ -339,8 +338,14 @@ public class VigorInputValidationService {
 																										   .collect(Collectors.toList()))));
 					}
 					if (!(param.description == null || param.description.isEmpty())) {
+						if (printedSomething || verbose) {
+							System.out.println(String.format("\t%-30s %s", "Description:", param.description));
+						} else {
+							System.out.print("\t");
+							System.out.println(param.description);
+						}
 						printedSomething = true;
-						System.out.println(String.format("\t%-30s %s", "Description:", param.description));
+
 					}
 					if (printedSomething) {
 						System.out.println();
