@@ -76,8 +76,8 @@ public class CheckCoverage implements EvaluateModel {
         long maxSeqLength = Long.max(querySeq.getLength(), subSeq.getLength());
         double percentSimilarity = SequenceUtils.computePercentSimilarity(actual.getGappedQueryAlignment(), actual.getGappedSubjectAlignment(), maxSeqLength, blosom62);
         double maxAlignmentLength = Long.max(actual.getQueryRange().getLength(), actual.getSubjectRange().getLength());
-        double percentCoverage = ( maxAlignmentLength / maxSeqLength ) * 100;
-        if (percentCoverage > 100) percentCoverage = 100;
+        double percentCoverage = Double.min( (maxAlignmentLength / maxSeqLength ) * 100, 100d);
+
         scores.put(Scores.IDENTITY_SCORE, percentIdentity);
         scores.put(Scores.SIMILARITY_SCORE, percentSimilarity);
         scores.put(Scores.COVERAGE_SCORE, percentCoverage);

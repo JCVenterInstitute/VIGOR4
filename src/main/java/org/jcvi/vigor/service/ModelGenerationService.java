@@ -94,14 +94,10 @@ public class ModelGenerationService {
         if (( !initialModels.isEmpty() ) && initialModels.get(0).getAlignment().getVirusGenome().getSequenceGaps() != null) {
             sequenceGaps = initialModels.get(0).getAlignment().getVirusGenome().getSequenceGaps();
         }
-        List<Range> validSequenceGaps = new ArrayList<Range>();
         int minGapLength = configuration.getOrDefault(ConfigurationParameters.SequenceGapMinimumLength, 0);
-        for (Range gapRange : sequenceGaps) {
-            if (gapRange.getLength() >= minGapLength) {
-                validSequenceGaps.add(gapRange);
-            }
-        }
-
+        List<Range> validSequenceGaps = sequenceGaps.stream()
+                                                    .filter(g -> g.getLength() >= minGapLength)
+                                                    .collect(Collectors.toList());
         // split models at sequence gaps
         for (Model model : initialModels) {
             try {
