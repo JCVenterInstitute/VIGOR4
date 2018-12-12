@@ -74,7 +74,7 @@ public class VigorInputValidationService {
 					  .metavar("<ref db>")
 					  .help("specify the reference database to be used");
 		unImplementedGroup.addArgument("-G", "--genbank-reference")
-					  .metavar("<genback file>")
+					  .metavar("<genbank file>")
 					  .dest(CommandLineParameters.genbankDB)
 					  .action(Arguments.store())
 					  .help("use a genbank file as the reference database, caution: VIGOR genbank parsing is fairly rudimentary and many genbank files are unparseable.  Partial genes will be ignored. Note: genbank files do not record enough information to handle RNA editing. This feature is not yet implemented.");
