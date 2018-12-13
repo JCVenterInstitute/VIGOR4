@@ -148,7 +148,7 @@ public class ModelGenerationService {
                     if (i == 0) {
                         mergedFragments = mergeAlignmentFragments(compatibleFragsList, alignment.getVirusGenome(), minIntronLength, maxAlignMergeAAGap, alignment.getViralProtein());
                         if (mergedFragments.size() != compatibleFragsList.size()) {
-                            LOGGER.trace("For reference {} used minIntronLength {} maxAAGap {} Fragments: {} merged to {}",
+                            LOGGER.trace("For reference {} used minIntronLength={} maxAAGap={} Fragments: {} merged to {}",
                                          proteinID, minIntronLength, maxAlignMergeAAGap,
                                          fragmentsToString.apply(compatibleFragsList),
                                          fragmentsToString.apply(mergedFragments));
@@ -264,7 +264,10 @@ public class ModelGenerationService {
                             upFragment = outFragments.remove(outFragments.size() - 1);
                             currentFragment = upFragment.getNucleotideSeqRange();
                         }
-                        LOGGER.trace("merging range {} and {} for reference protein match {}", currentFragment, nextFragment, viralProtein.getProteinID());
+                        LOGGER.trace("merging range {} and {} for reference protein match {}",
+                                     currentFragment.toString(Range.CoordinateSystem.RESIDUE_BASED),
+                                     nextFragment.toString(Range.CoordinateSystem.RESIDUE_BASED),
+                                     viralProtein.getProteinID());
                         Range adjustedNTrange = Range.of(currentFragment.getBegin(), nextFragment.getEnd());
                         Range adjustedAArange = Range.of(upFragment.getProteinSeqRange().getBegin(), downFragment.getProteinSeqRange().getEnd());
                         AlignmentFragment adjustedFragment = new AlignmentFragment(adjustedAArange, adjustedNTrange, upFragment.getDirection(), upFragment.getFrame());

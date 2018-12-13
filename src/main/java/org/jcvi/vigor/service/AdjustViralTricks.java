@@ -38,7 +38,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
             for (Model rnaEditeddModel : rnaEditedModels) {
                 LOGGER.trace("checking for leaky stop using {}", () -> {
                     VigorConfiguration.ValueWithSource val = model.getAlignment().getViralProtein().getConfiguration().getWithSource(ConfigurationParameters.ScoreFactorLeakyStopNotFound).orElse(VigorConfiguration.ValueWithSource.of(String.valueOf(DEFAULT_LEAKYSTOP_NOTFOUND_SCORE),"service default"));
-                    return String.format("%s=%s from %s", ConfigurationParameters.ScoreFactorLeakyStopNotFound.configKey, val.source, val.value);
+                    return String.format("%s=%s (%s)", ConfigurationParameters.ScoreFactorLeakyStopNotFound.configKey, val.value, val.source);
                 });
                 outputModels.addAll(checkForLeakyStop(rnaEditeddModel, leakyStopNotFoundScore));
             }

@@ -40,13 +40,13 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
 
         LOGGER.trace("adjusting unedited exon boundaries using {}",
                      () -> {
-                         VigorConfiguration.ValueWithSource unset = VigorConfiguration.ValueWithSource.of("unset","unset");
+                         VigorConfiguration.ValueWithSource unset = VigorConfiguration.ValueWithSource.of("","service defaults");
                          VigorConfiguration.ValueWithSource searchWindow = configuration.getWithSource(ConfigurationParameters.StopCodonSearchWindow).orElse(unset);
                          VigorConfiguration.ValueWithSource minIntronSize = configuration.getWithSource(ConfigurationParameters.IntronMinimumSize).orElse(unset);
 
                          StringBuilder logValue = new StringBuilder();
-                         logValue.append("searchWindow: ").append(searchWindow.value).append("(").append(searchWindow.source).append(") ");
-                         logValue.append("minIntronSize: ").append(minIntronSize.value).append("(").append(minIntronSize.source).append(")");
+                         logValue.append("searchWindow=").append(defaultSearchWindow).append(" (").append(searchWindow.source).append(") ");
+                         logValue.append("minIntronSize=").append(minIntronLength).append(" (").append(minIntronSize.source).append(")");
                          return logValue.toString();
                      });
 
