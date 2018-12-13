@@ -253,11 +253,11 @@ public class VigorInputValidationService {
 			Function<ConfigurationParameters.Flags, String> flagToString = (flag) -> {
 				switch (flag) {
 					case VIRUS_SET:
-						return "virus";
+						return "virus config";
 					case GENE_SET:
-						return "gene";
+						return "gene config/variant";
 					case PROGRAM_CONFIG_SET:
-						return "config";
+						return "program config";
 					case COMMANDLINE_SET:
 						return "commandline";
 					default:
@@ -301,9 +301,13 @@ public class VigorInputValidationService {
 						System.out.println(String.format("\t%-30s %s", "Settable levels", Joiner.on(",")
 																								.skipNulls()
 																								.join(param.hasFlags(settableFlags).stream()
-																										   .map(flagToString)
 																										   .sorted()
+																										   .map(flagToString)
 																										   .collect(Collectors.toList()))));
+						if (param.hasFlag(ConfigurationParameters.Flags.UNIMPLEMENTED)) {
+							System.out.println(String.format("\t%-30s This parameters is currently unimplemented","Note:"));
+						}
+
 					}
 					if (!(param.description == null || param.description.isEmpty())) {
 						if (printedSomething || verbose) {
