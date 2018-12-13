@@ -27,7 +27,9 @@ public class ModelGenerationService {
     private static final int DEFAULT_RELAX_MERGE_AA_GAP = 300;
     private static final int DEFAULT_NTOVERLAP_MAX = 30;
     private static final int DEFAULT_AAOVERLAP_MAX = 10;
-    private static Function<Range,String> rangeToString = range -> String.format("%s-%s",range.getBegin(), range.getEnd());
+    private static Function<Range,String> rangeToString = range -> String.format("%s-%s",
+                                                                                 range.getBegin(Range.CoordinateSystem.RESIDUE_BASED),
+                                                                                 range.getEnd(Range.CoordinateSystem.RESIDUE_BASED));
     private static Function<AlignmentFragment, String> fragmentToString = (fragment) -> String.format("%s/%s",
                                                                                        rangeToString.apply(fragment.getProteinSeqRange()),
                                                                                        rangeToString.apply(fragment.getNucleotideSeqRange()));
