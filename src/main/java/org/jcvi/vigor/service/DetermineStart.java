@@ -83,23 +83,23 @@ public class DetermineStart implements DetermineGeneFeatures {
     public List<Model> findStart ( List<Triplet> startCodons, Model model,
                                    Integer startCodonWindowParam ) throws CloneNotSupportedException {
 
+        String proteinID = model.getProteinID();
         List<Model> newModels = new ArrayList<Model>();
         List<Range> sequenceGaps = model.getAlignment().getVirusGenome().getSequenceGaps();
         long start;
         long end;
         Range startSearchRange;
         Range sequenceGapRange = Range.of(0);
-        int windowSize = 50;
+        int windowSize = NullUtil.nullOrElse(startCodonWindowParam,50);
         boolean isSequenceMissing = false;
         boolean isSequenceGap = false;
-        if (startCodonWindowParam != null) {
-                windowSize = startCodonWindowParam;
-        }
+
         Exon firstExon = model.getExons().get(0);
         Frame firstExonFrame = VigorFunctionalUtils.getSequenceFrame(firstExon.getRange().getBegin() + firstExon.getFrame().getFrame() - 1);
         long expectedStart = firstExon.getRange().getBegin()
                 - ( ( firstExon.getAlignmentFragment().getProteinSeqRange()
                 .getBegin() ) * 3 );
+        LOGGER.trace("expected start for {} is {}", proteinID, expectedStart + 1);
         Map<Range, Double> rangeScoreMap = new HashMap<>();
         if (( expectedStart < 0 && expectedStart > -windowSize ) || expectedStart >= 0) {
             expectedStart = expectedStart >= 0 ? expectedStart : 0;
@@ -114,6 +114,8 @@ public class DetermineStart implements DetermineGeneFeatures {
                 end = firstExon.getRange().getEnd();
             }
             startSearchRange = Range.of(start, end);
+            LOGGER.trace("For reference {} start search range is {}", proteinID,
+                         startSearchRange.toString(Range.CoordinateSystem.RESIDUE_BASED));
             //find any internal stops
             Map<Frame, List<Long>> internalStops = model.getAlignment().getVirusGenome().getInternalStops();
             List<Long> stopsInFrame = new ArrayList<>();
@@ -142,31 +144,26 @@ public class DetermineStart implements DetermineGeneFeatures {
                 }
             }
             final long tempStart = startSearchRange.getBegin();
-            NucleotideSequence NTSequence = model.getAlignment().getVirusGenome()
-                    .getSequence().toBuilder(startSearchRange).build();
+            NucleotideSequence NTSequence = model.getAlignment()
+                                                 .getVirusGenome()
+                                                 .getSequence()
+                                                 .toBuilder(startSearchRange).build();
             // List all starts in frame and assign a score for each match (match closer to expected start scores high)
             for (Triplet triplet : startCodons) {
-                Stream<Range> stream = NTSequence.findMatches(triplet.toString());
-                List<Range> rangesInFrame = new ArrayList<Range>();
-                List<Range> foundRanges = stream.map(
-                        range -> {
-                            range = Range.of(range.getBegin() + tempStart,
-                                    range.getEnd() + tempStart);
-                            return range;
-                        }).collect(Collectors.toList());
-                foundRanges.stream().forEach(x -> {
-                    if (VigorFunctionalUtils.getSequenceFrame(x.getBegin()).compareTo(firstExonFrame) == 0) {
-                        rangesInFrame.add(x);
-                    }
-                });
+                List<Range> rangesInFrame = NTSequence.findMatches(triplet.toString())
+                                                      .map(r -> r.toBuilder().shift(tempStart).build())
+                                                      .filter(r -> (VigorFunctionalUtils.getSequenceFrame(r.getBegin()).compareTo(firstExonFrame) == 0)
+                                                      ).collect(Collectors.toList());
                 for (Range range : rangesInFrame) {
                     boolean isValid = true;
                     for (Long stop : stopsInFrame) {
                         if (range.endsBefore(Range.of(stop, stop + 2))) {
                             isValid = false;
+                            break;
                         }
                     }
                     if (isValid) {
+                        LOGGER.trace("For reference {} adding potential start range {}",proteinID, range.toString(Range.CoordinateSystem.RESIDUE_BASED));
                         rangeScoreMap.put(range, VigorFunctionalUtils.generateProximityScore(firstExon.getRange().getBegin(), range.getBegin()));
                     }
                 }
@@ -187,9 +184,13 @@ public class DetermineStart implements DetermineGeneFeatures {
                                          rangeScoreMap.get(range));
                 newModels.add(newModel);
             }
-        } else isSequenceMissing = true;
+        } else {
+            isSequenceMissing = true;
+        }
+
         //set 5' partial and extend start of the first exon to the beginning of the sequence
-        if (( rangeScoreMap.isEmpty() && isSequenceMissing ) || ( rangeScoreMap.isEmpty() && isSequenceGap )) {
+        if (rangeScoreMap.isEmpty() && (isSequenceMissing  || isSequenceGap ) ) {
+            LOGGER.trace("For reference {} sequence missing {} sequence gap {}", proteinID, isSequenceMissing, isSequenceGap);
             Model newModel = model.clone();
             newModel.setPartial5p(true);
             Exon fExon = newModel.getExons().get(0);
@@ -203,7 +204,9 @@ public class DetermineStart implements DetermineGeneFeatures {
                 fExon.setRange(Range.of(sequenceGapRange.getEnd() + 1, fExonRange.getEnd()));
             }
             int frameshift = (int) bases % 3;
-            if (frameshift > 0) fExon.setFrame(fExon.getFrame().shift(frameshift));
+            if (frameshift > 0) {
+                fExon.setFrame(fExon.getFrame().shift(frameshift));
+            }
             newModels.add(newModel);
         } else if (rangeScoreMap.isEmpty()) {
             Model newModel = model.clone();

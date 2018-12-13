@@ -173,6 +173,11 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
                 missingNTRange = Range.of(preNTRange.getEnd() + 1, ntRange.getBegin() - 1);
             }
 
+            LOGGER.trace("For reference {} missing AA Range={} missingNTRange={}",
+                         model.getProteinID(),
+                         missingAARange.toString(Range.CoordinateSystem.RESIDUE_BASED),
+                         missingNTRange.toString(Range.CoordinateSystem.RESIDUE_BASED));
+
             if (missingAARange.getLength() > min_missing_AA_size) {
 
                 long temp = maxIntronSize + (missingAARange.getLength() * 3);
@@ -198,9 +203,14 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
 
                 //do not check for missing exons in the sequence gap
                 if (!sequenceGap && missingNTRange.getLength() > min_missing_AA_size * 3) {
+                    LOGGER.trace("For reference {} aligning AA range {} NT range {}",
+                                 model.getProteinID(),
+                                 missingAARange.toString(Range.CoordinateSystem.RESIDUE_BASED),
+                                 missingNTRange.toString(Range.CoordinateSystem.RESIDUE_BASED));
                     Optional<Exon> determinedExon = performJillionPairWiseAlignment(missingNTRange,
                                                                                     missingAARange, NTSeq, AASeq, model.getDirection());
                     if (determinedExon.isPresent()) {
+                        LOGGER.trace("For reference {} adding exon {}", model.getProteinID(), determinedExon.get());
                         missingExons.add(determinedExon.get());
 
                         // Unset 3' /5' adjusted flags if there is any missing protein alignment up/down stream of the exon

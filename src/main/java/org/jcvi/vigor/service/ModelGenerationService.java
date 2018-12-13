@@ -157,7 +157,7 @@ public class ModelGenerationService {
                     } else if (i == 1) {
                         mergedFragments = mergeAlignmentFragments(compatibleFragsList, alignment.getVirusGenome(), relaxIntronLength, relaxMergeAAGap, alignment.getViralProtein());
                         if (mergedFragments.size() != compatibleFragsList.size()) {
-                            LOGGER.trace("For reference {} used minIntronLength {} maxAAGap {} Fragments: {} merged to {}",
+                            LOGGER.trace("For reference {} used minIntronLength={} maxAAGap={} Fragments: {} merged to {}",
                                          proteinID, relaxIntronLength, relaxMergeAAGap,
                                          fragmentsToString.apply(compatibleFragsList),
                                          fragmentsToString.apply(mergedFragments));

@@ -66,6 +66,7 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
 
         // no introns means no place to splice?
         if (model.getAlignment().getViralProtein().getIntrons().isEmpty()) {
+            LOGGER.trace("For reference {} no introns, skipping splice adjustment", model.getProteinID());
             return Lists.newArrayList(model);
         }
 
@@ -127,7 +128,7 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
 
                     Map<Frame, List<Long>> acceptorInternalStopsMap = VigorFunctionalUtils.findStopsInSequenceFrame(virusGenome, acceptorSearchWindow);
                     List<Long> acceptorInternalStops = acceptorInternalStopsMap.getOrDefault(downExon.getSequenceFrame(), Collections.EMPTY_LIST);
-                    if (acceptorInternalStops.size() > 0) {
+                    if (! acceptorInternalStops.isEmpty()) {
                         Collections.sort(acceptorInternalStops, Collections.reverseOrder());
                         Long stopCoordinate = acceptorInternalStops.get(0);
                         if (stopCoordinate < nextExon.getEnd()) {
@@ -160,7 +161,7 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
                                 if (! checkSplicePairCompatibility(currentExon, nextExon, foundUpExonRange, foundDownExonRange, upExon.getFrame(), downExon.getFrame())) {
                                     continue;
                                 }
-                                if (isNewSpliceSite && models.size() > 0) {
+                                if (isNewSpliceSite && ! models.isEmpty()) {
                                     tempModels.clear();
                                     tempModels.addAll(models);
                                     models.clear();
@@ -190,7 +191,7 @@ public class AdjustUneditedExonBoundaries implements DetermineGeneFeatures {
                 }
             }
         }
-        if (models.size() == 0) {
+        if (models.isEmpty()) {
             models.add(model);
         }
         return models;
