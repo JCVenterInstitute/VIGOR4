@@ -32,7 +32,17 @@ public class DetermineStart implements DetermineGeneFeatures {
                         .getStartTranslationException().getAlternateStartCodons(),
                 config);
         Integer startCodonWindowParam = config.getOrDefault(ConfigurationParameters.StartCodonSearchWindow, 50);
-        LOGGER.trace("determining starts using {}", () -> "TODO");
+        LOGGER.trace(() -> {
+            VigorConfiguration.ValueWithSource serviceDefault = VigorConfiguration.ValueWithSource.of("",
+                                                                                                      "service default");
+            return String.format("determining starts for %s using %s=%s (%s) start codons=%s",
+                                 model.getAlignment().getViralProtein().getProteinID(),
+                                 ConfigurationParameters.StartCodonSearchWindow.configKey,
+                                 startCodonWindowParam,
+                                 config.getWithSource(ConfigurationParameters.StartCodonSearchWindow).orElse(serviceDefault).source,
+                                 startCodons.stream().map(Triplet::toString).collect(Collectors.joining(","))
+            );
+        });
 
         try {
             List<Model> models = findStart(startCodons, model, startCodonWindowParam);
