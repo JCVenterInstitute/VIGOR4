@@ -102,12 +102,11 @@ public class ViralProteinService {
             StructuralSpecifications structuralSpecifications = viralProtein.getGeneAttributes().getStructuralSpecifications();
             if (required != null) {
                 structuralSpecifications.set_required(required);
-            } else if (required != null) {
+            } else if (optional != null) {
                 structuralSpecifications.set_required(! optional);
             }
         }
-        // TODO more
-
+    
         return viralProtein;
     }
 
