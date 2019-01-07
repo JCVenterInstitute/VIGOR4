@@ -37,6 +37,7 @@
     <build.time>${maven.build.timestamp}</build.time>
     <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
     <build.branch></build.branch>
+    <log4j.configurationFile>log4j2-test.xml</log4j.configurationFile>
   </properties>
 
   <modelVersion>4.0.0</modelVersion>
