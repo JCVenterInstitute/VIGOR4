@@ -52,8 +52,9 @@ public class Model implements Cloneable {
 
         List<Exon> exons = getExons();
         if (!exons.isEmpty()) {
-            return Range.of(exons.get(0).getRange().getBegin(),
-                    exons.get(exons.size() - 1).getRange().getEnd());
+            long start = exons.get(0).getRange().getBegin();
+            long end = exons.get(exons.size() - 1).getRange().getEnd();
+            return Range.of(Math.min(start, end), Math.max(start, end));
         }
         return Range.ofLength(0);
     }
