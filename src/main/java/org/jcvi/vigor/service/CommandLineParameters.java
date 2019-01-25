@@ -5,13 +5,10 @@ public final class CommandLineParameters {
     public final static String outputPrefix = "output_prefix";
     public final static String inputFile = "input_fasta";
     public final static String referenceDB = "reference_database";
-    public final static String genbankDB = "genbank_reference";
     public final static String minCoverage = "min_coverage";
     public final static String circularGenome = "circular_genome";
-    public final static String completeGenome = "complete_genome";
     public final static String frameshiftSensitivity = "frameshift_sensitivity";
     public final static String locusTag = "locus_tag";
-    public final static String jcviRules = "jcvi_rules";
     public final static String ignoreReferenceRequirements = "ignore_reference_requirements";
     public final static String parameters = "parameters";
     public final static String verbose = "verbose";

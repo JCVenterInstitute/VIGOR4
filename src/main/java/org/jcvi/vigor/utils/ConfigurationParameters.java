@@ -29,7 +29,6 @@ public enum ConfigurationParameters {
     CandidateSelection("candidate_selection", "", Flags.VERSION_3),
 
     CircularGene("circular_genome", "When this parameter is set to TRUE, VIGOR consider the genome as circular, enabling annotating genes spanning both ends of the sequence (which would be continuous when circularized).", toBoolean, Flags.UNIMPLEMENTED, Flags.VERSION_3, Flags.VERSION_4),
-    CompleteGene("complete_genome", "When this parameter is set to TRUE, VIGOR assumes that the sequence represents the whole genome and all the genes must be present (unless a gene has the is_optional attribute)", toBoolean, Flags.UNIMPLEMENTED, Flags.VERSION_3, Flags.VERSION_4),
 
     Description("description", "Description of virus database", Flags.METADATA_SET),
 
@@ -66,7 +65,6 @@ public enum ConfigurationParameters {
     IntronMaximumSize("max_intron_size", "Maximum sequence length of an intron", toPositiveInteger, Flags.VERSION_3, Flags.VERSION_4),
     IntronMinimumSize("min_intron_size", "Minimum sequence length of an intron", toPositiveInteger, Flags.VERSION_3, Flags.VERSION_4),
 
-    JCVIRules("jcvi_rules", "", toBoolean),
     Locustag("locus_tag", "Prefix to be used for the locus_tag attribute in the feature table (.tbl) and in the GFF 3 outputs", Flags.VERSION_3, Flags.VERSION_4, Flags.COMMANDLINE_SET),
     MaturePeptideDB("matpepdb", "Location and name of the mature peptides reference database (e.g. matpepdb=<vigordata>/flua_ha_mp)", Flags.VERSION_4, Flags.GENE_SET),
     MaturePeptideMinimumCoverage("mature_pep_mincoverage", "Minimum percent coverage of the sequence of the reference mature peptide to consider the prediction valid.", ConfigurationParameterFunctions.toPercent,

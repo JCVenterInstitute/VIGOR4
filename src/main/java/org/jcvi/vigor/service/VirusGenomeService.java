@@ -67,7 +67,6 @@ public class VirusGenomeService {
      */
     public static VirusGenome fastaRecordToVirusGenome( NucleotideFastaRecord record, VigorConfiguration config) {
         VirusGenome virusGenome = new VirusGenome(record.getSequence(), record.getComment(), record.getId(),
-                config.getOrDefault(ConfigurationParameters.CompleteGene, false),
                 config.getOrDefault(ConfigurationParameters.CircularGene, false));
         Integer min_gap_length = config.get(ConfigurationParameters.SequenceGapMinimumLength);
         virusGenome.setInternalStops(findInternalStops(virusGenome.getSequence()));
@@ -83,8 +82,10 @@ public class VirusGenomeService {
      */
     public static VirusGenome reverseComplementVirusGenome(VirusGenome inputGenome,VigorConfiguration config){
         NucleotideSequence reverseCompGenome = inputGenome.getSequence().toBuilder().reverseComplement().build();
-        VirusGenome virusGenome = new VirusGenome(reverseCompGenome, inputGenome.getDefline(), inputGenome.getId(),
-                inputGenome.getIsComplete(), inputGenome.getIsCircular());
+        VirusGenome virusGenome = new VirusGenome(reverseCompGenome,
+                                                  inputGenome.getDefline(),
+                                                  inputGenome.getId(),
+                                                  inputGenome.getIsCircular());
         Integer min_gap_length = config.get(ConfigurationParameters.SequenceGapMinimumLength);
         virusGenome.setInternalStops(findInternalStops(virusGenome.getSequence()));
         virusGenome.setSequenceGaps(findSequenceGapRanges(min_gap_length,virusGenome.getSequence()));

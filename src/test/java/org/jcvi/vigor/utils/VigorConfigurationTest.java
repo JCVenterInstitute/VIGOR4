@@ -52,7 +52,7 @@ public class VigorConfigurationTest {
         assertThat("override should report containing it's own keys",
                 overrides.containsKey(ConfigurationParameters.CircularGene), equalTo(true));
         assertThat("override should report not containing keys not in it or default",
-                overrides.containsKey(ConfigurationParameters.CompleteGene), equalTo(false));
+                overrides.containsKey(ConfigurationParameters.Verbose), equalTo(false));
 
         Set<ConfigurationParameters> keySet = overrides.keySet();
         assertThat("keySet should return unique set across override and defaults", keySet.size(), equalTo(3));
@@ -79,14 +79,14 @@ public class VigorConfigurationTest {
 
 
         Map<ConfigurationParameters, String> newValues = new HashMap<>();
-        newValues.put(ConfigurationParameters.CompleteGene,"0");
+        newValues.put(ConfigurationParameters.Verbose,"0");
         overrides.putAllString(newValues);
 
         assertThat("putAllString only affects override",
-                overrides.get(ConfigurationParameters.CompleteGene),
-                   equalTo(ConfigurationParameters.CompleteGene.stringToValue("false")));
+                overrides.get(ConfigurationParameters.Verbose),
+                   equalTo(ConfigurationParameters.Verbose.stringToValue("false")));
         assertThat("putall does not affect not default",
-                defaults.get(ConfigurationParameters.CompleteGene), nullValue());
+                defaults.get(ConfigurationParameters.Verbose), nullValue());
 
 
         Set<Map.Entry<ConfigurationParameters,Object>> entrySet = overrides.entrySet();
@@ -96,8 +96,8 @@ public class VigorConfigurationTest {
                 allOf(
                         hasItem(equalTo(entryOf(ConfigurationParameters.OutputPrefix,
                                                 ConfigurationParameters.OutputPrefix.stringToValue(overrideOutputPrefix)))),
-                        hasItem(equalTo(entryOf(ConfigurationParameters.CompleteGene,
-                                                ConfigurationParameters.CompleteGene.stringToValue("false")))),
+                        hasItem(equalTo(entryOf(ConfigurationParameters.Verbose,
+                                                ConfigurationParameters.Verbose.stringToValue("false")))),
                         hasItem(equalTo(entryOf(ConfigurationParameters.CircularGene,
                                                 ConfigurationParameters.CircularGene.stringToValue("true")))),
                         hasItem(equalTo(entryOf(ConfigurationParameters.MinimumMissingAASize,

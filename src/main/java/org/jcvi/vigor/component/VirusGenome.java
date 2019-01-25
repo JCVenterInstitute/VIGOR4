@@ -20,17 +20,15 @@ public class VirusGenome {
     private NucleotideSequence sequence;
     private String defline;
     private String id;
-    private Boolean isComplete = false;
     private Boolean isCircular = false;
     private List<Range> sequenceGaps = Collections.EMPTY_LIST;
     private Map<Frame, List<Long>> internalStops = Collections.EMPTY_MAP;
 
-    public VirusGenome ( NucleotideSequence sequence, String defline, String id, boolean isComplete, boolean isCircular ) {
+    public VirusGenome ( NucleotideSequence sequence, String defline, String id, boolean isCircular ) {
 
         this.sequence = sequence;
         this.defline = defline;
         this.id = id;
-        this.isComplete = isComplete;
         this.isCircular = isCircular;
     }
 
@@ -39,7 +37,7 @@ public class VirusGenome {
     }
 
     public VirusGenome(VirusGenome copyFrom) {
-        this(copyFrom.getSequence(), copyFrom.getDefline(), copyFrom.getId(), copyFrom.getIsComplete(), copyFrom.getIsCircular());
+        this(copyFrom.getSequence(), copyFrom.getDefline(), copyFrom.getId(), copyFrom.getIsCircular());
         setSequenceGaps(new ArrayList<>(copyFrom.getSequenceGaps()));
         setInternalStops(copyFrom.getInternalStops()
                                  .entrySet()

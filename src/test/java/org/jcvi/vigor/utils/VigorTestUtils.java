@@ -36,8 +36,7 @@ public class VigorTestUtils {
             Stream<NucleotideFastaRecord> records = dataStore.records();
             Iterator<NucleotideFastaRecord> iter = records.iterator();
             NucleotideFastaRecord record = iter.next();
-            VirusGenome virusGenome = new VirusGenome(record.getSequence(), record.getComment(), record.getId(), false,
-                    false);
+            VirusGenome virusGenome = new VirusGenome(record.getSequence(), record.getComment(), record.getId(), false);
             List<Range> sequenceGaps = VirusGenomeService.findSequenceGapRanges(20, virusGenome.getSequence());
             virusGenome.setSequenceGaps(sequenceGaps);
             // create alignment evidence

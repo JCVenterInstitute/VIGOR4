@@ -64,20 +64,13 @@ public class VigorInitializationService {
 
 	public VigorConfiguration initializeVigor(Namespace inputs) throws VigorException {
 
-            boolean isComplete = false;
             boolean isCircular = false;
-            Boolean complete_gene = inputs.getBoolean(CommandLineParameters.completeGenome);
-            if (complete_gene != null && complete_gene) {
-                isComplete = true;
-            }
             Boolean circular_gene = inputs.getBoolean(CommandLineParameters.circularGenome);
             if (circular_gene != null && circular_gene) {
-                isComplete = true;
                 isCircular = true;
             }
             VigorConfiguration configuration = loadParameters(inputs);
             configuration.putString(ConfigurationParameters.CircularGene, isCircular ? "1" : "0");
-            configuration.putString(ConfigurationParameters.CompleteGene, isComplete ? "1" : "0");
             return configuration;
 
 	}
@@ -158,8 +151,6 @@ public class VigorInitializationService {
 
 		if ("any".equals(reference_db)) {
 			throw new UserFacingException("Auto-selecting reference database is not implemented");
-		} else if (inputs.get(CommandLineParameters.genbankDB) != null) {
-			throw new UserFacingException("Using genbank files as the reference database is not implemented");
 		} else if (reference_db == null || reference_db.isEmpty()) {
 			throw new UserFacingException("no reference database provided");
 		}else{
@@ -323,11 +314,6 @@ public class VigorInitializationService {
 		Boolean ignore_reference_requirements = inputs.getBoolean(CommandLineParameters.ignoreReferenceRequirements);
 		if (ignore_reference_requirements != null && ignore_reference_requirements) {
 			LOGGER.debug("Ignoring legacy parameter ignore reference requirement");
-		}
-
-		Boolean jcvi_rules = inputs.getBoolean(CommandLineParameters.jcviRules);
-		if (jcvi_rules != null) {
-			LOGGER.debug("Ignoring legacy parameter evalue");
 		}
 
 		String reference_database = inputs.getString(CommandLineParameters.referenceDB);
