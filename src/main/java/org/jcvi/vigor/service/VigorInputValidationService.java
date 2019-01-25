@@ -63,31 +63,17 @@ public class VigorInputValidationService {
 			  .required(true)
 			  .help("prefix for outputfile files, e.g. if the ouput prefix is /mydir/anno VIGOR will create output files /mydir/anno.tbl, /mydir/anno.stats, etc. An output prefix without a directory element will create the output files in the current working directory.");
 
-		unImplementedGroup.addArgument("-a", "--autoselect-reference")
-					  .dest(CommandLineParameters.referenceDB)
-					  .action(Arguments.storeConst())
-					  .setConst("any")
-					  .help("auto-select the reference database, equivalent to '-d any ', default behavior unless overridden by -d or -G. This feature is not yet implemented");
 		referenceGroup.addArgument("-d", "--reference-database")
 					  .dest(CommandLineParameters.referenceDB)
 					  .action(Arguments.store())
 					  .metavar("<ref db>")
 					  .help("specify the reference database to be used");
-		unImplementedGroup.addArgument("-G", "--genbank-reference")
-					  .metavar("<genbank file>")
-					  .dest(CommandLineParameters.genbankDB)
-					  .action(Arguments.store())
-					  .help("use a genbank file as the reference database, caution: VIGOR genbank parsing is fairly rudimentary and many genbank files are unparseable.  Partial genes will be ignored. Note: genbank files do not record enough information to handle RNA editing. This feature is not yet implemented.");
 
 		parser.addArgument("-c", "--min-coverage")
 			  .dest(CommandLineParameters.minCoverage)
 			  .action(Arguments.store())
 			  .help("minimum coverage of reference product (0-100) required to report a gene, by default coverage is ignored");
 
-		unImplementedGroup.addArgument("-C", "--complete")
-				   .help("complete (linear) genome (do not treat edges as gaps). This feature is currently unimplemented")
-				   .dest(CommandLineParameters.completeGenome)
-				   .action(Arguments.storeTrue());
 		unImplementedGroup.addArgument("-0", "--circular")
 				   .dest(CommandLineParameters.circularGenome)
 				   .help("complete circular genome (allows gene to span origin). This feature is currently unimplemented")
@@ -121,11 +107,6 @@ public class VigorInputValidationService {
 			  .dest(CommandLineParameters.parameters)
 			  .metavar("<parameter=value~~...~~parameter=value>")
 			  .help("~~ separated list of VIGOR parameters to override default values. Use --list-config-parameters to see settable parameters.");
-		unImplementedGroup.addArgument("-j", "--jcvi-rules-off")
-			  .action(Arguments.storeFalse())
-			  .dest(CommandLineParameters.jcviRules)
-			  .setDefault(true)
-			  .help("turn off JCVI rules, JCVI rules treat gaps and ambiguity codes conservatively, use this option to relax these constraints and produce a more speculative annotation");
 		unImplementedGroup.addArgument("-m","--ignore-reference-requirements")
 			  .action(Arguments.storeTrue())
 			  .dest(CommandLineParameters.ignoreReferenceRequirements)
