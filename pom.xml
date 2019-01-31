@@ -13,7 +13,7 @@
     
     <!-- library versions -->
     <assertj-version>3.11.1</assertj-version>
-    <spring-version>5.1.3.RELEASE</spring-version>
+    <spring-version>5.1.4.RELEASE</spring-version>
     <java-version>1.8</java-version>
     <argparse4j-version>0.8.1</argparse4j-version>
     <junit-version>4.13-beta-1</junit-version>
@@ -23,7 +23,7 @@
     <log4j-version>2.11.1</log4j-version>
     <jillion-version>5.3-20181002-110820</jillion-version>
     <argparse4j-version>0.8.1</argparse4j-version>
-    <jacoco-version>0.8.2</jacoco-version>
+    <jacoco-version>0.8.3</jacoco-version>
     <guava-version>27.0.1-jre</guava-version>
     <surefire-version>2.22.0</surefire-version>
     <opencsv-version>4.4</opencsv-version>
@@ -192,6 +192,12 @@
     <pluginManagement>
       <plugins>
 
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.7.1</version>
+        </plugin>
+        
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
