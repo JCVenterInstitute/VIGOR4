@@ -33,7 +33,7 @@ import org.springframework.test.context.junit4.rules.SpringMethodRule;
 import static org.junit.Assert.fail;
 
 @Category( { Slow.class, Regression.class })
-@RunWith(Parameterized.class)
+@RunWith(ParallelizedParameterized.class)
 @ContextConfiguration(classes = Application.class)
 public class ValidateVigor4ModelsTest {
 
