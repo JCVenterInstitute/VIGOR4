@@ -38,6 +38,7 @@
     <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
     <build.branch></build.branch>
     <log4j.configurationFile>log4j2-test.xml</log4j.configurationFile>
+    <maxParallelTestThreads>2</maxParallelTestThreads>
   </properties>
 
   <modelVersion>4.0.0</modelVersion>
@@ -57,6 +58,13 @@
       <version>${argparse4j-version}</version>
     </dependency>
 
+    <dependency>
+    <groupId>com.googlecode.junit-toolbox</groupId>
+    <artifactId>junit-toolbox</artifactId>
+    <version>2.4</version>
+    <scope>test</scope>
+    </dependency>
+    
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
@@ -321,6 +329,7 @@
             <vigor.skip_reference_db_tests>${vigor.skip_reference_db_tests}</vigor.skip_reference_db_tests>
             <vigor.reference_database_path>${vigor.reference_database_path}</vigor.reference_database_path>
             <log4j.configurationFile>${log4j.configurationFile}</log4j.configurationFile>
+            <maxParallelTestThreads>${maxParallelTestThreads}</maxParallelTestThreads>
           </systemPropertyVariables>
           <groups>org.jcvi.vigor.testing.category.Fast</groups>
           <excludedGroups>!org.jcvi.vigor.testing.category.Isolated</excludedGroups>

@@ -33,7 +33,7 @@ import org.springframework.test.context.junit4.rules.SpringMethodRule;
 import static org.junit.Assert.fail;
 
 @Category( { Slow.class, Regression.class })
-@RunWith(ParallelizedParameterized.class)
+@RunWith(com.googlecode.junittoolbox.ParallelParameterized.class)
 @ContextConfiguration(classes = Application.class)
 public class ValidateVigor4ModelsTest {
 
@@ -88,11 +88,12 @@ public class ValidateVigor4ModelsTest {
 
         final CSVReader reader = new CSVReaderBuilder(dataReader).withSkipLines(hasHeader ? 1 : 0).build();
         String[] nextLine;
+        // format is: expected TBL file, input fasta, reference database, vigor version
         while((nextLine= reader.readNext()) !=null){
              testData.add(Arrays.copyOfRange(nextLine,0,4));
          }
-
-       return testData;
+        LOGGER.info("Will run DBs {}", testData.stream().map(t -> (String) t[2]).collect(Collectors.joining(",")));
+        return testData;
     }
 
     public Map<String, List<Model>> getVigor4Models ( VigorConfiguration config, String inputFasta ) throws VigorException, IOException {
@@ -115,6 +116,7 @@ public class ValidateVigor4ModelsTest {
     @Test
     public void validate () throws IOException, VigorException {
 
+        LOGGER.info("Validating DB {} using input {} and TBL file {}", this.referenceDatabaseName, this.inputFasta, this.referenceOutputTBL);
         VigorConfiguration config = getConfiguration();
         Map<String, List<String>> errors = compareWithReferenceModels(getVigor4Models(config, inputFasta), getReferenceModels());
         String errorReport = String.format(config.get(ConfigurationParameters.OutputPrefix)+"_differencesReport_%sRef.txt", referenceType);
