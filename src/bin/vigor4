@@ -1,6 +1,5 @@
 #!/bin/bash
 set -euo pipefail
-
 SOURCE="${BASH_SOURCE[0]}"
 # it's a symlink
 while [ -h "$SOURCE" ]; do 
@@ -12,7 +11,7 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 function check_version() {
     java_cmd=$1
-    version=$($java_cmd -version 2>&1| grep 'version')
+    version=$($java_cmd -version 2>&1| grep -o 'version ".*"')
     version=${version#*version*\"}
     version=${version%\"}
     IFS="." read  major minor patch <<< "$version"
