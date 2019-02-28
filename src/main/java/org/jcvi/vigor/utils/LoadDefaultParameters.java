@@ -3,6 +3,7 @@ package org.jcvi.vigor.utils;
 import java.io.File;
 import java.net.URL;
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import org.apache.commons.configuration2.INIConfiguration;
@@ -18,12 +19,12 @@ public class LoadDefaultParameters {
     private static final Logger LOGGER = LogManager.getLogger(VigorInitializationService.class);
 
     @SuppressWarnings("Duplicates")
-    public static VigorConfiguration loadVigorConfiguration ( String sourceName, File path, ConfigurationParameters.Flags... flags ) throws VigorException {
+    public static VigorConfiguration loadVigorConfiguration ( String sourceName, File path, Function<String, EnumSet<ConfigurationParameters.Flags>> flagFunction ) throws VigorException {
 
         try {
             Configurations configs = new Configurations();
             INIConfiguration iniConfig = configs.ini(path);
-            return loadVigorConfiguration(sourceName, iniConfig, flags);
+            return loadVigorConfiguration(sourceName, iniConfig, flagFunction);
         } catch (ConfigurationException e) {
             LOGGER.error(e.getMessage(), e);
             throw new VigorException(String.format("unable to load configuration file %s", path), e);
@@ -31,21 +32,42 @@ public class LoadDefaultParameters {
     }
 
     @SuppressWarnings("Duplicates")
-    public static VigorConfiguration loadVigorConfiguration (String sourceName, URL path, ConfigurationParameters.Flags ... flags)
+    public static VigorConfiguration loadVigorConfiguration (String sourceName, URL path, Function<String, EnumSet<ConfigurationParameters.Flags>> flagFunction)
             throws VigorException {
 
         try {
             Configurations configs = new Configurations();
             INIConfiguration iniConfig = configs.ini(path);
-            return loadVigorConfiguration(sourceName, iniConfig, flags);
+            return loadVigorConfiguration(sourceName, iniConfig, flagFunction);
         } catch (ConfigurationException e) {
             LOGGER.error(e.getMessage(), e);
             throw new VigorException(String.format("unable to load configuration file %s", path), e);
         }
     }
 
-    public static VigorConfiguration loadVigorConfiguration (String sourceName, INIConfiguration iniConfig, ConfigurationParameters.Flags ... flags) throws VigorException {
+    public static Map<String,Map<String,String>> configFileToSectionMap(URL path) throws VigorException {
+        Configurations configs = new Configurations();
+        try {
+            INIConfiguration iniConfig = configs.ini(path);
+            return iniFileToSectionMap(iniConfig);
+        } catch (ConfigurationException e) {
+            LOGGER.error(e.getMessage(), e);
+            throw new VigorException(String.format("unable to load configuration file %s", path), e);
+        }
+    }
 
+    public static Map<String,Map<String,String>> configFileToSectionMap(File path) throws VigorException {
+        Configurations configs = new Configurations();
+        try {
+            INIConfiguration iniConfig = configs.ini(path);
+            return iniFileToSectionMap(iniConfig);
+        } catch (ConfigurationException e) {
+            LOGGER.error(e.getMessage(), e);
+            throw new VigorException(String.format("unable to load configuration file %s", path), e);
+        }
+    }
+
+    public static Map<String,Map<String,String>> iniFileToSectionMap(INIConfiguration iniConfig) {
         final Map<String, Map<String,String>> parametersMap = new HashMap<>();
         Map<String,String> sectionMap;
         String key;
@@ -62,16 +84,30 @@ public class LoadDefaultParameters {
                 sectionMap.put(key,val);
             }
         }
-        return configurationFromSectionMap(sourceName, parametersMap, flags);
+        return parametersMap;
     }
 
-    public static VigorConfiguration configurationFromMap(String sourceName, Map<String,String> configurationMap, ConfigurationParameters.Flags ... flags) throws VigorException {
-       return ConfigurationUtils.configurationFromMap(sourceName, configurationMap, flags);
+    public static VigorConfiguration loadVigorConfiguration (String sourceName,
+                                                             INIConfiguration iniConfig,
+                                                             Function<String, EnumSet<ConfigurationParameters.Flags>> flagFunction) throws VigorException {
+        return configurationFromSectionMap(sourceName, iniFileToSectionMap(iniConfig), flagFunction);
     }
 
-    public static VigorConfiguration configurationFromSectionMap (String sourceName, Map<String, Map<String,String>> configurationMap, ConfigurationParameters.Flags ... flags)
+    public static VigorConfiguration configurationFromMap(String sourceName,
+                                                          Map<String,String> configurationMap,
+                                                          Function<String, EnumSet<ConfigurationParameters.Flags>> flagFunction) throws VigorException {
+       return ConfigurationUtils.configurationFromMap(sourceName,
+                                                      configurationMap,
+                                                      flagFunction);
+    }
+
+    public static VigorConfiguration configurationFromSectionMap (String sourceName,
+                                                                  Map<String, Map<String,String>> configurationMap,
+                                                                  Function<String, EnumSet<ConfigurationParameters.Flags>> flagFunction)
             throws VigorException {
-        return ConfigurationUtils.configurationFromSectionMap(sourceName, configurationMap, flags);
+        return ConfigurationUtils.configurationFromSectionMap(sourceName,
+                                                              configurationMap,
+                                                              flagFunction);
     }
 }
 

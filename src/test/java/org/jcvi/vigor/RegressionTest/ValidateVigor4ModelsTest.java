@@ -201,8 +201,8 @@ public class ValidateVigor4ModelsTest {
         if (virusSpecificConfig.exists()) {
             VigorConfiguration virusConfig = LoadDefaultParameters.loadVigorConfiguration(virusSpecificConfig.toString(),
                                                                                           virusSpecificConfig,
-                                                                                          ConfigurationParameters.Flags.GENE_SET,
-                                                                                          ConfigurationParameters.Flags.VIRUS_SET);
+                                                                                          section -> EnumSet.of(ConfigurationParameters.Flags.GENE_SET,
+                                                                                                                ConfigurationParameters.Flags.VIRUS_SET));
             virusConfig.setDefaults(config);
             config = virusConfig;
             checkConfig(config);

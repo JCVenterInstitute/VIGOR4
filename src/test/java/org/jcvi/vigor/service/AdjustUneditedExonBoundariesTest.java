@@ -8,6 +8,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.io.File;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -57,8 +58,10 @@ public class AdjustUneditedExonBoundariesTest {
         VigorTestUtils.assumeReferenceDB(referenceDBPath);
 
         assertThat("reference database path must be set", referenceDBPath, is(notNullValue()));
-        VigorConfiguration config = initializationService.loadVirusSpecificParameters(defaultConfig, "flua_db", referenceDBPath, null);
-
+        List<VigorConfiguration> configurations = new ArrayList<>();
+        configurations.add(defaultConfig);
+        configurations.addAll(initializationService.loadVirusSpecificParameters("flua_db", referenceDBPath, null));
+        VigorConfiguration config = initializationService.mergeConfigurations(configurations);
         String referenceDB = Paths.get(referenceDBPath, "flua_db").toString();
         assertTrue("couldn't find reference DB", referenceDB != null);
         logger.info("using alignmentOutput file {} and reference database {}", alignmentOutput, referenceDB);

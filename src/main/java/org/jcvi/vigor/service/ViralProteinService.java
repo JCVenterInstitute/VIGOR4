@@ -228,7 +228,8 @@ public class ViralProteinService {
         VigorConfiguration deflineConfig = new VigorConfiguration("defline: " + viralProtein.getProteinID());
         if (! attributes.isEmpty()) {
             // use defline config entries where they exist
-            deflineConfig = ConfigurationUtils.configurationFromMap("defline: " + viralProtein.getProteinID(), p->p.deflineConfigKey, attributes, ConfigurationParameters.Flags.GENE_SET);
+            deflineConfig = ConfigurationUtils.configurationFromMap("defline: " + viralProtein.getProteinID(), attributes,
+                                                                    section -> EnumSet.of(ConfigurationParameters.Flags.GENE_SET));
         }
 
         String geneSection = ConfigurationUtils.getGeneSectionName(viralProtein.getGeneSymbol());

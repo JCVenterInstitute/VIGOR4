@@ -15,32 +15,18 @@ public class ConfigurationUtils {
 
     public static VigorConfiguration configurationFromMap(String sourceName,
                                                           Map<String,String> values,
-                                                          ConfigurationParameters.Flags ... flags) throws VigorException {
-        return configurationFromMap(sourceName, p -> p.configKey, values, flags);
-    }
-    public static VigorConfiguration configurationFromMap(String sourceName,
-                                                          Function<ConfigurationParameters, String> keyFunction,
-                                                          Map<String,String> values,
-                                                          ConfigurationParameters.Flags ... flags) throws VigorException {
+                                                          Function<String, EnumSet<ConfigurationParameters.Flags>> flagFunction) throws VigorException {
         Map<String, Map<String, String>> sectionMap = new HashMap<>();
         sectionMap.put(VigorConfiguration.DEFAULT_SECTION, values);
-        return configurationFromSectionMap(sourceName, keyFunction, sectionMap, flags);
+        return configurationFromSectionMap(sourceName, sectionMap, flagFunction);
     }
 
-    public static VigorConfiguration configurationFromSectionMap (String sourceName ,Map<String, Map<String,String>> configurationMap, ConfigurationParameters.Flags ... flags) throws VigorException {
-        return configurationFromSectionMap(sourceName, p -> p.configKey, configurationMap, flags);
-    }
 
-    public static VigorConfiguration configurationFromSectionMap (String sourceName, Function<ConfigurationParameters, String> keyFunction, Map<String, Map<String,String>> configurationMap, ConfigurationParameters.Flags ... flags)
+    public static VigorConfiguration configurationFromSectionMap (String sourceName,
+                                                                  Map<String, Map<String,String>> configurationMap,
+                                                                  Function<String,EnumSet<ConfigurationParameters.Flags>> flagFunction)
             throws VigorException {
 
-        EnumSet<ConfigurationParameters.Flags> flagSet;
-
-        if (flags.length == 0) {
-            flagSet = ConfigurationParameters.Flags.SET_FLAGS;
-        } else {
-            flagSet = EnumSet.copyOf(Arrays.asList(flags));
-        }
 
         final VigorConfiguration configuration = new VigorConfiguration(sourceName);
         Map<String, Map<String,String>> configEntries = new HashMap<>();
@@ -51,8 +37,11 @@ public class ConfigurationUtils {
 
         for (String section: configEntries.keySet()) {
             String sectionString = section == null || section.equals(VigorConfiguration.DEFAULT_SECTION) ? "" : String.format(" section \"%s\" ",section);
+
+            EnumSet<ConfigurationParameters.Flags> flagSet = flagFunction.apply(section);
+
             for (ConfigurationParameters parameter : ConfigurationParameters.values()) {
-                String key = keyFunction.apply(parameter);
+                String key = parameter.configKey;
                 if (configEntries.get(section).containsKey(key)) {
                     String value = configEntries.get(section).remove(key);
                     if ( parameter.hasOneOrMoreFlags(ConfigurationParameters.Flags.IGNORE)) {

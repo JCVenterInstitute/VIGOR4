@@ -290,10 +290,6 @@ public class VigorInputValidationService {
 					boolean printedSomething = false;
 					System.out.println(param.configKey);
 					System.out.println();
-					if (!param.configKey.equals(param.deflineConfigKey) && verbose) {
-						printedSomething = true;
-						System.out.println(String.format("\t%-30s %s", "Database attribute:", param.deflineConfigKey));
-					}
 					if (currentParameters && verbose) {
 						printedSomething = true;
 						System.out.println(String.format("\t%-30s VIGOR_%s", "Environment variable:", param.configKey.toUpperCase()));

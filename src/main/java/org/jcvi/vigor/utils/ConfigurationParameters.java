@@ -38,7 +38,7 @@ public enum ConfigurationParameters {
     DBDB("db", "gene database file backreference used for autoselecting reference database", Flags.GENE_SET, Flags.VERSION_3_5, Flags.METADATA),
 
     DBGene("gene", "Mandatory identifier for each sequence in the reference database. The value corresponds to the value found in the [gene:Gene_ID] section of the config file (e.g. gene=\"NS1\")", Flags.GENE_SET, Flags.METADATA),
-    DBGeneSynonym("gene_synonym", "gene_synonym", "", Flags.GENE_SET, Flags.METADATA),
+    DBGeneSynonym("gene_synonym",  "", Flags.GENE_SET, Flags.METADATA),
 
     DBGeneVariation("gene_variation", "?", Flags.GENE_SET, Flags.VERSION_3_5),
     DBLength("length", "length", Flags.VERSION_3_5, Flags.GENE_SET, Flags.METADATA, Flags.IGNORE),
@@ -163,7 +163,6 @@ public enum ConfigurationParameters {
     }
 
     public final String configKey;
-    public final String deflineConfigKey;
     public final String description;
 
     public final ValueFunction valueFunction;
@@ -203,20 +202,13 @@ public enum ConfigurationParameters {
     }
 
     ConfigurationParameters(String configKey, String description, Flags... flags) {
-        this(configKey, configKey, description, flags);
+        this(configKey, description, null,  flags);
     }
+
+
 
     ConfigurationParameters(String configKey, String description, ValueFunction valueFunction, Flags... flags) {
-        this(configKey, configKey, description, valueFunction, flags);
-    }
-
-    ConfigurationParameters(String configKey, String deflineConfigKey, String description, Flags... flags) {
-        this(configKey, deflineConfigKey, description, null, flags);
-    }
-
-    ConfigurationParameters(String configKey, String deflineConfigKey, String description, ValueFunction valueFunction, Flags... flags) {
         this.configKey = configKey;
-        this.deflineConfigKey = deflineConfigKey;
         this.description = description;
         this.valueFunction = valueFunction == null ? ConfigurationParameterFunctions.of(String.class, s -> s) : valueFunction;
 

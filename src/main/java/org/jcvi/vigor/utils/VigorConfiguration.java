@@ -7,6 +7,8 @@ public class VigorConfiguration {
 
     public static final String DEFAULT_SECTION = "__DEFAULT__" ;
     public static final String METADATA_SECTION = "Metadata";
+    public static final String DEFAULT_VIRUS_SECTION="Default:virus";
+    public static final String DEFAULT_GENE_SECTION="Default:gene";
 
     public static class ValueWithSource {
 
@@ -57,6 +59,10 @@ public class VigorConfiguration {
             this.values.computeIfAbsent(section, k -> new HashMap<>())
                        .putAll(defaults.values.getOrDefault(section,Collections.EMPTY_MAP));
         }
+    }
+
+    public String getSource() {
+        return this.source;
     }
 
     public <T> T get ( ConfigurationParameters parameter ) {
