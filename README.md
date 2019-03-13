@@ -97,7 +97,6 @@ locus tag usage:
                          '-d any ', default behavior unless overridden by -
                          d or -G, (-A is  a  synonym for this option). This
                          feature is not yet implemented
-  -A                     synonym for -a/--autoselect-reference
   -G <genback file>, --genbank-reference <genback file>
                          use a  genbank  file  as  the  reference database,
                          caution:   VIGOR   genbank   parsing   is   fairly
@@ -106,10 +105,6 @@ locus tag usage:
                          Note:  genbank   files   do   not   record  enough
                          information to handle  RNA  editing.  This feature
                          is not yet implemented.
-  -e EVALUE, --evalue EVALUE
-                         override  the  default  evalue  used  to  identify
-                         potential genes, the default  is usually 1E-5, but
-                         varies by reference database
   -C, --complete         complete (linear) genome  (do  not  treat edges as
                          gaps). This feature is currently unimplemented
   -0, --circular         complete circular  genome  (allows  gene  to  span
@@ -117,8 +112,6 @@ locus tag usage:
   -f {0,1,2}, --frameshift-sensitivity {0,1,2}
                          frameshift  sensitivity,   0=ignore   frameshifts,
                          1=normal (default), 2=sensitive. 
-  -K <value>, --skip-candidate-selection <value>
-                         value=0 skip candidate selection (default=1)
   -j, --jcvi-rules-off   turn off JCVI  rules,  JCVI  rules  treat gaps and
                          ambiguity codes  conservatively,  use  this option
                          to relax  these  constraints  and  produce  a more
