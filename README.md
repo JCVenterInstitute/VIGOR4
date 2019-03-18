@@ -35,12 +35,11 @@ Refer to [INSTALL.md](https://github.com/JCVenterInstitute/VIGOR4/blob/master/IN
   -h, --help             show this help message and exit
   -i <input fasta>, --input-fasta <input fasta>
                          path to fasta  file  of  genomic  sequences  to be
-                         annotated, (-I is a synonym for this option)
+                         annotated
   -o <output prefix>, --output-prefix <output prefix>
                          prefix for outputfile  files,  e.g.  if  the ouput
                          prefix is  /mydir/anno  VIGOR  will  create output
-                         files /mydir/anno.tbl, /mydir/anno.stats, etc., (-
-                         O is a synonym for this option)
+                         files /mydir/anno.tbl, /mydir/anno.stats, etc.
   -c MIN_COVERAGE, --min-coverage MIN_COVERAGE
                          minimum  coverage  of  reference  product  (0-100)
                          required to report a gene,  by default coverage is
@@ -49,9 +48,6 @@ Refer to [INSTALL.md](https://github.com/JCVenterInstitute/VIGOR4/blob/master/IN
                          ~~ separated list of  VIGOR parameters to override
                          default values.  Use  --list-config-parameters  to
                          see settable parameters.
-  -s <gene size>, --min-gene-size <gene size>
-                         minimum size (aa) of product  required to report a
-                         gene, by default size is ignored
   -v, --verbose          verbose logging (default=terse)
   --list-config-parameters
                          list available configuration parameters and exit
@@ -89,33 +85,15 @@ locus tag usage:
  outputprefix.tbl   -  predicted features in GenBank tbl format
  outputprefix.aln   -  alignment  of  predicted  protein  to  reference, and
                        reference protein to genome
+ outputprefix.gff3  -  predicted features in GFF3 format
 ```
 #### Currently unimplemented VIGOR3 Command Line Options:
 ```
--a, --autoselect-reference
-                         auto-select the reference  database, equivalent to
-                         '-d any ', default behavior unless overridden by -
-                         d or -G, (-A is  a  synonym for this option). This
-                         feature is not yet implemented
-  -G <genback file>, --genbank-reference <genback file>
-                         use a  genbank  file  as  the  reference database,
-                         caution:   VIGOR   genbank   parsing   is   fairly
-                         rudimentary   and   many    genbank    files   are
-                         unparseable.   Partial  genes   will  be  ignored.
-                         Note:  genbank   files   do   not   record  enough
-                         information to handle  RNA  editing.  This feature
-                         is not yet implemented.
-  -C, --complete         complete (linear) genome  (do  not  treat edges as
-                         gaps). This feature is currently unimplemented
   -0, --circular         complete circular  genome  (allows  gene  to  span
                          origin). This feature is currently unimplemented
   -f {0,1,2}, --frameshift-sensitivity {0,1,2}
                          frameshift  sensitivity,   0=ignore   frameshifts,
                          1=normal (default), 2=sensitive. 
-  -j, --jcvi-rules-off   turn off JCVI  rules,  JCVI  rules  treat gaps and
-                         ambiguity codes  conservatively,  use  this option
-                         to relax  these  constraints  and  produce  a more
-                         speculative annotation
   -m, --ignore-reference-requirements
                          ignore      reference      match      requirements
                          (coverage/identity/similarity),  sometimes  useful
