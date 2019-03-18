@@ -7,8 +7,8 @@ public class VigorConfiguration {
 
     public static final String DEFAULT_SECTION = "__DEFAULT__" ;
     public static final String METADATA_SECTION = "Metadata";
-    public static final String DEFAULT_VIRUS_SECTION="Default:virus";
-    public static final String DEFAULT_GENE_SECTION="Default:gene";
+    public static final String DEFAULT_VIRUS_SECTION="default:virus";
+    public static final String DEFAULT_GENE_SECTION="default:gene";
 
     public static class ValueWithSource {
 
