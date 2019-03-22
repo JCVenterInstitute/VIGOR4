@@ -1,7 +1,0 @@
-Sequence	Length	Genes	Pseudogenes	CDS Bases	Peptide Bases	%Ref Identity	%Ref Similarity	%Ref Coverage	Ref DB
-6	7512	2	0	6650	2214	46.5	74.3	98.9	norv_murine_db
-7	7515	1	0	1623	540	40.5	71.3	100.0	norv_murine_db
-30	7511	2	0	6725	2239	46.7	74.1	100.0	norv_murine_db
-RV-12	7511	2	0	6725	2239	46.7	73.9	100.0	norv_murine_db
-26	7527	2	0	6753	2249	46.4	73.8	100.0	norv_murine_db
-25	7749	2	0	6873	2289	43.9	71.5	100.0	norv_murine_db

@@ -1,8 +1,0 @@
-Sequence	Length	Genes	Pseudogenes	CDS Bases	Peptide Bases	%Ref Identity	%Ref Similarity	%Ref Coverage	Ref DB
-37	34763	39	1	34425	11437	77.6	90.7	100.0	hadve_db
-57	33802	25	2	23862	7929	65.3	83.9	99.9	hadve_db
-47	35931	33	0	30796	10234	67.0	83.9	99.6	hadve_db
-64	35151	33	3	26293	8733	69.1	85.1	99.5	hadve_db
-gi|51527264|ref|NC_003266.2|	35994	48	1	39312	13057	100.0	100.0	100.0	hadve_db
-gi|9626553|ref|NC_001454.1|	34214	24	1	24072	8001	67.3	85.2	99.5	hadve_db
-gi|61602086|ref|NC_006879.1|	34450	23	2	23526	7819	68.8	85.2	99.8	hadve_db

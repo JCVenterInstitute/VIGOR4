@@ -1,8 +1,0 @@
-Sequence	Length	Genes	Pseudogenes	CDS Bases	Peptide Bases	%Ref Identity	%Ref Similarity	%Ref Coverage	Ref DB
-119	13288	9	0	12504	4159	99.6	99.9	100.0	mpv_db
-106	13340	8	1	11964	3980	99.8	99.9	100.0	mpv_db
-101	13293	8	1	11979	3985	99.7	99.8	100.0	mpv_db
-102	13354	8	1	11964	3980	99.8	99.9	100.0	mpv_db
-113	13379	9	0	12534	4169	99.3	99.7	100.0	mpv_db
-112	13286	9	0	12465	4146	99.6	99.9	100.0	mpv_db
-145	13246	9	0	12516	4163	99.0	99.5	100.0	mpv_db
