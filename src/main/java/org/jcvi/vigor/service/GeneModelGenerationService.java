@@ -259,7 +259,7 @@ public class GeneModelGenerationService {
         }
         IDGenerator idGenerator = IDGenerator.of(proteinIDOfGenome);
         ViralProtein protein = geneModel.getAlignment().getViralProtein();
-        List<String> sharedCDSList = VigorUtils.nullElse(protein.getGeneAttributes().getStructuralSpecifications().getShared_cds(), Collections.EMPTY_LIST);
+        List<String> sharedCDSList = NullUtil.nullOrElse(protein.getGeneAttributes().getStructuralSpecifications().getShared_cds(), Collections.EMPTY_LIST);
         LOGGER.debug("for proteinID {}, gene {} checking for candidate models with shared cds: {}",
                      protein.getProteinID(),
                      protein.getGeneSymbol(),
@@ -275,7 +275,7 @@ public class GeneModelGenerationService {
             CHECKOVERLAP:
             for (Model model : geneModels) {
                 boolean isSharedCDS = false;
-                List<String> tempSharedCDS = VigorUtils.nullElse(model.getAlignment().getViralProtein().getGeneAttributes().getStructuralSpecifications().getShared_cds(), Collections.EMPTY_LIST);
+                List<String> tempSharedCDS = NullUtil.nullOrElse(model.getAlignment().getViralProtein().getGeneAttributes().getStructuralSpecifications().getShared_cds(), Collections.EMPTY_LIST);
                // below step is to not to add shared_CDS genes at this stage
                 for(String sharedCDS:tempSharedCDS){
                     if(sharedCDS.equals(candidateGene.getGeneSymbol())) {
@@ -349,7 +349,7 @@ public class GeneModelGenerationService {
                 id = idGenerator.next();
                 proteinID = tempGeneModel.getAlignment().getViralProtein().getProteinID();
             }
-            tempGeneModel.setGeneID(id + VigorUtils.nullElse(tempGeneModel.getGeneID(),""));
+            tempGeneModel.setGeneID(id + NullUtil.nullOrElse(tempGeneModel.getGeneID(),""));
         }
         return geneModels;
     }

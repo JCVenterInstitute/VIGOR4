@@ -4,10 +4,7 @@ import com.google.common.collect.ImmutableList;
 import org.jcvi.vigor.component.*;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.service.exception.ServiceException;
-import org.jcvi.vigor.utils.ConfigurationParameters;
-import org.jcvi.vigor.utils.ConfigurationUtils;
-import org.jcvi.vigor.utils.VigorConfiguration;
-import org.jcvi.vigor.utils.VigorUtils;
+import org.jcvi.vigor.utils.*;
 import org.apache.commons.lang3.StringUtils;
 import org.jcvi.vigor.component.SpliceSite;
 import org.apache.logging.log4j.LogManager;
@@ -63,7 +60,7 @@ public class ViralProteinService {
         viralProtein.setGeneSynonym(geneSynonym != null ? geneSynonym : geneConfig.getOrDefault(ConfigurationParameters.DBGeneSynonym,""));
 
         String matpepDB = alignment.getAlignmentEvidence().getMatpep_db();
-        matpepDB = ! VigorUtils.nullElse(matpepDB,"").isEmpty() ? matpepDB: geneConfig.getOrDefault(ConfigurationParameters.MaturePeptideDB, "");
+        matpepDB = ! NullUtil.isNullOrEmpty(matpepDB) ? matpepDB: geneConfig.getOrDefault(ConfigurationParameters.MaturePeptideDB, "");
         matpepDB = matpepDB.replace("<vigordata>", geneConfig.get(ConfigurationParameters.ReferenceDatabasePath));
         LOGGER.trace("setting mature peptide db for {} (gene {}) to {}", viralProtein.getProteinID(), viralProtein.getGeneSymbol(), matpepDB);
         alignment.getAlignmentEvidence().setMatpep_db(matpepDB);
@@ -189,7 +186,7 @@ public class ViralProteinService {
 
         while (matcher.find()) {
             key = matcher.group("key");
-            value = VigorUtils.removeQuotes(VigorUtils.nullElse(matcher.group("value"),"").trim());
+            value = VigorUtils.removeQuotes(NullUtil.nullOrElse(matcher.group("value"),"").trim());
             if (attributes.containsKey(key)) {
                 error = String.format("duplicate key \"%s\" previous value \"%s\" new value \"%s\"", key, attributes.get(key), value);
                 if (value.equals(attributes.get(key))) {
