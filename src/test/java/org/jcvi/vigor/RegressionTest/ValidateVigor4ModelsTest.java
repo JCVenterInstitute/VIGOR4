@@ -216,8 +216,8 @@ public class ValidateVigor4ModelsTest {
                 VigorUtils.FileCheck.EXISTS, VigorUtils.FileCheck.READ);
         VigorUtils.checkFilePath("temporary directory path", config.get(ConfigurationParameters.TemporaryDirectory),
                 VigorUtils.FileCheck.EXISTS, VigorUtils.FileCheck.READ, VigorUtils.FileCheck.WRITE);
-        // must be set, (but will be created if it doesn't exist?)
-        VigorUtils.checkFilePath("output directory", config.get(ConfigurationParameters.OutputDirectory));
+        // must be set, but will be created if it doesn't exist.
+        VigorUtils.checkFilePath("output directory", config.get(ConfigurationParameters.OutputDirectory), VigorUtils.FileCheck.SET);
     }
 
     public Map<String, List<String>> compareWithReferenceModels ( Map<String, List<Model>> allVigor4Models, Map<String, List<Model>> allReferenceModels ) {
