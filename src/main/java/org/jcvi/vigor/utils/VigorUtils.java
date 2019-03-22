@@ -100,7 +100,7 @@ public class VigorUtils {
     }
 
     public enum FileCheck {
-        READ, WRITE, EXISTS, NOT_EXISTS, EXECUTE, ABSOLUTE, RELATIVE, DIRECTORY, FILE
+        READ, WRITE, EXISTS, NOT_EXISTS, EXECUTE, ABSOLUTE, RELATIVE, DIRECTORY, FILE, SET
     }
 
 
@@ -117,7 +117,6 @@ public class VigorUtils {
         if (modes.length == 0) {
             throw new VigorException(String.format("no file checks specified for %s", description));
         }
-
         File testFile = new File(path);
         EnumSet<FileCheck> checks = EnumSet.copyOf(Arrays.asList(modes));
         if (checks.contains(FileCheck.EXISTS) && ! testFile.exists()) {
