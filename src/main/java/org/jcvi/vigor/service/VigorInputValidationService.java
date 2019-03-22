@@ -23,9 +23,6 @@ public class VigorInputValidationService {
 
 	private static final Logger LOGGER = LogManager.getLogger(VigorInputValidationService.class);
 
-	@Autowired
-	private VigorInitializationService vigorInitializationServiceObj;
-
 	public Namespace processInput(String... inputParams)  {
 		ArgumentParser parser = getArgumentParser();
 		return parser.parseArgsOrFail(inputParams);
