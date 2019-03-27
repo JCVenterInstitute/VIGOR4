@@ -50,14 +50,12 @@ public class VigorInputValidationService {
 			  .action(Arguments.store())
 			  .dest(CommandLineParameters.inputFile)
 			  .metavar("<input fasta>")
-			  .required(true)
 			  .help("path to fasta file of genomic sequences to be annotated.");
 
 		parser.addArgument("-o","--output-prefix")
 			  .action(Arguments.store())
 			  .dest(CommandLineParameters.outputPrefix)
 			  .metavar("<output prefix>")
-			  .required(true)
 			  .help("prefix for outputfile files, e.g. if the ouput prefix is /mydir/anno VIGOR will create output files /mydir/anno.tbl, /mydir/anno.stats, etc. An output prefix without a directory element will create the output files in the current working directory.");
 
 		referenceGroup.addArgument("-d", "--reference-database")
@@ -126,6 +124,11 @@ public class VigorInputValidationService {
 			  .setConst("current")
 			  .nargs("?")
 			  .help("list available configuration parameters and exit. By default only lists description, use the verbose option before this option to list more information");
+
+		parser.addArgument("--list-databases")
+			  .action(Arguments.storeTrue())
+			  .dest(CommandLineParameters.listDatabases)
+			  .help(String.format("list the names and other information about the found vigor compatible databases. Requires reference database path to be set either by passing the --reference-database-path command line parameter or setting %s in the configuration file", ConfigurationParameters.ReferenceDatabasePath.configKey));
 
 		parser.addArgument("--version")
 			  .action(new PrintVersion())

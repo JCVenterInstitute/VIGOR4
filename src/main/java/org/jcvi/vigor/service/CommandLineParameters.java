@@ -19,6 +19,7 @@ public final class CommandLineParameters {
     public final static String virusSpecificConfig = "virusSpecificConfig";
     public final static String virusSpecificConfigPath = "virusSpecificConfigPath";
     public final static String temporaryDirectory = "temporaryDirectory";
+    public final static String listDatabases = "listDatabases";
 
     /**
      * Not to be instantiated

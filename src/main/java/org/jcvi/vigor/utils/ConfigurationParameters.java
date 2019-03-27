@@ -11,6 +11,7 @@ import static org.jcvi.vigor.utils.ConfigurationParameterFunctions.*;
 
 
 public enum ConfigurationParameters {
+    Alias("alias", "One or more aliases used for the database", toListOfStrings, Flags.VERSION_4, Flags.METADATA_SET),
     AAOverlapMaximum("max_aa_overlap", "Maximum number of proteins that may overlap for alignment fragments to be considered compatible when generating a gene model", toInteger, Flags.VERSION_4),
     AlignmentModule("alignment_module", "Alignment Module", isMemberOfSet("exonerate"),
                     Flags.COMMANDLINE_SET,

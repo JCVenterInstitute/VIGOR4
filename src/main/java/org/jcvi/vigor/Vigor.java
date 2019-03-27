@@ -4,7 +4,13 @@ import net.sourceforge.argparse4j.inf.Namespace;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.Filter;
+import org.apache.logging.log4j.core.Layout;
 import org.apache.logging.log4j.core.LoggerContext;
+import org.apache.logging.log4j.core.appender.FileAppender;
+import org.apache.logging.log4j.core.config.Configuration;
+import org.apache.logging.log4j.core.filter.LevelRangeFilter;
+import org.apache.logging.log4j.core.layout.PatternLayout;
 import org.jcvi.jillion.core.Direction;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.datastore.DataStoreException;
@@ -55,6 +61,16 @@ public class Vigor {
     @Autowired
     private GenerateAlignmentOuput generateAlignmentOuput;
 
+    private class DatabaseInfo {
+        public final File databaseFile;
+        public final Optional<File> configFile;
+
+        DatabaseInfo(File databaseFile, File configFile) {
+            this.databaseFile = databaseFile;
+            this.configFile = Optional.ofNullable(configFile);
+        }
+    }
+
     public void run ( String... args ) {
 
         Namespace parsedArgs = parseArgs(args);
@@ -63,13 +79,29 @@ public class Vigor {
             setVerboseLogging(verbosity);
             LOGGER.debug("verbose logging enabled");
         }
-        String inputFileName = parsedArgs.getString("input_fasta");
         try {
             VigorConfiguration vigorConfiguration = getVigorConfiguration(parsedArgs);
+            if (parsedArgs.getBoolean(CommandLineParameters.listDatabases)) {
+                String referenceDatabasePath = vigorConfiguration.get(ConfigurationParameters.ReferenceDatabasePath);
+                VigorUtils.checkFilePath("reference database path", referenceDatabasePath,
+                                         VigorUtils.FileCheck.EXISTS,
+                                         VigorUtils.FileCheck.DIRECTORY,
+                                         VigorUtils.FileCheck.READ,
+                                         VigorUtils.FileCheck.SET);
+                List<DatabaseInfo> databases = getDatabaseInfo(referenceDatabasePath);
+                printDatabaseInfo(referenceDatabasePath, databases);
+                System.exit(0);
+            }
             checkConfig(vigorConfiguration);
+            File outputDirectory = new File((String) vigorConfiguration.get(ConfigurationParameters.OutputDirectory));
+
+            String outputPrefix = vigorConfiguration.get(ConfigurationParameters.OutputPrefix);
+            initiateReportFile(outputDirectory.getAbsolutePath(), outputPrefix, verbosity);
+
             String referenceDB = vigorConfiguration.get(ConfigurationParameters.ReferenceDatabaseFile);
             LOGGER.info("Command line arguments: {}", String.join(" ", args));
             LOGGER.info("Current working directory: {}", Paths.get("").toAbsolutePath().normalize().toString());
+            String inputFileName = parsedArgs.getString("input_fasta");
             generateAnnotations(inputFileName, referenceDB, vigorConfiguration);
         } catch (UserFacingException e) {
             System.err.println(e.getMessage());
@@ -80,6 +112,69 @@ public class Vigor {
         }
     }
 
+    private void printDatabaseInfo(String referenceDatabasePath, List<DatabaseInfo> databases) {
+        LOGGER.info("Databases found under {}", referenceDatabasePath);
+        List<DatabaseInfo> sortedDatabases = databases.stream()
+                                                      .sorted(Comparator.comparing(d -> d.databaseFile.getName(), String.CASE_INSENSITIVE_ORDER))
+                                                      .collect(Collectors.toList());
+        for (DatabaseInfo db: sortedDatabases) {
+            List<String> dbInfo = new ArrayList<>(8);
+            dbInfo.add(String.format("\nDatabase file: %s", db.databaseFile.getName()));
+            dbInfo.add(String.format("  Config file: %s", db.configFile.orElse(new File("no config found")).getName()));
+            if (db.configFile.isPresent()) {
+                try {
+                    LOGGER.trace("loading file {}", db.configFile.get().getAbsolutePath());
+                    VigorConfiguration vigorConfiguration = LoadDefaultParameters.loadVigorConfiguration(db.configFile.get().getAbsoluteFile().toString(),
+                                                                                                         db.configFile.get(),
+                                                                                                         section -> {
+                                                                                                             if (section == null || section.equals(VigorConfiguration.DEFAULT_SECTION)) {
+                                                                                                                 return EnumSet.of(ConfigurationParameters.Flags.VIRUS_SET);
+                                                                                                             } else if (section.startsWith("gene:") || section.equals(VigorConfiguration.DEFAULT_GENE_SECTION)) {
+                                                                                                                 return EnumSet.of(ConfigurationParameters.Flags.GENE_SET);
+                                                                                                             } else if (section.equals(VigorConfiguration.METADATA_SECTION)) {
+                                                                                                                 return EnumSet.of(ConfigurationParameters.Flags.METADATA_SET);
+                                                                                                             }
+                                                                                                             return EnumSet.of(ConfigurationParameters.Flags.VIRUS_SET);
+                                                                                                         });
+                    if (vigorConfiguration.hasSection(VigorConfiguration.METADATA_SECTION)) {
+                        String virusName = vigorConfiguration.get(VigorConfiguration.METADATA_SECTION, ConfigurationParameters.VirusName);
+                        if (!NullUtil.isNullOrEmpty(virusName)) {
+                            dbInfo.add(String.format("  Virus: %s", virusName));
+                        }
+                        List<String> aliases = vigorConfiguration.get(VigorConfiguration.METADATA_SECTION, ConfigurationParameters.Alias);
+                        if (! (aliases == null || aliases.isEmpty()) ) {
+                            dbInfo.add(String.format("  Alias(es): %s", String.join(", ", aliases)));
+                        }
+                        String description = vigorConfiguration.get(VigorConfiguration.METADATA_SECTION, ConfigurationParameters.Description);
+                        if (!NullUtil.isNullOrEmpty(description)) {
+                            dbInfo.add(String.format("  Description: %s", description));
+                        }
+                        List<String> notes = vigorConfiguration.get(VigorConfiguration.METADATA_SECTION, ConfigurationParameters.Note);
+                        if (!(notes == null || notes.isEmpty())) {
+                            dbInfo.add(String.format("  Note(s): %s", String.join(", ", notes)));
+                        }
+                    }
+                } catch (VigorException e) {
+                    LOGGER.error(String.format("Unable to load config file %s", db.configFile.get().getName()), e);
+                }
+            }
+            LOGGER.info(String.join("\n", dbInfo));
+        }
+    }
+
+    private List<DatabaseInfo> getDatabaseInfo(String referenceDatabasePath) throws IOException {
+        LOGGER.debug("Looking for databases under {}", referenceDatabasePath);
+        List<DatabaseInfo> databases = Files.list(Paths.get(referenceDatabasePath))
+             .filter(f -> f.getFileName().toString().endsWith(("_db")))
+             .map(f -> {
+                 File configFile = f.resolveSibling(f.getFileName().toString() + ".ini").toFile();
+                 configFile = configFile.exists() ? configFile : null;
+                 return new DatabaseInfo(f.toFile(), configFile);
+             }).collect(Collectors.toList());
+        return databases;
+    }
+
+
     /**
      * Check that required parameters are set
      * @param config
@@ -87,19 +182,57 @@ public class Vigor {
      */
     private void checkConfig(VigorConfiguration config) throws VigorException {
         List<String> errors =  new ArrayList<>();
-        Object val;
-        for (ConfigurationParameters parameter: Arrays.stream(ConfigurationParameters.values())
-                                                      .filter(p -> p.hasFlag(ConfigurationParameters.Flags.REQUIRED))
-                                                      .collect(Collectors.toList())) {
-            val = config.get(parameter);
-            if (val == null || (val instanceof String && ((String) val).isEmpty())) {
-                errors.add(String.format("parameter %s is not set but is required", parameter.configKey));
+
+        String outputDirectoryPath = config.get(ConfigurationParameters.OutputDirectory);
+        String outputPrefix = config.get(ConfigurationParameters.OutputPrefix);
+        if (! NullUtil.isNullOrEmpty(outputDirectoryPath)) {
+            File outputDirectory = new File(outputDirectoryPath);
+            if (!(outputDirectory.exists() || outputDirectory.mkdirs())) {
+                errors.add(String.format("unable to create directory %s", outputDirectory));
+            }
+            if (!(outputDirectory.exists() && outputDirectory.isDirectory())) {
+                errors.add(String.format("Invalid output prefix %s/%s. Please provide a directory followed by a file prefix", outputDirectory, outputPrefix));
+            }
+        } else {
+            errors.add("output directory is not set");
+        }
+
+        String reference_db = config.get(ConfigurationParameters.ReferenceDatabaseFile);
+
+        try {
+            VigorUtils.checkFilePath("Reference database file", reference_db,
+                                     VigorUtils.FileCheck.EXISTS,
+                                     VigorUtils.FileCheck.FILE,
+                                     VigorUtils.FileCheck.READ);
+        } catch (VigorException e) {
+            errors.add(e.getMessage());
+        }
+
+        String temporaryDirectory = config.get(ConfigurationParameters.TemporaryDirectory);
+        if ( NullUtil.isNullOrEmpty(temporaryDirectory)) {
+            errors.add("temporary directory not set");
+        }
+
+        File tempDir = Paths.get(temporaryDirectory).toFile();
+        if (tempDir.exists()) {
+            try {
+                VigorUtils.checkFilePath("temporary directory", temporaryDirectory,
+                                         VigorUtils.FileCheck.DIRECTORY,
+                                         VigorUtils.FileCheck.READ,
+                                         VigorUtils.FileCheck.WRITE);
+            } catch (VigorException e) {
+                errors.add(e.getMessage());
+            }
+        } else {
+            if (! tempDir.mkdirs()) {
+                errors.add(String.format("unable to create temporary directory %s", tempDir));
             }
         }
 
         if (! errors.isEmpty()) {
-            throw new VigorException(String.join("\n", errors));
+            throw new UserFacingException(String.join("\n", errors));
         }
+
     }
 
     private void printConfiguration(VigorConfiguration vigorParameters){
@@ -115,7 +248,11 @@ public class Vigor {
     }
 
     public void generateAnnotations(String inputFileName, String referenceDB, VigorConfiguration vigorParameters) throws VigorException {
-        VigorUtils.checkFilePath("input file", inputFileName, VigorUtils.FileCheck.EXISTS, VigorUtils.FileCheck.READ);
+        try {
+            VigorUtils.checkFilePath("input file", inputFileName, VigorUtils.FileCheck.EXISTS, VigorUtils.FileCheck.READ);
+        } catch (VigorException e) {
+            throw new UserFacingException(e.getMessage());
+        }
         printConfiguration(vigorParameters);
         String outputDir = vigorParameters.get(ConfigurationParameters.OutputDirectory);
         String outputPrefix = vigorParameters.get(ConfigurationParameters.OutputPrefix);
@@ -323,6 +460,45 @@ public class Vigor {
             }
         }
 
+    }
+
+    public void initiateReportFile(String outputDir, String outputPrefix, int verbose){
+        LoggerContext lc = (LoggerContext) LogManager.getContext(false);
+        Configuration config = lc.getConfiguration();
+
+        FileAppender fa = FileAppender.newBuilder()
+                                      .withName("mylogger")
+                                      .withAppend(false)
+                                      .withFileName(new File(outputDir, outputPrefix+".rpt").toString())
+                                      .build();
+        fa.start();
+        config.addAppender(fa);
+
+        Layout warningLayout = PatternLayout.newBuilder()
+                                            .withConfiguration(config)
+                                            .withPattern("%level %msg %exception{full}\n")
+                                            .build();
+
+        Filter warningFilter = LevelRangeFilter.createFilter(Level.FATAL, Level.WARN, Filter.Result.ACCEPT, Filter.Result.DENY);
+
+        FileAppender warnings = FileAppender.newBuilder()
+                                            .withName("__warnings")
+                                            .withAppend(false)
+                                            .withLayout(warningLayout)
+                                            .withFileName(new File(outputDir, outputPrefix + ".warnings").toString())
+                                            .build();
+        warningFilter.start();
+        warnings.addFilter(warningFilter);
+        warnings.start();
+        config.addAppender(warnings);
+
+        lc.getLogger("org.jcvi.vigor").addAppender(warnings);
+        lc.getLogger("org.jcvi.vigor").addAppender(fa);
+
+        if (verbose > 0) {
+            lc.getConfiguration().getLoggerConfig("org.jcvi.vigor").setLevel(verbose == 1 ? Level.DEBUG: Level.TRACE);
+        }
+        lc.updateLoggers();
     }
 
 
