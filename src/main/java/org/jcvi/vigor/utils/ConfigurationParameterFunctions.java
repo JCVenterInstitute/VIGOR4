@@ -42,8 +42,9 @@ public class ConfigurationParameterFunctions {
         }
     }
 
-    public static ValueFunction toListOfStrings = of(List.class, s -> Arrays.stream(s.split(","))
-                                                                            .map(i -> i.trim())
+    public static ValueFunction toListOfStrings = of(List.class, string -> Arrays.stream(string.split(","))
+                                                                            .map(String::trim)
+                                                                            .filter(s -> ! s.isEmpty())
                                                                             .collect(Collectors.toList()),
                                                      v -> String.join(",", (List) v));
     public static ValueFunction toSpliceForms = of (List.class, SpliceForm::parseFromString);
