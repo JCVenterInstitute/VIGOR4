@@ -125,17 +125,7 @@ public class Vigor {
                 try {
                     LOGGER.trace("loading file {}", db.configFile.get().getAbsolutePath());
                     VigorConfiguration vigorConfiguration = LoadDefaultParameters.loadVigorConfiguration(db.configFile.get().getAbsoluteFile().toString(),
-                                                                                                         db.configFile.get(),
-                                                                                                         section -> {
-                                                                                                             if (section == null || section.equals(VigorConfiguration.DEFAULT_SECTION)) {
-                                                                                                                 return EnumSet.of(ConfigurationParameters.Flags.VIRUS_SET);
-                                                                                                             } else if (section.startsWith("gene:") || section.equals(VigorConfiguration.DEFAULT_GENE_SECTION)) {
-                                                                                                                 return EnumSet.of(ConfigurationParameters.Flags.GENE_SET);
-                                                                                                             } else if (section.equals(VigorConfiguration.METADATA_SECTION)) {
-                                                                                                                 return EnumSet.of(ConfigurationParameters.Flags.METADATA_SET);
-                                                                                                             }
-                                                                                                             return EnumSet.of(ConfigurationParameters.Flags.VIRUS_SET);
-                                                                                                         });
+                                                                                                         db.configFile.get(), initializationService.virusConfigFlags);
                     if (vigorConfiguration.hasSection(VigorConfiguration.METADATA_SECTION)) {
                         String virusName = vigorConfiguration.get(VigorConfiguration.METADATA_SECTION, ConfigurationParameters.VirusName);
                         if (!NullUtil.isNullOrEmpty(virusName)) {

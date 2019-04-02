@@ -36,7 +36,8 @@ public class VigorInitializationService {
 				return EnumSet.of(ConfigurationParameters.Flags.PROGRAM_CONFIG_SET);
 		}
 	};
-	private static final Function<String, EnumSet<ConfigurationParameters.Flags>> programConfigFlags = (section) -> {
+
+	public static final Function<String, EnumSet<ConfigurationParameters.Flags>> programConfigFlags = (section) -> {
 
 		switch (section) {
 			case VigorConfiguration.DEFAULT_GENE_SECTION:
@@ -45,6 +46,18 @@ public class VigorInitializationService {
 				return EnumSet.of(ConfigurationParameters.Flags.VIRUS_SET);
 			default:
 				return EnumSet.of(ConfigurationParameters.Flags.PROGRAM_CONFIG_SET, ConfigurationParameters.Flags.COMMANDLINE_SET);
+		}
+	};
+
+	public static final Function<String, EnumSet<ConfigurationParameters.Flags>> virusConfigFlags = (section) -> {
+
+		switch (section) {
+			case VigorConfiguration.METADATA_SECTION:
+				return EnumSet.of(ConfigurationParameters.Flags.METADATA_SET);
+			case VigorConfiguration.DEFAULT_GENE_SECTION:
+				return EnumSet.of(ConfigurationParameters.Flags.GENE_SET);
+			default:
+				return EnumSet.of(ConfigurationParameters.Flags.VIRUS_SET);
 		}
 	};
 
@@ -322,8 +335,8 @@ public class VigorInitializationService {
 	 *         by virus specific parameters
 	 */
 	public List<VigorConfiguration> loadVirusSpecificParameters (String reference_db,
-                                                                    String virusSpecificConfigPath,
-                                                                    String virusSpecificConfig) throws VigorException {
+																 String virusSpecificConfigPath,
+																 String virusSpecificConfig) throws VigorException {
 		List<VigorConfiguration> configurations = new ArrayList<>(2);
 
 		LOGGER.debug("checking virus specific config for reference db {}, virus specific config {}, virus specific config path {}", reference_db, virusSpecificConfig, virusSpecificConfigPath);
@@ -347,15 +360,7 @@ public class VigorInitializationService {
 		// virus specific configuration files may not exist
 		if (configFile.exists()) {
 			Map<String,Map<String,String>> sectionMap = LoadDefaultParameters.configFileToSectionMap(configFile);
-			VigorConfiguration virusSpecificParameters =
-					LoadDefaultParameters.configurationFromSectionMap(configPath, sectionMap,
-																	  section -> {
-																		  if (section != null && (section.startsWith("gene:") || section.equals(VigorConfiguration.DEFAULT_GENE_SECTION))) {
-																			  return EnumSet.of(ConfigurationParameters.Flags.GENE_SET);
-																		  }
-																		  return EnumSet.of(ConfigurationParameters.Flags.VIRUS_SET);
-																	  }
-					);
+			VigorConfiguration virusSpecificParameters = LoadDefaultParameters.configurationFromSectionMap(configPath, sectionMap, virusConfigFlags);
 			configurations.add(virusSpecificParameters);
 			LOGGER.info("loaded virus specific config from {}", configPath);
 			if (virusSpecificParameters.hasSection(VigorConfiguration.METADATA_SECTION)) {
