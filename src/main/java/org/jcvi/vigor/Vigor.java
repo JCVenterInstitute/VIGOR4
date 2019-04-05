@@ -61,15 +61,6 @@ public class Vigor {
     @Autowired
     private GenerateAlignmentOuput generateAlignmentOuput;
 
-    private class DatabaseInfo {
-        public final File databaseFile;
-        public final Optional<File> configFile;
-
-        DatabaseInfo(File databaseFile, File configFile) {
-            this.databaseFile = databaseFile;
-            this.configFile = Optional.ofNullable(configFile);
-        }
-    }
 
     public void run ( String... args ) {
 
@@ -88,7 +79,7 @@ public class Vigor {
                                          VigorUtils.FileCheck.DIRECTORY,
                                          VigorUtils.FileCheck.READ,
                                          VigorUtils.FileCheck.SET);
-                List<DatabaseInfo> databases = getDatabaseInfo(referenceDatabasePath);
+                List<VigorInitializationService.DatabaseInfo> databases = initializationService.getDatabaseInfo(referenceDatabasePath);
                 printDatabaseInfo(referenceDatabasePath, databases);
                 System.exit(0);
             }
@@ -112,12 +103,12 @@ public class Vigor {
         }
     }
 
-    private void printDatabaseInfo(String referenceDatabasePath, List<DatabaseInfo> databases) {
+    private void printDatabaseInfo(String referenceDatabasePath, List<VigorInitializationService.DatabaseInfo> databases) {
         LOGGER.info("Databases found under {}", referenceDatabasePath);
-        List<DatabaseInfo> sortedDatabases = databases.stream()
-                                                      .sorted(Comparator.comparing(d -> d.databaseFile.getName(), String.CASE_INSENSITIVE_ORDER))
-                                                      .collect(Collectors.toList());
-        for (DatabaseInfo db: sortedDatabases) {
+        List<VigorInitializationService.DatabaseInfo> sortedDatabases = databases.stream()
+                                                                                 .sorted(Comparator.comparing(d -> d.databaseFile.getName(), String.CASE_INSENSITIVE_ORDER))
+                                                                                 .collect(Collectors.toList());
+        for (VigorInitializationService.DatabaseInfo db: sortedDatabases) {
             List<String> dbInfo = new ArrayList<>(8);
             dbInfo.add(String.format("\nDatabase file: %s", db.databaseFile.getName()));
             dbInfo.add(String.format("  Config file: %s", db.configFile.orElse(new File("no config found")).getName()));
@@ -151,17 +142,6 @@ public class Vigor {
         }
     }
 
-    private List<DatabaseInfo> getDatabaseInfo(String referenceDatabasePath) throws IOException {
-        LOGGER.debug("Looking for databases under {}", referenceDatabasePath);
-        List<DatabaseInfo> databases = Files.list(Paths.get(referenceDatabasePath))
-             .filter(f -> f.getFileName().toString().endsWith(("_db")))
-             .map(f -> {
-                 File configFile = f.resolveSibling(f.getFileName().toString() + ".ini").toFile();
-                 configFile = configFile.exists() ? configFile : null;
-                 return new DatabaseInfo(f.toFile(), configFile);
-             }).collect(Collectors.toList());
-        return databases;
-    }
 
 
     /**

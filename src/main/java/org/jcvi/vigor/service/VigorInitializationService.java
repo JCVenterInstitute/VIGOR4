@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
@@ -64,6 +66,16 @@ public class VigorInitializationService {
 		}
 	};
 
+	public class DatabaseInfo {
+		public final File databaseFile;
+		public final Optional<File> configFile;
+
+		DatabaseInfo(File databaseFile, File configFile) {
+			this.databaseFile = databaseFile;
+			this.configFile = Optional.ofNullable(configFile);
+		}
+	}
+
 	/**
 	 * @param inputs:
 	 *            User provided command line inputs Retrieve each Genomic
@@ -85,20 +97,22 @@ public class VigorInitializationService {
 
 	public List<VigorConfiguration> getDefaultConfigurations() throws VigorException {
 		List<VigorConfiguration> configurations = new ArrayList<>();
-		Map<String,Map<String,String>> sectionMap = LoadDefaultParameters.configFileToSectionMap(Thread.currentThread().getContextClassLoader().getResource(VigorUtils.getDefaultConfigurationPath()));
+		URL defaultConfigurationFile = Thread.currentThread().getContextClassLoader().getResource(VigorUtils.getDefaultConfigurationPath());
+		Map<String,Map<String,String>> sectionMap = LoadDefaultParameters.configFileToSectionMap(defaultConfigurationFile);
+		String configurationSource = "defaults";
 		VigorConfiguration config = LoadDefaultParameters
-				.configurationFromSectionMap("defaults", sectionMap, defaultConfigFlags);
+				.configurationFromSectionMap(configurationSource, sectionMap, defaultConfigFlags);
 
 		configurations.add(config);
 		if (sectionMap.containsKey(VigorConfiguration.DEFAULT_VIRUS_SECTION)) {
-			config = LoadDefaultParameters.configurationFromMap(String.format("defaults:%s", VigorConfiguration.DEFAULT_VIRUS_SECTION),
+			config = LoadDefaultParameters.configurationFromMap(String.format("%s:%s", configurationSource, VigorConfiguration.DEFAULT_VIRUS_SECTION),
 																sectionMap.get(VigorConfiguration.DEFAULT_VIRUS_SECTION),
 																section -> EnumSet.of(ConfigurationParameters.Flags.VIRUS_SET));
 			configurations.add(config);
 		}
 
 		if (sectionMap.containsKey(VigorConfiguration.DEFAULT_GENE_SECTION)) {
-			config = LoadDefaultParameters.configurationFromMap(String.format("defaults:%s", VigorConfiguration.DEFAULT_GENE_SECTION),
+			config = LoadDefaultParameters.configurationFromMap(String.format("%s:%s", configurationSource, VigorConfiguration.DEFAULT_GENE_SECTION),
 																sectionMap.get(VigorConfiguration.DEFAULT_GENE_SECTION),
 																section -> EnumSet.of(ConfigurationParameters.Flags.GENE_SET));
 			configurations.add(config);
@@ -112,7 +126,7 @@ public class VigorInitializationService {
 				if (param.hasFlag(ConfigurationParameters.Flags.VERSION_4)) {
 					propConfiguration.putString(param, val);
 				} else {
-					LOGGER.debug("Ignoring non VIGOR4 parameter {}={} set via system properties", param.configKey, val, param.getSystemPropertyName());
+					LOGGER.debug("Ignoring non-VIGOR4 parameter {}={} set via system properties", param.configKey, val, param.getSystemPropertyName());
 				}
 			}
 		}
@@ -126,7 +140,7 @@ public class VigorInitializationService {
 				if (param.hasFlag(ConfigurationParameters.Flags.VERSION_4)) {
 					envConfiguration.putString(param, val);
 				} else {
-					LOGGER.debug("ignoring non-VIGOR4 parameter {}={} set via environment variable {}", param.configKey, val, param.getEnvVarName());
+					LOGGER.debug("Ignoring non-VIGOR4 parameter {}={} set via environment variable {}", param.configKey, val, param.getEnvVarName());
 				}
 			}
 		}
@@ -155,19 +169,28 @@ public class VigorInitializationService {
 		LOGGER.debug("Reference database path is {}", reference_db_dir);
 
 		String reference_db= inputs.getString(CommandLineParameters.referenceDB);
-		LOGGER.debug("reference database is {}", reference_db);
+		LOGGER.debug("Reference database is {}", reference_db);
 
 		if ("any".equals(reference_db)) {
 			throw new UserFacingException("Auto-selecting reference database is not implemented");
-		}else if (! NullUtil.isNullOrEmpty(reference_db)){
+		} else if (! NullUtil.isNullOrEmpty(reference_db)){
 			File file = new File(reference_db);
 			if(file.exists() && file.isFile() ){
 				reference_db=file.getAbsolutePath();
 				if (reference_db_dir == null || reference_db_dir.isEmpty()) {
 					reference_db_dir = file.getParent();
 				}
-			}else if ( ! (reference_db_dir == null || reference_db_dir.isEmpty())){
-				reference_db=Paths.get(reference_db_dir,reference_db).toString();
+			} else if ( ! NullUtil.isNullOrEmpty(reference_db_dir)) {
+				Path referenceDBFile = Paths.get(reference_db_dir, reference_db);
+				if (referenceDBFile.toFile().exists()) {
+					reference_db = Paths.get(reference_db_dir, reference_db).toString();
+				} else {
+					// maybe reference_db is an alias, eg "Influenza A"
+					Optional<Path> aliasDatabase = findReferenceDBByAlias(reference_db_dir, reference_db);
+					if (aliasDatabase.isPresent()) {
+						reference_db = aliasDatabase.get().toString();
+					}
+				}
 			}
 			configurations.get(configurations.size() -1).put(ConfigurationParameters.ReferenceDatabaseFile, reference_db);
 			LOGGER.debug("Reference_db is {}", reference_db);
@@ -186,6 +209,48 @@ public class VigorInitializationService {
 
 
 		return defaultConfiguration;
+	}
+
+    public List<DatabaseInfo> getDatabaseInfo(String referenceDatabasePath) throws IOException, VigorException {
+        LOGGER.debug("Looking for databases under {}", referenceDatabasePath);
+        try {
+			VigorUtils.checkFilePath("reference database path", referenceDatabasePath,
+									 VigorUtils.FileCheck.EXISTS,
+									 VigorUtils.FileCheck.DIRECTORY,
+									 VigorUtils.FileCheck.READ);
+		} catch (VigorException e) {
+			throw new UserFacingException(e.getMessage(), e);
+		}
+        List<DatabaseInfo> databases = Files.list(Paths.get(referenceDatabasePath))
+											.filter(f -> f.getFileName().toString().endsWith(("_db")))
+											.map(f -> {
+                 File configFile = f.resolveSibling(f.getFileName().toString() + ".ini").toFile();
+                 configFile = configFile.exists() ? configFile : null;
+                 return new DatabaseInfo(f.toFile(), configFile);
+             }).collect(Collectors.toList());
+        return databases;
+    }
+
+
+	// see if any config file has a defined alias
+	private Optional<Path> findReferenceDBByAlias(String reference_db_dir, String alias) throws VigorException {
+		LOGGER.debug("Checking under reference database path {} for database alias {}", reference_db_dir, alias);
+		try {
+			VigorConfiguration config;
+			for (DatabaseInfo dbInfo: getDatabaseInfo(reference_db_dir)) {
+				if (dbInfo.configFile.isPresent()) {
+					config = mergeConfigurations(loadVirusConfiguration(dbInfo.configFile.get()));
+					for (String configAlias: (List<String>) config.getOrDefault(VigorConfiguration.METADATA_SECTION, ConfigurationParameters.Alias, Collections.EMPTY_LIST)) {
+						if (alias.equalsIgnoreCase(configAlias)) {
+							return Optional.of(dbInfo.databaseFile.toPath());
+						}
+					}
+				}
+			}
+		} catch (IOException e) {
+			throw new VigorException(String.format("Problem reading configuration files from %s", reference_db_dir), e);
+		}
+		return Optional.empty();
 	}
 
 
