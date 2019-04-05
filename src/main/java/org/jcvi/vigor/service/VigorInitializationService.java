@@ -57,6 +57,9 @@ public class VigorInitializationService {
 			case VigorConfiguration.DEFAULT_GENE_SECTION:
 				return EnumSet.of(ConfigurationParameters.Flags.GENE_SET);
 			default:
+				if (section != null && section.startsWith("gene:")) {
+					return EnumSet.of(ConfigurationParameters.Flags.GENE_SET);
+				}
 				return EnumSet.of(ConfigurationParameters.Flags.VIRUS_SET);
 		}
 	};
