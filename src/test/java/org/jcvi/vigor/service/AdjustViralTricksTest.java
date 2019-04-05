@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.jcvi.vigor.testing.category.Fast;
-import org.jcvi.vigor.testing.category.Isolated;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.testing.category.ReferenceDatabase;
 import org.jcvi.vigor.utils.ConfigurationParameters;
@@ -78,7 +77,7 @@ public class AdjustViralTricksTest {
         assertThat("reference database path must be set", referenceDBPath, is(notNullValue()));
         List<VigorConfiguration> configurations = new ArrayList<>();
         configurations.add(defaultConfig);
-        configurations.addAll(initializationService.loadVirusSpecificParameters("veev_db", referenceDBPath, null ));
+        configurations.addAll(initializationService.loadVirusConfiguration(new File(referenceDBPath, "veev_db") ));
         VigorConfiguration config = initializationService.mergeConfigurations(configurations);
         String referenceDB = Paths.get(referenceDBPath, "veev_db").toString();
         List<Alignment> alignments;

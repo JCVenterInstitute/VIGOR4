@@ -124,8 +124,7 @@ public class Vigor {
             if (db.configFile.isPresent()) {
                 try {
                     LOGGER.trace("loading file {}", db.configFile.get().getAbsolutePath());
-                    VigorConfiguration vigorConfiguration = LoadDefaultParameters.loadVigorConfiguration(db.configFile.get().getAbsoluteFile().toString(),
-                                                                                                         db.configFile.get(), initializationService.virusConfigFlags);
+                    VigorConfiguration vigorConfiguration = initializationService.mergeConfigurations(initializationService.loadVirusConfiguration(db.configFile.get().getAbsoluteFile()));
                     if (vigorConfiguration.hasSection(VigorConfiguration.METADATA_SECTION)) {
                         String virusName = vigorConfiguration.get(VigorConfiguration.METADATA_SECTION, ConfigurationParameters.VirusName);
                         if (!NullUtil.isNullOrEmpty(virusName)) {
