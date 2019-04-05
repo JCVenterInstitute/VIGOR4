@@ -406,7 +406,7 @@ public class VigorInitializationService {
 														   String virusSpecificConfigPath,
 														   String virusSpecificConfig) throws VigorException {
 
-		LOGGER.debug("checking virus specific config for reference db {}, virus specific config {}, virus specific config path {}", reference_db, virusSpecificConfig, virusSpecificConfigPath);
+		LOGGER.trace("checking virus specific config for reference db {}, virus specific config {}, virus specific config path {}", reference_db, virusSpecificConfig, virusSpecificConfigPath);
 		String configPath = virusSpecificConfig;
 		if (configPath == null && virusSpecificConfigPath != null) {
 			LOGGER.debug("using default virus specific config path {}", virusSpecificConfigPath);
@@ -427,7 +427,6 @@ public class VigorInitializationService {
 	}
 	public List<VigorConfiguration> loadVirusConfiguration(File configFile) throws VigorException{
 		List<VigorConfiguration> configurations = new ArrayList<>(2);
-		LOGGER.debug("virus specific config file for reference_db {} is {}", configFile.getParent(), configFile.getName());
 		// virus specific configuration files may not exist
 		if (configFile.exists()) {
 			Map<String,Map<String,String>> sectionMap = LoadDefaultParameters.configFileToSectionMap(configFile);
@@ -438,7 +437,8 @@ public class VigorInitializationService {
 				String version = virusSpecificParameters.getOrDefault(VigorConfiguration.METADATA_SECTION, ConfigurationParameters.Version, "");
 				String virusName = virusSpecificParameters.getOrDefault(VigorConfiguration.METADATA_SECTION, ConfigurationParameters.VirusName, "");
 				if (! (version.isEmpty()  && virusName.isEmpty()) ) {
-					LOGGER.info("Virus config for virus \"{}\" version \"{}\"",
+					LOGGER.info("Virus config {} is for virus \"{}\" version \"{}\"",
+								configFile.getAbsolutePath(),
 								NullUtil.emptyOrElse(virusName, "not set"),
 								NullUtil.emptyOrElse(version, "not set")
 								);
