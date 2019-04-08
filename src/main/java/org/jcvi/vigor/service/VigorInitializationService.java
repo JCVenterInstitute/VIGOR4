@@ -240,6 +240,9 @@ public class VigorInitializationService {
 			for (DatabaseInfo dbInfo: getDatabaseInfo(reference_db_dir)) {
 				if (dbInfo.configFile.isPresent()) {
 					config = mergeConfigurations(loadVirusConfiguration(dbInfo.configFile.get()));
+					if (alias.equalsIgnoreCase(config.getOrDefault(VigorConfiguration.METADATA_SECTION, ConfigurationParameters.VirusName, ""))) {
+						return Optional.of(dbInfo.databaseFile.toPath());
+					}
 					for (String configAlias: (List<String>) config.getOrDefault(VigorConfiguration.METADATA_SECTION, ConfigurationParameters.Alias, Collections.EMPTY_LIST)) {
 						if (alias.equalsIgnoreCase(configAlias)) {
 							return Optional.of(dbInfo.databaseFile.toPath());
