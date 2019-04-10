@@ -77,7 +77,7 @@ public class AdjustViralTricksTest {
         assertThat("reference database path must be set", referenceDBPath, is(notNullValue()));
         List<VigorConfiguration> configurations = new ArrayList<>();
         configurations.add(defaultConfig);
-        configurations.addAll(initializationService.loadVirusConfiguration(new File(referenceDBPath, "veev_db") ));
+        configurations.addAll(initializationService.loadVirusConfiguration(new File(referenceDBPath, "veev_db.ini") ));
         VigorConfiguration config = initializationService.mergeConfigurations(configurations);
         String referenceDB = Paths.get(referenceDBPath, "veev_db").toString();
         List<Alignment> alignments;

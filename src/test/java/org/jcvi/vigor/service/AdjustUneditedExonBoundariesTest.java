@@ -60,7 +60,7 @@ public class AdjustUneditedExonBoundariesTest {
         assertThat("reference database path must be set", referenceDBPath, is(notNullValue()));
         List<VigorConfiguration> configurations = new ArrayList<>();
         configurations.add(defaultConfig);
-        configurations.addAll(initializationService.loadVirusConfiguration( new File(referenceDBPath,"flua_db")));
+        configurations.addAll(initializationService.loadVirusConfiguration( new File(referenceDBPath,"flua_db.ini")));
         VigorConfiguration config = initializationService.mergeConfigurations(configurations);
         String referenceDB = Paths.get(referenceDBPath, "flua_db").toString();
         assertTrue("couldn't find reference DB", referenceDB != null);
