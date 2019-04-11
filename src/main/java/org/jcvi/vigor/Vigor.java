@@ -66,10 +66,7 @@ public class Vigor {
 
         Namespace parsedArgs = parseArgs(args);
         int verbosity = parsedArgs.getInt(CommandLineParameters.verbose);
-        if (verbosity > 0) {
-            setVerboseLogging(verbosity);
-            LOGGER.debug("verbose logging enabled");
-        }
+        setVerboseLogging(verbosity);
         try {
             VigorConfiguration vigorConfiguration = getVigorConfiguration(parsedArgs);
             if (parsedArgs.getBoolean(CommandLineParameters.listDatabases)) {
@@ -77,8 +74,7 @@ public class Vigor {
                 VigorUtils.checkFilePath("reference database path", referenceDatabasePath,
                                          VigorUtils.FileCheck.EXISTS,
                                          VigorUtils.FileCheck.DIRECTORY,
-                                         VigorUtils.FileCheck.READ,
-                                         VigorUtils.FileCheck.SET);
+                                         VigorUtils.FileCheck.READ);
                 List<VigorInitializationService.DatabaseInfo> databases = initializationService.getDatabaseInfo(referenceDatabasePath);
                 printDatabaseInfo(referenceDatabasePath, databases);
                 System.exit(0);
@@ -312,10 +308,14 @@ public class Vigor {
 
     private void setVerboseLogging ( int verbosity ) {
 
+        if (verbosity == 0) {
+            return;
+        }
         Level verboseLevel = verbosity == 1 ? Level.DEBUG : Level.TRACE;
         LoggerContext lc = (LoggerContext) LogManager.getContext(false);
         lc.getConfiguration().getLoggerConfig("org.jcvi.vigor").setLevel(verboseLevel);
         lc.updateLoggers();
+        LOGGER.debug("verbose logging enabled at level {}", verboseLevel);
     }
 
     private PeptideMatchingService.Scores getPeptideScores ( VigorConfiguration config ) {
