@@ -106,17 +106,18 @@ public class VigorUtils {
 
     public static String checkFilePath(String description, String path, FileCheck ... modes) throws VigorException {
 
-        if (description == null || description.isEmpty()) {
+        if (NullUtil.isNullOrEmpty(description)) {
             throw new VigorException("description not supplied");
         }
 
-        if (path == null || path.isEmpty()) {
+        if (NullUtil.isNullOrEmpty(path)) {
             throw new VigorException(String.format("%s not set", description));
         }
 
         if (modes.length == 0) {
             throw new VigorException(String.format("no file checks specified for %s", description));
         }
+
         File testFile = new File(path);
         EnumSet<FileCheck> checks = EnumSet.copyOf(Arrays.asList(modes));
         if (checks.contains(FileCheck.EXISTS) && ! testFile.exists()) {
