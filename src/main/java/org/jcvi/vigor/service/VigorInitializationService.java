@@ -435,12 +435,12 @@ public class VigorInitializationService {
 			Map<String,Map<String,String>> sectionMap = LoadDefaultParameters.configFileToSectionMap(configFile);
 			VigorConfiguration virusSpecificParameters = LoadDefaultParameters.configurationFromSectionMap(configFile.getPath(), sectionMap, virusConfigFlags);
 			configurations.add(virusSpecificParameters);
-			LOGGER.info("loaded virus specific config from {}", configFile.getPath());
+			LOGGER.debug("loaded virus specific config from {}", configFile.getPath());
 			if (virusSpecificParameters.hasSection(VigorConfiguration.METADATA_SECTION)) {
 				String version = virusSpecificParameters.getOrDefault(VigorConfiguration.METADATA_SECTION, ConfigurationParameters.Version, "");
 				String virusName = virusSpecificParameters.getOrDefault(VigorConfiguration.METADATA_SECTION, ConfigurationParameters.VirusName, "");
 				if (! (version.isEmpty()  && virusName.isEmpty()) ) {
-					LOGGER.info("Virus config {} is for virus \"{}\" version \"{}\"",
+					LOGGER.debug("Virus config {} is for virus \"{}\" version \"{}\"",
 								configFile.getAbsolutePath(),
 								NullUtil.emptyOrElse(virusName, "not set"),
 								NullUtil.emptyOrElse(version, "not set")
