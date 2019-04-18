@@ -10,7 +10,8 @@ Label name="Vigor4 OpenJDK 11" \
 RUN apt-get update && apt-get -y install \
     exonerate \
     git \
-    maven 
+    maven  \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN useradd --inactive -1 --create-home --comment "Vigor4"  --shell /bin/bash  vigor4
 USER vigor4

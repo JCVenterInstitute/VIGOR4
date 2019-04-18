@@ -11,7 +11,8 @@ RUN apt-get update && apt-get -y install \
     git \
     maven \
     openjdk-11-jre-headless  \
-    unzip
+    unzip \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN useradd --inactive -1 --create-home --comment "Vigor4"  --shell /bin/bash  vigor4
 USER vigor4
