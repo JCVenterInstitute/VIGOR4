@@ -255,9 +255,10 @@ public class Vigor {
     }
 
     public void outputModels(VigorConfiguration vigorParameters, GenerateVigorOutput.Outfiles outfiles, List<Model> geneModels) throws IOException {
-        generateAlignmentOutput(geneModels, outfiles);
+        String outputDir = vigorParameters.get(ConfigurationParameters.OutputDirectory);
+        generateAlignmentOutput(outputDir, geneModels, outfiles);
         generateOutput(vigorParameters, geneModels, outfiles);
-        generateGFF3Output(geneModels, outfiles);
+        generateGFF3Output(outputDir, geneModels, outfiles);
         FormatVigorOutput.printSequenceFeatures(geneModels, "GeneModels");
         outfiles.flush();
     }
@@ -376,14 +377,14 @@ public class Vigor {
         generateVigorOutput.generateOutputFiles(config, outfiles, models);
     }
 
-    public void generateGFF3Output ( List<Model> models, GenerateVigorOutput.Outfiles outfiles ) throws IOException {
+    public void generateGFF3Output ( String outputDir, List<Model> models, GenerateVigorOutput.Outfiles outfiles ) throws IOException {
 
-        generateGFF3Output.generateOutputFile(outfiles, models);
+        generateGFF3Output.generateOutputFile(outputDir, outfiles, models);
     }
 
-    public void generateAlignmentOutput ( List<Model> models, GenerateVigorOutput.Outfiles outfiles) {
+    public void generateAlignmentOutput ( String outputDir, List<Model> models, GenerateVigorOutput.Outfiles outfiles) throws IOException {
 
-        generateAlignmentOuput.generateOutputFile(outfiles, models);
+        generateAlignmentOuput.generateOutputFile(outputDir, outfiles, models);
     }
 
     private GenerateVigorOutput.Outfiles getOutfiles ( String outputDir, String outputPrefix, boolean overwrite ) throws IOException {

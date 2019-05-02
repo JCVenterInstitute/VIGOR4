@@ -4,11 +4,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.vigor.Vigor;
 import org.jcvi.vigor.component.Model;
+import org.jcvi.vigor.exception.VigorException;
 import org.springframework.stereotype.Service;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.*;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,13 +17,28 @@ public class GenerateAlignmentOuput {
 
     private static Logger LOGGER = LogManager.getLogger(Vigor.class);
 
-    public void generateOutputFile ( GenerateVigorOutput.Outfiles outfiles, List<Model> models ) {
-        List<File> raw_files = models.stream()
-                                    .map(m -> m.getAlignment().getAlignmentEvidence().getRaw_alignment())
-                                    .distinct().
-                collect(Collectors.toList());
-        for (File raw_alignment: raw_files) {
-            printAlignment(outfiles.get(GenerateVigorOutput.Outfile.ALN), raw_alignment);
+    public void generateOutputFile ( String outputDir, GenerateVigorOutput.Outfiles outfiles, List<Model> models ) throws IOException {
+        if (models.isEmpty()) {
+            LOGGER.warn("No models to print to ALN file");
+        }
+        String genomeID = models.get(0).getAlignment().getVirusGenome().getId();
+        String genomeAlignmentPath = Paths.get(outputDir, GenerateVigorOutput.getSequenceFilePath(genomeID) + ".aln").toString();
+        BufferedWriter alignmentWriter = outfiles.get(GenerateVigorOutput.Outfile.ALN);
+        try (FileWriter fw = new FileWriter(genomeAlignmentPath);
+             BufferedWriter genomeWriter = new BufferedWriter(fw)) {
+            List<File> raw_files = models.stream()
+                                         .map(m -> m.getAlignment().getAlignmentEvidence().getRaw_alignment())
+                                         .distinct().
+                                                 collect(Collectors.toList());
+
+            GenerateVigorOutput.WriterBundle bw = new GenerateVigorOutput.WriterBundle(alignmentWriter, genomeWriter);
+            for (File raw_alignment : raw_files) {
+                printAlignment(bw, raw_alignment);
+            }
+        } catch (IOException e ) {
+            String message = String.format("Issue opening/closing genome file %s for alignment", genomeAlignmentPath);
+            LOGGER.error(message, e);
+            throw e;
         }
         List<File> temp_directories = models.stream()
                 .map(m -> m.getAlignment().getAlignmentEvidence().getResults_directory())
@@ -34,7 +49,8 @@ public class GenerateAlignmentOuput {
         }
     }
 
-    public void printAlignment ( BufferedWriter bw, File inputFile ) {
+    // TODO don't write alignments one character at a time.
+    public void printAlignment (GenerateVigorOutput.WriterBundle bw, File inputFile ) {
 
         try {
             FileInputStream fRead = new FileInputStream(inputFile);
