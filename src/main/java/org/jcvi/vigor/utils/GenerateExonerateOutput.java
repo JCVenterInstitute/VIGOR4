@@ -38,7 +38,9 @@ public class GenerateExonerateOutput {
         } catch (IOException e) {
             throw new VigorException(String.format("problem creating input file %s", file), e);
         }
-        String fileName = virusGenome.getId().replaceAll("\\|", "") + ".txt";
+        String fileName = virusGenome.getId()
+                                     .replaceAll("\\|", "")
+                                     .replaceAll("/","_") + ".txt";
         File dbFile = new File(referenceDB);
         String refDBFolder = dbFile.getName().replaceAll("_db", "");
         String dbPath = referenceDB;
