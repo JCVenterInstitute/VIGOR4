@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Direction;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.vigor.component.*;
+import org.jcvi.vigor.exception.VigorException;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedWriter;
@@ -20,22 +21,22 @@ public class GenerateGFF3Output {
     private static Range.CoordinateSystem oneBased = Range.CoordinateSystem.RESIDUE_BASED;
     private static Logger LOGGER = LogManager.getLogger(GenerateGFF3Output.class);
 
-    public void generateOutputFile ( String outputDir, GenerateVigorOutput.Outfiles outfiles, List<Model> models ) throws IOException {
-        printGFF3Features(outputDir,outfiles.get(GenerateVigorOutput.Outfile.GFF3), models);
+    public void generateOutputFile (Outfiles outfiles, List<Model> models ) throws IOException, VigorException {
+        printGFF3Features(outfiles, models);
     }
 
-    public void printGFF3Features ( String outputDir, BufferedWriter gff3Writer, List<Model> geneModels ) throws IOException {
+    public void printGFF3Features (  Outfiles outfiles, List<Model> geneModels ) throws IOException, VigorException {
+
 
         if (geneModels.isEmpty()) {
             LOGGER.warn("no gene models for GFF3 output");
             return;
         }
-
+        BufferedWriter gff3Writer = outfiles.getWriter(GenerateVigorOutput.Outfile.GFF3);
         String genomeID = geneModels.get(0).getAlignment().getVirusGenome().getId();
-        String genomeFilePath = Paths.get(outputDir, GenerateVigorOutput.getSequenceFilePath(genomeID) + ".gff3").toString();
+        Path genomeFilePath = Paths.get(GenerateVigorOutput.getSequenceFilePath(genomeID) + ".gff3");
 
-        try (FileWriter fw = new FileWriter(genomeFilePath);
-             BufferedWriter genomeWriter = new BufferedWriter(fw)) {
+        try (BufferedWriter genomeWriter = outfiles.getWriter(genomeFilePath)) {
 
             genomeWriter.write("##gff-version 3");
             genomeWriter.newLine();

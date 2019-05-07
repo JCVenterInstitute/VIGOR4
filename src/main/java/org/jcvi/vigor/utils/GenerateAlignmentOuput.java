@@ -8,6 +8,7 @@ import org.jcvi.vigor.exception.VigorException;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,15 +18,14 @@ public class GenerateAlignmentOuput {
 
     private static Logger LOGGER = LogManager.getLogger(Vigor.class);
 
-    public void generateOutputFile ( String outputDir, GenerateVigorOutput.Outfiles outfiles, List<Model> models ) throws IOException {
+    public void generateOutputFile ( Outfiles outfiles, List<Model> models ) throws IOException, VigorException {
         if (models.isEmpty()) {
             LOGGER.warn("No models to print to ALN file");
         }
         String genomeID = models.get(0).getAlignment().getVirusGenome().getId();
-        String genomeAlignmentPath = Paths.get(outputDir, GenerateVigorOutput.getSequenceFilePath(genomeID) + ".aln").toString();
-        BufferedWriter alignmentWriter = outfiles.get(GenerateVigorOutput.Outfile.ALN);
-        try (FileWriter fw = new FileWriter(genomeAlignmentPath);
-             BufferedWriter genomeWriter = new BufferedWriter(fw)) {
+        Path genomeAlignmentPath = Paths.get(GenerateVigorOutput.getSequenceFilePath(genomeID) + ".aln");
+        BufferedWriter alignmentWriter = outfiles.getWriter( GenerateVigorOutput.Outfile.ALN);
+        try (BufferedWriter genomeWriter = outfiles.getWriter( genomeAlignmentPath)) {
             List<File> raw_files = models.stream()
                                          .map(m -> m.getAlignment().getAlignmentEvidence().getRaw_alignment())
                                          .distinct().

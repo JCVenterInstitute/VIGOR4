@@ -228,14 +228,12 @@ public class Vigor {
         try (NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(new File(inputFileName))
                 .hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)
                 .build();
-             GenerateVigorOutput.Outfiles outfiles = getOutfiles(outputDir,
-                                                                 outputPrefix,
-                                                                 vigorParameters.getOrDefault(ConfigurationParameters.OverwriteOutputFiles, false))
+             Outfiles outfiles = getOutfiles(vigorParameters);
         ) {
             // TODO move all this file handling to method
             // TODO checkout output earlier.
             writeEffectiveConfig(outputDir, outputPrefix, vigorParameters);
-            outfiles.get(GenerateVigorOutput.Outfile.GFF3).write("##gff-version 3\n");
+            outfiles.getWriter(GenerateVigorOutput.Outfile.GFF3).write("##gff-version 3\n");
             Iterator<NucleotideFastaRecord> recordIterator = dataStore.records().iterator();
             while (recordIterator.hasNext()) {
                 NucleotideFastaRecord record = recordIterator.next();
@@ -245,7 +243,7 @@ public class Vigor {
                     LOGGER.warn("No gene models generated for sequence {}", record.getId());
                     continue;
                 }
-                outputModels(vigorParameters, outfiles, geneModels);
+                outputModels(outfiles, geneModels);
             }
         } catch (DataStoreException e) {
             throw new VigorException(String.format("problem reading input file %s", inputFileName), e);
@@ -254,11 +252,10 @@ public class Vigor {
         }
     }
 
-    public void outputModels(VigorConfiguration vigorParameters, GenerateVigorOutput.Outfiles outfiles, List<Model> geneModels) throws IOException {
-        String outputDir = vigorParameters.get(ConfigurationParameters.OutputDirectory);
-        generateAlignmentOutput(outputDir, geneModels, outfiles);
-        generateOutput(vigorParameters, geneModels, outfiles);
-        generateGFF3Output(outputDir, geneModels, outfiles);
+    public void outputModels(Outfiles outfiles, List<Model> geneModels) throws IOException, VigorException {
+        generateAlignmentOutput(geneModels, outfiles);
+        generateOutput(geneModels, outfiles);
+        generateGFF3Output(geneModels, outfiles);
         FormatVigorOutput.printSequenceFeatures(geneModels, "GeneModels");
         outfiles.flush();
     }
@@ -372,35 +369,33 @@ public class Vigor {
         return geneModelGenerationService.generateGeneModel(models, configuration);
     }
 
-    public void generateOutput ( VigorConfiguration config, List<Model> models, GenerateVigorOutput.Outfiles outfiles ) throws IOException {
+    public void generateOutput ( List<Model> models, Outfiles outfiles ) throws IOException, VigorException {
 
-        generateVigorOutput.generateOutputFiles(config, outfiles, models);
+        generateVigorOutput.generateOutputFiles(outfiles, models);
     }
 
-    public void generateGFF3Output ( String outputDir, List<Model> models, GenerateVigorOutput.Outfiles outfiles ) throws IOException {
+    public void generateGFF3Output ( List<Model> models, Outfiles outfiles ) throws IOException, VigorException {
 
-        generateGFF3Output.generateOutputFile(outputDir, outfiles, models);
+        generateGFF3Output.generateOutputFile(outfiles, models);
     }
 
-    public void generateAlignmentOutput ( String outputDir, List<Model> models, GenerateVigorOutput.Outfiles outfiles) throws IOException {
+    public void generateAlignmentOutput ( List<Model> models, Outfiles outfiles) throws IOException, VigorException {
 
-        generateAlignmentOuput.generateOutputFile(outputDir, outfiles, models);
+        generateAlignmentOuput.generateOutputFile(outfiles, models);
     }
 
-    private GenerateVigorOutput.Outfiles getOutfiles ( String outputDir, String outputPrefix, boolean overwrite ) throws IOException {
+    private Outfiles getOutfiles (VigorConfiguration config) throws IOException, VigorException {
+        String outputDir = config.get(ConfigurationParameters.OutputDirectory);
+        VigorUtils.checkFilePath("output directory", outputDir,
+                                 VigorUtils.FileCheck.EXISTS,
+                                 VigorUtils.FileCheck.WRITE,
+                                 VigorUtils.FileCheck.DIRECTORY);
+        boolean overwrite = config.getOrDefault(ConfigurationParameters.OverwriteOutputFiles, false);
+        String fileBase = config.get(ConfigurationParameters.OutputPrefix);
 
-        GenerateVigorOutput.Outfiles outfiles = new GenerateVigorOutput.Outfiles();
-        List<OpenOption> openOptionsList = new ArrayList<>();
-        if (overwrite) {
-            openOptionsList.add(StandardOpenOption.CREATE);
-            openOptionsList.add(StandardOpenOption.TRUNCATE_EXISTING);
-        } else {
-            openOptionsList.add(StandardOpenOption.CREATE_NEW);
-        }
-        OpenOption[] openOptions = openOptionsList.toArray(new OpenOption[] {});
+        Outfiles outfiles = new Outfiles(Paths.get(outputDir), fileBase, overwrite);
         for (GenerateVigorOutput.Outfile outfile : GenerateVigorOutput.Outfile.values()) {
-            outfiles.put(outfile, Files.newBufferedWriter(Paths.get(outputDir, outputPrefix + "." + outfile.extension),
-                    Charset.forName("UTF-8"), openOptions));
+            outfiles.getWriter(outfile);
         }
         return outfiles;
     }

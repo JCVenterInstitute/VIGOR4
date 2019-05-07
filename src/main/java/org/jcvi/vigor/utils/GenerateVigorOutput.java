@@ -7,10 +7,12 @@ import org.jcvi.jillion.core.Sequence;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
 import org.jcvi.vigor.component.*;
+import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.service.Scores;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -31,37 +33,6 @@ public class GenerateVigorOutput {
         Outfile ( String extension ) {
 
             this.extension = extension;
-        }
-    }
-
-    public static class Outfiles extends EnumMap<Outfile, BufferedWriter> implements AutoCloseable {
-
-        public Outfiles () {
-
-            super(Outfile.class);
-        }
-
-        public void close () throws IOException {
-
-            List<IOException> exceptions = new ArrayList<>();
-            for (BufferedWriter writer : values()) {
-                try {
-                    writer.close();
-                } catch (IOException e) {
-                    exceptions.add(e);
-                }
-            }
-            if (!exceptions.isEmpty()) {
-                // TODO join all exceptions somehow meaningfully
-                throw exceptions.get(0);
-            }
-        }
-
-        public void flush () throws IOException {
-
-            for (BufferedWriter writer : values()) {
-                writer.flush();
-            }
         }
     }
 
@@ -100,27 +71,25 @@ public class GenerateVigorOutput {
     private static final Logger LOGGER = LogManager.getLogger(GenerateVigorOutput.class);
     private static Range.CoordinateSystem oneBased = Range.CoordinateSystem.RESIDUE_BASED;
 
-    public void generateOutputFiles ( VigorConfiguration config, Outfiles outfiles, List<Model> geneModels ) throws IOException {
+    public void generateOutputFiles (  Outfiles outfiles, List<Model> geneModels ) throws IOException, VigorException {
 
-        generateTBLReport(config, outfiles.get(Outfile.TBL), geneModels);
-        generateCDSReport(config, outfiles.get(Outfile.CDS), geneModels);
-        generatePEPReport(config, outfiles.get(Outfile.PEP), geneModels);
-        generateSUMReport(config, outfiles.get(Outfile.SUM), geneModels);
+        generateTBLReport(outfiles, geneModels);
+        generateCDSReport(outfiles, geneModels);
+        generatePEPReport(outfiles, geneModels);
+        generateSUMReport(outfiles, geneModels);
     }
 
-    public void generateSUMReport(VigorConfiguration config, BufferedWriter bw, List<Model> geneModels) throws IOException {
-
+    public void generateSUMReport(Outfiles outfiles, List<Model> geneModels) throws IOException, VigorException {
+        BufferedWriter bw = outfiles.getWriter(Outfile.SUM);
         if (geneModels.isEmpty()) {
             LOGGER.warn("no gene models to write to file");
             return;
         }
         String baseSequenceFileName = getSequenceFilePath(geneModels.get(0).getAlignment().getVirusGenome().getId());
-        String outputDir = config.get(ConfigurationParameters.OutputDirectory);
 
-        String sequenceSummaryReport = Paths.get(outputDir, baseSequenceFileName + ".sum").toString();
+        Path sequenceSummaryReport = Paths.get(baseSequenceFileName + ".sum");
 
-        try (FileWriter fw = new FileWriter(sequenceSummaryReport);
-             BufferedWriter bwSequence = new BufferedWriter(fw)) {
+        try (BufferedWriter bwSequence = outfiles.getWriter(sequenceSummaryReport)) {
 
             double identityAvg = 0;
             double similarityAvg = 0;
@@ -201,26 +170,25 @@ public class GenerateVigorOutput {
 
     }
 
-    public void generateTBLReport ( VigorConfiguration config, BufferedWriter tblWriter, List<Model> geneModels ) throws IOException {
-
+    public void generateTBLReport (Outfiles outfiles, List<Model> geneModels ) throws IOException, VigorException {
         if (geneModels.isEmpty()) {
             LOGGER.warn("no gene models to write to file");
             return;
         }
 
-        String outputDir = config.get(ConfigurationParameters.OutputDirectory);
+        BufferedWriter tblWriter = outfiles.getWriter(Outfile.TBL);
 
         VirusGenome virusGenome = geneModels.get(0).getAlignment().getVirusGenome();
         String genomeID = virusGenome.getId();
 
-        String locusPrefix = config.get(ConfigurationParameters.Locustag);
+        // TODO when moving to objects
+        String locusPrefix = ""; // config.get(ConfigurationParameters.Locustag);
         boolean writeLocus = ! NullUtil.isNullOrEmpty(locusPrefix);
         long seqlength = virusGenome.getSequence().getLength();
 
         String geneFileBase = getSequenceFilePath(genomeID);
-        String geneFilePath = Paths.get(outputDir, geneFileBase + ".tbl").toString();
-        try (FileWriter geneFileWriter = new FileWriter(geneFilePath);
-             BufferedWriter geneFileBWWriter = new BufferedWriter(geneFileWriter)) {
+        Path geneFilePath = Paths.get( geneFileBase + ".tbl");
+        try (BufferedWriter geneFileBWWriter = outfiles.getWriter(geneFilePath)) {
 
             WriterBundle bw = new WriterBundle(tblWriter, geneFileBWWriter);
 
@@ -427,23 +395,20 @@ public class GenerateVigorOutput {
         }
     }
 
-    public void generateCDSReport ( VigorConfiguration config, BufferedWriter cdsWriter, List<Model> geneModels ) throws IOException {
-
+    public void generateCDSReport (Outfiles outfiles, List<Model> geneModels ) throws IOException, VigorException {
         if (geneModels.isEmpty()) {
             LOGGER.warn("No gene models to write CDS reports");
             return;
         }
+        BufferedWriter cdsWriter = outfiles.getWriter(Outfile.CDS);
 
-        String outputDir = config.get(ConfigurationParameters.OutputDirectory);
         String sequenceFileBase = getSequenceFilePath(geneModels.get(0).getAlignment().getVirusGenome().getId());
-        String sequenceFilePath = Paths.get(outputDir, sequenceFileBase + ".cds").toString();
-        try (FileWriter sequenceFileWriter = new FileWriter(sequenceFilePath);
-             BufferedWriter sequenceWriter = new BufferedWriter(sequenceFileWriter)) {
+        Path sequenceFilePath = Paths.get(sequenceFileBase + ".cds");
+        try (BufferedWriter sequenceWriter = outfiles.getWriter(sequenceFilePath)) {
 
                 for (Model model : geneModels) {
-                    String geneFilePath = Paths.get(outputDir, getGeneFilePath(model.getGeneID()) + ".cds").toString();
-                    try (FileWriter modelFileWriter = new FileWriter(geneFilePath);
-                    BufferedWriter modelWriter = new BufferedWriter(modelFileWriter)) {
+                    Path geneFilePath = Paths.get( getGeneFilePath(model.getGeneID()) + ".cds");
+                    try (BufferedWriter modelWriter = outfiles.getWriter(geneFilePath)) {
                     WriterBundle bw = new WriterBundle(cdsWriter, sequenceWriter, modelWriter);
 
                     bw.write(getDefline(model));
@@ -466,8 +431,8 @@ public class GenerateVigorOutput {
             }
         }
 
-    public void generatePEPReport ( VigorConfiguration config, BufferedWriter pepWriter, List<Model> geneModels ) throws IOException {
-
+    public void generatePEPReport ( Outfiles outfiles, List<Model> geneModels ) throws IOException, VigorException {
+        BufferedWriter pepWriter = outfiles.getWriter(Outfile.PEP);
         StringBuilder defline;
 
         if (geneModels.isEmpty()) {
@@ -477,17 +442,14 @@ public class GenerateVigorOutput {
         VirusGenome genome = geneModels.get(0).getAlignment().getVirusGenome();
         String genomeID = genome.getId();
         long seqLength = genome.getSequence().getLength();
-        String outputDir = config.get(ConfigurationParameters.OutputDirectory);
 
-        String sequenceFilePath = Paths.get(outputDir, getSequenceFilePath(genomeID) + ".pep").toString();
-        try (FileWriter fw = new FileWriter(sequenceFilePath);
-             BufferedWriter sequenceWriter = new BufferedWriter(fw)) {
+        Path sequenceFilePath = Paths.get(getSequenceFilePath(genomeID) + ".pep");
+        try (BufferedWriter sequenceWriter = outfiles.getWriter(sequenceFilePath)) {
 
             for (Model model : geneModels) {
 
-                String geneFilePath = Paths.get(outputDir, getGeneFilePath(model.getGeneID()) + ".pep").toString();
-                try (FileWriter modelFileWriter = new FileWriter(geneFilePath);
-                     BufferedWriter modelWriter = new BufferedWriter(modelFileWriter)) {
+                Path geneFilePath = Paths.get(getGeneFilePath(model.getGeneID()) + ".pep");
+                try (BufferedWriter modelWriter = outfiles.getWriter(geneFilePath)) {
                     WriterBundle fbw = new WriterBundle(pepWriter, sequenceWriter, modelWriter);
 
                     fbw.write(getDefline(model));
@@ -496,9 +458,8 @@ public class GenerateVigorOutput {
                     IDGenerator idGenerator = IDGenerator.of(model.getGeneID());
                     for (MaturePeptideMatch match : model.getMaturePeptides()) {
                         String pepID = idGenerator.next();
-                        String pepFilePath = Paths.get(outputDir, getGeneFilePath(pepID) + ".pep").toString();
-                        try (FileWriter pepFileWriter = new FileWriter(pepFilePath);
-                             BufferedWriter pWriter = new BufferedWriter(pepFileWriter)) {
+                        Path pepFilePath = Paths.get( getGeneFilePath(pepID) + ".pep");
+                        try (BufferedWriter pWriter = outfiles.getWriter(pepFilePath)) {
                             WriterBundle bw = new WriterBundle(pepWriter, sequenceWriter, pWriter);
                             defline = new StringBuilder();
                             defline.append(">" + pepID);
