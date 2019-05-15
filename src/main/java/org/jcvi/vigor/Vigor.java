@@ -53,13 +53,7 @@ public class Vigor {
     @Autowired
     private GeneModelGenerationService geneModelGenerationService;
     @Autowired
-    private GenerateVigorOutput generateVigorOutput;
-    @Autowired
-    private GenerateGFF3Output generateGFF3Output;
-    @Autowired
     private PeptideMatchingService peptideMatchingService;
-    @Autowired
-    private GenerateAlignmentOuput generateAlignmentOuput;
 
 
     public void run ( String... args ) {
@@ -225,6 +219,7 @@ public class Vigor {
                                  VigorUtils.FileCheck.EXISTS,
                                  VigorUtils.FileCheck.WRITE,
                                  VigorUtils.FileCheck.DIRECTORY);
+        List<IOutputWriter> writers = getWriters(vigorParameters);
         try (NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(new File(inputFileName))
                 .hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)
                 .build();
@@ -233,7 +228,10 @@ public class Vigor {
             // TODO move all this file handling to method
             // TODO checkout output earlier.
             writeEffectiveConfig(outputDir, outputPrefix, vigorParameters);
-            outfiles.getWriter(GenerateVigorOutput.Outfile.GFF3).write("##gff-version 3\n");
+            // initialize the writers. This will fail if the files exist and we're not overwriting
+            for (IOutputWriter writer: writers) {
+                writer.getWriter(outfiles, new OutputContext());
+            }
             Iterator<NucleotideFastaRecord> recordIterator = dataStore.records().iterator();
             while (recordIterator.hasNext()) {
                 NucleotideFastaRecord record = recordIterator.next();
@@ -243,19 +241,43 @@ public class Vigor {
                     LOGGER.warn("No gene models generated for sequence {}", record.getId());
                     continue;
                 }
-                outputModels(outfiles, geneModels);
+                outputModels(writers, outfiles, geneModels);
             }
         } catch (DataStoreException e) {
             throw new VigorException(String.format("problem reading input file %s", inputFileName), e);
+        } catch (FileAlreadyExistsException e) {
+            throw new UserFacingException(String.format("File already exists %s", e.getMessage()));
         } catch (IOException e) {
             throw new VigorException(String.format("File issue. Got %s: %s", e.getClass().getSimpleName(), e.getMessage()), e);
         }
     }
 
-    public void outputModels(Outfiles outfiles, List<Model> geneModels) throws IOException, VigorException {
-        generateAlignmentOutput(geneModels, outfiles);
-        generateOutput(geneModels, outfiles);
-        generateGFF3Output(geneModels, outfiles);
+    private List<IOutputWriter> getWriters(VigorConfiguration config) {
+        // TODO get writer preferences from config
+        List<IOutputWriter> writers = new ArrayList<>();
+        writers.add(new TBLWriter());
+        writers.add(new CDSWriter());
+        writers.add(new PEPWriter());
+        writers.add(new SUMWriter());
+        writers.add(new AlignmentWriter());
+        writers.add(new GFF3Writer());
+
+        for (IOutputWriter writer: writers) {
+            if (IConfigurable.class.isAssignableFrom(writer.getClass())) {
+                ((IConfigurable) writer).configure(config);
+            }
+        }
+        return writers;
+    }
+
+    public void outputModels(List<IOutputWriter> writers, Outfiles outfiles, List<Model> geneModels) throws IOException, VigorException {
+        for (IOutputWriter writer: writers) {
+            writer.writeModels(outfiles, geneModels);
+            outfiles.flush();
+        }
+//        generateAlignmentOutput(geneModels, outfiles);
+//        generateOutput(geneModels, outfiles);
+//        generateGFF3Output(geneModels, outfiles);
         FormatVigorOutput.printSequenceFeatures(geneModels, "GeneModels");
         outfiles.flush();
     }
@@ -369,21 +391,6 @@ public class Vigor {
         return geneModelGenerationService.generateGeneModel(models, configuration);
     }
 
-    public void generateOutput ( List<Model> models, Outfiles outfiles ) throws IOException, VigorException {
-
-        generateVigorOutput.generateOutputFiles(outfiles, models);
-    }
-
-    public void generateGFF3Output ( List<Model> models, Outfiles outfiles ) throws IOException, VigorException {
-
-        generateGFF3Output.generateOutputFile(outfiles, models);
-    }
-
-    public void generateAlignmentOutput ( List<Model> models, Outfiles outfiles) throws IOException, VigorException {
-
-        generateAlignmentOuput.generateOutputFile(outfiles, models);
-    }
-
     private Outfiles getOutfiles (VigorConfiguration config) throws IOException, VigorException {
         String outputDir = config.get(ConfigurationParameters.OutputDirectory);
         VigorUtils.checkFilePath("output directory", outputDir,
@@ -394,9 +401,9 @@ public class Vigor {
         String fileBase = config.get(ConfigurationParameters.OutputPrefix);
 
         Outfiles outfiles = new Outfiles(Paths.get(outputDir), fileBase, overwrite);
-        for (GenerateVigorOutput.Outfile outfile : GenerateVigorOutput.Outfile.values()) {
-            outfiles.getWriter(outfile);
-        }
+     //   for (GenerateVigorOutput.Outfile outfile : GenerateVigorOutput.Outfile.values()) {
+     //       outfiles.getWriter(outfile);
+     //   }
         return outfiles;
     }
 

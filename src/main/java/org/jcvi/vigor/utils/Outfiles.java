@@ -1,5 +1,7 @@
 package org.jcvi.vigor.utils;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jcvi.vigor.exception.VigorException;
 
 import java.io.BufferedWriter;
@@ -7,10 +9,35 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.*;
 import java.util.*;
+import java.util.function.Consumer;
 
 public class Outfiles implements AutoCloseable {
 
-    private final Map<Path, BufferedWriter> writers;
+    class Buffer {
+
+        final BufferedWriter bufferedWriter;
+        final Consumer<BufferedWriter> onOpen;
+        final Consumer<BufferedWriter> onClose;
+
+        Buffer(BufferedWriter bw, Consumer<BufferedWriter> onOpen, Consumer<BufferedWriter> onClose) {
+            bufferedWriter = bw;
+            this.onOpen = onOpen;
+            this.onClose = onClose;
+        }
+
+        void close() throws IOException {
+            onClose.accept(bufferedWriter);
+            bufferedWriter.close();
+        }
+
+        void open() throws IOException {
+            onOpen.accept(bufferedWriter);
+        }
+    }
+
+    private static Logger LOGGER = LogManager.getLogger(Outfiles.class);
+
+    private final Map<Path, Buffer> writers;
     private final Path rootPath;
     private final boolean overwrite;
     private final String baseName;
@@ -26,9 +53,10 @@ public class Outfiles implements AutoCloseable {
 
         synchronized (writers) {
             List<IOException> exceptions = new ArrayList<>(writers.size());
-            for (BufferedWriter writer : writers.values()) {
+            for (Map.Entry<Path, Buffer> entry : writers.entrySet()) {
+                LOGGER.trace("Closing writer {} for path {}", entry.getValue(), entry.getKey());
                 try {
-                    writer.close();
+                    entry.getValue().close();
                 } catch (IOException e) {
                     exceptions.add(e);
                 }
@@ -40,19 +68,21 @@ public class Outfiles implements AutoCloseable {
         }
     }
 
-    public void flush () throws IOException {
+    public void flush() {
 
         synchronized (writers) {
-            List<IOException> exceptions = new ArrayList<>();
-            for (BufferedWriter writer : writers.values()) {
+            List<Path> closed = new ArrayList<>();
+            for (Path path: writers.keySet()) {
+                LOGGER.trace("Flushing writer for path {}", path);
                 try {
-                    writer.flush();
+                    writers.get(path).bufferedWriter.flush();
                 } catch (IOException e) {
-                    exceptions.add(e);
+                    closed.add(path);
+                    LOGGER.debug("flushing path got {}:{}", path, e.getClass(), e.getMessage());
                 }
             }
-            if (! exceptions.isEmpty()) {
-                throw exceptions.get(0);
+            for (Path path: closed) {
+                writers.remove(path);
             }
         }
     }
@@ -62,19 +92,21 @@ public class Outfiles implements AutoCloseable {
      * @param path
      * @return
      */
-    public BufferedWriter getWriter(Path path) throws VigorException, IOException {
+    public BufferedWriter getWriter(Path path, Consumer<BufferedWriter> onOpen, Consumer<BufferedWriter> onClose) throws VigorException, IOException {
         Path newPath = getAbsolutePath(path);
         synchronized (writers) {
             if (!writers.containsKey(newPath)) {
                 BufferedWriter writer = getBuffer(newPath);
-                writers.put(newPath, writer);
+                Buffer b = new Buffer(writer, onOpen, onClose);
+                writers.put(newPath, b);
+                b.open();
             }
-            return writers.get(newPath);
+            return writers.get(newPath).bufferedWriter;
         }
     }
 
-    public BufferedWriter getWriter(GenerateVigorOutput.Outfile outfile) throws IOException, VigorException {
-        return getWriter(getOutfilePath(outfile));
+    public BufferedWriter getWriter(Path path) throws VigorException, IOException {
+        return getWriter(path, b -> {}, b -> {});
     }
 
     private Path getAbsolutePath(Path path) throws VigorException {
@@ -85,8 +117,8 @@ public class Outfiles implements AutoCloseable {
         return newPath;
     }
 
-    private Path getOutfilePath(GenerateVigorOutput.Outfile outfile) {
-        return rootPath.resolve(baseName + "." + outfile.extension);
+    public Path getBaseFilePath(String extension) {
+        return rootPath.resolve(baseName + "." + extension);
     }
 
     private BufferedWriter getBuffer(Path path) throws IOException {
@@ -101,13 +133,22 @@ public class Outfiles implements AutoCloseable {
         return Files.newBufferedWriter(path, Charset.forName("UTF-8"), openOptions);
     }
 
-    private Optional<BufferedWriter> removeWriter(Path path) throws VigorException {
+    private Optional<Buffer> removeWriter(Path path) throws VigorException {
         synchronized (writers) {
-            return Optional.ofNullable(writers.get(getAbsolutePath(path)));
+            return Optional.ofNullable(writers.remove(getAbsolutePath(path)));
         }
     }
 
-    private Optional<BufferedWriter> removeWriter(GenerateVigorOutput.Outfile outfile) throws VigorException {
-        return removeWriter(getOutfilePath(outfile));
+    public Optional<BufferedWriter> close(Path path) throws IOException, VigorException {
+        synchronized (writers) {
+            Optional<Buffer> buffer = removeWriter(path);
+            if (buffer.isPresent()) {
+                Buffer b = buffer.get();
+                LOGGER.trace("Closing writer {} for path {}", b.bufferedWriter, path);
+                b.close();
+            }
+            return Optional.ofNullable(buffer == null ? null : buffer.get().bufferedWriter);
+        }
     }
+
 }

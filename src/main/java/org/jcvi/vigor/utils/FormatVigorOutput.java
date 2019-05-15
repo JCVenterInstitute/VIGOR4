@@ -202,7 +202,7 @@ public class FormatVigorOutput {
                 List<Range> cdRanges = VigorFunctionalUtils.proteinRangeToCDSRanges(model, match.getProteinRange());
                 long start = VigorFunctionalUtils.getDirectionBasedCoordinate(model.getRange().getBegin(Range.CoordinateSystem.RESIDUE_BASED),seqLength,model.getDirection());
                 long end = VigorFunctionalUtils.getDirectionBasedCoordinate(model.getRange().getEnd(Range.CoordinateSystem.RESIDUE_BASED),seqLength,model.getDirection());
-                content.append(String.format("%-20s",GenerateVigorOutput.formatMaturePeptideRange(model,
+                content.append(String.format("%-20s",OutputWriterUtils.formatMaturePeptideRange(model,
                                                                                                   match,
                                                                                                   cdRanges,
                                                                                                   Range.CoordinateSystem.RESIDUE_BASED,
