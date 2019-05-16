@@ -79,7 +79,7 @@ public class TBLFileParser {
                     pattern = Pattern.compile("Feature(s?)[\\s](\\S*)");
                     matcher = pattern.matcher(s);
                     if (matcher.find()) {
-                        virusGenomeID = matcher.group(2).toString();
+                        virusGenomeID = matcher.group(2);
                     }
                     if (geneLineMatcher.matches()) {
                         model = new TBLModel();

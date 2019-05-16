@@ -87,9 +87,8 @@ public class SUMWriter extends BaseOutputWriter {
                     long end = VigorFunctionalUtils.getDirectionBasedCoordinate(
                             model.getRange().getEnd(Range.CoordinateSystem.RESIDUE_BASED), seqLength, model.getDirection());
 
-                    bw.write(String.format(
-                            OutputWriterUtils.formatMaturePeptideRange(model, match, cdRanges, Range.CoordinateSystem.RESIDUE_BASED,
-                                                                         "..", start + model.getExons().get(0).getFrame().getFrame() - 1, end, true)));
+                    bw.write(OutputWriterUtils.formatMaturePeptideRange(model, match, cdRanges, Range.CoordinateSystem.RESIDUE_BASED,
+                                                                        "..", start + model.getExons().get(0).getFrame().getFrame() - 1, end, true));
                     bw.write("\t" + match.getProteinRange().getLength());
                     bw.write("\t" + match.getReference().getSequence().getLength());
                     bw.write("\t" + match.getReference().getProteinID());

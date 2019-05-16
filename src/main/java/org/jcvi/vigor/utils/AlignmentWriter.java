@@ -39,7 +39,7 @@ public class AlignmentWriter extends BaseOutputWriter {
                 .distinct()
                 .collect(Collectors.toList());
         for (File temp_directory: temp_directories) {
-            VigorUtils.deleteTempFiles(temp_directory.getAbsolutePath().toString());
+            VigorUtils.deleteTempFiles(temp_directory.getAbsolutePath());
         }
     }
 

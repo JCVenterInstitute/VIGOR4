@@ -51,7 +51,7 @@ public class TBLWriter extends BaseOutputWriter {
                 Ribosomal_Slippage riboSlippage = model.getAlignment().getViralProtein().getGeneAttributes().getRibosomal_slippage();
                 RNA_Editing rna_editing = model.getAlignment().getViralProtein().getGeneAttributes().getRna_editing();
                 List<SpliceSite> spliceSites = model.getAlignment().getViralProtein().getGeneAttributes().getSpliceSites();
-                StringBuilder notes = new StringBuilder("");
+                StringBuilder notes = new StringBuilder();
                 List<Exon> exons = model.getExons();
                 Collections.sort(exons, Comparator.comparing(e -> VigorFunctionalUtils.getDirectionBasedRange(e.getRange(), seqlength, model.getDirection()), Range.Comparators.ARRIVAL));
                 Exon firstExon = exons.get(0);

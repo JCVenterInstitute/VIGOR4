@@ -196,7 +196,7 @@ public class DetermineStart implements DetermineGeneFeatures {
             Range fExonRange = fExon.getRange();
             long bases;
             if (isSequenceMissing) {
-                bases = fExonRange.getBegin() - 0;
+                bases = fExonRange.getBegin();
                 fExon.setRange(Range.of(0, fExonRange.getEnd()));
             } else {
                 bases = fExonRange.getBegin() - ( sequenceGapRange.getEnd() + 1 );
