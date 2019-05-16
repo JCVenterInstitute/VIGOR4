@@ -8,6 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.NullUtil;
+import org.jcvi.vigor.utils.OutputWriters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -164,6 +165,10 @@ public class VigorInputValidationService {
               .dest(CommandLineParameters.temporaryDirectory)
               .help("Root directory to use for temporary directories");
 
+        parser.addArgument("--list-output-formats")
+              .action(new PrintFormats())
+              .help("list acceptable output formats and exit");
+
         return parser;
     }
 
@@ -178,6 +183,18 @@ public class VigorInputValidationService {
             return false;
         }
 
+    }
+
+    private static class PrintFormats extends CustomNoArgumentAction {
+
+        @Override
+        public void run(ArgumentParser argumentParser, Argument argument, Map<String, Object> map, String s, Object o) throws ArgumentParserException {
+            System.out.println(OutputWriters.Writers.keySet()
+                                                    .stream()
+                                                    .sorted(String.CASE_INSENSITIVE_ORDER)
+                                                    .collect(Collectors.joining(",","Valid Formats: ","")));
+            System.exit(0);
+        }
     }
 
     private static class PrintVersion extends CustomNoArgumentAction {
@@ -219,6 +236,7 @@ public class VigorInputValidationService {
             }
         }
     }
+
     private static class ListConfigurations implements ArgumentAction {
         @Override
         public void onAttach(Argument argument) {

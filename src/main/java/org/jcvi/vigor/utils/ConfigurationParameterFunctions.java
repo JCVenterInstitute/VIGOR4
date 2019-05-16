@@ -1,5 +1,6 @@
 package org.jcvi.vigor.utils;
 
+import com.google.common.collect.Sets;
 import org.jcvi.jillion.core.residue.aa.AminoAcid;
 import org.jcvi.vigor.component.SpliceForm;
 import org.jcvi.vigor.component.StopTranslationException;
@@ -42,10 +43,11 @@ public class ConfigurationParameterFunctions {
         }
     }
 
-    public static ValueFunction toListOfStrings = of(List.class, string -> Arrays.stream(string.split(","))
-                                                                            .map(String::trim)
-                                                                            .filter(s -> ! s.isEmpty())
-                                                                            .collect(Collectors.toList()),
+    public static Function<String,List<String>> stringToList = string -> Arrays.stream(string.split(","))
+                                                                               .map(String::trim)
+                                                                               .filter(s -> ! s.isEmpty())
+                                                                               .collect(Collectors.toList());
+    public static ValueFunction toListOfStrings = of(List.class, stringToList,
                                                      v -> String.join(",", (List) v));
     public static ValueFunction toSpliceForms = of (List.class, SpliceForm::parseFromString);
     public static ValueFunction toStopException = of(StopTranslationException.class,
@@ -156,5 +158,28 @@ public class ConfigurationParameterFunctions {
                       }
                       return v;
                   });
+    }
+
+    public static ValueFunction areMembersOfSet(String ... members) {
+
+        Set<String> validMembers = Arrays.stream(members).map(String::toUpperCase).collect(Collectors.toSet());
+        return of(Set.class,
+                  s -> {
+                      Set<String> value = stringToList.apply(s).stream().map(String::toUpperCase).collect(Collectors.toSet());
+                      Set<String> unknownFormats = Sets.difference(value, validMembers);
+                      if (!unknownFormats.isEmpty()) {
+                          throw new InvalidValue(String.format("Unexpected value(s): %s. Value(s) must be one of: %s",
+                                                               unknownFormats.stream()
+                                                                             .sorted(String.CASE_INSENSITIVE_ORDER)
+                                                                             .collect(Collectors.joining(",")),
+                                                               validMembers.stream()
+                                                                           .sorted(String.CASE_INSENSITIVE_ORDER)
+                                                                           .collect(Collectors.joining(",")))
+                          );
+                      }
+                      return value;
+                  },
+                  set -> ((Set<String>)set).stream().sorted(String.CASE_INSENSITIVE_ORDER).collect(Collectors.joining(","))
+        );
     }
 }

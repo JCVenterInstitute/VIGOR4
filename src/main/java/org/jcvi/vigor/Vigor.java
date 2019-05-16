@@ -1,5 +1,6 @@
 package org.jcvi.vigor;
 
+import com.google.common.collect.Sets;
 import net.sourceforge.argparse4j.inf.Namespace;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -36,6 +37,7 @@ import java.nio.charset.Charset;
 import java.nio.file.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 @Component
@@ -252,15 +254,21 @@ public class Vigor {
         }
     }
 
-    private List<IOutputWriter> getWriters(VigorConfiguration config) {
+    private List<IOutputWriter> getWriters(VigorConfiguration config) throws VigorException {
         // TODO get writer preferences from config
         List<IOutputWriter> writers = new ArrayList<>();
-        writers.add(new TBLWriter());
-        writers.add(new CDSWriter());
-        writers.add(new PEPWriter());
-        writers.add(new SUMWriter());
-        writers.add(new AlignmentWriter());
-        writers.add(new GFF3Writer());
+        Set<String> selectedWriters = config.getOrDefault(ConfigurationParameters.OutputFormats, Collections.EMPTY_SET);
+        for (String selectedWriter: selectedWriters) {
+            Supplier<IOutputWriter> writerSupplier = OutputWriters.Writers.get(selectedWriter);
+            if (writerSupplier == null) {
+                throw new VigorException("Unknown format " + selectedWriter);
+            }
+            writers.add(writerSupplier.get());
+        }
+
+        if (writers.isEmpty()) {
+            throw new UserFacingException("No writers configured");
+        }
 
         for (IOutputWriter writer: writers) {
             if (IConfigurable.class.isAssignableFrom(writer.getClass())) {

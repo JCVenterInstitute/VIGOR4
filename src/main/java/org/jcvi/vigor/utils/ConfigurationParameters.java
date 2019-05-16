@@ -90,6 +90,9 @@ public enum ConfigurationParameters {
                     Flags.COMMANDLINE_SET, Flags.REQUIRED),
 
     OutputPrefix("output_prefix", "Use this prefix output files", Flags.VERSION_3, Flags.VERSION_4, Flags.COMMANDLINE_SET, Flags.REQUIRED),
+    OutputFormats("output_formats", "Comma-separated list of output formats",
+                  areMembersOfSet(OutputWriters.Writers.keySet().toArray(new String[] {})),
+                  Flags.COMMANDLINE_SET, Flags.PROGRAM_CONFIG_SET),
     OverwriteOutputFiles("overwrite_output_files", "Overwrite output files if they exist",
                          toBoolean,
                          Flags.VERSION_4,
@@ -154,6 +157,7 @@ public enum ConfigurationParameters {
                                    Flags.VERSION_4,
                                    Flags.COMMANDLINE_SET,
                                    Flags.PROGRAM_CONFIG_SET);
+
 
 
     static final Map<String, ConfigurationParameters> byConfigKey;
