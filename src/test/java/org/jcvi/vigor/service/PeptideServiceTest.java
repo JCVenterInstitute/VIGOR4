@@ -9,7 +9,6 @@ import org.jcvi.jillion.core.residue.aa.ProteinSequenceBuilder;
 import org.jcvi.vigor.Application;
 import org.jcvi.vigor.component.*;
 import org.jcvi.vigor.testing.category.Fast;
-import org.jcvi.vigor.testing.category.Isolated;
 import org.jcvi.vigor.exception.VigorException;
 import org.jcvi.vigor.testing.category.ReferenceDatabase;
 import org.jcvi.vigor.utils.ConfigurationParameters;

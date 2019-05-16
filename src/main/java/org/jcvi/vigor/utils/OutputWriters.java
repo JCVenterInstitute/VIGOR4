@@ -1,6 +1,5 @@
 package org.jcvi.vigor.utils;
 
-import org.jcvi.vigor.component.Alignment;
 
 import java.util.HashMap;
 import java.util.Map;

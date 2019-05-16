@@ -1,6 +1,5 @@
 package org.jcvi.vigor;
 
-import com.google.common.collect.Sets;
 import net.sourceforge.argparse4j.inf.Namespace;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;

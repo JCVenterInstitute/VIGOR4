@@ -4,7 +4,6 @@ import java.io.File;
 import java.net.URL;
 import java.util.*;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 
 import org.apache.commons.configuration2.INIConfiguration;
 import org.apache.commons.configuration2.builder.fluent.Configurations;

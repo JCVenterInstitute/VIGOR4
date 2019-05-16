@@ -9,7 +9,6 @@ import org.apache.logging.log4j.Logger;
 import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.NullUtil;
 import org.jcvi.vigor.utils.OutputWriters;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
