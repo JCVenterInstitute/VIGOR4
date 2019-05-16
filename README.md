@@ -37,7 +37,7 @@ Refer to [INSTALL.md](https://github.com/JCVenterInstitute/VIGOR4/blob/master/IN
                          path to fasta  file  of  genomic  sequences  to be
                          annotated
   -o <output prefix>, --output-prefix <output prefix>
-                         prefix for outputfile  files,  e.g.  if  the ouput
+                         prefix for outputfile  files,  e.g.  if  the output
                          prefix is  /mydir/anno  VIGOR  will  create output
                          files /mydir/anno.tbl, /mydir/anno.stats, etc.
   -c MIN_COVERAGE, --min-coverage MIN_COVERAGE
