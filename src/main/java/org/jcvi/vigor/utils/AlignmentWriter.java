@@ -59,7 +59,7 @@ public class AlignmentWriter extends BaseOutputWriter {
             }
             fRead.close();
         } catch (Exception e) {
-            LOGGER.warn("Error reading temporory alignment file", inputFile.getAbsolutePath());
+            LOGGER.warn("Error reading temporory alignment file {}", inputFile.getAbsolutePath());
         }
     }
 

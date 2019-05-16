@@ -126,7 +126,7 @@ public class VigorInitializationService {
                 if (param.hasFlag(ConfigurationParameters.Flags.VERSION_4)) {
                     propConfiguration.putString(param, val);
                 } else {
-                    LOGGER.debug("Ignoring non-VIGOR4 parameter {}={} set via system properties", param.configKey, val, param.getSystemPropertyName());
+                    LOGGER.debug("Ignoring non-VIGOR4 parameter {}={} set via system property {}", param.configKey, val, param.getSystemPropertyName());
                 }
             }
         }

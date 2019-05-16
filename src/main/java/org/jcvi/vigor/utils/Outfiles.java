@@ -78,7 +78,7 @@ public class Outfiles implements AutoCloseable {
                     writers.get(path).bufferedWriter.flush();
                 } catch (IOException e) {
                     closed.add(path);
-                    LOGGER.debug("flushing path got {}:{}", path, e.getClass(), e.getMessage());
+                    LOGGER.debug("flushing path {} got {}:{}", path, e.getClass(), e.getMessage());
                 }
             }
             for (Path path: closed) {
