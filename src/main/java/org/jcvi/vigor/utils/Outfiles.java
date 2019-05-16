@@ -147,7 +147,7 @@ public class Outfiles implements AutoCloseable {
                 LOGGER.trace("Closing writer {} for path {}", b.bufferedWriter, path);
                 b.close();
             }
-            return Optional.ofNullable(buffer == null ? null : buffer.get().bufferedWriter);
+            return Optional.ofNullable(buffer == null || ! buffer.isPresent() ? null : buffer.get().bufferedWriter);
         }
     }
 
