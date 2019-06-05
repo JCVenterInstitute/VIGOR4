@@ -4,7 +4,10 @@ VIGOR4 determines the protein coding sequences by sequence similarity searching 
 
 This project is funded by the National Institute Of Allergy And Infectious Diseases of the National Institutes of Health under Award Number U19AI110819 and Contract Number HHSN272201400028C and is a collaboration between Northrop Grumman Health IT, J. Craig Venter Institute, and Vecna Technologies.
 
-### VIGOR4 currently annotates the following viruses:
+### Annotatable Viruses
+
+Vigor4 uses the [VIGOR_DB](https://github.com/JCVenterInstitute/VIGOR_DB) project which currently has databases for the following viruses:
+
 * Influenza (A & B for human, avian, and swine, and C for human)
 * West Nile Virus
 * Zika Virus
@@ -16,13 +19,24 @@ This project is funded by the National Institute Of Allergy And Infectious Disea
 * Lassa Mammarenavirus
 
 ## Installing VIGOR4
+
+#### Quick Start
+
+```
+mvn -DskipTests clean package
+unzip target/vigor-4.0.VERSION.zip -d INSTALL_DIRECTORY
+# set reference database path, exonerate path and temporary directory
+vi INSTALL_DIRECTORY/vigor-4.0.VERSION/config/vigor.ini
+INSTALL_DIRECTORY/vigor-4.0.VERSION/bin/vigor4 -i VIRUS.fasta -o OUTPUT_DIRECTORY -d VIRUS_DB
+```
+
 #### Build Dependencies
 Vigor4 uses 'Maven' to build & package the program <br>
 #### Runtime Dependencies
 VIGOR4 runs on Linux environment <br>
 JAVA8 or above<br>
 [Exonerate2.2.0](https://www.ebi.ac.uk/about/vertebrate-genomics/software/exonerate)<br>
-Vigor Viral databse (Available at [VIGOR_DB](https://github.com/JCVenterInstitute/VIGOR_DB))
+Vigor Viral database (Available at [VIGOR_DB](https://github.com/JCVenterInstitute/VIGOR_DB))
 
 Refer to [INSTALL.md](https://github.com/JCVenterInstitute/VIGOR4/blob/master/INSTALL.md) for detailed instructions
 
@@ -109,7 +123,7 @@ locus tag usage:
 ## Reference Databases:
 
  | Name  | Description |
- | :-----: | :----------:|
+ | :------------ | :----------|
  | flua |  Influenza A |
  | flub |  Influenza B|
  |fluc  |   Influenza C |

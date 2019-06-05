@@ -28,8 +28,9 @@ the European Bioinformatics Institute at
 VIGOR4 has been tested with the latest released exonerate version
 2.2.0 and with the development version 2.4.0. 
 
-Note: exonerate should be compiled with assertions disabled to work
-sucessfully with VIGOR4. 
+Note: There is a bug in exonerate that is triggered by VIGOR when
+exonerate is compiled with assertions enabled. Add --disable-assert to
+configure options when building from source.
 
 ### Vigor Viral Database
 
@@ -44,6 +45,9 @@ following on the commandline
 ```
 %mvn clean package -DskipTests
 ```
+
+This will create the zip file referenced in the Installing and
+Configuring section
 
 Running the tests during the build requires the path to the viral
 database be set. This can be done by setting the
@@ -87,7 +91,7 @@ For a full listing of the configuration parameters with a description,
 type the following on the commandline:
 
 ```
-% VIGOR-4.0.0/bin/vigor --list-config-parameters
+% VIGOR-4.0.0/bin/vigor4 --list-config-parameters
 ```
 
 Configuration parameters may be set in a number of ways:
