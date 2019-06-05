@@ -23,7 +23,7 @@ public class PEPWriter extends BaseOutputWriter {
         StringBuilder defline;
         long seqLength = models.get(0).getAlignment().getVirusGenome().getSequence().getLength();
         OutputContext context = new OutputContext();
-        context.addContext(OutputContext.Key.GENOME, models.get(0).getAlignment().getVirusGenome().getId());
+        context.addContext(OutputContext.Key.GENOME, models.get(0).getGeneID());
         // this ensures that the genome writer is closed
         try (WriterBundle unused = getWriter(outfiles, context, OutputContext.Key.GENOME)) {
             for (Model model : models) {

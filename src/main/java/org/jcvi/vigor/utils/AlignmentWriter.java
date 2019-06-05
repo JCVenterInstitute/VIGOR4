@@ -20,9 +20,8 @@ public class AlignmentWriter extends BaseOutputWriter {
             LOGGER.warn("No models to print to ALN file");
         }
 
-        String genomeID = models.get(0).getAlignment().getVirusGenome().getId();
         OutputContext context = new OutputContext();
-        context.addContext(OutputContext.Key.GENOME, genomeID);
+        context.addContext(OutputContext.Key.GENOME, models.get(0).getGeneID());
 
         try (WriterBundle bw  = getWriter(outfiles, context, OutputContext.Key.GENOME)) {
             List<File> raw_files = models.stream()

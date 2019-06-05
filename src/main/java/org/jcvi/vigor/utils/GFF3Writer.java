@@ -42,7 +42,7 @@ public class GFF3Writer extends BaseOutputWriter {
         String genomeID = models.get(0).getAlignment().getVirusGenome().getId();
 
         OutputContext context = new OutputContext();
-        context.addContext(OutputContext.Key.GENOME, genomeID);
+        context.addContext(OutputContext.Key.GENOME, models.get(0).getGeneID());
         try (WriterBundle bw = getWriter(outfiles, context, OutputContext.Key.GENOME)) {
 
             for (Model geneModel : models) {

@@ -31,7 +31,7 @@ public class CDSWriter extends BaseOutputWriter {
             return;
         }
         OutputContext context = new OutputContext();
-        context.addContext(OutputContext.Key.GENOME, geneModels.get(0).getAlignment().getVirusGenome().getId());
+        context.addContext(OutputContext.Key.GENOME, geneModels.get(0).getGeneID());
         try (WriterBundle unused = getWriter(outfiles, context, OutputContext.Key.GENOME)) {
             for (Model model : geneModels) {
                 context.addContext(OutputContext.Key.GENE, model.getGeneID());

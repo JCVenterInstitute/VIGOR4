@@ -36,7 +36,7 @@ public class TBLWriter extends BaseOutputWriter {
 
         VirusGenome virusGenome = models.get(0).getAlignment().getVirusGenome();
         String genomeID = virusGenome.getId();
-        OutputContext context = new OutputContext().addContext(OutputContext.Key.GENOME, genomeID);
+        OutputContext context = new OutputContext().addContext(OutputContext.Key.GENOME, models.get(0).getGeneID());
 
         boolean writeLocus = ! NullUtil.isNullOrEmpty(locusPrefix);
         long seqlength = virusGenome.getSequence().getLength();

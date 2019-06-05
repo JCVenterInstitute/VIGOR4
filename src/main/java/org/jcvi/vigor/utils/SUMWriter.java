@@ -23,7 +23,7 @@ public class SUMWriter extends BaseOutputWriter {
         }
 
         OutputContext context = new OutputContext();
-        context.addContext(OutputContext.Key.GENOME, models.get(0).getAlignment().getVirusGenome().getId());
+        context.addContext(OutputContext.Key.GENOME, models.get(0).getGeneID());
 
         try (WriterBundle bw = getWriter(outfiles, context, OutputContext.Key.GENOME)) {
 
