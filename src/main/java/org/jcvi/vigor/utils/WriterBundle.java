@@ -21,7 +21,13 @@ public class WriterBundle implements AutoCloseable{
 
     public void write(String value) throws IOException {
         for (BufferedWriter w : writers) {
-            w.write(value);
+            try {
+                w.write(value);
+            } catch (IOException e ) {
+                LOGGER.error("problem writing to {}", w);
+                throw e;
+            }
+
         }
     }
 
@@ -33,13 +39,23 @@ public class WriterBundle implements AutoCloseable{
 
     public void write(char c) throws IOException {
         for (BufferedWriter w: writers) {
-            w.write(c);
+            try {
+                w.write(c);
+            } catch (IOException e ) {
+                LOGGER.error("problem writing to {}", w);
+                throw e;
+            }
         }
     }
 
     public void newLine() throws IOException {
         for (BufferedWriter w: writers) {
-            w.newLine();
+            try {
+                w.newLine();
+            } catch (IOException e ) {
+                LOGGER.error("problem writing to {}", w);
+                throw e;
+            }
         }
     }
 
@@ -54,7 +70,11 @@ public class WriterBundle implements AutoCloseable{
         for (BufferedWriter writer: writers) {
             if (! borrowed.contains(writer)) {
                 LOGGER.trace("Closing {}", writer);
-                writer.close();
+                try {
+                    writer.close();
+                } catch (IOException e) {
+                    LOGGER.warn("error closing writer {} got {}:{}", writer, e.getClass(), e.getMessage());
+                }
             }
         }
     }

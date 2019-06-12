@@ -136,11 +136,15 @@ public class OutputWriterUtils {
     public static String getSequenceFilePath(String sequenceID) {
         String fileName = sequenceID.replaceAll("\\.", "-");
         fileName = fileName.split("-", 2)[0];
-        return fileName.replaceAll("[:/]", "_");
+        fileName = fileName.replaceAll("[:/]", "_");
+        LOGGER.trace("filename for sequence ID {} is {}", sequenceID, fileName);
+        return fileName;
     }
 
     public static String getGeneFilePath(String geneID) {
-        return geneID.replaceAll("[.:/]", "_");
+        String fileName = geneID.replaceAll("[.:/]", "_");
+        LOGGER.trace("filename for geneID {} is {}", geneID, fileName);
+        return fileName;
     }
 
 

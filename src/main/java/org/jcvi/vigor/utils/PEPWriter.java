@@ -27,6 +27,7 @@ public class PEPWriter extends BaseOutputWriter {
         // this ensures that the genome writer is closed
         try (WriterBundle unused = getWriter(outfiles, context, OutputContext.Key.GENOME)) {
             for (Model model : models) {
+                LOGGER.trace("writing peptides for model {}", model.getGeneID());
                 context.addContext(OutputContext.Key.GENE, model.getGeneID());
                 try (WriterBundle sequenceWriter = getWriter(outfiles, context, OutputContext.Key.GENE)) {
                     sequenceWriter.write(OutputWriterUtils.getDefline(model));

@@ -97,11 +97,14 @@ public class Outfiles implements AutoCloseable {
         synchronized (writers) {
             if (!writers.containsKey(newPath)) {
                 BufferedWriter writer = getBuffer(newPath);
+                LOGGER.trace("for path {} got new buffer {}", newPath, writer);
                 Buffer b = new Buffer(writer, onOpen, onClose);
                 writers.put(newPath, b);
                 b.open();
             }
-            return writers.get(newPath).bufferedWriter;
+            BufferedWriter writer = writers.get(newPath).bufferedWriter;
+            LOGGER.trace("for path {} returning buffer {}", newPath, writer);
+            return writer;
         }
     }
 
