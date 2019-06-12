@@ -75,6 +75,7 @@ public class PEPWriter extends BaseOutputWriter {
                         bw.newLine();
                         OutputWriterUtils.writeSequence(bw, match.getProtein().toBuilder().trim(match.getProteinRange()).build());
                     }
+                    context.removeContext(OutputContext.Key.PEP);
                 }
             }
         }
