@@ -22,7 +22,7 @@ public class FormatVigorOutput {
 
     public static void printModels ( List<Model> models, String message ) {
 
-        StringBuffer content = new StringBuffer("");
+        StringBuffer content = new StringBuffer();
         content.append(System.lineSeparator());
         content.append(
                 "*********************************" + message + "*****************************************************");
@@ -62,7 +62,7 @@ public class FormatVigorOutput {
 
     public static void printAllGeneModelsWithScores ( List<Model> geneModels, String msg ) {
 
-        StringBuffer content = new StringBuffer("");
+        StringBuffer content = new StringBuffer();
         content.append(System.lineSeparator());
         content.append(
                 "*********************************" + msg + "*****************************************************");
@@ -108,7 +108,7 @@ public class FormatVigorOutput {
 
     public static void printAlignments ( List<Alignment> alignments ) {
 
-        StringBuffer content = new StringBuffer("");
+        StringBuffer content = new StringBuffer();
         content.append(System.lineSeparator());
         content.append(
                 "*********************************Initial list of Alignments*****************************************************");
@@ -149,7 +149,7 @@ public class FormatVigorOutput {
         VirusGenome virusGenome = geneModels.get(0).getAlignment().getVirusGenome();
         long seqLength = virusGenome.getSequence().getLength();
         String refDb = geneModels.get(0).getAlignment().getAlignmentEvidence().getReference_db();
-        StringBuffer content = new StringBuffer("");
+        StringBuffer content = new StringBuffer();
         content.append(System.lineSeparator());
         content.append(System.lineSeparator());
         content.append(String.format("%-20s%-10s%-10s%-10s%-10s%-10s%-10s%-20s%-10s%-10s%-20s%-20s", "gene_id", "%id", "%sim", "%cov", "%t5", "%gap", "%t3", "start..stop", "pep_size", "ref_size", "ref_id", "definition"));
@@ -202,7 +202,7 @@ public class FormatVigorOutput {
                 List<Range> cdRanges = VigorFunctionalUtils.proteinRangeToCDSRanges(model, match.getProteinRange());
                 long start = VigorFunctionalUtils.getDirectionBasedCoordinate(model.getRange().getBegin(Range.CoordinateSystem.RESIDUE_BASED),seqLength,model.getDirection());
                 long end = VigorFunctionalUtils.getDirectionBasedCoordinate(model.getRange().getEnd(Range.CoordinateSystem.RESIDUE_BASED),seqLength,model.getDirection());
-                content.append(String.format("%-20s",GenerateVigorOutput.formatMaturePeptideRange(model,
+                content.append(String.format("%-20s",OutputWriterUtils.formatMaturePeptideRange(model,
                                                                                                   match,
                                                                                                   cdRanges,
                                                                                                   Range.CoordinateSystem.RESIDUE_BASED,
@@ -221,7 +221,7 @@ public class FormatVigorOutput {
         identityAvg = identityAvg / geneModels.size();
         similarityAvg = similarityAvg / geneModels.size();
         coverageAvg = coverageAvg / geneModels.size();
-        StringBuffer contentSummary = new StringBuffer("");
+        StringBuffer contentSummary = new StringBuffer();
         contentSummary.append(System.lineSeparator());
         contentSummary.append(String.format("%-32s%-10s%-10s%-15s%-15s%-15s%-15s%-17s%-15s%-20s", "Sequence", "Length", "Genes", "Pseudogenes", "CDS_Bases", "Peptide_Bases", "%Ref_Identity", "%Ref_Similarity", "%Ref_Coverage", "Ref_DB"));
         contentSummary.append(System.lineSeparator());

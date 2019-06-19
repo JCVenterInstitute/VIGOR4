@@ -82,6 +82,7 @@ public enum ConfigurationParameters {
     MinFunctionalLength("min_functional_len" , "Minimum functional length for a protein (expressed in aa) to be functional: if a premature stop codon makes it shorter than that, it should be annotated as pseudogene.", toPositiveInteger, Flags.VERSION_4, Flags.GENE_SET),
     MinimumMissingAASize("min_missing_AA_size", "Minimum number of proteins missing in a given alignment to search for missing exons.", toPositiveInteger),
 
+    MultiFile("multifile", "Generate genome, gene, peptide, CDS etc specific files as well as the overall files", toBoolean, Flags.COMMANDLINE_SET, Flags.PROGRAM_CONFIG_SET, Flags.VERSION_4),
     NTOverlapMaximum("max_nt_overlap", "Maximum number of nucleotides that may overlap for alignment fragments to be considered compatible when generating a gene model", toInteger, Flags.VERSION_4),
     NonCanonicalSplicing("noncanonical_splicing", "List of alternative splicing donor and acceptor sequence pairs. Format: noncanonical_splicing=donor+acceptor,donor+acceptor,... (e.g. noncanonical_splicing=AA+GT)", Flags.VERSION_4, Flags.VIRUS_SET, Flags.GENE_SET),
     Note("note","Information associated to a gene or protein variant (to be reported in the .tbl and GFF 3 outputs).", toListOfStrings, Flags.VIRUS_SET, Flags.GENE_SET, Flags.METADATA_SET),
@@ -89,6 +90,9 @@ public enum ConfigurationParameters {
                     Flags.COMMANDLINE_SET, Flags.REQUIRED),
 
     OutputPrefix("output_prefix", "Use this prefix output files", Flags.VERSION_3, Flags.VERSION_4, Flags.COMMANDLINE_SET, Flags.REQUIRED),
+    OutputFormats("output_formats", "Comma-separated list of output formats",
+                  areMembersOfSet(OutputWriters.Writers.keySet().toArray(new String[] {})),
+                  Flags.COMMANDLINE_SET, Flags.PROGRAM_CONFIG_SET),
     OverwriteOutputFiles("overwrite_output_files", "Overwrite output files if they exist",
                          toBoolean,
                          Flags.VERSION_4,
@@ -153,6 +157,7 @@ public enum ConfigurationParameters {
                                    Flags.VERSION_4,
                                    Flags.COMMANDLINE_SET,
                                    Flags.PROGRAM_CONFIG_SET);
+
 
 
     static final Map<String, ConfigurationParameters> byConfigKey;

@@ -8,7 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.NullUtil;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.jcvi.vigor.utils.OutputWriters;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -56,7 +56,7 @@ public class VigorInputValidationService {
               .action(Arguments.store())
               .dest(CommandLineParameters.outputPrefix)
               .metavar("<output prefix>")
-              .help("prefix for outputfile files, e.g. if the ouput prefix is /mydir/anno VIGOR will create output files /mydir/anno.tbl, /mydir/anno.stats, etc. An output prefix without a directory element will create the output files in the current working directory.");
+              .help("prefix for outputfile files, e.g. if the output prefix is /mydir/anno VIGOR will create output files /mydir/anno.tbl, /mydir/anno.stats, etc. An output prefix without a directory element will create the output files in the current working directory.");
 
         referenceGroup.addArgument("-d", "--reference-database")
                       .dest(CommandLineParameters.referenceDB)
@@ -164,6 +164,10 @@ public class VigorInputValidationService {
               .dest(CommandLineParameters.temporaryDirectory)
               .help("Root directory to use for temporary directories");
 
+        parser.addArgument("--list-output-formats")
+              .action(new PrintFormats())
+              .help("list acceptable output formats and exit");
+
         return parser;
     }
 
@@ -178,6 +182,18 @@ public class VigorInputValidationService {
             return false;
         }
 
+    }
+
+    private static class PrintFormats extends CustomNoArgumentAction {
+
+        @Override
+        public void run(ArgumentParser argumentParser, Argument argument, Map<String, Object> map, String s, Object o) throws ArgumentParserException {
+            System.out.println(OutputWriters.Writers.keySet()
+                                                    .stream()
+                                                    .sorted(String.CASE_INSENSITIVE_ORDER)
+                                                    .collect(Collectors.joining(",","Valid Formats: ","")));
+            System.exit(0);
+        }
     }
 
     private static class PrintVersion extends CustomNoArgumentAction {
@@ -219,6 +235,7 @@ public class VigorInputValidationService {
             }
         }
     }
+
     private static class ListConfigurations implements ArgumentAction {
         @Override
         public void onAttach(Argument argument) {

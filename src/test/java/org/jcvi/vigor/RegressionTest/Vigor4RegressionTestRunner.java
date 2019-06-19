@@ -40,10 +40,11 @@ public class Vigor4RegressionTestRunner {
                         throw new IllegalArgumentException("Not a valid argument: " + args[ i ]);
                     else {
                         if (args.length - 1 == i)
-                            if (args[ i ] == "-h") {
+                            if (args[ i ].equals("-h")) {
                                 printHelp();
-                            } else
-                                throw new IllegalArgumentException("Expected arg after: " + args[ i ]);
+                            } else {
+                                throw new IllegalArgumentException("Expected arg after: " + args[i]);
+                            }
                         // -opt
                         optsList.put(args[ i ], args[ i + 1 ]);
                         i++;

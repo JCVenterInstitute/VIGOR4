@@ -4,7 +4,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jcvi.vigor.exception.VigorException;
 
-import java.lang.reflect.Parameter;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;

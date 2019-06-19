@@ -375,10 +375,10 @@ public class GeneModelGenerationService {
         for (Model model : models) {
             if (!model.isPartial5p()) {
                 List<Model> outputModels = determineStart.determine(model);
-                outputModels.stream().forEach(model1 -> {
-                    modelsAfterDeterminingStart.add(model1);
-                });
-            } else modelsAfterDeterminingStart.add(model);
+                modelsAfterDeterminingStart.addAll(outputModels);
+            } else {
+                modelsAfterDeterminingStart.add(model);
+            }
         }
         ;
         if (isDebug) {
@@ -418,10 +418,10 @@ public class GeneModelGenerationService {
         for (Model model : modelsWithMissingExonsDetermined) {
             if (!model.isPartial3p()) {
                 List<Model> outputModels = determineStop.determine(model);
-                outputModels.stream().forEach(m -> {
-                    modelsAfterDeterminingStop.add(m);
-                });
-            } else modelsAfterDeterminingStop.add(model);
+                modelsAfterDeterminingStop.addAll(outputModels);
+            } else {
+                modelsAfterDeterminingStop.add(model);
+            }
         }
         if (isDebug) {
             FormatVigorOutput.printModels(modelsAfterDeterminingStop, "Models after determining stop");

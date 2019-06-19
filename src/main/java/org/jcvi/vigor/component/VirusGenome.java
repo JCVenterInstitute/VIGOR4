@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import lombok.Data;
 
-import javax.swing.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
