@@ -222,7 +222,7 @@ public class Vigor {
                                  VigorUtils.FileCheck.DIRECTORY);
         List<IOutputWriter> writers = getWriters(vigorParameters);
         try (NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(new File(inputFileName))
-                .hint(DataStoreProviderHint.RANDOM_ACCESS_OPTIMIZE_SPEED)
+                .hint(DataStoreProviderHint.ITERATION_ONLY)
                 .build();
              Outfiles outfiles = getOutfiles(vigorParameters);
         ) {
