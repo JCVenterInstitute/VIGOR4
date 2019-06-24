@@ -282,9 +282,6 @@ public class Vigor {
             writer.writeModels(outfiles, geneModels);
             outfiles.flush();
         }
-//        generateAlignmentOutput(geneModels, outfiles);
-//        generateOutput(geneModels, outfiles);
-//        generateGFF3Output(geneModels, outfiles);
         FormatVigorOutput.printSequenceFeatures(geneModels, "GeneModels");
         outfiles.flush();
     }
@@ -408,9 +405,6 @@ public class Vigor {
         String fileBase = config.get(ConfigurationParameters.OutputPrefix);
 
         Outfiles outfiles = new Outfiles(Paths.get(outputDir), fileBase, overwrite);
-     //   for (GenerateVigorOutput.Outfile outfile : GenerateVigorOutput.Outfile.values()) {
-     //       outfiles.getWriter(outfile);
-     //   }
         return outfiles;
     }
 
