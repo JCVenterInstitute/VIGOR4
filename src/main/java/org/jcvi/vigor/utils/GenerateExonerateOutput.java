@@ -1,8 +1,7 @@
 package org.jcvi.vigor.utils;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -11,6 +10,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
 
+import com.google.common.base.Charsets;
+import com.google.common.io.CharStreams;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.datastore.DataStoreProviderHint;
 import org.jcvi.jillion.fasta.aa.ProteinFastaDataStore;
 import org.jcvi.jillion.fasta.aa.ProteinFastaFileDataStoreBuilder;
@@ -19,6 +22,8 @@ import org.jcvi.vigor.component.VirusGenome;
 import org.jcvi.vigor.exception.VigorException;
 
 public class GenerateExonerateOutput {
+
+    private static final Logger LOGGER = LogManager.getLogger(GenerateExonerateOutput.class);
 
     public static String queryExonerate ( VirusGenome virusGenome, String referenceDB,
                                           String workspace, String proteinID, String exoneratePath ) throws VigorException {
@@ -74,14 +79,29 @@ public class GenerateExonerateOutput {
             List<String> exonerateCommand = Arrays.asList(exoneratePath, "--model",
                     "protein2genome", "-q", dbPath, "-t",
                     file.getAbsolutePath(), "--showcigar", "true");
-            Process p2 = new ProcessBuilder(exonerateCommand)
-                    .redirectOutput(Paths.get(workspace, refDBFolder, fileName).toFile())
-                    .start();
-            int result = p2.waitFor();
-            p2.destroy();
-            if (result != 0) {
-                throw new VigorException(String.format("exonerate process %s returned with non-zero exit code %s",
-                        String.join(" ", exonerateCommand), result));
+            Process exonerateProcess = null;
+            try {
+                exonerateProcess = new ProcessBuilder(exonerateCommand)
+                        .redirectOutput(Paths.get(workspace, refDBFolder, fileName).toFile())
+                        .start();
+                int result = exonerateProcess.waitFor();
+
+                if (result != 0) {
+                    String message = String.join(" ",
+                                                 "exonerate exit code",
+                                                 String.valueOf(result),
+                                                 ", exonerate error output:\n",
+                                                 CharStreams.toString(new InputStreamReader(exonerateProcess.getErrorStream(), Charsets.UTF_8)));
+                    LOGGER.error(message);
+                    throw new VigorException(String.join(" ", "exonerate process",
+                                                         String.join(" ", exonerateCommand),
+                                                         String.valueOf(result),
+                                                         "returned non-zero exit code"));
+                }
+            } finally {
+                if (exonerateProcess != null) {
+                    exonerateProcess.destroy();
+                }
             }
         } catch (Exception e) {
             throw new VigorException(String.format("Exception running exonerate. got %s: %s", e.getClass().getSimpleName(), e.getMessage()), e);
