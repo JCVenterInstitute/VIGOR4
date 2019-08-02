@@ -87,17 +87,14 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
             alignments.put(frame, actual);
         }
 
+        Range alignmentRange = NTRange;
         for (Frame myFrame : alignments.keySet()) {
             if (bestAlignment == null) {
                 bestAlignment = alignments.get(myFrame);
             }
             if (bestAlignment.getScore() < alignments.get(myFrame).getScore()) {
                 bestAlignment = alignments.get(myFrame);
-                if (myFrame == Frame.TWO) {
-                    NTRange = Range.of(NTRange.getBegin() + 1, NTRange.getEnd());
-                } else if (myFrame == Frame.THREE) {
-                    NTRange = Range.of(NTRange.getBegin() + 2, NTRange.getEnd());
-                }
+                alignmentRange = NTRange.toBuilder().contractBegin(myFrame.getFrame() -1).build();
             }
         }
 
@@ -111,8 +108,8 @@ public class DetermineMissingExons implements DetermineGeneFeatures {
             exon = new Exon();
             Range range = bestAlignment.getQueryRange().getRange();
             Range modelExonNTRange = Range.of(
-                    (range.getBegin() * 3) + NTRange.getBegin(),
-                    (((range.getEnd() + 1) * 3) - 1) + NTRange.getBegin());
+                    (range.getBegin() * 3) + alignmentRange.getBegin(),
+                    (((range.getEnd() + 1) * 3) - 1) + alignmentRange.getBegin());
             exon.setRange(modelExonNTRange);
             AlignmentFragment alignmentFragment = new AlignmentFragment(modelExonAARange, modelExonNTRange,
                                                                         bestAlignment.getQueryRange()
