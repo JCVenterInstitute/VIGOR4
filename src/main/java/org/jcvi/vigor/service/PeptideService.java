@@ -587,7 +587,7 @@ public class PeptideService implements PeptideMatchingService {
         return peptideDataStore.records()
                                .map(record -> PeptideMatch.of(record,
                                        protein,
-                                       PairwiseAlignmentBuilder.createProtienAlignmentBuilder(
+                                       PairwiseAlignmentBuilder.createProteinAlignmentBuilder(
                                                record.getSequence(),
                                                protein.getSequence(),
                                                BlosumMatrices.blosum40())

@@ -65,7 +65,7 @@ public class CheckCoverage implements EvaluateModel {
         ProteinSequence subSeq = model.getAlignment().getViralProtein().getSequence();
         AminoAcidSubstitutionMatrix blosom62 = BlosumMatrices.blosum62();
         ProteinPairwiseSequenceAlignment actual = PairwiseAlignmentBuilder
-                .createProtienAlignmentBuilder(querySeq,
+                .createProteinAlignmentBuilder(querySeq,
                         subSeq, blosom62).gapPenalty(-8, -8)
                 .build();
         Map<String, Double> scores = new HashMap<String, Double>();

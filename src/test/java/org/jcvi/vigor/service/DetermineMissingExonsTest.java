@@ -120,7 +120,7 @@ public class DetermineMissingExonsTest {
         ProteinSequence subjectSequence = new ProteinSequenceBuilder("MEDFVRQCFNPMIVELAEKTMKEYGEDLKIETNKFAAICTHLEVCFMYSDFHFINEQGESIIVELGDPNALLKHRFEIIEGRDRTMAWTVVNSICNTTGAEKPKF").build();
         AminoAcidSubstitutionMatrix blosom50 = BlosumMatrices.blosum50();
         ProteinPairwiseSequenceAlignment actual = PairwiseAlignmentBuilder
-                .createProtienAlignmentBuilder(querySequence, subjectSequence, blosom50).gapPenalty(-8, -8)
+                .createProteinAlignmentBuilder(querySequence, subjectSequence, blosom50).gapPenalty(-8, -8)
                 .build();
         DirectedRange expected;
         expected = DirectedRange.create(( Range.of(0, 53) ), Direction.FORWARD);

@@ -1,12 +1,5 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <repositories>
-    <repository>
-      <id>local-maven-repository</id>
-      <url>file://${project.basedir}/local-maven-repository</url>
-    </repository>
-  </repositories>
-
   <properties>
     <!-- platform -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -21,7 +14,7 @@
     <commons-configuration-version>2.2</commons-configuration-version>
     <commons-beanutils-version>1.9.3</commons-beanutils-version>
     <log4j-version>2.11.1</log4j-version>
-    <jillion-version>5.3-20181002-110820</jillion-version>
+    <jillion-version>5.3.1</jillion-version>
     <argparse4j-version>0.8.1</argparse4j-version>
     <jacoco-version>0.8.3</jacoco-version>
     <guava-version>27.0.1-jre</guava-version>
@@ -146,7 +139,7 @@
     </dependency>
     
     <dependency>
-      <groupId>org.jcvi</groupId>
+      <groupId>org.jcvi.jillion</groupId>
       <artifactId>jillion</artifactId>
       <version>${jillion-version}</version>
     </dependency>
