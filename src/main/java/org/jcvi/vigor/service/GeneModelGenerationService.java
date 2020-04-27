@@ -222,7 +222,7 @@ public class GeneModelGenerationService {
      */
     private List<Model> filterModelsWithStructuralSpecifications(List<Model> models, VigorConfiguration config) {
 
-        int min_coverage = config.getOrDefault(ConfigurationParameters.GeneMinimumCoverage, 0);
+        double min_coverage = config.getOrDefault(ConfigurationParameters.GeneMinimumCoverage, 0D);
 
         return models.stream()
                      .filter(
