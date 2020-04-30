@@ -3,6 +3,7 @@ package org.jcvi.vigor.component;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import com.google.common.base.MoreObjects;
 import org.jcvi.jillion.core.Direction;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.aa.ProteinSequence;
@@ -64,11 +65,14 @@ public class Model implements Cloneable {
     }
 
     @Override
-    public String toString(){
-        return "\n Gene Symbol : "+geneSymbol+"\n isPseudogene : "+isPseudogene
-                +"\n isPartial3p : "+partial3p
-                +"\n isPartial5p : "+partial5p
-                +"\n Exons : "+exons.stream().map(Object::toString).collect(Collectors.joining("\n "));
+    public String toString() {
+        return MoreObjects.toStringHelper(this)
+                          .omitNullValues()
+                          .add("ID", hashCode())
+                          .add("Gene", geneSymbol)
+                          .add("protein", getProteinID())
+                          .add("exons", exons.stream().map(Object::toString).collect(Collectors.joining(",")))
+                          .toString();
     }
 
     public void addNote(NoteType note) {
