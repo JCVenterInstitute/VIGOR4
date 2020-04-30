@@ -83,6 +83,9 @@ public class Vigor {
             String referenceDB = vigorConfiguration.get(ConfigurationParameters.ReferenceDatabaseFile);
             LOGGER.info("Command line arguments: {}", String.join(" ", args));
             LOGGER.info("Current working directory: {}", Paths.get("").toAbsolutePath().normalize().toString());
+            String dbVersion = vigorConfiguration.getOrDefault(VigorConfiguration.METADATA_SECTION, ConfigurationParameters.Version, "unknown");
+            String virusName = vigorConfiguration.getOrDefault(VigorConfiguration.METADATA_SECTION, ConfigurationParameters.VirusName, "unknown");
+            LOGGER.info("Using {} database version {}", virusName, dbVersion);
             String inputFileName = parsedArgs.getString("input_fasta");
             generateAnnotations(inputFileName, referenceDB, vigorConfiguration);
         } catch (UserFacingException e) {
