@@ -74,6 +74,7 @@ public class FormatVigorOutput {
             Map<String, Double> scores = model.getScores();
             long cdsBases = 0;
             content.append(String.format("%-32s", viralProtein.getProteinID()));
+            content.append(String.format("%-24s", model.getGeneID()));
             content.append(String.format("%-10s", String.format("%.02f", scores.get(Scores.IDENTITY_SCORE))));
             content.append(String.format("%-10s", String.format("%.02f", scores.get(Scores.SIMILARITY_SCORE))));
             content.append(String.format("%-10s", String.format("%.02f", scores.get(Scores.COVERAGE_SCORE))));
@@ -88,7 +89,7 @@ public class FormatVigorOutput {
                 if (i == model.getExons().size() - 1 && model.isPartial3p()) end = ">" + end;
                 if (i != 0) {
                     content.append(System.lineSeparator());
-                    content.append(String.format("%-92s", ""));
+                    content.append(String.format("%-116s", ""));
                 }
                 content.append(String.format("%-20s", start + ".." + end));
                 cdsBases = cdsBases + exon.getRange().getLength();
