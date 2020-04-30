@@ -126,10 +126,11 @@ public class ModelGenerationService {
      */
     // TODO configuration values from viral proteins?
     public List<Model> alignmentToModels ( Alignment alignment, VigorConfiguration defaultConfiguration ) {
+        String proteinID = alignment.getViralProtein().getProteinID();
         // TODO rely on viral protein having configuration
         VigorConfiguration configuration = alignment.getViralProtein().getConfiguration();
         configuration = configuration != null ? configuration : defaultConfiguration;
-        String proteinID = alignment.getViralProtein().getProteinID();
+        LOGGER.debug("Generating models for {} from genome {}", proteinID, alignment.getVirusGenome().getId());
         int maxAlignMergeAAGap = configuration.getOrDefault(ConfigurationParameters.MaxAlignMergeAAGap, DEFAULT_MAX_ALIGN_MERGE_AA_GAP);
         int minIntronLength = maxAlignMergeAAGap * 3;
         int relaxMergeAAGap = configuration.getOrDefault(ConfigurationParameters.RelaxAlignMergeAAGap, DEFAULT_RELAX_MERGE_AA_GAP);
@@ -187,6 +188,7 @@ public class ModelGenerationService {
                 }
             }
         }
+        LOGGER.debug("Returning {} models for alignment protein {} genome {}", models.size(), proteinID, alignment.getVirusGenome().getId());
         return models;
     }
 
