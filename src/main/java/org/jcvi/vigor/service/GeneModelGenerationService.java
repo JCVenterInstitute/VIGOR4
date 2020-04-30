@@ -18,6 +18,10 @@ import org.jcvi.vigor.component.Model;
 
 import static java.util.stream.Collectors.groupingBy;
 
+/**
+ * TODO Separate out scoring and filtering so that they can be overridden and experimented
+ * with
+ */
 @Service
 public class GeneModelGenerationService {
 
@@ -86,20 +90,17 @@ public class GeneModelGenerationService {
     }
 
     /**
+     * Sort models by score in descending order. Smallest number of exons is the secondary sort.
      * @param models
      * @param scoreType
      * @return
      */
     private List<Model> sortModels ( List<Model> models, String scoreType ) {
 
-        if (models.size() > 1) {
-            Collections.sort(models, ( m1, m2 ) -> {
-                if (Double.compare(m2.getScores().get(scoreType), m1.getScores().get(scoreType)) == 0) {
-                    return Double.compare(m1.getExons().size(), m2.getExons().size());
-                } else
-                    return Double.compare(m2.getScores().get(scoreType), m1.getScores().get(scoreType));
-            });
-        }
+        models.sort(Comparator.<Model>comparingDouble(m -> m.getScores().get(scoreType))
+                            .reversed()
+                            .thenComparing(m -> m.getExons().size()));
+
         return models;
     }
 
@@ -151,6 +152,8 @@ public class GeneModelGenerationService {
     }
 
     /**
+     * For each gene, reduce models to the highest scoring non-overlapping set.
+     * @TODO This step may remove models that work better in a given prediction
      * @param models
      * @return
      */
@@ -160,16 +163,21 @@ public class GeneModelGenerationService {
         List<Model> filteredModels = new ArrayList<Model>();
         for (String geneID : groupedModels.keySet()) {
             List<Model> similarModels = groupedModels.get(geneID);
+            LOGGER.debug("For gene {} found {} models", geneID, similarModels.size());
             similarModels = sortModels(similarModels, Scores.TOTAL_SCORE);
             List<Model> unOverlappedModels = new ArrayList<>();
             unOverlappedModels.add(similarModels.remove(0));
             for (Model checkModel : similarModels) {
                 if (isUnoverlappedCandidateModel(unOverlappedModels, checkModel)) {
                     unOverlappedModels.add(checkModel);
+                } else {
+                    LOGGER.debug("For gene {} discarding overlapping model {}", geneID, checkModel);
                 }
             }
+            LOGGER.debug("For gene {} {} models reduced to {} models", geneID, similarModels.size() + 1, unOverlappedModels);
             filteredModels.addAll(unOverlappedModels);
         }
+        LOGGER.debug("Returning {} models from starting {} models", filteredModels.size(), models.size());
         return filteredModels;
     }
 
@@ -179,15 +187,22 @@ public class GeneModelGenerationService {
      */
     private List<Model> filterUnOverlappedCandidateModels ( List<Model> models ) {
 
-        List<Model> candidateGenes = new ArrayList<>();
+        List<Model> candidateGenes = new ArrayList<>(models.size());
         Map<String, List<Model>> genewiseModels = models.stream().collect(Collectors.groupingBy(x -> x.getGeneSymbol()));
+        String geneName;
+        String proteinName;
         for (Map.Entry<String, List<Model>> entry : genewiseModels.entrySet()) {
+            geneName = entry.getKey();
             List<Model> aGeneModels = entry.getValue();
+            LOGGER.debug("For gene {} examining {} models", geneName, aGeneModels.size());
             Map<String, List<Model>> aGeneModelsProteinWise = aGeneModels.stream().collect(Collectors.groupingBy(x -> x.getAlignment().getViralProtein().getProteinID()));
             double highScore = 0;
             List<Model> highScoredModels = new ArrayList<>();
             for (Map.Entry<String, List<Model>> aProteinModelsOfGene : aGeneModelsProteinWise.entrySet()) {
+                proteinName = aProteinModelsOfGene.getKey();
                 List<Model> aProteinModels = aProteinModelsOfGene.getValue();
+
+                LOGGER.debug("For gene {} protein {} examining {} models", geneName, proteinName, aProteinModels.size());
                 double totalModelsScore = calculateTotalModelsScore(aProteinModels);
                 if (totalModelsScore > highScore) {
                     highScoredModels = new ArrayList<>();
@@ -209,10 +224,14 @@ public class GeneModelGenerationService {
             aGeneModels.removeAll(highScoredModels);
             for (Model tempModel : aGeneModels) {
                 if (isUnoverlappedCandidateModel(aGeneModels, tempModel)) {
+                    LOGGER.debug("Adding non-overlapping model {}", tempModel);
                     candidateGenes.add(tempModel);
+                } else {
+                    LOGGER.debug("Discarding overlapping model {}", tempModel);
                 }
             }
         }
+        LOGGER.debug("Return {} models from {} starting models", candidateGenes.size(), models);
         return candidateGenes;
     }
 
@@ -232,7 +251,24 @@ public class GeneModelGenerationService {
                      .collect(Collectors.toList());
     }
 
+    private static boolean exonsOverlap(Collection<Exon> exons1, Collection<Exon> exons2, int max_overlap) {
+        boolean overlap = false;
+        CHECKOVERLAP:
+        for (Exon exon1 : exons1) {
+            for (Exon exon2 : exons2) {
+                Range intersection = exon1.getRange().intersection(exon2.getRange());
+                if (intersection.getLength() > max_overlap) {
+                    overlap = true;
+                    break CHECKOVERLAP;
+                }
+            }
+        }
+        return overlap;
+    }
+
     /**
+     * Filter candidate list to final prediction
+     *
      * @param models
      * @param pseudogenes
      * @return
@@ -240,116 +276,84 @@ public class GeneModelGenerationService {
     private List<Model> filterGeneModels ( List<Model> models, List<Model> pseudogenes, int max_gene_overlap, boolean isDebug ) {
 
         List<Model> geneModels = new ArrayList<>();
+        if (isDebug) {
+            FormatVigorOutput.printAllGeneModelsWithScores(models, "All Gene Models");
+        }
         List<Model> filteredModels = filterModelsOfaGene(models);
+        if (isDebug) {
+            FormatVigorOutput.printAllGeneModelsWithScores(models, "Filtered Gene Models");
+        }
         List<Model> candidateGenes = filterUnOverlappedCandidateModels(filteredModels);
         if (isDebug) {
-            FormatVigorOutput.printAllGeneModelsWithScores(candidateGenes, "All Gene Models");
+            FormatVigorOutput.printAllGeneModelsWithScores(candidateGenes, "All Candidate Gene Models");
         }
         candidateGenes = sortModels(candidateGenes, Scores.MODEL_SCORE);
-        Model geneModel = candidateGenes.remove(0);
-        geneModels.add(geneModel);
-        //generate geneID
-        String genomeID = geneModel.getAlignment().getVirusGenome().getId();
-        String[] genomeIDParts = genomeID.split(Pattern.quote("|"));
-        String proteinIDOfGenome;
-        if (genomeIDParts.length >= 2) {
-            proteinIDOfGenome = genomeIDParts[ 0 ] + "_" + genomeIDParts[ 1 ];
-        } else {
-            proteinIDOfGenome = genomeIDParts[ 0 ];
+        if (isDebug) {
+            FormatVigorOutput.printAllGeneModelsWithScores(candidateGenes, "Sorted Gene Models");
         }
-        IDGenerator idGenerator = IDGenerator.of(proteinIDOfGenome);
-        ViralProtein protein = geneModel.getAlignment().getViralProtein();
-        List<String> sharedCDSList = NullUtil.nullOrElse(protein.getGeneAttributes().getStructuralSpecifications().getShared_cds(), Collections.EMPTY_LIST);
-        LOGGER.debug("for proteinID {}, gene {} checking for candidate models with shared cds: {}",
-                     protein.getProteinID(),
-                     protein.getGeneSymbol(),
-                     String.join(",",sharedCDSList));
 
         LOGGER.debug("checking {} models for non overlapping models", candidateGenes.size());
 
-        for (int j = candidateGenes.size() - 1; j >= 0; j--) {
-            Model candidateGene = candidateGenes.get(j);
-            List<Exon> candidateExons = candidateGene.getExons();
+        for (Model candidateGene: candidateGenes) {
+            LOGGER.debug("Examining candidate gene model {}", candidateGene);
             boolean overlap = false;
+            Boolean isSharedCDS = null;
             // Best model is picked as a gene model. Now compare other candidate models with genemodel. Check for overlap and do not add shared_CDS models at this step.
             CHECKOVERLAP:
             for (Model model : geneModels) {
-                boolean isSharedCDS = false;
-                List<String> tempSharedCDS = NullUtil.nullOrElse(model.getAlignment().getViralProtein().getGeneAttributes().getStructuralSpecifications().getShared_cds(), Collections.EMPTY_LIST);
-               // below step is to not to add shared_CDS genes at this stage
-                for(String sharedCDS:tempSharedCDS){
-                    if(sharedCDS.equals(candidateGene.getGeneSymbol())) {
-                        isSharedCDS = true;
-                        overlap = true;
-                    }
-                }
-                List<Exon> exons = model.getExons();
-                if (!isSharedCDS && candidateGene.getDirection().equals(model.getDirection())){
-                    for (Exon candidateExon : candidateExons) {
-                        for (Exon exon : exons) {
-                            Range intersection = candidateExon.getRange().intersection(exon.getRange());
-                            if (intersection.getLength() > max_gene_overlap) {
-                                overlap = true;
-                                break CHECKOVERLAP;
-                            }
+                LOGGER.debug("Checking candidate gene model {} against model {}", candidateGene, model);
+                if (! candidateGene.getDirection().equals(model.getDirection())){
+                    overlap |= exonsOverlap(model.getExons(), candidateGene.getExons(), max_gene_overlap);
+                    if (overlap) {
+                        Set<String> tempSharedCDS = new HashSet<>(NullUtil.nullOrElse(
+                                model.getAlignment().getViralProtein().getGeneAttributes().getStructuralSpecifications().getShared_cds(),
+                                Collections.EMPTY_LIST));
+
+                        // below step is to not to add shared_CDS genes at this stage
+                        if(tempSharedCDS.contains(candidateGene.getGeneSymbol())) {
+                            LOGGER.debug("candidateModel {} shares CDS with model {}", candidateGene, model);
+                            isSharedCDS =  isSharedCDS == null ? Boolean.TRUE : isSharedCDS && Boolean.TRUE;
+                        }
+
+                        if (! isSharedCDS) {
+                            break CHECKOVERLAP;
                         }
                     }
+                }
             }
-            }
-            if (!overlap) {
+
+            if ( (! overlap) || Boolean.TRUE.equals(isSharedCDS)) {
+                ViralProtein protein = candidateGene.getAlignment().getViralProtein();
                 LOGGER.debug("for protein {}, gene {} adding non-overlapping candidate {}",
                              protein.getProteinID(),
                              protein.getGeneSymbol(),
                              candidateGene);
                 geneModels.add(candidateGene);
-                candidateGenes.remove(j);
             }
         }
 
-        // add shared_cds model to gene models
-        for (String sharedCDS : sharedCDSList) {
-            Model sharedCDSModel = null;
-            Optional<Model> model = candidateGenes.stream()
-                    .filter(m -> m.getGeneSymbol().equals(sharedCDS))
-                    .findAny();
-            LOGGER.debug("for proteinID {} gene {} checking {} candidate models for shared CDs model {}: found {}",
-                    protein.getProteinID(),
-                    protein.getGeneSymbol(),
-                    candidateGenes.size(),
-                    sharedCDS,
-                    model.isPresent());
-            if (!geneModels.stream().filter(m -> m.getGeneSymbol().equals(sharedCDS)).findAny().isPresent()){
-                if (model.isPresent()) {
-                    sharedCDSModel = model.get();
-                    geneModels.add(sharedCDSModel);
-                } else {
-                    model = pseudogenes.stream()
-                            .filter(m -> m.getGeneSymbol().equals(( sharedCDS )))
-                            .findAny();
-                    LOGGER.debug("for proteinID {} gene {} checking {} pseudogenes for shared CDs model {}: found {}",
-                            protein.getProteinID(),
-                            protein.getGeneSymbol(),
-                            pseudogenes.size(),
-                            sharedCDS,
-                            model.isPresent());
-                    if (model.isPresent()) {
-                        sharedCDSModel = model.get();
-                        geneModels.add(sharedCDSModel);
-                    }
-                }
-            }
-
-        }
         geneModels.sort(Comparator.comparing(g -> g.getRange(), Range.Comparators.ARRIVAL));
 
         String proteinID = "";
         String id = "";
-        for (Model tempGeneModel : geneModels) {
-            if (! proteinID.equals(tempGeneModel.getAlignment().getViralProtein().getProteinID())) {
+        IDGenerator idGenerator = null;
+        for (Model geneModel : geneModels) {
+            if (! proteinID.equals(geneModel.getProteinID())) {
+                if (idGenerator == null) {
+                    String genomeID = geneModel.getAlignment().getVirusGenome().getId();
+                    String[] genomeIDParts = genomeID.split(Pattern.quote("|"));
+                    String proteinIDOfGenome;
+                    if (genomeIDParts.length >= 2) {
+                        proteinIDOfGenome = genomeIDParts[ 0 ] + "_" + genomeIDParts[ 1 ];
+                    } else {
+                        proteinIDOfGenome = genomeIDParts[ 0 ];
+                    }
+                    idGenerator = IDGenerator.of(proteinIDOfGenome);
+                }
                 id = idGenerator.next();
-                proteinID = tempGeneModel.getAlignment().getViralProtein().getProteinID();
+                proteinID = geneModel.getAlignment().getViralProtein().getProteinID();
             }
-            tempGeneModel.setGeneID(id + NullUtil.nullOrElse(tempGeneModel.getGeneID(),""));
+            geneModel.setGeneID(id + NullUtil.nullOrElse(geneModel.getGeneID(),""));
         }
         return geneModels;
     }
@@ -429,4 +433,3 @@ public class GeneModelGenerationService {
         return modelsAfterDeterminingStop;
     }
 }
-
