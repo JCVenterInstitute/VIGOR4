@@ -93,7 +93,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                                 exon.setFrame(Frame.ONE);
                                 newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(), slippagePoint.getBegin() - 1));
                                 newModel.getExons().get(i).set_3p_adjusted(true);
-                                newModel.getExons().add(exon);
+                                newModel.getExons().add(i+1, exon);
                             //if match found at the start of the exon, adjust 5' end of the exon and 3' end of previous exon, if any.
                             } else if (pointOfOccurance == PointOfOccurrence.START) {
                                 newModel.getExons().get(i).setRange(Range.of(slippagePoint.getBegin() + riboSlippage.getSlippage_frameshift(), exonRange.getEnd()));
