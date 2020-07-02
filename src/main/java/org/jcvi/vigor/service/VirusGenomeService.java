@@ -36,8 +36,9 @@ public class VirusGenomeService {
             filteredRangesOfNs.add(previousRange);
             for (int i = 1; i < rangesOfNs.size(); i++) {
                 Range currentRange = rangesOfNs.get(i);
+                // TODO remove magic value 6
                 if (Range.of(previousRange.getEnd(),currentRange.getBegin()).getLength()<=6) {
-                    filteredRangesOfNs.set(i-1, Range.of(previousRange.getBegin(), currentRange.getEnd()));
+                    filteredRangesOfNs.set(filteredRangesOfNs.size() -1 , Range.of(previousRange.getBegin(), currentRange.getEnd()));
                 }else{
                     filteredRangesOfNs.add(currentRange);
                 }
