@@ -116,7 +116,8 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                         //Below scenario is when slippage point lies in the intron, extend upstream and downstream exons till the slippage point
                         } else if (i != newModel.getExons().size() - 1) {
                             Range nextExonRange = newModel.getExons().get(i + 1).getRange();
-                            if (slippagePoint.intersects(Range.of(exonRange.getEnd() + 1, nextExonRange.getBegin() - 1))) {
+                            long intronLength = nextExonRange.getBegin() - exonRange.getEnd();
+                            if ( intronLength > 2 && slippagePoint.intersects(Range.of(exonRange.getEnd() + 1, nextExonRange.getBegin() - 1))) {
                                 newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(), slippagePoint.getBegin() - 1));
                                 newModel.getExons().get(i).set_3p_adjusted(true);
                                 newModel.getExons().get(i + 1).setRange(Range.of(slippagePoint.getBegin() + riboSlippage.getSlippage_frameshift(), nextExonRange.getEnd()));
