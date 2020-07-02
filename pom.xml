@@ -23,7 +23,7 @@
     <git-commit-id-plugin-version>2.2.5</git-commit-id-plugin-version>
     <vigor-major-version>4</vigor-major-version>
     <vigor-minor-version>1</vigor-minor-version>
-    <vigor-patch-version>20190131</vigor-patch-version>
+    <vigor-patch-version>20200702</vigor-patch-version>
     <vigor-version-number>${vigor-major-version}.${vigor-minor-version}.${vigor-patch-version}</vigor-version-number>
     <vigor-version>vigor-${vigor-version-number}</vigor-version>
     <build.host></build.host>
