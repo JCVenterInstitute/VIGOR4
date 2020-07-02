@@ -12,7 +12,7 @@
     <junit-version>4.13-beta-1</junit-version>
     <lombok-version>1.18.4</lombok-version>
     <commons-configuration-version>2.2</commons-configuration-version>
-    <commons-beanutils-version>1.9.3</commons-beanutils-version>
+    <commons-beanutils-version>1.9.4</commons-beanutils-version>
     <log4j-version>2.11.1</log4j-version>
     <jillion-version>5.3.1</jillion-version>
     <argparse4j-version>0.8.1</argparse4j-version>
