@@ -214,10 +214,9 @@ public class GeneModelGenerationService {
                 highScoredModels = highScoredModels.stream()
                         .sorted(Comparator.comparing(g -> g.getRange(), Range.Comparators.ARRIVAL))
                         .collect(Collectors.toList());
-                char alphabet = 'a';
+                IDSuffixGenerator suffixGenerator = new IDSuffixGenerator();
                 for (Model fragmentModel : highScoredModels) {
-                    fragmentModel.setGeneID(Character.toString(alphabet));
-                    alphabet++;
+                    fragmentModel.setGeneID(suffixGenerator.next());
                 }
             }
             candidateGenes.addAll(highScoredModels);
