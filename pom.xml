@@ -9,7 +9,7 @@
     <spring-version>5.1.4.RELEASE</spring-version>
     <java-version>1.8</java-version>
     <argparse4j-version>0.8.1</argparse4j-version>
-    <junit-version>4.13-beta-1</junit-version>
+    <junit-version>4.13.1</junit-version>
     <lombok-version>1.18.4</lombok-version>
     <commons-configuration-version>2.2</commons-configuration-version>
     <commons-beanutils-version>1.9.3</commons-beanutils-version>
