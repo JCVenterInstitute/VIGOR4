@@ -9,6 +9,7 @@ This project is funded by the National Institute Of Allergy And Infectious Disea
 Vigor4 uses the [VIGOR_DB](https://github.com/JCVenterInstitute/VIGOR_DB) project which currently has databases for the following viruses:
 
 * Influenza (A & B for human, avian, and swine, and C for human)
+* SARS-CoV-2
 * West Nile Virus
 * Zika Virus
 * Chikungunya Virus
