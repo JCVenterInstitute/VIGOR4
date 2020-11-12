@@ -31,6 +31,8 @@ public enum ConfigurationParameters {
 
     CircularGene("circular_genome", "When this parameter is set to TRUE, VIGOR consider the genome as circular, enabling annotating genes spanning both ends of the sequence (which would be continuous when circularized).", toBoolean, Flags.UNIMPLEMENTED, Flags.VERSION_3, Flags.VERSION_4),
 
+    ContinueAfterError("continue_after_errors", "Continue processing sequences despite encountering a runtime error with a given sequence. By default Vigor4 exits immediately when an error occurs.", toBoolean, Flags.VERSION_4, Flags.COMMANDLINE_SET, Flags.PROGRAM_CONFIG_SET),
+
     Description("description", "Description of virus database", Flags.METADATA_SET),
 
     DBCluster("cluster", "", Flags.GENE_SET, Flags.IGNORE),

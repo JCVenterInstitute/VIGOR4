@@ -224,6 +224,8 @@ public class Vigor {
                                  VigorUtils.FileCheck.WRITE,
                                  VigorUtils.FileCheck.DIRECTORY);
         List<IOutputWriter> writers = getWriters(vigorParameters);
+        Boolean continueAfterError = vigorParameters.getOrDefault(ConfigurationParameters.ContinueAfterError, Boolean.FALSE);
+
         try (NucleotideFastaDataStore dataStore = new NucleotideFastaFileDataStoreBuilder(new File(inputFileName))
                 .hint(DataStoreProviderHint.ITERATION_ONLY)
                 .build();
@@ -239,13 +241,21 @@ public class Vigor {
             Iterator<NucleotideFastaRecord> recordIterator = dataStore.records().iterator();
             while (recordIterator.hasNext()) {
                 NucleotideFastaRecord record = recordIterator.next();
-                LOGGER.debug("processing {}", record.getId());
-                List<Model> geneModels = modelsFromNucleotideRecord(record, referenceDB, vigorParameters);
-                if (geneModels.isEmpty()) {
-                    LOGGER.warn("No gene models generated for sequence {}", record.getId());
-                    continue;
+                try {
+                    LOGGER.debug("processing {}", record.getId());
+                    List<Model> geneModels = modelsFromNucleotideRecord(record, referenceDB, vigorParameters);
+                    if (geneModels.isEmpty()) {
+                        LOGGER.warn("No gene models generated for sequence {}", record.getId());
+                        continue;
+                    }
+                    outputModels(writers, outfiles, geneModels);
+                } catch (RuntimeException e) {
+                    if (continueAfterError) {
+                        LOGGER.error(String.format("Encountered exception processing sequence %s. Continuing to process subsequent sequences", record.getId()), e);
+                        continue;
+                    }
+                    throw e;
                 }
-                outputModels(writers, outfiles, geneModels);
             }
         } catch (DataStoreException e) {
             throw new VigorException(String.format("problem reading input file %s", inputFileName), e);
@@ -257,7 +267,6 @@ public class Vigor {
     }
 
     private List<IOutputWriter> getWriters(VigorConfiguration config) throws VigorException {
-        // TODO get writer preferences from config
         List<IOutputWriter> writers = new ArrayList<>();
         Set<String> selectedWriters = config.getOrDefault(ConfigurationParameters.OutputFormats, Collections.EMPTY_SET);
         for (String selectedWriter: selectedWriters) {
