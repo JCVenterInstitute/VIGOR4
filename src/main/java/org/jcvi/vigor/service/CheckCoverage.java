@@ -56,16 +56,17 @@ public class CheckCoverage implements EvaluateModel {
         Frame fFrame = model.getExons().get(0).getFrame();
         AminoAcid replacementAA = model.getAlignment().getViralProtein().getGeneAttributes().getStopTranslationException().getReplacementAA();
         ProteinSequence translatedSeq = IupacTranslationTables.STANDARD.translate(cds, fFrame);
-        ProteinSequenceBuilder proteinSeqBuilder = new ProteinSequenceBuilder(translatedSeq);
         if (replacementOffset != 0 && replacementAA != null) {
+            ProteinSequenceBuilder proteinSeqBuilder = new ProteinSequenceBuilder(translatedSeq);
             proteinSeqBuilder.replace((int) replacementOffset, replacementAA);
+            translatedSeq = proteinSeqBuilder.build();
+
         }
-        ProteinSequence querySeq = proteinSeqBuilder.build();
-        model.setTranslatedSeq(querySeq);
+        model.setTranslatedSeq(translatedSeq);
         ProteinSequence subSeq = model.getAlignment().getViralProtein().getSequence();
         AminoAcidSubstitutionMatrix blosom62 = BlosumMatrices.blosum62();
         ProteinPairwiseSequenceAlignment actual = PairwiseAlignmentBuilder
-                .createProteinAlignmentBuilder(querySeq,
+                .createProteinAlignmentBuilder(translatedSeq,
                         subSeq, blosom62).gapPenalty(-8, -8)
                 .build();
         Map<String, Double> scores = new HashMap<String, Double>();
@@ -73,7 +74,7 @@ public class CheckCoverage implements EvaluateModel {
             scores.putAll(model.getScores());
         }
         double percentIdentity = actual.getPercentIdentity() * 100;
-        long maxSeqLength = Long.max(querySeq.getLength(), subSeq.getLength());
+        long maxSeqLength = Long.max(translatedSeq.getLength(), subSeq.getLength());
         double percentSimilarity = SequenceUtils.computePercentSimilarity(actual.getGappedQueryAlignment(), actual.getGappedSubjectAlignment(), maxSeqLength, blosom62);
         double maxAlignmentLength = Long.max(actual.getQueryRange().getLength(), actual.getSubjectRange().getLength());
         double percentCoverage = Double.min( (maxAlignmentLength / maxSeqLength ) * 100, 100d);
