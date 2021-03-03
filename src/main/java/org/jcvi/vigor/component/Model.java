@@ -7,7 +7,9 @@ import com.google.common.base.MoreObjects;
 import org.jcvi.jillion.core.Direction;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.aa.ProteinSequence;
+import org.jcvi.vigor.component.MappedNucleotideSequence;
 import org.jcvi.vigor.utils.NoteType;
+import org.jcvi.vigor.utils.VigorFunctionalUtils;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import lombok.Data;
@@ -82,4 +84,14 @@ public class Model implements Cloneable {
     public void addNote(String note) {
         getNotes().add(note);
     }
+
+    public MappedNucleotideSequence getCDS() {
+        return getCDS(true);
+    }
+
+    public MappedNucleotideSequence getCDS(boolean trimStops) {
+        // can't cache while exons are changing underneath us
+        return VigorFunctionalUtils.getCDS(this, trimStops);
+    }
+
 }

@@ -10,13 +10,9 @@ import org.apache.logging.log4j.Logger;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.Frame;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
+import org.jcvi.vigor.component.*;
 import org.jcvi.vigor.service.exception.ServiceException;
 import org.jcvi.vigor.utils.*;
-import org.jcvi.vigor.component.Exon;
-import org.jcvi.vigor.component.Model;
-import org.jcvi.vigor.component.RNA_Editing;
-import org.jcvi.vigor.component.Ribosomal_Slippage;
-import org.jcvi.vigor.component.StopTranslationException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -220,8 +216,8 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
         List<Range> sequenceGaps = model.getAlignment().getVirusGenome().getSequenceGaps();
         StopTranslationException stopTransExce = model.getAlignment().getViralProtein().getGeneAttributes().getStopTranslationException();
         if (stopTransExce.isHasStopTranslationException()) {
-            NucleotideSequence cds = VigorFunctionalUtils.getCDS(model);
-            List<Range> matches = cds.findMatches(stopTransExce.getMotif()).distinct().collect(Collectors.toList());
+            MappedNucleotideSequence cds = VigorFunctionalUtils.getCDS(model);
+            List<Range> matches = cds.getSequence().findMatches(stopTransExce.getMotif()).distinct().collect(Collectors.toList());
             int offset = stopTransExce.getOffset();
             //+1 is added if offset is negative, this is to start count from the point where match is found.
             if (offset < 0) {

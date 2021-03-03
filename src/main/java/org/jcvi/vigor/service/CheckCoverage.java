@@ -18,6 +18,7 @@ import org.jcvi.jillion.core.residue.aa.ProteinSequenceBuilder;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
 import org.jcvi.vigor.component.Exon;
+import org.jcvi.vigor.component.MappedNucleotideSequence;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.utils.*;
 import org.springframework.stereotype.Service;
@@ -28,39 +29,39 @@ public class CheckCoverage implements EvaluateModel {
     @Override
     public Model evaluate ( Model model, VigorConfiguration configuration ) {
 
-        NucleotideSequence cds = determineCDS(model);
         List<Range> internalStops = getInternalStops(model);
         if (internalStops.size() > 0) {
             model.setPseudogene(true);
             model.addNote(internalStops.size() > 1 ? NoteType.StopCodonsInterruption : NoteType.StopCodonInterruption);
         }
-        model = determineHomology(model, cds);
+        model = determineHomology(model);
         return model;
     }
 
     /**
      * @param model
-     * @param cds
      * @return
      */
-    public Model determineHomology ( Model model, NucleotideSequence cds ) {
+    public Model determineHomology ( Model model) {
 
-        long replacementOffset = 0;
-        if (model.getReplaceStopCodonRange() != null) {
-            replacementOffset = model.getReplaceStopCodonRange().getBegin();
-        }
-        //replace stopcodon with an amino acid as per viral protein specifications
-        if (replacementOffset != 0) {
-            replacementOffset = getTranslatedProteinCoordinate(model.getExons(), replacementOffset, model.getInsertRNAEditingRange());
-        }
+        MappedNucleotideSequence mappedNucleotideSequence = model.getCDS();
         Frame fFrame = model.getExons().get(0).getFrame();
-        AminoAcid replacementAA = model.getAlignment().getViralProtein().getGeneAttributes().getStopTranslationException().getReplacementAA();
-        ProteinSequence translatedSeq = IupacTranslationTables.STANDARD.translate(cds, fFrame);
-        if (replacementOffset != 0 && replacementAA != null) {
-            ProteinSequenceBuilder proteinSeqBuilder = new ProteinSequenceBuilder(translatedSeq);
-            proteinSeqBuilder.replace((int) replacementOffset, replacementAA);
-            translatedSeq = proteinSeqBuilder.build();
+        ProteinSequence translatedSeq = IupacTranslationTables.STANDARD.translate(mappedNucleotideSequence.getSequence(), fFrame);
 
+        //replace stopcodon with an amino acid as per viral protein specifications
+        if (model.getReplaceStopCodonRange() != null) {
+            AminoAcid replacementAA = model.getAlignment().getViralProtein().getGeneAttributes().getStopTranslationException().getReplacementAA();
+            if (replacementAA != null) {
+                long replacementOffset = model.getReplaceStopCodonRange().getBegin();
+                if (replacementOffset != 0) {
+                    replacementOffset = getTranslatedProteinCoordinate(model.getExons(), replacementOffset, model.getInsertRNAEditingRange());
+                }
+                if (replacementOffset != 0) {
+                    ProteinSequenceBuilder proteinSeqBuilder = new ProteinSequenceBuilder(translatedSeq);
+                    proteinSeqBuilder.replace((int) replacementOffset, replacementAA);
+                    translatedSeq = proteinSeqBuilder.build();
+                }
+            }
         }
         model.setTranslatedSeq(translatedSeq);
         ProteinSequence subSeq = model.getAlignment().getViralProtein().getSequence();
@@ -88,36 +89,6 @@ public class CheckCoverage implements EvaluateModel {
         return model;
     }
 
-    /**
-     * @param model
-     * @return coding sequence of model
-     */
-    public NucleotideSequence determineCDS ( Model model ) {
-
-        model.getExons().sort(Exon.Comparators.Ascending);
-        List<Exon> exons = model.getExons();
-        NucleotideSequence virusGenomeSeq = model.getAlignment().getVirusGenome().getSequence();
-        boolean inserted = false;
-        NucleotideSequenceBuilder NTSeqBuilder = new NucleotideSequenceBuilder("");
-        NucleotideSequence NTSeq;
-        for (int i = 0; i < exons.size(); i++) {
-            Range exonRange = exons.get(i).getRange();
-            // trim off stop codon unless the model is partial
-            if (i == exons.size() - 1 && !model.isPartial3p()) {
-                exonRange = Range.of(exonRange.getBegin(), exonRange.getEnd() - 3);
-            }
-            if (!inserted && model.getInsertRNAEditingRange() != null && model.getInsertRNAEditingRange().getBegin() == ( exonRange.getEnd() + 1 )) {
-                NTSeqBuilder.append(virusGenomeSeq.toBuilder(exonRange));
-                String insertionString = model.getAlignment().getViralProtein().getGeneAttributes().getRna_editing().getInsertionString();
-                NTSeqBuilder.append(insertionString);
-                inserted = true;
-            } else {
-                NTSeqBuilder.append(virusGenomeSeq.toBuilder(exonRange));
-            }
-        }
-        NTSeq = NTSeqBuilder.build();
-        return NTSeq;
-    }
 
     /**
      * @param exons
@@ -179,8 +150,8 @@ public class CheckCoverage implements EvaluateModel {
     public List<Range> getInternalStops ( Model model ) {
 
         List<Range> internalStops = new ArrayList<Range>();
-        NucleotideSequence cds = VigorFunctionalUtils.getCDS(model);
-        Map<Frame, List<Long>> stops = IupacTranslationTables.STANDARD.findStops(cds);
+        MappedNucleotideSequence cds = model.getCDS(false);
+        Map<Frame, List<Long>> stops = IupacTranslationTables.STANDARD.findStops(cds.getSequence());
         Frame fFrame = model.getExons().get(0).getFrame();
         for (Map.Entry<Frame, List<Long>> pair : stops.entrySet()) {
             if (pair.getKey().equals(fFrame)) {
@@ -192,7 +163,7 @@ public class CheckCoverage implements EvaluateModel {
                     if (model.getReplaceStopCodonRange() != null && NTStopRange.equals(model.getReplaceStopCodonRange())) {
                         internalStop = false;
                     }
-                    if (Range.of(stop).equals(Range.of(cds.getLength() - 3))) {
+                    if (Range.of(stop).equals(Range.of(cds.getSequence().getLength() - 3))) {
                         internalStop = false;
                     }
                     if (internalStop) internalStops.add(NTStopRange);

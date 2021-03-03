@@ -34,8 +34,7 @@ public class CheckCoverageTest {
     public void determineHomologyTest () {
 
         Model model = getTestModel();
-        NucleotideSequence cds = checkCoverage.determineCDS(model);
-        model = checkCoverage.determineHomology(model, cds);
+        model = checkCoverage.determineHomology(model);
         assertEquals("VT*KS*", model.getTranslatedSeq().toString());
     }
 
@@ -128,7 +127,7 @@ public class CheckCoverageTest {
     public void determineCDS () {
 
         Model model = getTestModel();
-        NucleotideSequence cds = checkCoverage.determineCDS(model);
+        NucleotideSequence cds = model.getCDS().getSequence();
         assertEquals("GTCTTCTAAAAATCGTGA", cds.toString());
     }
 }

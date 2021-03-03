@@ -59,6 +59,7 @@ public class Exon implements Cloneable {
             }
         };
     }
+    
     @Override
     public String toString(){
         String frame = getFrame()==null ? "" : " frame:"+getFrame();

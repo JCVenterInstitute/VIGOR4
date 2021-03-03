@@ -1,9 +1,6 @@
 package org.jcvi.vigor.utils;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
@@ -17,20 +14,44 @@ import org.jcvi.jillion.core.residue.nt.NucleotideSequenceBuilder;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.component.VirusGenome;
+import org.jcvi.vigor.component.MappedNucleotideSequence;
 
 public class VigorFunctionalUtils {
 
     private static final Logger LOGGER = LogManager.getLogger(VigorFunctionalUtils.class);
 
-    public static NucleotideSequence getCDS ( Model model ) {
+    public static MappedNucleotideSequence getCDS( Model model) {
+        return getCDS(model, true);
+    }
 
+    /**
+     * @param model
+     * @return coding sequence of model
+     */
+    public static MappedNucleotideSequence getCDS (Model model, boolean trimStop) {
+
+        List<Range> originalRanges = new ArrayList<>();
+        model.getExons().sort(Exon.Comparators.Ascending);
+        List<Exon> exons = model.getExons();
         NucleotideSequence virusGenomeSeq = model.getAlignment().getVirusGenome().getSequence();
-        NucleotideSequenceBuilder NTSeqBuilder = new NucleotideSequenceBuilder("");
-        for (Exon exon : model.getExons()) {
-            NTSeqBuilder.append(virusGenomeSeq.toBuilder(exon.getRange()));
+        boolean inserted = false;
+        NucleotideSequenceBuilder ntSequenceBuilder = new NucleotideSequenceBuilder("");
+        for (int i = 0; i < exons.size(); i++) {
+            Range exonRange = exons.get(i).getRange();
+            // trim off stop codon unless the model is partial
+            if (i == exons.size() - 1 && trimStop && !model.isPartial3p()) {
+                exonRange = Range.of(exonRange.getBegin(), exonRange.getEnd() - 3);
+            }
+            ntSequenceBuilder.append(virusGenomeSeq.toBuilder(exonRange));
+            originalRanges.add(exonRange);
+            if (!inserted && model.getInsertRNAEditingRange() != null && model.getInsertRNAEditingRange().getBegin() == (exonRange.getEnd() + 1)) {
+                String insertionString = model.getAlignment().getViralProtein().getGeneAttributes().getRna_editing().getInsertionString();
+                ntSequenceBuilder.append(insertionString);
+                inserted = true;
+                originalRanges.add(Range.of(-(insertionString.length()), -1));
+            }
         }
-        NucleotideSequence cds = NTSeqBuilder.build();
-        return cds;
+        return new MappedNucleotideSequence(ntSequenceBuilder.build(), originalRanges);
     }
 
     private static Frame[] FRAMES = { Frame.ONE, Frame.TWO, Frame.THREE };
@@ -40,59 +61,19 @@ public class VigorFunctionalUtils {
         return FRAMES[ (int) coordinate % 3 ];
     }
 
+    /**
+     * TODO This does not take into account any viral tricks except insertion
+     * @param model
+     * @param proteinRange
+     * @return
+     */
     public static List<Range> proteinRangeToCDSRanges ( Model model, Range proteinRange ) {
 
-        List<Range> ranges = new ArrayList<>();
-        long pBegin = proteinRange.getBegin() * 3;
-        long proteinNTLength = proteinRange.getLength() * 3;
-        LOGGER.trace("getting ranges for proteinRange {}, ntBegin {}, ntLength {}", proteinRange, pBegin, proteinNTLength);
-        List<Exon> exons = model.getExons();
-        exons.sort(Exon.Comparators.Ascending);
-        boolean inserted = false;
-        long proteinBases = 0;
-        int insertedLength;
-        long exonLength;
-        Range addedRange;
-        long rangeStart;
-        long frameAdjustment;
-        Exon exon;
-        for (int i = 0; i < exons.size() && proteinNTLength > 0; i++) {
-            exon = exons.get(i);
-            frameAdjustment = exon.getFrame().getFrame() - 1;
-            Range exonRange = exon.getRange();
-            long adjustedBegin = exonRange.getBegin() + frameAdjustment;
-            long adjustedEnd = exonRange.getEnd() + frameAdjustment;
-            // TODO should ranges include stop codons?
-            // trim off stop codon unless the model is already partial
-            if (i == exons.size() - 1 && !model.isPartial3p()) {
-                adjustedEnd -= 3;
-            }
-            exonLength = adjustedEnd - adjustedBegin;
-            LOGGER.trace("checking range {}-{}, ntBegin {} against ntcount {}", adjustedBegin, adjustedEnd, pBegin, proteinBases);
-            if (proteinBases + exonLength > pBegin) {
-                rangeStart = adjustedBegin + ( pBegin - proteinBases );
-                if (proteinNTLength > exonLength) {
-                    addedRange = Range.of(rangeStart, adjustedEnd);
-                } else {
-                    addedRange = Range.of(rangeStart, rangeStart + proteinNTLength - 1);
-                }
-                ranges.add(addedRange);
-                LOGGER.trace("added range {}", addedRange);
-                proteinNTLength -= addedRange.getLength();
-                LOGGER.trace("{} bases left to to account for", proteinNTLength > 0 ? proteinNTLength : 0);
-            }
-            proteinBases += exonLength;
-            if (!inserted && model.getInsertRNAEditingRange() != null && model.getInsertRNAEditingRange().getBegin() == adjustedEnd + 1) {
-                insertedLength = model.getAlignment().getViralProtein().getGeneAttributes().getRna_editing().getInsertionString().length();
-                proteinBases += insertedLength;
-                if (proteinBases > pBegin) {
-                    LOGGER.trace("accounting for RNA editing of legth {}", insertedLength);
-                    proteinNTLength -= ( proteinBases - pBegin );
-                }
-                inserted = true;
-            }
-        }
-        return ranges;
+        LOGGER.debug("For model {} getting CDS ranges for AA Range {}", model, proteinRange);
+        Range ntRange = Range.ofLength(proteinRange.getLength() * 3 ).toBuilder().shift(proteinRange.getBegin() * 3).build();
+        List<Range> cdsRanges =  model.getCDS().getOriginalRanges(ntRange);
+        LOGGER.debug("For model {} for AA range {} returning NT Range {}", model, proteinRange, String.join(",", cdsRanges.stream().map(Range::toString).collect(Collectors.toList())));
+        return cdsRanges;
     }
 
     public static double generateProximityScore ( long referenceCoordinate, long pointOfOccurance ) {
@@ -198,6 +179,25 @@ public class VigorFunctionalUtils {
         long begin = getDirectionBasedCoordinate(range.getBegin(Range.CoordinateSystem.RESIDUE_BASED), seqLength, direction);
         long end = getDirectionBasedCoordinate(range.getEnd(Range.CoordinateSystem.RESIDUE_BASED), seqLength, direction);
         return Range.of(Range.CoordinateSystem.RESIDUE_BASED, Math.min(begin, end), Math.max(begin, end));
+    }
+
+    public static List<Range> mergeAdjacentRanges(List<Range> ranges) {
+        List<Range> returnedRanges = new ArrayList<>(ranges.size());
+        Range r,s;
+        if (! ranges.isEmpty()) {
+            returnedRanges.add(ranges.get(0));
+            for (int i=1; i < ranges.size(); i++) {
+                r = ranges.get(i);
+                s = returnedRanges.get(returnedRanges.size() -1);
+                if (r.getBegin() == s.getEnd() + 1) {
+                    returnedRanges.set(returnedRanges.size() -1,
+                                       s.toBuilder().expandEnd(r.getLength()).build());
+                } else {
+                    returnedRanges.add(r);
+                }
+            }
+        }
+        return returnedRanges;
     }
 
 }
