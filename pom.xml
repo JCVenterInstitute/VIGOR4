@@ -17,7 +17,7 @@
     <jillion-version>5.3.1</jillion-version>
     <argparse4j-version>0.8.1</argparse4j-version>
     <jacoco-version>0.8.3</jacoco-version>
-    <guava-version>27.0.1-jre</guava-version>
+    <guava-version>29.0-jre</guava-version>
     <surefire-version>2.22.0</surefire-version>
     <opencsv-version>4.4</opencsv-version>
     <git-commit-id-plugin-version>2.2.5</git-commit-id-plugin-version>
