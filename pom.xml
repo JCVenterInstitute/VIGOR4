@@ -6,7 +6,7 @@
     
     <!-- library versions -->
     <assertj-version>3.11.1</assertj-version>
-    <spring-version>5.1.4.RELEASE</spring-version>
+    <spring-version>5.3.19</spring-version>
     <java-version>1.8</java-version>
     <argparse4j-version>0.8.1</argparse4j-version>
     <junit-version>4.13-beta-1</junit-version>
