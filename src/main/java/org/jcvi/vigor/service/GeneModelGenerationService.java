@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.jcvi.jillion.core.Direction;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.vigor.component.Exon;
 import org.jcvi.vigor.component.ViralProtein;
@@ -166,7 +167,7 @@ public class GeneModelGenerationService {
             LOGGER.debug("For gene {} found {} models", geneID, similarModels.size());
             similarModels = sortModels(similarModels, Scores.TOTAL_SCORE);
             List<Model> unOverlappedModels = new ArrayList<>();
-            unOverlappedModels.add(similarModels.remove(0));
+            unOverlappedModels.add(similarModels.remove(0));   // CHECK HERE
             for (Model checkModel : similarModels) {
                 if (isUnoverlappedCandidateModel(unOverlappedModels, checkModel)) {
                     unOverlappedModels.add(checkModel);
@@ -265,6 +266,37 @@ public class GeneModelGenerationService {
         return overlap;
     }
 
+    private static boolean exonsOverlap(Collection<Exon> exons1, Collection<Exon> exons2, int max_overlap, long genomeSize) {
+        boolean overlap = false;
+        CHECKOVERLAP:
+        for (Exon exon1 : exons1) {
+            for (Exon exon2 : exons2) {
+                Range intersection;
+                if (exon2.getAlignmentFragment().getDirection().equals(exon1.getAlignmentFragment().getDirection())) {
+                    intersection = exon1.getRange().intersection(exon2.getRange());
+                } else {
+                    if (exon1.getAlignmentFragment().getDirection().equals(Direction.REVERSE)) {
+                        long start = genomeSize - exon1.getRange().getEnd();
+                        long end = genomeSize - exon1.getRange().getBegin();
+
+                        intersection = Range.of(start, end).intersection(exon2.getRange());
+                    } else {
+                        long start = genomeSize - exon2.getRange().getEnd();
+                        long end = genomeSize - exon2.getRange().getBegin();
+
+                        intersection = exon1.getRange().intersection(Range.of(start, end));
+                    }
+                }
+
+                if (intersection.getLength() > max_overlap) {
+                    overlap = true;
+                    break CHECKOVERLAP;
+                }
+            }
+        }
+        return overlap;
+    }
+
     /**
      * Filter candidate list to final prediction
      *
@@ -296,13 +328,14 @@ public class GeneModelGenerationService {
         for (Model candidateGene: candidateGenes) {
             LOGGER.debug("Examining candidate gene model {}", candidateGene);
             boolean overlap = false;
-            Boolean isSharedCDS = null;
+            Boolean isSharedCDS = Boolean.FALSE;
             // Best model is picked as a gene model. Now compare other candidate models with genemodel. Check for overlap and do not add shared_CDS models at this step.
             CHECKOVERLAP:
             for (Model model : geneModels) {
                 LOGGER.debug("Checking candidate gene model {} against model {}", candidateGene, model);
                 if (! candidateGene.getDirection().equals(model.getDirection())){
-                    overlap |= exonsOverlap(model.getExons(), candidateGene.getExons(), max_gene_overlap);
+                    //  overlap |= exonsOverlap(model.getExons(), candidateGene.getExons(), max_gene_overlap);
+                    overlap |= exonsOverlap(model.getExons(), candidateGene.getExons(), max_gene_overlap, model.getAlignment().getVirusGenome().getSequence().getLength());
                     if (overlap) {
                         Set<String> tempSharedCDS = new HashSet<>(NullUtil.nullOrElse(
                                 model.getAlignment().getViralProtein().getGeneAttributes().getStructuralSpecifications().getShared_cds(),
