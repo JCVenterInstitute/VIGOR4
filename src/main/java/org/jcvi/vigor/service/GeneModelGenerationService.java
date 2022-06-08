@@ -366,6 +366,33 @@ public class GeneModelGenerationService {
 
         geneModels.sort(Comparator.comparing(g -> g.getRange(), Range.Comparators.ARRIVAL));
 
+        Collection<Model> distinctGeneModels = geneModels.stream()
+                .collect(Collectors.toMap(c -> c.getRange(),
+                        Function.identity(),
+                        (a, b) -> {
+                            // Check if there is another model in the exact same range
+                            if ((a.getRange().getBegin() == b.getRange().getBegin()) &&
+                                    (a.getRange().getEnd() == b.getRange().getEnd())) {
+                                //Pick the higher coverage or similarity one
+                                if (a.getScores().get("%coverage") == b.getScores().get("%coverage")) {
+                                    if (a.getScores().get("%similarity") > b.getScores().get("%similarity")) {
+                                        return a;
+                                    } else {
+                                        return b;
+                                    }
+                                } else if (a.getScores().get("%coverage") > b.getScores().get("%coverage")) {
+                                    return a;
+                                } else {
+                                    return b;
+                                }
+                            } else {
+                                return a;
+                            }
+                        }))
+                .values();
+
+        geneModels = new ArrayList<>(distinctGeneModels);
+
         String proteinID = "";
         String id = "";
         IDGenerator idGenerator = null;
