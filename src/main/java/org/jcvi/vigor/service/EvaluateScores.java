@@ -2,6 +2,8 @@ package org.jcvi.vigor.service;
 
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jcvi.vigor.component.Model;
 import org.jcvi.vigor.utils.ConfigurationParameters;
 import org.jcvi.vigor.utils.VigorConfiguration;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class EvaluateScores implements EvaluateModel {
 
+    private static final Logger LOGGER = LogManager.getLogger(EvaluateScores.class);
 
     @Override
     public Model evaluate ( Model model, VigorConfiguration defaultConfiguration ) {
@@ -36,6 +39,10 @@ public class EvaluateScores implements EvaluateModel {
         scores.put(Scores.STOP_CODON_SCORE, stopScore);
         totalScore = alignmentScore + startCodonScore + leakyStopScore + splicingScore + stopScore;
         scores.put(Scores.TOTAL_SCORE, totalScore);
+
+        LOGGER.debug("Calculated scores for model {} : Alignment: {}, Start Codon: {}, Leaky Stop: {}, Splicing: {}. Stop: {}, Total: {}  ",
+                model, alignmentScore, startCodonScore, leakyStopScore, splicingScore, stopScore, totalScore);
+
         return model;
     }
 }
