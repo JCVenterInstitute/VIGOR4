@@ -29,15 +29,15 @@ public class OutputWriterUtils {
         long start = VigorFunctionalUtils.getDirectionBasedCoordinate(model.getRange().getBegin(Range.CoordinateSystem.RESIDUE_BASED),
                                                                       seqLength,
                                                                       model.getDirection());
-        Model endGeneModel = geneModels.stream()
+        /*Model endGeneModel = geneModels.stream()
                                        .filter(m -> model.getProteinID().equals(m.getProteinID()))
-                                       .findFirst().orElse(model);
-        long end = VigorFunctionalUtils.getDirectionBasedCoordinate(endGeneModel.getRange().getEnd(Range.CoordinateSystem.RESIDUE_BASED),
+                                       .findFirst().orElse(model);*/
+        long end = VigorFunctionalUtils.getDirectionBasedCoordinate(model.getRange().getEnd(Range.CoordinateSystem.RESIDUE_BASED),
                                                                     seqLength,
                                                                     model.getDirection());
         return String.join("\t",
                            ( model.isPartial5p() ? "<" : "" ) + start,
-                           ( endGeneModel.isPartial3p() ? ">" : "" ) + end);
+                           ( model.isPartial3p() ? ">" : "" ) + end);
     }
 
     public static String getDefline (Model model ) {
