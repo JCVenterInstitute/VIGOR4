@@ -367,7 +367,7 @@ public class GeneModelGenerationService {
         geneModels.sort(Comparator.comparing(g -> g.getRange(), Range.Comparators.ARRIVAL));
 
         Collection<Model> distinctGeneModels = geneModels.stream()
-                .collect(Collectors.toMap(c -> c.getRange(),
+                .collect(Collectors.toMap(c -> Arrays.asList(c.getDirection(), c.getRange()),
                         Function.identity(),
                         (a, b) -> {
                             // Check if there is another model in the exact same range
