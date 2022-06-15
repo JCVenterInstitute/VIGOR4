@@ -2,6 +2,7 @@ package org.jcvi.vigor.utils;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.jcvi.jillion.core.Direction;
 import org.jcvi.jillion.core.Range;
 import org.jcvi.jillion.core.residue.nt.NucleotideSequence;
 import org.jcvi.vigor.component.*;
@@ -45,6 +46,7 @@ public class TBLWriter extends BaseOutputWriter {
 
             bw.write(">Features " + genomeID + "\n");
             String proteinID = "";
+            List<Map> previousExonDirections = new ArrayList<>(0);
             for (int i = 0; i < models.size(); i++) {
                 Model model = models.get(i);
                 List<String> modelNotes = model.getNotes();
@@ -56,7 +58,7 @@ public class TBLWriter extends BaseOutputWriter {
                 Collections.sort(exons, Comparator.comparing(e -> VigorFunctionalUtils.getDirectionBasedRange(e.getRange(), seqlength, model.getDirection()), Range.Comparators.ARRIVAL));
                 Exon firstExon = exons.get(0);
                 int codon_start = firstExon.getFrame().getFrame();
-                if (!model.getAlignment().getViralProtein().getProteinID().equals(proteinID)) {
+                if (!model.getAlignment().getViralProtein().getProteinID().equals(proteinID) || !isExonDirectionsIdentical(previousExonDirections, exons, seqlength, model.getDirection())) {
                     bw.write(OutputWriterUtils.getGeneCoordinatesString(model, models));
                     bw.write("\tgene\n");
                     if (writeLocus) {
@@ -65,6 +67,7 @@ public class TBLWriter extends BaseOutputWriter {
                     bw.write("\t\t\tgene\t" + model.getGeneSymbol() + "\n");
                 }
                 proteinID = model.getAlignment().getViralProtein().getProteinID();
+                previousExonDirections.clear();
                 String geneSynonym = model.getAlignment().getViralProtein().getGeneSynonym();
                 if (!NullUtil.isNullOrEmpty(geneSynonym)) {
                     bw.write("\t\t\tgene_syn\t" + geneSynonym + "\n");
@@ -73,6 +76,10 @@ public class TBLWriter extends BaseOutputWriter {
                     Exon exon = exons.get(j);
                     String Cstart = Long.toString(VigorFunctionalUtils.getDirectionBasedCoordinate(exon.getRange().getBegin(Range.CoordinateSystem.RESIDUE_BASED), seqlength, model.getDirection()));
                     String Cend = Long.toString(VigorFunctionalUtils.getDirectionBasedCoordinate(exon.getRange().getEnd(Range.CoordinateSystem.RESIDUE_BASED), seqlength, model.getDirection()));
+                    Map<String, String> exonDirections = new HashMap<>(2);
+                    exonDirections.put("start", Cstart);
+                    exonDirections.put("end", Cend);
+                    previousExonDirections.add(exonDirections);
                     if (j == 0 && model.isPartial5p()) {
                         Cstart = "<" + Cstart;
                     }
@@ -194,5 +201,25 @@ public class TBLWriter extends BaseOutputWriter {
         } catch (IOException e) {
             throw new VigorException(e);
         }
+    }
+
+    private boolean isExonDirectionsIdentical(List<Map> previousExonDirections, List<Exon> exons, long seqlength, Direction direction) {
+        if (previousExonDirections.size() != exons.size()) {
+            return false;
+        }
+
+        for (int i = 0; i < exons.size(); i++) {
+            Exon exon = exons.get(i);
+            Map previousExonDirection = previousExonDirections.get(i);
+
+            String start = Long.toString(VigorFunctionalUtils.getDirectionBasedCoordinate(exon.getRange().getBegin(Range.CoordinateSystem.RESIDUE_BASED), seqlength, direction));
+            String end = Long.toString(VigorFunctionalUtils.getDirectionBasedCoordinate(exon.getRange().getEnd(Range.CoordinateSystem.RESIDUE_BASED), seqlength, direction));
+
+            if (!(start.equals(previousExonDirection.get("start")) && start.equals(previousExonDirection.get("end")))) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
