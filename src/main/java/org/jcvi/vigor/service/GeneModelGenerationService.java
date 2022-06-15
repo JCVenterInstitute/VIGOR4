@@ -111,10 +111,11 @@ public class GeneModelGenerationService {
      * @return
      */
     private boolean checkExonOverlap ( Model m1, Model m2 ) {
-
+        long genomeSize = m1.getAlignment().getVirusGenome().getSequence().getLength();
         for (Exon M1exon : m1.getExons()) {
             for (Exon M2exon : m2.getExons()) {
-                Range intersection = M1exon.getRange().intersection(M2exon.getRange());
+                // make sure to check direction here
+                Range intersection = getExonIntersaction(genomeSize, M1exon, M2exon);
                 if (intersection.getLength() != 0) return true;
             }
         }
@@ -271,22 +272,7 @@ public class GeneModelGenerationService {
         CHECKOVERLAP:
         for (Exon exon1 : exons1) {
             for (Exon exon2 : exons2) {
-                Range intersection;
-                if (exon2.getAlignmentFragment().getDirection().equals(exon1.getAlignmentFragment().getDirection())) {
-                    intersection = exon1.getRange().intersection(exon2.getRange());
-                } else {
-                    if (exon1.getAlignmentFragment().getDirection().equals(Direction.REVERSE)) {
-                        long start = genomeSize - exon1.getRange().getEnd();
-                        long end = genomeSize - exon1.getRange().getBegin();
-
-                        intersection = Range.of(start, end).intersection(exon2.getRange());
-                    } else {
-                        long start = genomeSize - exon2.getRange().getEnd();
-                        long end = genomeSize - exon2.getRange().getBegin();
-
-                        intersection = exon1.getRange().intersection(Range.of(start, end));
-                    }
-                }
+                Range intersection = getExonIntersaction(genomeSize, exon1, exon2);
 
                 if (intersection.getLength() > max_overlap) {
                     overlap = true;
@@ -295,6 +281,26 @@ public class GeneModelGenerationService {
             }
         }
         return overlap;
+    }
+
+    private static Range getExonIntersaction(long genomeSize, Exon exon1, Exon exon2) {
+        Range intersection;
+        if (exon2.getAlignmentFragment().getDirection().equals(exon1.getAlignmentFragment().getDirection())) {
+            intersection = exon1.getRange().intersection(exon2.getRange());
+        } else {
+            if (exon1.getAlignmentFragment().getDirection().equals(Direction.REVERSE)) {
+                long start = genomeSize - exon1.getRange().getEnd();
+                long end = genomeSize - exon1.getRange().getBegin();
+
+                intersection = Range.of(start, end).intersection(exon2.getRange());
+            } else {
+                long start = genomeSize - exon2.getRange().getEnd();
+                long end = genomeSize - exon2.getRange().getBegin();
+
+                intersection = exon1.getRange().intersection(Range.of(start, end));
+            }
+        }
+        return intersection;
     }
 
     /**
