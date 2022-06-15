@@ -310,7 +310,7 @@ public class GeneModelGenerationService {
      * @param pseudogenes
      * @return
      */
-    private List<Model> filterGeneModels ( List<Model> models, List<Model> pseudogenes, int max_gene_overlap, boolean isDebug ) {
+    private List<Model> filterGeneModels ( List<Model> models, List<Model> pseudogenes, int default_max_gene_overlap, boolean isDebug ) {
 
         List<Model> geneModels = new ArrayList<>();
         if (isDebug) {
@@ -341,6 +341,7 @@ public class GeneModelGenerationService {
                 LOGGER.debug("Checking candidate gene model {} against model {}", candidateGene, model);
                 if (! candidateGene.getDirection().equals(model.getDirection())){
                     //  overlap |= exonsOverlap(model.getExons(), candidateGene.getExons(), max_gene_overlap);
+                    int max_gene_overlap = model.getAlignment().getViralProtein().getConfiguration().getOrDefault(ConfigurationParameters.MaxGeneOverlap, default_max_gene_overlap);
                     overlap |= exonsOverlap(model.getExons(), candidateGene.getExons(), max_gene_overlap, model.getAlignment().getVirusGenome().getSequence().getLength());
                     if (overlap) {
                         Set<String> tempSharedCDS = new HashSet<>(NullUtil.nullOrElse(
