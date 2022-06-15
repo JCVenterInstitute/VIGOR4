@@ -247,7 +247,7 @@ public class GeneModelGenerationService {
         return models.stream()
                      .filter(
                              m -> m.getTranslatedSeq().getLength() >= getMinFunctionalLength.apply(m) &&
-                                     m.getScores().get(Scores.COVERAGE_SCORE) >= min_coverage
+                                         m.getScores().get(Scores.COVERAGE_SCORE) >= (Double) m.getAlignment().getViralProtein().getConfiguration().getOrDefault(ConfigurationParameters.GeneMinimumCoverage, min_coverage)
                      )
                      .collect(Collectors.toList());
     }
