@@ -61,12 +61,12 @@ public class ModelGenerationService {
         for (Alignment alignment : alignments) {
             alignment.getAlignmentFragments().sort(AlignmentFragment.Comparators.Ascending);
             String proteinID = alignment.getViralProtein().getProteinID();
-            protein2AlignmentsMap.computeIfAbsent(proteinID,(k) -> new ArrayList<>()).add(alignment);
+            protein2AlignmentsMap.computeIfAbsent(proteinID  + alignment.getDirection().toString(),(k) -> new ArrayList<>()).add(alignment);
         }
 
-        for (String proteinID : protein2AlignmentsMap.keySet()) {
-            Collections.sort(protein2AlignmentsMap.get(proteinID), alignmentComparator);
-            List<Alignment> alignmentsTemp = protein2AlignmentsMap.get(proteinID);
+        for (List<Alignment> protein2AlignmentsPerDirection : protein2AlignmentsMap.values()) {
+            Collections.sort(protein2AlignmentsPerDirection, alignmentComparator);
+            List<Alignment> alignmentsTemp = protein2AlignmentsPerDirection;
             Alignment mergedAlignment = alignmentsTemp.remove(0);
 
             for (Alignment alignment : alignmentsTemp) {
@@ -170,15 +170,23 @@ public class ModelGenerationService {
                                      fragmentsToString.apply(compatibleFragsList));
                         size = compatibleFragsList.size();
                         Model model = new Model();
-                        alignment.setAlignmentFragments(compatibleFragsList);
+                        Alignment alignment1 = new Alignment();
+                        alignment1.setAlignmentEvidence(alignment.getAlignmentEvidence());
+                        alignment1.setAlignmentTool(alignment.getAlignmentTool());
+                        alignment1.setAlignmentEvidence(alignment.getAlignmentEvidence());
+                        alignment1.setViralProtein(alignment.getViralProtein());
+                        alignment1.setVirusGenome(alignment.getVirusGenome());
+                        alignment1.setAlignmentScore(alignment.getAlignmentScore());
+
+                        alignment1.setAlignmentFragments(compatibleFragsList);
                         List<Exon> exons = determineVirusGenomeExons(compatibleFragsList);
                         model.getExons().addAll(exons);
-                        model.setAlignment(alignment);
-                        model.setGeneSymbol(alignment.getViralProtein().getGeneSymbol());
+                        model.setAlignment(alignment1);
+                        model.setGeneSymbol(alignment1.getViralProtein().getGeneSymbol());
                         model.setDirection(direction);
-                        model.getScores().putAll(alignment.getAlignmentScore());
+                        model.getScores().putAll(alignment1.getAlignmentScore());
                         model.getStatus().add("Initial Model");
-                        List<String> notes = alignment.getViralProtein()
+                        List<String> notes = alignment1.getViralProtein()
                                                       .getConfiguration()
                                                       .getOrDefault(ConfigurationParameters.Note, Collections.EMPTY_LIST);
 
