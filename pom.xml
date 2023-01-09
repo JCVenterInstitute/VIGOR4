@@ -11,7 +11,7 @@
     <argparse4j-version>0.8.1</argparse4j-version>
     <junit-version>4.13-beta-1</junit-version>
     <lombok-version>1.18.4</lombok-version>
-    <commons-configuration-version>2.2</commons-configuration-version>
+    <commons-configuration-version>2.7</commons-configuration-version>
     <commons-beanutils-version>1.9.3</commons-beanutils-version>
     <log4j-version>2.17.0</log4j-version>
     <jillion-version>5.3.1</jillion-version>
