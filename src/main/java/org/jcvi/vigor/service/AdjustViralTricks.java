@@ -174,7 +174,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                                 newModel.getExons().get(i).setRange(Range.of(pointOfInsertion.getBegin(), exonRange.getEnd()));
                                 if (i != 0) {
                                     Range prevExonRange = newModel.getExons().get(i - 1).getRange();
-                                    newModel.getExons().get(i - 1).setRange(Range.of(prevExonRange.getBegin(), pointOfInsertion.getBegin() - 1));
+                                    newModel.getExons().get(i - 1).setRange(Range.of(prevExonRange.getBegin(), pointOfInsertion.getBegin()));
                                 }
                             // If the position where insertionString has to be inserted lies in the end of the exon , adjust current exon and next exon ranges till the point of insertion
                             } else if (pointOfOccurance == PointOfOccurrence.END) {
@@ -193,7 +193,7 @@ public class AdjustViralTricks implements DetermineGeneFeatures {
                         } else if (i != newModel.getExons().size() - 1) {
                             Range nextExonRange = newModel.getExons().get(i + 1).getRange();
                             if (pointOfInsertion.intersects(Range.of(exonRange.getEnd() + 1, nextExonRange.getBegin() - 1))) {
-                                newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(), pointOfInsertion.getBegin() - 1));
+                                newModel.getExons().get(i).setRange(Range.of(exonRange.getBegin(), pointOfInsertion.getBegin()));
                                 newModel.getExons().get(i + 1).setRange(Range.of(pointOfInsertion.getBegin(), nextExonRange.getEnd()));
                             }
                         }
