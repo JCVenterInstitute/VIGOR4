@@ -10,14 +10,55 @@ Vigor4 uses the [VIGOR_DB](https://github.com/JCVenterInstitute/VIGOR_DB) projec
 
 * Influenza (A & B for human, avian, and swine, and C for human)
 * SARS-CoV-2
-* West Nile Virus
+* West Nile Virus (I and II)
 * Zika Virus
 * Chikungunya Virus
 * Eastern Equine Encephalitis Virus
 * Respiratory Syncytial Virus
-* Rotavirus
+* Rotavirus (A, B, C, F, and G)
 * Enterovirus
 * Lassa Mammarenavirus
+* Alphaviruses (VEEV and EEEV)
+* Antennavirus
+* Bandavirus
+* Beidivirus
+* Cicadellivirus
+* Coguvirus
+* Dengue Virus
+* Embecovirus
+* Feravirus
+* Goukovirus
+* Hantaviridae
+* Hartmanivirus
+* Hibecovirus
+* Horwuvirus
+* Hudivirus
+* Hudovirus
+* Inshuvirus
+* Ixovirus
+* Jonvirus
+* Laulavirus
+* Lentinuvirus
+* Measles Virus
+* Merbecovirus
+* Mobuvirus
+* Monkeypox Virus
+* Nairoviridae
+* Nobecovirus
+* Orthophasmavirus
+* Peribunyaviridae
+* Phasivirus
+* Phlebovirus
+* Pidchovirus
+* Reptarenavirus
+* Rubodvirus
+* Sarbecovirus
+* Sapovirus
+* Sawastrivirus
+* Tenuivirus
+* Uukuvirus
+* Wenrivirus
+* Wuhivirus
 
 ## Installing VIGOR4
 
