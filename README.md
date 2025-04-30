@@ -123,21 +123,62 @@ locus tag usage:
 
 ## Reference Databases:
 
- | Name  | Description |
- | :------------ | :----------|
- | flua |  Influenza A |
- | flub |  Influenza B|
- |fluc  |   Influenza C |
- | lassa  |     Lassa Mammarenavirus   |                                
- |rsv |        Respiratory syntactical virus (RSV)   |
- | rtva   |     Rotavirus A   |                                
-  |rtvb    |    Rotavirus B     |                              
-  |rtvc    |    Rotavirus C     |                              
- | rtvf   |     Rotavirus F  |
- | rtvg   |     Rotavirus G  |
- | sapo    |    Sapovirus  |
- | veev     |   Alphaviruses (VEEV/EEEV)|
- | wnvI     |   West Nile Virus - Lineage I |
- | wnvII    |   West Nile Virus - Lineage II |
- | zikv    |    Zika virus |
+| Name             | Description                       |
+|:-----------------|:----------------------------------|
+| antennavirus     | Antennavirus                      |
+| bandavirus       | Bandavirus                        |
+| beidivirus       | Beidivirus                        |
+| cicadellivirus   | Cicadellivirus                    |
+| coguvirus        | Coguvirus                         |
+| dengue           | Dengue virus                      |
+| embe             | Embecovirus                       |
+| entovirus        | Entovirus                         |
+| feravirus        | Feravirus                         |
+| flua             | Influenza A                       |
+| flub             | Influenza B                       |
+| fluc             | Influenza C                       |
+| goukovirus       | Goukovirus                        |
+| hantaviridae     | Hantaviridae                      |
+| hartmanivirus    | Hartmanivirus                     |
+| hibeco           | Hibecovirus                       |
+| horwuvirus       | Horwuvirus                        |
+| hudivirus        | Hudivirus                         |
+| hudovirus        | Hudovirus                         |
+| inshuvirus       | Inshuvirus                        |
+| ixovirus         | Ixovirus                          |
+| jonvirus         | Jonvirus                          |
+| lassa            | Lassa Mammarenavirus              |
+| laulavirus       | Laulavirus                        |
+| lentinuvirus     | Lentinuvirus                      |
+| measles          | Morbillivirus hominis             |
+| merbe            | Merbecovirus                      |
+| mobuvirus        | Mobuvirus                         |
+| monkeypox        | Monkeypox virus                   |
+| nairoviridae     | Nairoviridae                      |
+| nobeco           | Nobecovirus                       |
+| orthophasmavirus | Orthophasmavirus                  |
+| peribunyaviridae | Peribunyaviridae                  |
+| phasivirus       | Phasivirus                        |
+| phlebovirus      | Phlebovirus                       |
+| pidchovirus      | Pidchovirus                       |
+| reptarenavirus   | Reptarenavirus                    |
+| rsv              | Respiratory syncytial virus (RSV) |
+| rtva             | Rotavirus A                       |
+| rtvb             | Rotavirus B                       |
+| rtvc             | Rotavirus C                       |
+| rtvf             | Rotavirus F                       |
+| rtvg             | Rotavirus G                       |
+| rubodvirus       | Rubodvirus                        |
+| sapo             | Sapovirus                         |
+| sarbe            | Sarbecovirus                      |
+| sarscov2         | SARS-CoV-2                        |
+| sawastrivirus    | Sawastrivirus                     |
+| tenuivirus       | Tenuivirus                        |
+| uukuvirus        | Uukuvirus                         |
+| veev             | Alphaviruses (VEEV/EEEV)          |
+| wenrivirus       | Wenrivirus                        |
+| wnvI             | West Nile Virus - Lineage I       |
+| wnvII            | West Nile Virus - Lineage II      |
+| wuhivirus        | Wuhivirus                         |
+| zikv             | Zika virus                        |
 
