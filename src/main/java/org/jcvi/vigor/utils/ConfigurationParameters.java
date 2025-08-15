@@ -3,6 +3,7 @@ package org.jcvi.vigor.utils;
 import com.google.common.collect.Sets;
 import org.jcvi.vigor.component.RNA_Editing;
 import org.jcvi.vigor.component.Ribosomal_Slippage;
+import org.jcvi.vigor.component.UTR;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -158,8 +159,9 @@ public enum ConfigurationParameters {
     VirusSpecificConfigurationPath("virusSpecific_config_path", "Directory containing virus specific configurations.",
                                    Flags.VERSION_4,
                                    Flags.COMMANDLINE_SET,
-                                   Flags.PROGRAM_CONFIG_SET);
-
+                                   Flags.PROGRAM_CONFIG_SET),
+    UTR3("3_prime_UTR_file", "Search for 3' UTR in a genome sequence",  ConfigurationParameterFunctions.of(UTR.class, UTR::parseFromString), Flags.VERSION_4, Flags.GENE_SET),
+    UTR5("5_prime_UTR_file", "Search for 5' UTR in a genome sequence",  ConfigurationParameterFunctions.of(UTR.class, UTR::parseFromString), Flags.VERSION_4, Flags.GENE_SET);
 
 
     static final Map<String, ConfigurationParameters> byConfigKey;

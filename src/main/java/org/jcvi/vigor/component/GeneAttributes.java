@@ -19,4 +19,6 @@ public class GeneAttributes {
     private RNA_Editing rna_editing = RNA_Editing.NO_EDITING;
     private StructuralSpecifications structuralSpecifications = new StructuralSpecifications();
     private List<SpliceSite> spliceSites = Collections.EMPTY_LIST;
+    private UTR utr3 = UTR.NO_UTR3;
+    private UTR utr5 = UTR.NO_UTR5;
 }

@@ -68,6 +68,8 @@ public class ViralProteinService {
         GeneAttributes attributes = viralProtein.getGeneAttributes();
         attributes.setRibosomal_slippage(geneConfig.getOrDefault(ConfigurationParameters.RibosomalSlippage, Ribosomal_Slippage.NO_SLIPPAGE));
         attributes.setRna_editing(geneConfig.getOrDefault(ConfigurationParameters.RNAEditing, RNA_Editing.NO_EDITING));
+        attributes.setUtr3(geneConfig.getOrDefault(ConfigurationParameters.UTR3, UTR.NO_UTR3));
+        attributes.setUtr5(geneConfig.getOrDefault(ConfigurationParameters.UTR5, UTR.NO_UTR5));
         List<SpliceSite> nonCanonicalSpliceSites = geneConfig.getOrDefault(ConfigurationParameters.NonCanonicalSplicing, Collections.EMPTY_LIST);
         if (nonCanonicalSpliceSites.isEmpty()) {
             attributes.setSpliceSites(SpliceSite.DEFAULT_SPLICE_SITES);
